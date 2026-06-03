@@ -83,6 +83,27 @@ test('searchVM 无结果时 items 为空数组', () => {
   assert.deepStrictEqual(View.searchVM([], '查无').items, []);
 });
 
+test('buildComparison 并排比较并标出差异项', () => {
+  const names = { a: '甲菌', b: '乙菌' };
+  const biochem = {
+    a: [{ 项目: '触酶', 结果: '+' }, { 项目: '氧化酶', 结果: '−' }],
+    b: [{ 项目: '触酶', 结果: '+' }, { 项目: '氧化酶', 结果: '+' }]
+  };
+  const vm = View.buildComparison(names, biochem, ['a', 'b']);
+  assert.deepStrictEqual(vm.items.map((i) => i.名称), ['甲菌', '乙菌']);
+  assert.strictEqual(vm.rows.find((r) => r.项目 === '触酶').differs, false);
+  const oxidase = vm.rows.find((r) => r.项目 === '氧化酶');
+  assert.strictEqual(oxidase.differs, true);
+  assert.deepStrictEqual(oxidase.cells, ['−', '+']);
+});
+
+test('buildComparison 缺失项以 — 补齐并算作差异', () => {
+  const vm = View.buildComparison({ a: '甲', b: '乙' }, { a: [{ 项目: '脲酶', 结果: '+' }], b: [{ 项目: '触酶', 结果: '+' }] }, ['a', 'b']);
+  const urease = vm.rows.find((r) => r.项目 === '脲酶');
+  assert.deepStrictEqual(urease.cells, ['+', '—']);
+  assert.strictEqual(urease.differs, true);
+});
+
 const abxCats = { antibiotics: [
   { 名称: '抑制细胞壁合成', 子类: [{ 名称: '青霉素类' }, { 名称: '头孢菌素类' }] },
   { 名称: '抑制蛋白质合成', 子类: [{ 名称: '大环内酯类' }] }

@@ -49,6 +49,7 @@
     if (!entry) { return null; }
     extras = extras || {};
     return {
+      id: entry.id,
       名称: entry.名称,
       类别: entry.类别 || '',
       拉丁名: entry.拉丁名 || '',
@@ -119,11 +120,33 @@
     };
   }
 
+  // 生化反应对比：并排比较若干菌；rows 取所有项目的并集，differs 标出结果不一致的项目
+  function buildComparison(nameById, biochemMap, ids) {
+    biochemMap = biochemMap || {};
+    ids = (ids || []).filter(function (id) { return biochemMap[id]; });
+    var items = ids.map(function (id) { return { id: id, 名称: (nameById && nameById[id]) || id }; });
+    var order = [], seen = {};
+    ids.forEach(function (id) {
+      biochemMap[id].forEach(function (b) { if (!seen[b.项目]) { seen[b.项目] = true; order.push(b.项目); } });
+    });
+    var rows = order.map(function (项目) {
+      var cells = ids.map(function (id) {
+        var hit = biochemMap[id].filter(function (b) { return b.项目 === 项目; })[0];
+        return hit ? hit.结果 : '—';
+      });
+      var distinct = {};
+      cells.forEach(function (c) { distinct[c] = true; });
+      return { 项目: 项目, cells: cells, differs: Object.keys(distinct).length > 1 };
+    });
+    return { items: items, rows: rows };
+  }
+
   return {
     moduleLabel: moduleLabel,
     mechanismImageFor: mechanismImageFor,
     detailVM: detailVM,
     sidebarVM: sidebarVM,
-    searchVM: searchVM
+    searchVM: searchVM,
+    buildComparison: buildComparison
   };
 });

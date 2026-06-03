@@ -62,6 +62,26 @@ body {
 .diff-line { font-size: 13px; line-height: 1.65; color: #334155; margin-top: 3px; }
 .diff-tag { display: inline-block; font-size: 11px; color: #fff; background: #94a3b8; border-radius: 4px; padding: 1px 7px; }
 .diff-tag.diff-key { background: #f59e0b; }
+
+/* 生化对比 */
+.compare-btn { color: #d1fae5; text-decoration: none; font-size: 13px; padding: 6px 12px; border: 1px solid #5eead4; border-radius: 6px; white-space: nowrap; margin-left: 8px; }
+.compare-btn:hover { background: #0b5d56; color: #fff; }
+.biochem-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 460px; }
+.cmp-add { background: #0f766e; color: #fff; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; white-space: nowrap; }
+.cmp-add:hover { background: #0b5d56; }
+.cmp-pick { padding: 6px 10px; border-radius: 6px; cursor: pointer; color: #334155; font-size: 13px; user-select: none; }
+.cmp-pick:hover { background: #f1f5f9; }
+.cmp-pick.sel { background: #ccfbf1; color: #0f766e; font-weight: 600; }
+.cmp { border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+.cmp th, .cmp td { border: 1px solid #e2e8f0; padding: 7px 12px; text-align: left; }
+.cmp thead th { background: #0f766e; color: #fff; }
+.cmp .cmp-col { color: #fff; text-decoration: none; }
+.cmp .cmp-col:hover { text-decoration: underline; }
+.cmp .cmp-item { font-weight: 600; color: #475569; background: #f8fafc; }
+.cmp-cell { font-family: ui-monospace, Menlo, "Courier New", monospace; }
+.cmp tr.cmp-diff td { background: #fef9c3; }
+.cmp tr.cmp-diff .cmp-item { background: #fde68a; color: #92400e; }
+.cmp-hint { font-size: 12px; color: #94a3b8; margin-top: 10px; }
 .section-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; }
 .section-title { font-size: 13px; font-weight: 700; color: #0f766e; margin-bottom: 6px; }
 .section-body { color: #334155; line-height: 1.65; white-space: pre-wrap; }

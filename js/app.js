@@ -131,7 +131,10 @@
         ]);
       });
       nodes.push(el('div', { cls: 'biochem' }, [
-        el('div', { cls: 'biochem-title', text: '🧪 生化反应' }),
+        el('div', { cls: 'biochem-head' }, [
+          el('div', { cls: 'biochem-title', text: '🧪 生化反应' }),
+          el('button', { cls: 'cmp-add', text: '＋ 加入对比', onClick: function () { if (vm.id) { compareSet[vm.id] = true; location.hash = '#/compare'; } } })
+        ]),
         el('div', { cls: 'biochem-rows' }, bioRows)
       ]));
     }
@@ -181,7 +184,67 @@
     return nodes;
   }
 
+  // ===== 生化反应对比 =====
+  var compareSet = {}; // 选中用于对比的微生物 id
+
+  function isCompareRoute() {
+    return (location.hash || '').replace(/^#\/?/, '').split('/')[0] === 'compare';
+  }
+  function comparableIds() { return Object.keys((window.DB && window.DB.biochem) || {}); }
+  function nameById() {
+    var m = {};
+    ((window.DB && window.DB.microbes) || []).forEach(function (x) { m[x.id] = x.名称; });
+    return m;
+  }
+  function toggleCompare(id) {
+    if (compareSet[id]) { delete compareSet[id]; } else { compareSet[id] = true; }
+    if (isCompareRoute()) { renderCompare(); }
+  }
+  function buildComparePicker(names, ids) {
+    var kids = [ el('div', { cls: 'cat-group-name', text: '勾选细菌（可多选）' }) ];
+    ids.forEach(function (id) {
+      var sel = !!compareSet[id];
+      kids.push(el('div', {
+        cls: 'cmp-pick' + (sel ? ' sel' : ''),
+        text: (sel ? '☑ ' : '☐ ') + (names[id] || id),
+        onClick: function () { toggleCompare(id); }
+      }));
+    });
+    return [ el('div', { cls: 'cat-group' }, kids) ];
+  }
+  function buildCompareView(vm) {
+    var nodes = [ el('h2', { cls: 'detail-title', text: '🧪 生化反应对比' }) ];
+    if (vm.items.length < 2) {
+      nodes.push(el('div', { cls: 'empty', text: '在左侧勾选 2 个以上细菌进行对比。' }));
+      return nodes;
+    }
+    var headCells = [ el('th', { text: '生化项目' }) ];
+    vm.items.forEach(function (it) {
+      headCells.push(el('th', {}, [ el('a', { cls: 'cmp-col', text: it.名称, href: '#/microbes/' + it.id }) ]));
+    });
+    var bodyRows = vm.rows.map(function (row) {
+      var tds = [ el('td', { cls: 'cmp-item', text: row.项目 }) ];
+      row.cells.forEach(function (c) { tds.push(el('td', { cls: 'cmp-cell', text: c })); });
+      return el('tr', { cls: row.differs ? 'cmp-diff' : '' }, tds);
+    });
+    nodes.push(el('table', { cls: 'cmp' }, [
+      el('thead', {}, [ el('tr', {}, headCells) ]),
+      el('tbody', {}, bodyRows)
+    ]));
+    nodes.push(el('div', { cls: 'cmp-hint', text: '黄色行 = 各菌结果存在差异（鉴别要点）。点列首菌名可跳转详情。' }));
+    return nodes;
+  }
+  function renderCompare() {
+    setActiveTab(null);
+    var names = nameById();
+    var ids = comparableIds();
+    fill(document.getElementById('sidebar'), buildComparePicker(names, ids));
+    var selected = ids.filter(function (id) { return compareSet[id]; });
+    fill(document.getElementById('main'), buildCompareView(View.buildComparison(names, (window.DB && window.DB.biochem) || {}, selected)));
+  }
+
   function renderRoute() {
+    if (isCompareRoute()) { renderCompare(); return; }
     var route = parseHash();
     var data = db();
     setActiveTab(route.module);
