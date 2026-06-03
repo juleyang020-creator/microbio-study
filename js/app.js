@@ -5,7 +5,12 @@
 
   function db() {
     var DB = window.DB || {};
-    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [] };
+    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [] };
+  }
+  function abxIdByName() {
+    var m = {};
+    ((window.DB && window.DB.antibiotics) || []).forEach(function (a) { m[a.名称] = a.id; });
+    return m;
   }
   function categories() { return (window.DB && window.DB.categories) || {}; }
 
@@ -125,6 +130,19 @@
           el('div', { cls: 'section-body', text: s.正文 })
         ]));
       });
+    }
+
+    if (vm.药物 && vm.药物.length) {
+      var abxMap = abxIdByName();
+      var drugChips = vm.药物.map(function (name) {
+        var aid = abxMap[name];
+        if (aid) { return el('a', { cls: 'chip chip-antibiotics', text: name, href: '#/antibiotics/' + aid }); }
+        return el('span', { cls: 'chip chip-plain', text: name });
+      });
+      nodes.push(el('div', { cls: 'card-drugs' }, [
+        el('div', { cls: 'card-drugs-title', text: '💊 包含药物（' + vm.药物.length + '）' }),
+        el('div', { cls: 'chips' }, drugChips)
+      ]));
     }
 
     if (vm.形态) {

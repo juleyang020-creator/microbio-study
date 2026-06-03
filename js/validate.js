@@ -5,7 +5,8 @@
   var db = {
     microbes: DB.microbes || [],
     antibiotics: DB.antibiotics || [],
-    resistance: DB.resistance || []
+    resistance: DB.resistance || [],
+    cards: DB.cards || []
   };
   var problems = window.Core.validateData(db, DB.categories || {});
   if (problems.length) {

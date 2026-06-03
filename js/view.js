@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药' };
+  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', cards: '药敏卡' };
 
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 
@@ -58,6 +58,7 @@
       形态: extras.morphology || null,
       生化反应: extras.biochem || [],
       鉴别: extras.differential || [],
+      药物: entry.药物 || [],
       小节: (entry.小节 || []).map(function (s) {
         return { 标题: s.标题 || '', 正文: s.正文 || '' };
       }),
