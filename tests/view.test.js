@@ -5,7 +5,7 @@ const View = require('../js/view.js');
 
 test('moduleLabel 返回中文标签', () => {
   assert.strictEqual(View.moduleLabel('microbes'), '微生物');
-  assert.strictEqual(View.moduleLabel('antibiotics'), '抗生素');
+  assert.strictEqual(View.moduleLabel('antibiotics'), '抗微生物药');
   assert.strictEqual(View.moduleLabel('resistance'), '耐药');
 });
 
@@ -22,7 +22,7 @@ test('detailVM 组装标题/类别/拉丁名/小节/关联（含 href 与 label�
   assert.strictEqual(vm.类别, '革兰氏阳性球菌');
   assert.strictEqual(vm.拉丁名, 'Staph');
   assert.strictEqual(vm.小节[0].标题, '致病性');
-  assert.strictEqual(vm.关联[0].label, '抗生素 · 苯唑西林');
+  assert.strictEqual(vm.关联[0].label, '抗微生物药 · 苯唑西林');
   assert.strictEqual(vm.关联[0].href, '#/antibiotics/a1');
   assert.strictEqual(vm.关联[0].exists, true);
 });

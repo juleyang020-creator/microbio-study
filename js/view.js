@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗生素', resistance: '耐药' };
+  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药' };
 
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 
