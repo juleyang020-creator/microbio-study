@@ -117,6 +117,12 @@ test('detailVM 暴露药敏简写/机制图/生化反应', () => {
   assert.strictEqual(vm.生化反应[0].项目, '氧化酶');
 });
 
+test('detailVM 暴露形态', () => {
+  const vm = View.detailVM({ 名称: 'x', 类别: 'c', 小节: [], 关联: [] }, [], { morphology: { 镜下: 'a', 培养: [{ 培养基: '血平板', 形态: 'b' }] } });
+  assert.strictEqual(vm.形态.镜下, 'a');
+  assert.strictEqual(vm.形态.培养[0].培养基, '血平板');
+});
+
 test('detailVM 暴露鉴别', () => {
   const vm = View.detailVM({ 名称: 'x', 类别: 'c', 小节: [], 关联: [] }, [], { differential: [{ 名称: 'y', id: 'yy', 相似点: 'a', 鉴别: 'b' }] });
   assert.strictEqual(vm.鉴别[0].名称, 'y');

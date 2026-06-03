@@ -123,6 +123,17 @@
       });
     }
 
+    if (vm.形态) {
+      var mNodes = [ el('div', { cls: 'morph-title', text: '🔬 形态' }) ];
+      if (vm.形态.镜下) {
+        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag', text: '镜下' }), el('span', { text: ' ' + vm.形态.镜下 }) ]));
+      }
+      (vm.形态.培养 || []).forEach(function (c) {
+        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag morph-med', text: c.培养基 }), el('span', { text: ' ' + c.形态 }) ]));
+      });
+      nodes.push(el('div', { cls: 'morphology' }, mNodes));
+    }
+
     if (vm.生化反应 && vm.生化反应.length) {
       var bioRows = vm.生化反应.map(function (b) {
         return el('div', { cls: 'biochem-row' }, [
@@ -259,6 +270,7 @@
     }
     var extras = {
       mechanismImage: mechImg,
+      morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
       differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null
     };

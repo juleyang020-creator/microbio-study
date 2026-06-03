@@ -9,6 +9,7 @@ require('../data/antibiotics.js');
 require('../data/resistance.js');
 require('../data/biochem.js');
 require('../data/differential.js');
+require('../data/morphology.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
 const fs = require('node:fs');
@@ -40,6 +41,14 @@ test('鉴别数据的键与引用 id 均为存在的微生物', () => {
     global.window.DB.differential[k].forEach((d) => {
       if (d.id) { assert.ok(ids[d.id], '鉴别项引用了不存在的 id：' + d.id + '（在 ' + k + '）'); }
     });
+  });
+});
+
+test('形态数据的键均为存在的微生物 id', () => {
+  const ids = {};
+  global.window.DB.microbes.forEach((m) => { ids[m.id] = true; });
+  Object.keys(global.window.DB.morphology || {}).forEach((k) => {
+    assert.ok(ids[k], '形态引用了不存在的微生物 id：' + k);
   });
 });
 
