@@ -6,6 +6,7 @@ window.DB.antibiotics = [
     id: 'penicillin-g',
     名称: '青霉素G',
     拉丁名: 'Benzylpenicillin',
+    药敏简写: 'PEN',
     类别: '青霉素类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类。与青霉素结合蛋白(PBP)结合，抑制细胞壁肽聚糖的转肽交联，使细胞壁缺损、菌体裂解，为繁殖期杀菌剂。' },
@@ -17,6 +18,7 @@ window.DB.antibiotics = [
     id: 'oxacillin',
     名称: '苯唑西林',
     拉丁名: 'Oxacillin',
+    药敏简写: 'OXA',
     类别: '青霉素类',
     小节: [
       { 标题: '作用机制', 正文: '耐酶半合成青霉素，机制同青霉素（结合 PBP、抑制细胞壁交联），其侧链使之不被青霉素酶水解。' },
@@ -28,6 +30,7 @@ window.DB.antibiotics = [
     id: 'amoxicillin',
     名称: '阿莫西林',
     拉丁名: 'Amoxicillin',
+    药敏简写: 'AMX',
     类别: '青霉素类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类，结合 PBP 抑制细胞壁合成；广谱、耐酸可口服。' },
@@ -39,6 +42,7 @@ window.DB.antibiotics = [
     id: 'piperacillin',
     名称: '哌拉西林',
     拉丁名: 'Piperacillin',
+    药敏简写: 'PIP',
     类别: '青霉素类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类，结合 PBP 抑制细胞壁合成。' },
@@ -52,6 +56,7 @@ window.DB.antibiotics = [
     id: 'cefazolin',
     名称: '头孢唑林',
     拉丁名: 'Cefazolin',
+    药敏简写: 'CFZ',
     类别: '头孢菌素类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类。机制同青霉素——抑制 PBP 介导的肽聚糖交联而破坏细胞壁。' },
@@ -63,6 +68,7 @@ window.DB.antibiotics = [
     id: 'cefuroxime',
     名称: '头孢呋辛',
     拉丁名: 'Cefuroxime',
+    药敏简写: 'CXM',
     类别: '头孢菌素类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类，抑制 PBP、破坏细胞壁合成。' },
@@ -74,6 +80,7 @@ window.DB.antibiotics = [
     id: 'ceftriaxone',
     名称: '头孢曲松',
     拉丁名: 'Ceftriaxone',
+    药敏简写: 'CRO',
     类别: '头孢菌素类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类，抑制 PBP、破坏细胞壁合成。' },
@@ -85,6 +92,7 @@ window.DB.antibiotics = [
     id: 'ceftazidime',
     名称: '头孢他啶',
     拉丁名: 'Ceftazidime',
+    药敏简写: 'CAZ',
     类别: '头孢菌素类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类，抑制 PBP、破坏细胞壁合成。' },
@@ -96,6 +104,7 @@ window.DB.antibiotics = [
     id: 'cefepime',
     名称: '头孢吡肟',
     拉丁名: 'Cefepime',
+    药敏简写: 'FEP',
     类别: '头孢菌素类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类，抑制 PBP、破坏细胞壁合成。' },
@@ -107,6 +116,7 @@ window.DB.antibiotics = [
     id: 'ceftaroline',
     名称: '头孢洛林',
     拉丁名: 'Ceftaroline',
+    药敏简写: 'CPT',
     类别: '头孢菌素类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类，可与 PBP2a 结合，因而能抑制 MRSA 的细胞壁合成。' },
@@ -120,6 +130,7 @@ window.DB.antibiotics = [
     id: 'imipenem',
     名称: '亚胺培南',
     拉丁名: 'Imipenem',
+    药敏简写: 'IPM',
     类别: '碳青霉烯类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类，抗菌谱最广；抑制 PBP、破坏细胞壁，对多数β-内酰胺酶（含 ESBL、AmpC）稳定。' },
@@ -131,6 +142,7 @@ window.DB.antibiotics = [
     id: 'meropenem',
     名称: '美罗培南',
     拉丁名: 'Meropenem',
+    药敏简写: 'MEM',
     类别: '碳青霉烯类',
     小节: [
       { 标题: '作用机制', 正文: 'β-内酰胺类，超广谱；抑制 PBP、破坏细胞壁，对 ESBL、AmpC 稳定。' },
@@ -144,6 +156,7 @@ window.DB.antibiotics = [
     id: 'aztreonam',
     名称: '氨曲南',
     拉丁名: 'Aztreonam',
+    药敏简写: 'ATM',
     类别: '单环β-内酰胺类',
     小节: [
       { 标题: '作用机制', 正文: '单环β-内酰胺，仅与革兰阴性菌 PBP3 结合抑制细胞壁合成。' },
@@ -157,6 +170,7 @@ window.DB.antibiotics = [
     id: 'amoxicillin-clavulanate',
     名称: '阿莫西林/克拉维酸',
     拉丁名: 'Amoxicillin-Clavulanate',
+    药敏简写: 'AMC',
     类别: 'β-内酰胺酶抑制剂复方',
     小节: [
       { 标题: '作用机制', 正文: '克拉维酸本身抗菌弱，作为"自杀性"抑制剂结合并灭活β-内酰胺酶，保护阿莫西林不被水解。' },
@@ -168,6 +182,7 @@ window.DB.antibiotics = [
     id: 'piperacillin-tazobactam',
     名称: '哌拉西林/他唑巴坦',
     拉丁名: 'Piperacillin-Tazobactam',
+    药敏简写: 'TZP',
     类别: 'β-内酰胺酶抑制剂复方',
     小节: [
       { 标题: '作用机制', 正文: '他唑巴坦灭活β-内酰胺酶，保护哌拉西林；联合获得广谱抗菌力。' },
@@ -181,6 +196,7 @@ window.DB.antibiotics = [
     id: 'vancomycin',
     名称: '万古霉素',
     拉丁名: 'Vancomycin',
+    药敏简写: 'VAN',
     类别: '糖肽类',
     小节: [
       { 标题: '作用机制', 正文: '与肽聚糖前体末端 D-丙氨酰-D-丙氨酸(D-Ala-D-Ala)结合，阻止肽聚糖延伸与交联，抑制细胞壁合成。' },
@@ -192,6 +208,7 @@ window.DB.antibiotics = [
     id: 'teicoplanin',
     名称: '替考拉宁',
     拉丁名: 'Teicoplanin',
+    药敏简写: 'TEC',
     类别: '糖肽类',
     小节: [
       { 标题: '作用机制', 正文: '同万古霉素，结合 D-Ala-D-Ala 阻断细胞壁合成。' },
@@ -205,6 +222,7 @@ window.DB.antibiotics = [
     id: 'fosfomycin',
     名称: '磷霉素',
     拉丁名: 'Fosfomycin',
+    药敏简写: 'FOS',
     类别: '磷霉素类',
     小节: [
       { 标题: '作用机制', 正文: '抑制 MurA(烯醇丙酮酸转移酶)，阻断肽聚糖合成的最早期步骤，破坏细胞壁。' },
@@ -218,6 +236,7 @@ window.DB.antibiotics = [
     id: 'gentamicin',
     名称: '庆大霉素',
     拉丁名: 'Gentamicin',
+    药敏简写: 'GEN',
     类别: '氨基糖苷类',
     小节: [
       { 标题: '作用机制', 正文: '不可逆结合 30S 核糖体亚基，致 mRNA 密码错读并抑制蛋白质合成；浓度依赖性杀菌，静止期亦有效。' },
@@ -229,6 +248,7 @@ window.DB.antibiotics = [
     id: 'amikacin',
     名称: '阿米卡星',
     拉丁名: 'Amikacin',
+    药敏简写: 'AMK',
     类别: '氨基糖苷类',
     小节: [
       { 标题: '作用机制', 正文: '同庆大霉素，结合 30S 亚基抑制蛋白质合成。' },
@@ -240,6 +260,7 @@ window.DB.antibiotics = [
     id: 'tobramycin',
     名称: '妥布霉素',
     拉丁名: 'Tobramycin',
+    药敏简写: 'TOB',
     类别: '氨基糖苷类',
     小节: [
       { 标题: '作用机制', 正文: '同庆大霉素，结合 30S 亚基抑制蛋白质合成。' },
@@ -251,6 +272,7 @@ window.DB.antibiotics = [
     id: 'streptomycin',
     名称: '链霉素',
     拉丁名: 'Streptomycin',
+    药敏简写: 'STR',
     类别: '氨基糖苷类',
     小节: [
       { 标题: '作用机制', 正文: '最早的氨基糖苷类，结合 30S 亚基抑制蛋白质合成。' },
@@ -264,6 +286,7 @@ window.DB.antibiotics = [
     id: 'doxycycline',
     名称: '多西环素',
     拉丁名: 'Doxycycline',
+    药敏简写: 'DOX',
     类别: '四环素类',
     小节: [
       { 标题: '作用机制', 正文: '可逆结合 30S 亚基，阻止氨酰-tRNA 进入核糖体 A 位，抑制蛋白质合成；抑菌。' },
@@ -275,6 +298,7 @@ window.DB.antibiotics = [
     id: 'minocycline',
     名称: '米诺环素',
     拉丁名: 'Minocycline',
+    药敏简写: 'MNO',
     类别: '四环素类',
     小节: [
       { 标题: '作用机制', 正文: '同四环素类，结合 30S 亚基抑制蛋白质合成。' },
@@ -286,6 +310,7 @@ window.DB.antibiotics = [
     id: 'tigecycline',
     名称: '替加环素',
     拉丁名: 'Tigecycline',
+    药敏简写: 'TGC',
     类别: '四环素类',
     小节: [
       { 标题: '作用机制', 正文: '甘氨酰环素，结合 30S 亚基抑制蛋白质合成，对部分四环素耐药机制不敏感。' },
@@ -299,6 +324,7 @@ window.DB.antibiotics = [
     id: 'erythromycin',
     名称: '红霉素',
     拉丁名: 'Erythromycin',
+    药敏简写: 'ERY',
     类别: '大环内酯类',
     小节: [
       { 标题: '作用机制', 正文: '结合 50S 亚基的 23S rRNA，阻断肽链延伸（转位），抑菌。' },
@@ -310,6 +336,7 @@ window.DB.antibiotics = [
     id: 'azithromycin',
     名称: '阿奇霉素',
     拉丁名: 'Azithromycin',
+    药敏简写: 'AZM',
     类别: '大环内酯类',
     小节: [
       { 标题: '作用机制', 正文: '同大环内酯类，结合 50S 亚基抑制蛋白质合成。' },
@@ -321,6 +348,7 @@ window.DB.antibiotics = [
     id: 'clarithromycin',
     名称: '克拉霉素',
     拉丁名: 'Clarithromycin',
+    药敏简写: 'CLR',
     类别: '大环内酯类',
     小节: [
       { 标题: '作用机制', 正文: '同大环内酯类，结合 50S 亚基抑制蛋白质合成。' },
@@ -334,6 +362,7 @@ window.DB.antibiotics = [
     id: 'clindamycin',
     名称: '克林霉素',
     拉丁名: 'Clindamycin',
+    药敏简写: 'CLI',
     类别: '林可酰胺类',
     小节: [
       { 标题: '作用机制', 正文: '结合 50S 亚基抑制肽链延伸（位点与大环内酯相近）。' },
@@ -347,6 +376,7 @@ window.DB.antibiotics = [
     id: 'chloramphenicol',
     名称: '氯霉素',
     拉丁名: 'Chloramphenicol',
+    药敏简写: 'CHL',
     类别: '酰胺醇类',
     小节: [
       { 标题: '作用机制', 正文: '结合 50S 亚基，抑制肽酰转移酶活性而阻断蛋白质合成；广谱抑菌。' },
@@ -360,6 +390,7 @@ window.DB.antibiotics = [
     id: 'linezolid',
     名称: '利奈唑胺',
     拉丁名: 'Linezolid',
+    药敏简写: 'LZD',
     类别: '噁唑烷酮类',
     小节: [
       { 标题: '作用机制', 正文: '结合 50S 亚基 23S rRNA，阻止 70S 起始复合物形成，抑制蛋白质合成起始。' },
@@ -373,6 +404,7 @@ window.DB.antibiotics = [
     id: 'ciprofloxacin',
     名称: '环丙沙星',
     拉丁名: 'Ciprofloxacin',
+    药敏简写: 'CIP',
     类别: '喹诺酮类',
     小节: [
       { 标题: '作用机制', 正文: '抑制 DNA 回旋酶(gyrase)和拓扑异构酶 IV，阻断 DNA 复制；浓度依赖性杀菌。' },
@@ -384,6 +416,7 @@ window.DB.antibiotics = [
     id: 'levofloxacin',
     名称: '左氧氟沙星',
     拉丁名: 'Levofloxacin',
+    药敏简写: 'LVX',
     类别: '喹诺酮类',
     小节: [
       { 标题: '作用机制', 正文: '同喹诺酮类，抑制 DNA 回旋酶/拓扑异构酶 IV。' },
@@ -395,6 +428,7 @@ window.DB.antibiotics = [
     id: 'moxifloxacin',
     名称: '莫西沙星',
     拉丁名: 'Moxifloxacin',
+    药敏简写: 'MFX',
     类别: '喹诺酮类',
     小节: [
       { 标题: '作用机制', 正文: '同喹诺酮类，抑制 DNA 回旋酶/拓扑异构酶 IV。' },
@@ -408,6 +442,7 @@ window.DB.antibiotics = [
     id: 'rifampicin',
     名称: '利福平',
     拉丁名: 'Rifampicin',
+    药敏简写: 'RIF',
     类别: '利福霉素类',
     小节: [
       { 标题: '作用机制', 正文: '抑制依赖 DNA 的 RNA 聚合酶(β亚基)，阻断 mRNA 转录起始；杀菌。' },
@@ -421,6 +456,7 @@ window.DB.antibiotics = [
     id: 'metronidazole',
     名称: '甲硝唑',
     拉丁名: 'Metronidazole',
+    药敏简写: 'MTZ',
     类别: '硝基咪唑类',
     小节: [
       { 标题: '作用机制', 正文: '在厌氧环境中被还原为活性代谢物，使 DNA 链断裂。' },
@@ -434,10 +470,11 @@ window.DB.antibiotics = [
     id: 'sulfamethoxazole',
     名称: '磺胺甲噁唑',
     拉丁名: 'Sulfamethoxazole',
+    药敏简写: 'SMX',
     类别: '磺胺类',
     小节: [
       { 标题: '作用机制', 正文: '结构类似对氨基苯甲酸(PABA)，竞争性抑制二氢蝶酸合酶，阻断细菌叶酸合成；抑菌。' },
-      { 标题: '特点 / 抗菌谱', 正文: '常与甲氧苄啶组成复方磺胺甲噁唑(SMZ-TMP)以增效。' }
+      { 标题: '特点 / 抗菌谱', 正文: '常与甲氧苄啶组成复方磺胺甲噁唑(SMZ-TMP, 药敏写作 SXT)以增效。' }
     ],
     关联: []
   },
@@ -445,6 +482,7 @@ window.DB.antibiotics = [
     id: 'sulfadiazine',
     名称: '磺胺嘧啶',
     拉丁名: 'Sulfadiazine',
+    药敏简写: 'SDZ',
     类别: '磺胺类',
     小节: [
       { 标题: '作用机制', 正文: '同磺胺类，抑制二氢蝶酸合酶、阻断叶酸合成。' },
@@ -458,10 +496,11 @@ window.DB.antibiotics = [
     id: 'trimethoprim',
     名称: '甲氧苄啶',
     拉丁名: 'Trimethoprim',
+    药敏简写: 'TMP',
     类别: '磺胺增效剂',
     小节: [
       { 标题: '作用机制', 正文: '抑制二氢叶酸还原酶；与磺胺类序贯阻断叶酸代谢的两个步骤。' },
-      { 标题: '特点 / 抗菌谱', 正文: '与磺胺甲噁唑协同（SMZ-TMP），联合可达杀菌效果。' }
+      { 标题: '特点 / 抗菌谱', 正文: '与磺胺甲噁唑协同（复方 SXT），联合可达杀菌效果。' }
     ],
     关联: []
   },
@@ -471,6 +510,7 @@ window.DB.antibiotics = [
     id: 'polymyxin-b',
     名称: '多黏菌素B',
     拉丁名: 'Polymyxin B',
+    药敏简写: 'PMB',
     类别: '多黏菌素类',
     小节: [
       { 标题: '作用机制', 正文: '阳离子多肽，结合革兰阴性菌外膜脂多糖的脂质A，破坏外膜与细胞膜通透性（去污剂样作用）。' },
@@ -482,6 +522,7 @@ window.DB.antibiotics = [
     id: 'colistin',
     名称: '黏菌素',
     拉丁名: 'Colistin (Polymyxin E)',
+    药敏简写: 'CST',
     类别: '多黏菌素类',
     小节: [
       { 标题: '作用机制', 正文: '即多黏菌素E，机制同多黏菌素B，破坏革兰阴性菌膜通透性。' },
@@ -495,6 +536,7 @@ window.DB.antibiotics = [
     id: 'daptomycin',
     名称: '达托霉素',
     拉丁名: 'Daptomycin',
+    药敏简写: 'DAP',
     类别: '脂肽类',
     小节: [
       { 标题: '作用机制', 正文: '钙依赖性插入革兰阳性菌细胞膜，形成孔道致膜去极化、钾外流而杀菌。' },

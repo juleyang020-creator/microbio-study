@@ -67,3 +67,32 @@ test('searchVM 组装查询词与结果项（含 href）', () => {
 test('searchVM 无结果时 items 为空数组', () => {
   assert.deepStrictEqual(View.searchVM([], '查无').items, []);
 });
+
+const abxCats = { antibiotics: [
+  { 名称: '抑制细胞壁合成', 子类: [{ 名称: '青霉素类' }, { 名称: '头孢菌素类' }] },
+  { 名称: '抑制蛋白质合成', 子类: [{ 名称: '大环内酯类' }] }
+] };
+
+test('detailVM 暴露药敏简写与机制图', () => {
+  const entry = { id: 'cro', 名称: '头孢曲松', 类别: '头孢菌素类', 药敏简写: 'CRO', 小节: [], 关联: [] };
+  const vm = View.detailVM(entry, [], 'img/mechanism-cellwall.svg');
+  assert.strictEqual(vm.药敏简写, 'CRO');
+  assert.strictEqual(vm.机制图, 'img/mechanism-cellwall.svg');
+});
+
+test('detailVM 无药敏简写为空串、无机制图为 null', () => {
+  const vm = View.detailVM({ 名称: 'x', 类别: 'c', 小节: [], 关联: [] }, []);
+  assert.strictEqual(vm.药敏简写, '');
+  assert.strictEqual(vm.机制图, null);
+});
+
+test('mechanismImageFor 按抗生素类别映射到机制图', () => {
+  assert.strictEqual(View.mechanismImageFor('antibiotics', { 类别: '头孢菌素类' }, abxCats), 'img/mechanism-cellwall.svg');
+  assert.strictEqual(View.mechanismImageFor('antibiotics', { 类别: '大环内酯类' }, abxCats), 'img/mechanism-protein.svg');
+});
+
+test('mechanismImageFor 对非抗生素或未知类别返回 null', () => {
+  assert.strictEqual(View.mechanismImageFor('microbes', { 类别: '革兰氏阳性球菌' }, abxCats), null);
+  assert.strictEqual(View.mechanismImageFor('antibiotics', { 类别: '查无此类' }, abxCats), null);
+  assert.strictEqual(View.mechanismImageFor('antibiotics', null, abxCats), null);
+});

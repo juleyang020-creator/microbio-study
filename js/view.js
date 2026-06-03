@@ -10,12 +10,35 @@
 
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 
-  function detailVM(entry, relations) {
+  var MECHANISM_IMAGE = {
+    '抑制细胞壁合成': 'img/mechanism-cellwall.svg',
+    '抑制蛋白质合成': 'img/mechanism-protein.svg',
+    '抑制核酸合成': 'img/mechanism-nucleic.svg',
+    '抑制叶酸代谢': 'img/mechanism-folate.svg',
+    '破坏细胞膜': 'img/mechanism-membrane.svg'
+  };
+
+  // 仅抗生素：按其类别(子类)所属的机制大类，映射到一张机制示意图
+  function mechanismImageFor(moduleKey, entry, categories) {
+    if (moduleKey !== 'antibiotics' || !entry) { return null; }
+    var groups = (categories && categories.antibiotics) ? categories.antibiotics : [];
+    for (var i = 0; i < groups.length; i++) {
+      var sub = groups[i].子类 || [];
+      for (var j = 0; j < sub.length; j++) {
+        if (sub[j].名称 === entry.类别) { return MECHANISM_IMAGE[groups[i].名称] || null; }
+      }
+    }
+    return null;
+  }
+
+  function detailVM(entry, relations, mechanismImage) {
     if (!entry) { return null; }
     return {
       名称: entry.名称,
       类别: entry.类别 || '',
       拉丁名: entry.拉丁名 || '',
+      药敏简写: entry.药敏简写 || '',
+      机制图: mechanismImage || null,
       小节: (entry.小节 || []).map(function (s) {
         return { 标题: s.标题 || '', 正文: s.正文 || '' };
       }),
@@ -74,6 +97,7 @@
 
   return {
     moduleLabel: moduleLabel,
+    mechanismImageFor: mechanismImageFor,
     detailVM: detailVM,
     sidebarVM: sidebarVM,
     searchVM: searchVM

@@ -16,6 +16,8 @@
     if (opts.cls != null) { node.className = opts.cls; }
     if (opts.text != null) { node.textContent = opts.text; }
     if (opts.href != null) { node.setAttribute('href', opts.href); }
+    if (opts.src != null) { node.setAttribute('src', opts.src); }
+    if (opts.alt != null) { node.setAttribute('alt', opts.alt); }
     if (opts.title != null) { node.setAttribute('title', opts.title); }
     (children || []).forEach(function (c) { if (c) { node.appendChild(c); } });
     return node;
@@ -65,8 +67,15 @@
     var nodes = [];
     var head = [ el('h2', { cls: 'detail-title', text: vm.名称 }) ];
     if (vm.类别) { head.push(el('span', { cls: 'badge', text: vm.类别 })); }
+    if (vm.药敏简写) { head.push(el('span', { cls: 'abbr', title: '药敏试验简写', text: '药敏 ' + vm.药敏简写 })); }
     nodes.push(el('div', { cls: 'detail-head' }, head));
     if (vm.拉丁名) { nodes.push(el('div', { cls: 'latin', text: vm.拉丁名 })); }
+    if (vm.机制图) {
+      nodes.push(el('figure', { cls: 'mechanism-fig' }, [
+        el('img', { cls: 'mechanism-img', src: vm.机制图, alt: '作用机制示意图' }),
+        el('figcaption', { cls: 'mechanism-cap', text: '作用机制示意图' })
+      ]));
+    }
 
     if (vm.小节.length === 0) {
       nodes.push(el('div', { cls: 'empty-sm', text: '（暂无内容小节）' }));
@@ -116,13 +125,14 @@
     setActiveTab(route.module);
     fill(document.getElementById('sidebar'), buildSidebar(View.sidebarVM(route.module, categories(), data[route.module], route.id)));
 
-    var entry = null, rels = [];
+    var entry = null, rels = [], mechImg = null;
     if (route.id) {
       var hit = Core.buildIndex(data)[route.id];
       entry = hit ? hit.entry : null;
       rels = entry ? Core.getRelations(route.id, data) : [];
+      mechImg = View.mechanismImageFor(route.module, entry, categories());
     }
-    fill(document.getElementById('main'), buildDetail(View.detailVM(entry, rels)));
+    fill(document.getElementById('main'), buildDetail(View.detailVM(entry, rels, mechImg)));
   }
 
   function runSearch(query) {

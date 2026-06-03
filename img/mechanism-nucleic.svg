@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="420" height="240" fill="#f8fafc"/>
+  <text x="210" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#0f766e">抑制核酸合成</text>
+
+  <!-- DNA 双链 -->
+  <path d="M30,116 Q50,100 70,116 T110,116 T150,116 T190,116" fill="none" stroke="#0f766e" stroke-width="3"/>
+  <path d="M30,140 Q50,156 70,140 T110,140 T150,140 T190,140" fill="none" stroke="#0f766e" stroke-width="3"/>
+  <text x="34" y="172" font-size="10.5" fill="#475569">DNA 双链</text>
+
+  <!-- 回旋酶/拓扑异构酶 靶点 -->
+  <circle cx="150" cy="128" r="13" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+  <text x="150" y="131" text-anchor="middle" font-size="8" fill="#0f766e">回旋酶</text>
+  <text x="150" y="116" text-anchor="middle" font-size="14" fill="#dc2626" font-weight="700">✕</text>
+
+  <!-- RNA 聚合酶 靶点 -->
+  <circle cx="90" cy="128" r="13" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+  <text x="90" y="131" text-anchor="middle" font-size="7.5" fill="#0f766e">RNA聚</text>
+  <text x="90" y="116" text-anchor="middle" font-size="14" fill="#dc2626" font-weight="700">✕</text>
+
+  <!-- 喹诺酮 -->
+  <rect x="236" y="62" width="170" height="40" rx="9" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="321" y="79" text-anchor="middle" font-size="11.5" fill="#b91c1c" font-weight="600">喹诺酮类</text>
+  <text x="321" y="94" text-anchor="middle" font-size="9.5" fill="#b91c1c">抑制 DNA 回旋酶 / 拓扑异构酶Ⅳ</text>
+  <line x1="236" y1="92" x2="163" y2="124" stroke="#dc2626" stroke-width="1.5"/>
+
+  <!-- 利福平 -->
+  <rect x="236" y="150" width="170" height="40" rx="9" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="321" y="167" text-anchor="middle" font-size="11.5" fill="#b91c1c" font-weight="600">利福平</text>
+  <text x="321" y="182" text-anchor="middle" font-size="9.5" fill="#b91c1c">抑制 RNA 聚合酶（转录）</text>
+  <line x1="236" y1="166" x2="103" y2="130" stroke="#dc2626" stroke-width="1.5"/>
+
+  <text x="210" y="222" text-anchor="middle" font-size="11.5" fill="#334155">阻断 DNA 复制 / RNA 转录</text>
+</svg>
