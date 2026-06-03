@@ -143,12 +143,30 @@
     return { items: items, rows: rows };
   }
 
+  // 药敏卡对比：并排比较若干卡所含药物；cells 为布尔(是否含)，differs 标出各卡不一致的药物
+  function buildCardComparison(nameById, drugsByCard, ids) {
+    drugsByCard = drugsByCard || {};
+    ids = (ids || []).filter(function (id) { return drugsByCard[id]; });
+    var items = ids.map(function (id) { return { id: id, 名称: (nameById && nameById[id]) || id }; });
+    var order = [], seen = {};
+    ids.forEach(function (id) {
+      drugsByCard[id].forEach(function (d) { if (!seen[d]) { seen[d] = true; order.push(d); } });
+    });
+    var rows = order.map(function (drug) {
+      var cells = ids.map(function (id) { return drugsByCard[id].indexOf(drug) !== -1; });
+      var has = cells.filter(Boolean).length;
+      return { 药物: drug, cells: cells, differs: has > 0 && has < ids.length };
+    });
+    return { items: items, rows: rows };
+  }
+
   return {
     moduleLabel: moduleLabel,
     mechanismImageFor: mechanismImageFor,
     detailVM: detailVM,
     sidebarVM: sidebarVM,
     searchVM: searchVM,
-    buildComparison: buildComparison
+    buildComparison: buildComparison,
+    buildCardComparison: buildCardComparison
   };
 });

@@ -97,6 +97,19 @@ test('buildComparison 并排比较并标出差异项', () => {
   assert.deepStrictEqual(oxidase.cells, ['−', '+']);
 });
 
+test('buildCardComparison 并排比较药敏卡、标出不一致药物', () => {
+  const names = { a: '卡A', b: '卡B' };
+  const drugs = { a: ['氨苄西林', '头孢曲松'], b: ['头孢曲松', '美罗培南'] };
+  const vm = View.buildCardComparison(names, drugs, ['a', 'b']);
+  assert.deepStrictEqual(vm.items.map((i) => i.名称), ['卡A', '卡B']);
+  const cro = vm.rows.find((r) => r.药物 === '头孢曲松');
+  assert.deepStrictEqual(cro.cells, [true, true]);
+  assert.strictEqual(cro.differs, false);
+  const amp = vm.rows.find((r) => r.药物 === '氨苄西林');
+  assert.deepStrictEqual(amp.cells, [true, false]);
+  assert.strictEqual(amp.differs, true);
+});
+
 test('buildComparison 缺失项以 — 补齐并算作差异', () => {
   const vm = View.buildComparison({ a: '甲', b: '乙' }, { a: [{ 项目: '脲酶', 结果: '+' }], b: [{ 项目: '触酶', 结果: '+' }] }, ['a', 'b']);
   const urease = vm.rows.find((r) => r.项目 === '脲酶');

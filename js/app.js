@@ -140,7 +140,10 @@
         return el('span', { cls: 'chip chip-plain', text: name });
       });
       nodes.push(el('div', { cls: 'card-drugs' }, [
-        el('div', { cls: 'card-drugs-title', text: '💊 包含药物（' + vm.药物.length + '）' }),
+        el('div', { cls: 'card-drugs-head' }, [
+          el('div', { cls: 'card-drugs-title', text: '💊 包含药物（' + vm.药物.length + '）' }),
+          (vm.id ? el('button', { cls: 'cmp-add', text: '＋ 加入卡片对比', onClick: function () { compareCardSet[vm.id] = true; location.hash = '#/cardcompare'; } }) : null)
+        ]),
         el('div', { cls: 'chips' }, drugChips)
       ]));
     }
@@ -295,8 +298,71 @@
     fill(document.getElementById('main'), buildCompareView(View.buildComparison(names, (window.DB && window.DB.biochem) || {}, selected)));
   }
 
+  // ===== 药敏卡对比 =====
+  var compareCardSet = {};
+  var compareCardFilter = '';
+  function isCardCompareRoute() { return (location.hash || '').replace(/^#\/?/, '').split('/')[0] === 'cardcompare'; }
+  function cardNameById() { var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.名称; }); return m; }
+  function drugsByCard() { var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.药物 || []; }); return m; }
+  function cardIds() { return ((window.DB && window.DB.cards) || []).map(function (c) { return c.id; }); }
+  function toggleCardCompare(id) {
+    if (compareCardSet[id]) { delete compareCardSet[id]; } else { compareCardSet[id] = true; }
+    if (isCardCompareRoute()) { renderCardCompare(); }
+  }
+  function cardPickItems() {
+    var names = cardNameById();
+    var q = compareCardFilter.trim().toLowerCase();
+    var ids = cardIds().filter(function (id) { return !q || (names[id] || '').toLowerCase().indexOf(q) !== -1; });
+    var items = ids.map(function (id) {
+      var sel = !!compareCardSet[id];
+      return el('div', { cls: 'cmp-pick' + (sel ? ' sel' : ''), text: (sel ? '☑ ' : '☐ ') + (names[id] || id), onClick: function () { toggleCardCompare(id); } });
+    });
+    if (!items.length) { items = [ el('div', { cls: 'empty-sm', text: '无匹配的卡片' }) ]; }
+    return items;
+  }
+  function renderCardPickerList() {
+    var listEl = document.getElementById('card-pick-list');
+    if (listEl) { listEl.replaceChildren.apply(listEl, cardPickItems()); }
+  }
+  function buildCardComparePicker() {
+    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '🔍 筛选卡片…', value: compareCardFilter });
+    search.addEventListener('input', function () { compareCardFilter = search.value; renderCardPickerList(); });
+    return [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '勾选药敏卡（可多选）' }),
+      search,
+      el('div', { cls: 'cmp-pick-list', id: 'card-pick-list' })
+    ]) ];
+  }
+  function buildCardCompareView(vm) {
+    var nodes = [ el('h2', { cls: 'detail-title', text: '💳 药敏卡对比' }) ];
+    if (vm.items.length < 2) {
+      nodes.push(el('div', { cls: 'empty', text: '在左侧勾选 2 张以上药敏卡进行对比。' }));
+      return nodes;
+    }
+    var headCells = [ el('th', { text: '药物 / 检测项' }) ];
+    vm.items.forEach(function (it) {
+      headCells.push(el('th', {}, [ el('a', { cls: 'cmp-col', text: it.名称, href: '#/cards/' + it.id }) ]));
+    });
+    var bodyRows = vm.rows.map(function (row) {
+      var tds = [ el('td', { cls: 'cmp-item', text: row.药物 }) ];
+      row.cells.forEach(function (has) { tds.push(el('td', { cls: 'cmp-cell', text: has ? '✓' : '' })); });
+      return el('tr', { cls: row.differs ? 'cmp-diff' : '' }, tds);
+    });
+    nodes.push(el('table', { cls: 'cmp' }, [ el('thead', {}, [ el('tr', {}, headCells) ]), el('tbody', {}, bodyRows) ]));
+    nodes.push(el('div', { cls: 'cmp-hint', text: '✓ = 该卡含此药/检测项；黄色行 = 各卡不一致。点列首卡名可查看该卡详情。' }));
+    return nodes;
+  }
+  function renderCardCompare() {
+    setActiveTab(null);
+    fill(document.getElementById('sidebar'), buildCardComparePicker());
+    renderCardPickerList();
+    var selected = cardIds().filter(function (id) { return compareCardSet[id]; });
+    fill(document.getElementById('main'), buildCardCompareView(View.buildCardComparison(cardNameById(), drugsByCard(), selected)));
+  }
+
   function renderRoute() {
     if (isCompareRoute()) { renderCompare(); return; }
+    if (isCardCompareRoute()) { renderCardCompare(); return; }
     var route = parseHash();
     var data = db();
     setActiveTab(route.module);
