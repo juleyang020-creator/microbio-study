@@ -64,5 +64,11 @@ window.DB.differential = {
   ],
   'plasmodium-vivax': [
     { 名称: '三日疟 / 恶性疟原虫', id: 'plasmodium-malariae', 相似点: '同属疟原虫', 鉴别: '间日疟红细胞胀大+薛氏点、48h、可复发(休眠子)；三日疟带状滋养体、72h、红细胞不胀大；恶性疟香蕉形配子体、凶险。' }
+  ],
+  'haemophilus-parainfluenzae': [
+    { 名称: '流感嗜血杆菌', id: 'haemophilus-influenzae', 相似点: '同属嗜血杆菌、革兰阴性小杆菌', 鉴别: '生长因子：流感嗜血杆菌需 X+V 因子；副流感嗜血杆菌仅需 V 因子。' }
+  ],
+  'nocardia': [
+    { 名称: '结核分枝杆菌', id: 'mycobacterium-tuberculosis', 相似点: '抗酸染色均可着色、可致肺/播散感染', 鉴别: '诺卡菌弱抗酸(改良抗酸+)、有分枝丝状、需氧、SXT 治疗；结核完全抗酸、无分枝、抗结核联合治疗。' }
   ]
 };
