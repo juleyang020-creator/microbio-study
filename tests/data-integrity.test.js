@@ -7,6 +7,7 @@ require('../data/categories.js');
 require('../data/microbes.js');
 require('../data/antibiotics.js');
 require('../data/resistance.js');
+require('../data/biochem.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
 const fs = require('node:fs');
@@ -20,6 +21,14 @@ test('种子数据通过 validateData，无任何问题', () => {
   };
   const problems = Core.validateData(db, global.window.DB.categories);
   assert.deepStrictEqual(problems, [], '发现问题：' + JSON.stringify(problems, null, 2));
+});
+
+test('生化反应的键均为存在的微生物 id', () => {
+  const ids = {};
+  global.window.DB.microbes.forEach((m) => { ids[m.id] = true; });
+  Object.keys(global.window.DB.biochem || {}).forEach((k) => {
+    assert.ok(ids[k], '生化反应引用了不存在的微生物 id：' + k);
+  });
 });
 
 test('每个抗生素都有药敏简写', () => {

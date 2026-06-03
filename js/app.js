@@ -123,6 +123,19 @@
       });
     }
 
+    if (vm.生化反应 && vm.生化反应.length) {
+      var bioRows = vm.生化反应.map(function (b) {
+        return el('div', { cls: 'biochem-row' }, [
+          el('span', { cls: 'biochem-key', text: b.项目 }),
+          el('span', { cls: 'biochem-val', text: b.结果 })
+        ]);
+      });
+      nodes.push(el('div', { cls: 'biochem' }, [
+        el('div', { cls: 'biochem-title', text: '🧪 生化反应' }),
+        el('div', { cls: 'biochem-rows' }, bioRows)
+      ]));
+    }
+
     var relKids = [ el('div', { cls: 'relations-label', text: '🔗 关联' }) ];
     if (vm.关联.length === 0) {
       relKids.push(el('span', { cls: 'empty-sm', text: '（暂无关联）' }));
@@ -167,7 +180,11 @@
       rels = entry ? Core.getRelations(route.id, data) : [];
       mechImg = View.mechanismImageFor(route.module, entry, categories());
     }
-    fill(document.getElementById('main'), buildDetail(View.detailVM(entry, rels, mechImg)));
+    var extras = {
+      mechanismImage: mechImg,
+      biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null
+    };
+    fill(document.getElementById('main'), buildDetail(View.detailVM(entry, rels, extras)));
   }
 
   function runSearch(query) {

@@ -45,14 +45,16 @@
     return null;
   }
 
-  function detailVM(entry, relations, mechanismImage) {
+  function detailVM(entry, relations, extras) {
     if (!entry) { return null; }
+    extras = extras || {};
     return {
       名称: entry.名称,
       类别: entry.类别 || '',
       拉丁名: entry.拉丁名 || '',
       药敏简写: entry.药敏简写 || '',
-      机制图: mechanismImage || null,
+      机制图: extras.mechanismImage || null,
+      生化反应: extras.biochem || [],
       小节: (entry.小节 || []).map(function (s) {
         return { 标题: s.标题 || '', 正文: s.正文 || '' };
       }),

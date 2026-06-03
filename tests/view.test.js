@@ -88,17 +88,19 @@ const abxCats = { antibiotics: [
   { 名称: '抑制蛋白质合成', 子类: [{ 名称: '大环内酯类' }] }
 ] };
 
-test('detailVM 暴露药敏简写与机制图', () => {
+test('detailVM 暴露药敏简写/机制图/生化反应', () => {
   const entry = { id: 'cro', 名称: '头孢曲松', 类别: '头孢菌素类', 药敏简写: 'CRO', 小节: [], 关联: [] };
-  const vm = View.detailVM(entry, [], 'img/mechanism-cellwall.svg');
+  const vm = View.detailVM(entry, [], { mechanismImage: 'img/mechanism-cellwall.svg', biochem: [{ 项目: '氧化酶', 结果: '−' }] });
   assert.strictEqual(vm.药敏简写, 'CRO');
   assert.strictEqual(vm.机制图, 'img/mechanism-cellwall.svg');
+  assert.strictEqual(vm.生化反应[0].项目, '氧化酶');
 });
 
-test('detailVM 无药敏简写为空串、无机制图为 null', () => {
+test('detailVM 无 extras 时默认空值', () => {
   const vm = View.detailVM({ 名称: 'x', 类别: 'c', 小节: [], 关联: [] }, []);
   assert.strictEqual(vm.药敏简写, '');
   assert.strictEqual(vm.机制图, null);
+  assert.deepStrictEqual(vm.生化反应, []);
 });
 
 test('mechanismImageFor 按抗生素类别映射到机制图', () => {
