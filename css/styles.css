@@ -76,6 +76,8 @@ body {
 .biochem-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 460px; }
 .cmp-add { background: #0f766e; color: #fff; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; white-space: nowrap; }
 .cmp-add:hover { background: #0b5d56; }
+.cmp-search { width: 100%; box-sizing: border-box; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 9px; font-size: 13px; margin: 6px 0 8px; }
+.cmp-search:focus { outline: 2px solid #5eead4; }
 .cmp-pick { padding: 6px 10px; border-radius: 6px; cursor: pointer; color: #334155; font-size: 13px; user-select: none; }
 .cmp-pick:hover { background: #f1f5f9; }
 .cmp-pick.sel { background: #ccfbf1; color: #0f766e; font-weight: 600; }
