@@ -20,6 +20,7 @@
     if (opts.alt != null) { node.setAttribute('alt', opts.alt); }
     if (opts.title != null) { node.setAttribute('title', opts.title); }
     if (opts.style != null) { node.setAttribute('style', opts.style); }
+    if (opts.onClick) { node.addEventListener('click', opts.onClick); }
     (children || []).forEach(function (c) { if (c) { node.appendChild(c); } });
     return node;
   }
@@ -40,14 +41,30 @@
     });
   }
 
-  // 递归渲染一个分类节点（支持任意层级，按深度缩进）
-  function sidebarNodes(node, depth) {
-    var out = [];
-    var labelCls = depth === 0 ? 'cat-group-name' : 'cat-subgroup';
-    out.push(el('div', { cls: labelCls, text: node.名称, style: 'padding-left:' + (8 + depth * 14) + 'px' }));
+  var collapsed = {}; // path -> true 表示该分类节点已折叠（跨模块、跨重渲染保持）
+
+  function toggleCollapse(key) {
+    if (collapsed[key]) { delete collapsed[key]; } else { collapsed[key] = true; }
+    renderSidebar();
+  }
+
+  // 递归渲染一个分类节点（任意层级，按深度缩进，可点击折叠/展开）
+  function sidebarNodes(node, depth, parentPath) {
+    var path = parentPath + '/' + node.名称;
+    var collapsible = (node.children && node.children.length) || (node.entries && node.entries.length);
+    var isCollapsed = !!collapsed[path];
+    var labelCls = (depth === 0 ? 'cat-group-name' : 'cat-subgroup') + (collapsible ? ' collapsible' : '');
+    var marker = collapsible ? (isCollapsed ? '▸ ' : '▾ ') : '';
+    var out = [ el('div', {
+      cls: labelCls,
+      text: marker + node.名称,
+      style: 'padding-left:' + (8 + depth * 14) + 'px',
+      onClick: collapsible ? function () { toggleCollapse(path); } : null
+    }) ];
+    if (isCollapsed) { return out; }
     if (node.children && node.children.length) {
       node.children.forEach(function (c) {
-        sidebarNodes(c, depth + 1).forEach(function (n) { out.push(n); });
+        sidebarNodes(c, depth + 1, path).forEach(function (n) { out.push(n); });
       });
     } else {
       var epad = 'padding-left:' + (8 + (depth + 1) * 14) + 'px';
@@ -58,10 +75,10 @@
     return out;
   }
 
-  function buildSidebar(vm) {
+  function buildSidebar(vm, moduleKey) {
     var nodes = [];
     vm.tree.forEach(function (root) {
-      nodes.push(el('div', { cls: 'cat-group' }, sidebarNodes(root, 0)));
+      nodes.push(el('div', { cls: 'cat-group' }, sidebarNodes(root, 0, moduleKey)));
     });
     if (vm.未分类.length) {
       var uc = [ el('div', { cls: 'cat-group-name', text: '未分类' }) ];
@@ -72,6 +89,12 @@
     }
     if (!nodes.length) { nodes.push(el('div', { cls: 'empty-sm', text: '（暂无分类）' })); }
     return nodes;
+  }
+
+  function renderSidebar() {
+    var route = parseHash();
+    fill(document.getElementById('sidebar'),
+      buildSidebar(View.sidebarVM(route.module, categories(), db()[route.module], route.id), route.module));
   }
 
   function buildDetail(vm) {
@@ -135,7 +158,7 @@
     var route = parseHash();
     var data = db();
     setActiveTab(route.module);
-    fill(document.getElementById('sidebar'), buildSidebar(View.sidebarVM(route.module, categories(), data[route.module], route.id)));
+    renderSidebar();
 
     var entry = null, rels = [], mechImg = null;
     if (route.id) {

@@ -26,6 +26,8 @@ body {
 .cat-group-name { color: #64748b; font-weight: 700; margin-bottom: 4px; }
 .cat-leaf { color: #475569; font-weight: 600; padding: 4px 8px; margin-top: 4px; }
 .cat-subgroup { color: #475569; font-weight: 600; padding: 4px 8px; margin-top: 4px; }
+.collapsible { cursor: pointer; user-select: none; }
+.collapsible:hover { color: #0f766e; }
 .entry-link { display: block; color: #334155; text-decoration: none; padding: 5px 8px 5px 20px; border-radius: 5px; }
 .entry-link:hover { background: #f1f5f9; }
 .entry-link.selected { background: #ccfbf1; color: #0f766e; font-weight: 600; }
