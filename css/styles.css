@@ -50,6 +50,18 @@ body {
 .biochem-row:nth-child(even) { background: #f8fafc; }
 .biochem-key { color: #475569; }
 .biochem-val { color: #0f172a; font-weight: 600; font-family: ui-monospace, Menlo, "Courier New", monospace; }
+
+/* 鉴别 */
+.differential { margin: 16px 0; }
+.diff-title { font-size: 13px; font-weight: 700; color: #0f766e; margin-bottom: 8px; }
+.diff-item { border: 1px solid #e2e8f0; border-left: 3px solid #f59e0b; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; max-width: 560px; }
+.diff-head { margin-bottom: 6px; }
+.diff-link { color: #1d4ed8; text-decoration: none; font-weight: 600; }
+.diff-link:hover { text-decoration: underline; }
+.diff-name { font-weight: 600; color: #334155; }
+.diff-line { font-size: 13px; line-height: 1.65; color: #334155; margin-top: 3px; }
+.diff-tag { display: inline-block; font-size: 11px; color: #fff; background: #94a3b8; border-radius: 4px; padding: 1px 7px; }
+.diff-tag.diff-key { background: #f59e0b; }
 .section-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; }
 .section-title { font-size: 13px; font-weight: 700; color: #0f766e; margin-bottom: 6px; }
 .section-body { color: #334155; line-height: 1.65; white-space: pre-wrap; }

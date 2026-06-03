@@ -8,6 +8,7 @@ require('../data/microbes.js');
 require('../data/antibiotics.js');
 require('../data/resistance.js');
 require('../data/biochem.js');
+require('../data/differential.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
 const fs = require('node:fs');
@@ -28,6 +29,17 @@ test('生化反应的键均为存在的微生物 id', () => {
   global.window.DB.microbes.forEach((m) => { ids[m.id] = true; });
   Object.keys(global.window.DB.biochem || {}).forEach((k) => {
     assert.ok(ids[k], '生化反应引用了不存在的微生物 id：' + k);
+  });
+});
+
+test('鉴别数据的键与引用 id 均为存在的微生物', () => {
+  const ids = {};
+  global.window.DB.microbes.forEach((m) => { ids[m.id] = true; });
+  Object.keys(global.window.DB.differential || {}).forEach((k) => {
+    assert.ok(ids[k], '鉴别引用了不存在的微生物 id（键）：' + k);
+    global.window.DB.differential[k].forEach((d) => {
+      if (d.id) { assert.ok(ids[d.id], '鉴别项引用了不存在的 id：' + d.id + '（在 ' + k + '）'); }
+    });
   });
 });
 

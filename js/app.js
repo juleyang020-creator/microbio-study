@@ -136,6 +136,20 @@
       ]));
     }
 
+    if (vm.鉴别 && vm.鉴别.length) {
+      var diffItems = vm.鉴别.map(function (d) {
+        var head = d.id
+          ? el('a', { cls: 'diff-link', text: 'vs ' + d.名称, href: '#/microbes/' + d.id })
+          : el('span', { cls: 'diff-name', text: 'vs ' + d.名称 });
+        return el('div', { cls: 'diff-item' }, [
+          el('div', { cls: 'diff-head' }, [ head ]),
+          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag', text: '相似点' }), el('span', { text: ' ' + d.相似点 }) ]),
+          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag diff-key', text: '鉴别' }), el('span', { text: ' ' + d.鉴别 }) ])
+        ]);
+      });
+      nodes.push(el('div', { cls: 'differential' }, [ el('div', { cls: 'diff-title', text: '🔍 相似菌与鉴别' }) ].concat(diffItems)));
+    }
+
     var relKids = [ el('div', { cls: 'relations-label', text: '🔗 关联' }) ];
     if (vm.关联.length === 0) {
       relKids.push(el('span', { cls: 'empty-sm', text: '（暂无关联）' }));
@@ -182,7 +196,8 @@
     }
     var extras = {
       mechanismImage: mechImg,
-      biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null
+      biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
+      differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null
     };
     fill(document.getElementById('main'), buildDetail(View.detailVM(entry, rels, extras)));
   }

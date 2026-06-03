@@ -55,6 +55,7 @@
       药敏简写: entry.药敏简写 || '',
       机制图: extras.mechanismImage || null,
       生化反应: extras.biochem || [],
+      鉴别: extras.differential || [],
       小节: (entry.小节 || []).map(function (s) {
         return { 标题: s.标题 || '', 正文: s.正文 || '' };
       }),
