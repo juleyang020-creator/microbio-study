@@ -69,13 +69,17 @@
     return results;
   }
 
-  function leafNames(categories, moduleKey) {
-    var leaves = {};
-    var groups = (categories && categories[moduleKey]) ? categories[moduleKey] : [];
-    groups.forEach(function (group) {
-      (group.子类 || []).forEach(function (leaf) { leaves[leaf.名称] = true; });
+  // 递归收集"叶子"分类名（无子类的节点），支持任意层级（如 大类→形态→属）
+  function collectLeaves(nodes, out) {
+    (nodes || []).forEach(function (node) {
+      if (node.子类 && node.子类.length) { collectLeaves(node.子类, out); }
+      else { out[node.名称] = true; }
     });
-    return leaves;
+    return out;
+  }
+
+  function leafNames(categories, moduleKey) {
+    return collectLeaves((categories && categories[moduleKey]) ? categories[moduleKey] : [], {});
   }
 
   function validateData(db, categories) {

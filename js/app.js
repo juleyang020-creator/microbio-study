@@ -19,6 +19,7 @@
     if (opts.src != null) { node.setAttribute('src', opts.src); }
     if (opts.alt != null) { node.setAttribute('alt', opts.alt); }
     if (opts.title != null) { node.setAttribute('title', opts.title); }
+    if (opts.style != null) { node.setAttribute('style', opts.style); }
     (children || []).forEach(function (c) { if (c) { node.appendChild(c); } });
     return node;
   }
@@ -39,17 +40,28 @@
     });
   }
 
+  // 递归渲染一个分类节点（支持任意层级，按深度缩进）
+  function sidebarNodes(node, depth) {
+    var out = [];
+    var labelCls = depth === 0 ? 'cat-group-name' : 'cat-subgroup';
+    out.push(el('div', { cls: labelCls, text: node.名称, style: 'padding-left:' + (8 + depth * 14) + 'px' }));
+    if (node.children && node.children.length) {
+      node.children.forEach(function (c) {
+        sidebarNodes(c, depth + 1).forEach(function (n) { out.push(n); });
+      });
+    } else {
+      var epad = 'padding-left:' + (8 + (depth + 1) * 14) + 'px';
+      node.entries.forEach(function (e) {
+        out.push(el('a', { cls: 'entry-link' + (e.selected ? ' selected' : ''), text: e.名称, href: e.href, style: epad }));
+      });
+    }
+    return out;
+  }
+
   function buildSidebar(vm) {
     var nodes = [];
-    vm.groups.forEach(function (g) {
-      var kids = [ el('div', { cls: 'cat-group-name', text: g.名称 }) ];
-      g.子类.forEach(function (leaf) {
-        kids.push(el('div', { cls: 'cat-leaf', text: leaf.名称 }));
-        leaf.entries.forEach(function (e) {
-          kids.push(el('a', { cls: 'entry-link' + (e.selected ? ' selected' : ''), text: e.名称, href: e.href }));
-        });
-      });
-      nodes.push(el('div', { cls: 'cat-group' }, kids));
+    vm.tree.forEach(function (root) {
+      nodes.push(el('div', { cls: 'cat-group' }, sidebarNodes(root, 0)));
     });
     if (vm.未分类.length) {
       var uc = [ el('div', { cls: 'cat-group-name', text: '未分类' }) ];

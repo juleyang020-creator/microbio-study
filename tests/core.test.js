@@ -84,3 +84,19 @@ test('validateData 检出重复 id / 悬空关联 / 未匹配分类', () => {
   assert.ok(problems.some(p => p.indexOf('悬空关联') !== -1));
   assert.ok(problems.some(p => p.indexOf('未匹配分类') !== -1));
 });
+
+test('validateData 支持多级分类树（属作为最深叶子）', () => {
+  const db = {
+    microbes: [{ id: 'sa', 名称: '金葡', 类别: '葡萄球菌属', 小节: [], 关联: [] }],
+    antibiotics: [], resistance: []
+  };
+  const cats = {
+    microbes: [
+      { 名称: '细菌', 子类: [
+        { 名称: '革兰氏阳性球菌', 子类: [{ 名称: '葡萄球菌属' }, { 名称: '链球菌属' }] }
+      ] }
+    ],
+    antibiotics: [], resistance: []
+  };
+  assert.deepStrictEqual(Core.validateData(db, cats), []);
+});

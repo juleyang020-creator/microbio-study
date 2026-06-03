@@ -38,15 +38,30 @@ test('detailVM 悬空关联：label 带问号、href 为 null', () => {
 
 const sidebarCats = { microbes: [{ 名称: '细菌', 子类: [{ 名称: '革兰氏阳性球菌' }, { 名称: '革兰氏阴性杆菌' }] }] };
 
-test('sidebarVM 把条目挂到对应子类，并标注选中与 href', () => {
+test('sidebarVM 把条目挂到对应叶子，并标注选中与 href', () => {
   const entries = [{ id: 'm1', 名称: '金葡', 类别: '革兰氏阳性球菌' }];
   const vm = View.sidebarVM('microbes', sidebarCats, entries, 'm1');
-  const leaf = vm.groups[0].子类[0];
-  assert.strictEqual(vm.groups[0].名称, '细菌');
+  const group = vm.tree[0];
+  assert.strictEqual(group.名称, '细菌');
+  const leaf = group.children[0];
   assert.strictEqual(leaf.名称, '革兰氏阳性球菌');
   assert.strictEqual(leaf.entries[0].href, '#/microbes/m1');
   assert.strictEqual(leaf.entries[0].selected, true);
   assert.deepStrictEqual(vm.未分类, []);
+});
+
+test('sidebarVM 支持属级（多级）分类，菌种挂到属下', () => {
+  const cats = { microbes: [
+    { 名称: '细菌', 子类: [
+      { 名称: '革兰氏阳性球菌', 子类: [{ 名称: '葡萄球菌属' }, { 名称: '链球菌属' }] }
+    ] }
+  ] };
+  const entries = [{ id: 'sa', 名称: '金黄色葡萄球菌', 类别: '葡萄球菌属' }];
+  const vm = View.sidebarVM('microbes', cats, entries, 'sa');
+  const genus = vm.tree[0].children[0].children[0]; // 细菌 → 革兰氏阳性球菌 → 葡萄球菌属
+  assert.strictEqual(genus.名称, '葡萄球菌属');
+  assert.strictEqual(genus.entries[0].名称, '金黄色葡萄球菌');
+  assert.strictEqual(genus.entries[0].selected, true);
 });
 
 test('sidebarVM 把未匹配分类的条目放入 未分类', () => {

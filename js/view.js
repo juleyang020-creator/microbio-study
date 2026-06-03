@@ -18,15 +18,20 @@
     '破坏细胞膜': 'img/mechanism-membrane.svg'
   };
 
-  // 仅抗生素：按其类别(子类)所属的机制大类，映射到一张机制示意图
+  // 节点子树是否包含某叶子分类（支持任意层级）
+  function nodeContainsLeaf(node, leafName) {
+    if (node.子类 && node.子类.length) {
+      return node.子类.some(function (c) { return nodeContainsLeaf(c, leafName); });
+    }
+    return node.名称 === leafName;
+  }
+
+  // 仅抗生素：按其类别所属的机制大类，映射到一张机制示意图
   function mechanismImageFor(moduleKey, entry, categories) {
     if (moduleKey !== 'antibiotics' || !entry) { return null; }
     var groups = (categories && categories.antibiotics) ? categories.antibiotics : [];
     for (var i = 0; i < groups.length; i++) {
-      var sub = groups[i].子类 || [];
-      for (var j = 0; j < sub.length; j++) {
-        if (sub[j].名称 === entry.类别) { return MECHANISM_IMAGE[groups[i].名称] || null; }
-      }
+      if (nodeContainsLeaf(groups[i], entry.类别)) { return MECHANISM_IMAGE[groups[i].名称] || null; }
     }
     return null;
   }
@@ -55,12 +60,17 @@
     };
   }
 
-  function sidebarVM(moduleKey, categories, entries, selectedId) {
-    var groups = (categories && categories[moduleKey]) ? categories[moduleKey] : [];
-    var leafSet = {};
-    groups.forEach(function (g) {
-      (g.子类 || []).forEach(function (l) { leafSet[l.名称] = true; });
+  function collectLeafSet(nodes, out) {
+    (nodes || []).forEach(function (node) {
+      if (node.子类 && node.子类.length) { collectLeafSet(node.子类, out); }
+      else { out[node.名称] = true; }
     });
+    return out;
+  }
+
+  function sidebarVM(moduleKey, categories, entries, selectedId) {
+    var roots = (categories && categories[moduleKey]) ? categories[moduleKey] : [];
+    var leafSet = collectLeafSet(roots, {});
 
     function item(e) {
       return { id: e.id, 名称: e.名称, href: '#/' + moduleKey + '/' + e.id, selected: e.id === selectedId };
@@ -73,15 +83,17 @@
       else { uncategorized.push(item(e)); }
     });
 
+    function buildNode(node) {
+      var hasChildren = node.子类 && node.子类.length;
+      return {
+        名称: node.名称,
+        children: hasChildren ? node.子类.map(buildNode) : [],
+        entries: hasChildren ? [] : (byCat[node.名称] || [])
+      };
+    }
+
     return {
-      groups: groups.map(function (g) {
-        return {
-          名称: g.名称,
-          子类: (g.子类 || []).map(function (l) {
-            return { 名称: l.名称, entries: byCat[l.名称] || [] };
-          })
-        };
-      }),
+      tree: roots.map(buildNode),
       未分类: uncategorized
     };
   }
