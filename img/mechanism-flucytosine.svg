@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="420" height="240" fill="#f8fafc"/>
+  <text x="210" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#0f766e">抗真菌 · 嘧啶类似物（干扰核酸）</text>
+
+  <rect x="14" y="106" width="86" height="34" rx="6" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="57" y="121" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="600">5-氟胞嘧啶</text>
+  <text x="57" y="134" text-anchor="middle" font-size="9" fill="#b91c1c">(5-FC)</text>
+
+  <rect x="184" y="106" width="80" height="34" rx="6" fill="#fecaca" stroke="#dc2626"/>
+  <text x="224" y="127" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="600">5-氟尿嘧啶</text>
+
+  <rect x="330" y="100" width="80" height="46" rx="6" fill="#a7f3d0" stroke="#0f766e"/>
+  <text x="370" y="120" text-anchor="middle" font-size="11" fill="#0f766e">RNA</text>
+  <text x="370" y="134" text-anchor="middle" font-size="11" fill="#0f766e">/ DNA</text>
+
+  <!-- 箭头1 + 酶 -->
+  <line x1="100" y1="123" x2="178" y2="123" stroke="#64748b" stroke-width="2"/>
+  <polygon points="178,123 170,119 170,127" fill="#64748b"/>
+  <text x="139" y="98" text-anchor="middle" font-size="9" fill="#475569">胞嘧啶脱氨酶</text>
+  <text x="139" y="116" text-anchor="middle" font-size="8.5" fill="#94a3b8">(仅真菌有)</text>
+
+  <!-- 箭头2 + 干扰 -->
+  <line x1="264" y1="123" x2="326" y2="123" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="326,123 318,119 318,127" fill="#dc2626"/>
+  <text x="295" y="114" text-anchor="middle" font-size="14" fill="#dc2626" font-weight="700">✕</text>
+
+  <text x="210" y="206" text-anchor="middle" font-size="11.5" fill="#334155">转化为 5-FU → 干扰真菌 RNA/DNA 合成</text>
+</svg>

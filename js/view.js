@@ -11,11 +11,17 @@
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 
   var MECHANISM_IMAGE = {
+    // 抗细菌药：按顶层机制大类
     '抑制细胞壁合成': 'img/mechanism-cellwall.svg',
     '抑制蛋白质合成': 'img/mechanism-protein.svg',
     '抑制核酸合成': 'img/mechanism-nucleic.svg',
     '抑制叶酸代谢': 'img/mechanism-folate.svg',
-    '破坏细胞膜': 'img/mechanism-membrane.svg'
+    '破坏细胞膜': 'img/mechanism-membrane.svg',
+    // 抗真菌药：按类别（机制各异）
+    '唑类': 'img/mechanism-azole.svg',
+    '多烯类': 'img/mechanism-polyene.svg',
+    '棘白菌素类': 'img/mechanism-echinocandin.svg',
+    '嘧啶类似物': 'img/mechanism-flucytosine.svg'
   };
 
   // 节点子树是否包含某叶子分类（支持任意层级）
@@ -29,6 +35,9 @@
   // 仅抗生素：按其类别所属的机制大类，映射到一张机制示意图
   function mechanismImageFor(moduleKey, entry, categories) {
     if (moduleKey !== 'antibiotics' || !entry) { return null; }
+    // 先按类别(叶子)直接匹配（抗真菌药机制按其类别区分）
+    if (MECHANISM_IMAGE[entry.类别]) { return MECHANISM_IMAGE[entry.类别]; }
+    // 再按所属顶层机制大类匹配（抗细菌药）
     var groups = (categories && categories.antibiotics) ? categories.antibiotics : [];
     for (var i = 0; i < groups.length; i++) {
       if (nodeContainsLeaf(groups[i], entry.类别)) { return MECHANISM_IMAGE[groups[i].名称] || null; }

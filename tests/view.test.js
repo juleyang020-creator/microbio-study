@@ -106,6 +106,14 @@ test('mechanismImageFor 按抗生素类别映射到机制图', () => {
   assert.strictEqual(View.mechanismImageFor('antibiotics', { 类别: '大环内酯类' }, abxCats), 'img/mechanism-protein.svg');
 });
 
+test('mechanismImageFor 抗真菌药按类别映射到各自机制图', () => {
+  const cats = { antibiotics: [
+    { 名称: '抗真菌药', 子类: [{ 名称: '唑类' }, { 名称: '多烯类' }, { 名称: '棘白菌素类' }, { 名称: '嘧啶类似物' }] }
+  ] };
+  assert.strictEqual(View.mechanismImageFor('antibiotics', { 类别: '唑类' }, cats), 'img/mechanism-azole.svg');
+  assert.strictEqual(View.mechanismImageFor('antibiotics', { 类别: '棘白菌素类' }, cats), 'img/mechanism-echinocandin.svg');
+});
+
 test('mechanismImageFor 对非抗生素或未知类别返回 null', () => {
   assert.strictEqual(View.mechanismImageFor('microbes', { 类别: '革兰氏阳性球菌' }, abxCats), null);
   assert.strictEqual(View.mechanismImageFor('antibiotics', { 类别: '查无此类' }, abxCats), null);
