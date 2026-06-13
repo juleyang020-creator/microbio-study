@@ -70,5 +70,23 @@ window.DB.differential = {
   ],
   'nocardia': [
     { 名称: '结核分枝杆菌', id: 'mycobacterium-tuberculosis', 相似点: '抗酸染色均可着色、可致肺/播散感染', 鉴别: '诺卡菌弱抗酸(改良抗酸+)、有分枝丝状、需氧、SXT 治疗；结核完全抗酸、无分枝、抗结核联合治疗。' }
+  ],
+  'proteus-vulgaris': [
+    { 名称: '奇异变形杆菌', id: 'proteus-mirabilis', 相似点: '迁徙生长、脲酶阳性的变形杆菌', 鉴别: '吲哚：普通变形杆菌(+)、奇异变形杆菌(−)；鸟氨酸脱羧酶奇异(+)。' }
+  ],
+  'morganella-morganii': [
+    { 名称: '奇异变形杆菌', id: 'proteus-mirabilis', 相似点: '脲酶阳性、苯丙氨酸脱氨酶阳性的肠杆菌', 鉴别: '摩根菌不迁徙生长、H₂S(−)；变形杆菌迁徙生长、多 H₂S(+)。' }
+  ],
+  'vibrio-vulnificus': [
+    { 名称: '霍乱弧菌', id: 'vibrio-cholerae', 相似点: '同属弧菌', 鉴别: 'TCBS：霍乱弧菌发酵蔗糖呈黄色；创伤弧菌不发酵蔗糖呈绿色，且乳糖(+)、嗜盐。' }
+  ],
+  'staph-lugdunensis': [
+    { 名称: '金黄色葡萄球菌', id: 'staph-aureus', 相似点: '均可致心内膜炎、侵袭性强', 鉴别: '试管凝固酶：金葡(+)、路邓葡萄球菌(−，属 CoNS)；后者玻片凝固酶/PYR 可阳性而易误判。' }
+  ],
+  'enterococcus-gallinarum': [
+    { 名称: '屎肠球菌', id: 'enterococcus-faecium', 相似点: '肠球菌、对万古霉素可不敏感', 鉴别: '鹑鸡肠球菌有动力、固有 vanC 低度耐药(替考拉宁敏感)；屎肠球菌无动力、VRE 多为获得性 VanA(高度耐药)。' }
+  ],
+  'citrobacter-koseri': [
+    { 名称: '弗劳地柠檬酸杆菌', id: 'citrobacter-freundii', 相似点: '同属柠檬酸杆菌', 鉴别: '克氏：吲哚(+)、H₂S(−)、致新生儿脑脓肿；弗劳地：吲哚(−)、H₂S(+)、产诱导型 AmpC。' }
   ]
 };

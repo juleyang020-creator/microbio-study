@@ -1342,6 +1342,217 @@ window.DB.microbes = [
       { 标题: '致病性 / 所致疾病', 正文: '免疫低下者肺诺卡菌病、血行播散致脑脓肿；外伤接种致皮肤型(足菌肿)。首选复方磺胺甲噁唑(SXT)。' }
     ],
     关联: ['sulfamethoxazole', 'trimethoprim']
+  },
+
+  // ===== 补充批次 3（结合 VITEK 鉴定卡）=====
+  {
+    id: 'citrobacter-freundii',
+    名称: '弗劳地柠檬酸杆菌',
+    拉丁名: 'Citrobacter freundii',
+    类别: '柠檬酸杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，肠杆菌目；枸橼酸盐利用阳性、可产 H₂S。' },
+      { 标题: '致病性 / 所致疾病', 正文: '机会致病：尿路、胆道、伤口及血流感染。具诱导型 AmpC β-内酰胺酶，三代头孢可治疗中耐药。' }
+    ],
+    关联: ['ampc', 'cefepime', 'meropenem']
+  },
+  {
+    id: 'citrobacter-koseri',
+    名称: '克氏柠檬酸杆菌',
+    拉丁名: 'Citrobacter koseri',
+    类别: '柠檬酸杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌；吲哚阳性、不产 H₂S（区别于弗劳地柠檬酸杆菌）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '新生儿脑膜炎与脑脓肿的少见但重要病原；亦致尿路感染。' }
+    ],
+    关联: ['ceftriaxone', 'meropenem']
+  },
+  {
+    id: 'cronobacter-sakazakii',
+    名称: '阪崎克罗诺杆菌',
+    拉丁名: 'Cronobacter sakazakii',
+    类别: '克罗诺杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌（原属肠杆菌属），产黄色素，耐干燥。' },
+      { 标题: '致病性 / 所致疾病', 正文: '污染配方奶粉引起新生儿/早产儿脑膜炎、败血症、坏死性小肠结肠炎，病死率高。' }
+    ],
+    关联: ['meropenem', 'gentamicin']
+  },
+  {
+    id: 'morganella-morganii',
+    名称: '摩根摩根菌',
+    拉丁名: 'Morganella morganii',
+    类别: '摩根菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，有动力但不迁徙生长；脲酶阳性、吲哚阳性。' },
+      { 标题: '致病性 / 所致疾病', 正文: '尿路感染、伤口及术后感染。固有产 AmpC、对多黏菌素与替加环素天然耐药。' }
+    ],
+    关联: ['ampc', 'cefepime', 'meropenem', 'proteus-mirabilis']
+  },
+  {
+    id: 'serratia-marcescens',
+    名称: '粘质沙雷菌',
+    拉丁名: 'Serratia marcescens',
+    类别: '沙雷菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌；部分菌株产红色灵菌红素，DNase 阳性。' },
+      { 标题: '致病性 / 所致疾病', 正文: '院内感染重要病原：肺炎、血流、尿路与手术部位感染，易暴发。固有 AmpC、对多黏菌素天然耐药。' }
+    ],
+    关联: ['ampc', 'cefepime', 'meropenem']
+  },
+  {
+    id: 'providencia-stuartii',
+    名称: '斯氏普罗威登斯菌',
+    拉丁名: 'Providencia stuartii',
+    类别: '普罗威登斯菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，脲酶阳性；肠杆菌目。' },
+      { 标题: '致病性 / 所致疾病', 正文: '长期留置导尿管者的慢性尿路感染常见，可致导管结壳与菌血症；多重耐药常见。' }
+    ],
+    关联: ['meropenem', 'ciprofloxacin', 'proteus-mirabilis']
+  },
+  {
+    id: 'yersinia-enterocolitica',
+    名称: '小肠结肠炎耶尔森菌',
+    拉丁名: 'Yersinia enterocolitica',
+    类别: '耶尔森菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性球杆菌；嗜冷（4℃ 可生长），25℃ 有动力、37℃ 无动力。' },
+      { 标题: '致病性 / 所致疾病', 正文: '小肠结肠炎、假性阑尾炎（肠系膜淋巴结炎），可致反应性关节炎；冷藏血制品输血相关脓毒症。' }
+    ],
+    关联: ['ciprofloxacin', 'ceftriaxone']
+  },
+  {
+    id: 'yersinia-pestis',
+    名称: '鼠疫耶尔森菌',
+    拉丁名: 'Yersinia pestis',
+    类别: '耶尔森菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性球杆菌，两端浓染（安全别针样）；无动力。' },
+      { 标题: '致病性 / 所致疾病', 正文: '鼠疫（甲类传染病）：腺鼠疫、肺鼠疫、败血型；经鼠蚤传播。属高致病性病原，需生物安全防护。' }
+    ],
+    关联: ['streptomycin', 'gentamicin', 'doxycycline', 'ciprofloxacin']
+  },
+  {
+    id: 'proteus-vulgaris',
+    名称: '普通变形杆菌',
+    拉丁名: 'Proteus vulgaris',
+    类别: '变形杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，迁徙生长、脲酶阳性；吲哚阳性（区别于奇异变形杆菌）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '尿路感染（产脲酶致鸟粪石结石）、伤口感染；固有产染色体 β-内酰胺酶。' }
+    ],
+    关联: ['meropenem', 'ciprofloxacin', 'proteus-mirabilis']
+  },
+  {
+    id: 'salmonella-paratyphi-a',
+    名称: '甲型副伤寒沙门菌',
+    拉丁名: 'Salmonella enterica ser. Paratyphi A',
+    类别: '沙门菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，有动力；与伤寒沙门菌不同，常不产或微量产 H₂S。' },
+      { 标题: '致病性 / 所致疾病', 正文: '副伤寒（肠热症），临床类似伤寒而稍轻；粪口传播。耐药率上升，喹诺酮敏感性下降需关注。' }
+    ],
+    关联: ['ceftriaxone', 'ciprofloxacin', 'azithromycin', 'salmonella-typhi']
+  },
+  {
+    id: 'aeromonas-hydrophila',
+    名称: '嗜水气单胞菌',
+    拉丁名: 'Aeromonas hydrophila',
+    类别: '气单胞菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，氧化酶阳性（区别于肠杆菌目）；水生环境常见。' },
+      { 标题: '致病性 / 所致疾病', 正文: '水接触相关伤口感染/蜂窝织炎、腹泻；免疫低下者菌血症。常产多种 β-内酰胺酶。' }
+    ],
+    关联: ['ciprofloxacin', 'ceftriaxone']
+  },
+  {
+    id: 'pasteurella-multocida',
+    名称: '多杀巴斯德菌',
+    拉丁名: 'Pasteurella multocida',
+    类别: '巴斯德菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性球杆菌，两端浓染；氧化酶、吲哚阳性。' },
+      { 标题: '致病性 / 所致疾病', 正文: '猫狗咬抓伤后软组织感染（进展快），可致蜂窝织炎、骨髓炎；对青霉素敏感（与多数 GNB 不同）。' }
+    ],
+    关联: ['penicillin-g', 'amoxicillin', 'doxycycline']
+  },
+  {
+    id: 'francisella-tularensis',
+    名称: '土拉热弗朗西丝菌',
+    拉丁名: 'Francisella tularensis',
+    类别: '弗朗西丝菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性微小球杆菌，营养要求高（需胱氨酸）、生长慢、胞内寄生。' },
+      { 标题: '致病性 / 所致疾病', 正文: '土拉菌病（兔热病）：溃疡腺型、肺型等；蜱叮咬/接触病兽/气溶胶传播。高致病、可作生物战剂，培养需 BSL-3。' }
+    ],
+    关联: ['streptomycin', 'gentamicin', 'doxycycline', 'ciprofloxacin']
+  },
+  {
+    id: 'burkholderia-pseudomallei',
+    名称: '类鼻疽伯克霍尔德菌',
+    拉丁名: 'Burkholderia pseudomallei',
+    类别: '伯克霍尔德菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，两端浓染；存在于热带土壤与水。' },
+      { 标题: '致病性 / 所致疾病', 正文: '类鼻疽：肺炎、多发脓肿、败血症，糖尿病者高危；东南亚/澳北流行。治疗分强化期（头孢他啶/美罗培南）与根除期（复方磺胺）。' }
+    ],
+    关联: ['ceftazidime', 'meropenem', 'sulfamethoxazole', 'trimethoprim', 'burkholderia-cepacia']
+  },
+  {
+    id: 'vibrio-vulnificus',
+    名称: '创伤弧菌',
+    拉丁名: 'Vibrio vulnificus',
+    类别: '弧菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性弧菌，嗜盐；TCBS 上不发酵蔗糖（多呈绿色，区别于霍乱弧菌）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '生食牡蛎或海水伤口暴露致暴发性坏死性筋膜炎、脓毒症，肝病/血色病者病死率高。需及早清创+抗菌。' }
+    ],
+    关联: ['doxycycline', 'ceftazidime', 'ceftriaxone', 'vibrio-cholerae', 'vibrio-parahaemolyticus']
+  },
+  {
+    id: 'achromobacter-xylosoxidans',
+    名称: '木糖氧化无色杆菌',
+    拉丁名: 'Achromobacter xylosoxidans',
+    类别: '无色杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，氧化酶阳性、有动力；非发酵菌。' },
+      { 标题: '致病性 / 所致疾病', 正文: '院内机会感染（导管相关菌血症、肺炎），囊性纤维化患者气道定植；多重耐药，常需碳青霉烯/复方磺胺。' }
+    ],
+    关联: ['meropenem', 'piperacillin-tazobactam', 'sulfamethoxazole', 'trimethoprim']
+  },
+  {
+    id: 'staph-lugdunensis',
+    名称: '路邓葡萄球菌',
+    拉丁名: 'Staphylococcus lugdunensis',
+    类别: '葡萄球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌，凝固酶阴性(CoNS)，但玻片凝固酶/PYR 可阳性而易误判。' },
+      { 标题: '致病性 / 所致疾病', 正文: '侵袭性强、类似金黄色葡萄球菌：自体瓣膜心内膜炎、皮肤软组织与人工关节感染；多数对苯唑西林敏感。' }
+    ],
+    关联: ['oxacillin', 'vancomycin', 'staph-aureus']
+  },
+  {
+    id: 'gardnerella-vaginalis',
+    名称: '阴道加德纳菌',
+    拉丁名: 'Gardnerella vaginalis',
+    类别: '加德纳菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰染色不定的小杆菌；湿片/革兰片可见附着大量球杆菌的"线索细胞"(clue cell)。' },
+      { 标题: '致病性 / 所致疾病', 正文: '细菌性阴道病的标志菌（菌群失衡、胺试验阳性、pH 升高）；治疗用甲硝唑或克林霉素。' }
+    ],
+    关联: ['metronidazole', 'clindamycin']
+  },
+  {
+    id: 'enterococcus-gallinarum',
+    名称: '鹑鸡肠球菌',
+    拉丁名: 'Enterococcus gallinarum',
+    类别: '肠球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌，有动力（区别于粪/屎肠球菌）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '携带固有 vanC 基因，对万古霉素天然低水平耐药（替考拉宁敏感）——勿与获得性 VanA/VanB 的 VRE 混淆。' }
+    ],
+    关联: ['vancomycin', 'linezolid', 'vana-vre', 'enterococcus-faecium']
   }
 
 ];
