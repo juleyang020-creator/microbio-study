@@ -1,133 +1,156 @@
+:root {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --ink: #23272e;
+  --ink-soft: #454b54;
+  --muted: #8a8f98;
+  --faint: #aeb3ba;
+  --line: #e7e4dd;
+  --line-2: #f0ede7;
+  --accent: #2e6b66;
+  --accent-weak: #e9f0ee;
+  --accent-edge: #cfe0db;
+  --link: #345f86;
+  --green: #3f7a52;
+  --rust: #a85a2a;
+  --gold: #8a6d1f;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+}
+
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 body {
   font-family: -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-  color: #1e293b; background: #f1f5f9; display: flex; flex-direction: column; height: 100vh;
+  color: var(--ink); background: var(--bg);
+  display: flex; flex-direction: column; height: 100vh;
+  font-size: 14px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* 顶栏 */
-.topbar { display: flex; align-items: center; gap: 14px; background: #0f766e; color: #fff; padding: 10px 16px; flex-shrink: 0; }
-.brand { font-weight: 700; font-size: 16px; white-space: nowrap; }
-.tabs { display: flex; gap: 6px; }
-.tab { background: transparent; color: #d1fae5; border: none; font-size: 13px; padding: 7px 13px; border-radius: 6px; cursor: pointer; }
-.tab:hover { background: #0b5d56; }
-.tab.active { background: #fff; color: #0f766e; font-weight: 600; }
-.search { margin-left: auto; border: none; border-radius: 6px; padding: 7px 11px; font-size: 13px; min-width: 220px; background: #0b5d56; color: #fff; }
-.search::placeholder { color: #a7f3d0; }
-.search:focus { outline: 2px solid #5eead4; background: #fff; color: #0f172a; }
+.topbar { display: flex; align-items: center; gap: 22px; background: var(--surface); border-bottom: 1px solid var(--line); padding: 0 22px; height: 52px; flex-shrink: 0; }
+.brand { font-weight: 600; font-size: 15px; letter-spacing: 1px; color: var(--ink); white-space: nowrap; }
+.tabs { display: flex; gap: 2px; height: 100%; }
+.tab { background: none; border: none; color: var(--muted); font-size: 13.5px; padding: 0 12px; height: 100%; cursor: pointer; border-bottom: 2px solid transparent; font-family: inherit; }
+.tab:hover { color: var(--ink); }
+.tab.active { color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
+.search { margin-left: auto; border: 1px solid var(--line); border-radius: 6px; padding: 6px 11px; font-size: 13px; min-width: 200px; background: var(--surface); color: var(--ink); font-family: inherit; }
+.search::placeholder { color: var(--faint); }
+.search:focus { outline: none; border-color: var(--accent); }
+.compare-btn { color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; }
+.compare-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 /* 布局 */
 .layout { display: flex; flex: 1; min-height: 0; }
-.sidebar { width: 240px; background: #fff; border-right: 1px solid #e2e8f0; overflow-y: auto; padding: 12px 10px; font-size: 13px; flex-shrink: 0; }
-.main { flex: 1; overflow-y: auto; padding: 20px 24px; }
+.sidebar { width: 248px; background: var(--surface); border-right: 1px solid var(--line); overflow-y: auto; padding: 14px 12px; font-size: 13px; flex-shrink: 0; }
+.main { flex: 1; overflow-y: auto; padding: 30px 40px; }
 
 /* 侧栏分类树 */
-.cat-group { margin-bottom: 10px; }
-.cat-group-name { color: #64748b; font-weight: 700; margin-bottom: 4px; }
-.cat-leaf { color: #475569; font-weight: 600; padding: 4px 8px; margin-top: 4px; }
-.cat-subgroup { color: #475569; font-weight: 600; padding: 4px 8px; margin-top: 4px; }
+.cat-group { margin-bottom: 4px; }
+.cat-group-name { color: var(--muted); font-weight: 600; font-size: 11px; letter-spacing: 1px; margin: 12px 0 4px; }
+.cat-leaf, .cat-subgroup { color: var(--ink-soft); font-weight: 500; padding: 3px 6px; margin-top: 2px; }
 .collapsible { cursor: pointer; user-select: none; }
-.collapsible:hover { color: #0f766e; }
-.entry-link { display: block; color: #334155; text-decoration: none; padding: 5px 8px 5px 20px; border-radius: 5px; }
-.entry-link:hover { background: #f1f5f9; }
-.entry-link.selected { background: #ccfbf1; color: #0f766e; font-weight: 600; }
+.collapsible:hover { color: var(--accent); }
+.entry-link { display: block; color: var(--ink-soft); text-decoration: none; padding: 4px 8px 4px 16px; border-radius: 4px; border-left: 2px solid transparent; }
+.entry-link:hover { color: var(--ink); background: var(--line-2); }
+.entry-link.selected { color: var(--accent); font-weight: 600; border-left-color: var(--accent); }
 
-/* 详情 */
-.detail-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.detail-title { font-size: 22px; margin: 0; }
-.badge { background: #e0e7ff; color: #4338ca; font-size: 12px; padding: 3px 10px; border-radius: 11px; }
-.latin { color: #94a3b8; font-style: italic; margin: 4px 0 16px; }
-.abbr { font-family: ui-monospace, Menlo, monospace; background: #0f766e; color: #fff; font-size: 12px; padding: 3px 9px; border-radius: 6px; letter-spacing: .5px; }
-.mechanism-fig { margin: 14px 0 8px; padding: 0; }
-.mechanism-img { display: block; width: 100%; max-width: 460px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; }
-.mechanism-cap { font-size: 12px; color: #94a3b8; margin-top: 6px; }
+/* 详情头 */
+.detail-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.detail-title { font-size: 23px; font-weight: 650; margin: 0; letter-spacing: .3px; color: var(--ink); }
+.badge { color: var(--muted); font-size: 12px; border: 1px solid var(--line); border-radius: 4px; padding: 1px 8px; font-weight: 500; }
+.latin { color: var(--muted); font-style: italic; margin: 5px 0 22px; font-size: 14px; }
+.abbr { font-family: var(--mono); background: var(--accent-weak); color: var(--accent); font-size: 11.5px; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; }
+
+/* 机制图 */
+.mechanism-fig { margin: 18px 0 10px; }
+.mechanism-img { display: block; width: 100%; max-width: 520px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.mechanism-cap { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+/* 通用小标题 */
+.section-title, .morph-title, .biochem-title, .diff-title, .card-drugs-title, .relations-label, .refs-label {
+  font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; margin-bottom: 8px;
+}
+
+/* 文字小节（无卡片框，编辑式分隔） */
+.section-card { background: none; border: none; border-top: 1px solid var(--line); padding: 14px 0 0; margin: 0 0 14px; max-width: 700px; }
+.section-body { color: var(--ink-soft); line-height: 1.72; white-space: pre-wrap; }
 
 /* 形态 */
-.morphology { margin: 16px 0; max-width: 560px; }
-.morph-title { font-size: 13px; font-weight: 700; color: #0f766e; margin-bottom: 8px; }
-.morph-row { font-size: 13px; line-height: 1.65; color: #334155; margin-top: 5px; }
-.morph-tag { display: inline-block; font-size: 11px; color: #fff; background: #0ea5e9; border-radius: 4px; padding: 1px 7px; white-space: nowrap; }
-.morph-tag.morph-med { background: #6366f1; }
+.morphology { margin: 22px 0; max-width: 660px; }
+.morph-row { font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); margin-top: 6px; }
+.morph-tag { display: inline-block; font-size: 11px; color: var(--ink-soft); background: var(--line-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; white-space: nowrap; }
+.morph-tag.morph-med { background: var(--accent-weak); border-color: var(--accent-edge); color: var(--accent); }
 
 /* 生化反应 */
-.biochem { margin: 16px 0; }
-.biochem-title { font-size: 13px; font-weight: 700; color: #0f766e; margin-bottom: 8px; }
-.biochem-rows { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; max-width: 460px; }
+.biochem { margin: 22px 0; }
+.biochem-rows { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; max-width: 460px; }
 .biochem-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 12px; font-size: 13px; }
-.biochem-row:nth-child(even) { background: #f8fafc; }
-.biochem-key { color: #475569; }
-.biochem-val { color: #0f172a; font-weight: 600; font-family: ui-monospace, Menlo, "Courier New", monospace; }
+.biochem-row:nth-child(even) { background: var(--line-2); }
+.biochem-key { color: var(--muted); }
+.biochem-val { color: var(--ink); font-weight: 600; font-family: var(--mono); }
 
 /* 鉴别 */
-.differential { margin: 16px 0; }
-.diff-title { font-size: 13px; font-weight: 700; color: #0f766e; margin-bottom: 8px; }
-.diff-item { border: 1px solid #e2e8f0; border-left: 3px solid #f59e0b; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; max-width: 560px; }
+.differential { margin: 22px 0; }
+.diff-item { border: 1px solid var(--line); border-left: 2px solid var(--accent); border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; max-width: 700px; background: var(--surface); }
 .diff-head { margin-bottom: 6px; }
-.diff-link { color: #1d4ed8; text-decoration: none; font-weight: 600; }
+.diff-link { color: var(--link); text-decoration: none; font-weight: 600; }
 .diff-link:hover { text-decoration: underline; }
-.diff-name { font-weight: 600; color: #334155; }
-.diff-line { font-size: 13px; line-height: 1.65; color: #334155; margin-top: 3px; }
-.diff-tag { display: inline-block; font-size: 11px; color: #fff; background: #94a3b8; border-radius: 4px; padding: 1px 7px; }
-.diff-tag.diff-key { background: #f59e0b; }
+.diff-name { font-weight: 600; color: var(--ink-soft); }
+.diff-line { font-size: 13px; line-height: 1.65; color: var(--ink-soft); margin-top: 3px; }
+.diff-tag { display: inline-block; font-size: 11px; color: var(--muted); background: var(--line-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; }
+.diff-tag.diff-key { background: var(--accent-weak); border-color: var(--accent-edge); color: var(--accent); }
 
-/* 生化对比 */
-.compare-btn { color: #d1fae5; text-decoration: none; font-size: 13px; padding: 6px 12px; border: 1px solid #5eead4; border-radius: 6px; white-space: nowrap; margin-left: 8px; }
-.compare-btn:hover { background: #0b5d56; color: #fff; }
-.biochem-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 460px; }
-.cmp-add { background: #0f766e; color: #fff; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; white-space: nowrap; }
-.cmp-add:hover { background: #0b5d56; }
-.cmp-search { width: 100%; box-sizing: border-box; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 9px; font-size: 13px; margin: 6px 0 8px; }
-.cmp-search:focus { outline: 2px solid #5eead4; }
-.cmp-pick { padding: 6px 10px; border-radius: 6px; cursor: pointer; color: #334155; font-size: 13px; user-select: none; }
-.cmp-pick:hover { background: #f1f5f9; }
-.cmp-pick.sel { background: #ccfbf1; color: #0f766e; font-weight: 600; }
+/* 对比 */
+.biochem-head, .card-drugs-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 460px; }
+.cmp-add { background: var(--surface); color: var(--accent); border: 1px solid var(--line); border-radius: 5px; padding: 4px 10px; font-size: 12px; cursor: pointer; white-space: nowrap; font-family: inherit; }
+.cmp-add:hover { border-color: var(--accent); background: var(--accent-weak); }
+.cmp-search { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px; margin: 6px 0 8px; font-family: inherit; }
+.cmp-search:focus { outline: none; border-color: var(--accent); }
+.cmp-pick { padding: 5px 9px; border-radius: 4px; cursor: pointer; color: var(--ink-soft); font-size: 13px; user-select: none; }
+.cmp-pick:hover { background: var(--line-2); }
+.cmp-pick.sel { color: var(--accent); font-weight: 600; }
 .cmp { border-collapse: collapse; margin-top: 10px; font-size: 13px; }
-.cmp th, .cmp td { border: 1px solid #e2e8f0; padding: 7px 12px; text-align: left; }
-.cmp thead th { background: #0f766e; color: #fff; }
-.cmp .cmp-col { color: #fff; text-decoration: none; }
+.cmp th, .cmp td { border: 1px solid var(--line); padding: 7px 12px; text-align: left; }
+.cmp thead th { background: var(--line-2); color: var(--ink); font-weight: 600; }
+.cmp .cmp-col { color: var(--link); text-decoration: none; }
 .cmp .cmp-col:hover { text-decoration: underline; }
-.cmp .cmp-item { font-weight: 600; color: #475569; background: #f8fafc; }
-.cmp-cell { font-family: ui-monospace, Menlo, "Courier New", monospace; }
-.cmp tr.cmp-diff td { background: #fef9c3; }
-.cmp tr.cmp-diff .cmp-item { background: #fde68a; color: #92400e; }
-.cmp-hint { font-size: 12px; color: #94a3b8; margin-top: 10px; }
-.section-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; }
-.section-title { font-size: 13px; font-weight: 700; color: #0f766e; margin-bottom: 6px; }
-.section-body { color: #334155; line-height: 1.65; white-space: pre-wrap; }
+.cmp .cmp-item { font-weight: 600; color: var(--ink-soft); background: var(--surface); }
+.cmp-cell { font-family: var(--mono); }
+.cmp tr.cmp-diff td { background: #faf5e6; }
+.cmp tr.cmp-diff .cmp-item { background: #f1e8cf; color: #715711; }
+.cmp-hint { font-size: 12px; color: var(--muted); margin-top: 10px; }
 
-/* 关联 */
-.relations { border-top: 1px dashed #cbd5e1; margin-top: 16px; padding-top: 14px; }
-.relations-label { font-size: 13px; color: #64748b; margin-bottom: 8px; }
-.chips { display: flex; flex-wrap: wrap; gap: 7px; }
-.chip { font-size: 12.5px; padding: 5px 11px; border-radius: 13px; text-decoration: none; }
-.chip-microbes { background: #dbeafe; color: #1d4ed8; }
-.chip-antibiotics { background: #dcfce7; color: #15803d; }
-.chip-resistance { background: #fee2e2; color: #b91c1c; }
-.chip-missing { background: #f1f5f9; color: #94a3b8; }
-.chip-resistance, .chip-tests { background: #fee2e2; color: #b91c1c; }
-.chip-tests { background: #fef3c7; color: #92400e; }
-.chip-plain { background: #f1f5f9; color: #475569; }
-.refs { border-top: 1px dashed #cbd5e1; margin-top: 16px; padding-top: 14px; }
-.refs-label { font-size: 13px; color: #64748b; margin-bottom: 8px; }
-.ref-link { font-size: 12.5px; padding: 5px 11px; border-radius: 13px; text-decoration: none; background: #ccfbf1; color: #0f766e; border: 1px solid #99f6e4; }
-.ref-link:hover { background: #99f6e4; }
+/* 关联 / 标签 */
+.relations { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12.5px; padding: 3px 10px; border-radius: 4px; text-decoration: none; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+.chip:hover { border-color: var(--faint); }
+.chip-microbes { color: var(--link); }
+.chip-antibiotics { color: var(--green); }
+.chip-resistance { color: var(--rust); }
+.chip-tests { color: var(--gold); }
+.chip-missing, .chip-plain { color: var(--muted); background: var(--line-2); }
+
+/* 参考链接 */
+.refs { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
+.ref-link { font-size: 12.5px; padding: 3px 10px; border-radius: 4px; text-decoration: none; background: var(--surface); color: var(--accent); border: 1px solid var(--line); }
+.ref-link:hover { border-color: var(--accent); background: var(--accent-weak); }
 
 /* 药敏卡-包含药物 */
-.card-drugs { margin: 16px 0; }
-.card-drugs-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; max-width: 560px; }
-.card-drugs-title { font-size: 13px; font-weight: 700; color: #0f766e; }
+.card-drugs { margin: 22px 0; }
 
 /* 搜索结果 */
-.search-head { color: #64748b; font-size: 14px; margin-bottom: 12px; }
-.search-list { display: flex; flex-direction: column; gap: 6px; }
-.search-item { display: block; background: #fff; border: 1px solid #e2e8f0; border-radius: 7px; padding: 9px 12px; text-decoration: none; color: #1e293b; }
-.search-item:hover { border-color: #5eead4; }
-.tag { font-size: 11px; padding: 2px 8px; border-radius: 9px; margin-right: 6px; }
-.tag-microbes { background: #dbeafe; color: #1d4ed8; }
-.tag-antibiotics { background: #dcfce7; color: #15803d; }
-.tag-resistance { background: #fee2e2; color: #b91c1c; }
-.tag-tests { background: #fef3c7; color: #92400e; }
+.search-head { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+.search-list { display: flex; flex-direction: column; gap: 6px; max-width: 700px; }
+.search-item { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 9px 13px; text-decoration: none; color: var(--ink); }
+.search-item:hover { border-color: var(--accent); }
+.tag { font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 8px; border: 1px solid var(--line); color: var(--muted); }
+.tag-microbes { color: var(--link); }
+.tag-antibiotics { color: var(--green); }
+.tag-resistance { color: var(--rust); }
+.tag-tests { color: var(--gold); }
 
 /* 空状态 */
-.empty { color: #94a3b8; padding: 40px 0; text-align: center; }
-.empty-sm { color: #94a3b8; font-size: 13px; }
+.empty { color: var(--muted); padding: 48px 0; text-align: center; }
+.empty-sm { color: var(--muted); font-size: 13px; }

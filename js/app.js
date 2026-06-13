@@ -152,15 +152,15 @@
       });
       nodes.push(el('div', { cls: 'card-drugs' }, [
         el('div', { cls: 'card-drugs-head' }, [
-          el('div', { cls: 'card-drugs-title', text: '💊 包含药物（' + vm.药物.length + '）' }),
-          (vm.id ? el('button', { cls: 'cmp-add', text: '＋ 加入卡片对比', onClick: function () { compareCardSet[vm.id] = true; location.hash = '#/cardcompare'; } }) : null)
+          el('div', { cls: 'card-drugs-title', text: '包含药物 · ' + vm.药物.length }),
+          (vm.id ? el('button', { cls: 'cmp-add', text: '加入对比', onClick: function () { compareCardSet[vm.id] = true; location.hash = '#/cardcompare'; } }) : null)
         ]),
         el('div', { cls: 'chips' }, drugChips)
       ]));
     }
 
     if (vm.形态) {
-      var mNodes = [ el('div', { cls: 'morph-title', text: '🔬 形态' }) ];
+      var mNodes = [ el('div', { cls: 'morph-title', text: '形态' }) ];
       if (vm.形态.镜下) {
         mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag', text: '镜下' }), el('span', { text: ' ' + vm.形态.镜下 }) ]));
       }
@@ -179,8 +179,8 @@
       });
       nodes.push(el('div', { cls: 'biochem' }, [
         el('div', { cls: 'biochem-head' }, [
-          el('div', { cls: 'biochem-title', text: '🧪 生化反应' }),
-          el('button', { cls: 'cmp-add', text: '＋ 加入对比', onClick: function () { if (vm.id) { compareSet[vm.id] = true; location.hash = '#/compare'; } } })
+          el('div', { cls: 'biochem-title', text: '生化反应' }),
+          el('button', { cls: 'cmp-add', text: '加入对比', onClick: function () { if (vm.id) { compareSet[vm.id] = true; location.hash = '#/compare'; } } })
         ]),
         el('div', { cls: 'biochem-rows' }, bioRows)
       ]));
@@ -197,10 +197,10 @@
           el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag diff-key', text: '鉴别' }), el('span', { text: ' ' + d.鉴别 }) ])
         ]);
       });
-      nodes.push(el('div', { cls: 'differential' }, [ el('div', { cls: 'diff-title', text: '🔍 相似菌与鉴别' }) ].concat(diffItems)));
+      nodes.push(el('div', { cls: 'differential' }, [ el('div', { cls: 'diff-title', text: '相似菌与鉴别' }) ].concat(diffItems)));
     }
 
-    var relKids = [ el('div', { cls: 'relations-label', text: '🔗 关联' }) ];
+    var relKids = [ el('div', { cls: 'relations-label', text: '关联' }) ];
     if (vm.关联.length === 0) {
       relKids.push(el('span', { cls: 'empty-sm', text: '（暂无关联）' }));
     } else {
@@ -220,7 +220,7 @@
         });
       });
       nodes.push(el('div', { cls: 'refs' }, [
-        el('div', { cls: 'refs-label', text: '📚 综述 / 参考' })
+        el('div', { cls: 'refs-label', text: '综述 / 参考' })
       ].concat([ el('div', { cls: 'chips' }, refChips) ])));
     }
     return nodes;
@@ -282,7 +282,7 @@
     if (listEl) { listEl.replaceChildren.apply(listEl, comparePickItems()); }
   }
   function buildComparePicker() {
-    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '🔍 筛选细菌…', value: compareFilter });
+    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选…', value: compareFilter });
     search.addEventListener('input', function () { compareFilter = search.value; renderComparePickerList(); });
     return [ el('div', { cls: 'cat-group' }, [
       el('div', { cls: 'cat-group-name', text: '勾选细菌（可多选）' }),
@@ -291,7 +291,7 @@
     ]) ];
   }
   function buildCompareView(vm) {
-    var nodes = [ el('h2', { cls: 'detail-title', text: '🧪 生化反应对比' }) ];
+    var nodes = [ el('h2', { cls: 'detail-title', text: '生化反应对比' }) ];
     if (vm.items.length < 2) {
       nodes.push(el('div', { cls: 'empty', text: '在左侧勾选 2 个以上细菌进行对比。' }));
       return nodes;
@@ -348,7 +348,7 @@
     if (listEl) { listEl.replaceChildren.apply(listEl, cardPickItems()); }
   }
   function buildCardComparePicker() {
-    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '🔍 筛选卡片…', value: compareCardFilter });
+    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选…', value: compareCardFilter });
     search.addEventListener('input', function () { compareCardFilter = search.value; renderCardPickerList(); });
     return [ el('div', { cls: 'cat-group' }, [
       el('div', { cls: 'cat-group-name', text: '勾选药敏卡（可多选）' }),
@@ -357,7 +357,7 @@
     ]) ];
   }
   function buildCardCompareView(vm) {
-    var nodes = [ el('h2', { cls: 'detail-title', text: '💳 药敏卡对比' }) ];
+    var nodes = [ el('h2', { cls: 'detail-title', text: '药敏卡对比' }) ];
     if (vm.items.length < 2) {
       nodes.push(el('div', { cls: 'empty', text: '在左侧勾选 2 张以上药敏卡进行对比。' }));
       return nodes;
