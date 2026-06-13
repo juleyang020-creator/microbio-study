@@ -1,28 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <rect width="420" height="240" fill="#f8fafc"/>
-  <text x="210" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#0f766e">抗真菌 · 嘧啶类似物（干扰核酸）</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="fcBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccfbf1"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
+    <linearGradient id="fcDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+    <filter id="fcSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
+  </defs>
+  <rect width="480" height="300" fill="#f8fafc"/>
+  <text x="240" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f766e">嘧啶类似物：5-氟胞嘧啶（5-FC）</text>
 
-  <rect x="14" y="106" width="86" height="34" rx="6" fill="#fee2e2" stroke="#dc2626"/>
-  <text x="57" y="121" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="600">5-氟胞嘧啶</text>
-  <text x="57" y="134" text-anchor="middle" font-size="9" fill="#b91c1c">(5-FC)</text>
+  <!-- 5-FC 进入真菌 -->
+  <rect x="14" y="128" width="60" height="34" rx="9" fill="url(#fcDrug)" stroke="#2563eb" filter="url(#fcSh)"/>
+  <text x="44" y="149" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">5-FC</text>
+  <line x1="74" y1="145" x2="118" y2="145" stroke="#475569" stroke-width="2"/>
+  <polygon points="118,145 110,141 110,149" fill="#475569"/>
+  <text x="96" y="135" text-anchor="middle" font-size="8.5" fill="#64748b">渗透酶</text>
 
-  <rect x="184" y="106" width="80" height="34" rx="6" fill="#fecaca" stroke="#dc2626"/>
-  <text x="224" y="127" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="600">5-氟尿嘧啶</text>
+  <!-- 5-FU -->
+  <rect x="120" y="128" width="74" height="34" rx="9" fill="url(#fcBox)" stroke="#0f766e" filter="url(#fcSh)"/>
+  <text x="157" y="149" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f766e">5-FU</text>
+  <text x="157" y="120" text-anchor="middle" font-size="8.5" fill="#64748b">胞嘧啶脱氨酶</text>
 
-  <rect x="330" y="100" width="80" height="46" rx="6" fill="#a7f3d0" stroke="#0f766e"/>
-  <text x="370" y="120" text-anchor="middle" font-size="11" fill="#0f766e">RNA</text>
-  <text x="370" y="134" text-anchor="middle" font-size="11" fill="#0f766e">/ DNA</text>
+  <!-- 分支：DNA -->
+  <path d="M194,138 C230,120 250,96 286,86" fill="none" stroke="#475569" stroke-width="2"/>
+  <polygon points="286,86 277,86 281,94" fill="#475569"/>
+  <rect x="286" y="70" width="80" height="32" rx="9" fill="url(#fcBox)" stroke="#0f766e" filter="url(#fcSh)"/>
+  <text x="326" y="90" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0f766e">5-FdUMP</text>
+  <text x="372" y="78" font-size="14" fill="#dc2626" font-weight="700">⊣</text>
+  <text x="424" y="82" text-anchor="middle" font-size="9.5" fill="#334155">胸苷酸合酶</text>
+  <text x="424" y="96" text-anchor="middle" font-size="9.5" fill="#b91c1c">DNA 合成↓</text>
 
-  <!-- 箭头1 + 酶 -->
-  <line x1="100" y1="123" x2="178" y2="123" stroke="#64748b" stroke-width="2"/>
-  <polygon points="178,123 170,119 170,127" fill="#64748b"/>
-  <text x="139" y="98" text-anchor="middle" font-size="9" fill="#475569">胞嘧啶脱氨酶</text>
-  <text x="139" y="116" text-anchor="middle" font-size="8.5" fill="#94a3b8">(仅真菌有)</text>
+  <!-- 分支：RNA -->
+  <path d="M194,152 C230,170 250,182 286,190" fill="none" stroke="#475569" stroke-width="2"/>
+  <polygon points="286,190 277,186 281,194" fill="#475569"/>
+  <rect x="286" y="176" width="80" height="32" rx="9" fill="url(#fcBox)" stroke="#0f766e" filter="url(#fcSh)"/>
+  <text x="326" y="196" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0f766e">5-FUTP</text>
+  <text x="424" y="190" text-anchor="middle" font-size="9.5" fill="#334155">掺入 RNA</text>
+  <text x="424" y="204" text-anchor="middle" font-size="9.5" fill="#b91c1c">蛋白合成异常</text>
 
-  <!-- 箭头2 + 干扰 -->
-  <line x1="264" y1="123" x2="326" y2="123" stroke="#dc2626" stroke-width="2"/>
-  <polygon points="326,123 318,119 318,127" fill="#dc2626"/>
-  <text x="295" y="114" text-anchor="middle" font-size="14" fill="#dc2626" font-weight="700">✕</text>
-
-  <text x="210" y="206" text-anchor="middle" font-size="11.5" fill="#334155">转化为 5-FU → 干扰真菌 RNA/DNA 合成</text>
+  <text x="240" y="252" text-anchor="middle" font-size="10.5" fill="#64748b">哺乳动物细胞缺胞嘧啶脱氨酶，不能活化 5-FC → 选择性毒性</text>
+  <text x="240" y="284" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">干扰 DNA 与 RNA 合成 → 抑制真菌</text>
 </svg>

@@ -1,32 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <rect width="420" height="240" fill="#f8fafc"/>
-  <text x="210" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#0f766e">抑制叶酸代谢</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="foBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccfbf1"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
+    <linearGradient id="foDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+    <filter id="foSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
+  </defs>
+  <rect width="480" height="300" fill="#f8fafc"/>
+  <text x="240" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f766e">抑制叶酸代谢</text>
 
-  <!-- 代谢物 -->
-  <rect x="14" y="104" width="62" height="30" rx="6" fill="#ccfbf1" stroke="#0f766e"/>
-  <text x="45" y="123" text-anchor="middle" font-size="12" fill="#0f766e">PABA</text>
+  <!-- 通路框 -->
+  <g filter="url(#foSh)">
+    <rect x="14" y="150" width="66" height="40" rx="9" fill="url(#foBox)" stroke="#0f766e"/>
+    <rect x="118" y="150" width="80" height="40" rx="9" fill="url(#foBox)" stroke="#0f766e"/>
+    <rect x="236" y="150" width="80" height="40" rx="9" fill="url(#foBox)" stroke="#0f766e"/>
+    <rect x="354" y="150" width="112" height="40" rx="9" fill="url(#foBox)" stroke="#0f766e"/>
+  </g>
+  <text x="47" y="175" text-anchor="middle" font-size="12" font-weight="700" fill="#0f766e">PABA</text>
+  <text x="158" y="174" text-anchor="middle" font-size="11.5" fill="#0f766e">二氢叶酸</text>
+  <text x="276" y="174" text-anchor="middle" font-size="11.5" fill="#0f766e">四氢叶酸</text>
+  <text x="410" y="168" text-anchor="middle" font-size="11" fill="#0f766e">嘌呤 / 胸苷酸</text>
+  <text x="410" y="183" text-anchor="middle" font-size="10" fill="#475569">→ DNA / RNA</text>
 
-  <rect x="170" y="104" width="80" height="30" rx="6" fill="#ccfbf1" stroke="#0f766e"/>
-  <text x="210" y="119" text-anchor="middle" font-size="11" fill="#0f766e">二氢叶酸</text>
-  <text x="210" y="130" text-anchor="middle" font-size="9" fill="#0f766e">(DHF)</text>
+  <!-- 箭头 + 酶 -->
+  <g stroke="#475569" stroke-width="2">
+    <line x1="80" y1="170" x2="114" y2="170"/><polygon points="114,170 106,166 106,174" fill="#475569"/>
+    <line x1="198" y1="170" x2="232" y2="170"/><polygon points="232,170 224,166 224,174" fill="#475569"/>
+    <line x1="316" y1="170" x2="350" y2="170"/><polygon points="350,170 342,166 342,174" fill="#475569"/>
+  </g>
+  <text x="97" y="204" text-anchor="middle" font-size="9" fill="#64748b">DHPS</text>
+  <text x="215" y="204" text-anchor="middle" font-size="9" fill="#64748b">DHFR</text>
 
-  <rect x="330" y="104" width="80" height="30" rx="6" fill="#a7f3d0" stroke="#0f766e"/>
-  <text x="370" y="119" text-anchor="middle" font-size="11" fill="#0f766e">四氢叶酸</text>
-  <text x="370" y="130" text-anchor="middle" font-size="9" fill="#0f766e">(THF)</text>
+  <!-- 磺胺类阻 DHPS -->
+  <rect x="58" y="92" width="78" height="34" rx="9" fill="url(#foDrug)" stroke="#2563eb" filter="url(#foSh)"/>
+  <text x="97" y="108" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1d4ed8">磺胺类</text>
+  <text x="97" y="121" text-anchor="middle" font-size="8.5" fill="#334155">PABA 类似物·竞争</text>
+  <line x1="97" y1="126" x2="97" y2="158" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <text x="97" y="150" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
 
-  <!-- 箭头1 -->
-  <line x1="76" y1="119" x2="162" y2="119" stroke="#64748b" stroke-width="2"/>
-  <polygon points="162,119 154,115 154,123" fill="#64748b"/>
-  <text x="119" y="98" text-anchor="middle" font-size="9" fill="#475569">二氢蝶酸合酶</text>
-  <text x="119" y="119" text-anchor="middle" font-size="16" fill="#dc2626" font-weight="700">✕</text>
-  <text x="119" y="150" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="600">磺胺类</text>
+  <!-- 甲氧苄啶阻 DHFR -->
+  <rect x="176" y="92" width="78" height="34" rx="9" fill="url(#foDrug)" stroke="#2563eb" filter="url(#foSh)"/>
+  <text x="215" y="108" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1d4ed8">甲氧苄啶</text>
+  <text x="215" y="121" text-anchor="middle" font-size="8.5" fill="#334155">抑 DHFR</text>
+  <line x1="215" y1="126" x2="215" y2="158" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <text x="215" y="150" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
 
-  <!-- 箭头2 -->
-  <line x1="250" y1="119" x2="322" y2="119" stroke="#64748b" stroke-width="2"/>
-  <polygon points="322,119 314,115 314,123" fill="#64748b"/>
-  <text x="286" y="98" text-anchor="middle" font-size="9" fill="#475569">二氢叶酸还原酶</text>
-  <text x="286" y="119" text-anchor="middle" font-size="16" fill="#dc2626" font-weight="700">✕</text>
-  <text x="286" y="150" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="600">甲氧苄啶</text>
-
-  <text x="210" y="200" text-anchor="middle" font-size="11.5" fill="#334155">两步序贯阻断叶酸合成 → 抑制核酸合成（协同）</text>
+  <text x="240" y="240" text-anchor="middle" font-size="10.5" fill="#64748b">复方制剂双重阻断、协同；人类直接利用膳食叶酸，故有选择性毒性</text>
+  <text x="240" y="284" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">四氢叶酸缺乏 → 嘌呤/胸苷酸不足 → 核酸合成受阻</text>
 </svg>

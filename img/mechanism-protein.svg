@@ -1,29 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <rect width="420" height="240" fill="#f8fafc"/>
-  <text x="210" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#0f766e">抑制蛋白质合成</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <radialGradient id="pr50" cx="0.5" cy="0.35" r="0.8"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#14b8a6"/></radialGradient>
+    <radialGradient id="pr30" cx="0.5" cy="0.4" r="0.8"><stop offset="0" stop-color="#a7f3d0"/><stop offset="1" stop-color="#34d399"/></radialGradient>
+    <linearGradient id="prDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+    <filter id="prSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
+  </defs>
+  <rect width="480" height="300" fill="#f8fafc"/>
+  <text x="240" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f766e">抑制蛋白质合成</text>
 
-  <!-- mRNA -->
-  <line x1="120" y1="178" x2="320" y2="178" stroke="#64748b" stroke-width="3"/>
-  <text x="324" y="182" font-size="10.5" fill="#64748b">mRNA</text>
+  <!-- 生长肽链（从 50S 出口通道伸出） -->
+  <g filter="url(#prSh)">
+    <circle cx="208" cy="74" r="6" fill="#fbbf24"/><circle cx="220" cy="62" r="6" fill="#f59e0b"/>
+    <circle cx="212" cy="50" r="6" fill="#fbbf24"/><circle cx="226" cy="42" r="6" fill="#f59e0b"/>
+  </g>
+  <text x="246" y="52" font-size="10" fill="#92400e">生长中的肽链</text>
 
   <!-- 核糖体 50S / 30S -->
-  <ellipse cx="216" cy="112" rx="74" ry="33" fill="#ccfbf1" stroke="#0f766e"/>
-  <text x="216" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="#0f766e">50S 亚基</text>
-  <ellipse cx="216" cy="154" rx="66" ry="22" fill="#a7f3d0" stroke="#0f766e"/>
-  <text x="216" y="158" text-anchor="middle" font-size="12" fill="#0f766e">30S 亚基</text>
+  <ellipse cx="210" cy="116" rx="96" ry="42" fill="url(#pr50)" stroke="#0f766e" filter="url(#prSh)"/>
+  <text x="210" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#073b3a">50S 大亚基</text>
+  <ellipse cx="210" cy="188" rx="84" ry="32" fill="url(#pr30)" stroke="#0f766e" filter="url(#prSh)"/>
+  <text x="210" y="194" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">30S 小亚基</text>
 
-  <!-- 作用于50S -->
-  <rect x="12" y="52" width="192" height="40" rx="9" fill="#fee2e2" stroke="#dc2626"/>
-  <text x="108" y="69" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="600">作用于 50S：</text>
-  <text x="108" y="84" text-anchor="middle" font-size="9.5" fill="#b91c1c">大环内酯 / 林可酰胺 / 氯霉素 / 噁唑烷酮</text>
-  <line x1="150" y1="92" x2="180" y2="100" stroke="#dc2626" stroke-width="1.5"/>
-  <text x="150" y="108" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
+  <!-- mRNA 槽 + 密码子 -->
+  <line x1="96" y1="158" x2="330" y2="158" stroke="#7c3aed" stroke-width="3"/>
+  <g stroke="#7c3aed" stroke-width="3">
+    <line x1="120" y1="153" x2="120" y2="163"/><line x1="150" y1="153" x2="150" y2="163"/>
+    <line x1="180" y1="153" x2="180" y2="163"/><line x1="210" y1="153" x2="210" y2="163"/>
+    <line x1="240" y1="153" x2="240" y2="163"/><line x1="270" y1="153" x2="270" y2="163"/>
+  </g>
+  <text x="332" y="162" font-size="10.5" fill="#7c3aed">mRNA</text>
+  <!-- tRNA（P / A 位） -->
+  <path d="M192,150 l-6,-14 h12 z" fill="#fff" stroke="#0f766e"/>
+  <path d="M214,150 l-6,-14 h12 z" fill="#fff" stroke="#0f766e"/>
 
-  <!-- 作用于30S -->
-  <rect x="232" y="196" width="176" height="34" rx="9" fill="#fee2e2" stroke="#dc2626"/>
-  <text x="320" y="217" text-anchor="middle" font-size="10.5" fill="#b91c1c" font-weight="600">作用于 30S：氨基糖苷 / 四环素</text>
-  <line x1="262" y1="196" x2="244" y2="168" stroke="#dc2626" stroke-width="1.5"/>
-  <text x="250" y="180" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
+  <!-- 30S 抑制剂 -->
+  <rect x="14" y="176" width="78" height="40" rx="9" fill="url(#prDrug)" stroke="#2563eb" filter="url(#prSh)"/>
+  <text x="53" y="194" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1d4ed8">作用 30S</text>
+  <text x="53" y="209" text-anchor="middle" font-size="9.5" fill="#334155">氨基糖苷·四环素</text>
+  <path d="M92,194 C108,190 116,189 128,188" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <polygon points="128,188 119,185 120,193" fill="#2563eb"/>
 
-  <text x="210" y="44" text-anchor="middle" font-size="10" fill="#475569"> </text>
+  <!-- 50S 抑制剂 -->
+  <rect x="356" y="92" width="116" height="52" rx="9" fill="url(#prDrug)" stroke="#2563eb" filter="url(#prSh)"/>
+  <text x="414" y="110" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1d4ed8">作用 50S</text>
+  <text x="414" y="125" text-anchor="middle" font-size="9.5" fill="#334155">大环内酯·酰胺醇</text>
+  <text x="414" y="138" text-anchor="middle" font-size="9.5" fill="#334155">噁唑烷酮·林可酰胺</text>
+  <path d="M356,118 C336,118 320,117 306,116" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <polygon points="306,116 315,112 315,120" fill="#2563eb"/>
+
+  <text x="240" y="262" text-anchor="middle" font-size="11" fill="#64748b">阻碍 tRNA 进入、引起错读、或封闭肽链延伸 / 出口通道</text>
+  <text x="240" y="286" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">翻译受阻 → 蛋白质合成停止 → 抑菌 / 杀菌</text>
 </svg>

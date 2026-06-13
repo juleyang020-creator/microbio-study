@@ -1,34 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <rect width="420" height="240" fill="#f8fafc"/>
-  <text x="210" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#0f766e">抗真菌 · 棘白菌素类（抑制细胞壁）</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <pattern id="ecBi" width="13" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="6.5" cy="6" r="4.6" fill="#99f6e4" stroke="#0f766e"/>
+      <line x1="4.6" y1="10.5" x2="4.6" y2="15" stroke="#0f766e"/><line x1="8.4" y1="10.5" x2="8.4" y2="15" stroke="#0f766e"/>
+      <line x1="4.6" y1="15" x2="4.6" y2="19.5" stroke="#0f766e"/><line x1="8.4" y1="15" x2="8.4" y2="19.5" stroke="#0f766e"/>
+      <circle cx="6.5" cy="24" r="4.6" fill="#99f6e4" stroke="#0f766e"/>
+    </pattern>
+    <linearGradient id="ecWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccfbf1"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
+    <linearGradient id="ecDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+    <radialGradient id="ecEnz" cx="0.5" cy="0.4" r="0.75"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></radialGradient>
+    <filter id="ecSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
+  </defs>
+  <rect width="480" height="300" fill="#f8fafc"/>
+  <text x="240" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f766e">棘白菌素类：抑制 β-1,3-葡聚糖合成</text>
 
-  <!-- 细胞壁（葡聚糖网格） -->
-  <g stroke="#0f766e" fill="#ccfbf1">
-    <rect x="40" y="92" width="28" height="18" rx="4"/>
-    <rect x="76" y="92" width="28" height="18" rx="4"/>
-    <rect x="112" y="92" width="28" height="18" rx="4"/>
-    <rect x="148" y="92" width="28" height="18" rx="4"/>
-    <rect x="40" y="150" width="28" height="18" rx="4"/>
-    <rect x="76" y="150" width="28" height="18" rx="4"/>
-    <rect x="112" y="150" width="28" height="18" rx="4"/>
-    <rect x="148" y="150" width="28" height="18" rx="4"/>
+  <!-- 细胞壁分层 -->
+  <rect x="40" y="64" width="400" height="14" rx="3" fill="#fde68a" opacity="0.7"/>
+  <text x="46" y="75" font-size="9" fill="#92400e">甘露糖蛋白</text>
+  <rect x="40" y="84" width="400" height="46" rx="4" fill="url(#ecWall)" stroke="#0f766e"/>
+  <g stroke="#0f766e" stroke-width="1" opacity="0.5">
+    <line x1="60" y1="84" x2="60" y2="130"/><line x1="100" y1="84" x2="100" y2="130"/><line x1="140" y1="84" x2="140" y2="130"/>
+    <line x1="260" y1="84" x2="260" y2="130"/><line x1="300" y1="84" x2="300" y2="130"/><line x1="340" y1="84" x2="340" y2="130"/><line x1="380" y1="84" x2="380" y2="130"/><line x1="420" y1="84" x2="420" y2="130"/>
+    <line x1="40" y1="107" x2="440" y2="107"/>
   </g>
-  <g stroke="#16a34a" stroke-width="3">
-    <line x1="54" y1="110" x2="54" y2="150"/>
-    <line x1="162" y1="110" x2="162" y2="150"/>
-  </g>
-  <text x="40" y="84" font-size="10.5" fill="#475569">细胞壁 β-(1,3)-D-葡聚糖</text>
+  <text x="196" y="111" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">β-1,3 / β-1,6-葡聚糖</text>
+  <rect x="40" y="134" width="400" height="12" fill="#a7f3d0" opacity="0.8"/>
+  <text x="46" y="144" font-size="9" fill="#065f46">几丁质</text>
 
-  <!-- 合成酶被阻断 -->
-  <line x1="108" y1="110" x2="108" y2="150" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="4 3"/>
-  <circle cx="108" cy="130" r="12" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
-  <text x="108" y="133" text-anchor="middle" font-size="7" fill="#0f766e">合成酶</text>
-  <text x="108" y="150" text-anchor="middle" font-size="16" fill="#dc2626" font-weight="700">✕</text>
+  <!-- 细胞膜 + 合成酶 -->
+  <rect x="40" y="150" width="400" height="30" fill="url(#ecBi)"/>
+  <ellipse cx="170" cy="165" rx="24" ry="17" fill="url(#ecEnz)" stroke="#b45309" filter="url(#ecSh)"/>
+  <text x="170" y="162" text-anchor="middle" font-size="7.5" font-weight="700" fill="#7c2d12">葡聚糖</text>
+  <text x="170" y="172" text-anchor="middle" font-size="7.5" fill="#7c2d12">合成酶</text>
+  <!-- 正常合成的葡聚糖链 -->
+  <path d="M158,150 q-4,-18 0,-34" fill="none" stroke="#0f766e" stroke-width="2"/>
+  <path d="M182,150 q4,-18 0,-34" fill="none" stroke="#0f766e" stroke-width="2"/>
+  <text x="180" y="216" text-anchor="middle" font-size="9.5" fill="#475569">胞质</text>
 
-  <rect x="232" y="98" width="160" height="44" rx="9" fill="#fee2e2" stroke="#dc2626"/>
-  <text x="312" y="116" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="600">卡泊芬净 / 米卡芬净</text>
-  <text x="312" y="132" text-anchor="middle" font-size="9.5" fill="#b91c1c">抑制 β-(1,3)-D-葡聚糖合成酶</text>
-  <line x1="232" y1="124" x2="122" y2="130" stroke="#dc2626" stroke-width="1.5"/>
+  <!-- 棘白菌素阻断合成酶 -->
+  <rect x="244" y="196" width="86" height="30" rx="9" fill="url(#ecDrug)" stroke="#2563eb" filter="url(#ecSh)"/>
+  <text x="287" y="215" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1d4ed8">棘白菌素类</text>
+  <path d="M244,205 C220,190 200,178 192,172" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <polygon points="192,172 201,174 196,181" fill="#2563eb"/>
+  <text x="170" y="146" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
+  <!-- 缺陷区 -->
+  <rect x="300" y="84" width="60" height="46" fill="#fee2e2" opacity="0.45"/>
+  <text x="330" y="110" text-anchor="middle" font-size="9" fill="#b91c1c">葡聚糖缺失</text>
 
-  <text x="210" y="208" text-anchor="middle" font-size="11.5" fill="#334155">葡聚糖合成受阻 → 真菌细胞壁缺损</text>
+  <text x="240" y="252" text-anchor="middle" font-size="10.5" fill="#64748b">哺乳动物无细胞壁，故选择性高</text>
+  <text x="240" y="284" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">细胞壁骨架缺陷 → 渗透不稳定 → 真菌溶解</text>
 </svg>

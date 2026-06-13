@@ -1,36 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <rect width="420" height="240" fill="#f8fafc"/>
-  <text x="210" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#0f766e">抑制细胞壁合成</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="cwNAG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccfbf1"/><stop offset="1" stop-color="#99f6e4"/></linearGradient>
+    <linearGradient id="cwNAM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
+    <linearGradient id="cwDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+    <radialGradient id="cwEnz" cx="0.5" cy="0.38" r="0.72"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></radialGradient>
+    <filter id="cwSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
+  </defs>
+  <rect width="480" height="300" fill="#f8fafc"/>
+  <text x="240" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f766e">抑制细胞壁合成</text>
+  <text x="40" y="70" font-size="11" fill="#475569">肽聚糖：聚糖骨架（NAG–NAM）经转肽酶（PBP）交联成网</text>
 
-  <!-- 肽聚糖：两条糖链 -->
-  <g stroke="#0f766e">
-    <rect x="40" y="92" width="30" height="18" rx="4" fill="#ccfbf1"/>
-    <rect x="78" y="92" width="30" height="18" rx="4" fill="#a7f3d0"/>
-    <rect x="116" y="92" width="30" height="18" rx="4" fill="#ccfbf1"/>
-    <rect x="154" y="92" width="30" height="18" rx="4" fill="#a7f3d0"/>
-    <rect x="40" y="158" width="30" height="18" rx="4" fill="#a7f3d0"/>
-    <rect x="78" y="158" width="30" height="18" rx="4" fill="#ccfbf1"/>
-    <rect x="116" y="158" width="30" height="18" rx="4" fill="#a7f3d0"/>
-    <rect x="154" y="158" width="30" height="18" rx="4" fill="#ccfbf1"/>
+  <!-- 糖链：上/下两条，NAG 浅 / NAM 深 -->
+  <g stroke="#0f766e" filter="url(#cwSh)">
+    <rect x="40" y="84" width="32" height="20" rx="7" fill="url(#cwNAG)"/>
+    <rect x="78" y="84" width="32" height="20" rx="7" fill="url(#cwNAM)"/>
+    <rect x="116" y="84" width="32" height="20" rx="7" fill="url(#cwNAG)"/>
+    <rect x="154" y="84" width="32" height="20" rx="7" fill="url(#cwNAM)"/>
+    <rect x="192" y="84" width="32" height="20" rx="7" fill="url(#cwNAG)"/>
+    <rect x="230" y="84" width="32" height="20" rx="7" fill="url(#cwNAM)"/>
+    <rect x="268" y="84" width="32" height="20" rx="7" fill="url(#cwNAG)"/>
+    <rect x="40" y="224" width="32" height="20" rx="7" fill="url(#cwNAM)"/>
+    <rect x="78" y="224" width="32" height="20" rx="7" fill="url(#cwNAG)"/>
+    <rect x="116" y="224" width="32" height="20" rx="7" fill="url(#cwNAM)"/>
+    <rect x="154" y="224" width="32" height="20" rx="7" fill="url(#cwNAG)"/>
+    <rect x="192" y="224" width="32" height="20" rx="7" fill="url(#cwNAM)"/>
+    <rect x="230" y="224" width="32" height="20" rx="7" fill="url(#cwNAG)"/>
+    <rect x="268" y="224" width="32" height="20" rx="7" fill="url(#cwNAM)"/>
   </g>
-  <g stroke="#16a34a" stroke-width="3">
-    <line x1="55" y1="110" x2="55" y2="158"/>
-    <line x1="169" y1="110" x2="169" y2="158"/>
-  </g>
-  <text x="40" y="84" font-size="10.5" fill="#475569">糖链（肽聚糖）</text>
-  <text x="150" y="140" font-size="10.5" fill="#16a34a">正常交联</text>
 
-  <!-- 被阻断的交联 -->
-  <line x1="93" y1="110" x2="93" y2="158" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="4 3"/>
-  <circle cx="93" cy="124" r="11" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
-  <text x="93" y="127" text-anchor="middle" font-size="8" fill="#0f766e">PBP</text>
-  <text x="93" y="150" text-anchor="middle" font-size="17" fill="#dc2626" font-weight="700">✕</text>
+  <!-- 肽桥 + D-Ala-D-Ala 末端（三处：正常 / β-内酰胺 / 万古霉素）-->
+  <!-- 正常交联 x=94 -->
+  <line x1="94" y1="104" x2="94" y2="132" stroke="#0f766e" stroke-width="2"/>
+  <line x1="94" y1="196" x2="94" y2="224" stroke="#0f766e" stroke-width="2"/>
+  <line x1="94" y1="148" x2="94" y2="180" stroke="#16a34a" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="94" cy="164" r="12" fill="url(#cwEnz)" stroke="#b45309" filter="url(#cwSh)"/>
+  <text x="94" y="167" text-anchor="middle" font-size="8" fill="#7c2d12" font-weight="700">PBP</text>
 
-  <!-- 药物 -->
-  <rect x="232" y="92" width="156" height="42" rx="9" fill="#fee2e2" stroke="#dc2626"/>
-  <text x="310" y="110" text-anchor="middle" font-size="11.5" fill="#b91c1c" font-weight="600">β-内酰胺类 / 糖肽类</text>
-  <text x="310" y="126" text-anchor="middle" font-size="10" fill="#b91c1c">阻断转肽酶(PBP)交联</text>
-  <line x1="232" y1="120" x2="106" y2="124" stroke="#dc2626" stroke-width="1.5"/>
+  <!-- β-内酰胺占据 PBP x=170 -->
+  <line x1="170" y1="104" x2="170" y2="138" stroke="#0f766e" stroke-width="2"/>
+  <line x1="170" y1="190" x2="170" y2="224" stroke="#0f766e" stroke-width="2"/>
+  <circle cx="170" cy="164" r="12" fill="url(#cwEnz)" stroke="#b45309" filter="url(#cwSh)"/>
+  <rect x="184" y="150" width="26" height="17" rx="6" fill="url(#cwDrug)" stroke="#2563eb" filter="url(#cwSh)"/>
+  <text x="197" y="162" text-anchor="middle" font-size="8.5" fill="#1d4ed8">β内</text>
+  <line x1="184" y1="160" x2="182" y2="162" stroke="#2563eb"/>
+  <text x="170" y="150" text-anchor="middle" font-size="16" fill="#dc2626" font-weight="700">✕</text>
 
-  <text x="210" y="214" text-anchor="middle" font-size="11.5" fill="#334155">交联受阻 → 细胞壁缺损 → 菌体裂解死亡</text>
+  <!-- 万古霉素封闭 D-Ala-D-Ala x=246 -->
+  <line x1="246" y1="104" x2="246" y2="138" stroke="#0f766e" stroke-width="2"/>
+  <circle cx="241" cy="142" r="3.4" fill="#fff" stroke="#0f766e"/>
+  <circle cx="251" cy="142" r="3.4" fill="#fff" stroke="#0f766e"/>
+  <line x1="246" y1="190" x2="246" y2="224" stroke="#0f766e" stroke-width="2"/>
+  <rect x="226" y="150" width="40" height="18" rx="8" fill="url(#cwDrug)" stroke="#2563eb" filter="url(#cwSh)"/>
+  <text x="246" y="162" text-anchor="middle" font-size="8.5" fill="#1d4ed8">万古霉素</text>
+  <text x="246" y="186" text-anchor="middle" font-size="16" fill="#dc2626" font-weight="700">✕</text>
+
+  <!-- 右侧说明 -->
+  <text x="300" y="120" font-size="11.5" font-weight="700" fill="#1d4ed8">两类作用位点</text>
+  <text x="300" y="142" font-size="10" fill="#334155">β-内酰胺类：占据 PBP 活性位</text>
+  <text x="300" y="160" font-size="10" fill="#334155">糖肽类：封闭 D-Ala-D-Ala</text>
+  <text x="300" y="178" font-size="10" fill="#16a34a">→ 转肽交联均无法完成</text>
+
+  <text x="240" y="270" text-anchor="middle" font-size="11.5" fill="#16a34a">绿色＝正常交联　红✕＝交联受阻</text>
+  <text x="240" y="290" text-anchor="middle" font-size="12.5" fill="#334155" font-weight="600">交联受阻 → 细胞壁缺损 → 渗透压使菌体裂解死亡</text>
 </svg>

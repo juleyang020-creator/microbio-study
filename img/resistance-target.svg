@@ -1,21 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <rect width="420" height="240" fill="#f8fafc"/>
-  <text x="210" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">靶位改变（药物失去结合位点）</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="tgDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#93c5fd"/></linearGradient>
+    <linearGradient id="tgT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccfbf1"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
+    <filter id="tgSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.4" flood-color="#0f172a" flood-opacity="0.16"/></filter>
+  </defs>
+  <rect width="480" height="300" fill="#f8fafc"/>
+  <text x="240" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#b91c1c">靶位改变</text>
+  <text x="240" y="54" text-anchor="middle" font-size="10.5" fill="#64748b">改变药物作用靶点，使其亲和力骤降</text>
 
-  <!-- 左：正常靶点，药物结合 -->
-  <text x="105" y="64" text-anchor="middle" font-size="11.5" fill="#16a34a">正常靶点</text>
-  <path d="M70,150 h70 v-22 a18,18 0 0 0 -36,0 h-2 a16,16 0 0 1 -32,0 z" fill="#ccfbf1" stroke="#0f766e"/>
-  <circle cx="122" cy="120" r="13" fill="#dbeafe" stroke="#1d4ed8"/>
-  <text x="122" y="123" text-anchor="middle" font-size="8" fill="#1d4ed8">药物</text>
-  <text x="105" y="170" text-anchor="middle" font-size="10.5" fill="#16a34a">药物结合 ✓</text>
+  <!-- 三个面板 -->
+  <g filter="url(#tgSh)">
+    <rect x="16" y="68" width="144" height="170" rx="12" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="168" y="68" width="144" height="170" rx="12" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="320" y="68" width="144" height="170" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  </g>
 
-  <!-- 右：改变的靶点，药物不结合 -->
-  <text x="315" y="64" text-anchor="middle" font-size="11.5" fill="#b91c1c">改变的靶点</text>
-  <rect x="280" y="128" width="70" height="22" rx="4" fill="#fee2e2" stroke="#dc2626"/>
-  <circle cx="315" cy="98" r="13" fill="#dbeafe" stroke="#1d4ed8"/>
-  <text x="315" y="101" text-anchor="middle" font-size="8" fill="#1d4ed8">药物</text>
-  <text x="315" y="120" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
-  <text x="315" y="170" text-anchor="middle" font-size="10.5" fill="#b91c1c">无法结合</text>
+  <!-- 面板1：PBP→PBP2a -->
+  <text x="88" y="90" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f766e">PBP → PBP2a</text>
+  <text x="88" y="106" text-anchor="middle" font-size="9" fill="#64748b">mecA (MRSA)</text>
+  <rect x="56" y="150" width="64" height="40" rx="9" fill="url(#tgT)" stroke="#0f766e"/>
+  <text x="88" y="174" text-anchor="middle" font-size="10" fill="#065f46">PBP2a</text>
+  <circle cx="88" cy="124" r="13" fill="url(#tgDrug)" stroke="#2563eb"/><text x="88" y="127" text-anchor="middle" font-size="7.5" fill="#1d4ed8">β内</text>
+  <text x="88" y="146" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
+  <text x="88" y="212" text-anchor="middle" font-size="9" fill="#b91c1c">低亲和力，不被结合</text>
 
-  <text x="210" y="206" text-anchor="middle" font-size="11.5" fill="#334155">PBP2a / D-Ala→D-Lac / rRNA 甲基化 → 药物失去靶点</text>
+  <!-- 面板2：D-Ala-D-Ala→D-Lac -->
+  <text x="240" y="90" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f766e">D-Ala → D-Lac</text>
+  <text x="240" y="106" text-anchor="middle" font-size="9" fill="#64748b">vanA (VRE)</text>
+  <circle cx="224" cy="170" r="8" fill="url(#tgT)" stroke="#0f766e"/>
+  <circle cx="248" cy="170" r="8" fill="#fde68a" stroke="#b45309"/>
+  <text x="240" y="192" text-anchor="middle" font-size="8.5" fill="#7c2d12">D-Ala-D-乳酸</text>
+  <circle cx="240" cy="124" r="13" fill="url(#tgDrug)" stroke="#2563eb"/><text x="240" y="127" text-anchor="middle" font-size="7" fill="#1d4ed8">万古</text>
+  <text x="240" y="148" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
+  <text x="240" y="212" text-anchor="middle" font-size="9" fill="#b91c1c">结合力降~千倍</text>
+
+  <!-- 面板3：23S rRNA 甲基化 -->
+  <text x="392" y="90" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f766e">23S rRNA 甲基化</text>
+  <text x="392" y="106" text-anchor="middle" font-size="9" fill="#64748b">erm (MLSB)</text>
+  <ellipse cx="392" cy="172" rx="40" ry="24" fill="url(#tgT)" stroke="#0f766e"/>
+  <text x="392" y="170" text-anchor="middle" font-size="9" fill="#065f46">50S/23S</text>
+  <circle cx="416" cy="156" r="7" fill="#fecaca" stroke="#dc2626"/><text x="416" y="159" text-anchor="middle" font-size="6.5" fill="#b91c1c">CH₃</text>
+  <circle cx="392" cy="124" r="13" fill="url(#tgDrug)" stroke="#2563eb"/><text x="392" y="127" text-anchor="middle" font-size="6.5" fill="#1d4ed8">大环酯</text>
+  <text x="392" y="146" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
+  <text x="392" y="214" text-anchor="middle" font-size="9" fill="#b91c1c">甲基化阻结合</text>
+
+  <text x="240" y="262" text-anchor="middle" font-size="11" fill="#64748b">靶点突变 / 替换 / 修饰，药物失去结合位点</text>
+  <text x="240" y="286" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">药物—靶点亲和力骤降 → 耐药</text>
 </svg>
