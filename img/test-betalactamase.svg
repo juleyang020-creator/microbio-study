@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">β-内酰胺酶试验（头孢硝噻吩）</text>
+  <text x="240" y="52" text-anchor="middle" font-size="11" fill="#8a8f98">显色头孢菌素 nitrocefin 被β-内酰胺酶水解后变色</text>
+
+  <!-- 阴性 黄 -->
+  <circle cx="140" cy="160" r="52" fill="#f2d65c" stroke="#cdae33" stroke-width="2"/>
+  <text x="140" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#8a6d1f">阴性（黄）</text>
+  <text x="140" y="258" text-anchor="middle" font-size="10.5" fill="#8a8f98">不产酶</text>
+
+  <!-- 箭头 -->
+  <line x1="210" y1="160" x2="262" y2="160" stroke="#8a8f98" stroke-width="2"/>
+  <polygon points="262,160 252,155 252,165" fill="#8a8f98"/>
+  <text x="236" y="150" text-anchor="middle" font-size="10" fill="#8a8f98">水解</text>
+
+  <!-- 阳性 红 -->
+  <circle cx="338" cy="160" r="52" fill="#c0392b" stroke="#8f2a20" stroke-width="2"/>
+  <text x="338" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#b04242">阳性（红）</text>
+  <text x="338" y="258" text-anchor="middle" font-size="10.5" fill="#8a8f98">产β-内酰胺酶</text>
+
+  <text x="240" y="292" text-anchor="middle" font-size="11.5" fill="#454b54">适用：流感嗜血杆菌、淋病奈瑟菌、卡他莫拉菌、葡萄球菌(预测青霉素)</text>
+</svg>

@@ -126,8 +126,8 @@
     if (vm.拉丁名) { nodes.push(el('div', { cls: 'latin', text: vm.拉丁名 })); }
     if (vm.机制图) {
       nodes.push(el('figure', { cls: 'mechanism-fig' }, [
-        el('img', { cls: 'mechanism-img', src: vm.机制图, alt: '作用机制示意图' }),
-        el('figcaption', { cls: 'mechanism-cap', text: '作用机制示意图' })
+        el('img', { cls: 'mechanism-img', src: vm.机制图, alt: vm.机制图说明 }),
+        el('figcaption', { cls: 'mechanism-cap', text: vm.机制图说明 })
       ]));
     }
 
@@ -400,6 +400,7 @@
     }
     var extras = {
       mechanismImage: mechImg,
+      mechCaption: route.module === 'tests' ? '试验示意图' : '作用机制示意图',
       morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
       differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,

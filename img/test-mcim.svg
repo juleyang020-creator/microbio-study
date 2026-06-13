@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">mCIM 改良碳青霉烯灭活试验</text>
+  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#8a8f98">美罗培南纸片经待测菌孵育后，贴于敏感指示菌(大肠埃希菌)平板</text>
+
+  <!-- 阳性 -->
+  <circle cx="138" cy="168" r="92" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
+  <circle cx="138" cy="168" r="15" fill="#fff" stroke="#b0b4bb"/><text x="138" y="172" text-anchor="middle" font-size="9" fill="#454b54">MEM</text>
+  <text x="138" y="278" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b04242">阳性（产碳青霉烯酶）</text>
+  <text x="138" y="296" text-anchor="middle" font-size="10.5" fill="#8a8f98">无/极小抑菌圈(≤15mm)</text>
+
+  <!-- 阴性 -->
+  <circle cx="346" cy="168" r="92" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
+  <circle cx="346" cy="168" r="62" fill="#fbfaf8" stroke="#c9c3b6" stroke-dasharray="4 3"/>
+  <circle cx="346" cy="168" r="15" fill="#fff" stroke="#b0b4bb"/><text x="346" y="172" text-anchor="middle" font-size="9" fill="#454b54">MEM</text>
+  <text x="346" y="278" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">阴性（不产酶）</text>
+  <text x="346" y="296" text-anchor="middle" font-size="10.5" fill="#8a8f98">清晰抑菌圈(≥19mm)</text>
+</svg>

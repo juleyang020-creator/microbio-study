@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">ESBL 确证试验</text>
+  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#8a8f98">三代头孢 单药 vs 加克拉维酸，比较抑菌圈</text>
+
+  <circle cx="240" cy="172" r="118" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
+  <!-- 单药小圈 -->
+  <circle cx="180" cy="172" r="26" fill="#fbfaf8" stroke="#c9c3b6" stroke-dasharray="4 3"/>
+  <circle cx="180" cy="172" r="15" fill="#fff" stroke="#b0b4bb"/><text x="180" y="176" text-anchor="middle" font-size="9" fill="#454b54">CAZ</text>
+  <!-- 加克拉维酸大圈 -->
+  <circle cx="300" cy="172" r="50" fill="#fbfaf8" stroke="#c9c3b6" stroke-dasharray="4 3"/>
+  <circle cx="300" cy="172" r="15" fill="#fff" stroke="#b0b4bb"/><text x="300" y="176" text-anchor="middle" font-size="7.5" fill="#454b54">CAZ+CLA</text>
+
+  <text x="180" y="232" text-anchor="middle" font-size="10.5" fill="#454b54">头孢他啶</text>
+  <text x="300" y="240" text-anchor="middle" font-size="10.5" fill="#454b54">+克拉维酸</text>
+
+  <text x="240" y="290" text-anchor="middle" font-size="12.5" fill="#454b54">加克拉维酸后抑菌圈增大 ≥5mm（或 MIC 下降≥3 稀释度）= <tspan font-weight="700" fill="#b04242">ESBL 阳性</tspan></text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">血浆凝固酶试验（试管法）</text>
+  <text x="240" y="52" text-anchor="middle" font-size="11" fill="#8a8f98">凝固酶使血浆纤维蛋白原转为纤维蛋白而凝固</text>
+
+  <!-- 阳性管：倾斜不流动(凝固) -->
+  <g transform="rotate(38 150 170)">
+    <rect x="132" y="78" width="36" height="150" rx="18" fill="#fdfcfa" stroke="#b0b4bb" stroke-width="2"/>
+    <rect x="132" y="120" width="36" height="108" rx="18" fill="#e7c6c6" stroke="none"/>
+    <path d="M132,138 h36" stroke="#b04242" stroke-width="1.5" stroke-dasharray="3 2"/>
+  </g>
+  <text x="150" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#b04242">阳性：血浆凝固</text>
+  <text x="150" y="280" text-anchor="middle" font-size="10.5" fill="#8a8f98">倾斜不流动 → 金黄色葡萄球菌</text>
+
+  <!-- 阴性管：液面水平(液体) -->
+  <g transform="rotate(38 332 170)">
+    <rect x="314" y="78" width="36" height="150" rx="18" fill="#fdfcfa" stroke="#b0b4bb" stroke-width="2"/>
+  </g>
+  <!-- 阴性管内液体水平面 -->
+  <path d="M300,196 q34,12 64,0 v34 h-64 z" fill="#e7c6c6"/>
+  <text x="332" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#3f7a52">阴性：仍为液体</text>
+  <text x="332" y="280" text-anchor="middle" font-size="10.5" fill="#8a8f98">液面随重力 → CoNS</text>
+</svg>

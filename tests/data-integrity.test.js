@@ -89,6 +89,14 @@ test('每个耐药机制都映射到存在的机制图', () => {
   });
 });
 
+test('每个试验都映射到存在的示意图', () => {
+  global.window.DB.tests.forEach((t) => {
+    const img = View.mechanismImageFor('tests', t, global.window.DB.categories);
+    assert.ok(img, '无示意图映射：' + t.id);
+    assert.ok(fs.existsSync(path.join(__dirname, '..', img)), '示意图文件缺失：' + img);
+  });
+});
+
 test('每个微生物与耐药机制都能生成综述链接', () => {
   global.window.DB.microbes.forEach((m) => {
     assert.ok(View.referenceLinks('microbes', m).length >= 1, '微生物无综述链接：' + m.id);

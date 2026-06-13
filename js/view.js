@@ -31,6 +31,24 @@
     '生物膜': 'img/resistance-biofilm.svg'
   };
 
+  // 试验：按条目 id 映射到示意图
+  var TEST_IMAGE = {
+    'd-test': 'img/test-d.svg',
+    'mcim': 'img/test-mcim.svg',
+    'ecim': 'img/test-ecim.svg',
+    'esbl-test': 'img/test-esbl.svg',
+    'cefoxitin-screen': 'img/test-cefoxitin.svg',
+    'hlar': 'img/test-hlar.svg',
+    'beta-lactamase-test': 'img/test-betalactamase.svg',
+    'colistin-bmd': 'img/test-colistin.svg',
+    'coagulase': 'img/test-coagulase.svg',
+    'catalase': 'img/test-catalase.svg',
+    'oxidase': 'img/test-oxidase.svg',
+    'optochin': 'img/test-optochin.svg',
+    'camp-test': 'img/test-camp.svg',
+    'bile-solubility': 'img/test-bile.svg'
+  };
+
   // 节点子树是否包含某叶子分类（支持任意层级）
   function nodeContainsLeaf(node, leafName) {
     if (node.子类 && node.子类.length) {
@@ -41,7 +59,9 @@
 
   // 抗生素 / 耐药：按其类别所属的机制大类，映射到一张机制示意图
   function mechanismImageFor(moduleKey, entry, categories) {
-    if (!entry || (moduleKey !== 'antibiotics' && moduleKey !== 'resistance')) { return null; }
+    if (!entry) { return null; }
+    if (moduleKey === 'tests') { return TEST_IMAGE[entry.id] || null; }
+    if (moduleKey !== 'antibiotics' && moduleKey !== 'resistance') { return null; }
     // 先按类别(叶子)直接匹配（抗真菌药、旁路代谢/生物膜按其类别区分）
     if (MECHANISM_IMAGE[entry.类别]) { return MECHANISM_IMAGE[entry.类别]; }
     // 再按所属顶层机制大类匹配（抗细菌药、其余耐药机制）
@@ -86,6 +106,7 @@
       拉丁名: entry.拉丁名 || '',
       药敏简写: entry.药敏简写 || '',
       机制图: extras.mechanismImage || null,
+      机制图说明: extras.mechCaption || '示意图',
       形态: extras.morphology || null,
       生化反应: extras.biochem || [],
       鉴别: extras.differential || [],

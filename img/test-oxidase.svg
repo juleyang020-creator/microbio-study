@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">氧化酶试验</text>
+  <text x="240" y="52" text-anchor="middle" font-size="11" fill="#8a8f98">检测细胞色素 c 氧化酶，使试剂氧化显紫蓝色</text>
+
+  <!-- 阳性 滤纸 -->
+  <rect x="44" y="92" width="176" height="104" rx="8" fill="#fbfbf9" stroke="#d8dadd" stroke-width="2"/>
+  <rect x="84" y="128" width="96" height="32" rx="14" fill="#5b4a8c"/>
+  <text x="132" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#5b4a8c">阳性：变紫蓝</text>
+  <text x="132" y="238" text-anchor="middle" font-size="10.5" fill="#8a8f98">铜绿/弧菌/奈瑟/气单胞</text>
+
+  <!-- 阴性 滤纸 -->
+  <rect x="260" y="92" width="176" height="104" rx="8" fill="#fbfbf9" stroke="#d8dadd" stroke-width="2"/>
+  <rect x="300" y="128" width="96" height="32" rx="14" fill="#ece7da" stroke="#d8d2c4"/>
+  <text x="348" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#3f7a52">阴性：不变色</text>
+  <text x="348" y="238" text-anchor="middle" font-size="10.5" fill="#8a8f98">肠杆菌目</text>
+
+  <text x="240" y="278" text-anchor="middle" font-size="12" fill="#454b54">10–30 秒内判读，是革兰阴性杆菌分群的关键一步</text>
+</svg>

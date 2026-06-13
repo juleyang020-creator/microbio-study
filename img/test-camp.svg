@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">CAMP 试验（血平板）</text>
+
+  <!-- 血平板 -->
+  <circle cx="210" cy="168" r="120" fill="#e0c2c2" stroke="#c49a9a" stroke-width="2.5"/>
+  <!-- 金葡竖划线 -->
+  <rect x="276" y="60" width="10" height="216" rx="4" fill="#7a6a6a"/>
+  <text x="300" y="76" font-size="10.5" fill="#454b54">金黄色葡萄球菌</text>
+  <text x="300" y="90" font-size="9.5" fill="#8a8f98">(产β溶血素，竖划线)</text>
+  <!-- 待测链球菌横划线 -->
+  <rect x="104" y="163" width="150" height="10" rx="4" fill="#7a6a6a"/>
+  <text x="104" y="150" font-size="10.5" fill="#454b54">待测链球菌（横划线）</text>
+  <!-- 箭头状增强溶血 -->
+  <path d="M254,168 L218,150 L218,186 Z" fill="#f3e6e6" stroke="#c9b0b0"/>
+  <text x="300" y="200" font-size="11.5" font-weight="700" fill="#3f7a52">箭头(半月)状增强溶血</text>
+  <text x="300" y="218" font-size="11" fill="#3f7a52">= 阳性 → B 群无乳链球菌</text>
+
+  <text x="240" y="292" text-anchor="middle" font-size="11.5" fill="#454b54">CAMP 因子与金葡 β 溶血素协同，在交界处增强溶血</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">胆汁溶菌试验</text>
+  <text x="240" y="52" text-anchor="middle" font-size="11" fill="#8a8f98">胆盐（去氧胆酸钠）激活肺炎链球菌自溶酶</text>
+
+  <!-- 阳性管：澄清 -->
+  <rect x="120" y="78" width="44" height="170" rx="22" fill="#fbfdfc" stroke="#b0b4bb" stroke-width="2"/>
+  <rect x="120" y="150" width="44" height="98" rx="22" fill="#eef3f1"/>
+  <text x="142" y="266" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">澄清（溶菌）</text>
+  <text x="142" y="284" text-anchor="middle" font-size="10.5" fill="#8a8f98">→ 肺炎链球菌</text>
+
+  <!-- 阴性管：浑浊 -->
+  <rect x="316" y="78" width="44" height="170" rx="22" fill="#fbfdfc" stroke="#b0b4bb" stroke-width="2"/>
+  <rect x="316" y="150" width="44" height="98" rx="22" fill="#d8d2c4"/>
+  <text x="338" y="266" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b04242">浑浊（不溶）</text>
+  <text x="338" y="284" text-anchor="middle" font-size="10.5" fill="#8a8f98">→ 草绿色链球菌</text>
+
+  <text x="240" y="160" text-anchor="middle" font-size="11" fill="#8a8f98">加</text>
+  <text x="240" y="146" text-anchor="middle" font-size="11" fill="#8a8f98">胆盐</text>
+</svg>
