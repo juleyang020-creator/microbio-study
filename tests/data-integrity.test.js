@@ -77,3 +77,21 @@ test('抗细菌药均映射到存在的机制图；抗真菌药可无图', () =>
     }
   });
 });
+
+test('每个耐药机制都映射到存在的机制图', () => {
+  const cats = global.window.DB.categories;
+  global.window.DB.resistance.forEach((r) => {
+    const img = View.mechanismImageFor('resistance', r, cats);
+    assert.ok(img, '无机制图映射：' + r.id + '（类别 ' + r.类别 + '）');
+    assert.ok(fs.existsSync(path.join(__dirname, '..', img)), '机制图文件缺失：' + img);
+  });
+});
+
+test('每个微生物与耐药机制都能生成综述链接', () => {
+  global.window.DB.microbes.forEach((m) => {
+    assert.ok(View.referenceLinks('microbes', m).length >= 1, '微生物无综述链接：' + m.id);
+  });
+  global.window.DB.resistance.forEach((r) => {
+    assert.ok(View.referenceLinks('resistance', r).length >= 1, '耐药机制无综述链接：' + r.id);
+  });
+});

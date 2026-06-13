@@ -21,6 +21,8 @@
     if (opts.cls != null) { node.className = opts.cls; }
     if (opts.text != null) { node.textContent = opts.text; }
     if (opts.href != null) { node.setAttribute('href', opts.href); }
+    if (opts.target != null) { node.setAttribute('target', opts.target); }
+    if (opts.rel != null) { node.setAttribute('rel', opts.rel); }
     if (opts.src != null) { node.setAttribute('src', opts.src); }
     if (opts.alt != null) { node.setAttribute('alt', opts.alt); }
     if (opts.title != null) { node.setAttribute('title', opts.title); }
@@ -200,6 +202,18 @@
       relKids.push(el('div', { cls: 'chips' }, chips));
     }
     nodes.push(el('div', { cls: 'relations' }, relKids));
+
+    if (vm.链接 && vm.链接.length) {
+      var refChips = vm.链接.map(function (l) {
+        return el('a', {
+          cls: 'ref-link', text: l.标题, href: l.url,
+          target: '_blank', rel: 'noopener noreferrer', title: l.url
+        });
+      });
+      nodes.push(el('div', { cls: 'refs' }, [
+        el('div', { cls: 'refs-label', text: '📚 综述 / 参考' })
+      ].concat([ el('div', { cls: 'chips' }, refChips) ])));
+    }
     return nodes;
   }
 
@@ -379,7 +393,8 @@
       mechanismImage: mechImg,
       morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
-      differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null
+      differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,
+      links: View.referenceLinks(route.module, entry)
     };
     fill(document.getElementById('main'), buildDetail(View.detailVM(entry, rels, extras)));
   }

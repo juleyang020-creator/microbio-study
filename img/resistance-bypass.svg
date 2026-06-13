@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="420" height="240" fill="#f8fafc"/>
+  <text x="210" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">旁路代谢 / 靶点旁路</text>
+
+  <rect x="20" y="104" width="64" height="32" rx="6" fill="#ccfbf1" stroke="#0f766e"/>
+  <text x="52" y="124" text-anchor="middle" font-size="11" fill="#0f766e">底物</text>
+  <rect x="336" y="104" width="64" height="32" rx="6" fill="#a7f3d0" stroke="#0f766e"/>
+  <text x="368" y="124" text-anchor="middle" font-size="11" fill="#0f766e">产物</text>
+
+  <!-- 正常途径被药物阻断 -->
+  <line x1="84" y1="120" x2="200" y2="120" stroke="#64748b" stroke-width="2"/>
+  <text x="142" y="112" text-anchor="middle" font-size="9" fill="#475569">原靶酶</text>
+  <text x="142" y="124" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
+  <rect x="118" y="132" width="50" height="20" rx="5" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="143" y="146" text-anchor="middle" font-size="10" fill="#b91c1c">药物抑制</text>
+  <line x1="200" y1="120" x2="200" y2="120" stroke="#64748b"/>
+
+  <!-- 旁路 -->
+  <path d="M84,120 C84,70 336,70 336,120" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="5 3"/>
+  <polygon points="336,120 330,110 342,110" fill="#16a34a"/>
+  <text x="210" y="66" text-anchor="middle" font-size="10.5" fill="#16a34a">替代酶 / 过表达靶酶（旁路）</text>
+
+  <text x="210" y="208" text-anchor="middle" font-size="11.5" fill="#334155">获得不敏感的替代酶或过量靶酶绕过抑制（如 sul / dfr）</text>
+</svg>

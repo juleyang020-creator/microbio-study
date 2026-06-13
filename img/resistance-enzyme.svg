@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="420" height="240" fill="#f8fafc"/>
+  <text x="210" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">产生灭活酶（水解 / 修饰药物）</text>
+
+  <rect x="18" y="104" width="78" height="34" rx="8" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="57" y="126" text-anchor="middle" font-size="12" fill="#1d4ed8">药物</text>
+
+  <circle cx="200" cy="121" r="30" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="200" y="118" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="600">灭活酶</text>
+  <text x="200" y="132" text-anchor="middle" font-size="9" fill="#b91c1c">水解/修饰</text>
+
+  <!-- 断裂的失活药物 -->
+  <rect x="324" y="104" width="34" height="34" rx="6" fill="#fecaca" stroke="#dc2626"/>
+  <rect x="362" y="104" width="34" height="34" rx="6" fill="#fecaca" stroke="#dc2626"/>
+  <text x="360" y="160" text-anchor="middle" font-size="11" fill="#b91c1c">失活（断裂）</text>
+
+  <line x1="96" y1="121" x2="168" y2="121" stroke="#64748b" stroke-width="2"/>
+  <polygon points="168,121 160,117 160,125" fill="#64748b"/>
+  <line x1="232" y1="121" x2="320" y2="121" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="320,121 312,117 312,125" fill="#dc2626"/>
+
+  <text x="210" y="206" text-anchor="middle" font-size="11.5" fill="#334155">β-内酰胺酶水解β-内酰胺环；修饰酶使氨基糖苷失效</text>
+</svg>

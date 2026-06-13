@@ -105,6 +105,10 @@ body {
 .chip-resistance { background: #fee2e2; color: #b91c1c; }
 .chip-missing { background: #f1f5f9; color: #94a3b8; }
 .chip-plain { background: #f1f5f9; color: #475569; }
+.refs { border-top: 1px dashed #cbd5e1; margin-top: 16px; padding-top: 14px; }
+.refs-label { font-size: 13px; color: #64748b; margin-bottom: 8px; }
+.ref-link { font-size: 12.5px; padding: 5px 11px; border-radius: 13px; text-decoration: none; background: #ccfbf1; color: #0f766e; border: 1px solid #99f6e4; }
+.ref-link:hover { background: #99f6e4; }
 
 /* 药敏卡-包含药物 */
 .card-drugs { margin: 16px 0; }

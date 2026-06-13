@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="420" height="240" fill="#f8fafc"/>
+  <text x="210" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">主动外排泵</text>
+
+  <!-- 细胞膜（双层） -->
+  <rect x="150" y="56" width="40" height="150" fill="#ccfbf1" stroke="#0f766e"/>
+  <text x="120" y="50" font-size="10.5" fill="#475569">胞内</text>
+  <text x="300" y="50" font-size="10.5" fill="#475569">胞外</text>
+
+  <!-- 外排泵 -->
+  <rect x="158" y="86" width="24" height="90" rx="6" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="170" y="135" text-anchor="middle" font-size="9" fill="#b91c1c" font-weight="600" transform="rotate(90 170 135)">外排泵</text>
+
+  <!-- 药物被泵出 -->
+  <circle cx="90" cy="120" r="10" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="90" y="123" text-anchor="middle" font-size="7" fill="#1d4ed8">药</text>
+  <line x1="104" y1="120" x2="156" y2="120" stroke="#dc2626" stroke-width="2"/>
+  <line x1="184" y1="120" x2="300" y2="120" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="300,120 292,116 292,124" fill="#dc2626"/>
+  <circle cx="320" cy="120" r="10" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="320" y="123" text-anchor="middle" font-size="7" fill="#1d4ed8">药</text>
+
+  <text x="210" y="218" text-anchor="middle" font-size="11.5" fill="#334155">外排泵耗能将药物主动泵出 → 胞内浓度下降（常致多重耐药）</text>
+</svg>

@@ -162,8 +162,57 @@ test('mechanismImageFor 抗真菌药按类别映射到各自机制图', () => {
   assert.strictEqual(View.mechanismImageFor('antibiotics', { 类别: '棘白菌素类' }, cats), 'img/mechanism-echinocandin.svg');
 });
 
-test('mechanismImageFor 对非抗生素或未知类别返回 null', () => {
+test('mechanismImageFor 对非抗生素/耐药或未知类别返回 null', () => {
   assert.strictEqual(View.mechanismImageFor('microbes', { 类别: '革兰氏阳性球菌' }, abxCats), null);
   assert.strictEqual(View.mechanismImageFor('antibiotics', { 类别: '查无此类' }, abxCats), null);
   assert.strictEqual(View.mechanismImageFor('antibiotics', null, abxCats), null);
+});
+
+const resCats = { resistance: [
+  { 名称: '产生灭活酶', 子类: [{ 名称: 'β-内酰胺酶' }, { 名称: '氨基糖苷修饰酶' }] },
+  { 名称: '靶位改变', 子类: [{ 名称: 'PBP改变' }] },
+  { 名称: '主动外排', 子类: [{ 名称: '外排泵' }] },
+  { 名称: '膜通透性下降', 子类: [{ 名称: '孔蛋白缺失' }] },
+  { 名称: '旁路与其他', 子类: [{ 名称: '旁路代谢' }, { 名称: '生物膜' }] }
+] };
+
+test('mechanismImageFor 耐药机制按大类/叶子映射', () => {
+  assert.strictEqual(View.mechanismImageFor('resistance', { 类别: 'β-内酰胺酶' }, resCats), 'img/resistance-enzyme.svg');
+  assert.strictEqual(View.mechanismImageFor('resistance', { 类别: 'PBP改变' }, resCats), 'img/resistance-target.svg');
+  assert.strictEqual(View.mechanismImageFor('resistance', { 类别: '外排泵' }, resCats), 'img/resistance-efflux.svg');
+  assert.strictEqual(View.mechanismImageFor('resistance', { 类别: '孔蛋白缺失' }, resCats), 'img/resistance-permeability.svg');
+  // 旁路代谢 / 生物膜 同属"旁路与其他"，按叶子直接区分
+  assert.strictEqual(View.mechanismImageFor('resistance', { 类别: '旁路代谢' }, resCats), 'img/resistance-bypass.svg');
+  assert.strictEqual(View.mechanismImageFor('resistance', { 类别: '生物膜' }, resCats), 'img/resistance-biofilm.svg');
+});
+
+test('referenceLinks 微生物用拉丁名生成 PubMed 综述 + 维基', () => {
+  const links = View.referenceLinks('microbes', { 名称: '金黄色葡萄球菌', 拉丁名: 'Staphylococcus aureus' });
+  assert.strictEqual(links.length, 2);
+  assert.ok(links[0].url.indexOf('pubmed.ncbi.nlm.nih.gov') !== -1);
+  assert.ok(links[0].url.indexOf('filter=pubt.review') !== -1);
+  assert.ok(links[1].url.indexOf('en.wikipedia.org/wiki/Staphylococcus_aureus') !== -1);
+});
+
+test('referenceLinks 拉丁名去除括注与 spp. 后缀', () => {
+  const links = View.referenceLinks('microbes', { 名称: '立克次体', 拉丁名: 'Rickettsia spp.' });
+  assert.ok(links[1].url.indexOf('Rickettsia') !== -1);
+  assert.ok(links[1].url.indexOf('spp') === -1);
+});
+
+test('referenceLinks 耐药用英文术语，仅 PubMed', () => {
+  const links = View.referenceLinks('resistance', { 名称: 'KPC 型碳青霉烯酶', 英文: 'KPC carbapenemase' });
+  assert.strictEqual(links.length, 1);
+  assert.ok(links[0].url.indexOf(encodeURIComponent('KPC carbapenemase')) !== -1);
+});
+
+test('referenceLinks 对其他模块返回空数组', () => {
+  assert.deepStrictEqual(View.referenceLinks('antibiotics', { 名称: '美罗培南' }), []);
+  assert.deepStrictEqual(View.referenceLinks('microbes', null), []);
+});
+
+test('detailVM 暴露综述链接', () => {
+  const vm = View.detailVM({ 名称: 'x', 类别: 'c', 小节: [], 关联: [] }, [], { links: [{ 标题: 'PubMed 综述', url: 'http://x' }] });
+  assert.strictEqual(vm.链接.length, 1);
+  assert.strictEqual(vm.链接[0].标题, 'PubMed 综述');
 });

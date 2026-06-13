@@ -21,7 +21,14 @@
     '唑类': 'img/mechanism-azole.svg',
     '多烯类': 'img/mechanism-polyene.svg',
     '棘白菌素类': 'img/mechanism-echinocandin.svg',
-    '嘧啶类似物': 'img/mechanism-flucytosine.svg'
+    '嘧啶类似物': 'img/mechanism-flucytosine.svg',
+    // 耐药机制：按顶层机制大类（旁路代谢/生物膜按叶子区分，二者机制差异大）
+    '产生灭活酶': 'img/resistance-enzyme.svg',
+    '靶位改变': 'img/resistance-target.svg',
+    '主动外排': 'img/resistance-efflux.svg',
+    '膜通透性下降': 'img/resistance-permeability.svg',
+    '旁路代谢': 'img/resistance-bypass.svg',
+    '生物膜': 'img/resistance-biofilm.svg'
   };
 
   // 节点子树是否包含某叶子分类（支持任意层级）
@@ -32,17 +39,41 @@
     return node.名称 === leafName;
   }
 
-  // 仅抗生素：按其类别所属的机制大类，映射到一张机制示意图
+  // 抗生素 / 耐药：按其类别所属的机制大类，映射到一张机制示意图
   function mechanismImageFor(moduleKey, entry, categories) {
-    if (moduleKey !== 'antibiotics' || !entry) { return null; }
-    // 先按类别(叶子)直接匹配（抗真菌药机制按其类别区分）
+    if (!entry || (moduleKey !== 'antibiotics' && moduleKey !== 'resistance')) { return null; }
+    // 先按类别(叶子)直接匹配（抗真菌药、旁路代谢/生物膜按其类别区分）
     if (MECHANISM_IMAGE[entry.类别]) { return MECHANISM_IMAGE[entry.类别]; }
-    // 再按所属顶层机制大类匹配（抗细菌药）
-    var groups = (categories && categories.antibiotics) ? categories.antibiotics : [];
+    // 再按所属顶层机制大类匹配（抗细菌药、其余耐药机制）
+    var groups = (categories && categories[moduleKey]) ? categories[moduleKey] : [];
     for (var i = 0; i < groups.length; i++) {
       if (nodeContainsLeaf(groups[i], entry.类别)) { return MECHANISM_IMAGE[groups[i].名称] || null; }
     }
     return null;
+  }
+
+  // 去掉拉丁名中的括注与 spp. 后缀，得到适合检索的词条
+  function cleanTerm(s) {
+    return String(s || '').replace(/[（(].*$/, '').replace(/\s+spp\.?$/i, '').trim();
+  }
+
+  // 综述/参考链接：仅微生物与耐药机制。菌用拉丁名(→PubMed综述+维基)，耐药用英文术语(→PubMed综述)。
+  function referenceLinks(moduleKey, entry) {
+    if (!entry || (moduleKey !== 'microbes' && moduleKey !== 'resistance')) { return []; }
+    var latin = cleanTerm(entry.拉丁名);
+    var term = latin || entry.英文 || entry.名称 || '';
+    if (!term) { return []; }
+    var links = [{
+      标题: 'PubMed 综述',
+      url: 'https://pubmed.ncbi.nlm.nih.gov/?term=' + encodeURIComponent(term) + '&filter=pubt.review'
+    }];
+    if (latin) {
+      links.push({
+        标题: '维基百科',
+        url: 'https://en.wikipedia.org/wiki/' + encodeURIComponent(latin.replace(/\s+/g, '_'))
+      });
+    }
+    return links;
   }
 
   function detailVM(entry, relations, extras) {
@@ -61,6 +92,9 @@
       药物: entry.药物 || [],
       小节: (entry.小节 || []).map(function (s) {
         return { 标题: s.标题 || '', 正文: s.正文 || '' };
+      }),
+      链接: (extras.links || []).map(function (l) {
+        return { 标题: l.标题 || '', url: l.url || '' };
       }),
       关联: (relations || []).map(function (r) {
         return {
@@ -163,6 +197,7 @@
   return {
     moduleLabel: moduleLabel,
     mechanismImageFor: mechanismImageFor,
+    referenceLinks: referenceLinks,
     detailVM: detailVM,
     sidebarVM: sidebarVM,
     searchVM: searchVM,

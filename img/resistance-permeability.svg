@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="420" height="240" fill="#f8fafc"/>
+  <text x="210" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">膜通透性下降（孔蛋白缺失）</text>
+
+  <!-- 左：有孔蛋白，药物进入 -->
+  <text x="105" y="60" text-anchor="middle" font-size="11.5" fill="#16a34a">有孔蛋白</text>
+  <rect x="70" y="72" width="70" height="90" fill="#ccfbf1" stroke="#0f766e"/>
+  <rect x="96" y="72" width="18" height="90" fill="#fff" stroke="#0f766e"/>
+  <circle cx="60" cy="117" r="9" fill="#dbeafe" stroke="#1d4ed8"/>
+  <line x1="70" y1="117" x2="150" y2="117" stroke="#16a34a" stroke-width="2"/>
+  <polygon points="150,117 142,113 142,121" fill="#16a34a"/>
+  <text x="105" y="178" text-anchor="middle" font-size="10.5" fill="#16a34a">药物进入 ✓</text>
+
+  <!-- 右：孔蛋白缺失，药物被挡 -->
+  <text x="315" y="60" text-anchor="middle" font-size="11.5" fill="#b91c1c">孔蛋白缺失</text>
+  <rect x="280" y="72" width="70" height="90" fill="#ccfbf1" stroke="#0f766e"/>
+  <circle cx="262" cy="117" r="9" fill="#dbeafe" stroke="#1d4ed8"/>
+  <line x1="272" y1="117" x2="278" y2="117" stroke="#dc2626" stroke-width="2"/>
+  <text x="290" y="122" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
+  <text x="315" y="178" text-anchor="middle" font-size="10.5" fill="#b91c1c">药物难进入</text>
+
+  <text x="210" y="210" text-anchor="middle" font-size="11.5" fill="#334155">OprD / OmpK 缺失 → 药物难入周质（与产酶协同致耐药）</text>
+</svg>

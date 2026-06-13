@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="420" height="240" fill="#f8fafc"/>
+  <text x="210" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">靶位改变（药物失去结合位点）</text>
+
+  <!-- 左：正常靶点，药物结合 -->
+  <text x="105" y="64" text-anchor="middle" font-size="11.5" fill="#16a34a">正常靶点</text>
+  <path d="M70,150 h70 v-22 a18,18 0 0 0 -36,0 h-2 a16,16 0 0 1 -32,0 z" fill="#ccfbf1" stroke="#0f766e"/>
+  <circle cx="122" cy="120" r="13" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="122" y="123" text-anchor="middle" font-size="8" fill="#1d4ed8">药物</text>
+  <text x="105" y="170" text-anchor="middle" font-size="10.5" fill="#16a34a">药物结合 ✓</text>
+
+  <!-- 右：改变的靶点，药物不结合 -->
+  <text x="315" y="64" text-anchor="middle" font-size="11.5" fill="#b91c1c">改变的靶点</text>
+  <rect x="280" y="128" width="70" height="22" rx="4" fill="#fee2e2" stroke="#dc2626"/>
+  <circle cx="315" cy="98" r="13" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="315" y="101" text-anchor="middle" font-size="8" fill="#1d4ed8">药物</text>
+  <text x="315" y="120" text-anchor="middle" font-size="15" fill="#dc2626" font-weight="700">✕</text>
+  <text x="315" y="170" text-anchor="middle" font-size="10.5" fill="#b91c1c">无法结合</text>
+
+  <text x="210" y="206" text-anchor="middle" font-size="11.5" fill="#334155">PBP2a / D-Ala→D-Lac / rRNA 甲基化 → 药物失去靶点</text>
+</svg>
