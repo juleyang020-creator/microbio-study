@@ -104,6 +104,8 @@ body {
 .chip-antibiotics { background: #dcfce7; color: #15803d; }
 .chip-resistance { background: #fee2e2; color: #b91c1c; }
 .chip-missing { background: #f1f5f9; color: #94a3b8; }
+.chip-resistance, .chip-tests { background: #fee2e2; color: #b91c1c; }
+.chip-tests { background: #fef3c7; color: #92400e; }
 .chip-plain { background: #f1f5f9; color: #475569; }
 .refs { border-top: 1px dashed #cbd5e1; margin-top: 16px; padding-top: 14px; }
 .refs-label { font-size: 13px; color: #64748b; margin-bottom: 8px; }
@@ -124,6 +126,7 @@ body {
 .tag-microbes { background: #dbeafe; color: #1d4ed8; }
 .tag-antibiotics { background: #dcfce7; color: #15803d; }
 .tag-resistance { background: #fee2e2; color: #b91c1c; }
+.tag-tests { background: #fef3c7; color: #92400e; }
 
 /* 空状态 */
 .empty { color: #94a3b8; padding: 40px 0; text-align: center; }

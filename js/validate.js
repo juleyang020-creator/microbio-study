@@ -6,7 +6,8 @@
     microbes: DB.microbes || [],
     antibiotics: DB.antibiotics || [],
     resistance: DB.resistance || [],
-    cards: DB.cards || []
+    cards: DB.cards || [],
+    tests: DB.tests || []
   };
   var problems = window.Core.validateData(db, DB.categories || {});
   if (problems.length) {

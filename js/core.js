@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_KEYS = ['microbes', 'antibiotics', 'resistance', 'cards'];
+  var MODULE_KEYS = ['microbes', 'antibiotics', 'resistance', 'cards', 'tests'];
 
   function buildIndex(db) {
     var index = {};

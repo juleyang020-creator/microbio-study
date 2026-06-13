@@ -6,19 +6,19 @@ window.DB.cards = [
   // ===== 革兰阴性药敏卡 =====
   {
     id: 'gn09', 名称: 'GN09', 类别: '革兰阴性药敏卡',
-    关联: ['e-coli', 'klebsiella-pneumoniae', 'proteus-mirabilis', 'citrobacter-freundii', 'serratia-marcescens'],
+    关联: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'proteus-mirabilis', 'citrobacter-freundii', 'serratia-marcescens'],
     小节: [ { 标题: '适用', 正文: '革兰阴性杆菌（肠杆菌目、非发酵菌等）的药敏检测。' }, { 标题: '货号', 正文: '22008' } ],
     药物: ['氨苄西林', '哌拉西林', '氨苄西林/舒巴坦', '哌拉西林/他唑巴坦', '头孢唑林', '头孢呋辛', '头孢他啶', '头孢曲松', '头孢吡肟', '氨曲南', '头孢替坦', '亚胺培南', '美罗培南', '阿米卡星', '庆大霉素', '妥布霉素', '环丙沙星', '左氧氟沙星', '复方磺胺甲噁唑', '呋喃妥因']
   },
   {
     id: 'gn13', 名称: 'GN13', 类别: '革兰阴性药敏卡',
-    关联: ['e-coli', 'klebsiella-pneumoniae', 'enterobacter-cloacae', 'citrobacter-freundii', 'morganella-morganii', 'serratia-marcescens', 'proteus-vulgaris'],
+    关联: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-aerogenes', 'enterobacter-cloacae', 'citrobacter-freundii', 'morganella-morganii', 'serratia-marcescens', 'proteus-vulgaris', 'shigella-flexneri'],
     小节: [ { 标题: '适用', 正文: '革兰阴性杆菌药敏检测。' }, { 标题: '货号', 正文: '22095' } ],
     药物: ['氨苄西林', '氨苄西林/舒巴坦', '哌拉西林/他唑巴坦', '头孢唑林', '头孢他啶', '头孢曲松', '头孢吡肟', '氨曲南', '头孢替坦', '厄他培南', '亚胺培南', '阿米卡星', '庆大霉素', '妥布霉素', '环丙沙星', '左氧氟沙星', '复方磺胺甲噁唑', '呋喃妥因', 'ESBL']
   },
   {
     id: 'gn67', 名称: 'GN67', 类别: '革兰阴性药敏卡',
-    关联: ['e-coli', 'klebsiella-pneumoniae', 'salmonella-typhi', 'salmonella-paratyphi-a', 'providencia-stuartii', 'citrobacter-koseri'],
+    关联: ['e-coli', 'klebsiella-pneumoniae', 'salmonella-typhi', 'salmonella-paratyphi-a', 'salmonella-enteritidis', 'shigella-dysenteriae', 'providencia-stuartii', 'citrobacter-koseri'],
     小节: [ { 标题: '适用', 正文: '革兰阴性杆菌药敏检测。' }, { 标题: '货号', 正文: '413399' } ],
     药物: ['氨苄西林', '氨苄西林/舒巴坦', '哌拉西林/他唑巴坦', '头孢唑林', '头孢他啶', '头孢曲松', '头孢吡肟', '厄他培南', '亚胺培南', '阿米卡星', '庆大霉素', '妥布霉素', '环丙沙星', '左氧氟沙星', '复方磺胺甲噁唑', '呋喃妥因', 'ESBL']
   },
@@ -36,7 +36,7 @@ window.DB.cards = [
   },
   {
     id: 'n335', 名称: 'N335', 类别: '革兰阴性药敏卡',
-    关联: ['pseudomonas-aeruginosa', 'acinetobacter-baumannii', 'klebsiella-pneumoniae', 'stenotrophomonas-maltophilia', 'achromobacter-xylosoxidans'],
+    关联: ['pseudomonas-aeruginosa', 'acinetobacter-baumannii', 'klebsiella-pneumoniae', 'stenotrophomonas-maltophilia', 'achromobacter-xylosoxidans', 'burkholderia-cepacia'],
     小节: [ { 标题: '适用', 正文: '革兰阴性杆菌药敏检测。' }, { 标题: '货号', 正文: '418985' } ],
     药物: ['哌拉西林/他唑巴坦', '替卡西林/克拉维酸', '头孢哌酮/舒巴坦', '头孢他啶', '头孢吡肟', '亚胺培南', '美罗培南', '阿米卡星', '妥布霉素', '环丙沙星', '左氧氟沙星', '替加环素', '多西环素', '米诺环素', '复方磺胺甲噁唑', '黏菌素']
   },
@@ -56,7 +56,7 @@ window.DB.cards = [
   // ===== 革兰阳性药敏卡 =====
   {
     id: 'gp67', 名称: 'GP67', 类别: '革兰阳性药敏卡',
-    关联: ['staph-aureus', 'staph-epidermidis', 'staph-lugdunensis', 'enterococcus-faecalis', 'enterococcus-faecium', 'enterococcus-gallinarum', 'strep-agalactiae'],
+    关联: ['staph-aureus', 'staph-epidermidis', 'staph-saprophyticus', 'staph-haemolyticus', 'staph-lugdunensis', 'enterococcus-faecalis', 'enterococcus-faecium', 'enterococcus-gallinarum', 'strep-agalactiae'],
     小节: [ { 标题: '适用', 正文: '葡萄球菌属、肠球菌属、无乳链球菌等革兰阳性菌。' }, { 标题: '货号', 正文: '22226' } ],
     药物: ['青霉素G', '氨苄西林', '苯唑西林', '万古霉素', '红霉素', '克林霉素', '奎奴普丁-达福普汀', '四环素', '替加环素', '环丙沙星', '左氧氟沙星', '莫西沙星', '庆大霉素', '利奈唑胺', '呋喃妥因', '利福平', '复方磺胺甲噁唑', '头孢西丁筛选', '庆大霉素高水平(协同)', '链霉素高水平(协同)', '诱导型克林霉素耐药']
   },
@@ -76,7 +76,7 @@ window.DB.cards = [
   // ===== 真菌药敏卡 =====
   {
     id: 'ys08', 名称: 'YS08', 类别: '真菌药敏卡',
-    关联: ['candida-albicans', 'candida-glabrata', 'cryptococcus-neoformans'],
+    关联: ['candida-albicans', 'candida-glabrata', 'candida-tropicalis', 'candida-krusei', 'candida-parapsilosis', 'candida-auris', 'cryptococcus-neoformans'],
     小节: [ { 标题: '适用', 正文: '酵母菌（念珠菌、隐球菌等）的抗真菌药敏检测。' }, { 标题: '货号', 正文: '421409' } ],
     药物: ['两性霉素B', '5-氟胞嘧啶', '氟康唑', '伏立康唑', '卡泊芬净', '米卡芬净']
   },
@@ -84,7 +84,7 @@ window.DB.cards = [
   // ===== 链球菌药敏卡 =====
   {
     id: 'st03', 名称: 'ST03', 类别: '链球菌药敏卡',
-    关联: ['strep-pyogenes', 'strep-agalactiae', 'strep-viridans', 'strep-pneumoniae'],
+    关联: ['strep-pyogenes', 'strep-agalactiae', 'strep-viridans', 'strep-pneumoniae', 'strep-gallolyticus'],
     小节: [ { 标题: '适用', 正文: '链球菌（β溶血链球菌、草绿色链球菌等）药敏检测。' }, { 标题: '货号', 正文: '421040' } ],
     药物: ['青霉素G', '氨苄西林', '头孢噻肟', '头孢曲松', '万古霉素', '替考拉宁', '红霉素', '克林霉素', '四环素', '替加环素', '左氧氟沙星', '莫西沙星', '氯霉素', '利奈唑胺', '利福平', '复方磺胺甲噁唑', '庆大霉素', '诱导型克林霉素耐药']
   }

@@ -5,13 +5,21 @@
 
   function db() {
     var DB = window.DB || {};
-    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [] };
+    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [], tests: DB.tests || [] };
   }
   function abxIdByName() {
     var m = {};
     ((window.DB && window.DB.antibiotics) || []).forEach(function (a) { m[a.名称] = a.id; });
     return m;
   }
+  // 药敏卡上的耐药表型检测项 → 对应的试验条目
+  var CARD_TEST = {
+    'ESBL': 'esbl-test',
+    '头孢西丁筛选': 'cefoxitin-screen',
+    '诱导型克林霉素耐药': 'd-test',
+    '庆大霉素高水平(协同)': 'hlar',
+    '链霉素高水平(协同)': 'hlar'
+  };
   function categories() { return (window.DB && window.DB.categories) || {}; }
 
   // 安全建节点：文本一律走 textContent，内容不会被当作标记解析
@@ -139,6 +147,7 @@
       var drugChips = vm.药物.map(function (name) {
         var aid = abxMap[name];
         if (aid) { return el('a', { cls: 'chip chip-antibiotics', text: name, href: '#/antibiotics/' + aid }); }
+        if (CARD_TEST[name]) { return el('a', { cls: 'chip chip-tests', text: name, href: '#/tests/' + CARD_TEST[name] }); }
         return el('span', { cls: 'chip chip-plain', text: name });
       });
       nodes.push(el('div', { cls: 'card-drugs' }, [

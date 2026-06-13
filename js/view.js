@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', cards: '药敏卡' };
+  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', cards: '药敏卡', tests: '试验' };
 
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 
