@@ -1,50 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
   <defs>
-    <radialGradient id="bfMatrix" cx="0.5" cy="0.8" r="0.9"><stop offset="0" stop-color="#5eead4" stop-opacity="0.55"/><stop offset="1" stop-color="#99f6e4" stop-opacity="0.3"/></radialGradient>
-    <radialGradient id="bfDrug" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#3b82f6"/></radialGradient>
-    <filter id="bfSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
+    <linearGradient id="bfMatrix" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef3f2"/>
+      <stop offset="1" stop-color="#e3ecea"/>
+    </linearGradient>
+    <linearGradient id="bfDrug" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef3f9"/>
+      <stop offset="1" stop-color="#e1ebf5"/>
+    </linearGradient>
   </defs>
-  <rect width="480" height="300" fill="#f8fafc"/>
-  <text x="240" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#b91c1c">生物膜</text>
+  <rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 抗生素（仅渗透外层） -->
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">生物膜</text>
+  <text x="240" y="44" text-anchor="middle" font-size="11" fill="#8a8f98">基质屏障与休眠菌共同造成慢性顽固感染</text>
+
+  <!-- 抗生素（停留外层，难以深入） -->
   <g>
-    <circle cx="120" cy="58" r="7" fill="url(#bfDrug)" stroke="#1d4ed8"/>
-    <circle cx="200" cy="50" r="7" fill="url(#bfDrug)" stroke="#1d4ed8"/>
-    <circle cx="280" cy="58" r="7" fill="url(#bfDrug)" stroke="#1d4ed8"/>
-    <circle cx="360" cy="50" r="7" fill="url(#bfDrug)" stroke="#1d4ed8"/>
+    <circle cx="120" cy="70" r="6.5" fill="url(#bfDrug)" stroke="#345f86" stroke-width="1.2"/>
+    <circle cx="200" cy="64" r="6.5" fill="url(#bfDrug)" stroke="#345f86" stroke-width="1.2"/>
+    <circle cx="280" cy="70" r="6.5" fill="url(#bfDrug)" stroke="#345f86" stroke-width="1.2"/>
+    <circle cx="360" cy="64" r="6.5" fill="url(#bfDrug)" stroke="#345f86" stroke-width="1.2"/>
   </g>
-  <text x="406" y="56" font-size="9.5" fill="#1d4ed8">抗生素</text>
+  <text x="404" y="68" font-size="9.5" fill="#345f86">抗生素</text>
 
   <!-- 器械表面 -->
-  <rect x="30" y="246" width="420" height="18" rx="3" fill="#cbd5e1"/>
-  <text x="240" y="259" text-anchor="middle" font-size="9" fill="#475569">导管 / 植入物表面</text>
+  <rect x="30" y="246" width="420" height="18" rx="3" fill="#f1ede4" stroke="#cfcabd" stroke-width="1.2"/>
+  <text x="240" y="259" text-anchor="middle" font-size="9" fill="#454b54">导管 / 植入物表面</text>
 
-  <!-- 生物膜基质穹顶 -->
-  <path d="M70,246 C70,120 410,120 410,246 z" fill="url(#bfMatrix)" stroke="#0f766e"/>
-  <text x="240" y="138" text-anchor="middle" font-size="10.5" fill="#0f766e">胞外多糖基质（EPS）</text>
+  <!-- 生物膜基质穹顶（EPS） -->
+  <path d="M70,246 C70,118 410,118 410,246 z" fill="url(#bfMatrix)" stroke="#2e6b66" stroke-width="1.4"/>
+  <text x="240" y="134" text-anchor="middle" font-size="10.5" fill="#2e6b66" font-weight="600">胞外多糖基质（EPS）</text>
 
-  <!-- 水通道 -->
-  <path d="M180,246 C176,200 188,170 200,150" fill="none" stroke="#bae6fd" stroke-width="6" opacity="0.7"/>
-  <path d="M300,246 C306,205 296,178 286,158" fill="none" stroke="#bae6fd" stroke-width="6" opacity="0.7"/>
+  <!-- 水通道（生物膜内的输送通道） -->
+  <path d="M180,246 C176,202 188,176 198,154" fill="none" stroke="#cfe0db" stroke-width="5" stroke-linecap="round"/>
+  <path d="M300,246 C306,206 296,182 288,162" fill="none" stroke="#cfe0db" stroke-width="5" stroke-linecap="round"/>
 
-  <!-- 内部菌群（深色=休眠/耐受 persister） -->
-  <g stroke="#0f766e">
-    <circle cx="150" cy="220" r="9" fill="#14b8a6"/>
-    <circle cx="195" cy="228" r="9" fill="#14b8a6"/>
-    <circle cx="240" cy="218" r="9" fill="#0f766e"/>
-    <circle cx="285" cy="228" r="9" fill="#14b8a6"/>
-    <circle cx="330" cy="220" r="9" fill="#0f766e"/>
-    <circle cx="210" cy="196" r="8" fill="#0f766e"/>
-    <circle cx="270" cy="196" r="8" fill="#14b8a6"/>
+  <!-- 内部菌群：浅色=活跃增殖菌；深色=休眠/耐受 persister（位于深部受保护） -->
+  <g stroke="#2e6b66" stroke-width="1.2">
+    <circle cx="150" cy="220" r="9" fill="#e9f0ee"/>
+    <circle cx="195" cy="228" r="9" fill="#cdded9"/>
+    <circle cx="240" cy="218" r="9" fill="#cdded9"/>
+    <circle cx="285" cy="228" r="9" fill="#cdded9"/>
+    <circle cx="330" cy="220" r="9" fill="#e9f0ee"/>
+    <circle cx="210" cy="197" r="8" fill="#cdded9"/>
+    <circle cx="270" cy="197" r="8" fill="#e9f0ee"/>
   </g>
-  <text x="240" y="186" text-anchor="middle" font-size="9" fill="#065f46">深色＝休眠 / 耐受菌（persister）</text>
+  <text x="240" y="183" text-anchor="middle" font-size="9" fill="#1f4a46">深色＝休眠 / 耐受菌（persister，代谢低下受保护）</text>
 
-  <!-- 药物受阻 -->
-  <line x1="120" y1="66" x2="150" y2="116" stroke="#dc2626" stroke-width="1.6"/>
-  <text x="150" y="108" text-anchor="middle" font-size="13" fill="#dc2626" font-weight="700">✕</text>
-  <line x1="360" y1="58" x2="330" y2="116" stroke="#dc2626" stroke-width="1.6"/>
-  <text x="330" y="108" text-anchor="middle" font-size="13" fill="#dc2626" font-weight="700">✕</text>
+  <!-- 药物受阻：停留在基质外层无法深入 -->
+  <line x1="120" y1="77" x2="138" y2="112" stroke="#b04242" stroke-width="1.4"/>
+  <text x="142" y="110" text-anchor="middle" font-size="13" fill="#b04242" font-weight="700">✕</text>
+  <line x1="360" y1="71" x2="342" y2="112" stroke="#b04242" stroke-width="1.4"/>
+  <text x="338" y="110" text-anchor="middle" font-size="13" fill="#b04242" font-weight="700">✕</text>
+  <text x="240" y="106" text-anchor="middle" font-size="9" fill="#b04242">药物渗透受阻</text>
 
-  <text x="240" y="286" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">基质阻滞渗透、内部菌代谢低下受保护 → 顽固难清，常需移除器械</text>
+  <text x="240" y="286" text-anchor="middle" font-size="12.5" fill="#454b54">基质阻滞渗透、内部菌代谢低下受保护 → 顽固难清，常需移除器械</text>
 </svg>

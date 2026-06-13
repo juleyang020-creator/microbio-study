@@ -1,24 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <radialGradient id="dishHL" cx="40%" cy="34%" r="75%">
+      <stop offset="0%" stop-color="#f6f2ea"/>
+      <stop offset="100%" stop-color="#efe9de"/>
+    </radialGradient>
+  </defs>
+
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">D 试验（诱导型克林霉素耐药）</text>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">D 试验（诱导型克林霉素耐药）</text>
+  <text x="240" y="44" text-anchor="middle" font-size="11" fill="#8a8f98">红霉素(E)诱导克林霉素(DA)耐药</text>
 
-  <!-- 平板 -->
-  <circle cx="180" cy="162" r="110" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
-  <!-- 克林霉素侧 D 形抑菌圈（红霉素侧被压平）-->
-  <path d="M196,128 A46,46 0 1 1 196,196 Z" fill="#fbfaf8" stroke="#c9c3b6" stroke-dasharray="4 3"/>
-  <!-- 红霉素侧小抑菌圈（耐药）-->
-  <circle cx="150" cy="162" r="24" fill="#fbfaf8" stroke="#c9c3b6" stroke-dasharray="4 3"/>
-  <!-- 纸片 -->
-  <circle cx="150" cy="162" r="15" fill="#fff" stroke="#b0b4bb"/><text x="150" y="166" text-anchor="middle" font-size="11" font-weight="700" fill="#454b54">E</text>
-  <circle cx="232" cy="162" r="15" fill="#fff" stroke="#b0b4bb"/><text x="232" y="166" text-anchor="middle" font-size="10" font-weight="700" fill="#454b54">DA</text>
-  <!-- 压平边指示 -->
-  <line x1="200" y1="124" x2="200" y2="200" stroke="#b04242" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <!-- 琼脂平板 -->
+  <circle cx="178" cy="172" r="108" fill="url(#dishHL)" stroke="#cfcabd" stroke-width="2.5"/>
+  <circle cx="178" cy="172" r="101" fill="none" stroke="#d6d2c8" stroke-width="1"/>
 
-  <text x="312" y="120" font-size="12" fill="#454b54">E　红霉素</text>
-  <text x="312" y="142" font-size="12" fill="#454b54">DA　克林霉素</text>
-  <text x="312" y="176" font-size="11.5" fill="#b04242">红霉素侧抑菌圈被压平</text>
-  <text x="312" y="194" font-size="13" font-weight="700" fill="#b04242">呈 "D" 形 = 阳性</text>
-  <text x="312" y="212" font-size="11" fill="#8a8f98">诱导型克林霉素耐药</text>
+  <!-- 克林霉素(DA)侧抑菌圈：朝向红霉素的一侧被诱导压平 -> "D" 形 -->
+  <!-- 圆形主体在右(DA)，左缘(朝向 E)被压平为直边 -->
+  <path d="M210,128 A48,48 0 1 1 210,224 L210,128 Z" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.2" stroke-dasharray="4 3"/>
 
-  <text x="240" y="288" text-anchor="middle" font-size="12.5" fill="#454b54">阳性：即使体外克林霉素"敏感"也应报告耐药、不可单用</text>
+  <!-- 红霉素(E)侧抑菌圈：菌对红霉素耐药，圈较小 -->
+  <circle cx="138" cy="172" r="23" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- 纸片 E -->
+  <circle cx="138" cy="172" r="15" fill="#ffffff" stroke="#345f86" stroke-width="1.2"/>
+  <text x="138" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">E</text>
+  <!-- 纸片 DA -->
+  <circle cx="234" cy="172" r="15" fill="#ffffff" stroke="#345f86" stroke-width="1.2"/>
+  <text x="234" y="176" text-anchor="middle" font-size="10" font-weight="700" fill="#345f86">DA</text>
+
+  <!-- 压平直边指示 -->
+  <line x1="210" y1="130" x2="210" y2="214" stroke="#b04242" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="210" y="252" text-anchor="middle" font-size="9.5" fill="#b04242">压平的直边</text>
+
+  <!-- 右侧说明 -->
+  <text x="312" y="118" font-size="12" fill="#454b54"><tspan font-weight="700" fill="#345f86">E</tspan>　红霉素</text>
+  <text x="312" y="140" font-size="12" fill="#454b54"><tspan font-weight="700" fill="#345f86">DA</tspan>　克林霉素</text>
+
+  <line x1="312" y1="154" x2="452" y2="154" stroke="#d6d2c8" stroke-width="1"/>
+
+  <text x="312" y="176" font-size="11.5" fill="#b04242">DA 圈朝 E 一侧被压平</text>
+  <text x="312" y="196" font-size="13" font-weight="700" fill="#b04242">呈 “D” 形 = 阳性</text>
+  <text x="312" y="214" font-size="11" fill="#8a8f98">诱导型克林霉素耐药</text>
+
+  <!-- 底部结论 -->
+  <text x="240" y="290" text-anchor="middle" font-size="12.5" fill="#454b54">阳性时即使体外克林霉素“敏感”也按耐药报告，不可单用</text>
 </svg>

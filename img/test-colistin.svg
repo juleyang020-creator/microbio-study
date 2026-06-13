@@ -1,29 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="wellTurbid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8ccb0"/>
+      <stop offset="1" stop-color="#cdbf9e"/>
+    </linearGradient>
+    <linearGradient id="wellClear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fbfaf8"/>
+    </linearGradient>
+  </defs>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">黏菌素肉汤微量稀释（BMD）</text>
   <text x="240" y="52" text-anchor="middle" font-size="11" fill="#8a8f98">黏菌素扩散差，纸片/梯度法不可靠，须用肉汤微量稀释测 MIC</text>
 
   <!-- 8 孔，浓度递增；浊(生长)→清(抑制) -->
   <g>
-    <circle cx="70" cy="160" r="20" fill="#cdbf9e" stroke="#a99c7d"/>
-    <circle cx="118" cy="160" r="20" fill="#cdbf9e" stroke="#a99c7d"/>
-    <circle cx="166" cy="160" r="20" fill="#d6cbb0" stroke="#a99c7d"/>
-    <circle cx="214" cy="160" r="20" fill="#eee7d6" stroke="#c9c3b6"/>
-    <circle cx="262" cy="160" r="20" fill="#fbfaf8" stroke="#c9c3b6"/>
-    <circle cx="310" cy="160" r="20" fill="#fbfaf8" stroke="#c9c3b6"/>
-    <circle cx="358" cy="160" r="20" fill="#fbfaf8" stroke="#c9c3b6"/>
-    <circle cx="406" cy="160" r="20" fill="#fbfaf8" stroke="#c9c3b6"/>
+    <circle cx="70" cy="160" r="20" fill="url(#wellTurbid)" stroke="#a99c7d" stroke-width="1.5"/>
+    <circle cx="118" cy="160" r="20" fill="url(#wellTurbid)" stroke="#a99c7d" stroke-width="1.5"/>
+    <circle cx="166" cy="160" r="20" fill="#d6cbb0" stroke="#a99c7d" stroke-width="1.5"/>
+    <circle cx="214" cy="160" r="20" fill="#e6dcc6" stroke="#bcae8f" stroke-width="1.5"/>
+    <circle cx="262" cy="160" r="20" fill="url(#wellClear)" stroke="#c9c3b6" stroke-width="1.5"/>
+    <circle cx="310" cy="160" r="20" fill="url(#wellClear)" stroke="#c9c3b6" stroke-width="1.5"/>
+    <circle cx="358" cy="160" r="20" fill="url(#wellClear)" stroke="#c9c3b6" stroke-width="1.5"/>
+    <circle cx="406" cy="160" r="20" fill="url(#wellClear)" stroke="#c9c3b6" stroke-width="1.5"/>
   </g>
+
   <g font-size="9" fill="#8a8f98" text-anchor="middle">
     <text x="70" y="196">0.25</text><text x="118" y="196">0.5</text><text x="166" y="196">1</text><text x="214" y="196">2</text>
     <text x="262" y="196">4</text><text x="310" y="196">8</text><text x="358" y="196">16</text><text x="406" y="196">32</text>
   </g>
-  <text x="240" y="214" text-anchor="middle" font-size="9.5" fill="#8a8f98">µg/mL（浊=生长，清=抑制）</text>
-  <!-- MIC 指示 -->
-  <line x1="262" y1="124" x2="262" y2="138" stroke="#2e6b66" stroke-width="2"/>
-  <polygon points="262,138 257,128 267,128" fill="#2e6b66"/>
-  <text x="262" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#2e6b66">MIC = 4</text>
+  <text x="240" y="214" text-anchor="middle" font-size="9.5" fill="#8a8f98">µg/mL（浊 = 生长，清 = 抑制）</text>
 
-  <text x="240" y="262" text-anchor="middle" font-size="12.5" fill="#454b54">首个清亮孔即 MIC；MIC ≤2 敏感(中介)、≥4 耐药</text>
-  <text x="240" y="284" text-anchor="middle" font-size="11" fill="#8a8f98">用于多重耐药铜绿/不动杆菌/肠杆菌"最后一线"评估</text>
+  <!-- MIC 指示：首个清亮孔（浓度 4） -->
+  <line x1="262" y1="124" x2="262" y2="138" stroke="#345f86" stroke-width="1.5"/>
+  <polygon points="262,139 257.5,129 266.5,129" fill="#345f86"/>
+  <text x="262" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">MIC = 4</text>
+
+  <text x="240" y="262" text-anchor="middle" font-size="12.5" fill="#454b54">首个清亮孔即 MIC；MIC ≤2 敏感（含中介）、≥4 耐药</text>
+  <text x="240" y="284" text-anchor="middle" font-size="11" fill="#8a8f98">用于多重耐药铜绿/不动杆菌/肠杆菌“最后一线”评估</text>
 </svg>

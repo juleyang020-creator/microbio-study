@@ -1,47 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
   <defs>
-    <linearGradient id="azBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccfbf1"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
-    <linearGradient id="azDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
-    <filter id="azSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
+    <linearGradient id="azMembrane" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6f4ef"/></linearGradient>
   </defs>
-  <rect width="480" height="300" fill="#f8fafc"/>
-  <text x="240" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f766e">唑类：抑制麦角固醇合成</text>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">唑类：阻断麦角固醇合成</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">抑制 14α-去甲基酶 (CYP51)</text>
 
-  <!-- 通路 -->
-  <g filter="url(#azSh)">
-    <rect x="18" y="142" width="96" height="44" rx="10" fill="url(#azBox)" stroke="#0f766e"/>
-    <rect x="180" y="142" width="96" height="44" rx="10" fill="url(#azBox)" stroke="#0f766e"/>
-  </g>
-  <text x="66" y="166" text-anchor="middle" font-size="12" font-weight="700" fill="#0f766e">羊毛甾醇</text>
-  <text x="66" y="180" text-anchor="middle" font-size="9" fill="#475569">Lanosterol</text>
-  <text x="228" y="166" text-anchor="middle" font-size="12" font-weight="700" fill="#0f766e">麦角固醇</text>
-  <text x="228" y="180" text-anchor="middle" font-size="9" fill="#475569">Ergosterol</text>
+  <!-- 固醇合成通路 -->
+  <rect x="18" y="142" width="96" height="44" rx="7" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.3"/>
+  <text x="66" y="166" text-anchor="middle" font-size="12" font-weight="700" fill="#2e6b66">羊毛甾醇</text>
+  <text x="66" y="180" text-anchor="middle" font-size="9" fill="#454b54">Lanosterol</text>
 
-  <line x1="114" y1="164" x2="176" y2="164" stroke="#475569" stroke-width="2"/>
-  <polygon points="176,164 168,160 168,168" fill="#475569"/>
-  <text x="145" y="134" text-anchor="middle" font-size="9.5" fill="#64748b">14α-去甲基酶 (CYP51)</text>
+  <rect x="180" y="142" width="96" height="44" rx="7" fill="#e7e1f0" stroke="#7c6f9c" stroke-width="1.3"/>
+  <text x="228" y="166" text-anchor="middle" font-size="12" font-weight="700" fill="#5a4e7c">麦角固醇</text>
+  <text x="228" y="180" text-anchor="middle" font-size="9" fill="#454b54">Ergosterol</text>
+
+  <!-- 通路箭头（受阻） -->
+  <line x1="114" y1="164" x2="176" y2="164" stroke="#b04242" stroke-width="1.5"/>
+  <polygon points="177,164 169,160.5 169,167.5" fill="#b04242"/>
+
+  <!-- 酶（CYP51） -->
+  <rect x="116" y="120" width="58" height="22" rx="6" fill="#f3ead0" stroke="#8a6d1f" stroke-width="1.2"/>
+  <text x="145" y="134" text-anchor="middle" font-size="9" fill="#6e571a">CYP51 (酶)</text>
 
   <!-- 唑类阻断酶 -->
-  <rect x="113" y="80" width="64" height="32" rx="9" fill="url(#azDrug)" stroke="#2563eb" filter="url(#azSh)"/>
-  <text x="145" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">唑类</text>
-  <line x1="145" y1="112" x2="145" y2="150" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="4 3"/>
-  <text x="145" y="158" text-anchor="middle" font-size="16" fill="#dc2626" font-weight="700">✕</text>
+  <rect x="113" y="78" width="64" height="30" rx="7" fill="#e7eef6" stroke="#345f86" stroke-width="1.3"/>
+  <text x="145" y="97" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">唑类</text>
+  <line x1="145" y1="108" x2="145" y2="120" stroke="#345f86" stroke-width="1.3" stroke-dasharray="3.5 3"/>
+  <!-- 阻断标记，置于受阻箭头上 -->
+  <text x="145" y="159" text-anchor="middle" font-size="14" font-weight="700" fill="#b04242">✕</text>
+  <text x="145" y="200" text-anchor="middle" font-size="9" fill="#b04242">合成受阻</text>
 
-  <!-- 膜 -->
-  <line x1="276" y1="164" x2="316" y2="164" stroke="#475569" stroke-width="2"/>
-  <polygon points="316,164 308,160 308,168" fill="#475569"/>
-  <rect x="320" y="138" width="150" height="52" rx="10" fill="#fff" stroke="#cbd5e1" filter="url(#azSh)"/>
+  <!-- 通向细胞膜的箭头 -->
+  <line x1="276" y1="164" x2="316" y2="164" stroke="#454b54" stroke-width="1.5"/>
+  <polygon points="317,164 309,160.5 309,167.5" fill="#454b54"/>
+
+  <!-- 真菌细胞膜 -->
+  <rect x="320" y="138" width="150" height="52" rx="7" fill="url(#azMembrane)" stroke="#cfcabd" stroke-width="1.2"/>
+  <text x="395" y="130" text-anchor="middle" font-size="9.5" fill="#454b54">真菌细胞膜</text>
   <g>
-    <circle cx="336" cy="150" r="4" fill="#99f6e4" stroke="#0f766e"/><circle cx="350" cy="150" r="4" fill="#99f6e4" stroke="#0f766e"/>
-    <circle cx="378" cy="150" r="4" fill="#99f6e4" stroke="#0f766e"/><circle cx="406" cy="150" r="4" fill="#99f6e4" stroke="#0f766e"/><circle cx="434" cy="150" r="4" fill="#99f6e4" stroke="#0f766e"/>
-    <circle cx="336" cy="178" r="4" fill="#99f6e4" stroke="#0f766e"/><circle cx="350" cy="178" r="4" fill="#99f6e4" stroke="#0f766e"/>
-    <circle cx="378" cy="178" r="4" fill="#99f6e4" stroke="#0f766e"/><circle cx="406" cy="178" r="4" fill="#99f6e4" stroke="#0f766e"/><circle cx="434" cy="178" r="4" fill="#99f6e4" stroke="#0f766e"/>
-    <rect x="360" y="146" width="8" height="36" rx="3" fill="#ddd6fe" stroke="#7c3aed"/>
-    <rect x="416" y="146" width="8" height="36" rx="3" fill="#ddd6fe" stroke="#7c3aed" opacity="0.35"/>
+    <circle cx="336" cy="150" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/><circle cx="350" cy="150" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
+    <circle cx="378" cy="150" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/><circle cx="406" cy="150" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/><circle cx="434" cy="150" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
+    <circle cx="336" cy="178" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/><circle cx="350" cy="178" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
+    <circle cx="378" cy="178" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/><circle cx="406" cy="178" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/><circle cx="434" cy="178" r="4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
+    <!-- 嵌入膜的麦角固醇：一个正常，一个缺失（虚线轮廓） -->
+    <rect x="360" y="146" width="8" height="36" rx="3" fill="#e7e1f0" stroke="#7c6f9c" stroke-width="1.1"/>
+    <rect x="416" y="146" width="8" height="36" rx="3" fill="none" stroke="#7c6f9c" stroke-width="1" stroke-dasharray="2.5 2.5"/>
   </g>
-  <text x="395" y="166" text-anchor="middle" font-size="9" fill="#7c3aed">麦角固醇↓</text>
-  <text x="395" y="130" text-anchor="middle" font-size="9.5" fill="#475569">真菌细胞膜</text>
+  <text x="395" y="168" text-anchor="middle" font-size="9" fill="#5a4e7c">麦角固醇 ↓</text>
 
-  <text x="240" y="234" text-anchor="middle" font-size="10.5" fill="#64748b">麦角固醇缺乏 + 毒性 14α-甲基固醇堆积</text>
-  <text x="240" y="284" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">真菌细胞膜结构 / 功能障碍 → 抑制生长</text>
+  <!-- 结论 -->
+  <text x="240" y="232" text-anchor="middle" font-size="12.5" fill="#454b54">麦角固醇缺乏 + 毒性 14α-甲基固醇堆积</text>
+  <text x="240" y="252" text-anchor="middle" font-size="12.5" font-weight="600" fill="#23272e">真菌细胞膜结构 / 功能障碍 → 抑制生长</text>
 </svg>

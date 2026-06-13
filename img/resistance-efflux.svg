@@ -1,52 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
   <defs>
-    <linearGradient id="efMem" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#5eead4"/><stop offset="0.5" stop-color="#99f6e4"/><stop offset="1" stop-color="#5eead4"/>
-    </linearGradient>
     <linearGradient id="efPump" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/>
+      <stop offset="0" stop-color="#f6efda"/><stop offset="1" stop-color="#efe3c4"/>
     </linearGradient>
-    <radialGradient id="efDrug" cx="0.4" cy="0.35" r="0.7">
-      <stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#3b82f6"/>
-    </radialGradient>
-    <filter id="efSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-color="#0f172a" flood-opacity="0.2"/></filter>
+    <linearGradient id="efBilayer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6e4df"/><stop offset="1" stop-color="#c6d8d2"/>
+    </linearGradient>
   </defs>
-  <rect width="480" height="300" fill="#f8fafc"/>
-  <text x="240" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#b91c1c">主动外排泵（RND · AcrAB–TolC）</text>
+  <rect width="480" height="300" fill="#ffffff"/>
 
-  <rect x="0" y="44" width="480" height="30" fill="#eff6ff"/>
-  <rect x="0" y="170" width="480" height="86" fill="#f0fdfa"/>
-  <text x="466" y="62" text-anchor="end" font-size="11" fill="#64748b">胞外</text>
-  <text x="466" y="128" text-anchor="end" font-size="11" fill="#64748b">周质</text>
-  <text x="466" y="246" text-anchor="end" font-size="11" fill="#64748b">胞质</text>
+  <text x="240" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">主动外排泵（RND · AcrAB–TolC）</text>
+  <text x="240" y="41" text-anchor="middle" font-size="11" fill="#8a8f98">革兰阴性菌三联体泵将药物耗能泵出胞外</text>
 
-  <rect x="0" y="74" width="480" height="26" fill="url(#efMem)" stroke="#0f766e"/>
-  <line x1="0" y1="87" x2="480" y2="87" stroke="#0f766e" stroke-dasharray="3 3" opacity="0.5"/>
-  <text x="14" y="91" font-size="10.5" fill="#0f766e" font-weight="600">外膜</text>
-  <rect x="0" y="144" width="480" height="26" fill="url(#efMem)" stroke="#0f766e"/>
-  <line x1="0" y1="157" x2="480" y2="157" stroke="#0f766e" stroke-dasharray="3 3" opacity="0.5"/>
-  <text x="14" y="161" font-size="10.5" fill="#0f766e" font-weight="600">内膜</text>
+  <!-- compartment bands -->
+  <rect x="0" y="50" width="480" height="30" fill="#f7f9f8"/>
+  <rect x="0" y="176" width="480" height="80" fill="#f7f9f8"/>
+  <text x="466" y="68" text-anchor="end" font-size="10" fill="#8a8f98">胞外</text>
+  <text x="466" y="132" text-anchor="end" font-size="10" fill="#8a8f98">周质</text>
+  <text x="466" y="250" text-anchor="end" font-size="10" fill="#8a8f98">胞质</text>
 
-  <g filter="url(#efSh)">
-    <path d="M214,74 h52 l-8,26 h-36 z" fill="url(#efPump)" stroke="#b45309"/>
-    <path d="M222,100 h36 l-4,44 h-28 z" fill="url(#efPump)" stroke="#b45309"/>
-    <path d="M210,144 h60 l-10,26 h-40 z" fill="url(#efPump)" stroke="#b45309"/>
+  <!-- outer membrane -->
+  <rect x="0" y="80" width="480" height="26" fill="url(#efBilayer)" stroke="#2e6b66" stroke-width="1"/>
+  <line x1="0" y1="93" x2="480" y2="93" stroke="#2e6b66" stroke-dasharray="3 3" opacity="0.45"/>
+  <text x="14" y="97" font-size="10" fill="#2e6b66" font-weight="600">外膜</text>
+  <!-- inner (cytoplasmic) membrane -->
+  <rect x="0" y="150" width="480" height="26" fill="url(#efBilayer)" stroke="#2e6b66" stroke-width="1"/>
+  <line x1="0" y1="163" x2="480" y2="163" stroke="#2e6b66" stroke-dasharray="3 3" opacity="0.45"/>
+  <text x="14" y="167" font-size="10" fill="#2e6b66" font-weight="600">内膜</text>
+
+  <!-- tripartite pump: TolC (OM) / AcrA (periplasm) / AcrB (IM) -->
+  <g fill="url(#efPump)" stroke="#8a6d1f" stroke-width="1.2">
+    <path d="M214,80 h52 l-8,26 h-36 z"/>
+    <path d="M222,106 h36 l-4,44 h-28 z"/>
+    <path d="M210,150 h60 l-10,26 h-40 z"/>
   </g>
-  <path d="M236,76 v92" stroke="#fff" stroke-width="6" opacity="0.7"/>
-  <text x="284" y="66" font-size="10" fill="#7c2d12">外膜通道 TolC</text>
-  <text x="284" y="126" font-size="10" fill="#7c2d12">周质连接 AcrA</text>
-  <text x="284" y="162" font-size="10" fill="#7c2d12">内膜转运体 AcrB</text>
+  <!-- central efflux channel -->
+  <path d="M236,82 v92" stroke="#fbfaf8" stroke-width="6" opacity="0.85"/>
 
-  <circle cx="236" cy="206" r="7" fill="url(#efDrug)" stroke="#1d4ed8"/>
-  <circle cx="236" cy="150" r="7" fill="url(#efDrug)" stroke="#1d4ed8"/>
-  <circle cx="236" cy="96" r="7" fill="url(#efDrug)" stroke="#1d4ed8"/>
-  <circle cx="236" cy="56" r="7" fill="url(#efDrug)" stroke="#1d4ed8"/>
-  <line x1="236" y1="198" x2="236" y2="66" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 4"/>
-  <polygon points="236,50 230,62 242,62" fill="#2563eb"/>
+  <text x="282" y="72" font-size="10" fill="#6e571a">外膜通道 TolC</text>
+  <text x="282" y="132" font-size="10" fill="#6e571a">周质连接 AcrA</text>
+  <text x="282" y="168" font-size="10" fill="#6e571a">内膜转运体 AcrB</text>
 
-  <path d="M150,206 C150,176 150,176 174,157" fill="none" stroke="#dc2626" stroke-width="2"/>
-  <polygon points="174,157 164,158 169,167" fill="#dc2626"/>
-  <text x="120" y="212" font-size="10.5" fill="#b91c1c" font-weight="600">H⁺ 质子动力</text>
+  <!-- drug molecules travelling out through the channel -->
+  <g fill="#e7eef6" stroke="#345f86" stroke-width="1.2">
+    <circle cx="236" cy="210" r="7"/>
+    <circle cx="236" cy="156" r="7"/>
+    <circle cx="236" cy="100" r="7"/>
+    <circle cx="236" cy="60" r="7"/>
+  </g>
+  <!-- outward (upward) transport arrow -->
+  <line x1="236" y1="202" x2="236" y2="70" stroke="#345f86" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <polygon points="236,52 230,64 242,64" fill="#345f86"/>
 
-  <text x="240" y="284" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">耗能将药物主动泵出胞外 → 胞内浓度下降（常致多重耐药）</text>
+  <!-- proton motive force: H+ entering inward to power AcrB -->
+  <path d="M150,210 C150,182 150,180 174,163" fill="none" stroke="#3f7a52" stroke-width="1.5"/>
+  <polygon points="174,163 164,162 168,172" fill="#3f7a52"/>
+  <text x="118" y="216" font-size="10" fill="#3f7a52" font-weight="600">H⁺ 质子动力</text>
+
+  <text x="240" y="282" text-anchor="middle" font-size="12.5" fill="#454b54">耗能将药物主动泵出胞外 → 胞内浓度下降（常致多重耐药）</text>
 </svg>

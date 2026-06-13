@@ -1,47 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
   <defs>
-    <linearGradient id="nuDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
-    <radialGradient id="nuEnz" cx="0.5" cy="0.4" r="0.75"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></radialGradient>
-    <radialGradient id="nuPol" cx="0.5" cy="0.4" r="0.8"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#14b8a6"/></radialGradient>
-    <filter id="nuSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
+    <linearGradient id="nuPlateHi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef3f2"/><stop offset="1" stop-color="#e3ece9"/></linearGradient>
+    <marker id="nuArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#345f86"/>
+    </marker>
   </defs>
-  <rect width="480" height="300" fill="#f8fafc"/>
-  <text x="240" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f766e">抑制核酸合成</text>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">抑制核酸合成</text>
+  <text x="240" y="44" text-anchor="middle" font-size="11" fill="#8a8f98">阻断 DNA 复制（旋转酶）与转录（RNA 聚合酶）</text>
 
   <!-- DNA 双螺旋 -->
-  <g fill="none" stroke-width="3.5" stroke-linecap="round">
-    <path d="M48,158 q16,-30 33,0 q16,30 33,0 q16,-30 33,0 q16,30 33,0 q16,-30 33,0 q16,30 33,0 q16,-30 33,0" stroke="#0f766e"/>
-    <path d="M48,158 q16,30 33,0 q16,-30 33,0 q16,30 33,0 q16,-30 33,0 q16,30 33,0 q16,-30 33,0 q16,30 33,0" stroke="#2dd4bf"/>
+  <g fill="none" stroke-width="3" stroke-linecap="round">
+    <path d="M48,162 q16,-30 33,0 q16,30 33,0 q16,-30 33,0 q16,30 33,0 q16,-30 33,0 q16,30 33,0 q16,-30 33,0" stroke="#2e6b66"/>
+    <path d="M48,162 q16,30 33,0 q16,-30 33,0 q16,30 33,0 q16,-30 33,0 q16,30 33,0 q16,-30 33,0 q16,30 33,0" stroke="#7aa9a4"/>
   </g>
-  <g stroke="#94a3b8" stroke-width="1.5" opacity="0.7">
-    <line x1="64" y1="146" x2="64" y2="170"/><line x1="97" y1="146" x2="97" y2="170"/>
-    <line x1="130" y1="146" x2="130" y2="170"/><line x1="163" y1="146" x2="163" y2="170"/>
-    <line x1="196" y1="146" x2="196" y2="170"/><line x1="229" y1="146" x2="229" y2="170"/>
-    <line x1="262" y1="146" x2="262" y2="170"/>
+  <g stroke="#bcd2cd" stroke-width="1.5">
+    <line x1="64" y1="150" x2="64" y2="174"/><line x1="97" y1="150" x2="97" y2="174"/>
+    <line x1="130" y1="150" x2="130" y2="174"/><line x1="163" y1="150" x2="163" y2="174"/>
+    <line x1="196" y1="150" x2="196" y2="174"/><line x1="229" y1="150" x2="229" y2="174"/>
+    <line x1="262" y1="150" x2="262" y2="174"/>
   </g>
-  <text x="300" y="161" font-size="10.5" fill="#475569">DNA</text>
+  <text x="300" y="165" font-size="10.5" fill="#454b54">DNA</text>
 
   <!-- 转录：RNA 聚合酶 + 利福平 -->
-  <ellipse cx="150" cy="158" rx="24" ry="20" fill="url(#nuPol)" stroke="#0f766e" filter="url(#nuSh)"/>
-  <text x="150" y="161" text-anchor="middle" font-size="8.5" font-weight="700" fill="#073b3a">RNAP</text>
-  <path d="M150,140 q10,-26 28,-40" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
-  <text x="118" y="108" font-size="9.5" fill="#7c3aed">mRNA</text>
-  <rect x="196" y="86" width="64" height="20" rx="8" fill="url(#nuDrug)" stroke="#2563eb" filter="url(#nuSh)"/>
-  <text x="228" y="100" text-anchor="middle" font-size="10" fill="#1d4ed8">利福平</text>
-  <path d="M196,100 C184,104 176,108 168,112" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4 3"/>
-  <text x="160" y="120" text-anchor="middle" font-size="14" fill="#dc2626" font-weight="700">✕</text>
-  <text x="150" y="78" text-anchor="middle" font-size="10" fill="#64748b">转录：抑 RNA 聚合酶</text>
+  <text x="150" y="82" text-anchor="middle" font-size="10" fill="#454b54">转录</text>
+  <ellipse cx="150" cy="162" rx="24" ry="20" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.5"/>
+  <text x="150" y="159" text-anchor="middle" font-size="8.5" font-weight="700" fill="#2e6b66">RNA</text>
+  <text x="150" y="169" text-anchor="middle" font-size="8" fill="#2e6b66">聚合酶</text>
+  <path d="M150,142 q12,-24 28,-38" fill="none" stroke="#2e6b66" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="116" y="110" font-size="9" fill="#8a8f98">mRNA</text>
+  <rect x="194" y="88" width="68" height="22" rx="7" fill="#e7eef6" stroke="#345f86" stroke-width="1.5"/>
+  <text x="228" y="103" text-anchor="middle" font-size="10.5" fill="#345f86">利福平</text>
+  <path d="M194,102 C182,106 174,110 166,114" fill="none" stroke="#345f86" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="159" y="124" text-anchor="middle" font-size="13" fill="#b04242" font-weight="700">✕</text>
+  <text x="150" y="218" text-anchor="middle" font-size="9.5" fill="#454b54">阻转录起始</text>
 
-  <!-- 复制：DNA 旋转酶 / 拓扑异构酶 + 氟喹诺酮 -->
-  <ellipse cx="236" cy="158" rx="24" ry="19" fill="url(#nuEnz)" stroke="#b45309" filter="url(#nuSh)"/>
-  <text x="236" y="155" text-anchor="middle" font-size="8" font-weight="700" fill="#7c2d12">旋转酶</text>
-  <text x="236" y="166" text-anchor="middle" font-size="7.5" fill="#7c2d12">拓扑IV</text>
-  <polyline points="226,176 232,182 226,188 232,194" fill="none" stroke="#dc2626" stroke-width="2"/>
-  <rect x="300" y="186" width="78" height="22" rx="9" fill="url(#nuDrug)" stroke="#2563eb" filter="url(#nuSh)"/>
-  <text x="339" y="201" text-anchor="middle" font-size="10.5" fill="#1d4ed8">氟喹诺酮类</text>
-  <path d="M300,197 C284,196 270,186 258,172" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4 3"/>
-  <polygon points="258,172 267,176 260,182" fill="#2563eb"/>
-  <text x="300" y="232" text-anchor="middle" font-size="10" fill="#64748b">复制：抑旋转酶/拓扑异构酶IV → DNA 断裂不能修复</text>
+  <!-- 复制：DNA 旋转酶 / 拓扑异构酶 IV + 氟喹诺酮 -->
+  <text x="236" y="100" text-anchor="middle" font-size="10" fill="#454b54">复制</text>
+  <ellipse cx="236" cy="162" rx="25" ry="20" fill="#f3ead0" stroke="#8a6d1f" stroke-width="1.5"/>
+  <text x="236" y="159" text-anchor="middle" font-size="8" font-weight="700" fill="#6e571a">旋转酶</text>
+  <text x="236" y="169" text-anchor="middle" font-size="7.5" fill="#6e571a">拓扑IV</text>
+  <polyline points="226,180 232,186 226,192 232,198" fill="none" stroke="#b04242" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="298" y="190" width="80" height="22" rx="7" fill="#e7eef6" stroke="#345f86" stroke-width="1.5"/>
+  <text x="338" y="205" text-anchor="middle" font-size="10.5" fill="#345f86">氟喹诺酮类</text>
+  <path d="M298,201 C282,200 270,190 260,178" fill="none" stroke="#345f86" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#nuArrow)"/>
+  <text x="236" y="236" text-anchor="middle" font-size="9.5" fill="#454b54">DNA 断裂不能修复</text>
 
-  <text x="240" y="288" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">阻断 DNA 复制与转录 → 核酸合成中断</text>
+  <text x="240" y="288" text-anchor="middle" font-size="12.5" fill="#454b54">阻断 DNA 复制与转录 → 核酸合成中断</text>
 </svg>

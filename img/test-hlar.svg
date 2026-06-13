@@ -1,18 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">高水平氨基糖苷耐药筛选（HLAR）</text>
-  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#8a8f98">高浓度：庆大霉素 500 / 链霉素 1000–2000 µg/mL</text>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">高水平氨基糖苷耐药筛选（HLAR）</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">高浓度：庆大霉素 500 / 链霉素 1000–2000 µg/mL</text>
 
-  <!-- 生长=耐药 -->
-  <circle cx="138" cy="170" r="92" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
-  <g fill="#cdbf9e"><circle cx="110" cy="150" r="6"/><circle cx="150" cy="140" r="6"/><circle cx="170" cy="178" r="6"/><circle cx="120" cy="196" r="6"/><circle cx="158" cy="200" r="6"/><circle cx="96" cy="176" r="6"/><circle cx="140" cy="170" r="6"/></g>
-  <circle cx="138" cy="170" r="15" fill="#fff" stroke="#b0b4bb"/><text x="138" y="174" text-anchor="middle" font-size="8" fill="#454b54">GEN</text>
-  <text x="138" y="280" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b04242">有生长 → 高水平耐药</text>
-  <text x="138" y="297" text-anchor="middle" font-size="10.5" fill="#8a8f98">与β-内酰胺/糖肽协同消失</text>
+  <!-- 左：有生长 = 高水平耐药 -->
+  <g>
+    <circle cx="138" cy="166" r="90" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
+    <circle cx="138" cy="166" r="80" fill="none" stroke="#e2dccf" stroke-width="1"/>
+    <!-- 菌落（满布生长） -->
+    <g fill="#e9f0ee" stroke="#2e6b66" stroke-width="1">
+      <circle cx="108" cy="132" r="6.5"/>
+      <circle cx="150" cy="122" r="6"/>
+      <circle cx="176" cy="156" r="6.5"/>
+      <circle cx="184" cy="190" r="6"/>
+      <circle cx="120" cy="200" r="6.5"/>
+      <circle cx="158" cy="204" r="6"/>
+      <circle cx="92" cy="170" r="6"/>
+      <circle cx="100" cy="200" r="5.5"/>
+      <circle cx="166" cy="120" r="5.5"/>
+      <circle cx="190" cy="146" r="5.5"/>
+    </g>
+    <!-- 高浓度氨基糖苷（药敏纸片/孔） -->
+    <circle cx="138" cy="166" r="15" fill="#e7eef6" stroke="#345f86" stroke-width="1.3"/>
+    <text x="138" y="170" text-anchor="middle" font-size="8" font-weight="700" fill="#345f86">GEN</text>
+    <!-- 菌落紧贴纸片：协同消失 -->
+    <g fill="#e9f0ee" stroke="#2e6b66" stroke-width="1">
+      <circle cx="138" cy="142" r="5"/>
+      <circle cx="160" cy="178" r="5"/>
+      <circle cx="118" cy="180" r="5"/>
+    </g>
+    <text x="138" y="282" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b04242">有生长 → 高水平耐药</text>
+    <text x="138" y="297" text-anchor="middle" font-size="10" fill="#8a8f98">与 β-内酰胺 / 糖肽协同消失</text>
+  </g>
 
-  <!-- 无生长=可协同 -->
-  <circle cx="346" cy="170" r="92" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
-  <circle cx="346" cy="170" r="15" fill="#fff" stroke="#b0b4bb"/><text x="346" y="174" text-anchor="middle" font-size="8" fill="#454b54">GEN</text>
-  <text x="346" y="280" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">无生长 → 可协同</text>
-  <text x="346" y="297" text-anchor="middle" font-size="10.5" fill="#8a8f98">联合用药仍有效</text>
+  <!-- 右：无生长 = 可协同 -->
+  <g>
+    <circle cx="346" cy="166" r="90" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
+    <circle cx="346" cy="166" r="80" fill="none" stroke="#e2dccf" stroke-width="1"/>
+    <!-- 清亮无生长背景圈（敏感） -->
+    <circle cx="346" cy="166" r="58" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="346" y="118" text-anchor="middle" font-size="9.5" fill="#3f7a52">清亮 · 无菌落</text>
+    <!-- 高浓度氨基糖苷（药敏纸片/孔） -->
+    <circle cx="346" cy="166" r="15" fill="#e7eef6" stroke="#345f86" stroke-width="1.3"/>
+    <text x="346" y="170" text-anchor="middle" font-size="8" font-weight="700" fill="#345f86">GEN</text>
+    <text x="346" y="282" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">无生长 → 可协同</text>
+    <text x="346" y="297" text-anchor="middle" font-size="10" fill="#8a8f98">联合用药仍有效</text>
+  </g>
 </svg>

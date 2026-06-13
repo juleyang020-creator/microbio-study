@@ -1,52 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
   <defs>
     <pattern id="peBi" width="13" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="6.5" cy="5.5" r="4.4" fill="#99f6e4" stroke="#0f766e"/>
-      <line x1="4.6" y1="9.6" x2="4.6" y2="14" stroke="#0f766e"/><line x1="8.4" y1="9.6" x2="8.4" y2="14" stroke="#0f766e"/>
-      <line x1="4.6" y1="14" x2="4.6" y2="18.4" stroke="#0f766e"/><line x1="8.4" y1="14" x2="8.4" y2="18.4" stroke="#0f766e"/>
-      <circle cx="6.5" cy="22.5" r="4.4" fill="#99f6e4" stroke="#0f766e"/>
+      <circle cx="6.5" cy="5.5" r="4.2" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
+      <line x1="4.7" y1="9.5" x2="4.7" y2="14" stroke="#2e6b66" stroke-width="1"/><line x1="8.3" y1="9.5" x2="8.3" y2="14" stroke="#2e6b66" stroke-width="1"/>
+      <line x1="4.7" y1="14" x2="4.7" y2="18.5" stroke="#2e6b66" stroke-width="1"/><line x1="8.3" y1="14" x2="8.3" y2="18.5" stroke="#2e6b66" stroke-width="1"/>
+      <circle cx="6.5" cy="22.5" r="4.2" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
     </pattern>
-    <linearGradient id="peDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#3b82f6"/></linearGradient>
-    <linearGradient id="pePorin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
-    <filter id="peSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.4" flood-color="#0f172a" flood-opacity="0.16"/></filter>
   </defs>
-  <rect width="480" height="300" fill="#f8fafc"/>
-  <rect x="0" y="56" width="480" height="62" fill="#eff6ff" opacity="0.5"/>
-  <rect x="0" y="158" width="480" height="96" fill="#f0fdfa" opacity="0.6"/>
-  <text x="240" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#b91c1c">膜通透性下降（孔蛋白缺失）</text>
-  <text x="466" y="76" text-anchor="end" font-size="11" fill="#64748b">胞外</text>
-  <text x="466" y="186" text-anchor="end" font-size="11" fill="#64748b">周质</text>
+  <rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- LPS -->
-  <g stroke="#0f766e" fill="#a7f3d0">
-    <circle cx="60" cy="108" r="3.4"/><circle cx="60" cy="98" r="3.4"/><circle cx="180" cy="108" r="3.4"/><circle cx="180" cy="98" r="3.4"/>
-    <circle cx="300" cy="108" r="3.4"/><circle cx="300" cy="98" r="3.4"/><circle cx="420" cy="108" r="3.4"/><circle cx="420" cy="98" r="3.4"/>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">膜通透性下降（外膜孔蛋白缺失）</text>
+  <text x="240" y="44" text-anchor="middle" font-size="11" fill="#8a8f98">孔蛋白表达下降或丢失，药物难入周质</text>
+
+  <text x="466" y="92" text-anchor="end" font-size="10" fill="#8a8f98">胞外</text>
+  <text x="466" y="190" text-anchor="end" font-size="10" fill="#8a8f98">周质</text>
+
+  <!-- LPS（外膜外侧脂多糖糖链） -->
+  <g stroke="#2e6b66" stroke-width="1" fill="#cfe0db">
+    <circle cx="60" cy="108" r="3.2"/><circle cx="60" cy="99" r="3.2"/>
+    <circle cx="180" cy="108" r="3.2"/><circle cx="180" cy="99" r="3.2"/>
+    <circle cx="300" cy="108" r="3.2"/><circle cx="300" cy="99" r="3.2"/>
+    <circle cx="420" cy="108" r="3.2"/><circle cx="420" cy="99" r="3.2"/>
   </g>
-  <text x="14" y="104" font-size="9" fill="#0f766e">LPS</text>
+  <text x="14" y="103" font-size="9" fill="#2e6b66">LPS</text>
 
-  <!-- 外膜 -->
+  <!-- 外膜双层 -->
   <rect x="0" y="118" width="480" height="28" fill="url(#peBi)"/>
+  <text x="14" y="166" font-size="9" fill="#2e6b66">外膜</text>
 
   <!-- 左：有孔蛋白，药物进入 -->
-  <text x="120" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">有孔蛋白</text>
-  <g filter="url(#peSh)">
-    <path d="M100,116 h40 l-5,32 h-30 z" fill="url(#pePorin)" stroke="#0f766e"/>
-  </g>
-  <path d="M120,116 v32" stroke="#fff" stroke-width="7" opacity="0.8"/>
-  <text x="120" y="166" text-anchor="middle" font-size="9" fill="#065f46">OprD / OmpK</text>
-  <circle cx="120" cy="92" r="8" fill="url(#peDrug)" stroke="#1d4ed8"/>
-  <circle cx="120" cy="178" r="8" fill="url(#peDrug)" stroke="#1d4ed8"/>
-  <line x1="120" y1="100" x2="120" y2="170" stroke="#16a34a" stroke-width="2" stroke-dasharray="5 4"/>
-  <polygon points="120,178 114,166 126,166" fill="#16a34a"/>
-  <text x="120" y="208" text-anchor="middle" font-size="10" fill="#16a34a">药物进入 ✓</text>
+  <text x="120" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#2e6b66">有孔蛋白</text>
+  <!-- 孔蛋白桶（横跨外膜，中央通道开放） -->
+  <path d="M100,116 h40 l-5,32 h-30 z" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.4"/>
+  <path d="M120,116 v32" stroke="#ffffff" stroke-width="7" opacity="0.9"/>
+  <path d="M120,116 v32" stroke="#2e6b66" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+  <text x="120" y="166" text-anchor="middle" font-size="9" fill="#1f4a46">OprD / OmpK35·36</text>
+  <!-- 药物分子穿膜 -->
+  <circle cx="120" cy="92" r="7.5" fill="#e7eef6" stroke="#345f86" stroke-width="1.4"/>
+  <line x1="120" y1="100" x2="120" y2="170" stroke="#3f7a52" stroke-width="2" stroke-dasharray="5 4"/>
+  <polygon points="120,176 114.5,165 125.5,165" fill="#3f7a52"/>
+  <circle cx="120" cy="178" r="7.5" fill="#e7eef6" stroke="#345f86" stroke-width="1.4"/>
+  <text x="120" y="206" text-anchor="middle" font-size="10" fill="#3f7a52">药物进入 ✓</text>
 
   <!-- 右：孔蛋白缺失，药物受阻 -->
-  <text x="360" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">孔蛋白缺失</text>
-  <circle cx="360" cy="92" r="8" fill="url(#peDrug)" stroke="#1d4ed8"/>
-  <line x1="360" y1="100" x2="360" y2="116" stroke="#dc2626" stroke-width="2"/>
-  <text x="360" y="138" text-anchor="middle" font-size="16" fill="#dc2626" font-weight="700">✕</text>
-  <text x="360" y="208" text-anchor="middle" font-size="10" fill="#b91c1c">药物难进入</text>
+  <text x="360" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">孔蛋白缺失</text>
+  <!-- 缺口处的膜（无桶状通道，仅双层封闭） -->
+  <path d="M340,116 h40 v32 h-40 z" fill="url(#peBi)" stroke="#cfcabd" stroke-width="1"/>
+  <circle cx="360" cy="92" r="7.5" fill="#e7eef6" stroke="#345f86" stroke-width="1.4"/>
+  <line x1="360" y1="100" x2="360" y2="114" stroke="#b04242" stroke-width="2"/>
+  <text x="360" y="139" text-anchor="middle" font-size="16" fill="#b04242" font-weight="700">✕</text>
+  <text x="360" y="206" text-anchor="middle" font-size="10" fill="#b04242">药物难进入</text>
 
-  <text x="240" y="250" text-anchor="middle" font-size="10.5" fill="#64748b">铜绿 OprD / 肠杆菌 OmpK 表达下降或丢失</text>
-  <text x="240" y="286" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">药物难入周质 → 与产酶协同致碳青霉烯耐药</text>
+  <text x="240" y="250" text-anchor="middle" font-size="11" fill="#8a8f98">铜绿假单胞菌 OprD / 肠杆菌 OmpK35·OmpK36 表达下降或丢失</text>
+  <text x="240" y="284" text-anchor="middle" font-size="12.5" fill="#454b54">药物难入周质，与产酶协同致碳青霉烯耐药</text>
 </svg>

@@ -1,48 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
   <defs>
     <pattern id="poBi" width="13" height="32" patternUnits="userSpaceOnUse">
-      <circle cx="6.5" cy="6" r="4.7" fill="#99f6e4" stroke="#0f766e"/>
-      <line x1="4.6" y1="10.5" x2="4.6" y2="16" stroke="#0f766e"/><line x1="8.4" y1="10.5" x2="8.4" y2="16" stroke="#0f766e"/>
-      <line x1="4.6" y1="16" x2="4.6" y2="21.5" stroke="#0f766e"/><line x1="8.4" y1="16" x2="8.4" y2="21.5" stroke="#0f766e"/>
-      <circle cx="6.5" cy="26" r="4.7" fill="#99f6e4" stroke="#0f766e"/>
+      <circle cx="6.5" cy="6" r="4.4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
+      <line x1="4.7" y1="10.3" x2="4.7" y2="16" stroke="#2e6b66" stroke-width="1"/><line x1="8.3" y1="10.3" x2="8.3" y2="16" stroke="#2e6b66" stroke-width="1"/>
+      <line x1="4.7" y1="16" x2="4.7" y2="21.7" stroke="#2e6b66" stroke-width="1"/><line x1="8.3" y1="16" x2="8.3" y2="21.7" stroke="#2e6b66" stroke-width="1"/>
+      <circle cx="6.5" cy="26" r="4.4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
     </pattern>
-    <linearGradient id="poDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#3b82f6"/></linearGradient>
-    <filter id="poSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
   </defs>
-  <rect width="480" height="300" fill="#f8fafc"/>
-  <rect x="0" y="58" width="480" height="104" fill="#eff6ff" opacity="0.5"/>
-  <rect x="0" y="194" width="480" height="78" fill="#f0fdfa" opacity="0.6"/>
-  <text x="240" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f766e">多烯类：结合麦角固醇成孔</text>
-  <text x="466" y="76" text-anchor="end" font-size="11" fill="#64748b">胞外</text>
-  <text x="466" y="214" text-anchor="end" font-size="11" fill="#64748b">胞质</text>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">多烯类：结合麦角固醇成孔</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">两性霉素 B · 真菌细胞膜</text>
 
-  <!-- 真菌膜（含麦角固醇 紫色） -->
+  <text x="466" y="92" text-anchor="end" font-size="10" fill="#8a8f98">胞外</text>
+  <text x="466" y="226" text-anchor="end" font-size="10" fill="#8a8f98">胞质</text>
+  <line x1="14" y1="100" x2="466" y2="100" stroke="#d6d2c8" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <!-- 真菌磷脂双层（含麦角固醇 哑紫） -->
   <rect x="0" y="162" width="480" height="32" fill="url(#poBi)"/>
+
+  <!-- 散布于膜中的麦角固醇 -->
   <g>
-    <rect x="96" y="160" width="8" height="36" rx="3" fill="#ddd6fe" stroke="#7c3aed"/>
-    <rect x="300" y="160" width="8" height="36" rx="3" fill="#ddd6fe" stroke="#7c3aed"/>
-    <rect x="372" y="160" width="8" height="36" rx="3" fill="#ddd6fe" stroke="#7c3aed"/>
+    <rect x="96" y="160" width="8" height="36" rx="3" fill="#e7e1f0" stroke="#7c6f9c" stroke-width="1.2"/>
+    <rect x="138" y="160" width="8" height="36" rx="3" fill="#e7e1f0" stroke="#7c6f9c" stroke-width="1.2"/>
+    <rect x="344" y="160" width="8" height="36" rx="3" fill="#e7e1f0" stroke="#7c6f9c" stroke-width="1.2"/>
+    <rect x="392" y="160" width="8" height="36" rx="3" fill="#e7e1f0" stroke="#7c6f9c" stroke-width="1.2"/>
   </g>
-  <text x="120" y="150" font-size="9.5" fill="#7c3aed">■ 麦角固醇</text>
+  <rect x="62" y="142" width="11" height="9" rx="2" fill="#e7e1f0" stroke="#7c6f9c" stroke-width="1.2"/>
+  <text x="78" y="150" font-size="9.5" fill="#5b5176">麦角固醇</text>
 
-  <!-- 两性霉素 B 围成孔道，结合麦角固醇 -->
-  <g filter="url(#poSh)">
-    <rect x="196" y="156" width="9" height="44" rx="4" fill="url(#poDrug)"/>
-    <rect x="210" y="156" width="9" height="44" rx="4" fill="url(#poDrug)"/>
-    <rect x="232" y="156" width="9" height="44" rx="4" fill="url(#poDrug)"/>
-    <rect x="246" y="156" width="9" height="44" rx="4" fill="url(#poDrug)"/>
+  <!-- 两性霉素 B 多分子环绕，与麦角固醇结合，围成跨膜孔道 -->
+  <!-- 两端结合的麦角固醇 -->
+  <rect x="187" y="158" width="8" height="40" rx="3" fill="#e7e1f0" stroke="#7c6f9c" stroke-width="1.2"/>
+  <rect x="255" y="158" width="8" height="40" rx="3" fill="#e7e1f0" stroke="#7c6f9c" stroke-width="1.2"/>
+  <!-- 药物分子围成孔壁 -->
+  <g fill="#e7eef6" stroke="#345f86" stroke-width="1.2">
+    <rect x="197" y="156" width="8" height="44" rx="3.5"/>
+    <rect x="211" y="156" width="8" height="44" rx="3.5"/>
+    <rect x="232" y="156" width="8" height="44" rx="3.5"/>
+    <rect x="246" y="156" width="8" height="44" rx="3.5"/>
   </g>
-  <rect x="188" y="158" width="8" height="40" rx="3" fill="#ddd6fe" stroke="#7c3aed"/>
-  <rect x="255" y="158" width="8" height="40" rx="3" fill="#ddd6fe" stroke="#7c3aed"/>
-  <text x="300" y="220" text-anchor="middle" font-size="9.5" fill="#1d4ed8" font-weight="600">两性霉素 B 孔道</text>
+  <text x="296" y="222" text-anchor="middle" font-size="9.5" fill="#345f86" font-weight="600">两性霉素 B 孔道</text>
 
-  <!-- 离子外漏 -->
-  <circle cx="225" cy="214" r="8" fill="#fde047" stroke="#ca8a04"/><text x="225" y="217" text-anchor="middle" font-size="8" fill="#713f12">K⁺</text>
-  <circle cx="225" cy="150" r="8" fill="#fde047" stroke="#ca8a04"/><text x="225" y="153" text-anchor="middle" font-size="8" fill="#713f12">K⁺</text>
-  <circle cx="225" cy="112" r="8" fill="#fde047" stroke="#ca8a04"/><text x="225" y="115" text-anchor="middle" font-size="8" fill="#713f12">K⁺</text>
-  <line x1="225" y1="206" x2="225" y2="122" stroke="#ca8a04" stroke-width="1.6" stroke-dasharray="4 3"/>
-  <polygon points="225,104 219,116 231,116" fill="#ca8a04"/>
+  <!-- 离子/胞内物质经孔道外漏（胞质 → 胞外，向上） -->
+  <line x1="225" y1="206" x2="225" y2="120" stroke="#454b54" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <polygon points="225,110 220,121 230,121" fill="#454b54"/>
+  <g>
+    <circle cx="225" cy="214" r="8.5" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.2"/><text x="225" y="217.5" text-anchor="middle" font-size="8" fill="#1f4a46">K⁺</text>
+    <circle cx="225" cy="148" r="8.5" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.2"/><text x="225" y="151.5" text-anchor="middle" font-size="8" fill="#1f4a46">K⁺</text>
+    <circle cx="225" cy="118" r="8.5" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.2"/><text x="225" y="121.5" text-anchor="middle" font-size="8" fill="#1f4a46">K⁺</text>
+  </g>
 
-  <text x="240" y="252" text-anchor="middle" font-size="10.5" fill="#64748b">多烯大环与膜麦角固醇结合，多分子环绕形成跨膜离子通道</text>
-  <text x="240" y="284" text-anchor="middle" font-size="12.5" font-weight="600" fill="#334155">胞内 K⁺ / 物质外漏 → 真菌死亡（杀菌）</text>
+  <text x="240" y="256" text-anchor="middle" font-size="12.5" fill="#454b54">多烯大环与膜麦角固醇结合，多分子环绕形成跨膜离子通道</text>
+  <text x="240" y="282" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">胞内 K⁺ / 物质外漏 → 真菌死亡（杀菌）</text>
 </svg>
