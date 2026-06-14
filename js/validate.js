@@ -7,7 +7,8 @@
     antibiotics: DB.antibiotics || [],
     resistance: DB.resistance || [],
     cards: DB.cards || [],
-    tests: DB.tests || []
+    tests: DB.tests || [],
+    media: DB.media || []
   };
   var problems = window.Core.validateData(db, DB.categories || {});
   if (problems.length) {

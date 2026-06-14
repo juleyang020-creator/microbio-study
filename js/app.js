@@ -5,7 +5,7 @@
 
   function db() {
     var DB = window.DB || {};
-    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [], tests: DB.tests || [] };
+    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [] };
   }
   function abxIdByName() {
     var m = {};
@@ -140,6 +140,13 @@
           el('div', { cls: 'section-body', text: s.正文 })
         ]));
       });
+    }
+
+    if (vm.天然耐药) {
+      nodes.push(el('div', { cls: 'intrinsic' }, [
+        el('div', { cls: 'intrinsic-title', text: '天然耐药' }),
+        el('div', { cls: 'intrinsic-body', text: vm.天然耐药 })
+      ]));
     }
 
     if (vm.药物 && vm.药物.length) {

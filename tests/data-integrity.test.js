@@ -12,6 +12,7 @@ require('../data/differential.js');
 require('../data/morphology.js');
 require('../data/cards.js');
 require('../data/tests.js');
+require('../data/media.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
 const fs = require('node:fs');
@@ -23,7 +24,8 @@ test('种子数据通过 validateData，无任何问题', () => {
     antibiotics: global.window.DB.antibiotics,
     resistance: global.window.DB.resistance,
     cards: global.window.DB.cards,
-    tests: global.window.DB.tests
+    tests: global.window.DB.tests,
+    media: global.window.DB.media
   };
   const problems = Core.validateData(db, global.window.DB.categories);
   assert.deepStrictEqual(problems, [], '发现问题：' + JSON.stringify(problems, null, 2));

@@ -85,6 +85,7 @@ window.DB.microbes = [
   // ===== 革兰氏阳性球菌 · 肠球菌属 =====
   {
     id: 'enterococcus-faecalis',
+    天然耐药: '对头孢菌素类、氨曲南、低浓度氨基糖苷、克林霉素及复方磺胺（体内无效）天然耐药；治疗用氨苄西林/青霉素，重症加庆大霉素协同。',
     名称: '粪肠球菌',
     拉丁名: 'Enterococcus faecalis',
     类别: '肠球菌属',
@@ -96,6 +97,7 @@ window.DB.microbes = [
   },
   {
     id: 'enterococcus-faecium',
+    天然耐药: '具肠球菌固有耐药（头孢菌素、氨曲南、低浓度氨基糖苷、克林霉素、复方磺胺）；且多数对氨苄西林耐药，VRE 多见，常需利奈唑胺或达托霉素。',
     名称: '屎肠球菌',
     拉丁名: 'Enterococcus faecium',
     类别: '肠球菌属',
@@ -168,6 +170,7 @@ window.DB.microbes = [
   },
   {
     id: 'clostridium-perfringens',
+    天然耐药: '厌氧菌对氨基糖苷天然耐药（其摄取依赖需氧呼吸链）；青霉素、甲硝唑、克林霉素为常用药。',
     名称: '产气荚膜梭菌',
     拉丁名: 'Clostridium perfringens',
     类别: '梭菌属',
@@ -216,6 +219,7 @@ window.DB.microbes = [
   // ===== 革兰氏阳性杆菌 · 李斯特菌属 =====
   {
     id: 'listeria-monocytogenes',
+    天然耐药: '对所有头孢菌素类天然耐药（故李斯特菌脑膜炎不可用头孢曲松）；首选氨苄西林，重症加庆大霉素。',
     名称: '产单核细胞李斯特菌',
     拉丁名: 'Listeria monocytogenes',
     类别: '李斯特菌属',
@@ -242,6 +246,7 @@ window.DB.microbes = [
   // ===== 革兰氏阴性杆菌 · 克雷伯菌属 =====
   {
     id: 'klebsiella-pneumoniae',
+    天然耐药: '产染色体 SHV 类β-内酰胺酶，对氨苄西林、阿莫西林、替卡西林等氨基/羧基青霉素天然耐药。',
     名称: '肺炎克雷伯菌',
     拉丁名: 'Klebsiella pneumoniae',
     类别: '克雷伯菌属',
@@ -281,6 +286,7 @@ window.DB.microbes = [
   // ===== 革兰氏阴性杆菌 · 变形杆菌属 =====
   {
     id: 'proteus-mirabilis',
+    天然耐药: '对黏菌素(多黏菌素)、替加环素、呋喃妥因天然耐药（外膜结构与外排所致）。',
     名称: '奇异变形杆菌',
     拉丁名: 'Proteus mirabilis',
     类别: '变形杆菌属',
@@ -294,6 +300,7 @@ window.DB.microbes = [
   // ===== 革兰氏阴性杆菌 · 假单胞菌属 =====
   {
     id: 'pseudomonas-aeruginosa',
+    天然耐药: '对氨苄西林、阿莫西林/克拉维酸、第一/二代头孢、头孢曲松、厄他培南、四环素类、复方磺胺、氯霉素天然耐药；仅抗假单胞药物（哌拉西林/他唑巴坦、头孢他啶、头孢吡肟、亚胺培南/美罗培南、氨基糖苷、环丙/左氧氟沙星、黏菌素）有效。',
     名称: '铜绿假单胞菌',
     拉丁名: 'Pseudomonas aeruginosa',
     类别: '假单胞菌属',
@@ -764,6 +771,7 @@ window.DB.microbes = [
   // ===== 革兰氏阴性杆菌（临床常见补充） =====
   {
     id: 'acinetobacter-baumannii',
+    天然耐药: '对氨苄西林、阿莫西林/克拉维酸、第一/二代头孢、厄他培南、氨曲南天然耐药；临床常呈多重/广泛耐药，舒巴坦及碳青霉烯、黏菌素为常用选择。',
     名称: '鲍曼不动杆菌',
     拉丁名: 'Acinetobacter baumannii',
     类别: '不动杆菌属',
@@ -775,6 +783,7 @@ window.DB.microbes = [
   },
   {
     id: 'enterobacter-cloacae',
+    天然耐药: '具诱导型 AmpC，对氨苄西林、阿莫西林/克拉维酸、第一/二代头孢、头孢西丁天然耐药；三代头孢治疗中可耐药，选头孢吡肟或碳青霉烯。',
     名称: '阴沟肠杆菌',
     拉丁名: 'Enterobacter cloacae',
     类别: '肠杆菌属',
@@ -786,6 +795,7 @@ window.DB.microbes = [
   },
   {
     id: 'stenotrophomonas-maltophilia',
+    天然耐药: '产染色体 L1 金属酶与 L2 酶，对所有碳青霉烯及多数β-内酰胺天然耐药，并对氨基糖苷耐药；首选复方磺胺甲噁唑（备选左氧氟沙星、米诺环素）。',
     名称: '嗜麦芽窄食单胞菌',
     拉丁名: 'Stenotrophomonas maltophilia',
     类别: '窄食单胞菌属',
@@ -797,6 +807,7 @@ window.DB.microbes = [
   },
   {
     id: 'campylobacter-jejuni',
+    天然耐药: '对头孢菌素类天然耐药；首选大环内酯（阿奇霉素），重症用氟喹诺酮（注意耐药率上升）。',
     名称: '空肠弯曲菌',
     拉丁名: 'Campylobacter jejuni',
     类别: '弯曲菌属',
@@ -823,6 +834,7 @@ window.DB.microbes = [
   // ===== 其他细菌（临床常见补充） =====
   {
     id: 'legionella-pneumophila',
+    天然耐药: '为胞内菌，β-内酰胺类与氨基糖苷体内无效（药物难达胞内）；首选大环内酯（阿奇霉素）或氟喹诺酮（左氧氟沙星）。',
     名称: '嗜肺军团菌',
     拉丁名: 'Legionella pneumophila',
     类别: '军团菌属',
@@ -834,6 +846,7 @@ window.DB.microbes = [
   },
   {
     id: 'burkholderia-cepacia',
+    天然耐药: '对黏菌素(多黏菌素)、氨基糖苷天然耐药，并对多种β-内酰胺固有耐药；复方磺胺、美罗培南、米诺环素、头孢他啶可选。',
     名称: '洋葱伯克霍尔德菌',
     拉丁名: 'Burkholderia cepacia',
     类别: '伯克霍尔德菌属',
@@ -1200,6 +1213,7 @@ window.DB.microbes = [
   },
   {
     id: 'klebsiella-oxytoca',
+    天然耐药: '产染色体β-内酰胺酶，对氨苄西林、替卡西林天然耐药。',
     名称: '产酸克雷伯菌',
     拉丁名: 'Klebsiella oxytoca',
     类别: '克雷伯菌属',
@@ -1211,6 +1225,7 @@ window.DB.microbes = [
   },
   {
     id: 'klebsiella-aerogenes',
+    天然耐药: '具诱导型 AmpC，对氨苄西林、阿莫西林/克拉维酸、第一/二代头孢及头孢西丁天然耐药；三代头孢治疗中可去阻遏耐药。',
     名称: '产气克雷伯菌',
     拉丁名: 'Klebsiella aerogenes（旧称 Enterobacter aerogenes）',
     类别: '克雷伯菌属',
@@ -1347,6 +1362,7 @@ window.DB.microbes = [
   // ===== 补充批次 3（结合 VITEK 鉴定卡）=====
   {
     id: 'citrobacter-freundii',
+    天然耐药: '具诱导型 AmpC，对氨苄西林、阿莫西林/克拉维酸、第一代头孢、头孢西丁天然耐药。',
     名称: '弗劳地柠檬酸杆菌',
     拉丁名: 'Citrobacter freundii',
     类别: '柠檬酸杆菌属',
@@ -1380,6 +1396,7 @@ window.DB.microbes = [
   },
   {
     id: 'morganella-morganii',
+    天然耐药: '对黏菌素(多黏菌素)、替加环素、呋喃妥因天然耐药，并具固有 AmpC（对氨苄西林、阿莫西林/克拉维酸、第一/二代头孢耐药）。',
     名称: '摩根摩根菌',
     拉丁名: 'Morganella morganii',
     类别: '摩根菌属',
@@ -1391,6 +1408,7 @@ window.DB.microbes = [
   },
   {
     id: 'serratia-marcescens',
+    天然耐药: '具固有 AmpC，对氨苄西林、阿莫西林/克拉维酸、第一/二代头孢、头孢西丁天然耐药；并对黏菌素(多黏菌素)、呋喃妥因天然耐药。',
     名称: '粘质沙雷菌',
     拉丁名: 'Serratia marcescens',
     类别: '沙雷菌属',
@@ -1402,6 +1420,7 @@ window.DB.microbes = [
   },
   {
     id: 'providencia-stuartii',
+    天然耐药: '对黏菌素(多黏菌素)、替加环素、呋喃妥因及部分氨基糖苷(妥布霉素等)天然耐药。',
     名称: '斯氏普罗威登斯菌',
     拉丁名: 'Providencia stuartii',
     类别: '普罗威登斯菌属',
@@ -1435,6 +1454,7 @@ window.DB.microbes = [
   },
   {
     id: 'proteus-vulgaris',
+    天然耐药: '对黏菌素(多黏菌素)、替加环素、呋喃妥因天然耐药；并产染色体β-内酰胺酶，对氨苄西林、第一代头孢耐药。',
     名称: '普通变形杆菌',
     拉丁名: 'Proteus vulgaris',
     类别: '变形杆菌属',
@@ -1457,6 +1477,7 @@ window.DB.microbes = [
   },
   {
     id: 'aeromonas-hydrophila',
+    天然耐药: '产染色体β-内酰胺酶，对氨苄西林及阿莫西林天然耐药。',
     名称: '嗜水气单胞菌',
     拉丁名: 'Aeromonas hydrophila',
     类别: '气单胞菌属',
@@ -1490,6 +1511,7 @@ window.DB.microbes = [
   },
   {
     id: 'burkholderia-pseudomallei',
+    天然耐药: '对氨基糖苷、黏菌素、青霉素、第一/二代头孢天然耐药；治疗用头孢他啶或美罗培南（强化期）、复方磺胺（根除期）。',
     名称: '类鼻疽伯克霍尔德菌',
     拉丁名: 'Burkholderia pseudomallei',
     类别: '伯克霍尔德菌属',
@@ -1545,6 +1567,7 @@ window.DB.microbes = [
   },
   {
     id: 'enterococcus-gallinarum',
+    天然耐药: '具肠球菌固有耐药（头孢菌素、氨曲南、低浓度氨基糖苷等）；并携带固有 vanC 基因，对万古霉素天然低度耐药（替考拉宁仍敏感）。',
     名称: '鹑鸡肠球菌',
     拉丁名: 'Enterococcus gallinarum',
     类别: '肠球菌属',
