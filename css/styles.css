@@ -168,13 +168,13 @@ body {
 @media (max-width: 760px) {
   .topbar { flex-wrap: wrap; height: auto; row-gap: 8px; gap: 10px; padding: 8px 12px; padding-top: max(8px, env(safe-area-inset-top)); }
   .menu-btn { display: inline-flex; order: 1; }
-  .brand { order: 1; font-size: 14px; }
-  .search { order: 1; flex: 1 1 auto; min-width: 0; }
-  .topbar::before { content: ""; order: 2; flex-basis: 100%; height: 0; }
-  .tabs { order: 3; flex: 1 1 0; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .brand { order: 2; font-size: 14px; }
+  .search { order: 3; flex: 1 1 auto; min-width: 0; }
+  .compare-btn { order: 4; flex: 0 0 auto; align-self: center; }
+  .topbar::before { content: ""; order: 5; flex-basis: 100%; height: 0; }
+  .tabs { order: 6; width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab { white-space: nowrap; height: 36px; }
-  .compare-btn { order: 3; flex: 0 0 auto; align-self: center; }
 
   .layout { position: relative; }
   .sidebar { position: absolute; z-index: 40; top: 0; left: 0; bottom: 0; width: 84%; max-width: 300px; transform: translateX(-100%); transition: transform .24s ease; box-shadow: 2px 0 16px rgba(15,18,22,.18); }
