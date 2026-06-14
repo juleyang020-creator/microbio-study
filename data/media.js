@@ -11,7 +11,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '蛋白胨（氨基酸/氮源）、牛肉膏（维生素/碳源）、氯化钠（渗透压）、琼脂（凝固剂，本身无营养）。' },
       { 标题: '用途 / 原理', 正文: '最基础的通用培养基，无选择性、无鉴别性；用于一般细菌的增菌、传代与保存，也是多数选择/鉴别培养基的基础。' }
     ],
-    关联: ['e-coli', 'staph-aureus']
+    关联: ['e-coli', 'staph-aureus', 'proteus-mirabilis', 'bacillus-cereus']
   },
   {
     id: 'blood-agar',
@@ -21,7 +21,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '营养琼脂基础 + 5% 脱纤维羊（或兔）血，提供丰富营养与生长因子。' },
       { 标题: '用途 / 原理', 正文: '支持绝大多数细菌生长；并据溶血观察分型——α 溶血（草绿、不完全）、β 溶血（透明、完全）、γ（不溶血）。是链球菌/葡萄球菌分型与常规分离的核心平板。' }
     ],
-    关联: ['strep-pyogenes', 'strep-agalactiae', 'strep-pneumoniae', 'staph-aureus']
+    关联: ['strep-pyogenes', 'strep-agalactiae', 'strep-pneumoniae', 'strep-viridans', 'strep-gallolyticus', 'staph-aureus', 'staph-epidermidis', 'enterococcus-faecalis', 'enterococcus-faecium', 'listeria-monocytogenes']
   },
   {
     id: 'chocolate-agar',
@@ -31,7 +31,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '血琼脂加热（80℃左右）使红细胞裂解，释放出 X 因子（高铁血红素）与 V 因子（NAD），颜色呈巧克力色。' },
       { 标题: '用途 / 原理', 正文: '为营养要求高、需 X/V 因子的细菌提供生长条件，常用于嗜血杆菌与奈瑟菌的培养。' }
     ],
-    关联: ['haemophilus-influenzae', 'haemophilus-parainfluenzae', 'neisseria-meningitidis', 'neisseria-gonorrhoeae']
+    关联: ['haemophilus-influenzae', 'haemophilus-parainfluenzae', 'neisseria-meningitidis', 'neisseria-gonorrhoeae', 'moraxella-catarrhalis', 'brucella-melitensis', 'pasteurella-multocida']
   },
 
   // ===== 选择与鉴别培养基 =====
@@ -43,7 +43,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '蛋白胨基础 + 乳糖 + 胆盐与结晶紫（抑制革兰阳性菌）+ 中性红（pH 指示剂）。' },
       { 标题: '用途 / 原理', 正文: '选择培养革兰阴性肠道杆菌；发酵乳糖者产酸使菌落呈粉红色（如大肠埃希菌、克雷伯），不发酵者无色（如沙门、志贺、变形杆菌）。' }
     ],
-    关联: ['e-coli', 'klebsiella-pneumoniae', 'salmonella-typhi', 'shigella-flexneri', 'proteus-mirabilis']
+    关联: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'klebsiella-aerogenes', 'enterobacter-cloacae', 'citrobacter-freundii', 'serratia-marcescens', 'proteus-mirabilis', 'proteus-vulgaris', 'morganella-morganii', 'salmonella-typhi', 'salmonella-enteritidis', 'shigella-flexneri', 'shigella-dysenteriae', 'pseudomonas-aeruginosa', 'acinetobacter-baumannii', 'stenotrophomonas-maltophilia']
   },
   {
     id: 'emb',
@@ -53,7 +53,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '蛋白胨 + 乳糖（±蔗糖）+ 伊红 Y 与美蓝染料（兼抑制革兰阳性菌与 pH 指示）。' },
       { 标题: '用途 / 原理', 正文: '选择并鉴别革兰阴性菌；强发酵乳糖者产酸，使大肠埃希菌菌落呈特征性的绿色金属光泽。' }
     ],
-    关联: ['e-coli', 'klebsiella-pneumoniae']
+    关联: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'enterobacter-cloacae', 'proteus-mirabilis', 'salmonella-typhi', 'shigella-flexneri']
   },
   {
     id: 'ss-agar',
@@ -63,7 +63,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '乳糖 + 胆盐/枸橼酸盐/煌绿（强抑制革兰阳性菌及大肠菌群）+ 中性红 + 硫代硫酸钠与枸橼酸铁（指示 H₂S）。' },
       { 标题: '用途 / 原理', 正文: '强选择性分离沙门菌、志贺菌；不发酵乳糖呈无色菌落，产 H₂S 者（如沙门菌）中心变黑。' }
     ],
-    关联: ['salmonella-typhi', 'salmonella-enteritidis', 'shigella-dysenteriae', 'shigella-flexneri']
+    关联: ['salmonella-typhi', 'salmonella-paratyphi-a', 'salmonella-enteritidis', 'shigella-dysenteriae', 'shigella-flexneri']
   },
   {
     id: 'xld',
@@ -73,7 +73,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '木糖、赖氨酸、乳糖、蔗糖 + 酚红（pH 指示）+ 硫代硫酸钠/枸橼酸铁铵（H₂S 指示）+ 去氧胆酸钠（选择）。' },
       { 标题: '用途 / 原理', 正文: '分离鉴别沙门菌与志贺菌：沙门菌呈红色带黑心（脱羧赖氨酸+产 H₂S），志贺菌呈红色（不发酵糖）。' }
     ],
-    关联: ['salmonella-typhi', 'shigella-flexneri']
+    关联: ['salmonella-typhi', 'salmonella-paratyphi-a', 'salmonella-enteritidis', 'shigella-flexneri', 'shigella-dysenteriae']
   },
   {
     id: 'tcbs',
@@ -93,7 +93,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '7.5% 高浓度氯化钠（选择耐盐菌）+ 甘露醇 + 酚红（pH 指示）。' },
       { 标题: '用途 / 原理', 正文: '选择培养葡萄球菌（耐高盐）；金黄色葡萄球菌发酵甘露醇产酸，使周围培养基由红变黄。' }
     ],
-    关联: ['staph-aureus', 'staph-epidermidis']
+    关联: ['staph-aureus', 'staph-epidermidis', 'staph-saprophyticus', 'staph-haemolyticus', 'staph-lugdunensis']
   },
   {
     id: 'chromagar-candida',
@@ -103,7 +103,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '沙保罗样营养基础 + 含特异酶显色底物 + 抑菌剂（抑制细菌）。' },
       { 标题: '用途 / 原理', 正文: '据不同念珠菌的特异酶切割显色底物呈不同颜色，快速区分常见种：白念珠菌翠绿、热带念珠菌蓝灰、克柔念珠菌粉红毛糙。' }
     ],
-    关联: ['candida-albicans', 'candida-tropicalis', 'candida-krusei']
+    关联: ['candida-albicans', 'candida-tropicalis', 'candida-krusei', 'candida-glabrata', 'candida-parapsilosis', 'candida-auris']
   },
 
   // ===== 特殊培养基 =====
@@ -125,7 +125,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '高浓度葡萄糖（约 4%）+ 蛋白胨，低 pH（≈5.6），常加氯霉素/放线菌酮抑制细菌与腐生霉菌。' },
       { 标题: '用途 / 原理', 正文: '低 pH 与高糖利于真菌、不利于多数细菌，是酵母菌与丝状真菌的通用分离培养基。' }
     ],
-    关联: ['candida-albicans', 'cryptococcus-neoformans', 'aspergillus-fumigatus', 'trichophyton-rubrum']
+    关联: ['candida-albicans', 'candida-glabrata', 'candida-tropicalis', 'candida-krusei', 'candida-parapsilosis', 'candida-auris', 'cryptococcus-neoformans', 'aspergillus-fumigatus', 'aspergillus-flavus', 'aspergillus-niger', 'mucor', 'rhizopus', 'fusarium', 'trichophyton-rubrum', 'nocardia']
   },
   {
     id: 'bcye',
@@ -185,7 +185,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '强化血琼脂 + 维生素 K₁ 与氯化血红素（厌氧菌生长所需），于厌氧环境培养。' },
       { 标题: '用途 / 原理', 正文: '分离专性厌氧菌（如梭菌、拟杆菌）；需去除氧气并补充其特殊生长因子。' }
     ],
-    关联: ['clostridium-perfringens', 'clostridioides-difficile']
+    关联: ['clostridium-perfringens', 'clostridioides-difficile', 'clostridium-tetani', 'clostridium-botulinum']
   }
 
 ];
