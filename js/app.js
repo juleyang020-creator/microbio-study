@@ -421,12 +421,27 @@
   }
 
   function init() {
+    var isMobile = function () { return window.matchMedia('(max-width: 760px)').matches; };
+    var openNav = function () { document.body.classList.add('nav-open'); };
+    var closeNav = function () { document.body.classList.remove('nav-open'); };
+
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
       t.addEventListener('click', function () {
         document.getElementById('search-input').value = '';
         location.hash = '#/' + t.getAttribute('data-module');
+        if (isMobile()) { openNav(); }   // 切换模块时展开抽屉，便于选择条目
       });
     });
+
+    // 移动端抽屉：汉堡开合、点遮罩/选中条目后关闭
+    var menuBtn = document.getElementById('menu-btn');
+    if (menuBtn) { menuBtn.addEventListener('click', function () { document.body.classList.toggle('nav-open'); }); }
+    var backdrop = document.getElementById('nav-backdrop');
+    if (backdrop) { backdrop.addEventListener('click', closeNav); }
+    var sb = document.getElementById('sidebar');
+    if (sb) { sb.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a')) { closeNav(); } }); }
+    var cmpBtn = document.querySelector('.compare-btn');
+    if (cmpBtn) { cmpBtn.addEventListener('click', function () { if (isMobile()) { openNav(); } }); }
 
     var box = document.getElementById('search-input');
     box.addEventListener('input', function () {
