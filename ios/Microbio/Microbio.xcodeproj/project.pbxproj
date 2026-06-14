@@ -10,10 +10,12 @@
 		15189E7FEAA99DAF53371E41 /* MicrobioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0A16CB56CAB50DC0B74948 /* MicrobioApp.swift */; };
 		7A714259628CB7DC6B56176B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BE132DD7DB8F06B55FC26 /* ContentView.swift */; };
 		9A56E4CE72FB1F4AE264A7D3 /* web in Resources */ = {isa = PBXBuildFile; fileRef = 916FA21B5BC52C48C3428A90 /* web */; };
+		DDF5CE76ECFE8174FB88DFC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABCF0E9CBD2058746B1FD12 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C9BE132DD7DB8F06B55FC26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1ABCF0E9CBD2058746B1FD12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A6DCBDC9D0E72DF2F4ED579 /* Microbio.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Microbio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916FA21B5BC52C48C3428A90 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = SOURCE_ROOT; };
 		BA0A16CB56CAB50DC0B74948 /* MicrobioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrobioApp.swift; sourceTree = "<group>"; };
@@ -23,6 +25,7 @@
 		96460D6B70F56F371FA5263B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1ABCF0E9CBD2058746B1FD12 /* Assets.xcassets */,
 				0C9BE132DD7DB8F06B55FC26 /* ContentView.swift */,
 				BA0A16CB56CAB50DC0B74948 /* MicrobioApp.swift */,
 			);
@@ -102,6 +105,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF5CE76ECFE8174FB88DFC7 /* Assets.xcassets in Resources */,
 				9A56E4CE72FB1F4AE264A7D3 /* web in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

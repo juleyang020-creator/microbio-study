@@ -9,5 +9,7 @@ rm -rf "$DEST"
 mkdir -p "$DEST"
 cp "$ROOT/index.html" "$DEST/"
 cp -R "$ROOT/css" "$ROOT/js" "$ROOT/data" "$ROOT/img" "$DEST/"
+cp "$ROOT/manifest.json" "$ROOT/sw.js" "$DEST/" 2>/dev/null || true
+cp -R "$ROOT/icons" "$DEST/" 2>/dev/null || true
 echo "✓ 已同步网页到 $DEST"
 echo "  内容：index.html + css/ + js/ + data/ + img/"

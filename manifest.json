@@ -1,0 +1,17 @@
+{
+  "name": "微生物学习",
+  "short_name": "微生物学习",
+  "description": "微生物 / 抗微生物药 / 耐药 / 药敏卡 / 试验 / 培养基 学习参考",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f5f1",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

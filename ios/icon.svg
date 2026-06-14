@@ -1,16 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-  <!-- App 图标设计稿（1024×1024）。用任意工具导出 PNG 后放入 Xcode 的 AppIcon。 -->
-  <rect width="1024" height="1024" fill="#2e6b66"/>
+  <!-- App 图标源稿（1024×1024）。培养皿 + 菌落，克制配色。 -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#357d77"/>
+      <stop offset="1" stop-color="#27605b"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
   <!-- 培养皿 -->
-  <circle cx="512" cy="512" r="312" fill="#f4f1ea" stroke="#1f4a46" stroke-width="14"/>
-  <circle cx="512" cy="512" r="270" fill="none" stroke="#cfe0db" stroke-width="6"/>
+  <circle cx="512" cy="512" r="368" fill="#f4f1ea" stroke="#1f4a46" stroke-width="20"/>
+  <circle cx="512" cy="512" r="318" fill="none" stroke="#cfe0db" stroke-width="10"/>
   <!-- 菌落 -->
-  <circle cx="430" cy="430" r="40" fill="#2e6b66"/>
-  <circle cx="612" cy="452" r="30" fill="#8a6d1f"/>
-  <circle cx="470" cy="600" r="34" fill="#345f86"/>
-  <circle cx="600" cy="596" r="22" fill="#b04242"/>
-  <circle cx="540" cy="500" r="16" fill="#2e6b66"/>
+  <circle cx="402" cy="398" r="62" fill="#2e6b66"/>
+  <circle cx="636" cy="430" r="46" fill="#8a6d1f"/>
+  <circle cx="430" cy="612" r="52" fill="#345f86"/>
+  <circle cx="636" cy="612" r="34" fill="#b04242"/>
+  <circle cx="536" cy="506" r="26" fill="#6f6296"/>
   <!-- 杆菌示意 -->
-  <rect x="372" y="512" width="64" height="22" rx="11" fill="#2e6b66" transform="rotate(28 404 523)"/>
-  <rect x="628" y="528" width="58" height="20" rx="10" fill="#345f86" transform="rotate(-22 657 538)"/>
+  <rect x="486" y="372" width="96" height="34" rx="17" fill="#2e6b66" transform="rotate(32 534 389)"/>
+  <rect x="556" y="540" width="92" height="30" rx="15" fill="#345f86" transform="rotate(-20 602 555)"/>
 </svg>
