@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- App 图标设计稿（1024×1024）。用任意工具导出 PNG 后放入 Xcode 的 AppIcon。 -->
+  <rect width="1024" height="1024" fill="#2e6b66"/>
+  <!-- 培养皿 -->
+  <circle cx="512" cy="512" r="312" fill="#f4f1ea" stroke="#1f4a46" stroke-width="14"/>
+  <circle cx="512" cy="512" r="270" fill="none" stroke="#cfe0db" stroke-width="6"/>
+  <!-- 菌落 -->
+  <circle cx="430" cy="430" r="40" fill="#2e6b66"/>
+  <circle cx="612" cy="452" r="30" fill="#8a6d1f"/>
+  <circle cx="470" cy="600" r="34" fill="#345f86"/>
+  <circle cx="600" cy="596" r="22" fill="#b04242"/>
+  <circle cx="540" cy="500" r="16" fill="#2e6b66"/>
+  <!-- 杆菌示意 -->
+  <rect x="372" y="512" width="64" height="22" rx="11" fill="#2e6b66" transform="rotate(28 404 523)"/>
+  <rect x="628" y="528" width="58" height="20" rx="10" fill="#345f86" transform="rotate(-22 657 538)"/>
+</svg>
