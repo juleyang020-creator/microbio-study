@@ -1,13 +1,13 @@
 #!/bin/sh
-# 把网页资源汇总到 ios/web/，供 Xcode 以「文件夹引用」加入工程。
-# 用法：在仓库根目录或任意位置执行  sh ios/make-web.sh
+# 把网页资源同步到 ios/Microbio/web（工程以「文件夹引用」打包它）。
+# 用法：在仓库任意位置执行  sh ios/make-web.sh
+# 每次改了网页内容(data/css/img/js/index.html)后重跑一次，再在 Xcode 点 ▶ 即可更新 App。
 set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-DEST="$ROOT/ios/web"
+DEST="$ROOT/ios/Microbio/web"
 rm -rf "$DEST"
 mkdir -p "$DEST"
 cp "$ROOT/index.html" "$DEST/"
 cp -R "$ROOT/css" "$ROOT/js" "$ROOT/data" "$ROOT/img" "$DEST/"
-echo "✓ 已生成 $DEST"
+echo "✓ 已同步网页到 $DEST"
 echo "  内容：index.html + css/ + js/ + data/ + img/"
-echo "  下一步：把 ios/web 文件夹拖进 Xcode 工程，选「Create folder references」(蓝色)。"

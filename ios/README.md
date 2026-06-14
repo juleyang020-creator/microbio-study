@@ -1,79 +1,70 @@
-# 把「微生物学习」装到自己的 iPhone（WKWebView 套壳）
+# 把「微生物学习」装到自己的 iPhone
 
-目标：用免费 Apple ID，把这个网页应用打包成原生 App 装到自己手机，离线可用。**不需要付费开发者账号，不上架。**
+工程已经建好并**在模拟器上构建运行验证通过**（WKWebView 全屏离线加载整个网页）。
+你只需用**免费 Apple ID** 签名一次，就能装到自己手机。**不需要付费开发者账号、不上架。**
 
-> 限制：免费账号签的 App 证书 **7 天到期**，到期后用 Xcode 再运行一次即可续期；一个免费账号最多同时装 3 个自签 App。
+> 免费账号限制：签出的 App 证书 **7 天到期**，到期后用 Xcode 再点一次 ▶ 续期即可；一个免费账号最多同时装 3 个自签 App。
 
 ---
 
-## 0. 准备
-- 一台 **Mac**，从 App Store 安装 **Xcode**（免费，较大，约需半小时下载）。
-- 一根数据线 + 你的 **iPhone**。
-- 一个 **Apple ID**（免费即可）。
+## 一次性：装到 iPhone（5 步）
 
-## 1. 生成网页资源包
-在仓库根目录执行：
+1. **同步网页资源**（仓库根目录执行）：
+   ```sh
+   sh ios/make-web.sh
+   ```
 
+2. **打开工程**：双击 `ios/Microbio/Microbio.xcodeproj`。
+
+3. **签名**：左侧选最上方蓝色「Microbio」→ 选 TARGETS 的 Microbio → 顶部 **Signing & Capabilities** →
+   - 勾选 **Automatically manage signing**
+   - **Team** → 下拉 → **Add an Account…** → 登录你的 Apple ID（生成 Personal Team）→ 选中它
+   - 若提示 Bundle Identifier 冲突，把它改成唯一值，如 `com.你的名字.microbio`
+
+4. **真机运行**：数据线连 iPhone 并在手机上点「信任此电脑」→ Xcode 顶部运行目标选**你的 iPhone** → 点 **▶**。
+
+5. **信任开发者**：首次打开提示「未受信任的开发者」时，到 iPhone **设置 → 通用 → VPN与设备管理 →** 点你的证书 → **信任**。再点开 App 即可离线使用。
+
+## 以后更新内容
+改了 `data/ css/ img/ js/ index.html` 后：
+```sh
+sh ios/make-web.sh      # 重新同步
+```
+回到 Xcode 点一次 **▶** 重装即可。
+
+## 想先在模拟器看看（不连手机、免签名）
 ```sh
 sh ios/make-web.sh
+cd ios/Microbio
+xcodebuild -scheme Microbio -sdk iphonesimulator \
+  -destination 'platform=iOS Simulator,name=iPhone 17' \
+  -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+xcrun simctl boot "iPhone 17" 2>/dev/null; open -a Simulator
+xcrun simctl install booted build/Build/Products/Debug-iphonesimulator/Microbio.app
+xcrun simctl launch booted com.microbio.app
 ```
 
-会生成 `ios/web/`（含 `index.html` + `css/ js/ data/ img/`）。以后改了网页内容，重跑一次即可。
+## 应用名 / 图标
+- 显示名已设为「微生物学习」（`project.yml` 里的 `INFOPLIST_KEY_CFBundleDisplayName`）。
+- 图标：把 `ios/icon.svg` 导出 1024×1024 PNG，拖入 Xcode `Assets.xcassets → AppIcon`。
 
-## 2. 新建 Xcode 工程
-1. 打开 Xcode → **Create New Project**。
-2. 选 **iOS → App**，**Next**。
-3. 填写：
-   - Product Name：`Microbio`（随意，将作为 App 名；想用中文可之后在设置里改显示名）
-   - Team：先留空（第 5 步再设）
-   - Organization Identifier：`com.你的名字`（如 `com.jule`）
-   - Interface：**SwiftUI**；Language：**Swift**
-   - 「Include Tests」可不勾。
-4. 选个保存位置，**Create**。
-
-## 3. 放入网页与代码
-1. 用我提供的 `ios/ContentView.swift` 的全部内容，**替换**工程里自动生成的 `ContentView.swift`（整文件覆盖）。
-   - 默认生成的 `XxxApp.swift` 已是 `WindowGroup { ContentView() }`，**无需改动**。
-2. 把 **`ios/web` 这个文件夹**从访达拖进 Xcode 左侧文件列表，弹窗里：
-   - 勾选 **Copy items if needed**
-   - **务必选 “Create folder references”**（加入后是**蓝色**文件夹，不是黄色；否则子目录会被打平、网页加载失败）
-   - Add to targets：勾选你的 App
-   - **Finish**。
-   - 确认列表里出现一个**蓝色** `web` 文件夹，展开能看到 `index.html`。
-
-## 4. （可选）应用名 / 图标
-- 中文显示名：选中工程 → Target → **Info** → 加一行 `Bundle display name` = `微生物学习`。
-- 图标：工程里 `Assets.xcassets → AppIcon` 拖入 1024×1024 PNG（`ios/icon.svg` 可作设计稿，用任意工具导出 PNG）。
-
-## 5. 配置签名（关键）
-1. 选中工程（最上方蓝色图标）→ 选 Target → 顶部 **Signing & Capabilities**。
-2. 勾选 **Automatically manage signing**。
-3. **Team**：点下拉 → **Add an Account…** → 登录你的 Apple ID（会创建一个 “Personal Team”）→ 选中它。
-4. 若报 Bundle Identifier 冲突，把它改成唯一值，如 `com.jule.microbio`。
-
-## 6. 真机运行
-1. 数据线连接 iPhone，手机上点「**信任**此电脑」并解锁。
-2. Xcode 顶部运行目标从模拟器改成**你的 iPhone**。
-3. 点 **▶（Run）**。首次会编译+安装。
-4. 第一次在手机上打开会提示「未受信任的开发者」：到 iPhone **设置 → 通用 → VPN与设备管理 →** 点你的开发者证书 → **信任**。
-5. 再点开 App，即可离线使用。
-
-## 7. 日常更新内容
-改完网页（`data/*.js`、`css`、`img` 等）后：
-
-```sh
-sh ios/make-web.sh        # 重新生成 ios/web
-```
-
-回到 Xcode 点一次 **▶** 重新安装即可（蓝色文件夹引用会自动带上新文件）。
-
-## 8. 故障排查
-- **白屏**：`web` 必须是**蓝色**文件夹引用，且 `index.html` 在其根目录；重做第 3.2 步。
-- **“Untrusted Developer”**：按第 6.4 步在设备管理里信任。
-- **签名失败 / Bundle ID 冲突**：改成唯一的 Organization Identifier / Bundle Identifier。
-- **App 过几天打不开**：免费证书 7 天到期，连上 Mac 用 Xcode 再 Run 一次续期。
-- **想调试网页**：Mac Safari →「开发」菜单 → 选你的 iPhone → 选该 WebView，可像浏览器一样审查。
+## 故障排查
+- **白屏**：先跑 `sh ios/make-web.sh`，确认 `ios/Microbio/web/index.html` 存在；工程里 `web` 应是**蓝色**文件夹引用。
+- **签名失败 / Bundle ID 冲突**：把 Bundle Identifier 改成唯一值。
+- **过几天打不开**：免费证书 7 天到期，连 Mac 用 Xcode 再 ▶ 一次续期。
+- **想调试网页**：Mac Safari →「开发」菜单 → 选你的 iPhone/模拟器 → 选该 WebView，可像浏览器一样审查。
 
 ---
 
-需要我做的我都放这儿了（代码 + 脚本 + 步骤）；**第 2、5、6 步是 Xcode 图形界面 + 你的 Apple ID 登录**，必须你来点，我无法替你登录/签名。卡在任何一步把报错截图发我，我帮你定位。
+## 工程结构（XcodeGen 管理）
+```
+ios/Microbio/
+  project.yml                 # 工程定义（如需改设置后重跑: xcodegen generate）
+  Sources/MicrobioApp.swift   # @main 入口
+  Sources/ContentView.swift   # WKWebView 全屏离线加载 web/index.html
+  web/                        # 由 make-web.sh 生成的网页副本（已 gitignore）
+  Microbio.xcodeproj          # 已生成，可直接打开
+```
+> 改了 `project.yml` 需要 `brew install xcodegen` 后 `cd ios/Microbio && xcodegen generate` 重新生成工程；只改网页/Swift 代码则不需要。
+
+需要我做的（代码、工程、脚本、模拟器验证）都已完成；**第 3–5 步是 Xcode 图形界面 + 你的 Apple ID 登录签名**，只能你来点。卡住就把报错截图发我。

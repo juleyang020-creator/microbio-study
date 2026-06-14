@@ -2,11 +2,10 @@ import SwiftUI
 import WebKit
 
 /// 把打包进 App 的本地网页用 WKWebView 全屏离线加载。
-/// 网页资源需作为名为 "web" 的「文件夹引用(蓝色)」加入工程，其中含 index.html / css / js / data / img。
+/// 网页资源以名为 "web" 的「文件夹引用(蓝色)」加入工程，含 index.html / css / js / data / img。
 struct WebView: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
-        let config = WKWebViewConfiguration()
-        let webView = WKWebView(frame: .zero, configuration: config)
+        let webView = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
         webView.allowsBackForwardNavigationGestures = true          // 侧滑返回
         webView.scrollView.contentInsetAdjustmentBehavior = .never  // 由网页 env(safe-area) 处理刘海/底部
         webView.isOpaque = true
@@ -31,7 +30,7 @@ struct WebView: UIViewRepresentable {
 struct ContentView: View {
     var body: some View {
         WebView()
-            .ignoresSafeArea()   // 全屏，安全区由网页 CSS env(safe-area-inset-*) 内边距处理
+            .ignoresSafeArea()   // 全屏；安全区由网页 CSS env(safe-area-inset-*) 内边距处理
     }
 }
 

@@ -2,4 +2,7 @@
 .superpowers/
 .claude/
 node_modules/
-ios/web/
+ios/Microbio/web/
+ios/Microbio/build/
+**/xcuserdata/
+DerivedData/
