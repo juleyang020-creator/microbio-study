@@ -465,7 +465,7 @@
       t.addEventListener('click', function () {
         document.getElementById('search-input').value = '';
         location.hash = '#/' + t.getAttribute('data-module');
-        if (isMobile()) { openNav(); }   // 切换模块时展开抽屉，便于选择条目
+        if (isMobile()) { closeNav(); }   // 切换模块时收起抽屉，露出该模块总览图；点 ☰ 再手动展开分类
       });
     });
 
