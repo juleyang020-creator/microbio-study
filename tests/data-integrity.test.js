@@ -113,8 +113,12 @@ test('分子结构(structures) 的键均为存在的抗微生物药 id', () => {
   });
 });
 
-test('微生物着陆页的三张形态总览图均存在', () => {
-  ['morphology-overview.svg', 'morphology-fungi.svg', 'morphology-virus.svg'].forEach((f) => {
+test('各模块主界面的总览图均存在', () => {
+  [
+    'morphology-overview.svg', 'morphology-fungi.svg', 'morphology-virus.svg',
+    'landing-antibiotics.svg', 'landing-resistance.svg', 'landing-cards.svg',
+    'landing-tests.svg', 'landing-staining.svg', 'landing-media.svg'
+  ].forEach((f) => {
     assert.ok(fs.existsSync(path.join(__dirname, '..', 'img', f)), '缺少 img/' + f);
   });
 });

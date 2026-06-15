@@ -425,20 +425,29 @@
   }
 
   // 未选条目时的着陆页：微生物模块展示「细菌形态总览」图，其余模块仅提示
+  // 各模块主界面（未选条目）的总览图
+  var LANDING = {
+    microbes: [
+      { src: 'img/morphology-overview.svg', cap: '细菌形态总览（按形态与排列）' },
+      { src: 'img/morphology-fungi.svg', cap: '真菌形态总览（酵母相 / 菌丝相 / 产孢结构）' },
+      { src: 'img/morphology-virus.svg', cap: '病毒结构总览（基本结构 / 衣壳对称 / 包膜外形）' }
+    ],
+    antibiotics: [{ src: 'img/landing-antibiotics.svg', cap: '抗微生物药作用机制总览' }],
+    resistance: [{ src: 'img/landing-resistance.svg', cap: '细菌耐药机制总览' }],
+    cards: [{ src: 'img/landing-cards.svg', cap: '药敏卡与判读总览' }],
+    tests: [{ src: 'img/landing-tests.svg', cap: '实验室试验总览' }],
+    staining: [{ src: 'img/landing-staining.svg', cap: '染色方法总览' }],
+    media: [{ src: 'img/landing-media.svg', cap: '培养基总览' }]
+  };
+
   function buildLanding(moduleKey) {
     var nodes = [];
-    if (moduleKey === 'microbes') {
-      [
-        { src: 'img/morphology-overview.svg', cap: '细菌形态总览（按形态与排列）', alt: '细菌形态总览' },
-        { src: 'img/morphology-fungi.svg', cap: '真菌形态总览（酵母相 / 菌丝相 / 产孢结构）', alt: '真菌形态总览' },
-        { src: 'img/morphology-virus.svg', cap: '病毒结构总览（基本结构 / 衣壳对称 / 包膜外形）', alt: '病毒结构总览' }
-      ].forEach(function (g) {
-        nodes.push(el('figure', { cls: 'mechanism-fig' }, [
-          el('img', { cls: 'mechanism-img', src: g.src, alt: g.alt }),
-          el('figcaption', { cls: 'mechanism-cap', text: g.cap })
-        ]));
-      });
-    }
+    (LANDING[moduleKey] || []).forEach(function (g) {
+      nodes.push(el('figure', { cls: 'mechanism-fig' }, [
+        el('img', { cls: 'mechanism-img', src: g.src, alt: g.cap }),
+        el('figcaption', { cls: 'mechanism-cap', text: g.cap })
+      ]));
+    });
     nodes.push(el('div', { cls: 'empty', text: '请选择左侧的一个条目查看详情。' }));
     return nodes;
   }

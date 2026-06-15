@@ -1,6 +1,6 @@
 {
-  "name": "微生物学习",
-  "short_name": "微生物学习",
+  "name": "临床微生物学习与速查系统",
+  "short_name": "临床微生物速查",
   "description": "微生物 / 抗微生物药 / 耐药 / 药敏卡 / 试验 / 培养基 学习参考",
   "lang": "zh-CN",
   "start_url": "./index.html",

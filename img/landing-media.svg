@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 406" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="406" fill="#ffffff"/>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">培养基总览</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">基础与营养、选择与鉴别、特殊用途三类（色示菌落/培养基特征）</text>
+
+  <!-- ===== 基础与营养 ===== -->
+  <text x="24" y="72" font-size="12" font-weight="700" fill="#2e6b66">基础与营养</text>
+  <g text-anchor="middle" font-size="9.5" fill="#454b54">
+    <g><circle cx="64" cy="98" r="14" fill="#e7e0cc" stroke="#0000001a"/><text x="64" y="122">营养琼脂</text></g>
+    <g><circle cx="156" cy="98" r="14" fill="#c45b5b" stroke="#0000001a"/><text x="156" y="122">血平板</text></g>
+    <g><circle cx="248" cy="98" r="14" fill="#8a5a3a" stroke="#0000001a"/><text x="248" y="122">巧克力琼脂</text></g>
+  </g>
+
+  <!-- ===== 选择与鉴别 ===== -->
+  <text x="24" y="150" font-size="12" font-weight="700" fill="#8a6d1f">选择与鉴别</text>
+  <g text-anchor="middle" font-size="9.5" fill="#454b54">
+    <g><circle cx="64" cy="176" r="14" fill="#d98aa0" stroke="#0000001a"/><text x="64" y="200">麦康凯</text></g>
+    <g><circle cx="156" cy="176" r="14" fill="#2f6b4f" stroke="#0000001a"/><text x="156" y="200">EMB</text></g>
+    <g><circle cx="248" cy="176" r="14" fill="#e6dcc6" stroke="#0000001a"/><circle cx="248" cy="176" r="4.5" fill="#23272e"/><text x="248" y="200">SS 琼脂</text></g>
+    <g><circle cx="340" cy="176" r="14" fill="#c45b5b" stroke="#0000001a"/><circle cx="340" cy="176" r="4.5" fill="#23272e"/><text x="340" y="200">XLD</text></g>
+    <g><circle cx="432" cy="176" r="14" fill="#d8c24a" stroke="#0000001a"/><text x="432" y="200">TCBS</text></g>
+    <g><circle cx="64" cy="224" r="14" fill="#e0c84a" stroke="#0000001a"/><text x="64" y="248">甘露醇盐</text></g>
+    <g><circle cx="156" cy="224" r="14" fill="#3f9e5a" stroke="#0000001a"/><text x="156" y="248">念珠菌显色</text></g>
+  </g>
+
+  <!-- ===== 特殊用途 ===== -->
+  <text x="24" y="276" font-size="12" font-weight="700" fill="#3f4f8f">特殊用途</text>
+  <g text-anchor="middle" font-size="9.5" fill="#454b54">
+    <g><circle cx="64" cy="302" r="14" fill="#c7d6a8" stroke="#0000001a"/><text x="64" y="326">罗氏 L-J</text></g>
+    <g><circle cx="156" cy="302" r="14" fill="#ecdfae" stroke="#0000001a"/><text x="156" y="326">沙保罗</text></g>
+    <g><circle cx="248" cy="302" r="14" fill="#6b7378" stroke="#0000001a"/><text x="248" y="326">BCYE</text></g>
+    <g><circle cx="340" cy="302" r="14" fill="#e3e7ea" stroke="#0000001a"/><text x="340" y="326">鲍-金</text></g>
+    <g><circle cx="432" cy="302" r="14" fill="#8a5a3a" stroke="#0000001a"/><text x="432" y="326">T-M</text></g>
+    <g><circle cx="64" cy="350" r="14" fill="#d98aa0" stroke="#0000001a"/><circle cx="64" cy="350" r="5" fill="#c45b5b"/><text x="64" y="374">CIN</text></g>
+    <g><circle cx="156" cy="350" r="14" fill="#8a6db0" stroke="#0000001a"/><text x="156" y="374">Ashdown</text></g>
+    <g><circle cx="248" cy="350" r="14" fill="#9a3b3b" stroke="#0000001a"/><text x="248" y="374">厌氧血平板</text></g>
+  </g>
+
+  <text x="240" y="396" text-anchor="middle" font-size="9.5" fill="#8a8f98">点击任一培养基查看营养成分、用途与原理</text>
+</svg>
