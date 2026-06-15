@@ -46,7 +46,9 @@
     'oxidase': 'img/test-oxidase.svg',
     'optochin': 'img/test-optochin.svg',
     'camp-test': 'img/test-camp.svg',
-    'bile-solubility': 'img/test-bile.svg'
+    'bile-solubility': 'img/test-bile.svg',
+    'kb-test': 'img/test-kb.svg',
+    'e-test': 'img/test-etest.svg'
   };
 
   // 染色：按条目 id 映射到示意图
