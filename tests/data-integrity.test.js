@@ -13,6 +13,8 @@ require('../data/morphology.js');
 require('../data/cards.js');
 require('../data/tests.js');
 require('../data/media.js');
+require('../data/staining.js');
+require('../data/structures.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
 const fs = require('node:fs');
@@ -25,7 +27,8 @@ test('种子数据通过 validateData，无任何问题', () => {
     resistance: global.window.DB.resistance,
     cards: global.window.DB.cards,
     tests: global.window.DB.tests,
-    media: global.window.DB.media
+    media: global.window.DB.media,
+    staining: global.window.DB.staining
   };
   const problems = Core.validateData(db, global.window.DB.categories);
   assert.deepStrictEqual(problems, [], '发现问题：' + JSON.stringify(problems, null, 2));
@@ -96,6 +99,32 @@ test('每个试验都映射到存在的示意图', () => {
     const img = View.mechanismImageFor('tests', t, global.window.DB.categories);
     assert.ok(img, '无示意图映射：' + t.id);
     assert.ok(fs.existsSync(path.join(__dirname, '..', img)), '示意图文件缺失：' + img);
+  });
+});
+
+test('分子结构(structures) 的键均为存在的抗微生物药 id', () => {
+  const ids = {};
+  global.window.DB.antibiotics.forEach((a) => { ids[a.id] = true; });
+  Object.keys(global.window.DB.structures || {}).forEach((k) => {
+    assert.ok(ids[k], 'structures 引用了不存在的抗微生物药 id：' + k);
+    assert.ok((global.window.DB.structures[k] || '').length > 0, 'SMILES 为空：' + k);
+    const svg = path.join(__dirname, '..', 'img', 'struct-' + k + '.svg');
+    assert.ok(fs.existsSync(svg), '结构式 SVG 缺失：img/struct-' + k + '.svg');
+  });
+});
+
+test('微生物着陆页的三张形态总览图均存在', () => {
+  ['morphology-overview.svg', 'morphology-fungi.svg', 'morphology-virus.svg'].forEach((f) => {
+    assert.ok(fs.existsSync(path.join(__dirname, '..', 'img', f)), '缺少 img/' + f);
+  });
+});
+
+test('染色示意图（若有映射）文件均存在', () => {
+  global.window.DB.staining.forEach((s) => {
+    const img = View.mechanismImageFor('staining', s, global.window.DB.categories);
+    if (img) {
+      assert.ok(fs.existsSync(path.join(__dirname, '..', img)), '染色示意图文件缺失：' + img);
+    }
   });
 });
 

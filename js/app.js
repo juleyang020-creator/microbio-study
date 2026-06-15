@@ -5,7 +5,7 @@
 
   function db() {
     var DB = window.DB || {};
-    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [] };
+    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [] };
   }
   function abxIdByName() {
     var m = {};
@@ -230,6 +230,12 @@
         el('div', { cls: 'refs-label', text: '综述 / 参考' })
       ].concat([ el('div', { cls: 'chips' }, refChips) ])));
     }
+    if (vm.结构图) {
+      nodes.push(el('figure', { cls: 'mechanism-fig struct-fig' }, [
+        el('img', { cls: 'mechanism-img', src: vm.结构图, alt: '分子结构' }),
+        el('figcaption', { cls: 'mechanism-cap', text: '分子结构（数据来源 ChEMBL，RDKit 绘制）' })
+      ]));
+    }
     return nodes;
   }
 
@@ -407,13 +413,34 @@
     }
     var extras = {
       mechanismImage: mechImg,
-      mechCaption: route.module === 'tests' ? '试验示意图' : '作用机制示意图',
+      mechCaption: route.module === 'tests' ? '试验示意图' : (route.module === 'staining' ? '染色示意图' : '作用机制示意图'),
+      structImage: (route.module === 'antibiotics' && entry && window.DB.structures && window.DB.structures[entry.id]) ? ('img/struct-' + entry.id + '.svg') : null,
       morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
       differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,
       links: View.referenceLinks(route.module, entry)
     };
-    fill(document.getElementById('main'), buildDetail(View.detailVM(entry, rels, extras)));
+    var vm = View.detailVM(entry, rels, extras);
+    fill(document.getElementById('main'), vm ? buildDetail(vm) : buildLanding(route.module));
+  }
+
+  // 未选条目时的着陆页：微生物模块展示「细菌形态总览」图，其余模块仅提示
+  function buildLanding(moduleKey) {
+    var nodes = [];
+    if (moduleKey === 'microbes') {
+      [
+        { src: 'img/morphology-overview.svg', cap: '细菌形态总览（按形态与排列）', alt: '细菌形态总览' },
+        { src: 'img/morphology-fungi.svg', cap: '真菌形态总览（酵母相 / 菌丝相 / 产孢结构）', alt: '真菌形态总览' },
+        { src: 'img/morphology-virus.svg', cap: '病毒结构总览（基本结构 / 衣壳对称 / 包膜外形）', alt: '病毒结构总览' }
+      ].forEach(function (g) {
+        nodes.push(el('figure', { cls: 'mechanism-fig' }, [
+          el('img', { cls: 'mechanism-img', src: g.src, alt: g.alt }),
+          el('figcaption', { cls: 'mechanism-cap', text: g.cap })
+        ]));
+      });
+    }
+    nodes.push(el('div', { cls: 'empty', text: '请选择左侧的一个条目查看详情。' }));
+    return nodes;
   }
 
   function runSearch(query) {

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <radialGradient id="afField" cx="42%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#dbe3ef"/>
+      <stop offset="100%" stop-color="#c9d4e4"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">抗酸染色（萋-尼法 Ziehl-Neelsen）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">分枝菌酸抗脱色 → 抗酸菌红、背景蓝</text>
+
+  <!-- 左：三步流程 -->
+  <g>
+    <rect x="24" y="74" width="168" height="40" rx="7" fill="#fbeeee" stroke="#c98e8e" stroke-width="1.2"/>
+    <text x="36" y="91" font-size="10.5" font-weight="700" fill="#8a3a3a">①石炭酸复红 + 加热</text>
+    <text x="36" y="106" font-size="9" fill="#a55">冒蒸气勿沸，维持约 5 min</text>
+
+    <rect x="24" y="122" width="168" height="40" rx="7" fill="#fbfaf8" stroke="#cfcabd" stroke-width="1.2"/>
+    <text x="36" y="139" font-size="10.5" font-weight="700" fill="#454b54">②盐酸乙醇脱色</text>
+    <text x="36" y="154" font-size="9" fill="#8a8f98">抗酸菌不被脱色（关键）</text>
+
+    <rect x="24" y="170" width="168" height="40" rx="7" fill="#e7eef6" stroke="#7d93b0" stroke-width="1.2"/>
+    <text x="36" y="187" font-size="10.5" font-weight="700" fill="#345f86">③亚甲蓝复染</text>
+    <text x="36" y="202" font-size="9" fill="#5b7290">背景与非抗酸菌呈蓝色</text>
+
+    <g stroke="#cfcabd" stroke-width="1.4" fill="#cfcabd">
+      <line x1="108" y1="114" x2="108" y2="120"/><polygon points="108,122 105,116 111,116"/>
+      <line x1="108" y1="162" x2="108" y2="168"/><polygon points="108,170 105,164 111,164"/>
+    </g>
+  </g>
+
+  <!-- 右：油镜视野 -->
+  <circle cx="338" cy="150" r="92" fill="url(#afField)" stroke="#9aa7bb" stroke-width="2.5"/>
+  <!-- 蓝色背景细胞(非抗酸) -->
+  <g fill="#8ba0bd" opacity="0.7">
+    <ellipse cx="300" cy="120" rx="7" ry="5"/><ellipse cx="372" cy="186" rx="7" ry="5"/><ellipse cx="356" cy="112" rx="6" ry="4"/>
+  </g>
+  <!-- 红色抗酸杆菌(细长、串珠) -->
+  <g stroke="#b04242" stroke-width="3.4" stroke-linecap="round">
+    <line x1="312" y1="150" x2="336" y2="138"/>
+    <line x1="330" y1="170" x2="356" y2="162"/>
+    <line x1="350" y1="132" x2="372" y2="140"/>
+    <line x1="316" y1="178" x2="340" y2="184"/>
+  </g>
+  <!-- 串珠点缀 -->
+  <g fill="#8f2f2f">
+    <circle cx="318" cy="147" r="1.6"/><circle cx="328" cy="142" r="1.6"/>
+    <circle cx="338" cy="166" r="1.6"/><circle cx="348" cy="163" r="1.6"/>
+  </g>
+  <text x="338" y="258" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">抗酸杆菌（红，细长串珠状）</text>
+  <text x="338" y="274" text-anchor="middle" font-size="10" fill="#345f86">背景及非抗酸菌为蓝色</text>
+
+  <text x="108" y="232" text-anchor="middle" font-size="9.5" fill="#8a8f98">用于结核分枝杆菌等抗酸菌检测</text>
+</svg>

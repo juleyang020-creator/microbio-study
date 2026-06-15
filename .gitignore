@@ -6,3 +6,8 @@ ios/Microbio/web/
 ios/Microbio/build/
 **/xcuserdata/
 DerivedData/
+# secrets — never commit API keys
+.env
+.env.*
+*.secret
+tools/.secrets*

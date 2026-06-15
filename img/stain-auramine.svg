@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <radialGradient id="auField" cx="42%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#26303a"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">金胺O荧光染色（金胺-罗丹明）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">荧光显微镜下抗酸菌呈亮黄绿色，灵敏、可低倍快速筛查</text>
+
+  <!-- 荧光暗视野 -->
+  <circle cx="200" cy="158" r="104" fill="url(#auField)" stroke="#39424d" stroke-width="2"/>
+
+  <!-- 亮黄绿色荧光抗酸杆菌(细长、串珠) -->
+  <g stroke="#c7e85a" stroke-width="3.4" stroke-linecap="round" filter="url(#glow)">
+    <line x1="158" y1="150" x2="186" y2="136"/>
+    <line x1="196" y1="178" x2="226" y2="168"/>
+    <line x1="214" y1="128" x2="240" y2="138"/>
+    <line x1="166" y1="190" x2="194" y2="196"/>
+    <line x1="232" y1="196" x2="256" y2="186"/>
+  </g>
+  <g fill="#eaf7a8" filter="url(#glow)">
+    <circle cx="164" cy="147" r="1.7"/><circle cx="176" cy="141" r="1.7"/>
+    <circle cx="204" cy="174" r="1.7"/><circle cx="216" cy="171" r="1.7"/>
+    <circle cx="222" cy="131" r="1.6"/><circle cx="234" cy="135" r="1.6"/>
+  </g>
+
+  <!-- 标注 -->
+  <line x1="186" y1="136" x2="332" y2="120" stroke="#cfcabd" stroke-width="1"/>
+  <circle cx="186" cy="136" r="2.2" fill="#c7e85a"/>
+  <text x="338" y="116" font-size="11" font-weight="700" fill="#6e7d1f">亮黄绿色荧光</text>
+  <text x="338" y="132" font-size="9.5" fill="#8a8f98">金胺O 与分枝菌酸结合</text>
+
+  <line x1="226" y1="168" x2="332" y2="178" stroke="#cfcabd" stroke-width="1"/>
+  <text x="338" y="174" font-size="11" font-weight="700" fill="#454b54">抗酸杆菌（细长串珠）</text>
+  <text x="338" y="190" font-size="9.5" fill="#8a8f98">背景暗黑、对比强</text>
+
+  <text x="240" y="282" text-anchor="middle" font-size="10" fill="#8a8f98">灵敏度高于萋-尼法，常用于痰标本分枝杆菌筛查</text>
+</svg>

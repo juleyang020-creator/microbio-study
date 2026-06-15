@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <radialGradient id="gField" cx="42%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#f3eef0"/>
+      <stop offset="100%" stop-color="#ece3e6"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">吉姆萨染色（Giemsa）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">罗曼诺夫斯基染色：核紫红、胞质蓝；显示血内寄生虫</text>
+
+  <!-- 血涂片视野 -->
+  <circle cx="190" cy="158" r="104" fill="url(#gField)" stroke="#cbbcc1" stroke-width="2.5"/>
+
+  <!-- 红细胞(淡粉) -->
+  <g fill="#e2bcbc" stroke="#d2a6a6" stroke-width="1">
+    <circle cx="150" cy="118" r="20"/>
+    <circle cx="232" cy="128" r="20"/>
+    <circle cx="128" cy="186" r="20"/>
+    <circle cx="206" cy="200" r="20"/>
+    <circle cx="246" cy="178" r="18"/>
+  </g>
+
+  <!-- 受感染红细胞①：环状体(蓝环+红核) -->
+  <circle cx="184" cy="158" r="22" fill="#e2bcbc" stroke="#d2a6a6" stroke-width="1"/>
+  <circle cx="184" cy="158" r="9" fill="none" stroke="#3f5aa6" stroke-width="2.4"/>
+  <circle cx="191" cy="152" r="3" fill="#9e2f57"/>
+  <!-- 受感染红细胞②：环状体 + 薛氏点(胀大) -->
+  <circle cx="232" cy="128" r="22" fill="#e6c2c6" stroke="#d2a6a6" stroke-width="1"/>
+  <circle cx="232" cy="128" r="8" fill="none" stroke="#3f5aa6" stroke-width="2.2"/>
+  <circle cx="238" cy="123" r="2.6" fill="#9e2f57"/>
+  <g fill="#b07a86"><circle cx="222" cy="120" r="1"/><circle cx="242" cy="118" r="1"/><circle cx="226" cy="138" r="1"/><circle cx="240" cy="140" r="1"/></g>
+
+  <!-- 标注 -->
+  <line x1="184" y1="158" x2="324" y2="138" stroke="#cfcabd" stroke-width="1"/>
+  <circle cx="184" cy="158" r="2.2" fill="#3f5aa6"/>
+  <text x="330" y="134" font-size="11" font-weight="700" fill="#3f5aa6">环状体（胞质蓝环）</text>
+  <text x="330" y="150" font-size="11" font-weight="700" fill="#9e2f57">核 · 紫红</text>
+  <line x1="232" y1="128" x2="324" y2="190" stroke="#cfcabd" stroke-width="1"/>
+  <text x="330" y="194" font-size="10.5" fill="#454b54">被寄生红细胞可胀大、见薛氏点</text>
+
+  <text x="240" y="282" text-anchor="middle" font-size="10" fill="#8a8f98">用于疟原虫、利什曼原虫、立克次体、衣原体等检测</text>
+</svg>

@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', cards: '药敏卡', tests: '试验', media: '培养基' };
+  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', cards: '药敏卡', tests: '试验', media: '培养基', staining: '染色' };
 
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 
@@ -49,6 +49,19 @@
     'bile-solubility': 'img/test-bile.svg'
   };
 
+  // 染色：按条目 id 映射到示意图
+  var STAIN_IMAGE = {
+    'gram-stain': 'img/stain-gram.svg',
+    'acid-fast-zn': 'img/stain-acidfast.svg',
+    'india-ink': 'img/stain-indiaink.svg',
+    'spore-stain': 'img/stain-spore.svg',
+    'flagella-stain': 'img/stain-flagella.svg',
+    'metachromatic-granule': 'img/stain-granule.svg',
+    'lpcb': 'img/stain-lpcb.svg',
+    'giemsa': 'img/stain-giemsa.svg',
+    'auramine': 'img/stain-auramine.svg'
+  };
+
   // 节点子树是否包含某叶子分类（支持任意层级）
   function nodeContainsLeaf(node, leafName) {
     if (node.子类 && node.子类.length) {
@@ -61,6 +74,7 @@
   function mechanismImageFor(moduleKey, entry, categories) {
     if (!entry) { return null; }
     if (moduleKey === 'tests') { return TEST_IMAGE[entry.id] || null; }
+    if (moduleKey === 'staining') { return STAIN_IMAGE[entry.id] || null; }
     if (moduleKey !== 'antibiotics' && moduleKey !== 'resistance') { return null; }
     // 先按类别(叶子)直接匹配（抗真菌药、旁路代谢/生物膜按其类别区分）
     if (MECHANISM_IMAGE[entry.类别]) { return MECHANISM_IMAGE[entry.类别]; }
@@ -105,6 +119,7 @@
       类别: entry.类别 || '',
       拉丁名: entry.拉丁名 || '',
       药敏简写: entry.药敏简写 || '',
+      结构图: extras.structImage || '',
       机制图: extras.mechanismImage || null,
       机制图说明: extras.mechCaption || '示意图',
       形态: extras.morphology || null,
