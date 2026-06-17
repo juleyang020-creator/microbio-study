@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">H₂S 产生试验</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">含硫氨基酸→H₂S，与铁盐生成黑色硫化亚铁（TSI / SIM / KIA）</text>
+
+  <!-- 阴性管(TSI) -->
+  <g>
+    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
+    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <!-- 斜面(红) + 底层(黄) 无黑 -->
+    <path d="M150,150 L186,120 L186,180 L150,180 Z" fill="#c45b5b"/>
+    <path d="M150,180 L186,180 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#e0c84a"/>
+    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6d1f">阴性（无黑色）</text>
+  </g>
+
+  <!-- 阳性管 -->
+  <g>
+    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
+    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M300,150 L336,120 L336,176 L300,176 Z" fill="#c45b5b"/>
+    <path d="M300,176 L336,176 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#e0c84a"/>
+    <!-- 黑色沉淀(底部) -->
+    <path d="M300,196 L336,196 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#23272e"/>
+    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">阳性（底部变黑）</text>
+  </g>
+
+  <text x="240" y="295" text-anchor="middle" font-size="9.5" fill="#8a8f98">沙门菌、变形杆菌、爱德华菌阳性；大肠埃希菌、志贺菌阴性</text>
+</svg>

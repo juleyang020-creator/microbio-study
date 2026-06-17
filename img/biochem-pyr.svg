@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">PYR 试验</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">L-吡咯烷酮酶水解 PYR→β-萘胺，加肉桂醛试剂显红色</text>
+
+  <!-- 阴性纸片 -->
+  <g>
+    <rect x="96" y="92" width="120" height="120" rx="10" fill="#faf9f5" stroke="#c9b98a" stroke-width="2"/>
+    <circle cx="156" cy="152" r="34" fill="#f1ece0" stroke="#cabf9f" stroke-width="1.5"/>
+    <circle cx="156" cy="152" r="10" fill="#e7decb"/>
+    <text x="156" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#8a8f98">阴性（无色）</text>
+  </g>
+
+  <!-- 阳性纸片 -->
+  <g>
+    <rect x="264" y="92" width="120" height="120" rx="10" fill="#faf9f5" stroke="#c9b98a" stroke-width="2"/>
+    <circle cx="324" cy="152" r="34" fill="#f1ece0" stroke="#cabf9f" stroke-width="1.5"/>
+    <circle cx="324" cy="152" r="22" fill="#c4324f"/>
+    <text x="324" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">阳性（樱红色）</text>
+  </g>
+
+  <text x="240" y="278" text-anchor="middle" font-size="10" fill="#8a8f98">A 群化脓性链球菌、肠球菌阳性；可快速替代杆菌肽/胆汁七叶苷初筛</text>
+</svg>

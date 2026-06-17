@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">苯丙氨酸脱氨酶试验 (PDA)</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">苯丙氨酸→苯丙酮酸，加 10% FeCl₃ 与之络合显绿色</text>
+
+  <!-- 阴性管(黄,不变) -->
+  <g>
+    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
+    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M150,150 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#e6dcae"/>
+    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6d1f">阴性（黄，不变）</text>
+  </g>
+
+  <!-- 阳性管(绿) -->
+  <g>
+    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
+    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M300,150 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#4a8a5a"/>
+    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a52">阳性（绿色）</text>
+  </g>
+
+  <text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#8a8f98">变形杆菌属、普罗威登斯菌属、摩根菌属阳性（"PPM 三联"特征）</text>
+</svg>

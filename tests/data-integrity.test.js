@@ -10,11 +10,14 @@ require('../data/resistance.js');
 require('../data/biochem.js');
 require('../data/differential.js');
 require('../data/morphology.js');
+require('../data/idcards.js');
 require('../data/cards.js');
 require('../data/tests.js');
 require('../data/media.js');
 require('../data/staining.js');
 require('../data/structures.js');
+require('../data/breakpoints.js');
+require('../data/biochem-tests.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
 const fs = require('node:fs');
@@ -25,10 +28,12 @@ test('种子数据通过 validateData，无任何问题', () => {
     microbes: global.window.DB.microbes,
     antibiotics: global.window.DB.antibiotics,
     resistance: global.window.DB.resistance,
+    idcards: global.window.DB.idcards,
     cards: global.window.DB.cards,
     tests: global.window.DB.tests,
     media: global.window.DB.media,
-    staining: global.window.DB.staining
+    staining: global.window.DB.staining,
+    'biochem-tests': global.window.DB.biochemTests
   };
   const problems = Core.validateData(db, global.window.DB.categories);
   assert.deepStrictEqual(problems, [], '发现问题：' + JSON.stringify(problems, null, 2));
@@ -133,8 +138,8 @@ test('分子结构(structures) 的键均为存在的抗微生物药 id', () => {
 test('各模块主界面的总览图均存在', () => {
   [
     'morphology-overview.svg', 'morphology-fungi.svg', 'morphology-virus.svg',
-    'landing-antibiotics.svg', 'landing-resistance.svg', 'landing-cards.svg',
-    'landing-tests.svg', 'landing-staining.svg', 'landing-media.svg'
+    'landing-antibiotics.svg', 'landing-resistance.svg', 'landing-idcards.svg', 'landing-cards.svg',
+    'landing-tests.svg', 'landing-staining.svg', 'landing-media.svg', 'landing-biochem.svg'
   ].forEach((f) => {
     assert.ok(fs.existsSync(path.join(__dirname, '..', 'img', f)), '缺少 img/' + f);
   });
@@ -149,11 +154,50 @@ test('染色示意图（若有映射）文件均存在', () => {
   });
 });
 
+test('生化反应示意图（若有映射）文件均存在', () => {
+  global.window.DB.biochemTests.forEach((b) => {
+    const img = View.mechanismImageFor('biochem-tests', b, global.window.DB.categories);
+    if (img) {
+      assert.ok(fs.existsSync(path.join(__dirname, '..', img)), '生化反应示意图文件缺失：' + img);
+    }
+  });
+});
+
+test('鉴定卡数据完整：每卡有适用菌关联与小节', () => {
+  (global.window.DB.idcards || []).forEach((c) => {
+    assert.ok(Array.isArray(c.关联) && c.关联.length > 0, '鉴定卡无关联：' + c.id);
+    assert.ok(Array.isArray(c.小节) && c.小节.length > 0, '鉴定卡无小节：' + c.id);
+  });
+  assert.ok((global.window.DB.idcards || []).length >= 7, '鉴定卡数量不足 7');
+});
+
 test('每个微生物与耐药机制都能生成综述链接', () => {
   global.window.DB.microbes.forEach((m) => {
     assert.ok(View.referenceLinks('microbes', m).length >= 1, '微生物无综述链接：' + m.id);
   });
   global.window.DB.resistance.forEach((r) => {
     assert.ok(View.referenceLinks('resistance', r).length >= 1, '耐药机制无综述链接：' + r.id);
+  });
+});
+
+test('折点数据中引用的菌 id 均存在于微生物数据中', () => {
+  const microbeIds = {};
+  global.window.DB.microbes.forEach((m) => { microbeIds[m.id] = true; });
+  (global.window.DB.breakpoints || []).forEach((group) => {
+    (group.菌种 || []).forEach((id) => {
+      assert.ok(microbeIds[id], '折点组 “' + group.菌组名 + '” 引用了不存在的微生物 id：' + id);
+    });
+  });
+});
+
+test('折点数据中每组均有菌种和药物', () => {
+  (global.window.DB.breakpoints || []).forEach((group) => {
+    assert.ok(group.菌组名 && group.菌组名.length, '折点组缺少菌组名');
+    assert.ok(group.菌种 && group.菌种.length > 0, '折点组 “' + (group.菌组名 || '?') + '” 菌种为空');
+    assert.ok(group.药物 && group.药物.length > 0, '折点组 “' + group.菌组名 + '” 药物为空');
+    group.药物.forEach((d) => {
+      assert.ok(d.药物 && d.药物.length, '折点组 “' + group.菌组名 + '” 存在无药物名的条目');
+      assert.ok(d.MIC_S || d.MIC_R, '折点组 “' + group.菌组名 + '” 中 “' + d.药物 + '” 缺少 MIC 折点');
+    });
   });
 });
