@@ -1,6 +1,8 @@
 # 微生物学习软件 框架 Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+>
+> **📌 状态**：此计划是 v1 框架（三大模块）的实施蓝图，已于 2026-06-03 前后完成。后续已扩展至 7 大模块、数据文件增至 12 个、分类树升级为多级。详见设计文档当前版本。
 
 **Goal:** 搭出一个本地、免构建、可离线的静态网页应用框架，含微生物 / 抗生素 / 耐药三大模块的导航、统一数据模型、跨模块关联跳转与全局搜索，并放入少量占位条目。
 

@@ -1,4 +1,4 @@
-# 怎么把「微生物学习」分享给朋友
+# 怎么把「临床微生物速查」分享给朋友
 
 这本质上是一个网页应用，而且已做成 **PWA（可离线、可加到主屏）**。所以分享给朋友最简单的方式不是发 iOS App，而是发一个**网址**。
 
@@ -9,7 +9,7 @@
 
 - **最省事（无需注册）—— Netlify Drop**
   1. 浏览器打开 https://app.netlify.com/drop
-  2. 把**项目文件夹**（含 `index.html`、`css/ js/ data/ img/ icons/`、`manifest.json`、`sw.js`）整个拖进去
+  2. 把**项目文件夹**（含 `index.html`、`css/ js/ data/ img/ icons/ ios/`、`manifest.json`、`sw.js`）整个拖进去
   3. 几秒后得到一个网址，如 `https://xxxx.netlify.app`
   > 注意：`ios/`、`tests/`、`.git/` 这些拖不拖都行，不影响。
 

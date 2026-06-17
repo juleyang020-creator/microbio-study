@@ -67,6 +67,23 @@ test('每个抗生素都有药敏简写', () => {
   });
 });
 
+test('药敏卡中的药物名均可跳转到药物或对应试验条目', () => {
+  const drugNames = {};
+  global.window.DB.antibiotics.forEach((a) => { drugNames[a.名称] = true; });
+  const cardTests = {
+    ESBL: true,
+    头孢西丁筛选: true,
+    诱导型克林霉素耐药: true,
+    '庆大霉素高水平(协同)': true,
+    '链霉素高水平(协同)': true
+  };
+  global.window.DB.cards.forEach((card) => {
+    (card.药物 || []).forEach((name) => {
+      assert.ok(drugNames[name] || cardTests[name], card.id + ' 的项目无法跳转：' + name);
+    });
+  });
+});
+
 function isAntifungal(a, cats) {
   const g = (cats.antibiotics || []).find((grp) => grp.名称 === '抗真菌药');
   return !!(g && (g.子类 || []).some((l) => l.名称 === a.类别));

@@ -66,6 +66,21 @@ test('searchEntries 匹配名称/拉丁名/小节正文，且大小写不敏感'
   assert.deepStrictEqual(Core.searchEntries(db, '苯唑').map(r => r.id), ['a1']);
 });
 
+test('searchEntries 匹配类别、药敏简写、药敏卡药物与扩展数据', () => {
+  const db = {
+    microbes: [{ id: 'm1', 名称: '金葡', 拉丁名: 'Staph', 类别: '葡萄球菌属', 小节: [], 关联: [] }],
+    antibiotics: [{ id: 'a1', 名称: '苯唑西林', 药敏简写: 'OXA', 类别: '青霉素类', 小节: [], 关联: [] }],
+    resistance: [],
+    cards: [{ id: 'c1', 名称: 'GP68', 类别: '链球菌药敏卡', 药物: ['泰利霉素'], 小节: [], 关联: [] }],
+    tests: [], media: [], staining: [],
+    morphology: { m1: { 镜下: '葡萄串状排列' } },
+    biochem: { m1: [{ 项目: '血浆凝固酶', 结果: '+' }] }
+  };
+  assert.deepStrictEqual(Core.searchEntries(db, 'OXA').map(r => r.id), ['a1']);
+  assert.deepStrictEqual(Core.searchEntries(db, '泰利霉素').map(r => r.id), ['c1']);
+  assert.deepStrictEqual(Core.searchEntries(db, '凝固酶').map(r => r.id), ['m1']);
+});
+
 test('searchEntries 空查询返回空数组', () => {
   assert.deepStrictEqual(Core.searchEntries(fixture(), '   '), []);
 });

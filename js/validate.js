@@ -8,7 +8,8 @@
     resistance: DB.resistance || [],
     cards: DB.cards || [],
     tests: DB.tests || [],
-    media: DB.media || []
+    media: DB.media || [],
+    staining: DB.staining || []
   };
   var problems = window.Core.validateData(db, DB.categories || {});
   if (problems.length) {

@@ -28,9 +28,10 @@ body {
 }
 
 /* 顶栏 */
-.topbar { display: flex; align-items: center; gap: 22px; background: var(--surface); border-bottom: 1px solid var(--line); padding: 0 22px; height: 52px; flex-shrink: 0; }
+.topbar { display: flex; align-items: center; gap: 16px; background: var(--surface); border-bottom: 1px solid var(--line); padding: 0 22px; height: 52px; flex-shrink: 0; }
 .brand { font-weight: 600; font-size: 15px; letter-spacing: 1px; color: var(--ink); white-space: nowrap; }
-.tabs { display: flex; gap: 2px; height: 100%; }
+.tabs { display: flex; gap: 2px; height: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
 .tab { background: none; border: none; color: var(--muted); font-size: 13.5px; padding: 0 12px; height: 100%; cursor: pointer; border-bottom: 2px solid transparent; font-family: inherit; }
 .tab:hover { color: var(--ink); }
 .tab.active { color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
@@ -48,7 +49,7 @@ body {
 /* 侧栏分类树 */
 .cat-group { margin-bottom: 4px; }
 .cat-group-name { color: var(--muted); font-weight: 600; font-size: 11px; letter-spacing: 1px; margin: 12px 0 4px; }
-.cat-leaf, .cat-subgroup { color: var(--ink-soft); font-weight: 500; padding: 3px 6px; margin-top: 2px; }
+.cat-subgroup { color: var(--ink-soft); font-weight: 500; padding: 3px 6px; margin-top: 2px; }
 .collapsible { cursor: pointer; user-select: none; }
 .collapsible:hover { color: var(--accent); }
 .entry-link { display: block; color: var(--ink-soft); text-decoration: none; padding: 4px 8px 4px 16px; border-radius: 4px; border-left: 2px solid transparent; }
@@ -57,7 +58,7 @@ body {
 
 /* 详情头 */
 .detail-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.detail-title { font-size: 23px; font-weight: 650; margin: 0; letter-spacing: .3px; color: var(--ink); }
+.detail-title { font-size: 23px; font-weight: 600; margin: 0; letter-spacing: .3px; color: var(--ink); }
 .badge { color: var(--muted); font-size: 12px; border: 1px solid var(--line); border-radius: 4px; padding: 1px 8px; font-weight: 500; }
 .latin { color: var(--muted); font-style: italic; margin: 5px 0 22px; font-size: 14px; }
 .abbr { font-family: var(--mono); background: var(--accent-weak); color: var(--accent); font-size: 11.5px; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; }
@@ -110,7 +111,8 @@ body {
 .cmp-pick { padding: 5px 9px; border-radius: 4px; cursor: pointer; color: var(--ink-soft); font-size: 13px; user-select: none; }
 .cmp-pick:hover { background: var(--line-2); }
 .cmp-pick.sel { color: var(--accent); font-weight: 600; }
-.cmp { border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+.table-scroll { max-width: 100%; overflow-x: auto; padding-bottom: 2px; }
+.cmp { border-collapse: collapse; margin-top: 10px; font-size: 13px; min-width: 560px; }
 .cmp th, .cmp td { border: 1px solid var(--line); padding: 7px 12px; text-align: left; }
 .cmp thead th { background: var(--line-2); color: var(--ink); font-weight: 600; }
 .cmp .cmp-col { color: var(--link); text-decoration: none; }
@@ -130,6 +132,9 @@ body {
 .chip-antibiotics { color: var(--green); }
 .chip-resistance { color: var(--rust); }
 .chip-tests { color: var(--gold); }
+.chip-cards { color: #4a6d8c; }
+.chip-media { color: #6b4e8a; }
+.chip-staining { color: #8a4a6b; }
 .chip-missing, .chip-plain { color: var(--muted); background: var(--line-2); }
 
 /* 参考链接 */
@@ -150,11 +155,15 @@ body {
 .search-list { display: flex; flex-direction: column; gap: 6px; max-width: 700px; }
 .search-item { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 9px 13px; text-decoration: none; color: var(--ink); }
 .search-item:hover { border-color: var(--accent); }
+.search-summary { display: block; color: var(--muted); font-size: 12px; margin: 3px 0 0 48px; line-height: 1.45; }
 .tag { font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 8px; border: 1px solid var(--line); color: var(--muted); }
 .tag-microbes { color: var(--link); }
 .tag-antibiotics { color: var(--green); }
 .tag-resistance { color: var(--rust); }
 .tag-tests { color: var(--gold); }
+.tag-cards { color: #4a6d8c; }
+.tag-media { color: #6b4e8a; }
+.tag-staining { color: #8a4a6b; }
 
 /* 空状态 */
 .empty { color: var(--muted); padding: 48px 0; text-align: center; }
@@ -185,4 +194,11 @@ body {
   .detail-title { font-size: 20px; }
   .entry-link, .cmp-pick, .tab { min-height: 32px; }
   .cmp th, .cmp td { padding: 6px 9px; }
+  .search-summary { margin-left: 0; }
+}
+
+@media (max-width: 1120px) and (min-width: 761px) {
+  .topbar { gap: 10px; padding: 0 14px; }
+  .tab { padding: 0 9px; }
+  .search { min-width: 150px; }
 }
