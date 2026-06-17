@@ -250,6 +250,7 @@
         el('span', { cls: 'tag tag-' + r.module, text: View.moduleLabel(r.module) })
       ]);
       link.appendChild(document.createTextNode(' ' + r.名称));
+      if (r.摘要) { link.appendChild(el('span', { cls: 'search-summary', text: r.摘要 })); }
       return link;
     });
     nodes.push(el('div', { cls: 'search-list' }, items));
@@ -318,10 +319,10 @@
       row.cells.forEach(function (c) { tds.push(el('td', { cls: 'cmp-cell', text: c })); });
       return el('tr', { cls: row.differs ? 'cmp-diff' : '' }, tds);
     });
-    nodes.push(el('table', { cls: 'cmp' }, [
+    nodes.push(el('div', { cls: 'table-scroll' }, [ el('table', { cls: 'cmp' }, [
       el('thead', {}, [ el('tr', {}, headCells) ]),
       el('tbody', {}, bodyRows)
-    ]));
+    ]) ]));
     nodes.push(el('div', { cls: 'cmp-hint', text: '黄色行 = 各菌结果存在差异（鉴别要点）。点列首菌名可跳转详情。' }));
     return nodes;
   }
@@ -384,7 +385,9 @@
       row.cells.forEach(function (has) { tds.push(el('td', { cls: 'cmp-cell', text: has ? '✓' : '' })); });
       return el('tr', { cls: row.differs ? 'cmp-diff' : '' }, tds);
     });
-    nodes.push(el('table', { cls: 'cmp' }, [ el('thead', {}, [ el('tr', {}, headCells) ]), el('tbody', {}, bodyRows) ]));
+    nodes.push(el('div', { cls: 'table-scroll' }, [
+      el('table', { cls: 'cmp' }, [ el('thead', {}, [ el('tr', {}, headCells) ]), el('tbody', {}, bodyRows) ])
+    ]));
     nodes.push(el('div', { cls: 'cmp-hint', text: '✓ = 该卡含此药/检测项；黄色行 = 各卡不一致。点列首卡名可查看该卡详情。' }));
     return nodes;
   }

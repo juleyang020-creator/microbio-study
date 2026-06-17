@@ -35,14 +35,7 @@
     <g><circle cx="64" cy="350" r="14" fill="#d98aa0" stroke="#0000001a"/><circle cx="64" cy="350" r="5" fill="#c45b5b"/><text x="64" y="374">CIN</text></g>
     <g><circle cx="156" cy="350" r="14" fill="#8a6db0" stroke="#0000001a"/><text x="156" y="374">Ashdown</text></g>
     <g><circle cx="248" cy="350" r="14" fill="#9a3b3b" stroke="#0000001a"/><text x="248" y="374">厌氧血平板</text></g>
-    <!-- 琼脂糖凝胶：电泳介质（非培养皿），用凝胶板图标区分 -->
-    <g>
-      <rect x="326" y="338" width="28" height="24" rx="2" fill="#c2bbe0" stroke="#6a5fa0" stroke-width="1"/>
-      <g fill="#4a3f78"><rect x="330" y="338" width="3" height="3"/><rect x="338.5" y="338" width="3" height="3"/><rect x="347" y="338" width="3" height="3"/></g>
-      <g stroke="#4a3f78" stroke-width="1.4"><line x1="329" y1="347" x2="351" y2="347"/><line x1="329" y1="353" x2="345" y2="353"/></g>
-      <text x="340" y="374">琼脂糖凝胶</text>
-    </g>
   </g>
 
-  <text x="240" y="396" text-anchor="middle" font-size="9.5" fill="#8a8f98">M-H 为药敏标准培养基；琼脂糖凝胶用于核酸电泳（分子检测，非培养）</text>
+  <text x="240" y="396" text-anchor="middle" font-size="9.5" fill="#8a8f98">M-H 琼脂为药敏（KB / E-test）的标准培养基；点击任一培养基查看成分、用途与原理</text>
 </svg>

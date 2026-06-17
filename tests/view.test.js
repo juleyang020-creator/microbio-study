@@ -7,6 +7,11 @@ test('moduleLabel 返回中文标签', () => {
   assert.strictEqual(View.moduleLabel('microbes'), '微生物');
   assert.strictEqual(View.moduleLabel('antibiotics'), '抗微生物药');
   assert.strictEqual(View.moduleLabel('resistance'), '耐药');
+  assert.strictEqual(View.moduleLabel('cards'), '药敏卡');
+  assert.strictEqual(View.moduleLabel('tests'), '试验');
+  assert.strictEqual(View.moduleLabel('media'), '培养基');
+  assert.strictEqual(View.moduleLabel('staining'), '染色');
+  assert.strictEqual(View.moduleLabel('unknown'), '未知');
 });
 
 test('detailVM 为空条目时返回 null', () => {

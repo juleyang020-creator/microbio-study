@@ -52,18 +52,48 @@
     return result;
   }
 
+  function pushText(out, text) {
+    if (text == null) { return; }
+    if (Array.isArray(text)) {
+      text.forEach(function (x) { pushText(out, x); });
+      return;
+    }
+    if (typeof text === 'object') {
+      Object.keys(text).forEach(function (k) { pushText(out, text[k]); });
+      return;
+    }
+    out.push(String(text));
+  }
+
+  function entrySearchText(db, mod, entry) {
+    var hay = [];
+    pushText(hay, [entry.名称, entry.拉丁名, entry.英文, entry.类别, entry.药敏简写, entry.天然耐药, entry.药物]);
+    (entry.小节 || []).forEach(function (s) { pushText(hay, [s.标题, s.正文]); });
+
+    if (mod === 'microbes') {
+      pushText(hay, (db.morphology || {})[entry.id]);
+      pushText(hay, (db.biochem || {})[entry.id]);
+      pushText(hay, (db.differential || {})[entry.id]);
+    }
+    return hay.join(' ').toLowerCase();
+  }
+
+  function searchSummary(mod, entry) {
+    if (mod === 'microbes') { return entry.拉丁名 || entry.类别 || ''; }
+    if (mod === 'antibiotics') { return [entry.药敏简写, entry.类别].filter(Boolean).join(' · '); }
+    if (mod === 'cards') { return [entry.类别, entry.药物 ? (entry.药物.length + ' 项') : ''].filter(Boolean).join(' · '); }
+    return entry.类别 || '';
+  }
+
   function searchEntries(db, query) {
     var q = (query || '').trim().toLowerCase();
     if (!q) { return []; }
     var results = [];
     MODULE_KEYS.forEach(function (mod) {
       (db[mod] || []).forEach(function (entry) {
-        var hay = [entry.名称 || '', entry.拉丁名 || ''];
-        (entry.小节 || []).forEach(function (s) { hay.push(s.正文 || ''); });
-        var matched = hay.some(function (text) {
-          return String(text).toLowerCase().indexOf(q) !== -1;
-        });
-        if (matched) { results.push({ id: entry.id, 名称: entry.名称, module: mod }); }
+        if (entrySearchText(db, mod, entry).indexOf(q) !== -1) {
+          results.push({ id: entry.id, 名称: entry.名称, module: mod, 摘要: searchSummary(mod, entry) });
+        }
       });
     });
     return results;

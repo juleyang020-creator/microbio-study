@@ -190,7 +190,7 @@
     return {
       query: query,
       items: (results || []).map(function (r) {
-        return { id: r.id, 名称: r.名称, module: r.module, href: '#/' + r.module + '/' + r.id };
+        return { id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要 || '', href: '#/' + r.module + '/' + r.id };
       })
     };
   }
