@@ -2,7 +2,10 @@
 const test = require('node:test');
 const assert = require('node:assert');
 
-global.window = {};
+// 数据文件挂到 global.window.DB 上；这里在文件加载前重置，
+// 避免日后与其他 test 文件共享 globalThis 时互相污染。
+global.window = global.window || {};
+global.window.DB = global.window.DB || {};
 require('../data/categories.js');
 require('../data/microbes.js');
 require('../data/antibiotics.js');

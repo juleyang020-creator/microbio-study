@@ -1,4 +1,6 @@
-// 生化反应试验条目（作为独立模块）
+// 生化反应试验条目（独立模块，本身是「项目」的百科条目）。
+// 与 data/biochem.js 的区别：biochem.js 是「菌 → 反应结果」的映射（按微生物 id 索引），
+// 本文件是「反应项目」本身（按 id 索引，供详情页跳转与对比页表头使用）。
 window.DB = window.DB || {};
 window.DB.biochemTests = [
 

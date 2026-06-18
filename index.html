@@ -16,18 +16,33 @@
   <header class="topbar">
     <button id="menu-btn" class="menu-btn" aria-label="目录" type="button">☰</button>
     <div class="brand">临床微生物速查</div>
-    <nav class="tabs">
-      <button class="tab" data-module="microbes">微生物分类</button>
-      <button class="tab" data-module="antibiotics">抗微生物药</button>
-      <button class="tab" data-module="resistance">耐药因素</button>
-      <button class="tab" data-module="idcards">鉴定卡</button>
-      <button class="tab" data-module="cards">药敏卡</button>
-      <button class="tab" data-module="tests">试验</button>
-      <button class="tab" data-module="staining">染色</button>
-      <button class="tab" data-module="media">培养基</button>
-      <button class="tab" data-module="biochem-tests">生化反应</button>
-    </nav>
-    <a class="compare-btn" href="#/compare">生化对比</a>
+    <div class="nav-boards">
+      <section class="nav-board" aria-label="基础知识">
+        <div class="nav-board-title">基础知识</div>
+        <nav class="tabs" aria-label="基础知识">
+          <button class="tab" data-module="microbes">微生物分类</button>
+          <button class="tab" data-module="antibiotics">抗微生物药</button>
+          <button class="tab" data-module="resistance">耐药因素</button>
+          <button class="tab" data-module="idcards">鉴定卡</button>
+          <button class="tab" data-module="cards">药敏卡</button>
+          <button class="tab" data-module="tests">试验</button>
+          <button class="tab" data-module="staining">染色</button>
+          <button class="tab" data-module="media">培养基</button>
+          <button class="tab" data-module="biochem-tests">生化反应</button>
+        </nav>
+      </section>
+      <section class="nav-board nav-board-tools" aria-label="快捷工具">
+        <div class="nav-board-title">快捷工具</div>
+        <div class="tools">
+          <a class="tool-btn" data-tool="intrinsic" href="#/intrinsic">天然耐药</a>
+          <a class="tool-btn" data-tool="ast-alerts" href="#/ast-alerts">异常药敏</a>
+          <a class="tool-btn" data-tool="graph" href="#/graph">关系图</a>
+          <a class="tool-btn" data-tool="breakpoints" href="#/breakpoints">折点判读</a>
+          <a class="tool-btn" data-tool="compare" href="#/compare">生化对比</a>
+          <a class="tool-btn" data-tool="cardcompare" href="#/cardcompare">药敏卡对比</a>
+        </div>
+      </section>
+    </div>
     <input id="search-input" class="search" type="search" placeholder="搜索…" autocomplete="off">
   </header>
 
@@ -53,6 +68,7 @@
   <script src="data/structures.js"></script>
   <script src="data/breakpoints.js"></script>
   <script src="data/biochem-tests.js"></script>
+  <script src="data/ast-alerts.js"></script>
   <!-- 逻辑 -->
   <script src="js/core.js"></script>
   <script src="js/view.js"></script>
