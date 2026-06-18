@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', cards: '药敏卡', tests: '试验', media: '培养基', staining: '染色' };
+  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', idcards: '鉴定卡', cards: '药敏卡', tests: '试验', media: '培养基', staining: '染色', 'biochem-tests': '生化反应' };
 
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 
@@ -64,6 +64,42 @@
     'auramine': 'img/stain-auramine.svg'
   };
 
+  // 生化反应：按条目 id 映射到示意图（部分复用 test-*.svg）
+  var BIOCHEM_IMAGE = {
+    'bio-catalase': 'img/test-catalase.svg',
+    'bio-oxidase': 'img/test-oxidase.svg',
+    'bio-coagulase': 'img/test-coagulase.svg',
+    'bio-optochin': 'img/test-optochin.svg',
+    'bio-camp': 'img/test-camp.svg',
+    'bio-bile-solubility': 'img/test-bile.svg',
+    'urease': 'img/biochem-urease.svg',
+    'indole': 'img/biochem-indole.svg',
+    'h2s': 'img/biochem-h2s.svg',
+    'citrate': 'img/biochem-citrate.svg',
+    'glucose-fermentation': 'img/biochem-sugar.svg',
+    'lactose-fermentation': 'img/biochem-sugar.svg',
+    'mannitol-fermentation': 'img/biochem-sugar.svg',
+    'decarboxylase': 'img/biochem-decarboxylase.svg',
+    'lysine-decarboxylase': 'img/biochem-decarboxylase.svg',
+    'ornithine-decarboxylase': 'img/biochem-decarboxylase.svg',
+    'nitrate-reduction': 'img/biochem-nitrate.svg',
+    'mr-test': 'img/biochem-mr.svg',
+    'vp-test': 'img/biochem-vp.svg',
+    'pyr-test': 'img/biochem-pyr.svg',
+    'dnase': 'img/biochem-dnase.svg',
+    'phenylalanine-deaminase': 'img/biochem-pda.svg',
+    'gelatinase': 'img/biochem-gelatin.svg',
+    'hippurate': 'img/biochem-hippurate.svg',
+    'motility': 'img/biochem-motility.svg',
+    'nacl-65': 'img/biochem-nacl.svg',
+    'bile-esculin': 'img/biochem-esculin.svg',
+    'pigment': 'img/biochem-pigment.svg',
+    'bacitracin': 'img/biochem-disk.svg',
+    'novobiocin': 'img/biochem-disk.svg',
+    'hemolysis': 'img/biochem-hemolysis.svg',
+    'lancefield': 'img/biochem-lancefield.svg'
+  };
+
   // 节点子树是否包含某叶子分类（支持任意层级）
   function nodeContainsLeaf(node, leafName) {
     if (node.子类 && node.子类.length) {
@@ -77,6 +113,7 @@
     if (!entry) { return null; }
     if (moduleKey === 'tests') { return TEST_IMAGE[entry.id] || null; }
     if (moduleKey === 'staining') { return STAIN_IMAGE[entry.id] || null; }
+    if (moduleKey === 'biochem-tests') { return BIOCHEM_IMAGE[entry.id] || null; }
     if (moduleKey !== 'antibiotics' && moduleKey !== 'resistance') { return null; }
     // 先按类别(叶子)直接匹配（抗真菌药、旁路代谢/生物膜按其类别区分）
     if (MECHANISM_IMAGE[entry.类别]) { return MECHANISM_IMAGE[entry.类别]; }
@@ -135,6 +172,7 @@
       链接: (extras.links || []).map(function (l) {
         return { 标题: l.标题 || '', url: l.url || '' };
       }),
+      折点: extras.breakpoints || null,
       关联: (relations || []).map(function (r) {
         return {
           id: r.id,
@@ -233,6 +271,35 @@
     return { items: items, rows: rows };
   }
 
+  // 折点：按微生物 id 查找所属菌组的折点表
+  function breakpointGroup(microbeId, breakpoints) {
+    breakpoints = breakpoints || [];
+    for (var i = 0; i < breakpoints.length; i++) {
+      if (breakpoints[i].菌种.indexOf(microbeId) !== -1) { return breakpoints[i]; }
+    }
+    return null;
+  }
+
+  // 将折点数据转为视图模型（适于 detailVM 的 extras 传入）
+  function breakpointVM(microbeId, breakpoints) {
+    var group = breakpointGroup(microbeId, breakpoints);
+    if (!group) { return null; }
+    return {
+      菌组名: group.菌组名,
+      CLSI表: group.CLSI表,
+      来源: group.来源 || '',
+      药物: group.药物.map(function (d) {
+        return {
+          药物: d.药物,
+          简写: d.简写,
+          MIC: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / '),
+          抑菌圈: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / '),
+          备注: d.备注 || ''
+        };
+      })
+    };
+  }
+
   return {
     moduleLabel: moduleLabel,
     mechanismImageFor: mechanismImageFor,
@@ -241,6 +308,8 @@
     sidebarVM: sidebarVM,
     searchVM: searchVM,
     buildComparison: buildComparison,
-    buildCardComparison: buildCardComparison
+    buildCardComparison: buildCardComparison,
+    breakpointGroup: breakpointGroup,
+    breakpointVM: breakpointVM
   };
 });

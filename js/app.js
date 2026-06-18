@@ -5,11 +5,83 @@
 
   function db() {
     var DB = window.DB || {};
-    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [] };
+    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], idcards: DB.idcards || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [] };
   }
   function abxIdByName() {
     var m = {};
     ((window.DB && window.DB.antibiotics) || []).forEach(function (a) { m[a.名称] = a.id; });
+    return m;
+  }
+  // 药物名 → 抗生素 id（支持从折点表中的药物名查找）
+  function abxIdByDrugText(text) {
+    if (!text) { return null; }
+    var map = abxIdByName();
+    // 直接匹配 药敏简写(名称) 模式中的名称部分
+    if (map[text]) { return map[text]; }
+    // 从 "药物 (English)" 格式中提取中文名匹配
+    var m = text.match(/^([^(]+)/);
+    if (m && map[m[1].trim()]) { return map[m[1].trim()]; }
+    // 折点表药物名与抗菌药条目名的别名（如折点表「青霉素」对应抗菌药「青霉素G」）
+    var ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g' };
+    if (m && ALIAS[m[1].trim()]) { return ALIAS[m[1].trim()]; }
+    // 遍历所有抗生素，按名称包含关系匹配
+    var DB = window.DB || {};
+    var abxList = DB.antibiotics || [];
+    for (var i = 0; i < abxList.length; i++) {
+      if (text.indexOf(abxList[i].名称) !== -1) { return abxList[i].id; }
+    }
+    return null;
+  }
+  // 生化试验名 → 生化试验 id（支持多种模糊匹配）
+  function biochemTestIdByName() {
+    var m = {};
+    var tests = (window.DB && window.DB.biochemTests) || [];
+
+    // 显式别名词典：biochem.js 中的简名 → 模块条目 id
+    var aliases = {
+      '血浆凝固酶': 'bio-coagulase',
+      '试管凝固酶': 'bio-coagulase',
+      '玻片凝固酶': 'bio-coagulase',
+      '新生霉素': 'novobiocin',
+      '溶血型': 'hemolysis',
+      '杆菌肽': 'bacitracin',
+      'PYR': 'pyr-test',
+      'Lancefield 群': 'lancefield',
+      'Optochin': 'bio-optochin',
+      '6.5%NaCl 生长': 'nacl-65',
+      'VP': 'vp-test',
+      '枸橼酸盐': 'citrate',
+      'H2S': 'h2s',
+      'H₂S': 'h2s',
+      '绿脓菌素': 'pigment',
+      '黄色素': 'pigment',
+      '蔗糖': 'glucose-fermentation',
+      '麦芽糖': 'glucose-fermentation',
+      '葡萄糖': 'glucose-fermentation',
+      '糖发酵': 'glucose-fermentation',
+      '葡萄糖发酵': 'glucose-fermentation',
+      'TCBS(蔗糖)': 'glucose-fermentation',
+      '蔗糖发酵(TCBS)': 'glucose-fermentation',
+      '麦芽糖氧化': 'oxidase',
+      '明胶酶': 'gelatinase',
+      'DNase': 'dnase',
+      '迁徙生长': 'motility',
+      '动力(25℃/37℃)': 'motility'
+    };
+    Object.keys(aliases).forEach(function (k) { m[k] = aliases[k]; });
+
+    tests.forEach(function (t) {
+      m[t.名称] = t.id;
+      // 去掉"试验"后缀
+      var s1 = t.名称.replace(/\s*试验$/, '').trim();
+      if (s1 !== t.名称) { m[s1] = t.id; if (!m[s1 + '试验']) { m[s1 + '试验'] = t.id; } }
+      // 去掉括号内容
+      var s2 = t.名称.replace(/\([^)]*\)/g, '').trim();
+      if (s2 !== t.名称) { m[s2] = t.id; }
+      // 同时去括号+去后缀
+      var s3 = s2.replace(/\s*试验$/, '').trim();
+      if (s3 !== s2 && s3 !== s1) { m[s3] = t.id; }
+    });
     return m;
   }
   // 药敏卡上的耐药表型检测项 → 对应的试验条目
@@ -166,6 +238,7 @@
       ]));
     }
 
+    // ① 形态
     if (vm.形态) {
       var mNodes = [ el('div', { cls: 'morph-title', text: '形态' }) ];
       if (vm.形态.镜下) {
@@ -177,22 +250,38 @@
       nodes.push(el('div', { cls: 'morphology' }, mNodes));
     }
 
-    if (vm.生化反应 && vm.生化反应.length) {
-      var bioRows = vm.生化反应.map(function (b) {
-        return el('div', { cls: 'biochem-row' }, [
-          el('span', { cls: 'biochem-key', text: b.项目 }),
-          el('span', { cls: 'biochem-val', text: b.结果 })
+    // ② 药敏折点（来自 CLSI M100）—— 药物名可跳转到对应抗生素条目
+    if (vm.折点) {
+      var bp = vm.折点;
+      var bpHeadRow = [ el('th', { text: '抗菌药物' }), el('th', { text: 'MIC (μg/mL)' }), el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ];
+      var bpBodyRows = bp.药物.map(function (d) {
+        var aid = abxIdByDrugText(d.药物);
+        var drugCell = aid
+          ? el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
+          : el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }) ].concat([document.createTextNode(' ' + d.药物)]));
+        return el('tr', {}, [
+          drugCell,
+          el('td', { cls: 'bp-mic', text: d.MIC }),
+          el('td', { cls: 'bp-disk', text: d.抑菌圈 }),
+          el('td', { cls: 'bp-comment', text: d.备注 || '' })
         ]);
       });
-      nodes.push(el('div', { cls: 'biochem' }, [
-        el('div', { cls: 'biochem-head' }, [
-          el('div', { cls: 'biochem-title', text: '生化反应' }),
-          el('button', { cls: 'cmp-add', text: '加入对比', onClick: function () { if (vm.id) { compareSet[vm.id] = true; location.hash = '#/compare'; } } })
+      nodes.push(el('div', { cls: 'breakpoints' }, [
+        el('div', { cls: 'bp-head' }, [
+          el('span', { cls: 'bp-title', text: '药敏折点' }),
+          el('span', { cls: 'bp-source', text: (bp.来源 || 'CLSI M100 Ed36 (2026)') + '  |  ' + bp.CLSI表 })
         ]),
-        el('div', { cls: 'biochem-rows' }, bioRows)
+        el('div', { cls: 'table-scroll' }, [
+          el('table', { cls: 'bp-table' }, [
+            el('thead', {}, [ el('tr', {}, bpHeadRow) ]),
+            el('tbody', {}, bpBodyRows)
+          ])
+        ]),
+        el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' })
       ]));
     }
 
+    // ③ 相似菌与鉴别
     if (vm.鉴别 && vm.鉴别.length) {
       var diffItems = vm.鉴别.map(function (d) {
         var head = d.id
@@ -205,6 +294,25 @@
         ]);
       });
       nodes.push(el('div', { cls: 'differential' }, [ el('div', { cls: 'diff-title', text: '相似菌与鉴别' }) ].concat(diffItems)));
+    }
+
+    // ④ 生化反应 —— 项目名可跳转到对应生化试验条目
+    if (vm.生化反应 && vm.生化反应.length) {
+      var bioTestMap = biochemTestIdByName();
+      var bioRows = vm.生化反应.map(function (b) {
+        var tid = bioTestMap[b.项目];
+        var keyEl = tid
+          ? el('a', { cls: 'biochem-key biochem-link', text: b.项目, href: '#/biochem-tests/' + tid })
+          : el('span', { cls: 'biochem-key', text: b.项目 });
+        return el('div', { cls: 'biochem-row' }, [ keyEl, el('span', { cls: 'biochem-val', text: b.结果 }) ]);
+      });
+      nodes.push(el('div', { cls: 'biochem' }, [
+        el('div', { cls: 'biochem-head' }, [
+          el('div', { cls: 'biochem-title', text: '生化反应' }),
+          el('button', { cls: 'cmp-add', text: '加入对比', onClick: function () { if (vm.id) { compareSet[vm.id] = true; location.hash = '#/compare'; } } })
+        ]),
+        el('div', { cls: 'biochem-rows' }, bioRows)
+      ]));
     }
 
     var relKids = [ el('div', { cls: 'relations-label', text: '关联' }) ];
@@ -416,12 +524,13 @@
     }
     var extras = {
       mechanismImage: mechImg,
-      mechCaption: route.module === 'tests' ? '试验示意图' : (route.module === 'staining' ? '染色示意图' : '作用机制示意图'),
+      mechCaption: route.module === 'tests' ? '试验示意图' : (route.module === 'staining' ? '染色示意图' : (route.module === 'biochem-tests' ? '生化反应示意图' : '作用机制示意图')),
       structImage: (route.module === 'antibiotics' && entry && window.DB.structures && window.DB.structures[entry.id]) ? ('img/struct-' + entry.id + '.svg') : null,
       morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
       differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,
-      links: View.referenceLinks(route.module, entry)
+      links: View.referenceLinks(route.module, entry),
+      breakpoints: (route.module === 'microbes' && route.id) ? View.breakpointVM(route.id, window.DB.breakpoints) : null
     };
     var vm = View.detailVM(entry, rels, extras);
     fill(document.getElementById('main'), vm ? buildDetail(vm) : buildLanding(route.module));
@@ -437,10 +546,12 @@
     ],
     antibiotics: [{ src: 'img/landing-antibiotics.svg', cap: '抗微生物药作用机制总览' }],
     resistance: [{ src: 'img/landing-resistance.svg', cap: '细菌耐药机制总览' }],
+    idcards: [{ src: 'img/landing-idcards.svg', cap: 'VITEK 2 鉴定卡原理与选卡总览' }],
     cards: [{ src: 'img/landing-cards.svg', cap: '药敏卡与判读总览' }],
     tests: [{ src: 'img/landing-tests.svg', cap: '实验室试验总览' }],
     staining: [{ src: 'img/landing-staining.svg', cap: '染色方法总览' }],
-    media: [{ src: 'img/landing-media.svg', cap: '培养基总览' }]
+    media: [{ src: 'img/landing-media.svg', cap: '培养基总览' }],
+    'biochem-tests': [{ src: 'img/landing-biochem.svg', cap: '生化反应总览（按类别 · 颜色示阳性结果）' }]
   };
 
   function buildLanding(moduleKey) {

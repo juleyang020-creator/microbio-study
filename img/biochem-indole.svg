@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">吲哚试验 (Indole)</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">色氨酸→吲哚，与 Kovac 试剂（对二甲氨基苯甲醛）形成樱红色环</text>
+
+  <!-- 阴性管 -->
+  <g>
+    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
+    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <!-- 肉汤 -->
+    <path d="M150,150 L186,150 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#e7decb"/>
+    <!-- Kovac 试剂层(黄,阴性) -->
+    <rect x="150" y="118" width="36" height="32" fill="#e9d36b"/>
+    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6d1f">阴性（黄色环）</text>
+  </g>
+
+  <!-- 阳性管 -->
+  <g>
+    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
+    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M300,150 L336,150 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#e7decb"/>
+    <!-- 樱红色环(阳性) -->
+    <rect x="300" y="116" width="36" height="34" fill="#c4324f"/>
+    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">阳性（樱红色环）</text>
+  </g>
+
+  <text x="240" y="295" text-anchor="middle" font-size="9.5" fill="#8a8f98">大肠埃希菌阳性；肺炎克雷伯菌、产气肠杆菌阴性（IMViC 经典鉴别）</text>
+</svg>

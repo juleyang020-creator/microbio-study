@@ -11,6 +11,7 @@ test('moduleLabel 返回中文标签', () => {
   assert.strictEqual(View.moduleLabel('tests'), '试验');
   assert.strictEqual(View.moduleLabel('media'), '培养基');
   assert.strictEqual(View.moduleLabel('staining'), '染色');
+  assert.strictEqual(View.moduleLabel('biochem-tests'), '生化反应');
   assert.strictEqual(View.moduleLabel('unknown'), '未知');
 });
 
@@ -220,4 +221,46 @@ test('detailVM 暴露综述链接', () => {
   const vm = View.detailVM({ 名称: 'x', 类别: 'c', 小节: [], 关联: [] }, [], { links: [{ 标题: 'PubMed 综述', url: 'http://x' }] });
   assert.strictEqual(vm.链接.length, 1);
   assert.strictEqual(vm.链接[0].标题, 'PubMed 综述');
+});
+
+test('detailVM 暴露折点数据', () => {
+  const bps = { 菌组名: '肠杆菌目', CLSI表: 'Table 1A', 药物: [{ 药物: '阿米卡星', 简写: 'AK', MIC: '≤16 / 32 / ≥64', 抑菌圈: '≥17 / 15–16 / ≤14', 备注: '' }] };
+  const vm = View.detailVM({ 名称: 'x', 类别: 'c', 小节: [], 关联: [] }, [], { breakpoints: bps });
+  assert.strictEqual(vm.折点.菌组名, '肠杆菌目');
+  assert.strictEqual(vm.折点.药物[0].简写, 'AK');
+});
+
+test('detailVM 无折点数据时折点为 null', () => {
+  const vm = View.detailVM({ 名称: 'x', 类别: 'c', 小节: [], 关联: [] }, []);
+  assert.strictEqual(vm.折点, null);
+});
+
+test('breakpointGroup 按菌 id 匹配所属菌组', () => {
+  const bps = [
+    { 菌组名: '肠杆菌目', CLSI表: 'Table 1A', 菌种: ['e-coli', 'klebsiella-pneumoniae'], 药物: [] },
+    { 菌组名: '铜绿假单胞菌', CLSI表: 'Table 1B', 菌种: ['pseudomonas-aeruginosa'], 药物: [] }
+  ];
+  const g = View.breakpointGroup('e-coli', bps);
+  assert.strictEqual(g.菌组名, '肠杆菌目');
+  assert.strictEqual(View.breakpointGroup('pseudomonas-aeruginosa', bps).菌组名, '铜绿假单胞菌');
+  assert.strictEqual(View.breakpointGroup('nope', bps), null);
+  assert.strictEqual(View.breakpointGroup('e-coli', null), null);
+});
+
+test('breakpointVM 转换折点数据为紧凑视图', () => {
+  const bps = [
+    { 菌组名: '肠杆菌目', CLSI表: 'Table 1A', 菌种: ['e-coli'], 药物: [
+      { 药物: '阿米卡星 (Amikacin)', 简写: 'AK', MIC_S: '≤16', MIC_I: '32', MIC_R: '≥64', 抑菌圈_S: '≥17', 抑菌圈_I: '15–16', 抑菌圈_R: '≤14', 备注: '' },
+      { 药物: '氨苄西林 (Ampicillin)', 简写: 'AM', MIC_S: '≤8', MIC_I: '16', MIC_R: '≥32', 抑菌圈_S: '≥17', 抑菌圈_I: '14–16', 抑菌圈_R: '≤13', 备注: '部分菌种适用' }
+    ]}
+  ];
+  const vm = View.breakpointVM('e-coli', bps);
+  assert.strictEqual(vm.菌组名, '肠杆菌目');
+  assert.strictEqual(vm.CLSI表, 'Table 1A');
+  assert.strictEqual(vm.药物[0].简写, 'AK');
+  assert.strictEqual(vm.药物[0].MIC, '≤16 / 32 / ≥64');
+  assert.strictEqual(vm.药物[0].抑菌圈, '≥17 / 15–16 / ≤14');
+  assert.strictEqual(vm.药物[1].MIC, '≤8 / 16 / ≥32');
+  assert.strictEqual(vm.药物[1].备注, '部分菌种适用');
+  assert.strictEqual(View.breakpointVM('nope', bps), null);
 });

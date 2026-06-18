@@ -14,7 +14,8 @@ function fixture() {
     ],
     resistance: [
       { id: 'r1', 名称: 'MRSA', 类别: 'PBP改变', 小节: [{ 标题: '原理', 正文: 'PBP2a' }], 关联: [] }
-    ]
+    ],
+    'biochem-tests': []
   };
 }
 
@@ -72,7 +73,7 @@ test('searchEntries 匹配类别、药敏简写、药敏卡药物与扩展数据
     antibiotics: [{ id: 'a1', 名称: '苯唑西林', 药敏简写: 'OXA', 类别: '青霉素类', 小节: [], 关联: [] }],
     resistance: [],
     cards: [{ id: 'c1', 名称: 'GP68', 类别: '链球菌药敏卡', 药物: ['泰利霉素'], 小节: [], 关联: [] }],
-    tests: [], media: [], staining: [],
+    tests: [], media: [], staining: [], 'biochem-tests': [],
     morphology: { m1: { 镜下: '葡萄串状排列' } },
     biochem: { m1: [{ 项目: '血浆凝固酶', 结果: '+' }] }
   };

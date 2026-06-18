@@ -6,10 +6,12 @@
     microbes: DB.microbes || [],
     antibiotics: DB.antibiotics || [],
     resistance: DB.resistance || [],
+    idcards: DB.idcards || [],
     cards: DB.cards || [],
     tests: DB.tests || [],
     media: DB.media || [],
-    staining: DB.staining || []
+    staining: DB.staining || [],
+    'biochem-tests': DB.biochemTests || []
   };
   var problems = window.Core.validateData(db, DB.categories || {});
   if (problems.length) {

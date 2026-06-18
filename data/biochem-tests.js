@@ -1,0 +1,336 @@
+// 生化反应试验条目（作为独立模块）
+window.DB = window.DB || {};
+window.DB.biochemTests = [
+
+  // ===== 酶活性检测 =====
+  {
+    id: 'bio-catalase', 名称: '触酶试验', 类别: '酶活性检测',
+    关联: ["acinetobacter-baumannii","aeromonas-hydrophila","bordetella-pertussis","brucella-melitensis","burkholderia-cepacia","campylobacter-jejuni","corynebacterium-striatum","enterococcus-faecalis","enterococcus-faecium","enterococcus-gallinarum","legionella-pneumophila","moraxella-catarrhalis","neisseria-gonorrhoeae","neisseria-meningitidis","nocardia","staph-aureus","staph-epidermidis","staph-haemolyticus","staph-lugdunensis","staph-saprophyticus","strep-agalactiae","strep-gallolyticus","strep-pneumoniae","strep-pyogenes","strep-viridans"],
+    小节: [
+      { 标题: '原理', 正文: '触酶（过氧化氢酶）将 H₂O₂ 分解为 H₂O + O₂，产生气泡。几乎所有需氧菌和兼性厌氧菌均有此酶，但链球菌属和肠球菌属缺如。' },
+      { 标题: '方法', 正文: '取一洁净玻片，加 1 滴 3% H₂O₂ 于菌落上（或以菌落涂布后加 H₂O₂），观察是否立即产生气泡。' },
+      { 标题: '结果判读', 正文: '立即产生大量气泡为阳性（+）；无气泡或延迟微弱气泡为阴性（−）。注意：不可用血琼脂上的菌落直接做（红细胞含触酶可致假阳性）；陈旧培养物可致假阴性。' },
+      { 标题: '临床意义', 正文: '主要用于区分葡萄球菌属（+）与链球菌属/肠球菌属（−）；也是革兰阳性球菌初步鉴别的首要试验。' }
+    ]
+  },
+  {
+    id: 'bio-coagulase', 名称: '凝固酶试验', 类别: '酶活性检测',
+    关联: ["staph-aureus","staph-epidermidis","staph-haemolyticus","staph-lugdunensis","staph-saprophyticus"],
+    小节: [
+      { 标题: '原理', 正文: '金黄色葡萄球菌产生两种凝固酶：结合凝固酶（凝聚因子，ClfA/ClfB）直接使纤维蛋白原转变为纤维蛋白，致菌体凝集；游离凝固酶（Staphylocoagulase）激活血浆中的凝血酶原，使纤维蛋白原转变为纤维蛋白。' },
+      { 标题: '方法', 正文: '玻片法（检测结合凝固酶）：菌落混悬于生理盐水，加 1 滴兔血浆，混匀，10 秒内观察凝集。试管法（检测游离凝固酶）：菌落接种于 0.5 mL 兔血浆，35℃ 孵育 4 小时及 24 小时观察凝固。' },
+      { 标题: '结果判读', 正文: '玻片法：快速凝集为阳性（+），均匀混悬为阴性（−）。试管法：血浆凝固（试管倾斜时不流动）为阳性。玻片法阳性、试管法阴性可能为凝固酶阴性葡萄球菌。' },
+      { 标题: '临床意义', 正文: '区分金黄色葡萄球菌（+）与其他葡萄球菌（−）；血浆凝固酶阳性可推定 S. aureus。但中间葡萄球菌（S. intermedius）及部分猪葡萄球菌也可阳性。' }
+    ]
+  },
+  {
+    id: 'bio-oxidase', 名称: '氧化酶试验', 类别: '酶活性检测',
+    关联: ["acinetobacter-baumannii","aeromonas-hydrophila","bordetella-pertussis","brucella-melitensis","burkholderia-cepacia","campylobacter-jejuni","citrobacter-freundii","citrobacter-koseri","cronobacter-sakazakii","e-coli","enterobacter-cloacae","haemophilus-parainfluenzae","klebsiella-aerogenes","klebsiella-oxytoca","klebsiella-pneumoniae","legionella-pneumophila","moraxella-catarrhalis","morganella-morganii","neisseria-gonorrhoeae","neisseria-meningitidis","proteus-mirabilis","proteus-vulgaris","providencia-stuartii","pseudomonas-aeruginosa","salmonella-enteritidis","salmonella-paratyphi-a","salmonella-typhi","serratia-marcescens","shigella-dysenteriae","shigella-flexneri","stenotrophomonas-maltophilia","vibrio-cholerae","vibrio-parahaemolyticus","vibrio-vulnificus","yersinia-enterocolitica"],
+    小节: [
+      { 标题: '原理', 正文: '氧化酶（细胞色素 c 氧化酶）在有氧呼吸电子传递链末端将电子传递给 O₂。氧化酶试剂（四甲基对苯二胺）作为人工电子受体，被氧化后呈深紫色。' },
+      { 标题: '方法', 正文: '滤纸条法：取 1% 四甲基对苯二胺溶液浸湿的滤纸，用白金环（或木棒/竹棒）取新鲜菌落涂布，10 秒内观察变色。' },
+      { 标题: '结果判读', 正文: '10 秒内变深紫色为阳性（+）；不变色为阴性（−）。注意：必须用白金环或竹签取菌，含铁接种环可致假阳性；陈旧培养物可致假阴性。' },
+      { 标题: '临床意义', 正文: '用于革兰阴性杆菌初筛：氧化酶（+）→ 假单胞菌/弧菌/奈瑟菌/气单胞菌等。氧化酶（−）→ 肠杆菌目（多数）。' }
+    ]
+  },
+  {
+    id: 'pyr-test', 名称: 'PYR 试验', 类别: '酶活性检测',
+    关联: ["enterococcus-faecalis","enterococcus-faecium","staph-lugdunensis","strep-gallolyticus","strep-pyogenes"],
+    小节: [
+      { 标题: '原理', 正文: 'PYR（L-吡咯烷酮-β-萘基酰胺）被细菌的 L-吡咯烷酮酶（PYRase）水解为 β-萘胺，加入对二甲氨基肉桂醛试剂后形成红色络合物。' },
+      { 标题: '方法', 正文: '将菌落涂于含 PYR 底物的纸片或肉汤中孵育，加入显色试剂后观察。' },
+      { 标题: '结果判读', 正文: '红色/樱桃红为阳性（+）；不变色或黄色为阴性（−）。' },
+      { 标题: '临床意义', 正文: '用于革兰阳性球菌鉴别：化脓链球菌（A 群）和肠球菌属为 PYR（+）；其他 β-溶血链球菌为（−）。' }
+    ]
+  },
+  {
+    id: 'urease', 名称: '脲酶试验', 类别: '酶活性检测',
+    关联: ["bordetella-pertussis","brucella-melitensis","citrobacter-freundii","e-coli","klebsiella-oxytoca","klebsiella-pneumoniae","morganella-morganii","proteus-mirabilis","proteus-vulgaris","providencia-stuartii","salmonella-typhi","shigella-dysenteriae","yersinia-enterocolitica"],
+    小节: [
+      { 标题: '原理', 正文: '细菌产生的脲酶将尿素水解为 NH₃ + CO₂，致培养基 pH 升高，酚红指示剂变红（粉红）。' },
+      { 标题: '方法', 正文: '接种尿素培养基（Christensen 尿素琼脂或 Stuart 尿素肉汤），35℃ 孵育 24–48 小时。' },
+      { 标题: '结果判读', 正文: '培养基变深粉红色为阳性（+）；不变色为阴性（−）。注意：快速脲酶阳性（4–6 小时内）见于变形杆菌属和幽门螺杆菌。' },
+      { 标题: '临床意义', 正文: '快速脲酶（+）提示变形杆菌属或幽门螺杆菌；慢速脲酶（+）见于克雷伯菌属和部分肠杆菌。幽门螺杆菌的脲酶试验用于临床诊断（活检组织快速脲酶试验 RUT）和¹³C 呼气试验。' }
+    ]
+  },
+  {
+    id: 'dnase', 名称: '耐热核酸酶(DNase)试验', 类别: '酶活性检测',
+    关联: ["moraxella-catarrhalis","serratia-marcescens","staph-aureus","stenotrophomonas-maltophilia"],
+    小节: [
+      { 标题: '原理', 正文: '耐热核酸酶（热稳定性 DNase，由 nuc 基因编码）能耐受煮沸而不失活，水解 DNA。在含 DNA 和甲苯胺蓝的平板上，DNase 水解 DNA 后指示剂变粉红色。' },
+      { 标题: '方法', 正文: '经典法：菌落接种于含 DNA 的甲苯胺蓝平板（DNase 琼脂），35℃ 孵育 24 小时观察。确认法：菌落煮沸 15 分钟后加入含 DNA 甲苯胺蓝底物，观察变色。' },
+      { 标题: '结果判读', 正文: '菌落周围出现粉红色晕为阳性（+）。注意：部分凝固酶阴性葡萄球菌也可有 DNase，但通常是热不稳定的。耐热 DNase（煮沸后仍阳性）高度提示 S. aureus。' },
+      { 标题: '临床意义', 正文: '用于凝固酶阴性或模棱两可时，确认金黄色葡萄球菌：耐热 DNase（+）+ 血浆凝固酶（+）= 高度可靠。' }
+    ]
+  },
+  {
+    id: 'phenylalanine-deaminase', 名称: '苯丙氨酸脱氨酶试验', 类别: '酶活性检测',
+    关联: ["morganella-morganii","proteus-mirabilis","proteus-vulgaris","providencia-stuartii"],
+    小节: [
+      { 标题: '原理', 正文: '细菌产生苯丙氨酸脱氨酶，将 L-苯丙氨酸氧化脱氨为苯丙酮酸，加入 FeCl₃ 后形成绿色络合物。' },
+      { 标题: '方法', 正文: '接种苯丙氨酸斜面（或肉汤），35℃ 孵育 18–24 小时后加 10% FeCl₃ 数滴。' },
+      { 标题: '结果判读', 正文: '绿色为阳性（+）；不变色为阴性（−）。' },
+      { 标题: '临床意义', 正文: '用于肠杆菌科鉴别：变形杆菌属/普罗威登斯菌属/摩根菌属为（+）（PPM 群）；其余肠杆菌目为（−）。' }
+    ]
+  },
+  {
+    id: 'nitrate-reduction', 名称: '硝酸盐还原试验', 类别: '酶活性检测',
+    关联: ["acinetobacter-baumannii","corynebacterium-striatum"],
+    小节: [
+      { 标题: '原理', 正文: '部分细菌可将硝酸盐（NO₃⁻）还原为亚硝酸盐（NO₂⁻），再加对氨基苯磺酸 + α-萘胺（Griess 试剂）呈红色重氮化合物。若亚硝酸盐进一步还原为 N₂/N₂O，则需加锌粉验证。' },
+      { 标题: '方法', 正文: '接种硝酸盐肉汤，35℃ 孵育 24 小时后加 Griess 试剂 A+B 各数滴。' },
+      { 标题: '结果判读', 正文: '变红色为阳性（+→NO₂⁻）。不变色加锌粉：若变红→硝酸盐未被还原（阴性）；若仍不变色→硝酸盐已被完全还原为 N₂/NO（阳性）。' },
+      { 标题: '临床意义', 正文: '用于肠杆菌科鉴定（多数阳性）和假单胞菌属（铜绿 +）鉴别。' }
+    ]
+  },
+  {
+    id: 'decarboxylase', 名称: '脱羧酶试验', 类别: '酶活性检测',
+    关联: [],
+    小节: [
+      { 标题: '原理', 正文: '细菌的氨基酸脱羧酶在酸性条件下裂解氨基酸（赖氨酸/鸟氨酸/精氨酸）的羧基，产生碱性胺（尸胺/腐胺），使培养基 pH 升高、溴甲酚紫变紫色。' },
+      { 标题: '方法', 正文: 'Møller 脱羧酶肉汤：含特定氨基酸 + 溴甲酚紫指示剂 + 液体石蜡封层。35℃ 孵育 24–48 小时。' },
+      { 标题: '结果判读', 正文: '变紫色为阳性（+）→ 脱羧；变黄色为阴性（−）→ 仅发酵葡萄糖产酸。必须与对照管（无氨基酸）比对。' },
+      { 标题: '临床意义', 正文: '赖氨酸/鸟氨酸脱羧酶是肠杆菌科鉴别的关键试验。赖氨酸（+）/鸟氨酸（−）：大肠埃希菌。赖氨酸（+）/鸟氨酸（+）：克雷伯菌属、肠杆菌属。赖氨酸（−）：志贺菌属（多数）、变形杆菌属。沙门菌属赖氨酸（+）。' }
+    ]
+  },
+
+  // ===== 碳水化合物代谢 =====
+  {
+    id: 'glucose-fermentation', 名称: '葡萄糖发酵试验', 类别: '碳水化合物代谢',
+    关联: ["acinetobacter-baumannii","aeromonas-hydrophila","legionella-pneumophila","moraxella-catarrhalis","neisseria-gonorrhoeae","neisseria-meningitidis","vibrio-cholerae","vibrio-parahaemolyticus","vibrio-vulnificus","yersinia-enterocolitica"],
+    小节: [
+      { 标题: '原理', 正文: '细菌发酵葡萄糖产生酸性产物（混合酸/乳酸），使含糖培养基中的 pH 指示剂（溴甲酚紫/酚红）变色。' },
+      { 标题: '方法', 正文: '接种含 1% 葡萄糖的糖发酵管（含 Durham 倒管检测产气），35℃ 孵育 24–48 小时。' },
+      { 标题: '结果判读', 正文: '产酸（变黄）为阳性。发酵型：氧化-发酵（O-F）试验中，两支管中开管与封管均产酸；氧化型：仅开管产酸。产气：Durham 管中有气泡。' },
+      { 标题: '临床意义', 正文: '所有肠杆菌科均能发酵葡萄糖（产酸±产气），是不发酵菌（NFB）与之区分的基础。O-F 试验区分发酵型与氧化型代谢。' }
+    ]
+  },
+  {
+    id: 'lactose-fermentation', 名称: '乳糖发酵试验', 类别: '碳水化合物代谢',
+    关联: ["burkholderia-cepacia","e-coli","enterobacter-cloacae","klebsiella-aerogenes","klebsiella-oxytoca","klebsiella-pneumoniae","morganella-morganii","proteus-mirabilis","pseudomonas-aeruginosa","salmonella-enteritidis","salmonella-paratyphi-a","salmonella-typhi","serratia-marcescens","shigella-dysenteriae","shigella-flexneri","vibrio-vulnificus"],
+    小节: [
+      { 标题: '原理', 正文: '细菌产生 β-半乳糖苷酶（水解乳糖为葡萄糖+半乳糖），再经糖酵解产酸。乳糖发酵是肠杆菌科鉴别的最重要标记之一。' },
+      { 标题: '方法', 正文: '接种含乳糖的鉴别培养基（如麦康凯琼脂、SS 琼脂、Kligler 铁琼脂 KIA）或乳糖发酵管，35℃ 孵育 18–24 小时观察。' },
+      { 标题: '结果判读', 正文: '麦康凯琼脂上：粉红色菌落（乳糖发酵型）；无色/透明菌落（非乳糖发酵型或迟缓发酵型）。KIA 斜面红色/底层黄色 → 仅发酵葡萄糖；斜面黄色/底层黄色 → 同时发酵乳糖。' },
+      { 标题: '临床意义', 正文: '用于初步区分肠杆菌科大类。乳糖发酵菌：大肠埃希菌、克雷伯菌属、肠杆菌属、柠檬酸杆菌属（多数）。非乳糖发酵菌：沙门菌属、志贺菌属、变形杆菌属、普罗威登斯菌属、摩根菌属、耶尔森菌属、假单胞菌属。' }
+    ]
+  },
+  {
+    id: 'mannitol-fermentation', 名称: '甘露醇发酵试验', 类别: '碳水化合物代谢',
+    关联: ["staph-aureus","staph-epidermidis"],
+    小节: [
+      { 标题: '原理', 正文: '细菌发酵甘露醇产酸，在含甘露醇的选择性培养基（如甘露醇盐琼脂 MSA）上，酚红指示剂由红变黄。' },
+      { 标题: '方法', 正文: '接种甘露醇盐琼脂（MSA，含 7.5% NaCl），35℃ 孵育 24 小时。' },
+      { 标题: '结果判读', 正文: '菌落周围黄色（MSA 变黄）为阳性（+）→ 发酵甘露醇产酸。红色不变为阴性（−）。' },
+      { 标题: '临床意义', 正文: 'MSA 是金黄色葡萄球菌的选择-鉴别培养基：金黄色葡萄球菌发酵甘露醇（黄色），凝固酶阴性葡萄球菌多数不发酵（红色）。MRSA 也可在此培养基上生长和显色。' }
+    ]
+  },
+  {
+    id: 'mr-test', 名称: '甲基红(MR)试验', 类别: '碳水化合物代谢',
+    关联: ["e-coli","klebsiella-pneumoniae"],
+    小节: [
+      { 标题: '原理', 正文: '混合酸发酵菌（如大肠埃希菌）将葡萄糖发酵为大量稳定酸（乳酸/乙酸/甲酸/琥珀酸），使培养基 pH 降至 4.4 以下，加甲基红指示剂呈红色。' },
+      { 标题: '方法', 正文: '接种 MR-VP 肉汤（葡萄糖磷酸盐蛋白胨水），35℃ 孵育 48–72 小时，加甲基红指示剂数滴。' },
+      { 标题: '结果判读', 正文: '红色为阳性（+）；黄色为阴性（−）。注意：必须孵育 ≥48 小时以积累足够酸量。' },
+      { 标题: '临床意义', 正文: '与 VP 试验构成 IMViC 系列核心。大肠埃希菌：MR（+）/VP（−）；克雷伯菌属和肠杆菌属：MR（−）/VP（+）。' }
+    ]
+  },
+  {
+    id: 'vp-test', 名称: 'VP 试验', 类别: '碳水化合物代谢',
+    关联: ["cronobacter-sakazakii","e-coli","enterobacter-cloacae","klebsiella-aerogenes","klebsiella-oxytoca","klebsiella-pneumoniae","serratia-marcescens"],
+    小节: [
+      { 标题: '原理', 正文: '丁二醇发酵菌将葡萄糖发酵为乙偶姻（3-羟基丁酮），在碱性条件下（加 40% KOH + 5% α-萘酚，Barritt 试剂）被氧化为二乙酰，与胍基反应呈红色。' },
+      { 标题: '方法', 正文: '接种 MR-VP 肉汤，35℃ 孵育 48 小时，取 1 mL 加入 Barritt 试剂 A（α-萘酚）和 B（40% KOH），震荡后静置 15–30 分钟。' },
+      { 标题: '结果判读', 正文: '上层变红色为阳性（+）；不变色为阴性（−）。铜色可能为弱阳性。' },
+      { 标题: '临床意义', 正文: '大肠埃希菌 VP（−）；克雷伯菌属、肠杆菌属、沙雷菌属 VP（+）。' }
+    ]
+  },
+  {
+    id: 'citrate', 名称: '枸橼酸盐利用试验', 类别: '碳水化合物代谢',
+    关联: ["citrobacter-freundii","citrobacter-koseri","e-coli","enterobacter-cloacae","klebsiella-aerogenes","klebsiella-pneumoniae","providencia-stuartii","salmonella-enteritidis","salmonella-typhi"],
+    小节: [
+      { 标题: '原理', 正文: '细菌以枸橼酸钠为唯一碳源，铵盐为唯一氮源，生长过程中将枸橼酸盐分解产碱（NH₃ ↑ + Na₂CO₃），使溴麝香草酚蓝指示剂变蓝（pH > 7.6）。' },
+      { 标题: '方法', 正文: '接种 Simmons 枸橼酸盐斜面，35℃ 孵育 24–48 小时。' },
+      { 标题: '结果判读', 正文: '斜面变蓝色且有菌生长为阳性（+）。绿色（或仅有微量生长不变色）为阴性（−）。注意：必须有肉眼可见的生长才能判定阳性。' },
+      { 标题: '临床意义', 正文: 'IMViC 系列之一。枸橼酸盐（+）：克雷伯菌属、肠杆菌属、沙门菌属、沙雷菌属、柠檬酸杆菌属、普罗威登斯菌属。枸橼酸盐（−）：大肠埃希菌、志贺菌属、爱德华菌属。' }
+    ]
+  },
+  {
+    id: 'indole', 名称: '吲哚试验', 类别: '氨基酸与蛋白质代谢',
+    关联: ["aeromonas-hydrophila","citrobacter-freundii","citrobacter-koseri","e-coli","enterobacter-cloacae","klebsiella-aerogenes","klebsiella-oxytoca","klebsiella-pneumoniae","morganella-morganii","proteus-vulgaris","providencia-stuartii","salmonella-enteritidis","salmonella-paratyphi-a","salmonella-typhi","shigella-dysenteriae","shigella-flexneri"],
+    小节: [
+      { 标题: '原理', 正文: '细菌产生色氨酸酶，裂解蛋白胨中的色氨酸（Trp）为吲哚（indole）、丙酮酸和 NH₃。加入 Kovacs 试剂（对二甲氨基苯甲醛）后，吲哚与之反应呈红色环（溶于异戊醇层上层）。' },
+      { 标题: '方法', 正文: '接种蛋白胨水（1% 胰蛋白胨），35℃ 孵育 24 小时，沿管壁徐徐加入 Kovacs 试剂数滴（约 0.5 mL）。' },
+      { 标题: '结果判读', 正文: '试剂层出现樱红色环为阳性（+）；黄色（不变色）为阴性（−）。Ehrlich 试剂（对二甲氨基肉桂醛）更敏感。' },
+      { 标题: '临床意义', 正文: 'IMViC 系列之一。大肠埃希菌吲哚（+），是区分大肠埃希菌与多数其他肠杆菌的标志。奇异变形杆菌（−），普通变形杆菌（+）。' }
+    ]
+  },
+
+  // ===== 氨基酸与蛋白质代谢 =====
+  {
+    id: 'h2s', 名称: 'H₂S 产生试验', 类别: '氨基酸与蛋白质代谢',
+    关联: ["citrobacter-freundii","citrobacter-koseri","e-coli","proteus-mirabilis","proteus-vulgaris","salmonella-enteritidis","salmonella-paratyphi-a","salmonella-typhi","shigella-dysenteriae","shigella-flexneri"],
+    小节: [
+      { 标题: '原理', 正文: '细菌将含硫氨基酸（半胱氨酸/甲硫氨酸）或硫代硫酸盐还原为 H₂S，与培养基中的铁盐（Fe²⁺/Fe³⁺）反应生成黑色硫化铁（FeS）沉淀。' },
+      { 标题: '方法', 正文: '穿刺接种 TSI（三糖铁）琼脂或 KIA（Kligler 铁琼脂）37℃ 孵育 24 小时。' },
+      { 标题: '结果判读', 正文: '穿刺线或培养基变黑为阳性（+）。TSI 斜面同时给出糖发酵信息。' },
+      { 标题: '临床意义', 正文: 'H₂S（+）：沙门菌属、枸橼酸杆菌属（多数）、变形杆菌属、迟钝爱德华菌。H₂S（−）：志贺菌属、大肠埃希菌、克雷伯菌属。' }
+    ]
+  },
+  {
+    id: 'gelatinase', 名称: '明胶液化试验', 类别: '氨基酸与蛋白质代谢',
+    关联: ["serratia-marcescens"],
+    小节: [
+      { 标题: '原理', 正文: '细菌产明胶酶（胞外金属蛋白酶），将明胶（动物胶原蛋白变性产物）水解为小分子多肽和氨基酸，失去凝胶特性。' },
+      { 标题: '方法', 正文: '穿刺接种营养明胶培养基，22–25℃ 孵育（明胶在 35℃ 呈液态），24 小时至数天观察。或接种含炭粉明胶片（Kohn 法）。' },
+      { 标题: '结果判读', 正文: '培养基液化（穿刺后 4℃ 放置仍不凝固）为阳性（+）。Kohn 法：炭粉颗粒游离下沉为阳性。' },
+      { 标题: '临床意义', 正文: '明胶液化是部分细菌的特征：铜绿假单胞菌快速液化（+）、变形杆菌属多数（+）、沙雷菌属（+）、金黄色葡萄球菌（+）；肠杆菌科多数（−）。' }
+    ]
+  },
+  {
+    id: 'lysine-decarboxylase', 名称: '赖氨酸脱羧酶试验', 类别: '氨基酸与蛋白质代谢',
+    关联: ["burkholderia-cepacia"],
+    小节: [
+      { 标题: '原理', 正文: '赖氨酸脱羧酶将赖氨酸（Lys）裂解为尸胺（Cadaverine）+ CO₂，碱性产物使培养基溴甲酚紫变紫（pH 升高）。' },
+      { 标题: '方法', 正文: 'Møller 赖氨酸脱羧酶肉汤（含 L-赖氨酸），液体石蜡封层，35℃ 孵育 24 小时。' },
+      { 标题: '结果判读', 正文: '紫色/灰紫色为阳性（+）；黄色（仅发酵葡萄糖产酸）为阴性（−）。' },
+      { 标题: '临床意义', 正文: '赖氨酸（+）：大肠埃希菌、克雷伯菌属、沙雷菌属、肠杆菌属。赖氨酸（−）：志贺菌属、枸橼酸杆菌属（多数）、变形杆菌属。福氏志贺菌（S. flexneri）为（−），但宋内志贺菌（−）也与之一致。' }
+    ]
+  },
+  {
+    id: 'ornithine-decarboxylase', 名称: '鸟氨酸脱羧酶试验', 类别: '氨基酸与蛋白质代谢',
+    关联: ["staph-lugdunensis"],
+    小节: [
+      { 标题: '原理', 正文: '鸟氨酸脱羧酶将鸟氨酸（Orn）裂解为腐胺（Putrescine）+ CO₂，碱性产物使培养基 pH 升高。' },
+      { 标题: '方法', 正文: 'Møller 鸟氨酸脱羧酶肉汤，液体石蜡封层，35℃ 孵育 24 小时。' },
+      { 标题: '结果判读', 正文: '紫色为阳性（+）；黄色为阴性（−）。' },
+      { 标题: '临床意义', 正文: '鸟氨酸（+）：沙门菌属、克雷伯菌属、肠杆菌属、沙雷菌属、福氏志贺菌。鸟氨酸（−）：大肠埃希菌、奇异变形杆菌、摩根菌属、痢疾志贺菌。' }
+    ]
+  },
+  {
+    id: 'motility', 名称: '动力试验', 类别: '生长特性',
+    关联: ["acinetobacter-baumannii","burkholderia-cepacia","citrobacter-freundii","citrobacter-koseri","cronobacter-sakazakii","e-coli","enterobacter-cloacae","enterococcus-gallinarum","klebsiella-aerogenes","klebsiella-oxytoca","klebsiella-pneumoniae","morganella-morganii","proteus-mirabilis","proteus-vulgaris","pseudomonas-aeruginosa","salmonella-enteritidis","salmonella-paratyphi-a","salmonella-typhi","serratia-marcescens","shigella-dysenteriae","shigella-flexneri","stenotrophomonas-maltophilia","vibrio-cholerae","vibrio-parahaemolyticus","yersinia-enterocolitica"],
+    小节: [
+      { 标题: '原理', 正文: '有鞭毛的细菌可在半固体培养基（0.3–0.5% 琼脂）中游动并扩散生长，使培养基整体浑浊。无动力菌仅沿穿刺线生长。' },
+      { 标题: '方法', 正文: '穿刺接种半固体动力培养基（SIM 或不含指示剂的半固体），35℃ 孵育 24 小时。' },
+      { 标题: '结果判读', 正文: '穿刺线周围培养基弥漫性浑浊（云雾状向外扩散）为动力（+）。仅穿刺线生长为动力（−）。' },
+      { 标题: '临床意义', 正文: '动力（+）：大肠埃希菌（多数）、沙门菌属、变形杆菌属（迁徙生长）、假单胞菌属。动力（−）：克雷伯菌属、志贺菌属、不动杆菌属、鼠疫耶尔森菌。22℃ 动而 37℃ 不动：小肠结肠炎耶尔森菌。' }
+    ]
+  },
+
+  // ===== 生长特性 =====
+  {
+    id: 'bile-esculin', 名称: '胆汁七叶苷(BEA)试验', 类别: '生长特性',
+    关联: ["enterococcus-faecalis","enterococcus-faecium","enterococcus-gallinarum","strep-gallolyticus"],
+    小节: [
+      { 标题: '原理', 正文: 'D 群链球菌和肠球菌能在 40% 胆汁（胆盐）中生长，并将七叶苷水解为七叶素 + 葡萄糖；七叶素与 Fe³⁺ 形成黑色络合物。' },
+      { 标题: '方法', 正文: '接种胆汁七叶苷琼脂斜面（含 40% 牛胆汁或 4% 胆盐 + 七叶苷 + 枸橼酸铁铵），35℃ 孵育 24–48 小时。' },
+      { 标题: '结果判读', 正文: '斜面变黑（培养基任何位置）为阳性（+）。不变色为阴性（−）。' },
+      { 标题: '临床意义', 正文: 'BEA（+）/6.5%NaCl（+）：肠球菌属。BEA（+）/6.5%NaCl（−）：牛链球菌群（S. gallolyticus 等）。BEA（−）：肺炎链球菌、草绿色链球菌（多数）、β-溶血 A/B 群链球菌。' }
+    ]
+  },
+  {
+    id: 'nacl-65', 名称: '6.5% NaCl 生长试验', 类别: '生长特性',
+    关联: ["enterococcus-faecalis","enterococcus-faecium","strep-gallolyticus"],
+    小节: [
+      { 标题: '原理', 正文: '肠球菌属对 NaCl 有高耐受性，可在含 6.5% NaCl 的高渗环境中生长，而大多数非肠球菌链球菌不能。' },
+      { 标题: '方法', 正文: '接种含 6.5% NaCl 的脑心浸液（BHI）肉汤，35℃ 孵育 24–48 小时。' },
+      { 标题: '结果判读', 正文: '肉汤浑浊（明显生长）为阳性（+）；澄清为阴性（−）。' },
+      { 标题: '临床意义', 正文: '区分肠球菌属（+）与非肠球菌 D 群链球菌（−）。需同时完成 BEA 试验才有鉴别价值。' }
+    ]
+  },
+  {
+    id: 'bio-bile-solubility', 名称: '胆汁溶解试验', 类别: '生长特性',
+    关联: ["strep-pneumoniae","strep-viridans"],
+    小节: [
+      { 标题: '原理', 正文: '肺炎链球菌的细胞壁自溶酶（LytA 酰胺酶）被胆盐（如脱氧胆酸钠）激活，导致菌体迅速裂解。草绿色链球菌无此酶。' },
+      { 标题: '方法', 正文: '取 0.5 mL 菌悬液（0.5 McFarland），加 0.5 mL 2% 脱氧胆酸钠（或 10% 牛胆汁），充分混匀。35℃ 孵育 30 分钟观察。也可直接在菌落上滴加 10% 脱氧胆酸钠。' },
+      { 标题: '结果判读', 正文: '菌悬液由浑浊变澄清（裂解）为阳性（+）。菌落滴加法：菌落消失留空洞为阳性。' },
+      { 标题: '临床意义', 正文: '区分肺炎链球菌（+）与其他 α-溶血链球菌（−）的关键试验。与 Optochin 敏感试验联合使用。' }
+    ]
+  },
+  {
+    id: 'bio-optochin', 名称: 'Optochin 敏感试验', 类别: '生长抑制与耐受',
+    关联: ["strep-pneumoniae","strep-viridans"],
+    小节: [
+      { 标题: '原理', 正文: 'Optochin（盐酸乙基氢化羟基奎宁）抑制肺炎链球菌的 F₀F₁-ATPase，阻止 ATP 合成，从而抑制其生长。草绿色链球菌对此药天然耐药。' },
+      { 标题: '方法', 正文: '接种血琼脂平板，贴 5 μg Optochin 纸片，35℃ 5% CO₂ 孵育 18–24 小时。' },
+      { 标题: '结果判读', 正文: '抑菌圈直径 ≥14 mm 为敏感（+，肺炎链球菌推定）；≤13 mm 需做胆汁溶解确认。注意：部分 α-溶血非肺炎链球菌也可有 9–13 mm 的抑菌圈。' },
+      { 标题: '临床意义', 正文: '与胆汁溶解试验联合鉴别肺炎链球菌。Optochin S + 胆汁溶解（+）= 肺炎链球菌（高置信）。' }
+    ]
+  },
+  {
+    id: 'bacitracin', 名称: '杆菌肽敏感试验', 类别: '生长抑制与耐受',
+    关联: ["strep-pyogenes"],
+    小节: [
+      { 标题: '原理', 正文: 'A 群 β-溶血链球菌（化脓链球菌）对 0.04 U 杆菌肽纸片敏感（抑菌圈 ≥14 mm），而 B 群和其他 β-溶血链球菌耐药。' },
+      { 标题: '方法', 正文: '接种血琼脂平板，贴 0.04 U 杆菌肽鉴别纸片（Taxo A），35℃ 5% CO₂ 孵育 18–24 小时。' },
+      { 标题: '结果判读', 正文: '任何抑菌圈（通常 ≥10 mm）为敏感（+）；无菌圈为耐药（−）。' },
+      { 标题: '临床意义', 正文: '用于 A 群（化脓链球菌）快速推定：杆菌肽 S + PYR（+）+ β-溶血 = 高度提示 A 群。不用于 B 群（B 群可用 CAMP 或 Lancefield 分群）。' }
+    ]
+  },
+  {
+    id: 'novobiocin', 名称: '新生霉素敏感试验', 类别: '生长抑制与耐受',
+    关联: ["staph-aureus","staph-epidermidis","staph-haemolyticus","staph-saprophyticus"],
+    小节: [
+      { 标题: '原理', 正文: '腐生葡萄球菌对新生霉素天然耐药（5 μg 纸片抑菌圈 ≤16 mm），而表皮葡萄球菌敏感（≥17 mm）。机制：新生霉素靶向 DNA 旋转酶 B 亚基。' },
+      { 标题: '方法', 正文: '接种 MHA 平板，贴 5 μg 新生霉素纸片，35℃ 孵育 24 小时。' },
+      { 标题: '结果判读', 正文: '抑菌圈 ≥17 mm 为敏感（−，非腐生葡萄球菌）；≤16 mm 为耐药（+，腐生葡萄球菌推定）。' },
+      { 标题: '临床意义', 正文: '区分腐生葡萄球菌（耐药）与表皮葡萄球菌及其他凝固酶阴性葡萄球菌（敏感）。腐生葡萄球菌是年轻女性尿感的常见病原。' }
+    ]
+  },
+  {
+    id: 'bio-camp', 名称: 'CAMP 试验', 类别: '溶血与特殊反应',
+    关联: ["strep-agalactiae"],
+    小节: [
+      { 标题: '原理', 正文: 'B 群无乳链球菌产生 CAMP 因子（蛋白），能增强金黄色葡萄球菌 β-溶血素的溶血作用，在两种菌的交界处形成箭头状增强溶血区。' },
+      { 标题: '方法', 正文: '在血琼脂平板上，用金黄色葡萄球菌（ATCC 25923）划一条纵线，将被检菌垂直接种（不触及金葡线，间隔 3–5 mm），35℃ 空气或 5% CO₂ 孵育 18–24 小时。' },
+      { 标题: '结果判读', 正文: '两线交界处出现箭头状增强透明溶血区为阳性（+）。无变化或仅有普通溶血为阴性（−）。' },
+      { 标题: '临床意义', 正文: 'CAMP（+）= B 群无乳链球菌（GBS）。是 GBS 鉴别的经典试验，与马尿酸盐水解和 Lancefield B 群分型联合使用。' }
+    ]
+  },
+  {
+    id: 'hippurate', 名称: '马尿酸盐水解试验', 类别: '氨基酸与蛋白质代谢',
+    关联: ["campylobacter-jejuni","strep-agalactiae"],
+    小节: [
+      { 标题: '原理', 正文: '无乳链球菌产生马尿酸酶，将马尿酸钠水解为苯甲酸 + 甘氨酸。加入茚三酮后，甘氨酸与之反应呈深蓝色。' },
+      { 标题: '方法', 正文: '菌落接种于 1% 马尿酸钠溶液，35℃ 孵育 2 小时（或 18–24 小时）；离心取上清，加茚三酮试剂，100℃ 水浴 10–15 分钟。或使用快速水解试验。' },
+      { 标题: '结果判读', 正文: '深蓝色/紫色为阳性（+）；无色（或黄色）为阴性（−）。' },
+      { 标题: '临床意义', 正文: '马尿酸盐水解（+）高度提示 B 群无乳链球菌，结合 CAMP 试验和 β-溶血特征可确诊。' }
+    ]
+  },
+
+  // ===== 溶血与特殊反应 =====
+  {
+    id: 'hemolysis', 名称: '溶血型鉴定', 类别: '溶血与特殊反应',
+    关联: ["strep-agalactiae","strep-pneumoniae","strep-pyogenes","strep-viridans"],
+    小节: [
+      { 标题: '原理', 正文: '链球菌产生不同的溶血素（溶红细胞毒素），在血琼脂平板上形成特征性溶血现象。α-溶血（绿色）：不完全溶血，血红蛋白被还原→绿色褪色带/草绿色（肺炎链球菌、草绿色链球菌）。β-溶血（透明）：完全溶血→菌落周围完全透明的溶血带（化脓链球菌 A 群、无乳链球菌 B 群）。γ-溶血：无溶血（肠球菌、部分 D 群链球菌）。' },
+      { 标题: '方法', 正文: '划线接种 5% 绵羊血琼脂平板（BA），穿刺（检测氧不稳定性溶血素，如 SLO），35℃ 5% CO₂ 孵育 18–24 小时。' },
+      { 标题: '结果判读', 正文: '菌落周围半透明草绿色晕 = α-溶血；透明完全溶血圈 = β-溶血；无变色 = γ-溶血。穿刺线下的 β-溶血可使结果更加明确（链球菌溶血素 O 为氧不稳定型，穿刺下活性增强）。' },
+      { 标题: '临床意义', 正文: '是链球菌分类的第一步。A 群（化脓链球菌）和 B 群（无乳链球菌）均为 β-溶血；肺炎链球菌和草绿色链球菌为 α-溶血。' }
+    ]
+  },
+  {
+    id: 'pigment', 名称: '色素产生试验', 类别: '生长特性',
+    关联: ["cronobacter-sakazakii","pseudomonas-aeruginosa"],
+    小节: [
+      { 标题: '原理', 正文: '部分细菌产生特征性色素，可直接作为初步鉴别的依据。铜绿假单胞菌产生绿脓菌素（pyocyanin，蓝绿色）和荧光素（pyoverdin，黄绿色荧光），在紫外光下有荧光。黏质沙雷菌产生灵菌红素（prodigiosin，砖红色）。金黄色葡萄球菌产生金黄色类胡萝卜素色素（staphyloxanthin）。' },
+      { 标题: '方法', 正文: '接种相应培养基（铜绿假单胞菌：P 琼脂/King A 促进绿脓菌素产生；沙雷菌：营养琼脂 25–30℃ 促灵菌红素），孵育后肉眼及紫外灯（365 nm）观察。' },
+      { 标题: '结果判读', 正文: '肉眼可见色素 + 紫外荧光为阳性。' },
+      { 标题: '临床意义', 正文: '菌落或培养基中出现特征性色素可迅速推定菌种。但色素产生受温度、培养基影响，非所有菌株均能产色素。铜绿假单胞菌中仅约 70–80% 菌株可产生可见绿脓菌素。' }
+    ]
+  },
+
+  // ===== 区分性试验组合 =====
+  {
+    id: 'lancefield', 名称: 'Lancefield 分群', 类别: '溶血与特殊反应',
+    关联: ["strep-agalactiae","strep-pyogenes"],
+    小节: [
+      { 标题: '原理', 正文: 'Lancefield 分组基于 β-溶血链球菌细胞壁 C-多糖（C-carbohydrate）的抗原差异，用特异性抗血清进行乳胶凝集试验或协同凝集试验。临床常见：A 群（化脓链球菌）、B 群（无乳链球菌）、C 群、D 群（肠球菌/牛链球菌群）、F 群、G 群。' },
+      { 标题: '方法', 正文: '菌落经酶（提取酶如链霉菌酶或变溶菌素）或酸（0.2N HCl 加热）提取 C-多糖后，与各群特异性抗体包被的乳胶颗粒混合，观察凝集。' },
+      { 标题: '结果判读', 正文: '肉眼可见凝集颗粒（+）为阳性。' },
+      { 标题: '临床意义', 正文: 'A 群（S. pyogenes）：咽炎、脓疱疮、丹毒、猩红热、风湿热、链球菌感染后肾小球肾炎。B 群（S. agalactiae）：新生儿败血症和脑膜炎的主要病原（母体阴道/直肠定植、产道感染）。' }
+    ]
+  }
+];

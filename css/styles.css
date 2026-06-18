@@ -89,6 +89,8 @@ body {
 .biochem-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 12px; font-size: 13px; }
 .biochem-row:nth-child(even) { background: var(--line-2); }
 .biochem-key { color: var(--muted); }
+.biochem-link { text-decoration: none; }
+.biochem-link:hover { text-decoration: underline; color: var(--link); }
 .biochem-val { color: var(--ink); font-weight: 600; font-family: var(--mono); }
 
 /* 鉴别 */
@@ -135,7 +137,27 @@ body {
 .chip-cards { color: #4a6d8c; }
 .chip-media { color: #6b4e8a; }
 .chip-staining { color: #8a4a6b; }
+.chip-biochem-tests { color: #4a7a6b; }
 .chip-missing, .chip-plain { color: var(--muted); background: var(--line-2); }
+
+/* 折点表 */
+.breakpoints { margin: 22px 0; }
+.bp-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+.bp-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; }
+.bp-source { font-size: 11px; color: var(--faint); }
+.bp-table { border-collapse: collapse; margin-top: 6px; font-size: 13px; min-width: 680px; }
+.bp-table th, .bp-table td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+.bp-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; white-space: nowrap; }
+.bp-table .bp-drug { color: var(--ink); min-width: 200px; }
+.bp-table .bp-drug strong { color: var(--accent); font-family: var(--mono); font-size: 12px; }
+.bp-drug-link { color: var(--link); text-decoration: none; }
+.bp-drug-link:hover { text-decoration: underline; }
+.bp-table .bp-mic { font-family: var(--mono); color: var(--ink-soft); white-space: nowrap; }
+.bp-table .bp-disk { font-family: var(--mono); color: var(--ink-soft); white-space: nowrap; }
+.bp-table .bp-comment { color: var(--muted); font-size: 12px; max-width: 240px; }
+.bp-table .bp-note { color: var(--muted); font-size: 11px; }
+.bp-table tbody tr:hover { background: var(--line-2); }
+.bp-foot { font-size: 11.5px; color: var(--faint); margin-top: 8px; }
 
 /* 参考链接 */
 .refs { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
@@ -164,6 +186,7 @@ body {
 .tag-cards { color: #4a6d8c; }
 .tag-media { color: #6b4e8a; }
 .tag-staining { color: #8a4a6b; }
+.tag-biochem-tests { color: #4a7a6b; }
 
 /* 空状态 */
 .empty { color: var(--muted); padding: 48px 0; text-align: center; }
