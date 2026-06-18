@@ -5,6 +5,7 @@
 // 仅审校教学示意图（stain-/test-/mechanism-/resistance-）；分子结构(struct-)来自 ChEMBL/RDKit，不送审。
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -99,6 +100,7 @@ for (const r of results) {
   if (!dsi.length && !gli.length && !r.ds.error && !r.gl.error) md += `- ✅ 两模型均未发现明确错误\n`;
   md += '\n';
 }
-fs.writeFileSync('/tmp/diagram-review.md', md);
-console.log(`审校完成：${results.length} 张图，${flagged} 张被标记可疑。报告：/tmp/diagram-review.md`);
+const OUT = path.join(os.tmpdir(), 'diagram-review.md');
+fs.writeFileSync(OUT, md);
+console.log(`审校完成：${results.length} 张图，${flagged} 张被标记可疑。报告：${OUT}`);
 console.log(md);

@@ -300,6 +300,201 @@
     };
   }
 
+  // 天然耐药速查：聚合所有有"天然耐药"字段的微生物，支持按菌名/拉丁名/耐药文本模糊过滤。
+  function intrinsicVM(db, filter) {
+    var q = (filter || '').trim().toLowerCase();
+    var list = (db.microbes || []).filter(function (m) { return m.天然耐药 && String(m.天然耐药).length; });
+    if (q) {
+      list = list.filter(function (m) {
+        return [m.名称, m.拉丁名, m.天然耐药].some(function (s) {
+          return s && String(s).toLowerCase().indexOf(q) !== -1;
+        });
+      });
+    }
+    var byCat = {};
+    list.forEach(function (m) {
+      var cat = m.类别 || '其他';
+      (byCat[cat] = byCat[cat] || []).push({
+        id: m.id, 名称: m.名称, 拉丁名: m.拉丁名 || '', 天然耐药: m.天然耐药
+      });
+    });
+    return {
+      count: list.length,
+      groups: Object.keys(byCat).map(function (k) { return { 类别: k, items: byCat[k] }; })
+    };
+  }
+
+  // 关系图布局：把 Core.buildGraph 的结果按同心圆分层放到 width×height 画布上。
+  // 二级节点采用「径向树」分组：每个二级节点归到它的一级父节点，并沿父节点角度成簇排布，
+  // 使连线呈放射状、显著减少交叉，便于在 2 层时阅读。
+  function graphLayoutVM(graph, width, height) {
+    if (!graph) { return null; }
+    var cx = width / 2, cy = height / 2;
+    var minWH = Math.min(width, height);
+    var r1 = minWH * 0.30;
+    var r2 = minWH * 0.43;
+
+    var byLevel = { 0: [], 1: [], 2: [] };
+    graph.nodes.forEach(function (n) {
+      var lv = n.level || 0;
+      (byLevel[lv] = byLevel[lv] || []).push(n);
+    });
+
+    var levelOf = {};
+    graph.nodes.forEach(function (n) { levelOf[n.id] = n.level || 0; });
+    // 二级节点的父节点 = 与之相连的某个一级节点
+    var parentOf = {};
+    graph.edges.forEach(function (e) {
+      var lf = levelOf[e.from], lt = levelOf[e.to];
+      if (lf === 1 && lt === 2 && !parentOf[e.to]) { parentOf[e.to] = e.from; }
+      else if (lt === 1 && lf === 2 && !parentOf[e.from]) { parentOf[e.from] = e.to; }
+    });
+
+    var pos = {};
+    (byLevel[0] || []).forEach(function (n) { pos[n.id] = { x: cx, y: cy }; });
+
+    // 一级：均匀分布在内环，并记录角度
+    var l1 = byLevel[1] || [];
+    var angleOf = {};
+    l1.forEach(function (node, i) {
+      var a = (i / Math.max(1, l1.length)) * 2 * Math.PI - Math.PI / 2;
+      angleOf[node.id] = a;
+      pos[node.id] = { x: cx + r1 * Math.cos(a), y: cy + r1 * Math.sin(a) };
+    });
+
+    // 二级：按父节点角度分组排序后均匀放到外环（同一父节点的子节点相邻成簇）
+    var l2 = byLevel[2] || [];
+    if (l2.length) {
+      l2.forEach(function (node) {
+        var pid = parentOf[node.id];
+        node.__parentId = pid || null;
+        node.__pa = (pid != null && angleOf[pid] != null) ? angleOf[pid] : -Math.PI / 2;
+      });
+      var sorted = l2.slice().sort(function (a, b) {
+        if (a.__pa !== b.__pa) { return a.__pa - b.__pa; }
+        return a.id < b.id ? -1 : 1;
+      });
+      var M = sorted.length;
+      sorted.forEach(function (node, i) {
+        var a = (i / M) * 2 * Math.PI - Math.PI / 2;
+        pos[node.id] = { x: cx + r2 * Math.cos(a), y: cy + r2 * Math.sin(a) };
+      });
+    }
+
+    return {
+      width: width, height: height,
+      center: { id: graph.center.id, 名称: graph.center.名称, module: graph.center.module, x: cx, y: cy },
+      nodes: graph.nodes.map(function (n) {
+        var p = pos[n.id] || { x: cx, y: cy };
+        return { id: n.id, 名称: n.名称, module: n.module, level: n.level, x: p.x, y: p.y, parentId: n.__parentId || null };
+      }),
+      edges: graph.edges.map(function (e) {
+        var from = pos[e.from] || { x: cx, y: cy };
+        var to = pos[e.to] || { x: cx, y: cy };
+        return { x1: from.x, y1: from.y, x2: to.x, y2: to.y, direction: e.direction, fromId: e.from, toId: e.to };
+      })
+    };
+  }
+
+  // ===== 折点解析与 MIC 判读（CLSI M100 风格） =====
+  // 解析单个折点字符串："≤0.06"→{type:'le',val:0.06}；"≥2"→{type:'ge',val:2}；
+  // "0.12–1" / "0.12-1"→{type:'range',lo,hi}；"16"→{type:'value',val:16}；"—"/""→null。
+  function parseBP(s) {
+    if (s == null) { return null; }
+    s = String(s).trim();
+    if (!s || s === '—' || s === '-') { return null; }
+    // 去掉尾部说明性括注（如 "16/4 (SDD)"）—只取主数值部分
+    s = s.replace(/\s*\(.*\)$/, '').trim();
+    var m;
+    if ((m = s.match(/^([\d.]+)\s*[–-]\s*([\d.]+)/))) { return { type: 'range', lo: parseFloat(m[1]), hi: parseFloat(m[2]) }; }
+    if ((m = s.match(/^≤\s*([\d.]+)/))) { return { type: 'le', val: parseFloat(m[1]) }; }
+    if ((m = s.match(/^≥\s*([\d.]+)/))) { return { type: 'ge', val: parseFloat(m[1]) }; }
+    if ((m = s.match(/^>\s*([\d.]+)/))) { return { type: 'gt', val: parseFloat(m[1]) }; }
+    if ((m = s.match(/^<\s*([\d.]+)/))) { return { type: 'lt', val: parseFloat(m[1]) }; }
+    if ((m = s.match(/^([\d.]+)/))) { return { type: 'value', val: parseFloat(m[1]) }; }
+    return null;
+  }
+
+  // MIC 判读：输入数值 + S/I/R 三段折点字符串，返回 {result, reason}。
+  // result ∈ {'S','I','R','SDD','unknown','invalid'}。SDD 视为 I 的剂量依赖子类。
+  function judgeMIC(micInput, bpS, bpI, bpR) {
+    var val = parseFloat(micInput);
+    if (isNaN(val) || val < 0) { return { result: 'invalid', reason: 'MIC 输入无效（请输入非负数字）' }; }
+    var s = parseBP(bpS), i = parseBP(bpI), r = parseBP(bpR);
+
+    // R：≥ 阈值
+    if (r && r.type === 'ge' && val >= r.val) {
+      return { result: 'R', reason: 'MIC ≥ ' + r.val + '（耐药折点）' };
+    }
+    // S：≤ 阈值
+    if (s && s.type === 'le' && val <= s.val) {
+      return { result: 'S', reason: 'MIC ≤ ' + s.val + '（敏感折点）' };
+    }
+    // I：区间或单值（含 SDD）
+    if (i) {
+      if (i.type === 'range' && val >= i.lo && val <= i.hi) {
+        return { result: 'I', reason: 'MIC 在 ' + i.lo + '–' + i.hi + ' 区间（中介/SDD）' };
+      }
+      if (i.type === 'value' && val === i.val) {
+        return { result: 'I', reason: 'MIC = ' + i.val + '（中介）' };
+      }
+      // 黏菌素等仅 I≤x：val 落在 S 无 / R≥x 之间也算 I
+      if (i.type === 'le' && val <= i.val) {
+        return { result: 'I', reason: 'MIC ≤ ' + i.val + '（中介/剂量依赖）' };
+      }
+    }
+    // 折点不完整（如某些药只有 S≤x，无 R≥x）
+    if (!s && !r) { return { result: 'unknown', reason: '该药物无完整 S/I/R 折点，无法判读' }; }
+    return { result: 'unknown', reason: 'MIC 不在任何折点区间内' };
+  }
+
+  // 折点查询：按菌组名/药物名筛选
+  function breakpointLookupVM(breakpoints, groupFilter, drugFilter) {
+    var gq = (groupFilter || '').trim().toLowerCase();
+    var dq = (drugFilter || '').trim().toLowerCase();
+    return (breakpoints || []).filter(function (g) {
+      return !gq || (g.菌组名 || '').toLowerCase().indexOf(gq) !== -1;
+    }).map(function (g) {
+      var drugs = (g.药物 || []).filter(function (d) {
+        return !dq || (d.药物 || '').toLowerCase().indexOf(dq) !== -1 ||
+               (d.简写 || '').toLowerCase().indexOf(dq) !== -1;
+      });
+      return {
+        菌组名: g.菌组名, CLSI表: g.CLSI表, 来源: g.来源 || '',
+        菌种: g.菌种 || [], 药物: drugs
+      };
+    }).filter(function (g) { return g.药物.length > 0; });
+  }
+
+  // 异常药敏/修正规则：支持按等级、类别、关键词筛选，并按类别分组。
+  function astAlertsVM(alerts, opts) {
+    opts = opts || {};
+    var q = (opts.filter || '').trim().toLowerCase();
+    var level = opts.level || 'all';
+    var list = (alerts || []).filter(function (item) {
+      var levelOk = level === 'all' || item.等级 === level;
+      if (!levelOk) { return false; }
+      if (!q) { return true; }
+      var hay = [
+        item.类别, item.等级, item.标题, item.触发, item.异常结果,
+        item.处理, item.依据, item.关键词, item.来源
+      ].join(' ').toLowerCase();
+      return hay.indexOf(q) !== -1;
+    });
+    var byCat = {};
+    list.forEach(function (item) {
+      var cat = item.类别 || '其他';
+      (byCat[cat] = byCat[cat] || []).push(item);
+    });
+    return {
+      count: list.length,
+      levels: ['all', '必须修正', '需复核', '限制报告'],
+      groups: Object.keys(byCat).map(function (cat) {
+        return { 类别: cat, items: byCat[cat] };
+      })
+    };
+  }
+
   return {
     moduleLabel: moduleLabel,
     mechanismImageFor: mechanismImageFor,
@@ -310,6 +505,12 @@
     buildComparison: buildComparison,
     buildCardComparison: buildCardComparison,
     breakpointGroup: breakpointGroup,
-    breakpointVM: breakpointVM
+    breakpointVM: breakpointVM,
+    intrinsicVM: intrinsicVM,
+    graphLayoutVM: graphLayoutVM,
+    parseBP: parseBP,
+    judgeMIC: judgeMIC,
+    breakpointLookupVM: breakpointLookupVM,
+    astAlertsVM: astAlertsVM
   };
 });

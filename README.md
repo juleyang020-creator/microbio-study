@@ -1,46 +1,137 @@
-# 微生物学习软件
+# 临床微生物学习与速查系统
 
-本地、免安装的微生物学知识库。**双击 `index.html` 即可在浏览器打开使用**（无需联网、无需构建）。
+一个**本地、免安装、可离线**的临床微生物学知识库。**双击 `index.html` 即可在浏览器打开使用**（无需联网、无需构建）。同时是 PWA，可"添加到主屏幕"当 App 用；iOS 套壳代码见 `ios/`。
 
-## 七大模块
+## 九大模块（顶部 Tab）
+
 1. **微生物分类** — 细菌（按革兰染色与形态分属）/ 病毒（DNA/RNA）/ 真菌 / 寄生虫
-2. **抗微生物药** — 按作用机制分类（细胞壁/蛋白质/核酸/叶酸/细胞膜/抗真菌药）
-3. **耐药因素** — 按耐药机制分类（灭活酶/靶位改变/外排泵/膜通透性/旁路等）
-4. **药敏卡** — 革兰阴性/阳性/真菌/链球菌药敏卡
-5. **试验** — 药敏试验方法、耐药表型检测、鉴别试验
-6. **染色** — 常规染色 / 特殊结构染色 / 真菌染色 / 血液与寄生虫染色
-7. **培养基** — 基础与营养 / 选择与鉴别 / 特殊培养基
+2. **抗微生物药** — 按作用机制分类（细胞壁 / 蛋白质 / 核酸 / 叶酸 / 细胞膜 / 抗真菌药）
+3. **耐药因素** — 按耐药机制分类（灭活酶 / 靶位改变 / 外排泵 / 膜通透性 / 旁路等）
+4. **鉴定卡** — VITEK 2 等鉴定卡原理与选卡
+5. **药敏卡** — 革兰阴性 / 阳性 / 真菌 / 链球菌药敏卡
+6. **试验** — 药敏试验方法（KB 法 / E-test / MIC）、耐药表型检测、鉴别试验
+7. **染色** — 常规染色 / 特殊结构染色 / 真菌染色 / 血液与寄生虫染色
+8. **培养基** — 基础与营养 / 选择与鉴别 / 特殊培养基
+9. **生化反应** — 酶活性 / 碳水化合物 / 氨基酸 / 生长特性 / 溶血与特殊反应
 
 各模块互相打通：在一个条目里声明 `关联`，相关条目会在两边自动互相显示。
 
+## 两个对比工具（顶部右上角入口）
+
+- **生化对比** (`#/compare`) — 勾选 2 个以上细菌，并排比较生化反应结果，差异项自动高亮（鉴别要点）。
+- **药敏卡对比** (`#/cardcompare`) — 勾选 2 张以上药敏卡，并排比较所含药物/检测项，不一致项高亮。
+
+## 四个独立工具模块
+
+- **天然耐药速查** (`#/intrinsic`) — 聚合所有微生物的「天然耐药」字段，按菌属分组展示。支持按菌名/拉丁名/药名模糊过滤。临床夜班"这菌天然耐哪些药"高频查询。
+- **异常药敏速查** (`#/astalerts`) — 常见需修正/警示的药敏结果组合（如 MRSA 报敏感 β-内酰胺、肠球菌报敏感头孢等），按类别分组并附判读说明。
+- **关联关系图** (`#/graph` 或 `#/graph/<module>/<id>`) — 以任一条目为图心，画其 1 层 / 2 层关联网络（SVG 同心圆分层布局）。节点按模块着色，正向关联实线、反向关联虚线。**2 层时**：二级节点按其一级父节点成「径向树」分簇排布以减少连线交叉，画布随节点数自适应放大；**悬停（桌面）任一节点**可高亮其关联、显示邻居名称并淡化其余。点击非中心节点重新以该节点为图心。
+- **折点判读** (`#/breakpoints`) — 两个子模式：
+  - **折点查询**：按菌组名/药物名筛选 CLSI M100 折点表
+  - **MIC 判读**：选菌组 → 选药物 → 输入 MIC 值，自动判读 S/I/R 并给出依据。支持黏菌素等"无 S 折点"特殊情形。
+
 ## 怎么加内容
+
 1. 打开对应模块的数据文件，如 `data/microbes.js`。
-2. 复制一段已有条目，修改 `id`（保持唯一）、`名称`、`类别`（需匹配 `data/categories.js` 里的对应子类，注意分类支持多级）、`小节`。
+2. 复制一段已有条目，修改 `id`（保持唯一）、`名称`、`类别`（需匹配 `data/categories.js` 里的对应叶子分类，分类支持多级）、`小节`。
 3. （可选）在 `关联` 里填相关条目的 `id`（可跨模块）。
 4. 保存，刷新浏览器即可看到。
 
+> 数据文件采用 `window.DB.xxx = [...]` 形式，浏览器与 Node 测试都能直接 `require`，无需打包。
+
 ## 数据文件一览
 
+### 主模块数据
 | 文件 | 模块 | 条目量 |
 |---|---|---|
-| `data/microbes.js` | 微生物分类 | 大量条目（含形态、生化特征等） |
-| `data/antibiotics.js` | 抗微生物药 | 各机制分类下的药物条目 |
-| `data/resistance.js` | 耐药因素 | 各耐药机制的条目 |
-| `data/cards.js` | 药敏卡 | 不同菌种的药敏卡片 |
-| `data/tests.js` | 试验 | 药敏与耐药表型检测 |
-| `data/staining.js` | 染色 | 各类染色方法 |
-| `data/media.js` | 培养基 | 各类培养基配方 |
-| `data/biochem.js` | （辅助数据） | 生化反应数据 |
-| `data/morphology.js` | （辅助数据） | 形态学特征数据 |
-| `data/differential.js` | （辅助数据） | 鉴别诊断数据 |
-| `data/structures.js` | （辅助数据） | 结构特征数据 |
-| `data/categories.js` | 分类树（全部模块） | 支持多级分类 |
+| `data/microbes.js` | 微生物分类 | 134 |
+| `data/antibiotics.js` | 抗微生物药 | 73 |
+| `data/resistance.js` | 耐药因素 | 16 |
+| `data/idcards.js` | 鉴定卡 | 7 |
+| `data/cards.js` | 药敏卡 | 13 |
+| `data/tests.js` | 试验 | 16 |
+| `data/staining.js` | 染色 | 16 |
+| `data/media.js` | 培养基 | 19 |
+| `data/biochem-tests.js` | 生化反应（模块条目） | 32 |
 
-## 怎么跑测试（开发用，需要 Node）
+### 辅助数据（按微生物 id 索引的对象）
+| 文件 | 用途 | 键数 |
+|---|---|---|
+| `data/morphology.js` | 形态学特征（镜下 / 培养） | 134 |
+| `data/biochem.js` | 生化反应结果（用于详情页与对比） | 50 |
+| `data/differential.js` | 相似菌鉴别要点 | 28 |
+| `data/structures.js` | 抗菌药分子结构 SMILES（配套 `img/struct-*.svg`） | 58 |
+| `data/breakpoints.js` | CLSI M100（细菌）/ M60（真菌）药敏折点（按菌组） | 25 组 |
+| `data/ast-alerts.js` | 异常 / 警示药敏结果速查规则 | 13 条 |
+| `data/categories.js` | 全部模块的分类树（支持多级） | 9 棵 |
+
+## 怎么跑
+
+**使用**：双击 `index.html`，或在项目根目录起一个静态服务器：
+
+```bash
+python3 -m http.server 8123
+# 浏览器打开 http://localhost:8123/
+```
+
+`.claude/launch.json` 已配置好上面这条命令（VS Code 调试用）。
+
+**测试**（需要 Node ≥ 18）：
 ```bash
 node --test
 ```
-（应用本身运行不需要 Node，只有跑测试时需要。）
+共 75 个用例，覆盖：核心逻辑（关联、搜索、分类校验、关系图构建）、视图模型（详情/对比/折点/天然耐药/MIC 判读）、数据完整性（id 唯一、悬空关联、未匹配分类、辅助数据键合法、机制图与结构 SVG 文件存在等）。
+
+**示意图审校**（开发期工具，可选）：
+```bash
+DEEPSEEK_API_KEY=xxx GLM_API_KEY=yyy node tools/review-diagrams.mjs
+```
+把每张教学示意图的文字标签发给 DeepSeek + GLM 做事实核对，报告写到 `/tmp/diagram-review.md`。分子结构图（`struct-*.svg`）来自 ChEMBL/RDKit，不送审。
 
 ## 数据自检
-打开应用时会在浏览器控制台输出数据自检结果（id 重复 / 悬空关联 / 未匹配分类）。
+
+打开应用时会在浏览器控制台输出数据自检结果（id 重复 / 悬空关联 / 未匹配分类）。开发期同样的检查由 `tests/data-integrity.test.js` 自动跑。
+
+## PWA 与离线
+
+- `manifest.json` + `sw.js` 提供离线缓存，**联网一次后即可离线使用**。
+- 改了 `sw.js` 里的 `CACHE` 版本号即可强制刷新缓存。
+- `file://` 协议下（直接双击打开）会跳过 Service Worker 注册，不影响使用。
+
+## 分享
+
+见 [`SHARING.md`](./SHARING.md)——把网页托管到 Netlify Drop 或 GitHub Pages，发链接给朋友，他们"添加到主屏幕"就能当 App 用。
+
+## 目录结构
+
+```
+.
+├── index.html              # 单页入口（9 个 Tab + 对比入口 + 搜索）
+├── manifest.json           # PWA 清单
+├── sw.js                   # Service Worker（离线缓存）
+├── css/styles.css          # 全部样式
+├── js/
+│   ├── core.js             # 关联、搜索、数据校验
+│   ├── view.js             # 视图模型（详情/侧栏/对比/折点）
+│   ├── app.js              # 路由、渲染、交互
+│   └── validate.js         # 浏览器端数据自检
+├── data/                   # 全部数据（见上表）
+├── img/                    # SVG 示意图与分子结构图
+├── icons/                  # PWA 图标
+├── ios/                    # iOS 套壳 Xcode 工程（WKWebView，可选分发）
+├── tests/                  # node:test 用例
+├── tools/                  # 开发期脚本（示意图审校等）
+└── docs/superpowers/       # 设计文档与计划
+```
+
+### iOS 套壳说明
+
+`ios/Microbio/` 是一个 WKWebView 套壳工程，用 [xcodegen](https://github.com/yonaskolb/XcodeGen) 从 `project.yml` 生成 `.xcodeproj`。web 资源以**蓝色文件夹引用**方式打包（`project.yml` 里 `path: web` + `type: folder`），保留目录结构。
+
+- `ios/Microbio/web/` 是 web 资源副本（已 `.gitignore`），构建前需把根目录的 `index.html`、`css/`、`js/`、`data/`、`img/`、`icons/`、`manifest.json`、`sw.js` 同步进去。建议脚本化：
+  ```bash
+  rsync -a --delete --exclude='.git' --exclude='.DS_Store' \
+    index.html css js data img icons manifest.json sw.js ios/Microbio/web/
+  ```
+- 套壳内通过 `file://` 加载，Service Worker 不会注册（见 `index.html` 末尾的条件判断），离线缓存退化为浏览器自带的应用缓存。
+- 真正的分发方式见 `SHARING.md`——优先用 PWA 链接，iOS 套壳主要给自己/技术朋友体验原生壳。

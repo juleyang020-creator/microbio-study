@@ -1,12 +1,12 @@
 /* 离线缓存：核心文件预缓存 + 其余(图片等)运行时缓存。改版本号即可强制更新缓存。 */
-var CACHE = 'microbio-v15';
+var CACHE = 'microbio-v23';
 var CORE = [
   './', './index.html', './css/styles.css',
   './js/core.js', './js/view.js', './js/validate.js', './js/app.js',
   './data/categories.js', './data/microbes.js', './data/antibiotics.js', './data/resistance.js',
   './data/biochem.js', './data/differential.js', './data/morphology.js',
   './data/idcards.js', './data/cards.js', './data/tests.js', './data/media.js', './data/staining.js', './data/structures.js',
-  './data/breakpoints.js', './data/biochem-tests.js',
+  './data/breakpoints.js', './data/biochem-tests.js', './data/ast-alerts.js',
   './manifest.json', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'
 ];
 

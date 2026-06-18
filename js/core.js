@@ -143,11 +143,63 @@
     return problems;
   }
 
+  // 关系图构建：以 (moduleKey, id) 为中心，BFS 收集 depth 层关联（forward + reverse 去重）。
+  // 返回 { center, nodes: [{id,名称,module,level}], edges: [{from,to,direction}] }；找不到中心返回 null。
+  function buildGraph(db, moduleKey, id, depth) {
+    var index = buildIndex(db);
+    var center = index[id];
+    if (!center) { return null; }
+    depth = depth || 1;
+
+    var nodes = {};
+    var edges = {};
+    nodes[id] = { id: id, 名称: center.entry.名称, module: center.module, level: 0 };
+
+    function edgeKey(from, to, dir) { return from + '|' + to + '|' + dir; }
+
+    function collect(targetId) {
+      var rels = getRelations(targetId, db);
+      var out = [];
+      rels.forEach(function (r) {
+        if (!r.exists) { return; }
+        // 同一对节点正反向都算同一条边，避免重复绘制
+        var k1 = edgeKey(targetId, r.id, r.direction);
+        var k2 = edgeKey(r.id, targetId, r.direction === 'forward' ? 'reverse' : 'forward');
+        if (!edges[k1] && !edges[k2]) {
+          edges[k1] = { from: targetId, to: r.id, direction: r.direction };
+        }
+        out.push(r);
+      });
+      return out;
+    }
+
+    var frontier = [id];
+    for (var lv = 1; lv <= depth; lv++) {
+      var next = [];
+      frontier.forEach(function (fid) {
+        collect(fid).forEach(function (r) {
+          if (!nodes[r.id]) {
+            nodes[r.id] = { id: r.id, 名称: r.名称, module: r.module, level: lv };
+            next.push(r.id);
+          }
+        });
+      });
+      frontier = next;
+    }
+
+    return {
+      center: { id: id, 名称: center.entry.名称, module: center.module },
+      nodes: Object.keys(nodes).map(function (k) { return nodes[k]; }),
+      edges: Object.keys(edges).map(function (k) { return edges[k]; })
+    };
+  }
+
   return {
     MODULE_KEYS: MODULE_KEYS,
     buildIndex: buildIndex,
     getRelations: getRelations,
     searchEntries: searchEntries,
-    validateData: validateData
+    validateData: validateData,
+    buildGraph: buildGraph
   };
 });

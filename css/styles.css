@@ -28,18 +28,57 @@ body {
 }
 
 /* 顶栏 */
-.topbar { display: flex; align-items: center; gap: 16px; background: var(--surface); border-bottom: 1px solid var(--line); padding: 0 22px; height: 52px; flex-shrink: 0; }
+.topbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 22px;
+  min-height: 64px;
+  flex-shrink: 0;
+}
 .brand { font-weight: 600; font-size: 15px; letter-spacing: 1px; color: var(--ink); white-space: nowrap; }
-.tabs { display: flex; gap: 2px; height: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.nav-boards { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; min-width: 0; }
+.nav-board {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  height: 40px;
+  padding: 4px 7px 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+}
+.nav-board-title {
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1;
+  white-space: nowrap;
+  padding-right: 9px;
+  border-right: 1px solid var(--line);
+}
+.tabs { display: flex; gap: 3px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
-.tab { background: none; border: none; color: var(--muted); font-size: 13.5px; padding: 0 12px; height: 100%; cursor: pointer; border-bottom: 2px solid transparent; font-family: inherit; }
+.tab { background: none; border: 1px solid transparent; border-radius: 5px; color: var(--muted); font-size: 13px; padding: 4px 9px; min-height: 30px; cursor: pointer; font-family: inherit; white-space: nowrap; flex-shrink: 0; }
 .tab:hover { color: var(--ink); }
-.tab.active { color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
+.tab.active { color: var(--accent); font-weight: 600; border-color: var(--accent-edge); background: var(--accent-weak); }
 .search { border: 1px solid var(--line); border-radius: 6px; padding: 6px 11px; font-size: 13px; min-width: 180px; background: var(--surface); color: var(--ink); font-family: inherit; }
 .search::placeholder { color: var(--faint); }
 .search:focus { outline: none; border-color: var(--accent); }
 .compare-btn { margin-left: auto; color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; }
 .compare-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 工具按钮组（天然耐药 / 关系图 / 折点判读 / 生化对比 / 药敏卡对比） */
+.tools { display: flex; gap: 5px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.tools::-webkit-scrollbar { display: none; }
+.tool-btn { color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 4px 9px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; flex-shrink: 0; }
+.tool-btn:hover { border-color: var(--accent); color: var(--accent); }
+.tool-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-weak); font-weight: 600; }
 
 /* 布局 */
 .layout { display: flex; flex: 1; min-height: 0; }
@@ -169,6 +208,139 @@ body {
 .intrinsic-title { font-size: 12px; font-weight: 700; color: var(--rust); letter-spacing: 1.2px; margin-bottom: 5px; }
 .intrinsic-body { color: var(--ink-soft); line-height: 1.7; font-size: 13.5px; }
 
+/* 天然耐药速查（独立模块） */
+.intrinsic-group { margin: 18px 0; }
+.intrinsic-group-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; margin-bottom: 8px; }
+.intrinsic-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; }
+.intrinsic-card { background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--rust); border-radius: 6px; padding: 10px 14px; }
+.intrinsic-card-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }
+.intrinsic-link { color: var(--link); text-decoration: none; font-weight: 600; font-size: 14px; }
+.intrinsic-link:hover { text-decoration: underline; }
+.intrinsic-card .latin { margin: 0; font-size: 12px; }
+
+/* 关联关系图 */
+.graph-controls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+.graph-ctrl-label { font-size: 12px; color: var(--muted); }
+.graph-controls .cmp-add.sel { background: var(--accent-weak); border-color: var(--accent); color: var(--accent); }
+.graph-center-info { display: flex; align-items: baseline; gap: 8px; margin: 6px 0 10px; }
+.graph-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; margin: 14px 0; }
+.graph-svg { display: block; width: 100%; max-width: 720px; height: auto; margin: 0 auto; }
+.graph-svg .graph-edge { opacity: 0; transition: opacity 0.45s ease-out; }
+.graph-svg .graph-edge.visible { opacity: 1; }
+.graph-svg .graph-edge.reverse.visible { opacity: 0.85; }
+.graph-svg .graph-node-inner {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease-out;
+}
+.graph-svg .graph-node-inner.visible { opacity: 1; transform: scale(1); }
+.graph-svg .graph-node-inner.center.visible {
+  animation: graph-center-pulse 2.8s ease-in-out infinite 0.6s;
+}
+.graph-svg g[transform]:not(.graph-node-inner) { cursor: pointer; }
+.graph-svg g[transform]:not(.graph-node-inner):hover .graph-node-inner { transform: scale(1.2); transition: transform 0.2s ease; }
+.graph-svg text { font-family: -apple-system, "PingFang SC", system-ui, sans-serif; pointer-events: none; user-select: none; }
+.graph-svg .graph-label { pointer-events: none; }
+.graph-svg .graph-label-bg {
+  fill: rgba(255,255,255,.88);
+  stroke: rgba(212,218,214,.9);
+  stroke-width: .8;
+}
+.graph-svg .graph-label-text {
+  paint-order: stroke;
+  stroke: rgba(255,255,255,.84);
+  stroke-width: 2.4px;
+  stroke-linejoin: round;
+}
+.graph-svg .graph-label.center-label .graph-label-text {
+  paint-order: normal;
+  stroke: none;
+}
+.graph-svg .graph-label.secondary {
+  opacity: 0;
+  transition: opacity .18s ease-out;
+}
+.graph-svg g[transform]:not(.graph-node-inner):hover .graph-label.secondary { opacity: 1; }
+@keyframes graph-center-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .graph-svg .graph-edge, .graph-svg .graph-node-inner { transition: none; opacity: 1; transform: none; }
+  .graph-svg .graph-node-inner.center.visible { animation: none; }
+}
+.graph-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); margin: 10px 0; }
+.graph-legend-item { display: inline-flex; align-items: center; gap: 5px; }
+.graph-legend-line { display: inline-block; width: 22px; height: 2px; background: #cfe0db; }
+.graph-legend-line.dashed { background: repeating-linear-gradient(to right, #e7c9c0 0 4px, transparent 4px 7px); height: 2px; }
+.graph-legend-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: middle; }
+.graph-legend-dot.center { background: #2e6b66; }
+.graph-legend-dot.l1 { background: #345f86; }
+.graph-legend-dot.l2 { background: #8a8f98; }
+
+/* 2 层密图：更宽画布 + 默认淡化连线；悬停聚焦时高亮该节点的关联并显示邻居标签，其余淡出 */
+.graph-wrap.graph-dense .graph-svg { max-width: 880px; }
+.graph-wrap.graph-dense .graph-edge.visible { opacity: .5; }
+.graph-svg.focusing .graph-node-inner { opacity: .16; transition: opacity .2s ease; }
+.graph-svg.focusing .gnode.adj .graph-node-inner { opacity: 1; }
+.graph-svg.focusing .graph-edge.visible { opacity: .05; }
+.graph-svg.focusing .graph-edge.visible.adj { opacity: 1; }
+.graph-svg.focusing .gnode.adj .graph-label.secondary { opacity: 1; }
+.graph-svg.focusing .gnode.adj .graph-label-bg { fill: rgba(255,255,255,.97); }
+.graph-svg.focusing .graph-node-inner.center { animation: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .graph-svg .graph-edge, .graph-svg .graph-node-inner, .graph-svg .graph-node-inner.center {
+    animation: none; opacity: 1; transform: none;
+  }
+}
+
+/* 折点独立查询 + MIC 判读 */
+.bp-filters { margin: 12px 0 16px; }
+.bp-group { margin: 18px 0; }
+.bp-group-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.bp-group-list { display: flex; flex-direction: column; gap: 2px; }
+.bp-judge-form { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; margin: 16px 0; max-width: 560px; }
+.bp-judge-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
+.bp-judge-row label { width: 50px; color: var(--muted); font-size: 13px; }
+.bp-select { flex: 1; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px; font-family: inherit; background: var(--surface); color: var(--ink); }
+.bp-select:focus { outline: none; border-color: var(--accent); }
+.bp-judge-result { margin: 16px 0; }
+.bp-judge-bp { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-family: var(--mono); }
+.bp-verdict { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 8px; border: 1px solid var(--line); }
+.bp-verdict.v-s { background: #edf6ef; border-color: #b6d9bf; }
+.bp-verdict.v-i { background: #fff7e6; border-color: #e8cf8e; }
+.bp-verdict.v-r { background: #fdecea; border-color: #e8b8b3; }
+.bp-verdict.v-unknown { background: var(--line-2); }
+.bp-verdict-tag { font-size: 22px; font-weight: 700; padding: 4px 14px; border-radius: 4px; background: var(--surface); }
+.bp-verdict.v-s .bp-verdict-tag { color: var(--green); }
+.bp-verdict.v-i .bp-verdict-tag { color: var(--gold); }
+.bp-verdict.v-r .bp-verdict-tag { color: var(--rust); }
+.bp-verdict.v-unknown .bp-verdict-tag { color: var(--muted); }
+.bp-verdict-reason { font-size: 13.5px; color: var(--ink-soft); }
+.bp-judge-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+
+/* 异常药敏 / 修正规则 */
+.ast-disclaimer { max-width: 760px; margin: 8px 0 16px; }
+.ast-filter-controls { align-items: stretch; gap: 5px; }
+.ast-filter-controls .cmp-add { flex: 1 1 auto; min-width: 72px; }
+.ast-group { margin: 20px 0; }
+.ast-group-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; margin-bottom: 8px; }
+.ast-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 12px; max-width: 1120px; }
+.ast-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 13px 15px; box-shadow: 0 1px 0 rgba(20,24,28,.02); }
+.ast-card-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 9px; }
+.ast-title { margin: 1px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink); font-weight: 650; letter-spacing: 0; }
+.ast-level { flex: 0 0 auto; font-size: 11px; font-weight: 700; line-height: 1; border: 1px solid var(--line); border-radius: 4px; padding: 5px 7px; color: var(--ink-soft); background: var(--line-2); white-space: nowrap; }
+.ast-critical { color: #8b3d28; background: #fbefe8; border-color: #edcbb8; }
+.ast-review { color: #6d5a13; background: #fbf5df; border-color: #e6d99d; }
+.ast-limit { color: #345f86; background: #edf3f8; border-color: #c9d9e8; }
+.ast-line { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 10px; margin: 7px 0; line-height: 1.65; }
+.ast-line-label { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .8px; }
+.ast-line-text { color: var(--ink-soft); font-size: 13.5px; }
+.ast-tags { margin-top: 10px; gap: 5px; }
+
 /* 药敏卡-包含药物 */
 .card-drugs { margin: 22px 0; }
 
@@ -198,15 +370,21 @@ body {
 
 /* ===== 移动端 ===== */
 @media (max-width: 760px) {
-  .topbar { flex-wrap: wrap; height: auto; row-gap: 8px; gap: 10px; padding: 8px 12px; padding-top: max(8px, env(safe-area-inset-top)); }
-  .menu-btn { display: inline-flex; order: 1; }
-  .brand { order: 2; font-size: 14px; }
-  .search { order: 3; flex: 1 1 auto; min-width: 0; }
-  .compare-btn { order: 4; flex: 0 0 auto; align-self: center; }
-  .topbar::before { content: ""; order: 5; flex-basis: 100%; height: 0; }
-  .tabs { order: 6; width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .topbar {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    gap: 8px 10px;
+    padding: 8px 12px;
+    padding-top: max(8px, env(safe-area-inset-top));
+  }
+  .menu-btn { display: inline-flex; grid-column: 1; grid-row: 1; }
+  .brand { grid-column: 2; grid-row: 1; font-size: 14px; }
+  .search { grid-column: 3; grid-row: 1; min-width: 0; width: 100%; }
+  .nav-boards { grid-column: 1 / -1; grid-row: 2; display: flex; flex-direction: column; gap: 8px; }
+  .nav-board { height: auto; min-height: 44px; align-items: flex-start; flex-direction: column; gap: 6px; padding: 8px 10px; }
+  .nav-board-title { width: 100%; padding: 0 0 6px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .tools, .tabs { width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tabs::-webkit-scrollbar { display: none; }
-  .tab { white-space: nowrap; height: 36px; }
+  .tab { min-height: 30px; }
 
   .layout { position: relative; }
   .sidebar { position: absolute; z-index: 40; top: 0; left: 0; bottom: 0; width: 84%; max-width: 300px; transform: translateX(-100%); transition: transform .24s ease; box-shadow: 2px 0 16px rgba(15,18,22,.18); }
@@ -218,10 +396,14 @@ body {
   .entry-link, .cmp-pick, .tab { min-height: 32px; }
   .cmp th, .cmp td { padding: 6px 9px; }
   .search-summary { margin-left: 0; }
+  .ast-list { grid-template-columns: 1fr; }
+  .ast-card { padding: 12px; }
+  .ast-card-head { flex-direction: column; gap: 7px; }
+  .ast-line { grid-template-columns: 1fr; gap: 1px; margin: 9px 0; }
 }
 
 @media (max-width: 1120px) and (min-width: 761px) {
-  .topbar { gap: 10px; padding: 0 14px; }
-  .tab { padding: 0 9px; }
+  .topbar { gap: 10px; padding: 8px 14px; }
+  .tab { padding: 4px 8px; }
   .search { min-width: 150px; }
 }
