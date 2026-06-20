@@ -1,5 +1,5 @@
 /* 离线缓存：核心文件预缓存 + 其余(图片等)运行时缓存。改版本号即可强制更新缓存。 */
-var CACHE = 'microbio-v30';
+var CACHE = 'microbio-v31';
 var CORE = [
   './', './index.html', './css/styles.css',
   './js/core.js', './js/view.js', './js/validate.js', './js/app.js',
