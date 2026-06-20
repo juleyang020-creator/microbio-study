@@ -11,7 +11,8 @@ window.DB.breakpoints = [
       "proteus-mirabilis", "proteus-vulgaris",
       "enterobacter-cloacae", "citrobacter-freundii", "citrobacter-koseri",
       "cronobacter-sakazakii", "morganella-morganii", "serratia-marcescens",
-      "providencia-stuartii", "yersinia-enterocolitica", "yersinia-pestis"],
+      "providencia-stuartii", "providencia-rettgeri", "yersinia-enterocolitica", "yersinia-pestis",
+      "hafnia-alvei", "raoultella-ornithinolytica", "proteus-hauseri"],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "可预测阿莫西林;口服仅用于大肠埃希菌、奇异变形杆菌所致非复杂性尿路感染" },
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "≥15", 抑菌圈_I: "12–14", 抑菌圈_R: "≤11", 备注: "" },
@@ -94,7 +95,7 @@ window.DB.breakpoints = [
   {
     菌组名: "不动杆菌属 (Acinetobacter spp.)",
     CLSI表: "Table 2B-2",
-    菌种: ["acinetobacter-baumannii"],
+    菌种: ["acinetobacter-baumannii", "acinetobacter-pittii", "acinetobacter-nosocomialis", "acinetobacter-junii"],
     药物: [
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "≥22", 抑菌圈_I: "17–21", 抑菌圈_R: "≤16", 备注: "Ed36 修订(圈);舒巴坦为抗不动杆菌活性成分" },
       { 药物: "舒巴坦/度洛巴坦 (Sulbactam-Durlobactam)", 简写: "SUL-DUR", MIC_S: "≤4/4", MIC_I: "8/4", MIC_R: "≥16/4", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "Ed36;针对碳青霉烯耐药鲍曼不动杆菌(CRAB)的新型药" },
@@ -224,7 +225,8 @@ window.DB.breakpoints = [
   {
     菌组名: "葡萄球菌属 (Staphylococcus spp.)",
     CLSI表: "Table 2C",
-    菌种: ["staph-aureus", "staph-epidermidis", "staph-saprophyticus", "staph-haemolyticus", "staph-lugdunensis"],
+    菌种: ["staph-aureus", "staph-epidermidis", "staph-saprophyticus", "staph-haemolyticus", "staph-lugdunensis",
+      "staph-capitis", "staph-hominis", "staph-cohnii", "staph-kloosii"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.12", MIC_I: "—", MIC_R: "≥0.25", 抑菌圈_S: "≥29", 抑菌圈_I: "—", 抑菌圈_R: "≤28", 备注: "β-内酰胺酶阴性葡萄球菌方可报告敏感" },
       { 药物: "苯唑西林 (Oxacillin)", 简写: "OX", MIC_S: "≤2", MIC_I: "—", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "金葡菌/路邓葡萄球菌折点(用头孢西丁作 mecA 替代检测);凝固酶阴性葡萄球菌(CoNS)苯唑西林 MIC 折点为 S≤0.25/R≥0.5" },
@@ -247,7 +249,7 @@ window.DB.breakpoints = [
   {
     菌组名: "肠球菌属 (Enterococcus spp.)",
     CLSI表: "Table 2D",
-    菌种: ["enterococcus-faecalis", "enterococcus-faecium", "enterococcus-gallinarum"],
+    菌种: ["enterococcus-faecalis", "enterococcus-faecium", "enterococcus-gallinarum", "enterococcus-avium", "enterococcus-casseliflavus"],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", MIC_S: "≤8", MIC_I: "—", MIC_R: "≥16", 抑菌圈_S: "≥17", 抑菌圈_I: "—", 抑菌圈_R: "≤16", 备注: "" },
       { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤8", MIC_I: "—", MIC_R: "≥16", 抑菌圈_S: "≥15", 抑菌圈_I: "—", 抑菌圈_R: "≤14", 备注: "" },
@@ -306,7 +308,7 @@ window.DB.breakpoints = [
   {
     菌组名: "草绿色链球菌群 (Viridans Group Streptococci)",
     CLSI表: "Table 2H-2",
-    菌种: ["strep-viridans", "strep-gallolyticus"],
+    菌种: ["strep-viridans", "strep-gallolyticus", "strep-anginosus"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.12", MIC_I: "0.25–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无菌部位(血/脑脊液/骨)分离株须用 MIC 法;中介株治心内膜炎需联合氨基糖苷" },
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", MIC_S: "≤0.25", MIC_I: "0.5–4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
