@@ -88,15 +88,25 @@
   function searchEntries(db, query) {
     var q = (query || '').trim().toLowerCase();
     if (!q) { return []; }
+    // 分词检索：空白拆成多个词，要求全部命中（AND）。
+    // 这样中英混输、缩写+种名（如 "staph aureus" / "大肠 coli"）都能匹配。
+    var tokens = q.split(/\s+/).filter(Boolean);
     var results = [];
     MODULE_KEYS.forEach(function (mod) {
       (db[mod] || []).forEach(function (entry) {
-        if (entrySearchText(db, mod, entry).indexOf(q) !== -1) {
-          results.push({ id: entry.id, 名称: entry.名称, module: mod, 摘要: searchSummary(mod, entry) });
-        }
+        var hay = entrySearchText(db, mod, entry);
+        var hit = tokens.every(function (t) { return hay.indexOf(t) !== -1; });
+        if (!hit) { return; }
+        // 相关度：命中名称/拉丁名/英文名比命中正文得分更高，整串命中再加分
+        var head = String((entry.名称 || '') + ' ' + (entry.拉丁名 || '') + ' ' + (entry.英文 || '')).toLowerCase();
+        var score = 0;
+        tokens.forEach(function (t) { if (head.indexOf(t) !== -1) { score += 2; } });
+        if (head.indexOf(q) !== -1) { score += 3; }
+        results.push({ id: entry.id, 名称: entry.名称, module: mod, 摘要: searchSummary(mod, entry), _score: score });
       });
     });
-    return results;
+    results.sort(function (a, b) { return b._score - a._score; });
+    return results.map(function (r) { return { id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要 }; });
   }
 
   // 递归收集"叶子"分类名（无子类的节点），支持任意层级（如 大类→形态→属）

@@ -1579,6 +1579,362 @@ window.DB.microbes = [
       { 标题: '致病性 / 所致疾病', 正文: '携带固有 vanC 基因，对万古霉素天然低水平耐药（替考拉宁敏感）——勿与获得性 VanA/VanB 的 VRE 混淆。' }
     ],
     关联: ['vancomycin', 'linezolid', 'vana-vre', 'enterococcus-faecium']
-  }
+  },
 
+  // ===== 补充：VITEK 药敏卡对应菌名（N335 非发酵 / N334 肠杆菌 / GP67 / YST08）=====
+  {
+    id: 'acinetobacter-pittii', 名称: '皮特不动杆菌', 拉丁名: 'Acinetobacter pittii', 类别: '不动杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性球杆菌，氧化酶阴性，非发酵；属鲍曼不动杆菌复合群（Acb complex）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '院内机会感染（呼吸道、血流、伤口），毒力与耐药一般略低于鲍曼不动杆菌；常规鉴定常并入"鲍曼复合群"。' }
+    ],
+    关联: ['acinetobacter-baumannii', 'imipenem', 'colistin']
+  },
+  {
+    id: 'acinetobacter-nosocomialis', 名称: '医院不动杆菌', 拉丁名: 'Acinetobacter nosocomialis', 类别: '不动杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性球杆菌，非发酵；鲍曼不动杆菌复合群成员。' },
+      { 标题: '致病性 / 所致疾病', 正文: '医院获得性血流感染、呼吸机相关肺炎等，碳青霉烯耐药率上升。' }
+    ],
+    关联: ['acinetobacter-baumannii', 'meropenem', 'colistin']
+  },
+  {
+    id: 'acinetobacter-junii', 名称: '琼氏不动杆菌', 拉丁名: 'Acinetobacter junii', 类别: '不动杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性球杆菌，非发酵，氧化酶阴性。' },
+      { 标题: '致病性 / 所致疾病', 正文: '偶致导管相关菌血症（儿科、肿瘤患者），多数较敏感。' }
+    ],
+    关联: ['acinetobacter-baumannii', 'imipenem']
+  },
+  {
+    id: 'ralstonia-pickettii', 名称: '皮氏罗尔斯顿菌', 拉丁名: 'Ralstonia pickettii', 类别: '罗尔斯顿菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，非发酵，氧化酶阳性，生长缓慢。' },
+      { 标题: '致病性 / 所致疾病', 正文: '可污染消毒液/输液/透析用水致院内菌血症暴发；毒力低，多对碳青霉烯、复方磺胺敏感。' }
+    ],
+    关联: ['meropenem', 'cotrimoxazole']
+  },
+  {
+    id: 'ralstonia-mannitolilytica', 名称: '解甘露醇罗尔斯顿菌', 拉丁名: 'Ralstonia mannitolilytica', 类别: '罗尔斯顿菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性非发酵杆菌，能分解甘露醇（与皮氏罗尔斯顿菌区别）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '水源性院内感染（导管、透析相关），免疫低下者机会致病。' }
+    ],
+    关联: ['ralstonia-pickettii', 'meropenem']
+  },
+  {
+    id: 'alcaligenes-faecalis', 名称: '粪产碱杆菌', 拉丁名: 'Alcaligenes faecalis', 类别: '产碱杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，专性需氧，氧化酶阳性，不发酵糖、产碱。' },
+      { 标题: '致病性 / 所致疾病', 正文: '环境/水中常见，偶致免疫低下者机会感染；对哌拉西林/他唑巴坦、头孢他啶等较敏感。' }
+    ],
+    关联: ['piperacillin-tazobactam', 'ceftazidime']
+  },
+  {
+    id: 'chryseobacterium-indologenes', 名称: '产吲哚金黄杆菌', 拉丁名: 'Chryseobacterium indologenes', 类别: '金黄杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，非发酵，产黄色素，吲哚阳性，氧化酶阳性。' },
+      { 标题: '致病性 / 所致疾病', 正文: '院内（呼吸机、导管）机会感染。' },
+      { 标题: '耐药特点', 正文: '多重耐药：对碳青霉烯、氨基糖苷、多黏菌素多天然耐药；常对喹诺酮、复方磺胺、米诺环素相对敏感。' }
+    ],
+    关联: ['levofloxacin', 'cotrimoxazole', 'minocycline']
+  },
+  {
+    id: 'chryseobacterium-gleum', 名称: '金氏金黄杆菌', 拉丁名: 'Chryseobacterium gleum', 类别: '金黄杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性非发酵杆菌，产黄色素。' },
+      { 标题: '致病性 / 所致疾病', 正文: '环境/院内少见机会感染，耐药模式类似产吲哚金黄杆菌。' }
+    ],
+    关联: ['chryseobacterium-indologenes', 'levofloxacin']
+  },
+  {
+    id: 'elizabethkingia-meningoseptica', 名称: '脑膜炎败血伊丽莎白金菌', 拉丁名: 'Elizabethkingia meningoseptica', 类别: '伊丽莎白金菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，非发酵，氧化酶阳性，产微黄色素；旧称脑膜脓毒金黄杆菌。' },
+      { 标题: '致病性 / 所致疾病', 正文: '新生儿脑膜炎、免疫低下者菌血症，院内暴发（水源）。' },
+      { 标题: '耐药特点', 正文: '广泛耐药：对碳青霉烯、氨基糖苷、多黏菌素天然耐药；常对喹诺酮、复方磺胺、米诺环素、利福平、万古霉素相对敏感（须按药敏）。' }
+    ],
+    关联: ['levofloxacin', 'cotrimoxazole', 'vancomycin']
+  },
+  {
+    id: 'myroides', 名称: '类香味菌属', 拉丁名: 'Myroides spp.', 类别: '类香味菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，非发酵，产黄色素、有水果香味，氧化酶阳性。' },
+      { 标题: '致病性 / 所致疾病', 正文: '免疫低下者机会感染（尿路、软组织、菌血症），多重耐药。' }
+    ],
+    关联: ['levofloxacin', 'cotrimoxazole']
+  },
+  {
+    id: 'oligella-ureolytica', 名称: '解脲寡源杆菌', 拉丁名: 'Oligella ureolytica', 类别: '寡源杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性小杆菌，非发酵，脲酶强阳性，生长缓慢。' },
+      { 标题: '致病性 / 所致疾病', 正文: '长期留置导尿者泌尿道感染为主，偶菌血症。' }
+    ],
+    关联: ['urease', 'cotrimoxazole']
+  },
+  {
+    id: 'pseudomonas-putida', 名称: '恶臭假单胞菌', 拉丁名: 'Pseudomonas putida', 类别: '假单胞菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，非发酵，氧化酶阳性，产荧光素、不产绿脓菌素。' },
+      { 标题: '致病性 / 所致疾病', 正文: '环境/水常见，偶致导管或输液相关菌血症，毒力低于铜绿假单胞菌。' }
+    ],
+    关联: ['pseudomonas-aeruginosa', 'piperacillin-tazobactam']
+  },
+  {
+    id: 'pseudomonas-alcaligenes', 名称: '产碱假单胞菌', 拉丁名: 'Pseudomonas alcaligenes', 类别: '假单胞菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性非发酵杆菌，氧化酶阳性，产碱、不分解糖。' },
+      { 标题: '致病性 / 所致疾病', 正文: '环境来源，罕见机会感染。' }
+    ],
+    关联: ['pseudomonas-aeruginosa']
+  },
+  {
+    id: 'sphingomonas-paucimobilis', 名称: '少动鞘氨醇单胞菌', 拉丁名: 'Sphingomonas paucimobilis', 类别: '鞘氨醇单胞菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，非发酵，产黄色素，含鞘糖脂、无典型 LPS，动力弱。' },
+      { 标题: '致病性 / 所致疾病', 正文: '水源性院内感染（导管、输液），毒力低，多对喹诺酮、氨基糖苷、β-内酰胺敏感。' }
+    ],
+    关联: ['levofloxacin', 'ceftazidime']
+  },
+  {
+    id: 'delftia-acidovorans', 名称: '食酸代尔夫特菌', 拉丁名: 'Delftia acidovorans', 类别: '代尔夫特菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性非发酵杆菌，氧化酶阳性；旧归假单胞菌/丛毛单胞菌属。' },
+      { 标题: '致病性 / 所致疾病', 正文: '环境/院内，导管相关菌血症等机会感染；对氨基糖苷常天然耐药。' }
+    ],
+    关联: ['piperacillin-tazobactam', 'cotrimoxazole']
+  },
+  {
+    id: 'providencia-rettgeri', 名称: '雷氏普罗威登斯菌', 拉丁名: 'Providencia rettgeri', 类别: '普罗威登斯菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，肠杆菌目，脲酶阳性、苯丙氨酸脱氨酶阳性。' },
+      { 标题: '致病性 / 所致疾病', 正文: '长期导尿者尿路感染、院内菌血症；常多重耐药（有产碳青霉烯酶报道）。' }
+    ],
+    关联: ['providencia-stuartii', 'meropenem']
+  },
+  {
+    id: 'raoultella-ornithinolytica', 名称: '解鸟氨酸拉乌尔菌', 拉丁名: 'Raoultella ornithinolytica', 类别: '拉乌尔菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，肠杆菌目，似克雷伯但鸟氨酸脱羧酶阳性、可在 10℃ 生长。' },
+      { 标题: '致病性 / 所致疾病', 正文: '胆道、尿路、血流感染；产组胺与"鲭鱼（组胺）中毒"相关。' }
+    ],
+    关联: ['klebsiella-pneumoniae', 'meropenem']
+  },
+  {
+    id: 'hafnia-alvei', 名称: '蜂房哈夫尼亚菌', 拉丁名: 'Hafnia alvei', 类别: '哈夫尼亚菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，肠杆菌目，迟缓发酵乳糖，VP（22℃）阳性。' },
+      { 标题: '致病性 / 所致疾病', 正文: '肠道常居，偶致免疫低下者机会感染（菌血症、伤口）。' }
+    ],
+    关联: ['e-coli', 'meropenem']
+  },
+  {
+    id: 'proteus-hauseri', 名称: '豪泽变形杆菌', 拉丁名: 'Proteus hauseri', 类别: '变形杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性杆菌，有迁徙生长、脲酶阳性；普通变形杆菌群（原 P. vulgaris 群）成员。' },
+      { 标题: '致病性 / 所致疾病', 正文: '尿路感染、伤口感染；产诱导型 AmpC，对氨苄西林、一代头孢天然耐药。' }
+    ],
+    关联: ['proteus-vulgaris', 'ceftriaxone']
+  },
+  {
+    id: 'enterococcus-avium', 名称: '鸟肠球菌', 拉丁名: 'Enterococcus avium', 类别: '肠球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌成对/短链，触酶阴性，胆汁七叶苷阳性、6.5% NaCl 生长。' },
+      { 标题: '致病性 / 所致疾病', 正文: '肠道常居，偶致菌血症、腹腔感染。' }
+    ],
+    关联: ['ampicillin', 'vancomycin']
+  },
+  {
+    id: 'enterococcus-casseliflavus', 名称: '铅黄肠球菌', 拉丁名: 'Enterococcus casseliflavus', 类别: '肠球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌，产黄色素、有动力（与粪/屎肠球菌区别）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '毒力低，偶机会感染。' },
+      { 标题: '耐药特点', 正文: '携带固有 vanC 基因，对万古霉素天然低水平耐药（替考拉宁敏感）——勿与获得性 VanA/VanB 的 VRE 混淆。' }
+    ],
+    关联: ['enterococcus-gallinarum', 'vancomycin']
+  },
+  {
+    id: 'micrococcus-luteus', 名称: '藤黄微球菌', 拉丁名: 'Micrococcus luteus', 类别: '微球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌成四联，触酶阳性、改良氧化酶阳性，产黄色素；杆菌肽敏感（与葡萄球菌区别）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '皮肤/环境正常菌群，多为污染菌；重度免疫低下者偶致感染。' }
+    ],
+    关联: ['vancomycin']
+  },
+  {
+    id: 'rothia-mucilaginosa', 名称: '粘滑罗斯菌', 拉丁名: 'Rothia mucilaginosa', 类别: '罗斯菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌，菌落黏液状粘附琼脂；旧称黏滑口腔球菌。' },
+      { 标题: '致病性 / 所致疾病', 正文: '口腔正常菌群；免疫低下/中性粒细胞减少者菌血症、心内膜炎。' }
+    ],
+    关联: ['vancomycin', 'penicillin-g']
+  },
+  {
+    id: 'staph-capitis', 名称: '头葡萄球菌', 拉丁名: 'Staphylococcus capitis', 类别: '葡萄球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌成簇，触酶阳性、凝固酶阴性（CoNS）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '头皮等皮肤常居；导管/人工瓣膜相关感染，新生儿监护室菌血症（含耐药克隆 NRCS-A）。' }
+    ],
+    关联: ['staph-epidermidis', 'vancomycin']
+  },
+  {
+    id: 'staph-hominis', 名称: '人葡萄球菌', 拉丁名: 'Staphylococcus hominis', 类别: '葡萄球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌成簇，凝固酶阴性（CoNS）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '皮肤常居（多汗区），导管相关菌血症；常携带 mecA。' }
+    ],
+    关联: ['staph-epidermidis', 'vancomycin']
+  },
+  {
+    id: 'staph-cohnii', 名称: '孔氏葡萄球菌', 拉丁名: 'Staphylococcus cohnii', 类别: '葡萄球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌，凝固酶阴性（CoNS）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '皮肤常居，偶致院内导管相关感染，可携带 mecA。' }
+    ],
+    关联: ['staph-epidermidis', 'vancomycin']
+  },
+  {
+    id: 'staph-kloosii', 名称: '克氏葡萄球菌', 拉丁名: 'Staphylococcus kloosii', 类别: '葡萄球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌，凝固酶阴性（CoNS），新生霉素耐药型。' },
+      { 标题: '致病性 / 所致疾病', 正文: '罕见，多为皮肤/动物来源，临床多为污染菌。' }
+    ],
+    关联: ['staph-epidermidis']
+  },
+  {
+    id: 'candida-haemulonii', 名称: '希木龙念珠菌', 拉丁名: 'Candida haemulonii', 类别: '念珠菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样真菌，常规生化/质谱易误鉴定（与耳念珠菌、近平滑念珠菌混淆）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '导管相关念珠菌血症、软组织感染。' },
+      { 标题: '耐药特点', 正文: '常对两性霉素 B 与唑类（氟康唑）耐药，与耳念珠菌同属 haemulonii 复合群，需精确鉴定。' }
+    ],
+    关联: ['candida-auris', 'micafungin', 'amphotericin-b']
+  },
+  {
+    id: 'candida-lusitaniae', 名称: '葡萄牙念珠菌', 拉丁名: 'Clavispora lusitaniae（旧称 Candida lusitaniae）', 类别: '念珠菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样真菌，可产假菌丝。' },
+      { 标题: '致病性 / 所致疾病', 正文: '免疫低下者念珠菌血症。' },
+      { 标题: '耐药特点', 正文: '可获得性对两性霉素 B 耐药——经验性两性霉素需谨慎；通常对棘白菌素、唑类敏感。' }
+    ],
+    关联: ['micafungin', 'fluconazole']
+  },
+  {
+    id: 'candida-rugosa', 名称: '皱褶念珠菌', 拉丁名: 'Diutina rugosa（旧称 Candida rugosa）', 类别: '念珠菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样真菌，菌落表面皱褶。' },
+      { 标题: '致病性 / 所致疾病', 正文: '少见，导管/烧伤相关感染，有地区性暴发报道。' },
+      { 标题: '耐药特点', 正文: '唑类（氟康唑）敏感性可下降。' }
+    ],
+    关联: ['fluconazole', 'amphotericin-b']
+  },
+  {
+    id: 'candida-guilliermondii', 名称: '季也蒙念珠菌', 拉丁名: 'Meyerozyma guilliermondii（旧称 Candida guilliermondii）', 类别: '念珠菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样真菌。' },
+      { 标题: '致病性 / 所致疾病', 正文: '导管相关念珠菌血症（肿瘤、静脉营养患者）。' },
+      { 标题: '耐药特点', 正文: '棘白菌素 MIC 天然偏高，氟康唑敏感性不稳定。' }
+    ],
+    关联: ['fluconazole', 'micafungin']
+  },
+  {
+    id: 'kodamaea-ohmeri', 名称: '奥默柯达菌', 拉丁名: 'Kodamaea ohmeri', 类别: '其他酵母菌',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样真菌（旧称 Pichia ohmeri），CHROMagar 显色随温度变化，常误鉴定为近平滑/希木龙念珠菌。' },
+      { 标题: '致病性 / 所致疾病', 正文: '人工瓣膜心内膜炎、导管相关真菌血症、腹膜炎（多见于免疫低下/新生儿）。' },
+      { 标题: '耐药特点', 正文: '多对两性霉素 B 与棘白菌素敏感；唑类敏感性不一。' }
+    ],
+    关联: ['candida-parapsilosis', 'amphotericin-b', 'micafungin']
+  },
+
+  // ===== 补充：临床常见但系统缺失的菌（据 Bruker MBT 库；重点补厌氧菌与苛养菌）=====
+  {
+    id: 'bacteroides-fragilis', 名称: '脆弱拟杆菌', 拉丁名: 'Bacteroides fragilis', 类别: '拟杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阴性杆菌，多形性、有荚膜；胆汁七叶苷阳性、耐胆盐。' },
+      { 标题: '致病性 / 所致疾病', 正文: '肠道优势厌氧菌；腹腔/盆腔脓肿、术后伤口感染、厌氧菌血症中最常见。' },
+      { 标题: '耐药特点', 正文: '产β-内酰胺酶，对青霉素天然耐药；甲硝唑、碳青霉烯、哌拉西林/他唑巴坦、含酶抑制剂复方多敏感（耐药在增加，应做药敏）。' }
+    ],
+    关联: ['metronidazole', 'meropenem', 'clindamycin']
+  },
+  {
+    id: 'prevotella-melaninogenica', 名称: '产黑素普雷沃菌', 拉丁名: 'Prevotella melaninogenica', 类别: '普雷沃菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阴性杆菌，血平板上产黑色素，对胆汁敏感。' },
+      { 标题: '致病性 / 所致疾病', 正文: '口腔/上呼吸道常居菌；牙周脓肿、吸入性肺炎、肺脓肿、混合软组织感染。' }
+    ],
+    关联: ['metronidazole', 'clindamycin']
+  },
+  {
+    id: 'fusobacterium-nucleatum', 名称: '具核梭杆菌', 拉丁名: 'Fusobacterium nucleatum', 类别: '梭杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阴性梭形杆菌（两端尖细）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '牙周/扁桃体周脓肿、吸入性肺炎；与结直肠癌相关（坏死梭杆菌 F. necrophorum 可致 Lemierre 综合征）。' }
+    ],
+    关联: ['metronidazole', 'penicillin-g']
+  },
+  {
+    id: 'cutibacterium-acnes', 名称: '痤疮丙酸杆菌', 拉丁名: 'Cutibacterium acnes（旧称 Propionibacterium acnes）', 类别: '丙酸杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '厌氧/耐气革兰阳性棒状杆菌，皮肤皮脂腺常居菌，生长缓慢。' },
+      { 标题: '致病性 / 所致疾病', 正文: '痤疮；人工关节/肩关节、植入物、脑脊液分流相关感染——生长慢、常被误为血培养污染，需延长培养与多瓶判读。' }
+    ],
+    关联: ['penicillin-g', 'vancomycin']
+  },
+  {
+    id: 'peptostreptococcus-anaerobius', 名称: '厌氧消化链球菌', 拉丁名: 'Peptostreptococcus anaerobius', 类别: '消化链球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阳性球菌，成链/成簇。' },
+      { 标题: '致病性 / 所致疾病', 正文: '混合性脓肿（腹腔、盆腔、脑、肺）、女性生殖道与糖尿病足等混合感染常见组分。' }
+    ],
+    关联: ['metronidazole', 'penicillin-g']
+  },
+  {
+    id: 'actinomyces-israelii', 名称: '衣氏放线菌', 拉丁名: 'Actinomyces israelii', 类别: '放线菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '厌氧/微需氧革兰阳性分枝状杆菌（非抗酸，区别于诺卡菌），生长缓慢。' },
+      { 标题: '致病性 / 所致疾病', 正文: '放线菌病：颈面部"硫磺样颗粒"、胸腹部、盆腔（宫内节育器相关）；窦道穿越组织面。' }
+    ],
+    关联: ['penicillin-g', 'ampicillin']
+  },
+  {
+    id: 'aerococcus-urinae', 名称: '尿道气球菌', 拉丁名: 'Aerococcus urinae', 类别: '气球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌成簇/四联，触酶弱/阴性；菌落与培养特性似草绿色链球菌/肠球菌，易误判。' },
+      { 标题: '致病性 / 所致疾病', 正文: '老年（多为男性、有尿路基础病）尿路感染，偶致菌血症与感染性心内膜炎。' }
+    ],
+    关联: ['penicillin-g', 'vancomycin']
+  },
+  {
+    id: 'abiotrophia-defectiva', 名称: '缺陷乏养菌', 拉丁名: 'Abiotrophia defectiva', 类别: '乏养菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌，营养变异（需吡哆醛/半胱氨酸），在金黄色葡萄球菌划线旁呈"卫星现象"。' },
+      { 标题: '致病性 / 所致疾病', 正文: '感染性心内膜炎（部分"血培养阴性"心内膜炎病原）、眼内炎；预后较草绿链球菌差。' }
+    ],
+    关联: ['penicillin-g', 'vancomycin']
+  },
+  {
+    id: 'kingella-kingae', 名称: '金氏金菌', 拉丁名: 'Kingella kingae', 类别: '金氏菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性球杆菌，苛养，氧化酶阳性，HACEK 群成员；血培养瓶接种可提高检出。' },
+      { 标题: '致病性 / 所致疾病', 正文: '6 月~4 岁幼儿骨关节感染（化脓性关节炎、骨髓炎、椎间盘炎）首要病原，也致心内膜炎。' }
+    ],
+    关联: ['ceftriaxone', 'ampicillin']
+  },
+  {
+    id: 'strep-dysgalactiae', 名称: '停乳链球菌', 拉丁名: 'Streptococcus dysgalactiae（Lancefield C / G 群）', 类别: '链球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌成链，β-溶血，Lancefield C/G 群，大菌落型。' },
+      { 标题: '致病性 / 所致疾病', 正文: '咽炎、蜂窝织炎/丹毒、菌血症、链球菌中毒休克——临床表现与处理类似 A 群化脓性链球菌。' }
+    ],
+    关联: ['strep-pyogenes', 'penicillin-g', 'ceftriaxone']
+  },
+  {
+    id: 'strep-anginosus', 名称: '咽峡炎链球菌', 拉丁名: 'Streptococcus anginosus（咽峡炎群）', 类别: '链球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阳性球菌，微小菌落、常有焦糖气味，溶血多变；草绿色链球菌中的咽峡炎群（含 S. anginosus / constellatus / intermedius）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '强化脓倾向——脑脓肿、肝脓肿、腹腔/胸腔脓肿、深部软组织感染。' }
+    ],
+    关联: ['strep-viridans', 'penicillin-g', 'ceftriaxone']
+  }
 ];
