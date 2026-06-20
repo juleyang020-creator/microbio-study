@@ -394,7 +394,17 @@ body {
   .main { padding: 18px 16px calc(24px + env(safe-area-inset-bottom)); }
   .detail-title { font-size: 20px; }
   .entry-link, .cmp-pick, .tab { min-height: 32px; }
-  .cmp th, .cmp td { padding: 6px 9px; }
+  /* 表格瘦身：折点表 / 对比表在小屏更紧凑，尽量不横向溢出、行高更低 */
+  .bp-table, .cmp { min-width: 0; width: 100%; font-size: 10.5px; table-layout: fixed; }
+  .bp-table th, .bp-table td { padding: 3px 4px; word-break: break-word; }
+  .bp-table thead th { font-size: 9.5px; white-space: normal; }
+  .bp-table .bp-drug { min-width: 0; width: 38%; }
+  .bp-table .bp-drug strong { font-size: 9.5px; }
+  .bp-table .bp-mic, .bp-table .bp-disk { white-space: normal; font-size: 10px; }  /* S/I/R 竖排，列更窄 */
+  .bp-table .bp-comment { width: 24%; font-size: 9px; }
+  .bp-source, .bp-foot { font-size: 10.5px; }
+  .cmp th, .cmp td { padding: 4px 6px; }
+  .cmp .cmp-item { font-size: 10.5px; }
   .search-summary { margin-left: 0; }
   .ast-list { grid-template-columns: 1fr; }
   .ast-card { padding: 12px; }

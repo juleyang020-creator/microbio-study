@@ -30,6 +30,10 @@
   - **折点查询**：按菌组名/药物名筛选 CLSI M100 折点表
   - **MIC 判读**：选菌组 → 选药物 → 输入 MIC 值，自动判读 S/I/R 并给出依据。支持黏菌素等"无 S 折点"特殊情形。
 
+## 搜索
+
+顶部搜索栏支持**中英混输 + 分词**：可输入中文名、拉丁名/英文名或词根（如 `coli`、`staph aureus`、`pseudomonas aeruginosa`），多个词按"全部命中（AND）"匹配，命中名称/拉丁名的条目优先排序。
+
 ## 怎么加内容
 
 1. 打开对应模块的数据文件，如 `data/microbes.js`。
@@ -44,7 +48,7 @@
 ### 主模块数据
 | 文件 | 模块 | 条目量 |
 |---|---|---|
-| `data/microbes.js` | 微生物分类 | 134 |
+| `data/microbes.js` | 微生物分类 | 177 |
 | `data/antibiotics.js` | 抗微生物药 | 73 |
 | `data/resistance.js` | 耐药因素 | 16 |
 | `data/idcards.js` | 鉴定卡 | 7 |
