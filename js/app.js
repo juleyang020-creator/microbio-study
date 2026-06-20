@@ -23,7 +23,7 @@
     if (m && map[m[1].trim()]) { return map[m[1].trim()]; }
     // 折点表药物名与抗菌药条目名的别名：
     // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
-    var ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g' };
+    var ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g', '复方磺胺甲噁唑': 'cotrimoxazole', '复方新诺明': 'cotrimoxazole' };
     if (m && ALIAS[m[1].trim()]) { return ALIAS[m[1].trim()]; }
     // 遍历所有抗生素，按名称包含关系匹配
     var DB = window.DB || {};
