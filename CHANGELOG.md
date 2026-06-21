@@ -4,6 +4,11 @@
 
 ## 2026-06（未提交）
 
+- **代码优化与无障碍**：
+  - **Core**：`getRelations` 接受可选 `index` 参数；`buildGraph` 整个图构建只建一次索引并传给 `getRelations` 复用；边去重 key 简化为 `sort().join('|')`。
+  - **App**：抽出 `routeKey()` 替代 6 处 `isXxxRoute` 中重复的 hash 解析；抗菌药名称映射（`abxIdByName`/`biochemTestIdByName`）与 `ABX_ALIAS` 提升为模块级缓存/常量，避免每次渲染重建。
+  - **无障碍**：搜索框加 `aria-label`；顶部 Tab/工具按钮用 `aria-current="page"` 标记当前页；关系图 SVG 节点加 `role="button"` / `tabindex="0"` / `aria-label`，并支持 Enter/Space 键聚焦与激活、`focus-visible` 高亮；`.bp-source`、`.bp-foot` 由 `--faint` 改为 `--muted` 提升对比度。
+  - **测试**：新增异常药敏规则数据完整性测试（id 唯一、等级合法、必填字段与关键词/来源非空）。总用例数 77 → 78。
 - **搜索：中英混输 + 分词检索**——查询按空白分词、要求全部命中（AND），命中名称/拉丁名的条目优先排序；现在输入英文/拉丁名或词根（如 `staph aureus`、`coli`、`pseudomonas`）即可定位微生物。
 - **手机端表格瘦身**——折点表 / 对比表在小屏改 `table-layout: fixed` + 列宽收紧 + S/I/R 竖排，由原来约 740px 横向溢出压到屏宽内（约 360px），四列全显、无需横滑。
 - **菌种扩充 134 → 177（+43）**：
@@ -17,11 +22,11 @@
   - 二级节点改为「径向树」分组——按其一级父节点成簇排布、沿父节点角度展开，连线呈放射状、显著减少交叉。
   - 2 层时按节点数自适应放大画布并加大外边距（避免标签截断），连线默认淡化。
   - 新增**悬停聚焦**：悬停（桌面）任一节点即高亮它的关联节点与连线、显示邻居名称、淡化其余；二级标签由「始终隐藏」改为聚焦时显示，密图也能逐一读清。
-- **新增三个独立工具模块**：
+- **新增四个独立工具模块**：
   - **天然耐药速查** (`#/intrinsic`) — 按菌属分组聚合所有天然耐药条目，支持菌名/拉丁名/药名模糊过滤。
+  - **异常药敏速查** (`#/ast-alerts`，`data/ast-alerts.js`) — 13 条常见需修正/警示的药敏结果组合（如 MRSA 报敏感 β-内酰胺等），支持「必须修正 / 需复核 / 限制报告」三等级 + 关键词双维筛选，附 CLSI/EUCAST/CDC 参考口径。
   - **关联关系图** (`#/graph/<module>/<id>`) — SVG 同心圆分层布局（中心 / 一级 / 二级 + 二级径向树分组），1/2 层可切换，节点按模块着色，点击非中心节点重新构图。
   - **折点判读** (`#/breakpoints`) — 折点查询 + MIC 判读双模式，输入 MIC 值自动判读 S/I/R，支持黏菌素等无 S 折点情形。
-  - **异常药敏速查** (`#/astalerts`，`data/ast-alerts.js`) — 常见需修正/警示的药敏结果组合（如 MRSA 报敏感 β-内酰胺等）。
 - **Core**：新增 `buildGraph(db, module, id, depth)` BFS 关系图构建。
 - **View**：新增 `intrinsicVM` / `graphLayoutVM`（含二级径向树分组）/ `parseBP` / `judgeMIC` / `breakpointLookupVM` / `astAlertsVM`。
 - **测试**：新增 `tests/tools.test.js`（天然耐药聚合、关系图构建/布局、折点解析/判读、折点查询过滤、异常药敏）。总用例数 56 → 77。

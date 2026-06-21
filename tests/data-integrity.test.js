@@ -21,6 +21,7 @@ require('../data/staining.js');
 require('../data/structures.js');
 require('../data/breakpoints.js');
 require('../data/biochem-tests.js');
+require('../data/ast-alerts.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
 const fs = require('node:fs');
@@ -202,5 +203,24 @@ test('折点数据中每组均有菌种和药物', () => {
       assert.ok(d.药物 && d.药物.length, '折点组 “' + group.菌组名 + '” 存在无药物名的条目');
       assert.ok(d.MIC_S || d.MIC_R, '折点组 “' + group.菌组名 + '” 中 “' + d.药物 + '” 缺少 MIC 折点');
     });
+  });
+});
+
+test('异常药敏速查规则数据完整', () => {
+  const rules = global.window.DB.astAlerts || [];
+  assert.ok(rules.length > 0, '异常药敏规则为空');
+  const ids = {};
+  const validLevels = { '必须修正': true, '需复核': true, '限制报告': true };
+  const requiredText = ['类别', '标题', '触发', '异常结果', '处理', '依据'];
+  rules.forEach((r) => {
+    assert.ok(r.id && r.id.length, '异常药敏规则缺少 id');
+    assert.ok(!ids[r.id], '异常药敏规则 id 重复：' + r.id);
+    ids[r.id] = true;
+    assert.ok(validLevels[r.等级], '异常药敏规则 “' + (r.id || '?') + '” 等级非法：' + r.等级);
+    requiredText.forEach((k) => {
+      assert.ok(r[k] && String(r[k]).length, '异常药敏规则 “' + r.id + '” 缺少字段：' + k);
+    });
+    assert.ok(Array.isArray(r.关键词) && r.关键词.length > 0, '异常药敏规则 “' + r.id + '” 关键词为空');
+    assert.ok(Array.isArray(r.来源) && r.来源.length > 0, '异常药敏规则 “' + r.id + '” 来源为空');
   });
 });
