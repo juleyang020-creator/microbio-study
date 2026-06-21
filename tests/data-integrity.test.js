@@ -22,6 +22,7 @@ require('../data/structures.js');
 require('../data/breakpoints.js');
 require('../data/biochem-tests.js');
 require('../data/ast-alerts.js');
+require('../data/treatment.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
 const fs = require('node:fs');
@@ -222,5 +223,15 @@ test('异常药敏速查规则数据完整', () => {
     });
     assert.ok(Array.isArray(r.关键词) && r.关键词.length > 0, '异常药敏规则 “' + r.id + '” 关键词为空');
     assert.ok(Array.isArray(r.来源) && r.来源.length > 0, '异常药敏规则 “' + r.id + '” 来源为空');
+  });
+});
+
+test('治疗要点的键均为存在的微生物 id 且非空', () => {
+  const treatment = global.window.DB.treatment || {};
+  const micIds = {};
+  global.window.DB.microbes.forEach((m) => { micIds[m.id] = true; });
+  Object.keys(treatment).forEach((id) => {
+    assert.ok(micIds[id], '治疗要点指向不存在的微生物 id：' + id);
+    assert.ok(treatment[id] && String(treatment[id]).trim().length, '治疗要点为空：' + id);
   });
 });

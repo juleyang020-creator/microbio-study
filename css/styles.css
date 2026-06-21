@@ -208,6 +208,10 @@ body {
 .intrinsic-title { font-size: 12px; font-weight: 700; color: var(--rust); letter-spacing: 1.2px; margin-bottom: 5px; }
 .intrinsic-body { color: var(--ink-soft); line-height: 1.7; font-size: 13.5px; }
 
+.treatment { margin: 20px 0; max-width: 700px; border-left: 2px solid var(--teal, #2a8a78); background: #eef7f4; border-radius: 0 6px 6px 0; padding: 10px 14px; }
+.treatment-title { font-size: 12px; font-weight: 700; color: var(--teal, #2a8a78); letter-spacing: 1.2px; margin-bottom: 5px; }
+.treatment-body { color: var(--ink-soft); line-height: 1.7; font-size: 13.5px; }
+
 /* 天然耐药速查（独立模块） */
 .intrinsic-group { margin: 18px 0; }
 .intrinsic-group-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; margin-bottom: 8px; }
