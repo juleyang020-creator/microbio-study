@@ -192,26 +192,30 @@ test('mechanismImageFor 耐药机制按大类/叶子映射', () => {
   assert.strictEqual(View.mechanismImageFor('resistance', { 类别: '生物膜' }, resCats), 'img/resistance-biofilm.svg');
 });
 
-test('referenceLinks 细菌生成 PubMed 综述 + NCBI 书架 + LPSN 命名法', () => {
+test('referenceLinks 细菌：含 PubMed/StatPearls/默沙东/CDC/LPSN，无维基', () => {
   const links = View.referenceLinks('microbes', { 名称: '金黄色葡萄球菌', 拉丁名: 'Staphylococcus aureus', 类别: '葡萄球菌属' });
-  assert.strictEqual(links.length, 3);
+  const urls = links.map(l => l.url).join(' ');
   assert.ok(links[0].url.indexOf('pubmed.ncbi.nlm.nih.gov') !== -1);
   assert.ok(links[0].url.indexOf('filter=pubt.review') !== -1);
-  assert.ok(links[1].url.indexOf('ncbi.nlm.nih.gov/books') !== -1);
-  assert.ok(links[2].url.indexOf('lpsn.dsmz.de') !== -1);
+  assert.ok(urls.indexOf('ncbi.nlm.nih.gov/books') !== -1);
+  assert.ok(urls.indexOf('msdmanuals.cn') !== -1);
+  assert.ok(urls.indexOf('cdc.gov') !== -1);
+  assert.ok(urls.indexOf('lpsn.dsmz.de') !== -1);
   assert.strictEqual(links.filter(l => /wikipedia/.test(l.url)).length, 0);
 });
 
 test('referenceLinks 非细菌(真菌)用 NCBI 分类而非 LPSN', () => {
   const links = View.referenceLinks('microbes', { 名称: '白色念珠菌', 拉丁名: 'Candida albicans', 类别: '念珠菌属' });
-  assert.ok(links[2].url.indexOf('Taxonomy') !== -1);
+  const urls = links.map(l => l.url).join(' ');
+  assert.ok(urls.indexOf('Taxonomy') !== -1);
   assert.strictEqual(links.filter(l => /lpsn/.test(l.url)).length, 0);
 });
 
 test('referenceLinks 拉丁名去除括注与 spp. 后缀', () => {
   const links = View.referenceLinks('microbes', { 名称: '立克次体', 拉丁名: 'Rickettsia spp.', 类别: '立克次体属' });
-  assert.ok(links[1].url.indexOf('Rickettsia') !== -1);
-  assert.ok(links[1].url.indexOf('spp') === -1);
+  const latinUrls = links.filter(l => l.url.indexOf('msdmanuals') === -1).map(l => l.url).join(' ');
+  assert.ok(latinUrls.indexOf('Rickettsia') !== -1);
+  assert.ok(latinUrls.indexOf('spp') === -1);
 });
 
 test('referenceLinks 耐药用英文术语，仅 PubMed', () => {
