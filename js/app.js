@@ -3,13 +3,22 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
 
+  // 折点表药物名与抗菌药条目名的别名（模块级常量，避免每次调用重建）：
+  // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
+  var ABX_ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g', '复方磺胺甲噁唑': 'cotrimoxazole', '复方新诺明': 'cotrimoxazole' };
+
   function db() {
     var DB = window.DB || {};
     return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], idcards: DB.idcards || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [] };
   }
+
+  // 缓存：window.DB 加载后不变，名称→id 映射只需建一次
+  var _abxNameMap = null;
   function abxIdByName() {
+    if (_abxNameMap) { return _abxNameMap; }
     var m = {};
     ((window.DB && window.DB.antibiotics) || []).forEach(function (a) { m[a.名称] = a.id; });
+    _abxNameMap = m;
     return m;
   }
   // 药物名 → 抗生素 id（支持从折点表中的药物名查找）
@@ -21,20 +30,18 @@
     // 从 "药物 (English)" 格式中提取中文名匹配
     var m = text.match(/^([^(]+)/);
     if (m && map[m[1].trim()]) { return map[m[1].trim()]; }
-    // 折点表药物名与抗菌药条目名的别名：
-    // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
-    var ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g', '复方磺胺甲噁唑': 'cotrimoxazole', '复方新诺明': 'cotrimoxazole' };
-    if (m && ALIAS[m[1].trim()]) { return ALIAS[m[1].trim()]; }
+    if (m && ABX_ALIAS[m[1].trim()]) { return ABX_ALIAS[m[1].trim()]; }
     // 遍历所有抗生素，按名称包含关系匹配
-    var DB = window.DB || {};
-    var abxList = DB.antibiotics || [];
+    var abxList = (window.DB && window.DB.antibiotics) || [];
     for (var i = 0; i < abxList.length; i++) {
       if (text.indexOf(abxList[i].名称) !== -1) { return abxList[i].id; }
     }
     return null;
   }
-  // 生化试验名 → 生化试验 id（支持多种模糊匹配）
+  // 生化试验名 → 生化试验 id（支持多种模糊匹配）。模块级缓存。
+  var _biochemTestMap = null;
   function biochemTestIdByName() {
+    if (_biochemTestMap) { return _biochemTestMap; }
     var m = {};
     var tests = (window.DB && window.DB.biochemTests) || [];
 
@@ -83,6 +90,7 @@
       var s3 = s2.replace(/\s*试验$/, '').trim();
       if (s3 !== s2 && s3 !== s1) { m[s3] = t.id; }
     });
+    _biochemTestMap = m;
     return m;
   }
   // 药敏卡上的耐药表型检测项 → 对应的试验条目
@@ -135,6 +143,10 @@
     var module = MODULES.indexOf(parts[0]) !== -1 ? parts[0] : MODULES[0];
     return { module: module, id: parts[1] || null };
   }
+  // 当前路由的顶层 key（compare / cardcompare / intrinsic / graph / breakpoints / ast-alerts / 模块名）
+  function routeKey() {
+    return (location.hash || '').replace(/^#\/?/, '').split('/')[0];
+  }
 
   var SVGNS = 'http://www.w3.org/2000/svg';
   // SVG 元素构造（与 el() 同风格，但用 createElementNS）
@@ -154,19 +166,25 @@
 
   function setActiveTab(moduleKey) {
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
-      t.classList.toggle('active', t.getAttribute('data-module') === moduleKey);
+      var on = t.getAttribute('data-module') === moduleKey;
+      t.classList.toggle('active', on);
+      if (on) { t.setAttribute('aria-current', 'page'); } else { t.removeAttribute('aria-current'); }
     });
     Array.prototype.forEach.call(document.querySelectorAll('.tool-btn'), function (t) {
       t.classList.remove('active');
+      t.removeAttribute('aria-current');
     });
   }
 
   function setActiveTool(toolKey) {
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
       t.classList.remove('active');
+      t.removeAttribute('aria-current');
     });
     Array.prototype.forEach.call(document.querySelectorAll('.tool-btn'), function (t) {
-      t.classList.toggle('active', t.getAttribute('data-tool') === toolKey);
+      var on = t.getAttribute('data-tool') === toolKey;
+      t.classList.toggle('active', on);
+      if (on) { t.setAttribute('aria-current', 'page'); } else { t.removeAttribute('aria-current'); }
     });
   }
 
@@ -407,9 +425,7 @@
   var compareSet = {}; // 选中用于对比的微生物 id
   var compareFilter = ''; // 对比选择器的搜索过滤词
 
-  function isCompareRoute() {
-    return (location.hash || '').replace(/^#\/?/, '').split('/')[0] === 'compare';
-  }
+  function isCompareRoute() { return routeKey() === 'compare'; }
   function comparableIds() { return Object.keys((window.DB && window.DB.biochem) || {}); }
   function nameById() {
     var m = {};
@@ -484,7 +500,7 @@
   // ===== 药敏卡对比 =====
   var compareCardSet = {};
   var compareCardFilter = '';
-  function isCardCompareRoute() { return (location.hash || '').replace(/^#\/?/, '').split('/')[0] === 'cardcompare'; }
+  function isCardCompareRoute() { return routeKey() === 'cardcompare'; }
   function cardNameById() { var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.名称; }); return m; }
   function drugsByCard() { var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.药物 || []; }); return m; }
   function cardIds() { return ((window.DB && window.DB.cards) || []).map(function (c) { return c.id; }); }
@@ -547,7 +563,7 @@
 
   // ===== 工具 1：天然耐药速查 =====
   var intrinsicFilter = '';
-  function isIntrinsicRoute() { return (location.hash || '').replace(/^#\/?/, '').split('/')[0] === 'intrinsic'; }
+  function isIntrinsicRoute() { return routeKey() === 'intrinsic'; }
   function renderIntrinsic() {
     setActiveTool('intrinsic');
     var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选菌名/拉丁名/药名…', value: intrinsicFilter });
@@ -589,7 +605,7 @@
   // ===== 工具 2：关联关系图 =====
   var graphFilter = '';
   var graphDepth = 1;
-  function isGraphRoute() { return (location.hash || '').replace(/^#\/?/, '').split('/')[0] === 'graph'; }
+  function isGraphRoute() { return routeKey() === 'graph'; }
   function graphRouteId() {
     var parts = (location.hash || '').replace(/^#\/?/, '').split('/').filter(Boolean);
     return parts.length >= 3 ? { module: parts[1], id: parts[2] } : null;
@@ -731,7 +747,13 @@
       var isCenter = n.level === 0;
       var r = isCenter ? 30 : (n.level === 1 ? 17 : 12);
       var fill = nodeFill(n.module, isCenter);
-      var outer = sg('g', { transform: 'translate(' + n.x + ' ' + n.y + ')', cls: 'gnode' });
+      var outer = sg('g', {
+        transform: 'translate(' + n.x + ' ' + n.y + ')',
+        cls: 'gnode',
+        role: 'button',
+        tabindex: '0',
+        'aria-label': View.moduleLabel(n.module) + ' · ' + n.名称 + (isCenter ? '（当前图心）' : '（点击设为图心）')
+      });
       var inner = sg('g', { cls: 'graph-node-inner' + (isCenter ? ' center' : '') });
       outer.appendChild(sg('title', { text: View.moduleLabel(n.module) + ' · ' + n.名称 }));
       // 阶梯延迟：中心 0s，一级 0.08s 起每项 +8ms，二级 0.25s 起每项 +6ms
@@ -750,8 +772,21 @@
       // 悬停聚焦：高亮该节点与其邻居/连线，淡化其余，并显示邻居标签
       outer.addEventListener('mouseenter', function () { focusNode(n.id); });
       outer.addEventListener('mouseleave', clearFocus);
+      // 键盘聚焦同样触发高亮，便于不用鼠标的用户
+      outer.addEventListener('focus', function () { focusNode(n.id); });
+      outer.addEventListener('blur', clearFocus);
+      function activate() {
+        if (isCenter) { return; }
+        location.hash = '#/graph/' + n.module + '/' + n.id;
+      }
       if (!isCenter) {
-        outer.addEventListener('click', function () { location.hash = '#/graph/' + n.module + '/' + n.id; });
+        outer.addEventListener('click', activate);
+        outer.addEventListener('keydown', function (ev) {
+          if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
+            ev.preventDefault();
+            activate();
+          }
+        });
       }
       outer.appendChild(inner);
       innerRefs.push({ el: inner, delay: delay });
@@ -866,7 +901,7 @@
   var bpJudgeGroup = '';
   var bpJudgeDrug = '';
   var bpJudgeMIC = '';
-  function isBreakpointsRoute() { return (location.hash || '').replace(/^#\/?/, '').split('/')[0] === 'breakpoints'; }
+  function isBreakpointsRoute() { return routeKey() === 'breakpoints'; }
   function bpGroups() { return (window.DB && window.DB.breakpoints) || []; }
   function bpGroupByName(name) {
     return bpGroups().filter(function (g) { return g.菌组名 === name; })[0] || null;
@@ -1031,7 +1066,7 @@
   // ===== 工具 4：异常药敏 / 修正规则 =====
   var astFilter = '';
   var astLevel = 'all';
-  function isAstAlertsRoute() { return (location.hash || '').replace(/^#\/?/, '').split('/')[0] === 'ast-alerts'; }
+  function isAstAlertsRoute() { return routeKey() === 'ast-alerts'; }
   function astAlerts() { return (window.DB && window.DB.astAlerts) || []; }
   function astSources() { return (window.DB && window.DB.astAlertSources) || []; }
   function levelLabel(level) { return level === 'all' ? '全部' : level; }

@@ -157,7 +157,16 @@
         标题: 'NCBI 书架 (StatPearls)',
         url: 'https://www.ncbi.nlm.nih.gov/books/?term=' + enc
       });
-      // 命名/分类权威
+      // 中文权威临床手册（默沙东诊疗手册专业版，按中文名检索）
+      if (entry.名称) {
+        links.push({
+          标题: '默沙东诊疗手册',
+          url: 'https://www.msdmanuals.cn/professional/SearchResults?query=' + encodeURIComponent(entry.名称)
+        });
+      }
+      // CDC 公共卫生/临床（含寄生虫 DPDx、病毒、细菌专题）
+      links.push({ 标题: 'CDC', url: 'https://search.cdc.gov/search/?query=' + enc + '&affiliate=cdc-main' });
+      // 命名/分类权威：细菌用 LPSN（DSMZ 法定命名），其余用 NCBI 分类
       if (microbeKind(entry.类别) === 'bacteria') {
         links.push({ 标题: 'LPSN 命名法', url: 'https://lpsn.dsmz.de/search?word=' + enc });
       } else {

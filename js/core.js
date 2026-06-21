@@ -18,9 +18,9 @@
     return index;
   }
 
-  function getRelations(id, db) {
-    var index = buildIndex(db);
-    var current = index[id] ? index[id].entry : null;
+  function getRelations(id, db, index) {
+    var idx = index || buildIndex(db);
+    var current = idx[id] ? idx[id].entry : null;
     var forwardIds = (current && Array.isArray(current.关联)) ? current.关联.slice() : [];
 
     var reverseIds = [];
@@ -38,7 +38,7 @@
     function push(rid, direction) {
       if (seen[rid]) { return; }
       seen[rid] = true;
-      var hit = index[rid];
+      var hit = idx[rid];
       result.push({
         id: rid,
         名称: hit ? hit.entry.名称 : rid,
@@ -156,7 +156,7 @@
   // 关系图构建：以 (moduleKey, id) 为中心，BFS 收集 depth 层关联（forward + reverse 去重）。
   // 返回 { center, nodes: [{id,名称,module,level}], edges: [{from,to,direction}] }；找不到中心返回 null。
   function buildGraph(db, moduleKey, id, depth) {
-    var index = buildIndex(db);
+    var index = buildIndex(db);  // 整个 buildGraph 只建一次索引，传给 getRelations 复用
     var center = index[id];
     if (!center) { return null; }
     depth = depth || 1;
@@ -165,18 +165,15 @@
     var edges = {};
     nodes[id] = { id: id, 名称: center.entry.名称, module: center.module, level: 0 };
 
-    function edgeKey(from, to, dir) { return from + '|' + to + '|' + dir; }
-
     function collect(targetId) {
-      var rels = getRelations(targetId, db);
+      var rels = getRelations(targetId, db, index);
       var out = [];
       rels.forEach(function (r) {
         if (!r.exists) { return; }
-        // 同一对节点正反向都算同一条边，避免重复绘制
-        var k1 = edgeKey(targetId, r.id, r.direction);
-        var k2 = edgeKey(r.id, targetId, r.direction === 'forward' ? 'reverse' : 'forward');
-        if (!edges[k1] && !edges[k2]) {
-          edges[k1] = { from: targetId, to: r.id, direction: r.direction };
+        // 同一对节点只保留第一条边（按节点 id 排序规范化 key，忽略 direction）
+        var k = [targetId, r.id].sort().join('|');
+        if (!edges[k]) {
+          edges[k] = { from: targetId, to: r.id, direction: r.direction };
         }
         out.push(r);
       });

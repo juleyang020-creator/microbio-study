@@ -183,7 +183,7 @@ body {
 .breakpoints { margin: 22px 0; }
 .bp-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
 .bp-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; }
-.bp-source { font-size: 11px; color: var(--faint); }
+.bp-source { font-size: 11px; color: var(--muted); }
 .bp-table { border-collapse: collapse; margin-top: 6px; font-size: 13px; min-width: 680px; }
 .bp-table th, .bp-table td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
 .bp-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; white-space: nowrap; }
@@ -196,7 +196,7 @@ body {
 .bp-table .bp-comment { color: var(--muted); font-size: 12px; max-width: 240px; }
 .bp-table .bp-note { color: var(--muted); font-size: 11px; }
 .bp-table tbody tr:hover { background: var(--line-2); }
-.bp-foot { font-size: 11.5px; color: var(--faint); margin-top: 8px; }
+.bp-foot { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
 
 /* 参考链接 */
 .refs { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
@@ -240,7 +240,10 @@ body {
   animation: graph-center-pulse 2.8s ease-in-out infinite 0.6s;
 }
 .graph-svg g[transform]:not(.graph-node-inner) { cursor: pointer; }
-.graph-svg g[transform]:not(.graph-node-inner):hover .graph-node-inner { transform: scale(1.2); transition: transform 0.2s ease; }
+.graph-svg g[transform]:not(.graph-node-inner):hover .graph-node-inner,
+.graph-svg g[transform]:not(.graph-node-inner):focus-visible .graph-node-inner { transform: scale(1.2); transition: transform 0.2s ease; }
+.graph-svg g[transform]:not(.graph-node-inner):focus-visible { outline: none; }
+.graph-svg g[transform]:not(.graph-node-inner):focus-visible circle { stroke: var(--ink, #2a2f36); stroke-width: 3.5; }
 .graph-svg text { font-family: -apple-system, "PingFang SC", system-ui, sans-serif; pointer-events: none; user-select: none; }
 .graph-svg .graph-label { pointer-events: none; }
 .graph-svg .graph-label-bg {
