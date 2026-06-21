@@ -760,10 +760,10 @@
         cls: 'gnode',
         role: 'button',
         tabindex: '0',
-        'aria-label': View.moduleLabel(n.module) + ' · ' + n.名称 + (isCenter ? '（当前图心）' : '（点击设为图心）')
+        'aria-label': View.moduleLabel(n.module) + ' · ' + n.名称 + (isCenter ? '（点击查看详情）' : '（点击设为图心）')
       });
       var inner = sg('g', { cls: 'graph-node-inner' + (isCenter ? ' center' : '') });
-      outer.appendChild(sg('title', { text: View.moduleLabel(n.module) + ' · ' + n.名称 }));
+      outer.appendChild(sg('title', { text: View.moduleLabel(n.module) + ' · ' + n.名称 + (isCenter ? '（点击查看详情）' : '（点击设为图心）') }));
       // 阶梯延迟：中心 0s，一级 0.08s 起每项 +8ms，二级 0.25s 起每项 +6ms
       var delay = isCenter ? 0 : (n.level === 1 ? (0.08 + i * 0.008) : (0.25 + i * 0.006));
       inner.style.transitionDelay = delay + 's';
@@ -784,18 +784,16 @@
       outer.addEventListener('focus', function () { focusNode(n.id); });
       outer.addEventListener('blur', clearFocus);
       function activate() {
-        if (isCenter) { return; }
-        location.hash = '#/graph/' + n.module + '/' + n.id;
+        // 图心：跳转到该条目详情页；其余节点：以该节点为新图心
+        location.hash = isCenter ? ('#/' + n.module + '/' + n.id) : ('#/graph/' + n.module + '/' + n.id);
       }
-      if (!isCenter) {
-        outer.addEventListener('click', activate);
-        outer.addEventListener('keydown', function (ev) {
-          if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
-            ev.preventDefault();
-            activate();
-          }
-        });
-      }
+      outer.addEventListener('click', activate);
+      outer.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
+          ev.preventDefault();
+          activate();
+        }
+      });
       outer.appendChild(inner);
       innerRefs.push({ el: inner, delay: delay });
       nodeById[n.id] = outer;
