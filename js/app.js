@@ -277,6 +277,14 @@
       ]));
     }
 
+    // 治疗要点（经验首选，来自 IDSA/CDC/Sanford 等指南）
+    if (vm.治疗) {
+      nodes.push(el('div', { cls: 'treatment' }, [
+        el('div', { cls: 'treatment-title', text: '治疗要点' }),
+        el('div', { cls: 'treatment-body', text: vm.治疗 })
+      ]));
+    }
+
     if (vm.药物 && vm.药物.length) {
       var abxMap = abxIdByName();
       var drugChips = vm.药物.map(function (name) {
@@ -1175,6 +1183,7 @@
       mechCaption: route.module === 'tests' ? '试验示意图' : (route.module === 'staining' ? '染色示意图' : (route.module === 'biochem-tests' ? '生化反应示意图' : '作用机制示意图')),
       structImage: (route.module === 'antibiotics' && entry && window.DB.structures && window.DB.structures[entry.id]) ? ('img/struct-' + entry.id + '.svg') : null,
       morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
+      treatment: (entry && window.DB.treatment) ? window.DB.treatment[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
       differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,
       links: View.referenceLinks(route.module, entry),
