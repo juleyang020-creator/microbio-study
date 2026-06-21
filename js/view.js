@@ -130,21 +130,39 @@
     return String(s || '').replace(/[（(].*$/, '').replace(/\s+spp\.?$/i, '').trim();
   }
 
-  // 综述/参考链接：仅微生物与耐药机制。菌用拉丁名(→PubMed综述+维基)，耐药用英文术语(→PubMed综述)。
+  // 微生物大类判别（按 类别 关键字）：细菌/真菌/病毒/寄生虫
+  function microbeKind(cat) {
+    cat = String(cat || '');
+    if (/病毒/.test(cat)) { return 'virus'; }
+    if (/疟原虫|弓形虫|寄生|原虫|绦虫|线虫|吸虫|阿米巴|贾第|隐孢子|毛滴虫|疥|虱|棘球|血吸虫|肺孢子/.test(cat)) { return 'parasite'; }
+    if (/念珠|隐球|曲霉|毛癣|毛霉|根霉|镰刀|马拉色|孢子菌|酵母|真菌|皮炎芽生|组织胞浆|球孢子|癣菌|青霉|科达菌/.test(cat)) { return 'fungus'; }
+    return 'bacteria';
+  }
+
+  // 综述/参考链接（权威优先）：菌用拉丁名 → PubMed 综述 + NCBI 书架(StatPearls 同行评议临床专论)
+  //   + 命名/分类权威(细菌 LPSN，其余 NCBI 分类)。耐药机制用英文术语 → 仅 PubMed 综述。
   function referenceLinks(moduleKey, entry) {
     if (!entry || (moduleKey !== 'microbes' && moduleKey !== 'resistance')) { return []; }
     var latin = cleanTerm(entry.拉丁名);
     var term = latin || entry.英文 || entry.名称 || '';
     if (!term) { return []; }
+    var enc = encodeURIComponent(term);
     var links = [{
       标题: 'PubMed 综述',
-      url: 'https://pubmed.ncbi.nlm.nih.gov/?term=' + encodeURIComponent(term) + '&filter=pubt.review'
+      url: 'https://pubmed.ncbi.nlm.nih.gov/?term=' + enc + '&filter=pubt.review'
     }];
-    if (latin) {
+    if (moduleKey === 'microbes' && latin) {
+      // 同行评议临床专论（NCBI 书架，含 StatPearls）—— 比维基更权威
       links.push({
-        标题: '维基百科',
-        url: 'https://en.wikipedia.org/wiki/' + encodeURIComponent(latin.replace(/\s+/g, '_'))
+        标题: 'NCBI 书架 (StatPearls)',
+        url: 'https://www.ncbi.nlm.nih.gov/books/?term=' + enc
       });
+      // 命名/分类权威
+      if (microbeKind(entry.类别) === 'bacteria') {
+        links.push({ 标题: 'LPSN 命名法', url: 'https://lpsn.dsmz.de/search?word=' + enc });
+      } else {
+        links.push({ 标题: 'NCBI 分类', url: 'https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?name=' + enc });
+      }
     }
     return links;
   }
