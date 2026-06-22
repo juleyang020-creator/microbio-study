@@ -436,3 +436,7 @@ body {
 .about-h { font-size: 14px; font-weight: 700; color: var(--ink); margin: 0 0 8px; }
 .about-p { font-size: 13.5px; line-height: 1.8; color: var(--ink-soft); margin: 0 0 6px; }
 .about-p:last-child { margin-bottom: 0; }
+
+/* 品牌副标题（主名"知微" + 小字"微生物速查"） */
+.brand-sub { font-weight: 400; font-size: 11px; letter-spacing: .5px; color: var(--muted); margin-left: 8px; }
+@media (max-width: 600px) { .brand-sub { display: none; } }
