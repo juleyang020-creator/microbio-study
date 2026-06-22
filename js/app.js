@@ -1157,7 +1157,44 @@
     ]);
   }
 
+  function isAboutRoute() { return routeKey() === 'about'; }
+
+  // 关于 / 免责声明 / 隐私政策（上架与合规所需）
+  function renderAbout() {
+    setActiveTab(null);
+    renderSidebar();
+    function card(title, lines) {
+      return el('div', { cls: 'about-card' }, [ el('h3', { cls: 'about-h' , text: title }) ].concat(
+        lines.map(function (t) { return el('p', { cls: 'about-p', text: t }); })
+      ));
+    }
+    var nodes = [
+      el('h2', { cls: 'detail-title', text: '关于 · 免责声明 · 隐私政策' }),
+      card('免责声明', [
+        '本软件为临床微生物学习与速查工具，所载形态、鉴别、生化、药敏折点、治疗要点等内容仅供医学教育与专业人员查询参考，不构成任何诊断、治疗或用药建议。',
+        '任何临床决策（含用药选择、剂量、疗程）必须由具备资质的医务人员，结合患者具体情况、本地药敏结果与现行权威指南独立判断。开发者不对依据本软件内容所作决策导致的任何后果负责。',
+        '药敏折点依据 CLSI（M100 / M45 / M60 等）整理，可能随版本更新而变化；请以最新官方标准为准。'
+      ]),
+      card('隐私政策', [
+        '本软件为纯本地/离线应用，所有数据内置于程序中。',
+        '本软件不收集、不上传、不存储任何个人信息或使用数据，无账号体系，无第三方统计或广告 SDK。',
+        '「综述/参考」中的外部链接（PubMed、NCBI、LPSN、CDC、默沙东诊疗手册等）由用户主动点击后在浏览器打开，跳转后的网站隐私政策由对应站点负责。'
+      ]),
+      card('内容来源', [
+        '微生物学与临床内容综合整理自公认权威来源：CLSI 药敏标准、IDSA / CDC 指南、Sanford 抗微生物治疗指南、StatPearls、默沙东诊疗手册、LPSN / NCBI 分类等。',
+        '各条目底部「综述/参考」提供对应权威来源的检索入口，便于核对与延伸阅读。'
+      ]),
+      card('版本与版权', [
+        '名称：临床微生物学习与速查系统',
+        '版本：V1.0',
+        '© 2026 著作权所有。免费供个人学习与教学公益使用；未经许可不得用于商业用途或二次分发。'
+      ])
+    ];
+    fill(document.getElementById('main'), nodes);
+  }
+
   function renderRoute() {
+    if (isAboutRoute()) { renderAbout(); return; }
     if (isCompareRoute()) { renderCompare(); return; }
     if (isCardCompareRoute()) { renderCardCompare(); return; }
     if (isIntrinsicRoute()) { renderIntrinsic(); return; }
