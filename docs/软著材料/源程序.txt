@@ -1,0 +1,2690 @@
+临床微生物学习与速查系统 — 源程序
+（计算机软件著作权登记用；如超 60 页，提交前 30 页 + 后 30 页）
+========================================================================
+
+
+//// 文件：index.html ////
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="临床微生物速查">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <title>临床微生物学习与速查系统</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="menu-btn" class="menu-btn" aria-label="目录" type="button">☰</button>
+    <div class="brand">临床微生物速查</div>
+    <div class="nav-boards">
+      <section class="nav-board" aria-label="基础知识">
+        <div class="nav-board-title">基础知识</div>
+        <nav class="tabs" aria-label="基础知识">
+          <button class="tab" data-module="microbes">微生物分类</button>
+          <button class="tab" data-module="antibiotics">抗微生物药</button>
+          <button class="tab" data-module="resistance">耐药因素</button>
+          <button class="tab" data-module="idcards">鉴定卡</button>
+          <button class="tab" data-module="cards">药敏卡</button>
+          <button class="tab" data-module="tests">试验</button>
+          <button class="tab" data-module="staining">染色</button>
+          <button class="tab" data-module="media">培养基</button>
+          <button class="tab" data-module="biochem-tests">生化反应</button>
+        </nav>
+      </section>
+      <section class="nav-board nav-board-tools" aria-label="快捷工具">
+        <div class="nav-board-title">快捷工具</div>
+        <div class="tools">
+          <a class="tool-btn" data-tool="intrinsic" href="#/intrinsic">天然耐药</a>
+          <a class="tool-btn" data-tool="ast-alerts" href="#/ast-alerts">异常药敏</a>
+          <a class="tool-btn" data-tool="graph" href="#/graph">关系图</a>
+          <a class="tool-btn" data-tool="breakpoints" href="#/breakpoints">折点判读</a>
+          <a class="tool-btn" data-tool="compare" href="#/compare">生化对比</a>
+          <a class="tool-btn" data-tool="cardcompare" href="#/cardcompare">药敏卡对比</a>
+        </div>
+      </section>
+    </div>
+    <input id="search-input" class="search" type="search" placeholder="搜索…" autocomplete="off" aria-label="搜索条目">
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar"></aside>
+    <div id="nav-backdrop" class="nav-backdrop"></div>
+    <main id="main" class="main"></main>
+  </div>
+
+  <footer class="site-footer">
+    <p class="footer-disclaimer">⚠️ 本软件仅供医学学习与速查参考，<strong>不构成诊疗依据</strong>；临床用药与判断须结合患者具体情况、本地药敏与最新权威指南。</p>
+    <p class="footer-links"><a href="#/about">免责声明 · 隐私政策 · 关于</a></p>
+  </footer>
+
+  <!-- 数据（定义 window.DB） -->
+  <script src="data/categories.js"></script>
+  <script src="data/microbes.js"></script>
+  <script src="data/antibiotics.js"></script>
+  <script src="data/resistance.js"></script>
+  <script src="data/biochem.js"></script>
+  <script src="data/differential.js"></script>
+  <script src="data/morphology.js"></script>
+  <script src="data/treatment.js"></script>
+  <script src="data/idcards.js"></script>
+  <script src="data/cards.js"></script>
+  <script src="data/tests.js"></script>
+  <script src="data/media.js"></script>
+  <script src="data/staining.js"></script>
+  <script src="data/structures.js"></script>
+  <script src="data/breakpoints.js"></script>
+  <script src="data/biochem-tests.js"></script>
+  <script src="data/ast-alerts.js"></script>
+  <!-- 逻辑 -->
+  <script src="js/core.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // PWA：仅在 http(s) 下注册离线缓存（file:// 套壳内跳过）
+    if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
+      window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+    }
+  </script>
+</body>
+</html>
+
+//// 文件：css/styles.css ////
+:root {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --ink: #23272e;
+  --ink-soft: #454b54;
+  --muted: #8a8f98;
+  --faint: #aeb3ba;
+  --line: #e7e4dd;
+  --line-2: #f0ede7;
+  --accent: #2e6b66;
+  --accent-weak: #e9f0ee;
+  --accent-edge: #cfe0db;
+  --link: #345f86;
+  --green: #3f7a52;
+  --rust: #a85a2a;
+  --gold: #8a6d1f;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: var(--ink); background: var(--bg);
+  display: flex; flex-direction: column; height: 100vh;
+  font-size: 14px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 顶栏 */
+.topbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 22px;
+  min-height: 64px;
+  flex-shrink: 0;
+}
+.brand { font-weight: 600; font-size: 15px; letter-spacing: 1px; color: var(--ink); white-space: nowrap; }
+.nav-boards { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; min-width: 0; }
+.nav-board {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  height: 40px;
+  padding: 4px 7px 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+}
+.nav-board-title {
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1;
+  white-space: nowrap;
+  padding-right: 9px;
+  border-right: 1px solid var(--line);
+}
+.tabs { display: flex; gap: 3px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { background: none; border: 1px solid transparent; border-radius: 5px; color: var(--muted); font-size: 13px; padding: 4px 9px; min-height: 30px; cursor: pointer; font-family: inherit; white-space: nowrap; flex-shrink: 0; }
+.tab:hover { color: var(--ink); }
+.tab.active { color: var(--accent); font-weight: 600; border-color: var(--accent-edge); background: var(--accent-weak); }
+.search { border: 1px solid var(--line); border-radius: 6px; padding: 6px 11px; font-size: 13px; min-width: 180px; background: var(--surface); color: var(--ink); font-family: inherit; }
+.search::placeholder { color: var(--faint); }
+.search:focus { outline: none; border-color: var(--accent); }
+.compare-btn { margin-left: auto; color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; }
+.compare-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 工具按钮组（天然耐药 / 关系图 / 折点判读 / 生化对比 / 药敏卡对比） */
+.tools { display: flex; gap: 5px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.tools::-webkit-scrollbar { display: none; }
+.tool-btn { color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 4px 9px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; flex-shrink: 0; }
+.tool-btn:hover { border-color: var(--accent); color: var(--accent); }
+.tool-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-weak); font-weight: 600; }
+
+/* 布局 */
+.layout { display: flex; flex: 1; min-height: 0; }
+.sidebar { width: 248px; background: var(--surface); border-right: 1px solid var(--line); overflow-y: auto; padding: 14px 12px; font-size: 13px; flex-shrink: 0; }
+.main { flex: 1; overflow-y: auto; padding: 30px 40px; }
+
+/* 侧栏分类树 */
+.cat-group { margin-bottom: 4px; }
+.cat-group-name { color: var(--muted); font-weight: 600; font-size: 11px; letter-spacing: 1px; margin: 12px 0 4px; }
+.cat-subgroup { color: var(--ink-soft); font-weight: 500; padding: 3px 6px; margin-top: 2px; }
+.collapsible { cursor: pointer; user-select: none; }
+.collapsible:hover { color: var(--accent); }
+.entry-link { display: block; color: var(--ink-soft); text-decoration: none; padding: 4px 8px 4px 16px; border-radius: 4px; border-left: 2px solid transparent; }
+.entry-link:hover { color: var(--ink); background: var(--line-2); }
+.entry-link.selected { color: var(--accent); font-weight: 600; border-left-color: var(--accent); }
+
+/* 详情头 */
+.detail-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.detail-title { font-size: 23px; font-weight: 600; margin: 0; letter-spacing: .3px; color: var(--ink); }
+.badge { color: var(--muted); font-size: 12px; border: 1px solid var(--line); border-radius: 4px; padding: 1px 8px; font-weight: 500; }
+.latin { color: var(--muted); font-style: italic; margin: 5px 0 22px; font-size: 14px; }
+.abbr { font-family: var(--mono); background: var(--accent-weak); color: var(--accent); font-size: 11.5px; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; }
+
+/* 机制图 */
+.mechanism-fig { margin: 18px 0 10px; }
+.mechanism-img { display: block; width: 100%; max-width: 520px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.mechanism-cap { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+/* 通用小标题 */
+.section-title, .morph-title, .biochem-title, .diff-title, .card-drugs-title, .relations-label, .refs-label {
+  font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; margin-bottom: 8px;
+}
+
+/* 文字小节（无卡片框，编辑式分隔） */
+.section-card { background: none; border: none; border-top: 1px solid var(--line); padding: 14px 0 0; margin: 0 0 14px; max-width: 700px; }
+.section-body { color: var(--ink-soft); line-height: 1.72; white-space: pre-wrap; }
+
+/* 形态 */
+.morphology { margin: 22px 0; max-width: 660px; }
+.morph-row { font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); margin-top: 6px; }
+.morph-tag { display: inline-block; font-size: 11px; color: var(--ink-soft); background: var(--line-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; white-space: nowrap; }
+.morph-tag.morph-med { background: var(--accent-weak); border-color: var(--accent-edge); color: var(--accent); }
+
+/* 生化反应 */
+.biochem { margin: 22px 0; }
+.biochem-rows { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; max-width: 460px; }
+.biochem-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 12px; font-size: 13px; }
+.biochem-row:nth-child(even) { background: var(--line-2); }
+.biochem-key { color: var(--muted); }
+.biochem-link { text-decoration: none; }
+.biochem-link:hover { text-decoration: underline; color: var(--link); }
+.biochem-val { color: var(--ink); font-weight: 600; font-family: var(--mono); }
+
+/* 鉴别 */
+.differential { margin: 22px 0; }
+.diff-item { border: 1px solid var(--line); border-left: 2px solid var(--accent); border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; max-width: 700px; background: var(--surface); }
+.diff-head { margin-bottom: 6px; }
+.diff-link { color: var(--link); text-decoration: none; font-weight: 600; }
+.diff-link:hover { text-decoration: underline; }
+.diff-name { font-weight: 600; color: var(--ink-soft); }
+.diff-line { font-size: 13px; line-height: 1.65; color: var(--ink-soft); margin-top: 3px; }
+.diff-tag { display: inline-block; font-size: 11px; color: var(--muted); background: var(--line-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; }
+.diff-tag.diff-key { background: var(--accent-weak); border-color: var(--accent-edge); color: var(--accent); }
+
+/* 对比 */
+.biochem-head, .card-drugs-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 460px; }
+.cmp-add { background: var(--surface); color: var(--accent); border: 1px solid var(--line); border-radius: 5px; padding: 4px 10px; font-size: 12px; cursor: pointer; white-space: nowrap; font-family: inherit; }
+.cmp-add:hover { border-color: var(--accent); background: var(--accent-weak); }
+.cmp-search { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px; margin: 6px 0 8px; font-family: inherit; }
+.cmp-search:focus { outline: none; border-color: var(--accent); }
+.cmp-pick { padding: 5px 9px; border-radius: 4px; cursor: pointer; color: var(--ink-soft); font-size: 13px; user-select: none; }
+.cmp-pick:hover { background: var(--line-2); }
+.cmp-pick.sel { color: var(--accent); font-weight: 600; }
+.table-scroll { max-width: 100%; overflow-x: auto; padding-bottom: 2px; }
+.cmp { border-collapse: collapse; margin-top: 10px; font-size: 13px; min-width: 560px; }
+.cmp th, .cmp td { border: 1px solid var(--line); padding: 7px 12px; text-align: left; }
+.cmp thead th { background: var(--line-2); color: var(--ink); font-weight: 600; }
+.cmp .cmp-col { color: var(--link); text-decoration: none; }
+.cmp .cmp-col:hover { text-decoration: underline; }
+.cmp .cmp-item { font-weight: 600; color: var(--ink-soft); background: var(--surface); }
+.cmp-cell { font-family: var(--mono); }
+.cmp tr.cmp-diff td { background: #faf5e6; }
+.cmp tr.cmp-diff .cmp-item { background: #f1e8cf; color: #715711; }
+.cmp-hint { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+/* 关联 / 标签 */
+.relations { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12.5px; padding: 3px 10px; border-radius: 4px; text-decoration: none; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+.chip:hover { border-color: var(--faint); }
+.chip-microbes { color: var(--link); }
+.chip-antibiotics { color: var(--green); }
+.chip-resistance { color: var(--rust); }
+.chip-tests { color: var(--gold); }
+.chip-cards { color: #4a6d8c; }
+.chip-media { color: #6b4e8a; }
+.chip-staining { color: #8a4a6b; }
+.chip-biochem-tests { color: #4a7a6b; }
+.chip-missing, .chip-plain { color: var(--muted); background: var(--line-2); }
+
+/* 折点表 */
+.breakpoints { margin: 22px 0; }
+.bp-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+.bp-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; }
+.bp-source { font-size: 11px; color: var(--muted); }
+.bp-table { border-collapse: collapse; margin-top: 6px; font-size: 13px; min-width: 680px; }
+.bp-table th, .bp-table td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+.bp-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; white-space: nowrap; }
+.bp-table .bp-drug { color: var(--ink); min-width: 200px; }
+.bp-table .bp-drug strong { color: var(--accent); font-family: var(--mono); font-size: 12px; }
+.bp-drug-link { color: var(--link); text-decoration: none; }
+.bp-drug-link:hover { text-decoration: underline; }
+.bp-table .bp-mic { font-family: var(--mono); color: var(--ink-soft); white-space: nowrap; }
+.bp-table .bp-disk { font-family: var(--mono); color: var(--ink-soft); white-space: nowrap; }
+.bp-table .bp-comment { color: var(--muted); font-size: 12px; max-width: 240px; }
+.bp-table .bp-note { color: var(--muted); font-size: 11px; }
+.bp-table tbody tr:hover { background: var(--line-2); }
+.bp-foot { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+
+/* 参考链接 */
+.refs { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
+.ref-link { font-size: 12.5px; padding: 3px 10px; border-radius: 4px; text-decoration: none; background: var(--surface); color: var(--accent); border: 1px solid var(--line); }
+.ref-link:hover { border-color: var(--accent); background: var(--accent-weak); }
+
+/* 天然耐药 */
+.intrinsic { margin: 20px 0; max-width: 700px; border-left: 2px solid var(--rust); background: #fbf3ef; border-radius: 0 6px 6px 0; padding: 10px 14px; }
+.intrinsic-title { font-size: 12px; font-weight: 700; color: var(--rust); letter-spacing: 1.2px; margin-bottom: 5px; }
+.intrinsic-body { color: var(--ink-soft); line-height: 1.7; font-size: 13.5px; }
+
+.treatment { margin: 20px 0; max-width: 700px; border-left: 2px solid var(--teal, #2a8a78); background: #eef7f4; border-radius: 0 6px 6px 0; padding: 10px 14px; }
+.treatment-title { font-size: 12px; font-weight: 700; color: var(--teal, #2a8a78); letter-spacing: 1.2px; margin-bottom: 5px; }
+.treatment-body { color: var(--ink-soft); line-height: 1.7; font-size: 13.5px; }
+
+/* 天然耐药速查（独立模块） */
+.intrinsic-group { margin: 18px 0; }
+.intrinsic-group-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; margin-bottom: 8px; }
+.intrinsic-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; }
+.intrinsic-card { background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--rust); border-radius: 6px; padding: 10px 14px; }
+.intrinsic-card-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }
+.intrinsic-link { color: var(--link); text-decoration: none; font-weight: 600; font-size: 14px; }
+.intrinsic-link:hover { text-decoration: underline; }
+.intrinsic-card .latin { margin: 0; font-size: 12px; }
+
+/* 关联关系图 */
+.graph-controls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+.graph-ctrl-label { font-size: 12px; color: var(--muted); }
+.graph-controls .cmp-add.sel { background: var(--accent-weak); border-color: var(--accent); color: var(--accent); }
+.graph-center-info { display: flex; align-items: baseline; gap: 8px; margin: 6px 0 10px; }
+.graph-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; margin: 14px 0; }
+.graph-svg { display: block; width: 100%; max-width: 720px; height: auto; margin: 0 auto; }
+.graph-svg .graph-edge { opacity: 0; transition: opacity 0.45s ease-out; }
+.graph-svg .graph-edge.visible { opacity: 1; }
+.graph-svg .graph-edge.reverse.visible { opacity: 0.85; }
+.graph-svg .graph-node-inner {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease-out;
+}
+.graph-svg .graph-node-inner.visible { opacity: 1; transform: scale(1); }
+.graph-svg .graph-node-inner.center.visible {
+  animation: graph-center-pulse 2.8s ease-in-out infinite 0.6s;
+}
+.graph-svg g[transform]:not(.graph-node-inner) { cursor: pointer; }
+.graph-svg g[transform]:not(.graph-node-inner):hover .graph-node-inner,
+.graph-svg g[transform]:not(.graph-node-inner):focus-visible .graph-node-inner { transform: scale(1.2); transition: transform 0.2s ease; }
+.graph-svg g[transform]:not(.graph-node-inner):focus-visible { outline: none; }
+.graph-svg g[transform]:not(.graph-node-inner):focus-visible circle { stroke: var(--ink, #2a2f36); stroke-width: 3.5; }
+.graph-svg text { font-family: -apple-system, "PingFang SC", system-ui, sans-serif; pointer-events: none; user-select: none; }
+.graph-svg .graph-label { pointer-events: none; }
+.graph-svg .graph-label-bg {
+  fill: rgba(255,255,255,.88);
+  stroke: rgba(212,218,214,.9);
+  stroke-width: .8;
+}
+.graph-svg .graph-label-text {
+  paint-order: stroke;
+  stroke: rgba(255,255,255,.84);
+  stroke-width: 2.4px;
+  stroke-linejoin: round;
+}
+.graph-svg .graph-label.center-label .graph-label-text {
+  paint-order: normal;
+  stroke: none;
+}
+.graph-svg .graph-label.secondary {
+  opacity: 0;
+  transition: opacity .18s ease-out;
+}
+.graph-svg g[transform]:not(.graph-node-inner):hover .graph-label.secondary { opacity: 1; }
+@keyframes graph-center-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .graph-svg .graph-edge, .graph-svg .graph-node-inner { transition: none; opacity: 1; transform: none; }
+  .graph-svg .graph-node-inner.center.visible { animation: none; }
+}
+.graph-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); margin: 10px 0; }
+.graph-legend-item { display: inline-flex; align-items: center; gap: 5px; }
+.graph-legend-line { display: inline-block; width: 22px; height: 2px; background: #cfe0db; }
+.graph-legend-line.dashed { background: repeating-linear-gradient(to right, #e7c9c0 0 4px, transparent 4px 7px); height: 2px; }
+.graph-legend-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: middle; }
+.graph-legend-dot.center { background: #2e6b66; }
+.graph-legend-dot.l1 { background: #345f86; }
+.graph-legend-dot.l2 { background: #8a8f98; }
+
+/* 2 层密图：更宽画布 + 默认淡化连线；悬停聚焦时高亮该节点的关联并显示邻居标签，其余淡出 */
+.graph-wrap.graph-dense .graph-svg { max-width: 880px; }
+.graph-wrap.graph-dense .graph-edge.visible { opacity: .5; }
+.graph-svg.focusing .graph-node-inner { opacity: .16; transition: opacity .2s ease; }
+.graph-svg.focusing .gnode.adj .graph-node-inner { opacity: 1; }
+.graph-svg.focusing .graph-edge.visible { opacity: .05; }
+.graph-svg.focusing .graph-edge.visible.adj { opacity: 1; }
+.graph-svg.focusing .gnode.adj .graph-label.secondary { opacity: 1; }
+.graph-svg.focusing .gnode.adj .graph-label-bg { fill: rgba(255,255,255,.97); }
+.graph-svg.focusing .graph-node-inner.center { animation: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .graph-svg .graph-edge, .graph-svg .graph-node-inner, .graph-svg .graph-node-inner.center {
+    animation: none; opacity: 1; transform: none;
+  }
+}
+
+/* 折点独立查询 + MIC 判读 */
+.bp-filters { margin: 12px 0 16px; }
+.bp-group { margin: 18px 0; }
+.bp-group-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.bp-group-list { display: flex; flex-direction: column; gap: 2px; }
+.bp-judge-form { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; margin: 16px 0; max-width: 560px; }
+.bp-judge-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
+.bp-judge-row label { width: 50px; color: var(--muted); font-size: 13px; }
+.bp-select { flex: 1; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px; font-family: inherit; background: var(--surface); color: var(--ink); }
+.bp-select:focus { outline: none; border-color: var(--accent); }
+.bp-judge-result { margin: 16px 0; }
+.bp-judge-bp { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-family: var(--mono); }
+.bp-verdict { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 8px; border: 1px solid var(--line); }
+.bp-verdict.v-s { background: #edf6ef; border-color: #b6d9bf; }
+.bp-verdict.v-i { background: #fff7e6; border-color: #e8cf8e; }
+.bp-verdict.v-r { background: #fdecea; border-color: #e8b8b3; }
+.bp-verdict.v-unknown { background: var(--line-2); }
+.bp-verdict-tag { font-size: 22px; font-weight: 700; padding: 4px 14px; border-radius: 4px; background: var(--surface); }
+.bp-verdict.v-s .bp-verdict-tag { color: var(--green); }
+.bp-verdict.v-i .bp-verdict-tag { color: var(--gold); }
+.bp-verdict.v-r .bp-verdict-tag { color: var(--rust); }
+.bp-verdict.v-unknown .bp-verdict-tag { color: var(--muted); }
+.bp-verdict-reason { font-size: 13.5px; color: var(--ink-soft); }
+.bp-judge-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+
+/* 异常药敏 / 修正规则 */
+.ast-disclaimer { max-width: 760px; margin: 8px 0 16px; }
+.ast-filter-controls { align-items: stretch; gap: 5px; }
+.ast-filter-controls .cmp-add { flex: 1 1 auto; min-width: 72px; }
+.ast-group { margin: 20px 0; }
+.ast-group-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; margin-bottom: 8px; }
+.ast-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 12px; max-width: 1120px; }
+.ast-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 13px 15px; box-shadow: 0 1px 0 rgba(20,24,28,.02); }
+.ast-card-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 9px; }
+.ast-title { margin: 1px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink); font-weight: 650; letter-spacing: 0; }
+.ast-level { flex: 0 0 auto; font-size: 11px; font-weight: 700; line-height: 1; border: 1px solid var(--line); border-radius: 4px; padding: 5px 7px; color: var(--ink-soft); background: var(--line-2); white-space: nowrap; }
+.ast-critical { color: #8b3d28; background: #fbefe8; border-color: #edcbb8; }
+.ast-review { color: #6d5a13; background: #fbf5df; border-color: #e6d99d; }
+.ast-limit { color: #345f86; background: #edf3f8; border-color: #c9d9e8; }
+.ast-line { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 10px; margin: 7px 0; line-height: 1.65; }
+.ast-line-label { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .8px; }
+.ast-line-text { color: var(--ink-soft); font-size: 13.5px; }
+.ast-tags { margin-top: 10px; gap: 5px; }
+
+/* 药敏卡-包含药物 */
+.card-drugs { margin: 22px 0; }
+
+/* 搜索结果 */
+.search-head { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+.search-list { display: flex; flex-direction: column; gap: 6px; max-width: 700px; }
+.search-item { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 9px 13px; text-decoration: none; color: var(--ink); }
+.search-item:hover { border-color: var(--accent); }
+.search-summary { display: block; color: var(--muted); font-size: 12px; margin: 3px 0 0 48px; line-height: 1.45; }
+.tag { font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 8px; border: 1px solid var(--line); color: var(--muted); }
+.tag-microbes { color: var(--link); }
+.tag-antibiotics { color: var(--green); }
+.tag-resistance { color: var(--rust); }
+.tag-tests { color: var(--gold); }
+.tag-cards { color: #4a6d8c; }
+.tag-media { color: #6b4e8a; }
+.tag-staining { color: #8a4a6b; }
+.tag-biochem-tests { color: #4a7a6b; }
+
+/* 空状态 */
+.empty { color: var(--muted); padding: 48px 0; text-align: center; }
+.empty-sm { color: var(--muted); font-size: 13px; }
+
+/* 汉堡按钮 / 抽屉遮罩（桌面端隐藏） */
+.menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); font-size: 16px; line-height: 1; padding: 5px 10px; cursor: pointer; font-family: inherit; }
+.nav-backdrop { display: none; }
+
+/* ===== 移动端 ===== */
+@media (max-width: 760px) {
+  .topbar {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    gap: 8px 10px;
+    padding: 8px 12px;
+    padding-top: max(8px, env(safe-area-inset-top));
+  }
+  .menu-btn { display: inline-flex; grid-column: 1; grid-row: 1; }
+  .brand { grid-column: 2; grid-row: 1; font-size: 14px; }
+  .search { grid-column: 3; grid-row: 1; min-width: 0; width: 100%; }
+  .nav-boards { grid-column: 1 / -1; grid-row: 2; display: flex; flex-direction: column; gap: 8px; }
+  .nav-board { height: auto; min-height: 44px; align-items: flex-start; flex-direction: column; gap: 6px; padding: 8px 10px; }
+  .nav-board-title { width: 100%; padding: 0 0 6px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .tools, .tabs { width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { min-height: 30px; }
+
+  .layout { position: relative; }
+  .sidebar { position: absolute; z-index: 40; top: 0; left: 0; bottom: 0; width: 84%; max-width: 300px; transform: translateX(-100%); transition: transform .24s ease; box-shadow: 2px 0 16px rgba(15,18,22,.18); }
+  body.nav-open .sidebar { transform: translateX(0); }
+  .nav-backdrop { display: block; position: absolute; inset: 0; z-index: 35; background: rgba(15,18,22,.35); opacity: 0; pointer-events: none; transition: opacity .24s ease; }
+  body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
+  .main { padding: 18px 16px calc(24px + env(safe-area-inset-bottom)); }
+  .detail-title { font-size: 20px; }
+  .entry-link, .cmp-pick, .tab { min-height: 32px; }
+  /* 表格瘦身：折点表 / 对比表在小屏更紧凑，尽量不横向溢出、行高更低 */
+  .bp-table, .cmp { min-width: 0; width: 100%; font-size: 10.5px; table-layout: fixed; }
+  .bp-table th, .bp-table td { padding: 3px 4px; word-break: break-word; }
+  .bp-table thead th { font-size: 9.5px; white-space: normal; }
+  .bp-table .bp-drug { min-width: 0; width: 38%; }
+  .bp-table .bp-drug strong { font-size: 9.5px; }
+  .bp-table .bp-mic, .bp-table .bp-disk { white-space: normal; font-size: 10px; }  /* S/I/R 竖排，列更窄 */
+  .bp-table .bp-comment { width: 24%; font-size: 9px; }
+  .bp-source, .bp-foot { font-size: 10.5px; }
+  .cmp th, .cmp td { padding: 4px 6px; }
+  .cmp .cmp-item { font-size: 10.5px; }
+  .search-summary { margin-left: 0; }
+  .ast-list { grid-template-columns: 1fr; }
+  .ast-card { padding: 12px; }
+  .ast-card-head { flex-direction: column; gap: 7px; }
+  .ast-line { grid-template-columns: 1fr; gap: 1px; margin: 9px 0; }
+}
+
+@media (max-width: 1120px) and (min-width: 761px) {
+  .topbar { gap: 10px; padding: 8px 14px; }
+  .tab { padding: 4px 8px; }
+  .search { min-width: 150px; }
+}
+
+/* 页脚免责声明 + 关于页 */
+.site-footer { max-width: 1180px; margin: 8px auto 0; padding: 14px 22px 26px; border-top: 1px solid var(--line); color: var(--muted); }
+.footer-disclaimer { font-size: 12px; line-height: 1.7; margin: 0 0 6px; }
+.footer-disclaimer strong { color: var(--rust); }
+.footer-links { font-size: 12px; margin: 0; }
+.footer-links a { color: var(--link); text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+.about-card { max-width: 760px; margin: 16px 0; padding: 14px 18px; background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--teal, #2a8a78); border-radius: 0 6px 6px 0; }
+.about-h { font-size: 14px; font-weight: 700; color: var(--ink); margin: 0 0 8px; }
+.about-p { font-size: 13.5px; line-height: 1.8; color: var(--ink-soft); margin: 0 0 6px; }
+.about-p:last-child { margin-bottom: 0; }
+
+//// 文件：js/core.js ////
+(function (factory) {
+  'use strict';
+  var Core = factory();
+  if (typeof module !== 'undefined' && module.exports) { module.exports = Core; }
+  if (typeof window !== 'undefined') { window.Core = Core; }
+})(function () {
+  'use strict';
+
+  var MODULE_KEYS = ['microbes', 'antibiotics', 'resistance', 'idcards', 'cards', 'tests', 'media', 'staining', 'biochem-tests'];
+
+  function buildIndex(db) {
+    var index = {};
+    MODULE_KEYS.forEach(function (mod) {
+      (db[mod] || []).forEach(function (entry) {
+        index[entry.id] = { entry: entry, module: mod };
+      });
+    });
+    return index;
+  }
+
+  function getRelations(id, db, index) {
+    var idx = index || buildIndex(db);
+    var current = idx[id] ? idx[id].entry : null;
+    var forwardIds = (current && Array.isArray(current.关联)) ? current.关联.slice() : [];
+
+    var reverseIds = [];
+    MODULE_KEYS.forEach(function (mod) {
+      (db[mod] || []).forEach(function (entry) {
+        if (entry.id === id) { return; }
+        if (Array.isArray(entry.关联) && entry.关联.indexOf(id) !== -1) {
+          reverseIds.push(entry.id);
+        }
+      });
+    });
+
+    var seen = {};
+    var result = [];
+    function push(rid, direction) {
+      if (seen[rid]) { return; }
+      seen[rid] = true;
+      var hit = idx[rid];
+      result.push({
+        id: rid,
+        名称: hit ? hit.entry.名称 : rid,
+        module: hit ? hit.module : null,
+        exists: !!hit,
+        direction: direction
+      });
+    }
+    forwardIds.forEach(function (rid) { push(rid, 'forward'); });
+    reverseIds.forEach(function (rid) { push(rid, 'reverse'); });
+    return result;
+  }
+
+  function pushText(out, text) {
+    if (text == null) { return; }
+    if (Array.isArray(text)) {
+      text.forEach(function (x) { pushText(out, x); });
+      return;
+    }
+    if (typeof text === 'object') {
+      Object.keys(text).forEach(function (k) { pushText(out, text[k]); });
+      return;
+    }
+    out.push(String(text));
+  }
+
+  function entrySearchText(db, mod, entry) {
+    var hay = [];
+    pushText(hay, [entry.名称, entry.拉丁名, entry.英文, entry.类别, entry.药敏简写, entry.天然耐药, entry.药物]);
+    (entry.小节 || []).forEach(function (s) { pushText(hay, [s.标题, s.正文]); });
+
+    if (mod === 'microbes') {
+      pushText(hay, (db.morphology || {})[entry.id]);
+      pushText(hay, (db.biochem || {})[entry.id]);
+      pushText(hay, (db.differential || {})[entry.id]);
+    }
+    return hay.join(' ').toLowerCase();
+  }
+
+  function searchSummary(mod, entry) {
+    if (mod === 'microbes') { return entry.拉丁名 || entry.类别 || ''; }
+    if (mod === 'antibiotics') { return [entry.药敏简写, entry.类别].filter(Boolean).join(' · '); }
+    if (mod === 'cards') { return [entry.类别, entry.药物 ? (entry.药物.length + ' 项') : ''].filter(Boolean).join(' · '); }
+    return entry.类别 || '';
+  }
+
+  function searchEntries(db, query) {
+    var q = (query || '').trim().toLowerCase();
+    if (!q) { return []; }
+    // 分词检索：空白拆成多个词，要求全部命中（AND）。
+    // 这样中英混输、缩写+种名（如 "staph aureus" / "大肠 coli"）都能匹配。
+    var tokens = q.split(/\s+/).filter(Boolean);
+    var results = [];
+    MODULE_KEYS.forEach(function (mod) {
+      (db[mod] || []).forEach(function (entry) {
+        var hay = entrySearchText(db, mod, entry);
+        var hit = tokens.every(function (t) { return hay.indexOf(t) !== -1; });
+        if (!hit) { return; }
+        // 相关度：命中名称/拉丁名/英文名比命中正文得分更高，整串命中再加分
+        var head = String((entry.名称 || '') + ' ' + (entry.拉丁名 || '') + ' ' + (entry.英文 || '')).toLowerCase();
+        var score = 0;
+        tokens.forEach(function (t) { if (head.indexOf(t) !== -1) { score += 2; } });
+        if (head.indexOf(q) !== -1) { score += 3; }
+        results.push({ id: entry.id, 名称: entry.名称, module: mod, 摘要: searchSummary(mod, entry), _score: score });
+      });
+    });
+    results.sort(function (a, b) { return b._score - a._score; });
+    return results.map(function (r) { return { id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要 }; });
+  }
+
+  // 递归收集"叶子"分类名（无子类的节点），支持任意层级（如 大类→形态→属）
+  function collectLeaves(nodes, out) {
+    (nodes || []).forEach(function (node) {
+      if (node.子类 && node.子类.length) { collectLeaves(node.子类, out); }
+      else { out[node.名称] = true; }
+    });
+    return out;
+  }
+
+  function leafNames(categories, moduleKey) {
+    return collectLeaves((categories && categories[moduleKey]) ? categories[moduleKey] : [], {});
+  }
+
+  function validateData(db, categories) {
+    var problems = [];
+    var idCount = {};
+    MODULE_KEYS.forEach(function (mod) {
+      (db[mod] || []).forEach(function (entry) {
+        idCount[entry.id] = (idCount[entry.id] || 0) + 1;
+      });
+    });
+    Object.keys(idCount).forEach(function (id) {
+      if (idCount[id] > 1) {
+        problems.push('重复的 id：' + id + '（出现 ' + idCount[id] + ' 次）');
+      }
+    });
+
+    var index = buildIndex(db);
+    MODULE_KEYS.forEach(function (mod) {
+      var leaves = leafNames(categories, mod);
+      (db[mod] || []).forEach(function (entry) {
+        (entry.关联 || []).forEach(function (rid) {
+          if (!index[rid]) {
+            problems.push('悬空关联：' + entry.id + ' → ' + rid + '（目标不存在）');
+          }
+        });
+        if (entry.类别 && !leaves[entry.类别]) {
+          problems.push('未匹配分类：' + entry.id + ' 的类别 “' + entry.类别 + '” 不在分类树中');
+        }
+      });
+    });
+    return problems;
+  }
+
+  // 关系图构建：以 (moduleKey, id) 为中心，BFS 收集 depth 层关联（forward + reverse 去重）。
+  // 返回 { center, nodes: [{id,名称,module,level}], edges: [{from,to,direction}] }；找不到中心返回 null。
+  function buildGraph(db, moduleKey, id, depth) {
+    var index = buildIndex(db);  // 整个 buildGraph 只建一次索引，传给 getRelations 复用
+    var center = index[id];
+    if (!center) { return null; }
+    depth = depth || 1;
+
+    var nodes = {};
+    var edges = {};
+    nodes[id] = { id: id, 名称: center.entry.名称, module: center.module, level: 0 };
+
+    function collect(targetId) {
+      var rels = getRelations(targetId, db, index);
+      var out = [];
+      rels.forEach(function (r) {
+        if (!r.exists) { return; }
+        // 同一对节点只保留第一条边（按节点 id 排序规范化 key，忽略 direction）
+        var k = [targetId, r.id].sort().join('|');
+        if (!edges[k]) {
+          edges[k] = { from: targetId, to: r.id, direction: r.direction };
+        }
+        out.push(r);
+      });
+      return out;
+    }
+
+    var frontier = [id];
+    for (var lv = 1; lv <= depth; lv++) {
+      var next = [];
+      frontier.forEach(function (fid) {
+        collect(fid).forEach(function (r) {
+          if (!nodes[r.id]) {
+            nodes[r.id] = { id: r.id, 名称: r.名称, module: r.module, level: lv };
+            next.push(r.id);
+          }
+        });
+      });
+      frontier = next;
+    }
+
+    return {
+      center: { id: id, 名称: center.entry.名称, module: center.module },
+      nodes: Object.keys(nodes).map(function (k) { return nodes[k]; }),
+      edges: Object.keys(edges).map(function (k) { return edges[k]; })
+    };
+  }
+
+  return {
+    MODULE_KEYS: MODULE_KEYS,
+    buildIndex: buildIndex,
+    getRelations: getRelations,
+    searchEntries: searchEntries,
+    validateData: validateData,
+    buildGraph: buildGraph
+  };
+});
+
+//// 文件：js/view.js ////
+(function (factory) {
+  'use strict';
+  var View = factory();
+  if (typeof module !== 'undefined' && module.exports) { module.exports = View; }
+  if (typeof window !== 'undefined') { window.View = View; }
+})(function () {
+  'use strict';
+
+  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', idcards: '鉴定卡', cards: '药敏卡', tests: '试验', media: '培养基', staining: '染色', 'biochem-tests': '生化反应' };
+
+  function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
+
+  var MECHANISM_IMAGE = {
+    // 抗细菌药：按顶层机制大类
+    '抑制细胞壁合成': 'img/mechanism-cellwall.svg',
+    '抑制蛋白质合成': 'img/mechanism-protein.svg',
+    '抑制核酸合成': 'img/mechanism-nucleic.svg',
+    '抑制叶酸代谢': 'img/mechanism-folate.svg',
+    '破坏细胞膜': 'img/mechanism-membrane.svg',
+    // 抗真菌药：按类别（机制各异）
+    '唑类': 'img/mechanism-azole.svg',
+    '多烯类': 'img/mechanism-polyene.svg',
+    '棘白菌素类': 'img/mechanism-echinocandin.svg',
+    '嘧啶类似物': 'img/mechanism-flucytosine.svg',
+    // 耐药机制：按顶层机制大类（旁路代谢/生物膜按叶子区分，二者机制差异大）
+    '产生灭活酶': 'img/resistance-enzyme.svg',
+    '靶位改变': 'img/resistance-target.svg',
+    '主动外排': 'img/resistance-efflux.svg',
+    '膜通透性下降': 'img/resistance-permeability.svg',
+    '旁路代谢': 'img/resistance-bypass.svg',
+    '生物膜': 'img/resistance-biofilm.svg'
+  };
+
+  // 试验：按条目 id 映射到示意图
+  var TEST_IMAGE = {
+    'd-test': 'img/test-d.svg',
+    'mcim': 'img/test-mcim.svg',
+    'ecim': 'img/test-ecim.svg',
+    'esbl-test': 'img/test-esbl.svg',
+    'cefoxitin-screen': 'img/test-cefoxitin.svg',
+    'hlar': 'img/test-hlar.svg',
+    'beta-lactamase-test': 'img/test-betalactamase.svg',
+    'colistin-bmd': 'img/test-colistin.svg',
+    'coagulase': 'img/test-coagulase.svg',
+    'catalase': 'img/test-catalase.svg',
+    'oxidase': 'img/test-oxidase.svg',
+    'optochin': 'img/test-optochin.svg',
+    'camp-test': 'img/test-camp.svg',
+    'bile-solubility': 'img/test-bile.svg',
+    'kb-test': 'img/test-kb.svg',
+    'e-test': 'img/test-etest.svg'
+  };
+
+  // 染色：按条目 id 映射到示意图
+  var STAIN_IMAGE = {
+    'gram-stain': 'img/stain-gram.svg',
+    'acid-fast-zn': 'img/stain-acidfast.svg',
+    'india-ink': 'img/stain-indiaink.svg',
+    'spore-stain': 'img/stain-spore.svg',
+    'flagella-stain': 'img/stain-flagella.svg',
+    'metachromatic-granule': 'img/stain-granule.svg',
+    'lpcb': 'img/stain-lpcb.svg',
+    'giemsa': 'img/stain-giemsa.svg',
+    'auramine': 'img/stain-auramine.svg'
+  };
+
+  // 生化反应：按条目 id 映射到示意图（部分复用 test-*.svg）
+  var BIOCHEM_IMAGE = {
+    'bio-catalase': 'img/test-catalase.svg',
+    'bio-oxidase': 'img/test-oxidase.svg',
+    'bio-coagulase': 'img/test-coagulase.svg',
+    'bio-optochin': 'img/test-optochin.svg',
+    'bio-camp': 'img/test-camp.svg',
+    'bio-bile-solubility': 'img/test-bile.svg',
+    'urease': 'img/biochem-urease.svg',
+    'indole': 'img/biochem-indole.svg',
+    'h2s': 'img/biochem-h2s.svg',
+    'citrate': 'img/biochem-citrate.svg',
+    'glucose-fermentation': 'img/biochem-sugar.svg',
+    'lactose-fermentation': 'img/biochem-sugar.svg',
+    'mannitol-fermentation': 'img/biochem-sugar.svg',
+    'decarboxylase': 'img/biochem-decarboxylase.svg',
+    'lysine-decarboxylase': 'img/biochem-decarboxylase.svg',
+    'ornithine-decarboxylase': 'img/biochem-decarboxylase.svg',
+    'nitrate-reduction': 'img/biochem-nitrate.svg',
+    'mr-test': 'img/biochem-mr.svg',
+    'vp-test': 'img/biochem-vp.svg',
+    'pyr-test': 'img/biochem-pyr.svg',
+    'dnase': 'img/biochem-dnase.svg',
+    'phenylalanine-deaminase': 'img/biochem-pda.svg',
+    'gelatinase': 'img/biochem-gelatin.svg',
+    'hippurate': 'img/biochem-hippurate.svg',
+    'motility': 'img/biochem-motility.svg',
+    'nacl-65': 'img/biochem-nacl.svg',
+    'bile-esculin': 'img/biochem-esculin.svg',
+    'pigment': 'img/biochem-pigment.svg',
+    'bacitracin': 'img/biochem-disk.svg',
+    'novobiocin': 'img/biochem-disk.svg',
+    'hemolysis': 'img/biochem-hemolysis.svg',
+    'lancefield': 'img/biochem-lancefield.svg'
+  };
+
+  // 节点子树是否包含某叶子分类（支持任意层级）
+  function nodeContainsLeaf(node, leafName) {
+    if (node.子类 && node.子类.length) {
+      return node.子类.some(function (c) { return nodeContainsLeaf(c, leafName); });
+    }
+    return node.名称 === leafName;
+  }
+
+  // 抗生素 / 耐药：按其类别所属的机制大类，映射到一张机制示意图
+  function mechanismImageFor(moduleKey, entry, categories) {
+    if (!entry) { return null; }
+    if (moduleKey === 'tests') { return TEST_IMAGE[entry.id] || null; }
+    if (moduleKey === 'staining') { return STAIN_IMAGE[entry.id] || null; }
+    if (moduleKey === 'biochem-tests') { return BIOCHEM_IMAGE[entry.id] || null; }
+    if (moduleKey !== 'antibiotics' && moduleKey !== 'resistance') { return null; }
+    // 先按类别(叶子)直接匹配（抗真菌药、旁路代谢/生物膜按其类别区分）
+    if (MECHANISM_IMAGE[entry.类别]) { return MECHANISM_IMAGE[entry.类别]; }
+    // 再按所属顶层机制大类匹配（抗细菌药、其余耐药机制）
+    var groups = (categories && categories[moduleKey]) ? categories[moduleKey] : [];
+    for (var i = 0; i < groups.length; i++) {
+      if (nodeContainsLeaf(groups[i], entry.类别)) { return MECHANISM_IMAGE[groups[i].名称] || null; }
+    }
+    return null;
+  }
+
+  // 去掉拉丁名中的括注与 spp. 后缀，得到适合检索的词条
+  function cleanTerm(s) {
+    return String(s || '').replace(/[（(].*$/, '').replace(/\s+spp\.?$/i, '').trim();
+  }
+
+  // 微生物大类判别（按 类别 关键字）：细菌/真菌/病毒/寄生虫
+  function microbeKind(cat) {
+    cat = String(cat || '');
+    if (/病毒/.test(cat)) { return 'virus'; }
+    if (/疟原虫|弓形虫|寄生|原虫|绦虫|线虫|吸虫|阿米巴|贾第|隐孢子|毛滴虫|疥|虱|棘球|血吸虫|肺孢子/.test(cat)) { return 'parasite'; }
+    if (/念珠|隐球|曲霉|毛癣|毛霉|根霉|镰刀|马拉色|孢子菌|酵母|真菌|皮炎芽生|组织胞浆|球孢子|癣菌|青霉|科达菌/.test(cat)) { return 'fungus'; }
+    return 'bacteria';
+  }
+
+  // 综述/参考链接（权威优先）：菌用拉丁名 → PubMed 综述 + NCBI 书架(StatPearls 同行评议临床专论)
+  //   + 命名/分类权威(细菌 LPSN，其余 NCBI 分类)。耐药机制用英文术语 → 仅 PubMed 综述。
+  function referenceLinks(moduleKey, entry) {
+    if (!entry || (moduleKey !== 'microbes' && moduleKey !== 'resistance')) { return []; }
+    var latin = cleanTerm(entry.拉丁名);
+    var term = latin || entry.英文 || entry.名称 || '';
+    if (!term) { return []; }
+    var enc = encodeURIComponent(term);
+    var links = [{
+      标题: 'PubMed 综述',
+      url: 'https://pubmed.ncbi.nlm.nih.gov/?term=' + enc + '&filter=pubt.review'
+    }];
+    if (moduleKey === 'microbes' && latin) {
+      // 同行评议临床专论（NCBI 书架，含 StatPearls）—— 比维基更权威
+      links.push({
+        标题: 'NCBI 书架 (StatPearls)',
+        url: 'https://www.ncbi.nlm.nih.gov/books/?term=' + enc
+      });
+      // 中文权威临床手册（默沙东诊疗手册专业版，按中文名检索）
+      if (entry.名称) {
+        links.push({
+          标题: '默沙东诊疗手册',
+          url: 'https://www.msdmanuals.cn/professional/SearchResults?query=' + encodeURIComponent(entry.名称)
+        });
+      }
+      // CDC 公共卫生/临床（含寄生虫 DPDx、病毒、细菌专题）
+      links.push({ 标题: 'CDC', url: 'https://search.cdc.gov/search/?query=' + enc + '&affiliate=cdc-main' });
+      // 命名/分类权威：细菌用 LPSN（DSMZ 法定命名），其余用 NCBI 分类
+      if (microbeKind(entry.类别) === 'bacteria') {
+        links.push({ 标题: 'LPSN 命名法', url: 'https://lpsn.dsmz.de/search?word=' + enc });
+      } else {
+        links.push({ 标题: 'NCBI 分类', url: 'https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?name=' + enc });
+      }
+    }
+    return links;
+  }
+
+  function detailVM(entry, relations, extras) {
+    if (!entry) { return null; }
+    extras = extras || {};
+    return {
+      id: entry.id,
+      名称: entry.名称,
+      类别: entry.类别 || '',
+      拉丁名: entry.拉丁名 || '',
+      药敏简写: entry.药敏简写 || '',
+      结构图: extras.structImage || '',
+      机制图: extras.mechanismImage || null,
+      机制图说明: extras.mechCaption || '示意图',
+      形态: extras.morphology || null,
+      治疗: extras.treatment || null,
+      生化反应: extras.biochem || [],
+      鉴别: extras.differential || [],
+      药物: entry.药物 || [],
+      天然耐药: entry.天然耐药 || '',
+      小节: (entry.小节 || []).map(function (s) {
+        return { 标题: s.标题 || '', 正文: s.正文 || '' };
+      }),
+      链接: (extras.links || []).map(function (l) {
+        return { 标题: l.标题 || '', url: l.url || '' };
+      }),
+      折点: extras.breakpoints || null,
+      关联: (relations || []).map(function (r) {
+        return {
+          id: r.id,
+          名称: r.名称,
+          module: r.module,
+          exists: r.exists,
+          label: r.exists ? (moduleLabel(r.module) + ' · ' + r.名称) : (r.id + ' ?'),
+          href: r.exists ? ('#/' + r.module + '/' + r.id) : null
+        };
+      })
+    };
+  }
+
+  function collectLeafSet(nodes, out) {
+    (nodes || []).forEach(function (node) {
+      if (node.子类 && node.子类.length) { collectLeafSet(node.子类, out); }
+      else { out[node.名称] = true; }
+    });
+    return out;
+  }
+
+  function sidebarVM(moduleKey, categories, entries, selectedId) {
+    var roots = (categories && categories[moduleKey]) ? categories[moduleKey] : [];
+    var leafSet = collectLeafSet(roots, {});
+
+    function item(e) {
+      return { id: e.id, 名称: e.名称, href: '#/' + moduleKey + '/' + e.id, selected: e.id === selectedId };
+    }
+
+    var byCat = {};
+    var uncategorized = [];
+    (entries || []).forEach(function (e) {
+      if (leafSet[e.类别]) { (byCat[e.类别] = byCat[e.类别] || []).push(item(e)); }
+      else { uncategorized.push(item(e)); }
+    });
+
+    function buildNode(node) {
+      var hasChildren = node.子类 && node.子类.length;
+      return {
+        名称: node.名称,
+        children: hasChildren ? node.子类.map(buildNode) : [],
+        entries: hasChildren ? [] : (byCat[node.名称] || [])
+      };
+    }
+
+    return {
+      tree: roots.map(buildNode),
+      未分类: uncategorized
+    };
+  }
+
+  function searchVM(results, query) {
+    return {
+      query: query,
+      items: (results || []).map(function (r) {
+        return { id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要 || '', href: '#/' + r.module + '/' + r.id };
+      })
+    };
+  }
+
+  // 生化反应对比：并排比较若干菌；rows 取所有项目的并集，differs 标出结果不一致的项目
+  function buildComparison(nameById, biochemMap, ids) {
+    biochemMap = biochemMap || {};
+    ids = (ids || []).filter(function (id) { return biochemMap[id]; });
+    var items = ids.map(function (id) { return { id: id, 名称: (nameById && nameById[id]) || id }; });
+    var order = [], seen = {};
+    ids.forEach(function (id) {
+      biochemMap[id].forEach(function (b) { if (!seen[b.项目]) { seen[b.项目] = true; order.push(b.项目); } });
+    });
+    var rows = order.map(function (项目) {
+      var cells = ids.map(function (id) {
+        var hit = biochemMap[id].filter(function (b) { return b.项目 === 项目; })[0];
+        return hit ? hit.结果 : '—';
+      });
+      var distinct = {};
+      cells.forEach(function (c) { distinct[c] = true; });
+      return { 项目: 项目, cells: cells, differs: Object.keys(distinct).length > 1 };
+    });
+    return { items: items, rows: rows };
+  }
+
+  // 药敏卡对比：并排比较若干卡所含药物；cells 为布尔(是否含)，differs 标出各卡不一致的药物
+  function buildCardComparison(nameById, drugsByCard, ids) {
+    drugsByCard = drugsByCard || {};
+    ids = (ids || []).filter(function (id) { return drugsByCard[id]; });
+    var items = ids.map(function (id) { return { id: id, 名称: (nameById && nameById[id]) || id }; });
+    var order = [], seen = {};
+    ids.forEach(function (id) {
+      drugsByCard[id].forEach(function (d) { if (!seen[d]) { seen[d] = true; order.push(d); } });
+    });
+    var rows = order.map(function (drug) {
+      var cells = ids.map(function (id) { return drugsByCard[id].indexOf(drug) !== -1; });
+      var has = cells.filter(Boolean).length;
+      return { 药物: drug, cells: cells, differs: has > 0 && has < ids.length };
+    });
+    return { items: items, rows: rows };
+  }
+
+  // 折点：按微生物 id 查找所属菌组的折点表
+  function breakpointGroup(microbeId, breakpoints) {
+    breakpoints = breakpoints || [];
+    for (var i = 0; i < breakpoints.length; i++) {
+      if (breakpoints[i].菌种.indexOf(microbeId) !== -1) { return breakpoints[i]; }
+    }
+    return null;
+  }
+
+  // 将折点数据转为视图模型（适于 detailVM 的 extras 传入）
+  function breakpointVM(microbeId, breakpoints) {
+    var group = breakpointGroup(microbeId, breakpoints);
+    if (!group) { return null; }
+    return {
+      菌组名: group.菌组名,
+      CLSI表: group.CLSI表,
+      来源: group.来源 || '',
+      药物: group.药物.map(function (d) {
+        return {
+          药物: d.药物,
+          简写: d.简写,
+          MIC: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / '),
+          抑菌圈: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / '),
+          备注: d.备注 || ''
+        };
+      })
+    };
+  }
+
+  // 天然耐药速查：聚合所有有"天然耐药"字段的微生物，支持按菌名/拉丁名/耐药文本模糊过滤。
+  function intrinsicVM(db, filter) {
+    var q = (filter || '').trim().toLowerCase();
+    var list = (db.microbes || []).filter(function (m) { return m.天然耐药 && String(m.天然耐药).length; });
+    if (q) {
+      list = list.filter(function (m) {
+        return [m.名称, m.拉丁名, m.天然耐药].some(function (s) {
+          return s && String(s).toLowerCase().indexOf(q) !== -1;
+        });
+      });
+    }
+    var byCat = {};
+    list.forEach(function (m) {
+      var cat = m.类别 || '其他';
+      (byCat[cat] = byCat[cat] || []).push({
+        id: m.id, 名称: m.名称, 拉丁名: m.拉丁名 || '', 天然耐药: m.天然耐药
+      });
+    });
+    return {
+      count: list.length,
+      groups: Object.keys(byCat).map(function (k) { return { 类别: k, items: byCat[k] }; })
+    };
+  }
+
+  // 关系图布局：把 Core.buildGraph 的结果按同心圆分层放到 width×height 画布上。
+  // 二级节点采用「径向树」分组：每个二级节点归到它的一级父节点，并沿父节点角度成簇排布，
+  // 使连线呈放射状、显著减少交叉，便于在 2 层时阅读。
+  function graphLayoutVM(graph, width, height) {
+    if (!graph) { return null; }
+    var cx = width / 2, cy = height / 2;
+    var minWH = Math.min(width, height);
+    var r1 = minWH * 0.30;
+    var r2 = minWH * 0.43;
+
+    var byLevel = { 0: [], 1: [], 2: [] };
+    graph.nodes.forEach(function (n) {
+      var lv = n.level || 0;
+      (byLevel[lv] = byLevel[lv] || []).push(n);
+    });
+
+    var levelOf = {};
+    graph.nodes.forEach(function (n) { levelOf[n.id] = n.level || 0; });
+    // 二级节点的父节点 = 与之相连的某个一级节点
+    var parentOf = {};
+    graph.edges.forEach(function (e) {
+      var lf = levelOf[e.from], lt = levelOf[e.to];
+      if (lf === 1 && lt === 2 && !parentOf[e.to]) { parentOf[e.to] = e.from; }
+      else if (lt === 1 && lf === 2 && !parentOf[e.from]) { parentOf[e.from] = e.to; }
+    });
+
+    var pos = {};
+    (byLevel[0] || []).forEach(function (n) { pos[n.id] = { x: cx, y: cy }; });
+
+    // 一级：均匀分布在内环，并记录角度
+    var l1 = byLevel[1] || [];
+    var angleOf = {};
+    l1.forEach(function (node, i) {
+      var a = (i / Math.max(1, l1.length)) * 2 * Math.PI - Math.PI / 2;
+      angleOf[node.id] = a;
+      pos[node.id] = { x: cx + r1 * Math.cos(a), y: cy + r1 * Math.sin(a) };
+    });
+
+    // 二级：按父节点角度分组排序后均匀放到外环（同一父节点的子节点相邻成簇）
+    var l2 = byLevel[2] || [];
+    if (l2.length) {
+      l2.forEach(function (node) {
+        var pid = parentOf[node.id];
+        node.__parentId = pid || null;
+        node.__pa = (pid != null && angleOf[pid] != null) ? angleOf[pid] : -Math.PI / 2;
+      });
+      var sorted = l2.slice().sort(function (a, b) {
+        if (a.__pa !== b.__pa) { return a.__pa - b.__pa; }
+        return a.id < b.id ? -1 : 1;
+      });
+      var M = sorted.length;
+      sorted.forEach(function (node, i) {
+        var a = (i / M) * 2 * Math.PI - Math.PI / 2;
+        pos[node.id] = { x: cx + r2 * Math.cos(a), y: cy + r2 * Math.sin(a) };
+      });
+    }
+
+    return {
+      width: width, height: height,
+      center: { id: graph.center.id, 名称: graph.center.名称, module: graph.center.module, x: cx, y: cy },
+      nodes: graph.nodes.map(function (n) {
+        var p = pos[n.id] || { x: cx, y: cy };
+        return { id: n.id, 名称: n.名称, module: n.module, level: n.level, x: p.x, y: p.y, parentId: n.__parentId || null };
+      }),
+      edges: graph.edges.map(function (e) {
+        var from = pos[e.from] || { x: cx, y: cy };
+        var to = pos[e.to] || { x: cx, y: cy };
+        return { x1: from.x, y1: from.y, x2: to.x, y2: to.y, direction: e.direction, fromId: e.from, toId: e.to };
+      })
+    };
+  }
+
+  // ===== 折点解析与 MIC 判读（CLSI M100 风格） =====
+  // 解析单个折点字符串："≤0.06"→{type:'le',val:0.06}；"≥2"→{type:'ge',val:2}；
+  // "0.12–1" / "0.12-1"→{type:'range',lo,hi}；"16"→{type:'value',val:16}；"—"/""→null。
+  function parseBP(s) {
+    if (s == null) { return null; }
+    s = String(s).trim();
+    if (!s || s === '—' || s === '-') { return null; }
+    // 去掉尾部说明性括注（如 "16/4 (SDD)"）—只取主数值部分
+    s = s.replace(/\s*\(.*\)$/, '').trim();
+    var m;
+    if ((m = s.match(/^([\d.]+)\s*[–-]\s*([\d.]+)/))) { return { type: 'range', lo: parseFloat(m[1]), hi: parseFloat(m[2]) }; }
+    if ((m = s.match(/^≤\s*([\d.]+)/))) { return { type: 'le', val: parseFloat(m[1]) }; }
+    if ((m = s.match(/^≥\s*([\d.]+)/))) { return { type: 'ge', val: parseFloat(m[1]) }; }
+    if ((m = s.match(/^>\s*([\d.]+)/))) { return { type: 'gt', val: parseFloat(m[1]) }; }
+    if ((m = s.match(/^<\s*([\d.]+)/))) { return { type: 'lt', val: parseFloat(m[1]) }; }
+    if ((m = s.match(/^([\d.]+)/))) { return { type: 'value', val: parseFloat(m[1]) }; }
+    return null;
+  }
+
+  // MIC 判读：输入数值 + S/I/R 三段折点字符串，返回 {result, reason}。
+  // result ∈ {'S','I','R','SDD','unknown','invalid'}。SDD 视为 I 的剂量依赖子类。
+  function judgeMIC(micInput, bpS, bpI, bpR) {
+    var val = parseFloat(micInput);
+    if (isNaN(val) || val < 0) { return { result: 'invalid', reason: 'MIC 输入无效（请输入非负数字）' }; }
+    var s = parseBP(bpS), i = parseBP(bpI), r = parseBP(bpR);
+
+    // R：≥ 阈值
+    if (r && r.type === 'ge' && val >= r.val) {
+      return { result: 'R', reason: 'MIC ≥ ' + r.val + '（耐药折点）' };
+    }
+    // S：≤ 阈值
+    if (s && s.type === 'le' && val <= s.val) {
+      return { result: 'S', reason: 'MIC ≤ ' + s.val + '（敏感折点）' };
+    }
+    // I：区间或单值（含 SDD）
+    if (i) {
+      if (i.type === 'range' && val >= i.lo && val <= i.hi) {
+        return { result: 'I', reason: 'MIC 在 ' + i.lo + '–' + i.hi + ' 区间（中介/SDD）' };
+      }
+      if (i.type === 'value' && val === i.val) {
+        return { result: 'I', reason: 'MIC = ' + i.val + '（中介）' };
+      }
+      // 黏菌素等仅 I≤x：val 落在 S 无 / R≥x 之间也算 I
+      if (i.type === 'le' && val <= i.val) {
+        return { result: 'I', reason: 'MIC ≤ ' + i.val + '（中介/剂量依赖）' };
+      }
+    }
+    // 折点不完整（如某些药只有 S≤x，无 R≥x）
+    if (!s && !r) { return { result: 'unknown', reason: '该药物无完整 S/I/R 折点，无法判读' }; }
+    return { result: 'unknown', reason: 'MIC 不在任何折点区间内' };
+  }
+
+  // 折点查询：按菌组名/药物名筛选
+  function breakpointLookupVM(breakpoints, groupFilter, drugFilter) {
+    var gq = (groupFilter || '').trim().toLowerCase();
+    var dq = (drugFilter || '').trim().toLowerCase();
+    return (breakpoints || []).filter(function (g) {
+      return !gq || (g.菌组名 || '').toLowerCase().indexOf(gq) !== -1;
+    }).map(function (g) {
+      var drugs = (g.药物 || []).filter(function (d) {
+        return !dq || (d.药物 || '').toLowerCase().indexOf(dq) !== -1 ||
+               (d.简写 || '').toLowerCase().indexOf(dq) !== -1;
+      });
+      return {
+        菌组名: g.菌组名, CLSI表: g.CLSI表, 来源: g.来源 || '',
+        菌种: g.菌种 || [], 药物: drugs
+      };
+    }).filter(function (g) { return g.药物.length > 0; });
+  }
+
+  // 异常药敏/修正规则：支持按等级、类别、关键词筛选，并按类别分组。
+  function astAlertsVM(alerts, opts) {
+    opts = opts || {};
+    var q = (opts.filter || '').trim().toLowerCase();
+    var level = opts.level || 'all';
+    var list = (alerts || []).filter(function (item) {
+      var levelOk = level === 'all' || item.等级 === level;
+      if (!levelOk) { return false; }
+      if (!q) { return true; }
+      var hay = [
+        item.类别, item.等级, item.标题, item.触发, item.异常结果,
+        item.处理, item.依据, item.关键词, item.来源
+      ].join(' ').toLowerCase();
+      return hay.indexOf(q) !== -1;
+    });
+    var byCat = {};
+    list.forEach(function (item) {
+      var cat = item.类别 || '其他';
+      (byCat[cat] = byCat[cat] || []).push(item);
+    });
+    return {
+      count: list.length,
+      levels: ['all', '必须修正', '需复核', '限制报告'],
+      groups: Object.keys(byCat).map(function (cat) {
+        return { 类别: cat, items: byCat[cat] };
+      })
+    };
+  }
+
+  return {
+    moduleLabel: moduleLabel,
+    mechanismImageFor: mechanismImageFor,
+    referenceLinks: referenceLinks,
+    detailVM: detailVM,
+    sidebarVM: sidebarVM,
+    searchVM: searchVM,
+    buildComparison: buildComparison,
+    buildCardComparison: buildCardComparison,
+    breakpointGroup: breakpointGroup,
+    breakpointVM: breakpointVM,
+    intrinsicVM: intrinsicVM,
+    graphLayoutVM: graphLayoutVM,
+    parseBP: parseBP,
+    judgeMIC: judgeMIC,
+    breakpointLookupVM: breakpointLookupVM,
+    astAlertsVM: astAlertsVM
+  };
+});
+
+//// 文件：js/validate.js ////
+(function () {
+  'use strict';
+  if (typeof window === 'undefined' || !window.Core) { return; }
+  var DB = window.DB || {};
+  var db = {
+    microbes: DB.microbes || [],
+    antibiotics: DB.antibiotics || [],
+    resistance: DB.resistance || [],
+    idcards: DB.idcards || [],
+    cards: DB.cards || [],
+    tests: DB.tests || [],
+    media: DB.media || [],
+    staining: DB.staining || [],
+    'biochem-tests': DB.biochemTests || []
+  };
+  var problems = window.Core.validateData(db, DB.categories || {});
+  if (problems.length) {
+    console.warn('[数据自检] 发现 ' + problems.length + ' 个问题：');
+    problems.forEach(function (p) { console.warn('  • ' + p); });
+  } else {
+    console.info('[数据自检] 数据正常，未发现问题。');
+  }
+})();
+
+//// 文件：js/app.js ////
+(function () {
+  'use strict';
+  var Core = window.Core, View = window.View;
+  var MODULES = Core.MODULE_KEYS;
+
+  // 折点表药物名与抗菌药条目名的别名（模块级常量，避免每次调用重建）：
+  // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
+  var ABX_ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g', '复方磺胺甲噁唑': 'cotrimoxazole', '复方新诺明': 'cotrimoxazole' };
+
+  function db() {
+    var DB = window.DB || {};
+    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], idcards: DB.idcards || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [] };
+  }
+
+  // 缓存：window.DB 加载后不变，名称→id 映射只需建一次
+  var _abxNameMap = null;
+  function abxIdByName() {
+    if (_abxNameMap) { return _abxNameMap; }
+    var m = {};
+    ((window.DB && window.DB.antibiotics) || []).forEach(function (a) { m[a.名称] = a.id; });
+    _abxNameMap = m;
+    return m;
+  }
+  // 药物名 → 抗生素 id（支持从折点表中的药物名查找）
+  function abxIdByDrugText(text) {
+    if (!text) { return null; }
+    var map = abxIdByName();
+    // 直接匹配 药敏简写(名称) 模式中的名称部分
+    if (map[text]) { return map[text]; }
+    // 从 "药物 (English)" 格式中提取中文名匹配
+    var m = text.match(/^([^(]+)/);
+    if (m && map[m[1].trim()]) { return map[m[1].trim()]; }
+    if (m && ABX_ALIAS[m[1].trim()]) { return ABX_ALIAS[m[1].trim()]; }
+    // 遍历所有抗生素，按名称包含关系匹配
+    var abxList = (window.DB && window.DB.antibiotics) || [];
+    for (var i = 0; i < abxList.length; i++) {
+      if (text.indexOf(abxList[i].名称) !== -1) { return abxList[i].id; }
+    }
+    return null;
+  }
+  // 生化试验名 → 生化试验 id（支持多种模糊匹配）。模块级缓存。
+  var _biochemTestMap = null;
+  function biochemTestIdByName() {
+    if (_biochemTestMap) { return _biochemTestMap; }
+    var m = {};
+    var tests = (window.DB && window.DB.biochemTests) || [];
+
+    // 显式别名词典：biochem.js 中的简名 → 模块条目 id
+    var aliases = {
+      '血浆凝固酶': 'bio-coagulase',
+      '试管凝固酶': 'bio-coagulase',
+      '玻片凝固酶': 'bio-coagulase',
+      '新生霉素': 'novobiocin',
+      '溶血型': 'hemolysis',
+      '杆菌肽': 'bacitracin',
+      'PYR': 'pyr-test',
+      'Lancefield 群': 'lancefield',
+      'Optochin': 'bio-optochin',
+      '6.5%NaCl 生长': 'nacl-65',
+      'VP': 'vp-test',
+      '枸橼酸盐': 'citrate',
+      'H2S': 'h2s',
+      'H₂S': 'h2s',
+      '绿脓菌素': 'pigment',
+      '黄色素': 'pigment',
+      '蔗糖': 'glucose-fermentation',
+      '麦芽糖': 'glucose-fermentation',
+      '葡萄糖': 'glucose-fermentation',
+      '糖发酵': 'glucose-fermentation',
+      '葡萄糖发酵': 'glucose-fermentation',
+      'TCBS(蔗糖)': 'glucose-fermentation',
+      '蔗糖发酵(TCBS)': 'glucose-fermentation',
+      '麦芽糖氧化': 'oxidase',
+      '明胶酶': 'gelatinase',
+      'DNase': 'dnase',
+      '迁徙生长': 'motility',
+      '动力(25℃/37℃)': 'motility'
+    };
+    Object.keys(aliases).forEach(function (k) { m[k] = aliases[k]; });
+
+    tests.forEach(function (t) {
+      m[t.名称] = t.id;
+      // 去掉"试验"后缀
+      var s1 = t.名称.replace(/\s*试验$/, '').trim();
+      if (s1 !== t.名称) { m[s1] = t.id; if (!m[s1 + '试验']) { m[s1 + '试验'] = t.id; } }
+      // 去掉括号内容
+      var s2 = t.名称.replace(/\([^)]*\)/g, '').trim();
+      if (s2 !== t.名称) { m[s2] = t.id; }
+      // 同时去括号+去后缀
+      var s3 = s2.replace(/\s*试验$/, '').trim();
+      if (s3 !== s2 && s3 !== s1) { m[s3] = t.id; }
+    });
+    _biochemTestMap = m;
+    return m;
+  }
+  // 药敏卡上的耐药表型检测项 → 对应的试验条目
+  var CARD_TEST = {
+    'ESBL': 'esbl-test',
+    '头孢西丁筛选': 'cefoxitin-screen',
+    '诱导型克林霉素耐药': 'd-test',
+    '庆大霉素高水平(协同)': 'hlar',
+    '链霉素高水平(协同)': 'hlar'
+  };
+  function categories() { return (window.DB && window.DB.categories) || {}; }
+
+  function appendChildNode(parent, child) {
+    if (child == null || child === false) { return; }
+    if (typeof child === 'string' || typeof child === 'number') {
+      parent.appendChild(document.createTextNode(String(child)));
+      return;
+    }
+    parent.appendChild(child);
+  }
+
+  // 安全建节点：文本一律走 textContent / TextNode，内容不会被当作标记解析
+  function el(tag, opts, children) {
+    var node = document.createElement(tag);
+    opts = opts || {};
+    if (opts.cls != null) { node.className = opts.cls; }
+    if (opts.text != null) { node.textContent = opts.text; }
+    if (opts.href != null) { node.setAttribute('href', opts.href); }
+    if (opts.target != null) { node.setAttribute('target', opts.target); }
+    if (opts.rel != null) { node.setAttribute('rel', opts.rel); }
+    if (opts.src != null) { node.setAttribute('src', opts.src); }
+    if (opts.alt != null) { node.setAttribute('alt', opts.alt); }
+    if (opts.title != null) { node.setAttribute('title', opts.title); }
+    if (opts.style != null) { node.setAttribute('style', opts.style); }
+    if (opts.id != null) { node.id = opts.id; }
+    if (opts.type != null) { node.setAttribute('type', opts.type); }
+    if (opts.placeholder != null) { node.setAttribute('placeholder', opts.placeholder); }
+    if (opts.value != null) { node.value = opts.value; }
+    if (opts.onClick) { node.addEventListener('click', opts.onClick); }
+    (children || []).forEach(function (c) { appendChildNode(node, c); });
+    return node;
+  }
+  function fill(container, nodes) {
+    container.replaceChildren.apply(container, nodes);
+  }
+
+  function parseHash() {
+    var raw = (location.hash || '').replace(/^#\/?/, '');
+    var parts = raw.split('/').filter(Boolean);
+    var module = MODULES.indexOf(parts[0]) !== -1 ? parts[0] : MODULES[0];
+    return { module: module, id: parts[1] || null };
+  }
+  // 当前路由的顶层 key（compare / cardcompare / intrinsic / graph / breakpoints / ast-alerts / 模块名）
+  function routeKey() {
+    return (location.hash || '').replace(/^#\/?/, '').split('/')[0];
+  }
+
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  // SVG 元素构造（与 el() 同风格，但用 createElementNS）
+  function sg(tag, opts, children) {
+    var node = document.createElementNS(SVGNS, tag);
+    opts = opts || {};
+    Object.keys(opts).forEach(function (k) {
+      var v = opts[k];
+      if (v == null) { return; }
+      if (k === 'text') { node.textContent = v; return; }
+      if (k === 'cls') { node.setAttribute('class', v); return; }
+      node.setAttribute(k, v);
+    });
+    (children || []).forEach(function (c) { appendChildNode(node, c); });
+    return node;
+  }
+
+  function setActiveTab(moduleKey) {
+    Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
+      var on = t.getAttribute('data-module') === moduleKey;
+      t.classList.toggle('active', on);
+      if (on) { t.setAttribute('aria-current', 'page'); } else { t.removeAttribute('aria-current'); }
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.tool-btn'), function (t) {
+      t.classList.remove('active');
+      t.removeAttribute('aria-current');
+    });
+  }
+
+  function setActiveTool(toolKey) {
+    Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
+      t.classList.remove('active');
+      t.removeAttribute('aria-current');
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.tool-btn'), function (t) {
+      var on = t.getAttribute('data-tool') === toolKey;
+      t.classList.toggle('active', on);
+      if (on) { t.setAttribute('aria-current', 'page'); } else { t.removeAttribute('aria-current'); }
+    });
+  }
+
+  var collapsed = {}; // path -> true 表示该分类节点已折叠（跨模块、跨重渲染保持）
+
+  function toggleCollapse(key) {
+    if (collapsed[key]) { delete collapsed[key]; } else { collapsed[key] = true; }
+    renderSidebar();
+  }
+
+  // 递归渲染一个分类节点（任意层级，按深度缩进，可点击折叠/展开）
+  function sidebarNodes(node, depth, parentPath) {
+    var path = parentPath + '/' + node.名称;
+    var collapsible = (node.children && node.children.length) || (node.entries && node.entries.length);
+    var isCollapsed = !!collapsed[path];
+    var labelCls = (depth === 0 ? 'cat-group-name' : 'cat-subgroup') + (collapsible ? ' collapsible' : '');
+    var marker = collapsible ? (isCollapsed ? '▸ ' : '▾ ') : '';
+    var out = [ el('div', {
+      cls: labelCls,
+      text: marker + node.名称,
+      style: 'padding-left:' + (8 + depth * 14) + 'px',
+      onClick: collapsible ? function () { toggleCollapse(path); } : null
+    }) ];
+    if (isCollapsed) { return out; }
+    if (node.children && node.children.length) {
+      node.children.forEach(function (c) {
+        sidebarNodes(c, depth + 1, path).forEach(function (n) { out.push(n); });
+      });
+    } else {
+      var epad = 'padding-left:' + (8 + (depth + 1) * 14) + 'px';
+      node.entries.forEach(function (e) {
+        out.push(el('a', { cls: 'entry-link' + (e.selected ? ' selected' : ''), text: e.名称, href: e.href, style: epad }));
+      });
+    }
+    return out;
+  }
+
+  function buildSidebar(vm, moduleKey) {
+    var nodes = [];
+    vm.tree.forEach(function (root) {
+      nodes.push(el('div', { cls: 'cat-group' }, sidebarNodes(root, 0, moduleKey)));
+    });
+    if (vm.未分类.length) {
+      var uc = [ el('div', { cls: 'cat-group-name', text: '未分类' }) ];
+      vm.未分类.forEach(function (e) {
+        uc.push(el('a', { cls: 'entry-link' + (e.selected ? ' selected' : ''), text: e.名称, href: e.href }));
+      });
+      nodes.push(el('div', { cls: 'cat-group' }, uc));
+    }
+    if (!nodes.length) { nodes.push(el('div', { cls: 'empty-sm', text: '（暂无分类）' })); }
+    return nodes;
+  }
+
+  function renderSidebar() {
+    var route = parseHash();
+    fill(document.getElementById('sidebar'),
+      buildSidebar(View.sidebarVM(route.module, categories(), db()[route.module], route.id), route.module));
+  }
+
+  function buildDetail(vm) {
+    if (!vm) { return [ el('div', { cls: 'empty', text: '请选择左侧的一个条目查看详情。' }) ]; }
+    var nodes = [];
+    var head = [ el('h2', { cls: 'detail-title', text: vm.名称 }) ];
+    if (vm.类别) { head.push(el('span', { cls: 'badge', text: vm.类别 })); }
+    if (vm.药敏简写) { head.push(el('span', { cls: 'abbr', title: '药敏试验简写', text: '药敏 ' + vm.药敏简写 })); }
+    nodes.push(el('div', { cls: 'detail-head' }, head));
+    if (vm.拉丁名) { nodes.push(el('div', { cls: 'latin', text: vm.拉丁名 })); }
+    if (vm.机制图) {
+      nodes.push(el('figure', { cls: 'mechanism-fig' }, [
+        el('img', { cls: 'mechanism-img', src: vm.机制图, alt: vm.机制图说明 }),
+        el('figcaption', { cls: 'mechanism-cap', text: vm.机制图说明 })
+      ]));
+    }
+
+    if (vm.小节.length === 0) {
+      nodes.push(el('div', { cls: 'empty-sm', text: '（暂无内容小节）' }));
+    } else {
+      vm.小节.forEach(function (s) {
+        nodes.push(el('div', { cls: 'section-card' }, [
+          el('div', { cls: 'section-title', text: s.标题 }),
+          el('div', { cls: 'section-body', text: s.正文 })
+        ]));
+      });
+    }
+
+    if (vm.天然耐药) {
+      nodes.push(el('div', { cls: 'intrinsic' }, [
+        el('div', { cls: 'intrinsic-title', text: '天然耐药' }),
+        el('div', { cls: 'intrinsic-body', text: vm.天然耐药 })
+      ]));
+    }
+
+    // 治疗要点（经验首选，来自 IDSA/CDC/Sanford 等指南）
+    if (vm.治疗) {
+      nodes.push(el('div', { cls: 'treatment' }, [
+        el('div', { cls: 'treatment-title', text: '治疗要点' }),
+        el('div', { cls: 'treatment-body', text: vm.治疗 })
+      ]));
+    }
+
+    if (vm.药物 && vm.药物.length) {
+      var abxMap = abxIdByName();
+      var drugChips = vm.药物.map(function (name) {
+        var aid = abxMap[name];
+        if (aid) { return el('a', { cls: 'chip chip-antibiotics', text: name, href: '#/antibiotics/' + aid }); }
+        if (CARD_TEST[name]) { return el('a', { cls: 'chip chip-tests', text: name, href: '#/tests/' + CARD_TEST[name] }); }
+        return el('span', { cls: 'chip chip-plain', text: name });
+      });
+      nodes.push(el('div', { cls: 'card-drugs' }, [
+        el('div', { cls: 'card-drugs-head' }, [
+          el('div', { cls: 'card-drugs-title', text: '包含药物 · ' + vm.药物.length }),
+          (vm.id ? el('button', { cls: 'cmp-add', text: '加入对比', onClick: function () { compareCardSet[vm.id] = true; location.hash = '#/cardcompare'; } }) : null)
+        ]),
+        el('div', { cls: 'chips' }, drugChips)
+      ]));
+    }
+
+    // ① 形态
+    if (vm.形态) {
+      var mNodes = [ el('div', { cls: 'morph-title', text: '形态' }) ];
+      if (vm.形态.镜下) {
+        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag', text: '镜下' }), el('span', { text: ' ' + vm.形态.镜下 }) ]));
+      }
+      (vm.形态.培养 || []).forEach(function (c) {
+        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag morph-med', text: c.培养基 }), el('span', { text: ' ' + c.形态 }) ]));
+      });
+      nodes.push(el('div', { cls: 'morphology' }, mNodes));
+    }
+
+    // ② 药敏折点（来自 CLSI M100）—— 药物名可跳转到对应抗生素条目
+    if (vm.折点) {
+      var bp = vm.折点;
+      var bpHeadRow = [ el('th', { text: '抗菌药物' }), el('th', { text: 'MIC (μg/mL)' }), el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ];
+      var bpBodyRows = bp.药物.map(function (d) {
+        var aid = abxIdByDrugText(d.药物);
+        var drugCell = aid
+          ? el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
+          : el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }) ].concat([document.createTextNode(' ' + d.药物)]));
+        return el('tr', {}, [
+          drugCell,
+          el('td', { cls: 'bp-mic', text: d.MIC }),
+          el('td', { cls: 'bp-disk', text: d.抑菌圈 }),
+          el('td', { cls: 'bp-comment', text: d.备注 || '' })
+        ]);
+      });
+      nodes.push(el('div', { cls: 'breakpoints' }, [
+        el('div', { cls: 'bp-head' }, [
+          el('span', { cls: 'bp-title', text: '药敏折点' }),
+          el('span', { cls: 'bp-source', text: (bp.来源 || 'CLSI M100 Ed36 (2026)') + '  |  ' + bp.CLSI表 })
+        ]),
+        el('div', { cls: 'table-scroll' }, [
+          el('table', { cls: 'bp-table' }, [
+            el('thead', {}, [ el('tr', {}, bpHeadRow) ]),
+            el('tbody', {}, bpBodyRows)
+          ])
+        ]),
+        el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' })
+      ]));
+    }
+
+    // ③ 相似菌与鉴别
+    if (vm.鉴别 && vm.鉴别.length) {
+      var diffItems = vm.鉴别.map(function (d) {
+        var head = d.id
+          ? el('a', { cls: 'diff-link', text: 'vs ' + d.名称, href: '#/microbes/' + d.id })
+          : el('span', { cls: 'diff-name', text: 'vs ' + d.名称 });
+        return el('div', { cls: 'diff-item' }, [
+          el('div', { cls: 'diff-head' }, [ head ]),
+          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag', text: '相似点' }), el('span', { text: ' ' + d.相似点 }) ]),
+          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag diff-key', text: '鉴别' }), el('span', { text: ' ' + d.鉴别 }) ])
+        ]);
+      });
+      nodes.push(el('div', { cls: 'differential' }, [ el('div', { cls: 'diff-title', text: '相似菌与鉴别' }) ].concat(diffItems)));
+    }
+
+    // ④ 生化反应 —— 项目名可跳转到对应生化试验条目
+    if (vm.生化反应 && vm.生化反应.length) {
+      var bioTestMap = biochemTestIdByName();
+      var bioRows = vm.生化反应.map(function (b) {
+        var tid = bioTestMap[b.项目];
+        var keyEl = tid
+          ? el('a', { cls: 'biochem-key biochem-link', text: b.项目, href: '#/biochem-tests/' + tid })
+          : el('span', { cls: 'biochem-key', text: b.项目 });
+        return el('div', { cls: 'biochem-row' }, [ keyEl, el('span', { cls: 'biochem-val', text: b.结果 }) ]);
+      });
+      nodes.push(el('div', { cls: 'biochem' }, [
+        el('div', { cls: 'biochem-head' }, [
+          el('div', { cls: 'biochem-title', text: '生化反应' }),
+          el('button', { cls: 'cmp-add', text: '加入对比', onClick: function () { if (vm.id) { compareSet[vm.id] = true; location.hash = '#/compare'; } } })
+        ]),
+        el('div', { cls: 'biochem-rows' }, bioRows)
+      ]));
+    }
+
+    var relKids = [ el('div', { cls: 'relations-label', text: '关联' }) ];
+    if (vm.关联.length === 0) {
+      relKids.push(el('span', { cls: 'empty-sm', text: '（暂无关联）' }));
+    } else {
+      var chips = vm.关联.map(function (r) {
+        if (!r.exists) { return el('span', { cls: 'chip chip-missing', text: r.label, title: '目标不存在' }); }
+        return el('a', { cls: 'chip chip-' + r.module, text: r.label, href: r.href });
+      });
+      relKids.push(el('div', { cls: 'chips' }, chips));
+    }
+    nodes.push(el('div', { cls: 'relations' }, relKids));
+
+    if (vm.链接 && vm.链接.length) {
+      var refChips = vm.链接.map(function (l) {
+        return el('a', {
+          cls: 'ref-link', text: l.标题, href: l.url,
+          target: '_blank', rel: 'noopener noreferrer', title: l.url
+        });
+      });
+      nodes.push(el('div', { cls: 'refs' }, [
+        el('div', { cls: 'refs-label', text: '综述 / 参考' })
+      ].concat([ el('div', { cls: 'chips' }, refChips) ])));
+    }
+    if (vm.结构图) {
+      nodes.push(el('figure', { cls: 'mechanism-fig struct-fig' }, [
+        el('img', { cls: 'mechanism-img', src: vm.结构图, alt: '分子结构' }),
+        el('figcaption', { cls: 'mechanism-cap', text: '分子结构（数据来源 ChEMBL，RDKit 绘制）' })
+      ]));
+    }
+    return nodes;
+  }
+
+  function buildSearch(vm) {
+    var nodes = [ el('div', { cls: 'search-head', text: '搜索：“' + vm.query + '”' }) ];
+    if (vm.items.length === 0) {
+      nodes.push(el('div', { cls: 'empty', text: '没有找到匹配的条目。' }));
+      return nodes;
+    }
+    var items = vm.items.map(function (r) {
+      var link = el('a', { cls: 'search-item', href: r.href }, [
+        el('span', { cls: 'tag tag-' + r.module, text: View.moduleLabel(r.module) })
+      ]);
+      link.appendChild(document.createTextNode(' ' + r.名称));
+      if (r.摘要) { link.appendChild(el('span', { cls: 'search-summary', text: r.摘要 })); }
+      return link;
+    });
+    nodes.push(el('div', { cls: 'search-list' }, items));
+    return nodes;
+  }
+
+  // ===== 生化反应对比 =====
+  var compareSet = {}; // 选中用于对比的微生物 id
+  var compareFilter = ''; // 对比选择器的搜索过滤词
+
+  function isCompareRoute() { return routeKey() === 'compare'; }
+  function comparableIds() { return Object.keys((window.DB && window.DB.biochem) || {}); }
+  function nameById() {
+    var m = {};
+    ((window.DB && window.DB.microbes) || []).forEach(function (x) { m[x.id] = x.名称; });
+    return m;
+  }
+  function toggleCompare(id) {
+    if (compareSet[id]) { delete compareSet[id]; } else { compareSet[id] = true; }
+    if (isCompareRoute()) { renderCompare(); }
+  }
+  function comparePickItems() {
+    var names = nameById();
+    var q = compareFilter.trim().toLowerCase();
+    var ids = comparableIds().filter(function (id) {
+      return !q || (names[id] || '').toLowerCase().indexOf(q) !== -1;
+    });
+    var items = ids.map(function (id) {
+      var sel = !!compareSet[id];
+      return el('div', {
+        cls: 'cmp-pick' + (sel ? ' sel' : ''),
+        text: (sel ? '☑ ' : '☐ ') + (names[id] || id),
+        onClick: function () { toggleCompare(id); }
+      });
+    });
+    if (!items.length) { items = [ el('div', { cls: 'empty-sm', text: '无匹配的细菌' }) ]; }
+    return items;
+  }
+  function renderComparePickerList() {
+    var listEl = document.getElementById('cmp-pick-list');
+    if (listEl) { listEl.replaceChildren.apply(listEl, comparePickItems()); }
+  }
+  function buildComparePicker() {
+    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选…', value: compareFilter });
+    search.addEventListener('input', function () { compareFilter = search.value; renderComparePickerList(); });
+    return [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '勾选细菌（可多选）' }),
+      search,
+      el('div', { cls: 'cmp-pick-list', id: 'cmp-pick-list' })
+    ]) ];
+  }
+  function buildCompareView(vm) {
+    var nodes = [ el('h2', { cls: 'detail-title', text: '生化反应对比' }) ];
+    if (vm.items.length < 2) {
+      nodes.push(el('div', { cls: 'empty', text: '在左侧勾选 2 个以上细菌进行对比。' }));
+      return nodes;
+    }
+    var headCells = [ el('th', { text: '生化项目' }) ];
+    vm.items.forEach(function (it) {
+      headCells.push(el('th', {}, [ el('a', { cls: 'cmp-col', text: it.名称, href: '#/microbes/' + it.id }) ]));
+    });
+    var bodyRows = vm.rows.map(function (row) {
+      var tds = [ el('td', { cls: 'cmp-item', text: row.项目 }) ];
+      row.cells.forEach(function (c) { tds.push(el('td', { cls: 'cmp-cell', text: c })); });
+      return el('tr', { cls: row.differs ? 'cmp-diff' : '' }, tds);
+    });
+    nodes.push(el('div', { cls: 'table-scroll' }, [ el('table', { cls: 'cmp' }, [
+      el('thead', {}, [ el('tr', {}, headCells) ]),
+      el('tbody', {}, bodyRows)
+    ]) ]));
+    nodes.push(el('div', { cls: 'cmp-hint', text: '黄色行 = 各菌结果存在差异（鉴别要点）。点列首菌名可跳转详情。' }));
+    return nodes;
+  }
+  function renderCompare() {
+    setActiveTab(null);
+    var names = nameById();
+    fill(document.getElementById('sidebar'), buildComparePicker());
+    renderComparePickerList();
+    var selected = comparableIds().filter(function (id) { return compareSet[id]; });
+    fill(document.getElementById('main'), buildCompareView(View.buildComparison(names, (window.DB && window.DB.biochem) || {}, selected)));
+  }
+
+  // ===== 药敏卡对比 =====
+  var compareCardSet = {};
+  var compareCardFilter = '';
+  function isCardCompareRoute() { return routeKey() === 'cardcompare'; }
+  function cardNameById() { var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.名称; }); return m; }
+  function drugsByCard() { var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.药物 || []; }); return m; }
+  function cardIds() { return ((window.DB && window.DB.cards) || []).map(function (c) { return c.id; }); }
+  function toggleCardCompare(id) {
+    if (compareCardSet[id]) { delete compareCardSet[id]; } else { compareCardSet[id] = true; }
+    if (isCardCompareRoute()) { renderCardCompare(); }
+  }
+  function cardPickItems() {
+    var names = cardNameById();
+    var q = compareCardFilter.trim().toLowerCase();
+    var ids = cardIds().filter(function (id) { return !q || (names[id] || '').toLowerCase().indexOf(q) !== -1; });
+    var items = ids.map(function (id) {
+      var sel = !!compareCardSet[id];
+      return el('div', { cls: 'cmp-pick' + (sel ? ' sel' : ''), text: (sel ? '☑ ' : '☐ ') + (names[id] || id), onClick: function () { toggleCardCompare(id); } });
+    });
+    if (!items.length) { items = [ el('div', { cls: 'empty-sm', text: '无匹配的卡片' }) ]; }
+    return items;
+  }
+  function renderCardPickerList() {
+    var listEl = document.getElementById('card-pick-list');
+    if (listEl) { listEl.replaceChildren.apply(listEl, cardPickItems()); }
+  }
+  function buildCardComparePicker() {
+    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选…', value: compareCardFilter });
+    search.addEventListener('input', function () { compareCardFilter = search.value; renderCardPickerList(); });
+    return [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '勾选药敏卡（可多选）' }),
+      search,
+      el('div', { cls: 'cmp-pick-list', id: 'card-pick-list' })
+    ]) ];
+  }
+  function buildCardCompareView(vm) {
+    var nodes = [ el('h2', { cls: 'detail-title', text: '药敏卡对比' }) ];
+    if (vm.items.length < 2) {
+      nodes.push(el('div', { cls: 'empty', text: '在左侧勾选 2 张以上药敏卡进行对比。' }));
+      return nodes;
+    }
+    var headCells = [ el('th', { text: '药物 / 检测项' }) ];
+    vm.items.forEach(function (it) {
+      headCells.push(el('th', {}, [ el('a', { cls: 'cmp-col', text: it.名称, href: '#/cards/' + it.id }) ]));
+    });
+    var bodyRows = vm.rows.map(function (row) {
+      var tds = [ el('td', { cls: 'cmp-item', text: row.药物 }) ];
+      row.cells.forEach(function (has) { tds.push(el('td', { cls: 'cmp-cell', text: has ? '✓' : '' })); });
+      return el('tr', { cls: row.differs ? 'cmp-diff' : '' }, tds);
+    });
+    nodes.push(el('div', { cls: 'table-scroll' }, [
+      el('table', { cls: 'cmp' }, [ el('thead', {}, [ el('tr', {}, headCells) ]), el('tbody', {}, bodyRows) ])
+    ]));
+    nodes.push(el('div', { cls: 'cmp-hint', text: '✓ = 该卡含此药/检测项；黄色行 = 各卡不一致。点列首卡名可查看该卡详情。' }));
+    return nodes;
+  }
+  function renderCardCompare() {
+    setActiveTab(null);
+    fill(document.getElementById('sidebar'), buildCardComparePicker());
+    renderCardPickerList();
+    var selected = cardIds().filter(function (id) { return compareCardSet[id]; });
+    fill(document.getElementById('main'), buildCardCompareView(View.buildCardComparison(cardNameById(), drugsByCard(), selected)));
+  }
+
+  // ===== 工具 1：天然耐药速查 =====
+  var intrinsicFilter = '';
+  function isIntrinsicRoute() { return routeKey() === 'intrinsic'; }
+  function renderIntrinsic() {
+    setActiveTool('intrinsic');
+    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选菌名/拉丁名/药名…', value: intrinsicFilter });
+    search.addEventListener('input', function () { intrinsicFilter = search.value; renderIntrinsicMain(); });
+    var sb = [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '天然耐药速查' }),
+      el('div', { cls: 'cmp-hint', text: '左侧筛选；右侧按菌属列出全部天然耐药条目。点菌名可跳转详情。' }),
+      search
+    ]) ];
+    fill(document.getElementById('sidebar'), sb);
+    renderIntrinsicMain();
+  }
+  function renderIntrinsicMain() {
+    var vm = View.intrinsicVM(db(), intrinsicFilter);
+    var nodes = [ el('h2', { cls: 'detail-title', text: '天然耐药速查' }) ];
+    nodes.push(el('div', { cls: 'cmp-hint', text: '共 ' + vm.count + ' 条' + (intrinsicFilter ? '（已筛选）' : '') }));
+    if (vm.groups.length === 0) {
+      nodes.push(el('div', { cls: 'empty', text: '没有匹配的条目。' }));
+    } else {
+      vm.groups.forEach(function (g) {
+        var items = g.items.map(function (it) {
+          return el('div', { cls: 'intrinsic-card' }, [
+            el('div', { cls: 'intrinsic-card-head' }, [
+              el('a', { cls: 'intrinsic-link', text: it.名称, href: '#/microbes/' + it.id }),
+              it.拉丁名 ? el('span', { cls: 'latin', text: it.拉丁名 }) : null
+            ]),
+            el('div', { cls: 'intrinsic-body', text: it.天然耐药 })
+          ]);
+        });
+        nodes.push(el('div', { cls: 'intrinsic-group' }, [
+          el('div', { cls: 'intrinsic-group-title', text: g.类别 + ' · ' + g.items.length }),
+          el('div', { cls: 'intrinsic-list' }, items)
+        ]));
+      });
+    }
+    fill(document.getElementById('main'), nodes);
+  }
+
+  // ===== 工具 2：关联关系图 =====
+  var graphFilter = '';
+  var graphDepth = 1;
+  function isGraphRoute() { return routeKey() === 'graph'; }
+  function graphRouteId() {
+    var parts = (location.hash || '').replace(/^#\/?/, '').split('/').filter(Boolean);
+    return parts.length >= 3 ? { module: parts[1], id: parts[2] } : null;
+  }
+  function graphPickItems() {
+    var q = graphFilter.trim().toLowerCase();
+    var items = [];
+    MODULES.forEach(function (mod) {
+      (db()[mod] || []).forEach(function (e) {
+        if (!q || (e.名称 || '').toLowerCase().indexOf(q) !== -1) {
+          items.push({ id: e.id, 名称: e.名称, module: mod });
+        }
+      });
+    });
+    return items.slice(0, 200);
+  }
+  function renderGraphPicker() {
+    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '搜索条目作为图心…', value: graphFilter });
+    search.addEventListener('input', function () {
+      graphFilter = search.value;
+      var list = document.getElementById('graph-pick-list');
+      if (list) { list.replaceChildren.apply(list, graphPickItems().map(function (it) {
+        return el('a', { cls: 'entry-link', text: it.名称, href: '#/graph/' + it.module + '/' + it.id });
+      })); }
+    });
+    return [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '选择图心' }),
+      el('div', { cls: 'cmp-hint', text: '挑一个条目作为中心，画它的关联网络。' }),
+      search,
+      el('div', { cls: 'cmp-pick-list', id: 'graph-pick-list' })
+    ]) ];
+  }
+  function renderGraphPickerList() {
+    var list = document.getElementById('graph-pick-list');
+    if (list) { list.replaceChildren.apply(list, graphPickItems().map(function (it) {
+      return el('a', { cls: 'entry-link', text: it.名称, href: '#/graph/' + it.module + '/' + it.id });
+    })); }
+  }
+  function nodeFill(module, isCenter) {
+    if (isCenter) { return '#2e6b66'; }
+    var map = {
+      microbes: '#345f86', antibiotics: '#3f7a52', resistance: '#a85a2a',
+      tests: '#8a6d1f', cards: '#4a6d8c', media: '#6b4e8a',
+      staining: '#8a4a6b', 'biochem-tests': '#4a7a6b', idcards: '#7a5a3a'
+    };
+    return map[module] || '#8a8f98';
+  }
+
+  function graphLabelText(name, level) {
+    var max = level === 0 ? 12 : (level === 1 ? 8 : 5);
+    return name.length > max ? name.slice(0, max - 1) + '…' : name;
+  }
+
+  function graphTextWidth(text, fontSize) {
+    var units = 0;
+    String(text || '').split('').forEach(function (ch) {
+      units += /[\x00-\x7F]/.test(ch) ? 0.56 : 1;
+    });
+    return Math.ceil(units * fontSize);
+  }
+
+  function graphLabelPlacement(node, radius, width, height) {
+    if (node.level === 0) {
+      return { x: 0, y: 4, anchor: 'middle', baseline: 'central' };
+    }
+    var dx = node.x - width / 2;
+    var dy = node.y - height / 2;
+    var gap = node.level === 1 ? 12 : 9;
+    if (Math.abs(dx) < 42) {
+      return {
+        x: 0,
+        y: dy < 0 ? -(radius + gap + 2) : (radius + gap + 6),
+        anchor: 'middle',
+        baseline: 'central'
+      };
+    }
+    return {
+      x: dx > 0 ? radius + gap : -(radius + gap),
+      y: Math.max(-10, Math.min(10, dy * 0.04)),
+      anchor: dx > 0 ? 'start' : 'end',
+      baseline: 'central'
+    };
+  }
+
+  function graphLabelGroup(node, radius, labelText, fontSize, width, height) {
+    var p = graphLabelPlacement(node, radius, width, height);
+    var textWidth = graphTextWidth(labelText, fontSize);
+    var padX = 5, labelH = fontSize + 7, labelW = textWidth + padX * 2;
+    var rectX = p.anchor === 'middle' ? p.x - labelW / 2 : (p.anchor === 'start' ? p.x - padX : p.x - labelW + padX);
+    var rectY = p.y - labelH / 2;
+    var g = sg('g', { cls: 'graph-label' + (node.level === 0 ? ' center-label' : (node.level > 1 ? ' secondary' : ' primary')) });
+    if (node.level > 0) {
+      g.appendChild(sg('rect', {
+        cls: 'graph-label-bg',
+        x: rectX, y: rectY, width: labelW, height: labelH, rx: 4, ry: 4
+      }));
+    }
+    g.appendChild(sg('text', {
+      cls: 'graph-label-text',
+      x: p.x, y: p.y,
+      'text-anchor': p.anchor,
+      'dominant-baseline': p.baseline,
+      'font-size': fontSize,
+      'font-weight': node.level === 0 ? '600' : '500',
+      fill: node.level === 0 ? '#ffffff' : '#3f464f'
+    }, [labelText]));
+    return g;
+  }
+
+  function buildGraphSVG(layout) {
+    var W = layout.width, H = layout.height;
+
+    // 边：先渲染（位于节点下方），淡入；记录两端 id 用于悬停聚焦
+    var edgeData = layout.edges.map(function (e) {
+      var line = sg('line', {
+        x1: e.x1, y1: e.y1, x2: e.x2, y2: e.y2,
+        stroke: e.direction === 'forward' ? '#cfe0db' : '#e7c9c0',
+        'stroke-width': '1.6',
+        'stroke-dasharray': e.direction === 'reverse' ? '5 3' : 'none',
+        'stroke-linecap': 'round',
+        cls: 'graph-edge' + (e.direction === 'reverse' ? ' reverse' : '')
+      });
+      return { el: line, fromId: e.fromId, toId: e.toId };
+    });
+    var edgeRefs = edgeData.map(function (d) { return d.el; });
+
+    // 邻接表（节点 id → 邻居 id 集合），用于悬停聚焦
+    var neighbors = {};
+    layout.nodes.forEach(function (n) { neighbors[n.id] = {}; });
+    edgeData.forEach(function (d) {
+      if (neighbors[d.fromId]) { neighbors[d.fromId][d.toId] = true; }
+      if (neighbors[d.toId]) { neighbors[d.toId][d.fromId] = true; }
+    });
+
+    // 节点：外层 g 用 transform 属性定位，内层 g 做 CSS 缩放/淡入
+    var innerRefs = [];
+    var nodeById = {};
+    var nodeEls = layout.nodes.map(function (n, i) {
+      var isCenter = n.level === 0;
+      var r = isCenter ? 30 : (n.level === 1 ? 17 : 12);
+      var fill = nodeFill(n.module, isCenter);
+      var outer = sg('g', {
+        transform: 'translate(' + n.x + ' ' + n.y + ')',
+        cls: 'gnode',
+        role: 'button',
+        tabindex: '0',
+        'aria-label': View.moduleLabel(n.module) + ' · ' + n.名称 + (isCenter ? '（点击查看详情）' : '（点击设为图心）')
+      });
+      var inner = sg('g', { cls: 'graph-node-inner' + (isCenter ? ' center' : '') });
+      outer.appendChild(sg('title', { text: View.moduleLabel(n.module) + ' · ' + n.名称 + (isCenter ? '（点击查看详情）' : '（点击设为图心）') }));
+      // 阶梯延迟：中心 0s，一级 0.08s 起每项 +8ms，二级 0.25s 起每项 +6ms
+      var delay = isCenter ? 0 : (n.level === 1 ? (0.08 + i * 0.008) : (0.25 + i * 0.006));
+      inner.style.transitionDelay = delay + 's';
+
+      inner.appendChild(sg('circle', {
+        cx: 0, cy: 0, r: r, fill: fill,
+        'fill-opacity': isCenter ? '1' : '0.92',
+        stroke: '#ffffff', 'stroke-width': '2.5'
+      }));
+      var fontSize = isCenter ? '12' : '10.5';
+      inner.appendChild(graphLabelGroup(n, r, graphLabelText(n.名称, n.level), fontSize, W, H));
+
+      outer.style.cursor = 'pointer';
+      // 悬停聚焦：高亮该节点与其邻居/连线，淡化其余，并显示邻居标签
+      outer.addEventListener('mouseenter', function () { focusNode(n.id); });
+      outer.addEventListener('mouseleave', clearFocus);
+      // 键盘聚焦同样触发高亮，便于不用鼠标的用户
+      outer.addEventListener('focus', function () { focusNode(n.id); });
+      outer.addEventListener('blur', clearFocus);
+      function activate() {
+        // 图心：跳转到该条目详情页；其余节点：以该节点为新图心
+        location.hash = isCenter ? ('#/' + n.module + '/' + n.id) : ('#/graph/' + n.module + '/' + n.id);
+      }
+      outer.addEventListener('click', activate);
+      outer.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
+          ev.preventDefault();
+          activate();
+        }
+      });
+      outer.appendChild(inner);
+      innerRefs.push({ el: inner, delay: delay });
+      nodeById[n.id] = outer;
+      return outer;
+    });
+
+    // 显式 width/height（防 height:auto 在部分浏览器计算为 0）；viewBox 保持等比缩放
+    var svg = sg('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, cls: 'graph-svg' });
+    edgeRefs.forEach(function (e) { svg.appendChild(e); });
+    nodeEls.forEach(function (n) { svg.appendChild(n); });
+
+    function focusNode(id) {
+      svg.classList.add('focusing');
+      var on = {}; on[id] = true;
+      var nb = neighbors[id] || {};
+      Object.keys(nb).forEach(function (k) { on[k] = true; });
+      layout.nodes.forEach(function (nd) {
+        var g = nodeById[nd.id];
+        if (g) { g.classList.toggle('adj', !!on[nd.id]); }
+      });
+      edgeData.forEach(function (d) { d.el.classList.toggle('adj', d.fromId === id || d.toId === id); });
+    }
+    function clearFocus() {
+      svg.classList.remove('focusing');
+      Object.keys(nodeById).forEach(function (k) { nodeById[k].classList.remove('adj'); });
+      edgeData.forEach(function (d) { d.el.classList.remove('adj'); });
+    }
+
+    // 挂到 DOM 后下一帧加 .visible 触发入场过渡；后台标签页可能暂停 RAF，定时器兜底保证图不会保持透明。
+    var shown = false;
+    function showGraph() {
+      if (shown) { return; }
+      shown = true;
+      innerRefs.forEach(function (item) { item.el.classList.add('visible'); });
+      edgeRefs.forEach(function (e) { e.classList.add('visible'); });
+    }
+    requestAnimationFrame(function () {
+      requestAnimationFrame(showGraph);
+    });
+    setTimeout(showGraph, 80);
+    return svg;
+  }
+  function renderGraph() {
+    setActiveTool('graph');
+    var route = graphRouteId();
+    if (!route) {
+      fill(document.getElementById('sidebar'), renderGraphPicker());
+      renderGraphPickerList();
+      fill(document.getElementById('main'), [
+        el('h2', { cls: 'detail-title', text: '关联关系图' }),
+        el('div', { cls: 'empty', text: '在左侧搜索并选择一个条目作为图心，查看其关联网络。' })
+      ]);
+      return;
+    }
+    var data = db();
+    var graph = Core.buildGraph(data, route.module, route.id, graphDepth);
+    if (!graph) {
+      fill(document.getElementById('sidebar'), renderGraphPicker());
+      renderGraphPickerList();
+      fill(document.getElementById('main'), [ el('div', { cls: 'empty', text: '找不到该条目。' }) ]);
+      return;
+    }
+    // 2 层时节点多，放大画布留出间距（节点半径固定 → 相对更小、更不挤）
+    var nodeCount = graph.nodes.length;
+    var canvas = (graphDepth >= 2) ? Math.min(1040, 720 + Math.max(0, nodeCount - 24) * 7) : 720;
+    var layout = View.graphLayoutVM(graph, canvas, canvas);
+
+    // 侧栏：图心信息 + 深度切换 + 关联列表
+    var depthToggle = el('div', { cls: 'graph-controls' }, [
+      el('span', { cls: 'graph-ctrl-label', text: '深度' }),
+      el('button', { cls: 'cmp-add' + (graphDepth === 1 ? ' sel' : ''), text: '1 层', onClick: function () { graphDepth = 1; renderGraph(); } }),
+      el('button', { cls: 'cmp-add' + (graphDepth === 2 ? ' sel' : ''), text: '2 层', onClick: function () { graphDepth = 2; renderGraph(); } })
+    ]);
+    var relList = graph.nodes.filter(function (n) { return n.level > 0; }).map(function (n) {
+      return el('a', {
+        cls: 'entry-link chip chip-' + n.module,
+        text: View.moduleLabel(n.module) + ' · ' + n.名称,
+        href: '#/graph/' + n.module + '/' + n.id
+      });
+    });
+    var sidebarNodes = [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '图心' }),
+      el('div', { cls: 'graph-center-info' }, [
+        el('a', { cls: 'intrinsic-link', text: graph.center.名称, href: '#/' + route.module + '/' + route.id }),
+        el('span', { cls: 'badge', text: View.moduleLabel(route.module) })
+      ]),
+      depthToggle,
+      el('div', { cls: 'cat-group-name', text: '关联 (' + (graph.nodes.length - 1) + ')' }),
+      el('div', { cls: 'chips', style: 'flex-direction:column;align-items:flex-start;gap:4px;' }, relList)
+    ]) ];
+    fill(document.getElementById('sidebar'), sidebarNodes);
+
+    // 主区：图例 + SVG
+    var main = [ el('h2', { cls: 'detail-title', text: '关联关系图' }) ];
+    main.push(el('div', { cls: 'graph-legend' }, [
+      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-line solid' }), '正向关联' ]),
+      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-line dashed' }), '反向关联' ]),
+      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-dot center' }), '图心' ]),
+      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-dot l1' }), '一级关联' ]),
+      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-dot l2' }), '二级关联' ])
+    ]));
+    main.push(el('div', { cls: 'graph-wrap' + (graphDepth >= 2 ? ' graph-dense' : '') }, [ buildGraphSVG(layout) ]));
+    main.push(el('div', { cls: 'cmp-hint', text: '桌面端悬停任一节点：高亮它的关联、显示邻居名称、淡化其余。点击节点以它为新图心（手机端逐层下钻），点侧栏关联项可跳转。' }));
+    fill(document.getElementById('main'), main);
+  }
+
+  // ===== 工具 3：折点独立查询 + MIC 判读 =====
+  var bpMode = 'lookup'; // 'lookup' | 'judge'
+  var bpGroupFilter = '';
+  var bpDrugFilter = '';
+  var bpJudgeGroup = '';
+  var bpJudgeDrug = '';
+  var bpJudgeMIC = '';
+  function isBreakpointsRoute() { return routeKey() === 'breakpoints'; }
+  function bpGroups() { return (window.DB && window.DB.breakpoints) || []; }
+  function bpGroupByName(name) {
+    return bpGroups().filter(function (g) { return g.菌组名 === name; })[0] || null;
+  }
+  function renderBreakpoints() {
+    setActiveTool('breakpoints');
+    // 侧栏：模式切换 +（judge 模式下）菌组列表
+    var modeToggle = el('div', { cls: 'graph-controls' }, [
+      el('button', { cls: 'cmp-add' + (bpMode === 'lookup' ? ' sel' : ''), text: '折点查询', onClick: function () { bpMode = 'lookup'; renderBreakpoints(); } }),
+      el('button', { cls: 'cmp-add' + (bpMode === 'judge' ? ' sel' : ''), text: 'MIC 判读', onClick: function () { bpMode = 'judge'; renderBreakpoints(); } })
+    ]);
+    var sbNodes = [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '折点工具' }),
+      modeToggle
+    ]) ];
+    if (bpMode === 'judge') {
+      var groupItems = bpGroups().map(function (g) {
+        return el('div', {
+          cls: 'cmp-pick' + (bpJudgeGroup === g.菌组名 ? ' sel' : ''),
+          text: g.菌组名,
+          onClick: function () {
+            bpJudgeGroup = g.菌组名;
+            bpJudgeDrug = (g.药物 && g.药物[0]) ? g.药物[0].药物 : '';
+            bpJudgeMIC = '';
+            renderBreakpoints();
+          }
+        });
+      });
+      sbNodes.push(el('div', { cls: 'cat-group' }, [
+        el('div', { cls: 'cat-group-name', text: '菌组 (' + bpGroups().length + ')' }),
+        el('div', { cls: 'bp-group-list' }, groupItems)
+      ]));
+    } else {
+      sbNodes.push(el('div', { cls: 'cmp-hint', text: '在右侧按菌组名 / 药物名筛选，查看 CLSI 折点表。切到「MIC 判读」可输入数值自动判读 S/I/R。' }));
+    }
+    fill(document.getElementById('sidebar'), sbNodes);
+    renderBreakpointsMain();
+  }
+  function renderBreakpointsMain() {
+    var nodes = [ el('h2', { cls: 'detail-title', text: bpMode === 'lookup' ? '折点查询' : 'MIC 判读' }) ];
+    if (bpMode === 'lookup') {
+      // 顶部筛选
+      var gf = el('input', { cls: 'cmp-search', type: 'search', placeholder: '按菌组名筛选…', value: bpGroupFilter, style: 'display:inline-block;width:auto;margin-right:8px;' });
+      gf.addEventListener('input', function () { bpGroupFilter = gf.value; renderBreakpointsMain(); });
+      var df = el('input', { cls: 'cmp-search', type: 'search', placeholder: '按药物名/简写筛选…', value: bpDrugFilter, style: 'display:inline-block;width:auto;' });
+      df.addEventListener('input', function () { bpDrugFilter = df.value; renderBreakpointsMain(); });
+      nodes.push(el('div', { cls: 'bp-filters' }, [ gf, df ]));
+      var groups = View.breakpointLookupVM(bpGroups(), bpGroupFilter, bpDrugFilter);
+      if (groups.length === 0) {
+        nodes.push(el('div', { cls: 'empty', text: '没有匹配的折点。' }));
+      } else {
+        groups.forEach(function (g) {
+          nodes.push(el('div', { cls: 'bp-group' }, [
+            el('div', { cls: 'bp-group-head' }, [
+              el('span', { cls: 'bp-title', text: g.菌组名 }),
+              el('span', { cls: 'bp-source', text: (g.来源 || 'CLSI M100 Ed36 (2026)') + '  |  ' + g.CLSI表 + '  |  ' + g.菌种.length + ' 菌种' })
+            ]),
+            buildBpTable(g.药物)
+          ]));
+        });
+      }
+    } else {
+      // MIC 判读表单
+      var group = bpJudgeGroup ? bpGroupByName(bpJudgeGroup) : null;
+      var groupSelect = el('select', { cls: 'bp-select' });
+      groupSelect.appendChild(el('option', { value: '', text: '— 选择菌组 —' }));
+      bpGroups().forEach(function (g) {
+        var opt = el('option', { value: g.菌组名, text: g.菌组名 });
+        if (g.菌组名 === bpJudgeGroup) { opt.selected = true; }
+        groupSelect.appendChild(opt);
+      });
+      groupSelect.addEventListener('change', function () {
+        bpJudgeGroup = groupSelect.value;
+        var gg = bpJudgeGroup ? bpGroupByName(bpJudgeGroup) : null;
+        bpJudgeDrug = (gg && gg.药物 && gg.药物[0]) ? gg.药物[0].药物 : '';
+        bpJudgeMIC = '';
+        renderBreakpointsMain();
+      });
+
+      var drugSelect = el('select', { cls: 'bp-select' });
+      drugSelect.appendChild(el('option', { value: '', text: '— 选择药物 —' }));
+      if (group) {
+        group.药物.forEach(function (d) {
+          var opt = el('option', { value: d.药物, text: d.药物 + ' (' + d.简写 + ')' });
+          if (d.药物 === bpJudgeDrug) { opt.selected = true; }
+          drugSelect.appendChild(opt);
+        });
+      }
+      drugSelect.addEventListener('change', function () { bpJudgeDrug = drugSelect.value; bpJudgeMIC = ''; renderBreakpointsMain(); });
+
+      var micInput = el('input', { cls: 'cmp-search', type: 'number', placeholder: '输入 MIC 值 (μg/mL)', value: bpJudgeMIC, step: '0.01', min: '0', style: 'width:200px;' });
+      micInput.addEventListener('input', function () { bpJudgeMIC = micInput.value; renderJudgeResult(); });
+
+      nodes.push(el('div', { cls: 'bp-judge-form' }, [
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '菌组' }), groupSelect ]),
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '药物' }), drugSelect ]),
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: 'MIC' }), micInput ])
+      ]));
+
+      var resultBox = el('div', { cls: 'bp-judge-result', id: 'bp-judge-result' });
+      nodes.push(resultBox);
+      fill(document.getElementById('main'), nodes);
+      // fill 是同步的，DOM 已就位，直接渲染判读结果
+      renderJudgeResult();
+      return;
+    }
+    fill(document.getElementById('main'), nodes);
+  }
+  function buildBpTable(drugs) {
+    var headRow = [ el('th', { text: '抗菌药物' }), el('th', { text: 'MIC (μg/mL)' }), el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ];
+    var bodyRows = drugs.map(function (d) {
+      var aid = abxIdByDrugText(d.药物);
+      var drugCell = aid
+        ? el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
+        : el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
+      return el('tr', {}, [
+        drugCell,
+        el('td', { cls: 'bp-mic', text: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / ') }),
+        el('td', { cls: 'bp-disk', text: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / ') }),
+        el('td', { cls: 'bp-comment', text: d.备注 || '' })
+      ]);
+    });
+    return el('div', { cls: 'table-scroll' }, [
+      el('table', { cls: 'bp-table' }, [
+        el('thead', {}, [ el('tr', {}, headRow) ]),
+        el('tbody', {}, bodyRows)
+      ])
+    ]);
+  }
+  function renderJudgeResult() {
+    var box = document.getElementById('bp-judge-result');
+    if (!box) { return; }
+    if (!bpJudgeGroup || !bpJudgeDrug) {
+      box.replaceChildren(el('div', { cls: 'empty-sm', text: '请选择菌组与药物，并输入 MIC 值。' }));
+      return;
+    }
+    var group = bpGroupByName(bpJudgeGroup);
+    var drug = (group && group.药物 || []).filter(function (d) { return d.药物 === bpJudgeDrug; })[0];
+    if (!drug) {
+      box.replaceChildren(el('div', { cls: 'empty-sm', text: '该菌组未找到此药物。' }));
+      return;
+    }
+    // 显示该药折点
+    var bpInfo = el('div', { cls: 'bp-judge-bp' }, [
+      el('span', { text: '折点：S ' + (drug.MIC_S || '—') + ' / I ' + (drug.MIC_I || '—') + ' / R ' + (drug.MIC_R || '—') + ' (μg/mL)' })
+    ]);
+    if (!bpJudgeMIC || bpJudgeMIC === '') {
+      box.replaceChildren(bpInfo, el('div', { cls: 'empty-sm', text: '输入 MIC 值后自动判读。' }));
+      return;
+    }
+    var verdict = View.judgeMIC(bpJudgeMIC, drug.MIC_S, drug.MIC_I, drug.MIC_R);
+    var cls = 'bp-verdict ' + (verdict.result === 'S' ? 'v-s' : (verdict.result === 'R' ? 'v-r' : (verdict.result === 'I' ? 'v-i' : 'v-unknown')));
+    box.replaceChildren(bpInfo, el('div', { cls: cls }, [
+      el('span', { cls: 'bp-verdict-tag', text: verdict.result === 'invalid' ? '无效' : verdict.result }),
+      el('span', { cls: 'bp-verdict-reason', text: verdict.reason })
+    ]));
+    if (drug.备注) {
+      box.appendChild(el('div', { cls: 'bp-judge-note', text: '备注：' + drug.备注 }));
+    }
+  }
+
+  // ===== 工具 4：异常药敏 / 修正规则 =====
+  var astFilter = '';
+  var astLevel = 'all';
+  function isAstAlertsRoute() { return routeKey() === 'ast-alerts'; }
+  function astAlerts() { return (window.DB && window.DB.astAlerts) || []; }
+  function astSources() { return (window.DB && window.DB.astAlertSources) || []; }
+  function levelLabel(level) { return level === 'all' ? '全部' : level; }
+  function astLevelClass(level) {
+    if (level === '必须修正') { return 'ast-level ast-critical'; }
+    if (level === '需复核') { return 'ast-level ast-review'; }
+    if (level === '限制报告') { return 'ast-level ast-limit'; }
+    return 'ast-level';
+  }
+  function renderAstAlerts() {
+    setActiveTool('ast-alerts');
+    var vm = View.astAlertsVM(astAlerts(), { filter: astFilter, level: astLevel });
+    var levelBtns = vm.levels.map(function (lv) {
+      return el('button', {
+        cls: 'cmp-add' + (astLevel === lv ? ' sel' : ''),
+        text: levelLabel(lv),
+        onClick: function () { astLevel = lv; renderAstAlerts(); }
+      });
+    });
+    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选菌名/药物/机制…', value: astFilter });
+    search.addEventListener('input', function () { astFilter = search.value; renderAstAlertsMain(); });
+    fill(document.getElementById('sidebar'), [
+      el('div', { cls: 'cat-group' }, [
+        el('div', { cls: 'cat-group-name', text: '异常药敏' }),
+        el('div', { cls: 'cmp-hint', text: '用于发现“看起来敏感但不应直接报告”的组合。正式报告以本院 SOP 和当前标准为准。' }),
+        el('div', { cls: 'graph-controls ast-filter-controls' }, levelBtns),
+        search
+      ])
+    ]);
+    renderAstAlertsMain();
+  }
+  function renderAstAlertsMain() {
+    var vm = View.astAlertsVM(astAlerts(), { filter: astFilter, level: astLevel });
+    var nodes = [
+      el('div', { cls: 'detail-head' }, [
+        el('h2', { cls: 'detail-title', text: '异常药敏 / 修正规则' }),
+        el('span', { cls: 'badge', text: vm.count + ' 条' })
+      ]),
+      el('div', { cls: 'cmp-hint ast-disclaimer', text: '定位常见矛盾结果、固有耐药、限制报告和需要补充试验的场景；不替代最终审核。' })
+    ];
+    if (vm.groups.length === 0) {
+      nodes.push(el('div', { cls: 'empty', text: '没有匹配的异常药敏规则。' }));
+    } else {
+      vm.groups.forEach(function (group) {
+        nodes.push(el('section', { cls: 'ast-group' }, [
+          el('div', { cls: 'ast-group-title', text: group.类别 + ' · ' + group.items.length }),
+          el('div', { cls: 'ast-list' }, group.items.map(buildAstCard))
+        ]));
+      });
+    }
+    var refs = astSources().map(function (src) {
+      return el('a', { cls: 'ref-link', text: src.名称, href: src.链接, target: '_blank', rel: 'noopener noreferrer' });
+    });
+    if (refs.length) {
+      nodes.push(el('div', { cls: 'refs' }, [
+        el('div', { cls: 'refs-label', text: '参考口径' }),
+        el('div', { cls: 'chips' }, refs)
+      ]));
+    }
+    fill(document.getElementById('main'), nodes);
+  }
+  function astLine(label, text) {
+    return el('div', { cls: 'ast-line' }, [
+      el('span', { cls: 'ast-line-label', text: label }),
+      el('span', { cls: 'ast-line-text', text: text || '—' })
+    ]);
+  }
+  function buildAstCard(item) {
+    var tags = (item.关键词 || []).slice(0, 7).map(function (tag) {
+      return el('span', { cls: 'morph-tag', text: tag });
+    });
+    return el('article', { cls: 'ast-card' }, [
+      el('div', { cls: 'ast-card-head' }, [
+        el('span', { cls: astLevelClass(item.等级), text: item.等级 }),
+        el('h3', { cls: 'ast-title', text: item.标题 })
+      ]),
+      astLine('触发', item.触发),
+      astLine('异常', item.异常结果),
+      astLine('处理', item.处理),
+      astLine('依据', item.依据),
+      tags.length ? el('div', { cls: 'chips ast-tags' }, tags) : null
+    ]);
+  }
+
+  function isAboutRoute() { return routeKey() === 'about'; }
+
+  // 关于 / 免责声明 / 隐私政策（上架与合规所需）
+  function renderAbout() {
+    setActiveTab(null);
+    renderSidebar();
+    function card(title, lines) {
+      return el('div', { cls: 'about-card' }, [ el('h3', { cls: 'about-h' , text: title }) ].concat(
+        lines.map(function (t) { return el('p', { cls: 'about-p', text: t }); })
+      ));
+    }
+    var nodes = [
+      el('h2', { cls: 'detail-title', text: '关于 · 免责声明 · 隐私政策' }),
+      card('免责声明', [
+        '本软件为临床微生物学习与速查工具，所载形态、鉴别、生化、药敏折点、治疗要点等内容仅供医学教育与专业人员查询参考，不构成任何诊断、治疗或用药建议。',
+        '任何临床决策（含用药选择、剂量、疗程）必须由具备资质的医务人员，结合患者具体情况、本地药敏结果与现行权威指南独立判断。开发者不对依据本软件内容所作决策导致的任何后果负责。',
+        '药敏折点依据 CLSI（M100 / M45 / M60 等）整理，可能随版本更新而变化；请以最新官方标准为准。'
+      ]),
+      card('隐私政策', [
+        '本软件为纯本地/离线应用，所有数据内置于程序中。',
+        '本软件不收集、不上传、不存储任何个人信息或使用数据，无账号体系，无第三方统计或广告 SDK。',
+        '「综述/参考」中的外部链接（PubMed、NCBI、LPSN、CDC、默沙东诊疗手册等）由用户主动点击后在浏览器打开，跳转后的网站隐私政策由对应站点负责。'
+      ]),
+      card('内容来源', [
+        '微生物学与临床内容综合整理自公认权威来源：CLSI 药敏标准、IDSA / CDC 指南、Sanford 抗微生物治疗指南、StatPearls、默沙东诊疗手册、LPSN / NCBI 分类等。',
+        '各条目底部「综述/参考」提供对应权威来源的检索入口，便于核对与延伸阅读。'
+      ]),
+      card('版本与版权', [
+        '名称：临床微生物学习与速查系统',
+        '版本：V1.0',
+        '© 2026 著作权所有。免费供个人学习与教学公益使用；未经许可不得用于商业用途或二次分发。'
+      ])
+    ];
+    fill(document.getElementById('main'), nodes);
+  }
+
+  function renderRoute() {
+    if (isAboutRoute()) { renderAbout(); return; }
+    if (isCompareRoute()) { renderCompare(); return; }
+    if (isCardCompareRoute()) { renderCardCompare(); return; }
+    if (isIntrinsicRoute()) { renderIntrinsic(); return; }
+    if (isGraphRoute()) { renderGraph(); return; }
+    if (isBreakpointsRoute()) { renderBreakpoints(); return; }
+    if (isAstAlertsRoute()) { renderAstAlerts(); return; }
+    var route = parseHash();
+    var data = db();
+    setActiveTab(route.module);
+    renderSidebar();
+
+    var entry = null, rels = [], mechImg = null;
+    if (route.id) {
+      var hit = Core.buildIndex(data)[route.id];
+      entry = hit ? hit.entry : null;
+      rels = entry ? Core.getRelations(route.id, data) : [];
+      mechImg = View.mechanismImageFor(route.module, entry, categories());
+    }
+    var extras = {
+      mechanismImage: mechImg,
+      mechCaption: route.module === 'tests' ? '试验示意图' : (route.module === 'staining' ? '染色示意图' : (route.module === 'biochem-tests' ? '生化反应示意图' : '作用机制示意图')),
+      structImage: (route.module === 'antibiotics' && entry && window.DB.structures && window.DB.structures[entry.id]) ? ('img/struct-' + entry.id + '.svg') : null,
+      morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
+      treatment: (entry && window.DB.treatment) ? window.DB.treatment[entry.id] : null,
+      biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
+      differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,
+      links: View.referenceLinks(route.module, entry),
+      breakpoints: (route.module === 'microbes' && route.id) ? View.breakpointVM(route.id, window.DB.breakpoints) : null
+    };
+    var vm = View.detailVM(entry, rels, extras);
+    fill(document.getElementById('main'), vm ? buildDetail(vm) : buildLanding(route.module));
+  }
+
+  // 未选条目时的着陆页：微生物模块展示「细菌形态总览」图，其余模块仅提示
+  // 各模块主界面（未选条目）的总览图
+  var LANDING = {
+    microbes: [
+      { src: 'img/morphology-overview.svg', cap: '细菌形态总览（按形态与排列）' },
+      { src: 'img/morphology-fungi.svg', cap: '真菌形态总览（酵母相 / 菌丝相 / 产孢结构）' },
+      { src: 'img/morphology-virus.svg', cap: '病毒结构总览（基本结构 / 衣壳对称 / 包膜外形）' }
+    ],
+    antibiotics: [{ src: 'img/landing-antibiotics.svg', cap: '抗微生物药作用机制总览' }],
+    resistance: [{ src: 'img/landing-resistance.svg', cap: '细菌耐药机制总览' }],
+    idcards: [{ src: 'img/landing-idcards.svg', cap: 'VITEK 2 鉴定卡原理与选卡总览' }],
+    cards: [{ src: 'img/landing-cards.svg', cap: '药敏卡与判读总览' }],
+    tests: [{ src: 'img/landing-tests.svg', cap: '实验室试验总览' }],
+    staining: [{ src: 'img/landing-staining.svg', cap: '染色方法总览' }],
+    media: [{ src: 'img/landing-media.svg', cap: '培养基总览' }],
+    'biochem-tests': [{ src: 'img/landing-biochem.svg', cap: '生化反应总览（按类别 · 颜色示阳性结果）' }]
+  };
+
+  function buildLanding(moduleKey) {
+    var nodes = [];
+    (LANDING[moduleKey] || []).forEach(function (g) {
+      nodes.push(el('figure', { cls: 'mechanism-fig' }, [
+        el('img', { cls: 'mechanism-img', src: g.src, alt: g.cap }),
+        el('figcaption', { cls: 'mechanism-cap', text: g.cap })
+      ]));
+    });
+    nodes.push(el('div', { cls: 'empty', text: '请选择左侧的一个条目查看详情。' }));
+    return nodes;
+  }
+
+  function runSearch(query) {
+    fill(document.getElementById('main'), buildSearch(View.searchVM(Core.searchEntries(db(), query), query)));
+  }
+
+  function init() {
+    var isMobile = function () { return window.matchMedia('(max-width: 760px)').matches; };
+    var openNav = function () { document.body.classList.add('nav-open'); };
+    var closeNav = function () { document.body.classList.remove('nav-open'); };
+
+    Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
+      t.addEventListener('click', function () {
+        document.getElementById('search-input').value = '';
+        location.hash = '#/' + t.getAttribute('data-module');
+        if (isMobile()) { closeNav(); }   // 切换模块时收起抽屉，露出该模块总览图；点 ☰ 再手动展开分类
+      });
+    });
+
+    // 移动端抽屉：汉堡开合、点遮罩/选中条目后关闭
+    var menuBtn = document.getElementById('menu-btn');
+    if (menuBtn) { menuBtn.addEventListener('click', function () { document.body.classList.toggle('nav-open'); }); }
+    var backdrop = document.getElementById('nav-backdrop');
+    if (backdrop) { backdrop.addEventListener('click', closeNav); }
+    var sb = document.getElementById('sidebar');
+    if (sb) { sb.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a')) { closeNav(); } }); }
+    var cmpBtn = document.querySelector('.compare-btn');
+    if (cmpBtn) { cmpBtn.addEventListener('click', function () { if (isMobile()) { openNav(); } }); }
+
+    var box = document.getElementById('search-input');
+    box.addEventListener('input', function () {
+      var q = box.value.trim();
+      if (q) { runSearch(q); } else { renderRoute(); }
+    });
+
+    window.addEventListener('hashchange', function () {
+      var s = document.getElementById('search-input');
+      if (s.value.trim()) { s.value = ''; }
+      renderRoute();
+    });
+
+    renderRoute();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+//// 文件：sw.js ////
+/* 离线缓存：核心文件预缓存 + 其余(图片等)运行时缓存。改版本号即可强制更新缓存。 */
+var CACHE = 'microbio-v38';
+var CORE = [
+  './', './index.html', './css/styles.css',
+  './js/core.js', './js/view.js', './js/validate.js', './js/app.js',
+  './data/categories.js', './data/microbes.js', './data/antibiotics.js', './data/resistance.js',
+  './data/biochem.js', './data/differential.js', './data/morphology.js', './data/treatment.js',
+  './data/idcards.js', './data/cards.js', './data/tests.js', './data/media.js', './data/staining.js', './data/structures.js',
+  './data/breakpoints.js', './data/biochem-tests.js', './data/ast-alerts.js',
+  './manifest.json', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'
+];
+
+self.addEventListener('install', function (e) {
+  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(CORE); }).then(function () { return self.skipWaiting(); }));
+});
+
+self.addEventListener('activate', function (e) {
+  e.waitUntil(
+    caches.keys().then(function (ks) {
+      return Promise.all(ks.filter(function (k) { return k !== CACHE; }).map(function (k) { return caches.delete(k); }));
+    }).then(function () { return self.clients.claim(); })
+  );
+});
+
+self.addEventListener('fetch', function (e) {
+  if (e.request.method !== 'GET') return;
+  e.respondWith(
+    caches.match(e.request).then(function (hit) {
+      return hit || fetch(e.request).then(function (res) {
+        if (res && res.ok && res.type === 'basic') {
+          var copy = res.clone();
+          caches.open(CACHE).then(function (c) { c.put(e.request, copy); });
+        }
+        return res;
+      }).catch(function () { return caches.match('./index.html'); });
+    })
+  );
+});
+
+//// 文件：manifest.json ////
+{
+  "name": "临床微生物学习与速查系统",
+  "short_name": "临床微生物速查",
+  "description": "微生物 / 抗微生物药 / 耐药 / 药敏卡 / 试验 / 培养基 学习参考",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f5f1",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
