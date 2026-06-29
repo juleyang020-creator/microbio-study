@@ -195,8 +195,8 @@ window.DB.breakpoints = [
       { 药物: "头孢克肟 (Cefixime)", 简写: "CFM", MIC_S: "≤0.06", MIC_I: "0.12", MIC_R: "≥0.25", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Ed36:纸片折点已移除;新增中介/耐药 MIC 折点(口服替代)" },
       { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.06", MIC_I: "0.12–1", MIC_R: "≥2", 抑菌圈_S: "≥47", 抑菌圈_I: "27–46", 抑菌圈_R: "≤26", 备注: "产青霉素酶株(PPNG)耐药;现已不用于治疗,主要供流行病学/酶检测参考" },
       { 药物: "环丙沙星 (Ciprofloxacin)", 简写: "CIP", MIC_S: "≤0.06", MIC_I: "0.12–0.5", MIC_R: "≥1", 抑菌圈_S: "≥41", 抑菌圈_I: "28–40", 抑菌圈_R: "≤27", 备注: "耐药普遍,需参照当地流行病学数据" },
-      { 药物: "阿奇霉素 (Azithromycin)", 简写: "AZM", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "≥30", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点;须用于含其他药物的联合方案" },
-      { 药物: "壮观霉素 (Spectinomycin)", 简写: "SPT", MIC_S: "≤32", MIC_I: "64", MIC_R: "≥128", 抑菌圈_S: "≥18", 抑菌圈_I: "15–17", 抑菌圈_R: "≤14", 备注: "头孢曲松不可用/过敏时的备选" },
+      { 药物: "阿奇霉素 (Azithromycin)", 简写: "AZM", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "≥30", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点;主要用于耐药监测/历史资料,治疗按 CDC 当前方案" },
+      { 药物: "壮观霉素 (Spectinomycin)", 简写: "SPT", MIC_S: "≤32", MIC_I: "64", MIC_R: "≥128", 抑菌圈_S: "≥18", 抑菌圈_I: "15–17", 抑菌圈_R: "≤14", 备注: "历史替代药;咽部疗效不足且可及性有限,治疗按 CDC 当前方案" },
       { 药物: "四环素 (Tetracycline)", 简写: "TE", MIC_S: "≤0.25", MIC_I: "0.5–1", MIC_R: "≥2", 抑菌圈_S: "≥38", 抑菌圈_I: "31–37", 抑菌圈_R: "≤30", 备注: "圈 ≤19 mm 提示质粒介导耐药(TRNG)" }
     ]
   },
@@ -365,7 +365,7 @@ window.DB.breakpoints = [
   {
     菌组名: "厌氧菌 (Anaerobic Bacteria)",
     CLSI表: "Table 2J",
-    菌种: ["clostridium-perfringens", "clostridium-tetani", "clostridium-botulinum", "clostridioides-difficile", "bacteroides-fragilis", "prevotella-melaninogenica", "fusobacterium-nucleatum", "peptostreptococcus-anaerobius", "cutibacterium-acnes", "actinomyces-israelii"],
+    菌种: ["clostridium-perfringens", "clostridium-tetani", "clostridium-botulinum", "clostridioides-difficile", "bacteroides-fragilis", "prevotella-melaninogenica", "fusobacterium-nucleatum", "peptostreptococcus-anaerobius", "cutibacterium-acnes", "actinomyces-israelii", "fusobacterium-necrophorum", "parvimonas-micra", "finegoldia-magna", "eggerthella-lenta", "veillonella-parvula", "clostridium-septicum"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "革兰阳性厌氧菌(梭菌)多敏感;脆弱拟杆菌等革兰阴性厌氧菌天然耐药" },
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "可预测阿莫西林;仅 MIC 法(琼脂稀释/肉汤微量稀释)" },

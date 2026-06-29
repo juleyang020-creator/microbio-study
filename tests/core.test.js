@@ -82,6 +82,20 @@ test('searchEntries 匹配类别、药敏简写、药敏卡药物与扩展数据
   assert.deepStrictEqual(Core.searchEntries(db, '凝固酶').map(r => r.id), ['m1']);
 });
 
+test('searchEntries 支持检验科常见菌名简写', () => {
+  const db = {
+    microbes: [
+      { id: 'kpn', 名称: '肺炎克雷伯菌', 拉丁名: 'Klebsiella pneumoniae', 类别: '克雷伯菌属', 小节: [], 关联: [] },
+      { id: 'aba', 名称: '鲍曼不动杆菌', 拉丁名: 'Acinetobacter baumannii', 类别: '不动杆菌属', 小节: [], 关联: [] },
+      { id: 'eco', 名称: '大肠埃希菌', 拉丁名: 'Escherichia coli', 类别: '埃希菌属', 小节: [], 关联: [] }
+    ],
+    antibiotics: [], resistance: [], idcards: [], cards: [], tests: [], media: [], staining: [], 'biochem-tests': []
+  };
+  assert.deepStrictEqual(Core.searchEntries(db, 'kpn').map(r => r.id), ['kpn']);
+  assert.deepStrictEqual(Core.searchEntries(db, 'aba').map(r => r.id), ['aba']);
+  assert.deepStrictEqual(Core.searchEntries(db, 'eco').map(r => r.id), ['eco']);
+});
+
 test('searchEntries 空查询返回空数组', () => {
   assert.deepStrictEqual(Core.searchEntries(fixture(), '   '), []);
 });

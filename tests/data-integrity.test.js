@@ -77,6 +77,27 @@ test('每个抗生素都有药敏简写', () => {
   });
 });
 
+test('折点药物名可跳转到药物或对应试验条目', () => {
+  const drugNames = {};
+  const aliases = {
+    青霉素: true,
+    '氨苄西林/阿莫西林': true,
+    复方磺胺甲噁唑: true,
+    复方新诺明: true
+  };
+  const testItems = {
+    庆大霉素高水平: true,
+    链霉素高水平: true
+  };
+  global.window.DB.antibiotics.forEach((a) => { drugNames[a.名称] = true; });
+  (global.window.DB.breakpoints || []).forEach((group) => {
+    (group.药物 || []).forEach((d) => {
+      const name = String(d.药物 || '').replace(/\s*\([^)]*\)\s*$/, '').trim();
+      assert.ok(drugNames[name] || aliases[name] || testItems[name], group.菌组名 + ' 的折点药物无法跳转：' + d.药物);
+    });
+  });
+});
+
 test('药敏卡中的药物名均可跳转到药物或对应试验条目', () => {
   const drugNames = {};
   global.window.DB.antibiotics.forEach((a) => { drugNames[a.名称] = true; });
@@ -234,4 +255,30 @@ test('治疗要点的键均为存在的微生物 id 且非空', () => {
     assert.ok(micIds[id], '治疗要点指向不存在的微生物 id：' + id);
     assert.ok(treatment[id] && String(treatment[id]).trim().length, '治疗要点为空：' + id);
   });
+});
+
+test('高风险性传播感染治疗要点采用当前教学口径', () => {
+  const treatment = global.window.DB.treatment || {};
+  assert.match(treatment['neisseria-gonorrhoeae'], /头孢曲松500mg/);
+  assert.match(treatment['neisseria-gonorrhoeae'], /多西环素/);
+  assert.doesNotMatch(treatment['neisseria-gonorrhoeae'], /联合阿奇霉素|经验性联合阿奇霉素/);
+  assert.match(treatment['trichomonas-vaginalis'], /女性首选甲硝唑500mg/);
+  assert.match(treatment['trichomonas-vaginalis'], /男性首选甲硝唑2g单次/);
+});
+
+test('Service Worker 预缓存全部图片且只清理本应用缓存', () => {
+  const sw = fs.readFileSync(path.join(__dirname, '..', 'sw.js'), 'utf8');
+  fs.readdirSync(path.join(__dirname, '..', 'img')).filter((f) => f.endsWith('.svg')).forEach((f) => {
+    assert.ok(sw.includes('./img/' + f), 'sw.js 未预缓存图片：img/' + f);
+  });
+  assert.ok(sw.includes('CACHE_PREFIX'), 'sw.js 应使用缓存前缀');
+  assert.ok(/k\.indexOf\(CACHE_PREFIX\)\s*===\s*0/.test(sw), 'sw.js 应只清理本应用缓存');
+});
+
+test('入口资源带版本参数以避免旧脚本缓存', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+  ['css/styles.css', 'js/app.js', 'js/view.js', 'data/breakpoints.js', 'data/treatment.js'].forEach((asset) => {
+    assert.ok(html.includes(asset + '?v='), 'index.html 未给资源加版本参数：' + asset);
+  });
+  assert.ok(html.includes("updateViaCache: 'none'"), 'Service Worker 注册应绕过脚本缓存');
 });

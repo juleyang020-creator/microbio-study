@@ -299,6 +299,37 @@
     return { items: items, rows: rows };
   }
 
+  function retiredText(obj) {
+    return [obj && obj.菌组名, obj && obj.CLSI表, obj && obj.备注].filter(Boolean).join(' ');
+  }
+
+  function isRetiredBreakpointGroup(group) {
+    return /已撤销|历史参考/.test(retiredText(group));
+  }
+
+  function isRetiredBreakpointDrug(drug) {
+    return /已撤销|历史参考/.test(retiredText(drug));
+  }
+
+  function judgeableBreakpointGroups(breakpoints) {
+    return (breakpoints || []).filter(function (group) {
+      return !isRetiredBreakpointGroup(group);
+    }).map(function (group) {
+      var copy = {
+        菌组名: group.菌组名,
+        CLSI表: group.CLSI表,
+        来源: group.来源 || '',
+        菌种: group.菌种 || [],
+        药物: (group.药物 || []).filter(function (drug) {
+          return !isRetiredBreakpointDrug(drug) && (drug.MIC_S || drug.MIC_I || drug.MIC_R);
+        })
+      };
+      return copy;
+    }).filter(function (group) {
+      return group.药物.length > 0;
+    });
+  }
+
   // 折点：按微生物 id 查找所属菌组的折点表
   function breakpointGroup(microbeId, breakpoints) {
     breakpoints = breakpoints || [];
@@ -425,21 +456,27 @@
   }
 
   // ===== 折点解析与 MIC 判读（CLSI M100 风格） =====
+  function numPattern() {
+    return '([\\d.]+)(?:\\s*/\\s*[\\d.]+)?';
+  }
+
   // 解析单个折点字符串："≤0.06"→{type:'le',val:0.06}；"≥2"→{type:'ge',val:2}；
-  // "0.12–1" / "0.12-1"→{type:'range',lo,hi}；"16"→{type:'value',val:16}；"—"/""→null。
+  // "0.12–1" / "32/4–64/4"→{type:'range',lo,hi}；"16/4"→{type:'value',val:16}；"—"/""→null。
+  // 复方药只取斜线前的主药 MIC 数值，与页面上的单个 MIC 输入保持一致。
   function parseBP(s) {
     if (s == null) { return null; }
     s = String(s).trim();
     if (!s || s === '—' || s === '-') { return null; }
     // 去掉尾部说明性括注（如 "16/4 (SDD)"）—只取主数值部分
     s = s.replace(/\s*\(.*\)$/, '').trim();
+    var n = numPattern();
     var m;
-    if ((m = s.match(/^([\d.]+)\s*[–-]\s*([\d.]+)/))) { return { type: 'range', lo: parseFloat(m[1]), hi: parseFloat(m[2]) }; }
-    if ((m = s.match(/^≤\s*([\d.]+)/))) { return { type: 'le', val: parseFloat(m[1]) }; }
-    if ((m = s.match(/^≥\s*([\d.]+)/))) { return { type: 'ge', val: parseFloat(m[1]) }; }
-    if ((m = s.match(/^>\s*([\d.]+)/))) { return { type: 'gt', val: parseFloat(m[1]) }; }
-    if ((m = s.match(/^<\s*([\d.]+)/))) { return { type: 'lt', val: parseFloat(m[1]) }; }
-    if ((m = s.match(/^([\d.]+)/))) { return { type: 'value', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^' + n + '\\s*[–-]\\s*' + n)))) { return { type: 'range', lo: parseFloat(m[1]), hi: parseFloat(m[2]) }; }
+    if ((m = s.match(new RegExp('^≤\\s*' + n)))) { return { type: 'le', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^≥\\s*' + n)))) { return { type: 'ge', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^>\\s*' + n)))) { return { type: 'gt', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^<\\s*' + n)))) { return { type: 'lt', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^' + n)))) { return { type: 'value', val: parseFloat(m[1]) }; }
     return null;
   }
 
@@ -534,6 +571,9 @@
     buildCardComparison: buildCardComparison,
     breakpointGroup: breakpointGroup,
     breakpointVM: breakpointVM,
+    isRetiredBreakpointGroup: isRetiredBreakpointGroup,
+    isRetiredBreakpointDrug: isRetiredBreakpointDrug,
+    judgeableBreakpointGroups: judgeableBreakpointGroups,
     intrinsicVM: intrinsicVM,
     graphLayoutVM: graphLayoutVM,
     parseBP: parseBP,

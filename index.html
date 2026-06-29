@@ -7,14 +7,14 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="知微">
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json?v=20260630-1">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <title>知微 · 微生物学习手册</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20260630-1">
 </head>
 <body>
   <header class="topbar">
-    <button id="menu-btn" class="menu-btn" aria-label="目录" type="button">☰</button>
+    <button id="menu-btn" class="menu-btn" aria-label="目录" aria-controls="sidebar" aria-expanded="false" type="button">☰</button>
     <div class="brand">知微<span class="brand-sub">微生物学习手册</span></div>
     <div class="nav-boards">
       <section class="nav-board" aria-label="基础知识">
@@ -58,32 +58,56 @@
   </footer>
 
   <!-- 数据（定义 window.DB） -->
-  <script src="data/categories.js"></script>
-  <script src="data/microbes.js"></script>
-  <script src="data/antibiotics.js"></script>
-  <script src="data/resistance.js"></script>
-  <script src="data/biochem.js"></script>
-  <script src="data/differential.js"></script>
-  <script src="data/morphology.js"></script>
-  <script src="data/treatment.js"></script>
-  <script src="data/idcards.js"></script>
-  <script src="data/cards.js"></script>
-  <script src="data/tests.js"></script>
-  <script src="data/media.js"></script>
-  <script src="data/staining.js"></script>
-  <script src="data/structures.js"></script>
-  <script src="data/breakpoints.js"></script>
-  <script src="data/biochem-tests.js"></script>
-  <script src="data/ast-alerts.js"></script>
+  <script>window.APP_VERSION = '20260630-1';</script>
+  <script src="data/source-metadata.js?v=20260630-1"></script>
+  <script src="data/categories.js?v=20260630-1"></script>
+  <script src="data/microbes.js?v=20260630-1"></script>
+  <script src="data/antibiotics.js?v=20260630-1"></script>
+  <script src="data/resistance.js?v=20260630-1"></script>
+  <script src="data/biochem.js?v=20260630-1"></script>
+  <script src="data/differential.js?v=20260630-1"></script>
+  <script src="data/morphology.js?v=20260630-1"></script>
+  <script src="data/treatment.js?v=20260630-1"></script>
+  <script src="data/idcards.js?v=20260630-1"></script>
+  <script src="data/cards.js?v=20260630-1"></script>
+  <script src="data/tests.js?v=20260630-1"></script>
+  <script src="data/media.js?v=20260630-1"></script>
+  <script src="data/staining.js?v=20260630-1"></script>
+  <script src="data/structures.js?v=20260630-1"></script>
+  <script src="data/breakpoints.js?v=20260630-1"></script>
+  <script src="data/biochem-tests.js?v=20260630-1"></script>
+  <script src="data/ast-alerts.js?v=20260630-1"></script>
   <!-- 逻辑 -->
-  <script src="js/core.js"></script>
-  <script src="js/view.js"></script>
-  <script src="js/validate.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/core.js?v=20260630-1"></script>
+  <script src="js/view.js?v=20260630-1"></script>
+  <script src="js/validate.js?v=20260630-1"></script>
+  <script src="js/app.js?v=20260630-1"></script>
   <script>
+    function showUpdateNotice(text) {
+      var btn = document.createElement('button');
+      btn.className = 'update-toast';
+      btn.type = 'button';
+      btn.textContent = text;
+      btn.addEventListener('click', function () { location.reload(); });
+      document.body.appendChild(btn);
+    }
     // PWA：仅在 http(s) 下注册离线缓存（file:// 套壳内跳过）
     if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
-      window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(function (reg) {
+          reg.addEventListener('updatefound', function () {
+            var worker = reg.installing;
+            if (!worker) { return; }
+            worker.addEventListener('statechange', function () {
+              if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+                showUpdateNotice('已更新内容，点此刷新');
+              }
+            });
+          });
+        }).catch(function () {
+          showUpdateNotice('离线缓存未启用，点此重试');
+        });
+      });
     }
   </script>
 </body>

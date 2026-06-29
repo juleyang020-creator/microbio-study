@@ -1898,6 +1898,56 @@ window.DB.microbes = [
     关联: ['penicillin-g', 'ampicillin']
   },
   {
+    id: 'fusobacterium-necrophorum', 名称: '坏死梭杆菌', 拉丁名: 'Fusobacterium necrophorum', 类别: '梭杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阴性梭形杆菌，菌体可较粗短，两端尖细，常见于口咽部与胃肠道。' },
+      { 标题: '致病性 / 所致疾病', 正文: '扁桃体周脓肿、咽后脓肿与 Lemierre 综合征的经典病原；后者表现为咽部感染后颈内静脉化脓性血栓性静脉炎，可有肺部脓毒性栓塞。' },
+      { 标题: '耐药特点', 正文: '可产β-内酰胺酶；深部感染通常需覆盖厌氧菌并充分控制感染灶。' }
+    ],
+    关联: ['fusobacterium-nucleatum', 'metronidazole', 'penicillin-g', 'anaerobic-blood-agar']
+  },
+  {
+    id: 'parvimonas-micra', 名称: '微小微单胞菌', 拉丁名: 'Parvimonas micra（旧称 Peptostreptococcus micros）', 类别: '微小单胞菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阳性小球菌，可成对、短链或小团排列，口腔常居菌。' },
+      { 标题: '致病性 / 所致疾病', 正文: '牙周炎、根尖周脓肿、脑/肺/腹腔脓肿等混合厌氧感染常见成员；也可致菌血症和感染性心内膜炎。' }
+    ],
+    关联: ['peptostreptococcus-anaerobius', 'penicillin-g', 'metronidazole', 'id-anc']
+  },
+  {
+    id: 'finegoldia-magna', 名称: '大芬戈尔德菌', 拉丁名: 'Finegoldia magna', 类别: '芬戈尔德菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阳性球菌，常成对、短链或小团排列，为皮肤、口腔及泌尿生殖道常居菌。' },
+      { 标题: '致病性 / 所致疾病', 正文: '皮肤软组织感染、糖尿病足、骨关节和假体相关感染中较常见，也可参与腹腔/盆腔混合感染。' }
+    ],
+    关联: ['peptostreptococcus-anaerobius', 'penicillin-g', 'vancomycin', 'id-anc']
+  },
+  {
+    id: 'eggerthella-lenta', 名称: '迟缓埃格特菌', 拉丁名: 'Eggerthella lenta', 类别: '埃格特菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阳性细长杆菌，可染色不均；属肠道菌群，培养生长慢。' },
+      { 标题: '致病性 / 所致疾病', 正文: '菌血症、腹腔感染、肝胆感染、皮肤软组织感染；血培养阳性时常提示肠源性或腹腔/胆道感染灶，应积极寻找源头。' },
+      { 标题: '耐药特点', 正文: '敏感性不稳定，需按药敏选择；经验治疗常需覆盖厌氧菌并控制感染灶。' }
+    ],
+    关联: ['metronidazole', 'meropenem', 'id-anc']
+  },
+  {
+    id: 'veillonella-parvula', 名称: '微小韦荣球菌', 拉丁名: 'Veillonella parvula', 类别: '韦荣球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阴性小球菌，常成对或短链；为口腔、胃肠道与泌尿生殖道常居菌。' },
+      { 标题: '致病性 / 所致疾病', 正文: '多见于牙源性、头颈部、腹腔或盆腔混合感染；少数可致菌血症、感染性心内膜炎、骨关节感染。' }
+    ],
+    关联: ['metronidazole', 'penicillin-g', 'id-anc']
+  },
+  {
+    id: 'clostridium-septicum', 名称: '败血梭菌', 拉丁名: 'Clostridium septicum', 类别: '梭菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '专性厌氧革兰阳性产芽孢杆菌，有动力，血平板常可见溶血。' },
+      { 标题: '致病性 / 所致疾病', 正文: '可致自发性气性坏疽、肌坏死和败血症；与结直肠肿瘤及血液系统恶性肿瘤相关性强，检出后需评估潜在病灶。' }
+    ],
+    关联: ['clostridium-perfringens', 'penicillin-g', 'clindamycin', 'metronidazole']
+  },
+  {
     id: 'aerococcus-urinae', 名称: '尿道气球菌', 拉丁名: 'Aerococcus urinae', 类别: '气球菌属',
     小节: [
       { 标题: '形态与染色', 正文: '革兰阳性球菌成簇/四联，触酶弱/阴性；菌落与培养特性似草绿色链球菌/肠球菌，易误判。' },

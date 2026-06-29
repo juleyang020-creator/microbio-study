@@ -1,6 +1,6 @@
-# 把「微生物学习」装到自己的 iPhone
+# 把「知微」装到自己的 iPhone
 
-工程已经建好并**在模拟器上构建运行验证通过**（WKWebView 全屏离线加载整个网页）。
+工程已经建好，可用 WKWebView 全屏离线加载打包进 App 的网页资源。
 你只需用**免费 Apple ID** 签名一次，就能装到自己手机。**不需要付费开发者账号、不上架。**
 
 > 免费账号限制：签出的 App 证书 **7 天到期**，到期后用 Xcode 再点一次 ▶ 续期即可；一个免费账号最多同时装 3 个自签 App。
@@ -30,7 +30,7 @@
 ```sh
 sh ios/make-web.sh      # 重新同步
 ```
-回到 Xcode 点一次 **▶** 重装即可。
+回到 Xcode 点一次 **▶** 重装即可。若使用 `project.yml` 重新生成工程，构建阶段也会自动同步网页资源。
 
 ## 想先在模拟器看看（不连手机、免签名）
 ```sh
@@ -45,7 +45,7 @@ xcrun simctl launch booted com.microbio.app
 ```
 
 ## 应用名 / 图标
-- 显示名已设为「微生物学习」（`project.yml` 里的 `INFOPLIST_KEY_CFBundleDisplayName`）。
+- 显示名已设为「知微」（`project.yml` 里的 `INFOPLIST_KEY_CFBundleDisplayName`）。
 - 图标：把 `ios/icon.svg` 导出 1024×1024 PNG，拖入 Xcode `Assets.xcassets → AppIcon`。
 
 ## 故障排查
@@ -67,4 +67,4 @@ ios/Microbio/
 ```
 > 改了 `project.yml` 需要 `brew install xcodegen` 后 `cd ios/Microbio && xcodegen generate` 重新生成工程；只改网页/Swift 代码则不需要。
 
-需要我做的（代码、工程、脚本、模拟器验证）都已完成；**第 3–5 步是 Xcode 图形界面 + 你的 Apple ID 登录签名**，只能你来点。卡住就把报错截图发我。
+**第 3–5 步是 Xcode 图形界面 + 你的 Apple ID 登录签名**，只能你来点。卡住就把报错截图发我。
