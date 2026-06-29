@@ -7,6 +7,88 @@
   'use strict';
 
   var MODULE_KEYS = ['microbes', 'antibiotics', 'resistance', 'idcards', 'cards', 'tests', 'media', 'staining', 'biochem-tests'];
+  var SEARCH_ALIASES = {
+    'ng': ['淋病奈瑟菌', '淋病', 'neisseria gonorrhoeae', 'gonococcus'],
+    'gc': ['淋病奈瑟菌', '淋病', 'neisseria gonorrhoeae', 'gonococcus'],
+    'eco': ['大肠埃希菌', 'escherichia coli', 'e coli', 'e. coli'],
+    'kpn': ['肺炎克雷伯菌', 'klebsiella pneumoniae'],
+    'kp': ['肺炎克雷伯菌', 'klebsiella pneumoniae'],
+    'kox': ['产酸克雷伯菌', 'klebsiella oxytoca'],
+    'aba': ['鲍曼不动杆菌', 'acinetobacter baumannii'],
+    'pae': ['铜绿假单胞菌', 'pseudomonas aeruginosa'],
+    'sau': ['金黄色葡萄球菌', 'staphylococcus aureus'],
+    'efa': ['粪肠球菌', 'enterococcus faecalis'],
+    'efm': ['屎肠球菌', 'enterococcus faecium'],
+    'ecl': ['阴沟肠杆菌', 'enterobacter cloacae'],
+    'cdiff': ['艰难梭菌', 'clostridioides difficile', 'clostridium difficile', 'c difficile', 'c. difficile', '伪膜性肠炎'],
+    'c-diff': ['艰难梭菌', 'clostridioides difficile', 'clostridium difficile', 'c difficile', 'c. difficile', '伪膜性肠炎'],
+    'c diff': ['艰难梭菌', 'clostridioides difficile', 'clostridium difficile', 'c difficile', 'c. difficile', '伪膜性肠炎'],
+    'mrsa': ['耐甲氧西林金黄色葡萄球菌', '金黄色葡萄球菌', 'staphylococcus aureus', 'meca', 'pbp2a'],
+    'vre': ['耐万古霉素肠球菌', '肠球菌', 'enterococcus', 'vana', 'vanb'],
+    'cre': ['碳青霉烯耐药肠杆菌', '肠杆菌', '碳青霉烯酶', 'kpc', 'ndm', 'oxa-48'],
+    'crab': ['碳青霉烯耐药鲍曼不动杆菌', '鲍曼不动杆菌', 'acinetobacter baumannii'],
+    'sxt': ['复方新诺明', '复方磺胺甲噁唑', 'tmp-smx', 'trimethoprim-sulfamethoxazole', 'cotrimoxazole'],
+    'tmp-smx': ['复方新诺明', '复方磺胺甲噁唑', 'sxt', 'trimethoprim-sulfamethoxazole', 'cotrimoxazole'],
+    'tmp/smx': ['复方新诺明', '复方磺胺甲噁唑', 'sxt', 'trimethoprim-sulfamethoxazole', 'cotrimoxazole'],
+    'tmpsmx': ['复方新诺明', '复方磺胺甲噁唑', 'sxt', 'trimethoprim-sulfamethoxazole', 'cotrimoxazole'],
+    'h pylori': ['幽门螺杆菌', 'helicobacter pylori'],
+    'hp': ['幽门螺杆菌', 'helicobacter pylori'],
+    'bv': ['加德纳菌', 'gardnerella vaginalis', '细菌性阴道病'],
+    'lemierre': ['坏死梭杆菌', 'fusobacterium necrophorum', 'lemierre'],
+    'mssa': ['金黄色葡萄球菌', 'staphylococcus aureus'],
+    'mrse': ['表皮葡萄球菌', 'staphylococcus epidermidis'],
+    'cons': ['凝固酶阴性葡萄球菌', '表皮葡萄球菌', 'staphylococcus epidermidis'],
+    'gbs': ['无乳链球菌', 'streptococcus agalactiae'],
+    'gas': ['化脓性链球菌', 'streptococcus pyogenes'],
+    'spn': ['肺炎链球菌', 'streptococcus pneumoniae'],
+    'pneumococcus': ['肺炎链球菌', 'streptococcus pneumoniae'],
+    'hflu': ['流感嗜血杆菌', 'haemophilus influenzae'],
+    'hib': ['流感嗜血杆菌', 'haemophilus influenzae'],
+    'tb': ['结核分枝杆菌', 'mycobacterium tuberculosis'],
+    'mtb': ['结核分枝杆菌', 'mycobacterium tuberculosis'],
+    'lm': ['李斯特菌', 'listeria monocytogenes'],
+    'steno': ['嗜麦芽窄食单胞菌', 'stenotrophomonas maltophilia'],
+    'smaltophilia': ['嗜麦芽窄食单胞菌', 'stenotrophomonas maltophilia'],
+    'campy': ['空肠弯曲菌', 'campylobacter'],
+    'pcp': ['耶氏肺孢子菌', 'pneumocystis'],
+    'pjp': ['耶氏肺孢子菌', 'pneumocystis'],
+    'gv': ['加德纳菌', 'gardnerella vaginalis', '细菌性阴道病'],
+    'esbl': ['超广谱', 'esbl', '肺炎克雷伯菌', '大肠埃希菌'],
+    'ampc': ['ampc', '头孢菌素酶', '阴沟肠杆菌'],
+    'kpc': ['碳青霉烯', 'kpc'],
+    'ndm': ['金属', 'ndm', '碳青霉烯'],
+    'mdr': ['多重耐药', '泛耐药'],
+    'xdr': ['泛耐药', '广泛耐药'],
+    'hiv': ['人类免疫缺陷病毒', 'human immunodeficiency', '艾滋'],
+    'hbv': ['乙型肝炎病毒', 'hepatitis b'],
+    'hcv': ['丙型肝炎病毒', 'hepatitis c'],
+    'hsv': ['单纯疱疹病毒', 'herpes simplex'],
+    'cmv': ['巨细胞病毒', 'cytomegalovirus'],
+    'ebv': ['eb 病毒', 'epstein', 'epstein-barr'],
+    'vzv': ['水痘', '带状疱疹', 'varicella']
+  };
+
+  function aliasKeys(term) {
+    return [
+      term,
+      term.replace(/\s+/g, '-'),
+      term.replace(/[.\s-]+/g, ''),
+      term.replace(/\//g, '-')
+    ];
+  }
+
+  function aliasesFor(term) {
+    var out = [];
+    aliasKeys(term).forEach(function (key) {
+      (SEARCH_ALIASES[key] || []).forEach(function (alias) { out.push(String(alias).toLowerCase()); });
+    });
+    return out;
+  }
+
+  function textHasTerm(text, term) {
+    if (text.indexOf(term) !== -1) { return true; }
+    return aliasesFor(term).some(function (alias) { return text.indexOf(alias) !== -1; });
+  }
 
   function buildIndex(db) {
     var index = {};
@@ -90,18 +172,18 @@
     if (!q) { return []; }
     // 分词检索：空白拆成多个词，要求全部命中（AND）。
     // 这样中英混输、缩写+种名（如 "staph aureus" / "大肠 coli"）都能匹配。
-    var tokens = q.split(/\s+/).filter(Boolean);
+    var tokens = aliasesFor(q).length ? [q] : q.split(/\s+/).filter(Boolean);
     var results = [];
     MODULE_KEYS.forEach(function (mod) {
       (db[mod] || []).forEach(function (entry) {
         var hay = entrySearchText(db, mod, entry);
-        var hit = tokens.every(function (t) { return hay.indexOf(t) !== -1; });
+        var hit = tokens.every(function (t) { return textHasTerm(hay, t); });
         if (!hit) { return; }
         // 相关度：命中名称/拉丁名/英文名比命中正文得分更高，整串命中再加分
         var head = String((entry.名称 || '') + ' ' + (entry.拉丁名 || '') + ' ' + (entry.英文 || '')).toLowerCase();
         var score = 0;
-        tokens.forEach(function (t) { if (head.indexOf(t) !== -1) { score += 2; } });
-        if (head.indexOf(q) !== -1) { score += 3; }
+        tokens.forEach(function (t) { if (textHasTerm(head, t)) { score += 2; } });
+        if (textHasTerm(head, q)) { score += 3; }
         results.push({ id: entry.id, 名称: entry.名称, module: mod, 摘要: searchSummary(mod, entry), _score: score });
       });
     });

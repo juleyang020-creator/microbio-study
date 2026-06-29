@@ -1,7 +1,6 @@
-临床微生物学习与速查系统 — 源程序
-（计算机软件著作权登记用；如超 60 页，提交前 30 页 + 后 30 页）
-========================================================================
-
+知微 · 微生物学习手册 — 源程序
+版本：V1.0
+说明：本文件由当前源码关键文件汇总生成，用于软著源程序材料。
 
 //// 文件：index.html ////
 <!DOCTYPE html>
@@ -12,16 +11,16 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="临床微生物速查">
-  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-title" content="知微">
+  <link rel="manifest" href="manifest.json?v=20260629-2">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-  <title>临床微生物学习与速查系统</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>知微 · 微生物学习手册</title>
+  <link rel="stylesheet" href="css/styles.css?v=20260629-2">
 </head>
 <body>
   <header class="topbar">
-    <button id="menu-btn" class="menu-btn" aria-label="目录" type="button">☰</button>
-    <div class="brand">临床微生物速查</div>
+    <button id="menu-btn" class="menu-btn" aria-label="目录" aria-controls="sidebar" aria-expanded="false" type="button">☰</button>
+    <div class="brand">知微<span class="brand-sub">微生物学习手册</span></div>
     <div class="nav-boards">
       <section class="nav-board" aria-label="基础知识">
         <div class="nav-board-title">基础知识</div>
@@ -64,32 +63,54 @@
   </footer>
 
   <!-- 数据（定义 window.DB） -->
-  <script src="data/categories.js"></script>
-  <script src="data/microbes.js"></script>
-  <script src="data/antibiotics.js"></script>
-  <script src="data/resistance.js"></script>
-  <script src="data/biochem.js"></script>
-  <script src="data/differential.js"></script>
-  <script src="data/morphology.js"></script>
-  <script src="data/treatment.js"></script>
-  <script src="data/idcards.js"></script>
-  <script src="data/cards.js"></script>
-  <script src="data/tests.js"></script>
-  <script src="data/media.js"></script>
-  <script src="data/staining.js"></script>
-  <script src="data/structures.js"></script>
-  <script src="data/breakpoints.js"></script>
-  <script src="data/biochem-tests.js"></script>
-  <script src="data/ast-alerts.js"></script>
+  <script src="data/categories.js?v=20260629-2"></script>
+  <script src="data/microbes.js?v=20260629-2"></script>
+  <script src="data/antibiotics.js?v=20260629-2"></script>
+  <script src="data/resistance.js?v=20260629-2"></script>
+  <script src="data/biochem.js?v=20260629-2"></script>
+  <script src="data/differential.js?v=20260629-2"></script>
+  <script src="data/morphology.js?v=20260629-2"></script>
+  <script src="data/treatment.js?v=20260629-2"></script>
+  <script src="data/idcards.js?v=20260629-2"></script>
+  <script src="data/cards.js?v=20260629-2"></script>
+  <script src="data/tests.js?v=20260629-2"></script>
+  <script src="data/media.js?v=20260629-2"></script>
+  <script src="data/staining.js?v=20260629-2"></script>
+  <script src="data/structures.js?v=20260629-2"></script>
+  <script src="data/breakpoints.js?v=20260629-2"></script>
+  <script src="data/biochem-tests.js?v=20260629-2"></script>
+  <script src="data/ast-alerts.js?v=20260629-2"></script>
   <!-- 逻辑 -->
-  <script src="js/core.js"></script>
-  <script src="js/view.js"></script>
-  <script src="js/validate.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/core.js?v=20260629-2"></script>
+  <script src="js/view.js?v=20260629-2"></script>
+  <script src="js/validate.js?v=20260629-2"></script>
+  <script src="js/app.js?v=20260629-2"></script>
   <script>
+    function showUpdateNotice(text) {
+      var btn = document.createElement('button');
+      btn.className = 'update-toast';
+      btn.type = 'button';
+      btn.textContent = text;
+      btn.addEventListener('click', function () { location.reload(); });
+      document.body.appendChild(btn);
+    }
     // PWA：仅在 http(s) 下注册离线缓存（file:// 套壳内跳过）
     if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
-      window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(function (reg) {
+          reg.addEventListener('updatefound', function () {
+            var worker = reg.installing;
+            if (!worker) { return; }
+            worker.addEventListener('statechange', function () {
+              if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+                showUpdateNotice('已更新内容，点此刷新');
+              }
+            });
+          });
+        }).catch(function () {
+          showUpdateNotice('离线缓存未启用，点此重试');
+        });
+      });
     }
   </script>
 </body>
@@ -187,6 +208,7 @@ body {
 .cat-group { margin-bottom: 4px; }
 .cat-group-name { color: var(--muted); font-weight: 600; font-size: 11px; letter-spacing: 1px; margin: 12px 0 4px; }
 .cat-subgroup { color: var(--ink-soft); font-weight: 500; padding: 3px 6px; margin-top: 2px; }
+.cat-toggle { display: block; width: 100%; border: 0; background: transparent; font-family: inherit; text-align: left; }
 .collapsible { cursor: pointer; user-select: none; }
 .collapsible:hover { color: var(--accent); }
 .entry-link { display: block; color: var(--ink-soft); text-decoration: none; padding: 4px 8px 4px 16px; border-radius: 4px; border-left: 2px solid transparent; }
@@ -247,7 +269,7 @@ body {
 .cmp-add:hover { border-color: var(--accent); background: var(--accent-weak); }
 .cmp-search { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px; margin: 6px 0 8px; font-family: inherit; }
 .cmp-search:focus { outline: none; border-color: var(--accent); }
-.cmp-pick { padding: 5px 9px; border-radius: 4px; cursor: pointer; color: var(--ink-soft); font-size: 13px; user-select: none; }
+.cmp-pick { display: block; width: 100%; padding: 5px 9px; border: 0; background: transparent; border-radius: 4px; cursor: pointer; color: var(--ink-soft); font-size: 13px; user-select: none; text-align: left; font-family: inherit; }
 .cmp-pick:hover { background: var(--line-2); }
 .cmp-pick.sel { color: var(--accent); font-weight: 600; }
 .table-scroll { max-width: 100%; overflow-x: auto; padding-bottom: 2px; }
@@ -473,6 +495,21 @@ body {
 .menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); font-size: 16px; line-height: 1; padding: 5px 10px; cursor: pointer; font-family: inherit; }
 .nav-backdrop { display: none; }
 
+.update-toast {
+  position: fixed;
+  right: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom));
+  z-index: 80;
+  border: 1px solid var(--accent-edge);
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  padding: 9px 14px;
+  font: inherit;
+  box-shadow: 0 6px 22px rgba(15,18,22,.18);
+  cursor: pointer;
+}
+
 /* ===== 移动端 ===== */
 @media (max-width: 760px) {
   .topbar {
@@ -481,7 +518,7 @@ body {
     padding: 8px 12px;
     padding-top: max(8px, env(safe-area-inset-top));
   }
-  .menu-btn { display: inline-flex; grid-column: 1; grid-row: 1; }
+  .menu-btn { display: inline-flex; grid-column: 1; grid-row: 1; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; padding: 0; }
   .brand { grid-column: 2; grid-row: 1; font-size: 14px; }
   .search { grid-column: 3; grid-row: 1; min-width: 0; width: 100%; }
   .nav-boards { grid-column: 1 / -1; grid-row: 2; display: flex; flex-direction: column; gap: 8px; }
@@ -489,16 +526,16 @@ body {
   .nav-board-title { width: 100%; padding: 0 0 6px; border-right: 0; border-bottom: 1px solid var(--line); }
   .tools, .tabs { width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tabs::-webkit-scrollbar { display: none; }
-  .tab { min-height: 30px; }
+  .tab, .tool-btn { min-height: 44px; display: inline-flex; align-items: center; }
 
   .layout { position: relative; }
-  .sidebar { position: absolute; z-index: 40; top: 0; left: 0; bottom: 0; width: 84%; max-width: 300px; transform: translateX(-100%); transition: transform .24s ease; box-shadow: 2px 0 16px rgba(15,18,22,.18); }
+  .sidebar { position: fixed; z-index: 40; top: 0; left: 0; bottom: 0; width: 84%; max-width: 300px; transform: translateX(-100%); transition: transform .24s ease; box-shadow: 2px 0 16px rgba(15,18,22,.18); padding-top: max(14px, env(safe-area-inset-top)); }
   body.nav-open .sidebar { transform: translateX(0); }
-  .nav-backdrop { display: block; position: absolute; inset: 0; z-index: 35; background: rgba(15,18,22,.35); opacity: 0; pointer-events: none; transition: opacity .24s ease; }
+  .nav-backdrop { display: block; position: fixed; inset: 0; z-index: 35; background: rgba(15,18,22,.35); opacity: 0; pointer-events: none; transition: opacity .24s ease; }
   body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
   .main { padding: 18px 16px calc(24px + env(safe-area-inset-bottom)); }
   .detail-title { font-size: 20px; }
-  .entry-link, .cmp-pick, .tab { min-height: 32px; }
+  .entry-link, .cmp-pick, .cat-toggle { min-height: 44px; display: flex; align-items: center; }
   /* 表格瘦身：折点表 / 对比表在小屏更紧凑，尽量不横向溢出、行高更低 */
   .bp-table, .cmp { min-width: 0; width: 100%; font-size: 10.5px; table-layout: fixed; }
   .bp-table th, .bp-table td { padding: 3px 4px; word-break: break-word; }
@@ -534,6 +571,10 @@ body {
 .about-h { font-size: 14px; font-weight: 700; color: var(--ink); margin: 0 0 8px; }
 .about-p { font-size: 13.5px; line-height: 1.8; color: var(--ink-soft); margin: 0 0 6px; }
 .about-p:last-child { margin-bottom: 0; }
+
+/* 品牌副标题（主名"知微" + 小字"微生物学习手册"） */
+.brand-sub { font-weight: 400; font-size: 11px; letter-spacing: .5px; color: var(--muted); margin-left: 8px; }
+@media (max-width: 600px) { .brand-sub { display: none; } }
 
 //// 文件：js/core.js ////
 (function (factory) {
@@ -1051,6 +1092,37 @@ body {
     return { items: items, rows: rows };
   }
 
+  function retiredText(obj) {
+    return [obj && obj.菌组名, obj && obj.CLSI表, obj && obj.备注].filter(Boolean).join(' ');
+  }
+
+  function isRetiredBreakpointGroup(group) {
+    return /已撤销|历史参考/.test(retiredText(group));
+  }
+
+  function isRetiredBreakpointDrug(drug) {
+    return /已撤销|历史参考/.test(retiredText(drug));
+  }
+
+  function judgeableBreakpointGroups(breakpoints) {
+    return (breakpoints || []).filter(function (group) {
+      return !isRetiredBreakpointGroup(group);
+    }).map(function (group) {
+      var copy = {
+        菌组名: group.菌组名,
+        CLSI表: group.CLSI表,
+        来源: group.来源 || '',
+        菌种: group.菌种 || [],
+        药物: (group.药物 || []).filter(function (drug) {
+          return !isRetiredBreakpointDrug(drug) && (drug.MIC_S || drug.MIC_I || drug.MIC_R);
+        })
+      };
+      return copy;
+    }).filter(function (group) {
+      return group.药物.length > 0;
+    });
+  }
+
   // 折点：按微生物 id 查找所属菌组的折点表
   function breakpointGroup(microbeId, breakpoints) {
     breakpoints = breakpoints || [];
@@ -1177,21 +1249,27 @@ body {
   }
 
   // ===== 折点解析与 MIC 判读（CLSI M100 风格） =====
+  function numPattern() {
+    return '([\\d.]+)(?:\\s*/\\s*[\\d.]+)?';
+  }
+
   // 解析单个折点字符串："≤0.06"→{type:'le',val:0.06}；"≥2"→{type:'ge',val:2}；
-  // "0.12–1" / "0.12-1"→{type:'range',lo,hi}；"16"→{type:'value',val:16}；"—"/""→null。
+  // "0.12–1" / "32/4–64/4"→{type:'range',lo,hi}；"16/4"→{type:'value',val:16}；"—"/""→null。
+  // 复方药只取斜线前的主药 MIC 数值，与页面上的单个 MIC 输入保持一致。
   function parseBP(s) {
     if (s == null) { return null; }
     s = String(s).trim();
     if (!s || s === '—' || s === '-') { return null; }
     // 去掉尾部说明性括注（如 "16/4 (SDD)"）—只取主数值部分
     s = s.replace(/\s*\(.*\)$/, '').trim();
+    var n = numPattern();
     var m;
-    if ((m = s.match(/^([\d.]+)\s*[–-]\s*([\d.]+)/))) { return { type: 'range', lo: parseFloat(m[1]), hi: parseFloat(m[2]) }; }
-    if ((m = s.match(/^≤\s*([\d.]+)/))) { return { type: 'le', val: parseFloat(m[1]) }; }
-    if ((m = s.match(/^≥\s*([\d.]+)/))) { return { type: 'ge', val: parseFloat(m[1]) }; }
-    if ((m = s.match(/^>\s*([\d.]+)/))) { return { type: 'gt', val: parseFloat(m[1]) }; }
-    if ((m = s.match(/^<\s*([\d.]+)/))) { return { type: 'lt', val: parseFloat(m[1]) }; }
-    if ((m = s.match(/^([\d.]+)/))) { return { type: 'value', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^' + n + '\\s*[–-]\\s*' + n)))) { return { type: 'range', lo: parseFloat(m[1]), hi: parseFloat(m[2]) }; }
+    if ((m = s.match(new RegExp('^≤\\s*' + n)))) { return { type: 'le', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^≥\\s*' + n)))) { return { type: 'ge', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^>\\s*' + n)))) { return { type: 'gt', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^<\\s*' + n)))) { return { type: 'lt', val: parseFloat(m[1]) }; }
+    if ((m = s.match(new RegExp('^' + n)))) { return { type: 'value', val: parseFloat(m[1]) }; }
     return null;
   }
 
@@ -1286,6 +1364,9 @@ body {
     buildCardComparison: buildCardComparison,
     breakpointGroup: breakpointGroup,
     breakpointVM: breakpointVM,
+    isRetiredBreakpointGroup: isRetiredBreakpointGroup,
+    isRetiredBreakpointDrug: isRetiredBreakpointDrug,
+    judgeableBreakpointGroups: judgeableBreakpointGroups,
     intrinsicVM: intrinsicVM,
     graphLayoutVM: graphLayoutVM,
     parseBP: parseBP,
@@ -1328,7 +1409,7 @@ body {
 
   // 折点表药物名与抗菌药条目名的别名（模块级常量，避免每次调用重建）：
   // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
-  var ABX_ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g', '复方磺胺甲噁唑': 'cotrimoxazole', '复方新诺明': 'cotrimoxazole' };
+  var ABX_ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g', '氨苄西林/阿莫西林': 'ampicillin', '复方磺胺甲噁唑': 'cotrimoxazole', '复方新诺明': 'cotrimoxazole' };
 
   function db() {
     var DB = window.DB || {};
@@ -1421,6 +1502,8 @@ body {
     'ESBL': 'esbl-test',
     '头孢西丁筛选': 'cefoxitin-screen',
     '诱导型克林霉素耐药': 'd-test',
+    '庆大霉素高水平': 'hlar',
+    '链霉素高水平': 'hlar',
     '庆大霉素高水平(协同)': 'hlar',
     '链霉素高水平(协同)': 'hlar'
   };
@@ -1450,8 +1533,21 @@ body {
     if (opts.style != null) { node.setAttribute('style', opts.style); }
     if (opts.id != null) { node.id = opts.id; }
     if (opts.type != null) { node.setAttribute('type', opts.type); }
+    if (opts.name != null) { node.setAttribute('name', opts.name); }
+    if (opts.min != null) { node.setAttribute('min', opts.min); }
+    if (opts.max != null) { node.setAttribute('max', opts.max); }
+    if (opts.step != null) { node.setAttribute('step', opts.step); }
+    if (opts.role != null) { node.setAttribute('role', opts.role); }
+    if (opts.tabindex != null) { node.setAttribute('tabindex', opts.tabindex); }
+    if (opts['for'] != null) { node.setAttribute('for', opts['for']); }
+    if (opts.selected) { node.selected = true; }
+    if (opts.disabled) { node.disabled = true; }
+    if (opts.checked) { node.checked = true; }
     if (opts.placeholder != null) { node.setAttribute('placeholder', opts.placeholder); }
     if (opts.value != null) { node.value = opts.value; }
+    Object.keys(opts).forEach(function (key) {
+      if (key.indexOf('aria-') === 0 && opts[key] != null) { node.setAttribute(key, opts[key]); }
+    });
     if (opts.onClick) { node.addEventListener('click', opts.onClick); }
     (children || []).forEach(function (c) { appendChildNode(node, c); });
     return node;
@@ -1525,10 +1621,12 @@ body {
     var isCollapsed = !!collapsed[path];
     var labelCls = (depth === 0 ? 'cat-group-name' : 'cat-subgroup') + (collapsible ? ' collapsible' : '');
     var marker = collapsible ? (isCollapsed ? '▸ ' : '▾ ') : '';
-    var out = [ el('div', {
-      cls: labelCls,
+    var out = [ el(collapsible ? 'button' : 'div', {
+      cls: labelCls + (collapsible ? ' cat-toggle' : ''),
       text: marker + node.名称,
+      type: collapsible ? 'button' : null,
       style: 'padding-left:' + (8 + depth * 14) + 'px',
+      'aria-expanded': collapsible ? String(!isCollapsed) : null,
       onClick: collapsible ? function () { toggleCollapse(path); } : null
     }) ];
     if (isCollapsed) { return out; }
@@ -1775,9 +1873,11 @@ body {
     });
     var items = ids.map(function (id) {
       var sel = !!compareSet[id];
-      return el('div', {
+      return el('button', {
         cls: 'cmp-pick' + (sel ? ' sel' : ''),
+        type: 'button',
         text: (sel ? '☑ ' : '☐ ') + (names[id] || id),
+        'aria-pressed': String(sel),
         onClick: function () { toggleCompare(id); }
       });
     });
@@ -1845,7 +1945,7 @@ body {
     var ids = cardIds().filter(function (id) { return !q || (names[id] || '').toLowerCase().indexOf(q) !== -1; });
     var items = ids.map(function (id) {
       var sel = !!compareCardSet[id];
-      return el('div', { cls: 'cmp-pick' + (sel ? ' sel' : ''), text: (sel ? '☑ ' : '☐ ') + (names[id] || id), onClick: function () { toggleCardCompare(id); } });
+      return el('button', { cls: 'cmp-pick' + (sel ? ' sel' : ''), type: 'button', text: (sel ? '☑ ' : '☐ ') + (names[id] || id), 'aria-pressed': String(sel), onClick: function () { toggleCardCompare(id); } });
     });
     if (!items.length) { items = [ el('div', { cls: 'empty-sm', text: '无匹配的卡片' }) ]; }
     return items;
@@ -2232,8 +2332,12 @@ body {
   var bpJudgeMIC = '';
   function isBreakpointsRoute() { return routeKey() === 'breakpoints'; }
   function bpGroups() { return (window.DB && window.DB.breakpoints) || []; }
+  function judgeableBpGroups() { return View.judgeableBreakpointGroups(bpGroups()); }
   function bpGroupByName(name) {
     return bpGroups().filter(function (g) { return g.菌组名 === name; })[0] || null;
+  }
+  function judgeableBpGroupByName(name) {
+    return judgeableBpGroups().filter(function (g) { return g.菌组名 === name; })[0] || null;
   }
   function renderBreakpoints() {
     setActiveTool('breakpoints');
@@ -2247,10 +2351,12 @@ body {
       modeToggle
     ]) ];
     if (bpMode === 'judge') {
-      var groupItems = bpGroups().map(function (g) {
-        return el('div', {
+      var groupItems = judgeableBpGroups().map(function (g) {
+        return el('button', {
           cls: 'cmp-pick' + (bpJudgeGroup === g.菌组名 ? ' sel' : ''),
+          type: 'button',
           text: g.菌组名,
+          'aria-pressed': String(bpJudgeGroup === g.菌组名),
           onClick: function () {
             bpJudgeGroup = g.菌组名;
             bpJudgeDrug = (g.药物 && g.药物[0]) ? g.药物[0].药物 : '';
@@ -2260,7 +2366,8 @@ body {
         });
       });
       sbNodes.push(el('div', { cls: 'cat-group' }, [
-        el('div', { cls: 'cat-group-name', text: '菌组 (' + bpGroups().length + ')' }),
+        el('div', { cls: 'cat-group-name', text: '可判读菌组 (' + judgeableBpGroups().length + ')' }),
+        el('div', { cls: 'cmp-hint', text: '已撤销或仅作历史参考的折点不进入 MIC 自动判读。' }),
         el('div', { cls: 'bp-group-list' }, groupItems)
       ]));
     } else {
@@ -2294,23 +2401,31 @@ body {
       }
     } else {
       // MIC 判读表单
-      var group = bpJudgeGroup ? bpGroupByName(bpJudgeGroup) : null;
+      var judgeGroups = judgeableBpGroups();
+      var group = bpJudgeGroup ? judgeableBpGroupByName(bpJudgeGroup) : null;
+      if (bpJudgeGroup && !group) {
+        bpJudgeGroup = '';
+        bpJudgeDrug = '';
+        group = null;
+      }
       var groupSelect = el('select', { cls: 'bp-select' });
+      groupSelect.id = 'bp-judge-group';
       groupSelect.appendChild(el('option', { value: '', text: '— 选择菌组 —' }));
-      bpGroups().forEach(function (g) {
+      judgeGroups.forEach(function (g) {
         var opt = el('option', { value: g.菌组名, text: g.菌组名 });
         if (g.菌组名 === bpJudgeGroup) { opt.selected = true; }
         groupSelect.appendChild(opt);
       });
       groupSelect.addEventListener('change', function () {
         bpJudgeGroup = groupSelect.value;
-        var gg = bpJudgeGroup ? bpGroupByName(bpJudgeGroup) : null;
+        var gg = bpJudgeGroup ? judgeableBpGroupByName(bpJudgeGroup) : null;
         bpJudgeDrug = (gg && gg.药物 && gg.药物[0]) ? gg.药物[0].药物 : '';
         bpJudgeMIC = '';
         renderBreakpointsMain();
       });
 
       var drugSelect = el('select', { cls: 'bp-select' });
+      drugSelect.id = 'bp-judge-drug';
       drugSelect.appendChild(el('option', { value: '', text: '— 选择药物 —' }));
       if (group) {
         group.药物.forEach(function (d) {
@@ -2322,12 +2437,13 @@ body {
       drugSelect.addEventListener('change', function () { bpJudgeDrug = drugSelect.value; bpJudgeMIC = ''; renderBreakpointsMain(); });
 
       var micInput = el('input', { cls: 'cmp-search', type: 'number', placeholder: '输入 MIC 值 (μg/mL)', value: bpJudgeMIC, step: '0.01', min: '0', style: 'width:200px;' });
+      micInput.id = 'bp-judge-mic';
       micInput.addEventListener('input', function () { bpJudgeMIC = micInput.value; renderJudgeResult(); });
 
       nodes.push(el('div', { cls: 'bp-judge-form' }, [
-        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '菌组' }), groupSelect ]),
-        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '药物' }), drugSelect ]),
-        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: 'MIC' }), micInput ])
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '菌组', 'for': 'bp-judge-group' }), groupSelect ]),
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '药物', 'for': 'bp-judge-drug' }), drugSelect ]),
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: 'MIC', 'for': 'bp-judge-mic' }), micInput ])
       ]));
 
       var resultBox = el('div', { cls: 'bp-judge-result', id: 'bp-judge-result' });
@@ -2367,7 +2483,7 @@ body {
       box.replaceChildren(el('div', { cls: 'empty-sm', text: '请选择菌组与药物，并输入 MIC 值。' }));
       return;
     }
-    var group = bpGroupByName(bpJudgeGroup);
+    var group = judgeableBpGroupByName(bpJudgeGroup);
     var drug = (group && group.药物 || []).filter(function (d) { return d.药物 === bpJudgeDrug; })[0];
     if (!drug) {
       box.replaceChildren(el('div', { cls: 'empty-sm', text: '该菌组未找到此药物。' }));
@@ -2494,7 +2610,7 @@ body {
     var nodes = [
       el('h2', { cls: 'detail-title', text: '关于 · 免责声明 · 隐私政策' }),
       card('免责声明', [
-        '本软件为临床微生物学习与速查工具，所载形态、鉴别、生化、药敏折点、治疗要点等内容仅供医学教育与专业人员查询参考，不构成任何诊断、治疗或用药建议。',
+        '本软件为微生物学习与速查工具，所载形态、鉴别、生化、药敏折点、治疗要点等内容仅供医学教育与专业人员查询参考，不构成任何诊断、治疗或用药建议。',
         '任何临床决策（含用药选择、剂量、疗程）必须由具备资质的医务人员，结合患者具体情况、本地药敏结果与现行权威指南独立判断。开发者不对依据本软件内容所作决策导致的任何后果负责。',
         '药敏折点依据 CLSI（M100 / M45 / M60 等）整理，可能随版本更新而变化；请以最新官方标准为准。'
       ]),
@@ -2508,7 +2624,7 @@ body {
         '各条目底部「综述/参考」提供对应权威来源的检索入口，便于核对与延伸阅读。'
       ]),
       card('版本与版权', [
-        '名称：临床微生物学习与速查系统',
+        '名称：知微 · 微生物学习手册（全称：知微微生物学习手册）',
         '版本：V1.0',
         '© 2026 著作权所有。免费供个人学习与教学公益使用；未经许可不得用于商业用途或二次分发。'
       ])
@@ -2531,9 +2647,10 @@ body {
 
     var entry = null, rels = [], mechImg = null;
     if (route.id) {
-      var hit = Core.buildIndex(data)[route.id];
+      var index = Core.buildIndex(data);
+      var hit = index[route.id];
       entry = hit ? hit.entry : null;
-      rels = entry ? Core.getRelations(route.id, data) : [];
+      rels = entry ? Core.getRelations(route.id, data, index) : [];
       mechImg = View.mechanismImageFor(route.module, entry, categories());
     }
     var extras = {
@@ -2587,8 +2704,13 @@ body {
 
   function init() {
     var isMobile = function () { return window.matchMedia('(max-width: 760px)').matches; };
-    var openNav = function () { document.body.classList.add('nav-open'); };
-    var closeNav = function () { document.body.classList.remove('nav-open'); };
+    var menuBtn = document.getElementById('menu-btn');
+    var openNav = function () { setNavOpen(true); };
+    var closeNav = function () { setNavOpen(false); };
+    function setNavOpen(open) {
+      document.body.classList.toggle('nav-open', open);
+      if (menuBtn) { menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+    }
 
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
       t.addEventListener('click', function () {
@@ -2599,8 +2721,7 @@ body {
     });
 
     // 移动端抽屉：汉堡开合、点遮罩/选中条目后关闭
-    var menuBtn = document.getElementById('menu-btn');
-    if (menuBtn) { menuBtn.addEventListener('click', function () { document.body.classList.toggle('nav-open'); }); }
+    if (menuBtn) { menuBtn.addEventListener('click', function () { setNavOpen(!document.body.classList.contains('nav-open')); }); }
     var backdrop = document.getElementById('nav-backdrop');
     if (backdrop) { backdrop.addEventListener('click', closeNav); }
     var sb = document.getElementById('sidebar');
@@ -2619,7 +2740,11 @@ body {
       if (s.value.trim()) { s.value = ''; }
       renderRoute();
     });
+    window.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape') { closeNav(); }
+    });
 
+    setNavOpen(false);
     renderRoute();
   }
 
@@ -2631,40 +2756,198 @@ body {
 })();
 
 //// 文件：sw.js ////
-/* 离线缓存：核心文件预缓存 + 其余(图片等)运行时缓存。改版本号即可强制更新缓存。 */
-var CACHE = 'microbio-v38';
+/* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
+var CACHE_PREFIX = 'microbio-';
+var APP_VERSION = '20260629-2';
+var CACHE = CACHE_PREFIX + 'v42';
+function versioned(path) {
+  return path + '?v=' + APP_VERSION;
+}
 var CORE = [
-  './', './index.html', './css/styles.css',
-  './js/core.js', './js/view.js', './js/validate.js', './js/app.js',
-  './data/categories.js', './data/microbes.js', './data/antibiotics.js', './data/resistance.js',
-  './data/biochem.js', './data/differential.js', './data/morphology.js', './data/treatment.js',
-  './data/idcards.js', './data/cards.js', './data/tests.js', './data/media.js', './data/staining.js', './data/structures.js',
-  './data/breakpoints.js', './data/biochem-tests.js', './data/ast-alerts.js',
-  './manifest.json', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'
+  './', './index.html', versioned('./css/styles.css'),
+  versioned('./js/core.js'), versioned('./js/view.js'), versioned('./js/validate.js'), versioned('./js/app.js'),
+  versioned('./data/categories.js'), versioned('./data/microbes.js'), versioned('./data/antibiotics.js'), versioned('./data/resistance.js'),
+  versioned('./data/biochem.js'), versioned('./data/differential.js'), versioned('./data/morphology.js'), versioned('./data/treatment.js'),
+  versioned('./data/idcards.js'), versioned('./data/cards.js'), versioned('./data/tests.js'), versioned('./data/media.js'), versioned('./data/staining.js'), versioned('./data/structures.js'),
+  versioned('./data/breakpoints.js'), versioned('./data/biochem-tests.js'), versioned('./data/ast-alerts.js'),
+  versioned('./manifest.json'), './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'
 ];
+var IMAGE_ASSETS = [
+  './img/biochem-citrate.svg',
+  './img/biochem-decarboxylase.svg',
+  './img/biochem-disk.svg',
+  './img/biochem-dnase.svg',
+  './img/biochem-esculin.svg',
+  './img/biochem-gelatin.svg',
+  './img/biochem-h2s.svg',
+  './img/biochem-hemolysis.svg',
+  './img/biochem-hippurate.svg',
+  './img/biochem-indole.svg',
+  './img/biochem-lancefield.svg',
+  './img/biochem-motility.svg',
+  './img/biochem-mr.svg',
+  './img/biochem-nacl.svg',
+  './img/biochem-nitrate.svg',
+  './img/biochem-pda.svg',
+  './img/biochem-pigment.svg',
+  './img/biochem-pyr.svg',
+  './img/biochem-sugar.svg',
+  './img/biochem-urease.svg',
+  './img/biochem-vp.svg',
+  './img/landing-antibiotics.svg',
+  './img/landing-biochem.svg',
+  './img/landing-cards.svg',
+  './img/landing-idcards.svg',
+  './img/landing-media.svg',
+  './img/landing-resistance.svg',
+  './img/landing-staining.svg',
+  './img/landing-tests.svg',
+  './img/mechanism-azole.svg',
+  './img/mechanism-cellwall.svg',
+  './img/mechanism-echinocandin.svg',
+  './img/mechanism-flucytosine.svg',
+  './img/mechanism-folate.svg',
+  './img/mechanism-membrane.svg',
+  './img/mechanism-nucleic.svg',
+  './img/mechanism-polyene.svg',
+  './img/mechanism-protein.svg',
+  './img/morphology-fungi.svg',
+  './img/morphology-overview.svg',
+  './img/morphology-virus.svg',
+  './img/resistance-biofilm.svg',
+  './img/resistance-bypass.svg',
+  './img/resistance-efflux.svg',
+  './img/resistance-enzyme.svg',
+  './img/resistance-permeability.svg',
+  './img/resistance-target.svg',
+  './img/stain-acidfast.svg',
+  './img/stain-auramine.svg',
+  './img/stain-flagella.svg',
+  './img/stain-giemsa.svg',
+  './img/stain-gram.svg',
+  './img/stain-granule.svg',
+  './img/stain-indiaink.svg',
+  './img/stain-lpcb.svg',
+  './img/stain-spore.svg',
+  './img/struct-amikacin.svg',
+  './img/struct-amoxicillin.svg',
+  './img/struct-amphotericin-b.svg',
+  './img/struct-ampicillin.svg',
+  './img/struct-azithromycin.svg',
+  './img/struct-aztreonam.svg',
+  './img/struct-caspofungin.svg',
+  './img/struct-cefazolin.svg',
+  './img/struct-cefepime.svg',
+  './img/struct-cefotaxime.svg',
+  './img/struct-cefotetan.svg',
+  './img/struct-cefoxitin.svg',
+  './img/struct-cefpodoxime.svg',
+  './img/struct-ceftaroline.svg',
+  './img/struct-ceftazidime.svg',
+  './img/struct-ceftizoxime.svg',
+  './img/struct-ceftriaxone.svg',
+  './img/struct-cefuroxime.svg',
+  './img/struct-cephalothin.svg',
+  './img/struct-chloramphenicol.svg',
+  './img/struct-ciprofloxacin.svg',
+  './img/struct-clarithromycin.svg',
+  './img/struct-clindamycin.svg',
+  './img/struct-daptomycin.svg',
+  './img/struct-doripenem.svg',
+  './img/struct-doxycycline.svg',
+  './img/struct-eravacycline.svg',
+  './img/struct-ertapenem.svg',
+  './img/struct-erythromycin.svg',
+  './img/struct-fluconazole.svg',
+  './img/struct-flucytosine.svg',
+  './img/struct-fosfomycin.svg',
+  './img/struct-imipenem.svg',
+  './img/struct-levofloxacin.svg',
+  './img/struct-linezolid.svg',
+  './img/struct-meropenem.svg',
+  './img/struct-metronidazole.svg',
+  './img/struct-micafungin.svg',
+  './img/struct-minocycline.svg',
+  './img/struct-moxifloxacin.svg',
+  './img/struct-nalidixic-acid.svg',
+  './img/struct-nitrofurantoin.svg',
+  './img/struct-norfloxacin.svg',
+  './img/struct-omadacycline.svg',
+  './img/struct-oxacillin.svg',
+  './img/struct-penicillin-g.svg',
+  './img/struct-piperacillin.svg',
+  './img/struct-rifampicin.svg',
+  './img/struct-streptomycin.svg',
+  './img/struct-sulfadiazine.svg',
+  './img/struct-sulfamethoxazole.svg',
+  './img/struct-tetracycline.svg',
+  './img/struct-ticarcillin.svg',
+  './img/struct-tigecycline.svg',
+  './img/struct-tobramycin.svg',
+  './img/struct-trimethoprim.svg',
+  './img/struct-vancomycin.svg',
+  './img/struct-voriconazole.svg',
+  './img/test-betalactamase.svg',
+  './img/test-bile.svg',
+  './img/test-camp.svg',
+  './img/test-catalase.svg',
+  './img/test-cefoxitin.svg',
+  './img/test-coagulase.svg',
+  './img/test-colistin.svg',
+  './img/test-d.svg',
+  './img/test-ecim.svg',
+  './img/test-esbl.svg',
+  './img/test-etest.svg',
+  './img/test-hlar.svg',
+  './img/test-kb.svg',
+  './img/test-mcim.svg',
+  './img/test-optochin.svg',
+  './img/test-oxidase.svg'
+];
+var PRECACHE = CORE.concat(IMAGE_ASSETS);
 
 self.addEventListener('install', function (e) {
-  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(CORE); }).then(function () { return self.skipWaiting(); }));
+  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(PRECACHE); }).then(function () { return self.skipWaiting(); }));
 });
 
 self.addEventListener('activate', function (e) {
   e.waitUntil(
     caches.keys().then(function (ks) {
-      return Promise.all(ks.filter(function (k) { return k !== CACHE; }).map(function (k) { return caches.delete(k); }));
+      return Promise.all(ks.filter(function (k) {
+        return k.indexOf(CACHE_PREFIX) === 0 && k !== CACHE;
+      }).map(function (k) { return caches.delete(k); }));
     }).then(function () { return self.clients.claim(); })
   );
 });
 
+function putIfCacheable(request, response) {
+  if (response && response.ok && response.type === 'basic') {
+    var copy = response.clone();
+    caches.open(CACHE).then(function (c) { c.put(request, copy); });
+  }
+  return response;
+}
+
 self.addEventListener('fetch', function (e) {
-  if (e.request.method !== 'GET') return;
+  if (e.request.method !== 'GET') { return; }
+
+  if (e.request.mode === 'navigate') {
+    e.respondWith(
+      fetch(e.request).then(function (res) {
+        return putIfCacheable(e.request, res);
+      }).catch(function () {
+        return caches.match(e.request).then(function (hit) {
+          return hit || caches.match('./index.html');
+        });
+      })
+    );
+    return;
+  }
+
   e.respondWith(
     caches.match(e.request).then(function (hit) {
       return hit || fetch(e.request).then(function (res) {
-        if (res && res.ok && res.type === 'basic') {
-          var copy = res.clone();
-          caches.open(CACHE).then(function (c) { c.put(e.request, copy); });
-        }
-        return res;
+        return putIfCacheable(e.request, res);
       }).catch(function () { return caches.match('./index.html'); });
     })
   );
@@ -2672,14 +2955,14 @@ self.addEventListener('fetch', function (e) {
 
 //// 文件：manifest.json ////
 {
-  "name": "临床微生物学习与速查系统",
-  "short_name": "临床微生物速查",
+  "name": "知微 · 微生物学习手册",
+  "short_name": "知微",
   "description": "微生物 / 抗微生物药 / 耐药 / 药敏卡 / 试验 / 培养基 学习参考",
   "lang": "zh-CN",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#f6f5f1",
   "theme_color": "#ffffff",
   "icons": [

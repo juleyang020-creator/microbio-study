@@ -1,6 +1,8 @@
 # 知微 · 微生物学习手册
 
-一个**本地、免安装、可离线**的微生物学知识库。**双击 `index.html` 即可在浏览器打开使用**（无需联网、无需构建）。同时是 PWA，可"添加到主屏幕"当 App 用；iOS 套壳代码见 `ios/`。
+一个**本地、免安装、可离线**的微生物学知识库。**双击 `index.html` 即可在浏览器打开使用**（核心内容无需联网、无需构建；外部参考链接需用户主动点击）。同时是 PWA，可"添加到主屏幕"当 App 用；iOS 套壳代码见 `ios/`。
+
+> 本软件仅供医学教育与专业人员学习参考，不构成诊断、治疗或用药建议；临床决策必须结合患者情况、本地药敏结果与当前权威指南。
 
 ## 九大模块（顶部 Tab）
 
@@ -49,7 +51,7 @@
 | 文件 | 模块 | 条目量 |
 |---|---|---|
 | `data/microbes.js` | 微生物分类 | 177 |
-| `data/antibiotics.js` | 抗微生物药 | 73 |
+| `data/antibiotics.js` | 抗微生物药 | 77 |
 | `data/resistance.js` | 耐药因素 | 16 |
 | `data/idcards.js` | 鉴定卡 | 7 |
 | `data/cards.js` | 药敏卡 | 13 |
@@ -61,12 +63,13 @@
 ### 辅助数据（按微生物 id 索引的对象）
 | 文件 | 用途 | 键数 |
 |---|---|---|
-| `data/morphology.js` | 形态学特征（镜下 / 培养） | 134 |
-| `data/biochem.js` | 生化反应结果（用于详情页与对比） | 50 |
-| `data/differential.js` | 相似菌鉴别要点 | 28 |
+| `data/morphology.js` | 形态学特征（镜下 / 培养） | 177 |
+| `data/biochem.js` | 生化反应结果（用于详情页与对比） | 116 |
+| `data/differential.js` | 相似菌鉴别要点 | 133 |
 | `data/structures.js` | 抗菌药分子结构 SMILES（配套 `img/struct-*.svg`） | 58 |
-| `data/breakpoints.js` | CLSI M100（细菌）/ M60（真菌）药敏折点（按菌组） | 25 组 |
+| `data/breakpoints.js` | CLSI M100（细菌）/ M60（真菌）药敏折点（按菌组） | 38 组 |
 | `data/ast-alerts.js` | 异常 / 警示药敏结果速查规则 | 13 条 |
+| `data/treatment.js` | 治疗要点（按微生物 id 索引） | 177 |
 | `data/categories.js` | 全部模块的分类树（支持多级） | 9 棵 |
 
 ## 怎么跑
@@ -84,7 +87,7 @@ python3 -m http.server 8123
 ```bash
 node --test
 ```
-共 78 个用例，覆盖：核心逻辑（关联、搜索、分类校验、关系图构建）、视图模型（详情/对比/折点/天然耐药/MIC 判读/异常药敏筛选）、数据完整性（id 唯一、悬空关联、未匹配分类、辅助数据键合法、机制图与结构 SVG 文件存在、异常药敏规则字段与等级合法等）。
+共 86 个用例，覆盖：核心逻辑（关联、搜索、分类校验、关系图构建）、视图模型（详情/对比/折点/天然耐药/MIC 判读/异常药敏筛选）、数据完整性（id 唯一、悬空关联、未匹配分类、辅助数据键合法、机制图与结构 SVG 文件存在、异常药敏规则字段与等级合法、离线预缓存清单、高风险治疗要点与资源缓存回归检查等）。
 
 **示意图审校**（开发期工具，可选）：
 ```bash
@@ -98,8 +101,8 @@ DEEPSEEK_API_KEY=xxx GLM_API_KEY=yyy node tools/review-diagrams.mjs
 
 ## PWA 与离线
 
-- `manifest.json` + `sw.js` 提供离线缓存，**联网一次后即可离线使用**。
-- 改了 `sw.js` 里的 `CACHE` 版本号即可强制刷新缓存。
+- `manifest.json` + `sw.js` 提供离线缓存，网页和 `img/` 下全部 SVG 会预缓存；**联网打开一次后核心内容可离线使用**。
+- `sw.js` 对入口页采用网络优先策略，发布新版本后刷新更及时；改 `CACHE` 版本号可强制刷新缓存。
 - `file://` 协议下（直接双击打开）会跳过 Service Worker 注册，不影响使用。
 
 ## 分享
@@ -132,10 +135,10 @@ DEEPSEEK_API_KEY=xxx GLM_API_KEY=yyy node tools/review-diagrams.mjs
 
 `ios/Microbio/` 是一个 WKWebView 套壳工程，用 [xcodegen](https://github.com/yonaskolb/XcodeGen) 从 `project.yml` 生成 `.xcodeproj`。web 资源以**蓝色文件夹引用**方式打包（`project.yml` 里 `path: web` + `type: folder`），保留目录结构。
 
-- `ios/Microbio/web/` 是 web 资源副本（已 `.gitignore`），构建前需把根目录的 `index.html`、`css/`、`js/`、`data/`、`img/`、`icons/`、`manifest.json`、`sw.js` 同步进去。建议脚本化：
+- `ios/Microbio/web/` 是 web 资源副本（已 `.gitignore`），构建前需把根目录的 `index.html`、`css/`、`js/`、`data/`、`img/`、`icons/`、`manifest.json`、`sw.js` 同步进去。`project.yml` 已配置构建前自动运行 `ios/make-web.sh`；手动同步也可执行：
   ```bash
   rsync -a --delete --exclude='.git' --exclude='.DS_Store' \
     index.html css js data img icons manifest.json sw.js ios/Microbio/web/
   ```
-- 套壳内通过 `file://` 加载，Service Worker 不会注册（见 `index.html` 末尾的条件判断），离线缓存退化为浏览器自带的应用缓存。
+- 套壳内通过 `file://` 加载，Service Worker 不会注册（见 `index.html` 末尾的条件判断）；网页资源直接打包进 App，外部参考链接由 Safari 打开。
 - 真正的分发方式见 `SHARING.md`——优先用 PWA 链接，iOS 套壳主要给自己/技术朋友体验原生壳。

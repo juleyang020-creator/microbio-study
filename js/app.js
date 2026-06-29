@@ -2,10 +2,11 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
+  var APP_VERSION = window.APP_VERSION || '20260630-1';
 
   // 折点表药物名与抗菌药条目名的别名（模块级常量，避免每次调用重建）：
   // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
-  var ABX_ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g', '复方磺胺甲噁唑': 'cotrimoxazole', '复方新诺明': 'cotrimoxazole' };
+  var ABX_ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g', '氨苄西林/阿莫西林': 'ampicillin', '复方磺胺甲噁唑': 'cotrimoxazole', '复方新诺明': 'cotrimoxazole' };
 
   function db() {
     var DB = window.DB || {};
@@ -98,6 +99,8 @@
     'ESBL': 'esbl-test',
     '头孢西丁筛选': 'cefoxitin-screen',
     '诱导型克林霉素耐药': 'd-test',
+    '庆大霉素高水平': 'hlar',
+    '链霉素高水平': 'hlar',
     '庆大霉素高水平(协同)': 'hlar',
     '链霉素高水平(协同)': 'hlar'
   };
@@ -127,8 +130,21 @@
     if (opts.style != null) { node.setAttribute('style', opts.style); }
     if (opts.id != null) { node.id = opts.id; }
     if (opts.type != null) { node.setAttribute('type', opts.type); }
+    if (opts.name != null) { node.setAttribute('name', opts.name); }
+    if (opts.min != null) { node.setAttribute('min', opts.min); }
+    if (opts.max != null) { node.setAttribute('max', opts.max); }
+    if (opts.step != null) { node.setAttribute('step', opts.step); }
+    if (opts.role != null) { node.setAttribute('role', opts.role); }
+    if (opts.tabindex != null) { node.setAttribute('tabindex', opts.tabindex); }
+    if (opts['for'] != null) { node.setAttribute('for', opts['for']); }
+    if (opts.selected) { node.selected = true; }
+    if (opts.disabled) { node.disabled = true; }
+    if (opts.checked) { node.checked = true; }
     if (opts.placeholder != null) { node.setAttribute('placeholder', opts.placeholder); }
     if (opts.value != null) { node.value = opts.value; }
+    Object.keys(opts).forEach(function (key) {
+      if (key.indexOf('aria-') === 0 && opts[key] != null) { node.setAttribute(key, opts[key]); }
+    });
     if (opts.onClick) { node.addEventListener('click', opts.onClick); }
     (children || []).forEach(function (c) { appendChildNode(node, c); });
     return node;
@@ -202,10 +218,12 @@
     var isCollapsed = !!collapsed[path];
     var labelCls = (depth === 0 ? 'cat-group-name' : 'cat-subgroup') + (collapsible ? ' collapsible' : '');
     var marker = collapsible ? (isCollapsed ? '▸ ' : '▾ ') : '';
-    var out = [ el('div', {
-      cls: labelCls,
+    var out = [ el(collapsible ? 'button' : 'div', {
+      cls: labelCls + (collapsible ? ' cat-toggle' : ''),
       text: marker + node.名称,
+      type: collapsible ? 'button' : null,
       style: 'padding-left:' + (8 + depth * 14) + 'px',
+      'aria-expanded': collapsible ? String(!isCollapsed) : null,
       onClick: collapsible ? function () { toggleCollapse(path); } : null
     }) ];
     if (isCollapsed) { return out; }
@@ -452,9 +470,11 @@
     });
     var items = ids.map(function (id) {
       var sel = !!compareSet[id];
-      return el('div', {
+      return el('button', {
         cls: 'cmp-pick' + (sel ? ' sel' : ''),
+        type: 'button',
         text: (sel ? '☑ ' : '☐ ') + (names[id] || id),
+        'aria-pressed': String(sel),
         onClick: function () { toggleCompare(id); }
       });
     });
@@ -522,7 +542,7 @@
     var ids = cardIds().filter(function (id) { return !q || (names[id] || '').toLowerCase().indexOf(q) !== -1; });
     var items = ids.map(function (id) {
       var sel = !!compareCardSet[id];
-      return el('div', { cls: 'cmp-pick' + (sel ? ' sel' : ''), text: (sel ? '☑ ' : '☐ ') + (names[id] || id), onClick: function () { toggleCardCompare(id); } });
+      return el('button', { cls: 'cmp-pick' + (sel ? ' sel' : ''), type: 'button', text: (sel ? '☑ ' : '☐ ') + (names[id] || id), 'aria-pressed': String(sel), onClick: function () { toggleCardCompare(id); } });
     });
     if (!items.length) { items = [ el('div', { cls: 'empty-sm', text: '无匹配的卡片' }) ]; }
     return items;
@@ -909,8 +929,12 @@
   var bpJudgeMIC = '';
   function isBreakpointsRoute() { return routeKey() === 'breakpoints'; }
   function bpGroups() { return (window.DB && window.DB.breakpoints) || []; }
+  function judgeableBpGroups() { return View.judgeableBreakpointGroups(bpGroups()); }
   function bpGroupByName(name) {
     return bpGroups().filter(function (g) { return g.菌组名 === name; })[0] || null;
+  }
+  function judgeableBpGroupByName(name) {
+    return judgeableBpGroups().filter(function (g) { return g.菌组名 === name; })[0] || null;
   }
   function renderBreakpoints() {
     setActiveTool('breakpoints');
@@ -924,10 +948,12 @@
       modeToggle
     ]) ];
     if (bpMode === 'judge') {
-      var groupItems = bpGroups().map(function (g) {
-        return el('div', {
+      var groupItems = judgeableBpGroups().map(function (g) {
+        return el('button', {
           cls: 'cmp-pick' + (bpJudgeGroup === g.菌组名 ? ' sel' : ''),
+          type: 'button',
           text: g.菌组名,
+          'aria-pressed': String(bpJudgeGroup === g.菌组名),
           onClick: function () {
             bpJudgeGroup = g.菌组名;
             bpJudgeDrug = (g.药物 && g.药物[0]) ? g.药物[0].药物 : '';
@@ -937,7 +963,8 @@
         });
       });
       sbNodes.push(el('div', { cls: 'cat-group' }, [
-        el('div', { cls: 'cat-group-name', text: '菌组 (' + bpGroups().length + ')' }),
+        el('div', { cls: 'cat-group-name', text: '可判读菌组 (' + judgeableBpGroups().length + ')' }),
+        el('div', { cls: 'cmp-hint', text: '已撤销或仅作历史参考的折点不进入 MIC 自动判读。' }),
         el('div', { cls: 'bp-group-list' }, groupItems)
       ]));
     } else {
@@ -971,23 +998,31 @@
       }
     } else {
       // MIC 判读表单
-      var group = bpJudgeGroup ? bpGroupByName(bpJudgeGroup) : null;
+      var judgeGroups = judgeableBpGroups();
+      var group = bpJudgeGroup ? judgeableBpGroupByName(bpJudgeGroup) : null;
+      if (bpJudgeGroup && !group) {
+        bpJudgeGroup = '';
+        bpJudgeDrug = '';
+        group = null;
+      }
       var groupSelect = el('select', { cls: 'bp-select' });
+      groupSelect.id = 'bp-judge-group';
       groupSelect.appendChild(el('option', { value: '', text: '— 选择菌组 —' }));
-      bpGroups().forEach(function (g) {
+      judgeGroups.forEach(function (g) {
         var opt = el('option', { value: g.菌组名, text: g.菌组名 });
         if (g.菌组名 === bpJudgeGroup) { opt.selected = true; }
         groupSelect.appendChild(opt);
       });
       groupSelect.addEventListener('change', function () {
         bpJudgeGroup = groupSelect.value;
-        var gg = bpJudgeGroup ? bpGroupByName(bpJudgeGroup) : null;
+        var gg = bpJudgeGroup ? judgeableBpGroupByName(bpJudgeGroup) : null;
         bpJudgeDrug = (gg && gg.药物 && gg.药物[0]) ? gg.药物[0].药物 : '';
         bpJudgeMIC = '';
         renderBreakpointsMain();
       });
 
       var drugSelect = el('select', { cls: 'bp-select' });
+      drugSelect.id = 'bp-judge-drug';
       drugSelect.appendChild(el('option', { value: '', text: '— 选择药物 —' }));
       if (group) {
         group.药物.forEach(function (d) {
@@ -999,12 +1034,13 @@
       drugSelect.addEventListener('change', function () { bpJudgeDrug = drugSelect.value; bpJudgeMIC = ''; renderBreakpointsMain(); });
 
       var micInput = el('input', { cls: 'cmp-search', type: 'number', placeholder: '输入 MIC 值 (μg/mL)', value: bpJudgeMIC, step: '0.01', min: '0', style: 'width:200px;' });
+      micInput.id = 'bp-judge-mic';
       micInput.addEventListener('input', function () { bpJudgeMIC = micInput.value; renderJudgeResult(); });
 
       nodes.push(el('div', { cls: 'bp-judge-form' }, [
-        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '菌组' }), groupSelect ]),
-        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '药物' }), drugSelect ]),
-        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: 'MIC' }), micInput ])
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '菌组', 'for': 'bp-judge-group' }), groupSelect ]),
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '药物', 'for': 'bp-judge-drug' }), drugSelect ]),
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: 'MIC', 'for': 'bp-judge-mic' }), micInput ])
       ]));
 
       var resultBox = el('div', { cls: 'bp-judge-result', id: 'bp-judge-result' });
@@ -1044,7 +1080,7 @@
       box.replaceChildren(el('div', { cls: 'empty-sm', text: '请选择菌组与药物，并输入 MIC 值。' }));
       return;
     }
-    var group = bpGroupByName(bpJudgeGroup);
+    var group = judgeableBpGroupByName(bpJudgeGroup);
     var drug = (group && group.药物 || []).filter(function (d) { return d.药物 === bpJudgeDrug; })[0];
     if (!drug) {
       box.replaceChildren(el('div', { cls: 'empty-sm', text: '该菌组未找到此药物。' }));
@@ -1159,6 +1195,28 @@
 
   function isAboutRoute() { return routeKey() === 'about'; }
 
+  function cacheStatusLine() {
+    if (!('serviceWorker' in navigator) || location.protocol.indexOf('http') !== 0) {
+      return '离线缓存：当前以本地文件方式运行，页面直接读取内置资源；PWA 离线缓存仅在 http(s) 链接下启用。';
+    }
+    if (navigator.serviceWorker.controller) {
+      return '离线缓存：已启用，刷新后会优先获取新入口页并更新本地缓存。';
+    }
+    return '离线缓存：首次访问或正在注册，刷新一次后通常会完成接管。';
+  }
+
+  function sourceMetadataLines() {
+    var meta = (window.DB && window.DB.sourceMetadata) || {};
+    var keys = ['breakpoints', 'treatment', 'taxonomy'];
+    var lines = keys.map(function (key) {
+      var item = meta[key] || {};
+      if (!item.口径 && !item.版本 && !item.最近校对日期) { return null; }
+      var label = key === 'breakpoints' ? '药敏折点' : (key === 'treatment' ? '治疗要点' : '分类命名');
+      return label + '：' + [item.口径, item.版本, item.最近校对日期].filter(Boolean).join(' · ');
+    }).filter(Boolean);
+    return lines.length ? lines : ['内容来源已内置，后续版本会继续细化到条目级来源。'];
+  }
+
   // 关于 / 免责声明 / 隐私政策（上架与合规所需）
   function renderAbout() {
     setActiveTab(null);
@@ -1184,6 +1242,11 @@
         '微生物学与临床内容综合整理自公认权威来源：CLSI 药敏标准、IDSA / CDC 指南、Sanford 抗微生物治疗指南、StatPearls、默沙东诊疗手册、LPSN / NCBI 分类等。',
         '各条目底部「综述/参考」提供对应权威来源的检索入口，便于核对与延伸阅读。'
       ]),
+      card('内容版本', sourceMetadataLines()),
+      card('运行状态', [
+        '资源版本：' + APP_VERSION,
+        cacheStatusLine()
+      ]),
       card('版本与版权', [
         '名称：知微 · 微生物学习手册（全称：知微微生物学习手册）',
         '版本：V1.0',
@@ -1208,9 +1271,10 @@
 
     var entry = null, rels = [], mechImg = null;
     if (route.id) {
-      var hit = Core.buildIndex(data)[route.id];
+      var index = Core.buildIndex(data);
+      var hit = index[route.id];
       entry = hit ? hit.entry : null;
-      rels = entry ? Core.getRelations(route.id, data) : [];
+      rels = entry ? Core.getRelations(route.id, data, index) : [];
       mechImg = View.mechanismImageFor(route.module, entry, categories());
     }
     var extras = {
@@ -1264,8 +1328,13 @@
 
   function init() {
     var isMobile = function () { return window.matchMedia('(max-width: 760px)').matches; };
-    var openNav = function () { document.body.classList.add('nav-open'); };
-    var closeNav = function () { document.body.classList.remove('nav-open'); };
+    var menuBtn = document.getElementById('menu-btn');
+    var openNav = function () { setNavOpen(true); };
+    var closeNav = function () { setNavOpen(false); };
+    function setNavOpen(open) {
+      document.body.classList.toggle('nav-open', open);
+      if (menuBtn) { menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+    }
 
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
       t.addEventListener('click', function () {
@@ -1276,8 +1345,7 @@
     });
 
     // 移动端抽屉：汉堡开合、点遮罩/选中条目后关闭
-    var menuBtn = document.getElementById('menu-btn');
-    if (menuBtn) { menuBtn.addEventListener('click', function () { document.body.classList.toggle('nav-open'); }); }
+    if (menuBtn) { menuBtn.addEventListener('click', function () { setNavOpen(!document.body.classList.contains('nav-open')); }); }
     var backdrop = document.getElementById('nav-backdrop');
     if (backdrop) { backdrop.addEventListener('click', closeNav); }
     var sb = document.getElementById('sidebar');
@@ -1296,7 +1364,11 @@
       if (s.value.trim()) { s.value = ''; }
       renderRoute();
     });
+    window.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape') { closeNav(); }
+    });
 
+    setNavOpen(false);
     renderRoute();
   }
 

@@ -120,6 +120,8 @@ test('parseBP 解析 ≤ / ≥ / 区间 / 单值 / 无折点', () => {
   assert.deepStrictEqual(View.parseBP('≥2'), { type: 'ge', val: 2 });
   assert.deepStrictEqual(View.parseBP('0.12–1'), { type: 'range', lo: 0.12, hi: 1 });
   assert.deepStrictEqual(View.parseBP('0.12-1'), { type: 'range', lo: 0.12, hi: 1 });
+  assert.deepStrictEqual(View.parseBP('32/4–64/4'), { type: 'range', lo: 32, hi: 64 });
+  assert.deepStrictEqual(View.parseBP('1/19–2/38'), { type: 'range', lo: 1, hi: 2 });
   assert.deepStrictEqual(View.parseBP('16'), { type: 'value', val: 16 });
   assert.strictEqual(View.parseBP('—'), null);
   assert.strictEqual(View.parseBP(''), null);
@@ -146,6 +148,11 @@ test('judgeMIC 区间型 I（如 0.12–1）', () => {
   // 青霉素（链球菌）：S≤0.06 / I=0.12–1 / R≥2
   const r = View.judgeMIC(0.5, '≤0.06', '0.12–1', '≥2');
   assert.strictEqual(r.result, 'I');
+});
+
+test('judgeMIC 复方药按主药数值判读斜线区间', () => {
+  assert.strictEqual(View.judgeMIC(64, '≤16/4', '32/4–64/4', '≥128/4').result, 'I');
+  assert.strictEqual(View.judgeMIC(1.5, '≤0.5/9.5', '1/19–2/38', '≥4/76').result, 'I');
 });
 
 test('judgeMIC 边界值：恰好等于阈值', () => {
@@ -203,6 +210,15 @@ test('breakpointLookupVM 药物过滤后空组被剔除', () => {
   const filtered = View.breakpointLookupVM(global.window.DB.breakpoints, '', '__不存在的药__');
   filtered.forEach((g) => {
     assert.ok(g.药物.length > 0, '过滤后不应有空的药物组');
+  });
+});
+
+test('judgeableBreakpointGroups 排除历史或已撤销折点', () => {
+  const groups = View.judgeableBreakpointGroups(global.window.DB.breakpoints);
+  assert.ok(groups.length > 0);
+  assert.ok(!groups.some((g) => /B\. cepacia|已撤销|历史参考/.test(g.菌组名 + ' ' + (g.备注 || ''))));
+  groups.forEach((g) => {
+    g.药物.forEach((d) => assert.ok(!/已撤销|历史参考/.test(String(d.备注 || ''))));
   });
 });
 
