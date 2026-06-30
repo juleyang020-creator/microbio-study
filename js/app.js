@@ -2,7 +2,7 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260630-1';
+  var APP_VERSION = window.APP_VERSION || '20260630-2';
 
   // 折点表药物名与抗菌药条目名的别名（模块级常量，避免每次调用重建）：
   // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
@@ -359,7 +359,7 @@
             el('tbody', {}, bpBodyRows)
           ])
         ]),
-        el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' })
+        el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' + (bpHasCombo(bp.药物) ? '　·　' + COMBO_BP_NOTE : '') })
       ]));
     }
 
@@ -1052,6 +1052,17 @@
     }
     fill(document.getElementById('main'), nodes);
   }
+  // 复方制剂（β-内酰胺/酶抑制剂等）是单一药物、单一折点：CLSI 记法「活性成分/固定抑制剂浓度」中，
+  // 斜线后的数字是固定不变的抑制剂浓度，并非第二个折点。判读只看活性成分（斜线前）的值。
+  var COMBO_BP_NOTE = '复方制剂为单一药物、按单一折点判读：斜线后的数字是固定配比的另一成分浓度（如酶抑制剂或第二组分），并非第二个折点。';
+  // 仅"数字/数字"才算复方记法；详情页折点经 breakpointVM 合并为 "≤8/4 / 16/8 / ≥32/16"，
+  // 用 \d/\d 可避开 " / " 分隔符的误判，同时兼容原始 MIC_S/I/R 字段。
+  function bpHasCombo(drugs) {
+    return (drugs || []).some(function (d) {
+      var s = String(d.MIC_S || '') + ' ' + String(d.MIC_I || '') + ' ' + String(d.MIC_R || '') + ' ' + String(d.MIC || '');
+      return /\d\/\d/.test(s); // 复方记法"数字/数字"无空格；VM 合并串的 " / " 分隔有空格，故不会误判
+    });
+  }
   function buildBpTable(drugs) {
     var headRow = [ el('th', { text: '抗菌药物' }), el('th', { text: 'MIC (μg/mL)' }), el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ];
     var bodyRows = drugs.map(function (d) {
@@ -1066,12 +1077,14 @@
         el('td', { cls: 'bp-comment', text: d.备注 || '' })
       ]);
     });
-    return el('div', { cls: 'table-scroll' }, [
+    var tableWrap = el('div', { cls: 'table-scroll' }, [
       el('table', { cls: 'bp-table' }, [
         el('thead', {}, [ el('tr', {}, headRow) ]),
         el('tbody', {}, bodyRows)
       ])
     ]);
+    if (!bpHasCombo(drugs)) { return tableWrap; }
+    return el('div', {}, [ tableWrap, el('div', { cls: 'bp-foot', text: COMBO_BP_NOTE }) ]);
   }
   function renderJudgeResult() {
     var box = document.getElementById('bp-judge-result');
@@ -1087,9 +1100,13 @@
       return;
     }
     // 显示该药折点
-    var bpInfo = el('div', { cls: 'bp-judge-bp' }, [
+    var bpInfoKids = [
       el('span', { text: '折点：S ' + (drug.MIC_S || '—') + ' / I ' + (drug.MIC_I || '—') + ' / R ' + (drug.MIC_R || '—') + ' (μg/mL)' })
-    ]);
+    ];
+    if (/\//.test(String(drug.MIC_S || '') + String(drug.MIC_I || '') + String(drug.MIC_R || ''))) {
+      bpInfoKids.push(el('div', { cls: 'bp-judge-note', text: '复方制剂：单一药物、单一折点；斜线后为固定配比的另一成分浓度（非第二折点）。请输入活性成分（斜线前）的 MIC。' }));
+    }
+    var bpInfo = el('div', { cls: 'bp-judge-bp' }, bpInfoKids);
     if (!bpJudgeMIC || bpJudgeMIC === '') {
       box.replaceChildren(bpInfo, el('div', { cls: 'empty-sm', text: '输入 MIC 值后自动判读。' }));
       return;
