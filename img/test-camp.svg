@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>CAMP 试验（血平板）</title><desc>B 群链球菌的协同溶血鉴别</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">CAMP 试验（血平板）</text>
   <text x="240" y="44" text-anchor="middle" font-size="11" fill="#8a8f98">B 群链球菌的协同溶血鉴别</text>
@@ -15,12 +16,12 @@
 
   <!-- 金葡竖划线（产 β 溶血素），完全在皿内 -->
   <rect x="224" y="92" width="9" height="164" rx="4" fill="#9a8585" stroke="#7a6a6a" stroke-width="1"/>
-  <text x="252" y="86" font-size="10.5" fill="#454b54">金黄色葡萄球菌</text>
-  <text x="252" y="100" font-size="9.5" fill="#8a8f98">竖划线，产 β 溶血素</text>
+  <text x="252" y="86" font-size="11" fill="#454b54">金黄色葡萄球菌</text>
+  <text x="252" y="100" font-size="11" fill="#8a8f98">竖划线，产 β 溶血素</text>
 
   <!-- 待测链球菌横划线，与金葡留有间隙（不相交） -->
   <rect x="70" y="170" width="138" height="9" rx="4" fill="#9a8585" stroke="#7a6a6a" stroke-width="1"/>
-  <text x="70" y="154" font-size="10.5" fill="#454b54">待测链球菌（横划线）</text>
+  <text x="70" y="154" font-size="11" fill="#454b54">待测链球菌（横划线）</text>
 
   <!-- 箭头(半月)状增强溶血：跨越间隙，尖端指向金葡 β 溶血素带 -->
   <path d="M205,174 L222,156 L222,193 Z" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.2" stroke-dasharray="3 2"/>

@@ -1,9 +1,10 @@
-<svg version='1.1' baseProfile='full'
+<svg role="img" version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
                       xmlns:rdkit='http://www.rdkit.org/xml'
                       xmlns:xlink='http://www.w3.org/1999/xlink'
                   xml:space='preserve'
 width='520px' height='380px' viewBox='0 0 520 380'>
+<title>阿米卡星 化学结构式</title><desc>Amikacin，分子结构式（去盐母体，数据来源 ChEMBL）</desc>
 <!-- END OF HEADER -->
 <rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='520.0' height='380.0' x='0.0' y='0.0'> </rect>
 <path class='bond-0 atom-0 atom-1' d='M 128.9,55.1 L 139.1,64.4' style='fill:none;fill-rule:evenodd;stroke:#0000FF;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />

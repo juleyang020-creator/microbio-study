@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif"><defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抑制细胞壁合成</title><desc>β-内酰胺结合PBP · 糖肽结合D-Ala-D-Ala · 磷霉素抑MurA。β-内酰胺类、万古霉素/替考拉宁、磷霉素等</desc><defs>
  <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
  <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
 </defs>
-<rect width="480" height="300" fill="#ffffff"/>
+<rect width="100%" height="100%" fill="#ffffff"/>
 <text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">抑制细胞壁合成</text>
-<text x="240" y="42" font-size="11" fill="#8a8f98" text-anchor="middle">β-内酰胺/糖肽结合 PBP，阻断肽聚糖交联</text>
-<rect x="60" y="70" width="360" height="26" fill="#e4dcc0" stroke="#c8b887"/> <text x="70" y="87" font-size="10" fill="#6e6b52" text-anchor="start">肽聚糖细胞壁</text>
- <rect x="60" y="150" width="360" height="18" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="163" font-size="9" fill="#6e6b52" text-anchor="start">细胞膜</text>
- <circle cx="210" cy="96" r="15" fill="#9fb0cc" stroke="#8093b3" stroke-width="1.3"/> <text x="232" y="96" font-size="10" fill="#2c3138" text-anchor="start">PBP（转肽酶）</text>
- <g transform="translate(210,120) rotate(90) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="210" y1="132" x2="210" y2="112" stroke="#3a4a63" stroke-width="1.6" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="232" y1="75" x2="248" y2="91"/><line x1="232" y1="91" x2="248" y2="75"/></g>
-
- <g stroke="#c9b887" stroke-width="2"><line x1="120" y1="83" x2="150" y2="83"/><line x1="150" y1="70" x2="150" y2="96"/><line x1="300" y1="83" x2="330" y2="83"/></g>
- <text x="240" y="205" font-size="11" fill="#454b54" text-anchor="middle">交联受阻 → 细胞壁缺损、渗透溶解</text>
- <g transform="translate(120,130) rotate(15) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g transform="translate(340,120) rotate(-20) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
-<text x="240" y="286" font-size="12" fill="#454b54" text-anchor="middle">β-内酰胺类、万古霉素、磷霉素等</text>
+<text x="240" y="44" font-size="12" fill="#77797e" text-anchor="middle">β-内酰胺结合PBP · 糖肽结合D-Ala-D-Ala · 磷霉素抑MurA</text>
+<rect x="60" y="74" width="360" height="26" fill="#e4dcc0" stroke="#c8b887"/> <text x="70" y="91" font-size="11" fill="#6e6b52" text-anchor="start">肽聚糖细胞壁</text>
+ <rect x="60" y="152" width="360" height="18" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="165" font-size="11" fill="#6e6b52" text-anchor="start">细胞膜</text>
+ <circle cx="200" cy="100" r="15" fill="#9fb0cc" stroke="#8093b3" stroke-width="1.3"/> <text x="222" y="98" font-size="11" fill="#2c3138" text-anchor="start">PBP（转肽酶）</text>
+ <g transform="translate(200,126) rotate(90) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="200" y1="138" x2="200" y2="116" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="222" y1="78" x2="238" y2="94"/><line x1="222" y1="94" x2="238" y2="78"/></g>
+ <g stroke="#c9b887" stroke-width="2"><line x1="120" y1="87" x2="150" y2="87"/><line x1="150" y1="74" x2="150" y2="100"/><line x1="300" y1="87" x2="330" y2="87"/></g>
+ <text x="240" y="206" font-size="12" fill="#3f444b" text-anchor="middle">交联/前体受阻 → 细胞壁缺损、渗透溶解</text>
+ <g transform="translate(118,134) rotate(15) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g transform="translate(340,126) rotate(-20) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
+<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">β-内酰胺类、万古霉素/替考拉宁、磷霉素等</text>
 </svg>

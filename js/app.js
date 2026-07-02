@@ -2,7 +2,7 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260701-1';
+  var APP_VERSION = window.APP_VERSION || '20260702-1';
 
   // 折点表药物名与抗菌药条目名的别名（模块级常量，避免每次调用重建）：
   // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 466" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 466" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抗微生物药作用机制总览</title><desc>各类抗菌药在细菌细胞上的作用靶点</desc>
   <rect width="480" height="466" fill="#ffffff"/>
   <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">抗微生物药作用机制总览</text>
   <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">各类抗菌药在细菌细胞上的作用靶点</text>
@@ -15,7 +16,7 @@
   <polygon points="322,150 332,156 332,166 322,172 312,166 312,156" fill="#cfe6d6" stroke="#3f7a52" stroke-width="1.2"/>
 
   <!-- 编号标记 -->
-  <g font-size="10" font-weight="700" text-anchor="middle">
+  <g font-size="11" font-weight="700" text-anchor="middle">
     <circle cx="240" cy="66" r="10" fill="#8a6d1f"/><text x="240" y="69.5" fill="#fff">①</text>
     <circle cx="106" cy="126" r="10" fill="#2e6b66"/><text x="106" y="129.5" fill="#fff">②</text>
     <circle cx="240" cy="98" r="10" fill="#3f4f8f"/><text x="240" y="101.5" fill="#fff">③</text>
@@ -26,18 +27,18 @@
 
   <!-- 图例 -->
   <g font-size="11">
-    <g transform="translate(40,214)"><circle cx="0" cy="-4" r="9" fill="#8a6d1f"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">①</text>
+    <g transform="translate(40,214)"><circle cx="0" cy="-4" r="9" fill="#8a6d1f"/><text x="-3.3" y="-0.5" font-size="11" font-weight="700" fill="#fff">①</text>
       <text x="18" y="0"><tspan font-weight="700" fill="#23272e">细胞壁合成　</tspan><tspan fill="#454b54">β-内酰胺类 · 糖肽类 · 磷霉素</tspan></text></g>
-    <g transform="translate(40,250)"><circle cx="0" cy="-4" r="9" fill="#2e6b66"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">②</text>
+    <g transform="translate(40,250)"><circle cx="0" cy="-4" r="9" fill="#2e6b66"/><text x="-3.3" y="-0.5" font-size="11" font-weight="700" fill="#fff">②</text>
       <text x="18" y="0"><tspan font-weight="700" fill="#23272e">细胞膜　</tspan><tspan fill="#454b54">多黏菌素（黏菌素）· 达托霉素</tspan></text></g>
-    <g transform="translate(40,286)"><circle cx="0" cy="-4" r="9" fill="#3f4f8f"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">③</text>
+    <g transform="translate(40,286)"><circle cx="0" cy="-4" r="9" fill="#3f4f8f"/><text x="-3.3" y="-0.5" font-size="11" font-weight="700" fill="#fff">③</text>
       <text x="18" y="0"><tspan font-weight="700" fill="#23272e">核糖体 30S　</tspan><tspan fill="#454b54">氨基糖苷类 · 四环素类</tspan></text></g>
-    <g transform="translate(40,322)"><circle cx="0" cy="-4" r="9" fill="#3f4f8f"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">④</text>
+    <g transform="translate(40,322)"><circle cx="0" cy="-4" r="9" fill="#3f4f8f"/><text x="-3.3" y="-0.5" font-size="11" font-weight="700" fill="#fff">④</text>
       <text x="18" y="0"><tspan font-weight="700" fill="#23272e">核糖体 50S　</tspan><tspan fill="#454b54">大环内酯 · 林可酰胺 · 氯霉素 · 噁唑烷酮</tspan></text></g>
-    <g transform="translate(40,358)"><circle cx="0" cy="-4" r="9" fill="#b0506a"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">⑤</text>
+    <g transform="translate(40,358)"><circle cx="0" cy="-4" r="9" fill="#b0506a"/><text x="-3.3" y="-0.5" font-size="11" font-weight="700" fill="#fff">⑤</text>
       <text x="18" y="0"><tspan font-weight="700" fill="#23272e">核酸合成　</tspan><tspan fill="#454b54">氟喹诺酮（DNA 旋转酶）· 利福平（RNA 聚合酶）</tspan></text></g>
-    <g transform="translate(40,394)"><circle cx="0" cy="-4" r="9" fill="#3f7a52"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">⑥</text>
+    <g transform="translate(40,394)"><circle cx="0" cy="-4" r="9" fill="#3f7a52"/><text x="-3.3" y="-0.5" font-size="11" font-weight="700" fill="#fff">⑥</text>
       <text x="18" y="0"><tspan font-weight="700" fill="#23272e">叶酸代谢　</tspan><tspan fill="#454b54">磺胺类（抑 DHPS）· 甲氧苄啶（抑 DHFR）</tspan></text></g>
   </g>
-  <text x="40" y="436" font-size="9.5" fill="#8a8f98">抗真菌药靶点另见各药条目：麦角固醇（唑类/多烯）· 细胞壁葡聚糖（棘白菌素）· 核酸（5-FC）</text>
+  <text x="40" y="436" font-size="11" fill="#8a8f98">抗真菌药靶点另见各药条目：麦角固醇（唑类/多烯）· 细胞壁葡聚糖（棘白菌素）· 核酸（5-FC）</text>
 </svg>

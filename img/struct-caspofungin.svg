@@ -1,9 +1,10 @@
-<svg version='1.1' baseProfile='full'
+<svg role="img" version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
                       xmlns:rdkit='http://www.rdkit.org/xml'
                       xmlns:xlink='http://www.w3.org/1999/xlink'
                   xml:space='preserve'
 width='620px' height='460px' viewBox='0 0 620 460'>
+<title>卡泊芬净 化学结构式</title><desc>Caspofungin，分子结构式（去盐母体，数据来源 ChEMBL）</desc>
 <!-- END OF HEADER -->
 <rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='620.0' height='460.0' x='0.0' y='0.0'> </rect>
 <path class='bond-0 atom-0 atom-1' d='M 549.2,210.8 L 531.2,217.5' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />

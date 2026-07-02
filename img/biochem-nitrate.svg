@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>硝酸盐还原试验 (Nitrate)</title><desc>硝酸盐→亚硝酸盐，加格里斯试剂（磺胺酸 + α-萘胺）显红</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">硝酸盐还原试验 (Nitrate)</text>
   <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">硝酸盐→亚硝酸盐，加格里斯试剂（磺胺酸 + α-萘胺）显红</text>
@@ -19,5 +20,5 @@
     <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a8f98">阴性（不变色）</text>
   </g>
 
-  <text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#8a8f98">大肠埃希菌等肠杆菌阳性；不变红须加锌粉——变红=真阴性，仍不红=已还原为氮气(阳性)</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#8a8f98">大肠埃希菌等肠杆菌阳性；不变红须加锌粉——变红=真阴性，仍不红=已还原为氮气(阳性)</text>
 </svg>

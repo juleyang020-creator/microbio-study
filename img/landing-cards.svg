@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>药敏卡与判读总览</title><desc>系列浓度微孔测 MIC，再按折点判敏感 / 中介 / 耐药</desc>
   <rect width="480" height="330" fill="#ffffff"/>
   <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">药敏卡与判读总览</text>
   <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">系列浓度微孔测 MIC，再按折点判敏感 / 中介 / 耐药</text>
@@ -18,7 +19,7 @@
     <circle cx="344" cy="134" r="14" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.4"/>
     <circle cx="393" cy="134" r="14" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.4"/>
   </g>
-  <g font-size="9" fill="#8a8f98" text-anchor="middle">
+  <g font-size="11" fill="#8a8f98" text-anchor="middle">
     <text x="50" y="160">0.25</text><text x="99" y="160">0.5</text><text x="148" y="160">1</text><text x="197" y="160">2</text>
     <text x="246" y="160">4</text><text x="295" y="160">8</text><text x="344" y="160">16</text><text x="393" y="160">32</text>
     <text x="438" y="160">µg/mL</text>
@@ -34,8 +35,8 @@
   <text x="360" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#b04242">耐药 R</text>
   <!-- MIC 轴 -->
   <line x1="40" y1="252" x2="440" y2="252" stroke="#cfcabd" stroke-width="1.2"/><polygon points="442,252 432,248 432,256" fill="#cfcabd"/>
-  <text x="240" y="268" text-anchor="middle" font-size="9.5" fill="#8a8f98">MIC 增大 →（越大越耐药）</text>
+  <text x="240" y="268" text-anchor="middle" font-size="11" fill="#8a8f98">MIC 增大 →（越大越耐药）</text>
 
-  <text x="240" y="298" text-anchor="middle" font-size="9.5" fill="#454b54">仪器（如 VITEK）测各药 MIC，按折点报 S / I / R；按菌种选用 GN / GP 等不同卡</text>
-  <text x="240" y="316" text-anchor="middle" font-size="9.5" fill="#8a8f98">点击任一药敏卡查看所含药物与适用菌</text>
+  <text x="240" y="298" text-anchor="middle" font-size="11" fill="#454b54">仪器（如 VITEK）测各药 MIC，按折点报 S / I / R；按菌种选用 GN / GP 等不同卡</text>
+  <text x="240" y="316" text-anchor="middle" font-size="11" fill="#8a8f98">点击任一药敏卡查看所含药物与适用菌</text>
 </svg>

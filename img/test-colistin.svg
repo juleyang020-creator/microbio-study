@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>黏菌素肉汤微量稀释（BMD）</title><desc>黏菌素扩散差，纸片/梯度法不可靠，须用肉汤微量稀释测 MIC</desc>
   <defs>
     <linearGradient id="wellTurbid" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#d8ccb0"/>
@@ -25,11 +26,11 @@
     <circle cx="406" cy="160" r="20" fill="url(#wellClear)" stroke="#c9c3b6" stroke-width="1.5"/>
   </g>
 
-  <g font-size="9" fill="#8a8f98" text-anchor="middle">
+  <g font-size="11" fill="#8a8f98" text-anchor="middle">
     <text x="70" y="196">0.25</text><text x="118" y="196">0.5</text><text x="166" y="196">1</text><text x="214" y="196">2</text>
     <text x="262" y="196">4</text><text x="310" y="196">8</text><text x="358" y="196">16</text><text x="406" y="196">32</text>
   </g>
-  <text x="240" y="214" text-anchor="middle" font-size="9.5" fill="#8a8f98">µg/mL（浊 = 生长，清 = 抑制）</text>
+  <text x="240" y="214" text-anchor="middle" font-size="11" fill="#8a8f98">µg/mL（浊 = 生长，清 = 抑制）</text>
 
   <!-- MIC 指示：首个清亮孔（浓度 4） -->
   <line x1="262" y1="124" x2="262" y2="138" stroke="#345f86" stroke-width="1.5"/>

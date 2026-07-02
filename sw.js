@@ -1,7 +1,7 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260701-1';
-var CACHE = CACHE_PREFIX + 'v46';
+var APP_VERSION = '20260702-1';
+var CACHE = CACHE_PREFIX + 'v47';
 function versioned(path) {
   return path + '?v=' + APP_VERSION;
 }

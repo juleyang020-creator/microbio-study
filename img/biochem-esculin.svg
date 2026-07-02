@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>胆汁七叶苷试验 (BEA)</title><desc>在 40% 胆盐中水解七叶苷，产物与铁盐生成黑色（七叶素-铁）</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">胆汁七叶苷试验 (BEA)</text>
   <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">在 40% 胆盐中水解七叶苷，产物与铁盐生成黑色（七叶素-铁）</text>
@@ -19,5 +20,5 @@
     <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#23272e">阳性（变黑）</text>
   </g>
 
-  <text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#8a8f98">肠球菌属、D 群链球菌（牛链球菌群）阳性；耐胆盐 + 水解七叶苷双重选择</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#8a8f98">肠球菌属、D 群链球菌（牛链球菌群）阳性；耐胆盐 + 水解七叶苷双重选择</text>
 </svg>

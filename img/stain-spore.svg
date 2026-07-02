@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>芽孢染色（Schaeffer-Fulton 孔雀绿法）</title><desc>加热使孔雀绿入芽孢、水洗不脱；番红复染菌体 → 芽孢绿、菌体红</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">芽孢染色（Schaeffer-Fulton 孔雀绿法）</text>
   <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">加热使孔雀绿入芽孢、水洗不脱；番红复染菌体 → 芽孢绿、菌体红</text>
@@ -8,39 +9,39 @@
   <g>
     <rect x="40" y="92" width="120" height="22" rx="11" fill="#b04242"/>
     <ellipse cx="100" cy="103" rx="13" ry="9" fill="#2f8f6f" stroke="#1f6b51" stroke-width="1"/>
-    <text x="100" y="132" text-anchor="middle" font-size="10.5" font-weight="700" fill="#454b54">中央、不膨大</text>
-    <text x="100" y="147" text-anchor="middle" font-size="9.5" fill="#8a8f98">炭疽芽孢杆菌</text>
+    <text x="100" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#454b54">中央、不膨大</text>
+    <text x="100" y="147" text-anchor="middle" font-size="11" fill="#8a8f98">炭疽芽孢杆菌</text>
   </g>
 
   <!-- ② 次端 椭圆 -->
   <g>
     <rect x="180" y="92" width="120" height="22" rx="11" fill="#b04242"/>
     <ellipse cx="270" cy="103" rx="12" ry="11" fill="#2f8f6f" stroke="#1f6b51" stroke-width="1"/>
-    <text x="240" y="132" text-anchor="middle" font-size="10.5" font-weight="700" fill="#454b54">次端、略膨大</text>
-    <text x="240" y="147" text-anchor="middle" font-size="9.5" fill="#8a8f98">肉毒梭菌</text>
+    <text x="240" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#454b54">次端、略膨大</text>
+    <text x="240" y="147" text-anchor="middle" font-size="11" fill="#8a8f98">肉毒梭菌</text>
   </g>
 
   <!-- ③ 顶端 鼓槌状 -->
   <g>
     <rect x="320" y="98" width="100" height="20" rx="10" fill="#b04242"/>
     <circle cx="420" cy="108" r="14" fill="#2f8f6f" stroke="#1f6b51" stroke-width="1"/>
-    <text x="384" y="132" text-anchor="middle" font-size="10.5" font-weight="700" fill="#454b54">顶端、膨大（鼓槌状）</text>
-    <text x="384" y="147" text-anchor="middle" font-size="9.5" fill="#8a8f98">破伤风梭菌</text>
+    <text x="384" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#454b54">顶端、膨大（鼓槌状）</text>
+    <text x="384" y="147" text-anchor="middle" font-size="11" fill="#8a8f98">破伤风梭菌</text>
   </g>
 
   <!-- 步骤条 -->
   <g>
     <rect x="40" y="178" width="124" height="34" rx="7" fill="#eaf3ee" stroke="#7bb394" stroke-width="1.2"/>
-    <text x="102" y="193" text-anchor="middle" font-size="10" font-weight="700" fill="#2e6b66">①孔雀绿 + 加热</text>
-    <text x="102" y="206" text-anchor="middle" font-size="9" fill="#5e8f78">维持约 5 min</text>
+    <text x="102" y="193" text-anchor="middle" font-size="11" font-weight="700" fill="#2e6b66">①孔雀绿 + 加热</text>
+    <text x="102" y="206" text-anchor="middle" font-size="11" fill="#5e8f78">维持约 5 min</text>
 
     <rect x="178" y="178" width="124" height="34" rx="7" fill="#fbfaf8" stroke="#cfcabd" stroke-width="1.2"/>
-    <text x="240" y="193" text-anchor="middle" font-size="10" font-weight="700" fill="#454b54">②充分水洗</text>
-    <text x="240" y="206" text-anchor="middle" font-size="9" fill="#8a8f98">脱去菌体内孔雀绿</text>
+    <text x="240" y="193" text-anchor="middle" font-size="11" font-weight="700" fill="#454b54">②充分水洗</text>
+    <text x="240" y="206" text-anchor="middle" font-size="11" fill="#8a8f98">脱去菌体内孔雀绿</text>
 
     <rect x="316" y="178" width="124" height="34" rx="7" fill="#fbeeee" stroke="#c98e8e" stroke-width="1.2"/>
-    <text x="378" y="193" text-anchor="middle" font-size="10" font-weight="700" fill="#8a3a3a">③番红复染</text>
-    <text x="378" y="206" text-anchor="middle" font-size="9" fill="#a55">菌体呈红色</text>
+    <text x="378" y="193" text-anchor="middle" font-size="11" font-weight="700" fill="#8a3a3a">③番红复染</text>
+    <text x="378" y="206" text-anchor="middle" font-size="11" fill="#a55">菌体呈红色</text>
 
     <g stroke="#cfcabd" stroke-width="1.4" fill="#cfcabd">
       <line x1="165" y1="195" x2="176" y2="195"/><polygon points="178,195 172,192 172,198"/>
@@ -53,5 +54,5 @@
     <ellipse cx="156" cy="244" rx="11" ry="8" fill="#2f8f6f"/><text x="174" y="248" font-size="11" fill="#454b54">芽孢（绿）</text>
     <rect x="278" y="237" width="22" height="13" rx="6" fill="#b04242"/><text x="308" y="248" font-size="11" fill="#454b54">菌体（红）</text>
   </g>
-  <text x="240" y="278" text-anchor="middle" font-size="10" fill="#8a8f98">芽孢的位置与是否膨大有助于鉴别芽孢杆菌</text>
+  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#8a8f98">芽孢的位置与是否膨大有助于鉴别芽孢杆菌</text>
 </svg>

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>甲基红试验 (MR)</title><desc>葡萄糖混合酸发酵使 pH&amp;lt;4.4，加甲基红显红色</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">甲基红试验 (MR)</text>
   <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">葡萄糖混合酸发酵使 pH&lt;4.4，加甲基红显红色</text>
@@ -19,5 +20,5 @@
     <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">阳性（红）</text>
   </g>
 
-  <text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#8a8f98">大肠埃希菌阳性；产气肠杆菌、肺炎克雷伯菌阴性（与 VP 互补，IMViC）</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#8a8f98">大肠埃希菌阳性；产气肠杆菌、肺炎克雷伯菌阴性（与 VP 互补，IMViC）</text>
 </svg>

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>吉姆萨染色（Giemsa）</title><desc>罗曼诺夫斯基染色：核紫红、胞质蓝；显示血内寄生虫</desc>
   <defs>
     <radialGradient id="gField" cx="42%" cy="38%" r="72%">
       <stop offset="0%" stop-color="#f3eef0"/>
@@ -37,7 +38,7 @@
   <text x="330" y="134" font-size="11" font-weight="700" fill="#3f5aa6">环状体（胞质蓝环）</text>
   <text x="330" y="150" font-size="11" font-weight="700" fill="#9e2f57">核 · 紫红</text>
   <line x1="232" y1="128" x2="324" y2="190" stroke="#cfcabd" stroke-width="1"/>
-  <text x="330" y="194" font-size="10.5" fill="#454b54">被寄生红细胞可胀大、见薛氏点</text>
+  <text x="330" y="194" font-size="11" fill="#454b54">被寄生红细胞可胀大、见薛氏点</text>
 
-  <text x="240" y="282" text-anchor="middle" font-size="10" fill="#8a8f98">用于疟原虫、利什曼原虫、立克次体、衣原体等检测</text>
+  <text x="240" y="282" text-anchor="middle" font-size="11" fill="#8a8f98">用于疟原虫、利什曼原虫、立克次体、衣原体等检测</text>
 </svg>

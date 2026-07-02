@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>D 试验（诱导型克林霉素耐药）</title><desc>红霉素(E)诱导克林霉素(DA)耐药</desc>
   <defs>
     <radialGradient id="dishHL" cx="40%" cy="34%" r="75%">
       <stop offset="0%" stop-color="#f6f2ea"/>
@@ -26,11 +27,11 @@
   <text x="138" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">E</text>
   <!-- 纸片 DA -->
   <circle cx="234" cy="172" r="15" fill="#ffffff" stroke="#345f86" stroke-width="1.2"/>
-  <text x="234" y="176" text-anchor="middle" font-size="10" font-weight="700" fill="#345f86">DA</text>
+  <text x="234" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">DA</text>
 
   <!-- 压平直边指示 -->
   <line x1="210" y1="130" x2="210" y2="214" stroke="#b04242" stroke-width="1.5" stroke-dasharray="3 2"/>
-  <text x="210" y="252" text-anchor="middle" font-size="9.5" fill="#b04242">压平的直边</text>
+  <text x="210" y="252" text-anchor="middle" font-size="11" fill="#b04242">压平的直边</text>
 
   <!-- 右侧说明 -->
   <text x="312" y="118" font-size="12" fill="#454b54"><tspan font-weight="700" fill="#345f86">E</tspan>　红霉素</text>

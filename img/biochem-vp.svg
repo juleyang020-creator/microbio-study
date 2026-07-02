@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>VP 试验 (Voges-Proskauer)</title><desc>产乙酰甲基甲醇(acetoin)，加 α-萘酚 + KOH 显红</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">VP 试验 (Voges-Proskauer)</text>
   <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">产乙酰甲基甲醇(acetoin)，加 α-萘酚 + KOH 显红</text>
@@ -20,5 +21,5 @@
     <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">阳性（表层变红）</text>
   </g>
 
-  <text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#8a8f98">产气肠杆菌、肺炎克雷伯菌阳性；大肠埃希菌阴性（颜色 15–60 min 由表层显现）</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#8a8f98">产气肠杆菌、肺炎克雷伯菌阳性；大肠埃希菌阴性（颜色 15–60 min 由表层显现）</text>
 </svg>

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>mCIM 改良碳青霉烯灭活试验</title><desc>美罗培南纸片经待测菌孵育后，贴于敏感指示菌（大肠埃希菌）平板</desc>
   <defs>
     <radialGradient id="plateLawn" cx="42%" cy="36%" r="72%">
       <stop offset="0%" stop-color="#f5f1e9"/>
@@ -26,9 +27,9 @@
   </g>
   <!-- 美罗培南纸片（药物 token，已被灭活，菌长到圈边） -->
   <circle cx="138" cy="166" r="15" fill="#e7eef6" stroke="#345f86" stroke-width="1.3"/>
-  <text x="138" y="170" text-anchor="middle" font-size="8.5" font-weight="700" fill="#345f86">MEM</text>
+  <text x="138" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">MEM</text>
   <text x="138" y="274" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b04242">阳性（产碳青霉烯酶）</text>
-  <text x="138" y="291" text-anchor="middle" font-size="10.5" fill="#8a8f98">无／极小抑菌圈（≤15&#8201;mm）</text>
+  <text x="138" y="291" text-anchor="middle" font-size="11" fill="#8a8f98">无／极小抑菌圈（≤15&#8201;mm）</text>
 
   <!-- 阴性：不产酶 → 药物有效 → 抑制指示菌生长，清晰抑菌圈 -->
   <circle cx="346" cy="166" r="92" fill="url(#plateLawn)" stroke="#cfcabd" stroke-width="2.5"/>
@@ -44,7 +45,7 @@
   <circle cx="346" cy="166" r="62" fill="url(#plateClear)" stroke="#c9c3b6" stroke-width="1.2" stroke-dasharray="4 3"/>
   <!-- 美罗培南纸片（药物有效） -->
   <circle cx="346" cy="166" r="15" fill="#e7eef6" stroke="#345f86" stroke-width="1.3"/>
-  <text x="346" y="170" text-anchor="middle" font-size="8.5" font-weight="700" fill="#345f86">MEM</text>
+  <text x="346" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">MEM</text>
   <text x="346" y="274" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">阴性（不产酶）</text>
-  <text x="346" y="291" text-anchor="middle" font-size="10.5" fill="#8a8f98">清晰抑菌圈（≥19&#8201;mm）</text>
+  <text x="346" y="291" text-anchor="middle" font-size="11" fill="#8a8f98">清晰抑菌圈（≥19&#8201;mm）</text>
 </svg>
