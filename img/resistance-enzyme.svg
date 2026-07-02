@@ -1,62 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <defs>
-    <linearGradient id="enDrug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef3f9"/><stop offset="1" stop-color="#e0e9f3"/></linearGradient>
-    <linearGradient id="enEnz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6efda"/><stop offset="1" stop-color="#efe4c6"/></linearGradient>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">产生灭活酶</text>
-  <text x="240" y="44" text-anchor="middle" font-size="11" fill="#8a8f98">水解或共价修饰药物分子，使其失去活性</text>
-
-  <!-- 上：β-内酰胺酶水解β-内酰胺环 -->
-  <text x="20" y="74" font-size="11" font-weight="700" fill="#454b54">① β-内酰胺酶：水解 β-内酰胺环</text>
-
-  <!-- 完整药物（青霉素核心：四元β-内酰胺环 + 噻唑烷环） -->
-  <path d="M44,84 h26 v26 h-26 z" fill="url(#enDrug)" stroke="#345f86" stroke-width="1.4"/>
-  <path d="M70,84 l22,5 l4,8 l-4,8 l-22,5 z" fill="url(#enDrug)" stroke="#345f86" stroke-width="1.4"/>
-  <text x="57" y="130" text-anchor="middle" font-size="9" fill="#345f86">β-内酰胺环</text>
-
-  <line x1="104" y1="97" x2="146" y2="97" stroke="#8a8f98" stroke-width="1.3"/><polygon points="148,97 141,93.5 141,100.5" fill="#8a8f98"/>
-
-  <!-- 酶 -->
-  <ellipse cx="184" cy="97" rx="34" ry="22" fill="url(#enEnz)" stroke="#8a6d1f" stroke-width="1.4"/>
-  <text x="184" y="100.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#6e571a">β-内酰胺酶</text>
-
-  <line x1="220" y1="97" x2="262" y2="97" stroke="#8a8f98" stroke-width="1.3"/><polygon points="264,97 257,93.5 257,100.5" fill="#8a8f98"/>
-
-  <!-- 失活药物：β-内酰胺环开裂（断口） -->
-  <path d="M288,84 h26 v9 M314,110 h-26 v-26" fill="none" stroke="#b04242" stroke-width="1.5" stroke-dasharray="4 3"/>
-  <path d="M314,84 l22,5 l4,8 l-4,8 l-22,5 z" fill="#f3e3e3" stroke="#b04242" stroke-width="1.4"/>
-  <line x1="320" y1="89" x2="328" y2="97" stroke="#b04242" stroke-width="1.4"/><line x1="328" y1="89" x2="320" y2="97" stroke="#b04242" stroke-width="1.4"/>
-  <text x="318" y="130" text-anchor="middle" font-size="9" fill="#b04242">环开裂 → 失活</text>
-  <text x="408" y="100.5" text-anchor="middle" font-size="10" fill="#b04242">不能结合 PBP</text>
-
-  <!-- 分隔发丝线 -->
-  <line x1="24" y1="150" x2="456" y2="150" stroke="#d6d2c8" stroke-width="1"/>
-
-  <!-- 下：修饰酶修饰氨基糖苷 -->
-  <text x="20" y="178" font-size="11" font-weight="700" fill="#454b54">② 氨基糖苷修饰酶：乙酰/磷酸/腺苷化修饰药物</text>
-
-  <!-- 完整氨基糖苷（糖环 + 氨基/羟基位点） -->
-  <circle cx="58" cy="216" r="15" fill="url(#enDrug)" stroke="#345f86" stroke-width="1.4"/>
-  <circle cx="80" cy="222" r="12" fill="url(#enDrug)" stroke="#345f86" stroke-width="1.4"/>
-  <circle cx="52" cy="206" r="2.4" fill="#3f7a52"/><circle cx="68" cy="228" r="2.4" fill="#3f7a52"/><circle cx="88" cy="214" r="2.4" fill="#3f7a52"/>
-  <text x="68" y="250" text-anchor="middle" font-size="9" fill="#345f86">氨基糖苷</text>
-
-  <line x1="102" y1="219" x2="146" y2="219" stroke="#8a8f98" stroke-width="1.3"/><polygon points="148,219 141,215.5 141,222.5" fill="#8a8f98"/>
-
-  <!-- 酶 -->
-  <ellipse cx="184" cy="219" rx="34" ry="20" fill="url(#enEnz)" stroke="#8a6d1f" stroke-width="1.4"/>
-  <text x="184" y="222.5" text-anchor="middle" font-size="10" font-weight="700" fill="#6e571a">修饰酶</text>
-
-  <line x1="220" y1="219" x2="262" y2="219" stroke="#8a8f98" stroke-width="1.3"/><polygon points="264,219 257,215.5 257,222.5" fill="#8a8f98"/>
-
-  <!-- 被修饰药物：原位点上挂上修饰基 -->
-  <circle cx="300" cy="216" r="15" fill="url(#enDrug)" stroke="#345f86" stroke-width="1.4"/>
-  <circle cx="322" cy="222" r="12" fill="url(#enDrug)" stroke="#345f86" stroke-width="1.4"/>
-  <circle cx="294" cy="206" r="2.4" fill="#3f7a52"/><circle cx="310" cy="228" r="2.4" fill="#3f7a52"/>
-  <line x1="330" y1="214" x2="330" y2="202" stroke="#b04242" stroke-width="1.3"/>
-  <rect x="316" y="190" width="28" height="13" rx="4" fill="#f3e3e3" stroke="#b04242" stroke-width="1.3"/><text x="330" y="200" text-anchor="middle" font-size="8.5" fill="#b04242">修饰基</text>
-  <text x="408" y="222.5" text-anchor="middle" font-size="10" fill="#b04242">不能结合 30S</text>
-
-  <text x="240" y="286" text-anchor="middle" font-size="12.5" fill="#454b54">水解或共价修饰药物分子 → 药物失活</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif"><defs>
+ <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
+ <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">产生灭活酶</text>
+<text x="240" y="42" font-size="11" fill="#8a8f98" text-anchor="middle">酶水解或修饰药物使其失活</text>
+<circle cx="140" cy="150" r="30" fill="#6f97c9" stroke="#5a80b0" stroke-width="1.3"/> <text x="140" y="205" font-size="11" fill="#2c3138" text-anchor="middle" font-weight="600">灭活酶</text>
+ <g transform="translate(185,150) rotate(0) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
+ <line x1="228" y1="120" x2="300" y2="95" stroke="#3a4a63" stroke-width="1.6" marker-end="url(#arr)"/> <text x="250" y="108" font-size="11" fill="#2c3138" text-anchor="start">水解</text>
+ <g transform="translate(330,95)"><rect x="-17" y="-7.5" width="17" height="15" rx="7.5" fill="#df8c7e" stroke="#b0a47c"/></g>
+ <g transform="translate(360,95)"><rect x="0" y="-7.5" width="17" height="15" rx="7.5" fill="#e7e0c5" stroke="#b0a47c"/></g>
+ <line x1="228" y1="175" x2="300" y2="200" stroke="#3a4a63" stroke-width="1.6" marker-end="url(#arr)"/> <text x="250" y="220" font-size="11" fill="#2c3138" text-anchor="start">修饰</text>
+ <g transform="translate(345,200) rotate(0) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <text x="372" y="196" font-size="13" fill="#454b54">–CH₃/–PO₄</text>
+ <text x="240" y="268" font-size="11" fill="#454b54" text-anchor="middle">药物失去抗菌活性</text>
+<text x="240" y="286" font-size="12" fill="#454b54" text-anchor="middle">β-内酰胺酶（水解）/ 乙酰-磷酸-核苷转移酶（修饰）</text>
 </svg>
