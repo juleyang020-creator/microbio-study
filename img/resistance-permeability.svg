@@ -1,56 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <defs>
-    <pattern id="peBi" width="13" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="6.5" cy="5.5" r="4.2" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
-      <line x1="4.7" y1="9.5" x2="4.7" y2="14" stroke="#2e6b66" stroke-width="1"/><line x1="8.3" y1="9.5" x2="8.3" y2="14" stroke="#2e6b66" stroke-width="1"/>
-      <line x1="4.7" y1="14" x2="4.7" y2="18.5" stroke="#2e6b66" stroke-width="1"/><line x1="8.3" y1="14" x2="8.3" y2="18.5" stroke="#2e6b66" stroke-width="1"/>
-      <circle cx="6.5" cy="22.5" r="4.2" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
-    </pattern>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">膜通透性下降（外膜孔蛋白缺失）</text>
-  <text x="240" y="44" text-anchor="middle" font-size="11" fill="#8a8f98">孔蛋白表达下降或丢失，药物难入周质</text>
-
-  <text x="466" y="92" text-anchor="end" font-size="10" fill="#8a8f98">胞外</text>
-  <text x="466" y="190" text-anchor="end" font-size="10" fill="#8a8f98">周质</text>
-
-  <!-- LPS（外膜外侧脂多糖糖链） -->
-  <g stroke="#2e6b66" stroke-width="1" fill="#cfe0db">
-    <circle cx="60" cy="108" r="3.2"/><circle cx="60" cy="99" r="3.2"/>
-    <circle cx="180" cy="108" r="3.2"/><circle cx="180" cy="99" r="3.2"/>
-    <circle cx="300" cy="108" r="3.2"/><circle cx="300" cy="99" r="3.2"/>
-    <circle cx="420" cy="108" r="3.2"/><circle cx="420" cy="99" r="3.2"/>
-  </g>
-  <text x="14" y="103" font-size="9" fill="#2e6b66">LPS</text>
-
-  <!-- 外膜双层 -->
-  <rect x="0" y="118" width="480" height="28" fill="url(#peBi)"/>
-  <text x="14" y="166" font-size="9" fill="#2e6b66">外膜</text>
-
-  <!-- 左：有孔蛋白，药物进入 -->
-  <text x="120" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#2e6b66">有孔蛋白</text>
-  <!-- 孔蛋白桶（横跨外膜，中央通道开放） -->
-  <path d="M100,116 h40 l-5,32 h-30 z" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.4"/>
-  <path d="M120,116 v32" stroke="#ffffff" stroke-width="7" opacity="0.9"/>
-  <path d="M120,116 v32" stroke="#2e6b66" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
-  <text x="120" y="166" text-anchor="middle" font-size="9" fill="#1f4a46">OprD / OmpK35·36</text>
-  <!-- 药物分子穿膜 -->
-  <circle cx="120" cy="92" r="7.5" fill="#e7eef6" stroke="#345f86" stroke-width="1.4"/>
-  <line x1="120" y1="100" x2="120" y2="170" stroke="#3f7a52" stroke-width="2" stroke-dasharray="5 4"/>
-  <polygon points="120,176 114.5,165 125.5,165" fill="#3f7a52"/>
-  <circle cx="120" cy="178" r="7.5" fill="#e7eef6" stroke="#345f86" stroke-width="1.4"/>
-  <text x="120" y="206" text-anchor="middle" font-size="10" fill="#3f7a52">药物进入 ✓</text>
-
-  <!-- 右：孔蛋白缺失，药物受阻 -->
-  <text x="360" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">孔蛋白缺失</text>
-  <!-- 缺口处的膜（无桶状通道，仅双层封闭） -->
-  <path d="M340,116 h40 v32 h-40 z" fill="url(#peBi)" stroke="#cfcabd" stroke-width="1"/>
-  <circle cx="360" cy="92" r="7.5" fill="#e7eef6" stroke="#345f86" stroke-width="1.4"/>
-  <line x1="360" y1="100" x2="360" y2="114" stroke="#b04242" stroke-width="2"/>
-  <text x="360" y="139" text-anchor="middle" font-size="16" fill="#b04242" font-weight="700">✕</text>
-  <text x="360" y="206" text-anchor="middle" font-size="10" fill="#b04242">药物难进入</text>
-
-  <text x="240" y="250" text-anchor="middle" font-size="11" fill="#8a8f98">铜绿假单胞菌 OprD / 肠杆菌 OmpK35·OmpK36 表达下降或丢失</text>
-  <text x="240" y="284" text-anchor="middle" font-size="12.5" fill="#454b54">药物难入周质，与产酶协同致碳青霉烯耐药</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif"><defs>
+ <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
+ <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">膜通透性下降</text>
+<text x="240" y="42" font-size="11" fill="#8a8f98" text-anchor="middle">孔蛋白减少/关闭，药物进入减少</text>
+<rect x="60" y="66" width="360" height="180" rx="24" fill="#f6f2e2" stroke="#c8b887" stroke-width="2"/>
+ <rect x="60" y="150" width="360" height="16" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="162" font-size="9" fill="#6e6b52" text-anchor="start">外膜</text>
+ <g fill="#9fb0cc" stroke="#8093b3" stroke-width="1.2"><rect x="150" y="146" width="16" height="24" rx="3"/><rect x="172" y="146" width="16" height="24" rx="3"/></g>
+ <text x="210" y="140" font-size="10" fill="#2c3138" text-anchor="start">正常孔蛋白</text> <g transform="translate(158,110) rotate(90) scale(0.7)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="158" y1="124" x2="158" y2="146" stroke="#3a4a63" stroke-width="1.6" marker-end="url(#arr)"/>
+ <g fill="#9fb0cc" stroke="#8093b3" stroke-width="1.2" opacity="0.5"><rect x="300" y="146" width="16" height="24" rx="3"/></g>
+ <line x1="300" y1="150" x2="316" y2="166" stroke="#8093b3" stroke-width="2"/>
+ <text x="324" y="150" font-size="10" fill="#2c3138" text-anchor="start">孔蛋白减少/关闭</text>
+ <g transform="translate(308,110) rotate(90) scale(0.7)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="308" y1="124" x2="308" y2="146" stroke="#3a4a63" stroke-width="1.4" stroke-dasharray="3 4"/>
+ <text x="240" y="232" font-size="11" fill="#454b54" text-anchor="middle">胞内药物浓度不足</text>
+ <text x="240" y="268" font-size="11" fill="#454b54" text-anchor="middle">常与外排/灭活酶叠加致多重耐药</text>
+<text x="240" y="286" font-size="12" fill="#454b54" text-anchor="middle">如肠杆菌 OmpK35/36 缺失、铜绿 OprD 下调</text>
 </svg>

@@ -1,52 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <defs>
-    <pattern id="ecBi" width="13" height="30" patternUnits="userSpaceOnUse">
-      <circle cx="6.5" cy="6" r="4.4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
-      <line x1="4.8" y1="10.2" x2="4.8" y2="15" stroke="#2e6b66" stroke-width="0.9"/><line x1="8.2" y1="10.2" x2="8.2" y2="15" stroke="#2e6b66" stroke-width="0.9"/>
-      <line x1="4.8" y1="15" x2="4.8" y2="19.8" stroke="#2e6b66" stroke-width="0.9"/><line x1="8.2" y1="15" x2="8.2" y2="19.8" stroke="#2e6b66" stroke-width="0.9"/>
-      <circle cx="6.5" cy="24" r="4.4" fill="#cfe0db" stroke="#2e6b66" stroke-width="1"/>
-    </pattern>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">棘白菌素类：抑制 β-1,3-葡聚糖合成</text>
-  <text x="240" y="44" text-anchor="middle" font-size="11" fill="#8a8f98">阻断真菌细胞壁主骨架合成</text>
-
-  <!-- 细胞壁分层 -->
-  <rect x="40" y="64" width="400" height="14" rx="3" fill="#f3ead0" stroke="#cfcabd" stroke-width="1"/>
-  <text x="46" y="74.5" font-size="9" fill="#6e571a">甘露糖蛋白</text>
-
-  <rect x="40" y="84" width="400" height="46" rx="4" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.5"/>
-  <g stroke="#2e6b66" stroke-width="1" opacity="0.4">
-    <line x1="60" y1="84" x2="60" y2="130"/><line x1="100" y1="84" x2="100" y2="130"/><line x1="140" y1="84" x2="140" y2="130"/>
-    <line x1="260" y1="84" x2="260" y2="130"/><line x1="300" y1="84" x2="300" y2="130"/><line x1="340" y1="84" x2="340" y2="130"/><line x1="380" y1="84" x2="380" y2="130"/><line x1="420" y1="84" x2="420" y2="130"/>
-    <line x1="40" y1="107" x2="440" y2="107"/>
-  </g>
-  <text x="196" y="111" text-anchor="middle" font-size="11" font-weight="700" fill="#1f4a46">β-1,3 / β-1,6-葡聚糖</text>
-
-  <rect x="40" y="134" width="400" height="12" rx="2" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1"/>
-  <text x="46" y="143.5" font-size="9" fill="#1f4a46">几丁质</text>
-
-  <!-- 细胞膜 + 合成酶 -->
-  <rect x="40" y="150" width="400" height="30" fill="url(#ecBi)"/>
-  <ellipse cx="170" cy="165" rx="24" ry="17" fill="#f3ead0" stroke="#8a6d1f" stroke-width="1.5"/>
-  <text x="170" y="162" text-anchor="middle" font-size="7.5" font-weight="700" fill="#6e571a">葡聚糖</text>
-  <text x="170" y="172" text-anchor="middle" font-size="7.5" font-weight="700" fill="#6e571a">合成酶</text>
-  <!-- 被阻断的葡聚糖链（虚线表示无法合成） -->
-  <path d="M158,150 q-4,-18 0,-34" fill="none" stroke="#2e6b66" stroke-width="1.6" stroke-dasharray="3 3" opacity="0.55"/>
-  <path d="M182,150 q4,-18 0,-34" fill="none" stroke="#2e6b66" stroke-width="1.6" stroke-dasharray="3 3" opacity="0.55"/>
-  <text x="180" y="216" text-anchor="middle" font-size="9.5" fill="#8a8f98">胞质</text>
-
-  <!-- 棘白菌素阻断合成酶 -->
-  <rect x="244" y="196" width="86" height="30" rx="7" fill="#e7eef6" stroke="#345f86" stroke-width="1.5"/>
-  <text x="287" y="215" text-anchor="middle" font-size="10.5" font-weight="700" fill="#345f86">棘白菌素类</text>
-  <path d="M244,205 C220,190 200,178 192,172" fill="none" stroke="#345f86" stroke-width="1.4" stroke-dasharray="4 3"/>
-  <polygon points="192,172 201,174.5 196.5,181.5" fill="#345f86"/>
-  <text x="170" y="147" text-anchor="middle" font-size="15" fill="#b04242" font-weight="700">✕</text>
-
-  <!-- 缺陷区 -->
-  <rect x="300" y="84" width="60" height="46" rx="3" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1" stroke-dasharray="4 3"/>
-  <text x="330" y="110" text-anchor="middle" font-size="9" fill="#b04242">葡聚糖缺失</text>
-
-  <text x="240" y="250" text-anchor="middle" font-size="12.5" fill="#454b54">哺乳动物无细胞壁，故选择性高</text>
-  <text x="240" y="282" text-anchor="middle" font-size="12.5" font-weight="600" fill="#454b54">细胞壁骨架缺陷 → 渗透不稳定 → 真菌溶解</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif"><defs>
+ <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
+ <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">棘白菌素类（抗真菌）</text>
+<text x="240" y="42" font-size="11" fill="#8a8f98" text-anchor="middle">抑制 β-1,3-葡聚糖合成酶，破坏真菌细胞壁</text>
+<rect x="60" y="74" width="360" height="26" fill="#e4dcc0" stroke="#c8b887"/> <text x="70" y="91" font-size="10" fill="#6e6b52" text-anchor="start">β-1,3-葡聚糖细胞壁</text>
+ <rect x="60" y="150" width="360" height="18" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="163" font-size="9" fill="#6e6b52" text-anchor="start">细胞膜</text>
+ <circle cx="230" cy="150" r="16" fill="#b79ac9" stroke="#9d7fb4" stroke-width="1.3"/> <text x="230" y="150" font-size="8.5" fill="#fff" text-anchor="middle" font-weight="600">合成酶</text> <text x="230" y="190" font-size="9" fill="#2c3138" text-anchor="middle">β-1,3-葡聚糖合成酶</text>
+ <g transform="translate(230,124) rotate(0) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="230" y1="134" x2="230" y2="134" stroke="#3a4a63" stroke-width="1.6" marker-end="url(#arr)"/> <line x1="230" y1="124" x2="230" y2="134" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="250" y1="102" x2="266" y2="118"/><line x1="250" y1="118" x2="266" y2="102"/></g>
+ <g stroke="#c9b887" stroke-width="2" opacity="0.5"><line x1="120" y1="87" x2="150" y2="87"/><line x1="150" y1="74" x2="150" y2="100"/></g>
+ <text x="240" y="215" font-size="11" fill="#454b54" text-anchor="middle">细胞壁缺损 → 渗透不稳、真菌溶解</text>
+<text x="240" y="286" font-size="12" fill="#454b54" text-anchor="middle">卡泊芬净/米卡芬净/阿尼芬净</text>
 </svg>
