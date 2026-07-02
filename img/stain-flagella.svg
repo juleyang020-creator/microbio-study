@@ -1,34 +1,34 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>鞭毛染色（镀银 / 媒染增粗法）</title><desc>媒染剂沉积使纤细鞭毛增粗显现，判断有无及着生方式</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">鞭毛染色（镀银 / 媒染增粗法）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">媒染剂沉积使纤细鞭毛增粗显现，判断有无及着生方式</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">鞭毛染色（镀银 / 媒染增粗法）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">媒染剂沉积使纤细鞭毛增粗显现，判断有无及着生方式</text>
 
   <!-- ① 单端单毛 -->
   <g>
-    <text x="118" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#454b54">单端单毛</text>
-    <rect x="92" y="104" width="52" height="20" rx="10" fill="#7d6fae"/>
-    <path d="M92,114 q-14,-6 -24,2 q-12,8 -24,2" fill="none" stroke="#5b4a8c" stroke-width="1.6"/>
-    <text x="118" y="150" text-anchor="middle" font-size="11" fill="#8a8f98">铜绿假单胞菌</text>
+    <text x="118" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">单端单毛</text>
+    <rect x="92" y="104" width="52" height="20" rx="10" fill="#9d7fb4"/>
+    <path d="M92,114 q-14,-6 -24,2 q-12,8 -24,2" fill="none" stroke="#7a67a0" stroke-width="1.6"/>
+    <text x="118" y="150" text-anchor="middle" font-size="11" fill="#77797e">铜绿假单胞菌</text>
   </g>
 
   <!-- ② 丛生(一端多毛) -->
   <g>
-    <text x="240" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#454b54">丛生（一端多毛）</text>
-    <rect x="216" y="104" width="52" height="20" rx="10" fill="#7d6fae"/>
-    <g fill="none" stroke="#5b4a8c" stroke-width="1.5">
+    <text x="240" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">丛生（一端多毛）</text>
+    <rect x="216" y="104" width="52" height="20" rx="10" fill="#9d7fb4"/>
+    <g fill="none" stroke="#7a67a0" stroke-width="1.5">
       <path d="M216,108 q-16,-8 -30,-2"/>
       <path d="M216,114 q-18,-2 -32,4"/>
       <path d="M216,120 q-16,6 -30,8"/>
     </g>
-    <text x="240" y="150" text-anchor="middle" font-size="11" fill="#8a8f98">弧菌等</text>
+    <text x="240" y="150" text-anchor="middle" font-size="11" fill="#77797e">弧菌等</text>
   </g>
 
   <!-- ③ 周身鞭毛 -->
   <g>
-    <text x="372" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#454b54">周身鞭毛</text>
-    <rect x="346" y="104" width="52" height="20" rx="10" fill="#7d6fae"/>
-    <g fill="none" stroke="#5b4a8c" stroke-width="1.5">
+    <text x="372" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">周身鞭毛</text>
+    <rect x="346" y="104" width="52" height="20" rx="10" fill="#9d7fb4"/>
+    <g fill="none" stroke="#7a67a0" stroke-width="1.5">
       <path d="M352,104 q-6,-12 -14,-16"/>
       <path d="M366,103 q-2,-13 4,-18"/>
       <path d="M384,104 q6,-12 16,-14"/>
@@ -36,15 +36,15 @@
       <path d="M370,125 q0,12 6,18"/>
       <path d="M388,124 q8,10 18,10"/>
     </g>
-    <text x="372" y="150" text-anchor="middle" font-size="11" fill="#8a8f98">变形杆菌、沙门菌</text>
+    <text x="372" y="150" text-anchor="middle" font-size="11" fill="#77797e">变形杆菌、沙门菌</text>
   </g>
 
   <!-- 原理说明 -->
   <g>
-    <rect x="40" y="180" width="400" height="60" rx="9" fill="#fbfaf8" stroke="#cfcabd" stroke-width="1.2"/>
-    <text x="60" y="204" font-size="11" font-weight="700" fill="#454b54">原理</text>
-    <text x="60" y="222" font-size="11" fill="#454b54">鞭毛极细，普通染色不可见；先以单宁酸等媒染剂在其表面沉积增粗，</text>
-    <text x="60" y="237" font-size="11" fill="#454b54">再用银盐 / 复红染色，使鞭毛得以显现。</text>
+    <rect x="40" y="180" width="400" height="60" rx="9" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2"/>
+    <text x="60" y="204" font-size="11" font-weight="700" fill="#565b63">原理</text>
+    <text x="60" y="222" font-size="11" fill="#565b63">鞭毛极细，普通染色不可见；先以单宁酸等媒染剂在其表面沉积增粗，</text>
+    <text x="60" y="237" font-size="11" fill="#565b63">再用银盐 / 复红染色，使鞭毛得以显现。</text>
   </g>
-  <text x="240" y="270" text-anchor="middle" font-size="11" fill="#8a8f98">操作需轻柔，避免鞭毛脱落；辅助菌种鉴定与动力判断</text>
+  <text x="240" y="270" text-anchor="middle" font-size="11" fill="#77797e">操作需轻柔，避免鞭毛脱落；辅助菌种鉴定与动力判断</text>
 </svg>

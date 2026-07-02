@@ -1,45 +1,45 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 372" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>染色方法总览</title><desc>按用途分四类；色点示典型结果颜色</desc>
   <rect width="480" height="372" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">染色方法总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">按用途分四类；色点示典型结果颜色</text>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">染色方法总览</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#77797e">按用途分四类；色点示典型结果颜色</text>
 
   <!-- 通用 pill 定义靠重复绘制 -->
   <!-- ===== 常规染色 ===== -->
-  <text x="24" y="72" font-size="12" font-weight="700" fill="#5b4a8c">常规染色</text>
-  <g font-size="11" fill="#454b54">
-    <g transform="translate(24,82)"><rect width="104" height="26" rx="13" fill="#f4f1fa"/><circle cx="15" cy="13" r="5" fill="#5b4a8c"/><text x="26" y="17">革兰染色</text></g>
-    <g transform="translate(140,82)"><rect width="104" height="26" rx="13" fill="#fbeeee"/><circle cx="15" cy="13" r="5" fill="#b04242"/><text x="26" y="17">抗酸染色</text></g>
-    <g transform="translate(256,82)"><rect width="104" height="26" rx="13" fill="#fbeeee"/><circle cx="15" cy="13" r="5" fill="#b04242"/><text x="26" y="17">改良抗酸</text></g>
-    <g transform="translate(372,82)"><rect width="84" height="26" rx="13" fill="#e7eef6"/><circle cx="15" cy="13" r="5" fill="#345f86"/><text x="26" y="17">美蓝</text></g>
+  <text x="24" y="72" font-size="12" font-weight="700" fill="#7a67a0">常规染色</text>
+  <g font-size="11" fill="#565b63">
+    <g transform="translate(24,82)"><rect width="104" height="26" rx="13" fill="#f4f1fa"/><circle cx="15" cy="13" r="5" fill="#7a67a0"/><text x="26" y="17">革兰染色</text></g>
+    <g transform="translate(140,82)"><rect width="104" height="26" rx="13" fill="#f6e6e1"/><circle cx="15" cy="13" r="5" fill="#c46a62"/><text x="26" y="17">抗酸染色</text></g>
+    <g transform="translate(256,82)"><rect width="104" height="26" rx="13" fill="#f6e6e1"/><circle cx="15" cy="13" r="5" fill="#c46a62"/><text x="26" y="17">改良抗酸</text></g>
+    <g transform="translate(372,82)"><rect width="84" height="26" rx="13" fill="#e6ecf4"/><circle cx="15" cy="13" r="5" fill="#5a80b0"/><text x="26" y="17">美蓝</text></g>
   </g>
 
   <!-- ===== 特殊结构染色 ===== -->
   <text x="24" y="140" font-size="12" font-weight="700" fill="#2e6b66">特殊结构染色</text>
-  <g font-size="11" fill="#454b54">
-    <g transform="translate(24,150)"><rect width="104" height="26" rx="13" fill="#eaf3ee"/><circle cx="15" cy="13" r="5" fill="#2f8f6f"/><text x="26" y="17">芽孢染色</text></g>
+  <g font-size="11" fill="#565b63">
+    <g transform="translate(24,150)"><rect width="104" height="26" rx="13" fill="#f2eee2"/><circle cx="15" cy="13" r="5" fill="#2f8f6f"/><text x="26" y="17">芽孢染色</text></g>
     <g transform="translate(140,150)"><rect width="104" height="26" rx="13" fill="#f1f3f5"/><circle cx="15" cy="13" r="5" fill="#9aa7bb"/><text x="26" y="17">荚膜染色</text></g>
-    <g transform="translate(256,150)"><rect width="104" height="26" rx="13" fill="#eaf3ee"/><circle cx="15" cy="13" r="5" fill="#4f9e93"/><text x="26" y="17">鞭毛染色</text></g>
-    <g transform="translate(372,150)"><rect width="100" height="26" rx="13" fill="#efeaf5"/><circle cx="15" cy="13" r="5" fill="#3c2f63"/><text x="26" y="17">异染颗粒</text></g>
+    <g transform="translate(256,150)"><rect width="104" height="26" rx="13" fill="#f2eee2"/><circle cx="15" cy="13" r="5" fill="#4f9e93"/><text x="26" y="17">鞭毛染色</text></g>
+    <g transform="translate(372,150)"><rect width="100" height="26" rx="13" fill="#efeaf5"/><circle cx="15" cy="13" r="5" fill="#57487a"/><text x="26" y="17">异染颗粒</text></g>
   </g>
 
   <!-- ===== 真菌染色 ===== -->
-  <text x="24" y="208" font-size="12" font-weight="700" fill="#3f63a6">真菌染色</text>
-  <g font-size="11" fill="#454b54">
-    <g transform="translate(24,218)"><rect width="116" height="26" rx="13" fill="#e9eef7"/><circle cx="15" cy="13" r="5" fill="#3f63a6"/><text x="26" y="17">乳酸酚棉蓝</text></g>
-    <g transform="translate(152,218)"><rect width="104" height="26" rx="13" fill="#edeef0"/><circle cx="15" cy="13" r="5" fill="#23272e"/><text x="26" y="17">墨汁负染</text></g>
-    <g transform="translate(268,218)"><rect width="104" height="26" rx="13" fill="#edeef0"/><circle cx="15" cy="13" r="5" fill="#23272e"/><text x="26" y="17">六胺银染色</text></g>
-    <g transform="translate(384,218)"><rect width="80" height="26" rx="13" fill="#f1f0ec"/><circle cx="15" cy="13" r="5" fill="#8a8f98"/><text x="26" y="17">KOH</text></g>
+  <text x="24" y="208" font-size="12" font-weight="700" fill="#5a80b0">真菌染色</text>
+  <g font-size="11" fill="#565b63">
+    <g transform="translate(24,218)"><rect width="116" height="26" rx="13" fill="#e9eef7"/><circle cx="15" cy="13" r="5" fill="#5a80b0"/><text x="26" y="17">乳酸酚棉蓝</text></g>
+    <g transform="translate(152,218)"><rect width="104" height="26" rx="13" fill="#edeef0"/><circle cx="15" cy="13" r="5" fill="#2c3138"/><text x="26" y="17">墨汁负染</text></g>
+    <g transform="translate(268,218)"><rect width="104" height="26" rx="13" fill="#edeef0"/><circle cx="15" cy="13" r="5" fill="#2c3138"/><text x="26" y="17">六胺银染色</text></g>
+    <g transform="translate(384,218)"><rect width="80" height="26" rx="13" fill="#f1f0ec"/><circle cx="15" cy="13" r="5" fill="#77797e"/><text x="26" y="17">KOH</text></g>
   </g>
 
   <!-- ===== 血液与寄生虫染色 ===== -->
-  <text x="24" y="276" font-size="12" font-weight="700" fill="#9e2f57">血液与寄生虫染色</text>
-  <g font-size="11" fill="#454b54">
-    <g transform="translate(24,286)"><rect width="104" height="26" rx="13" fill="#f7eaf0"/><circle cx="15" cy="13" r="5" fill="#9e2f57"/><text x="26" y="17">吉姆萨</text></g>
-    <g transform="translate(140,286)"><rect width="104" height="26" rx="13" fill="#f7eaf0"/><circle cx="15" cy="13" r="5" fill="#9e2f57"/><text x="26" y="17">瑞氏染色</text></g>
-    <g transform="translate(256,286)"><rect width="104" height="26" rx="13" fill="#f1ede1"/><circle cx="15" cy="13" r="5" fill="#6e571a"/><text x="26" y="17">镀银染色</text></g>
+  <text x="24" y="276" font-size="12" font-weight="700" fill="#a75d69">血液与寄生虫染色</text>
+  <g font-size="11" fill="#565b63">
+    <g transform="translate(24,286)"><rect width="104" height="26" rx="13" fill="#f7eaf0"/><circle cx="15" cy="13" r="5" fill="#a75d69"/><text x="26" y="17">吉姆萨</text></g>
+    <g transform="translate(140,286)"><rect width="104" height="26" rx="13" fill="#f7eaf0"/><circle cx="15" cy="13" r="5" fill="#a75d69"/><text x="26" y="17">瑞氏染色</text></g>
+    <g transform="translate(256,286)"><rect width="104" height="26" rx="13" fill="#f1ede1"/><circle cx="15" cy="13" r="5" fill="#7c6a34"/><text x="26" y="17">镀银染色</text></g>
     <g transform="translate(372,286)"><rect width="96" height="26" rx="13" fill="#f4f6e6"/><circle cx="15" cy="13" r="5" fill="#9aac3a"/><text x="26" y="17">金胺荧光</text></g>
   </g>
 
-  <text x="240" y="350" text-anchor="middle" font-size="11" fill="#8a8f98">点击任一染色查看原理、试剂、步骤与结果判读</text>
+  <text x="240" y="350" text-anchor="middle" font-size="11" fill="#77797e">点击任一染色查看原理、试剂、步骤与结果判读</text>
 </svg>

@@ -1,34 +1,34 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>溶血型鉴定（血平板）</title><desc>观察菌落周围红细胞溶解情况：α / β / γ 三型</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">溶血型鉴定（血平板）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">观察菌落周围红细胞溶解情况：α / β / γ 三型</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">溶血型鉴定（血平板）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">观察菌落周围红细胞溶解情况：α / β / γ 三型</text>
 
   <!-- α 溶血(草绿) -->
   <g>
     <circle cx="100" cy="148" r="60" fill="#9e2f3a" stroke="#7d2530" stroke-width="2.5"/>
     <circle cx="100" cy="148" r="26" fill="#6f8f5a"/>
-    <circle cx="100" cy="148" r="9" fill="#cfcabd"/>
+    <circle cx="100" cy="148" r="9" fill="#cbc1a8"/>
     <text x="100" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a52">α 溶血（草绿）</text>
-    <text x="100" y="246" text-anchor="middle" font-size="11" fill="#8a8f98">部分溶血·绿变</text>
+    <text x="100" y="246" text-anchor="middle" font-size="11" fill="#77797e">部分溶血·绿变</text>
   </g>
 
   <!-- β 溶血(透明) -->
   <g>
     <circle cx="240" cy="148" r="60" fill="#9e2f3a" stroke="#7d2530" stroke-width="2.5"/>
     <circle cx="240" cy="148" r="26" fill="#f3ead9"/>
-    <circle cx="240" cy="148" r="9" fill="#cfcabd"/>
-    <text x="240" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">β 溶血（透明）</text>
-    <text x="240" y="246" text-anchor="middle" font-size="11" fill="#8a8f98">完全溶血·清亮</text>
+    <circle cx="240" cy="148" r="9" fill="#cbc1a8"/>
+    <text x="240" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">β 溶血（透明）</text>
+    <text x="240" y="246" text-anchor="middle" font-size="11" fill="#77797e">完全溶血·清亮</text>
   </g>
 
   <!-- γ 不溶血 -->
   <g>
     <circle cx="380" cy="148" r="60" fill="#9e2f3a" stroke="#7d2530" stroke-width="2.5"/>
-    <circle cx="380" cy="148" r="9" fill="#cfcabd"/>
-    <text x="380" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#8a8f98">γ 不溶血</text>
-    <text x="380" y="246" text-anchor="middle" font-size="11" fill="#8a8f98">无变化</text>
+    <circle cx="380" cy="148" r="9" fill="#cbc1a8"/>
+    <text x="380" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#77797e">γ 不溶血</text>
+    <text x="380" y="246" text-anchor="middle" font-size="11" fill="#77797e">无变化</text>
   </g>
 
-  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#8a8f98">A 群/B 群链球菌 β 溶血；肺炎链球菌、草绿色链球菌 α 溶血；肠球菌多为 γ</text>
+  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#77797e">A 群/B 群链球菌 β 溶血；肺炎链球菌、草绿色链球菌 α 溶血；肠球菌多为 γ</text>
 </svg>

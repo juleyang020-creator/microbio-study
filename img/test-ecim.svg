@@ -1,29 +1,29 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>eCIM（区分金属酶 / 丝氨酸酶）</title><desc>在 mCIM 阳性基础上，加 EDTA 螯合锌离子以抑制金属β-内酰胺酶</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">eCIM（区分金属酶 / 丝氨酸酶）</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">在 mCIM 阳性基础上，加 EDTA 螯合锌离子以抑制金属β-内酰胺酶</text>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">eCIM（区分金属酶 / 丝氨酸酶）</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#77797e">在 mCIM 阳性基础上，加 EDTA 螯合锌离子以抑制金属β-内酰胺酶</text>
 
   <!-- mCIM（无 EDTA）：抑菌圈小 -->
-  <circle cx="138" cy="172" r="90" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
-  <circle cx="138" cy="172" r="22" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1" stroke-dasharray="4 3"/>
-  <circle cx="138" cy="172" r="14" fill="#e7eef6" stroke="#345f86" stroke-width="1.2"/>
-  <text x="138" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">MEM</text>
-  <text x="138" y="278" text-anchor="middle" font-size="12" font-weight="700" fill="#454b54">mCIM（不含 EDTA）</text>
+  <circle cx="138" cy="172" r="90" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.5"/>
+  <circle cx="138" cy="172" r="22" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="138" cy="172" r="14" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.2"/>
+  <text x="138" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MEM</text>
+  <text x="138" y="278" text-anchor="middle" font-size="12" font-weight="700" fill="#565b63">mCIM（不含 EDTA）</text>
 
   <!-- mCIM + EDTA：抑菌圈增大 -->
-  <circle cx="346" cy="172" r="90" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
-  <circle cx="346" cy="172" r="52" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1" stroke-dasharray="4 3"/>
-  <circle cx="346" cy="172" r="14" fill="#e7eef6" stroke="#345f86" stroke-width="1.2"/>
-  <text x="346" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">MEM</text>
-  <text x="346" y="184" text-anchor="middle" font-size="11" fill="#345f86">+EDTA</text>
-  <text x="346" y="278" text-anchor="middle" font-size="12" font-weight="700" fill="#454b54">mCIM + EDTA</text>
+  <circle cx="346" cy="172" r="90" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.5"/>
+  <circle cx="346" cy="172" r="52" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="346" cy="172" r="14" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.2"/>
+  <text x="346" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MEM</text>
+  <text x="346" y="184" text-anchor="middle" font-size="11" fill="#5a80b0">+EDTA</text>
+  <text x="346" y="278" text-anchor="middle" font-size="12" font-weight="700" fill="#565b63">mCIM + EDTA</text>
 
   <!-- ≥5mm 增量标注（哑红，正向阳性提示） -->
-  <line x1="346" y1="120" x2="346" y2="158" stroke="#b04242" stroke-width="1" stroke-dasharray="3 2"/>
-  <line x1="346" y1="186" x2="346" y2="224" stroke="#b04242" stroke-width="1" stroke-dasharray="3 2"/>
-  <text x="395" y="146" text-anchor="middle" font-size="11" fill="#b04242">Δ≥5mm</text>
+  <line x1="346" y1="120" x2="346" y2="158" stroke="#c46a62" stroke-width="1" stroke-dasharray="3 2"/>
+  <line x1="346" y1="186" x2="346" y2="224" stroke="#c46a62" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="395" y="146" text-anchor="middle" font-size="11" fill="#c46a62">Δ≥5mm</text>
 
-  <text x="240" y="110" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b04242">圈增大 ≥5mm → 金属β-内酰胺酶 (NDM / IMP / VIM)</text>
-  <text x="240" y="296" text-anchor="middle" font-size="11.5" fill="#454b54">无明显增大 → 丝氨酸碳青霉烯酶（如 KPC）</text>
+  <text x="240" y="110" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c46a62">圈增大 ≥5mm → 金属β-内酰胺酶 (NDM / IMP / VIM)</text>
+  <text x="240" y="296" text-anchor="middle" font-size="11.5" fill="#565b63">无明显增大 → 丝氨酸碳青霉烯酶（如 KPC）</text>
 </svg>

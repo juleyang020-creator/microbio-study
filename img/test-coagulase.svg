@@ -4,31 +4,31 @@
     <linearGradient id="cgGlass" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#ffffff"/>
       <stop offset="0.5" stop-color="#fbfaf8"/>
-      <stop offset="1" stop-color="#f1ede4"/>
+      <stop offset="1" stop-color="#f4efe2"/>
     </linearGradient>
   </defs>
 
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">血浆凝固酶试验（试管法）</text>
-  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#8a8f98">凝固酶使血浆纤维蛋白原转为纤维蛋白而凝固</text>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">血浆凝固酶试验（试管法）</text>
+  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#77797e">凝固酶使血浆纤维蛋白原转为纤维蛋白而凝固</text>
 
   <!-- ===== 阳性管：倾斜不流动（血浆已凝成胶冻） ===== -->
   <g transform="rotate(40 150 165)">
     <!-- 管壁 -->
     <rect x="132" y="74" width="36" height="158" rx="18" fill="url(#cgGlass)" stroke="#b8b2a4" stroke-width="2"/>
     <!-- 凝固的血浆：随管壁固定，不随重力，因此填充垂直于管轴（与管同向） -->
-    <path d="M134,118 h32 v96 a16,16 0 0 1 -32,0 z" fill="#e0c2c2" stroke="#c49a9a" stroke-width="1"/>
+    <path d="M134,118 h32 v96 a16,16 0 0 1 -32,0 z" fill="#e0c2c2" stroke="#c9a49f" stroke-width="1"/>
     <!-- 凝胶上缘随管壁、与管轴垂直（说明凝块不流动） -->
-    <path d="M134,118 h32" stroke="#b04242" stroke-width="1.5"/>
+    <path d="M134,118 h32" stroke="#c46a62" stroke-width="1.5"/>
     <!-- 凝块纹理：细小裂纹示意胶冻 -->
-    <path d="M140,140 h20 M138,162 h24 M141,184 h18" stroke="#c49a9a" stroke-width="0.8" stroke-linecap="round" opacity="0.7"/>
+    <path d="M140,140 h20 M138,162 h24 M141,184 h18" stroke="#c9a49f" stroke-width="0.8" stroke-linecap="round" opacity="0.7"/>
     <!-- 高光 -->
     <rect x="139" y="84" width="5" height="138" rx="2.5" fill="#ffffff" opacity="0.55"/>
   </g>
   <!-- 阳性标记：箭头指向凝块上缘 -->
-  <text x="150" y="250" text-anchor="middle" font-size="13" font-weight="700" fill="#b04242">阳性：血浆凝固成胶冻</text>
-  <text x="150" y="268" text-anchor="middle" font-size="11" fill="#454b54">倾斜倒置不流动</text>
-  <text x="150" y="284" text-anchor="middle" font-size="11" fill="#8a8f98">金黄色葡萄球菌</text>
+  <text x="150" y="250" text-anchor="middle" font-size="13" font-weight="700" fill="#c46a62">阳性：血浆凝固成胶冻</text>
+  <text x="150" y="268" text-anchor="middle" font-size="11" fill="#565b63">倾斜倒置不流动</text>
+  <text x="150" y="284" text-anchor="middle" font-size="11" fill="#77797e">金黄色葡萄球菌</text>
 
   <!-- ===== 阴性管：倾斜，液面随重力保持水平（仍为液体） ===== -->
   <g transform="rotate(40 332 165)">
@@ -45,6 +45,6 @@
     <path d="M260,158 h130" stroke="#3f7a52" stroke-width="1.5"/>
   </g>
   <text x="332" y="250" text-anchor="middle" font-size="13" font-weight="700" fill="#3f7a52">阴性：仍为液体</text>
-  <text x="332" y="268" text-anchor="middle" font-size="11" fill="#454b54">液面随重力呈水平</text>
-  <text x="332" y="284" text-anchor="middle" font-size="11" fill="#8a8f98">凝固酶阴性葡萄球菌（CoNS）</text>
+  <text x="332" y="268" text-anchor="middle" font-size="11" fill="#565b63">液面随重力呈水平</text>
+  <text x="332" y="284" text-anchor="middle" font-size="11" fill="#77797e">凝固酶阴性葡萄球菌（CoNS）</text>
 </svg>

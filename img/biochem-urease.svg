@@ -1,32 +1,32 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>脲酶试验 (Urease)</title><desc>尿素被脲酶分解为氨，pH 升高使酚红由橙黄变粉红</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">脲酶试验 (Urease)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">尿素被脲酶分解为氨，pH 升高使酚红由橙黄变粉红</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">脲酶试验 (Urease)</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">尿素被脲酶分解为氨，pH 升高使酚红由橙黄变粉红</text>
 
   <!-- 阴性管（橙黄，斜面） -->
   <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
     <!-- 斜面琼脂(橙黄) -->
     <path d="M150,150 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#e8b84b"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6d1f">阴性（橙黄）</text>
+    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阴性（橙黄）</text>
   </g>
 
   <!-- 阳性管（粉红，斜面） -->
   <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
     <path d="M300,150 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#cf4f86"/>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">阳性（粉红）</text>
+    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（粉红）</text>
   </g>
 
   <!-- 箭头 -->
-  <g stroke="#8a8f98" stroke-width="1.4" fill="none">
+  <g stroke="#77797e" stroke-width="1.4" fill="none">
     <line x1="210" y1="165" x2="280" y2="165" marker-end="url(#arr)"/>
   </g>
-  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8a8f98"/></marker></defs>
-  <text x="245" y="158" text-anchor="middle" font-size="11" fill="#8a8f98">产氨</text>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#77797e"/></marker></defs>
+  <text x="245" y="158" text-anchor="middle" font-size="11" fill="#77797e">产氨</text>
 
-  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#8a8f98">变形杆菌强阳性（快速）；克雷伯菌、部分肠杆菌阳性；大肠埃希菌阴性</text>
+  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#77797e">变形杆菌强阳性（快速）；克雷伯菌、部分肠杆菌阳性；大肠埃希菌阴性</text>
 </svg>

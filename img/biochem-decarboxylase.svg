@@ -1,35 +1,35 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>脱羧酶试验（赖氨酸 / 鸟氨酸 / 精氨酸）</title><desc>氨基酸脱羧产胺使溴甲酚紫由黄回紫（Moeller 法，覆矿物油隔氧）</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">脱羧酶试验（赖氨酸 / 鸟氨酸 / 精氨酸）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">氨基酸脱羧产胺使溴甲酚紫由黄回紫（Moeller 法，覆矿物油隔氧）</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">脱羧酶试验（赖氨酸 / 鸟氨酸 / 精氨酸）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">氨基酸脱羧产胺使溴甲酚紫由黄回紫（Moeller 法，覆矿物油隔氧）</text>
 
   <!-- 对照管(无氨基酸,黄) -->
   <g>
-    <path d="M120,78 L120,238 Q120,256 138,256 Q156,256 156,238 L156,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="138" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
-    <path d="M120,128 L156,128 L156,238 Q156,256 138,256 Q120,256 120,238 Z" fill="#e0c84a"/>
+    <path d="M120,78 L120,238 Q120,256 138,256 Q156,256 156,238 L156,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="138" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+    <path d="M120,128 L156,128 L156,238 Q156,256 138,256 Q120,256 120,238 Z" fill="#cdb85f"/>
     <rect x="120" y="116" width="36" height="14" fill="#f1e6c8" opacity="0.85"/>
-    <text x="138" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6d1f">对照（黄）</text>
+    <text x="138" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">对照（黄）</text>
   </g>
 
   <!-- 阴性(只发酵葡萄糖,黄) -->
   <g>
-    <path d="M222,78 L222,238 Q222,256 240,256 Q258,256 258,238 L258,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="240" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
-    <path d="M222,128 L258,128 L258,238 Q258,256 240,256 Q222,256 222,238 Z" fill="#e0c84a"/>
+    <path d="M222,78 L222,238 Q222,256 240,256 Q258,256 258,238 L258,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="240" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+    <path d="M222,128 L258,128 L258,238 Q258,256 240,256 Q222,256 222,238 Z" fill="#cdb85f"/>
     <rect x="222" y="116" width="36" height="14" fill="#f1e6c8" opacity="0.85"/>
-    <text x="240" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6d1f">阴性（黄）</text>
+    <text x="240" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阴性（黄）</text>
   </g>
 
   <!-- 阳性(产胺,紫) -->
   <g>
-    <path d="M324,78 L324,238 Q324,256 342,256 Q360,256 360,238 L360,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="342" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
-    <path d="M324,128 L360,128 L360,238 Q360,256 342,256 Q324,256 324,238 Z" fill="#7b5ea8"/>
+    <path d="M324,78 L324,238 Q324,256 342,256 Q360,256 360,238 L360,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="342" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+    <path d="M324,128 L360,128 L360,238 Q360,256 342,256 Q324,256 324,238 Z" fill="#9d7fb4"/>
     <rect x="324" y="116" width="36" height="14" fill="#f1e6c8" opacity="0.85"/>
-    <text x="342" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#5b4a8c">阳性（紫）</text>
+    <text x="342" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#7a67a0">阳性（紫）</text>
   </g>
 
-  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#8a8f98">先发酵葡萄糖变黄→脱羧产碱性胺再回紫为阳性；顶部矿物油隔绝空气</text>
+  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#77797e">先发酵葡萄糖变黄→脱羧产碱性胺再回紫为阳性；顶部矿物油隔绝空气</text>
 </svg>

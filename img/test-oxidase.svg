@@ -6,37 +6,37 @@
       <stop offset="1" stop-color="#faf9f6"/>
     </linearGradient>
     <linearGradient id="oxPos" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#5b4a8c"/>
+      <stop offset="0" stop-color="#7a67a0"/>
       <stop offset="1" stop-color="#4a3b78"/>
     </linearGradient>
   </defs>
 
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">氧化酶试验</text>
-  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#8a8f98">滤纸涂菌加试剂；细胞色素 c 氧化酶将试剂氧化为紫蓝色</text>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">氧化酶试验</text>
+  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#77797e">滤纸涂菌加试剂；细胞色素 c 氧化酶将试剂氧化为紫蓝色</text>
 
   <!-- 阳性 滤纸 -->
-  <rect x="44" y="86" width="176" height="104" rx="8" fill="url(#oxPaper)" stroke="#cfcabd" stroke-width="1.5"/>
-  <text x="132" y="104" text-anchor="middle" font-size="11" fill="#8a8f98">滤纸 + 试剂滴 + 菌落涂布</text>
+  <rect x="44" y="86" width="176" height="104" rx="8" fill="url(#oxPaper)" stroke="#cbc1a8" stroke-width="1.5"/>
+  <text x="132" y="104" text-anchor="middle" font-size="11" fill="#77797e">滤纸 + 试剂滴 + 菌落涂布</text>
   <!-- 阳性涂菌斑：紫蓝 -->
-  <ellipse cx="132" cy="146" rx="50" ry="20" fill="url(#oxPos)" stroke="#3c2f63" stroke-width="1"/>
+  <ellipse cx="132" cy="146" rx="50" ry="20" fill="url(#oxPos)" stroke="#57487a" stroke-width="1"/>
   <ellipse cx="132" cy="146" rx="50" ry="20" fill="none" stroke="#7a68b0" stroke-width="0.8" opacity="0.5" transform="translate(0,-1)"/>
   <text x="132" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">变紫蓝</text>
-  <text x="132" y="210" text-anchor="middle" font-size="13" font-weight="700" fill="#5b4a8c">阳性</text>
-  <text x="132" y="228" text-anchor="middle" font-size="11" fill="#454b54">铜绿假单胞 / 弧菌 / 奈瑟 / 气单胞</text>
+  <text x="132" y="210" text-anchor="middle" font-size="13" font-weight="700" fill="#7a67a0">阳性</text>
+  <text x="132" y="228" text-anchor="middle" font-size="11" fill="#565b63">铜绿假单胞 / 弧菌 / 奈瑟 / 气单胞</text>
 
   <!-- 阴性 滤纸 -->
-  <rect x="260" y="86" width="176" height="104" rx="8" fill="url(#oxPaper)" stroke="#cfcabd" stroke-width="1.5"/>
-  <text x="348" y="104" text-anchor="middle" font-size="11" fill="#8a8f98">滤纸 + 试剂滴 + 菌落涂布</text>
+  <rect x="260" y="86" width="176" height="104" rx="8" fill="url(#oxPaper)" stroke="#cbc1a8" stroke-width="1.5"/>
+  <text x="348" y="104" text-anchor="middle" font-size="11" fill="#77797e">滤纸 + 试剂滴 + 菌落涂布</text>
   <!-- 阴性涂菌斑：无色 -->
-  <ellipse cx="348" cy="146" rx="50" ry="20" fill="#f3ead0" stroke="#cfcabd" stroke-width="1"/>
-  <text x="348" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6d1f">不变色</text>
+  <ellipse cx="348" cy="146" rx="50" ry="20" fill="#f3ead0" stroke="#cbc1a8" stroke-width="1"/>
+  <text x="348" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">不变色</text>
   <text x="348" y="210" text-anchor="middle" font-size="13" font-weight="700" fill="#3f7a52">阴性</text>
-  <text x="348" y="228" text-anchor="middle" font-size="11" fill="#454b54">肠杆菌目</text>
+  <text x="348" y="228" text-anchor="middle" font-size="11" fill="#565b63">肠杆菌目</text>
 
   <!-- 中线对比箭头 -->
-  <line x1="226" y1="146" x2="254" y2="146" stroke="#d6d2c8" stroke-width="1.5"/>
+  <line x1="226" y1="146" x2="254" y2="146" stroke="#d9d1bd" stroke-width="1.5"/>
 
-  <text x="240" y="262" text-anchor="middle" font-size="12.5" fill="#454b54">10–30 秒内判读；30 秒后假阳性，不可采纳</text>
-  <text x="240" y="282" text-anchor="middle" font-size="12.5" fill="#454b54">革兰阴性杆菌分群的关键一步</text>
+  <text x="240" y="262" text-anchor="middle" font-size="12.5" fill="#565b63">10–30 秒内判读；30 秒后假阳性，不可采纳</text>
+  <text x="240" y="282" text-anchor="middle" font-size="12.5" fill="#565b63">革兰阴性杆菌分群的关键一步</text>
 </svg>

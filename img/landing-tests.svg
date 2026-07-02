@@ -1,39 +1,39 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 312" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>实验室试验总览</title><desc>药敏试验方法、耐药表型检测与细菌鉴别试验</desc>
   <rect width="480" height="312" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">实验室试验总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">药敏试验方法、耐药表型检测与细菌鉴别试验</text>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">实验室试验总览</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#77797e">药敏试验方法、耐药表型检测与细菌鉴别试验</text>
 
   <!-- 药敏试验方法 -->
-  <text x="24" y="72" font-size="12" font-weight="700" fill="#345f86">药敏试验方法</text>
-  <g font-size="11" fill="#454b54">
-    <g transform="translate(24,82)"><rect width="104" height="26" rx="13" fill="#e7eef6"/><text x="12" y="17">KB 纸片法</text></g>
-    <g transform="translate(140,82)"><rect width="104" height="26" rx="13" fill="#e7eef6"/><text x="14" y="17">E-test</text></g>
-    <g transform="translate(256,82)"><rect width="120" height="26" rx="13" fill="#e7eef6"/><text x="12" y="17">黏菌素 BMD</text></g>
+  <text x="24" y="72" font-size="12" font-weight="700" fill="#5a80b0">药敏试验方法</text>
+  <g font-size="11" fill="#565b63">
+    <g transform="translate(24,82)"><rect width="104" height="26" rx="13" fill="#e6ecf4"/><text x="12" y="17">KB 纸片法</text></g>
+    <g transform="translate(140,82)"><rect width="104" height="26" rx="13" fill="#e6ecf4"/><text x="14" y="17">E-test</text></g>
+    <g transform="translate(256,82)"><rect width="120" height="26" rx="13" fill="#e6ecf4"/><text x="12" y="17">黏菌素 BMD</text></g>
   </g>
 
   <!-- 耐药表型检测 -->
-  <text x="24" y="124" font-size="12" font-weight="700" fill="#b04242">耐药表型检测</text>
-  <g font-size="11" fill="#454b54">
-    <g transform="translate(24,134)"><rect width="104" height="26" rx="13" fill="#fbeeee"/><text x="14" y="17">D 试验</text></g>
-    <g transform="translate(140,134)"><rect width="104" height="26" rx="13" fill="#fbeeee"/><text x="14" y="17">mCIM</text></g>
-    <g transform="translate(256,134)"><rect width="104" height="26" rx="13" fill="#fbeeee"/><text x="14" y="17">eCIM</text></g>
-    <g transform="translate(372,134)"><rect width="96" height="26" rx="13" fill="#fbeeee"/><text x="12" y="17">ESBL 确证</text></g>
-    <g transform="translate(24,166)"><rect width="116" height="26" rx="13" fill="#fbeeee"/><text x="12" y="17">头孢西丁筛选</text></g>
-    <g transform="translate(152,166)"><rect width="92" height="26" rx="13" fill="#fbeeee"/><text x="14" y="17">HLAR</text></g>
-    <g transform="translate(256,166)"><rect width="104" height="26" rx="13" fill="#fbeeee"/><text x="12" y="17">β-内酰胺酶</text></g>
+  <text x="24" y="124" font-size="12" font-weight="700" fill="#c46a62">耐药表型检测</text>
+  <g font-size="11" fill="#565b63">
+    <g transform="translate(24,134)"><rect width="104" height="26" rx="13" fill="#f6e6e1"/><text x="14" y="17">D 试验</text></g>
+    <g transform="translate(140,134)"><rect width="104" height="26" rx="13" fill="#f6e6e1"/><text x="14" y="17">mCIM</text></g>
+    <g transform="translate(256,134)"><rect width="104" height="26" rx="13" fill="#f6e6e1"/><text x="14" y="17">eCIM</text></g>
+    <g transform="translate(372,134)"><rect width="96" height="26" rx="13" fill="#f6e6e1"/><text x="12" y="17">ESBL 确证</text></g>
+    <g transform="translate(24,166)"><rect width="116" height="26" rx="13" fill="#f6e6e1"/><text x="12" y="17">头孢西丁筛选</text></g>
+    <g transform="translate(152,166)"><rect width="92" height="26" rx="13" fill="#f6e6e1"/><text x="14" y="17">HLAR</text></g>
+    <g transform="translate(256,166)"><rect width="104" height="26" rx="13" fill="#f6e6e1"/><text x="12" y="17">β-内酰胺酶</text></g>
   </g>
 
   <!-- 鉴别试验 -->
   <text x="24" y="208" font-size="12" font-weight="700" fill="#2e6b66">鉴别试验</text>
-  <g font-size="11" fill="#454b54">
-    <g transform="translate(24,218)"><rect width="104" height="26" rx="13" fill="#eaf3ee"/><text x="14" y="17">触酶试验</text></g>
-    <g transform="translate(140,218)"><rect width="104" height="26" rx="13" fill="#eaf3ee"/><text x="14" y="17">氧化酶试验</text></g>
-    <g transform="translate(256,218)"><rect width="104" height="26" rx="13" fill="#eaf3ee"/><text x="14" y="17">凝固酶试验</text></g>
-    <g transform="translate(372,218)"><rect width="96" height="26" rx="13" fill="#eaf3ee"/><text x="12" y="17">Optochin</text></g>
-    <g transform="translate(24,250)"><rect width="104" height="26" rx="13" fill="#eaf3ee"/><text x="14" y="17">CAMP 试验</text></g>
-    <g transform="translate(140,250)"><rect width="116" height="26" rx="13" fill="#eaf3ee"/><text x="12" y="17">胆汁溶菌试验</text></g>
+  <g font-size="11" fill="#565b63">
+    <g transform="translate(24,218)"><rect width="104" height="26" rx="13" fill="#f2eee2"/><text x="14" y="17">触酶试验</text></g>
+    <g transform="translate(140,218)"><rect width="104" height="26" rx="13" fill="#f2eee2"/><text x="14" y="17">氧化酶试验</text></g>
+    <g transform="translate(256,218)"><rect width="104" height="26" rx="13" fill="#f2eee2"/><text x="14" y="17">凝固酶试验</text></g>
+    <g transform="translate(372,218)"><rect width="96" height="26" rx="13" fill="#f2eee2"/><text x="12" y="17">Optochin</text></g>
+    <g transform="translate(24,250)"><rect width="104" height="26" rx="13" fill="#f2eee2"/><text x="14" y="17">CAMP 试验</text></g>
+    <g transform="translate(140,250)"><rect width="116" height="26" rx="13" fill="#f2eee2"/><text x="12" y="17">胆汁溶菌试验</text></g>
   </g>
 
-  <text x="240" y="298" text-anchor="middle" font-size="11" fill="#8a8f98">点击任一试验查看原理、方法与结果判读（多附示意图）</text>
+  <text x="240" y="298" text-anchor="middle" font-size="11" fill="#77797e">点击任一试验查看原理、方法与结果判读（多附示意图）</text>
 </svg>
