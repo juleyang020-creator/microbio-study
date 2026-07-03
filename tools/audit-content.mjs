@@ -112,7 +112,7 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 if (!html.includes('data/source-metadata.js?v=')) {
   fail('index.html 未加载 data/source-metadata.js');
 }
-if (!html.includes("window.APP_VERSION = '20260702-1'")) {
+if (!html.includes("window.APP_VERSION = '20260702-2'")) {
   warn('index.html 的 APP_VERSION 与当前脚本期望不一致');
 }
 
