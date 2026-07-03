@@ -2,7 +2,7 @@
 <title>芽孢染色（Schaeffer-Fulton 孔雀绿法）</title><desc>加热使孔雀绿入芽孢、水洗不脱；番红复染菌体 → 芽孢绿、菌体红</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">芽孢染色（Schaeffer-Fulton 孔雀绿法）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">加热使孔雀绿入芽孢、水洗不脱；番红复染菌体 → 芽孢绿、菌体红</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">加热使孔雀绿入芽孢、水洗不脱；番红复染菌体 → 芽孢绿、菌体红</text>
 
   <!-- 三种芽孢位置 -->
   <!-- ① 中央 不膨大 -->
@@ -10,7 +10,7 @@
     <rect x="40" y="92" width="120" height="22" rx="11" fill="#c46a62"/>
     <ellipse cx="100" cy="103" rx="13" ry="9" fill="#2f8f6f" stroke="#1f6b51" stroke-width="1"/>
     <text x="100" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">中央、不膨大</text>
-    <text x="100" y="147" text-anchor="middle" font-size="11" fill="#77797e">炭疽芽孢杆菌</text>
+    <text x="100" y="147" text-anchor="middle" font-size="11" fill="#565b63">炭疽芽孢杆菌</text>
   </g>
 
   <!-- ② 次端 椭圆 -->
@@ -18,7 +18,7 @@
     <rect x="180" y="92" width="120" height="22" rx="11" fill="#c46a62"/>
     <ellipse cx="270" cy="103" rx="12" ry="11" fill="#2f8f6f" stroke="#1f6b51" stroke-width="1"/>
     <text x="240" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">次端、略膨大</text>
-    <text x="240" y="147" text-anchor="middle" font-size="11" fill="#77797e">肉毒梭菌</text>
+    <text x="240" y="147" text-anchor="middle" font-size="11" fill="#565b63">肉毒梭菌</text>
   </g>
 
   <!-- ③ 顶端 鼓槌状 -->
@@ -26,7 +26,7 @@
     <rect x="320" y="98" width="100" height="20" rx="10" fill="#c46a62"/>
     <circle cx="420" cy="108" r="14" fill="#2f8f6f" stroke="#1f6b51" stroke-width="1"/>
     <text x="384" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">顶端、膨大（鼓槌状）</text>
-    <text x="384" y="147" text-anchor="middle" font-size="11" fill="#77797e">破伤风梭菌</text>
+    <text x="384" y="147" text-anchor="middle" font-size="11" fill="#565b63">破伤风梭菌</text>
   </g>
 
   <!-- 步骤条 -->
@@ -37,7 +37,7 @@
 
     <rect x="178" y="178" width="124" height="34" rx="7" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2"/>
     <text x="240" y="193" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">②充分水洗</text>
-    <text x="240" y="206" text-anchor="middle" font-size="11" fill="#77797e">脱去菌体内孔雀绿</text>
+    <text x="240" y="206" text-anchor="middle" font-size="11" fill="#565b63">脱去菌体内孔雀绿</text>
 
     <rect x="316" y="178" width="124" height="34" rx="7" fill="#f6e6e1" stroke="#c98e8e" stroke-width="1.2"/>
     <text x="378" y="193" text-anchor="middle" font-size="11" font-weight="700" fill="#8a3a3a">③番红复染</text>
@@ -54,5 +54,5 @@
     <ellipse cx="156" cy="244" rx="11" ry="8" fill="#2f8f6f"/><text x="174" y="248" font-size="11" fill="#565b63">芽孢（绿）</text>
     <rect x="278" y="237" width="22" height="13" rx="6" fill="#c46a62"/><text x="308" y="248" font-size="11" fill="#565b63">菌体（红）</text>
   </g>
-  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#77797e">芽孢的位置与是否膨大有助于鉴别芽孢杆菌</text>
+  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#565b63">芽孢的位置与是否膨大有助于鉴别芽孢杆菌</text>
 </svg>

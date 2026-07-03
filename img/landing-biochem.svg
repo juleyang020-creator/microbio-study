@@ -2,7 +2,7 @@
 <title>生化反应总览</title><desc>按反应类别组织;圆点颜色示「阳性」结果</desc>
   <rect width="480" height="446" fill="#ffffff"/>
   <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">生化反应总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#77797e">按反应类别组织;圆点颜色示「阳性」结果</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">按反应类别组织;圆点颜色示「阳性」结果</text>
 
   <!-- 卡片 1：酶活性检测 -->
   <g>
@@ -12,8 +12,8 @@
       <circle cx="42" cy="98" r="4.5" fill="#9fb7d0"/><text x="52" y="101">触酶（气泡）</text>
       <circle cx="42" cy="116" r="4.5" fill="#7a67a0"/><text x="52" y="119">氧化酶（紫）</text>
       <circle cx="42" cy="134" r="4.5" fill="#cf4f86"/><text x="52" y="137">脲酶（粉红）</text>
-      <circle cx="148" cy="98" r="4.5" fill="#bd5b62"/><text x="158" y="101">硝酸盐（红）</text>
-      <circle cx="148" cy="116" r="4.5" fill="#bd5b62"/><text x="158" y="119">PYR（红）</text>
+      <circle cx="148" cy="98" r="4.5" fill="#c46a62"/><text x="158" y="101">硝酸盐（红）</text>
+      <circle cx="148" cy="116" r="4.5" fill="#c46a62"/><text x="158" y="119">PYR（红）</text>
       <circle cx="148" cy="134" r="4.5" fill="#4a8a5a"/><text x="158" y="137">苯丙氨酸（绿）</text>
       <circle cx="42" cy="152" r="4.5" fill="#cbc1a8"/><text x="52" y="155">凝固酶（凝块）</text>
       <circle cx="148" cy="152" r="4.5" fill="#e08aa8"/><text x="158" y="155">DNase（粉环）</text>
@@ -26,7 +26,7 @@
     <text x="258" y="80" font-size="11.5" font-weight="700" fill="#9a8a52">碳水化合物代谢</text>
     <g font-size="11" fill="#565b63">
       <circle cx="264" cy="98" r="4.5" fill="#cdb85f"/><text x="274" y="101">糖发酵（黄+气）</text>
-      <circle cx="264" cy="116" r="4.5" fill="#bd5b62"/><text x="274" y="119">甲基红 MR（红）</text>
+      <circle cx="264" cy="116" r="4.5" fill="#c46a62"/><text x="274" y="119">甲基红 MR（红）</text>
       <circle cx="264" cy="134" r="4.5" fill="#cf4f5e"/><text x="274" y="137">VP（红）</text>
       <circle cx="264" cy="152" r="4.5" fill="#2f6bb0"/><text x="274" y="155">枸橼酸盐（蓝）</text>
     </g>
@@ -37,7 +37,7 @@
     <rect x="22" y="184" width="214" height="116" rx="8" fill="#f4f2f8" stroke="#dcd4ea"/>
     <text x="36" y="204" font-size="11.5" font-weight="700" fill="#7a67a0">氨基酸与蛋白质代谢</text>
     <g font-size="11" fill="#565b63">
-      <circle cx="42" cy="222" r="4.5" fill="#bd5b62"/><text x="52" y="225">吲哚（红环）</text>
+      <circle cx="42" cy="222" r="4.5" fill="#c46a62"/><text x="52" y="225">吲哚（红环）</text>
       <circle cx="42" cy="240" r="4.5" fill="#2c3138"/><text x="52" y="243">H₂S（黑）</text>
       <circle cx="42" cy="258" r="4.5" fill="#9d7fb4"/><text x="52" y="261">脱羧酶（紫）</text>
       <circle cx="148" cy="222" r="4.5" fill="#5b3a8c"/><text x="158" y="225">马尿酸（紫）</text>
@@ -80,5 +80,5 @@
     </g>
   </g>
 
-  <text x="240" y="432" text-anchor="middle" font-size="11" fill="#77797e">共 32 项;点击任一反应查看原理 / 方法 / 结果判读与示意图</text>
+  <text x="240" y="432" text-anchor="middle" font-size="11" fill="#565b63">共 32 项;点击任一反应查看原理 / 方法 / 结果判读与示意图</text>
 </svg>

@@ -2,7 +2,7 @@
 <title>VITEK 2 鉴定卡原理与选卡</title><desc>64 孔密闭塑卡，比色 / 荧光生化底物 + AES 专家系统自动鉴定</desc>
   <rect width="480" height="452" fill="#ffffff"/>
   <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">VITEK 2 鉴定卡原理与选卡</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#77797e">64 孔密闭塑卡，比色 / 荧光生化底物 + AES 专家系统自动鉴定</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">64 孔密闭塑卡，比色 / 荧光生化底物 + AES 专家系统自动鉴定</text>
 
   <!-- ===== 64 孔卡示意 ===== -->
   <text x="96" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#2e6b66">64 孔生化卡</text>
@@ -27,7 +27,7 @@
       <circle cx="106" cy="182" r="5" fill="#2f6bb0"/><circle cx="50" cy="98" r="5" fill="#cdb85f"/>
     </g>
   </g>
-  <text x="96" y="220" text-anchor="middle" font-size="11" fill="#77797e">各孔显色/荧光 = 一项生化反应的阴阳</text>
+  <text x="96" y="220" text-anchor="middle" font-size="11" fill="#565b63">各孔显色/荧光 = 一项生化反应的阴阳</text>
 
   <!-- ===== 原理流程(右侧竖排) ===== -->
   <g font-size="11" fill="#565b63">
@@ -55,36 +55,36 @@
   <g font-size="11">
     <g>
       <rect x="36" y="300" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="48" y="314" font-weight="700" fill="#2e6b66">GN</text><text x="48" y="326" fill="#77797e" font-size="11">0.5–0.63 McF</text>
+      <text x="48" y="314" font-weight="700" fill="#2e6b66">GN</text><text x="48" y="326" fill="#565b63" font-size="11">0.5–0.63 McF</text>
       <text x="92" y="320" fill="#565b63">革兰阴性杆菌（肠杆菌/非发酵菌）</text>
     </g>
     <g>
       <rect x="244" y="300" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="256" y="314" font-weight="700" fill="#2e6b66">GP</text><text x="256" y="326" fill="#77797e" font-size="11">0.5–0.63 McF</text>
+      <text x="256" y="314" font-weight="700" fill="#2e6b66">GP</text><text x="256" y="326" fill="#565b63" font-size="11">0.5–0.63 McF</text>
       <text x="300" y="320" fill="#565b63">革兰阳性球菌（葡/肠/链球菌）</text>
     </g>
     <g>
       <rect x="36" y="336" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="48" y="350" font-weight="700" fill="#3f7a52">YST</text><text x="48" y="362" fill="#77797e" font-size="11">1.8–2.2 McF</text>
+      <text x="48" y="350" font-weight="700" fill="#3f7a52">YST</text><text x="48" y="362" fill="#565b63" font-size="11">1.8–2.2 McF</text>
       <text x="92" y="356" fill="#565b63">酵母菌（念珠菌/隐球菌）</text>
     </g>
     <g>
       <rect x="244" y="336" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="256" y="350" font-weight="700" fill="#9a8a52">NH</text><text x="256" y="362" fill="#77797e" font-size="11">2.7–3.3 McF</text>
+      <text x="256" y="350" font-weight="700" fill="#9a8a52">NH</text><text x="256" y="362" fill="#565b63" font-size="11">2.7–3.3 McF</text>
       <text x="296" y="356" fill="#565b63">苛养菌（奈瑟/嗜血杆菌）</text>
     </g>
     <g>
       <rect x="36" y="372" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="48" y="386" font-weight="700" fill="#7a67a0">ANC</text><text x="48" y="398" fill="#77797e" font-size="11">2.7–3.3 McF</text>
+      <text x="48" y="386" font-weight="700" fill="#7a67a0">ANC</text><text x="48" y="398" fill="#565b63" font-size="11">2.7–3.3 McF</text>
       <text x="96" y="392" fill="#565b63">厌氧菌 / 棒状杆菌</text>
     </g>
     <g>
       <rect x="244" y="372" width="200" height="30" rx="5" fill="#f7f3ee" stroke="#e0d4c2"/>
-      <text x="256" y="386" font-weight="700" fill="#8a5a3a">BCL · CBC</text><text x="256" y="398" fill="#77797e" font-size="11">科研(RUO)</text>
+      <text x="256" y="386" font-weight="700" fill="#8a5a3a">BCL · CBC</text><text x="256" y="398" fill="#565b63" font-size="11">科研(RUO)</text>
       <text x="332" y="392" fill="#565b63">芽胞杆菌 / 棒状杆菌</text>
     </g>
   </g>
 
-  <text x="240" y="424" text-anchor="middle" font-size="11" fill="#77797e">鉴定卡在前、药敏卡在后同时上机；点击任一鉴定卡查看适用菌、上机要求与主要生化反应</text>
+  <text x="240" y="424" text-anchor="middle" font-size="11" fill="#565b63">鉴定卡在前、药敏卡在后同时上机；点击任一鉴定卡查看适用菌、上机要求与主要生化反应</text>
   <text x="240" y="442" text-anchor="middle" font-size="11" fill="#b0b4ba">数据来源：bioMérieux VITEK 2 Compact SOP（V9.02 &amp; V9.04, 2025-03）</text>
 </svg>

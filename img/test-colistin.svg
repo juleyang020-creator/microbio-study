@@ -12,7 +12,7 @@
   </defs>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">黏菌素肉汤微量稀释（BMD）</text>
-  <text x="240" y="52" text-anchor="middle" font-size="11" fill="#77797e">黏菌素扩散差，纸片/梯度法不可靠，须用肉汤微量稀释测 MIC</text>
+  <text x="240" y="52" text-anchor="middle" font-size="11" fill="#565b63">黏菌素扩散差，纸片/梯度法不可靠，须用肉汤微量稀释测 MIC</text>
 
   <!-- 8 孔，浓度递增；浊(生长)→清(抑制) -->
   <g>
@@ -26,11 +26,11 @@
     <circle cx="406" cy="160" r="20" fill="url(#wellClear)" stroke="#cbc1a8" stroke-width="1.5"/>
   </g>
 
-  <g font-size="11" fill="#77797e" text-anchor="middle">
+  <g font-size="11" fill="#565b63" text-anchor="middle">
     <text x="70" y="196">0.25</text><text x="118" y="196">0.5</text><text x="166" y="196">1</text><text x="214" y="196">2</text>
     <text x="262" y="196">4</text><text x="310" y="196">8</text><text x="358" y="196">16</text><text x="406" y="196">32</text>
   </g>
-  <text x="240" y="214" text-anchor="middle" font-size="11" fill="#77797e">µg/mL（浊 = 生长，清 = 抑制）</text>
+  <text x="240" y="214" text-anchor="middle" font-size="11" fill="#565b63">µg/mL（浊 = 生长，清 = 抑制）</text>
 
   <!-- MIC 指示：首个清亮孔（浓度 4） -->
   <line x1="262" y1="124" x2="262" y2="138" stroke="#5a80b0" stroke-width="1.5"/>
@@ -38,5 +38,5 @@
   <text x="262" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MIC = 4</text>
 
   <text x="240" y="262" text-anchor="middle" font-size="12.5" fill="#565b63">首个清亮孔即 MIC；MIC ≤2 敏感（含中介）、≥4 耐药</text>
-  <text x="240" y="284" text-anchor="middle" font-size="11" fill="#77797e">用于多重耐药铜绿/不动杆菌/肠杆菌“最后一线”评估</text>
+  <text x="240" y="284" text-anchor="middle" font-size="11" fill="#565b63">用于多重耐药铜绿/不动杆菌/肠杆菌“最后一线”评估</text>
 </svg>

@@ -9,7 +9,7 @@
 
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">头孢西丁筛选（MRSA 检测）</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#77797e">头孢西丁能强诱导 mecA 表达，比苯唑西林更可靠地检出 PBP2a</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">头孢西丁能强诱导 mecA 表达，比苯唑西林更可靠地检出 PBP2a</text>
 
   <!-- 耐药 = MRSA：无抑菌圈 -->
   <circle cx="138" cy="166" r="92" fill="url(#agarSheen)" stroke="#cbc1a8" stroke-width="2.5"/>
@@ -18,7 +18,7 @@
   <text x="138" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">FOX</text>
   <text x="138" y="262" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c46a62">耐药 → MRSA（mecA 阳性）</text>
   <text x="138" y="280" text-anchor="middle" font-size="11" fill="#565b63">无抑菌圈，菌生长至纸片边缘</text>
-  <text x="138" y="295" text-anchor="middle" font-size="11" fill="#77797e">对所有 β-内酰胺耐药（头孢洛林除外）</text>
+  <text x="138" y="295" text-anchor="middle" font-size="11" fill="#565b63">对所有 β-内酰胺耐药（头孢洛林除外）</text>
 
   <!-- 敏感 = MSSA：清晰抑菌圈 -->
   <circle cx="346" cy="166" r="92" fill="url(#agarSheen)" stroke="#cbc1a8" stroke-width="2.5"/>
@@ -28,5 +28,5 @@
   <text x="346" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">FOX</text>
   <text x="346" y="262" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">敏感 → MSSA（mecA 阴性）</text>
   <text x="346" y="280" text-anchor="middle" font-size="11" fill="#565b63">清晰抑菌圈，菌被抑制</text>
-  <text x="346" y="295" text-anchor="middle" font-size="11" fill="#77797e">β-内酰胺类仍有效</text>
+  <text x="346" y="295" text-anchor="middle" font-size="11" fill="#565b63">β-内酰胺类仍有效</text>
 </svg>

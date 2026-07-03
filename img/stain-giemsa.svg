@@ -8,7 +8,7 @@
   </defs>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">吉姆萨染色（Giemsa）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">罗曼诺夫斯基染色：核紫红、胞质蓝；显示血内寄生虫</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">罗曼诺夫斯基染色：核紫红、胞质蓝；显示血内寄生虫</text>
 
   <!-- 血涂片视野 -->
   <circle cx="190" cy="158" r="104" fill="url(#gField)" stroke="#cbbcc1" stroke-width="2.5"/>
@@ -40,5 +40,5 @@
   <line x1="232" y1="128" x2="324" y2="190" stroke="#cbc1a8" stroke-width="1"/>
   <text x="330" y="194" font-size="11" fill="#565b63">被寄生红细胞可胀大、见薛氏点</text>
 
-  <text x="240" y="282" text-anchor="middle" font-size="11" fill="#77797e">用于疟原虫、利什曼原虫、立克次体、衣原体等检测</text>
+  <text x="240" y="282" text-anchor="middle" font-size="11" fill="#565b63">用于疟原虫、利什曼原虫、立克次体、衣原体等检测</text>
 </svg>

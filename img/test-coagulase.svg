@@ -10,7 +10,7 @@
 
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">血浆凝固酶试验（试管法）</text>
-  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#77797e">凝固酶使血浆纤维蛋白原转为纤维蛋白而凝固</text>
+  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#565b63">凝固酶使血浆纤维蛋白原转为纤维蛋白而凝固</text>
 
   <!-- ===== 阳性管：倾斜不流动（血浆已凝成胶冻） ===== -->
   <g transform="rotate(40 150 165)">
@@ -28,7 +28,7 @@
   <!-- 阳性标记：箭头指向凝块上缘 -->
   <text x="150" y="250" text-anchor="middle" font-size="13" font-weight="700" fill="#c46a62">阳性：血浆凝固成胶冻</text>
   <text x="150" y="268" text-anchor="middle" font-size="11" fill="#565b63">倾斜倒置不流动</text>
-  <text x="150" y="284" text-anchor="middle" font-size="11" fill="#77797e">金黄色葡萄球菌</text>
+  <text x="150" y="284" text-anchor="middle" font-size="11" fill="#565b63">金黄色葡萄球菌</text>
 
   <!-- ===== 阴性管：倾斜，液面随重力保持水平（仍为液体） ===== -->
   <g transform="rotate(40 332 165)">
@@ -46,5 +46,5 @@
   </g>
   <text x="332" y="250" text-anchor="middle" font-size="13" font-weight="700" fill="#3f7a52">阴性：仍为液体</text>
   <text x="332" y="268" text-anchor="middle" font-size="11" fill="#565b63">液面随重力呈水平</text>
-  <text x="332" y="284" text-anchor="middle" font-size="11" fill="#77797e">凝固酶阴性葡萄球菌（CoNS）</text>
+  <text x="332" y="284" text-anchor="middle" font-size="11" fill="#565b63">凝固酶阴性葡萄球菌（CoNS）</text>
 </svg>

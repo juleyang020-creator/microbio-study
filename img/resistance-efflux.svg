@@ -6,10 +6,10 @@
 </defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">主动外排</text>
-<text x="240" y="44" font-size="12" fill="#77797e" text-anchor="middle">外排泵耗能将药物泵出，胞内浓度下降</text>
+<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">外排泵耗能将药物泵出，胞内浓度下降</text>
 <rect x="60" y="62" width="360" height="192" rx="24" fill="#f6f2e2" stroke="#c8b887" stroke-width="2"/>
- <rect x="60" y="88" width="360" height="14" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="99" font-size="11" fill="#6e6b52" text-anchor="start">外膜</text>
- <rect x="60" y="212" width="360" height="14" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="223" font-size="11" fill="#6e6b52" text-anchor="start">内膜</text>
+ <rect x="60" y="88" width="360" height="14" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="99" font-size="11" fill="#5a5740" text-anchor="start">外膜</text>
+ <rect x="60" y="212" width="360" height="14" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="223" font-size="11" fill="#5a5740" text-anchor="start">内膜</text>
  <g fill="#a9c3d6" stroke="#5a80b0" stroke-width="1.2"><path d="M226,82 h44 l-7,26 h-30 z"/><path d="M233,108 h30 l-4,98 h-22 z"/><path d="M222,206 h52 l-8,26 h-36 z"/></g>
  <path d="M248,86 v140" stroke="#fbfaf8" stroke-width="6"/>
  <text x="282" y="120" font-size="12" fill="#2c3138" text-anchor="start" font-weight="600">外排泵</text>

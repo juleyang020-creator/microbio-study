@@ -15,7 +15,7 @@
 
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="29" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">胆汁溶菌试验</text>
-  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#77797e">胆盐（去氧胆酸钠）激活肺炎链球菌自溶酶</text>
+  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#565b63">胆盐（去氧胆酸钠）激活肺炎链球菌自溶酶</text>
 
   <!-- 试剂标注：胆盐（酶激活剂，金色酶 token） -->
   <rect x="206" y="120" width="68" height="34" rx="7" fill="#f3ead0" stroke="#9a8a52" stroke-width="1.2"/>

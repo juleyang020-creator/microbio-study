@@ -13,7 +13,7 @@
 
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">mCIM 改良碳青霉烯灭活试验</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#77797e">美罗培南纸片经待测菌孵育后，贴于敏感指示菌（大肠埃希菌）平板</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">美罗培南纸片经待测菌孵育后，贴于敏感指示菌（大肠埃希菌）平板</text>
 
   <!-- 阳性：产碳青霉烯酶 → 药物被灭活 → 指示菌长到纸片旁，无圈 -->
   <circle cx="138" cy="166" r="92" fill="url(#plateLawn)" stroke="#cbc1a8" stroke-width="2.5"/>
@@ -29,7 +29,7 @@
   <circle cx="138" cy="166" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
   <text x="138" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MEM</text>
   <text x="138" y="274" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c46a62">阳性（产碳青霉烯酶）</text>
-  <text x="138" y="291" text-anchor="middle" font-size="11" fill="#77797e">无／极小抑菌圈（≤15&#8201;mm）</text>
+  <text x="138" y="291" text-anchor="middle" font-size="11" fill="#565b63">无／极小抑菌圈（≤15&#8201;mm）</text>
 
   <!-- 阴性：不产酶 → 药物有效 → 抑制指示菌生长，清晰抑菌圈 -->
   <circle cx="346" cy="166" r="92" fill="url(#plateLawn)" stroke="#cbc1a8" stroke-width="2.5"/>
@@ -47,5 +47,5 @@
   <circle cx="346" cy="166" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
   <text x="346" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MEM</text>
   <text x="346" y="274" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">阴性（不产酶）</text>
-  <text x="346" y="291" text-anchor="middle" font-size="11" fill="#77797e">清晰抑菌圈（≥19&#8201;mm）</text>
+  <text x="346" y="291" text-anchor="middle" font-size="11" fill="#565b63">清晰抑菌圈（≥19&#8201;mm）</text>
 </svg>

@@ -2,7 +2,7 @@
 <title>培养基总览</title><desc>基础与营养、选择与鉴别、特殊用途三类（色示菌落/培养基特征）</desc>
   <rect width="480" height="406" fill="#ffffff"/>
   <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">培养基总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#77797e">基础与营养、选择与鉴别、特殊用途三类（色示菌落/培养基特征）</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">基础与营养、选择与鉴别、特殊用途三类（色示菌落/培养基特征）</text>
 
   <!-- ===== 基础与营养 ===== -->
   <text x="24" y="72" font-size="12" font-weight="700" fill="#2e6b66">基础与营养</text>
@@ -38,5 +38,5 @@
     <g><circle cx="248" cy="350" r="14" fill="#9a3b3b" stroke="#0000001a"/><text x="248" y="374">厌氧血平板</text></g>
   </g>
 
-  <text x="240" y="396" text-anchor="middle" font-size="11" fill="#77797e">M-H 琼脂为药敏（KB / E-test）的标准培养基；点击任一培养基查看成分、用途与原理</text>
+  <text x="240" y="396" text-anchor="middle" font-size="11" fill="#565b63">M-H 琼脂为药敏（KB / E-test）的标准培养基；点击任一培养基查看成分、用途与原理</text>
 </svg>

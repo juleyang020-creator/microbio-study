@@ -2,7 +2,7 @@
 <title>乳酸酚棉蓝（LPCB）</title><desc>棉蓝使真菌细胞壁着蓝色，用于观察菌丝与产孢结构</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">乳酸酚棉蓝（LPCB）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">棉蓝使真菌细胞壁着蓝色，用于观察菌丝与产孢结构</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">棉蓝使真菌细胞壁着蓝色，用于观察菌丝与产孢结构</text>
 
   <!-- 左：有隔菌丝 + 45°锐角分支（曲霉样） -->
   <g stroke="#5a80b0" stroke-width="6" fill="none" stroke-linecap="round">
@@ -22,7 +22,7 @@
     <circle cx="146" cy="101" r="2.8"/><circle cx="158" cy="98" r="2.8"/><circle cx="170" cy="101" r="2.8"/>
   </g>
   <text x="120" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">有隔菌丝 · 45°锐角分支</text>
-  <text x="120" y="248" text-anchor="middle" font-size="11" fill="#77797e">曲霉（含分生孢子头）</text>
+  <text x="120" y="248" text-anchor="middle" font-size="11" fill="#565b63">曲霉（含分生孢子头）</text>
 
   <!-- 分隔线 -->
   <line x1="240" y1="70" x2="240" y2="256" stroke="#e6e2d8" stroke-width="1"/>
@@ -36,7 +36,7 @@
   <circle cx="356" cy="100" r="13" fill="#5a7cc0"/>
   <circle cx="356" cy="100" r="13" fill="none" stroke="#33508a" stroke-width="1"/>
   <text x="360" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">宽大无隔 · 直角分支</text>
-  <text x="360" y="248" text-anchor="middle" font-size="11" fill="#77797e">毛霉 / 根霉（含孢子囊）</text>
+  <text x="360" y="248" text-anchor="middle" font-size="11" fill="#565b63">毛霉 / 根霉（含孢子囊）</text>
 
-  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#77797e">取材：透明胶带粘取或挑取菌落，滴加 LPCB 镜检</text>
+  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#565b63">取材：透明胶带粘取或挑取菌落，滴加 LPCB 镜检</text>
 </svg>

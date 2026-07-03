@@ -6,7 +6,7 @@
 </defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">靶点旁路 / 替代酶</text>
-<text x="240" y="44" font-size="12" fill="#77797e" text-anchor="middle">获得替代酶，绕过被抑制的原酶继续代谢</text>
+<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">获得替代酶，绕过被抑制的原酶继续代谢</text>
 <text x="120" y="120" font-size="12" fill="#2c3138" text-anchor="start" font-weight="600">原代谢通路（被抑制）</text>
  <circle cx="110" cy="162" r="15" fill="#e4938c" stroke="#cf7c74"/> <text x="110" y="167" font-size="13" text-anchor="middle" fill="#7a3b36">A</text>
  <line x1="128" y1="162" x2="196" y2="162" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g fill="#b79ac9" stroke="#9d7fb4"><circle cx="162" cy="146" r="11"/></g> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="154" y1="154" x2="170" y2="170"/><line x1="154" y1="170" x2="170" y2="154"/></g> <text x="162" y="132" font-size="11" fill="#2c3138" text-anchor="middle">原酶</text>

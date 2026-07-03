@@ -6,9 +6,9 @@
 </defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">膜通透性下降</text>
-<text x="240" y="44" font-size="12" fill="#77797e" text-anchor="middle">孔蛋白减少/关闭，药物进入减少</text>
+<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">孔蛋白减少/关闭，药物进入减少</text>
 <rect x="60" y="60" width="360" height="182" rx="24" fill="#f6f2e2" stroke="#c8b887" stroke-width="2"/>
- <rect x="60" y="148" width="360" height="16" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="160" font-size="11" fill="#6e6b52" text-anchor="start">外膜</text>
+ <rect x="60" y="148" width="360" height="16" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="160" font-size="11" fill="#5a5740" text-anchor="start">外膜</text>
  <g fill="#9fb0cc" stroke="#8093b3" stroke-width="1.2"><rect x="150" y="144" width="16" height="24" rx="3"/><rect x="172" y="144" width="16" height="24" rx="3"/></g>
  <text x="196" y="138" font-size="11" fill="#2c3138" text-anchor="start">正常孔蛋白</text> <g transform="translate(158,108) rotate(90) scale(0.72)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="158" y1="122" x2="158" y2="144" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/>
  <g fill="#9fb0cc" stroke="#8093b3" stroke-width="1.2" opacity="0.5"><rect x="300" y="144" width="16" height="24" rx="3"/></g>

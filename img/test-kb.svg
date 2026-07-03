@@ -8,7 +8,7 @@
   </defs>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">KB 纸片扩散法（Kirby-Bauer）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">抑菌圈直径 → 对照折点判 S/I/R（圈越大越敏感）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">抑菌圈直径 → 对照折点判 S/I/R（圈越大越敏感）</text>
 
   <!-- M-H 琼脂平板（菌苔） -->
   <circle cx="158" cy="172" r="110" fill="url(#kbAgar)" stroke="#c8b887" stroke-width="2.5"/>
@@ -38,8 +38,8 @@
     <circle cx="300" cy="130" r="6" fill="#b58f2a"/><text x="312" y="134">圈中 → 中介 (I)</text>
     <circle cx="300" cy="156" r="6" fill="#c46a62"/><text x="312" y="160">圈小/无 → 耐药 (R)</text>
   </g>
-  <text x="296" y="190" font-size="11" fill="#77797e">抑菌圈直径与 MIC 负相关</text>
-  <text x="296" y="206" font-size="11" fill="#77797e">对照折点表判读，只定性、不读 MIC</text>
+  <text x="296" y="190" font-size="11" fill="#565b63">抑菌圈直径与 MIC 负相关</text>
+  <text x="296" y="206" font-size="11" fill="#565b63">对照折点表判读，只定性、不读 MIC</text>
 
   <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">0.5 麦氏菌液涂布 M-H 琼脂，35℃ 16–18 h；扩散差的药（如黏菌素）不适用</text>
 </svg>

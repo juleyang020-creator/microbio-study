@@ -6,10 +6,10 @@
 </defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">破坏细胞膜</text>
-<text x="240" y="44" font-size="12" fill="#77797e" text-anchor="middle">结合膜脂、形成孔道，胞内物质外漏</text>
+<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">结合膜脂、形成孔道，胞内物质外漏</text>
 <rect x="60" y="122" width="360" height="30" fill="#efe6c6" stroke="#c8b887"/>
  <g fill="#c8b887"><circle cx="90" cy="122" r="4"/><circle cx="120" cy="122" r="4"/><circle cx="150" cy="122" r="4"/><circle cx="330" cy="122" r="4"/><circle cx="360" cy="122" r="4"/><circle cx="390" cy="122" r="4"/></g>
- <text x="70" y="112" font-size="11" fill="#6e6b52" text-anchor="start">细胞膜</text>
+ <text x="70" y="112" font-size="11" fill="#5a5740" text-anchor="start">细胞膜</text>
  <g transform="translate(210,122) rotate(90) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g transform="translate(240,122) rotate(90) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
  <rect x="204" y="122" width="42" height="30" fill="#ffffff" opacity="0.85"/>
  <g stroke="#3a6f8c" stroke-width="1.6"><line x1="216" y1="154" x2="210" y2="188" marker-end="url(#arr)"/><line x1="234" y1="154" x2="240" y2="188" marker-end="url(#arr)"/></g>

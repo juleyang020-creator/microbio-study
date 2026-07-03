@@ -2,14 +2,14 @@
 <title>鞭毛染色（镀银 / 媒染增粗法）</title><desc>媒染剂沉积使纤细鞭毛增粗显现，判断有无及着生方式</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">鞭毛染色（镀银 / 媒染增粗法）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">媒染剂沉积使纤细鞭毛增粗显现，判断有无及着生方式</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">媒染剂沉积使纤细鞭毛增粗显现，判断有无及着生方式</text>
 
   <!-- ① 单端单毛 -->
   <g>
     <text x="118" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">单端单毛</text>
     <rect x="92" y="104" width="52" height="20" rx="10" fill="#9d7fb4"/>
     <path d="M92,114 q-14,-6 -24,2 q-12,8 -24,2" fill="none" stroke="#7a67a0" stroke-width="1.6"/>
-    <text x="118" y="150" text-anchor="middle" font-size="11" fill="#77797e">铜绿假单胞菌</text>
+    <text x="118" y="150" text-anchor="middle" font-size="11" fill="#565b63">铜绿假单胞菌</text>
   </g>
 
   <!-- ② 丛生(一端多毛) -->
@@ -21,7 +21,7 @@
       <path d="M216,114 q-18,-2 -32,4"/>
       <path d="M216,120 q-16,6 -30,8"/>
     </g>
-    <text x="240" y="150" text-anchor="middle" font-size="11" fill="#77797e">弧菌等</text>
+    <text x="240" y="150" text-anchor="middle" font-size="11" fill="#565b63">弧菌等</text>
   </g>
 
   <!-- ③ 周身鞭毛 -->
@@ -36,7 +36,7 @@
       <path d="M370,125 q0,12 6,18"/>
       <path d="M388,124 q8,10 18,10"/>
     </g>
-    <text x="372" y="150" text-anchor="middle" font-size="11" fill="#77797e">变形杆菌、沙门菌</text>
+    <text x="372" y="150" text-anchor="middle" font-size="11" fill="#565b63">变形杆菌、沙门菌</text>
   </g>
 
   <!-- 原理说明 -->
@@ -46,5 +46,5 @@
     <text x="60" y="222" font-size="11" fill="#565b63">鞭毛极细，普通染色不可见；先以单宁酸等媒染剂在其表面沉积增粗，</text>
     <text x="60" y="237" font-size="11" fill="#565b63">再用银盐 / 复红染色，使鞭毛得以显现。</text>
   </g>
-  <text x="240" y="270" text-anchor="middle" font-size="11" fill="#77797e">操作需轻柔，避免鞭毛脱落；辅助菌种鉴定与动力判断</text>
+  <text x="240" y="270" text-anchor="middle" font-size="11" fill="#565b63">操作需轻柔，避免鞭毛脱落；辅助菌种鉴定与动力判断</text>
 </svg>

@@ -2,14 +2,14 @@
 <title>动力试验 (Motility)</title><desc>半固体培养基穿刺接种；有动力者沿穿刺线向周围扩散浑浊</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">动力试验 (Motility)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">半固体培养基穿刺接种；有动力者沿穿刺线向周围扩散浑浊</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">半固体培养基穿刺接种；有动力者沿穿刺线向周围扩散浑浊</text>
 
   <!-- 阴性管(仅沿穿刺线生长) -->
   <g>
     <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#f3efe4" stroke="#c8b887" stroke-width="2"/>
     <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
     <line x1="168" y1="92" x2="168" y2="244" stroke="#9a8f6a" stroke-width="3"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#77797e">阴性（仅沿线生长）</text>
+    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">阴性（仅沿线生长）</text>
   </g>
 
   <!-- 阳性管(沿线扩散浑浊) -->
@@ -22,5 +22,5 @@
     <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a52">阳性（扩散浑浊）</text>
   </g>
 
-  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#77797e">大肠埃希菌、变形杆菌、沙门菌有动力；克雷伯菌、志贺菌、不动杆菌无动力</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌、变形杆菌、沙门菌有动力；克雷伯菌、志贺菌、不动杆菌无动力</text>
 </svg>

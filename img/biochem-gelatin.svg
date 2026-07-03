@@ -2,7 +2,7 @@
 <title>明胶液化试验 (Gelatinase)</title><desc>明胶酶水解明胶；4℃ 冷藏后仍呈液态为阳性，凝固为阴性</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">明胶液化试验 (Gelatinase)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">明胶酶水解明胶；4℃ 冷藏后仍呈液态为阳性，凝固为阴性</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">明胶酶水解明胶；4℃ 冷藏后仍呈液态为阳性，凝固为阴性</text>
 
   <!-- 阴性管(凝固/固态) -->
   <g>
@@ -24,5 +24,5 @@
     <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（液化·液态）</text>
   </g>
 
-  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#77797e">金黄色葡萄球菌、黏质沙雷菌、铜绿假单胞菌阳性；判读前须 4℃ 冷藏对照</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">金黄色葡萄球菌、黏质沙雷菌、铜绿假单胞菌阳性；判读前须 4℃ 冷藏对照</text>
 </svg>

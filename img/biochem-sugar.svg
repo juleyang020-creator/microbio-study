@@ -2,7 +2,7 @@
 <title>糖发酵试验（葡萄糖 / 乳糖 / 甘露醇等）</title><desc>发酵糖产酸使酚红由红变黄；Durham 小管内气泡示产气</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">糖发酵试验（葡萄糖 / 乳糖 / 甘露醇等）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">发酵糖产酸使酚红由红变黄；Durham 小管内气泡示产气</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">发酵糖产酸使酚红由红变黄；Durham 小管内气泡示产气</text>
 
   <!-- 阴性管(红,无气) -->
   <g>
@@ -34,5 +34,5 @@
     <text x="342" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">产酸产气</text>
   </g>
 
-  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#77797e">大肠埃希菌发酵葡萄糖/乳糖产酸产气；志贺菌、沙门菌不发酵乳糖</text>
+  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌发酵葡萄糖/乳糖产酸产气；志贺菌、沙门菌不发酵乳糖</text>
 </svg>

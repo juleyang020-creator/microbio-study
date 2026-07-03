@@ -6,9 +6,9 @@
 </defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">嘧啶类似物（抗真菌）</text>
-<text x="240" y="44" font-size="12" fill="#77797e" text-anchor="middle">5-FC 经胞嘧啶脱氨酶转 5-FU，干扰核酸合成</text>
+<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">5-FC 经胞嘧啶脱氨酶转 5-FU，干扰核酸合成</text>
 <g transform="translate(92,120) rotate(0) scale(0.95)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <text x="92" y="150" font-size="12" fill="#2c3138" text-anchor="middle" font-weight="600">5-FC</text>
- <line x1="122" y1="120" x2="182" y2="120" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="152" y="110" font-size="11" fill="#2c3138" text-anchor="middle">胞嘧啶脱氨酶</text> <text x="152" y="98" font-size="11" fill="#77797e" text-anchor="middle">(真菌特有)</text>
+ <line x1="122" y1="120" x2="182" y2="120" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="152" y="110" font-size="11" fill="#2c3138" text-anchor="middle">胞嘧啶脱氨酶</text> <text x="152" y="98" font-size="11" fill="#565b63" text-anchor="middle">(真菌特有)</text>
  <g transform="translate(207,120)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e6b7a8" stroke="#b0a47c"/></g> <text x="207" y="150" font-size="12" fill="#2c3138" text-anchor="middle" font-weight="600">5-FU</text>
  <line x1="232" y1="110" x2="290" y2="82" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="360" y="82" font-size="11" fill="#3f444b" text-anchor="start">掺入 RNA → 抑蛋白</text>
  <line x1="232" y1="130" x2="290" y2="160" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="360" y="162" font-size="11" fill="#3f444b" text-anchor="start">抑 TS → 抑 DNA</text>

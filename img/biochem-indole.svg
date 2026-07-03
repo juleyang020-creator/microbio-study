@@ -2,7 +2,7 @@
 <title>吲哚试验 (Indole)</title><desc>色氨酸→吲哚，与 Kovac 试剂（对二甲氨基苯甲醛）形成樱红色环</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">吲哚试验 (Indole)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">色氨酸→吲哚，与 Kovac 试剂（对二甲氨基苯甲醛）形成樱红色环</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">色氨酸→吲哚，与 Kovac 试剂（对二甲氨基苯甲醛）形成樱红色环</text>
 
   <!-- 阴性管 -->
   <g>
@@ -21,9 +21,9 @@
     <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
     <path d="M300,150 L336,150 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#e7decb"/>
     <!-- 樱红色环(阳性) -->
-    <rect x="300" y="116" width="36" height="34" fill="#bd5b62"/>
+    <rect x="300" y="116" width="36" height="34" fill="#c46a62"/>
     <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（樱红色环）</text>
   </g>
 
-  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#77797e">大肠埃希菌阳性；肺炎克雷伯菌、产气肠杆菌阴性（IMViC 经典鉴别）</text>
+  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌阳性；肺炎克雷伯菌、产气肠杆菌阴性（IMViC 经典鉴别）</text>
 </svg>

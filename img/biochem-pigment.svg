@@ -2,14 +2,14 @@
 <title>色素产生试验 (Pigment)</title><desc>某些细菌产特征性色素，有助于初步鉴定</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">色素产生试验 (Pigment)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">某些细菌产特征性色素，有助于初步鉴定</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">某些细菌产特征性色素，有助于初步鉴定</text>
 
   <!-- 铜绿假单胞菌(蓝绿) -->
   <g>
     <circle cx="100" cy="150" r="62" fill="#e9efe6" stroke="#bcae86" stroke-width="2.5"/>
     <path d="M70,128 Q100,120 130,128 M68,150 Q100,142 132,150 M70,172 Q100,164 130,172" stroke="#2f8f7a" stroke-width="7" fill="none" stroke-linecap="round"/>
     <text x="100" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#2e6b66">铜绿假单胞菌</text>
-    <text x="100" y="248" text-anchor="middle" font-size="11" fill="#77797e">绿脓菌素（蓝绿）</text>
+    <text x="100" y="248" text-anchor="middle" font-size="11" fill="#565b63">绿脓菌素（蓝绿）</text>
   </g>
 
   <!-- 金黄色葡萄球菌(金黄) -->
@@ -17,7 +17,7 @@
     <circle cx="240" cy="150" r="62" fill="#f2ead8" stroke="#bcae86" stroke-width="2.5"/>
     <path d="M210,128 Q240,120 270,128 M208,150 Q240,142 272,150 M210,172 Q240,164 270,172" stroke="#d6a72f" stroke-width="7" fill="none" stroke-linecap="round"/>
     <text x="240" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">金黄色葡萄球菌</text>
-    <text x="240" y="248" text-anchor="middle" font-size="11" fill="#77797e">金黄色类胡萝卜素</text>
+    <text x="240" y="248" text-anchor="middle" font-size="11" fill="#565b63">金黄色类胡萝卜素</text>
   </g>
 
   <!-- 黏质沙雷菌(红) -->
@@ -25,8 +25,8 @@
     <circle cx="380" cy="150" r="62" fill="#f2e6e3" stroke="#bcae86" stroke-width="2.5"/>
     <path d="M350,128 Q380,120 410,128 M348,150 Q380,142 412,150 M350,172 Q380,164 410,172" stroke="#b0414a" stroke-width="7" fill="none" stroke-linecap="round"/>
     <text x="380" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">黏质沙雷菌</text>
-    <text x="380" y="248" text-anchor="middle" font-size="11" fill="#77797e">灵菌红素（红，室温显著）</text>
+    <text x="380" y="248" text-anchor="middle" font-size="11" fill="#565b63">灵菌红素（红，室温显著）</text>
   </g>
 
-  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#77797e">色素强弱受温度/培养基影响；绿脓菌素溶于氯仿可与荧光素区分</text>
+  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#565b63">色素强弱受温度/培养基影响；绿脓菌素溶于氯仿可与荧光素区分</text>
 </svg>

@@ -2,7 +2,7 @@
 <title>ESBL 确证试验</title><desc>同一平板：三代头孢单药 vs 加克拉维酸，比较抑菌圈</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">ESBL 确证试验</text>
-  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#77797e">同一平板：三代头孢单药 vs 加克拉维酸，比较抑菌圈</text>
+  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#565b63">同一平板：三代头孢单药 vs 加克拉维酸，比较抑菌圈</text>
 
   <!-- 琼脂平板（接种待测菌的均匀菌苔） -->
   <circle cx="240" cy="174" r="118" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.5"/>
@@ -29,7 +29,7 @@
 
   <!-- 下方标签 -->
   <text x="178" y="236" text-anchor="middle" font-size="11" fill="#565b63">头孢他啶（单药）</text>
-  <text x="178" y="249" text-anchor="middle" font-size="11" fill="#77797e">圈小：被酶水解</text>
+  <text x="178" y="249" text-anchor="middle" font-size="11" fill="#565b63">圈小：被酶水解</text>
   <text x="306" y="240" text-anchor="middle" font-size="11" fill="#565b63">头孢他啶 + 克拉维酸</text>
   <text x="306" y="253" text-anchor="middle" font-size="11" fill="#3f7a52">圈增大：酶被抑制</text>
 

@@ -12,7 +12,7 @@
   </defs>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">金胺O荧光染色（金胺-罗丹明）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">荧光显微镜下抗酸菌呈亮黄绿色，灵敏、可低倍快速筛查</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">荧光显微镜下抗酸菌呈亮黄绿色，灵敏、可低倍快速筛查</text>
 
   <!-- 荧光暗视野 -->
   <circle cx="200" cy="158" r="104" fill="url(#auField)" stroke="#39424d" stroke-width="2"/>
@@ -35,11 +35,11 @@
   <line x1="186" y1="136" x2="332" y2="120" stroke="#cbc1a8" stroke-width="1"/>
   <circle cx="186" cy="136" r="2.2" fill="#c7e85a"/>
   <text x="338" y="116" font-size="11" font-weight="700" fill="#6e7d1f">亮黄绿色荧光</text>
-  <text x="338" y="132" font-size="11" fill="#77797e">金胺O 与分枝菌酸结合</text>
+  <text x="338" y="132" font-size="11" fill="#565b63">金胺O 与分枝菌酸结合</text>
 
   <line x1="226" y1="168" x2="332" y2="178" stroke="#cbc1a8" stroke-width="1"/>
   <text x="338" y="174" font-size="11" font-weight="700" fill="#565b63">抗酸杆菌（细长串珠）</text>
-  <text x="338" y="190" font-size="11" fill="#77797e">背景暗黑、对比强</text>
+  <text x="338" y="190" font-size="11" fill="#565b63">背景暗黑、对比强</text>
 
-  <text x="240" y="282" text-anchor="middle" font-size="11" fill="#77797e">灵敏度高于萋-尼法，常用于痰标本分枝杆菌筛查</text>
+  <text x="240" y="282" text-anchor="middle" font-size="11" fill="#565b63">灵敏度高于萋-尼法，常用于痰标本分枝杆菌筛查</text>
 </svg>

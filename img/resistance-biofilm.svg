@@ -6,10 +6,10 @@
 </defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">生物膜</text>
-<text x="240" y="44" font-size="12" fill="#77797e" text-anchor="middle">胞外多糖基质屏障 + 休眠菌，降低药物渗透与杀灭</text>
+<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">胞外多糖基质屏障 + 休眠菌，降低药物渗透与杀灭</text>
 <rect x="60" y="66" width="360" height="60" rx="10" fill="#e8eef0" stroke="#b9c7cb"/> <text x="72" y="88" font-size="11" fill="#5f7378" text-anchor="start">胞外基质（EPS）</text>
  <g fill="#e4938c" stroke="#cf7c74" stroke-width="1.1"><circle cx="150" cy="178" r="16"/><circle cx="210" cy="194" r="16"/><circle cx="270" cy="178" r="16"/><circle cx="330" cy="194" r="16"/><circle cx="185" cy="214" r="13"/><circle cx="300" cy="214" r="13"/></g>
- <text x="240" y="248" font-size="11" fill="#77797e" text-anchor="middle">深层菌代谢低下（持留菌）</text>
+ <text x="240" y="248" font-size="11" fill="#565b63" text-anchor="middle">深层菌代谢低下（持留菌）</text>
  <g transform="translate(150,54) rotate(10) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g transform="translate(300,54) rotate(-10) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="150" y1="64" x2="150" y2="70" stroke="#3a4a63" stroke-width="1.7" stroke-dasharray="3 4" marker-end="url(#arr)"/> <line x1="300" y1="64" x2="300" y2="70" stroke="#3a4a63" stroke-width="1.7" stroke-dasharray="3 4" marker-end="url(#arr)"/>
  <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="201" y1="89" x2="219" y2="107"/><line x1="201" y1="107" x2="219" y2="89"/></g> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="261" y1="89" x2="279" y2="107"/><line x1="261" y1="107" x2="279" y2="89"/></g>
  <text x="240" y="270" font-size="12" fill="#3f444b" text-anchor="middle">药物渗透受阻、疗效下降</text>

@@ -6,8 +6,8 @@
 </defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">多烯类（抗真菌）</text>
-<text x="240" y="44" font-size="12" fill="#77797e" text-anchor="middle">直接结合麦角固醇，在膜上打孔</text>
-<rect x="60" y="122" width="360" height="34" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="114" font-size="11" fill="#6e6b52" text-anchor="start">真菌细胞膜（含麦角固醇）</text>
+<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">直接结合麦角固醇，在膜上打孔</text>
+<rect x="60" y="122" width="360" height="34" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="114" font-size="11" fill="#5a5740" text-anchor="start">真菌细胞膜（含麦角固醇）</text>
  <g><g transform="translate(200,139) rotate(90) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g><g transform="translate(214,139) rotate(90) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g><g transform="translate(228,139) rotate(90) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g></g>
  <rect x="192" y="122" width="44" height="34" fill="#ffffff" opacity="0.8"/>
  <text x="214" y="178" font-size="11" fill="#2c3138" text-anchor="middle">药物-固醇孔道</text>

@@ -2,7 +2,7 @@
 <title>eCIM（区分金属酶 / 丝氨酸酶）</title><desc>在 mCIM 阳性基础上，加 EDTA 螯合锌离子以抑制金属β-内酰胺酶</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">eCIM（区分金属酶 / 丝氨酸酶）</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#77797e">在 mCIM 阳性基础上，加 EDTA 螯合锌离子以抑制金属β-内酰胺酶</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">在 mCIM 阳性基础上，加 EDTA 螯合锌离子以抑制金属β-内酰胺酶</text>
 
   <!-- mCIM（无 EDTA）：抑菌圈小 -->
   <circle cx="138" cy="172" r="90" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.5"/>

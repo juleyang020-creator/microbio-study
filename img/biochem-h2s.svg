@@ -2,7 +2,7 @@
 <title>H₂S 产生试验</title><desc>含硫氨基酸→H₂S，与铁盐生成黑色硫化亚铁（TSI / SIM / KIA）</desc>
   <rect width="480" height="300" fill="#ffffff"/>
   <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">H₂S 产生试验</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#77797e">含硫氨基酸→H₂S，与铁盐生成黑色硫化亚铁（TSI / SIM / KIA）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">含硫氨基酸→H₂S，与铁盐生成黑色硫化亚铁（TSI / SIM / KIA）</text>
 
   <!-- 阴性管(TSI) -->
   <g>
@@ -25,5 +25,5 @@
     <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（底部变黑）</text>
   </g>
 
-  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#77797e">沙门菌、变形杆菌、爱德华菌阳性；大肠埃希菌、志贺菌阴性</text>
+  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#565b63">沙门菌、变形杆菌、爱德华菌阳性；大肠埃希菌、志贺菌阴性</text>
 </svg>
