@@ -2,7 +2,9 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260702-1';
+  var APP_VERSION = window.APP_VERSION || '20260702-2';
+  // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
+  function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
   // 折点表药物名与抗菌药条目名的别名（模块级常量，避免每次调用重建）：
   // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
@@ -272,7 +274,7 @@
     if (vm.拉丁名) { nodes.push(el('div', { cls: 'latin', text: vm.拉丁名 })); }
     if (vm.机制图) {
       nodes.push(el('figure', { cls: 'mechanism-fig' }, [
-        el('img', { cls: 'mechanism-img', src: vm.机制图, alt: vm.机制图说明 }),
+        el('img', { cls: 'mechanism-img', src: imgV(vm.机制图), alt: vm.机制图说明 }),
         el('figcaption', { cls: 'mechanism-cap', text: vm.机制图说明 })
       ]));
     }
@@ -422,7 +424,7 @@
     }
     if (vm.结构图) {
       nodes.push(el('figure', { cls: 'mechanism-fig struct-fig' }, [
-        el('img', { cls: 'mechanism-img', src: vm.结构图, alt: '分子结构' }),
+        el('img', { cls: 'mechanism-img', src: imgV(vm.结构图), alt: '分子结构' }),
         el('figcaption', { cls: 'mechanism-cap', text: '分子结构（数据来源 ChEMBL，RDKit 绘制）' })
       ]));
     }
@@ -1331,7 +1333,7 @@
     var nodes = [];
     (LANDING[moduleKey] || []).forEach(function (g) {
       nodes.push(el('figure', { cls: 'mechanism-fig' }, [
-        el('img', { cls: 'mechanism-img', src: g.src, alt: g.cap }),
+        el('img', { cls: 'mechanism-img', src: imgV(g.src), alt: g.cap }),
         el('figcaption', { cls: 'mechanism-cap', text: g.cap })
       ]));
     });

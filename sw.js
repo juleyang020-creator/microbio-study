@@ -1,7 +1,7 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260702-1';
-var CACHE = CACHE_PREFIX + 'v47';
+var APP_VERSION = '20260702-2';
+var CACHE = CACHE_PREFIX + 'v48';
 function versioned(path) {
   return path + '?v=' + APP_VERSION;
 }
@@ -147,7 +147,8 @@ var IMAGE_ASSETS = [
   './img/test-optochin.svg',
   './img/test-oxidase.svg'
 ];
-var PRECACHE = CORE.concat(IMAGE_ASSETS);
+// 图片也带版本号预缓存，与页面里 <img src=...?v=> 一致，避免版本更新后手机端命中旧图
+var PRECACHE = CORE.concat(IMAGE_ASSETS.map(versioned));
 
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(PRECACHE); }).then(function () { return self.skipWaiting(); }));
