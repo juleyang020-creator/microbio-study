@@ -1,20 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 446" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 446" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>生化反应总览</title><desc>按反应类别组织;圆点颜色示「阳性」结果</desc>
   <rect width="480" height="446" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">生化反应总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">按反应类别组织;圆点颜色示「阳性」结果</text>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">生化反应总览</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">按反应类别组织;圆点颜色示「阳性」结果</text>
 
   <!-- 卡片 1：酶活性检测 -->
   <g>
-    <rect x="22" y="60" width="214" height="116" rx="8" fill="#f3f6f5" stroke="#cfe0dc"/>
+    <rect x="22" y="60" width="214" height="116" rx="8" fill="#f7f3ea" stroke="#cfe0dc"/>
     <text x="36" y="80" font-size="11.5" font-weight="700" fill="#2e6b66">酶活性检测</text>
-    <g font-size="10" fill="#454b54">
+    <g font-size="11" fill="#565b63">
       <circle cx="42" cy="98" r="4.5" fill="#9fb7d0"/><text x="52" y="101">触酶（气泡）</text>
-      <circle cx="42" cy="116" r="4.5" fill="#5b4a8c"/><text x="52" y="119">氧化酶（紫）</text>
+      <circle cx="42" cy="116" r="4.5" fill="#7a67a0"/><text x="52" y="119">氧化酶（紫）</text>
       <circle cx="42" cy="134" r="4.5" fill="#cf4f86"/><text x="52" y="137">脲酶（粉红）</text>
-      <circle cx="148" cy="98" r="4.5" fill="#c4324f"/><text x="158" y="101">硝酸盐（红）</text>
-      <circle cx="148" cy="116" r="4.5" fill="#c4324f"/><text x="158" y="119">PYR（红）</text>
+      <circle cx="148" cy="98" r="4.5" fill="#c46a62"/><text x="158" y="101">硝酸盐（红）</text>
+      <circle cx="148" cy="116" r="4.5" fill="#c46a62"/><text x="158" y="119">PYR（红）</text>
       <circle cx="148" cy="134" r="4.5" fill="#4a8a5a"/><text x="158" y="137">苯丙氨酸（绿）</text>
-      <circle cx="42" cy="152" r="4.5" fill="#cfcabd"/><text x="52" y="155">凝固酶（凝块）</text>
+      <circle cx="42" cy="152" r="4.5" fill="#cbc1a8"/><text x="52" y="155">凝固酶（凝块）</text>
       <circle cx="148" cy="152" r="4.5" fill="#e08aa8"/><text x="158" y="155">DNase（粉环）</text>
     </g>
   </g>
@@ -22,10 +23,10 @@
   <!-- 卡片 2：碳水化合物代谢 -->
   <g>
     <rect x="244" y="60" width="214" height="116" rx="8" fill="#f7f3ea" stroke="#e6dcc2"/>
-    <text x="258" y="80" font-size="11.5" font-weight="700" fill="#8a6d1f">碳水化合物代谢</text>
-    <g font-size="10" fill="#454b54">
-      <circle cx="264" cy="98" r="4.5" fill="#e0c84a"/><text x="274" y="101">糖发酵（黄+气）</text>
-      <circle cx="264" cy="116" r="4.5" fill="#c4324f"/><text x="274" y="119">甲基红 MR（红）</text>
+    <text x="258" y="80" font-size="11.5" font-weight="700" fill="#9a8a52">碳水化合物代谢</text>
+    <g font-size="11" fill="#565b63">
+      <circle cx="264" cy="98" r="4.5" fill="#cdb85f"/><text x="274" y="101">糖发酵（黄+气）</text>
+      <circle cx="264" cy="116" r="4.5" fill="#c46a62"/><text x="274" y="119">甲基红 MR（红）</text>
       <circle cx="264" cy="134" r="4.5" fill="#cf4f5e"/><text x="274" y="137">VP（红）</text>
       <circle cx="264" cy="152" r="4.5" fill="#2f6bb0"/><text x="274" y="155">枸橼酸盐（蓝）</text>
     </g>
@@ -34,14 +35,14 @@
   <!-- 卡片 3：氨基酸与蛋白质代谢 -->
   <g>
     <rect x="22" y="184" width="214" height="116" rx="8" fill="#f4f2f8" stroke="#dcd4ea"/>
-    <text x="36" y="204" font-size="11.5" font-weight="700" fill="#5b4a8c">氨基酸与蛋白质代谢</text>
-    <g font-size="10" fill="#454b54">
-      <circle cx="42" cy="222" r="4.5" fill="#c4324f"/><text x="52" y="225">吲哚（红环）</text>
-      <circle cx="42" cy="240" r="4.5" fill="#23272e"/><text x="52" y="243">H₂S（黑）</text>
-      <circle cx="42" cy="258" r="4.5" fill="#7b5ea8"/><text x="52" y="261">脱羧酶（紫）</text>
+    <text x="36" y="204" font-size="11.5" font-weight="700" fill="#7a67a0">氨基酸与蛋白质代谢</text>
+    <g font-size="11" fill="#565b63">
+      <circle cx="42" cy="222" r="4.5" fill="#c46a62"/><text x="52" y="225">吲哚（红环）</text>
+      <circle cx="42" cy="240" r="4.5" fill="#2c3138"/><text x="52" y="243">H₂S（黑）</text>
+      <circle cx="42" cy="258" r="4.5" fill="#9d7fb4"/><text x="52" y="261">脱羧酶（紫）</text>
       <circle cx="148" cy="222" r="4.5" fill="#5b3a8c"/><text x="158" y="225">马尿酸（紫）</text>
       <circle cx="148" cy="240" r="4.5" fill="#ecdfa8"/><text x="158" y="243">明胶液化</text>
-      <circle cx="148" cy="258" r="4.5" fill="#7b5ea8"/><text x="158" y="261">赖/鸟氨酸</text>
+      <circle cx="148" cy="258" r="4.5" fill="#9d7fb4"/><text x="158" y="261">赖/鸟氨酸</text>
     </g>
   </g>
 
@@ -49,9 +50,9 @@
   <g>
     <rect x="244" y="184" width="214" height="116" rx="8" fill="#f1f6f1" stroke="#d4e6d4"/>
     <text x="258" y="204" font-size="11.5" font-weight="700" fill="#3f7a52">生长特性</text>
-    <g font-size="10" fill="#454b54">
+    <g font-size="11" fill="#565b63">
       <circle cx="264" cy="222" r="4.5" fill="#3f7a52"/><text x="274" y="225">动力（扩散）</text>
-      <circle cx="264" cy="240" r="4.5" fill="#23272e"/><text x="274" y="243">胆汁七叶苷（黑）</text>
+      <circle cx="264" cy="240" r="4.5" fill="#2c3138"/><text x="274" y="243">胆汁七叶苷（黑）</text>
       <circle cx="264" cy="258" r="4.5" fill="#d8c84a"/><text x="274" y="261">6.5% NaCl（浊）</text>
       <circle cx="264" cy="276" r="4.5" fill="#3f8f6a"/><text x="274" y="279">色素 / 胆汁溶解</text>
     </g>
@@ -61,23 +62,23 @@
   <g>
     <rect x="22" y="308" width="214" height="104" rx="8" fill="#f4f4f3" stroke="#dedede"/>
     <text x="36" y="328" font-size="11.5" font-weight="700" fill="#6b7378">生长抑制与耐受（纸片）</text>
-    <g font-size="10" fill="#454b54">
-      <circle cx="42" cy="346" r="4.5" fill="#cfc6ad"/><text x="52" y="349">Optochin（抑菌圈）</text>
-      <circle cx="42" cy="364" r="4.5" fill="#cfc6ad"/><text x="52" y="367">杆菌肽</text>
-      <circle cx="42" cy="382" r="4.5" fill="#cfc6ad"/><text x="52" y="385">新生霉素</text>
+    <g font-size="11" fill="#565b63">
+      <circle cx="42" cy="346" r="4.5" fill="#c8b887"/><text x="52" y="349">Optochin（抑菌圈）</text>
+      <circle cx="42" cy="364" r="4.5" fill="#c8b887"/><text x="52" y="367">杆菌肽</text>
+      <circle cx="42" cy="382" r="4.5" fill="#c8b887"/><text x="52" y="385">新生霉素</text>
     </g>
   </g>
 
   <!-- 卡片 6：溶血与特殊反应 -->
   <g>
     <rect x="244" y="308" width="214" height="104" rx="8" fill="#f7f1f1" stroke="#ecd9d9"/>
-    <text x="258" y="328" font-size="11.5" font-weight="700" fill="#b04242">溶血与特殊反应</text>
-    <g font-size="10" fill="#454b54">
+    <text x="258" y="328" font-size="11.5" font-weight="700" fill="#c46a62">溶血与特殊反应</text>
+    <g font-size="11" fill="#565b63">
       <circle cx="264" cy="346" r="4.5" fill="#6f8f5a"/><text x="274" y="349">溶血型（α/β/γ）</text>
-      <circle cx="264" cy="364" r="4.5" fill="#c45b5b"/><text x="274" y="367">CAMP（箭头）</text>
+      <circle cx="264" cy="364" r="4.5" fill="#cf7c74"/><text x="274" y="367">CAMP（箭头）</text>
       <circle cx="264" cy="382" r="4.5" fill="#4a6b9a"/><text x="274" y="385">Lancefield（凝集）</text>
     </g>
   </g>
 
-  <text x="240" y="432" text-anchor="middle" font-size="9.5" fill="#8a8f98">共 32 项;点击任一反应查看原理 / 方法 / 结果判读与示意图</text>
+  <text x="240" y="432" text-anchor="middle" font-size="11" fill="#565b63">共 32 项;点击任一反应查看原理 / 方法 / 结果判读与示意图</text>
 </svg>

@@ -1,51 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 470" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-  <rect width="480" height="470" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">细菌耐药机制总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">细菌抵抗抗菌药的六类主要机制</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" width="720" height="470" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>细菌耐药机制总览</title><desc>一图概览细菌六大耐药机制（点左侧条目看详解）</desc><defs>
+ <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
+ <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="360" y="26" font-size="20" fill="#2c3138" text-anchor="middle" font-weight="700">细菌耐药机制总览</text>
 
-  <!-- 细胞 -->
-  <rect x="96" y="70" width="288" height="118" rx="46" fill="#f3ead0" stroke="#c9a24a" stroke-width="2.5"/>
-  <rect x="106" y="80" width="268" height="98" rx="38" fill="#f3f8f5" stroke="#4f9e93" stroke-width="2"/>
-  <!-- ⑥ 生物膜层(顶部点状基质) -->
-  <path d="M96,84 q144,-26 288,0" fill="none" stroke="#9aa7bb" stroke-width="6" stroke-dasharray="2 4" opacity="0.7"/>
-  <!-- ① 灭活酶: Pac-man 咬药 -->
-  <path d="M150,118 a11,11 0 1 1 -3,-7 l-8,7 z" fill="#b0506a"/>
-  <polygon points="132,118 126,114 126,122" fill="#8a6d1f"/>
-  <!-- ② 靶位改变: 靶+星 -->
-  <circle cx="232" cy="126" r="11" fill="#7d8bc4" stroke="#3f4f8f" stroke-width="1.2"/>
-  <text x="232" y="130" text-anchor="middle" font-size="11" fill="#fff">✦</text>
-  <!-- ③ 外排泵: 跨膜泵 + 上箭头 -->
-  <rect x="350" y="96" width="14" height="70" rx="4" fill="#aab4dc" stroke="#3f4f8f" stroke-width="1.2"/>
-  <line x1="357" y1="96" x2="357" y2="76" stroke="#3f4f8f" stroke-width="2"/><polygon points="357,72 352,82 362,82" fill="#3f4f8f"/>
-  <!-- ④ 孔蛋白缺失: 缺口 -->
-  <text x="300" y="80" text-anchor="middle" font-size="13" fill="#b04242">✕</text>
-  <!-- ⑤ 旁路替代酶 -->
-  <polygon points="300,150 309,155 309,165 300,170 291,165 291,155" fill="#cfe6d6" stroke="#3f7a52" stroke-width="1.1"/>
-
-  <!-- 编号标记 -->
-  <g font-size="9" font-weight="700" text-anchor="middle">
-    <circle cx="140" cy="140" r="10" fill="#b0506a"/><text x="140" y="143.5" fill="#fff">①</text>
-    <circle cx="232" cy="150" r="10" fill="#3f4f8f"/><text x="232" y="153.5" fill="#fff">②</text>
-    <circle cx="372" cy="120" r="10" fill="#5b6aa8"/><text x="372" y="123.5" fill="#fff">③</text>
-    <circle cx="300" cy="96" r="10" fill="#b04242"/><text x="300" y="99.5" fill="#fff">④</text>
-    <circle cx="300" cy="150" r="10" fill="#3f7a52"/><text x="300" y="153.5" fill="#fff">⑤</text>
-    <circle cx="110" cy="72" r="10" fill="#6b7384"/><text x="110" y="75.5" fill="#fff">⑥</text>
-  </g>
-
-  <!-- 图例 -->
-  <g font-size="11">
-    <g transform="translate(40,216)"><circle cx="0" cy="-4" r="9" fill="#b0506a"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">①</text>
-      <text x="18" y="0"><tspan font-weight="700" fill="#23272e">产生灭活酶　</tspan><tspan fill="#454b54">β-内酰胺酶 · 氨基糖苷修饰酶</tspan></text></g>
-    <g transform="translate(40,252)"><circle cx="0" cy="-4" r="9" fill="#3f4f8f"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">②</text>
-      <text x="18" y="0"><tspan font-weight="700" fill="#23272e">靶位改变　</tspan><tspan fill="#454b54">PBP2a(MRSA) · 23S 甲基化(MLSB) · D-Ala-D-Lac(VRE)</tspan></text></g>
-    <g transform="translate(40,288)"><circle cx="0" cy="-4" r="9" fill="#5b6aa8"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">③</text>
-      <text x="18" y="0"><tspan font-weight="700" fill="#23272e">主动外排　</tspan><tspan fill="#454b54">外排泵（AcrAB-TolC / MexAB-OprM）</tspan></text></g>
-    <g transform="translate(40,324)"><circle cx="0" cy="-4" r="9" fill="#b04242"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">④</text>
-      <text x="18" y="0"><tspan font-weight="700" fill="#23272e">膜通透性下降　</tspan><tspan fill="#454b54">外膜孔蛋白缺失（OprD / OmpK35·36）</tspan></text></g>
-    <g transform="translate(40,360)"><circle cx="0" cy="-4" r="9" fill="#3f7a52"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">⑤</text>
-      <text x="18" y="0"><tspan font-weight="700" fill="#23272e">旁路代谢　</tspan><tspan fill="#454b54">替代酶绕过靶点（sul / dfr → 复方磺胺）</tspan></text></g>
-    <g transform="translate(40,396)"><circle cx="0" cy="-4" r="9" fill="#6b7384"/><text x="-3.3" y="-0.5" font-size="9" font-weight="700" fill="#fff">⑥</text>
-      <text x="18" y="0"><tspan font-weight="700" fill="#23272e">生物膜　</tspan><tspan fill="#454b54">基质阻滞渗透、内部菌代谢低下受保护</tspan></text></g>
-  </g>
-  <text x="40" y="438" font-size="9.5" fill="#8a8f98">多种机制常并存，叠加导致多重 / 广泛耐药</text>
+<rect x="30" y="70" width="660" height="326" rx="150" fill="#f6f2e2" stroke="#b8ac83" stroke-width="6"/>
+  <rect x="44" y="84" width="632" height="298" rx="136" fill="none" stroke="#c8b887" stroke-width="2"/>
+  <rect x="56" y="96" width="608" height="274" rx="124" fill="none" stroke="#9fb0cc" stroke-width="1.6"/>
+  <!-- 1 active efflux (top center, spans top membrane) -->
+  <path d="M342,150 L346,88 L374,88 L378,150 Z" fill="#a9c3d6" stroke="#5a80b0" stroke-width="1.4"/>
+  <path d="M360,150 V88" stroke="#fbfaf8" stroke-width="5"/>
+  <g transform="translate(360,132) rotate(90) scale(0.55)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g transform="translate(360,108) rotate(90) scale(0.55)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g transform="translate(360,58) rotate(90) scale(0.6)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
+  <line x1="360" y1="146" x2="360" y2="52" stroke="#3a4a63" stroke-width="1.7" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="360" y="178" font-size="13" fill="#2c3138" text-anchor="middle" font-weight="700">主动外排</text>
+  <!-- 2 target protection (upper-left) -->
+  <circle cx="184" cy="162" r="25" fill="#e4938c" stroke="#cf7c74" stroke-width="1.3"/>
+  <circle cx="158" cy="162" r="16" fill="#9fb0cc" stroke="#8093b3" stroke-width="1.2"/>
+  <g transform="translate(116,162) rotate(0) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="129" y1="154" x2="145" y2="170"/><line x1="129" y1="170" x2="145" y2="154"/></g>
+  <text x="174" y="118" font-size="13" fill="#2c3138" text-anchor="middle" font-weight="700">靶点保护</text> <text x="216" y="162" font-size="11" fill="#7a3b36" text-anchor="middle">靶点</text>
+  <!-- 3 inactivation (lower-left) -->
+  <circle cx="150" cy="300" r="22" fill="#6f97c9" stroke="#5a80b0" stroke-width="1.3"/> <g transform="translate(192,292) rotate(0) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
+  <line x1="214" y1="282" x2="250" y2="270" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g transform="translate(268,264)"><rect x="-13" y="-6" width="13" height="12" rx="6" fill="#df8c7e" stroke="#b0a47c"/></g><g transform="translate(292,264)"><rect x="0" y="-6" width="13" height="12" rx="6" fill="#e7e0c5" stroke="#b0a47c"/></g>
+  <line x1="214" y1="306" x2="250" y2="318" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g transform="translate(272,318) rotate(0) scale(0.78)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
+  <text x="150" y="344" font-size="13" fill="#2c3138" text-anchor="middle" font-weight="700">灭活酶</text>
+  <!-- 4 target site modification (center-lower) -->
+  <rect x="334" y="250" width="52" height="52" rx="14" fill="#e4938c" stroke="#cf7c74" stroke-width="1.3"/>
+  <circle cx="334" cy="276" r="8" fill="#f6f2e2" stroke="#cf7c74"/>
+  <g transform="translate(298,276) rotate(0) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="314" y1="268" x2="330" y2="284"/><line x1="314" y1="284" x2="330" y2="268"/></g>
+  <text x="360" y="324" font-size="13" fill="#2c3138" text-anchor="middle" font-weight="700">靶位改变</text>
+  <!-- 5 target bypass (right) -->
+  <circle cx="540" cy="162" r="14" fill="#e4938c" stroke="#cf7c74"/> <text x="540" y="167" font-size="12" text-anchor="middle" fill="#7a3b36">A</text>
+  <line x1="556" y1="162" x2="606" y2="162" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="573" y1="154" x2="589" y2="170"/><line x1="573" y1="170" x2="589" y2="154"/></g>
+  <circle cx="624" cy="162" r="14" fill="#e4938c" stroke="#cf7c74"/> <text x="624" y="167" font-size="12" text-anchor="middle" fill="#7a3b36">B</text>
+  <path d="M552,178 C575,208 595,208 616,178" fill="none" stroke="#3f7a52" stroke-width="1.7" marker-end="url(#arrG)"/>
+  <text x="584" y="222" font-size="11" fill="#565b63" text-anchor="middle">获得性替代酶</text>
+  <circle cx="590" cy="296" r="22" fill="#a7b4c9" stroke="#8093b3" stroke-width="1.3"/> <path d="M590,291 a8 8 0 1 0 0.01 0" fill="#f6f2e2"/>
+  <text x="584" y="344" font-size="13" fill="#2c3138" text-anchor="middle" font-weight="700">靶点旁路 / 替代酶</text>
+  <!-- 6 decreased influx (bottom center, spans bottom membrane) -->
+  <g fill="#9fb0cc" stroke="#8093b3" stroke-width="1.2"><rect x="345" y="384" width="14" height="26" rx="3"/><rect x="363" y="384" width="14" height="26" rx="3"/></g>
+  <g transform="translate(361,436) rotate(90) scale(0.6)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="361" y1="430" x2="361" y2="414" stroke="#3a4a63" stroke-width="1.7" stroke-dasharray="3 4" marker-end="url(#arr)"/>
+  <text x="438" y="398" font-size="12" fill="#2c3138" text-anchor="start" font-weight="700">膜通透性下降 / 孔蛋白 ↓</text>
+  <!-- legend -->
+  <g transform="translate(66,436) rotate(0) scale(0.7)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <text x="82" y="440" font-size="11" fill="#565b63" text-anchor="start">= 药物</text>
+<text x="360" y="458" font-size="13" fill="#3f444b" text-anchor="middle">一图概览细菌六大耐药机制（点左侧条目看详解）</text>
 </svg>

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>KB 纸片扩散法（Kirby-Bauer）</title><desc>抑菌圈直径 → 对照折点判 S/I/R（圈越大越敏感）</desc>
   <defs>
     <radialGradient id="kbAgar" cx="42%" cy="36%" r="72%">
       <stop offset="0%" stop-color="#efe7d2"/>
@@ -6,39 +7,39 @@
     </radialGradient>
   </defs>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">KB 纸片扩散法（Kirby-Bauer）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">抑菌圈直径 → 对照折点判 S/I/R（圈越大越敏感）</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">KB 纸片扩散法（Kirby-Bauer）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">抑菌圈直径 → 对照折点判 S/I/R（圈越大越敏感）</text>
 
   <!-- M-H 琼脂平板（菌苔） -->
-  <circle cx="158" cy="172" r="110" fill="url(#kbAgar)" stroke="#c9b98a" stroke-width="2.5"/>
+  <circle cx="158" cy="172" r="110" fill="url(#kbAgar)" stroke="#c8b887" stroke-width="2.5"/>
 
   <!-- 敏感：大抑菌圈 -->
-  <circle cx="128" cy="142" r="40" fill="#faf8f1" stroke="#cfc6ad" stroke-width="1.2" stroke-dasharray="5 3"/>
-  <circle cx="128" cy="142" r="8" fill="#ffffff" stroke="#345f86" stroke-width="1.3"/>
+  <circle cx="128" cy="142" r="40" fill="#faf8f1" stroke="#c8b887" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <circle cx="128" cy="142" r="8" fill="#ffffff" stroke="#5a80b0" stroke-width="1.3"/>
   <!-- 直径标注 -->
-  <line x1="88" y1="142" x2="168" y2="142" stroke="#454b54" stroke-width="1" stroke-dasharray="2 2" opacity="0.7"/>
-  <line x1="88" y1="137" x2="88" y2="147" stroke="#454b54" stroke-width="1" opacity="0.7"/>
-  <line x1="168" y1="137" x2="168" y2="147" stroke="#454b54" stroke-width="1" opacity="0.7"/>
-  <text x="128" y="96" text-anchor="middle" font-size="9.5" fill="#3f7a52">大抑菌圈（敏感）</text>
+  <line x1="88" y1="142" x2="168" y2="142" stroke="#565b63" stroke-width="1" stroke-dasharray="2 2" opacity="0.7"/>
+  <line x1="88" y1="137" x2="88" y2="147" stroke="#565b63" stroke-width="1" opacity="0.7"/>
+  <line x1="168" y1="137" x2="168" y2="147" stroke="#565b63" stroke-width="1" opacity="0.7"/>
+  <text x="128" y="96" text-anchor="middle" font-size="11" fill="#3f7a52">大抑菌圈（敏感）</text>
 
   <!-- 中介：中等圈 -->
-  <circle cx="150" cy="240" r="22" fill="#faf8f1" stroke="#cfc6ad" stroke-width="1.2" stroke-dasharray="5 3"/>
-  <circle cx="150" cy="240" r="8" fill="#ffffff" stroke="#345f86" stroke-width="1.3"/>
-  <text x="150" y="272" text-anchor="middle" font-size="9.5" fill="#8a6d1f">中等（中介）</text>
+  <circle cx="150" cy="240" r="22" fill="#faf8f1" stroke="#c8b887" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <circle cx="150" cy="240" r="8" fill="#ffffff" stroke="#5a80b0" stroke-width="1.3"/>
+  <text x="150" y="272" text-anchor="middle" font-size="11" fill="#9a8a52">中等（中介）</text>
 
   <!-- 耐药：几乎无圈，菌苔逼近纸片 -->
-  <circle cx="224" cy="186" r="12" fill="#eee6cf" stroke="#cfc6ad" stroke-width="1" stroke-dasharray="3 2"/>
-  <circle cx="224" cy="186" r="8" fill="#ffffff" stroke="#345f86" stroke-width="1.3"/>
-  <text x="224" y="214" text-anchor="middle" font-size="9.5" fill="#b04242">无/小圈（耐药）</text>
+  <circle cx="224" cy="186" r="12" fill="#efe6c6" stroke="#c8b887" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="224" cy="186" r="8" fill="#ffffff" stroke="#5a80b0" stroke-width="1.3"/>
+  <text x="224" y="214" text-anchor="middle" font-size="11" fill="#c46a62">无/小圈（耐药）</text>
 
   <!-- 右侧图例 -->
-  <g font-size="10.5" fill="#454b54">
+  <g font-size="11" fill="#565b63">
     <circle cx="300" cy="104" r="6" fill="#3f7a52"/><text x="312" y="108">圈大 → 敏感 (S)</text>
     <circle cx="300" cy="130" r="6" fill="#b58f2a"/><text x="312" y="134">圈中 → 中介 (I)</text>
-    <circle cx="300" cy="156" r="6" fill="#b04242"/><text x="312" y="160">圈小/无 → 耐药 (R)</text>
+    <circle cx="300" cy="156" r="6" fill="#c46a62"/><text x="312" y="160">圈小/无 → 耐药 (R)</text>
   </g>
-  <text x="296" y="190" font-size="9.5" fill="#8a8f98">抑菌圈直径与 MIC 负相关</text>
-  <text x="296" y="206" font-size="9.5" fill="#8a8f98">对照折点表判读，只定性、不读 MIC</text>
+  <text x="296" y="190" font-size="11" fill="#565b63">抑菌圈直径与 MIC 负相关</text>
+  <text x="296" y="206" font-size="11" fill="#565b63">对照折点表判读，只定性、不读 MIC</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#454b54">0.5 麦氏菌液涂布 M-H 琼脂，35℃ 16–18 h；扩散差的药（如黏菌素）不适用</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">0.5 麦氏菌液涂布 M-H 琼脂，35℃ 16–18 h；扩散差的药（如黏菌素）不适用</text>
 </svg>

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>胆汁溶菌试验</title><desc>胆盐（去氧胆酸钠）激活肺炎链球菌自溶酶</desc>
   <defs>
     <linearGradient id="glassClear" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#f4f8f6"/>
@@ -13,13 +14,13 @@
   </defs>
 
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="29" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">胆汁溶菌试验</text>
-  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#8a8f98">胆盐（去氧胆酸钠）激活肺炎链球菌自溶酶</text>
+  <text x="240" y="29" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">胆汁溶菌试验</text>
+  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#565b63">胆盐（去氧胆酸钠）激活肺炎链球菌自溶酶</text>
 
   <!-- 试剂标注：胆盐（酶激活剂，金色酶 token） -->
-  <rect x="206" y="120" width="68" height="34" rx="7" fill="#f3ead0" stroke="#8a6d1f" stroke-width="1.2"/>
-  <text x="240" y="135" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6e571a">滴加胆盐</text>
-  <text x="240" y="148" text-anchor="middle" font-size="9" fill="#8a6d1f">激活自溶酶</text>
+  <rect x="206" y="120" width="68" height="34" rx="7" fill="#f3ead0" stroke="#9a8a52" stroke-width="1.2"/>
+  <text x="240" y="135" text-anchor="middle" font-size="11" font-weight="700" fill="#7c6a34">滴加胆盐</text>
+  <text x="240" y="148" text-anchor="middle" font-size="11" fill="#9a8a52">激活自溶酶</text>
 
   <!-- 阳性管：澄清（溶菌）→ 肺炎链球菌 -->
   <rect x="118" y="76" width="46" height="174" rx="23" fill="url(#glassClear)" stroke="#9aa0a8" stroke-width="2"/>
@@ -30,22 +31,22 @@
   <!-- 液面线 -->
   <line x1="120" y1="150" x2="162" y2="150" stroke="#cfe0db" stroke-width="1"/>
   <text x="141" y="270" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">澄清（溶菌）</text>
-  <text x="141" y="287" text-anchor="middle" font-size="10.5" fill="#454b54">肺炎链球菌（阳性）</text>
+  <text x="141" y="287" text-anchor="middle" font-size="11" fill="#565b63">肺炎链球菌（阳性）</text>
 
   <!-- 阴性管：浑浊（不溶）→ 草绿色链球菌 -->
   <rect x="316" y="76" width="46" height="174" rx="23" fill="url(#glassClear)" stroke="#9aa0a8" stroke-width="2"/>
   <!-- 液面（不溶仍浑浊） -->
   <rect x="316" y="150" width="46" height="100" rx="23" fill="url(#glassTurbid)" stroke="#c4bdad" stroke-width="1"/>
   <!-- 浑浊悬浮颗粒 -->
-  <circle cx="330" cy="178" r="1.6" fill="#b7b09f"/>
-  <circle cx="346" cy="196" r="1.6" fill="#b7b09f"/>
-  <circle cx="338" cy="216" r="1.6" fill="#b7b09f"/>
-  <circle cx="326" cy="208" r="1.4" fill="#b7b09f"/>
-  <circle cx="350" cy="170" r="1.4" fill="#b7b09f"/>
-  <circle cx="334" cy="234" r="1.4" fill="#b7b09f"/>
+  <circle cx="330" cy="178" r="1.6" fill="#b0a47c"/>
+  <circle cx="346" cy="196" r="1.6" fill="#b0a47c"/>
+  <circle cx="338" cy="216" r="1.6" fill="#b0a47c"/>
+  <circle cx="326" cy="208" r="1.4" fill="#b0a47c"/>
+  <circle cx="350" cy="170" r="1.4" fill="#b0a47c"/>
+  <circle cx="334" cy="234" r="1.4" fill="#b0a47c"/>
   <!-- 高光 -->
   <rect x="325" y="86" width="6" height="150" rx="3" fill="#ffffff" opacity="0.4"/>
   <line x1="318" y1="150" x2="360" y2="150" stroke="#c4bdad" stroke-width="1"/>
-  <text x="339" y="270" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b04242">浑浊（不溶）</text>
-  <text x="339" y="287" text-anchor="middle" font-size="10.5" fill="#454b54">草绿色链球菌（阴性）</text>
+  <text x="339" y="270" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c46a62">浑浊（不溶）</text>
+  <text x="339" y="287" text-anchor="middle" font-size="11" fill="#565b63">草绿色链球菌（阴性）</text>
 </svg>

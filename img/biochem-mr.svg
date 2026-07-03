@@ -1,23 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>甲基红试验 (MR)</title><desc>葡萄糖混合酸发酵使 pH&amp;lt;4.4，加甲基红显红色</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">甲基红试验 (MR)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">葡萄糖混合酸发酵使 pH&lt;4.4，加甲基红显红色</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">甲基红试验 (MR)</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">葡萄糖混合酸发酵使 pH&lt;4.4，加甲基红显红色</text>
 
   <!-- 阴性管(黄) -->
   <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
-    <path d="M150,120 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#e0c84a"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6d1f">阴性（黄）</text>
+    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+    <path d="M150,120 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#cdb85f"/>
+    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阴性（黄）</text>
   </g>
 
   <!-- 阳性管(红) -->
   <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
-    <path d="M300,120 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#c4324f"/>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#b04242">阳性（红）</text>
+    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+    <path d="M300,120 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#c46a62"/>
+    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（红）</text>
   </g>
 
-  <text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#8a8f98">大肠埃希菌阳性；产气肠杆菌、肺炎克雷伯菌阴性（与 VP 互补，IMViC）</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌阳性；产气肠杆菌、肺炎克雷伯菌阴性（与 VP 互补，IMViC）</text>
 </svg>

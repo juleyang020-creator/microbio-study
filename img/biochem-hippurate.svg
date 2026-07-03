@@ -1,23 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>马尿酸盐水解试验 (Hippurate)</title><desc>马尿酸→甘氨酸 + 苯甲酸，茚三酮与甘氨酸反应显深紫色</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">马尿酸盐水解试验 (Hippurate)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">马尿酸→甘氨酸 + 苯甲酸，茚三酮与甘氨酸反应显深紫色</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">马尿酸盐水解试验 (Hippurate)</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">马尿酸→甘氨酸 + 苯甲酸，茚三酮与甘氨酸反应显深紫色</text>
 
   <!-- 阴性管(无色) -->
   <g>
-    <path d="M150,90 L150,232 Q150,250 168,250 Q186,250 186,232 L186,90 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="168" cy="90" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M150,90 L150,232 Q150,250 168,250 Q186,250 186,232 L186,90 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="168" cy="90" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
     <path d="M150,140 L186,140 L186,232 Q186,250 168,250 Q150,250 150,232 Z" fill="#eef0ea"/>
-    <text x="168" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#8a8f98">阴性（无色/淡黄）</text>
+    <text x="168" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">阴性（无色/淡黄）</text>
   </g>
 
   <!-- 阳性管(深紫) -->
   <g>
-    <path d="M300,90 L300,232 Q300,250 318,250 Q336,250 336,232 L336,90 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="318" cy="90" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M300,90 L300,232 Q300,250 318,250 Q336,250 336,232 L336,90 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="318" cy="90" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
     <path d="M300,140 L336,140 L336,232 Q336,250 318,250 Q300,250 300,232 Z" fill="#5b3a8c"/>
-    <text x="318" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#5b4a8c">阳性（深紫色）</text>
+    <text x="318" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#7a67a0">阳性（深紫色）</text>
   </g>
 
-  <text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#8a8f98">无乳链球菌(B 群)、空肠弯曲菌、加德纳菌阳性；化脓性链球菌(A 群)阴性</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">无乳链球菌(B 群)、空肠弯曲菌、加德纳菌阳性；化脓性链球菌(A 群)阴性</text>
 </svg>

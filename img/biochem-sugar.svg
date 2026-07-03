@@ -1,37 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>糖发酵试验（葡萄糖 / 乳糖 / 甘露醇等）</title><desc>发酵糖产酸使酚红由红变黄；Durham 小管内气泡示产气</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">糖发酵试验（葡萄糖 / 乳糖 / 甘露醇等）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">发酵糖产酸使酚红由红变黄；Durham 小管内气泡示产气</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">糖发酵试验（葡萄糖 / 乳糖 / 甘露醇等）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">发酵糖产酸使酚红由红变黄；Durham 小管内气泡示产气</text>
 
   <!-- 阴性管(红,无气) -->
   <g>
-    <path d="M120,78 L120,238 Q120,256 138,256 Q156,256 156,238 L156,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="138" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
-    <path d="M120,120 L156,120 L156,238 Q156,256 138,256 Q120,256 120,238 Z" fill="#c45b5b"/>
+    <path d="M120,78 L120,238 Q120,256 138,256 Q156,256 156,238 L156,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="138" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+    <path d="M120,120 L156,120 L156,238 Q156,256 138,256 Q120,256 120,238 Z" fill="#cf7c74"/>
     <!-- Durham 小管(满液,无气) -->
     <rect x="130" y="150" width="16" height="92" rx="3" fill="#a83f3f" stroke="#7d2f2f" stroke-width="1"/>
-    <text x="138" y="278" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8a6d1f">阴性（红，无气）</text>
+    <text x="138" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阴性（红，无气）</text>
   </g>
 
   <!-- 产酸不产气(黄,无气) -->
   <g>
-    <path d="M222,78 L222,238 Q222,256 240,256 Q258,256 258,238 L258,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="240" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
-    <path d="M222,120 L258,120 L258,238 Q258,256 240,256 Q222,256 222,238 Z" fill="#e0c84a"/>
+    <path d="M222,78 L222,238 Q222,256 240,256 Q258,256 258,238 L258,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="240" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+    <path d="M222,120 L258,120 L258,238 Q258,256 240,256 Q222,256 222,238 Z" fill="#cdb85f"/>
     <rect x="232" y="150" width="16" height="92" rx="3" fill="#cbb43f" stroke="#9a8a2f" stroke-width="1"/>
-    <text x="240" y="278" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8a6d1f">产酸（黄）</text>
+    <text x="240" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">产酸（黄）</text>
   </g>
 
   <!-- 产酸产气(黄+气泡) -->
   <g>
-    <path d="M324,78 L324,238 Q324,256 342,256 Q360,256 360,238 L360,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="342" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
-    <path d="M324,120 L360,120 L360,238 Q360,256 342,256 Q324,256 324,238 Z" fill="#e0c84a"/>
+    <path d="M324,78 L324,238 Q324,256 342,256 Q360,256 360,238 L360,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="342" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+    <path d="M324,120 L360,120 L360,238 Q360,256 342,256 Q324,256 324,238 Z" fill="#cdb85f"/>
     <!-- Durham 小管上部气泡 -->
     <rect x="334" y="150" width="16" height="92" rx="3" fill="#cbb43f" stroke="#9a8a2f" stroke-width="1"/>
     <rect x="334" y="150" width="16" height="30" rx="3" fill="#faf8f1" stroke="#9a8a2f" stroke-width="1"/>
-    <text x="342" y="278" text-anchor="middle" font-size="10.5" font-weight="700" fill="#b04242">产酸产气</text>
+    <text x="342" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">产酸产气</text>
   </g>
 
-  <text x="240" y="295" text-anchor="middle" font-size="9.5" fill="#8a8f98">大肠埃希菌发酵葡萄糖/乳糖产酸产气；志贺菌、沙门菌不发酵乳糖</text>
+  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌发酵葡萄糖/乳糖产酸产气；志贺菌、沙门菌不发酵乳糖</text>
 </svg>

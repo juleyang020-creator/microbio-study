@@ -1,25 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>6.5% NaCl 生长试验</title><desc>高盐肉汤（含溴甲酚紫）中能生长者浑浊，产酸时由紫变黄</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">6.5% NaCl 生长试验</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">高盐肉汤（含溴甲酚紫）中能生长者浑浊，产酸时由紫变黄</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">6.5% NaCl 生长试验</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">高盐肉汤（含溴甲酚紫）中能生长者浑浊，产酸时由紫变黄</text>
 
   <!-- 阴性管(紫,清亮) -->
   <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
     <path d="M150,120 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#8a6db0"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#5b4a8c">阴性（紫·清亮）</text>
+    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#7a67a0">阴性（紫·清亮）</text>
   </g>
 
   <!-- 阳性管(黄,浑浊) -->
   <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c9b98a" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#eee6cf" stroke="#c9b98a" stroke-width="1.4"/>
+    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
     <path d="M300,120 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#d8c84a"/>
     <!-- 浑浊颗粒 -->
     <g fill="#b7a738" opacity="0.7"><circle cx="312" cy="150" r="3"/><circle cx="326" cy="170" r="2.6"/><circle cx="310" cy="195" r="2.8"/><circle cx="324" cy="215" r="3"/><circle cx="316" cy="232" r="2.4"/></g>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6d1f">阳性（黄·浑浊）</text>
+    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阳性（黄·浑浊）</text>
   </g>
 
-  <text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#8a8f98">肠球菌属、金黄色葡萄球菌阳性；多数链球菌阴性（肠球菌鉴定要点）</text>
+  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">肠球菌属、金黄色葡萄球菌阳性；多数链球菌阴性（肠球菌鉴定要点）</text>
 </svg>

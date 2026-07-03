@@ -1,41 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>异染颗粒染色（Albert / Neisser 法）</title><desc>多聚偏磷酸盐异染：颗粒深蓝紫、菌体绿黄 —— 白喉棒状杆菌</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">异染颗粒染色（Albert / Neisser 法）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">多聚偏磷酸盐异染：颗粒深蓝紫、菌体绿黄 —— 白喉棒状杆菌</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">异染颗粒染色（Albert / Neisser 法）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">多聚偏磷酸盐异染：颗粒深蓝紫、菌体绿黄 —— 白喉棒状杆菌</text>
 
   <!-- 棒状杆菌：栅栏/V/L 排列，两端棒状膨大，极端见深色异染颗粒 -->
   <!-- 杆菌1 斜放 -->
   <g transform="rotate(-18 150 150)">
     <path d="M120,142 q-6,8 0,16 h60 q6,-8 0,-16 z" fill="#c9d49a" stroke="#9aab63" stroke-width="1.2"/>
-    <circle cx="124" cy="150" r="5.5" fill="#3c2f63"/>
-    <circle cx="176" cy="150" r="5.5" fill="#3c2f63"/>
+    <circle cx="124" cy="150" r="5.5" fill="#57487a"/>
+    <circle cx="176" cy="150" r="5.5" fill="#57487a"/>
   </g>
   <!-- 杆菌2 斜放成 V -->
   <g transform="rotate(20 175 168)">
     <path d="M148,160 q-6,8 0,16 h60 q6,-8 0,-16 z" fill="#c9d49a" stroke="#9aab63" stroke-width="1.2"/>
-    <circle cx="152" cy="168" r="5.5" fill="#3c2f63"/>
-    <circle cx="204" cy="168" r="5.5" fill="#3c2f63"/>
+    <circle cx="152" cy="168" r="5.5" fill="#57487a"/>
+    <circle cx="204" cy="168" r="5.5" fill="#57487a"/>
   </g>
   <!-- 杆菌3 竖放(栅栏) -->
   <g transform="rotate(80 232 150)">
     <path d="M204,142 q-6,8 0,16 h56 q6,-8 0,-16 z" fill="#c9d49a" stroke="#9aab63" stroke-width="1.2"/>
-    <circle cx="208" cy="150" r="5.5" fill="#3c2f63"/>
-    <circle cx="256" cy="150" r="5.5" fill="#3c2f63"/>
+    <circle cx="208" cy="150" r="5.5" fill="#57487a"/>
+    <circle cx="256" cy="150" r="5.5" fill="#57487a"/>
   </g>
 
   <!-- 标注 -->
-  <line x1="124" y1="135" x2="330" y2="110" stroke="#cfcabd" stroke-width="1"/>
-  <circle cx="172" cy="128" r="2.2" fill="#3c2f63"/>
-  <text x="336" y="106" font-size="11" font-weight="700" fill="#3c2f63">异染颗粒（深蓝紫）</text>
-  <text x="336" y="122" font-size="9.5" fill="#8a8f98">多位于菌体两端</text>
+  <line x1="124" y1="135" x2="330" y2="110" stroke="#cbc1a8" stroke-width="1"/>
+  <circle cx="172" cy="128" r="2.2" fill="#57487a"/>
+  <text x="336" y="106" font-size="11" font-weight="700" fill="#57487a">异染颗粒（深蓝紫）</text>
+  <text x="336" y="122" font-size="11" fill="#565b63">多位于菌体两端</text>
 
-  <line x1="180" y1="166" x2="330" y2="166" stroke="#cfcabd" stroke-width="1"/>
+  <line x1="180" y1="166" x2="330" y2="166" stroke="#cbc1a8" stroke-width="1"/>
   <circle cx="180" cy="166" r="2.2" fill="#9aab63"/>
   <text x="336" y="162" font-size="11" font-weight="700" fill="#6e7d3a">菌体（绿 / 黄褐）</text>
 
-  <line x1="210" y1="196" x2="330" y2="210" stroke="#cfcabd" stroke-width="1"/>
-  <text x="336" y="214" font-size="11" font-weight="700" fill="#454b54">排列呈栅栏、V / L 形</text>
+  <line x1="210" y1="196" x2="330" y2="210" stroke="#cbc1a8" stroke-width="1"/>
+  <text x="336" y="214" font-size="11" font-weight="700" fill="#565b63">排列呈栅栏、V / L 形</text>
 
-  <text x="240" y="270" text-anchor="middle" font-size="10.5" fill="#454b54">异染颗粒为白喉棒状杆菌的特征，用于辅助鉴定</text>
-  <text x="240" y="288" text-anchor="middle" font-size="10" fill="#8a8f98">亦可用美蓝单染色快速衬托颗粒</text>
+  <text x="240" y="270" text-anchor="middle" font-size="11" fill="#565b63">异染颗粒为白喉棒状杆菌的特征，用于辅助鉴定</text>
+  <text x="240" y="288" text-anchor="middle" font-size="11" fill="#565b63">亦可用美蓝单染色快速衬托颗粒</text>
 </svg>

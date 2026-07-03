@@ -1,10 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>乳酸酚棉蓝（LPCB）</title><desc>棉蓝使真菌细胞壁着蓝色，用于观察菌丝与产孢结构</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">乳酸酚棉蓝（LPCB）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#8a8f98">棉蓝使真菌细胞壁着蓝色，用于观察菌丝与产孢结构</text>
+  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">乳酸酚棉蓝（LPCB）</text>
+  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">棉蓝使真菌细胞壁着蓝色，用于观察菌丝与产孢结构</text>
 
   <!-- 左：有隔菌丝 + 45°锐角分支（曲霉样） -->
-  <g stroke="#3f63a6" stroke-width="6" fill="none" stroke-linecap="round">
+  <g stroke="#5a80b0" stroke-width="6" fill="none" stroke-linecap="round">
     <line x1="40" y1="200" x2="150" y2="138"/>
     <line x1="108" y1="160" x2="158" y2="180"/>
   </g>
@@ -20,22 +21,22 @@
     <circle cx="150" cy="110" r="3.2"/><circle cx="158" cy="106" r="3.2"/><circle cx="166" cy="110" r="3.2"/>
     <circle cx="146" cy="101" r="2.8"/><circle cx="158" cy="98" r="2.8"/><circle cx="170" cy="101" r="2.8"/>
   </g>
-  <text x="120" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#3f63a6">有隔菌丝 · 45°锐角分支</text>
-  <text x="120" y="248" text-anchor="middle" font-size="9.5" fill="#8a8f98">曲霉（含分生孢子头）</text>
+  <text x="120" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">有隔菌丝 · 45°锐角分支</text>
+  <text x="120" y="248" text-anchor="middle" font-size="11" fill="#565b63">曲霉（含分生孢子头）</text>
 
   <!-- 分隔线 -->
   <line x1="240" y1="70" x2="240" y2="256" stroke="#e6e2d8" stroke-width="1"/>
 
   <!-- 右：宽大无隔菌丝 + 直角分支（毛霉样） -->
-  <g stroke="#3f63a6" stroke-width="9" fill="none" stroke-linecap="round">
+  <g stroke="#5a80b0" stroke-width="9" fill="none" stroke-linecap="round">
     <line x1="300" y1="200" x2="420" y2="160"/>
     <line x1="356" y1="180" x2="356" y2="110"/>
   </g>
   <!-- 孢子囊 -->
   <circle cx="356" cy="100" r="13" fill="#5a7cc0"/>
   <circle cx="356" cy="100" r="13" fill="none" stroke="#33508a" stroke-width="1"/>
-  <text x="360" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#3f63a6">宽大无隔 · 直角分支</text>
-  <text x="360" y="248" text-anchor="middle" font-size="9.5" fill="#8a8f98">毛霉 / 根霉（含孢子囊）</text>
+  <text x="360" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">宽大无隔 · 直角分支</text>
+  <text x="360" y="248" text-anchor="middle" font-size="11" fill="#565b63">毛霉 / 根霉（含孢子囊）</text>
 
-  <text x="240" y="278" text-anchor="middle" font-size="10" fill="#8a8f98">取材：透明胶带粘取或挑取菌落，滴加 LPCB 镜检</text>
+  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#565b63">取材：透明胶带粘取或挑取菌落，滴加 LPCB 镜检</text>
 </svg>

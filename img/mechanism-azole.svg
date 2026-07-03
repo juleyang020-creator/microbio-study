@@ -1,16 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif"><defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>唑类（抗真菌）</title><desc>抑制 14α-去甲基化酶，阻断麦角固醇合成。氟康唑/伏立康唑/艾沙康唑等</desc><defs>
  <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
  <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
 </defs>
-<rect width="480" height="300" fill="#ffffff"/>
+<rect width="100%" height="100%" fill="#ffffff"/>
 <text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">唑类（抗真菌）</text>
-<text x="240" y="42" font-size="11" fill="#8a8f98" text-anchor="middle">抑制 14α-去甲基化酶，阻断麦角固醇合成</text>
-<text x="60" y="120" font-size="11" fill="#2c3138" text-anchor="start">羊毛固醇</text> <line x1="120" y1="116" x2="180" y2="116" stroke="#3a4a63" stroke-width="1.6" marker-end="url(#arr)"/>
- <circle cx="202" cy="116" r="18" fill="#b79ac9" stroke="#9d7fb4" stroke-width="1.3"/> <text x="202" y="150" font-size="9" fill="#2c3138" text-anchor="middle">14α-去甲基化酶</text> <text x="202" y="163" font-size="9" fill="#8a8f98" text-anchor="middle">(CYP51)</text>
- <g transform="translate(202,86) rotate(0) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="202" y1="96" x2="202" y2="100" stroke="#3a4a63" stroke-width="1.6" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="173" y1="109" x2="187" y2="123"/><line x1="173" y1="123" x2="187" y2="109"/></g> <text x="180" y="78" font-size="10" fill="#2c3138" text-anchor="middle">唑类</text>
- <line x1="222" y1="116" x2="286" y2="116" stroke="#3a4a63" stroke-width="1.6" marker-end="url(#arr)"/> <text x="330" y="120" font-size="11" fill="#2c3138" text-anchor="start">麦角固醇</text> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="298" y1="109" x2="312" y2="123"/><line x1="298" y1="123" x2="312" y2="109"/></g>
- <text x="240" y="205" font-size="11" fill="#454b54" text-anchor="middle">膜麦角固醇缺乏、毒性中间体堆积 → 膜功能障碍</text>
- <rect x="60" y="230" width="360" height="16" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="242" font-size="9" fill="#6e6b52" text-anchor="start">真菌细胞膜</text>
-<text x="240" y="286" font-size="12" fill="#454b54" text-anchor="middle">氟康唑/伏立康唑/艾沙康唑等</text>
+<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">抑制 14α-去甲基化酶，阻断麦角固醇合成</text>
+<text x="58" y="112" font-size="12" fill="#2c3138" text-anchor="start">羊毛固醇</text> <line x1="122" y1="108" x2="182" y2="108" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/>
+ <circle cx="204" cy="108" r="19" fill="#b79ac9" stroke="#9d7fb4" stroke-width="1.3"/> <text x="204" y="144" font-size="11" fill="#2c3138" text-anchor="middle">14α-去甲基化酶</text> <text x="204" y="158" font-size="11" fill="#565b63" text-anchor="middle">(CYP51)</text>
+ <g transform="translate(204,78) rotate(0) scale(0.82)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="204" y1="88" x2="204" y2="90" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="175" y1="101" x2="189" y2="115"/><line x1="175" y1="115" x2="189" y2="101"/></g> <text x="182" y="70" font-size="11" fill="#2c3138" text-anchor="middle">唑类</text>
+ <line x1="224" y1="108" x2="288" y2="108" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="332" y="112" font-size="12" fill="#2c3138" text-anchor="start">麦角固醇</text> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="301" y1="101" x2="315" y2="115"/><line x1="301" y1="115" x2="315" y2="101"/></g>
+ <text x="240" y="206" font-size="12" fill="#3f444b" text-anchor="middle">膜麦角固醇缺乏、毒性中间体堆积</text>
+ <rect x="60" y="232" width="360" height="16" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="244" font-size="11" fill="#5a5740" text-anchor="start">真菌细胞膜</text>
+<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">氟康唑/伏立康唑/艾沙康唑等</text>
 </svg>

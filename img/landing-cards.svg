@@ -1,41 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>药敏卡与判读总览</title><desc>系列浓度微孔测 MIC，再按折点判敏感 / 中介 / 耐药</desc>
   <rect width="480" height="330" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">药敏卡与判读总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#8a8f98">系列浓度微孔测 MIC，再按折点判敏感 / 中介 / 耐药</text>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">药敏卡与判读总览</text>
+  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">系列浓度微孔测 MIC，再按折点判敏感 / 中介 / 耐药</text>
 
-  <text x="40" y="78" font-size="11.5" font-weight="700" fill="#345f86">① 药敏卡：每药一排系列浓度微孔（浊 = 生长，清 = 抑制）</text>
+  <text x="40" y="78" font-size="11.5" font-weight="700" fill="#5a80b0">① 药敏卡：每药一排系列浓度微孔（浊 = 生长，清 = 抑制）</text>
   <!-- MIC 指示 -->
-  <text x="246" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#345f86">MIC = 首个清亮孔</text>
-  <line x1="246" y1="104" x2="246" y2="116" stroke="#345f86" stroke-width="1.5"/><polygon points="246,118 241,108 251,108" fill="#345f86"/>
+  <text x="246" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MIC = 首个清亮孔</text>
+  <line x1="246" y1="104" x2="246" y2="116" stroke="#5a80b0" stroke-width="1.5"/><polygon points="246,118 241,108 251,108" fill="#5a80b0"/>
   <!-- 8 微孔 -->
   <g>
-    <circle cx="50" cy="134" r="14" fill="#d8ccb0" stroke="#a99c7d" stroke-width="1.4"/>
-    <circle cx="99" cy="134" r="14" fill="#d8ccb0" stroke="#a99c7d" stroke-width="1.4"/>
-    <circle cx="148" cy="134" r="14" fill="#ddd0b4" stroke="#a99c7d" stroke-width="1.4"/>
+    <circle cx="50" cy="134" r="14" fill="#d8ccb0" stroke="#b0a47c" stroke-width="1.4"/>
+    <circle cx="99" cy="134" r="14" fill="#d8ccb0" stroke="#b0a47c" stroke-width="1.4"/>
+    <circle cx="148" cy="134" r="14" fill="#ddd0b4" stroke="#b0a47c" stroke-width="1.4"/>
     <circle cx="197" cy="134" r="14" fill="#e6dcc6" stroke="#bcae8f" stroke-width="1.4"/>
-    <circle cx="246" cy="134" r="14" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.4"/>
-    <circle cx="295" cy="134" r="14" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.4"/>
-    <circle cx="344" cy="134" r="14" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.4"/>
-    <circle cx="393" cy="134" r="14" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.4"/>
+    <circle cx="246" cy="134" r="14" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.4"/>
+    <circle cx="295" cy="134" r="14" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.4"/>
+    <circle cx="344" cy="134" r="14" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.4"/>
+    <circle cx="393" cy="134" r="14" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.4"/>
   </g>
-  <g font-size="9" fill="#8a8f98" text-anchor="middle">
+  <g font-size="11" fill="#565b63" text-anchor="middle">
     <text x="50" y="160">0.25</text><text x="99" y="160">0.5</text><text x="148" y="160">1</text><text x="197" y="160">2</text>
     <text x="246" y="160">4</text><text x="295" y="160">8</text><text x="344" y="160">16</text><text x="393" y="160">32</text>
     <text x="438" y="160">µg/mL</text>
   </g>
 
-  <text x="40" y="196" font-size="11.5" font-weight="700" fill="#345f86">② 对照折点判读（CLSI / EUCAST）</text>
+  <text x="40" y="196" font-size="11.5" font-weight="700" fill="#5a80b0">② 对照折点判读（CLSI / EUCAST）</text>
   <!-- S / I / R 三色带 -->
   <rect x="40" y="208" width="150" height="30" rx="6" fill="#dff0e4" stroke="#3f7a52" stroke-width="1.2"/>
   <text x="115" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#3f7a52">敏感 S</text>
   <rect x="190" y="208" width="90" height="30" fill="#f6edd6" stroke="#b58f2a" stroke-width="1.2"/>
-  <text x="235" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#8a6d1f">中介 I</text>
-  <rect x="280" y="208" width="160" height="30" rx="6" fill="#f7dede" stroke="#b04242" stroke-width="1.2"/>
-  <text x="360" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#b04242">耐药 R</text>
+  <text x="235" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#9a8a52">中介 I</text>
+  <rect x="280" y="208" width="160" height="30" rx="6" fill="#f7dede" stroke="#c46a62" stroke-width="1.2"/>
+  <text x="360" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#c46a62">耐药 R</text>
   <!-- MIC 轴 -->
-  <line x1="40" y1="252" x2="440" y2="252" stroke="#cfcabd" stroke-width="1.2"/><polygon points="442,252 432,248 432,256" fill="#cfcabd"/>
-  <text x="240" y="268" text-anchor="middle" font-size="9.5" fill="#8a8f98">MIC 增大 →（越大越耐药）</text>
+  <line x1="40" y1="252" x2="440" y2="252" stroke="#cbc1a8" stroke-width="1.2"/><polygon points="442,252 432,248 432,256" fill="#cbc1a8"/>
+  <text x="240" y="268" text-anchor="middle" font-size="11" fill="#565b63">MIC 增大 →（越大越耐药）</text>
 
-  <text x="240" y="298" text-anchor="middle" font-size="9.5" fill="#454b54">仪器（如 VITEK）测各药 MIC，按折点报 S / I / R；按菌种选用 GN / GP 等不同卡</text>
-  <text x="240" y="316" text-anchor="middle" font-size="9.5" fill="#8a8f98">点击任一药敏卡查看所含药物与适用菌</text>
+  <text x="240" y="298" text-anchor="middle" font-size="11" fill="#565b63">仪器（如 VITEK）测各药 MIC，按折点报 S / I / R；按菌种选用 GN / GP 等不同卡</text>
+  <text x="240" y="316" text-anchor="middle" font-size="11" fill="#565b63">点击任一药敏卡查看所含药物与适用菌</text>
 </svg>

@@ -1,36 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>ESBL 确证试验</title><desc>同一平板：三代头孢单药 vs 加克拉维酸，比较抑菌圈</desc>
   <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#23272e">ESBL 确证试验</text>
-  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#8a8f98">同一平板：三代头孢单药 vs 加克拉维酸，比较抑菌圈</text>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">ESBL 确证试验</text>
+  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#565b63">同一平板：三代头孢单药 vs 加克拉维酸，比较抑菌圈</text>
 
   <!-- 琼脂平板（接种待测菌的均匀菌苔） -->
-  <circle cx="240" cy="174" r="118" fill="#f1ede4" stroke="#cfcabd" stroke-width="2.5"/>
+  <circle cx="240" cy="174" r="118" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.5"/>
   <circle cx="240" cy="174" r="118" fill="none" stroke="#e4ddcd" stroke-width="6" opacity="0.5"/>
 
   <!-- 单药：头孢他啶 CAZ —— 小抑菌圈（酶将其水解，活性下降） -->
-  <circle cx="178" cy="174" r="27" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.2" stroke-dasharray="4 3"/>
-  <circle cx="178" cy="174" r="15" fill="#e7eef6" stroke="#345f86" stroke-width="1.3"/>
-  <text x="178" y="171" text-anchor="middle" font-size="9" font-weight="700" fill="#345f86">CAZ</text>
-  <text x="178" y="181" text-anchor="middle" font-size="7" fill="#345f86">30µg</text>
+  <circle cx="178" cy="174" r="27" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <circle cx="178" cy="174" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
+  <text x="178" y="171" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">CAZ</text>
+  <text x="178" y="181" text-anchor="middle" font-size="11" fill="#5a80b0">30µg</text>
 
   <!-- 加药：头孢他啶+克拉维酸 CAZ/CLA —— 抑菌圈增大（克拉维酸抑酶，恢复活性） -->
-  <circle cx="306" cy="174" r="50" fill="#fbfaf8" stroke="#c9c3b6" stroke-width="1.2" stroke-dasharray="4 3"/>
-  <circle cx="306" cy="174" r="15" fill="#e7eef6" stroke="#345f86" stroke-width="1.3"/>
-  <text x="306" y="170" text-anchor="middle" font-size="8" font-weight="700" fill="#345f86">CAZ</text>
-  <text x="306" y="180" text-anchor="middle" font-size="7" fill="#345f86">/CLA</text>
+  <circle cx="306" cy="174" r="50" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <circle cx="306" cy="174" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
+  <text x="306" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">CAZ</text>
+  <text x="306" y="180" text-anchor="middle" font-size="11" fill="#5a80b0">/CLA</text>
 
   <!-- 抑菌圈直径增量标注：Δ≥5mm = 阳性 -->
   <line x1="256" y1="138" x2="356" y2="138" stroke="#3f7a52" stroke-width="1" stroke-dasharray="2 2"/>
   <line x1="256" y1="134" x2="256" y2="142" stroke="#3f7a52" stroke-width="1"/>
   <line x1="356" y1="134" x2="356" y2="142" stroke="#3f7a52" stroke-width="1"/>
   <rect x="285" y="126" width="42" height="15" rx="4" fill="#ffffff" stroke="#3f7a52" stroke-width="1"/>
-  <text x="306" y="137" text-anchor="middle" font-size="9" font-weight="700" fill="#3f7a52">Δ≥5mm</text>
+  <text x="306" y="137" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a52">Δ≥5mm</text>
 
   <!-- 下方标签 -->
-  <text x="178" y="236" text-anchor="middle" font-size="10.5" fill="#454b54">头孢他啶（单药）</text>
-  <text x="178" y="249" text-anchor="middle" font-size="9" fill="#8a8f98">圈小：被酶水解</text>
-  <text x="306" y="240" text-anchor="middle" font-size="10.5" fill="#454b54">头孢他啶 + 克拉维酸</text>
-  <text x="306" y="253" text-anchor="middle" font-size="9" fill="#3f7a52">圈增大：酶被抑制</text>
+  <text x="178" y="236" text-anchor="middle" font-size="11" fill="#565b63">头孢他啶（单药）</text>
+  <text x="178" y="249" text-anchor="middle" font-size="11" fill="#565b63">圈小：被酶水解</text>
+  <text x="306" y="240" text-anchor="middle" font-size="11" fill="#565b63">头孢他啶 + 克拉维酸</text>
+  <text x="306" y="253" text-anchor="middle" font-size="11" fill="#3f7a52">圈增大：酶被抑制</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="12.5" fill="#454b54">加克拉维酸后抑菌圈增大 ≥5mm（或 MIC 下降 ≥3 个稀释度）= <tspan font-weight="700" fill="#b04242">ESBL 阳性</tspan></text>
+  <text x="240" y="290" text-anchor="middle" font-size="12.5" fill="#565b63">加克拉维酸后抑菌圈增大 ≥5mm（或 MIC 下降 ≥3 个稀释度）= <tspan font-weight="700" fill="#c46a62">ESBL 阳性</tspan></text>
 </svg>
