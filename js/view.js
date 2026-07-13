@@ -351,6 +351,7 @@
         return {
           药物: d.药物,
           简写: d.简写,
+          组别: d.组别 || '',
           MIC: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / '),
           抑菌圈: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / '),
           备注: d.备注 || ''

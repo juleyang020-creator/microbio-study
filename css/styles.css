@@ -198,6 +198,19 @@ body {
 .bp-table .bp-note { color: var(--muted); font-size: 11px; }
 .bp-table tbody tr:hover { background: var(--line-2); }
 .bp-foot { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+/* CLSI M100 报告分组徽章 */
+.bp-tier { display: inline-block; min-width: 15px; padding: 0 4px; margin-right: 5px; border-radius: 4px; font-size: 10.5px; font-weight: 700; line-height: 16px; text-align: center; color: #fff; vertical-align: middle; font-family: var(--mono); }
+.bp-tier-A { background: #2e6b66; }
+.bp-tier-B { background: #345f86; }
+.bp-tier-C { background: #7d6fae; }
+.bp-tier-U { background: #b58f2a; }
+.bp-tier-O { background: #8a8f98; }
+.bp-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 12px; margin-top: 8px; font-size: 11.5px; }
+.bp-legend-lead { font-weight: 600; color: var(--ink-soft); }
+.bp-legend-item { display: inline-flex; align-items: center; }
+.bp-legend-item .bp-tier { margin-right: 4px; }
+.bp-legend-txt { color: var(--muted); }
+.bp-legend-note { font-size: 11px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
 
 /* 参考链接 */
 .refs { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
