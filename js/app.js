@@ -2,9 +2,41 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260702-2';
+  var APP_VERSION = window.APP_VERSION || '20260702-3';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
+
+  // CLSI M100 报告分组（Table 1 抗菌药物检测与报告分组）
+  var BP_TIER_LABELS = {
+    A: '常规首选检测并报告',
+    B: '主要药物 · 选择性报告',
+    C: '补充/替代 · 选择性报告',
+    U: '仅尿路分离株',
+    O: '其他（有折点，通常不常规报告）'
+  };
+  var BP_TIER_ORDER = ['A', 'B', 'C', 'U', 'O'];
+  function bpTierBadge(tier) {
+    if (!tier || !BP_TIER_LABELS[tier]) { return null; }
+    return el('span', { cls: 'bp-tier bp-tier-' + tier, title: 'CLSI M100 报告分组 ' + tier + '：' + BP_TIER_LABELS[tier], text: tier });
+  }
+  // 图例：仅列出该菌组中实际出现的分组
+  function bpTierLegend(drugs) {
+    var present = {};
+    (drugs || []).forEach(function (d) { if (d.组别 && BP_TIER_LABELS[d.组别]) { present[d.组别] = 1; } });
+    var tiers = BP_TIER_ORDER.filter(function (t) { return present[t]; });
+    if (!tiers.length) { return null; }
+    var kids = [ el('span', { cls: 'bp-legend-lead', text: '报告分组（CLSI M100）：' }) ];
+    tiers.forEach(function (t) {
+      kids.push(el('span', { cls: 'bp-legend-item' }, [
+        el('span', { cls: 'bp-tier bp-tier-' + t, text: t }),
+        el('span', { cls: 'bp-legend-txt', text: BP_TIER_LABELS[t] })
+      ]));
+    });
+    return el('div', {}, [
+      el('div', { cls: 'bp-legend' }, kids),
+      el('div', { cls: 'bp-legend-note', text: '分组为选择性报告参考：A 类应常规报告，B/C 类通常在对 A 类耐药、深部/重症感染或临床需要时按级联报告。具体须结合本地抗菌谱与用药目录，并以现行版 CLSI 为准。' })
+    ]);
+  }
 
   // 折点表药物名与抗菌药条目名的别名（模块级常量，避免每次调用重建）：
   // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
@@ -341,8 +373,8 @@
       var bpBodyRows = bp.药物.map(function (d) {
         var aid = abxIdByDrugText(d.药物);
         var drugCell = aid
-          ? el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
-          : el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }) ].concat([document.createTextNode(' ' + d.药物)]));
+          ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
+          : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
         return el('tr', {}, [
           drugCell,
           el('td', { cls: 'bp-mic', text: d.MIC }),
@@ -361,6 +393,7 @@
             el('tbody', {}, bpBodyRows)
           ])
         ]),
+        bpTierLegend(bp.药物),
         el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' + (bpHasCombo(bp.药物) ? '　·　' + COMBO_BP_NOTE : '') })
       ]));
     }
@@ -1070,8 +1103,8 @@
     var bodyRows = drugs.map(function (d) {
       var aid = abxIdByDrugText(d.药物);
       var drugCell = aid
-        ? el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
-        : el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
+        ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
+        : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
       return el('tr', {}, [
         drugCell,
         el('td', { cls: 'bp-mic', text: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / ') }),
@@ -1085,8 +1118,9 @@
         el('tbody', {}, bodyRows)
       ])
     ]);
-    if (!bpHasCombo(drugs)) { return tableWrap; }
-    return el('div', {}, [ tableWrap, el('div', { cls: 'bp-foot', text: COMBO_BP_NOTE }) ]);
+    var legend = bpTierLegend(drugs);
+    if (!legend && !bpHasCombo(drugs)) { return tableWrap; }
+    return el('div', {}, [ tableWrap, legend, bpHasCombo(drugs) ? el('div', { cls: 'bp-foot', text: COMBO_BP_NOTE }) : null ]);
   }
   function renderJudgeResult() {
     var box = document.getElementById('bp-judge-result');
