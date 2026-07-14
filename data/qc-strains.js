@@ -965,7 +965,24 @@ window.DB['qc-strains'] = [
     英文: 'ATCC 22019',
     类别: '抗真菌质控',
     小节: [ { 标题: '质控用途 / 要点', 正文: '抗真菌药敏质控株：CLSI M60/M27 肉汤微量稀释及 M44 纸片法质控，覆盖唑类、棘白菌素、两性霉素B及氟胞嘧啶，与克柔念珠菌 ATCC 6258 同为两株推荐酵母菌质控株之一' } ],
-    质控来源: '抗真菌 MIC 可接受质控范围见 CLSI M60（本版所附文件未含）；判读须以现行版 M60 原表为准。',
+    质控来源: 'CLSI M27M44S Ed3 (2022)：MIC=Table 3（24 h 肉汤微量稀释）· 抑菌圈=Table 6（24 h 纸片）',
+    质控范围: [
+      { 药物: 'Amphotericin B', MIC: '0.25–2' },
+      { 药物: 'Anidulafungin', MIC: '0.25–2' },
+      { 药物: 'Caspofungin', MIC: '0.25–1', 抑菌圈: '14–23' },
+      { 药物: 'Fluconazole', MIC: '0.5–4', 抑菌圈: '22–33' },
+      { 药物: 'Flucytosine', MIC: '0.06–0.25' },
+      { 药物: 'Ibrexafungerp', MIC: '0.06–0.25' },
+      { 药物: 'Isavuconazole', MIC: '0.016–0.06' },
+      { 药物: 'Itraconazole', MIC: '0.06–0.5' },
+      { 药物: 'Ketoconazole', MIC: '0.03–0.25' },
+      { 药物: 'Manogepix', MIC: '0.008–0.03', 抑菌圈: '26–34' },
+      { 药物: 'Micafungin', MIC: '0.5–2', 抑菌圈: '14–23' },
+      { 药物: 'Oteseconazole', MIC: '0.008–0.06' },
+      { 药物: 'Posaconazole', MIC: '0.03–0.25', 抑菌圈: '25–36' },
+      { 药物: 'Rezafungin', MIC: '0.25–2', 抑菌圈: '9–16' },
+      { 药物: 'Voriconazole', MIC: '0.016–0.06', 抑菌圈: '28–37' }
+    ],
     关联: ['candida-parapsilosis']
   },
   {
@@ -975,7 +992,22 @@ window.DB['qc-strains'] = [
     英文: 'ATCC 6258',
     类别: '抗真菌质控',
     小节: [ { 标题: '质控用途 / 要点', 正文: 'CLSI M60 抗真菌药敏质控株，肉汤微量稀释 MIC 与纸片扩散法均适用；QC 范围涵盖唑类(氟康唑/伏立康唑/泊沙康唑/伊曲康唑)、棘白菌素(卡泊芬净/米卡芬净/阿尼芬净)、两性霉素B 及 5-氟胞嘧啶。本株对氟康唑为固有(天然)耐药。' } ],
-    质控来源: '抗真菌 MIC 可接受质控范围见 CLSI M60（本版所附文件未含）；判读须以现行版 M60 原表为准。',
+    质控来源: 'CLSI M27M44S Ed3 (2022)：MIC=Table 3（24 h 肉汤微量稀释）· 抑菌圈=Table 6（24 h 纸片）',
+    质控范围: [
+      { 药物: 'Amphotericin B', MIC: '0.5–2' },
+      { 药物: 'Anidulafungin', MIC: '0.03–0.12' },
+      { 药物: 'Caspofungin', MIC: '0.12–1', 抑菌圈: '19–26' },
+      { 药物: 'Fluconazole', MIC: '8–64' },
+      { 药物: 'Flucytosine', MIC: '4–16' },
+      { 药物: 'Ibrexafungerp', MIC: '0.25–1' },
+      { 药物: 'Isavuconazole', MIC: '0.06–0.5' },
+      { 药物: 'Itraconazole', MIC: '0.12–1' },
+      { 药物: 'Ketoconazole', MIC: '0.12–1' },
+      { 药物: 'Micafungin', MIC: '0.06–0.25', 抑菌圈: '23–29' },
+      { 药物: 'Posaconazole', MIC: '0.06–0.5', 抑菌圈: '23–31' },
+      { 药物: 'Rezafungin', MIC: '0.016–0.12', 抑菌圈: '14–20' },
+      { 药物: 'Voriconazole', MIC: '0.06–0.5', 抑菌圈: '16–25' }
+    ],
     关联: ['candida-krusei']
   },
   {
@@ -985,7 +1017,19 @@ window.DB['qc-strains'] = [
     英文: 'ATCC 90028',
     类别: '抗真菌质控',
     小节: [ { 标题: '质控用途 / 要点', 正文: '抗真菌药 MIC 质控株(部分方法/药物)' } ],
-    质控来源: '抗真菌 MIC 可接受质控范围见 CLSI M60（本版所附文件未含）；判读须以现行版 M60 原表为准。',
+    质控来源: 'CLSI M27M44S Ed3 (2022)：抑菌圈=Table 6（24 h 纸片）；MIC 中 manogepix / oteseconazole=Table 3（24 h 微量稀释），两性霉素B / 氟康唑 / 氟胞嘧啶=Table 4（48 h 肉汤大稀释法参考株）',
+    质控范围: [
+      { 药物: 'Amphotericin B', MIC: '0.5–2', 备注: '48 h 肉汤大稀释法参考' },
+      { 药物: 'Caspofungin', 抑菌圈: '18–27' },
+      { 药物: 'Fluconazole', MIC: '0.25–1', 抑菌圈: '28–39', 备注: '48 h 大稀释法参考' },
+      { 药物: 'Flucytosine', MIC: '0.5–2', 备注: '48 h 大稀释法参考' },
+      { 药物: 'Manogepix', MIC: '0.004–0.016', 抑菌圈: '32–44' },
+      { 药物: 'Micafungin', 抑菌圈: '24–31' },
+      { 药物: 'Oteseconazole', MIC: '0.002–0.016' },
+      { 药物: 'Posaconazole', 抑菌圈: '24–34' },
+      { 药物: 'Rezafungin', 抑菌圈: '13–20' },
+      { 药物: 'Voriconazole', 抑菌圈: '31–42' }
+    ],
     关联: ['candida-albicans']
   }
 ];
