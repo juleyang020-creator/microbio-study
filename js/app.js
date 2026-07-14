@@ -2,7 +2,7 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260702-4';
+  var APP_VERSION = window.APP_VERSION || '20260702-5';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -320,6 +320,37 @@
           el('div', { cls: 'section-body', text: s.正文 })
         ]));
       });
+    }
+
+    // CLSI 可接受质控范围（质控菌株）——逐格转录自 CLSI M100/M45，双人独立转录并比对
+    if (vm.质控范围 && vm.质控范围.length) {
+      var hasMic = vm.质控范围.some(function (r) { return r.MIC; });
+      var hasDisk = vm.质控范围.some(function (r) { return r.抑菌圈; });
+      var hasNote = vm.质控范围.some(function (r) { return r.备注; });
+      var qcHead = [ el('th', { text: '抗菌药物' }) ];
+      if (hasMic) { qcHead.push(el('th', { text: 'MIC (μg/mL)' })); }
+      if (hasDisk) { qcHead.push(el('th', { text: '抑菌圈 (mm)' })); }
+      if (hasNote) { qcHead.push(el('th', { text: '备注' })); }
+      var qcRows = vm.质控范围.map(function (r) {
+        var cells = [ el('td', { cls: 'bp-drug', text: r.药物 }) ];
+        if (hasMic) { cells.push(el('td', { cls: 'bp-mic', text: r.MIC || '—' })); }
+        if (hasDisk) { cells.push(el('td', { cls: 'bp-disk', text: r.抑菌圈 || '—' })); }
+        if (hasNote) { cells.push(el('td', { cls: 'bp-comment', text: r.备注 || '' })); }
+        return el('tr', {}, cells);
+      });
+      nodes.push(el('div', { cls: 'breakpoints qc-ranges' }, [
+        el('div', { cls: 'bp-head' }, [
+          el('span', { cls: 'bp-title', text: 'CLSI 可接受质控范围' }),
+          el('span', { cls: 'bp-source', text: vm.质控来源 || 'CLSI' })
+        ]),
+        el('div', { cls: 'table-scroll' }, [
+          el('table', { cls: 'bp-table' }, [
+            el('thead', {}, [ el('tr', {}, qcHead) ]),
+            el('tbody', {}, qcRows)
+          ])
+        ]),
+        el('div', { cls: 'bp-legend-note', text: '质控范围为该标准株在规定方法下每次药敏跑批应落入的可接受区间（超出即失控）；须以现行版 CLSI 原表为准，并按你实验室采用的方法/培养基执行。' })
+      ]));
     }
 
     if (vm.天然耐药) {

@@ -201,6 +201,8 @@
         return { 标题: l.标题 || '', url: l.url || '' };
       }),
       折点: extras.breakpoints || null,
+      质控范围: entry.质控范围 || null,
+      质控来源: entry.质控来源 || '',
       关联: (relations || []).map(function (r) {
         return {
           id: r.id,
