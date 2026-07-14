@@ -2,7 +2,7 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260702-5';
+  var APP_VERSION = window.APP_VERSION || '20260702-7';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -1391,7 +1391,8 @@
     tests: [{ src: 'img/landing-tests.svg', cap: '实验室试验总览' }],
     staining: [{ src: 'img/landing-staining.svg', cap: '染色方法总览' }],
     media: [{ src: 'img/landing-media.svg', cap: '培养基总览' }],
-    'biochem-tests': [{ src: 'img/landing-biochem.svg', cap: '生化反应总览（按类别 · 颜色示阳性结果）' }]
+    'biochem-tests': [{ src: 'img/landing-biochem.svg', cap: '生化反应总览（按类别 · 颜色示阳性结果）' }],
+    'qc-strains': [{ src: 'img/landing-qc-strains.svg', cap: '质控菌株总览（4 类 · 在控/失控）' }]
   };
 
   function buildLanding(moduleKey) {

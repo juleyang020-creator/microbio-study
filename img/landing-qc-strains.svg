@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 486" width="720" height="486" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>质控菌株总览</title><desc>常见 CLSI 药敏/鉴定质控标准株，按常规药敏、耐药机制/酶、苛养菌、抗真菌四类分组；结果落入可接受范围即在控。</desc>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="360.0" y="30" font-size="20" font-weight="700" fill="#2c3138" text-anchor="middle">质控菌株总览</text>
+<text x="360.0" y="52" font-size="12.5" fill="#565b63" text-anchor="middle">标准参考株锚定药敏 / 鉴定质控：每批结果落入可接受范围 = 在控</text>
+<text x="212" y="94" font-size="11.5" fill="#565b63" text-anchor="end">可接受范围</text>
+<line x1="250" y1="90" x2="478" y2="90" stroke="#b8ac83" stroke-width="2"/>
+<rect x="322" y="83" width="110" height="14" rx="3" fill="#e2ecdc" stroke="#7a9a6a" stroke-width="1.2"/>
+<line x1="250" y1="86" x2="250" y2="94" stroke="#b8ac83" stroke-width="1.4"/>
+<line x1="322" y1="86" x2="322" y2="94" stroke="#b8ac83" stroke-width="1.4"/>
+<line x1="432" y1="86" x2="432" y2="94" stroke="#b8ac83" stroke-width="1.4"/>
+<line x1="478" y1="86" x2="478" y2="94" stroke="#b8ac83" stroke-width="1.4"/>
+<circle cx="384" cy="90" r="4.5" fill="#5f8f5a"/>
+<text x="384" y="79" font-size="11" font-weight="700" fill="#3f7a52" text-anchor="middle">在控</text>
+<circle cx="462" cy="90" r="4.5" fill="#c0605a"/>
+<text x="462" y="79" font-size="11" font-weight="700" fill="#b04a44" text-anchor="middle">失控</text>
+<rect x="22" y="120" width="326" height="166" rx="14" fill="#f6f2e2" stroke="#c8b887" stroke-width="1.6"/>
+<circle cx="42" cy="142" r="6" fill="#9a8a52"/>
+<text x="56" y="146" font-size="13.5" font-weight="700" fill="#2c3138">常规药敏质控</text>
+<line x1="38" y1="154" x2="332" y2="154" stroke="#c8b887" stroke-width="1"/>
+<rect x="40" y="161.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#9a8a52" stroke-width="1.2"/><rect x="40" y="168.5" width="8" height="7" rx="2.5" fill="#9a8a52" opacity="0.55"/><rect x="38.6" y="159.6" width="10.8" height="3.2" rx="1.4" fill="#9a8a52"/>
+<text x="60" y="172" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 25922</tspan><tspan fill="#565b63">  大肠埃希菌</tspan></text>
+<rect x="40" y="184.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#9a8a52" stroke-width="1.2"/><rect x="40" y="191.5" width="8" height="7" rx="2.5" fill="#9a8a52" opacity="0.55"/><rect x="38.6" y="182.6" width="10.8" height="3.2" rx="1.4" fill="#9a8a52"/>
+<text x="60" y="195" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 29213</tspan><tspan fill="#565b63">  金黄色葡萄球菌 · MIC</tspan></text>
+<rect x="40" y="207.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#9a8a52" stroke-width="1.2"/><rect x="40" y="214.5" width="8" height="7" rx="2.5" fill="#9a8a52" opacity="0.55"/><rect x="38.6" y="205.6" width="10.8" height="3.2" rx="1.4" fill="#9a8a52"/>
+<text x="60" y="218" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 25923</tspan><tspan fill="#565b63">  金黄色葡萄球菌 · 纸片</tspan></text>
+<rect x="40" y="230.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#9a8a52" stroke-width="1.2"/><rect x="40" y="237.5" width="8" height="7" rx="2.5" fill="#9a8a52" opacity="0.55"/><rect x="38.6" y="228.6" width="10.8" height="3.2" rx="1.4" fill="#9a8a52"/>
+<text x="60" y="241" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 27853</tspan><tspan fill="#565b63">  铜绿假单胞菌</tspan></text>
+<rect x="40" y="253.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#9a8a52" stroke-width="1.2"/><rect x="40" y="260.5" width="8" height="7" rx="2.5" fill="#9a8a52" opacity="0.55"/><rect x="38.6" y="251.6" width="10.8" height="3.2" rx="1.4" fill="#9a8a52"/>
+<text x="60" y="264" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 29212</tspan><tspan fill="#565b63">  粪肠球菌</tspan></text>
+<rect x="372" y="120" width="326" height="166" rx="14" fill="#f6f2e2" stroke="#c8b887" stroke-width="1.6"/>
+<circle cx="392" cy="142" r="6" fill="#c0605a"/>
+<text x="406" y="146" font-size="13.5" font-weight="700" fill="#2c3138">耐药机制 / 酶质控</text>
+<line x1="388" y1="154" x2="682" y2="154" stroke="#c8b887" stroke-width="1"/>
+<rect x="390" y="161.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#c0605a" stroke-width="1.2"/><rect x="390" y="168.5" width="8" height="7" rx="2.5" fill="#c0605a" opacity="0.55"/><rect x="388.6" y="159.6" width="10.8" height="3.2" rx="1.4" fill="#c0605a"/>
+<text x="410" y="172" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 35218</tspan><tspan fill="#565b63">  大肠埃希菌 · TEM-1</tspan></text>
+<rect x="390" y="184.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#c0605a" stroke-width="1.2"/><rect x="390" y="191.5" width="8" height="7" rx="2.5" fill="#c0605a" opacity="0.55"/><rect x="388.6" y="182.6" width="10.8" height="3.2" rx="1.4" fill="#c0605a"/>
+<text x="410" y="195" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 700603</tspan><tspan fill="#565b63">  肺炎克雷伯菌 · ESBL</tspan></text>
+<rect x="390" y="207.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#c0605a" stroke-width="1.2"/><rect x="390" y="214.5" width="8" height="7" rx="2.5" fill="#c0605a" opacity="0.55"/><rect x="388.6" y="205.6" width="10.8" height="3.2" rx="1.4" fill="#c0605a"/>
+<text x="410" y="218" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC BAA-1705</tspan><tspan fill="#565b63">  肺炎克雷伯菌 · KPC</tspan></text>
+<rect x="390" y="230.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#c0605a" stroke-width="1.2"/><rect x="390" y="237.5" width="8" height="7" rx="2.5" fill="#c0605a" opacity="0.55"/><rect x="388.6" y="228.6" width="10.8" height="3.2" rx="1.4" fill="#c0605a"/>
+<text x="410" y="241" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC BAA-1706</tspan><tspan fill="#565b63">  肺炎克雷伯菌 · mCIM 阴性</tspan></text>
+<rect x="390" y="253.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#c0605a" stroke-width="1.2"/><rect x="390" y="260.5" width="8" height="7" rx="2.5" fill="#c0605a" opacity="0.55"/><rect x="388.6" y="251.6" width="10.8" height="3.2" rx="1.4" fill="#c0605a"/>
+<text x="410" y="264" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 51299</tspan><tspan fill="#565b63">  粪肠球菌 · vanB / HLAR</tspan></text>
+<rect x="22" y="304" width="326" height="166" rx="14" fill="#f6f2e2" stroke="#c8b887" stroke-width="1.6"/>
+<circle cx="42" cy="326" r="6" fill="#5a80b0"/>
+<text x="56" y="330" font-size="13.5" font-weight="700" fill="#2c3138">苛养菌质控</text>
+<line x1="38" y1="338" x2="332" y2="338" stroke="#c8b887" stroke-width="1"/>
+<rect x="40" y="345.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#5a80b0" stroke-width="1.2"/><rect x="40" y="352.5" width="8" height="7" rx="2.5" fill="#5a80b0" opacity="0.55"/><rect x="38.6" y="343.6" width="10.8" height="3.2" rx="1.4" fill="#5a80b0"/>
+<text x="60" y="356" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 49247</tspan><tspan fill="#565b63">  流感嗜血杆菌</tspan></text>
+<rect x="40" y="368.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#5a80b0" stroke-width="1.2"/><rect x="40" y="375.5" width="8" height="7" rx="2.5" fill="#5a80b0" opacity="0.55"/><rect x="38.6" y="366.6" width="10.8" height="3.2" rx="1.4" fill="#5a80b0"/>
+<text x="60" y="379" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 49766</tspan><tspan fill="#565b63">  流感嗜血杆菌</tspan></text>
+<rect x="40" y="391.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#5a80b0" stroke-width="1.2"/><rect x="40" y="398.5" width="8" height="7" rx="2.5" fill="#5a80b0" opacity="0.55"/><rect x="38.6" y="389.6" width="10.8" height="3.2" rx="1.4" fill="#5a80b0"/>
+<text x="60" y="402" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 49619</tspan><tspan fill="#565b63">  肺炎链球菌</tspan></text>
+<rect x="40" y="414.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#5a80b0" stroke-width="1.2"/><rect x="40" y="421.5" width="8" height="7" rx="2.5" fill="#5a80b0" opacity="0.55"/><rect x="38.6" y="412.6" width="10.8" height="3.2" rx="1.4" fill="#5a80b0"/>
+<text x="60" y="425" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 49226</tspan><tspan fill="#565b63">  淋病奈瑟菌</tspan></text>
+<rect x="40" y="437.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#5a80b0" stroke-width="1.2"/><rect x="40" y="444.5" width="8" height="7" rx="2.5" fill="#5a80b0" opacity="0.55"/><rect x="38.6" y="435.6" width="10.8" height="3.2" rx="1.4" fill="#5a80b0"/>
+<text x="60" y="448" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 33560</tspan><tspan fill="#565b63">  空肠弯曲菌</tspan></text>
+<rect x="372" y="304" width="326" height="166" rx="14" fill="#f6f2e2" stroke="#c8b887" stroke-width="1.6"/>
+<circle cx="392" cy="326" r="6" fill="#9d7fb4"/>
+<text x="406" y="330" font-size="13.5" font-weight="700" fill="#2c3138">抗真菌质控</text>
+<line x1="388" y1="338" x2="682" y2="338" stroke="#c8b887" stroke-width="1"/>
+<rect x="390" y="345.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#9d7fb4" stroke-width="1.2"/><rect x="390" y="352.5" width="8" height="7" rx="2.5" fill="#9d7fb4" opacity="0.55"/><rect x="388.6" y="343.6" width="10.8" height="3.2" rx="1.4" fill="#9d7fb4"/>
+<text x="410" y="356" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 22019</tspan><tspan fill="#565b63">  近平滑念珠菌</tspan></text>
+<rect x="390" y="368.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#9d7fb4" stroke-width="1.2"/><rect x="390" y="375.5" width="8" height="7" rx="2.5" fill="#9d7fb4" opacity="0.55"/><rect x="388.6" y="366.6" width="10.8" height="3.2" rx="1.4" fill="#9d7fb4"/>
+<text x="410" y="379" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 6258</tspan><tspan fill="#565b63">  克柔念珠菌</tspan></text>
+<rect x="390" y="391.5" width="8" height="14" rx="3" fill="#faf7ee" stroke="#9d7fb4" stroke-width="1.2"/><rect x="390" y="398.5" width="8" height="7" rx="2.5" fill="#9d7fb4" opacity="0.55"/><rect x="388.6" y="389.6" width="10.8" height="3.2" rx="1.4" fill="#9d7fb4"/>
+<text x="410" y="402" font-size="11.5"><tspan font-weight="700" fill="#3f444b">ATCC 90028</tspan><tspan fill="#565b63">  白念珠菌</tspan></text>
+<text x="360.0" y="476" font-size="11.5" fill="#565b63" text-anchor="middle">共 19 株（16 株附 CLSI 可接受范围）；点左侧任一株查看用途与质控范围。定性对照株看预期结果。</text>
+</svg>
