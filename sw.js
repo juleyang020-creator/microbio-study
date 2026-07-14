@@ -1,7 +1,7 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260702-6';
-var CACHE = CACHE_PREFIX + 'v52';
+var APP_VERSION = '20260702-7';
+var CACHE = CACHE_PREFIX + 'v53';
 function versioned(path) {
   return path + '?v=' + APP_VERSION;
 }
@@ -42,6 +42,7 @@ var IMAGE_ASSETS = [
   './img/landing-cards.svg',
   './img/landing-idcards.svg',
   './img/landing-media.svg',
+  './img/landing-qc-strains.svg',
   './img/landing-resistance.svg',
   './img/landing-staining.svg',
   './img/landing-tests.svg',
