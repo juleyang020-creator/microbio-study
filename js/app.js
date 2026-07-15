@@ -2,7 +2,7 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260702-10';
+  var APP_VERSION = window.APP_VERSION || '20260702-11';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -426,6 +426,36 @@
         ]),
         bpTierLegend(bp.药物),
         el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' + (bpHasCombo(bp.药物) ? '　·　' + COMBO_BP_NOTE : '') })
+      ]));
+    }
+
+    // ②b 流行病学界值（ECV / ECOFF）—— 区分野生型(WT)/非野生型(NWT)，非临床折点
+    if (vm.ECV && vm.ECV.药物 && vm.ECV.药物.length) {
+      var ecv = vm.ECV;
+      var ecvHasNote = ecv.药物.some(function (d) { return d.备注; });
+      var ecvHead = [ el('th', { text: '抗菌药物' }), el('th', { text: 'ECV (μg/mL)' }), el('th', { text: '野生型 WT' }), el('th', { text: '非野生型 NWT' }) ];
+      if (ecvHasNote) { ecvHead.push(el('th', { text: '备注' })); }
+      var ecvRows = ecv.药物.map(function (d) {
+        var aid = abxIdByDrugText(d.药物);
+        var drugCell = aid
+          ? el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
+          : el('td', { cls: 'bp-drug' }, [ el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
+        var cells = [ drugCell, el('td', { cls: 'bp-mic', text: d.ECV }), el('td', { cls: 'bp-disk', text: d.WT }), el('td', { cls: 'bp-disk', text: d.NWT }) ];
+        if (ecvHasNote) { cells.push(el('td', { cls: 'bp-comment', text: d.备注 || '' })); }
+        return el('tr', {}, cells);
+      });
+      nodes.push(el('div', { cls: 'breakpoints' }, [
+        el('div', { cls: 'bp-head' }, [
+          el('span', { cls: 'bp-title', text: '流行病学界值 (ECV)' }),
+          el('span', { cls: 'bp-source', text: ecv.来源 })
+        ]),
+        el('div', { cls: 'table-scroll' }, [
+          el('table', { cls: 'bp-table' }, [
+            el('thead', {}, [ el('tr', {}, ecvHead) ]),
+            el('tbody', {}, ecvRows)
+          ])
+        ]),
+        el('div', { cls: 'bp-legend-note', text: '⚠️ ECV 只区分野生型(WT，≤ECV)与非野生型(NWT，>ECV，提示获得性耐药机制)，' + (ecv.注 || '不是临床折点，不得按 S/I/R 报告。') })
       ]));
     }
 
@@ -1370,7 +1400,8 @@
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
       differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,
       links: View.referenceLinks(route.module, entry),
-      breakpoints: (route.module === 'microbes' && route.id) ? View.breakpointVM(route.id, window.DB.breakpoints) : null
+      breakpoints: (route.module === 'microbes' && route.id) ? View.breakpointVM(route.id, window.DB.breakpoints) : null,
+      ecv: (route.module === 'microbes' && route.id) ? View.ecvVM(route.id, window.DB.ecv) : null
     };
     var vm = View.detailVM(entry, rels, extras);
     fill(document.getElementById('main'), vm ? buildDetail(vm) : buildLanding(route.module));

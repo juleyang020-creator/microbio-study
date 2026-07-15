@@ -201,6 +201,7 @@
         return { 标题: l.标题 || '', url: l.url || '' };
       }),
       折点: extras.breakpoints || null,
+      ECV: extras.ecv || null,
       质控范围: entry.质控范围 || null,
       质控来源: entry.质控来源 || '',
       关联: (relations || []).map(function (r) {
@@ -357,6 +358,31 @@
           MIC: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / '),
           抑菌圈: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / '),
           备注: d.备注 || ''
+        };
+      })
+    };
+  }
+
+  // ECV（流行病学界值）：按微生物 id 查找所属 ECV 组
+  function ecvGroup(microbeId, ecvs) {
+    ecvs = ecvs || [];
+    for (var i = 0; i < ecvs.length; i++) {
+      if (ecvs[i].菌种 && ecvs[i].菌种.indexOf(microbeId) !== -1) { return ecvs[i]; }
+    }
+    return null;
+  }
+
+  function ecvVM(microbeId, ecvs) {
+    var group = ecvGroup(microbeId, ecvs);
+    if (!group) { return null; }
+    return {
+      组名: group.组名,
+      来源: group.来源 || '',
+      注: group.注 || '',
+      药物: (group.药物 || []).map(function (d) {
+        return {
+          药物: d.药物, 简写: d.简写 || '',
+          ECV: d.ECV || '', WT: d.WT || '', NWT: d.NWT || '', 备注: d.备注 || ''
         };
       })
     };
@@ -574,6 +600,8 @@
     buildCardComparison: buildCardComparison,
     breakpointGroup: breakpointGroup,
     breakpointVM: breakpointVM,
+    ecvGroup: ecvGroup,
+    ecvVM: ecvVM,
     isRetiredBreakpointGroup: isRetiredBreakpointGroup,
     isRetiredBreakpointDrug: isRetiredBreakpointDrug,
     judgeableBreakpointGroups: judgeableBreakpointGroups,
