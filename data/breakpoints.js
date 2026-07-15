@@ -686,5 +686,14 @@ window.DB.breakpoints = [
       { 药物: "四环素 (Tetracycline)", 简写: "TE", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "复方新诺明 (Trimethoprim-Sulfamethoxazole)", 简写: "SXT", MIC_S: "≤2/38", MIC_I: "—", MIC_R: "≥4/76", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "根除期口服方案" }
     ]
+  },
+  {
+    菌组名: "曲霉·丝状真菌 (Aspergillus fumigatus)",
+    CLSI表: "M38M51S Ed3 · Table 1",
+    来源: "CLSI M38M51S (3rd ed., 2022)",
+    菌种: ["aspergillus-fumigatus"],
+    药物: [
+      { 药物: "伏立康唑 (Voriconazole)", 简写: "VRC", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "唯一有 CLSI 临床折点的丝状真菌药物组合；仅适用于序列确认的 A. fumigatus sensu stricto，不适用于烟曲霉复合群其他成员。伊曲康唑/泊沙康唑/艾沙康唑目前为 ECV(流行病学界值)而非临床折点。" }
+    ]
   }
 ];
