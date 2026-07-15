@@ -22,6 +22,7 @@ require('../data/structures.js');
 require('../data/breakpoints.js');
 require('../data/biochem-tests.js');
 require('../data/ast-alerts.js');
+require('../data/ecv.js');
 require('../data/treatment.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
@@ -212,6 +213,23 @@ test('折点数据中引用的菌 id 均存在于微生物数据中', () => {
   (global.window.DB.breakpoints || []).forEach((group) => {
     (group.菌种 || []).forEach((id) => {
       assert.ok(microbeIds[id], '折点组 “' + group.菌组名 + '” 引用了不存在的微生物 id：' + id);
+    });
+  });
+});
+
+test('ECV 数据中引用的菌 id 均存在，且每组有菌种/药物/ECV 值', () => {
+  const microbeIds = {};
+  global.window.DB.microbes.forEach((m) => { microbeIds[m.id] = true; });
+  (global.window.DB.ecv || []).forEach((group) => {
+    assert.ok(group.组名 && group.组名.length, 'ECV 组缺少组名');
+    assert.ok(group.菌种 && group.菌种.length > 0, 'ECV 组 “' + (group.组名 || '?') + '” 菌种为空');
+    assert.ok(group.药物 && group.药物.length > 0, 'ECV 组 “' + group.组名 + '” 药物为空');
+    (group.菌种 || []).forEach((id) => {
+      assert.ok(microbeIds[id], 'ECV 组 “' + group.组名 + '” 引用了不存在的微生物 id：' + id);
+    });
+    group.药物.forEach((d) => {
+      assert.ok(d.药物 && d.药物.length, 'ECV 组 “' + group.组名 + '” 存在无药物名的条目');
+      assert.ok(d.ECV && String(d.ECV).length, 'ECV 组 “' + group.组名 + '” 中 “' + d.药物 + '” 缺少 ECV 值');
     });
   });
 });
