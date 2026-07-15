@@ -374,6 +374,55 @@ window.DB.microbes = [
     关联: ['rifampicin']
   },
 
+  {
+    id: 'mycobacterium-avium-complex',
+    名称: '鸟分枝杆菌复合群',
+    拉丁名: 'Mycobacterium avium complex (M. avium / M. intracellulare)',
+    类别: '分枝杆菌属',
+    天然耐药: '对多数一线抗结核药天然耐药；治疗以大环内酯(克拉霉素/阿奇霉素)为核心，联合乙胺丁醇＋利福布汀/利福平。',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸染色阳性；缓慢生长、不产色的非结核分枝杆菌(NTM)，广泛存在于水和土壤。' },
+      { 标题: '致病性 / 所致疾病', 正文: 'AIDS(CD4<50)播散性感染；结构性肺病(支扩/COPD)慢性肺病；儿童颈淋巴结炎。经环境获得，无人际传播。' }
+    ],
+    关联: ['azithromycin', 'clarithromycin', 'amikacin', 'rifampicin', 'mycobacterium-tuberculosis']
+  },
+  {
+    id: 'mycobacterium-abscessus',
+    名称: '脓肿分枝杆菌',
+    拉丁名: 'Mycobacterium abscessus complex',
+    类别: '分枝杆菌属',
+    天然耐药: '快速生长 NTM 中最耐药者；对多数一线抗结核药及多类抗菌药天然耐药，erm(41)基因致大环内酯诱导耐药，治疗困难。',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸染色阳性；快速生长型 NTM(7 天内成菌落)，与水源/环境相关。' },
+      { 标题: '致病性 / 所致疾病', 正文: '慢性肺病(尤支扩/囊性纤维化)、皮肤软组织及术后/导管相关感染、免疫低下者播散；疗程长、治愈率有限。' }
+    ],
+    关联: ['amikacin', 'azithromycin', 'cefoxitin', 'imipenem', 'tigecycline']
+  },
+  {
+    id: 'mycobacterium-kansasii',
+    名称: '堪萨斯分枝杆菌',
+    拉丁名: 'Mycobacterium kansasii',
+    类别: '分枝杆菌属',
+    天然耐药: '对吡嗪酰胺天然耐药；但对利福平敏感，是较易治疗、预后较好的 NTM。',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸染色阳性、菌体长而有横纹；缓慢生长、光产色(photochromogen——见光后产黄色素)。自来水为重要来源。' },
+      { 标题: '致病性 / 所致疾病', 正文: '慢性肺病(临床/影像类似结核，多见于基础肺病/免疫低下者)；偶皮肤及播散感染。' }
+    ],
+    关联: ['rifampicin', 'clarithromycin', 'moxifloxacin', 'mycobacterium-tuberculosis']
+  },
+  {
+    id: 'mycobacterium-marinum',
+    名称: '海分枝杆菌',
+    拉丁名: 'Mycobacterium marinum',
+    类别: '分枝杆菌属',
+    天然耐药: '对吡嗪酰胺天然耐药；最适生长温度较低(约 30℃)。',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸染色阳性；缓慢生长、光产色，最适 28–32℃(低于体温)，与水体(鱼缸/海水)接触相关。' },
+      { 标题: '致病性 / 所致疾病', 正文: '"游泳池/鱼缸肉芽肿"：手/四肢皮肤软组织慢性肉芽肿，可沿淋巴管呈孢子丝菌样播散；免疫低下者可深部扩散。' }
+    ],
+    关联: ['clarithromycin', 'rifampicin', 'mycobacterium-tuberculosis']
+  },
+
   // ===== 其他细菌 · 支原体属 =====
   {
     id: 'mycoplasma-pneumoniae',
@@ -530,6 +579,28 @@ window.DB.microbes = [
       { 标题: '致病性 / 所致疾病', 正文: '侵袭性肺曲霉病（免疫低下）、肺曲霉球、过敏性支气管肺曲霉病(ABPA)。' }
     ],
     关联: ['voriconazole', 'caspofungin', 'amphotericin-b']
+  },
+  {
+    id: 'talaromyces-marneffei',
+    名称: '马尔尼菲篮状菌',
+    拉丁名: 'Talaromyces marneffei（旧称 Penicillium marneffei）',
+    类别: '双相真菌',
+    小节: [
+      { 标题: '形态与染色', 正文: '温度双相真菌：25℃菌丝相(产可扩散葡萄酒红色色素)，37℃/组织内为酵母相(卵圆形、以横隔分裂而非出芽)。华南/东南亚流行。' },
+      { 标题: '致病性 / 所致疾病', 正文: '马尔尼菲篮状菌病：主要见于 AIDS 等免疫低下者，播散性感染(发热、贫血、脐凹样皮疹、肝脾肿大)；华南、广西及东南亚地方性流行。' }
+    ],
+    关联: ['amphotericin-b', 'voriconazole', 'histoplasma-capsulatum']
+  },
+  {
+    id: 'histoplasma-capsulatum',
+    名称: '荚膜组织胞浆菌',
+    拉丁名: 'Histoplasma capsulatum',
+    类别: '双相真菌',
+    小节: [
+      { 标题: '形态与染色', 正文: '温度双相真菌：25℃菌丝相(结节状/齿轮状大分生孢子)，37℃/组织内为小型酵母(2–4µm、巨噬细胞内、窄基出芽)。' },
+      { 标题: '致病性 / 所致疾病', 正文: '组织胞浆菌病：吸入孢子(鸟/蝙蝠粪污染土壤)致肺部感染，免疫低下者播散(发热、肝脾肿大、全血细胞减少、黏膜溃疡)；美洲密西西比/俄亥俄河谷等地方性流行。' }
+    ],
+    关联: ['amphotericin-b', 'voriconazole', 'talaromyces-marneffei']
   },
   {
     id: 'pneumocystis-jirovecii',
