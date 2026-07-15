@@ -1,6 +1,12 @@
 window.DB = window.DB || {};
 // 鉴别（按微生物 id）：每项 { 名称, id?(相似菌的id,用于跳转), 相似点, 鉴别 }
 window.DB.differential = {
+  'mycobacterium-avium-complex': [ { 名称: '结核分枝杆菌', id: 'mycobacterium-tuberculosis', 相似点: '均抗酸杆菌、慢生长、可致慢性肺病', 鉴别: 'MAC 烟酰胺(niacin)阴性、硝酸盐还原阴性、热触酶(68℃)阳性、PNB 上可生长、对一线抗结核药耐药；结核 niacin/硝酸盐阳性、热触酶阴性。确证靠核酸探针(AccuProbe)/MALDI-TOF。' }, { 名称: '脓肿分枝杆菌', id: 'mycobacterium-abscessus', 相似点: '同为 NTM、可致肺病', 鉴别: 'MAC 缓慢生长；脓肿分枝杆菌为快速生长 NTM(<7 天)。靠生长速度与 rpoB/hsp65 测序区分。' } ],
+  'mycobacterium-abscessus': [ { 名称: '鸟分枝杆菌复合群', id: 'mycobacterium-avium-complex', 相似点: '同为 NTM、可致慢性肺病', 鉴别: '脓肿分枝杆菌快速生长(<7 天)、3%NaCl 生长阳性；MAC 缓慢生长。' }, { 名称: '偶发/龟分枝杆菌', 相似点: '均快速生长 NTM', 鉴别: '脓肿分枝杆菌头孢西丁较耐受、含 erm(41)诱导大环内酯耐药；亚种(abscessus/massiliense/bolletii)药敏不同，靠 hsp65/rpoB 测序与 erm(41)分型。' } ],
+  'mycobacterium-kansasii': [ { 名称: '结核分枝杆菌', id: 'mycobacterium-tuberculosis', 相似点: '均慢生长抗酸杆菌、致慢性肺病、影像相似', 鉴别: '堪萨斯菌光产色(见光产黄)、硝酸盐还原阳性、对吡嗪酰胺耐药但利福平敏感；结核不产色、需完整抗结核方案。确证靠核酸探针/MALDI-TOF。' } ],
+  'mycobacterium-marinum': [ { 名称: '申克孢子丝菌', 相似点: '均可致沿淋巴管排列的皮肤结节("孢子丝菌样"播散)', 鉴别: '海分枝杆菌为抗酸杆菌、有水体接触史、组织抗酸染色/低温培养阳性；孢子丝菌为双相真菌、有园艺/植物刺伤史。' }, { 名称: '堪萨斯分枝杆菌', id: 'mycobacterium-kansasii', 相似点: '均缓慢生长、光产色 NTM', 鉴别: '海分枝杆菌最适 30℃、主要致皮肤感染；堪萨斯菌 37℃生长良好、主要致肺病。' } ],
+  'talaromyces-marneffei': [ { 名称: '荚膜组织胞浆菌', id: 'histoplasma-capsulatum', 相似点: '均胞内、双相、致 AIDS 播散性感染的真菌', 鉴别: '马尔尼菲：37℃酵母相以横隔分裂(非出芽)、25℃产红色色素、华南/东南亚流行；组织胞浆菌：酵母相窄基出芽、菌丝相有结节状大分生孢子、美洲河谷流行。' }, { 名称: '青霉(非致病)', 相似点: '25℃菌丝相帚状枝相似', 鉴别: '马尔尼菲温度双相、产红色色素、37℃转酵母相；普通青霉不双相、不产该红色素。' } ],
+  'histoplasma-capsulatum': [ { 名称: '马尔尼菲篮状菌', id: 'talaromyces-marneffei', 相似点: '均胞内、双相、致免疫低下者播散感染', 鉴别: '组织胞浆菌酵母相窄基出芽、菌丝相结节状大分生孢子、美洲流行；马尔尼菲酵母相横隔分裂(非出芽)、25℃产红色色素、华南/东南亚流行。' }, { 名称: '杜氏利什曼原虫', id: 'leishmania-donovani', 相似点: '组织内巨噬细胞内小体、均致发热肝脾大全血减少', 鉴别: '组织胞浆菌为真菌(GMS/PAS 阳性、窄基出芽、可培养)；利什曼无鞭毛体有动基体(kinetoplast)、GMS 阴性。' } ],
   'fusobacterium-necrophorum': [
     { 名称: '具核梭杆菌', id: 'fusobacterium-nucleatum', 相似点: '同属革兰阴性厌氧梭杆菌', 鉴别: '坏死梭杆菌菌体较粗短多形、脂酶(+)、吲哚强阳性、与Lemierre综合征相关；具核梭杆菌细长梭形、脂酶(−)。' },
     { 名称: '脆弱拟杆菌', id: 'bacteroides-fragilis', 相似点: '革兰阴性厌氧杆菌、致混合感染', 鉴别: '脆弱拟杆菌耐胆盐(BBE+)、对黏菌素纸片耐药；坏死梭杆菌胆汁敏感、对黏菌素纸片敏感。' }
