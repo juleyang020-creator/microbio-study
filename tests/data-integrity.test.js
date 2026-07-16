@@ -23,6 +23,7 @@ require('../data/breakpoints.js');
 require('../data/biochem-tests.js');
 require('../data/ast-alerts.js');
 require('../data/ecv.js');
+require('../data/qc-strains.js');
 require('../data/treatment.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
@@ -215,6 +216,39 @@ test('折点数据中引用的菌 id 均存在于微生物数据中', () => {
       assert.ok(microbeIds[id], '折点组 “' + group.菌组名 + '” 引用了不存在的微生物 id：' + id);
     });
   });
+});
+
+// 关键标准值固定回归测试（防止已修正的转录/映射错误回退）——对照 CLSI 原表
+test('关键折点/质控标准值不回退（CLSI 基准）', () => {
+  const bp = (id) => (global.window.DB.breakpoints || []).find((g) => (g.菌种 || []).indexOf(id) !== -1);
+  const drug = (g, re) => (g.药物 || []).find((d) => re.test(d.药物));
+  // M27M44S Table 1 卡泊芬净种特异折点
+  const cas = [
+    ['candida-albicans', '≤0.25', '0.5', '≥1'],
+    ['candida-glabrata', '≤0.12', '0.25', '≥0.5'],
+    ['candida-parapsilosis', '≤2', '4', '≥8'],
+    ['candida-tropicalis', '≤0.25', '0.5', '≥1'],
+    ['candida-krusei', '≤0.25', '0.5', '≥1']
+  ];
+  cas.forEach(([id, s, i, r]) => {
+    const d = drug(bp(id), /Caspofungin/);
+    assert.ok(d, id + ' 缺卡泊芬净行');
+    assert.strictEqual(d.MIC_S + '/' + d.MIC_I + '/' + d.MIC_R, s + '/' + i + '/' + r, id + ' 卡泊芬净折点错误');
+  });
+  // 来源不得再出现不存在的 M60 Ed3
+  assert.ok(!/M60 Ed3/.test(JSON.stringify(global.window.DB.breakpoints)), '折点来源仍含不存在的 M60 Ed3');
+  // M100 Ed36 Table 2B-4 嗜麦芽窄食单胞菌头孢地尔
+  const fdc = drug(bp('stenotrophomonas-maltophilia'), /Cefiderocol/);
+  assert.ok(fdc && fdc.MIC_S === '≤1' && fdc.抑菌圈_S === '≥17', '嗜麦芽头孢地尔折点缺失/错误');
+  // HACEK 组含 Eikenella/Aggregatibacter
+  const hacek = (global.window.DB.breakpoints || []).find((g) => /HACEK/.test(g.菌组名));
+  assert.ok(hacek && hacek.菌种.indexOf('eikenella-corrodens') !== -1 && hacek.菌种.indexOf('aggregatibacter-actinomycetemcomitans') !== -1, 'HACEK 组未含 Eikenella/Aggregatibacter');
+  // 红斑丹毒丝菌 M45 Table 7 组存在
+  assert.ok(bp('erysipelothrix-rhusiopathiae'), '红斑丹毒丝菌缺 M45 折点组');
+  // M27M44S Table 3 质控：C. parapsilosis ATCC 22019 伏立康唑 24h = 0.016–0.12
+  const qc = (global.window.DB['qc-strains'] || []).find((s) => /22019/.test(s.英文 || ''));
+  const qv = qc && (qc.质控范围 || []).find((d) => /Voriconazole/.test(d.药物));
+  assert.ok(qv && qv.MIC === '0.016–0.12', '22019 伏立康唑质控范围应为 0.016–0.12');
 });
 
 test('ECV 数据中引用的菌 id 均存在，且每组有菌种/药物/ECV 值', () => {

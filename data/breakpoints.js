@@ -121,6 +121,7 @@ window.DB.breakpoints = [
     CLSI表: "Table 2B-4",
     菌种: ["stenotrophomonas-maltophilia"],
     药物: [
+      { 药物: "头孢地尔 (Cefiderocol)", 简写: "FDC", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "≥17", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅敏感折点(I/R 未建立)；须用缺铁 CAMHB(见附录H)，铁浓度/接种量/厂家显著影响结果，可假敏或假耐，建议检测后续分离株并与临床/药学沟通" },
       { 药物: "复方新诺明 (Trimethoprim-Sulfamethoxazole)", 简写: "SXT", 组别: "A", MIC_S: "≤2/38", MIC_I: "—", MIC_R: "≥4/76", 抑菌圈_S: "≥16", 抑菌圈_I: "11–15", 抑菌圈_R: "≤10", 备注: "首选药物" },
       { 药物: "米诺环素 (Minocycline)", 简写: "MI", 组别: "B", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "≥26", 抑菌圈_I: "21–25", 抑菌圈_R: "≤20", 备注: "Ed36 修订(折点下调);一线可选" },
       { 药物: "左氧氟沙星 (Levofloxacin)", 简写: "LVX", 组别: "B", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "不宜单药使用" },
@@ -387,66 +388,67 @@ window.DB.breakpoints = [
   // 抗真菌折点均为 MIC 法（肉汤微量稀释 BMD），无纸片抑菌圈；念珠菌按种分别设折点。
   {
     菌组名: "白念珠菌 (Candida albicans)",
-    CLSI表: "M60 · MIC 法(BMD)",
-    来源: "CLSI M60 Ed3 (2022)",
+    CLSI表: "M27M44S · Table 1(BMD MIC)",
+    来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-albicans"],
     药物: [
       { 药物: "氟康唑 (Fluconazole)", 简写: "FLC", MIC_S: "≤2", MIC_I: "4 (SDD)", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "4 µg/mL 为剂量依赖性敏感(SDD)" },
       { 药物: "伏立康唑 (Voriconazole)", 简写: "VRC", MIC_S: "≤0.12", MIC_I: "0.25–0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "米卡芬净 (Micafungin)", 简写: "MCF", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "阿尼芬净折点相同(S≤0.25/I0.5/R≥1)" },
-      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "CLSI 因实验室间变异大未设折点；以阿尼芬净/米卡芬净结果替代判读" },
+      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "卡泊芬净实验室间变异大、可假耐药；S 可报告，I/R 结果须经米卡芬净/阿尼芬净或 FKS1/FKS2 突变检测(或参考实验室)确认" },
       { 药物: "两性霉素B (Amphotericin B)", 简写: "AMB", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无 CLSI 临床折点；流行病学界值(ECV)约 ≤2 µg/mL" },
       { 药物: "5-氟胞嘧啶 (Flucytosine)", 简写: "5FC", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无现行 CLSI 临床折点；不单独使用(易耐药)" }
     ]
   },
   {
     菌组名: "光滑念珠菌 (Nakaseomyces glabratus / C. glabrata)",
-    CLSI表: "M60 · MIC 法(BMD)",
-    来源: "CLSI M60 Ed3 (2022)",
+    CLSI表: "M27M44S · Table 1(BMD MIC)",
+    来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-glabrata"],
     药物: [
       { 药物: "氟康唑 (Fluconazole)", 简写: "FLC", MIC_S: "—", MIC_I: "≤32 (SDD)", MIC_R: "≥64", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无敏感折点；≤32 为剂量依赖性敏感(SDD)，须用最大剂量；天然敏感性低" },
       { 药物: "米卡芬净 (Micafungin)", 简写: "MCF", MIC_S: "≤0.06", MIC_I: "0.12", MIC_R: "≥0.25", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "阿尼芬净 S≤0.12/I0.25/R≥0.5" },
-      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "CLSI 未设折点；以阿尼芬净/米卡芬净替代" },
+      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "≤0.12", MIC_I: "0.25", MIC_R: "≥0.5", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "卡泊芬净实验室间变异大、可假耐药；S 可报告，I/R 结果须经米卡芬净/阿尼芬净或 FKS1/FKS2 突变检测(或参考实验室)确认" },
       { 药物: "伏立康唑 (Voriconazole)", 简写: "VRC", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无 CLSI 临床折点(仅 ECV)；常与氟康唑交叉耐药，不推荐单凭体外判敏" },
       { 药物: "两性霉素B (Amphotericin B)", 简写: "AMB", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无 CLSI 临床折点；ECV 约 ≤2 µg/mL" }
     ]
   },
   {
     菌组名: "近平滑念珠菌 (Candida parapsilosis)",
-    CLSI表: "M60 · MIC 法(BMD)",
-    来源: "CLSI M60 Ed3 (2022)",
+    CLSI表: "M27M44S · Table 1(BMD MIC)",
+    来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-parapsilosis"],
     药物: [
       { 药物: "氟康唑 (Fluconazole)", 简写: "FLC", MIC_S: "≤2", MIC_I: "4 (SDD)", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "伏立康唑 (Voriconazole)", 简写: "VRC", MIC_S: "≤0.12", MIC_I: "0.25–0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "米卡芬净 (Micafungin)", 简写: "MCF", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "棘白菌素 MIC 天然偏高(FKS1 多态性)，折点高于其他念珠菌；阿尼芬净折点同" },
-      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "CLSI 未设折点；以阿尼芬净/米卡芬净替代" },
+      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "卡泊芬净实验室间变异大、可假耐药；S 可报告，I/R 结果须经米卡芬净/阿尼芬净或 FKS1/FKS2 突变检测(或参考实验室)确认" },
       { 药物: "两性霉素B (Amphotericin B)", 简写: "AMB", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无 CLSI 临床折点；ECV 约 ≤2 µg/mL" }
     ]
   },
   {
     菌组名: "热带念珠菌 (Candida tropicalis)",
-    CLSI表: "M60 · MIC 法(BMD)",
-    来源: "CLSI M60 Ed3 (2022)",
+    CLSI表: "M27M44S · Table 1(BMD MIC)",
+    来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-tropicalis"],
     药物: [
       { 药物: "氟康唑 (Fluconazole)", 简写: "FLC", MIC_S: "≤2", MIC_I: "4 (SDD)", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "伏立康唑 (Voriconazole)", 简写: "VRC", MIC_S: "≤0.12", MIC_I: "0.25–0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "米卡芬净 (Micafungin)", 简写: "MCF", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "阿尼芬净折点相同" },
-      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "CLSI 未设折点；以阿尼芬净/米卡芬净替代" },
+      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "卡泊芬净实验室间变异大、可假耐药；S 可报告，I/R 结果须经米卡芬净/阿尼芬净或 FKS1/FKS2 突变检测(或参考实验室)确认" },
       { 药物: "两性霉素B (Amphotericin B)", 简写: "AMB", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无 CLSI 临床折点；ECV 约 ≤2 µg/mL" }
     ]
   },
   {
     菌组名: "克柔念珠菌 (Pichia kudriavzevii / C. krusei)",
-    CLSI表: "M60 · MIC 法(BMD)",
-    来源: "CLSI M60 Ed3 (2022)",
+    CLSI表: "M27M44S · Table 1(BMD MIC)",
+    来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-krusei"],
     药物: [
       { 药物: "氟康唑 (Fluconazole)", 简写: "FLC", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "天然耐药——CLSI 不设折点、不应报告为敏感" },
       { 药物: "伏立康唑 (Voriconazole)", 简写: "VRC", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "克柔念珠菌专属折点(高于其他念珠菌)" },
       { 药物: "米卡芬净 (Micafungin)", 简写: "MCF", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "阿尼芬净折点相同；首选棘白菌素或两性霉素 B" },
+      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "卡泊芬净实验室间变异大、可假耐药；S 可报告，I/R 结果须经米卡芬净/阿尼芬净或 FKS1/FKS2 突变检测(或参考实验室)确认" },
       { 药物: "两性霉素B (Amphotericin B)", 简写: "AMB", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无 CLSI 临床折点；ECV 约 ≤2 µg/mL" }
     ]
   },
@@ -565,7 +567,7 @@ window.DB.breakpoints = [
     菌组名: "HACEK 群 (含金氏菌属 Kingella)",
     CLSI表: "CLSI M45 · Table 9",
     来源: "CLSI M45 (3rd ed., 2018)",
-    菌种: ["kingella-kingae"],
+    菌种: ["kingella-kingae", "eikenella-corrodens", "aggregatibacter-actinomycetemcomitans"],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "β-内酰胺酶阳性者对青霉素/氨苄/阿莫西林耐药,建议β-内酰胺酶检测" },
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", MIC_S: "≤2/1", MIC_I: "—", MIC_R: "≥4/2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
@@ -694,6 +696,21 @@ window.DB.breakpoints = [
     菌种: ["aspergillus-fumigatus"],
     药物: [
       { 药物: "伏立康唑 (Voriconazole)", 简写: "VRC", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "唯一有 CLSI 临床折点的丝状真菌药物组合；仅适用于序列确认的 A. fumigatus sensu stricto，不适用于烟曲霉复合群其他成员。伊曲康唑/泊沙康唑/艾沙康唑目前为 ECV(流行病学界值)而非临床折点。" }
+    ]
+  },
+  {
+    菌组名: "红斑丹毒丝菌 (Erysipelothrix rhusiopathiae)",
+    CLSI表: "CLSI M45 · Table 7",
+    来源: "CLSI M45 (3rd ed., 2018)",
+    菌种: ["erysipelothrix-rhusiopathiae"],
+    药物: [
+      { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.12", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅敏感折点；非敏感结果须确认鉴定与药敏并送参考实验室" },
+      { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", MIC_S: "≤0.25", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "首选，仅敏感折点" },
+      { 药物: "头孢曲松 (Ceftriaxone)", 简写: "CRO", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "头孢噻肟、头孢吡肟折点同 ≤1；仅敏感折点" },
+      { 药物: "亚胺培南 (Imipenem)", 简写: "IPM", MIC_S: "≤0.5", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "美罗培南折点同 ≤0.5；仅敏感折点" },
+      { 药物: "环丙沙星 (Ciprofloxacin)", 简写: "CIP", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "左氧氟沙星 ≤2；仅敏感折点" },
+      { 药物: "红霉素 (Erythromycin)", 简写: "E", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "青霉素过敏者可选" },
+      { 药物: "克林霉素 (Clindamycin)", 简写: "CC", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
     ]
   }
 ];

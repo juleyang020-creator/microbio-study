@@ -981,7 +981,7 @@ window.DB['qc-strains'] = [
       { 药物: 'Oteseconazole', MIC: '0.008–0.06' },
       { 药物: 'Posaconazole', MIC: '0.03–0.25', 抑菌圈: '25–36' },
       { 药物: 'Rezafungin', MIC: '0.25–2', 抑菌圈: '9–16' },
-      { 药物: 'Voriconazole', MIC: '0.016–0.06', 抑菌圈: '28–37' }
+      { 药物: 'Voriconazole', MIC: '0.016–0.12', 抑菌圈: '28–37' }
     ],
     关联: ['candida-parapsilosis']
   },
