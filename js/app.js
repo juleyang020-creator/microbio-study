@@ -1542,7 +1542,93 @@
     fill(document.getElementById('main'), nodes);
   }
 
+  // ===== 工具：标本与实验室流程（MCM 12th ed）=====
+  function isLabWorkflowRoute() { return routeKey() === 'lab-workflow'; }
+  function lwList(items) {
+    return el('ul', { cls: 'lw-list' }, (items || []).map(function (t) { return el('li', { text: t }); }));
+  }
+  function renderLabWorkflow() {
+    setActiveTool('lab-workflow');
+    fill(document.getElementById('sidebar'), [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '标本与实验室流程' }),
+      el('div', { cls: 'cmp-hint', text: '标本→染色→培养→鉴定→药敏→报告的实验室流程教学参考（MCM 第12版）。' })
+    ]) ]);
+    var wf = (window.DB && window.DB.labWorkflow) || null;
+    var nodes = [ el('h2', { cls: 'detail-title', text: '标本与实验室流程' }) ];
+    if (!wf) {
+      nodes.push(el('div', { cls: 'empty', text: '数据未加载。' }));
+      fill(document.getElementById('main'), nodes);
+      return;
+    }
+    nodes.push(el('div', { cls: 'lw-src', text: '来源：' + (wf.来源 || 'MCM 12th ed') }));
+    nodes.push(el('div', { cls: 'lw-note', text: wf.说明 || '' }));
+
+    // ① 教学工作流路径
+    if (wf.教学流程 && wf.教学流程.length) {
+      var pathKids = [];
+      wf.教学流程.forEach(function (n, i) {
+        if (i > 0) { pathKids.push(el('span', { cls: 'lw-path-sep', text: '→' })); }
+        pathKids.push(n.href
+          ? el('a', { cls: 'lw-path-node', href: n.href, text: n.阶段 })
+          : el('span', { cls: 'lw-path-node plain', text: n.阶段 }));
+      });
+      nodes.push(el('div', { cls: 'lw-section' }, [
+        el('div', { cls: 'lw-h', text: '教学工作流' }),
+        el('div', { cls: 'lw-path' }, pathKids)
+      ]));
+    }
+
+    // ② 标本采集、运输与拒收
+    var sm = wf.标本管理 || {};
+    var smKids = [ el('div', { cls: 'lw-h', text: '标本采集、运输与拒收' }) ];
+    if (sm.通则 && sm.通则.length) { smKids.push(el('div', { cls: 'lw-sub', text: '总则' }), lwList(sm.通则)); }
+    if (sm.拒收 && sm.拒收.length) { smKids.push(el('div', { cls: 'lw-sub', text: '拒收标准' }), lwList(sm.拒收)); }
+    if (sm.常见标本 && sm.常见标本.length) {
+      smKids.push(el('div', { cls: 'lw-sub', text: '常见标本采集与转运' }));
+      smKids.push(el('div', { cls: 'lw-table-wrap' }, [ el('table', { cls: 'lw-table' }, [
+        el('thead', {}, [ el('tr', {}, [ el('th', { text: '标本' }), el('th', { text: '采集' }), el('th', { text: '转运' }), el('th', { text: '说明' }) ]) ]),
+        el('tbody', {}, sm.常见标本.map(function (s) {
+          return el('tr', {}, [ el('td', { text: s.name }), el('td', { text: s.collection }), el('td', { text: s.transport }), el('td', { text: s.note || '' }) ]);
+        }))
+      ]) ]));
+    }
+    nodes.push(el('div', { cls: 'lw-section' }, smKids));
+
+    // ③ 阳性血培养处理流程
+    var bc = wf.血培养 || {};
+    var bcKids = [ el('div', { cls: 'lw-h', text: '阳性血培养处理流程' }) ];
+    if (bc.采集 && bc.采集.length) { bcKids.push(el('div', { cls: 'lw-sub', text: '采集关键因素（血量 · 套数 · 时机 · 消毒）' }), lwList(bc.采集)); }
+    if (bc.流程 && bc.流程.length) {
+      bcKids.push(el('div', { cls: 'lw-sub', text: '阳性瓶处理步骤' }));
+      bcKids.push(el('div', { cls: 'lw-flow' }, bc.流程.map(function (st, i) {
+        return el('div', { cls: 'lw-step' }, [
+          el('span', { cls: 'lw-step-n', text: String(i + 1) }),
+          el('div', { cls: 'lw-step-b' }, [ el('div', { cls: 'lw-step-t', text: st.step }), el('div', { cls: 'lw-step-d', text: st.detail || '' }) ])
+        ]);
+      })));
+    }
+    if (bc.污染判断 && bc.污染判断.length) { bcKids.push(el('div', { cls: 'lw-sub', text: '污染菌判断' }), lwList(bc.污染判断)); }
+    nodes.push(el('div', { cls: 'lw-section' }, bcKids));
+
+    // ④ 鉴定方法与局限
+    var idm = wf.鉴定方法 || {};
+    var idKids = [ el('div', { cls: 'lw-h', text: '鉴定方法与局限' }) ];
+    if (idm.方法 && idm.方法.length) {
+      idKids.push(el('div', { cls: 'lw-table-wrap' }, [ el('table', { cls: 'lw-table' }, [
+        el('thead', {}, [ el('tr', {}, [ el('th', { text: '方法' }), el('th', { text: '原理' }), el('th', { text: '适用' }), el('th', { text: '局限' }) ]) ]),
+        el('tbody', {}, idm.方法.map(function (m) {
+          return el('tr', {}, [ el('td', { text: m.name }), el('td', { text: m.principle }), el('td', { text: m.use }), el('td', { text: m.limitation }) ]);
+        }))
+      ]) ]));
+    }
+    if (idm.局限 && idm.局限.length) { idKids.push(el('div', { cls: 'lw-sub', text: '总体局限与常见误鉴定陷阱' }), lwList(idm.局限)); }
+    nodes.push(el('div', { cls: 'lw-section' }, idKids));
+
+    fill(document.getElementById('main'), nodes);
+  }
+
   function renderRoute() {
+    if (isLabWorkflowRoute()) { renderLabWorkflow(); return; }
     if (isAboutRoute()) { renderAbout(); return; }
     if (isCompareRoute()) { renderCompare(); return; }
     if (isCardCompareRoute()) { renderCardCompare(); return; }

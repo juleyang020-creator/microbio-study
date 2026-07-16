@@ -1,7 +1,7 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260702-30';
-var CACHE = CACHE_PREFIX + 'v76';
+var APP_VERSION = '20260702-31';
+var CACHE = CACHE_PREFIX + 'v77';
 function versioned(path) {
   return path + '?v=' + APP_VERSION;
 }
@@ -12,7 +12,7 @@ var CORE = [
   versioned('./data/categories.js'), versioned('./data/microbes.js'), versioned('./data/antibiotics.js'), versioned('./data/resistance.js'),
   versioned('./data/biochem.js'), versioned('./data/differential.js'), versioned('./data/morphology.js'), versioned('./data/treatment.js'),
   versioned('./data/idcards.js'), versioned('./data/cards.js'), versioned('./data/tests.js'), versioned('./data/media.js'), versioned('./data/staining.js'), versioned('./data/structures.js'),
-  versioned('./data/breakpoints.js'), versioned('./data/biochem-tests.js'), versioned('./data/ast-alerts.js'), versioned('./data/qc-strains.js'), versioned('./data/ecv.js'), versioned('./data/intrinsic-resistance.js'), versioned('./data/site-reporting.js'),
+  versioned('./data/breakpoints.js'), versioned('./data/biochem-tests.js'), versioned('./data/ast-alerts.js'), versioned('./data/qc-strains.js'), versioned('./data/ecv.js'), versioned('./data/intrinsic-resistance.js'), versioned('./data/site-reporting.js'), versioned('./data/lab-workflow.js'),
   versioned('./manifest.json'), './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'
 ];
 var IMAGE_ASSETS = [

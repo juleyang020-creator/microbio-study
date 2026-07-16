@@ -26,6 +26,7 @@ require('../data/ecv.js');
 require('../data/qc-strains.js');
 require('../data/intrinsic-resistance.js');
 require('../data/site-reporting.js');
+require('../data/lab-workflow.js');
 require('../data/source-metadata.js');
 require('../data/treatment.js');
 const Core = require('../js/core.js');
@@ -433,6 +434,35 @@ test('判读引擎：全部折点行的边界值判读自洽（S界=S · R界=R 
   assert.ok(zoneChecked > 20, '抑菌圈边界校验覆盖过少：' + zoneChecked);
 });
 
+test('标本与实验室流程模块结构完整（MCM 第12版 · 项 11.1–11.3/11.5）', () => {
+  const wf = global.window.DB.labWorkflow;
+  assert.ok(wf && /MCM|临床微生物学手册/.test(wf.来源 || ''), '缺标本与流程模块或来源');
+  // 11.5 教学工作流路径
+  assert.ok(Array.isArray(wf.教学流程) && wf.教学流程.length >= 6, '缺教学工作流路径');
+  // 11.1 标本采集/运输/拒收
+  const sm = wf.标本管理 || {};
+  assert.ok((sm.通则 || []).length >= 5, '标本总则过少');
+  assert.ok((sm.拒收 || []).length >= 8, '标本拒收标准过少');
+  assert.ok((sm.常见标本 || []).length >= 10, '常见标本条目过少');
+  sm.常见标本.forEach((s) => assert.ok(s.name && s.collection && s.transport, '标本条目字段不全：' + (s.name || '?')));
+  // 拒收要点含关键项（Foley 导尿管、痰上皮细胞、住院>3天粪便）
+  const rej = (sm.拒收 || []).join('　');
+  assert.ok(/Foley|导尿管/.test(rej) && /上皮细胞/.test(rej), '拒收标准缺关键项');
+  // 11.2 阳性血培养流程
+  const bc = wf.血培养 || {};
+  assert.ok((bc.采集 || []).length >= 5, '血培养采集要点过少');
+  assert.ok((bc.流程 || []).length >= 5, '阳性血培养流程步骤过少');
+  bc.流程.forEach((st) => assert.ok(st.step && st.detail, '血培养流程步骤字段不全'));
+  assert.ok(/革兰染色/.test((bc.流程[0] || {}).step || ''), '血培养流程首步应为阳性瓶革兰染色');
+  assert.ok((bc.污染判断 || []).length >= 5, '污染判断要点过少');
+  // 11.3 鉴定方法与局限
+  const idm = wf.鉴定方法 || {};
+  assert.ok((idm.方法 || []).length >= 3, '鉴定方法过少');
+  idm.方法.forEach((m) => assert.ok(m.name && m.principle && m.use && m.limitation, '鉴定方法字段不全：' + (m.name || '?')));
+  assert.ok(/MALDI/i.test(JSON.stringify(idm.方法)), '鉴定方法应含 MALDI-TOF');
+  assert.ok((idm.局限 || []).length >= 5, '鉴定局限要点过少');
+});
+
 test('高致病/选择性生物战剂微生物带生物安全警示（BSL-3 转送提示）', () => {
   const byId = {};
   global.window.DB.microbes.forEach((m) => { byId[m.id] = m; });
@@ -531,7 +561,7 @@ test('版本号在 index.html / sw.js / 来源元数据间保持一致', () => {
 test('新增数据模块进入 sw 预缓存清单且被 index.html 加载', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
   const sw = fs.readFileSync(path.join(__dirname, '..', 'sw.js'), 'utf8');
-  ['data/ecv.js', 'data/qc-strains.js', 'data/intrinsic-resistance.js', 'data/site-reporting.js'].forEach((f) => {
+  ['data/ecv.js', 'data/qc-strains.js', 'data/intrinsic-resistance.js', 'data/site-reporting.js', 'data/lab-workflow.js'].forEach((f) => {
     assert.ok(sw.includes("versioned('./" + f + "')"), 'sw.js 未预缓存：' + f);
     assert.ok(html.includes(f + '?v='), 'index.html 未加载：' + f);
   });
