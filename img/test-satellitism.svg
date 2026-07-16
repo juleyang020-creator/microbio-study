@@ -1,0 +1,22 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>卫星现象试验</title><desc>金黄色葡萄球菌划线供给 V 因子(NAD)，嗜血杆菌沿其两侧呈卫星样生长</desc>
+  <defs>
+    <radialGradient id="plate" cx="0.5" cy="0.42" r="0.62"><stop offset="0" stop-color="#f3eddd"/><stop offset="1" stop-color="#e4dcc4"/></radialGradient>
+  </defs>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">卫星现象试验</text>
+  <text x="240" y="49" text-anchor="middle" font-size="11" fill="#565b63">金葡菌供给 V 因子(NAD)，嗜血杆菌沿划线卫星样生长</text>
+  <!-- 平板 -->
+  <circle cx="240" cy="168" r="108" fill="url(#plate)" stroke="#b8ac84" stroke-width="2"/>
+  <!-- 金葡菌中央划线 -->
+  <line x1="240" y1="72" x2="240" y2="264" stroke="#d8b24a" stroke-width="7" stroke-linecap="round"/>
+  <text x="240" y="285" text-anchor="middle" font-size="10.5" fill="#8a7a3a">金黄色葡萄球菌划线</text>
+  <!-- 卫星菌落：近划线大、远划线小 -->
+  <g fill="#cdbf9e" stroke="#a99a72" stroke-width="0.8">
+    <circle cx="212" cy="110" r="5.5"/><circle cx="196" cy="132" r="4.5"/><circle cx="184" cy="158" r="3.6"/><circle cx="180" cy="188" r="2.8"/><circle cx="190" cy="214" r="2.2"/>
+    <circle cx="268" cy="112" r="5.5"/><circle cx="286" cy="134" r="4.5"/><circle cx="298" cy="160" r="3.6"/><circle cx="300" cy="190" r="2.8"/><circle cx="290" cy="216" r="2.2"/>
+    <circle cx="214" cy="150" r="4.8"/><circle cx="266" cy="150" r="4.8"/><circle cx="216" cy="196" r="3.2"/><circle cx="264" cy="196" r="3.2"/>
+  </g>
+  <text x="240" y="160" text-anchor="middle" font-size="10" fill="#7a6f4e">卫星菌落</text>
+  <text x="240" y="176" text-anchor="middle" font-size="9.5" fill="#8a8172">近划线大、远则小</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>肉汤微量稀释法（BMD）</title><desc>抗菌药倍比稀释于 CAMHB，首个抑制生长的最低浓度即 MIC</desc>
+  <defs>
+    <linearGradient id="bmdTurbid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8ccb0"/><stop offset="1" stop-color="#cdbf9e"/></linearGradient>
+    <linearGradient id="bmdClear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbfaf8"/></linearGradient>
+  </defs>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">肉汤微量稀释法（BMD）</text>
+  <text x="240" y="52" text-anchor="middle" font-size="11" fill="#565b63">抗菌药倍比稀释于阳离子调节 MH 肉汤，CLSI 参考 MIC 法</text>
+  <g>
+    <circle cx="70" cy="150" r="20" fill="url(#bmdTurbid)" stroke="#b0a47c" stroke-width="1.5"/>
+    <circle cx="118" cy="150" r="20" fill="url(#bmdTurbid)" stroke="#b0a47c" stroke-width="1.5"/>
+    <circle cx="166" cy="150" r="20" fill="#d6cbb0" stroke="#b0a47c" stroke-width="1.5"/>
+    <circle cx="214" cy="150" r="20" fill="#e6dcc6" stroke="#bcae8f" stroke-width="1.5"/>
+    <circle cx="262" cy="150" r="20" fill="url(#bmdClear)" stroke="#cbc1a8" stroke-width="1.5"/>
+    <circle cx="310" cy="150" r="20" fill="url(#bmdClear)" stroke="#cbc1a8" stroke-width="1.5"/>
+    <circle cx="358" cy="150" r="20" fill="url(#bmdClear)" stroke="#cbc1a8" stroke-width="1.5"/>
+    <circle cx="406" cy="150" r="20" fill="url(#bmdClear)" stroke="#cbc1a8" stroke-width="1.5"/>
+  </g>
+  <g font-size="11" fill="#565b63" text-anchor="middle">
+    <text x="70" y="186">0.5</text><text x="118" y="186">1</text><text x="166" y="186">2</text><text x="214" y="186">4</text>
+    <text x="262" y="186">8</text><text x="310" y="186">16</text><text x="358" y="186">32</text><text x="406" y="186">64</text>
+  </g>
+  <text x="240" y="204" text-anchor="middle" font-size="11" fill="#565b63">药物浓度 µg/mL（浊 = 生长，清 = 抑制）</text>
+  <line x1="262" y1="114" x2="262" y2="128" stroke="#5a80b0" stroke-width="1.5"/>
+  <polygon points="262,129 257.5,119 266.5,119" fill="#5a80b0"/>
+  <text x="262" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MIC = 8</text>
+  <text x="240" y="248" text-anchor="middle" font-size="12.5" fill="#565b63">首个无肉眼可见生长的孔浓度 = MIC</text>
+  <text x="240" y="272" text-anchor="middle" font-size="11" fill="#565b63">与折点比对判 S / I / R；黏菌素等仅此法可靠</text>
+</svg>
