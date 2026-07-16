@@ -326,6 +326,36 @@ test('judgeMIC：稳健处理 > 与 < 折点算子（不止 ≥/≤）', () => {
   assert.strictEqual(View.judgeMIC(1, '<1', '1', '≥2').result, 'I');
 });
 
+test('判读引擎：严重度随剂量单调（MIC 升不回退 R→S；抑菌圈相反）', () => {
+  var rank = { S: 0, SDD: 1, I: 1, NS: 2, R: 3 };
+  var micSpecs = [
+    ['≤2', '4 (SDD)', '≥8'], ['≤0.25', '0.5', '≥1'], ['≤0.12', '0.25–0.5', '≥1'],
+    ['—', '≤2', '≥4'], ['≤0.25', '—', '—'], ['≤500', '—', '>500'], ['<1', '1', '≥2'],
+    ['—', '≤32 (SDD)', '≥64']
+  ];
+  var vals = [0.008, 0.03, 0.12, 0.25, 0.5, 1, 2, 4, 8, 16, 32, 64, 128, 256, 500, 1000];
+  micSpecs.forEach(function (sp) {
+    var prev = -1;
+    vals.forEach(function (v) {
+      var r = View.judgeMIC(v, sp[0], sp[1], sp[2]).result;
+      if (rank[r] == null) { return; }
+      assert.ok(rank[r] >= prev, 'MIC 单调性破坏 spec=' + sp.join('/') + ' @' + v + ' → ' + r);
+      prev = rank[r];
+    });
+  });
+  var zoneSpecs = [['≥17', '15–16', '≤14'], ['≥17', '14–16 (SDD)', '≤13'], ['≥15', '13–14', '≤12']];
+  var zones = [6, 8, 10, 12, 13, 14, 15, 16, 17, 18, 20, 25, 30];
+  zoneSpecs.forEach(function (sp) {
+    var prev = 99;
+    zones.forEach(function (z) {
+      var r = View.judgeZone(z, sp[0], sp[1], sp[2]).result;
+      if (rank[r] == null) { return; }
+      assert.ok(rank[r] <= prev, '抑菌圈单调性破坏 spec=' + sp.join('/') + ' @' + z + ' → ' + r);
+      prev = rank[r];
+    });
+  });
+});
+
 test('judgeZone：纸片抑菌圈判读（方向相反，圈越大越敏感）', () => {
   // 卡泊芬净对白念珠菌：S≥17 / I 15–16 / R≤14（M27M44S Table 5）
   assert.strictEqual(View.judgeZone(20, '≥17', '15–16', '≤14').result, 'S');
