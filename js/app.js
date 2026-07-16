@@ -2,39 +2,45 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260702-21';
+  var APP_VERSION = window.APP_VERSION || '20260702-22';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
-  // CLSI M100 报告分组（Table 1 抗菌药物检测与报告分组）
+  // CLSI M100 Ed36 报告分层（Table 1A–1J：Tier 1–4 + 仅尿路）
   var BP_TIER_LABELS = {
-    A: '常规首选检测并报告',
-    B: '主要药物 · 选择性报告',
-    C: '补充/替代 · 选择性报告',
-    U: '仅尿路分离株',
-    O: '其他（有折点，通常不常规报告）'
+    '1': 'Tier 1 · 常规首选检测并报告',
+    '2': 'Tier 2 · 常规检测，按本机构级联规则报告',
+    '3': 'Tier 3 · 高 MDRO 风险机构常规/按需检测，按级联规则报告',
+    '4': 'Tier 4 · 临床申请或其他层不适用时检测报告'
   };
-  var BP_TIER_ORDER = ['A', 'B', 'C', 'U', 'O'];
+  var BP_TIER_ORDER = ['1', '2', '3', '4'];
   function bpTierBadge(tier) {
     if (!tier || !BP_TIER_LABELS[tier]) { return null; }
-    return el('span', { cls: 'bp-tier bp-tier-' + tier, title: 'CLSI M100 报告分组 ' + tier + '：' + BP_TIER_LABELS[tier], text: tier });
+    return el('span', { cls: 'bp-tier bp-tier-' + tier, title: 'CLSI M100 Ed36 报告分层 ' + BP_TIER_LABELS[tier], text: tier });
   }
-  // 图例：仅列出该菌组中实际出现的分组
+  function bpUrineChip(d) {
+    if (!d || !d.仅尿路) { return null; }
+    return el('span', { cls: 'bp-urine', title: '仅适用于尿路分离株的报告限制', text: '尿' });
+  }
+  // 图例：仅列出该菌组中实际出现的分层
   function bpTierLegend(drugs) {
-    var present = {};
-    (drugs || []).forEach(function (d) { if (d.组别 && BP_TIER_LABELS[d.组别]) { present[d.组别] = 1; } });
+    var present = {}, hasUrine = false;
+    (drugs || []).forEach(function (d) { if (d.组别 && BP_TIER_LABELS[d.组别]) { present[d.组别] = 1; } if (d.仅尿路) { hasUrine = true; } });
     var tiers = BP_TIER_ORDER.filter(function (t) { return present[t]; });
-    if (!tiers.length) { return null; }
-    var kids = [ el('span', { cls: 'bp-legend-lead', text: '报告分组（CLSI M100）：' }) ];
+    if (!tiers.length && !hasUrine) { return null; }
+    var kids = [ el('span', { cls: 'bp-legend-lead', text: '报告分层（CLSI M100 Ed36）：' }) ];
     tiers.forEach(function (t) {
       kids.push(el('span', { cls: 'bp-legend-item' }, [
         el('span', { cls: 'bp-tier bp-tier-' + t, text: t }),
         el('span', { cls: 'bp-legend-txt', text: BP_TIER_LABELS[t] })
       ]));
     });
+    if (hasUrine) {
+      kids.push(el('span', { cls: 'bp-legend-item' }, [ el('span', { cls: 'bp-urine', text: '尿' }), el('span', { cls: 'bp-legend-txt', text: '仅尿路分离株报告' }) ]));
+    }
     return el('div', {}, [
       el('div', { cls: 'bp-legend' }, kids),
-      el('div', { cls: 'bp-legend-note', text: '分组为选择性报告参考：A 类应常规报告，B/C 类通常在对 A 类耐药、深部/重症感染或临床需要时按级联报告。具体须结合本地抗菌谱与用药目录，并以现行版 CLSI 为准。' })
+      el('div', { cls: 'bp-legend-note', text: '分层为选择性报告参考：Tier 1 应常规报告，Tier 2–4 通常在上层耐药、深部/重症感染或临床需要时按机构级联规则报告。本地实验室应结合本机构药物目录与级联报告规则，并以现行版 CLSI 原表为准。' })
     ]);
   }
 
@@ -404,8 +410,8 @@
       var bpBodyRows = bp.药物.map(function (d) {
         var aid = abxIdByDrugText(d.药物);
         var drugCell = aid
-          ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
-          : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
+          ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
+          : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
         return el('tr', {}, [
           drugCell,
           el('td', { cls: 'bp-mic', text: d.MIC }),
@@ -1183,8 +1189,8 @@
     var bodyRows = drugs.map(function (d) {
       var aid = abxIdByDrugText(d.药物);
       var drugCell = aid
-        ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
-        : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
+        ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
+        : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
       return el('tr', {}, [
         drugCell,
         el('td', { cls: 'bp-mic', text: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / ') }),
