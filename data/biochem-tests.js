@@ -29,7 +29,7 @@ window.DB.biochemTests = [
     id: 'xv-factor',
     名称: 'X/V 因子需求试验',
     类别: '生长特性',
-    关联: ['haemophilus-influenzae', 'haemophilus-parainfluenzae', 'aggregatibacter-actinomycetemcomitans'],
+    关联: ['haemophilus-influenzae', 'haemophilus-parainfluenzae'],
     小节: [
       { 标题: '原理', 正文: '嗜血杆菌属为兼性厌氧的革兰阴性苛养菌，生长需要 X 因子和（或）V 因子。X 因子为原卟啉 Ⅸ，是氯化血红素（hemin）生物合成途径中的代谢中间产物，实验室常以结晶氯化血红素/高铁血红素供给；V 因子由烟酰胺腺嘌呤二核苷酸（NAD）或其磷酸盐（NADP）组成。红细胞中富含此二因子，故名“嗜血”。不同菌种对因子需求各异：流感嗜血杆菌、埃及嗜血杆菌、溶血嗜血杆菌须同时具备 X + V 因子才能生长，其余嗜血杆菌仅需其中之一。据菌株对 X、V 因子的不同需求组合，即可对菌种作推测性鉴别。' },
       { 标题: '方法 / 判读', 正文: '取 0.5 麦氏浊度菌悬液，以棉拭子均匀涂布于不含 X/V 因子的培养基（首选胰蛋白酶大豆琼脂 TSA；用血琼脂等含因子培养基易出错）平板，其上贴 X、V、X+V 三种因子纸片（或试纸条），置 5%~7% CO₂、35℃ 孵育 20~24 h。观察菌落生长部位：待检菌仅在含其所需因子的纸片周围生长、远离纸片处不生长（即卫星现象），据此判定所需因子——仅绕 X+V 片生长者需 X+V 因子（如流感嗜血杆菌），绕 V 及 X+V 片生长者需 V 因子（如副流感嗜血杆菌）。操作须避免将 X 因子污染菌液或培养基，否则会把流感嗜血杆菌误判为副流感嗜血杆菌。ThermoFisher 三维平板（嗜血杆菌属 ID II）或四维平板（ID Quad）也可用于该需求检测。' },
@@ -40,7 +40,7 @@ window.DB.biochemTests = [
     id: 'adh-test',
     名称: '精氨酸双水解酶（ADH）试验',
     类别: '氨基酸与蛋白质代谢',
-    关联: ['pseudomonas-aeruginosa', 'burkholderia-pseudomallei', 'burkholderia-cepacia', 'plesiomonas-shigelloides', 'enterobacter-cloacae'],
+    关联: ['pseudomonas-aeruginosa', 'burkholderia-cepacia', 'enterobacter-cloacae'],
     小节: [
       { 标题: '原理', 正文: '精氨酸双水解酶（arginine dihydrolase）系统经水解作用逐步分解 L-精氨酸，脱氨产生氨（NH₃）等碱性产物，使培养基 pH 升高。默勒（Møller）肉汤所含 pH 指示剂随之由黄色转为紫色，即为阳性。本试验与赖氨酸/鸟氨酸脱羧酶试验同属默勒氨基酸分解试验系列，指示剂（溴甲酚紫）与判读方式一致，均以产碱变紫为阳性。' },
       { 标题: '方法 / 判读', 正文: '取浓菌悬液（麦氏浊度 4~5）接种于含 1% L-精氨酸的默勒（Møller）肉汤，接种后以石蜡油（矿物油）覆盖形成封层。35~37℃ 孵育，结果可于 4~48 h 读取（草绿色链球菌等生长缓慢者可延长孵育，不超过 7 天）。阳性：培养液变紫色（产氨碱化）；阴性：保持黄色（仅葡萄糖发酵产酸）。应同时设不含氨基酸的对照管进行比对。' },
@@ -63,7 +63,7 @@ window.DB.biochemTests = [
   // ===== 酶活性检测 =====
   {
     id: 'bio-catalase', 名称: '触酶试验', 类别: '酶活性检测',
-    关联: ["acinetobacter-baumannii","aeromonas-hydrophila","bordetella-pertussis","brucella-melitensis","burkholderia-cepacia","campylobacter-jejuni","corynebacterium-striatum","enterococcus-faecalis","enterococcus-faecium","enterococcus-gallinarum","legionella-pneumophila","moraxella-catarrhalis","neisseria-gonorrhoeae","neisseria-meningitidis","nocardia","staph-aureus","staph-epidermidis","staph-haemolyticus","staph-lugdunensis","staph-saprophyticus","strep-agalactiae","strep-gallolyticus","strep-pneumoniae","strep-pyogenes","strep-viridans"],
+    关联: ['acinetobacter-baumannii', 'bordetella-pertussis', 'brucella-melitensis', 'burkholderia-cepacia', 'corynebacterium-striatum', 'enterococcus-faecalis', 'enterococcus-faecium', 'enterococcus-gallinarum', 'legionella-pneumophila', 'moraxella-catarrhalis', 'neisseria-gonorrhoeae', 'neisseria-meningitidis', 'nocardia', 'staph-aureus', 'staph-epidermidis', 'staph-haemolyticus', 'staph-lugdunensis', 'staph-saprophyticus', 'strep-agalactiae', 'strep-gallolyticus', 'strep-pneumoniae', 'strep-pyogenes', 'strep-viridans'],
     小节: [
       { 标题: '原理', 正文: '触酶（过氧化氢酶）将 H₂O₂ 分解为 H₂O + O₂，产生气泡。几乎所有需氧菌和兼性厌氧菌均有此酶，但链球菌属和肠球菌属缺如。' },
       { 标题: '方法', 正文: '取一洁净玻片，加 1 滴 3% H₂O₂ 于菌落上（或以菌落涂布后加 H₂O₂），观察是否立即产生气泡。' },
@@ -83,7 +83,7 @@ window.DB.biochemTests = [
   },
   {
     id: 'bio-oxidase', 名称: '氧化酶试验', 类别: '酶活性检测',
-    关联: ["acinetobacter-baumannii","aeromonas-hydrophila","bordetella-pertussis","brucella-melitensis","burkholderia-cepacia","campylobacter-jejuni","citrobacter-freundii","citrobacter-koseri","cronobacter-sakazakii","e-coli","enterobacter-cloacae","haemophilus-parainfluenzae","klebsiella-aerogenes","klebsiella-oxytoca","klebsiella-pneumoniae","legionella-pneumophila","moraxella-catarrhalis","morganella-morganii","neisseria-gonorrhoeae","neisseria-meningitidis","proteus-mirabilis","proteus-vulgaris","providencia-stuartii","pseudomonas-aeruginosa","salmonella-enteritidis","salmonella-paratyphi-a","salmonella-typhi","serratia-marcescens","shigella-dysenteriae","shigella-flexneri","stenotrophomonas-maltophilia","vibrio-cholerae","vibrio-parahaemolyticus","vibrio-vulnificus","yersinia-enterocolitica"],
+    关联: ['acinetobacter-baumannii', 'bordetella-pertussis', 'brucella-melitensis', 'burkholderia-cepacia', 'citrobacter-freundii', 'citrobacter-koseri', 'e-coli', 'enterobacter-cloacae', 'haemophilus-parainfluenzae', 'klebsiella-aerogenes', 'klebsiella-oxytoca', 'klebsiella-pneumoniae', 'legionella-pneumophila', 'moraxella-catarrhalis', 'morganella-morganii', 'neisseria-gonorrhoeae', 'neisseria-meningitidis', 'proteus-mirabilis', 'proteus-vulgaris', 'providencia-stuartii', 'pseudomonas-aeruginosa', 'salmonella-enteritidis', 'salmonella-paratyphi-a', 'salmonella-typhi', 'serratia-marcescens', 'shigella-dysenteriae', 'shigella-flexneri', 'stenotrophomonas-maltophilia', 'vibrio-cholerae', 'vibrio-parahaemolyticus', 'vibrio-vulnificus'],
     小节: [
       { 标题: '原理', 正文: '氧化酶（细胞色素 c 氧化酶）在有氧呼吸电子传递链末端将电子传递给 O₂。氧化酶试剂（四甲基对苯二胺）作为人工电子受体，被氧化后呈深紫色。' },
       { 标题: '方法', 正文: '滤纸条法：取 1% 四甲基对苯二胺溶液浸湿的滤纸，用白金环（或木棒/竹棒）取新鲜菌落涂布，10 秒内观察变色。' },
@@ -103,7 +103,7 @@ window.DB.biochemTests = [
   },
   {
     id: 'urease', 名称: '脲酶试验', 类别: '酶活性检测',
-    关联: ["bordetella-pertussis","brucella-melitensis","citrobacter-freundii","e-coli","klebsiella-oxytoca","klebsiella-pneumoniae","morganella-morganii","proteus-mirabilis","proteus-vulgaris","providencia-stuartii","salmonella-typhi","shigella-dysenteriae","yersinia-enterocolitica"],
+    关联: ['bordetella-pertussis', 'brucella-melitensis', 'citrobacter-freundii', 'e-coli', 'klebsiella-oxytoca', 'klebsiella-pneumoniae', 'morganella-morganii', 'proteus-mirabilis', 'proteus-vulgaris', 'providencia-stuartii', 'salmonella-typhi', 'shigella-dysenteriae'],
     小节: [
       { 标题: '原理', 正文: '细菌产生的脲酶将尿素水解为 NH₃ + CO₂，致培养基 pH 升高，酚红指示剂变红（粉红）。' },
       { 标题: '方法', 正文: '接种尿素培养基（Christensen 尿素琼脂或 Stuart 尿素肉汤），35℃ 孵育 24–48 小时。' },
@@ -155,7 +155,7 @@ window.DB.biochemTests = [
   // ===== 碳水化合物代谢 =====
   {
     id: 'glucose-fermentation', 名称: '葡萄糖发酵试验', 类别: '碳水化合物代谢',
-    关联: ["acinetobacter-baumannii","aeromonas-hydrophila","legionella-pneumophila","moraxella-catarrhalis","neisseria-gonorrhoeae","neisseria-meningitidis","vibrio-cholerae","vibrio-parahaemolyticus","vibrio-vulnificus","yersinia-enterocolitica"],
+    关联: ['acinetobacter-baumannii', 'legionella-pneumophila', 'moraxella-catarrhalis', 'neisseria-gonorrhoeae', 'neisseria-meningitidis', 'vibrio-cholerae', 'vibrio-parahaemolyticus', 'vibrio-vulnificus'],
     小节: [
       { 标题: '原理', 正文: '细菌发酵葡萄糖产生酸性产物（混合酸/乳酸），使含糖培养基中的 pH 指示剂（溴甲酚紫/酚红）变色。' },
       { 标题: '方法', 正文: '接种含 1% 葡萄糖的糖发酵管（含 Durham 倒管检测产气），35℃ 孵育 24–48 小时。' },
@@ -195,7 +195,7 @@ window.DB.biochemTests = [
   },
   {
     id: 'vp-test', 名称: 'VP 试验', 类别: '碳水化合物代谢',
-    关联: ["cronobacter-sakazakii","e-coli","enterobacter-cloacae","klebsiella-aerogenes","klebsiella-oxytoca","klebsiella-pneumoniae","serratia-marcescens"],
+    关联: ['e-coli', 'enterobacter-cloacae', 'klebsiella-aerogenes', 'klebsiella-oxytoca', 'klebsiella-pneumoniae', 'serratia-marcescens'],
     小节: [
       { 标题: '原理', 正文: '丁二醇发酵菌将葡萄糖发酵为乙偶姻（3-羟基丁酮），在碱性条件下（加 40% KOH + 5% α-萘酚，Barritt 试剂）被氧化为二乙酰，与胍基反应呈红色。' },
       { 标题: '方法', 正文: '接种 MR-VP 肉汤，35℃ 孵育 48 小时，取 1 mL 加入 Barritt 试剂 A（α-萘酚）和 B（40% KOH），震荡后静置 15–30 分钟。' },
@@ -215,7 +215,7 @@ window.DB.biochemTests = [
   },
   {
     id: 'indole', 名称: '吲哚试验', 类别: '氨基酸与蛋白质代谢',
-    关联: ["aeromonas-hydrophila","citrobacter-freundii","citrobacter-koseri","e-coli","enterobacter-cloacae","klebsiella-aerogenes","klebsiella-oxytoca","klebsiella-pneumoniae","morganella-morganii","proteus-vulgaris","providencia-stuartii","salmonella-enteritidis","salmonella-paratyphi-a","salmonella-typhi","shigella-dysenteriae","shigella-flexneri"],
+    关联: ['citrobacter-freundii', 'citrobacter-koseri', 'e-coli', 'enterobacter-cloacae', 'klebsiella-aerogenes', 'klebsiella-oxytoca', 'klebsiella-pneumoniae', 'morganella-morganii', 'proteus-vulgaris', 'providencia-stuartii', 'salmonella-enteritidis', 'salmonella-paratyphi-a', 'salmonella-typhi', 'shigella-dysenteriae', 'shigella-flexneri'],
     小节: [
       { 标题: '原理', 正文: '细菌产生色氨酸酶，裂解蛋白胨中的色氨酸（Trp）为吲哚（indole）、丙酮酸和 NH₃。加入 Kovacs 试剂（对二甲氨基苯甲醛）后，吲哚与之反应呈红色环（溶于异戊醇层上层）。' },
       { 标题: '方法', 正文: '接种蛋白胨水（1% 胰蛋白胨），35℃ 孵育 24 小时，沿管壁徐徐加入 Kovacs 试剂数滴（约 0.5 mL）。' },
@@ -267,7 +267,7 @@ window.DB.biochemTests = [
   },
   {
     id: 'motility', 名称: '动力试验', 类别: '生长特性',
-    关联: ["acinetobacter-baumannii","burkholderia-cepacia","citrobacter-freundii","citrobacter-koseri","cronobacter-sakazakii","e-coli","enterobacter-cloacae","enterococcus-gallinarum","klebsiella-aerogenes","klebsiella-oxytoca","klebsiella-pneumoniae","morganella-morganii","proteus-mirabilis","proteus-vulgaris","pseudomonas-aeruginosa","salmonella-enteritidis","salmonella-paratyphi-a","salmonella-typhi","serratia-marcescens","shigella-dysenteriae","shigella-flexneri","stenotrophomonas-maltophilia","vibrio-cholerae","vibrio-parahaemolyticus","yersinia-enterocolitica"],
+    关联: ['acinetobacter-baumannii', 'burkholderia-cepacia', 'citrobacter-freundii', 'citrobacter-koseri', 'e-coli', 'enterobacter-cloacae', 'enterococcus-gallinarum', 'klebsiella-aerogenes', 'klebsiella-oxytoca', 'klebsiella-pneumoniae', 'morganella-morganii', 'proteus-mirabilis', 'proteus-vulgaris', 'pseudomonas-aeruginosa', 'salmonella-enteritidis', 'salmonella-paratyphi-a', 'salmonella-typhi', 'serratia-marcescens', 'shigella-dysenteriae', 'shigella-flexneri', 'stenotrophomonas-maltophilia', 'vibrio-cholerae', 'vibrio-parahaemolyticus'],
     小节: [
       { 标题: '原理', 正文: '有鞭毛的细菌可在半固体培养基（0.3–0.5% 琼脂）中游动并扩散生长，使培养基整体浑浊。无动力菌仅沿穿刺线生长。' },
       { 标题: '方法', 正文: '穿刺接种半固体动力培养基（SIM 或不含指示剂的半固体），35℃ 孵育 24 小时。' },
@@ -349,7 +349,7 @@ window.DB.biochemTests = [
   },
   {
     id: 'hippurate', 名称: '马尿酸盐水解试验', 类别: '氨基酸与蛋白质代谢',
-    关联: ["campylobacter-jejuni","strep-agalactiae"],
+    关联: ['strep-agalactiae'],
     小节: [
       { 标题: '原理', 正文: '无乳链球菌产生马尿酸酶，将马尿酸钠水解为苯甲酸 + 甘氨酸。加入茚三酮后，甘氨酸与之反应呈深蓝色。' },
       { 标题: '方法', 正文: '菌落接种于 1% 马尿酸钠溶液，35℃ 孵育 2 小时（或 18–24 小时）；离心取上清，加茚三酮试剂，100℃ 水浴 10–15 分钟。或使用快速水解试验。' },
@@ -371,7 +371,7 @@ window.DB.biochemTests = [
   },
   {
     id: 'pigment', 名称: '色素产生试验', 类别: '生长特性',
-    关联: ["cronobacter-sakazakii","pseudomonas-aeruginosa"],
+    关联: ['pseudomonas-aeruginosa'],
     小节: [
       { 标题: '原理', 正文: '部分细菌产生特征性色素，可直接作为初步鉴别的依据。铜绿假单胞菌产生绿脓菌素（pyocyanin，蓝绿色）和荧光素（pyoverdin，黄绿色荧光），在紫外光下有荧光。黏质沙雷菌产生灵菌红素（prodigiosin，砖红色）。金黄色葡萄球菌产生金黄色类胡萝卜素色素（staphyloxanthin）。' },
       { 标题: '方法', 正文: '接种相应培养基（铜绿假单胞菌：P 琼脂/King A 促进绿脓菌素产生；沙雷菌：营养琼脂 25–30℃ 促灵菌红素），孵育后肉眼及紫外灯（365 nm）观察。' },
