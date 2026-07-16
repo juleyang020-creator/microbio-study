@@ -397,6 +397,15 @@
     };
   }
 
+  // 天然耐药速查里"常见/临床重要"的属排序（越靠前越常见）；未列出的属按数据顺序排其后。
+  var INTRINSIC_PRIORITY = [
+    '埃希菌属', '克雷伯菌属', '肠杆菌属', '假单胞菌属', '葡萄球菌属', '肠球菌属',
+    '不动杆菌属', '变形杆菌属', '窄食单胞菌属', '沙雷菌属', '弧菌属', '嗜血杆菌属',
+    '奈瑟菌属', '链球菌属', '沙门菌属', '志贺菌属', '弯曲菌属', '伯克霍尔德菌属',
+    '柠檬酸杆菌属', '摩根菌属', '普罗威登斯菌属', '耶尔森菌属', '拟杆菌属', '梭菌属',
+    '念珠菌属', '曲霉属', '隐球菌属', '毛霉属', '根霉属'
+  ];
+
   // 天然耐药速查：聚合所有有"天然耐药"字段的微生物，支持按菌名/拉丁名/耐药文本模糊过滤。
   function intrinsicVM(db, filter) {
     var q = (filter || '').trim().toLowerCase();
@@ -415,9 +424,18 @@
         id: m.id, 名称: m.名称, 拉丁名: m.拉丁名 || '', 天然耐药: m.天然耐药
       });
     });
+    // 常见/临床重要的属排前，其余按数据(分类)顺序在后
+    var keys = Object.keys(byCat);
+    var orig = {};
+    keys.forEach(function (k, i) { orig[k] = i; });
+    keys.sort(function (a, b) {
+      var ia = INTRINSIC_PRIORITY.indexOf(a); if (ia < 0) { ia = 1000 + orig[a]; }
+      var ib = INTRINSIC_PRIORITY.indexOf(b); if (ib < 0) { ib = 1000 + orig[b]; }
+      return ia - ib;
+    });
     return {
       count: list.length,
-      groups: Object.keys(byCat).map(function (k) { return { 类别: k, items: byCat[k] }; })
+      groups: keys.map(function (k) { return { 类别: k, items: byCat[k] }; })
     };
   }
 
