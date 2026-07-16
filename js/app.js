@@ -2,7 +2,7 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260702-17';
+  var APP_VERSION = window.APP_VERSION || '20260702-18';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -734,6 +734,23 @@
     var parts = (location.hash || '').replace(/^#\/?/, '').split('/').filter(Boolean);
     return parts.length >= 3 ? { module: parts[1], id: parts[2] } : null;
   }
+  // 关系图选图心：常见菌提前（越靠前越常见），其余微生物按数据顺序，非微生物条目排最后
+  var GRAPH_COMMON = [
+    'staph-aureus', 'e-coli', 'klebsiella-pneumoniae', 'pseudomonas-aeruginosa',
+    'strep-pneumoniae', 'strep-pyogenes', 'enterococcus-faecalis', 'enterococcus-faecium',
+    'acinetobacter-baumannii', 'mycobacterium-tuberculosis', 'haemophilus-influenzae',
+    'neisseria-meningitidis', 'neisseria-gonorrhoeae', 'candida-albicans', 'clostridioides-difficile',
+    'staph-epidermidis', 'strep-agalactiae', 'enterobacter-cloacae', 'proteus-mirabilis',
+    'helicobacter-pylori', 'moraxella-catarrhalis', 'listeria-monocytogenes',
+    'stenotrophomonas-maltophilia', 'salmonella-typhi'
+  ];
+  function graphPickPriority(it) {
+    if (it.module === 'microbes') {
+      var i = GRAPH_COMMON.indexOf(it.id);
+      return i >= 0 ? i : 500;
+    }
+    return 1000;
+  }
   function graphPickItems() {
     var q = graphFilter.trim().toLowerCase();
     var items = [];
@@ -744,6 +761,8 @@
         }
       });
     });
+    items.forEach(function (it, i) { it._o = i; });
+    items.sort(function (a, b) { return graphPickPriority(a) - graphPickPriority(b) || a._o - b._o; });
     return items.slice(0, 200);
   }
   function renderGraphPicker() {
