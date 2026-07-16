@@ -310,6 +310,17 @@
     if (vm.药敏简写) { head.push(el('span', { cls: 'abbr', title: '药敏试验简写', text: '药敏 ' + vm.药敏简写 })); }
     nodes.push(el('div', { cls: 'detail-head' }, head));
     if (vm.拉丁名) { nodes.push(el('div', { cls: 'latin', text: vm.拉丁名 })); }
+    if (vm.生物安全) {
+      var bio = vm.生物安全;
+      nodes.push(el('div', { cls: 'biosafety-alert', role: 'alert' }, [
+        el('div', { cls: 'biosafety-head' }, [
+          el('span', { cls: 'biosafety-icon', text: '⚠' }),
+          el('span', { cls: 'biosafety-title', text: '生物安全警示' }),
+          bio.级别 ? el('span', { cls: 'biosafety-level', text: bio.级别 }) : null
+        ]),
+        el('div', { cls: 'biosafety-body', text: bio.提示 || '' })
+      ]));
+    }
     if (vm.机制图) {
       nodes.push(el('figure', { cls: 'mechanism-fig' }, [
         el('img', { cls: 'mechanism-img', src: imgV(vm.机制图), alt: vm.机制图说明 }),

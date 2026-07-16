@@ -383,6 +383,18 @@ test('来源元数据：折点标准结构化且 M60 标为历史对照（非 20
   assert.ok(Array.isArray(bp.优先顺序) && bp.优先顺序.length >= 4, '折点来源缺优先顺序列表');
 });
 
+test('高致病/选择性生物战剂微生物带生物安全警示（BSL-3 转送提示）', () => {
+  const byId = {};
+  global.window.DB.microbes.forEach((m) => { byId[m.id] = m; });
+  const selectAgents = ['bacillus-anthracis', 'brucella-melitensis', 'yersinia-pestis', 'francisella-tularensis', 'burkholderia-pseudomallei', 'coccidioides-immitis'];
+  selectAgents.forEach((id) => {
+    const m = byId[id];
+    assert.ok(m, '缺微生物：' + id);
+    assert.ok(m.生物安全 && m.生物安全.级别 && m.生物安全.提示, id + ' 缺生物安全警示（级别/提示）');
+    assert.ok(/BSL|生物安全柜|BSC|LRN|转送|通知/.test(m.生物安全.提示), id + ' 生物安全提示应含防护/转送要点');
+  });
+});
+
 test('折点数据中每组均有菌种和药物', () => {
   (global.window.DB.breakpoints || []).forEach((group) => {
     assert.ok(group.菌组名 && group.菌组名.length, '折点组缺少菌组名');
