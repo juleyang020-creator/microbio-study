@@ -31,7 +31,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '血琼脂加热（80℃左右）使红细胞裂解，释放出 X 因子（高铁血红素）与 V 因子（NAD），颜色呈巧克力色。' },
       { 标题: '用途 / 原理', 正文: '为营养要求高、需 X/V 因子的细菌提供生长条件，常用于嗜血杆菌与奈瑟菌的培养。' }
     ],
-    关联: ['haemophilus-influenzae', 'haemophilus-parainfluenzae', 'neisseria-meningitidis', 'neisseria-gonorrhoeae', 'moraxella-catarrhalis', 'brucella-melitensis', 'pasteurella-multocida']
+    关联: ['haemophilus-influenzae', 'haemophilus-parainfluenzae', 'neisseria-meningitidis', 'neisseria-gonorrhoeae', 'moraxella-catarrhalis', 'brucella-melitensis']
   },
 
   // ===== 选择与鉴别培养基 =====
@@ -125,7 +125,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '高浓度葡萄糖（约 4%）+ 蛋白胨，低 pH（≈5.6），常加氯霉素/放线菌酮抑制细菌与腐生霉菌。' },
       { 标题: '用途 / 原理', 正文: '低 pH 与高糖利于真菌、不利于多数细菌，是酵母菌与丝状真菌的通用分离培养基。' }
     ],
-    关联: ['candida-albicans', 'candida-glabrata', 'candida-tropicalis', 'candida-krusei', 'candida-parapsilosis', 'candida-auris', 'cryptococcus-neoformans', 'aspergillus-fumigatus', 'aspergillus-flavus', 'aspergillus-niger', 'mucor', 'rhizopus', 'fusarium', 'trichophyton-rubrum', 'nocardia']
+    关联: ['candida-albicans', 'candida-glabrata', 'candida-tropicalis', 'candida-krusei', 'candida-parapsilosis', 'candida-auris', 'cryptococcus-neoformans', 'aspergillus-fumigatus', 'aspergillus-flavus', 'aspergillus-niger', 'mucor', 'rhizopus', 'fusarium', 'nocardia']
   },
   {
     id: 'bcye',
@@ -165,7 +165,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '甘露醇 + 中性红 + 头孢磺啶-Irgasan-新生霉素（CIN 选择剂）。' },
       { 标题: '用途 / 原理', 正文: '选择性分离小肠结肠炎耶尔森菌；发酵甘露醇者呈红心透明边的"牛眼"样菌落。' }
     ],
-    关联: ['yersinia-enterocolitica']
+    关联: []
   },
   {
     id: 'ashdown',
@@ -175,7 +175,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '甘油 + 结晶紫 + 中性红 + 庆大霉素（选择）。' },
       { 标题: '用途 / 原理', 正文: '类鼻疽伯克霍尔德菌的选择性培养；菌落干燥、皱褶，呈"矢车菊/奶油糖"样并吸附结晶紫变深。' }
     ],
-    关联: ['burkholderia-pseudomallei']
+    关联: []
   },
   {
     id: 'anaerobic-blood-agar',
@@ -185,7 +185,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '强化血琼脂 + 维生素 K₁ 与氯化血红素（厌氧菌生长所需），于厌氧环境培养。' },
       { 标题: '用途 / 原理', 正文: '分离专性厌氧菌（如梭菌、拟杆菌）；需去除氧气并补充其特殊生长因子。' }
     ],
-    关联: ['clostridium-perfringens', 'clostridioides-difficile', 'clostridium-tetani', 'clostridium-botulinum', 'fusobacterium-necrophorum', 'parvimonas-micra', 'finegoldia-magna', 'eggerthella-lenta', 'veillonella-parvula', 'clostridium-septicum']
+    关联: ['clostridium-perfringens', 'clostridioides-difficile', 'clostridium-tetani', 'clostridium-botulinum', 'veillonella-parvula', 'clostridium-septicum']
   },
   {
     id: 'mh-agar',

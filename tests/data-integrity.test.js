@@ -27,6 +27,7 @@ require('../data/qc-strains.js');
 require('../data/intrinsic-resistance.js');
 require('../data/site-reporting.js');
 require('../data/lab-workflow.js');
+require('../data/microbe-names.js');
 require('../data/source-metadata.js');
 require('../data/treatment.js');
 const Core = require('../js/core.js');
@@ -244,11 +245,6 @@ test('关键折点/质控标准值不回退（CLSI 基准）', () => {
   // M100 Ed36 Table 2B-4 嗜麦芽窄食单胞菌头孢地尔
   const fdc = drug(bp('stenotrophomonas-maltophilia'), /Cefiderocol/);
   assert.ok(fdc && fdc.MIC_S === '≤1' && fdc.抑菌圈_S === '≥17', '嗜麦芽头孢地尔折点缺失/错误');
-  // HACEK 组含 Eikenella/Aggregatibacter
-  const hacek = (global.window.DB.breakpoints || []).find((g) => /HACEK/.test(g.菌组名));
-  assert.ok(hacek && hacek.菌种.indexOf('eikenella-corrodens') !== -1 && hacek.菌种.indexOf('aggregatibacter-actinomycetemcomitans') !== -1, 'HACEK 组未含 Eikenella/Aggregatibacter');
-  // 红斑丹毒丝菌 M45 Table 7 组存在
-  assert.ok(bp('erysipelothrix-rhusiopathiae'), '红斑丹毒丝菌缺 M45 折点组');
   // M27M44S Table 3 质控：C. parapsilosis ATCC 22019 伏立康唑 24h = 0.016–0.12
   const qc = (global.window.DB['qc-strains'] || []).find((s) => /22019/.test(s.英文 || ''));
   const qv = qc && (qc.质控范围 || []).find((d) => /Voriconazole/.test(d.药物));
@@ -274,13 +270,6 @@ test('关键折点/质控标准值不回退（CLSI 基准）', () => {
     assert.ok(d, id + ' 缺瑞扎芬净行');
     assert.strictEqual(d.MIC_S, s, id + ' 瑞扎芬净 S 折点错误');
     assert.strictEqual(d.MIC_R, '—', id + ' 瑞扎芬净不应有 R 折点（仅敏感）');
-  });
-  // M27M44S Table 1 季也蒙念珠菌折点组（阿尼芬净/卡泊芬净/米卡芬净 ≤2/4/≥8）
-  const guil = bp('candida-guilliermondii');
-  assert.ok(guil, '缺季也蒙念珠菌折点组');
-  [/Anidulafungin/, /Caspofungin/, /Micafungin/].forEach((re) => {
-    const d = drug(guil, re);
-    assert.ok(d && d.MIC_S === '≤2' && d.MIC_I === '4' && d.MIC_R === '≥8', '季也蒙 ' + re + ' 折点应为 ≤2/4/≥8');
   });
   // M27M44S Table 5 纸片抑菌圈（卡泊芬净对 C. albicans ≥17/15–16/≤14）
   const casAlb = drug(bp('candida-albicans'), /Caspofungin/);
@@ -434,6 +423,25 @@ test('判读引擎：全部折点行的边界值判读自洽（S界=S · R界=R 
   assert.ok(zoneChecked > 20, '抑菌圈边界校验覆盖过少：' + zoneChecked);
 });
 
+test('菌名速查索引：覆盖全部菌名（含被精简移除的），字段完整', () => {
+  const names = global.window.DB.microbeNames;
+  assert.ok(Array.isArray(names) && names.length >= 220, '菌名速查索引过少：' + (names && names.length));
+  names.forEach((m) => {
+    assert.ok(m.名称 && typeof m.名称 === 'string', '菌名速查条目缺中文名');
+    assert.ok(m.界, '菌名速查条目缺界分组：' + m.名称);
+  });
+  // 名称唯一（无重复）
+  const seen = new Set();
+  names.forEach((m) => { assert.ok(!seen.has(m.名称), '菌名速查重复：' + m.名称); seen.add(m.名称); });
+  // 详情模块保留的菌都应在索引中（索引是全集）
+  const idxNames = new Set(names.map((m) => m.名称));
+  global.window.DB.microbes.forEach((mb) => {
+    assert.ok(idxNames.has(mb.名称), '菌名速查缺详情模块中的菌：' + mb.名称);
+  });
+  // 被移除的代表菌仍以名称保留（如空肠弯曲菌、粗球孢子菌）
+  assert.ok(idxNames.has('空肠弯曲菌') && idxNames.has('粗球孢子菌'), '被移除菌未在菌名速查中保留');
+});
+
 test('标本与实验室流程模块结构完整（MCM 第12版 · 项 11.1–11.3/11.5）', () => {
   const wf = global.window.DB.labWorkflow;
   assert.ok(wf && /MCM|临床微生物学手册/.test(wf.来源 || ''), '缺标本与流程模块或来源');
@@ -466,7 +474,7 @@ test('标本与实验室流程模块结构完整（MCM 第12版 · 项 11.1–11
 test('高致病/选择性生物战剂微生物带生物安全警示（BSL-3 转送提示）', () => {
   const byId = {};
   global.window.DB.microbes.forEach((m) => { byId[m.id] = m; });
-  const selectAgents = ['bacillus-anthracis', 'brucella-melitensis', 'yersinia-pestis', 'francisella-tularensis', 'burkholderia-pseudomallei', 'coccidioides-immitis'];
+  const selectAgents = ['bacillus-anthracis', 'brucella-melitensis', 'yersinia-pestis'];
   selectAgents.forEach((id) => {
     const m = byId[id];
     assert.ok(m, '缺微生物：' + id);
@@ -561,7 +569,7 @@ test('版本号在 index.html / sw.js / 来源元数据间保持一致', () => {
 test('新增数据模块进入 sw 预缓存清单且被 index.html 加载', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
   const sw = fs.readFileSync(path.join(__dirname, '..', 'sw.js'), 'utf8');
-  ['data/ecv.js', 'data/qc-strains.js', 'data/intrinsic-resistance.js', 'data/site-reporting.js', 'data/lab-workflow.js'].forEach((f) => {
+  ['data/ecv.js', 'data/qc-strains.js', 'data/intrinsic-resistance.js', 'data/site-reporting.js', 'data/lab-workflow.js', 'data/microbe-names.js'].forEach((f) => {
     assert.ok(sw.includes("versioned('./" + f + "')"), 'sw.js 未预缓存：' + f);
     assert.ok(html.includes(f + '?v='), 'index.html 未加载：' + f);
   });
@@ -581,7 +589,7 @@ test('M100 Ed36 关键变化固定在数据中', () => {
     assert.ok(d && d.MIC_S && d.MIC_S !== '—', '淋病奈瑟菌 ' + n + ' 应有 MIC 折点');
     assert.strictEqual(d.抑菌圈_S, '—', '淋病奈瑟菌 ' + n + ' 纸片折点应已移除（Ed36）');
   });
-  // 流感嗜血杆菌不得误命中 M45 HACEK 组
+  // 流感嗜血杆菌不得误命中任何 HACEK 组（若存在该组）
   const hacek = bps.find((g) => /HACEK/.test(g.菌组名));
-  assert.ok(hacek && (hacek.菌种 || []).indexOf('haemophilus-influenzae') === -1, '流感嗜血杆菌不应落入 HACEK 组');
+  assert.ok(!hacek || (hacek.菌种 || []).indexOf('haemophilus-influenzae') === -1, '流感嗜血杆菌不应落入 HACEK 组');
 });

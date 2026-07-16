@@ -84,18 +84,6 @@ window.DB.ecv = [
     ]
   },
   {
-    组名: '季也蒙念珠菌 · 抗真菌 ECV',
-    来源: 'CLSI M57S 4th ed (2022) · Table 1（酵母·无折点）',
-    注: '以下药物无 CLSI 临床折点，用 ECV(流行病学界值/ECOFF) 区分野生型(WT ≤ECV)与非野生型(NWT >ECV，提示获得性耐药)；ECV 不预测疗效、不等同 S/I/R。',
-    菌种: ['candida-guilliermondii'],
-    药物: [
-      { 药物: '两性霉素B (Amphotericin B)', 简写: 'AMB', ECV: '2', WT: '≤2', NWT: '>2', 备注: '' },
-      { 药物: '氟康唑 (Fluconazole)', 简写: 'FLU', ECV: '8', WT: '≤8', NWT: '>8', 备注: '' },
-      { 药物: '伊曲康唑 (Itraconazole)', 简写: 'ITC', ECV: '2', WT: '≤2', NWT: '>2', 备注: '' },
-      { 药物: '泊沙康唑 (Posaconazole)', 简写: 'POS', ECV: '0.5', WT: '≤0.5', NWT: '>0.5', 备注: '' }
-    ]
-  },
-  {
     组名: '希木龙念珠菌 · 抗真菌 ECV',
     来源: 'CLSI M57S 4th ed (2022) · Table 1（酵母·无折点）',
     注: '以下药物无 CLSI 临床折点，用 ECV(流行病学界值/ECOFF) 区分野生型(WT ≤ECV)与非野生型(NWT >ECV，提示获得性耐药)；ECV 不预测疗效、不等同 S/I/R。',

@@ -121,7 +121,7 @@ window.DB.staining = [
       { 标题: '步骤', 正文: '用透明胶带粘取或挑取菌落少许置于载玻片，滴加 LPCB 染液，加盖玻片后镜检。' },
       { 标题: '临床应用', 正文: '观察菌丝（有隔/无隔）、分支角度、分生孢子头、孢子囊等结构，鉴定霉菌。' }
     ],
-    关联: ['aspergillus-fumigatus', 'mucor', 'rhizopus', 'fusarium', 'trichophyton-rubrum']
+    关联: ['aspergillus-fumigatus', 'mucor', 'rhizopus', 'fusarium']
   },
   {
     id: 'gms',
@@ -143,7 +143,7 @@ window.DB.staining = [
       { 标题: '步骤', 正文: '取皮屑/甲屑/毛发置载玻片，滴加 10% KOH，微加温片刻待背景透明后镜检。' },
       { 标题: '临床应用', 正文: '皮肤、指甲、毛发等浅部真菌感染的快速镜检。' }
     ],
-    关联: ['trichophyton-rubrum', 'candida-albicans']
+    关联: ['candida-albicans']
   },
 
   // ===== 血液与寄生虫染色 =====

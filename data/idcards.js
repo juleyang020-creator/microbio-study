@@ -63,8 +63,7 @@ window.DB.idcards = [
   // ===== 厌氧菌与棒状杆菌 =====
   {
     id: 'id-anc', 名称: 'ANC 厌氧菌及棒状杆菌鉴定卡', 类别: '厌氧菌与棒状杆菌',
-    关联: ['clostridium-perfringens', 'clostridioides-difficile', 'corynebacterium-diphtheriae', 'corynebacterium-striatum', 'listeria-monocytogenes', 'fusobacterium-necrophorum', 'parvimonas-micra', 'finegoldia-magna', 'eggerthella-lenta', 'veillonella-parvula', 'clostridium-septicum',
-      'indole', 'bile-esculin', 'nitrate-reduction'],
+    关联: ['clostridium-perfringens', 'clostridioides-difficile', 'corynebacterium-diphtheriae', 'corynebacterium-striatum', 'listeria-monocytogenes', 'veillonella-parvula', 'clostridium-septicum', 'indole', 'bile-esculin', 'nitrate-reduction'],
     小节: [
       { 标题: '货号 / 测试数', 正文: '21347；64 孔卡，含约 46 项生化反应。20 卡/盒。' },
       { 标题: '适用菌', 正文: '专性厌氧菌（梭菌、拟杆菌、普雷沃菌、消化链球菌等）及部分需氧革兰阳性杆菌（棒状杆菌、李斯特菌等）。' },

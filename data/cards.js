@@ -24,13 +24,13 @@ window.DB.cards = [
   },
   {
     id: 'xn04', 名称: 'XN04', 类别: '革兰阴性药敏卡',
-    关联: ['e-coli', 'klebsiella-pneumoniae', 'pseudomonas-aeruginosa', 'acinetobacter-baumannii', 'aeromonas-hydrophila'],
+    关联: ['e-coli', 'klebsiella-pneumoniae', 'pseudomonas-aeruginosa', 'acinetobacter-baumannii'],
     小节: [ { 标题: '适用', 正文: '革兰阴性杆菌药敏检测。' }, { 标题: '货号', 正文: '410401' } ],
     药物: ['哌拉西林', '替卡西林', '阿莫西林/克拉维酸', '替卡西林/克拉维酸', '头孢呋辛', '头孢噻肟', '头孢泊肟', '头孢唑肟', '头孢噻吩', '氨曲南', '头孢替坦', '美罗培南', '多利培南', '萘啶酸', '诺氟沙星', '莫西沙星', '四环素', '替加环素']
   },
   {
     id: 'n334', 名称: 'N334', 类别: '革兰阴性药敏卡',
-    关联: ['e-coli', 'klebsiella-pneumoniae', 'enterobacter-cloacae', 'pseudomonas-aeruginosa', 'cronobacter-sakazakii'],
+    关联: ['e-coli', 'klebsiella-pneumoniae', 'enterobacter-cloacae', 'pseudomonas-aeruginosa'],
     小节: [ { 标题: '适用', 正文: '革兰阴性杆菌药敏检测（含头孢哌酮/舒巴坦等）。' }, { 标题: '货号', 正文: '418984' } ],
     药物: ['阿莫西林/克拉维酸', '哌拉西林/他唑巴坦', '头孢哌酮/舒巴坦', '头孢呋辛', '头孢他啶', '头孢曲松', '头孢吡肟', '头孢西丁', '厄他培南', '亚胺培南', '阿米卡星', '左氧氟沙星', '替加环素', '复方新诺明', 'ESBL']
   },
@@ -42,7 +42,7 @@ window.DB.cards = [
   },
   {
     id: 'n399', 名称: 'N399', 类别: '革兰阴性药敏卡',
-    关联: ['pseudomonas-aeruginosa', 'klebsiella-pneumoniae', 'e-coli', 'yersinia-enterocolitica'],
+    关联: ['pseudomonas-aeruginosa', 'klebsiella-pneumoniae', 'e-coli'],
     小节: [ { 标题: '适用', 正文: '革兰阴性杆菌药敏检测。' }, { 标题: '货号', 正文: '423701' } ],
     药物: ['哌拉西林/他唑巴坦', '头孢哌酮/舒巴坦', '头孢他啶', '头孢曲松', '头孢吡肟', '氨曲南', '亚胺培南', '美罗培南', '庆大霉素', '左氧氟沙星', '替加环素', '复方新诺明', 'ESBL']
   },

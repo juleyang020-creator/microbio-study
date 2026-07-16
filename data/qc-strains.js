@@ -956,7 +956,7 @@ window.DB['qc-strains'] = [
       { 药物: 'Meropenem', MIC: '0.008–0.03' },
       { 药物: 'Tetracycline', MIC: '0.25–2（48h）｜0.25–1（24h）' }
     ],
-    关联: ['campylobacter-jejuni']
+    关联: []
   },
   {
     id: 'qc-cparapsilosis-22019',
@@ -1155,6 +1155,6 @@ window.DB['qc-strains'] = [
       { 药物: 'Fluconazole', MIC: '0.5–4', 备注: '96 h 参考范围' },
       { 药物: 'Voriconazole', MIC: '0.008–0.06', 备注: '96 h 参考范围' }
     ],
-    关联: ['trichophyton-rubrum']
+    关联: []
   }
 ];

@@ -74,10 +74,6 @@ Core.validateData(appDb, DB.categories || {}).forEach((p) => fail(p));
 });
 
 const newAnaerobes = [
-  'fusobacterium-necrophorum',
-  'parvimonas-micra',
-  'finegoldia-magna',
-  'eggerthella-lenta',
   'veillonella-parvula',
   'clostridium-septicum'
 ];
@@ -112,7 +108,7 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 if (!html.includes('data/source-metadata.js?v=')) {
   fail('index.html 未加载 data/source-metadata.js');
 }
-if (!html.includes("window.APP_VERSION = '20260702-31'")) {
+if (!html.includes("window.APP_VERSION = '20260702-32'")) {
   warn('index.html 的 APP_VERSION 与当前脚本期望不一致');
 }
 
