@@ -1,6 +1,6 @@
 # 知微 · 微生物学习手册
 
-一个**本地、免安装、可离线**的微生物学知识库。**双击 `index.html` 即可在浏览器打开使用**（核心内容无需联网、无需构建；外部参考链接需用户主动点击）。同时是 PWA，可"添加到主屏幕"当 App 用；iOS 套壳代码见 `ios/`。
+一个**本地、免安装、可离线**的微生物学知识库。**双击 `index.html` 即可在浏览器打开使用**（核心内容无需联网、无需构建；外部参考链接需用户主动点击）。同时是 **PWA**：在手机浏览器打开后"添加到主屏幕"即可当原生 App 一样全屏、离线使用（iOS Safari / Android Chrome 均支持）。
 
 > 本软件仅供医学教育与专业人员学习参考，不构成诊断、治疗或用药建议；临床决策必须结合患者情况、本地药敏结果与当前权威指南。
 
@@ -125,20 +125,15 @@ DEEPSEEK_API_KEY=xxx GLM_API_KEY=yyy node tools/review-diagrams.mjs
 ├── data/                   # 全部数据（见上表）
 ├── img/                    # SVG 示意图与分子结构图
 ├── icons/                  # PWA 图标
-├── ios/                    # iOS 套壳 Xcode 工程（WKWebView，可选分发）
 ├── tests/                  # node:test 用例
 ├── tools/                  # 开发期脚本（示意图审校等）
 └── docs/superpowers/       # 设计文档与计划
 ```
 
-### iOS 套壳说明
+### 移动端 / PWA 说明
 
-`ios/Microbio/` 是一个 WKWebView 套壳工程，用 [xcodegen](https://github.com/yonaskolb/XcodeGen) 从 `project.yml` 生成 `.xcodeproj`。web 资源以**蓝色文件夹引用**方式打包（`project.yml` 里 `path: web` + `type: folder`），保留目录结构。
+无需原生 App：本项目就是一个可安装的 PWA。手机浏览器打开线上地址后，通过浏览器菜单「添加到主屏幕」即可获得全屏、离线、带图标的类原生体验。
 
-- `ios/Microbio/web/` 是 web 资源副本（已 `.gitignore`），构建前需把根目录的 `index.html`、`css/`、`js/`、`data/`、`img/`、`icons/`、`manifest.json`、`sw.js` 同步进去。`project.yml` 已配置构建前自动运行 `ios/make-web.sh`；手动同步也可执行：
-  ```bash
-  rsync -a --delete --exclude='.git' --exclude='.DS_Store' \
-    index.html css js data img icons manifest.json sw.js ios/Microbio/web/
-  ```
-- 套壳内通过 `file://` 加载，Service Worker 不会注册（见 `index.html` 末尾的条件判断）；网页资源直接打包进 App，外部参考链接由 Safari 打开。
-- 真正的分发方式见 `SHARING.md`——优先用 PWA 链接，iOS 套壳主要给自己/技术朋友体验原生壳。
+- 移动端已做响应式适配（`css/styles.css` 内的媒体查询）：窄屏下导航折叠、分类栏改为抽屉式（点 ☰ 打开）。
+- 离线由 Service Worker（`sw.js`）提供；更新内容后需升级 `sw.js` 里的缓存版本号，用户下次联网即自动刷新。
+- 分发方式见 `SHARING.md`——优先用 PWA 链接。
