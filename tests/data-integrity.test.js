@@ -461,3 +461,47 @@ test('入口资源带版本参数以避免旧脚本缓存', () => {
   });
   assert.ok(html.includes("updateViaCache: 'none'"), 'Service Worker 注册应绕过脚本缓存');
 });
+
+// 13.2 文档与缓存：版本号跨文件同步
+test('版本号在 index.html / sw.js / 来源元数据间保持一致', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+  const sw = fs.readFileSync(path.join(__dirname, '..', 'sw.js'), 'utf8');
+  const htmlVer = (html.match(/window\.APP_VERSION = '([^']+)'/) || [])[1];
+  const swVer = (sw.match(/var APP_VERSION = '([^']+)'/) || [])[1];
+  const metaVer = ((global.window.DB.sourceMetadata || {}).app || {}).资源版本;
+  assert.ok(htmlVer, 'index.html 缺 APP_VERSION');
+  assert.strictEqual(swVer, htmlVer, 'sw.js APP_VERSION 应与 index.html 一致（否则预缓存 URL 版本不匹配）');
+  assert.strictEqual(metaVer, htmlVer, '来源元数据 资源版本 应与 index.html APP_VERSION 一致');
+  // 入口页所有带版本的资源均用同一版本号
+  const stray = (html.match(/\?v=20260702-\d+/g) || []).filter((s) => s !== '?v=' + htmlVer);
+  assert.strictEqual(stray.length, 0, 'index.html 存在版本号不一致的资源引用：' + stray.join(', '));
+});
+
+// 13.2 文档与缓存：新增数据文件须进入离线缓存清单并被入口页加载
+test('新增数据模块进入 sw 预缓存清单且被 index.html 加载', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+  const sw = fs.readFileSync(path.join(__dirname, '..', 'sw.js'), 'utf8');
+  ['data/ecv.js', 'data/qc-strains.js', 'data/intrinsic-resistance.js', 'data/site-reporting.js'].forEach((f) => {
+    assert.ok(sw.includes("versioned('./" + f + "')"), 'sw.js 未预缓存：' + f);
+    assert.ok(html.includes(f + '?v='), 'index.html 未加载：' + f);
+  });
+});
+
+// 13.2 M100 Ed36 关键变化（数据基准）
+test('M100 Ed36 关键变化固定在数据中', () => {
+  const bps = global.window.DB.breakpoints || [];
+  const grp = (id) => bps.find((g) => (g.菌种 || []).indexOf(id) !== -1);
+  const drug = (g, re) => (g.药物 || []).find((d) => re.test(d.药物));
+  // 肠杆菌目存在氨曲南/阿维巴坦
+  assert.ok(drug(grp('e-coli'), /Aztreonam.?[–/-].?Avibactam|氨曲南\/阿维巴坦|Aztreonam.*Avibactam/), '肠杆菌目缺氨曲南/阿维巴坦');
+  // 淋病奈瑟菌头孢克肟/头孢曲松：MIC 判读、纸片折点已暂时移除
+  const gc = grp('neisseria-gonorrhoeae');
+  ['Cefixime', 'Ceftriaxone'].forEach((n) => {
+    const d = drug(gc, new RegExp(n));
+    assert.ok(d && d.MIC_S && d.MIC_S !== '—', '淋病奈瑟菌 ' + n + ' 应有 MIC 折点');
+    assert.strictEqual(d.抑菌圈_S, '—', '淋病奈瑟菌 ' + n + ' 纸片折点应已移除（Ed36）');
+  });
+  // 流感嗜血杆菌不得误命中 M45 HACEK 组
+  const hacek = bps.find((g) => /HACEK/.test(g.菌组名));
+  assert.ok(hacek && (hacek.菌种 || []).indexOf('haemophilus-influenzae') === -1, '流感嗜血杆菌不应落入 HACEK 组');
+});

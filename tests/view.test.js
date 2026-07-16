@@ -305,3 +305,11 @@ test('judgeMIC：黏菌素仅 I≤2 / R≥4 时正常判读，且不误判为 SD
   assert.strictEqual(View.judgeMIC(1, '—', '≤2', '≥4').result, 'I');
   assert.strictEqual(View.judgeMIC(4, '—', '≤2', '≥4').result, 'R');
 });
+
+test('judgeMIC：瑞扎芬净仅有敏感折点时只判 S、不生成 I/R', () => {
+  // 瑞扎芬净暂定「仅敏感」折点：S≤0.25，无 I/R
+  assert.strictEqual(View.judgeMIC(0.12, '≤0.25', '—', '—').result, 'S');
+  assert.strictEqual(View.judgeMIC(0.25, '≤0.25', '—', '—').result, 'S');
+  // 高于 S 折点但无 R 折点 → 不能判为 R，应回落为“无完整判读”而非臆断
+  assert.notStrictEqual(View.judgeMIC(1, '≤0.25', '—', '—').result, 'R');
+});
