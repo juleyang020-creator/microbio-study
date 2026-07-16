@@ -233,6 +233,22 @@ body {
 .ir-note { color: var(--muted); font-size: 11.5px; max-width: 230px; }
 .ir-table .latin { display: block; color: var(--muted); font-style: italic; font-size: 11px; }
 
+/* 念珠菌标本部位报告限制（M27M44S App A）参考面板 */
+.sr-section { margin: 14px 0 6px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--line-2); }
+.sr-section-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.sr-section-title { font-weight: 700; font-size: 14px; color: var(--ink); }
+.sr-section-src { color: var(--muted); font-size: 11.5px; }
+.sr-legend { color: var(--ink-soft); font-size: 12px; margin: 5px 0 8px; line-height: 1.55; }
+.sr-block { margin: 10px 0 4px; }
+.sr-block-title { font-weight: 600; font-size: 13px; color: var(--ink-soft); margin-bottom: 4px; }
+.sr-table-wrap { overflow-x: auto; }
+.sr-table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 12.5px; background: var(--bg); }
+.sr-table th, .sr-table td { border: 1px solid var(--line); padding: 5px 8px; text-align: left; vertical-align: top; }
+.sr-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; white-space: nowrap; }
+.sr-table td.sr-site { white-space: nowrap; font-weight: 600; color: var(--ink-soft); }
+.sr-table td.sr-report { color: var(--ink); }
+.sr-table td.sr-note { color: var(--muted); font-size: 11.5px; }
+
 /* 参考链接 */
 .refs { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
 .ref-link { font-size: 12.5px; padding: 3px 10px; border-radius: 4px; text-decoration: none; background: var(--surface); color: var(--accent); border: 1px solid var(--line); }
