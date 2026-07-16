@@ -1136,6 +1136,38 @@
     fill(document.getElementById('sidebar'), sbNodes);
     renderBreakpointsMain();
   }
+  // 念珠菌标本部位报告限制（M27M44S App A）——仅当查询结果含抗真菌(念珠菌)组时展示
+  function bpSiteReportingNodes(shownGroups) {
+    var data = (window.DB && window.DB.siteReporting) || null;
+    if (!data) { return []; }
+    var hasAntifungal = (shownGroups || []).some(function (g) {
+      return /M27M44S/.test(g.来源 || '') || /M27M44S/.test(g.CLSI表 || '') || /念珠菌|隐球菌/.test(g.菌组名 || '');
+    });
+    if (!hasAntifungal) { return []; }
+    var blocks = (data.分组 || []).map(function (grp) {
+      var rows = (grp.规则 || []).map(function (r) {
+        return el('tr', {}, [
+          el('td', { cls: 'sr-site', text: r.部位 }),
+          el('td', { cls: 'sr-report', text: r.报告 }),
+          el('td', { cls: 'sr-note', text: r.说明 || '' })
+        ]);
+      });
+      return el('div', { cls: 'sr-block' }, [
+        el('div', { cls: 'sr-block-title', text: grp.药类 }),
+        el('div', { cls: 'sr-table-wrap' }, [el('table', { cls: 'sr-table' }, [
+          el('thead', {}, [el('tr', {}, [el('th', { text: '标本部位' }), el('th', { text: '报告规则' }), el('th', { text: '说明' })])]),
+          el('tbody', {}, rows)
+        ])])
+      ]);
+    });
+    return [el('div', { cls: 'sr-section' }, [
+      el('div', { cls: 'sr-section-head' }, [
+        el('span', { cls: 'sr-section-title', text: '念珠菌标本部位报告限制' }),
+        el('span', { cls: 'sr-section-src', text: data.来源 })
+      ]),
+      el('div', { cls: 'sr-legend', text: data.说明 })
+    ].concat(blocks))];
+  }
   function renderBreakpointsMain() {
     var nodes = [ el('h2', { cls: 'detail-title', text: bpMode === 'lookup' ? '折点查询' : 'MIC 判读' }) ];
     if (bpMode === 'lookup') {
@@ -1158,6 +1190,7 @@
             buildBpTable(g.药物)
           ]));
         });
+        bpSiteReportingNodes(groups).forEach(function (n) { nodes.push(n); });
       }
     } else {
       // MIC 判读表单

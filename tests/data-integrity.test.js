@@ -25,6 +25,7 @@ require('../data/ast-alerts.js');
 require('../data/ecv.js');
 require('../data/qc-strains.js');
 require('../data/intrinsic-resistance.js');
+require('../data/site-reporting.js');
 require('../data/treatment.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
@@ -326,6 +327,25 @@ test('真菌固有耐药结构化数据符合 CLSI 附录（M27M44S App B / M38M
   ir.分组.forEach((g) => (g.行 || []).forEach((r) => {
     if (r.id) assert.ok(microbeIds[r.id], '固有耐药引用了不存在的微生物 id：' + r.id);
   }));
+});
+
+test('念珠菌标本部位报告数据结构完整（M27M44S App A）', () => {
+  const sr = global.window.DB.siteReporting;
+  assert.ok(sr && Array.isArray(sr.分组) && sr.分组.length >= 3, '缺念珠菌标本部位报告数据');
+  const azole = sr.分组.find((g) => /唑类|Azole/.test(g.药类));
+  const echino = sr.分组.find((g) => /棘白菌素|Echinocandin/.test(g.药类));
+  assert.ok(azole && echino, '缺唑类或棘白菌素分组');
+  // 唑类：尿液仅报氟康唑
+  const azUrine = (azole.规则 || []).find((r) => /尿/.test(r.部位));
+  assert.ok(azUrine && /氟康唑/.test(azUrine.报告), '唑类尿液应仅报告氟康唑');
+  // 棘白菌素：尿液不应常规报告
+  const ecUrine = (echino.规则 || []).find((r) => /尿/.test(r.部位));
+  assert.ok(ecUrine && /不应常规报告/.test(ecUrine.报告), '棘白菌素尿液应不常规报告');
+  // 每条规则字段完整
+  sr.分组.forEach((g) => {
+    assert.ok(g.药类 && (g.规则 || []).length > 0, '标本部位分组 “' + (g.药类 || '?') + '” 规则为空');
+    g.规则.forEach((r) => assert.ok(r.部位 && r.报告, '标本部位规则缺部位/报告字段'));
+  });
 });
 
 test('折点数据中每组均有菌种和药物', () => {
