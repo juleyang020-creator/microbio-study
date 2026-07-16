@@ -26,6 +26,7 @@ require('../data/ecv.js');
 require('../data/qc-strains.js');
 require('../data/intrinsic-resistance.js');
 require('../data/site-reporting.js');
+require('../data/source-metadata.js');
 require('../data/treatment.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
@@ -364,6 +365,22 @@ test('质控菌株结构化字段：MEC 终点与 QC/Reference 用途（M27M44S 
   // 常规酵母 QC 株默认 QC 用途且带方法字段
   const cpara = qcById('qc-cparapsilosis-22019');
   assert.ok(cpara && (cpara.质控用途 || 'QC') === 'QC' && cpara.质控孵育, '近平滑念珠菌应为 QC 且带孵育字段');
+});
+
+test('来源元数据：折点标准结构化且 M60 标为历史对照（非 2022 Ed3）', () => {
+  const meta = global.window.DB.sourceMetadata || {};
+  const bp = meta.breakpoints || {};
+  assert.ok(bp.标准 && bp.标准.细菌 && bp.标准.酵母 && bp.标准.丝状真菌, '折点来源缺细菌/酵母/丝状真菌结构化标准');
+  const m100 = bp.标准.细菌.find((d) => d.文件 === 'CLSI M100');
+  assert.ok(m100 && m100.版次 === 36 && m100.年份 === 2026, 'M100 应为 Ed36 (2026)');
+  const m27 = bp.标准.酵母.find((d) => d.文件 === 'CLSI M27M44S');
+  assert.ok(m27 && m27.版次 === 3 && m27.年份 === 2022, 'M27M44S 应为 Ed3 (2022)');
+  const m38 = bp.标准.丝状真菌.find((d) => d.文件 === 'CLSI M38M51S');
+  assert.ok(m38 && m38.版次 === 3 && m38.年份 === 2022, 'M38M51S 应为 Ed3 (2022)');
+  const m60 = bp.标准.酵母.find((d) => d.文件 === 'CLSI M60');
+  assert.ok(m60 && m60.状态 && /取代|历史|superseded/i.test(m60.状态), 'M60 应标注为已被取代/历史对照');
+  assert.ok(!(m60.版次 === 3 || m60.年份 === 2022), 'M60 不应标为 2022 年第 3 版');
+  assert.ok(Array.isArray(bp.优先顺序) && bp.优先顺序.length >= 4, '折点来源缺优先顺序列表');
 });
 
 test('折点数据中每组均有菌种和药物', () => {

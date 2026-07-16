@@ -1443,12 +1443,22 @@
   function sourceMetadataLines() {
     var meta = (window.DB && window.DB.sourceMetadata) || {};
     var keys = ['breakpoints', 'treatment', 'taxonomy'];
-    var lines = keys.map(function (key) {
+    var lines = [];
+    keys.forEach(function (key) {
       var item = meta[key] || {};
-      if (!item.口径 && !item.版本 && !item.最近校对日期) { return null; }
+      if (!item.口径 && !item.版本 && !item.最近校对日期) { return; }
       var label = key === 'breakpoints' ? '药敏折点' : (key === 'treatment' ? '治疗要点' : '分类命名');
-      return label + '：' + [item.口径, item.版本, item.最近校对日期].filter(Boolean).join(' · ');
-    }).filter(Boolean);
+      lines.push(label + '：' + [item.口径, item.版本, item.最近校对日期].filter(Boolean).join(' · '));
+      // 折点：展开结构化标准来源（按细菌/酵母/丝状真菌分列，含版次、年份、状态）
+      if (key === 'breakpoints' && item.标准) {
+        Object.keys(item.标准).forEach(function (cat) {
+          var docs = (item.标准[cat] || []).map(function (d) {
+            return d.文件 + ' Ed' + d.版次 + '（' + d.年份 + '）' + (d.状态 ? '，' + d.状态 : '');
+          }).join('；');
+          lines.push('　· ' + cat + '：' + docs);
+        });
+      }
+    });
     return lines.length ? lines : ['内容来源已内置，后续版本会继续细化到条目级来源。'];
   }
 
@@ -1466,7 +1476,7 @@
       card('免责声明', [
         '本软件为微生物学习与速查工具，所载形态、鉴别、生化、药敏折点、治疗要点等内容仅供医学教育与专业人员查询参考，不构成任何诊断、治疗或用药建议。',
         '任何临床决策（含用药选择、剂量、疗程）必须由具备资质的医务人员，结合患者具体情况、本地药敏结果与现行权威指南独立判断。开发者不对依据本软件内容所作决策导致的任何后果负责。',
-        '药敏折点依据 CLSI（M100 / M45 / M60 等）整理，可能随版本更新而变化；请以最新官方标准为准。'
+        '药敏折点依据 CLSI 现行标准整理：细菌 M100 Ed36（2026）与 M45 Ed3（2018），酵母 M27M44S Ed3（2022），丝状真菌 M38M51S Ed3（2022）；M60 Ed2（2020）已被 M27M44S 取代、仅作历史对照。折点可能随版本更新而变化，请以最新官方标准为准。'
       ]),
       card('隐私政策', [
         '本软件为纯本地/离线应用，所有数据内置于程序中。',
