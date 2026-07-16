@@ -1630,13 +1630,19 @@
   // ===== 工具：菌名速查（全部菌名 → 百度百科）=====
   function isMicrobeNamesRoute() { return routeKey() === 'microbe-names'; }
   var mnFilter = '';
+  function mnLetter(lat) { var c = (lat || '').charAt(0).toUpperCase(); return /[A-Z]/.test(c) ? c : '#'; }
   function renderMicrobeNames() {
     setActiveTool('microbe-names');
     var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '搜索中文名 / 拉丁名…', value: mnFilter });
-    search.addEventListener('input', function () { mnFilter = search.value; renderMicrobeNamesMain(); });
+    var mnTimer = null;
+    search.addEventListener('input', function () {
+      mnFilter = search.value;
+      if (mnTimer) { clearTimeout(mnTimer); }
+      mnTimer = setTimeout(function () { renderMicrobeNamesMain(); var s = document.querySelector('.sidebar .cmp-search'); if (s) { s.focus(); } }, 140);
+    });
     fill(document.getElementById('sidebar'), [ el('div', { cls: 'cat-group' }, [
       el('div', { cls: 'cat-group-name', text: '菌名速查' }),
-      el('div', { cls: 'cmp-hint', text: '全部微生物名称索引，点击跳转百度百科；含已从「微生物分类」详情精简移除的菌种。' }),
+      el('div', { cls: 'cmp-hint', text: '微生物名称索引（按拉丁名字母序），点击跳转百度百科；含已从「微生物分类」详情精简移除的菌种。' }),
       search
     ]) ]);
     renderMicrobeNamesMain();
@@ -1644,25 +1650,32 @@
   function renderMicrobeNamesMain() {
     var list = (window.DB && window.DB.microbeNames) || [];
     var q = mnFilter.trim().toLowerCase();
-    var filtered = list.filter(function (m) { return !q || (m.名称 + ' ' + (m.拉丁名 || '')).toLowerCase().indexOf(q) !== -1; });
-    var groups = {};
-    filtered.forEach(function (m) { (groups[m.界] = groups[m.界] || []).push(m); });
+    var filtered = q ? list.filter(function (m) { return (m.名称 + ' ' + (m.拉丁名 || '')).toLowerCase().indexOf(q) !== -1; }) : list;
     var nodes = [
       el('h2', { cls: 'detail-title', text: '菌名速查' }),
-      el('div', { cls: 'lw-note', text: '全部 ' + list.length + ' 种微生物名称（中文 + 拉丁）索引，点击任一菌名跳转百度百科；含已从「微生物分类」详情模块精简移除的菌种。' }),
-      el('div', { cls: 'cmp-hint', text: '共 ' + filtered.length + ' 条' + (q ? '（已筛选）' : '') })
+      el('div', { cls: 'lw-note', text: '微生物名称索引（中文 + 拉丁，共 ' + list.length + ' 条，按拉丁名字母顺序）——点击任一菌名跳转百度百科；含已从「微生物分类」详情模块精简移除的菌种。' })
     ];
-    ['细菌', '真菌', '病毒', '寄生虫', '其他'].forEach(function (jie) {
-      if (!groups[jie]) { return; }
-      nodes.push(el('div', { cls: 'mn-section' }, [
-        el('div', { cls: 'lw-h', text: jie + ' · ' + groups[jie].length }),
-        el('div', { cls: 'mn-grid' }, groups[jie].map(function (m) {
-          return el('a', {
-            cls: 'mn-item', href: 'https://baike.baidu.com/item/' + encodeURIComponent(m.名称),
-            target: '_blank', rel: 'noopener noreferrer', title: '在百度百科查看：' + m.名称
-          }, [ el('span', { cls: 'mn-nm', text: m.名称 }), el('span', { cls: 'mn-lt', text: m.拉丁名 || '' }) ]);
-        }))
-      ]));
+    if (q) {
+      nodes.push(el('div', { cls: 'cmp-hint', text: '共 ' + filtered.length + ' 条（已筛选）' }));
+    } else {
+      var letters = [], seenL = {};
+      filtered.forEach(function (m) { var L = mnLetter(m.拉丁名); if (!seenL[L]) { seenL[L] = true; letters.push(L); } });
+      nodes.push(el('div', { cls: 'mn-az' }, letters.map(function (L) {
+        return el('a', { cls: 'mn-az-l', href: '#/microbe-names', text: L, onClick: function (e) { e.preventDefault(); var t = document.getElementById('mn-' + L); if (t) { t.scrollIntoView({ block: 'start' }); } } });
+      })));
+    }
+    var curL = null, grid = null;
+    filtered.forEach(function (m) {
+      var L = mnLetter(m.拉丁名);
+      if (L !== curL) {
+        curL = L;
+        grid = el('div', { cls: 'mn-grid' });
+        nodes.push(el('div', { cls: 'mn-section', id: 'mn-' + L }, [ el('div', { cls: 'lw-h', text: L }), grid ]));
+      }
+      grid.appendChild(el('a', {
+        cls: 'mn-item', href: 'https://baike.baidu.com/item/' + encodeURIComponent(m.名称),
+        target: '_blank', rel: 'noopener noreferrer', title: '在百度百科查看：' + m.名称
+      }, [ el('span', { cls: 'mn-nm', text: m.名称 }), el('span', { cls: 'mn-lt', text: m.拉丁名 || '' }) ]));
     });
     if (filtered.length === 0) { nodes.push(el('div', { cls: 'empty', text: '没有匹配的菌名。' })); }
     fill(document.getElementById('main'), nodes);

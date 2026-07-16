@@ -104,7 +104,10 @@ body {
 .abbr { font-family: var(--mono); background: var(--accent-weak); color: var(--accent); font-size: 11.5px; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; }
 
 /* 菌名速查（全部菌名 → 百度百科） */
-.mn-section { margin: 8px 0 18px; }
+.mn-az { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 3px; padding: 8px 0; margin-bottom: 6px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.mn-az-l { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 4px; border-radius: 4px; font-size: 12px; font-weight: 700; font-family: var(--mono); color: var(--accent); text-decoration: none; border: 1px solid var(--accent-edge); background: var(--accent-weak); }
+.mn-az-l:hover { background: var(--accent); color: #fff; }
+.mn-section { margin: 8px 0 18px; scroll-margin-top: 44px; }
 .mn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2px 14px; }
 .mn-item { display: flex; align-items: baseline; gap: 8px; padding: 5px 8px; border-radius: 5px; text-decoration: none; color: var(--ink); border: 1px solid transparent; }
 .mn-item:hover { background: var(--accent-weak); border-color: var(--accent-edge); }
