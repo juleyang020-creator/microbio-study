@@ -152,6 +152,28 @@ body.route-mn .detail-title { margin-top: 18px; }
 .lw-path-node.plain { border-color: var(--line); background: var(--line-2); color: var(--ink-soft); }
 .lw-path-sep { color: var(--faint); font-size: 13px; }
 
+/* 生化鉴定 · 结果查菌（填结果 → 倒推候选菌）*/
+.id-form-head { display: flex; align-items: center; justify-content: space-between; max-width: 620px; margin: 6px 0 2px; }
+.id-form { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 18px; max-width: 900px; margin-bottom: 20px; }
+.id-group { break-inside: avoid; }
+.id-group-h { font-weight: 600; font-size: 12px; color: var(--muted); letter-spacing: .5px; margin: 10px 0 3px; }
+.id-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 3px 6px; border-radius: 5px; }
+.id-row.set { background: var(--accent-weak); }
+.id-test { font-size: 13px; color: var(--ink-soft); }
+.id-tri-wrap { display: inline-flex; gap: 2px; flex: 0 0 auto; }
+.id-tri { min-width: 30px; height: 24px; padding: 0 6px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 5px; font-size: 12px; cursor: pointer; font-family: inherit; }
+.id-tri:hover { border-color: var(--accent); }
+.id-tri.pos.sel { background: var(--green); color: #fff; border-color: var(--green); }
+.id-tri.neg.sel { background: var(--rust); color: #fff; border-color: var(--rust); }
+.id-tri.sel:not(.pos):not(.neg) { background: var(--line-2); color: var(--ink-soft); border-color: var(--faint); }
+.identify-cands { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 12px; }
+.identify-cand { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; padding: 5px 11px; border: 1px solid var(--accent-edge); background: var(--accent-weak); border-radius: 16px; }
+.identify-cand:hover { border-color: var(--accent); }
+.identify-cand-nm { font-size: 13px; color: var(--accent); font-weight: 500; }
+.identify-cand-sc { font-size: 11px; color: var(--muted); font-family: var(--mono); }
+.identify-cand.near { background: var(--surface); border-color: var(--line); }
+.identify-cand.near .identify-cand-nm { color: var(--ink-soft); font-weight: 400; }
+
 /* 生物安全警示（选择性生物战剂 / 高致病病原） */
 .biosafety-alert { margin: 4px 0 20px; padding: 12px 14px; border: 1px solid #e6b8a8; border-left: 4px solid #b5482a; border-radius: 8px; background: #fbf1ec; max-width: 700px; }
 .biosafety-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }

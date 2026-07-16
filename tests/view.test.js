@@ -3,6 +3,34 @@ const test = require('node:test');
 const assert = require('node:assert');
 const View = require('../js/view.js');
 
+test('生化反查：项目归一与结果极性解析', () => {
+  assert.strictEqual(View.normBioItem('触酶(过氧化氢酶)'), '触酶');
+  assert.strictEqual(View.normBioItem('H₂S'), 'H2S');
+  assert.strictEqual(View.normBioItem('血浆凝固酶'), '凝固酶');
+  assert.strictEqual(View.bioPolarity('阳性'), '阳性');
+  assert.strictEqual(View.bioPolarity('阴性（发酵葡萄糖产酸不产气）'), '阴性');
+  assert.strictEqual(View.bioPolarity('+'), '阳性');
+  assert.strictEqual(View.bioPolarity('−'), '阴性');
+  assert.strictEqual(View.bioPolarity('迟缓发酵（早期阴性）'), '可变');
+  assert.strictEqual(View.bioPolarity('光产色(photochromogen)'), '其他');
+});
+
+test('生化反查：bioIdentify 一致候选无矛盾、按匹配数排序', () => {
+  const biochem = {
+    a: [{ 项目: '触酶', 结果: '阳性' }, { 项目: '氧化酶', 结果: '阴性' }, { 项目: '凝固酶', 结果: '阳性' }],
+    b: [{ 项目: '触酶', 结果: '阳性' }, { 项目: '氧化酶', 结果: '阴性' }],
+    c: [{ 项目: '触酶(过氧化氢酶)', 结果: '阴性' }, { 项目: '氧化酶', 结果: '阴性' }]
+  };
+  const names = { a: '菌A', b: '菌B', c: '菌C' };
+  const r = View.bioIdentify(biochem, names, { 触酶: '阳性', 氧化酶: '阴性', 凝固酶: '阳性' });
+  const ids = r.consistent.map((x) => x.id);
+  assert.ok(ids.indexOf('a') !== -1 && ids.indexOf('b') !== -1, '触酶+/氧化酶- 应含 a、b');
+  assert.strictEqual(ids.indexOf('c'), -1, '触酶- 的 c 有矛盾，不应进入一致候选');
+  assert.strictEqual(r.consistent[0].id, 'a', '匹配 3 项的 a 应排在匹配 2 项的 b 前');
+  // c 应在部分匹配里（有矛盾但也有匹配氧化酶-）
+  assert.ok(r.near.some((x) => x.id === 'c'), 'c 应在部分匹配（含矛盾）');
+});
+
 test('moduleLabel 返回中文标签', () => {
   assert.strictEqual(View.moduleLabel('microbes'), '微生物');
   assert.strictEqual(View.moduleLabel('antibiotics'), '抗微生物药');
