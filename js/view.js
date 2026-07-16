@@ -538,35 +538,46 @@
 
   // MIC 判读：输入数值 + S/I/R 三段折点字符串，返回 {result, reason}。
   // result ∈ {'S','I','R','SDD','unknown','invalid'}。SDD 视为 I 的剂量依赖子类。
+  // 标准二倍稀释梯度（μg/mL）：把非梯度输入向上归入的目标点
+  var DILUTIONS = [0.008, 0.015, 0.03, 0.06, 0.12, 0.25, 0.5, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
+  function nextDilution(val) {
+    for (var k = 0; k < DILUTIONS.length; k++) { if (val <= DILUTIONS[k] + 1e-9) { return DILUTIONS[k]; } }
+    return null;
+  }
+  // 分类：把数值判为 S / I / SDD / R / unknown。isSDD 表示中间类别实为"剂量依赖性敏感"。
+  function classifyMIC(val, bpS, bpI, bpR, isSDD) {
+    var s = parseBP(bpS), i = parseBP(bpI), r = parseBP(bpR);
+    if (r && r.type === 'ge' && val >= r.val) { return { result: 'R', reason: 'MIC ≥ ' + r.val + '（耐药折点）' }; }
+    if (s && s.type === 'le' && val <= s.val) { return { result: 'S', reason: 'MIC ≤ ' + s.val + '（敏感折点）' }; }
+    if (i) {
+      var midRes = isSDD ? 'SDD' : 'I';
+      var midLabel = isSDD ? '剂量依赖性敏感 SDD' : '中介';
+      if (i.type === 'range' && val >= i.lo && val <= i.hi) { return { result: midRes, reason: 'MIC 在 ' + i.lo + '–' + i.hi + '（' + midLabel + '）' }; }
+      if (i.type === 'value' && val === i.val) { return { result: midRes, reason: 'MIC = ' + i.val + '（' + midLabel + '）' }; }
+      if (i.type === 'le' && val <= i.val) { return { result: midRes, reason: 'MIC ≤ ' + i.val + '（' + midLabel + '）' }; }
+    }
+    if (!s && !r && !(i && i.type === 'le')) { return { result: 'unknown', reason: '该药物无完整 S/I/R 折点，无法判读' }; }
+    return { result: 'unknown', reason: 'MIC 不在任何折点区间内' };
+  }
   function judgeMIC(micInput, bpS, bpI, bpR) {
     var val = parseFloat(micInput);
     if (isNaN(val) || val < 0) { return { result: 'invalid', reason: 'MIC 输入无效（请输入非负数字）' }; }
-    var s = parseBP(bpS), i = parseBP(bpI), r = parseBP(bpR);
-
-    // R：≥ 阈值
-    if (r && r.type === 'ge' && val >= r.val) {
-      return { result: 'R', reason: 'MIC ≥ ' + r.val + '（耐药折点）' };
-    }
-    // S：≤ 阈值
-    if (s && s.type === 'le' && val <= s.val) {
-      return { result: 'S', reason: 'MIC ≤ ' + s.val + '（敏感折点）' };
-    }
-    // I：区间或单值（含 SDD）
-    if (i) {
-      if (i.type === 'range' && val >= i.lo && val <= i.hi) {
-        return { result: 'I', reason: 'MIC 在 ' + i.lo + '–' + i.hi + ' 区间（中介/SDD）' };
-      }
-      if (i.type === 'value' && val === i.val) {
-        return { result: 'I', reason: 'MIC = ' + i.val + '（中介）' };
-      }
-      // 黏菌素等仅 I≤x：val 落在 S 无 / R≥x 之间也算 I
-      if (i.type === 'le' && val <= i.val) {
-        return { result: 'I', reason: 'MIC ≤ ' + i.val + '（中介/剂量依赖）' };
+    var isSDD = /SDD/i.test(String(bpI || ''));
+    var res = classifyMIC(val, bpS, bpI, bpR, isSDD);
+    if (res.result !== 'unknown') { return res; }
+    // 非标准梯度值：按 CLSI 规则向上归入下一较高的二倍稀释点后重判
+    var up = nextDilution(val);
+    if (up != null && Math.abs(up - val) > 1e-9) {
+      var res2 = classifyMIC(up, bpS, bpI, bpR, isSDD);
+      if (res2.result !== 'unknown') {
+        res2.adjusted = true;
+        res2.interpretedValue = up;
+        res2.originalValue = val;
+        res2.reason = '输入 MIC ' + val + ' 非标准二倍稀释点，按 CLSI 向上归入 ' + up + ' μg/mL → ' + res2.reason;
+        return res2;
       }
     }
-    // 折点不完整（如某些药只有 S≤x，无 R≥x）
-    if (!s && !r) { return { result: 'unknown', reason: '该药物无完整 S/I/R 折点，无法判读' }; }
-    return { result: 'unknown', reason: 'MIC 不在任何折点区间内' };
+    return res;
   }
 
   // 折点查询：按菌组名/药物名筛选

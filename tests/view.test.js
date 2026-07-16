@@ -276,3 +276,32 @@ test('breakpointVM 转换折点数据为紧凑视图', () => {
   assert.strictEqual(vm.药物[1].备注, '部分菌种适用');
   assert.strictEqual(View.breakpointVM('nope', bps), null);
 });
+
+test('judgeMIC：SDD 与中介(I)分开判读', () => {
+  // 氟康唑白念珠菌：S≤2 / SDD 4 / R≥8
+  assert.strictEqual(View.judgeMIC(1, '≤2', '4 (SDD)', '≥8').result, 'S');
+  assert.strictEqual(View.judgeMIC(4, '≤2', '4 (SDD)', '≥8').result, 'SDD');
+  assert.strictEqual(View.judgeMIC(8, '≤2', '4 (SDD)', '≥8').result, 'R');
+  // 光滑念珠菌氟康唑：SDD ≤32 / R≥64（le 型 SDD）
+  assert.strictEqual(View.judgeMIC(16, '—', '≤32 (SDD)', '≥64').result, 'SDD');
+  // 普通中介仍为 I（无 SDD 标记）：卡泊芬净白念珠菌 S≤0.25 / I 0.5 / R≥1
+  assert.strictEqual(View.judgeMIC(0.5, '≤0.25', '0.5', '≥1').result, 'I');
+});
+
+test('judgeMIC：非标准梯度值向上归入下一稀释点', () => {
+  var r = View.judgeMIC(3, '≤2', '4 (SDD)', '≥8');
+  assert.strictEqual(r.result, 'SDD');
+  assert.strictEqual(r.adjusted, true);
+  assert.strictEqual(r.interpretedValue, 4);
+  // 12 → 16 → I（S≤8 / I 16 / R≥32）
+  var r2 = View.judgeMIC(12, '≤8', '16', '≥32');
+  assert.strictEqual(r2.result, 'I');
+  assert.strictEqual(r2.adjusted, true);
+  // 0.3 → 0.5 → I（S≤0.25 / I 0.5 / R≥1）
+  assert.strictEqual(View.judgeMIC(0.3, '≤0.25', '0.5', '≥1').result, 'I');
+});
+
+test('judgeMIC：黏菌素仅 I≤2 / R≥4 时正常判读，且不误判为 SDD', () => {
+  assert.strictEqual(View.judgeMIC(1, '—', '≤2', '≥4').result, 'I');
+  assert.strictEqual(View.judgeMIC(4, '—', '≤2', '≥4').result, 'R');
+});

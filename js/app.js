@@ -2,7 +2,7 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260702-20';
+  var APP_VERSION = window.APP_VERSION || '20260702-21';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -1228,11 +1228,15 @@
       return;
     }
     var verdict = View.judgeMIC(bpJudgeMIC, drug.MIC_S, drug.MIC_I, drug.MIC_R);
-    var cls = 'bp-verdict ' + (verdict.result === 'S' ? 'v-s' : (verdict.result === 'R' ? 'v-r' : (verdict.result === 'I' ? 'v-i' : 'v-unknown')));
+    var clsMap = { S: 'v-s', R: 'v-r', SDD: 'v-sdd', I: 'v-i' };
+    var cls = 'bp-verdict ' + (clsMap[verdict.result] || 'v-unknown');
     box.replaceChildren(bpInfo, el('div', { cls: cls }, [
       el('span', { cls: 'bp-verdict-tag', text: verdict.result === 'invalid' ? '无效' : verdict.result }),
       el('span', { cls: 'bp-verdict-reason', text: verdict.reason })
     ]));
+    if (verdict.adjusted) {
+      box.appendChild(el('div', { cls: 'bp-judge-note', text: '⚠️ 输入值非标准二倍稀释点，已向上归入 ' + verdict.interpretedValue + ' μg/mL 判读（未静默修正原始输入）。' }));
+    }
     if (drug.备注) {
       box.appendChild(el('div', { cls: 'bp-judge-note', text: '备注：' + drug.备注 }));
     }
