@@ -213,6 +213,10 @@
       ECV: extras.ecv || null,
       质控范围: entry.质控范围 || null,
       质控来源: entry.质控来源 || '',
+      质控用途: entry.质控用途 || 'QC',
+      质控方法: entry.质控方法 || '',
+      质控培养基: entry.质控培养基 || '',
+      质控孵育: entry.质控孵育 || '',
       关联: (relations || []).map(function (r) {
         return {
           id: r.id,

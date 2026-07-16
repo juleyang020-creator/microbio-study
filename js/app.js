@@ -328,35 +328,48 @@
       });
     }
 
-    // CLSI 可接受质控范围（质控菌株）——逐格转录自 CLSI M100/M45，双人独立转录并比对
+    // CLSI 质控/参考范围（质控菌株）——逐格转录自 CLSI M100/M45/M27M44S/M38M51S，双人独立转录并比对
     if (vm.质控范围 && vm.质控范围.length) {
+      var isReference = /reference|参考/i.test(vm.质控用途 || 'QC');
       var hasMic = vm.质控范围.some(function (r) { return r.MIC; });
       var hasDisk = vm.质控范围.some(function (r) { return r.抑菌圈; });
       var hasNote = vm.质控范围.some(function (r) { return r.备注; });
+      var hasMec = vm.质控范围.some(function (r) { return /MEC/i.test(r.终点 || ''); });
       var qcHead = [ el('th', { text: '抗菌药物' }) ];
-      if (hasMic) { qcHead.push(el('th', { text: 'MIC (μg/mL)' })); }
+      if (hasMic) { qcHead.push(el('th', { text: hasMec ? 'MIC / MEC (μg/mL)' : 'MIC (μg/mL)' })); }
       if (hasDisk) { qcHead.push(el('th', { text: '抑菌圈 (mm)' })); }
       if (hasNote) { qcHead.push(el('th', { text: '备注' })); }
       var qcRows = vm.质控范围.map(function (r) {
         var cells = [ el('td', { cls: 'bp-drug', text: r.药物 }) ];
-        if (hasMic) { cells.push(el('td', { cls: 'bp-mic', text: r.MIC || '—' })); }
+        if (hasMic) {
+          var micCell = el('td', { cls: 'bp-mic' });
+          micCell.appendChild(document.createTextNode(r.MIC || '—'));
+          if (/MEC/i.test(r.终点 || '')) { micCell.appendChild(el('span', { cls: 'qc-endpoint', title: '最低有效浓度（棘白菌素对霉菌的判读终点）', text: 'MEC' })); }
+          cells.push(micCell);
+        }
         if (hasDisk) { cells.push(el('td', { cls: 'bp-disk', text: r.抑菌圈 || '—' })); }
         if (hasNote) { cells.push(el('td', { cls: 'bp-comment', text: r.备注 || '' })); }
         return el('tr', {}, cells);
       });
-      nodes.push(el('div', { cls: 'breakpoints qc-ranges' }, [
-        el('div', { cls: 'bp-head' }, [
-          el('span', { cls: 'bp-title', text: 'CLSI 可接受质控范围' }),
-          el('span', { cls: 'bp-source', text: vm.质控来源 || 'CLSI' })
-        ]),
-        el('div', { cls: 'table-scroll' }, [
-          el('table', { cls: 'bp-table' }, [
-            el('thead', {}, [ el('tr', {}, qcHead) ]),
-            el('tbody', {}, qcRows)
-          ])
-        ]),
-        el('div', { cls: 'bp-legend-note', text: '质控范围为该标准株在规定方法下每次药敏跑批应落入的可接受区间（超出即失控）；须以现行版 CLSI 原表为准，并按你实验室采用的方法/培养基执行。' })
+      var qcHeadNodes = [
+        el('span', { cls: 'bp-title', text: isReference ? 'CLSI 参考范围' : 'CLSI 可接受质控范围' }),
+        el('span', { cls: 'qc-purpose ' + (isReference ? 'qc-ref' : 'qc-qc'), title: isReference ? '参考范围（Reference）' : '日常质控（QC）', text: isReference ? '参考 Reference' : '质控 QC' }),
+        el('span', { cls: 'bp-source', text: vm.质控来源 || 'CLSI' })
+      ];
+      var methodBits = [];
+      if (vm.质控方法) { methodBits.push('方法：' + vm.质控方法); }
+      if (vm.质控培养基) { methodBits.push('培养基：' + vm.质控培养基); }
+      if (vm.质控孵育) { methodBits.push('孵育：' + vm.质控孵育); }
+      var qcChildren = [ el('div', { cls: 'bp-head' }, qcHeadNodes) ];
+      if (methodBits.length) { qcChildren.push(el('div', { cls: 'qc-method', text: methodBits.join('　·　') })); }
+      qcChildren.push(el('div', { cls: 'table-scroll' }, [
+        el('table', { cls: 'bp-table' }, [ el('thead', {}, [ el('tr', {}, qcHead) ]), el('tbody', {}, qcRows) ])
       ]));
+      qcChildren.push(el('div', { cls: 'bp-legend-note', text: isReference
+        ? '参考范围用于评估试验体系与方法学，不等同于每批质控的在控/失控判定；结果超出时应结合试验目的、方法与文件说明分析。须以现行版 CLSI 原表为准。'
+        : '质控范围为该标准株在规定方法下每次药敏跑批应落入的可接受区间（超出即失控）；须以现行版 CLSI 原表为准，并按你实验室采用的方法/培养基执行。' }));
+      if (hasMec) { qcChildren.push(el('div', { cls: 'bp-legend-note', text: 'MEC = 最低有效浓度：棘白菌素类对霉菌以 MEC（而非 MIC）为判读终点。' })); }
+      nodes.push(el('div', { cls: 'breakpoints qc-ranges' }, qcChildren));
     }
 
     if (vm.天然耐药) {
