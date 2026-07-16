@@ -348,6 +348,24 @@ test('念珠菌标本部位报告数据结构完整（M27M44S App A）', () => {
   });
 });
 
+test('质控菌株结构化字段：MEC 终点与 QC/Reference 用途（M27M44S / M38M51S）', () => {
+  const qcById = (id) => (global.window.DB['qc-strains'] || []).find((s) => s.id === id);
+  // 8.2 棘白菌素对霉菌以 MEC 判读——须有 终点:'MEC' 结构化字段
+  const afum = qcById('qc-afumigatus-mya3626');
+  assert.ok(afum, '缺烟曲霉 MYA-3626 质控株');
+  const afumAnid = (afum.质控范围 || []).find((r) => /Anidulafungin/.test(r.药物));
+  assert.ok(afumAnid && afumAnid.终点 === 'MEC', '烟曲霉阿尼芬净应标注 终点=MEC');
+  // 8.3 纯参考株须标注 用途:'Reference'
+  const sced = qcById('qc-sapiospermum-mya3635');
+  assert.ok(sced && /reference/i.test(sced.质控用途 || ''), '赛多孢参考株应标注 用途=Reference');
+  assert.ok(/reference/i.test((qcById('qc-tmentagrophytes-mya4439') || {}).质控用途 || ''), '须癣毛癣菌应标注 Reference');
+  // 8.4 参考株须带结构化方法背景
+  assert.ok(sced.质控方法 && sced.质控培养基 && sced.质控孵育, '赛多孢参考株缺方法/培养基/孵育结构化字段');
+  // 常规酵母 QC 株默认 QC 用途且带方法字段
+  const cpara = qcById('qc-cparapsilosis-22019');
+  assert.ok(cpara && (cpara.质控用途 || 'QC') === 'QC' && cpara.质控孵育, '近平滑念珠菌应为 QC 且带孵育字段');
+});
+
 test('折点数据中每组均有菌种和药物', () => {
   (global.window.DB.breakpoints || []).forEach((group) => {
     assert.ok(group.菌组名 && group.菌组名.length, '折点组缺少菌组名');
