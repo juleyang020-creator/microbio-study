@@ -51,7 +51,7 @@
 | 文件 | 模块 | 条目量 |
 |---|---|---|
 | `data/microbes.js` | 微生物分类 | 227 |
-| `data/antibiotics.js` | 抗微生物药 | 92 |
+| `data/antibiotics.js` | 抗微生物药 | 93 |
 | `data/resistance.js` | 耐药因素 | 22 |
 | `data/idcards.js` | 鉴定卡 | 7 |
 | `data/cards.js` | 药敏卡 | 13 |
@@ -67,7 +67,7 @@
 | `data/biochem.js` | 生化反应结果（用于详情页与对比） | 142 |
 | `data/differential.js` | 相似菌鉴别要点 | 175 |
 | `data/structures.js` | 抗菌药分子结构 SMILES（配套 `img/struct-*.svg`） | 58 |
-| `data/breakpoints.js` | CLSI M100/M45（细菌）· M27M44S/M38M51S（真菌）药敏折点（按菌组） | 40 组 |
+| `data/breakpoints.js` | CLSI M100/M45（细菌）· M27M44S/M38M51S（真菌）药敏折点（按菌组） | 41 组 |
 | `data/ast-alerts.js` | 异常 / 警示药敏结果速查规则 | 18 条 |
 | `data/treatment.js` | 治疗要点（按微生物 id 索引） | 226 |
 | `data/categories.js` | 全部模块的分类树（支持多级） | 9 棵 |
