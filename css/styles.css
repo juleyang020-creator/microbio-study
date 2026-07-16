@@ -104,10 +104,20 @@ body {
 .abbr { font-family: var(--mono); background: var(--accent-weak); color: var(--accent); font-size: 11.5px; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; }
 
 /* 菌名速查（全部菌名 → 百度百科） */
-.mn-az { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 3px; padding: 8px 0; margin-bottom: 6px; background: var(--bg); border-bottom: 1px solid var(--line); }
-.mn-az-l { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 4px; border-radius: 4px; font-size: 12px; font-weight: 700; font-family: var(--mono); color: var(--accent); text-decoration: none; border: 1px solid var(--accent-edge); background: var(--accent-weak); }
+/* 菌名速查路由：去掉正文顶部内边距，让粘性头贴主区顶部吸顶、无缝隙 */
+body.route-mn .main { padding-top: 0; }
+body.route-mn .detail-title { margin-top: 18px; }
+/* 粘性头：搜索 + A–Z（整块吸顶，实心背景，横跨正文左右内边距，滚动时下方内容干净滑过） */
+.mn-head { position: sticky; top: 0; z-index: 6; background: var(--bg); margin: 0 -40px; padding: 10px 40px 10px; border-bottom: 1px solid var(--line); }
+.mn-searchwrap { display: flex; align-items: center; gap: 10px; }
+.mn-search { flex: 1 1 auto; max-width: 460px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 14px; background: var(--surface); color: var(--ink); font-family: inherit; }
+.mn-search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-weak); }
+.mn-count { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+.mn-az { display: flex; flex-wrap: nowrap; gap: 3px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.mn-az::-webkit-scrollbar { display: none; }
+.mn-az-l { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 24px; padding: 0 5px; border-radius: 4px; font-size: 12px; font-weight: 700; font-family: var(--mono); color: var(--accent); text-decoration: none; border: 1px solid var(--accent-edge); background: var(--accent-weak); }
 .mn-az-l:hover { background: var(--accent); color: #fff; }
-.mn-section { margin: 8px 0 18px; scroll-margin-top: 44px; }
+.mn-section { margin: 14px 0 18px; scroll-margin-top: 96px; }
 .mn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2px 14px; }
 .mn-item { display: flex; align-items: baseline; gap: 8px; padding: 5px 8px; border-radius: 5px; text-decoration: none; color: var(--ink); border: 1px solid transparent; }
 .mn-item:hover { background: var(--accent-weak); border-color: var(--accent-edge); }
@@ -546,6 +556,14 @@ body {
   .ast-card { padding: 12px; }
   .ast-card-head { flex-direction: column; gap: 7px; }
   .ast-line { grid-template-columns: 1fr; gap: 1px; margin: 9px 0; }
+  /* 手机端：输入框字号 ≥16px，避免 iOS 聚焦时自动放大页面 */
+  .search, .cmp-search, .mn-search,
+  input[type="search"], input[type="text"], input[type="number"], textarea { font-size: 16px; }
+  /* 菌名速查：搜索移到正文并占满宽度，粘性头与正文内边距对齐 */
+  .mn-head { margin: 0 -16px; padding: 8px 16px; }
+  .mn-search { max-width: none; }
+  .mn-searchwrap { flex-wrap: wrap; gap: 4px 10px; }
+  .mn-section { scroll-margin-top: 104px; }
 }
 
 @media (max-width: 1120px) and (min-width: 761px) {
