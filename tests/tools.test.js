@@ -179,10 +179,15 @@ test('judgeMIC 无效输入', () => {
   assert.strictEqual(View.judgeMIC(-1, '≤1', '2', '≥4').result, 'invalid');
 });
 
-test('judgeMIC 折点不完整返回 unknown', () => {
-  // 某药只有 S≤0.12，I/R 都是 —
-  const r = View.judgeMIC(4, '≤0.12', '—', '—');
-  assert.strictEqual(r.result, 'unknown');
+test('judgeMIC：仅敏感折点时高于折点判为 NS，完全无折点判为 unknown', () => {
+  // 仅设敏感折点 S≤0.12（I/R 均 —）：MIC 4 高于折点 → 非敏感 NS（CLSI nonsusceptible），不判为耐药
+  const ns = View.judgeMIC(4, '≤0.12', '—', '—');
+  assert.strictEqual(ns.result, 'NS');
+  assert.notStrictEqual(ns.result, 'R');
+  // 敏感折点以内仍判 S
+  assert.strictEqual(View.judgeMIC(0.06, '≤0.12', '—', '—').result, 'S');
+  // 三段折点全缺 → 无法判读 unknown
+  assert.strictEqual(View.judgeMIC(4, '—', '—', '—').result, 'unknown');
 });
 
 // ===== 折点查询 =====

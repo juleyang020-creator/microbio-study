@@ -306,10 +306,35 @@ test('judgeMIC：黏菌素仅 I≤2 / R≥4 时正常判读，且不误判为 SD
   assert.strictEqual(View.judgeMIC(4, '—', '≤2', '≥4').result, 'R');
 });
 
-test('judgeMIC：瑞扎芬净仅有敏感折点时只判 S、不生成 I/R', () => {
+test('judgeMIC：瑞扎芬净仅有敏感折点时判 S 或 NS，绝不生成 R', () => {
   // 瑞扎芬净暂定「仅敏感」折点：S≤0.25，无 I/R
   assert.strictEqual(View.judgeMIC(0.12, '≤0.25', '—', '—').result, 'S');
   assert.strictEqual(View.judgeMIC(0.25, '≤0.25', '—', '—').result, 'S');
-  // 高于 S 折点但无 R 折点 → 不能判为 R，应回落为“无完整判读”而非臆断
-  assert.notStrictEqual(View.judgeMIC(1, '≤0.25', '—', '—').result, 'R');
+  // 高于 S 折点但无 R 折点 → 非敏感 NS（CLSI nonsusceptible），绝不臆断为耐药
+  assert.strictEqual(View.judgeMIC(1, '≤0.25', '—', '—').result, 'NS');
+});
+
+test('judgeMIC：稳健处理 > 与 < 折点算子（不止 ≥/≤）', () => {
+  // 高水平庆大霉素 HLAR：S≤500 / R>500 —— 边界 500 判 S（协同），>500 才耐药
+  assert.strictEqual(View.judgeMIC(500, '≤500', '—', '>500').result, 'S');
+  assert.strictEqual(View.judgeMIC(1000, '≤500', '—', '>500').result, 'R');
+  // R 折点为 >1：2>1 → R；0.5 命中中段值
+  assert.strictEqual(View.judgeMIC(2, '≤0.25', '0.5', '>1').result, 'R');
+  assert.strictEqual(View.judgeMIC(0.5, '≤0.25', '0.5', '>1').result, 'I');
+  // S 折点为 <1：0.5<1 → S；边界 1 不 <1，命中中段
+  assert.strictEqual(View.judgeMIC(0.5, '<1', '1', '≥2').result, 'S');
+  assert.strictEqual(View.judgeMIC(1, '<1', '1', '≥2').result, 'I');
+});
+
+test('judgeZone：纸片抑菌圈判读（方向相反，圈越大越敏感）', () => {
+  // 卡泊芬净对白念珠菌：S≥17 / I 15–16 / R≤14（M27M44S Table 5）
+  assert.strictEqual(View.judgeZone(20, '≥17', '15–16', '≤14').result, 'S');
+  assert.strictEqual(View.judgeZone(17, '≥17', '15–16', '≤14').result, 'S');
+  assert.strictEqual(View.judgeZone(15, '≥17', '15–16', '≤14').result, 'I');
+  assert.strictEqual(View.judgeZone(14, '≥17', '15–16', '≤14').result, 'R');
+  assert.strictEqual(View.judgeZone(8, '≥17', '15–16', '≤14').result, 'R');
+  // 氟康唑 SDD 圈段：S≥17 / SDD 14–16 / R≤13
+  assert.strictEqual(View.judgeZone(15, '≥17', '14–16 (SDD)', '≤13').result, 'SDD');
+  // 非法输入
+  assert.strictEqual(View.judgeZone('abc', '≥17', '15–16', '≤14').result, 'invalid');
 });
