@@ -1115,6 +1115,9 @@
   var bpJudgeGroup = '';
   var bpJudgeDrug = '';
   var bpJudgeMIC = '';
+  var bpJudgeMethod = 'mic'; // 'mic' | 'zone'
+  // 某折点药物是否有可判读的纸片抑菌圈折点
+  function drugHasZone(d) { return !!(d && (View.parseBP(d.抑菌圈_S) || View.parseBP(d.抑菌圈_R))); }
   function isBreakpointsRoute() { return routeKey() === 'breakpoints'; }
   function bpGroups() { return (window.DB && window.DB.breakpoints) || []; }
   function judgeableBpGroups() { return View.judgeableBreakpointGroups(bpGroups()); }
@@ -1253,16 +1256,38 @@
           drugSelect.appendChild(opt);
         });
       }
-      drugSelect.addEventListener('change', function () { bpJudgeDrug = drugSelect.value; bpJudgeMIC = ''; renderBreakpointsMain(); });
+      drugSelect.addEventListener('change', function () { bpJudgeDrug = drugSelect.value; bpJudgeMIC = ''; bpJudgeMethod = 'mic'; renderBreakpointsMain(); });
 
-      var micInput = el('input', { cls: 'cmp-search', type: 'number', placeholder: '输入 MIC 值 (μg/mL)', value: bpJudgeMIC, step: '0.01', min: '0', style: 'width:200px;' });
-      micInput.id = 'bp-judge-mic';
-      micInput.addEventListener('input', function () { bpJudgeMIC = micInput.value; renderJudgeResult(); });
+      // 当前所选药物是否支持纸片抑菌圈判读
+      var curDrug = (group && group.药物 || []).filter(function (d) { return d.药物 === bpJudgeDrug; })[0];
+      var zoneAvail = drugHasZone(curDrug);
+      if (bpJudgeMethod === 'zone' && !zoneAvail) { bpJudgeMethod = 'mic'; }
+      var isZone = bpJudgeMethod === 'zone';
+
+      // 方法切换：MIC / 抑菌圈（仅当该药有纸片折点时可选）
+      var methodBtns = el('div', { cls: 'bp-method-toggle' }, [
+        el('button', { cls: 'cmp-add' + (!isZone ? ' sel' : ''), text: 'MIC (μg/mL)', onClick: function () { bpJudgeMethod = 'mic'; bpJudgeMIC = ''; renderBreakpointsMain(); } }),
+        el('button', {
+          cls: 'cmp-add' + (isZone ? ' sel' : '') + (zoneAvail ? '' : ' disabled'),
+          title: zoneAvail ? '按纸片扩散法抑菌圈判读' : '该药物无纸片抑菌圈折点',
+          text: '抑菌圈 (mm)',
+          onClick: function () { if (zoneAvail) { bpJudgeMethod = 'zone'; bpJudgeMIC = ''; renderBreakpointsMain(); } }
+        })
+      ]);
+
+      var valInput = el('input', {
+        cls: 'cmp-search', type: 'number', value: bpJudgeMIC, min: '0', style: 'width:200px;',
+        placeholder: isZone ? '输入抑菌圈直径 (mm)' : '输入 MIC 值 (μg/mL)',
+        step: isZone ? '1' : '0.01'
+      });
+      valInput.id = 'bp-judge-mic';
+      valInput.addEventListener('input', function () { bpJudgeMIC = valInput.value; renderJudgeResult(); });
 
       nodes.push(el('div', { cls: 'bp-judge-form' }, [
         el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '菌组', 'for': 'bp-judge-group' }), groupSelect ]),
         el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '药物', 'for': 'bp-judge-drug' }), drugSelect ]),
-        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: 'MIC', 'for': 'bp-judge-mic' }), micInput ])
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '方法' }), methodBtns ]),
+        el('div', { cls: 'bp-judge-row' }, [ el('label', { text: isZone ? '抑菌圈' : 'MIC', 'for': 'bp-judge-mic' }), valInput ])
       ]));
 
       var resultBox = el('div', { cls: 'bp-judge-result', id: 'bp-judge-result' });
@@ -1314,8 +1339,9 @@
   function renderJudgeResult() {
     var box = document.getElementById('bp-judge-result');
     if (!box) { return; }
+    var isZone = bpJudgeMethod === 'zone';
     if (!bpJudgeGroup || !bpJudgeDrug) {
-      box.replaceChildren(el('div', { cls: 'empty-sm', text: '请选择菌组与药物，并输入 MIC 值。' }));
+      box.replaceChildren(el('div', { cls: 'empty-sm', text: '请选择菌组与药物，并输入' + (isZone ? '抑菌圈直径' : ' MIC 值') + '。' }));
       return;
     }
     var group = judgeableBpGroupByName(bpJudgeGroup);
@@ -1324,20 +1350,24 @@
       box.replaceChildren(el('div', { cls: 'empty-sm', text: '该菌组未找到此药物。' }));
       return;
     }
-    // 显示该药折点
+    // 显示该药折点（按当前方法）
+    var bpS = isZone ? drug.抑菌圈_S : drug.MIC_S;
+    var bpMid = isZone ? drug.抑菌圈_I : drug.MIC_I;
+    var bpR = isZone ? drug.抑菌圈_R : drug.MIC_R;
+    var unit = isZone ? 'mm' : 'μg/mL';
     var bpInfoKids = [
-      el('span', { text: '折点：S ' + (drug.MIC_S || '—') + ' / I ' + (drug.MIC_I || '—') + ' / R ' + (drug.MIC_R || '—') + ' (μg/mL)' })
+      el('span', { text: (isZone ? '抑菌圈折点：S ' : '折点：S ') + (bpS || '—') + ' / I ' + (bpMid || '—') + ' / R ' + (bpR || '—') + ' (' + unit + ')' })
     ];
-    if (/\//.test(String(drug.MIC_S || '') + String(drug.MIC_I || '') + String(drug.MIC_R || ''))) {
+    if (!isZone && /\//.test(String(drug.MIC_S || '') + String(drug.MIC_I || '') + String(drug.MIC_R || ''))) {
       bpInfoKids.push(el('div', { cls: 'bp-judge-note', text: '复方制剂：单一药物、单一折点；斜线后为固定配比的另一成分浓度（非第二折点）。请输入活性成分（斜线前）的 MIC。' }));
     }
     var bpInfo = el('div', { cls: 'bp-judge-bp' }, bpInfoKids);
     if (!bpJudgeMIC || bpJudgeMIC === '') {
-      box.replaceChildren(bpInfo, el('div', { cls: 'empty-sm', text: '输入 MIC 值后自动判读。' }));
+      box.replaceChildren(bpInfo, el('div', { cls: 'empty-sm', text: '输入' + (isZone ? '抑菌圈直径' : ' MIC 值') + '后自动判读。' }));
       return;
     }
-    var verdict = View.judgeMIC(bpJudgeMIC, drug.MIC_S, drug.MIC_I, drug.MIC_R);
-    var clsMap = { S: 'v-s', R: 'v-r', SDD: 'v-sdd', I: 'v-i' };
+    var verdict = isZone ? View.judgeZone(bpJudgeMIC, bpS, bpMid, bpR) : View.judgeMIC(bpJudgeMIC, bpS, bpMid, bpR);
+    var clsMap = { S: 'v-s', R: 'v-r', SDD: 'v-sdd', I: 'v-i', NS: 'v-ns' };
     var cls = 'bp-verdict ' + (clsMap[verdict.result] || 'v-unknown');
     box.replaceChildren(bpInfo, el('div', { cls: cls }, [
       el('span', { cls: 'bp-verdict-tag', text: verdict.result === 'invalid' ? '无效' : verdict.result }),

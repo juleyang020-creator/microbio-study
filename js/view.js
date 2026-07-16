@@ -542,39 +542,71 @@
     return null;
   }
 
-  // MIC 判读：输入数值 + S/I/R 三段折点字符串，返回 {result, reason}。
-  // result ∈ {'S','I','R','SDD','unknown','invalid'}。SDD 视为 I 的剂量依赖子类。
-  // 标准二倍稀释梯度（μg/mL）：把非梯度输入向上归入的目标点
+  // ===== 判读引擎（结构化，CLSI M100 风格）=====
+  // 结果类别：S=敏感, I=中介, SDD=剂量依赖性敏感, R=耐药,
+  //   NS=非敏感（仅设敏感折点且高于折点，按 CLSI 报为 nonsusceptible）,
+  //   unknown=折点不完整或落入未定义间隙, invalid=输入非法。
+  // 标准二倍稀释梯度（μg/mL）：把非梯度 MIC 输入按 CLSI 规则向上归入的目标点。
   var DILUTIONS = [0.008, 0.015, 0.03, 0.06, 0.12, 0.25, 0.5, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
   function nextDilution(val) {
     for (var k = 0; k < DILUTIONS.length; k++) { if (val <= DILUTIONS[k] + 1e-9) { return DILUTIONS[k]; } }
     return null;
   }
-  // 分类：把数值判为 S / I / SDD / R / unknown。isSDD 表示中间类别实为"剂量依赖性敏感"。
-  function classifyMIC(val, bpS, bpI, bpR, isSDD) {
-    var s = parseBP(bpS), i = parseBP(bpI), r = parseBP(bpR);
-    if (r && r.type === 'ge' && val >= r.val) { return { result: 'R', reason: 'MIC ≥ ' + r.val + '（耐药折点）' }; }
-    if (s && s.type === 'le' && val <= s.val) { return { result: 'S', reason: 'MIC ≤ ' + s.val + '（敏感折点）' }; }
-    if (i) {
-      var midRes = isSDD ? 'SDD' : 'I';
-      var midLabel = isSDD ? '剂量依赖性敏感 SDD' : '中介';
-      if (i.type === 'range' && val >= i.lo && val <= i.hi) { return { result: midRes, reason: 'MIC 在 ' + i.lo + '–' + i.hi + '（' + midLabel + '）' }; }
-      if (i.type === 'value' && val === i.val) { return { result: midRes, reason: 'MIC = ' + i.val + '（' + midLabel + '）' }; }
-      if (i.type === 'le' && val <= i.val) { return { result: midRes, reason: 'MIC ≤ ' + i.val + '（' + midLabel + '）' }; }
+  // 把 S / 中段 / R 三段折点字符串规整为结构化判读规格。
+  //   midKind: 中段实际类别（字符串含 SDD → 'SDD'，否则 'I'）。
+  //   susceptibleOnly: 仅设敏感折点（无中段、无耐药折点）——高于 S 折点判为 NS。
+  function normalizeSpec(bpS, bpMid, bpR) {
+    var S = parseBP(bpS), mid = parseBP(bpMid), R = parseBP(bpR);
+    return { S: S, mid: mid, R: R, midKind: /SDD/i.test(String(bpMid || '')) ? 'SDD' : 'I', susceptibleOnly: !!S && !mid && !R };
+  }
+  function midLabel(kind) { return kind === 'SDD' ? '剂量依赖性敏感 SDD' : '中介 I'; }
+  // 谓词求值：折点谓词 p 命中数值 val 时返回 true（含 ≤ < ≥ > = 与区间，容差 1e-9）。
+  function bpHit(p, val) {
+    if (!p) { return false; }
+    switch (p.type) {
+      case 'le': return val <= p.val + 1e-9;
+      case 'lt': return val < p.val - 1e-9;
+      case 'ge': return val >= p.val - 1e-9;
+      case 'gt': return val > p.val + 1e-9;
+      case 'value': return Math.abs(val - p.val) < 1e-9;
+      case 'range': return val >= p.lo - 1e-9 && val <= p.hi + 1e-9;
+      default: return false;
     }
-    if (!s && !r && !(i && i.type === 'le')) { return { result: 'unknown', reason: '该药物无完整 S/I/R 折点，无法判读' }; }
+  }
+  // 分类 MIC（不做梯度归一）。返回 {result, reason}。判读优先级：R → S → 中段 → NS/间隙。
+  function classifyMIC(val, spec) {
+    if (bpHit(spec.R, val)) { return { result: 'R', reason: 'MIC ' + (spec.R.type === 'gt' ? '> ' : '≥ ') + spec.R.val + '（耐药折点）' }; }
+    if (bpHit(spec.S, val)) { return { result: 'S', reason: 'MIC ' + (spec.S.type === 'lt' ? '< ' : '≤ ') + spec.S.val + '（敏感折点）' }; }
+    var m = spec.mid;
+    if (m && (m.type === 'range' || m.type === 'value' || m.type === 'le') && bpHit(m, val)) {
+      var seg = m.type === 'range' ? ('在 ' + m.lo + '–' + m.hi) : (m.type === 'le' ? ('≤ ' + m.val) : ('= ' + m.val));
+      return { result: spec.midKind, reason: 'MIC ' + seg + '（' + midLabel(spec.midKind) + '）' };
+    }
+    if (spec.susceptibleOnly) {
+      return { result: 'NS', reason: '高于敏感折点（' + (spec.S.type === 'lt' ? '<' : '≤') + spec.S.val + '），且该药仅设敏感折点、未建立 I/R；按 CLSI 报告为非敏感(NS)，不能判为耐药，建议结合 MIC 分布/参比实验室' };
+    }
+    if (!spec.S && !spec.R && !(spec.mid && spec.mid.type === 'le')) { return { result: 'unknown', reason: '该药物无完整 S/I/R 折点，无法判读' }; }
     return { result: 'unknown', reason: 'MIC 不在任何折点区间内' };
   }
-  function judgeMIC(micInput, bpS, bpI, bpR) {
+  // 分类抑菌圈（纸片法，方向相反：圈越大越敏感）。S 段为 ≥、R 段为 ≤、中段为区间。
+  function classifyZone(val, spec) {
+    if (bpHit(spec.S, val)) { return { result: 'S', reason: '抑菌圈 ≥ ' + spec.S.val + ' mm（敏感折点）' }; }
+    if (bpHit(spec.R, val)) { return { result: 'R', reason: '抑菌圈 ≤ ' + spec.R.val + ' mm（耐药折点）' }; }
+    if (spec.mid && spec.mid.type === 'range' && bpHit(spec.mid, val)) { return { result: spec.midKind, reason: '抑菌圈在 ' + spec.mid.lo + '–' + spec.mid.hi + ' mm（' + midLabel(spec.midKind) + '）' }; }
+    if (spec.susceptibleOnly && spec.S && spec.S.type === 'ge' && val < spec.S.val - 1e-9) { return { result: 'NS', reason: '抑菌圈小于敏感折点，且仅设敏感折点 → 非敏感(NS)' }; }
+    return { result: 'unknown', reason: '抑菌圈不在任何折点区间内' };
+  }
+  // MIC 判读（对外）：输入数值 + S/中段(可含 SDD)/R 折点字符串。非标准梯度值按 CLSI 向上归入后重判。
+  function judgeMIC(micInput, bpS, bpMid, bpR) {
     var val = parseFloat(micInput);
     if (isNaN(val) || val < 0) { return { result: 'invalid', reason: 'MIC 输入无效（请输入非负数字）' }; }
-    var isSDD = /SDD/i.test(String(bpI || ''));
-    var res = classifyMIC(val, bpS, bpI, bpR, isSDD);
+    var spec = normalizeSpec(bpS, bpMid, bpR);
+    var res = classifyMIC(val, spec);
     if (res.result !== 'unknown') { return res; }
     // 非标准梯度值：按 CLSI 规则向上归入下一较高的二倍稀释点后重判
     var up = nextDilution(val);
     if (up != null && Math.abs(up - val) > 1e-9) {
-      var res2 = classifyMIC(up, bpS, bpI, bpR, isSDD);
+      var res2 = classifyMIC(up, spec);
       if (res2.result !== 'unknown') {
         res2.adjusted = true;
         res2.interpretedValue = up;
@@ -584,6 +616,12 @@
       }
     }
     return res;
+  }
+  // 抑菌圈判读（对外）：输入 mm 值 + S/I/R 抑菌圈折点字符串。圈直径为整数、不做梯度归一。
+  function judgeZone(zoneInput, zS, zMid, zR) {
+    var val = parseFloat(zoneInput);
+    if (isNaN(val) || val < 0) { return { result: 'invalid', reason: '抑菌圈输入无效（请输入非负整数，单位 mm）' }; }
+    return classifyZone(val, normalizeSpec(zS, zMid, zR));
   }
 
   // 折点查询：按菌组名/药物名筛选
@@ -652,7 +690,10 @@
     intrinsicVM: intrinsicVM,
     graphLayoutVM: graphLayoutVM,
     parseBP: parseBP,
+    normalizeSpec: normalizeSpec,
+    classifyMIC: classifyMIC,
     judgeMIC: judgeMIC,
+    judgeZone: judgeZone,
     breakpointLookupVM: breakpointLookupVM,
     astAlertsVM: astAlertsVM
   };

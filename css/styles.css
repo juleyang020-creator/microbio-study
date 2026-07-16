@@ -388,13 +388,19 @@ body {
 .bp-verdict.v-i { background: #fff7e6; border-color: #e8cf8e; }
 .bp-verdict.v-sdd { background: #eef1fb; border-color: #b9c4ec; }
 .bp-verdict.v-r { background: #fdecea; border-color: #e8b8b3; }
+.bp-verdict.v-ns { background: #fbf1e8; border-color: #e6c39c; }
 .bp-verdict.v-unknown { background: var(--line-2); }
 .bp-verdict-tag { font-size: 22px; font-weight: 700; padding: 4px 14px; border-radius: 4px; background: var(--surface); }
 .bp-verdict.v-s .bp-verdict-tag { color: var(--green); }
 .bp-verdict.v-i .bp-verdict-tag { color: var(--gold); }
 .bp-verdict.v-sdd .bp-verdict-tag { color: #4a5cb0; }
 .bp-verdict.v-r .bp-verdict-tag { color: var(--rust); }
+.bp-verdict.v-ns .bp-verdict-tag { color: #b5701f; }
 .bp-verdict.v-unknown .bp-verdict-tag { color: var(--muted); }
+/* 判读方法切换（MIC / 抑菌圈）与禁用态 */
+.bp-method-toggle { display: inline-flex; gap: 6px; }
+.cmp-add.disabled { opacity: .45; cursor: not-allowed; }
+.bp-method-toggle .cmp-add.sel { background: var(--accent-weak); border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .bp-verdict-reason { font-size: 13.5px; color: var(--ink-soft); }
 .bp-judge-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
 

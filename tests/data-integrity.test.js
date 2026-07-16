@@ -383,6 +383,56 @@ test('来源元数据：折点标准结构化且 M60 标为历史对照（非 20
   assert.ok(Array.isArray(bp.优先顺序) && bp.优先顺序.length >= 4, '折点来源缺优先顺序列表');
 });
 
+// 判读引擎属性测试：对全部真实折点行做边界值自洽校验，覆盖整套数据而非个别用例
+test('判读引擎：全部折点行的边界值判读自洽（S界=S · R界=R · 中段=I/SDD · 单调）', () => {
+  const bps = global.window.DB.breakpoints || [];
+  let micChecked = 0;
+  let zoneChecked = 0;
+  bps.forEach((g) => {
+    (g.药物 || []).forEach((d) => {
+      const label = g.菌组名 + ' / ' + d.药物;
+      // ---- MIC 方向 ----
+      const spec = View.normalizeSpec(d.MIC_S, d.MIC_I, d.MIC_R);
+      if (spec.S && spec.S.type === 'le') {
+        assert.strictEqual(View.classifyMIC(spec.S.val, spec).result, 'S', label + ' MIC S 界 ' + spec.S.val + ' 应判 S');
+        micChecked++;
+      }
+      if (spec.R && spec.R.type === 'ge') {
+        assert.strictEqual(View.classifyMIC(spec.R.val, spec).result, 'R', label + ' MIC R 界 ' + spec.R.val + ' 应判 R');
+        micChecked++;
+      }
+      if (spec.mid) {
+        let mv = spec.mid.type === 'value' ? spec.mid.val : (spec.mid.type === 'range' ? spec.mid.lo : (spec.mid.type === 'le' ? spec.mid.val : null));
+        if (mv != null) {
+          const r = View.classifyMIC(mv, spec).result;
+          assert.ok(r === 'I' || r === 'SDD', label + ' MIC 中段值 ' + mv + ' 应判 I/SDD（得 ' + r + '）');
+          micChecked++;
+        }
+      }
+      // 单调性：S 界 < R 界（折点不得交叉）
+      if (spec.S && spec.S.type === 'le' && spec.R && spec.R.type === 'ge') {
+        assert.ok(spec.S.val < spec.R.val, label + ' MIC 折点异常：S 界 ' + spec.S.val + ' ≥ R 界 ' + spec.R.val);
+      }
+      // ---- 抑菌圈方向（判读相反）----
+      const zspec = View.normalizeSpec(d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R);
+      if (zspec.S && zspec.S.type === 'ge') {
+        assert.strictEqual(View.judgeZone(zspec.S.val, d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R).result, 'S', label + ' 圈 S 界 ' + zspec.S.val + ' 应判 S');
+        zoneChecked++;
+      }
+      if (zspec.R && zspec.R.type === 'le') {
+        assert.strictEqual(View.judgeZone(zspec.R.val, d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R).result, 'R', label + ' 圈 R 界 ' + zspec.R.val + ' 应判 R');
+        zoneChecked++;
+      }
+      // 单调性：圈 S 界 > R 界（圈越大越敏感）
+      if (zspec.S && zspec.S.type === 'ge' && zspec.R && zspec.R.type === 'le') {
+        assert.ok(zspec.S.val > zspec.R.val, label + ' 圈折点异常：S 界 ' + zspec.S.val + ' ≤ R 界 ' + zspec.R.val);
+      }
+    });
+  });
+  assert.ok(micChecked > 200, 'MIC 边界校验覆盖过少：' + micChecked);
+  assert.ok(zoneChecked > 20, '抑菌圈边界校验覆盖过少：' + zoneChecked);
+});
+
 test('高致病/选择性生物战剂微生物带生物安全警示（BSL-3 转送提示）', () => {
   const byId = {};
   global.window.DB.microbes.forEach((m) => { byId[m.id] = m; });
