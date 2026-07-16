@@ -299,6 +299,54 @@
     return { items: items, rows: rows };
   }
 
+  // ===== 生化反查（填结果 → 倒推候选菌）=====
+  // 生化项目名归一：去括注/空白，合并常见同义或异体写法
+  var BIO_ALIAS = { '血浆凝固酶': '凝固酶', '过氧化氢酶': '触酶', '甘露醇发酵': '甘露醇' };
+  function normBioItem(s) {
+    var k = String(s == null ? '' : s).replace(/[（(].*?[)）]/g, '').replace(/（.*?）/g, '').replace(/H₂S/g, 'H2S').replace(/\s+/g, '').trim();
+    return BIO_ALIAS[k] || k;
+  }
+  // 结果字符串 → 极性：'阳性' | '阴性' | '可变' | '其他'
+  function bioPolarity(r) {
+    r = String(r == null ? '' : r);
+    var head = r.slice(0, 6);
+    if (/可变|不定|迟缓|偶|不一|多变/.test(head)) { return '可变'; }
+    if (/^[+＋]/.test(r) || /^阳性/.test(r)) { return '阳性'; }
+    if (/^[-−–]/.test(r) || /^阴性/.test(r)) { return '阴性'; }
+    if (/弱阳/.test(head)) { return '可变'; }
+    if (/阳性/.test(head)) { return '阳性'; }
+    if (/阴性/.test(head)) { return '阴性'; }
+    return '其他';
+  }
+  // 每菌归一化生化谱：{ id: { 归一项目: 极性 } }
+  function bioProfiles(biochemMap) {
+    var out = {};
+    Object.keys(biochemMap || {}).forEach(function (id) {
+      var m = {};
+      (biochemMap[id] || []).forEach(function (x) { m[normBioItem(x.项目)] = bioPolarity(x.结果); });
+      out[id] = m;
+    });
+    return out;
+  }
+  // 反查：specified = { 归一项目: '阳性'|'阴性' }。返回一致候选（无矛盾）与部分匹配（有矛盾）两组，按匹配数排序。
+  function bioIdentify(biochemMap, nameById, specified) {
+    var profiles = bioProfiles(biochemMap);
+    var keys = Object.keys(specified || {}).filter(function (k) { return specified[k] === '阳性' || specified[k] === '阴性'; });
+    var all = Object.keys(profiles).map(function (id) {
+      var prof = profiles[id], match = 0, contradict = 0, known = 0, hits = [], miss = [];
+      keys.forEach(function (k) {
+        var p = prof[k];
+        if (p === '阳性' || p === '阴性') { known++; if (p === specified[k]) { match++; hits.push(k); } else { contradict++; miss.push(k); } }
+      });
+      return { id: id, 名称: (nameById && nameById[id]) || id, match: match, contradict: contradict, known: known, hits: hits, miss: miss };
+    });
+    var consistent = all.filter(function (r) { return r.contradict === 0 && r.match > 0; })
+      .sort(function (a, b) { return b.match - a.match || a.known - b.known || (a.名称 > b.名称 ? 1 : -1); });
+    var near = all.filter(function (r) { return r.contradict > 0 && r.match > 0; })
+      .sort(function (a, b) { return (b.match - b.contradict) - (a.match - a.contradict) || b.match - a.match; });
+    return { specifiedKeys: keys, consistent: consistent, near: near };
+  }
+
   // 药敏卡对比：并排比较若干卡所含药物；cells 为布尔(是否含)，differs 标出各卡不一致的药物
   function buildCardComparison(nameById, drugsByCard, ids) {
     drugsByCard = drugsByCard || {};
@@ -679,6 +727,9 @@
     sidebarVM: sidebarVM,
     searchVM: searchVM,
     buildComparison: buildComparison,
+    normBioItem: normBioItem,
+    bioPolarity: bioPolarity,
+    bioIdentify: bioIdentify,
     buildCardComparison: buildCardComparison,
     breakpointGroup: breakpointGroup,
     breakpointVM: breakpointVM,
