@@ -1,0 +1,32 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>头孢地尔药敏（缺铁 CAMHB）</title><desc>头孢地尔为铁载体头孢，须用缺铁阳离子调节 MH 肉汤 BMD，常规培养基铁充足会假耐药</desc>
+  <defs>
+    <linearGradient id="fdcT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8ccb0"/><stop offset="1" stop-color="#cdbf9e"/></linearGradient>
+    <linearGradient id="fdcC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbfaf8"/></linearGradient>
+  </defs>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">头孢地尔药敏（缺铁 CAMHB）</text>
+  <text x="240" y="49" text-anchor="middle" font-size="11" fill="#565b63">铁载体头孢，测试培养基须铁耗竭，否则假耐药</text>
+  <!-- 左：常规 MHB（铁充足）→ 假耐药（全浊） -->
+  <text x="120" y="82" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b0653a">常规 MHB（铁充足）</text>
+  <g>
+    <circle cx="60" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
+    <circle cx="96" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
+    <circle cx="132" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
+    <circle cx="168" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
+  </g>
+  <text x="114" y="150" text-anchor="middle" font-size="10.5" fill="#b0653a">全部生长 → 误判耐药 ✗</text>
+  <!-- 右：缺铁 CAMHB → 真实 MIC -->
+  <text x="360" y="82" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4a7a52">缺铁 ID-CAMHB</text>
+  <g>
+    <circle cx="300" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
+    <circle cx="336" cy="118" r="15" fill="#e6dcc6" stroke="#bcae8f" stroke-width="1.3"/>
+    <circle cx="372" cy="118" r="15" fill="url(#fdcC)" stroke="#cbc1a8" stroke-width="1.3"/>
+    <circle cx="408" cy="118" r="15" fill="url(#fdcC)" stroke="#cbc1a8" stroke-width="1.3"/>
+  </g>
+  <line x1="372" y1="138" x2="372" y2="150" stroke="#5a80b0" stroke-width="1.4"/>
+  <text x="360" y="166" text-anchor="middle" font-size="10.5" fill="#4a7a52">真实 MIC，正确判读 ✓</text>
+  <text x="240" y="212" text-anchor="middle" font-size="12.5" fill="#565b63">缺铁诱导细菌铁载体转运系统主动摄入头孢地尔</text>
+  <text x="240" y="238" text-anchor="middle" font-size="11" fill="#565b63">回补 Ca/Mg/Zn；以铜绿假单胞菌 ATCC 27853 质控</text>
+  <text x="240" y="264" text-anchor="middle" font-size="11" fill="#565b63">见 CLSI M100 附录 H；纸片/梯度法不可靠</text>
+</svg>

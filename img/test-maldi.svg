@@ -1,0 +1,33 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>MALDI-TOF MS 质谱鉴定</title><desc>激光解吸菌体蛋白，按飞行时间得质量指纹谱，与数据库比对鉴定菌种</desc>
+  <rect width="480" height="300" fill="#ffffff"/>
+  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">MALDI-TOF MS 质谱鉴定</text>
+  <text x="240" y="49" text-anchor="middle" font-size="11" fill="#565b63">基质辅助激光解吸电离飞行时间质谱</text>
+  <!-- 靶板样本点 -->
+  <rect x="40" y="90" width="70" height="70" rx="6" fill="#eee7d6" stroke="#b0a47c" stroke-width="1.5"/>
+  <circle cx="62" cy="112" r="6" fill="#c9a24b"/><circle cx="88" cy="112" r="6" fill="#c9a24b"/>
+  <circle cx="62" cy="138" r="6" fill="#c9a24b"/><circle cx="88" cy="138" r="6" fill="#c9a24b"/>
+  <text x="75" y="178" text-anchor="middle" font-size="10.5" fill="#565b63">靶板 + 基质</text>
+  <!-- 激光 -->
+  <line x1="120" y1="60" x2="70" y2="108" stroke="#5a80b0" stroke-width="2"/>
+  <polygon points="70,108 78,100 82,110" fill="#5a80b0"/>
+  <text x="128" y="58" font-size="10.5" fill="#5a80b0">激光</text>
+  <!-- 飞行管 → 峰谱 -->
+  <path d="M115 125 H175" stroke="#8a8172" stroke-width="1.5" marker-end="url(#a)"/>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><polygon points="0,0 6,3 0,6" fill="#8a8172"/></marker></defs>
+  <text x="145" y="118" text-anchor="middle" font-size="10" fill="#8a8172">飞行时间</text>
+  <!-- 质谱图 -->
+  <rect x="190" y="80" width="256" height="120" rx="4" fill="#fbfaf8" stroke="#d8ccb0" stroke-width="1.2"/>
+  <line x1="200" y1="190" x2="436" y2="190" stroke="#b0a47c" stroke-width="1.2"/>
+  <line x1="200" y1="190" x2="200" y2="90" stroke="#b0a47c" stroke-width="1.2"/>
+  <g stroke="#7a6f4e" stroke-width="2.2">
+    <line x1="216" y1="190" x2="216" y2="150"/><line x1="240" y1="190" x2="240" y2="118"/>
+    <line x1="262" y1="190" x2="262" y2="160"/><line x1="292" y1="190" x2="292" y2="104"/>
+    <line x1="320" y1="190" x2="320" y2="140"/><line x1="352" y1="190" x2="352" y2="126"/>
+    <line x1="388" y1="190" x2="388" y2="166"/><line x1="414" y1="190" x2="414" y2="152"/>
+  </g>
+  <text x="318" y="206" text-anchor="middle" font-size="10.5" fill="#565b63">m/z（蛋白质量指纹谱）</text>
+  <!-- 结果 -->
+  <text x="240" y="240" text-anchor="middle" font-size="12.5" fill="#565b63">谱图与数据库比对 → 分值高者即鉴定结果</text>
+  <text x="240" y="266" text-anchor="middle" font-size="11" fill="#565b63">数分钟内种水平鉴定，快速、低耗、通量高</text>
+</svg>

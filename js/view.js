@@ -28,7 +28,11 @@
     '主动外排': 'img/resistance-efflux.svg',
     '膜通透性下降': 'img/resistance-permeability.svg',
     '旁路代谢': 'img/resistance-bypass.svg',
-    '生物膜': 'img/resistance-biofilm.svg'
+    '生物膜': 'img/resistance-biofilm.svg',
+    // 新增机制大类
+    '抗真菌耐药': 'img/resistance-target.svg',
+    '靶位基因突变': 'img/resistance-target.svg',
+    '多黏菌素耐药': 'img/resistance-permeability.svg'
   };
 
   // 试验：按条目 id 映射到示意图
@@ -48,7 +52,12 @@
     'camp-test': 'img/test-camp.svg',
     'bile-solubility': 'img/test-bile.svg',
     'kb-test': 'img/test-kb.svg',
-    'e-test': 'img/test-etest.svg'
+    'e-test': 'img/test-etest.svg',
+    'bmd': 'img/test-bmd.svg',
+    'maldi-tof': 'img/test-maldi.svg',
+    'cefiderocol-ast': 'img/test-cefiderocol.svg',
+    'cbde-colistin': 'img/test-colistin.svg',
+    'satellitism': 'img/test-satellitism.svg'
   };
 
   // 染色：按条目 id 映射到示意图
