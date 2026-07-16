@@ -431,7 +431,8 @@
           ])
         ]),
         bpTierLegend(bp.药物),
-        el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' + (bpHasCombo(bp.药物) ? '　·　' + COMBO_BP_NOTE : '') })
+        el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' + (bpHasCombo(bp.药物) ? '　·　' + COMBO_BP_NOTE : '') }),
+        el('div', { cls: 'bp-curated', text: CURATED_BP_NOTE })
       ]));
     }
 
@@ -1177,6 +1178,7 @@
       var df = el('input', { cls: 'cmp-search', type: 'search', placeholder: '按药物名/简写筛选…', value: bpDrugFilter, style: 'display:inline-block;width:auto;' });
       df.addEventListener('input', function () { bpDrugFilter = df.value; renderBreakpointsMain(); });
       nodes.push(el('div', { cls: 'bp-filters' }, [ gf, df ]));
+      nodes.push(el('div', { cls: 'bp-curated bp-curated-tool', text: CURATED_BP_NOTE }));
       var groups = View.breakpointLookupVM(bpGroups(), bpGroupFilter, bpDrugFilter);
       if (groups.length === 0) {
         nodes.push(el('div', { cls: 'empty', text: '没有匹配的折点。' }));
@@ -1251,6 +1253,8 @@
   // 复方制剂（β-内酰胺/酶抑制剂等）是单一药物、单一折点：CLSI 记法「活性成分/固定抑制剂浓度」中，
   // 斜线后的数字是固定不变的抑制剂浓度，并非第二个折点。判读只看活性成分（斜线前）的值。
   var COMBO_BP_NOTE = '复方制剂为单一药物、按单一折点判读：斜线后的数字是固定配比的另一成分浓度（如酶抑制剂或第二组分），并非第二个折点。';
+  // 本模块采用「精选常用折点」范围（方案 B）：并非完整复制 CLSI 原表，仅收录教学与临床常用药物。
+  var CURATED_BP_NOTE = '本模块为教学与临床常用的「精选常用折点」，并非 CLSI 原表的完整复制；未列出某药物不代表 CLSI 未建立折点，完整数据请查阅对应版本原表（M100 / M45 / M27M44S / M38M51S）。';
   // 仅"数字/数字"才算复方记法；详情页折点经 breakpointVM 合并为 "≤8/4 / 16/8 / ≥32/16"，
   // 用 \d/\d 可避开 " / " 分隔符的误判，同时兼容原始 MIC_S/I/R 字段。
   function bpHasCombo(drugs) {

@@ -213,6 +213,8 @@ body {
 .bp-legend-item .bp-tier { margin-right: 4px; }
 .bp-legend-txt { color: var(--muted); }
 .bp-legend-note { font-size: 11px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+.bp-curated { font-size: 11px; color: var(--muted); margin-top: 6px; line-height: 1.55; padding-left: 8px; border-left: 2px solid var(--line); }
+.bp-curated-tool { margin: 4px 0 12px; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--line-2); border-radius: 0 6px 6px 0; }
 
 /* 真菌固有耐药结构化速查矩阵 */
 .ir-section { margin: 6px 0 22px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--line-2); }
