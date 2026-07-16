@@ -1631,40 +1631,54 @@
   function isMicrobeNamesRoute() { return routeKey() === 'microbe-names'; }
   var mnFilter = '';
   function mnLetter(lat) { var c = (lat || '').charAt(0).toUpperCase(); return /[A-Z]/.test(c) ? c : '#'; }
+  var mnTimer = null;
   function renderMicrobeNames() {
     setActiveTool('microbe-names');
-    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '搜索中文名 / 拉丁名…', value: mnFilter });
-    var mnTimer = null;
+    var list = (window.DB && window.DB.microbeNames) || [];
+    // 侧栏保持精简：仅说明，不放搜索框（搜索移到正文，手机端搜索与结果同屏）
+    fill(document.getElementById('sidebar'), [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '菌名速查' }),
+      el('div', { cls: 'cmp-hint', text: '微生物名称索引（按拉丁名字母序），点击跳转百度百科；含已从「微生物分类」详情精简移除的菌种。' })
+    ]) ]);
+    // 正文：标题 + 说明 + 粘性头（搜索 + A–Z）+ 结果容器（仅结果重渲染，搜索框不丢焦点）
+    var search = el('input', { cls: 'mn-search', type: 'search', enterkeyhint: 'search', autocomplete: 'off', placeholder: '搜索中文名 / 拉丁名…', value: mnFilter });
     search.addEventListener('input', function () {
       mnFilter = search.value;
       if (mnTimer) { clearTimeout(mnTimer); }
-      mnTimer = setTimeout(function () { renderMicrobeNamesMain(); var s = document.querySelector('.sidebar .cmp-search'); if (s) { s.focus(); } }, 140);
+      mnTimer = setTimeout(renderMicrobeNamesResults, 150);
     });
-    fill(document.getElementById('sidebar'), [ el('div', { cls: 'cat-group' }, [
-      el('div', { cls: 'cat-group-name', text: '菌名速查' }),
-      el('div', { cls: 'cmp-hint', text: '微生物名称索引（按拉丁名字母序），点击跳转百度百科；含已从「微生物分类」详情精简移除的菌种。' }),
-      search
-    ]) ]);
-    renderMicrobeNamesMain();
+    fill(document.getElementById('main'), [
+      el('h2', { cls: 'detail-title', text: '菌名速查' }),
+      el('div', { cls: 'lw-note', text: '微生物名称索引（中文 + 拉丁，共 ' + list.length + ' 条，按拉丁名字母顺序）——点击任一菌名跳转百度百科；含已从「微生物分类」详情模块精简移除的菌种。' }),
+      el('div', { cls: 'mn-head' }, [
+        el('div', { cls: 'mn-searchwrap' }, [ search, el('span', { cls: 'mn-count', id: 'mn-count' }) ]),
+        el('div', { cls: 'mn-az', id: 'mn-az' })
+      ]),
+      el('div', { id: 'mn-results' })
+    ]);
+    renderMicrobeNamesResults();
   }
-  function renderMicrobeNamesMain() {
+  function renderMicrobeNamesResults() {
     var list = (window.DB && window.DB.microbeNames) || [];
     var q = mnFilter.trim().toLowerCase();
     var filtered = q ? list.filter(function (m) { return (m.名称 + ' ' + (m.拉丁名 || '')).toLowerCase().indexOf(q) !== -1; }) : list;
-    var nodes = [
-      el('h2', { cls: 'detail-title', text: '菌名速查' }),
-      el('div', { cls: 'lw-note', text: '微生物名称索引（中文 + 拉丁，共 ' + list.length + ' 条，按拉丁名字母顺序）——点击任一菌名跳转百度百科；含已从「微生物分类」详情模块精简移除的菌种。' })
-    ];
-    if (q) {
-      nodes.push(el('div', { cls: 'cmp-hint', text: '共 ' + filtered.length + ' 条（已筛选）' }));
-    } else {
-      var letters = [], seenL = {};
-      filtered.forEach(function (m) { var L = mnLetter(m.拉丁名); if (!seenL[L]) { seenL[L] = true; letters.push(L); } });
-      nodes.push(el('div', { cls: 'mn-az' }, letters.map(function (L) {
-        return el('a', { cls: 'mn-az-l', href: '#/microbe-names', text: L, onClick: function (e) { e.preventDefault(); var t = document.getElementById('mn-' + L); if (t) { t.scrollIntoView({ block: 'start' }); } } });
-      })));
+    // 计数反馈
+    var cnt = document.getElementById('mn-count');
+    if (cnt) { cnt.textContent = q ? ('共 ' + filtered.length + ' 条') : ''; }
+    // A–Z 跳转条（筛选时隐藏）
+    var az = document.getElementById('mn-az');
+    if (az) {
+      az.style.display = q ? 'none' : '';
+      if (!q) {
+        var letters = [], seenL = {};
+        filtered.forEach(function (m) { var L = mnLetter(m.拉丁名); if (!seenL[L]) { seenL[L] = true; letters.push(L); } });
+        fill(az, letters.map(function (L) {
+          return el('a', { cls: 'mn-az-l', href: '#/microbe-names', text: L, onClick: function (e) { e.preventDefault(); var t = document.getElementById('mn-' + L); if (t) { t.scrollIntoView({ block: 'start' }); } } });
+        }));
+      }
     }
-    var curL = null, grid = null;
+    // 结果分节（只重渲染结果，不动搜索框）
+    var nodes = [], curL = null, grid = null;
     filtered.forEach(function (m) {
       var L = mnLetter(m.拉丁名);
       if (L !== curL) {
@@ -1678,10 +1692,11 @@
       }, [ el('span', { cls: 'mn-nm', text: m.名称 }), el('span', { cls: 'mn-lt', text: m.拉丁名 || '' }) ]));
     });
     if (filtered.length === 0) { nodes.push(el('div', { cls: 'empty', text: '没有匹配的菌名。' })); }
-    fill(document.getElementById('main'), nodes);
+    fill(document.getElementById('mn-results'), nodes);
   }
 
   function renderRoute() {
+    document.body.classList.toggle('route-mn', isMicrobeNamesRoute());
     if (isMicrobeNamesRoute()) { renderMicrobeNames(); return; }
     if (isLabWorkflowRoute()) { renderLabWorkflow(); return; }
     if (isAboutRoute()) { renderAbout(); return; }
