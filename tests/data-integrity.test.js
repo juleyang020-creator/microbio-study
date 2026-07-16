@@ -28,6 +28,7 @@ require('../data/intrinsic-resistance.js');
 require('../data/site-reporting.js');
 require('../data/lab-workflow.js');
 require('../data/microbe-names.js');
+require('../data/drug-cn.js');
 require('../data/source-metadata.js');
 require('../data/treatment.js');
 const Core = require('../js/core.js');
@@ -337,6 +338,17 @@ test('念珠菌标本部位报告数据结构完整（M27M44S App A）', () => {
     assert.ok(g.药类 && (g.规则 || []).length > 0, '标本部位分组 “' + (g.药类 || '?') + '” 规则为空');
     g.规则.forEach((r) => assert.ok(r.部位 && r.报告, '标本部位规则缺部位/报告字段'));
   });
+});
+
+test('质控菌株每个抗菌药物都有中文名（drugCN 全覆盖）', () => {
+  const cn = global.window.DB.drugCN || {};
+  const missing = new Set();
+  (global.window.DB['qc-strains'] || []).forEach((s) => {
+    (s.质控范围 || []).forEach((d) => { if (!cn[d.药物]) { missing.add(d.药物); } });
+  });
+  assert.strictEqual(missing.size, 0, '质控药物缺中文名：' + Array.from(missing).join(', '));
+  // 中文值不应再残留配比括注（配比只保留在英文名）
+  Object.keys(cn).forEach((k) => { assert.ok(!/\(\d+(:\d+)?\)\s*$/.test(cn[k]), 'drugCN 中文值含配比括注：' + k + ' → ' + cn[k]); });
 });
 
 test('质控菌株结构化字段：MEC 终点与 QC/Reference 用途（M27M44S / M38M51S）', () => {

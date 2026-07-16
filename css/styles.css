@@ -246,6 +246,8 @@ body.route-mn .detail-title { margin-top: 18px; }
 .bp-table th, .bp-table td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
 .bp-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; white-space: nowrap; }
 .bp-table .bp-drug { color: var(--ink); min-width: 200px; }
+.bp-table .bp-drug .qc-drug-cn { display: block; font-weight: 600; color: var(--ink); }
+.bp-table .bp-drug .qc-drug-en { display: block; color: var(--muted); font-size: 11px; font-family: var(--mono); margin-top: 1px; }
 .bp-table .bp-drug strong { color: var(--accent); font-family: var(--mono); font-size: 12px; }
 .bp-drug-link { color: var(--link); text-decoration: none; }
 .bp-drug-link:hover { text-decoration: underline; }

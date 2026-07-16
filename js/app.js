@@ -350,8 +350,13 @@
       if (hasMic) { qcHead.push(el('th', { text: hasMec ? 'MIC / MEC (μg/mL)' : 'MIC (μg/mL)' })); }
       if (hasDisk) { qcHead.push(el('th', { text: '抑菌圈 (mm)' })); }
       if (hasNote) { qcHead.push(el('th', { text: '备注' })); }
+      var drugCN = (window.DB && window.DB.drugCN) || {};
       var qcRows = vm.质控范围.map(function (r) {
-        var cells = [ el('td', { cls: 'bp-drug', text: r.药物 }) ];
+        var cn = drugCN[r.药物] || '';
+        var drugCell = cn
+          ? el('td', { cls: 'bp-drug' }, [ el('span', { cls: 'qc-drug-cn', text: cn }), el('span', { cls: 'qc-drug-en', text: r.药物 }) ])
+          : el('td', { cls: 'bp-drug', text: r.药物 });
+        var cells = [ drugCell ];
         if (hasMic) {
           var micCell = el('td', { cls: 'bp-mic' });
           micCell.appendChild(document.createTextNode(r.MIC || '—'));
