@@ -214,6 +214,25 @@ body {
 .bp-legend-txt { color: var(--muted); }
 .bp-legend-note { font-size: 11px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
 
+/* 真菌固有耐药结构化速查矩阵 */
+.ir-section { margin: 6px 0 22px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--line-2); }
+.ir-section-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ir-section-title { font-weight: 700; font-size: 14.5px; color: var(--ink); }
+.ir-section-src { color: var(--muted); font-size: 11.5px; }
+.ir-legend { color: var(--ink-soft); font-size: 12px; margin: 5px 0 8px; line-height: 1.55; }
+.ir-block { margin: 10px 0 4px; }
+.ir-block-title { font-weight: 600; font-size: 13px; color: var(--ink-soft); margin-bottom: 4px; }
+.ir-table-wrap { overflow-x: auto; }
+.ir-table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 12.5px; background: var(--bg); }
+.ir-table th, .ir-table td { border: 1px solid var(--line); padding: 5px 8px; text-align: left; vertical-align: top; }
+.ir-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; }
+.ir-table th.ir-drug-col { white-space: nowrap; text-align: center; }
+.ir-table td.ir-cell { text-align: center; }
+.ir-chip { display: inline-block; min-width: 18px; padding: 1px 6px; border-radius: 4px; background: #fdecec; color: #c0392b; border: 1px solid #f0b6b1; font-weight: 700; font-size: 11.5px; }
+.ir-dash { color: var(--line); }
+.ir-note { color: var(--muted); font-size: 11.5px; max-width: 230px; }
+.ir-table .latin { display: block; color: var(--muted); font-style: italic; font-size: 11px; }
+
 /* 参考链接 */
 .refs { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
 .ref-link { font-size: 12.5px; padding: 3px 10px; border-radius: 4px; text-decoration: none; background: var(--surface); color: var(--accent); border: 1px solid var(--line); }

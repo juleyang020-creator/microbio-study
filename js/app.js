@@ -706,10 +706,52 @@
     fill(document.getElementById('sidebar'), sb);
     renderIntrinsicMain();
   }
+  function intrinsicMatrixNodes(filter) {
+    var data = (window.DB && window.DB.intrinsicResistance) || null;
+    if (!data) { return []; }
+    var q = (filter || '').trim().toLowerCase();
+    var out = [];
+    (data.分组 || []).forEach(function (grp) {
+      var rows = (grp.行 || []).filter(function (r) {
+        if (!q) { return true; }
+        var hay = [r.名称, r.拉丁, r.备注].concat(r.耐药 || []).join(' ').toLowerCase();
+        return hay.indexOf(q) !== -1;
+      });
+      if (rows.length === 0) { return; }
+      var head = el('tr', {}, [el('th', { text: '菌种' })]
+        .concat((grp.药物列 || []).map(function (d) { return el('th', { cls: 'ir-drug-col', text: d }); }))
+        .concat([el('th', { text: '备注' })]));
+      var body = rows.map(function (r) {
+        var nameCell = r.id
+          ? el('td', {}, [el('a', { cls: 'intrinsic-link', text: r.名称, href: '#/microbes/' + r.id }), el('span', { cls: 'latin', text: r.拉丁 })])
+          : el('td', {}, [el('strong', { text: r.名称 }), el('span', { cls: 'latin', text: r.拉丁 })]);
+        var cells = [nameCell].concat((grp.药物列 || []).map(function (d) {
+          var isR = (r.耐药 || []).indexOf(d) !== -1;
+          return el('td', { cls: 'ir-cell' }, [isR ? el('span', { cls: 'ir-chip', title: '固有耐药', text: '耐' }) : el('span', { cls: 'ir-dash', text: '—' })]);
+        }));
+        cells.push(el('td', { cls: 'ir-note', text: r.备注 || '' }));
+        return el('tr', {}, cells);
+      });
+      out.push(el('div', { cls: 'ir-block' }, [
+        el('div', { cls: 'ir-block-title', text: grp.界 }),
+        el('div', { cls: 'ir-table-wrap' }, [el('table', { cls: 'ir-table' }, [el('thead', {}, [head]), el('tbody', {}, body)])])
+      ]));
+    });
+    if (out.length === 0) { return []; }
+    return [el('div', { cls: 'ir-section' }, [
+      el('div', { cls: 'ir-section-head' }, [
+        el('span', { cls: 'ir-section-title', text: '真菌固有耐药速查（CLSI 结构化）' }),
+        el('span', { cls: 'ir-section-src', text: data.来源 })
+      ]),
+      el('div', { cls: 'ir-legend', text: data.说明 })
+    ].concat(out))];
+  }
+
   function renderIntrinsicMain() {
     var vm = View.intrinsicVM(db(), intrinsicFilter);
     var nodes = [ el('h2', { cls: 'detail-title', text: '天然耐药速查' }) ];
-    nodes.push(el('div', { cls: 'cmp-hint', text: '共 ' + vm.count + ' 条' + (intrinsicFilter ? '（已筛选）' : '') }));
+    nodes = nodes.concat(intrinsicMatrixNodes(intrinsicFilter));
+    nodes.push(el('div', { cls: 'cmp-hint', text: '按菌属列出的文字条目：共 ' + vm.count + ' 条' + (intrinsicFilter ? '（已筛选）' : '') }));
     if (vm.groups.length === 0) {
       nodes.push(el('div', { cls: 'empty', text: '没有匹配的条目。' }));
     } else {

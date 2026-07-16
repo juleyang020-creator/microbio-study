@@ -24,6 +24,7 @@ require('../data/biochem-tests.js');
 require('../data/ast-alerts.js');
 require('../data/ecv.js');
 require('../data/qc-strains.js');
+require('../data/intrinsic-resistance.js');
 require('../data/treatment.js');
 const Core = require('../js/core.js');
 const View = require('../js/view.js');
@@ -300,6 +301,31 @@ test('ECV 数据中引用的菌 id 均存在，且每组有菌种/药物/ECV 值
       assert.ok(d.ECV && String(d.ECV).length, 'ECV 组 “' + group.组名 + '” 中 “' + d.药物 + '” 缺少 ECV 值');
     });
   });
+});
+
+test('真菌固有耐药结构化数据符合 CLSI 附录（M27M44S App B / M38M51S App）', () => {
+  const ir = global.window.DB.intrinsicResistance;
+  assert.ok(ir && Array.isArray(ir.分组) && ir.分组.length >= 2, '缺真菌固有耐药结构化数据');
+  const microbeIds = {};
+  global.window.DB.microbes.forEach((m) => { microbeIds[m.id] = true; });
+  const findRow = (latin) => {
+    for (const g of ir.分组) { const r = (g.行 || []).find((x) => x.拉丁 === latin); if (r) return r; }
+    return null;
+  };
+  // M27M44S Appendix B（酵母）
+  assert.deepStrictEqual(findRow('Pichia kudriavzevii / C. krusei').耐药, ['氟康唑'], '克柔念珠菌固有耐药应仅氟康唑');
+  assert.deepStrictEqual(findRow('Cryptococcus spp.').耐药, ['阿尼芬净', '卡泊芬净', '米卡芬净'], '隐球菌固有耐棘白菌素类');
+  assert.deepStrictEqual(findRow('Rhodotorula spp.').耐药, ['阿尼芬净', '卡泊芬净', '氟康唑', '米卡芬净'], '红酵母固有耐药错误');
+  assert.deepStrictEqual(findRow('Trichosporon spp.').耐药, ['阿尼芬净', '卡泊芬净', '米卡芬净'], '毛孢子菌固有耐棘白菌素类');
+  // M38M51S Appendix（丝状真菌）
+  assert.deepStrictEqual(findRow('Aspergillus spp.').耐药, ['氟康唑'], '曲霉固有耐氟康唑');
+  assert.deepStrictEqual(findRow('Lomentospora prolificans').耐药, ['两性霉素B', '氟康唑'], 'Lomentospora 固有耐药错误');
+  assert.deepStrictEqual(findRow('Mucorales').耐药, ['氟康唑', '伏立康唑'], '毛霉目固有耐短侧链唑类');
+  assert.deepStrictEqual(findRow('Purpureocillium lilacinum').耐药, ['两性霉素B'], '淡紫紫孢霉固有耐两性霉素B');
+  // 引用的菌 id（若给出）须存在
+  ir.分组.forEach((g) => (g.行 || []).forEach((r) => {
+    if (r.id) assert.ok(microbeIds[r.id], '固有耐药引用了不存在的微生物 id：' + r.id);
+  }));
 });
 
 test('折点数据中每组均有菌种和药物', () => {
