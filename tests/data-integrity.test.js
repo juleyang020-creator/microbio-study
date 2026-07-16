@@ -249,6 +249,40 @@ test('关键折点/质控标准值不回退（CLSI 基准）', () => {
   const qc = (global.window.DB['qc-strains'] || []).find((s) => /22019/.test(s.英文 || ''));
   const qv = qc && (qc.质控范围 || []).find((d) => /Voriconazole/.test(d.药物));
   assert.ok(qv && qv.MIC === '0.016–0.12', '22019 伏立康唑质控范围应为 0.016–0.12');
+  // M27M44S Table 1 阿尼芬净作为独立药物行（种特异折点）
+  const andCases = [
+    ['candida-albicans', '≤0.25', '0.5', '≥1'],
+    ['candida-glabrata', '≤0.12', '0.25', '≥0.5'],
+    ['candida-parapsilosis', '≤2', '4', '≥8']
+  ];
+  andCases.forEach(([id, s, i, r]) => {
+    const d = drug(bp(id), /Anidulafungin/);
+    assert.ok(d, id + ' 缺阿尼芬净独立行');
+    assert.strictEqual(d.MIC_S + '/' + d.MIC_I + '/' + d.MIC_R, s + '/' + i + '/' + r, id + ' 阿尼芬净折点错误');
+  });
+  // M27M44S Table 1 瑞扎芬净暂定「仅敏感」折点（仅 S，无 I/R）
+  const rzf = [
+    ['candida-albicans', '≤0.25'], ['candida-glabrata', '≤0.5'], ['candida-parapsilosis', '≤2'],
+    ['candida-tropicalis', '≤0.25'], ['candida-krusei', '≤0.25'], ['candida-auris', '≤0.5']
+  ];
+  rzf.forEach(([id, s]) => {
+    const d = drug(bp(id), /Rezafungin/);
+    assert.ok(d, id + ' 缺瑞扎芬净行');
+    assert.strictEqual(d.MIC_S, s, id + ' 瑞扎芬净 S 折点错误');
+    assert.strictEqual(d.MIC_R, '—', id + ' 瑞扎芬净不应有 R 折点（仅敏感）');
+  });
+  // M27M44S Table 1 季也蒙念珠菌折点组（阿尼芬净/卡泊芬净/米卡芬净 ≤2/4/≥8）
+  const guil = bp('candida-guilliermondii');
+  assert.ok(guil, '缺季也蒙念珠菌折点组');
+  [/Anidulafungin/, /Caspofungin/, /Micafungin/].forEach((re) => {
+    const d = drug(guil, re);
+    assert.ok(d && d.MIC_S === '≤2' && d.MIC_I === '4' && d.MIC_R === '≥8', '季也蒙 ' + re + ' 折点应为 ≤2/4/≥8');
+  });
+  // M27M44S Table 5 纸片抑菌圈（卡泊芬净对 C. albicans ≥17/15–16/≤14）
+  const casAlb = drug(bp('candida-albicans'), /Caspofungin/);
+  assert.ok(casAlb && casAlb.抑菌圈_S === '≥17' && casAlb.抑菌圈_R === '≤14', 'C. albicans 卡泊芬净纸片折点缺失/错误');
+  // 瑞扎芬净须有独立药物条目可跳转
+  assert.ok(global.window.DB.antibiotics.some((a) => a.名称 === '瑞扎芬净'), '缺瑞扎芬净药物条目');
 });
 
 test('ECV 数据中引用的菌 id 均存在，且每组有菌种/药物/ECV 值', () => {
