@@ -564,6 +564,16 @@ body.route-mn .detail-title { margin-top: 18px; }
   .mn-search { max-width: none; }
   .mn-searchwrap { flex-wrap: wrap; gap: 4px 10px; }
   .mn-section { scroll-margin-top: 104px; }
+  /* 标本流程表格：手机端改为堆叠卡片（每行一卡、字段带标签），避免比例失衡/横向溢出 */
+  .lw-table-wrap { overflow-x: visible; }
+  .lw-table, .lw-table tbody, .lw-table tr, .lw-table td { display: block; width: 100%; }
+  .lw-table { min-width: 0; font-size: 12.5px; }
+  .lw-table thead { display: none; }
+  .lw-table tr { border: 1px solid var(--line); border-radius: 8px; margin: 0 0 10px; padding: 5px 2px; background: var(--surface); }
+  .lw-table td { border: 0; padding: 4px 12px; display: grid; grid-template-columns: 52px 1fr; gap: 10px; line-height: 1.6; vertical-align: top; }
+  .lw-table td:empty { display: none; }
+  .lw-table td::before { content: attr(data-label); font-weight: 700; color: var(--muted); font-size: 11px; padding-top: 1px; }
+  .lw-table td:first-child { color: var(--ink); font-weight: 600; padding-top: 7px; }
 }
 
 @media (max-width: 1120px) and (min-width: 761px) {

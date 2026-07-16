@@ -183,7 +183,7 @@
     if (opts.placeholder != null) { node.setAttribute('placeholder', opts.placeholder); }
     if (opts.value != null) { node.value = opts.value; }
     Object.keys(opts).forEach(function (key) {
-      if (key.indexOf('aria-') === 0 && opts[key] != null) { node.setAttribute(key, opts[key]); }
+      if ((key.indexOf('aria-') === 0 || key.indexOf('data-') === 0) && opts[key] != null) { node.setAttribute(key, opts[key]); }
     });
     if (opts.onClick) { node.addEventListener('click', opts.onClick); }
     (children || []).forEach(function (c) { appendChildNode(node, c); });
@@ -594,6 +594,12 @@
     var q = compareFilter.trim().toLowerCase();
     var ids = comparableIds().filter(function (id) {
       return !q || (names[id] || '').toLowerCase().indexOf(q) !== -1;
+    });
+    // 常见菌排前（按 GRAPH_COMMON 顺序），其余保持原数据顺序
+    ids.sort(function (a, b) {
+      var ia = GRAPH_COMMON.indexOf(a); if (ia === -1) { ia = 1e6; }
+      var ib = GRAPH_COMMON.indexOf(b); if (ib === -1) { ib = 1e6; }
+      return ia - ib;
     });
     var items = ids.map(function (id) {
       var sel = !!compareSet[id];
@@ -1588,7 +1594,7 @@
       smKids.push(el('div', { cls: 'lw-table-wrap' }, [ el('table', { cls: 'lw-table' }, [
         el('thead', {}, [ el('tr', {}, [ el('th', { text: '标本' }), el('th', { text: '采集' }), el('th', { text: '转运' }), el('th', { text: '说明' }) ]) ]),
         el('tbody', {}, sm.常见标本.map(function (s) {
-          return el('tr', {}, [ el('td', { text: s.name }), el('td', { text: s.collection }), el('td', { text: s.transport }), el('td', { text: s.note || '' }) ]);
+          return el('tr', {}, [ el('td', { 'data-label': '标本', text: s.name }), el('td', { 'data-label': '采集', text: s.collection }), el('td', { 'data-label': '转运', text: s.transport }), el('td', { 'data-label': '说明', text: s.note || '' }) ]);
         }))
       ]) ]));
     }
@@ -1617,7 +1623,7 @@
       idKids.push(el('div', { cls: 'lw-table-wrap' }, [ el('table', { cls: 'lw-table' }, [
         el('thead', {}, [ el('tr', {}, [ el('th', { text: '方法' }), el('th', { text: '原理' }), el('th', { text: '适用' }), el('th', { text: '局限' }) ]) ]),
         el('tbody', {}, idm.方法.map(function (m) {
-          return el('tr', {}, [ el('td', { text: m.name }), el('td', { text: m.principle }), el('td', { text: m.use }), el('td', { text: m.limitation }) ]);
+          return el('tr', {}, [ el('td', { 'data-label': '方法', text: m.name }), el('td', { 'data-label': '原理', text: m.principle }), el('td', { 'data-label': '适用', text: m.use }), el('td', { 'data-label': '局限', text: m.limitation }) ]);
         }))
       ]) ]));
     }
