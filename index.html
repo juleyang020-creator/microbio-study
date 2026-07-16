@@ -94,7 +94,7 @@
       btn.addEventListener('click', function () { location.reload(); });
       document.body.appendChild(btn);
     }
-    // PWA：仅在 http(s) 下注册离线缓存（file:// 套壳内跳过）
+    // PWA：仅在 http(s) 下注册离线缓存（本地 file:// 双击打开时跳过）
     if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(function (reg) {

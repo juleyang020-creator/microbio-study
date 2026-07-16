@@ -2,16 +2,6 @@
 .superpowers/
 .claude/
 node_modules/
-ios/Microbio/web/
-ios/Microbio/build/
-**/xcuserdata/
-DerivedData/
-*.xcarchive/
-*.xcresult/
-*.dSYM/
-*.ipa
-*.mobileprovision
-ExportOptions.plist
 # secrets — never commit API keys
 .env
 .env.*
