@@ -423,22 +423,27 @@ test('判读引擎：全部折点行的边界值判读自洽（S界=S · R界=R 
   assert.ok(zoneChecked > 20, '抑菌圈边界校验覆盖过少：' + zoneChecked);
 });
 
-test('菌名速查索引：覆盖全部菌名（含被精简移除的），字段完整', () => {
+test('菌名速查索引：大规模、按拉丁名字母序、字段完整、名称唯一', () => {
   const names = global.window.DB.microbeNames;
-  assert.ok(Array.isArray(names) && names.length >= 220, '菌名速查索引过少：' + (names && names.length));
+  assert.ok(Array.isArray(names) && names.length >= 1500, '菌名速查索引过少：' + (names && names.length));
   names.forEach((m) => {
     assert.ok(m.名称 && typeof m.名称 === 'string', '菌名速查条目缺中文名');
-    assert.ok(m.界, '菌名速查条目缺界分组：' + m.名称);
+    assert.ok(typeof m.拉丁名 === 'string', '菌名速查条目缺拉丁名：' + m.名称);
   });
-  // 名称唯一（无重复）
+  // 名称唯一
   const seen = new Set();
   names.forEach((m) => { assert.ok(!seen.has(m.名称), '菌名速查重复：' + m.名称); seen.add(m.名称); });
-  // 详情模块保留的菌都应在索引中（索引是全集）
+  // 按拉丁名字母顺序（忽略大小写与非字母）非递减
+  const key = (m) => (m.拉丁名 || '').toLowerCase().replace(/[^a-z]/g, '');
+  for (let i = 1; i < names.length; i++) {
+    assert.ok(key(names[i - 1]) <= key(names[i]), '菌名速查未按拉丁名字母序：' + names[i - 1].拉丁名 + ' > ' + names[i].拉丁名);
+  }
+  // 详情模块保留的菌都在索引中（索引是全集）
   const idxNames = new Set(names.map((m) => m.名称));
   global.window.DB.microbes.forEach((mb) => {
     assert.ok(idxNames.has(mb.名称), '菌名速查缺详情模块中的菌：' + mb.名称);
   });
-  // 被移除的代表菌仍以名称保留（如空肠弯曲菌、粗球孢子菌）
+  // 被移除的代表菌仍以名称保留
   assert.ok(idxNames.has('空肠弯曲菌') && idxNames.has('粗球孢子菌'), '被移除菌未在菌名速查中保留');
 });
 

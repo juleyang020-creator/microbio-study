@@ -53,7 +53,7 @@
 | 文件 | 模块 | 条目量 |
 |---|---|---|
 | `data/microbes.js` | 微生物分类（精选临床常用） | 187 |
-| `data/microbe-names.js` | 菌名速查索引（全部菌名 → 百度百科） | 230 |
+| `data/microbe-names.js` | 菌名速查索引（全部菌名 → 百度百科，按拉丁名字母序） | 2328 |
 | `data/antibiotics.js` | 抗微生物药 | 93 |
 | `data/resistance.js` | 耐药因素 | 22 |
 | `data/idcards.js` | 鉴定卡 | 7 |
