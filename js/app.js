@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-45';
+  var APP_VERSION = window.APP_VERSION || '20260702-46';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -480,34 +480,6 @@
       ]));
     }
 
-    // 抗菌谱速览（经验，仅微生物条目、且有 CLSI 折点组时）—— 聚合自结构化数据，非药敏结果
-    if (vm.id && parseHash().module === 'microbes') {
-      var abg = View.antibiogramVM(window.DB || {}, vm.id); // 需 breakpoints/intrinsicResistance/treatment，用完整 DB
-      if (abg && abg.rows.length) {
-        var ABG_SYM = { S: '✓', R: '✗', Q: '?', N: '—' }, ABG_CLS = { S: 'abg-s', R: 'abg-r', Q: 'abg-q', N: 'abg-n' };
-        var abgRows = abg.rows.map(function (r) {
-          return el('tr', {}, [
-            el('td', { cls: 'abg-drug', text: r.药物 }),
-            el('td', { cls: 'abg-status ' + ABG_CLS[r.状态], text: ABG_SYM[r.状态] })
-          ]);
-        });
-        nodes.push(el('div', { cls: 'antibiogram' }, [
-          el('div', { cls: 'bp-head' }, [
-            el('span', { cls: 'bp-title', text: '抗菌谱速览（经验）' }),
-            el('span', { cls: 'bp-source', text: '教学速查 · 非临床报告' })
-          ]),
-          el('div', { cls: 'abg-warn', text: '⚠️ 本表由固有耐药 + CLSI 折点 + 治疗要点自动聚合，不是药敏结果、不是临床报告；实际敏感性以患者标本的药敏试验为准。' }),
-          el('div', { cls: 'table-scroll' }, [
-            el('table', { cls: 'abg-table' }, [
-              el('thead', {}, [ el('tr', {}, [ el('th', { text: '药物' }), el('th', { text: '通常' }) ]) ]),
-              el('tbody', {}, abgRows)
-            ])
-          ]),
-          el('div', { cls: 'bp-legend-note', text: '✓ 经验首选（治疗要点提及）· ? 有 CLSI 折点、需做药敏 · ✗ 固有耐药（CLSI M100 附录 B）。列为该菌 Tier-1 常规报告药物；「?」是最常见状态，代表须依据药敏报告。' })
-        ]));
-      }
-    }
-
     if (vm.药物 && vm.药物.length) {
       var abxMap = abxIdByName();
       var drugChips = vm.药物.map(function (name) {
@@ -541,17 +513,16 @@
     if (vm.折点) {
       var bp = vm.折点;
       var eu = View.eucastVM(bp.菌组名, (window.DB || {}).eucastBreakpoints); // EUCAST 并排对照（无则不加列）
-      var bpHeadRow = [ el('th', { text: '抗菌药物' }), el('th', { text: 'CLSI MIC (μg/mL)' }) ]
+      var bpHeadRow = [ el('th', { text: '抗菌药物' }), el('th', { text: (eu ? 'CLSI ' : '') + 'MIC (μg/mL)' }), el('th', { text: (eu ? 'CLSI ' : '') + '抑菌圈 (mm)' }) ]
         .concat(eu ? [ el('th', { cls: 'bp-eu-col', text: 'EUCAST MIC' }) ] : [])
-        .concat([ el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ]);
+        .concat([ el('th', { text: '备注' }) ]);
       var bpBodyRows = bp.药物.map(function (d) {
         var aid = abxIdByDrugText(d.药物);
         var drugCell = aid
           ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
           : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
-        var cells = [ drugCell, el('td', { cls: 'bp-mic', text: d.MIC }) ];
-        if (eu) { cells.push(eucastCell(eu.drug[d.药物], d.MIC)); }
-        cells.push(el('td', { cls: 'bp-disk', text: d.抑菌圈 }));
+        var cells = [ drugCell, el('td', { cls: 'bp-mic', text: d.MIC }), el('td', { cls: 'bp-disk', text: d.抑菌圈 }) ];
+        if (eu) { cells.push(eucastCell(eu.drug[d.药物], d.MIC)); } // EUCAST 置于抑菌圈之后
         cells.push(el('td', { cls: 'bp-comment', text: d.备注 || '' }));
         return el('tr', {}, cells);
       });
@@ -1599,18 +1570,17 @@
     });
   }
   function buildBpTable(drugs, eu) {
-    var headRow = [ el('th', { text: '抗菌药物' }), el('th', { text: (eu ? 'CLSI ' : '') + 'MIC (μg/mL)' }) ]
+    var headRow = [ el('th', { text: '抗菌药物' }), el('th', { text: (eu ? 'CLSI ' : '') + 'MIC (μg/mL)' }), el('th', { text: (eu ? 'CLSI ' : '') + '抑菌圈 (mm)' }) ]
       .concat(eu ? [ el('th', { cls: 'bp-eu-col', text: 'EUCAST MIC' }) ] : [])
-      .concat([ el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ]);
+      .concat([ el('th', { text: '备注' }) ]);
     var bodyRows = drugs.map(function (d) {
       var aid = abxIdByDrugText(d.药物);
       var drugCell = aid
         ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
         : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
       var clsiMic = [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / ');
-      var cells = [ drugCell, el('td', { cls: 'bp-mic', text: clsiMic }) ];
-      if (eu) { cells.push(eucastCell(eu.drug[d.药物], clsiMic)); }
-      cells.push(el('td', { cls: 'bp-disk', text: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / ') }));
+      var cells = [ drugCell, el('td', { cls: 'bp-mic', text: clsiMic }), el('td', { cls: 'bp-disk', text: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / ') }) ];
+      if (eu) { cells.push(eucastCell(eu.drug[d.药物], clsiMic)); } // EUCAST 置于抑菌圈之后
       cells.push(el('td', { cls: 'bp-comment', text: d.备注 || '' }));
       return el('tr', {}, cells);
     });
