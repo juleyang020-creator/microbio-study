@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-43';
+  var APP_VERSION = window.APP_VERSION || '20260702-44';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -298,10 +298,76 @@
     return nodes;
   }
 
+  // ===== 本地存储：收藏夹 + 浏览历史（localStorage，跨会话保留、仅本设备，不上传）=====
+  function lsLoad(key) { try { var v = JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(v) ? v : []; } catch (e) { return []; } }
+  function lsSave(key, list) { try { localStorage.setItem(key, JSON.stringify(list)); } catch (e) {} }
+
+  var FAV_KEY = 'zhiwei-favorites', FAV_MAX = 50;
+  var _favCache = null;
+  function favorites() { if (!_favCache) { _favCache = lsLoad(FAV_KEY); } return _favCache; }
+  function isFavorited(id) { return favorites().some(function (f) { return f.id === id; }); }
+  function toggleFavorite(id, module, 名称) {
+    if (!id || !module) { return; }
+    var list = favorites().slice();
+    var i = -1;
+    for (var k = 0; k < list.length; k++) { if (list[k].id === id) { i = k; break; } }
+    if (i >= 0) { list.splice(i, 1); }
+    else { list.push({ id: id, module: module, 名称: 名称, ts: Date.now() }); if (list.length > FAV_MAX) { list.shift(); } }
+    _favCache = list; lsSave(FAV_KEY, list);
+  }
+
+  var HIST_KEY = 'zhiwei-history', HIST_MAX = 30;
+  var _histCache = null;
+  function browseHistory() { if (!_histCache) { _histCache = lsLoad(HIST_KEY); } return _histCache; }
+  function recordHistory(id, module, 名称) {
+    if (!id || !module) { return; }
+    var list = browseHistory().filter(function (h) { return h.id !== id; }); // 去重：重复访问移到最前
+    list.unshift({ id: id, module: module, 名称: 名称, ts: Date.now() });
+    if (list.length > HIST_MAX) { list = list.slice(0, HIST_MAX); }
+    _histCache = list; lsSave(HIST_KEY, list);
+  }
+  function clearHistory() { _histCache = []; lsSave(HIST_KEY, []); }
+
+  // 侧栏顶部的「我的收藏」+「最近浏览」区（名称实时取 DB，改名后不过期；取不到用快照名）
+  function favHistNodes(route) {
+    var out = [];
+    var index = Core.buildIndex(db());
+    var favs = favorites();
+    if (favs.length) {
+      var favItems = favs.slice().reverse().map(function (f) { // 最新收藏在前
+        var hit = index[f.id];
+        return el('a', {
+          cls: 'entry-link fav-item' + (f.id === route.id ? ' selected' : ''),
+          text: '★ ' + (hit ? hit.entry.名称 : f.名称), href: '#/' + f.module + '/' + f.id
+        });
+      });
+      out.push(el('div', { cls: 'cat-group fav-section' },
+        [ el('div', { cls: 'cat-group-name', text: '我的收藏 (' + favs.length + ')' }) ].concat(favItems)));
+    }
+    var hist = browseHistory();
+    if (hist.length) {
+      var histItems = hist.slice(0, 10).map(function (h) { // 侧栏只显示最近 10 条
+        var hit = index[h.id];
+        return el('a', {
+          cls: 'entry-link history-item' + (h.id === route.id ? ' selected' : ''),
+          text: hit ? hit.entry.名称 : h.名称, href: '#/' + h.module + '/' + h.id
+        });
+      });
+      out.push(el('div', { cls: 'cat-group history-section' }, [
+        el('div', { cls: 'cat-group-name history-head' }, [
+          el('span', { text: '最近浏览' }),
+          el('button', { cls: 'hist-clear', type: 'button', text: '清空', onClick: function () { clearHistory(); renderSidebar(); } })
+        ])
+      ].concat(histItems)));
+    }
+    return out;
+  }
+
   function renderSidebar() {
     var route = parseHash();
-    fill(document.getElementById('sidebar'),
+    var nodes = favHistNodes(route).concat(
       buildSidebar(View.sidebarVM(route.module, categories(), db()[route.module], route.id), route.module));
+    fill(document.getElementById('sidebar'), nodes);
   }
 
   function buildDetail(vm) {
@@ -310,6 +376,15 @@
     var head = [ el('h2', { cls: 'detail-title', text: vm.名称 }) ];
     if (vm.类别) { head.push(el('span', { cls: 'badge', text: vm.类别 })); }
     if (vm.药敏简写) { head.push(el('span', { cls: 'abbr', title: '药敏试验简写', text: '药敏 ' + vm.药敏简写 })); }
+    if (vm.id) { // ☆ 收藏（仅条目详情）
+      var _fav = isFavorited(vm.id);
+      head.push(el('button', {
+        cls: 'fav-star' + (_fav ? ' favorited' : ''), type: 'button',
+        'aria-label': _fav ? '取消收藏' : '收藏', 'aria-pressed': String(_fav),
+        title: _fav ? '取消收藏' : '加入收藏', text: _fav ? '★' : '☆',
+        onClick: function () { toggleFavorite(vm.id, parseHash().module, vm.名称); renderRoute(); }
+      }));
+    }
     nodes.push(el('div', { cls: 'detail-head' }, head));
     if (vm.拉丁名) { nodes.push(el('div', { cls: 'latin', text: vm.拉丁名 })); }
     if (vm.生物安全) {
@@ -405,6 +480,34 @@
       ]));
     }
 
+    // 抗菌谱速览（经验，仅微生物条目、且有 CLSI 折点组时）—— 聚合自结构化数据，非药敏结果
+    if (vm.id && parseHash().module === 'microbes') {
+      var abg = View.antibiogramVM(window.DB || {}, vm.id); // 需 breakpoints/intrinsicResistance/treatment，用完整 DB
+      if (abg && abg.rows.length) {
+        var ABG_SYM = { S: '✓', R: '✗', Q: '?', N: '—' }, ABG_CLS = { S: 'abg-s', R: 'abg-r', Q: 'abg-q', N: 'abg-n' };
+        var abgRows = abg.rows.map(function (r) {
+          return el('tr', {}, [
+            el('td', { cls: 'abg-drug', text: r.药物 }),
+            el('td', { cls: 'abg-status ' + ABG_CLS[r.状态], text: ABG_SYM[r.状态] })
+          ]);
+        });
+        nodes.push(el('div', { cls: 'antibiogram' }, [
+          el('div', { cls: 'bp-head' }, [
+            el('span', { cls: 'bp-title', text: '抗菌谱速览（经验）' }),
+            el('span', { cls: 'bp-source', text: '教学速查 · 非临床报告' })
+          ]),
+          el('div', { cls: 'abg-warn', text: '⚠️ 本表由固有耐药 + CLSI 折点 + 治疗要点自动聚合，不是药敏结果、不是临床报告；实际敏感性以患者标本的药敏试验为准。' }),
+          el('div', { cls: 'table-scroll' }, [
+            el('table', { cls: 'abg-table' }, [
+              el('thead', {}, [ el('tr', {}, [ el('th', { text: '药物' }), el('th', { text: '通常' }) ]) ]),
+              el('tbody', {}, abgRows)
+            ])
+          ]),
+          el('div', { cls: 'bp-legend-note', text: '✓ 经验首选（治疗要点提及）· ? 有 CLSI 折点、需做药敏 · ✗ 固有耐药（CLSI M100 附录 B）。列为该菌 Tier-1 常规报告药物；「?」是最常见状态，代表须依据药敏报告。' })
+        ]));
+      }
+    }
+
     if (vm.药物 && vm.药物.length) {
       var abxMap = abxIdByName();
       var drugChips = vm.药物.map(function (name) {
@@ -454,7 +557,7 @@
         el('div', { cls: 'bp-head' }, [
           el('span', { cls: 'bp-title', text: '药敏折点' }),
           el('span', { cls: 'bp-source', text: (bp.来源 || 'CLSI M100 Ed36 (2026)') + '  |  ' + bp.CLSI表 })
-        ]),
+        ].concat(eucastBadgeNodes())),
         el('div', { cls: 'table-scroll' }, [
           el('table', { cls: 'bp-table' }, [
             el('thead', {}, [ el('tr', {}, bpHeadRow) ]),
@@ -463,6 +566,7 @@
         ]),
         bpTierLegend(bp.药物),
         el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' + (bpHasCombo(bp.药物) ? '　·　' + COMBO_BP_NOTE : '') }),
+        eucastNoteNode(),
         el('div', { cls: 'bp-curated', text: CURATED_BP_NOTE })
       ]));
     }
@@ -563,18 +667,54 @@
     return nodes;
   }
 
+  // 命中高亮：把文本按 token 拆成普通文本节点与 <mark> 节点（全程 textContent，无 innerHTML/XSS 面）
+  function highlightNodes(text, tokens) {
+    text = String(text || '');
+    if (!text || !tokens || !tokens.length) { return [ document.createTextNode(text) ]; }
+    var lower = text.toLowerCase(), matches = [];
+    tokens.forEach(function (t) {
+      if (!t) { return; }
+      var idx = 0;
+      while ((idx = lower.indexOf(t, idx)) !== -1) { matches.push({ start: idx, end: idx + t.length }); idx += t.length; }
+    });
+    if (!matches.length) { return [ document.createTextNode(text) ]; }
+    matches.sort(function (a, b) { return a.start - b.start; });
+    var merged = [ matches[0] ];
+    for (var i = 1; i < matches.length; i++) {
+      var last = merged[merged.length - 1];
+      if (matches[i].start <= last.end) { last.end = Math.max(last.end, matches[i].end); }
+      else { merged.push(matches[i]); }
+    }
+    var out = [], pos = 0;
+    merged.forEach(function (m) {
+      if (m.start > pos) { out.push(document.createTextNode(text.slice(pos, m.start))); }
+      out.push(el('mark', { cls: 'search-hit', text: text.slice(m.start, m.end) }));
+      pos = m.end;
+    });
+    if (pos < text.length) { out.push(document.createTextNode(text.slice(pos))); }
+    return out;
+  }
   function buildSearch(vm) {
     var nodes = [ el('div', { cls: 'search-head', text: '搜索：“' + vm.query + '”' }) ];
     if (vm.items.length === 0) {
       nodes.push(el('div', { cls: 'empty', text: '没有找到匹配的条目。' }));
       return nodes;
     }
+    var tokens = vm.tokens || [];
     var items = vm.items.map(function (r) {
       var link = el('a', { cls: 'search-item', href: r.href }, [
-        el('span', { cls: 'tag tag-' + r.module, text: View.moduleLabel(r.module) })
+        el('span', { cls: 'tag tag-' + r.module, text: View.moduleLabel(r.module) }),
+        document.createTextNode(' ')
       ]);
-      link.appendChild(document.createTextNode(' ' + r.名称));
-      if (r.摘要) { link.appendChild(el('span', { cls: 'search-summary', text: r.摘要 })); }
+      highlightNodes(r.名称, tokens).forEach(function (n) { link.appendChild(n); }); // 名称高亮
+      if (r.命中片段) { // 命中上下文片段（含来源字段）
+        var ctx = el('div', { cls: 'search-context' });
+        if (r.命中字段) { ctx.appendChild(el('span', { cls: 'search-context-field', text: r.命中字段 + '：' })); }
+        highlightNodes(r.命中片段, tokens).forEach(function (n) { ctx.appendChild(n); });
+        link.appendChild(ctx);
+      } else if (r.摘要) {
+        link.appendChild(el('span', { cls: 'search-summary', text: r.摘要 }));
+      }
       return link;
     });
     nodes.push(el('div', { cls: 'search-list' }, items));
@@ -1314,6 +1454,7 @@
       df.addEventListener('input', function () { bpDrugFilter = df.value; renderBreakpointsMain(); });
       nodes.push(el('div', { cls: 'bp-filters' }, [ gf, df ]));
       nodes.push(el('div', { cls: 'bp-curated bp-curated-tool', text: CURATED_BP_NOTE }));
+      nodes.push(el('div', { cls: 'bp-eucast-bar' }, eucastBadgeNodes().concat([ eucastNoteNode() ])));
       var groups = View.breakpointLookupVM(bpGroups(), bpGroupFilter, bpDrugFilter);
       if (groups.length === 0) {
         nodes.push(el('div', { cls: 'empty', text: '没有匹配的折点。' }));
@@ -1410,6 +1551,17 @@
   // 复方制剂（β-内酰胺/酶抑制剂等）是单一药物、单一折点：CLSI 记法「活性成分/固定抑制剂浓度」中，
   // 斜线后的数字是固定不变的抑制剂浓度，并非第二个折点。判读只看活性成分（斜线前）的值。
   var COMBO_BP_NOTE = '复方制剂为单一药物、按单一折点判读：斜线后的数字是固定配比的另一成分浓度（如酶抑制剂或第二组分），并非第二个折点。';
+  // EUCAST 阶段1：标注本表为 CLSI 标准 + 官方对照链接 + 差异提示（未收录 EUCAST 数值）
+  var EUCAST_URL = 'https://www.eucast.org/clinical_breakpoints';
+  function eucastBadgeNodes() {
+    return [
+      el('span', { cls: 'bp-standard-badge', title: '本表折点为 CLSI 标准', text: 'CLSI' }),
+      el('a', { cls: 'bp-eucast-link', text: 'EUCAST 对照', href: EUCAST_URL, target: '_blank', rel: 'noopener noreferrer', title: '欧洲抗菌药敏试验委员会折点（与 CLSI 可能存在差异）' })
+    ];
+  }
+  function eucastNoteNode() {
+    return el('div', { cls: 'bp-eucast-note', text: '⚠️ 本表为 CLSI 标准。EUCAST（欧洲）折点可能与之不同——尤其 β-内酰胺类、氨基糖苷类的 S/R 界值，以及“I”的定义（EUCAST 的 I=“增加暴露仍可敏感”，CLSI 的 I=“中介”）。欧洲使用请以 EUCAST 当前版本为准。' });
+  }
   // 本模块采用「精选常用折点」范围（方案 B）：并非完整复制 CLSI 原表，仅收录教学与临床常用药物。
   var CURATED_BP_NOTE = '本模块为教学与临床常用的「精选常用折点」，并非 CLSI 原表的完整复制；未列出某药物不代表 CLSI 未建立折点，完整数据请查阅对应版本原表（M100 / M45 / M27M44S / M38M51S）。';
   // 仅"数字/数字"才算复方记法；详情页折点经 breakpointVM 合并为 "≤8/4 / 16/8 / ≥32/16"，
@@ -1875,7 +2027,6 @@
     var route = parseHash();
     var data = db();
     setActiveTab(route.module);
-    renderSidebar();
 
     var entry = null, rels = [], mechImg = null;
     if (route.id) {
@@ -1885,6 +2036,8 @@
       rels = entry ? Core.getRelations(route.id, data, index) : [];
       mechImg = View.mechanismImageFor(route.module, entry, categories());
     }
+    if (entry && route.id) { recordHistory(route.id, route.module, entry.名称); }
+    renderSidebar(); // 放在记录历史之后，使当前条目在「最近浏览」中即时高亮
     var extras = {
       mechanismImage: mechImg,
       mechCaption: route.module === 'tests' ? '试验示意图' : (route.module === 'staining' ? '染色示意图' : (route.module === 'biochem-tests' ? '生化反应示意图' : '作用机制示意图')),
