@@ -849,15 +849,15 @@
         cells.push(el('td', { cls: 'ir-note', text: r.备注 || '' }));
         return el('tr', {}, cells);
       });
-      out.push(el('div', { cls: 'ir-block' }, [
-        el('div', { cls: 'ir-block-title', text: grp.界 }),
-        el('div', { cls: 'ir-table-wrap' }, [el('table', { cls: 'ir-table' }, [el('thead', {}, [head]), el('tbody', {}, body)])])
-      ]));
+      var block = [el('div', { cls: 'ir-block-title', text: grp.界 })];
+      if (grp.备注) { block.push(el('div', { cls: 'ir-block-note', text: grp.备注 })); }
+      block.push(el('div', { cls: 'ir-table-wrap' }, [el('table', { cls: 'ir-table' }, [el('thead', {}, [head]), el('tbody', {}, body)])]));
+      out.push(el('div', { cls: 'ir-block' }, block));
     });
     if (out.length === 0) { return []; }
     return [el('div', { cls: 'ir-section' }, [
       el('div', { cls: 'ir-section-head' }, [
-        el('span', { cls: 'ir-section-title', text: '真菌固有耐药速查（CLSI 结构化）' }),
+        el('span', { cls: 'ir-section-title', text: '固有耐药速查（CLSI 结构化 · 细菌 + 真菌）' }),
         el('span', { cls: 'ir-section-src', text: data.来源 })
       ]),
       el('div', { cls: 'ir-legend', text: data.说明 })

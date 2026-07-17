@@ -318,7 +318,42 @@ test('真菌固有耐药结构化数据符合 CLSI 附录（M27M44S App B / M38M
   // 引用的菌 id（若给出）须存在
   ir.分组.forEach((g) => (g.行 || []).forEach((r) => {
     if (r.id) assert.ok(microbeIds[r.id], '固有耐药引用了不存在的微生物 id：' + r.id);
+    assert.ok(Array.isArray(r.耐药), '固有耐药行缺耐药数组：' + r.名称);
   }));
+});
+
+test('细菌固有耐药结构化数据符合 CLSI M100 Ed36 Appendix B（逐格核对 PDF）', () => {
+  const ir = global.window.DB.intrinsicResistance;
+  assert.strictEqual(ir.分组.length, 8, '合并后应含细菌 6 组 + 真菌 2 组');
+  const findRow = (latin) => { for (const g of ir.分组) { const r = (g.行 || []).find((x) => x.拉丁 === latin); if (r) return r; } return null; };
+  const has = (latin, drug) => (findRow(latin) || { 耐药: [] }).耐药.indexOf(drug) !== -1;
+  // 细菌各组不得有空列（全部无 R 的列已删除）；真菌组保留完整抗真菌药面板，故不检查
+  ir.分组.filter((g) => /M100/.test(g.界)).forEach((g) => (g.药物列 || []).forEach((col) => {
+    assert.ok((g.行 || []).some((r) => (r.耐药 || []).indexOf(col) !== -1), `${g.界} 存在空列：${col}`);
+  }));
+  // B1 肠杆菌目
+  assert.ok(has('Citrobacter freundii', '一代头孢') && has('Citrobacter freundii', '头霉素类'), '弗劳地柠檬酸杆菌应固有耐一代头孢/头霉素');
+  assert.ok(has('Serratia marcescens', '呋喃妥因') && has('Serratia marcescens', '黏菌素/多黏菌素B'), '黏质沙雷菌应固有耐呋喃妥因/多黏菌素');
+  assert.ok(has('Proteus mirabilis', '呋喃妥因') && has('Proteus mirabilis', '黏菌素/多黏菌素B') && !has('Proteus mirabilis', '氨苄西林'), '奇异变形杆菌耐呋喃妥因+多黏菌素、不耐氨苄西林');
+  assert.ok(has('Morganella morganii', '黏菌素/多黏菌素B'), '摩根菌应固有耐黏菌素/多黏菌素B');
+  // 亚胺培南列（仅脚注 d，无 R）应被删除
+  assert.ok((findRow('Morganella morganii').备注 || '').indexOf('亚胺培南') !== -1, '摩根菌亚胺培南脚注 d 应写入备注');
+  // B2 非肠杆菌目
+  assert.ok(has('Stenotrophomonas maltophilia', '亚胺培南') && has('Stenotrophomonas maltophilia', '美罗培南'), '嗜麦芽应固有耐碳青霉烯');
+  assert.ok(!has('Stenotrophomonas maltophilia', '四环素类/替加环素'), '嗜麦芽四环素为脚注 b（不含替加环素），不计入固有耐药列');
+  assert.ok(has('Pseudomonas aeruginosa', '氯霉素') && has('Pseudomonas aeruginosa', '复方磺胺甲噁唑'), '铜绿假单胞菌固有耐氯霉素/SMZ');
+  assert.ok(!has('Burkholderia cepacia complex', '甲氧苄啶'), '洋葱伯克霍尔德菌甲氧苄啶为脚注 a，不计入');
+  // B4 肠球菌（此前手填有误，核对 PDF 后修正）
+  assert.deepStrictEqual(findRow('Enterococcus faecalis').耐药,
+    ['头孢菌素类', '氨基糖苷类', '克林霉素', '奎奴普丁/达福普汀', '甲氧苄啶', '复方磺胺甲噁唑', '夫西地酸'], '粪肠球菌固有耐药谱');
+  assert.ok(!has('Enterococcus faecium', '奎奴普丁/达福普汀'), '屎肠球菌对奎奴普丁/达福普汀不固有耐药（与粪肠球菌区别）');
+  assert.ok(has('Enterococcus gallinarum / E. casseliflavus', '万古霉素') && !has('Enterococcus faecalis', '万古霉素'), 'vanC 仅 gallinarum/casseliflavus 固有耐万古霉素');
+  // B3 葡萄球菌
+  assert.ok(has('Staphylococcus saprophyticus', '新生霉素'), '腐生葡萄球菌固有耐新生霉素');
+  assert.ok(has('Staphylococcus capitis', '磷霉素') && !has('Staphylococcus capitis', '新生霉素'), '头葡萄球菌仅固有耐磷霉素');
+  // B5/B6 厌氧菌
+  assert.ok(has('Clostridium innocuum', '万古霉素'), '无害梭菌固有耐万古霉素');
+  assert.ok(has('Bacteroides spp.', '氨基糖苷类') && has('Bacteroides spp.', '青霉素'), '拟杆菌固有耐氨基糖苷/青霉素');
 });
 
 test('念珠菌标本部位报告数据结构完整（M27M44S App A）', () => {
