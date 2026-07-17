@@ -329,6 +329,16 @@ body.route-mn .detail-title { margin-top: 18px; }
 .ir-dash { color: var(--line); }
 .ir-note { color: var(--muted); font-size: 11.5px; max-width: 220px; min-width: 150px; }
 .ir-table .latin { display: block; color: var(--muted); font-style: italic; font-size: 11px; }
+/* 手机端卡片视图：按菌列出「只显示其耐药药物」，无横滚、无空格子（默认隐藏，窄屏启用） */
+.ir-card-view { display: none; }
+.ir-card { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); margin: 0 0 8px; }
+.ir-card-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 8px; margin-bottom: 8px; }
+.ir-card-head .intrinsic-link, .ir-card-head strong { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.ir-card-head .latin { font-style: italic; color: var(--muted); font-size: 11.5px; }
+.ir-card-drugs { display: flex; flex-wrap: wrap; gap: 5px; }
+.ir-drug-chip { display: inline-block; padding: 3px 9px; border-radius: 5px; background: #fdecec; color: #b83227; border: 1px solid #f0b6b1; font-size: 12.5px; line-height: 1.35; }
+.ir-card-none { display: inline-block; color: var(--green); font-size: 12.5px; background: var(--accent-weak); border: 1px solid var(--accent-edge); border-radius: 5px; padding: 3px 9px; }
+.ir-card-note { margin-top: 8px; color: var(--muted); font-size: 11.5px; line-height: 1.55; }
 
 /* 念珠菌标本部位报告限制（M27M44S App A）参考面板 */
 .sr-section { margin: 14px 0 6px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--line-2); }
@@ -603,17 +613,10 @@ body.route-mn .detail-title { margin-top: 18px; }
   .cmp th, .cmp td { padding: 4px 6px; }
   .cmp .cmp-item { font-size: 10.5px; }
   .search-summary { margin-left: 0; }
-  /* 天然耐药矩阵：手机端更紧凑 */
-  .ir-table { font-size: 11.5px; }
-  .ir-table th, .ir-table td { padding: 4px 5px; }
-  .ir-table thead th { height: 116px; font-size: 10px; }
-  .ir-table th.ir-drug-col { padding: 6px 2px 5px; }
-  .ir-table th:first-child, .ir-table td:first-child { min-width: 88px; max-width: 108px; }
-  /* 手机端表高更矮：既保留药名吸顶，又在四周留出可翻页的空白，减少嵌套滚动"卡住"感 */
-  .ir-table-wrap { max-height: 60vh; }
-  .ir-chip { min-width: 14px; padding: 1px 4px; font-size: 10.5px; }
-  .ir-note { font-size: 10.5px; max-width: 148px; min-width: 120px; }
-  .ir-table .latin { font-size: 10px; }
+  /* 天然耐药：手机端隐藏矩阵、改用按菌卡片视图（无横滚、无空格子、无嵌套滚动） */
+  .ir-matrix-view { display: none; }
+  .ir-card-view { display: block; }
+  .ir-section { padding: 10px 11px; }
   /* 异常药敏表：隐藏独立类别列，改为标题上方的小标签；标题换行 */
   .ast-table { font-size: 13px; }
   .ast-th-cat, .ast-cell-cat { display: none; }
