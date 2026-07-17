@@ -710,9 +710,20 @@
       var cat = item.类别 || '其他';
       (byCat[cat] = byCat[cat] || []).push(item);
     });
+    // 严重度排序：必须修正 > 需复核 > 限制报告；同级按类别聚拢、保持原相对顺序
+    var rank = { '必须修正': 0, '需复核': 1, '限制报告': 2 };
+    var sorted = list.map(function (item, i) { return { item: item, i: i }; }).sort(function (a, b) {
+      var ra = rank[a.item.等级]; if (ra == null) { ra = 9; }
+      var rb = rank[b.item.等级]; if (rb == null) { rb = 9; }
+      if (ra !== rb) { return ra - rb; }
+      var ca = a.item.类别 || '其他', cb = b.item.类别 || '其他';
+      if (ca !== cb) { return ca < cb ? -1 : 1; }
+      return a.i - b.i;
+    }).map(function (x) { return x.item; });
     return {
       count: list.length,
       levels: ['all', '必须修正', '需复核', '限制报告'],
+      list: sorted,
       groups: Object.keys(byCat).map(function (cat) {
         return { 类别: cat, items: byCat[cat] };
       })

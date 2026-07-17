@@ -312,15 +312,22 @@ body.route-mn .detail-title { margin-top: 18px; }
 .ir-block { margin: 10px 0 4px; }
 .ir-block-title { font-weight: 600; font-size: 13px; color: var(--ink-soft); margin-bottom: 4px; }
 .ir-block-note { color: var(--muted); font-size: 11.5px; line-height: 1.5; margin: 0 0 6px; }
-.ir-table-wrap { overflow-x: auto; }
-.ir-table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 12.5px; background: var(--bg); }
-.ir-table th, .ir-table td { border: 1px solid var(--line); padding: 5px 8px; text-align: left; vertical-align: top; }
-.ir-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; }
-.ir-table th.ir-drug-col { white-space: nowrap; text-align: center; }
+/* 矩阵：药名表头竖排+吸顶，菌种首列吸附左侧，便于横竖滚动时对照 */
+.ir-table-wrap { overflow: auto; max-height: min(72vh, 660px); border: 1px solid var(--line); border-radius: 6px; }
+.ir-table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 12.5px; background: var(--bg); }
+.ir-table th, .ir-table td { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 5px 8px; text-align: left; vertical-align: middle; }
+/* 末列/末行的外缘边框交给 .ir-table-wrap，避免与其 1px 边框叠成 2px */
+.ir-table tr > :last-child { border-right: 0; }
+.ir-table tbody tr:last-child > * { border-bottom: 0; }
+.ir-table thead th { position: sticky; top: 0; z-index: 3; background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11px; height: 132px; vertical-align: bottom; }
+.ir-table th.ir-drug-col { writing-mode: vertical-rl; white-space: nowrap; text-align: left; padding: 7px 3px 6px; line-height: 1.05; }
 .ir-table td.ir-cell { text-align: center; }
+/* 菌种首列吸附左侧：分隔线只用 box-shadow，去掉自身 border-right 以免 2px 重线 */
+.ir-table th:first-child, .ir-table td:first-child { position: sticky; left: 0; z-index: 2; background: var(--bg); min-width: 120px; max-width: 158px; border-right: 0; box-shadow: 1px 0 0 var(--line); }
+.ir-table thead th:first-child { z-index: 5; background: var(--line-2); vertical-align: bottom; }
 .ir-chip { display: inline-block; min-width: 18px; padding: 1px 6px; border-radius: 4px; background: #fdecec; color: #c0392b; border: 1px solid #f0b6b1; font-weight: 700; font-size: 11.5px; }
 .ir-dash { color: var(--line); }
-.ir-note { color: var(--muted); font-size: 11.5px; max-width: 230px; }
+.ir-note { color: var(--muted); font-size: 11.5px; max-width: 220px; min-width: 150px; }
 .ir-table .latin { display: block; color: var(--muted); font-style: italic; font-size: 11px; }
 
 /* 念珠菌标本部位报告限制（M27M44S App A）参考面板 */
@@ -478,20 +485,39 @@ body.route-mn .detail-title { margin-top: 18px; }
 .bp-verdict-reason { font-size: 13.5px; color: var(--ink-soft); }
 .bp-judge-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
 
-/* 异常药敏 / 修正规则 */
-.ast-disclaimer { max-width: 760px; margin: 8px 0 16px; }
+/* 异常药敏 / 修正规则 —— 表格 + 等级图标，点行展开详情 */
+.ast-disclaimer { max-width: 760px; margin: 8px 0 12px; }
 .ast-filter-controls { align-items: stretch; gap: 5px; }
 .ast-filter-controls .cmp-add { flex: 1 1 auto; min-width: 72px; }
-.ast-group { margin: 20px 0; }
-.ast-group-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; margin-bottom: 8px; }
-.ast-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 12px; max-width: 1120px; }
-.ast-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 13px 15px; box-shadow: 0 1px 0 rgba(20,24,28,.02); }
-.ast-card-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 9px; }
-.ast-title { margin: 1px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink); font-weight: 650; letter-spacing: 0; }
-.ast-level { flex: 0 0 auto; font-size: 11px; font-weight: 700; line-height: 1; border: 1px solid var(--line); border-radius: 4px; padding: 5px 7px; color: var(--ink-soft); background: var(--line-2); white-space: nowrap; }
+.ast-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0 0 14px; }
+.ast-legend-item { display: inline-flex; align-items: center; gap: 7px; }
+.ast-legend-desc { color: var(--muted); font-size: 12px; }
+.ast-level-ic { font-size: 12px; line-height: 1; }
+.ast-level { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; font-size: 11px; font-weight: 700; line-height: 1; border: 1px solid var(--line); border-radius: 4px; padding: 4px 7px; color: var(--ink-soft); background: var(--line-2); white-space: nowrap; }
 .ast-critical { color: #8b3d28; background: #fbefe8; border-color: #edcbb8; }
 .ast-review { color: #6d5a13; background: #fbf5df; border-color: #e6d99d; }
 .ast-limit { color: #345f86; background: #edf3f8; border-color: #c9d9e8; }
+.ast-table-wrap { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; max-width: 1120px; }
+.ast-table { border-collapse: collapse; width: 100%; font-size: 13.5px; background: var(--surface); }
+.ast-table thead th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .6px; color: var(--muted); background: var(--line-2); padding: 8px 12px; border-bottom: 1px solid var(--line); }
+.ast-th-toggle { width: 34px; }
+.ast-th-level { width: 96px; }
+.ast-th-cat { width: 128px; white-space: nowrap; }
+.ast-row { cursor: pointer; }
+.ast-row > td { padding: 9px 12px; border-top: 1px solid var(--line); vertical-align: middle; }
+.ast-table tbody tr:first-child > td { border-top: 0; }
+.ast-row:hover { background: var(--line-2); }
+.ast-row.open { background: var(--line-2); }
+.ast-cell-cat { color: var(--ink-soft); font-size: 12.5px; white-space: nowrap; }
+.ast-row-cat-inline { display: none; }
+.ast-row-title { color: var(--ink); font-weight: 600; line-height: 1.4; }
+.ast-cell-toggle { text-align: center; color: var(--muted); }
+.ast-toggle-btn { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; min-height: 28px; padding: 4px; background: none; border: 0; border-radius: 5px; cursor: pointer; color: var(--muted); line-height: 1; }
+.ast-toggle-btn:hover { color: var(--ink-soft); }
+.ast-toggle-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; background: var(--accent-weak); }
+.ast-caret { font-size: 11px; }
+.ast-detail-row > td { padding: 0 12px 14px; background: var(--surface); border-top: 0; }
+.ast-detail { border-left: 3px solid var(--line); padding: 4px 0 4px 14px; }
 .ast-line { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 10px; margin: 7px 0; line-height: 1.65; }
 .ast-line-label { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .8px; }
 .ast-line-text { color: var(--ink-soft); font-size: 13.5px; }
@@ -577,9 +603,25 @@ body.route-mn .detail-title { margin-top: 18px; }
   .cmp th, .cmp td { padding: 4px 6px; }
   .cmp .cmp-item { font-size: 10.5px; }
   .search-summary { margin-left: 0; }
-  .ast-list { grid-template-columns: 1fr; }
-  .ast-card { padding: 12px; }
-  .ast-card-head { flex-direction: column; gap: 7px; }
+  /* 天然耐药矩阵：手机端更紧凑 */
+  .ir-table { font-size: 11.5px; }
+  .ir-table th, .ir-table td { padding: 4px 5px; }
+  .ir-table thead th { height: 116px; font-size: 10px; }
+  .ir-table th.ir-drug-col { padding: 6px 2px 5px; }
+  .ir-table th:first-child, .ir-table td:first-child { min-width: 88px; max-width: 108px; }
+  /* 手机端表高更矮：既保留药名吸顶，又在四周留出可翻页的空白，减少嵌套滚动"卡住"感 */
+  .ir-table-wrap { max-height: 60vh; }
+  .ir-chip { min-width: 14px; padding: 1px 4px; font-size: 10.5px; }
+  .ir-note { font-size: 10.5px; max-width: 148px; min-width: 120px; }
+  .ir-table .latin { font-size: 10px; }
+  /* 异常药敏表：隐藏独立类别列，改为标题上方的小标签；标题换行 */
+  .ast-table { font-size: 13px; }
+  .ast-th-cat, .ast-cell-cat { display: none; }
+  .ast-row > td { padding: 9px 10px; }
+  .ast-row-cat-inline { display: inline-block; margin-bottom: 3px; font-size: 10.5px; font-weight: 700; letter-spacing: .4px; color: var(--muted); }
+  .ast-row-title { display: block; }
+  .ast-legend { gap: 6px 14px; }
+  .ast-legend-desc { font-size: 11px; }
   .ast-line { grid-template-columns: 1fr; gap: 1px; margin: 9px 0; }
   /* 手机端：输入框字号 ≥16px，避免 iOS 聚焦时自动放大页面 */
   .search, .cmp-search, .mn-search,
