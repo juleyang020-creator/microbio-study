@@ -268,3 +268,36 @@ test('antibiogramVM 抗菌谱聚合：固有耐药=✗ / 有折点=? / 无折点
   // 每行状态只能是 S/R/Q（列取自真实折点，不应出现 N 无数据）
   cf.rows.concat(pm.rows).forEach((r) => assert.ok(['S', 'R', 'Q'].indexOf(r.状态) !== -1, '状态应为 S/R/Q'));
 });
+
+test('EUCAST 折点数据结构完整、与 CLSI 组对应、含已核对的代表值', () => {
+  require('../data/eucast-breakpoints.js');
+  const eu = global.window.DB.eucastBreakpoints;
+  const bp = global.window.DB.breakpoints;
+  assert.ok(eu.length >= 20, '应收录 ≥20 个 EUCAST 菌组');
+  const cnames = new Set(bp.map((g) => g.菌组名));
+  eu.forEach((g) => {
+    assert.ok(cnames.has(g.菌组名), 'EUCAST 组应对应一个 CLSI 组：' + g.菌组名);
+    assert.ok(/EUCAST/.test(g.来源));
+    g.药物.forEach((d) => {
+      assert.ok(/^≤|^IE|^—/.test(d.MIC_S), 'MIC_S 格式：' + g.菌组名 + '/' + d.药物 + ' = ' + d.MIC_S);
+    });
+  });
+  // 已人工/多智能体核对的代表值
+  const find = (grpSub, drugSub) => {
+    const g = eu.find((x) => x.菌组名.indexOf(grpSub) >= 0);
+    return g && g.药物.find((d) => d.药物.indexOf(drugSub) >= 0);
+  };
+  const cefepime = find('肠杆菌目', '头孢吡肟');
+  assert.strictEqual(cefepime.MIC_S, '≤1'); assert.strictEqual(cefepime.MIC_R, '>4'); // EUCAST v16.1 Enterobacterales
+  const cipro = find('肠杆菌目', '环丙沙星');
+  assert.strictEqual(cipro.MIC_S, '≤0.25'); assert.strictEqual(cipro.MIC_R, '>0.5'); // 通用（非沙门/脑膜炎）
+  const vgsAmp = find('草绿色链球菌', '氨苄西林');
+  assert.strictEqual(vgsAmp.MIC_R, '>2'); // 非心内膜炎通用行
+});
+
+test('micDiffers 正确识别 CLSI 与 EUCAST 界值差异（含复方 " / " 分隔）', () => {
+  assert.strictEqual(View.micDiffers('≤8 / 16 / ≥32', '≤8', '>8'), true);   // R 不同
+  assert.strictEqual(View.micDiffers('≤1 / 2 / ≥4', '≤1', '>2'), true);      // R 不同
+  assert.strictEqual(View.micDiffers('≤4/4 / 8/4 / ≥16/4', '≤4', '>4'), true); // 复方：R 16≠4，应判不同
+  assert.strictEqual(View.micDiffers('≤2 / 4 / ≥8', '≤2', '>8'), false);     // S、R 相同
+});

@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-44';
+  var APP_VERSION = window.APP_VERSION || '20260702-45';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -540,18 +540,20 @@
     // ② 药敏折点（来自 CLSI M100）—— 药物名可跳转到对应抗生素条目
     if (vm.折点) {
       var bp = vm.折点;
-      var bpHeadRow = [ el('th', { text: '抗菌药物' }), el('th', { text: 'MIC (μg/mL)' }), el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ];
+      var eu = View.eucastVM(bp.菌组名, (window.DB || {}).eucastBreakpoints); // EUCAST 并排对照（无则不加列）
+      var bpHeadRow = [ el('th', { text: '抗菌药物' }), el('th', { text: 'CLSI MIC (μg/mL)' }) ]
+        .concat(eu ? [ el('th', { cls: 'bp-eu-col', text: 'EUCAST MIC' }) ] : [])
+        .concat([ el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ]);
       var bpBodyRows = bp.药物.map(function (d) {
         var aid = abxIdByDrugText(d.药物);
         var drugCell = aid
           ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
           : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
-        return el('tr', {}, [
-          drugCell,
-          el('td', { cls: 'bp-mic', text: d.MIC }),
-          el('td', { cls: 'bp-disk', text: d.抑菌圈 }),
-          el('td', { cls: 'bp-comment', text: d.备注 || '' })
-        ]);
+        var cells = [ drugCell, el('td', { cls: 'bp-mic', text: d.MIC }) ];
+        if (eu) { cells.push(eucastCell(eu.drug[d.药物], d.MIC)); }
+        cells.push(el('td', { cls: 'bp-disk', text: d.抑菌圈 }));
+        cells.push(el('td', { cls: 'bp-comment', text: d.备注 || '' }));
+        return el('tr', {}, cells);
       });
       nodes.push(el('div', { cls: 'breakpoints' }, [
         el('div', { cls: 'bp-head' }, [
@@ -1364,6 +1366,12 @@
   var bpJudgeDrug = '';
   var bpJudgeMIC = '';
   var bpJudgeMethod = 'mic'; // 'mic' | 'zone'
+  var bpJudgeStd = 'clsi';   // 'clsi' | 'eucast'（EUCAST 仅 MIC）
+  // 当前菌组+药物的 EUCAST MIC 折点（有则可切到 EUCAST 判读），无则 null
+  function eucastDrugFor(菌组名, 药物名) {
+    var eu = View.eucastVM(菌组名, (window.DB || {}).eucastBreakpoints);
+    return eu ? (eu.drug[药物名] || null) : null;
+  }
   // 某折点药物是否有可判读的纸片抑菌圈折点
   function drugHasZone(d) { return !!(d && (View.parseBP(d.抑菌圈_S) || View.parseBP(d.抑菌圈_R))); }
   function isBreakpointsRoute() { return routeKey() === 'breakpoints'; }
@@ -1460,12 +1468,13 @@
         nodes.push(el('div', { cls: 'empty', text: '没有匹配的折点。' }));
       } else {
         groups.forEach(function (g) {
+          var euG = View.eucastVM(g.菌组名, (window.DB || {}).eucastBreakpoints);
           nodes.push(el('div', { cls: 'bp-group' }, [
             el('div', { cls: 'bp-group-head' }, [
               el('span', { cls: 'bp-title', text: g.菌组名 }),
               el('span', { cls: 'bp-source', text: (g.来源 || 'CLSI M100 Ed36 (2026)') + '  |  ' + g.CLSI表 + '  |  ' + g.菌种.length + ' 菌种' })
-            ]),
-            buildBpTable(g.药物)
+            ].concat(euG ? eucastBadgeNodes() : [])),
+            buildBpTable(g.药物, euG)
           ]));
         });
         bpSiteReportingNodes(groups).forEach(function (n) { nodes.push(n); });
@@ -1524,6 +1533,14 @@
         })
       ]);
 
+      // 标准切换：CLSI / EUCAST（EUCAST 仅 MIC，且该药有 EUCAST 折点时才出现）
+      var euDrug = eucastDrugFor(bpJudgeGroup, bpJudgeDrug);
+      if (bpJudgeStd === 'eucast' && (!euDrug || isZone)) { bpJudgeStd = 'clsi'; }
+      var stdBtns = (euDrug && !isZone) ? el('div', { cls: 'bp-method-toggle' }, [
+        el('button', { cls: 'cmp-add' + (bpJudgeStd === 'clsi' ? ' sel' : ''), text: 'CLSI', onClick: function () { bpJudgeStd = 'clsi'; renderBreakpointsMain(); } }),
+        el('button', { cls: 'cmp-add' + (bpJudgeStd === 'eucast' ? ' sel' : ''), title: 'EUCAST v16.1 折点判读', text: 'EUCAST', onClick: function () { bpJudgeStd = 'eucast'; renderBreakpointsMain(); } })
+      ]) : null;
+
       var valInput = el('input', {
         cls: 'cmp-search', type: 'number', value: bpJudgeMIC, min: '0', style: 'width:200px;',
         placeholder: isZone ? '输入抑菌圈直径 (mm)' : '输入 MIC 值 (μg/mL)',
@@ -1536,6 +1553,7 @@
         el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '菌组', 'for': 'bp-judge-group' }), groupSelect ]),
         el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '药物', 'for': 'bp-judge-drug' }), drugSelect ]),
         el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '方法' }), methodBtns ]),
+        stdBtns ? el('div', { cls: 'bp-judge-row' }, [ el('label', { text: '标准' }), stdBtns ]) : null,
         el('div', { cls: 'bp-judge-row' }, [ el('label', { text: isZone ? '抑菌圈' : 'MIC', 'for': 'bp-judge-mic' }), valInput ])
       ]));
 
@@ -1560,7 +1578,15 @@
     ];
   }
   function eucastNoteNode() {
-    return el('div', { cls: 'bp-eucast-note', text: '⚠️ 本表为 CLSI 标准。EUCAST（欧洲）折点可能与之不同——尤其 β-内酰胺类、氨基糖苷类的 S/R 界值，以及“I”的定义（EUCAST 的 I=“增加暴露仍可敏感”，CLSI 的 I=“中介”）。欧洲使用请以 EUCAST 当前版本为准。' });
+    return el('div', { cls: 'bp-eucast-note', text: '⚠️ CLSI 与 EUCAST 并列对照。EUCAST 列为 v16.1 折点（S≤ / R>；X<Y 时 X<MIC≤Y 为 “I=增加暴露”，与 CLSI 的 “I=中介” 定义不同）；与 CLSI 界值不同处已高亮，“⟨括⟩”为 EUCAST 括号折点、需按指南谨慎使用，空缺表示 EUCAST 未设该折点或本 App 未收录。欧洲报告以 EUCAST 现行版为准。' });
+  }
+  // EUCAST MIC 单元格（并排对照）：无数据显示 —；与 CLSI 界值不同则高亮
+  function eucastCell(euD, clsiMIC) {
+    if (!euD) { return el('td', { cls: 'bp-eu' }, [ el('span', { cls: 'bp-eu-na', text: '—' }) ]); }
+    var txt = (euD.MIC_S || '—') + (euD.MIC_R ? ' / ' + euD.MIC_R : '');
+    var kids = [ document.createTextNode(txt) ];
+    if (euD.括注) { kids.push(el('span', { cls: 'bp-eu-bracket', title: 'EUCAST 括号折点，需按指南谨慎使用', text: ' ⟨括⟩' })); }
+    return el('td', { cls: 'bp-eu' + (View.micDiffers(clsiMIC, euD.MIC_S, euD.MIC_R) ? ' bp-eu-diff' : '') }, kids);
   }
   // 本模块采用「精选常用折点」范围（方案 B）：并非完整复制 CLSI 原表，仅收录教学与临床常用药物。
   var CURATED_BP_NOTE = '本模块为教学与临床常用的「精选常用折点」，并非 CLSI 原表的完整复制；未列出某药物不代表 CLSI 未建立折点，完整数据请查阅对应版本原表（M100 / M45 / M27M44S / M38M51S）。';
@@ -1572,19 +1598,21 @@
       return /\d\/\d/.test(s); // 复方记法"数字/数字"无空格；VM 合并串的 " / " 分隔有空格，故不会误判
     });
   }
-  function buildBpTable(drugs) {
-    var headRow = [ el('th', { text: '抗菌药物' }), el('th', { text: 'MIC (μg/mL)' }), el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ];
+  function buildBpTable(drugs, eu) {
+    var headRow = [ el('th', { text: '抗菌药物' }), el('th', { text: (eu ? 'CLSI ' : '') + 'MIC (μg/mL)' }) ]
+      .concat(eu ? [ el('th', { cls: 'bp-eu-col', text: 'EUCAST MIC' }) ] : [])
+      .concat([ el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ]);
     var bodyRows = drugs.map(function (d) {
       var aid = abxIdByDrugText(d.药物);
       var drugCell = aid
         ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
         : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
-      return el('tr', {}, [
-        drugCell,
-        el('td', { cls: 'bp-mic', text: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / ') }),
-        el('td', { cls: 'bp-disk', text: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / ') }),
-        el('td', { cls: 'bp-comment', text: d.备注 || '' })
-      ]);
+      var clsiMic = [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / ');
+      var cells = [ drugCell, el('td', { cls: 'bp-mic', text: clsiMic }) ];
+      if (eu) { cells.push(eucastCell(eu.drug[d.药物], clsiMic)); }
+      cells.push(el('td', { cls: 'bp-disk', text: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / ') }));
+      cells.push(el('td', { cls: 'bp-comment', text: d.备注 || '' }));
+      return el('tr', {}, cells);
     });
     var tableWrap = el('div', { cls: 'table-scroll' }, [
       el('table', { cls: 'bp-table' }, [
@@ -1610,17 +1638,30 @@
       box.replaceChildren(el('div', { cls: 'empty-sm', text: '该菌组未找到此药物。' }));
       return;
     }
-    // 显示该药折点（按当前方法）
-    var bpS = isZone ? drug.抑菌圈_S : drug.MIC_S;
-    var bpMid = isZone ? drug.抑菌圈_I : drug.MIC_I;
-    var bpR = isZone ? drug.抑菌圈_R : drug.MIC_R;
+    // 显示该药折点（按当前方法与标准）。EUCAST 仅 MIC：S≤X / R>Y，I=（X,Y]“增加暴露”
+    var isEu = (bpJudgeStd === 'eucast') && !isZone;
+    var euD = isEu ? eucastDrugFor(bpJudgeGroup, bpJudgeDrug) : null;
+    if (isEu && !euD) { isEu = false; }
+    var bpS, bpMid, bpR;
+    if (isEu) {
+      bpS = euD.MIC_S; bpR = euD.MIC_R;
+      var _x = (String(bpS).match(/-?\d+(\.\d+)?/) || [])[0], _y = (String(bpR).match(/-?\d+(\.\d+)?/) || [])[0];
+      var _X = _x != null ? parseFloat(_x) : null, _Y = _y != null ? parseFloat(_y) : null;
+      bpMid = (_X != null && _Y != null && _X < _Y) ? (_X + '–' + _Y) : ''; // EUCAST I 区间（增加暴露）
+    } else {
+      bpS = isZone ? drug.抑菌圈_S : drug.MIC_S;
+      bpMid = isZone ? drug.抑菌圈_I : drug.MIC_I;
+      bpR = isZone ? drug.抑菌圈_R : drug.MIC_R;
+    }
     var unit = isZone ? 'mm' : 'μg/mL';
     var bpInfoKids = [
-      el('span', { text: (isZone ? '抑菌圈折点：S ' : '折点：S ') + (bpS || '—') + ' / I ' + (bpMid || '—') + ' / R ' + (bpR || '—') + ' (' + unit + ')' })
+      el('span', { text: (isEu ? 'EUCAST 折点：S ' + (bpS || '—') + ' / R ' + (bpR || '—') + (bpMid ? '（I：' + bpMid + '，增加暴露）' : '') + ' (' + unit + ')'
+        : ((isZone ? '抑菌圈折点：S ' : 'CLSI 折点：S ') + (bpS || '—') + ' / I ' + (bpMid || '—') + ' / R ' + (bpR || '—') + ' (' + unit + ')')) })
     ];
-    if (!isZone && /\//.test(String(drug.MIC_S || '') + String(drug.MIC_I || '') + String(drug.MIC_R || ''))) {
+    if (!isZone && !isEu && /\//.test(String(drug.MIC_S || '') + String(drug.MIC_I || '') + String(drug.MIC_R || ''))) {
       bpInfoKids.push(el('div', { cls: 'bp-judge-note', text: '复方制剂：单一药物、单一折点；斜线后为固定配比的另一成分浓度（非第二折点）。请输入活性成分（斜线前）的 MIC。' }));
     }
+    if (isEu) { bpInfoKids.push(el('div', { cls: 'bp-judge-note', text: 'EUCAST v16.1 判读。“I” 为“增加暴露仍可敏感”（需加大剂量/优化给药），与 CLSI 的“中介”定义不同；判读仅供教学，正式报告以实验室现行 EUCAST 版本与 SOP 为准。' })); }
     var bpInfo = el('div', { cls: 'bp-judge-bp' }, bpInfoKids);
     if (!bpJudgeMIC || bpJudgeMIC === '') {
       box.replaceChildren(bpInfo, el('div', { cls: 'empty-sm', text: '输入' + (isZone ? '抑菌圈直径' : ' MIC 值') + '后自动判读。' }));
