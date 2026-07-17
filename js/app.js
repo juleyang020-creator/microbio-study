@@ -2,7 +2,8 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
-  var APP_VERSION = window.APP_VERSION || '20260702-22';
+  // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
+  var APP_VERSION = window.APP_VERSION || '20260702-43';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -594,16 +595,45 @@
 
   function isCompareRoute() { return routeKey() === 'compare'; }
   function comparableIds() { return Object.keys((window.DB && window.DB.biochem) || {}); }
+  // 缓存：window.DB 加载后不变，微生物名称映射只需建一次（同 abxIdByName 模式）
+  var _microbeNameMap = null;
   function nameById() {
+    if (_microbeNameMap) { return _microbeNameMap; }
     var m = {};
     ((window.DB && window.DB.microbes) || []).forEach(function (x) { m[x.id] = x.名称; });
+    _microbeNameMap = m;
     return m;
   }
   function toggleCompare(id) {
     if (compareSet[id]) { delete compareSet[id]; } else { compareSet[id] = true; }
     if (isCompareRoute()) { renderCompare(); }
   }
-  function comparePickItems() {
+  // 通用多选勾选面板（生化对比 / 药敏卡对比复用）：搜索框 + 可勾选按钮 + 局部重渲染。
+  // descriptors 为 [{id, 名称, selected, onToggle}]，各功能只提供数据、不再各写一套 DOM。
+  function pickerButtonNodes(descriptors, emptyText) {
+    if (!descriptors.length) { return [ el('div', { cls: 'empty-sm', text: emptyText }) ]; }
+    return descriptors.map(function (it) {
+      return el('button', {
+        cls: 'cmp-pick' + (it.selected ? ' sel' : ''), type: 'button',
+        text: (it.selected ? '☑ ' : '☐ ') + (it.名称 || it.id),
+        'aria-pressed': String(it.selected), onClick: it.onToggle
+      });
+    });
+  }
+  function renderPickerList(listId, descriptors, emptyText) {
+    var listEl = document.getElementById(listId);
+    if (listEl) { listEl.replaceChildren.apply(listEl, pickerButtonNodes(descriptors, emptyText)); }
+  }
+  function buildTogglePicker(groupLabel, listId, filterValue, onFilterInput) {
+    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选…', value: filterValue });
+    search.addEventListener('input', function () { onFilterInput(search.value); });
+    return [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: groupLabel }),
+      search,
+      el('div', { cls: 'cmp-pick-list', id: listId })
+    ]) ];
+  }
+  function compareItemDescriptors() {
     var names = nameById();
     var q = compareFilter.trim().toLowerCase();
     var ids = comparableIds().filter(function (id) {
@@ -615,31 +645,13 @@
       var ib = GRAPH_COMMON.indexOf(b); if (ib === -1) { ib = 1e6; }
       return ia - ib;
     });
-    var items = ids.map(function (id) {
-      var sel = !!compareSet[id];
-      return el('button', {
-        cls: 'cmp-pick' + (sel ? ' sel' : ''),
-        type: 'button',
-        text: (sel ? '☑ ' : '☐ ') + (names[id] || id),
-        'aria-pressed': String(sel),
-        onClick: function () { toggleCompare(id); }
-      });
+    return ids.map(function (id) {
+      return { id: id, 名称: names[id] || id, selected: !!compareSet[id], onToggle: function () { toggleCompare(id); } };
     });
-    if (!items.length) { items = [ el('div', { cls: 'empty-sm', text: '无匹配的细菌' }) ]; }
-    return items;
   }
-  function renderComparePickerList() {
-    var listEl = document.getElementById('cmp-pick-list');
-    if (listEl) { listEl.replaceChildren.apply(listEl, comparePickItems()); }
-  }
+  function renderComparePickerList() { renderPickerList('cmp-pick-list', compareItemDescriptors(), '无匹配的细菌'); }
   function buildComparePicker() {
-    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选…', value: compareFilter });
-    search.addEventListener('input', function () { compareFilter = search.value; renderComparePickerList(); });
-    return [ el('div', { cls: 'cat-group' }, [
-      el('div', { cls: 'cat-group-name', text: '勾选细菌（可多选）' }),
-      search,
-      el('div', { cls: 'cmp-pick-list', id: 'cmp-pick-list' })
-    ]) ];
+    return buildTogglePicker('勾选细菌（可多选）', 'cmp-pick-list', compareFilter, function (v) { compareFilter = v; renderComparePickerList(); });
   }
   function buildCompareView(vm) {
     var nodes = [];
@@ -737,7 +749,7 @@
     var nodes = [
       el('h2', { cls: 'detail-title', text: '生化鉴定' }),
       compareModeToggle(),
-      el('div', { cls: 'lw-note', text: '填写你观察到的生化反应结果（＋阳性 / －阴性 / 不限），按匹配度倒推候选菌种。数据来自本库 114 种菌的生化谱。' }),
+      el('div', { cls: 'lw-note', text: '填写你观察到的生化反应结果（＋阳性 / －阴性 / 不限），按匹配度倒推候选菌种。数据来自本库 ' + Object.keys((window.DB && window.DB.biochem) || {}).length + ' 种菌的生化谱。' }),
       el('div', { cls: 'id-form-head' }, [ el('span', { cls: 'lw-sub', text: '生化结果' }), el('button', { cls: 'cmp-add', text: '清空', onClick: function () { identifySel = {}; renderIdentify(); } }) ]),
       el('div', { cls: 'id-form' }, formGroups),
       el('div', { cls: 'lw-h', text: '候选菌种' })
@@ -749,36 +761,26 @@
   var compareCardSet = {};
   var compareCardFilter = '';
   function isCardCompareRoute() { return routeKey() === 'cardcompare'; }
-  function cardNameById() { var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.名称; }); return m; }
-  function drugsByCard() { var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.药物 || []; }); return m; }
+  // 缓存：药敏卡数据加载后不变，卡名 / 药物映射只需各建一次
+  var _cardNameMap = null, _cardDrugMap = null;
+  function cardNameById() { if (_cardNameMap) { return _cardNameMap; } var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.名称; }); _cardNameMap = m; return m; }
+  function drugsByCard() { if (_cardDrugMap) { return _cardDrugMap; } var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.药物 || []; }); _cardDrugMap = m; return m; }
   function cardIds() { return ((window.DB && window.DB.cards) || []).map(function (c) { return c.id; }); }
   function toggleCardCompare(id) {
     if (compareCardSet[id]) { delete compareCardSet[id]; } else { compareCardSet[id] = true; }
     if (isCardCompareRoute()) { renderCardCompare(); }
   }
-  function cardPickItems() {
+  function cardItemDescriptors() {
     var names = cardNameById();
     var q = compareCardFilter.trim().toLowerCase();
     var ids = cardIds().filter(function (id) { return !q || (names[id] || '').toLowerCase().indexOf(q) !== -1; });
-    var items = ids.map(function (id) {
-      var sel = !!compareCardSet[id];
-      return el('button', { cls: 'cmp-pick' + (sel ? ' sel' : ''), type: 'button', text: (sel ? '☑ ' : '☐ ') + (names[id] || id), 'aria-pressed': String(sel), onClick: function () { toggleCardCompare(id); } });
+    return ids.map(function (id) {
+      return { id: id, 名称: names[id] || id, selected: !!compareCardSet[id], onToggle: function () { toggleCardCompare(id); } };
     });
-    if (!items.length) { items = [ el('div', { cls: 'empty-sm', text: '无匹配的卡片' }) ]; }
-    return items;
   }
-  function renderCardPickerList() {
-    var listEl = document.getElementById('card-pick-list');
-    if (listEl) { listEl.replaceChildren.apply(listEl, cardPickItems()); }
-  }
+  function renderCardPickerList() { renderPickerList('card-pick-list', cardItemDescriptors(), '无匹配的卡片'); }
   function buildCardComparePicker() {
-    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '筛选…', value: compareCardFilter });
-    search.addEventListener('input', function () { compareCardFilter = search.value; renderCardPickerList(); });
-    return [ el('div', { cls: 'cat-group' }, [
-      el('div', { cls: 'cat-group-name', text: '勾选药敏卡（可多选）' }),
-      search,
-      el('div', { cls: 'cmp-pick-list', id: 'card-pick-list' })
-    ]) ];
+    return buildTogglePicker('勾选药敏卡（可多选）', 'card-pick-list', compareCardFilter, function (v) { compareCardFilter = v; renderCardPickerList(); });
   }
   function buildCardCompareView(vm) {
     var nodes = [ el('h2', { cls: 'detail-title', text: '药敏卡对比' }) ];
@@ -802,7 +804,7 @@
     return nodes;
   }
   function renderCardCompare() {
-    setActiveTab(null);
+    setActiveTool('cardcompare');
     fill(document.getElementById('sidebar'), buildCardComparePicker());
     renderCardPickerList();
     var selected = cardIds().filter(function (id) { return compareCardSet[id]; });
@@ -952,13 +954,7 @@
   }
   function renderGraphPicker() {
     var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '搜索条目作为图心…', value: graphFilter });
-    search.addEventListener('input', function () {
-      graphFilter = search.value;
-      var list = document.getElementById('graph-pick-list');
-      if (list) { list.replaceChildren.apply(list, graphPickItems().map(function (it) {
-        return el('a', { cls: 'entry-link', text: it.名称, href: '#/graph/' + it.module + '/' + it.id });
-      })); }
-    });
+    search.addEventListener('input', function () { graphFilter = search.value; renderGraphPickerList(); });
     return [ el('div', { cls: 'cat-group' }, [
       el('div', { cls: 'cat-group-name', text: '选择图心' }),
       el('div', { cls: 'cmp-hint', text: '挑一个条目作为中心，画它的关联网络。' }),
@@ -1593,7 +1589,6 @@
     btn.setAttribute('aria-expanded', open ? 'false' : 'true');
     caret.textContent = open ? '▸' : '▾';
   }
-  var astRowSeq = 0;
   function buildAstTable(list) {
     var head = el('tr', {}, [
       el('th', { cls: 'ast-th-level', text: '等级' }),
@@ -1613,7 +1608,7 @@
         astLine('依据', item.依据)
       ];
       if (tags.length) { detailInner.push(el('div', { cls: 'chips ast-tags' }, tags)); }
-      var detailId = 'ast-d-' + (item.id || (++astRowSeq));
+      var detailId = 'ast-d-' + item.id;
       var detailRow = el('tr', { cls: 'ast-detail-row', id: detailId }, [
         el('td', { colspan: '4' }, [el('div', { cls: 'ast-detail' }, detailInner)])
       ]);
@@ -1969,9 +1964,13 @@
     if (cmpBtn) { cmpBtn.addEventListener('click', function () { if (isMobile()) { openNav(); } }); }
 
     var box = document.getElementById('search-input');
+    var searchTimer = null;
     box.addEventListener('input', function () {
-      var q = box.value.trim();
-      if (q) { runSearch(q); } else { renderRoute(); }
+      if (searchTimer) { clearTimeout(searchTimer); }
+      searchTimer = setTimeout(function () {
+        var q = box.value.trim();
+        if (q) { runSearch(q); } else { renderRoute(); }
+      }, 150);
     });
 
     window.addEventListener('hashchange', function () {

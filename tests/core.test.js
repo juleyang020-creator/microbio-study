@@ -51,6 +51,21 @@ test('getRelations 返回反向关联（别的条目声明指向它的）', () =
   assert.strictEqual(m1.module, 'microbes');
 });
 
+test('buildReverseIndex 与全库扫描一致：getRelations 传入反向索引结果不变', () => {
+  const db = fixture();
+  const index = Core.buildIndex(db);
+  const reverse = Core.buildReverseIndex(db);
+  // 反向索引应记录 a1、r1 各被谁引用（顺序与全库扫描一致：按 MODULE_KEYS）
+  assert.deepStrictEqual(reverse['a1'], ['m1']);
+  assert.deepStrictEqual(reverse['r1'], ['m1', 'a1']);
+  // 每个条目：带反向索引的结果与全库扫描结果完全一致
+  ['m1', 'a1', 'r1'].forEach((id) => {
+    const scan = Core.getRelations(id, db);
+    const fast = Core.getRelations(id, db, index, reverse);
+    assert.deepStrictEqual(fast, scan, 'id=' + id + ' 两种路径结果应一致');
+  });
+});
+
 test('getRelations 标注悬空关联 exists=false', () => {
   const db = fixture();
   db.microbes[0].关联 = ['nope'];
