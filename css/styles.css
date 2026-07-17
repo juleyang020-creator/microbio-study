@@ -328,18 +328,6 @@ body.route-mn .detail-title { margin-top: 18px; }
 .qc-method { font-size: 11.5px; color: var(--ink-soft); margin: 4px 0 2px; }
 .qc-endpoint { display: inline-block; margin-left: 6px; padding: 0 5px; border-radius: 3px; font-size: 10px; font-weight: 700; font-family: var(--mono); background: #eef1fb; color: #4a5cb0; border: 1px solid #b9c4ec; vertical-align: middle; }
 .bp-curated-tool { margin: 4px 0 12px; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--line-2); border-radius: 0 6px 6px 0; }
-/* 抗菌谱速览（经验）*/
-.antibiogram { margin: 16px 0; }
-.abg-warn { font-size: 12px; color: var(--rust); background: #fdecec; border: 1px solid #f0b6b1; border-radius: 4px; padding: 6px 12px; margin: 4px 0 8px; line-height: 1.55; }
-.abg-table { border-collapse: collapse; font-size: 13px; min-width: 200px; }
-.abg-table th { background: var(--line-2); padding: 4px 14px; font-weight: 600; text-align: left; color: var(--muted); font-size: 12px; }
-.abg-table td { padding: 3px 14px; border-bottom: 1px solid var(--line-2); }
-.abg-drug { color: var(--ink-soft); }
-.abg-status { text-align: center; font-weight: 700; font-size: 15px; }
-.abg-s { color: var(--green); }
-.abg-r { color: var(--rust); }
-.abg-q { color: var(--gold); }
-.abg-n { color: var(--faint); }
 
 /* 真菌固有耐药结构化速查矩阵 */
 .ir-section { margin: 6px 0 22px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--line-2); }

@@ -251,24 +251,6 @@ test('astAlertsVM 支持按等级与关键词筛选', () => {
   assert.ok(mrsa.groups.some((g) => g.items.some((it) => it.id === 'mrsa-beta-lactam')));
 });
 
-test('antibiogramVM 抗菌谱聚合：固有耐药=✗ / 有折点=? / 无折点组=null', () => {
-  const DB = global.window.DB;
-  // 无折点组的菌 → 不生成（不虚构）
-  assert.strictEqual(View.antibiogramVM(DB, 'not-a-real-id'), null);
-  // 弗劳地柠檬酸杆菌：固有耐氨苄西林 + 一代头孢(→头孢唑林，经类展开)
-  const cf = View.antibiogramVM(DB, 'citrobacter-freundii');
-  assert.ok(cf && cf.rows.length, '应生成抗菌谱');
-  const cfStatus = (drug) => (cf.rows.find((r) => r.药物 === drug) || {}).状态;
-  assert.strictEqual(cfStatus('氨苄西林'), 'R', '氨苄西林应为固有耐药 ✗');
-  assert.strictEqual(cfStatus('头孢唑林'), 'R', '一代头孢固有耐药应经类展开落到头孢唑林 ✗');
-  assert.strictEqual(cfStatus('头孢曲松'), 'Q', '三代头孢非固有耐药、有折点 → 需药敏 ?');
-  // 奇异变形杆菌：固有耐呋喃妥因
-  const pm = View.antibiogramVM(DB, 'proteus-mirabilis');
-  assert.strictEqual((pm.rows.find((r) => r.药物 === '呋喃妥因') || {}).状态, 'R', '奇异变形杆菌呋喃妥因固有耐药 ✗');
-  // 每行状态只能是 S/R/Q（列取自真实折点，不应出现 N 无数据）
-  cf.rows.concat(pm.rows).forEach((r) => assert.ok(['S', 'R', 'Q'].indexOf(r.状态) !== -1, '状态应为 S/R/Q'));
-});
-
 test('EUCAST 折点数据结构完整、与 CLSI 组对应、含已核对的代表值', () => {
   require('../data/eucast-breakpoints.js');
   const eu = global.window.DB.eucastBreakpoints;
