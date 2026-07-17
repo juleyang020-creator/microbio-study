@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-47';
+  var APP_VERSION = window.APP_VERSION || '20260702-48';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -541,8 +541,7 @@
         ]),
         bpTierLegend(bp.药物),
         el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' + (bpHasCombo(bp.药物) ? '　·　' + COMBO_BP_NOTE : '') }),
-        eucastNoteNode(),
-        el('div', { cls: 'bp-curated', text: CURATED_BP_NOTE })
+        eucastNoteNode()
       ]));
     }
 
@@ -1434,7 +1433,6 @@
       var df = el('input', { cls: 'cmp-search', type: 'search', placeholder: '按药物名/简写筛选…', value: bpDrugFilter, style: 'display:inline-block;width:auto;' });
       df.addEventListener('input', function () { bpDrugFilter = df.value; renderBreakpointsMain(); });
       nodes.push(el('div', { cls: 'bp-filters' }, [ gf, df ]));
-      nodes.push(el('div', { cls: 'bp-curated bp-curated-tool', text: CURATED_BP_NOTE }));
       nodes.push(el('div', { cls: 'bp-eucast-bar' }, eucastBadgeNodes().concat([ eucastNoteNode() ])));
       var groups = View.breakpointLookupVM(bpGroups(), bpGroupFilter, bpDrugFilter);
       if (groups.length === 0) {
@@ -1580,8 +1578,6 @@
     if (hz) { r2.push(el('th', { cls: 'bp-eu-col', text: '抑菌圈' })); }
     return [ el('tr', {}, r1), el('tr', {}, r2) ];
   }
-  // 本模块采用「精选常用折点」范围（方案 B）：并非完整复制 CLSI 原表，仅收录教学与临床常用药物。
-  var CURATED_BP_NOTE = '本模块为教学与临床常用的「精选常用折点」，并非 CLSI 原表的完整复制；未列出某药物不代表 CLSI 未建立折点，完整数据请查阅对应版本原表（M100 / M45 / M27M44S / M38M51S）。';
   // 仅"数字/数字"才算复方记法；详情页折点经 breakpointVM 合并为 "≤8/4 / 16/8 / ≥32/16"，
   // 用 \d/\d 可避开 " / " 分隔符的误判，同时兼容原始 MIC_S/I/R 字段。
   function bpHasCombo(drugs) {
