@@ -96,6 +96,19 @@ body {
 .entry-link:hover { color: var(--ink); background: var(--line-2); }
 .entry-link.selected { color: var(--accent); font-weight: 600; border-left-color: var(--accent); }
 
+/* 侧栏：收藏夹 + 浏览历史 */
+.fav-section, .history-section { margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); }
+.fav-item { color: var(--gold); }
+.fav-item:hover { color: var(--rust); }
+.history-item { color: var(--ink-soft); font-size: 12.5px; }
+.history-head { display: flex; align-items: center; justify-content: space-between; }
+.hist-clear { background: none; border: none; color: var(--faint); font-size: 11px; letter-spacing: 0; cursor: pointer; padding: 0 2px; }
+.hist-clear:hover { color: var(--rust); }
+/* 详情头收藏星标 */
+.fav-star { background: none; border: none; cursor: pointer; font-size: 20px; line-height: 1; color: var(--faint); padding: 0 4px; align-self: center; }
+.fav-star:hover { color: var(--gold); }
+.fav-star.favorited { color: var(--gold); }
+
 /* 详情头 */
 .detail-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .detail-title { font-size: 23px; font-weight: 600; margin: 0; letter-spacing: .3px; color: var(--ink); }
@@ -261,9 +274,16 @@ body.route-mn .detail-title { margin-top: 18px; }
 
 /* 折点表 */
 .breakpoints { margin: 22px 0; }
-.bp-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+.bp-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
 .bp-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; }
 .bp-source { font-size: 11px; color: var(--muted); }
+/* EUCAST 阶段1：标准徽标 + 对照链接 + 差异提示 */
+.bp-standard-badge { font-size: 11px; font-weight: 600; color: var(--accent); border: 1px solid var(--accent-edge); border-radius: 3px; padding: 1px 6px; background: var(--accent-weak); }
+.bp-eucast-link { font-size: 11.5px; color: var(--link); text-decoration: none; border: 1px solid var(--line); border-radius: 4px; padding: 1px 8px; }
+.bp-eucast-link:hover { border-color: var(--link); }
+.bp-eucast-note { font-size: 12px; color: var(--gold); background: #fff8e8; border: 1px solid #f0e0a0; border-radius: 4px; padding: 6px 12px; margin-top: 8px; line-height: 1.55; }
+.bp-eucast-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 4px 0 12px; }
+.bp-eucast-bar .bp-eucast-note { flex: 1 1 320px; margin-top: 0; }
 .bp-table { border-collapse: collapse; margin-top: 6px; font-size: 13px; min-width: 680px; }
 .bp-table th, .bp-table td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
 .bp-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; white-space: nowrap; }
@@ -302,6 +322,18 @@ body.route-mn .detail-title { margin-top: 18px; }
 .qc-method { font-size: 11.5px; color: var(--ink-soft); margin: 4px 0 2px; }
 .qc-endpoint { display: inline-block; margin-left: 6px; padding: 0 5px; border-radius: 3px; font-size: 10px; font-weight: 700; font-family: var(--mono); background: #eef1fb; color: #4a5cb0; border: 1px solid #b9c4ec; vertical-align: middle; }
 .bp-curated-tool { margin: 4px 0 12px; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--line-2); border-radius: 0 6px 6px 0; }
+/* 抗菌谱速览（经验）*/
+.antibiogram { margin: 16px 0; }
+.abg-warn { font-size: 12px; color: var(--rust); background: #fdecec; border: 1px solid #f0b6b1; border-radius: 4px; padding: 6px 12px; margin: 4px 0 8px; line-height: 1.55; }
+.abg-table { border-collapse: collapse; font-size: 13px; min-width: 200px; }
+.abg-table th { background: var(--line-2); padding: 4px 14px; font-weight: 600; text-align: left; color: var(--muted); font-size: 12px; }
+.abg-table td { padding: 3px 14px; border-bottom: 1px solid var(--line-2); }
+.abg-drug { color: var(--ink-soft); }
+.abg-status { text-align: center; font-weight: 700; font-size: 15px; }
+.abg-s { color: var(--green); }
+.abg-r { color: var(--rust); }
+.abg-q { color: var(--gold); }
+.abg-n { color: var(--faint); }
 
 /* 真菌固有耐药结构化速查矩阵 */
 .ir-section { margin: 6px 0 22px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--line-2); }
@@ -542,6 +574,10 @@ body.route-mn .detail-title { margin-top: 18px; }
 .search-item { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 9px 13px; text-decoration: none; color: var(--ink); }
 .search-item:hover { border-color: var(--accent); }
 .search-summary { display: block; color: var(--muted); font-size: 12px; margin: 3px 0 0 48px; line-height: 1.45; }
+/* 搜索命中高亮 + 上下文片段 */
+.search-hit { background: #fff3a8; color: inherit; border-radius: 2px; padding: 0 1px; }
+.search-context { display: block; margin: 3px 0 0 48px; font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
+.search-context-field { color: var(--accent); font-weight: 500; }
 .tag { font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 8px; border: 1px solid var(--line); color: var(--muted); }
 .tag-microbes { color: var(--link); }
 .tag-antibiotics { color: var(--green); }
@@ -612,7 +648,7 @@ body.route-mn .detail-title { margin-top: 18px; }
   .bp-source, .bp-foot { font-size: 10.5px; }
   .cmp th, .cmp td { padding: 4px 6px; }
   .cmp .cmp-item { font-size: 10.5px; }
-  .search-summary { margin-left: 0; }
+  .search-summary, .search-context { margin-left: 0; }
   /* 天然耐药：手机端隐藏矩阵、改用按菌卡片视图（无横滚、无空格子、无嵌套滚动） */
   .ir-matrix-view { display: none; }
   .ir-card-view { display: block; }

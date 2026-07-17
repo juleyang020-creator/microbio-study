@@ -262,10 +262,16 @@
   }
 
   function searchVM(results, query) {
+    var tokens = (query || '').trim().toLowerCase().split(/\s+/).filter(Boolean); // 用于结果高亮
     return {
       query: query,
+      tokens: tokens,
       items: (results || []).map(function (r) {
-        return { id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要 || '', href: '#/' + r.module + '/' + r.id };
+        return {
+          id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要 || '',
+          命中字段: r.命中字段 || '', 命中片段: r.命中片段 || '',
+          href: '#/' + r.module + '/' + r.id
+        };
       })
     };
   }
@@ -722,6 +728,71 @@
     };
   }
 
+  // ===== 抗菌谱速览（经验）=====
+  // 教学速查：列 = 该菌 CLSI 折点组的 Tier-1 药物（真实、逐菌）；不虚构 S/R——
+  //   ✗ 固有耐药 = 结构化 intrinsic-resistance（CLSI M100 App.B）；
+  //   ✓ 经验首选 = 治疗要点文本明确提及该药；
+  //   ? 需药敏 = 有折点、非上述两者（默认）。
+  function abgCore(name) { return String(name || '').replace(/\s*[（(].*$/, '').trim(); } // 去掉 " (English)"
+  var ABG_SYN = { '复方磺胺甲噁唑': '复方新诺明', '磺胺甲噁唑/甲氧苄啶': '复方新诺明' };
+  function abgNorm(name) { var c = abgCore(name); return ABG_SYN[c] || c; }
+  // IR 里的类名 → 具体药（用于把「一代头孢」等类级固有耐药落到具体列）
+  var ABG_CLASS = {
+    '一代头孢': ['头孢唑林', '头孢氨苄', '头孢拉定', '头孢噻吩'],
+    '二代头孢': ['头孢呋辛', '头孢克洛'],
+    '头霉素类': ['头孢西丁', '头孢替坦'],
+    '三代头孢': ['头孢噻肟', '头孢曲松', '头孢他啶', '头孢泊肟'],
+    '氨基糖苷类': ['庆大霉素', '妥布霉素', '阿米卡星', '奈替米星'],
+    '四环素类': ['四环素', '多西环素', '米诺环素'],
+    '氟喹诺酮类': ['环丙沙星', '左氧氟沙星', '莫西沙星', '氧氟沙星'],
+    '头孢菌素类': ['头孢唑林', '头孢呋辛', '头孢噻肟', '头孢曲松', '头孢他啶', '头孢吡肟']
+  };
+  function abgTxMentions(tx, core) {
+    if (!tx || !core) { return false; }
+    var i = tx.indexOf(core);
+    if (i < 0) { return false; }
+    var after = tx.charAt(i + core.length); // 防组合误配：紧跟 '/'、'-' 且本身非复方 → 不算命中该单药
+    if ((after === '/' || after === '-') && core.indexOf('/') < 0) { return false; }
+    return true;
+  }
+  function antibiogramVM(db, microbeId) {
+    var entry = (db.microbes || []).filter(function (m) { return m.id === microbeId; })[0];
+    if (!entry) { return null; }
+    var grp = (db.breakpoints || []).filter(function (g) { return (g.菌种 || []).indexOf(microbeId) !== -1; })[0];
+    if (!grp || !grp.药物 || !grp.药物.length) { return null; } // 无折点 → 不生成（不虚构）
+    var hasTier = grp.药物.some(function (d) { return d.组别; });
+    var cols = grp.药物.filter(function (d) { return hasTier ? String(d.组别) === '1' : true; });
+    if (!cols.length) { cols = grp.药物.slice(); }
+    cols = cols.slice(0, 14);
+
+    var irNorms = {};
+    if (db.intrinsicResistance) {
+      (db.intrinsicResistance.分组 || []).forEach(function (gr) {
+        (gr.行 || []).forEach(function (r) {
+          if (r.id === microbeId) { (r.耐药 || []).forEach(function (d) { irNorms[abgNorm(d)] = true; }); }
+        });
+      });
+    }
+    function isIntrinsicR(core) {
+      if (irNorms[core]) { return true; }
+      var hit = false;
+      Object.keys(irNorms).forEach(function (irName) {
+        if (hit) { return; }
+        var members = ABG_CLASS[irName]; // 类级固有耐药 → 展开到具体药
+        if (members && members.indexOf(core) !== -1) { hit = true; return; }
+        if (irName.length >= 2 && (core.indexOf(irName) !== -1 || irName.indexOf(core) !== -1)) { hit = true; } // 双向包含
+      });
+      return hit;
+    }
+    var tx = String((db.treatment || {})[microbeId] || '');
+    var rows = cols.map(function (d) {
+      var core = abgCore(d.药物);
+      var status = isIntrinsicR(core) ? 'R' : (abgTxMentions(tx, core) ? 'S' : 'Q');
+      return { 药物: core, 简写: d.简写 || '', 状态: status };
+    });
+    return { microbeId: microbeId, 名称: entry.名称, 组名: grp.菌组名, rows: rows };
+  }
+
   return {
     moduleLabel: moduleLabel,
     mechanismImageFor: mechanismImageFor,
@@ -749,6 +820,7 @@
     judgeMIC: judgeMIC,
     judgeZone: judgeZone,
     breakpointLookupVM: breakpointLookupVM,
-    astAlertsVM: astAlertsVM
+    astAlertsVM: astAlertsVM,
+    antibiogramVM: antibiogramVM
   };
 });

@@ -194,6 +194,28 @@
     return entry.类别 || '';
   }
 
+  // 命中片段：优先取 名称/拉丁名/英文 命中处，否则取首个命中小节；命中词前后各 20 字，供搜索结果展示上下文
+  function searchSnippet(entry, tokens) {
+    var out = { 字段: '', 片段: '' };
+    function scan(field, raw) {
+      if (out.片段) { return; }
+      var val = String(raw || '').toLowerCase();
+      for (var i = 0; i < tokens.length; i++) {
+        var t = tokens[i]; if (!t) { continue; }
+        var idx = val.indexOf(t);
+        if (idx !== -1) {
+          var s = Math.max(0, idx - 20), e = Math.min(raw.length, idx + t.length + 20);
+          out.字段 = field;
+          out.片段 = (s > 0 ? '…' : '') + String(raw).slice(s, e) + (e < raw.length ? '…' : '');
+          return;
+        }
+      }
+    }
+    scan('名称', entry.名称); scan('拉丁名', entry.拉丁名); scan('英文', entry.英文);
+    if (!out.片段) { (entry.小节 || []).forEach(function (sct) { scan(sct.标题 || '', sct.正文); }); }
+    return out;
+  }
+
   function searchEntries(db, query) {
     var q = (query || '').trim().toLowerCase();
     if (!q) { return []; }
@@ -211,11 +233,12 @@
         var score = 0;
         tokens.forEach(function (t) { if (textHasTerm(head, t)) { score += 2; } });
         if (textHasTerm(head, q)) { score += 3; }
-        results.push({ id: entry.id, 名称: entry.名称, module: mod, 摘要: searchSummary(mod, entry), _score: score });
+        var snip = searchSnippet(entry, tokens);
+        results.push({ id: entry.id, 名称: entry.名称, module: mod, 摘要: searchSummary(mod, entry), _score: score, 命中字段: snip.字段, 命中片段: snip.片段 });
       });
     });
     results.sort(function (a, b) { return b._score - a._score; });
-    return results.map(function (r) { return { id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要 }; });
+    return results.map(function (r) { return { id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要, 命中字段: r.命中字段, 命中片段: r.命中片段 }; });
   }
 
   // 递归收集"叶子"分类名（无子类的节点），支持任意层级（如 大类→形态→属）
