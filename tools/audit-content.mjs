@@ -74,7 +74,6 @@ Core.validateData(appDb, DB.categories || {}).forEach((p) => fail(p));
 });
 
 const newAnaerobes = [
-  'veillonella-parvula',
   'clostridium-septicum'
 ];
 const breakpointIds = new Set();
@@ -108,7 +107,7 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 if (!html.includes('data/source-metadata.js?v=')) {
   fail('index.html 未加载 data/source-metadata.js');
 }
-if (!html.includes("window.APP_VERSION = '20260702-41'")) {
+if (!html.includes("window.APP_VERSION = '20260702-42'")) {
   warn('index.html 的 APP_VERSION 与当前脚本期望不一致');
 }
 

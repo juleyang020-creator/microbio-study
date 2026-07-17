@@ -2045,36 +2045,12 @@ window.DB.microbes = [
     关联: ['penicillin-g', 'vancomycin']
   },
   {
-    id: 'peptostreptococcus-anaerobius', 名称: '厌氧消化链球菌', 拉丁名: 'Peptostreptococcus anaerobius', 类别: '消化链球菌属',
-    小节: [
-      { 标题: '形态与染色', 正文: '专性厌氧革兰阳性球菌，成链/成簇。' },
-      { 标题: '致病性 / 所致疾病', 正文: '混合性脓肿（腹腔、盆腔、脑、肺）、女性生殖道与糖尿病足等混合感染常见组分。' }
-    ],
-    关联: ['metronidazole', 'penicillin-g']
-  },
-  {
-    id: 'veillonella-parvula', 名称: '微小韦荣球菌', 拉丁名: 'Veillonella parvula', 类别: '韦荣球菌属',
-    小节: [
-      { 标题: '形态与染色', 正文: '专性厌氧革兰阴性小球菌，常成对或短链；为口腔、胃肠道与泌尿生殖道常居菌。' },
-      { 标题: '致病性 / 所致疾病', 正文: '多见于牙源性、头颈部、腹腔或盆腔混合感染；少数可致菌血症、感染性心内膜炎、骨关节感染。' }
-    ],
-    关联: ['metronidazole', 'penicillin-g', 'id-anc']
-  },
-  {
     id: 'clostridium-septicum', 名称: '败血梭菌', 拉丁名: 'Clostridium septicum', 类别: '梭菌属',
     小节: [
       { 标题: '形态与染色', 正文: '专性厌氧革兰阳性产芽孢杆菌，有动力，血平板常可见溶血。' },
       { 标题: '致病性 / 所致疾病', 正文: '可致自发性气性坏疽、肌坏死和败血症；与结直肠肿瘤及血液系统恶性肿瘤相关性强，检出后需评估潜在病灶。' }
     ],
     关联: ['clostridium-perfringens', 'penicillin-g', 'clindamycin', 'metronidazole']
-  },
-  {
-    id: 'aerococcus-urinae', 名称: '尿道气球菌', 拉丁名: 'Aerococcus urinae', 类别: '气球菌属',
-    小节: [
-      { 标题: '形态与染色', 正文: '革兰阳性球菌成簇/四联，触酶弱/阴性；菌落与培养特性似草绿色链球菌/肠球菌，易误判。' },
-      { 标题: '致病性 / 所致疾病', 正文: '老年（多为男性、有尿路基础病）尿路感染，偶致菌血症与感染性心内膜炎。' }
-    ],
-    关联: ['penicillin-g', 'vancomycin']
   },
   {
     id: 'strep-dysgalactiae', 名称: '停乳链球菌', 拉丁名: 'Streptococcus dysgalactiae（Lancefield C / G 群）', 类别: '链球菌属',

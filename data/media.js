@@ -185,7 +185,7 @@ window.DB.media = [
       { 标题: '营养成分', 正文: '强化血琼脂 + 维生素 K₁ 与氯化血红素（厌氧菌生长所需），于厌氧环境培养。' },
       { 标题: '用途 / 原理', 正文: '分离专性厌氧菌（如梭菌、拟杆菌）；需去除氧气并补充其特殊生长因子。' }
     ],
-    关联: ['clostridium-perfringens', 'clostridioides-difficile', 'clostridium-tetani', 'clostridium-botulinum', 'veillonella-parvula', 'clostridium-septicum']
+    关联: ['clostridium-perfringens', 'clostridioides-difficile', 'clostridium-tetani', 'clostridium-botulinum', 'clostridium-septicum']
   },
   {
     id: 'mh-agar',

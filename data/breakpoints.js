@@ -361,7 +361,7 @@ window.DB.breakpoints = [
   {
     菌组名: "厌氧菌 (Anaerobic Bacteria)",
     CLSI表: "Table 2J",
-    菌种: ['clostridium-perfringens', 'clostridium-tetani', 'clostridium-botulinum', 'clostridioides-difficile', 'bacteroides-fragilis', 'peptostreptococcus-anaerobius', 'cutibacterium-acnes', 'veillonella-parvula', 'clostridium-septicum'],
+    菌种: ['clostridium-perfringens', 'clostridium-tetani', 'clostridium-botulinum', 'clostridioides-difficile', 'bacteroides-fragilis', 'cutibacterium-acnes', 'clostridium-septicum'],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "革兰阳性厌氧菌(梭菌)多敏感;脆弱拟杆菌等革兰阴性厌氧菌天然耐药" },
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "可预测阿莫西林;仅 MIC 法(琼脂稀释/肉汤微量稀释)" },
@@ -471,24 +471,6 @@ window.DB.breakpoints = [
       { 药物: "阿尼芬净 (Anidulafungin)", 简写: "AND", MIC_S: "—", MIC_I: "—", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "CDC 暂定(耐药折点同米卡芬净 ≥4)" },
       { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "—", MIC_I: "—", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "CDC 暂定" },
       { 药物: "瑞扎芬净 (Rezafungin)", 简写: "RZF", MIC_S: "≤0.5", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "M27M44S(2022) Table 1 暂定「仅敏感」折点(暂定 1 年、开放征询)；仅报告 S，未设 I/R" }
-    ]
-  },
-
-  {
-    菌组名: "气球菌属 (Aerococcus spp.)",
-    CLSI表: "CLSI M45 · Table 2",
-    来源: "CLSI M45 (3rd ed., 2018)",
-    菌种: ["aerococcus-urinae"],
-    药物: [
-      { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.12", MIC_I: "0.25–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
-      { 药物: "头孢噻肟 (Cefotaxime)", 简写: "CTX", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
-      { 药物: "头孢曲松 (Ceftriaxone)", 简写: "CRO", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
-      { 药物: "美罗培南 (Meropenem)", 简写: "MEM", MIC_S: "≤0.5", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
-      { 药物: "万古霉素 (Vancomycin)", 简写: "VA", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
-      { 药物: "环丙沙星 (Ciprofloxacin)", 简写: "CIP", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
-      { 药物: "左氧氟沙星 (Levofloxacin)", 简写: "LVX", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
-      { 药物: "四环素 (Tetracycline)", 简写: "TE", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
-      { 药物: "利奈唑胺 (Linezolid)", 简写: "LZD", MIC_S: "≤2", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
     ]
   },
   {
