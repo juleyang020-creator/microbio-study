@@ -7,3 +7,8 @@ node_modules/
 .env.*
 *.secret
 tools/.secrets*
+# 软著登记材料（申请表含个人信息，勿提交到公开仓库）
+docs/软著材料/*.doc
+docs/软著材料/*.docx
+docs/软著材料/*.pdf
+docs/软著材料/~$*
