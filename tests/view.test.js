@@ -1,6 +1,8 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert');
+global.window = global.window || {};
+require('../js/core.js'); // 设置 window.Core（sidebarVM 复用 Core.collectLeaves）
 const View = require('../js/view.js');
 
 test('生化反查：项目归一与结果极性解析', () => {

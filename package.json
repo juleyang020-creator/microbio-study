@@ -1,0 +1,10 @@
+{
+  "name": "microbio-study",
+  "version": "1.0.0",
+  "private": true,
+  "description": "知微 · 微生物学习手册 —— 本地无构建静态 PWA（数据/逻辑均为浏览器全局脚本，故不设 type:module）",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "audit": "node tools/audit-content.mjs"
+  }
+}

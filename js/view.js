@@ -231,17 +231,9 @@
     };
   }
 
-  function collectLeafSet(nodes, out) {
-    (nodes || []).forEach(function (node) {
-      if (node.子类 && node.子类.length) { collectLeafSet(node.子类, out); }
-      else { out[node.名称] = true; }
-    });
-    return out;
-  }
-
   function sidebarVM(moduleKey, categories, entries, selectedId) {
     var roots = (categories && categories[moduleKey]) ? categories[moduleKey] : [];
-    var leafSet = collectLeafSet(roots, {});
+    var leafSet = window.Core.collectLeaves(roots, {});
 
     function item(e) {
       return { id: e.id, 名称: e.名称, href: '#/' + moduleKey + '/' + e.id, selected: e.id === selectedId };
@@ -638,8 +630,8 @@
   }
   // 分类抑菌圈（纸片法，方向相反：圈越大越敏感）。S 段为 ≥、R 段为 ≤、中段为区间。
   function classifyZone(val, spec) {
-    if (bpHit(spec.S, val)) { return { result: 'S', reason: '抑菌圈 ≥ ' + spec.S.val + ' mm（敏感折点）' }; }
-    if (bpHit(spec.R, val)) { return { result: 'R', reason: '抑菌圈 ≤ ' + spec.R.val + ' mm（耐药折点）' }; }
+    if (bpHit(spec.S, val)) { return { result: 'S', reason: '抑菌圈 ' + (spec.S.type === 'gt' ? '> ' : '≥ ') + spec.S.val + ' mm（敏感折点）' }; }
+    if (bpHit(spec.R, val)) { return { result: 'R', reason: '抑菌圈 ' + (spec.R.type === 'lt' ? '< ' : '≤ ') + spec.R.val + ' mm（耐药折点）' }; }
     if (spec.mid && spec.mid.type === 'range' && bpHit(spec.mid, val)) { return { result: spec.midKind, reason: '抑菌圈在 ' + spec.mid.lo + '–' + spec.mid.hi + ' mm（' + midLabel(spec.midKind) + '）' }; }
     if (spec.susceptibleOnly && spec.S && spec.S.type === 'ge' && val < spec.S.val - 1e-9) { return { result: 'NS', reason: '抑菌圈小于敏感折点，且仅设敏感折点 → 非敏感(NS)' }; }
     return { result: 'unknown', reason: '抑菌圈不在任何折点区间内' };

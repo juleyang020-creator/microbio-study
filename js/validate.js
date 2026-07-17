@@ -11,7 +11,8 @@
     tests: DB.tests || [],
     media: DB.media || [],
     staining: DB.staining || [],
-    'biochem-tests': DB.biochemTests || []
+    'biochem-tests': DB.biochemTests || [],
+    'qc-strains': DB['qc-strains'] || []
   };
   var problems = window.Core.validateData(db, DB.categories || {});
   if (problems.length) {

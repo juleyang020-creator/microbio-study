@@ -100,20 +100,42 @@
     return index;
   }
 
-  function getRelations(id, db, index) {
+  // 反向关联索引：id → [引用它的条目 id...]。数据加载后不变，建一次可多处复用。
+  // 与旧全库扫描的产出顺序一致（同样按 MODULE_KEYS→条目顺序累加）。
+  function buildReverseIndex(db) {
+    var reverse = {};
+    MODULE_KEYS.forEach(function (mod) {
+      (db[mod] || []).forEach(function (entry) {
+        if (!Array.isArray(entry.关联)) { return; }
+        entry.关联.forEach(function (rid) {
+          if (rid === entry.id) { return; }
+          (reverse[rid] = reverse[rid] || []).push(entry.id);
+        });
+      });
+    });
+    return reverse;
+  }
+
+  function getRelations(id, db, index, reverse) {
     var idx = index || buildIndex(db);
     var current = idx[id] ? idx[id].entry : null;
     var forwardIds = (current && Array.isArray(current.关联)) ? current.关联.slice() : [];
 
-    var reverseIds = [];
-    MODULE_KEYS.forEach(function (mod) {
-      (db[mod] || []).forEach(function (entry) {
-        if (entry.id === id) { return; }
-        if (Array.isArray(entry.关联) && entry.关联.indexOf(id) !== -1) {
-          reverseIds.push(entry.id);
-        }
+    // 反向关联：优先用预建索引（O(1) 查表），否则退回全库扫描（保持向后兼容）
+    var reverseIds;
+    if (reverse) {
+      reverseIds = (reverse[id] || []).slice();
+    } else {
+      reverseIds = [];
+      MODULE_KEYS.forEach(function (mod) {
+        (db[mod] || []).forEach(function (entry) {
+          if (entry.id === id) { return; }
+          if (Array.isArray(entry.关联) && entry.关联.indexOf(id) !== -1) {
+            reverseIds.push(entry.id);
+          }
+        });
       });
-    });
+    }
 
     var seen = {};
     var result = [];
@@ -147,7 +169,10 @@
     out.push(String(text));
   }
 
+  // 搜索 haystack 缓存：数据加载后条目不变，按条目对象缓存一次，避免每次击键全量重建
+  var _hayCache = (typeof WeakMap !== 'undefined') ? new WeakMap() : null;
   function entrySearchText(db, mod, entry) {
+    if (_hayCache && _hayCache.has(entry)) { return _hayCache.get(entry); }
     var hay = [];
     pushText(hay, [entry.名称, entry.拉丁名, entry.英文, entry.类别, entry.药敏简写, entry.天然耐药, entry.药物]);
     (entry.小节 || []).forEach(function (s) { pushText(hay, [s.标题, s.正文]); });
@@ -157,7 +182,9 @@
       pushText(hay, (db.biochem || {})[entry.id]);
       pushText(hay, (db.differential || {})[entry.id]);
     }
-    return hay.join(' ').toLowerCase();
+    var text = hay.join(' ').toLowerCase();
+    if (_hayCache) { _hayCache.set(entry, text); }
+    return text;
   }
 
   function searchSummary(mod, entry) {
@@ -239,6 +266,7 @@
   // 返回 { center, nodes: [{id,名称,module,level}], edges: [{from,to,direction}] }；找不到中心返回 null。
   function buildGraph(db, moduleKey, id, depth) {
     var index = buildIndex(db);  // 整个 buildGraph 只建一次索引，传给 getRelations 复用
+    var reverse = buildReverseIndex(db);  // 反向索引同样只建一次，避免每个节点全库扫描
     var center = index[id];
     if (!center) { return null; }
     depth = depth || 1;
@@ -248,7 +276,7 @@
     nodes[id] = { id: id, 名称: center.entry.名称, module: center.module, level: 0 };
 
     function collect(targetId) {
-      var rels = getRelations(targetId, db, index);
+      var rels = getRelations(targetId, db, index, reverse);
       var out = [];
       rels.forEach(function (r) {
         if (!r.exists) { return; }
@@ -286,9 +314,11 @@
   return {
     MODULE_KEYS: MODULE_KEYS,
     buildIndex: buildIndex,
+    buildReverseIndex: buildReverseIndex,
     getRelations: getRelations,
     searchEntries: searchEntries,
     validateData: validateData,
-    buildGraph: buildGraph
+    buildGraph: buildGraph,
+    collectLeaves: collectLeaves
   };
 });
