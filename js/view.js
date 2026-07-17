@@ -728,6 +728,28 @@
     };
   }
 
+  // ===== EUCAST 折点（与 CLSI 并排对照）=====
+  // 按菌组名查 EUCAST 折点，返回 { 来源, drug: {药物名 → {MIC_S,MIC_R,括注}} }；无则 null
+  function eucastVM(菌组名, list) {
+    var g = (list || []).filter(function (x) { return x.菌组名 === 菌组名; })[0];
+    if (!g) { return null; }
+    var map = {};
+    (g.药物 || []).forEach(function (d) { map[d.药物] = d; });
+    return { 来源: g.来源, drug: map };
+  }
+  // 从字符串里取第一个数值（用于比较 CLSI 与 EUCAST 的 S/R 界值是否不同）
+  function firstNum(s) { var m = String(s == null ? '' : s).match(/-?\d+(\.\d+)?/); return m ? parseFloat(m[0]) : null; }
+  // CLSI MIC "≤8 / 16 / ≥32" 的 S(首段)、R(末段) 与 EUCAST S≤/R> 是否不同
+  function micDiffers(clsiMIC, euS, euR) {
+    if (!clsiMIC || clsiMIC === '—') { return false; }
+    var segs = String(clsiMIC).split(' / '); // S/I/R 以 " / " 分隔；复方内部的 "/" 无空格，不会误切
+    var cS = firstNum(segs[0]), cR = firstNum(segs[segs.length - 1]);
+    var eS = firstNum(euS), eR = firstNum(euR);
+    if (eS != null && cS != null && eS !== cS) { return true; }
+    if (eR != null && cR != null && eR !== cR) { return true; }
+    return false;
+  }
+
   // ===== 抗菌谱速览（经验）=====
   // 教学速查：列 = 该菌 CLSI 折点组的 Tier-1 药物（真实、逐菌）；不虚构 S/R——
   //   ✗ 固有耐药 = 结构化 intrinsic-resistance（CLSI M100 App.B）；
@@ -821,6 +843,8 @@
     judgeZone: judgeZone,
     breakpointLookupVM: breakpointLookupVM,
     astAlertsVM: astAlertsVM,
-    antibiogramVM: antibiogramVM
+    antibiogramVM: antibiogramVM,
+    eucastVM: eucastVM,
+    micDiffers: micDiffers
   };
 });
