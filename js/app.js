@@ -824,6 +824,21 @@
     fill(document.getElementById('sidebar'), sb);
     renderIntrinsicMain();
   }
+  function intrinsicResistanceCard(r) {
+    var nameEl = r.id
+      ? el('a', { cls: 'intrinsic-link', text: r.名称, href: '#/microbes/' + r.id })
+      : el('strong', { text: r.名称 });
+    var children = [el('div', { cls: 'ir-card-head' }, [nameEl, el('span', { cls: 'latin', text: r.拉丁 })])];
+    if ((r.耐药 || []).length) {
+      children.push(el('div', { cls: 'ir-card-drugs' }, r.耐药.map(function (d) {
+        return el('span', { cls: 'ir-drug-chip', text: d });
+      })));
+      if (r.备注) { children.push(el('div', { cls: 'ir-card-note', text: r.备注 })); }
+    } else {
+      children.push(el('div', { cls: 'ir-card-none', text: r.备注 || '对所列药物无固有耐药' }));
+    }
+    return el('article', { cls: 'ir-card' }, children);
+  }
   function intrinsicMatrixNodes(filter) {
     var data = (window.DB && window.DB.intrinsicResistance) || null;
     if (!data) { return []; }
@@ -836,6 +851,7 @@
         return hay.indexOf(q) !== -1;
       });
       if (rows.length === 0) { return; }
+      // 桌面：药名×菌种矩阵；手机：按菌列出「只显示其耐药药物」的卡片（见 CSS 断点切换）
       var head = el('tr', {}, [el('th', { text: '菌种' })]
         .concat((grp.药物列 || []).map(function (d) { return el('th', { cls: 'ir-drug-col', text: d }); }))
         .concat([el('th', { text: '备注' })]));
@@ -852,7 +868,10 @@
       });
       var block = [el('div', { cls: 'ir-block-title', text: grp.界 })];
       if (grp.备注) { block.push(el('div', { cls: 'ir-block-note', text: grp.备注 })); }
-      block.push(el('div', { cls: 'ir-table-wrap' }, [el('table', { cls: 'ir-table' }, [el('thead', {}, [head]), el('tbody', {}, body)])]));
+      block.push(el('div', { cls: 'ir-matrix-view' }, [
+        el('div', { cls: 'ir-table-wrap' }, [el('table', { cls: 'ir-table' }, [el('thead', {}, [head]), el('tbody', {}, body)])])
+      ]));
+      block.push(el('div', { cls: 'ir-card-view' }, rows.map(intrinsicResistanceCard)));
       out.push(el('div', { cls: 'ir-block' }, block));
     });
     if (out.length === 0) { return []; }
