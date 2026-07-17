@@ -174,6 +174,7 @@
     if (opts.min != null) { node.setAttribute('min', opts.min); }
     if (opts.max != null) { node.setAttribute('max', opts.max); }
     if (opts.step != null) { node.setAttribute('step', opts.step); }
+    if (opts.colspan != null) { node.setAttribute('colspan', opts.colspan); }
     if (opts.role != null) { node.setAttribute('role', opts.role); }
     if (opts.tabindex != null) { node.setAttribute('tabindex', opts.tabindex); }
     if (opts['for'] != null) { node.setAttribute('for', opts['for']); }
@@ -1508,6 +1509,32 @@
     ]);
     renderAstAlertsMain();
   }
+  function astLevelIcon(level) {
+    if (level === '必须修正') { return '⚠'; }
+    if (level === '需复核') { return '⟳'; }
+    if (level === '限制报告') { return '⊘'; }
+    return '•';
+  }
+  function astLevelDesc(level) {
+    if (level === '必须修正') { return '结果达修正条件，须按规则改判 / 加注后报告'; }
+    if (level === '需复核') { return '先核实鉴定 / 方法 / 重测，再决定发报'; }
+    if (level === '限制报告') { return '结果不宜直接报告，需限制或补充试验'; }
+    return '';
+  }
+  function astLevelChip(level) {
+    return el('span', { cls: astLevelClass(level) }, [
+      el('span', { cls: 'ast-level-ic', 'aria-hidden': 'true', text: astLevelIcon(level) }),
+      el('span', { text: level })
+    ]);
+  }
+  function astLegend() {
+    return el('div', { cls: 'ast-legend' }, ['必须修正', '需复核', '限制报告'].map(function (lv) {
+      return el('div', { cls: 'ast-legend-item' }, [
+        astLevelChip(lv),
+        el('span', { cls: 'ast-legend-desc', text: astLevelDesc(lv) })
+      ]);
+    }));
+  }
   function renderAstAlertsMain() {
     var vm = View.astAlertsVM(astAlerts(), { filter: astFilter, level: astLevel });
     var nodes = [
@@ -1515,17 +1542,13 @@
         el('h2', { cls: 'detail-title', text: '异常药敏 / 修正规则' }),
         el('span', { cls: 'badge', text: vm.count + ' 条' })
       ]),
-      el('div', { cls: 'cmp-hint ast-disclaimer', text: '定位常见矛盾结果、固有耐药、限制报告和需要补充试验的场景；不替代最终审核。' })
+      el('div', { cls: 'cmp-hint ast-disclaimer', text: '定位常见矛盾结果、固有耐药、限制报告和需要补充试验的场景；点行展开详情。不替代最终审核。' }),
+      astLegend()
     ];
-    if (vm.groups.length === 0) {
+    if (!vm.list.length) {
       nodes.push(el('div', { cls: 'empty', text: '没有匹配的异常药敏规则。' }));
     } else {
-      vm.groups.forEach(function (group) {
-        nodes.push(el('section', { cls: 'ast-group' }, [
-          el('div', { cls: 'ast-group-title', text: group.类别 + ' · ' + group.items.length }),
-          el('div', { cls: 'ast-list' }, group.items.map(buildAstCard))
-        ]));
-      });
+      nodes.push(buildAstTable(vm.list));
     }
     var refs = astSources().map(function (src) {
       return el('a', { cls: 'ref-link', text: src.名称, href: src.链接, target: '_blank', rel: 'noopener noreferrer' });
@@ -1544,20 +1567,57 @@
       el('span', { cls: 'ast-line-text', text: text || '—' })
     ]);
   }
-  function buildAstCard(item) {
-    var tags = (item.关键词 || []).slice(0, 7).map(function (tag) {
-      return el('span', { cls: 'morph-tag', text: tag });
+  function toggleAstRow(sumRow, detailRow, caret, btn) {
+    var open = detailRow.style.display !== 'none';
+    detailRow.style.display = open ? 'none' : '';
+    sumRow.classList.toggle('open', !open);
+    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    caret.textContent = open ? '▸' : '▾';
+  }
+  var astRowSeq = 0;
+  function buildAstTable(list) {
+    var head = el('tr', {}, [
+      el('th', { cls: 'ast-th-level', text: '等级' }),
+      el('th', { cls: 'ast-th-cat', text: '类别' }),
+      el('th', { text: '异常药敏情形' }),
+      el('th', { cls: 'ast-th-toggle', 'aria-label': '展开' })
+    ]);
+    var body = [];
+    list.forEach(function (item) {
+      var tags = (item.关键词 || []).slice(0, 8).map(function (tag) {
+        return el('span', { cls: 'morph-tag', text: tag });
+      });
+      var detailInner = [
+        astLine('触发', item.触发),
+        astLine('异常', item.异常结果),
+        astLine('处理', item.处理),
+        astLine('依据', item.依据)
+      ];
+      if (tags.length) { detailInner.push(el('div', { cls: 'chips ast-tags' }, tags)); }
+      var detailId = 'ast-d-' + (item.id || (++astRowSeq));
+      var detailRow = el('tr', { cls: 'ast-detail-row', id: detailId }, [
+        el('td', { colspan: '4' }, [el('div', { cls: 'ast-detail' }, detailInner)])
+      ]);
+      detailRow.style.display = 'none';
+      // 真实 <button> 承载可访问的展开控件（保留 tr 的行语义，避免 role=button 破坏表格结构）
+      var caret = el('span', { cls: 'ast-caret', 'aria-hidden': 'true', text: '▸' });
+      var btn = el('button', { cls: 'ast-toggle-btn', type: 'button', 'aria-expanded': 'false', 'aria-controls': detailId, 'aria-label': item.标题 + '：展开/收起详情' }, [caret]);
+      var sumRow = el('tr', { cls: 'ast-row' }, [
+        el('td', { cls: 'ast-cell-level' }, [astLevelChip(item.等级)]),
+        el('td', { cls: 'ast-cell-cat', text: item.类别 }),
+        el('td', { cls: 'ast-cell-title' }, [
+          el('span', { cls: 'ast-row-cat-inline', text: item.类别 }),
+          el('span', { cls: 'ast-row-title', text: item.标题 })
+        ]),
+        el('td', { cls: 'ast-cell-toggle' }, [btn])
+      ]);
+      // 整行可点（鼠标便利）；键盘/读屏经内部 button（其 click 冒泡到本行，单次切换）
+      sumRow.addEventListener('click', function () { toggleAstRow(sumRow, detailRow, caret, btn); });
+      body.push(sumRow);
+      body.push(detailRow);
     });
-    return el('article', { cls: 'ast-card' }, [
-      el('div', { cls: 'ast-card-head' }, [
-        el('span', { cls: astLevelClass(item.等级), text: item.等级 }),
-        el('h3', { cls: 'ast-title', text: item.标题 })
-      ]),
-      astLine('触发', item.触发),
-      astLine('异常', item.异常结果),
-      astLine('处理', item.处理),
-      astLine('依据', item.依据),
-      tags.length ? el('div', { cls: 'chips ast-tags' }, tags) : null
+    return el('div', { cls: 'ast-table-wrap' }, [
+      el('table', { cls: 'ast-table' }, [el('thead', {}, [head]), el('tbody', {}, body)])
     ]);
   }
 
