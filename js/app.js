@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-52';
+  var APP_VERSION = window.APP_VERSION || '20260702-53';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -372,6 +372,52 @@
     fill(document.getElementById('sidebar'), nodes);
   }
 
+  // ===== 示意图点击放大 =====
+  // 示意图信息密度高，缩到手机宽度后标签仅约 8px；提供全屏查看，避免整页缩放的笨拙操作。
+  var _zoomEl = null;
+  function closeImageZoom() {
+    if (!_zoomEl) { return; }
+    document.removeEventListener('keydown', _zoomEsc);
+    if (_zoomEl.parentNode) { _zoomEl.parentNode.removeChild(_zoomEl); }
+    _zoomEl = null;
+    document.body.classList.remove('zoom-open');
+  }
+  function _zoomEsc(e) { if (e.key === 'Escape') { closeImageZoom(); } }
+  function openImageZoom(src, caption) {
+    closeImageZoom();
+    var img = el('img', { cls: 'zoom-img', src: src, alt: caption || '' });
+    // 竖屏手机看横向示意图时，宽度只有约 340px，放大等于没放大；
+    // 此时旋转 90° 改用屏幕长边显示，可得约 2.4 倍尺寸。
+    img.addEventListener('load', function () {
+      var landscape = img.naturalWidth > img.naturalHeight * 1.15;
+      var portrait = window.innerHeight > window.innerWidth;
+      if (landscape && portrait && _zoomEl) {
+        _zoomEl.classList.add('rotate');
+        var hint = _zoomEl.querySelector('.zoom-cap');
+        if (hint) { hint.textContent = (caption ? caption + '　·　' : '') + '已横向显示以便阅读，点击任意处关闭'; }
+      }
+    });
+    _zoomEl = el('div', {
+      cls: 'zoom-overlay', role: 'dialog', 'aria-label': (caption || '示意图') + '（放大查看）',
+      onClick: closeImageZoom
+    }, [
+      img,
+      caption ? el('div', { cls: 'zoom-cap', text: caption }) : null,
+      el('button', { cls: 'zoom-close', type: 'button', 'aria-label': '关闭', text: '×', onClick: closeImageZoom })
+    ]);
+    document.body.appendChild(_zoomEl);
+    document.body.classList.add('zoom-open');
+    document.addEventListener('keydown', _zoomEsc);
+  }
+  // 可放大的示意图（点击 / Enter 均可打开）
+  function zoomableImg(src, alt, caption) {
+    return el('img', {
+      cls: 'mechanism-img zoomable', src: src, alt: alt || '', title: '点击放大',
+      tabindex: '0', role: 'button',
+      onClick: function () { openImageZoom(src, caption || alt); }
+    });
+  }
+
   // 形态图轮播：单图占位、高度受限（不喧宾夺主）；移动端靠 CSS scroll-snap 原生左右滑动，
   // 桌面端用左右按钮；底部圆点指示当前位置。图片懒加载。
   function buildPhotoCarousel(list) {
@@ -379,7 +425,8 @@
     list.forEach(function (p) {
       track.appendChild(el('div', { cls: 'photo-slide' }, [
         el('img', {
-          cls: 'photo-img', src: imgV(p.文件), alt: p.说明, loading: 'lazy',
+          cls: 'photo-img zoomable', src: imgV(p.文件), alt: p.说明, loading: 'lazy',
+          onClick: (function (q) { return function () { openImageZoom(imgV(q.文件), q.说明 + '（' + (q.英文说明 || '') + '）'); }; })(p),
           title: p.英文说明 || p.说明
         }),
         el('div', { cls: 'photo-cap' }, [
@@ -482,7 +529,7 @@
     }
     if (vm.机制图) {
       nodes.push(el('figure', { cls: 'mechanism-fig' }, [
-        el('img', { cls: 'mechanism-img', src: imgV(vm.机制图), alt: vm.机制图说明 }),
+        zoomableImg(imgV(vm.机制图), vm.机制图说明, vm.机制图说明),
         el('figcaption', { cls: 'mechanism-cap', text: vm.机制图说明 })
       ]));
     }
@@ -1928,7 +1975,7 @@
     var nodes = [];
     (LANDING[moduleKey] || []).forEach(function (g) {
       nodes.push(el('figure', { cls: 'mechanism-fig' }, [
-        el('img', { cls: 'mechanism-img', src: imgV(g.src), alt: g.cap }),
+        zoomableImg(imgV(g.src), g.cap, g.cap),
         el('figcaption', { cls: 'mechanism-cap', text: g.cap })
       ]));
     });

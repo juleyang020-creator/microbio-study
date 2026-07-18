@@ -1,17 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>唑类（抗真菌）</title><desc>抑制 14α-去甲基化酶，阻断麦角固醇合成。氟康唑/伏立康唑/艾沙康唑等</desc><defs>
- <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
- <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
- <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>唑类（抗真菌）</title><desc>唑类结合14α-去甲基化酶（Erg11/CYP51）血红素铁，阻断羊毛固醇→麦角固醇；膜麦角固醇缺乏＋14α-甲基固醇蓄积</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
 </defs>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">唑类（抗真菌）</text>
-<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">抑制 14α-去甲基化酶，阻断麦角固醇合成</text>
-<text x="58" y="112" font-size="12" fill="#2c3138" text-anchor="start">羊毛固醇</text> <line x1="122" y1="108" x2="182" y2="108" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/>
- <circle cx="204" cy="108" r="19" fill="#b79ac9" stroke="#9d7fb4" stroke-width="1.3"/> <text x="204" y="144" font-size="11" fill="#2c3138" text-anchor="middle">14α-去甲基化酶</text> <text x="204" y="158" font-size="11" fill="#565b63" text-anchor="middle">(CYP51)</text>
- <g transform="translate(204,78) rotate(0) scale(0.82)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="204" y1="88" x2="204" y2="90" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="175" y1="101" x2="189" y2="115"/><line x1="175" y1="115" x2="189" y2="101"/></g> <text x="182" y="70" font-size="11" fill="#2c3138" text-anchor="middle">唑类</text>
- <line x1="224" y1="108" x2="288" y2="108" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="332" y="112" font-size="12" fill="#2c3138" text-anchor="start">麦角固醇</text> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="301" y1="101" x2="315" y2="115"/><line x1="301" y1="115" x2="315" y2="101"/></g>
- <text x="240" y="206" font-size="12" fill="#3f444b" text-anchor="middle">膜麦角固醇缺乏、毒性中间体堆积</text>
- <rect x="60" y="232" width="360" height="16" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="244" font-size="11" fill="#5a5740" text-anchor="start">真菌细胞膜</text>
-<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">氟康唑/伏立康唑/艾沙康唑等</text>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">唑类（抗真菌）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef2f7"/>
+<text x="416" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗真菌机制 1/4</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">抑制麦角固醇合成关键酶 → 真菌细胞膜功能障碍</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- ===== 合成通路 ===== -->
+<rect x="36" y="104" width="76" height="28" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="74" y="122" text-anchor="middle" font-size="10" fill="#1f2733">羊毛固醇</text>
+<line x1="112" y1="118" x2="178" y2="118" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- Erg11 -->
+<circle cx="200" cy="118" r="18" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="200" y="115" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">14α-</text>
+<text x="200" y="125" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">去甲基化酶</text>
+<text x="200" y="154" text-anchor="middle" font-size="9.5" fill="#5c6672">Erg11 / CYP51</text>
+<line x1="218" y1="118" x2="282" y2="118" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- 麦角固醇（减少） -->
+<rect x="284" y="104" width="76" height="28" rx="5" fill="#e8f3ef" stroke="#2f8f83"/>
+<text x="322" y="118" text-anchor="middle" font-size="10" fill="#1f2733">麦角固醇</text>
+<text x="322" y="129" text-anchor="middle" font-size="9.5" fill="#c2413d">↓ 缺乏</text>
+
+<!-- 唑类阻断 -->
+<rect x="168" y="68" width="64" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="200" y="79" text-anchor="middle" font-size="9.5" fill="#a3332f">唑类</text>
+<line x1="200" y1="83" x2="200" y2="98" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="242" y="80" font-size="9.5" fill="#5c6672">与酶的血红素铁结合</text>
+
+<!-- 毒性中间体 -->
+<text x="200" y="180" text-anchor="middle" font-size="9.5" fill="#c2413d">14α-甲基固醇蓄积（膜毒性）↑</text>
+
+<!-- ===== 真菌细胞膜 ===== -->
+<text x="60" y="200" font-size="9.5" fill="#8a6d2f">真菌细胞膜：正常固醇↓、异常固醇↑</text>
+<rect x="60" y="206" width="360" height="18" fill="#f7ecd4"/>
+<g fill="#d9a441">
+  <circle cx="66" cy="206" r="2.2"/><circle cx="78" cy="206" r="2.2"/><circle cx="90" cy="206" r="2.2"/><circle cx="102" cy="206" r="2.2"/><circle cx="114" cy="206" r="2.2"/><circle cx="126" cy="206" r="2.2"/><circle cx="138" cy="206" r="2.2"/><circle cx="150" cy="206" r="2.2"/><circle cx="162" cy="206" r="2.2"/><circle cx="174" cy="206" r="2.2"/><circle cx="186" cy="206" r="2.2"/><circle cx="198" cy="206" r="2.2"/><circle cx="210" cy="206" r="2.2"/><circle cx="222" cy="206" r="2.2"/><circle cx="234" cy="206" r="2.2"/><circle cx="246" cy="206" r="2.2"/><circle cx="258" cy="206" r="2.2"/><circle cx="270" cy="206" r="2.2"/><circle cx="282" cy="206" r="2.2"/><circle cx="294" cy="206" r="2.2"/><circle cx="306" cy="206" r="2.2"/><circle cx="318" cy="206" r="2.2"/><circle cx="330" cy="206" r="2.2"/><circle cx="342" cy="206" r="2.2"/><circle cx="354" cy="206" r="2.2"/><circle cx="366" cy="206" r="2.2"/><circle cx="378" cy="206" r="2.2"/><circle cx="390" cy="206" r="2.2"/><circle cx="402" cy="206" r="2.2"/><circle cx="414" cy="206" r="2.2"/>
+  <circle cx="66" cy="224" r="2.2"/><circle cx="78" cy="224" r="2.2"/><circle cx="90" cy="224" r="2.2"/><circle cx="102" cy="224" r="2.2"/><circle cx="114" cy="224" r="2.2"/><circle cx="126" cy="224" r="2.2"/><circle cx="138" cy="224" r="2.2"/><circle cx="150" cy="224" r="2.2"/><circle cx="162" cy="224" r="2.2"/><circle cx="174" cy="224" r="2.2"/><circle cx="186" cy="224" r="2.2"/><circle cx="198" cy="224" r="2.2"/><circle cx="210" cy="224" r="2.2"/><circle cx="222" cy="224" r="2.2"/><circle cx="234" cy="224" r="2.2"/><circle cx="246" cy="224" r="2.2"/><circle cx="258" cy="224" r="2.2"/><circle cx="270" cy="224" r="2.2"/><circle cx="282" cy="224" r="2.2"/><circle cx="294" cy="224" r="2.2"/><circle cx="306" cy="224" r="2.2"/><circle cx="318" cy="224" r="2.2"/><circle cx="330" cy="224" r="2.2"/><circle cx="342" cy="224" r="2.2"/><circle cx="354" cy="224" r="2.2"/><circle cx="366" cy="224" r="2.2"/><circle cx="378" cy="224" r="2.2"/><circle cx="390" cy="224" r="2.2"/><circle cx="402" cy="224" r="2.2"/><circle cx="414" cy="224" r="2.2"/>
+</g>
+<!-- 正常麦角固醇（少） -->
+<g fill="#4e8d5b"><ellipse cx="120" cy="215" rx="3" ry="7"/><ellipse cx="330" cy="215" rx="3" ry="7"/><ellipse cx="380" cy="215" rx="3" ry="7"/></g>
+<!-- 异常固醇（红叉标记） -->
+<g stroke="#c2413d" stroke-width="1.8" stroke-linecap="round">
+  <line x1="176" y1="210" x2="186" y2="220"/><line x1="176" y1="220" x2="186" y2="210"/>
+  <line x1="226" y1="210" x2="236" y2="220"/><line x1="226" y1="220" x2="236" y2="210"/>
+  <line x1="276" y1="210" x2="286" y2="220"/><line x1="276" y1="220" x2="286" y2="210"/>
+</g>
+
+<!-- 结局 -->
+<text x="240" y="252" text-anchor="middle" font-size="12" fill="#3f444b">膜麦角固醇缺乏 ＋ 毒性中间体蓄积 → 膜功能障碍 → 抑制真菌生长</text>
+
+<!-- 页脚：代表药 -->
+<rect x="24" y="272" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="287" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#1f2733">代表药</tspan>　氟康唑｜伊曲康唑｜伏立康唑｜泊沙康唑｜艾沙康唑</text>
 </svg>

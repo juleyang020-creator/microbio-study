@@ -1,18 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>抑制细胞壁合成</title><desc>β-内酰胺结合PBP · 糖肽结合D-Ala-D-Ala · 磷霉素抑MurA。β-内酰胺类、万古霉素/替考拉宁、磷霉素等</desc><defs>
- <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
- <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
- <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抑制细胞壁合成</title><desc>肽聚糖合成三环节：磷霉素抑MurA（胞质）→ 糖肽类结合D-Ala-D-Ala末端 → β-内酰胺抑PBP转肽交联；致细胞壁缺损、渗透溶解</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
 </defs>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">抑制细胞壁合成</text>
-<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">β-内酰胺结合PBP · 糖肽结合D-Ala-D-Ala · 磷霉素抑MurA</text>
-<rect x="60" y="74" width="360" height="26" fill="#e4dcc0" stroke="#c8b887"/> <text x="70" y="91" font-size="11" fill="#5a5740" text-anchor="start">肽聚糖细胞壁</text>
- <rect x="60" y="152" width="360" height="18" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="165" font-size="11" fill="#5a5740" text-anchor="start">细胞膜</text>
- <circle cx="200" cy="100" r="15" fill="#9fb0cc" stroke="#8093b3" stroke-width="1.3"/> <text x="222" y="98" font-size="11" fill="#2c3138" text-anchor="start">PBP（转肽酶）</text>
- <g transform="translate(200,126) rotate(90) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="200" y1="138" x2="200" y2="116" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="222" y1="78" x2="238" y2="94"/><line x1="222" y1="94" x2="238" y2="78"/></g>
- <g stroke="#c9b887" stroke-width="2"><line x1="120" y1="87" x2="150" y2="87"/><line x1="150" y1="74" x2="150" y2="100"/><line x1="300" y1="87" x2="330" y2="87"/></g>
- <text x="240" y="206" font-size="12" fill="#3f444b" text-anchor="middle">交联/前体受阻 → 细胞壁缺损、渗透溶解</text>
- <g transform="translate(118,134) rotate(15) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g transform="translate(340,126) rotate(-20) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
-<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">β-内酰胺类、万古霉素/替考拉宁、磷霉素等</text>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抑制细胞壁合成</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef2f7"/>
+<text x="416" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗菌机制 1/5</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">肽聚糖（PG）生物合成的三个环节均可被药物阻断</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- ===== 肽聚糖层 ===== -->
+<text x="28" y="74" font-size="10" fill="#8570b3" font-weight="700">肽聚糖层（聚糖骨架＋肽桥）</text>
+<g stroke="#6e5a9e" stroke-width="0.8">
+  <rect x="40"  y="82" width="12" height="12" rx="2" fill="#cfc4e8"/><rect x="54"  y="82" width="12" height="12" rx="2" fill="#a997cf"/>
+  <rect x="68"  y="82" width="12" height="12" rx="2" fill="#cfc4e8"/><rect x="82"  y="82" width="12" height="12" rx="2" fill="#a997cf"/>
+  <rect x="96"  y="82" width="12" height="12" rx="2" fill="#cfc4e8"/><rect x="110" y="82" width="12" height="12" rx="2" fill="#a997cf"/>
+  <rect x="124" y="82" width="12" height="12" rx="2" fill="#cfc4e8"/><rect x="138" y="82" width="12" height="12" rx="2" fill="#a997cf"/>
+  <rect x="152" y="82" width="12" height="12" rx="2" fill="#cfc4e8"/><rect x="166" y="82" width="12" height="12" rx="2" fill="#a997cf"/>
+  <rect x="40"  y="114" width="12" height="12" rx="2" fill="#a997cf"/><rect x="54"  y="114" width="12" height="12" rx="2" fill="#cfc4e8"/>
+  <rect x="68"  y="114" width="12" height="12" rx="2" fill="#a997cf"/><rect x="82"  y="114" width="12" height="12" rx="2" fill="#cfc4e8"/>
+  <rect x="96"  y="114" width="12" height="12" rx="2" fill="#a997cf"/><rect x="110" y="114" width="12" height="12" rx="2" fill="#cfc4e8"/>
+  <rect x="124" y="114" width="12" height="12" rx="2" fill="#a997cf"/><rect x="138" y="114" width="12" height="12" rx="2" fill="#cfc4e8"/>
+  <rect x="152" y="114" width="12" height="12" rx="2" fill="#a997cf"/><rect x="166" y="114" width="12" height="12" rx="2" fill="#cfc4e8"/>
+</g>
+<g stroke="#8570b3" stroke-width="2" stroke-linecap="round">
+  <line x1="60" y1="96" x2="60" y2="112"/><line x1="116" y1="96" x2="116" y2="112"/>
+</g>
+<text x="46" y="140" font-size="9.5" fill="#8570b3">肽桥交联</text>
+
+<!-- 游离 D-Ala-D-Ala 末端 -->
+<line x1="172" y1="88" x2="196" y2="88" stroke="#8570b3" stroke-width="2"/>
+<circle cx="201" cy="88" r="4" fill="#ece6f5" stroke="#6e5a9e" stroke-width="1"/>
+<circle cx="212" cy="88" r="4" fill="#ece6f5" stroke="#6e5a9e" stroke-width="1"/>
+<text x="200" y="76" text-anchor="middle" font-size="9.5" fill="#6e5a9e">D-Ala-D-Ala</text>
+
+<!-- ===== 细胞膜 ===== -->
+<rect x="24" y="152" width="432" height="22" fill="#f7ecd4"/>
+<g fill="#d9a441">
+  <circle cx="30" cy="152" r="2.6"/><circle cx="42" cy="152" r="2.6"/><circle cx="54" cy="152" r="2.6"/><circle cx="66" cy="152" r="2.6"/><circle cx="78" cy="152" r="2.6"/><circle cx="90" cy="152" r="2.6"/><circle cx="102" cy="152" r="2.6"/><circle cx="114" cy="152" r="2.6"/><circle cx="126" cy="152" r="2.6"/><circle cx="138" cy="152" r="2.6"/><circle cx="150" cy="152" r="2.6"/><circle cx="162" cy="152" r="2.6"/><circle cx="174" cy="152" r="2.6"/><circle cx="186" cy="152" r="2.6"/><circle cx="198" cy="152" r="2.6"/><circle cx="210" cy="152" r="2.6"/><circle cx="222" cy="152" r="2.6"/><circle cx="234" cy="152" r="2.6"/><circle cx="246" cy="152" r="2.6"/><circle cx="258" cy="152" r="2.6"/><circle cx="270" cy="152" r="2.6"/><circle cx="282" cy="152" r="2.6"/><circle cx="294" cy="152" r="2.6"/><circle cx="306" cy="152" r="2.6"/><circle cx="318" cy="152" r="2.6"/><circle cx="330" cy="152" r="2.6"/><circle cx="342" cy="152" r="2.6"/><circle cx="354" cy="152" r="2.6"/><circle cx="366" cy="152" r="2.6"/><circle cx="378" cy="152" r="2.6"/><circle cx="390" cy="152" r="2.6"/><circle cx="402" cy="152" r="2.6"/><circle cx="414" cy="152" r="2.6"/><circle cx="426" cy="152" r="2.6"/><circle cx="438" cy="152" r="2.6"/><circle cx="450" cy="152" r="2.6"/>
+  <circle cx="30" cy="174" r="2.6"/><circle cx="42" cy="174" r="2.6"/><circle cx="54" cy="174" r="2.6"/><circle cx="66" cy="174" r="2.6"/><circle cx="78" cy="174" r="2.6"/><circle cx="90" cy="174" r="2.6"/><circle cx="102" cy="174" r="2.6"/><circle cx="114" cy="174" r="2.6"/><circle cx="126" cy="174" r="2.6"/><circle cx="138" cy="174" r="2.6"/><circle cx="150" cy="174" r="2.6"/><circle cx="162" cy="174" r="2.6"/><circle cx="174" cy="174" r="2.6"/><circle cx="186" cy="174" r="2.6"/><circle cx="198" cy="174" r="2.6"/><circle cx="210" cy="174" r="2.6"/><circle cx="222" cy="174" r="2.6"/><circle cx="234" cy="174" r="2.6"/><circle cx="246" cy="174" r="2.6"/><circle cx="258" cy="174" r="2.6"/><circle cx="270" cy="174" r="2.6"/><circle cx="282" cy="174" r="2.6"/><circle cx="294" cy="174" r="2.6"/><circle cx="306" cy="174" r="2.6"/><circle cx="318" cy="174" r="2.6"/><circle cx="330" cy="174" r="2.6"/><circle cx="342" cy="174" r="2.6"/><circle cx="354" cy="174" r="2.6"/><circle cx="366" cy="174" r="2.6"/><circle cx="378" cy="174" r="2.6"/><circle cx="390" cy="174" r="2.6"/><circle cx="402" cy="174" r="2.6"/><circle cx="414" cy="174" r="2.6"/><circle cx="426" cy="174" r="2.6"/><circle cx="438" cy="174" r="2.6"/><circle cx="450" cy="174" r="2.6"/>
+</g>
+<text x="452" y="168" text-anchor="end" font-size="9.5" fill="#8a6d2f">细胞膜</text>
+
+<!-- ===== 环节① 胞质：MurA × 磷霉素 ===== -->
+<text x="24" y="186" font-size="9.5" fill="#5c6672">UDP-GlcNAc</text>
+<line x1="46" y1="196" x2="68" y2="202" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<circle cx="86" cy="208" r="14" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="86" y="212" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">MurA</text>
+<circle cx="30" cy="210" r="8" fill="#1f2733"/><text x="30" y="214" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+<text x="86" y="240" text-anchor="middle" font-size="9.5" fill="#5c6672">肽聚糖前体合成</text>
+<rect x="126" y="234" width="52" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="152" y="245" text-anchor="middle" font-size="9.5" fill="#a3332f">磷霉素</text>
+<line x1="140" y1="234" x2="94" y2="216" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+
+<!-- ===== 环节② 膜外：D-Ala-D-Ala × 糖肽类 ===== -->
+<circle cx="238" cy="118" r="8" fill="#1f2733"/><text x="238" y="122" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">2</text>
+<rect x="238" y="62" width="66" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="271" y="73" text-anchor="middle" font-size="9.5" fill="#a3332f">糖肽类</text>
+<line x1="260" y1="77" x2="216" y2="86" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="238" y="134" text-anchor="middle" font-size="9.5" fill="#5c6672">结合末端 → 空间位阻</text>
+
+<!-- ===== 环节③ 壁面：PBP × β-内酰胺 ===== -->
+<ellipse cx="352" cy="140" rx="19" ry="16" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="352" y="144" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">PBP</text>
+<text x="352" y="116" text-anchor="middle" font-size="9.5" fill="#5c6672">转肽酶</text>
+<circle cx="312" cy="96" r="8" fill="#1f2733"/><text x="312" y="100" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">3</text>
+<rect x="330" y="62" width="76" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="368" y="73" text-anchor="middle" font-size="9.5" fill="#a3332f">β-内酰胺类</text>
+<line x1="360" y1="77" x2="354" y2="122" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<line x1="404" y1="96" x2="404" y2="112" stroke="#c2413d" stroke-width="1.6" stroke-dasharray="3,3"/>
+<g stroke="#c2413d" stroke-width="2" stroke-linecap="round"><line x1="396" y1="98" x2="412" y2="110"/><line x1="396" y1="110" x2="412" y2="98"/></g>
+<g stroke="#6e5a9e" stroke-width="0.8">
+  <rect x="390" y="82" width="12" height="12" rx="2" fill="#cfc4e8"/><rect x="404" y="82" width="12" height="12" rx="2" fill="#a997cf"/>
+  <rect x="390" y="114" width="12" height="12" rx="2" fill="#a997cf"/><rect x="404" y="114" width="12" height="12" rx="2" fill="#cfc4e8"/>
+</g>
+
+<!-- 结局 -->
+<text x="240" y="262" text-anchor="middle" font-size="12" fill="#3f444b">任一环节受阻 → 肽聚糖交联缺陷 → 高渗胞质使菌体溶解（繁殖期杀菌）</text>
+
+<!-- 页脚：代表药 -->
+<rect x="24" y="272" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="287" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#1f2733">代表药</tspan>　青霉素/头孢/碳青霉烯（β-内酰胺）· 万古霉素/替考拉宁（糖肽）· 磷霉素</text>
 </svg>

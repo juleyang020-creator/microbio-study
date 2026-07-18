@@ -1,19 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>抑制核酸合成</title><desc>阻断 DNA 复制或 RNA 转录。氟喹诺酮(旋转酶/拓扑IV)；利福平(RNA聚合酶)；甲硝唑(还原产物直接损伤DNA)</desc><defs>
- <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
- <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
- <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抑制核酸合成</title><desc>氟喹诺酮抑DNA旋转酶/拓扑异构酶IV致双链断裂；利福平抑RNA聚合酶β亚基阻断转录；甲硝唑厌氧活化后损伤DNA</desc>
+<defs>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
 </defs>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">抑制核酸合成</text>
-<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">阻断 DNA 复制或 RNA 转录</text>
-<path d="M120,92 C160,122 120,152 160,182 C200,212 160,242 200,256" fill="none" stroke="#cf7c74" stroke-width="3"/>
- <path d="M150,92 C110,122 150,152 110,182 C70,212 110,242 70,256" fill="none" stroke="#cf7c74" stroke-width="3"/>
- <text x="112" y="274" font-size="11" fill="#565b63" text-anchor="middle">DNA</text>
- <circle cx="206" cy="150" r="22" fill="#b79ac9" stroke="#9d7fb4" stroke-width="1.3"/> <text x="206" y="154" font-size="11" fill="#2c3138" text-anchor="middle" font-weight="600">旋转酶</text>
- <g transform="translate(244,150) rotate(0) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="236" y1="150" x2="228" y2="150" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="212" y1="118" x2="228" y2="134"/><line x1="212" y1="134" x2="228" y2="118"/></g>
- <circle cx="336" cy="118" r="22" fill="#9fb0cc" stroke="#8093b3" stroke-width="1.3"/> <text x="336" y="122" font-size="11" fill="#2c3138" text-anchor="middle" font-weight="600">RNA聚</text>
- <g transform="translate(336,160) rotate(90) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="336" y1="150" x2="336" y2="140" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="354" y1="108" x2="370" y2="124"/><line x1="354" y1="124" x2="370" y2="108"/></g>
- <text x="300" y="210" font-size="12" fill="#3f444b" text-anchor="middle">复制/转录中断</text>
-<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">氟喹诺酮(旋转酶/拓扑IV)；利福平(RNA聚合酶)；甲硝唑(还原产物直接损伤DNA)</text>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抑制核酸合成</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef2f7"/>
+<text x="416" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗菌机制 3/5</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">阻断 DNA 复制或 RNA 转录，或直接造成 DNA 损伤</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+<line x1="240" y1="66" x2="240" y2="220" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 左：DNA复制 × 氟喹诺酮 ===== -->
+<text x="28" y="74" font-size="10" font-weight="700" fill="#2f8f83">DNA 复制（靶：旋转酶 / 拓扑IV）</text>
+<!-- DNA 双螺旋 -->
+<g fill="none" stroke="#2f8f83" stroke-width="2.2">
+  <path d="M64,88 C84,104 64,120 84,136 C104,152 84,168 104,184 C112,192 110,200 104,208"/>
+  <path d="M104,88 C84,104 104,120 84,136 C64,152 84,168 64,184 C56,192 58,200 64,208"/>
+</g>
+<g stroke="#a9d3cc" stroke-width="1.2"><line x1="66" y1="112" x2="102" y2="112"/><line x1="66" y1="144" x2="102" y2="144"/><line x1="66" y1="176" x2="102" y2="176"/></g>
+<!-- 断裂的末端 -->
+<g fill="none" stroke="#2f8f83" stroke-width="2.2"><path d="M100,208 l-8,10"/><path d="M68,208 l8,10"/></g>
+<g stroke="#c2413d" stroke-width="2" stroke-linecap="round"><line x1="76" y1="214" x2="92" y2="222"/><line x1="76" y1="222" x2="92" y2="214"/></g>
+<text x="84" y="236" text-anchor="middle" font-size="9.5" fill="#c2413d">DNA 双链断裂</text>
+<!-- 旋转酶 -->
+<circle cx="84" cy="144" r="15" fill="#e3edf8" fill-opacity="0.92" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="84" y="147" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">旋转酶</text>
+<!-- 氟喹诺酮 -->
+<rect x="132" y="120" width="58" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="161" y="131" text-anchor="middle" font-size="9.5" fill="#a3332f">氟喹诺酮</text>
+<line x1="142" y1="135" x2="97" y2="141" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="132" y="112" font-size="9.5" fill="#5c6672">锁定酶-DNA断裂复合物</text>
+
+<!-- ===== 右：RNA转录 × 利福平 ===== -->
+<text x="258" y="74" font-size="10" font-weight="700" fill="#2f8f83">RNA 转录（靶：RNA聚合酶）</text>
+<!-- 模板DNA -->
+<g stroke="#2f8f83" stroke-width="1.6"><line x1="258" y1="176" x2="446" y2="176"/><line x1="258" y1="182" x2="446" y2="182"/></g>
+<g stroke="#a9d3cc" stroke-width="1"><line x1="280" y1="176" x2="280" y2="182"/><line x1="300" y1="176" x2="300" y2="182"/><line x1="400" y1="176" x2="400" y2="182"/><line x1="420" y1="176" x2="420" y2="182"/></g>
+<text x="446" y="196" text-anchor="end" font-size="9.5" fill="#2f8f83">模板 DNA</text>
+<!-- RNA聚合酶 -->
+<ellipse cx="350" cy="160" rx="24" ry="17" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="350" y="157" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">RNA</text>
+<text x="350" y="167" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">聚合酶</text>
+<!-- 新生RNA短链 -->
+<path d="M356,146 q6,-10 2,-20 q-4,-10 4,-18" fill="none" stroke="#2f8f83" stroke-width="2"/>
+<text x="370" y="112" font-size="9.5" fill="#5c6672">新生RNA延伸受阻</text>
+<!-- 利福平 -->
+<rect x="268" y="98" width="52" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="294" y="109" text-anchor="middle" font-size="9.5" fill="#a3332f">利福平</text>
+<line x1="304" y1="113" x2="336" y2="146" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="268" y="92" font-size="9.5" fill="#5c6672">结合 β 亚基</text>
+
+<!-- 甲硝唑补充说明 -->
+<text x="240" y="248" text-anchor="middle" font-size="9.5" fill="#5c6672">甲硝唑：在厌氧菌内被还原活化，活性产物直接损伤 DNA（抗厌氧菌及原虫）</text>
+
+<!-- 结局 -->
+<text x="240" y="264" text-anchor="middle" font-size="12" fill="#3f444b">复制 / 转录中断、DNA 损伤 → 细胞死亡（杀菌）</text>
+
+<!-- 页脚：代表药 -->
+<rect x="24" y="272" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="287" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#1f2733">代表药</tspan>　左氧氟沙星·莫西沙星（喹诺酮）｜利福平｜甲硝唑</text>
 </svg>

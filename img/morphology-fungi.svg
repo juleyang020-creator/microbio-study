@@ -1,67 +1,71 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 408" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>真菌的基本形态与结构</title><desc>酵母相、菌丝相与产孢结构（示意）</desc>
-  <rect width="480" height="408" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">真菌的基本形态与结构</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">酵母相、菌丝相与产孢结构（示意）</text>
+<title>真菌的基本形态与结构</title><desc>酵母相（芽生孢子/假菌丝/厚膜孢子）、菌丝相（有隔45°分枝/无隔直角分枝）、产孢结构（曲霉分生孢子头/毛霉孢子囊）</desc>
+<rect width="480" height="408" fill="#ffffff"/>
 
-  <!-- ===== 酵母相 ===== -->
-  <text x="24" y="72" font-size="12.5" font-weight="700" fill="#3f7a52">酵母相 Yeast</text>
-  <!-- 芽生孢子(出芽) cx96 -->
-  <g fill="#cfe6d6" stroke="#3f7a52" stroke-width="1.4">
-    <ellipse cx="93" cy="106" rx="13" ry="10"/>
-    <ellipse cx="110" cy="93" rx="7" ry="6"/>
-  </g>
-  <text x="96" y="138" text-anchor="middle" font-size="11" fill="#565b63">芽生孢子（出芽）</text>
-  <!-- 假菌丝 cx240：链状缢缩 -->
-  <g fill="#cfe6d6" stroke="#3f7a52" stroke-width="1.4">
-    <ellipse cx="216" cy="104" rx="11" ry="7"/><ellipse cx="238" cy="104" rx="11" ry="7"/><ellipse cx="260" cy="104" rx="11" ry="7"/>
-  </g>
-  <text x="240" y="138" text-anchor="middle" font-size="11" fill="#565b63">假菌丝（缢缩成链）</text>
-  <!-- 厚膜孢子 cx384：菌丝末端双壁大孢子 -->
-  <line x1="356" y1="112" x2="378" y2="104" stroke="#4f9e93" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="392" cy="100" r="11" fill="#e7f1d6" stroke="#6e8f3a" stroke-width="1.4"/>
-  <circle cx="392" cy="100" r="6.5" fill="none" stroke="#6e8f3a" stroke-width="1"/>
-  <text x="392" y="138" text-anchor="middle" font-size="11" fill="#565b63">厚膜孢子</text>
+<!-- 页眉 -->
+<text x="24" y="28" font-size="16" font-weight="700" fill="#1f2733">真菌的基本形态与结构</text>
+<rect x="368" y="14" width="88" height="18" rx="9" fill="#eef2f7"/>
+<text x="412" y="27" text-anchor="middle" font-size="10" fill="#5c6672">形态总览 · 真菌</text>
+<text x="24" y="47" font-size="11.5" fill="#5c6672">酵母相、菌丝相与产孢结构（示意）</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
 
-  <line x1="24" y1="152" x2="456" y2="152" stroke="#efe6c6" stroke-width="1"/>
+<!-- ===== 酵母相 ===== -->
+<circle cx="30" cy="75" r="4" fill="#4e8d5b"/><text x="42" y="79" font-size="12.5" font-weight="700" fill="#3f7a52">酵母相 Yeast</text>
+<g fill="#dcefe0" stroke="#3f7a52" stroke-width="1.4">
+  <!-- 芽生孢子（出芽） -->
+  <ellipse cx="90" cy="106" rx="13" ry="10"/><ellipse cx="108" cy="93" rx="7" ry="6"/>
+  <!-- 假菌丝（芽孢成链、连接处缢缩） -->
+  <ellipse cx="212" cy="104" rx="12" ry="7"/><ellipse cx="236" cy="104" rx="12" ry="7"/><ellipse cx="260" cy="104" rx="12" ry="7"/>
+</g>
+<!-- 厚膜孢子（菌丝末端、厚壁） -->
+<line x1="352" y1="112" x2="376" y2="104" stroke="#3f7a52" stroke-width="3" stroke-linecap="round"/>
+<circle cx="390" cy="100" r="11" fill="#eef4da" stroke="#6e8f3a" stroke-width="1.6"/>
+<circle cx="390" cy="100" r="6.5" fill="none" stroke="#6e8f3a" stroke-width="1"/>
+<text x="96" y="138" text-anchor="middle" font-size="11" fill="#3f444b">芽生孢子（出芽）</text>
+<text x="240" y="138" text-anchor="middle" font-size="11" fill="#3f444b">假菌丝（连接处缢缩）</text>
+<text x="390" y="138" text-anchor="middle" font-size="11" fill="#3f444b">厚膜孢子</text>
+<text x="390" y="150" text-anchor="middle" font-size="9.5" fill="#5c6672">白念珠菌鉴别要点</text>
+<line x1="24" y1="164" x2="456" y2="164" stroke="#e3e7ec"/>
 
-  <!-- ===== 菌丝相 ===== -->
-  <text x="24" y="174" font-size="12.5" font-weight="700" fill="#2e6b66">菌丝相 Hyphae</text>
-  <!-- 有隔菌丝 45°锐角分支 cx132 -->
-  <g stroke="#4f9e93" stroke-width="7" fill="none" stroke-linecap="round">
-    <line x1="60" y1="232" x2="160" y2="200"/>
-    <line x1="120" y1="216" x2="158" y2="232"/>
-  </g>
-  <g stroke="#eafaf4" stroke-width="2">
-    <line x1="84" y1="226" x2="90" y2="216"/><line x1="108" y1="218" x2="114" y2="208"/><line x1="132" y1="210" x2="138" y2="200"/>
-  </g>
-  <text x="120" y="256" text-anchor="middle" font-size="11" fill="#565b63">有隔菌丝 · 45°锐角分支</text>
-  <text x="120" y="270" text-anchor="middle" font-size="11" fill="#565b63">曲霉型</text>
-  <!-- 无隔菌丝 直角分支 cx360 -->
-  <g stroke="#4f9e93" stroke-width="10" fill="none" stroke-linecap="round">
-    <line x1="300" y1="232" x2="420" y2="206"/>
-    <line x1="356" y1="220" x2="356" y2="190"/>
-  </g>
-  <text x="360" y="256" text-anchor="middle" font-size="11" fill="#565b63">无隔菌丝 · 直角分支</text>
-  <text x="360" y="270" text-anchor="middle" font-size="11" fill="#565b63">毛霉 / 根霉型</text>
+<!-- ===== 菌丝相 ===== -->
+<circle cx="30" cy="183" r="4" fill="#4e8d5b"/><text x="42" y="187" font-size="12.5" font-weight="700" fill="#3f7a52">菌丝相 Hypha</text>
+<!-- 有隔菌丝 · 45°锐角分枝（曲霉型） -->
+<g stroke="#4e9e78" stroke-width="6.5" fill="none" stroke-linecap="round">
+  <line x1="56" y1="238" x2="168" y2="206"/>
+  <line x1="122" y1="218" x2="158" y2="238"/>
+</g>
+<g stroke="#eafaf4" stroke-width="2">
+  <line x1="82" y1="231" x2="88" y2="221"/><line x1="106" y1="223" x2="112" y2="213"/><line x1="130" y1="215" x2="136" y2="205"/>
+</g>
+<text x="116" y="262" text-anchor="middle" font-size="11" fill="#3f444b">有隔菌丝 · 45°锐角分枝</text>
+<text x="116" y="275" text-anchor="middle" font-size="9.5" fill="#5c6672">曲霉型</text>
+<!-- 无隔菌丝 · 直角分枝（毛霉/根霉型） -->
+<g stroke="#4e9e78" stroke-width="9" fill="none" stroke-linecap="round">
+  <line x1="300" y1="238" x2="420" y2="212"/>
+  <line x1="360" y1="225" x2="360" y2="196"/>
+</g>
+<text x="360" y="262" text-anchor="middle" font-size="11" fill="#3f444b">无隔（少隔）菌丝 · 直角分枝</text>
+<text x="360" y="275" text-anchor="middle" font-size="9.5" fill="#5c6672">毛霉 / 根霉型</text>
+<line x1="24" y1="290" x2="456" y2="290" stroke="#e3e7ec"/>
 
-  <line x1="24" y1="286" x2="456" y2="286" stroke="#efe6c6" stroke-width="1"/>
-
-  <!-- ===== 产孢结构 ===== -->
-  <text x="24" y="308" font-size="12.5" font-weight="700" fill="#9a8a52">产孢结构 Sporulation</text>
-  <!-- 分生孢子头(曲霉) cx132 -->
-  <line x1="120" y1="392" x2="120" y2="346" stroke="#4f9e93" stroke-width="4"/>
-  <circle cx="120" cy="342" r="9" fill="#cfe6d6" stroke="#3f7a52" stroke-width="1.3"/>
-  <g stroke="#3f7a52" stroke-width="1.4"><line x1="113" y1="335" x2="108" y2="328"/><line x1="120" y1="333" x2="120" y2="325"/><line x1="127" y1="335" x2="132" y2="328"/></g>
-  <g fill="#cfe6d6" stroke="#6e8f3a" stroke-width="0.8"><circle cx="105" cy="323" r="2.6"/><circle cx="120" cy="320" r="2.6"/><circle cx="135" cy="323" r="2.6"/><circle cx="101" cy="316" r="2.4"/><circle cx="120" cy="313" r="2.4"/><circle cx="139" cy="316" r="2.4"/></g>
-  <text x="120" y="392" text-anchor="middle" font-size="11" fill="#565b63">分生孢子头（曲霉）</text>
-  <!-- 孢子囊(毛霉) cx360 -->
-  <line x1="360" y1="392" x2="360" y2="340" stroke="#4f9e93" stroke-width="4"/>
-  <circle cx="360" cy="328" r="15" fill="#e7f1d6" stroke="#6e8f3a" stroke-width="1.4"/>
-  <path d="M352,340 q8,-10 16,0" fill="none" stroke="#6e8f3a" stroke-width="1.2"/>
-  <g fill="#9aac5e"><circle cx="354" cy="324" r="1.6"/><circle cx="362" cy="322" r="1.6"/><circle cx="367" cy="330" r="1.6"/><circle cx="356" cy="332" r="1.6"/><circle cx="364" cy="334" r="1.4"/></g>
-  <!-- 假根 -->
-  <g stroke="#4f9e93" stroke-width="2" fill="none" stroke-linecap="round"><path d="M360,392 q-8,6 -14,6"/><path d="M360,392 q8,6 14,6"/></g>
-  <text x="360" y="392" text-anchor="middle" font-size="11" fill="#565b63" dy="0"> </text>
-  <text x="360" y="404" text-anchor="middle" font-size="11" fill="#565b63">孢子囊（毛霉 / 根霉）</text>
+<!-- ===== 产孢结构 ===== -->
+<circle cx="30" cy="309" r="4" fill="#9a8a52"/><text x="42" y="313" font-size="12.5" font-weight="700" fill="#8a6d2f">产孢结构 Sporulation</text>
+<!-- 曲霉：分生孢子头（顶囊+小梗+分生孢子链） -->
+<line x1="120" y1="388" x2="120" y2="352" stroke="#4e9e78" stroke-width="4"/>
+<circle cx="120" cy="346" r="10" fill="#dcefe0" stroke="#3f7a52" stroke-width="1.4"/>
+<g stroke="#3f7a52" stroke-width="1.4">
+  <line x1="112" y1="340" x2="106" y2="332"/><line x1="120" y1="336" x2="120" y2="327"/><line x1="128" y1="340" x2="134" y2="332"/>
+</g>
+<g fill="#dcefe0" stroke="#6e8f3a" stroke-width="0.8">
+  <circle cx="103" cy="326" r="2.6"/><circle cx="120" cy="321" r="2.6"/><circle cx="137" cy="326" r="2.6"/>
+  <circle cx="99" cy="319" r="2.3"/><circle cx="120" cy="314" r="2.3"/><circle cx="141" cy="319" r="2.3"/>
+</g>
+<text x="120" y="401" text-anchor="middle" font-size="11" fill="#3f444b">分生孢子头（曲霉）</text>
+<!-- 毛霉：孢子囊（孢囊梗+孢子囊+囊轴+假根） -->
+<line x1="360" y1="388" x2="360" y2="346" stroke="#4e9e78" stroke-width="4"/>
+<circle cx="360" cy="332" r="15" fill="#eef4da" stroke="#6e8f3a" stroke-width="1.5"/>
+<path d="M352,343 q8,-9 16,0" fill="none" stroke="#6e8f3a" stroke-width="1.2"/>
+<g fill="#9aac5e"><circle cx="354" cy="328" r="1.6"/><circle cx="362" cy="326" r="1.6"/><circle cx="367" cy="333" r="1.6"/><circle cx="356" cy="336" r="1.6"/><circle cx="364" cy="337" r="1.4"/></g>
+<g stroke="#4e9e78" stroke-width="2" fill="none" stroke-linecap="round"><path d="M360,388 q-8,6 -14,8"/><path d="M360,388 q8,6 14,8"/></g>
+<text x="360" y="401" text-anchor="middle" font-size="11" fill="#3f444b">孢子囊（毛霉 / 根霉）</text>
 </svg>
