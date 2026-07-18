@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-49';
+  var APP_VERSION = window.APP_VERSION || '20260702-50';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -51,7 +51,7 @@
 
   function db() {
     var DB = window.DB || {};
-    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], idcards: DB.idcards || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [], 'qc-strains': DB['qc-strains'] || [] };
+    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [], 'qc-strains': DB['qc-strains'] || [] };
   }
 
   // 缓存：window.DB 加载后不变，名称→id 映射只需建一次
@@ -632,12 +632,6 @@
         el('div', { cls: 'refs-label', text: '综述 / 参考' })
       ].concat([ el('div', { cls: 'chips' }, refChips) ])));
     }
-    if (vm.结构图) {
-      nodes.push(el('figure', { cls: 'mechanism-fig struct-fig' }, [
-        el('img', { cls: 'mechanism-img', src: imgV(vm.结构图), alt: '分子结构' }),
-        el('figcaption', { cls: 'mechanism-cap', text: '分子结构（数据来源 ChEMBL，RDKit 绘制）' })
-      ]));
-    }
     return nodes;
   }
 
@@ -879,7 +873,12 @@
   var _cardNameMap = null, _cardDrugMap = null;
   function cardNameById() { if (_cardNameMap) { return _cardNameMap; } var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.名称; }); _cardNameMap = m; return m; }
   function drugsByCard() { if (_cardDrugMap) { return _cardDrugMap; } var m = {}; ((window.DB && window.DB.cards) || []).forEach(function (c) { m[c.id] = c.药物 || []; }); _cardDrugMap = m; return m; }
-  function cardIds() { return ((window.DB && window.DB.cards) || []).map(function (c) { return c.id; }); }
+  // 仅药敏卡参与「药敏卡对比」：鉴定卡（合并入本模块）无药物组成，不可比
+  function cardIds() {
+    return ((window.DB && window.DB.cards) || [])
+      .filter(function (c) { return c.药物 && c.药物.length; })
+      .map(function (c) { return c.id; });
+  }
   function toggleCardCompare(id) {
     if (compareCardSet[id]) { delete compareCardSet[id]; } else { compareCardSet[id] = true; }
     if (isCardCompareRoute()) { renderCardCompare(); }
@@ -1027,309 +1026,6 @@
     fill(document.getElementById('main'), nodes);
   }
 
-  // ===== 工具 2：关联关系图 =====
-  var graphFilter = '';
-  var graphDepth = 1;
-  function isGraphRoute() { return routeKey() === 'graph'; }
-  function graphRouteId() {
-    var parts = (location.hash || '').replace(/^#\/?/, '').split('/').filter(Boolean);
-    return parts.length >= 3 ? { module: parts[1], id: parts[2] } : null;
-  }
-  // 关系图选图心：常见菌提前（越靠前越常见），其余微生物按数据顺序，非微生物条目排最后
-  var GRAPH_COMMON = [
-    'staph-aureus', 'e-coli', 'klebsiella-pneumoniae', 'pseudomonas-aeruginosa',
-    'strep-pneumoniae', 'strep-pyogenes', 'enterococcus-faecalis', 'enterococcus-faecium',
-    'acinetobacter-baumannii', 'mycobacterium-tuberculosis', 'haemophilus-influenzae',
-    'neisseria-meningitidis', 'neisseria-gonorrhoeae', 'candida-albicans', 'clostridioides-difficile',
-    'staph-epidermidis', 'strep-agalactiae', 'enterobacter-cloacae', 'proteus-mirabilis',
-    'helicobacter-pylori', 'moraxella-catarrhalis', 'listeria-monocytogenes',
-    'stenotrophomonas-maltophilia', 'salmonella-typhi'
-  ];
-  function graphPickPriority(it) {
-    if (it.module === 'microbes') {
-      var i = GRAPH_COMMON.indexOf(it.id);
-      return i >= 0 ? i : 500;
-    }
-    return 1000;
-  }
-  function graphPickItems() {
-    var q = graphFilter.trim().toLowerCase();
-    var items = [];
-    MODULES.forEach(function (mod) {
-      (db()[mod] || []).forEach(function (e) {
-        if (!q || (e.名称 || '').toLowerCase().indexOf(q) !== -1) {
-          items.push({ id: e.id, 名称: e.名称, module: mod });
-        }
-      });
-    });
-    items.forEach(function (it, i) { it._o = i; });
-    items.sort(function (a, b) { return graphPickPriority(a) - graphPickPriority(b) || a._o - b._o; });
-    return items.slice(0, 200);
-  }
-  function renderGraphPicker() {
-    var search = el('input', { cls: 'cmp-search', type: 'search', placeholder: '搜索条目作为图心…', value: graphFilter });
-    search.addEventListener('input', function () { graphFilter = search.value; renderGraphPickerList(); });
-    return [ el('div', { cls: 'cat-group' }, [
-      el('div', { cls: 'cat-group-name', text: '选择图心' }),
-      el('div', { cls: 'cmp-hint', text: '挑一个条目作为中心，画它的关联网络。' }),
-      search,
-      el('div', { cls: 'cmp-pick-list', id: 'graph-pick-list' })
-    ]) ];
-  }
-  function renderGraphPickerList() {
-    var list = document.getElementById('graph-pick-list');
-    if (list) { list.replaceChildren.apply(list, graphPickItems().map(function (it) {
-      return el('a', { cls: 'entry-link', text: it.名称, href: '#/graph/' + it.module + '/' + it.id });
-    })); }
-  }
-  function nodeFill(module, isCenter) {
-    if (isCenter) { return '#2e6b66'; }
-    var map = {
-      microbes: '#345f86', antibiotics: '#3f7a52', resistance: '#a85a2a',
-      tests: '#8a6d1f', cards: '#4a6d8c', media: '#6b4e8a',
-      staining: '#8a4a6b', 'biochem-tests': '#4a7a6b', idcards: '#7a5a3a'
-    };
-    return map[module] || '#8a8f98';
-  }
-
-  function graphLabelText(name, level) {
-    var max = level === 0 ? 12 : (level === 1 ? 8 : 5);
-    return name.length > max ? name.slice(0, max - 1) + '…' : name;
-  }
-
-  function graphTextWidth(text, fontSize) {
-    var units = 0;
-    String(text || '').split('').forEach(function (ch) {
-      units += /[\x00-\x7F]/.test(ch) ? 0.56 : 1;
-    });
-    return Math.ceil(units * fontSize);
-  }
-
-  function graphLabelPlacement(node, radius, width, height) {
-    if (node.level === 0) {
-      return { x: 0, y: 4, anchor: 'middle', baseline: 'central' };
-    }
-    var dx = node.x - width / 2;
-    var dy = node.y - height / 2;
-    var gap = node.level === 1 ? 12 : 9;
-    if (Math.abs(dx) < 42) {
-      return {
-        x: 0,
-        y: dy < 0 ? -(radius + gap + 2) : (radius + gap + 6),
-        anchor: 'middle',
-        baseline: 'central'
-      };
-    }
-    return {
-      x: dx > 0 ? radius + gap : -(radius + gap),
-      y: Math.max(-10, Math.min(10, dy * 0.04)),
-      anchor: dx > 0 ? 'start' : 'end',
-      baseline: 'central'
-    };
-  }
-
-  function graphLabelGroup(node, radius, labelText, fontSize, width, height) {
-    var p = graphLabelPlacement(node, radius, width, height);
-    var textWidth = graphTextWidth(labelText, fontSize);
-    var padX = 5, labelH = fontSize + 7, labelW = textWidth + padX * 2;
-    var rectX = p.anchor === 'middle' ? p.x - labelW / 2 : (p.anchor === 'start' ? p.x - padX : p.x - labelW + padX);
-    var rectY = p.y - labelH / 2;
-    var g = sg('g', { cls: 'graph-label' + (node.level === 0 ? ' center-label' : (node.level > 1 ? ' secondary' : ' primary')) });
-    if (node.level > 0) {
-      g.appendChild(sg('rect', {
-        cls: 'graph-label-bg',
-        x: rectX, y: rectY, width: labelW, height: labelH, rx: 4, ry: 4
-      }));
-    }
-    g.appendChild(sg('text', {
-      cls: 'graph-label-text',
-      x: p.x, y: p.y,
-      'text-anchor': p.anchor,
-      'dominant-baseline': p.baseline,
-      'font-size': fontSize,
-      'font-weight': node.level === 0 ? '600' : '500',
-      fill: node.level === 0 ? '#ffffff' : '#3f464f'
-    }, [labelText]));
-    return g;
-  }
-
-  function buildGraphSVG(layout) {
-    var W = layout.width, H = layout.height;
-
-    // 边：先渲染（位于节点下方），淡入；记录两端 id 用于悬停聚焦
-    var edgeData = layout.edges.map(function (e) {
-      var line = sg('line', {
-        x1: e.x1, y1: e.y1, x2: e.x2, y2: e.y2,
-        stroke: e.direction === 'forward' ? '#cfe0db' : '#e7c9c0',
-        'stroke-width': '1.6',
-        'stroke-dasharray': e.direction === 'reverse' ? '5 3' : 'none',
-        'stroke-linecap': 'round',
-        cls: 'graph-edge' + (e.direction === 'reverse' ? ' reverse' : '')
-      });
-      return { el: line, fromId: e.fromId, toId: e.toId };
-    });
-    var edgeRefs = edgeData.map(function (d) { return d.el; });
-
-    // 邻接表（节点 id → 邻居 id 集合），用于悬停聚焦
-    var neighbors = {};
-    layout.nodes.forEach(function (n) { neighbors[n.id] = {}; });
-    edgeData.forEach(function (d) {
-      if (neighbors[d.fromId]) { neighbors[d.fromId][d.toId] = true; }
-      if (neighbors[d.toId]) { neighbors[d.toId][d.fromId] = true; }
-    });
-
-    // 节点：外层 g 用 transform 属性定位，内层 g 做 CSS 缩放/淡入
-    var innerRefs = [];
-    var nodeById = {};
-    var nodeEls = layout.nodes.map(function (n, i) {
-      var isCenter = n.level === 0;
-      var r = isCenter ? 30 : (n.level === 1 ? 17 : 12);
-      var fill = nodeFill(n.module, isCenter);
-      var outer = sg('g', {
-        transform: 'translate(' + n.x + ' ' + n.y + ')',
-        cls: 'gnode',
-        role: 'button',
-        tabindex: '0',
-        'aria-label': View.moduleLabel(n.module) + ' · ' + n.名称 + (isCenter ? '（点击查看详情）' : '（点击设为图心）')
-      });
-      var inner = sg('g', { cls: 'graph-node-inner' + (isCenter ? ' center' : '') });
-      outer.appendChild(sg('title', { text: View.moduleLabel(n.module) + ' · ' + n.名称 + (isCenter ? '（点击查看详情）' : '（点击设为图心）') }));
-      // 阶梯延迟：中心 0s，一级 0.08s 起每项 +8ms，二级 0.25s 起每项 +6ms
-      var delay = isCenter ? 0 : (n.level === 1 ? (0.08 + i * 0.008) : (0.25 + i * 0.006));
-      inner.style.transitionDelay = delay + 's';
-
-      inner.appendChild(sg('circle', {
-        cx: 0, cy: 0, r: r, fill: fill,
-        'fill-opacity': isCenter ? '1' : '0.92',
-        stroke: '#ffffff', 'stroke-width': '2.5'
-      }));
-      var fontSize = isCenter ? '12' : '10.5';
-      inner.appendChild(graphLabelGroup(n, r, graphLabelText(n.名称, n.level), fontSize, W, H));
-
-      outer.style.cursor = 'pointer';
-      // 悬停聚焦：高亮该节点与其邻居/连线，淡化其余，并显示邻居标签
-      outer.addEventListener('mouseenter', function () { focusNode(n.id); });
-      outer.addEventListener('mouseleave', clearFocus);
-      // 键盘聚焦同样触发高亮，便于不用鼠标的用户
-      outer.addEventListener('focus', function () { focusNode(n.id); });
-      outer.addEventListener('blur', clearFocus);
-      function activate() {
-        // 图心：跳转到该条目详情页；其余节点：以该节点为新图心
-        location.hash = isCenter ? ('#/' + n.module + '/' + n.id) : ('#/graph/' + n.module + '/' + n.id);
-      }
-      outer.addEventListener('click', activate);
-      outer.addEventListener('keydown', function (ev) {
-        if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
-          ev.preventDefault();
-          activate();
-        }
-      });
-      outer.appendChild(inner);
-      innerRefs.push({ el: inner, delay: delay });
-      nodeById[n.id] = outer;
-      return outer;
-    });
-
-    // 显式 width/height（防 height:auto 在部分浏览器计算为 0）；viewBox 保持等比缩放
-    var svg = sg('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, cls: 'graph-svg' });
-    edgeRefs.forEach(function (e) { svg.appendChild(e); });
-    nodeEls.forEach(function (n) { svg.appendChild(n); });
-
-    function focusNode(id) {
-      svg.classList.add('focusing');
-      var on = {}; on[id] = true;
-      var nb = neighbors[id] || {};
-      Object.keys(nb).forEach(function (k) { on[k] = true; });
-      layout.nodes.forEach(function (nd) {
-        var g = nodeById[nd.id];
-        if (g) { g.classList.toggle('adj', !!on[nd.id]); }
-      });
-      edgeData.forEach(function (d) { d.el.classList.toggle('adj', d.fromId === id || d.toId === id); });
-    }
-    function clearFocus() {
-      svg.classList.remove('focusing');
-      Object.keys(nodeById).forEach(function (k) { nodeById[k].classList.remove('adj'); });
-      edgeData.forEach(function (d) { d.el.classList.remove('adj'); });
-    }
-
-    // 挂到 DOM 后下一帧加 .visible 触发入场过渡；后台标签页可能暂停 RAF，定时器兜底保证图不会保持透明。
-    var shown = false;
-    function showGraph() {
-      if (shown) { return; }
-      shown = true;
-      innerRefs.forEach(function (item) { item.el.classList.add('visible'); });
-      edgeRefs.forEach(function (e) { e.classList.add('visible'); });
-    }
-    requestAnimationFrame(function () {
-      requestAnimationFrame(showGraph);
-    });
-    setTimeout(showGraph, 80);
-    return svg;
-  }
-  function renderGraph() {
-    setActiveTool('graph');
-    var route = graphRouteId();
-    if (!route) {
-      fill(document.getElementById('sidebar'), renderGraphPicker());
-      renderGraphPickerList();
-      fill(document.getElementById('main'), [
-        el('h2', { cls: 'detail-title', text: '关联关系图' }),
-        el('div', { cls: 'empty', text: '在左侧搜索并选择一个条目作为图心，查看其关联网络。' })
-      ]);
-      return;
-    }
-    var data = db();
-    var graph = Core.buildGraph(data, route.module, route.id, graphDepth);
-    if (!graph) {
-      fill(document.getElementById('sidebar'), renderGraphPicker());
-      renderGraphPickerList();
-      fill(document.getElementById('main'), [ el('div', { cls: 'empty', text: '找不到该条目。' }) ]);
-      return;
-    }
-    // 2 层时节点多，放大画布留出间距（节点半径固定 → 相对更小、更不挤）
-    var nodeCount = graph.nodes.length;
-    var canvas = (graphDepth >= 2) ? Math.min(1040, 720 + Math.max(0, nodeCount - 24) * 7) : 720;
-    var layout = View.graphLayoutVM(graph, canvas, canvas);
-
-    // 侧栏：图心信息 + 深度切换 + 关联列表
-    var depthToggle = el('div', { cls: 'graph-controls' }, [
-      el('span', { cls: 'graph-ctrl-label', text: '深度' }),
-      el('button', { cls: 'cmp-add' + (graphDepth === 1 ? ' sel' : ''), text: '1 层', onClick: function () { graphDepth = 1; renderGraph(); } }),
-      el('button', { cls: 'cmp-add' + (graphDepth === 2 ? ' sel' : ''), text: '2 层', onClick: function () { graphDepth = 2; renderGraph(); } })
-    ]);
-    var relList = graph.nodes.filter(function (n) { return n.level > 0; }).map(function (n) {
-      return el('a', {
-        cls: 'entry-link chip chip-' + n.module,
-        text: View.moduleLabel(n.module) + ' · ' + n.名称,
-        href: '#/graph/' + n.module + '/' + n.id
-      });
-    });
-    var sidebarNodes = [ el('div', { cls: 'cat-group' }, [
-      el('div', { cls: 'cat-group-name', text: '图心' }),
-      el('div', { cls: 'graph-center-info' }, [
-        el('a', { cls: 'intrinsic-link', text: graph.center.名称, href: '#/' + route.module + '/' + route.id }),
-        el('span', { cls: 'badge', text: View.moduleLabel(route.module) })
-      ]),
-      depthToggle,
-      el('div', { cls: 'cat-group-name', text: '关联 (' + (graph.nodes.length - 1) + ')' }),
-      el('div', { cls: 'chips', style: 'flex-direction:column;align-items:flex-start;gap:4px;' }, relList)
-    ]) ];
-    fill(document.getElementById('sidebar'), sidebarNodes);
-
-    // 主区：图例 + SVG
-    var main = [ el('h2', { cls: 'detail-title', text: '关联关系图' }) ];
-    main.push(el('div', { cls: 'graph-legend' }, [
-      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-line solid' }), '正向关联' ]),
-      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-line dashed' }), '反向关联' ]),
-      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-dot center' }), '图心' ]),
-      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-dot l1' }), '一级关联' ]),
-      el('span', { cls: 'graph-legend-item' }, [ el('span', { cls: 'graph-legend-dot l2' }), '二级关联' ])
-    ]));
-    main.push(el('div', { cls: 'graph-wrap' + (graphDepth >= 2 ? ' graph-dense' : '') }, [ buildGraphSVG(layout) ]));
-    main.push(el('div', { cls: 'cmp-hint', text: '桌面端悬停任一节点：高亮它的关联、显示邻居名称、淡化其余。点击节点以它为新图心（手机端逐层下钻），点侧栏关联项可跳转。' }));
-    fill(document.getElementById('main'), main);
-  }
-
   // ===== 工具 3：折点独立查询 + MIC 判读 =====
   var bpMode = 'lookup'; // 'lookup' | 'judge'
   var bpGroupFilter = '';
@@ -1358,7 +1054,7 @@
   function renderBreakpoints() {
     setActiveTool('breakpoints');
     // 侧栏：模式切换 +（judge 模式下）菌组列表
-    var modeToggle = el('div', { cls: 'graph-controls' }, [
+    var modeToggle = el('div', { cls: 'tool-controls' }, [
       el('button', { cls: 'cmp-add' + (bpMode === 'lookup' ? ' sel' : ''), text: '折点查询', onClick: function () { bpMode = 'lookup'; renderBreakpoints(); } }),
       el('button', { cls: 'cmp-add' + (bpMode === 'judge' ? ' sel' : ''), text: 'MIC 判读', onClick: function () { bpMode = 'judge'; renderBreakpoints(); } })
     ]);
@@ -1699,7 +1395,7 @@
       el('div', { cls: 'cat-group' }, [
         el('div', { cls: 'cat-group-name', text: '异常药敏' }),
         el('div', { cls: 'cmp-hint', text: '用于发现“看起来敏感但不应直接报告”的组合。正式报告以本院 SOP 和当前标准为准。' }),
-        el('div', { cls: 'graph-controls ast-filter-controls' }, levelBtns),
+        el('div', { cls: 'tool-controls ast-filter-controls' }, levelBtns),
         search
       ])
     ]);
@@ -1974,10 +1670,47 @@
     fill(document.getElementById('main'), nodes);
   }
 
-  // ===== 工具：菌名速查（全部菌名 → 百度百科）=====
+  // ===== 工具：菌名速查 =====
+  // 跳转分三级（均为权威来源、国内可达；不再使用百度百科）：
+  //   ① 本库已收录 → 应用内详情页（离线、已校对）
+  //   ② 未收录但为全写拉丁名 → NCBI Taxonomy 精确条目
+  //   ③ 缩写属名/仅属名/其他 → PubMed 文献检索（分类库无法精确命中时仍能给出可用结果）
   function isMicrobeNamesRoute() { return routeKey() === 'microbe-names'; }
   var mnFilter = '';
   function mnLetter(lat) { var c = (lat || '').charAt(0).toUpperCase(); return /[A-Z]/.test(c) ? c : '#'; }
+  var _mnLibIndex = null;
+  function mnNorm(s) { return String(s || '').toLowerCase().replace(/\s+/g, ' ').trim(); }
+  // 本库微生物索引：中文名 / 拉丁名 → id
+  function mnLibIndex() {
+    if (_mnLibIndex) { return _mnLibIndex; }
+    var idx = {};
+    ((window.DB && window.DB.microbes) || []).forEach(function (m) {
+      if (m.名称) { idx[mnNorm(m.名称)] = m.id; }
+      if (m.拉丁名) { idx[mnNorm(m.拉丁名)] = m.id; }
+    });
+    _mnLibIndex = idx;
+    return idx;
+  }
+  // 返回 { href, external, title, tag }
+  function mnTarget(m) {
+    var id = mnLibIndex()[mnNorm(m.名称)] || mnLibIndex()[mnNorm(m.拉丁名)];
+    if (id) {
+      return { href: '#/microbes/' + id, external: false, title: '本库已收录，查看详情：' + m.名称, tag: '本库' };
+    }
+    var lat = String(m.拉丁名 || '').trim();
+    if (/^[A-Z][a-z]{2,}\s+\S/.test(lat)) { // 全写「属 种」→ NCBI 分类可精确命中
+      return {
+        href: 'https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?name=' + encodeURIComponent(lat),
+        external: true, title: '在 NCBI Taxonomy 查看：' + lat, tag: ''
+      };
+    }
+    // 缩写属名/仅属名：分类库无法精确命中，回落 PubMed 文献检索
+    var term = lat || m.名称 || '';
+    return {
+      href: 'https://pubmed.ncbi.nlm.nih.gov/?term=' + encodeURIComponent(term),
+      external: true, title: '在 PubMed 检索：' + term, tag: ''
+    };
+  }
   var mnTimer = null;
   function renderMicrobeNames() {
     setActiveTool('microbe-names');
@@ -1985,7 +1718,7 @@
     // 侧栏保持精简：仅说明，不放搜索框（搜索移到正文，手机端搜索与结果同屏）
     fill(document.getElementById('sidebar'), [ el('div', { cls: 'cat-group' }, [
       el('div', { cls: 'cat-group-name', text: '菌名速查' }),
-      el('div', { cls: 'cmp-hint', text: '微生物名称索引（按拉丁名字母序），点击跳转百度百科；含已从「微生物分类」详情精简移除的菌种。' })
+      el('div', { cls: 'cmp-hint', text: '微生物名称索引（按拉丁名字母序）。本库已收录者跳应用内详情，其余跳 NCBI Taxonomy / PubMed。' })
     ]) ]);
     // 正文：标题 + 说明 + 粘性头（搜索 + A–Z）+ 结果容器（仅结果重渲染，搜索框不丢焦点）
     var search = el('input', { cls: 'mn-search', type: 'search', enterkeyhint: 'search', autocomplete: 'off', placeholder: '搜索中文名 / 拉丁名…', value: mnFilter });
@@ -1996,7 +1729,7 @@
     });
     fill(document.getElementById('main'), [
       el('h2', { cls: 'detail-title', text: '菌名速查' }),
-      el('div', { cls: 'lw-note', text: '微生物名称索引（中文 + 拉丁，共 ' + list.length + ' 条，按拉丁名字母顺序）——点击任一菌名跳转百度百科；含已从「微生物分类」详情模块精简移除的菌种。' }),
+      el('div', { cls: 'lw-note', text: '微生物名称索引（中文 + 拉丁，共 ' + list.length + ' 条，按拉丁名字母顺序）——标「本库」者跳应用内详情页（离线）；其余跳 NCBI Taxonomy（全写拉丁名）或 PubMed 文献检索。' }),
       el('div', { cls: 'mn-head' }, [
         el('div', { cls: 'mn-searchwrap' }, [ search, el('span', { cls: 'mn-count', id: 'mn-count' }) ]),
         el('div', { cls: 'mn-az', id: 'mn-az' })
@@ -2033,10 +1766,12 @@
         grid = el('div', { cls: 'mn-grid' });
         nodes.push(el('div', { cls: 'mn-section', id: 'mn-' + L }, [ el('div', { cls: 'lw-h', text: L }), grid ]));
       }
-      grid.appendChild(el('a', {
-        cls: 'mn-item', href: 'https://baike.baidu.com/item/' + encodeURIComponent(m.名称),
-        target: '_blank', rel: 'noopener noreferrer', title: '在百度百科查看：' + m.名称
-      }, [ el('span', { cls: 'mn-nm', text: m.名称 }), el('span', { cls: 'mn-lt', text: m.拉丁名 || '' }) ]));
+      var t = mnTarget(m);
+      var opts = { cls: 'mn-item' + (t.tag ? ' mn-item-lib' : ''), href: t.href, title: t.title };
+      if (t.external) { opts.target = '_blank'; opts.rel = 'noopener noreferrer'; }
+      var kids = [ el('span', { cls: 'mn-nm', text: m.名称 }), el('span', { cls: 'mn-lt', text: m.拉丁名 || '' }) ];
+      if (t.tag) { kids.push(el('span', { cls: 'mn-tag', text: t.tag })); }
+      grid.appendChild(el('a', opts, kids));
     });
     if (filtered.length === 0) { nodes.push(el('div', { cls: 'empty', text: '没有匹配的菌名。' })); }
     fill(document.getElementById('mn-results'), nodes);
@@ -2050,7 +1785,6 @@
     if (isCompareRoute()) { renderCompare(); return; }
     if (isCardCompareRoute()) { renderCardCompare(); return; }
     if (isIntrinsicRoute()) { renderIntrinsic(); return; }
-    if (isGraphRoute()) { renderGraph(); return; }
     if (isBreakpointsRoute()) { renderBreakpoints(); return; }
     if (isAstAlertsRoute()) { renderAstAlerts(); return; }
     var route = parseHash();
@@ -2070,7 +1804,6 @@
     var extras = {
       mechanismImage: mechImg,
       mechCaption: route.module === 'tests' ? '试验示意图' : (route.module === 'staining' ? '染色示意图' : (route.module === 'biochem-tests' ? '生化反应示意图' : '作用机制示意图')),
-      structImage: (route.module === 'antibiotics' && entry && window.DB.structures && window.DB.structures[entry.id]) ? ('img/struct-' + entry.id + '.svg') : null,
       morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
       treatment: (entry && window.DB.treatment) ? window.DB.treatment[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
@@ -2093,8 +1826,10 @@
     ],
     antibiotics: [{ src: 'img/landing-antibiotics.svg', cap: '抗微生物药作用机制总览' }],
     resistance: [{ src: 'img/landing-resistance.svg', cap: '细菌耐药机制总览' }],
-    idcards: [{ src: 'img/landing-idcards.svg', cap: 'VITEK 2 鉴定卡原理与选卡总览' }],
-    cards: [{ src: 'img/landing-cards.svg', cap: '药敏卡与判读总览' }],
+    cards: [
+      { src: 'img/landing-cards.svg', cap: '药敏卡与判读总览' },
+      { src: 'img/landing-idcards.svg', cap: 'VITEK 2 鉴定卡原理与选卡总览' }
+    ],
     tests: [{ src: 'img/landing-tests.svg', cap: '实验室试验总览' }],
     staining: [{ src: 'img/landing-staining.svg', cap: '染色方法总览' }],
     media: [{ src: 'img/landing-media.svg', cap: '培养基总览' }],

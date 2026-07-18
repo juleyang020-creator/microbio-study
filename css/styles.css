@@ -73,7 +73,7 @@ body {
 .compare-btn { margin-left: auto; color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; }
 .compare-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-/* 工具按钮组（天然耐药 / 关系图 / 折点判读 / 生化对比 / 药敏卡对比） */
+/* 工具按钮组（天然耐药 / 异常药敏 / 菌名速查 / 折点判读 / 生化鉴定 / 药敏卡对比 / 标本流程） */
 .tools { display: flex; gap: 4px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .tools::-webkit-scrollbar { display: none; }
 .tool-btn { color: var(--ink-soft); text-decoration: none; font-size: 12px; padding: 3px 7px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; flex-shrink: 0; }
@@ -116,7 +116,7 @@ body {
 .latin { color: var(--muted); font-style: italic; margin: 5px 0 22px; font-size: 14px; }
 .abbr { font-family: var(--mono); background: var(--accent-weak); color: var(--accent); font-size: 11.5px; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; }
 
-/* 菌名速查（全部菌名 → 百度百科） */
+/* 菌名速查（本库详情 / NCBI Taxonomy / PubMed） */
 /* 菌名速查路由：去掉正文顶部内边距，让粘性头贴主区顶部吸顶、无缝隙 */
 body.route-mn .main { padding-top: 0; }
 body.route-mn .detail-title { margin-top: 18px; }
@@ -137,6 +137,9 @@ body.route-mn .detail-title { margin-top: 18px; }
 .mn-item .mn-nm { font-weight: 500; color: var(--link); }
 .mn-item:hover .mn-nm { color: var(--accent); }
 .mn-item .mn-lt { color: var(--muted); font-style: italic; font-size: 12px; }
+/* 「本库」标记：该菌名在本软件已收录，点击跳应用内详情（离线），而非外部站点 */
+.mn-item .mn-tag { margin-left: auto; flex-shrink: 0; font-size: 10.5px; color: var(--accent); background: var(--accent-weak); border: 1px solid var(--accent-edge); border-radius: 3px; padding: 0 5px; line-height: 1.5; }
+.mn-item-lib .mn-nm { color: var(--accent); }
 
 /* 标本与实验室流程模块（MCM 12th ed） */
 .lw-src { font-size: 12px; color: var(--muted); margin: 2px 0 2px; }
@@ -411,87 +414,6 @@ body.route-mn .detail-title { margin-top: 18px; }
 .intrinsic-link:hover { text-decoration: underline; }
 .intrinsic-card .latin { margin: 0; font-size: 12px; }
 
-/* 关联关系图 */
-.graph-controls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
-.graph-ctrl-label { font-size: 12px; color: var(--muted); }
-.graph-controls .cmp-add.sel { background: var(--accent-weak); border-color: var(--accent); color: var(--accent); }
-.graph-center-info { display: flex; align-items: baseline; gap: 8px; margin: 6px 0 10px; }
-.graph-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; margin: 14px 0; }
-.graph-svg { display: block; width: 100%; max-width: 720px; height: auto; margin: 0 auto; }
-.graph-svg .graph-edge { opacity: 0; transition: opacity 0.45s ease-out; }
-.graph-svg .graph-edge.visible { opacity: 1; }
-.graph-svg .graph-edge.reverse.visible { opacity: 0.85; }
-.graph-svg .graph-node-inner {
-  transform-box: fill-box;
-  transform-origin: center;
-  opacity: 0;
-  transform: scale(0);
-  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease-out;
-}
-.graph-svg .graph-node-inner.visible { opacity: 1; transform: scale(1); }
-.graph-svg .graph-node-inner.center.visible {
-  animation: graph-center-pulse 2.8s ease-in-out infinite 0.6s;
-}
-.graph-svg g[transform]:not(.graph-node-inner) { cursor: pointer; }
-.graph-svg g[transform]:not(.graph-node-inner):hover .graph-node-inner,
-.graph-svg g[transform]:not(.graph-node-inner):focus-visible .graph-node-inner { transform: scale(1.2); transition: transform 0.2s ease; }
-.graph-svg g[transform]:not(.graph-node-inner):focus-visible { outline: none; }
-.graph-svg g[transform]:not(.graph-node-inner):focus-visible circle { stroke: var(--ink, #2a2f36); stroke-width: 3.5; }
-.graph-svg text { font-family: -apple-system, "PingFang SC", system-ui, sans-serif; pointer-events: none; user-select: none; }
-.graph-svg .graph-label { pointer-events: none; }
-.graph-svg .graph-label-bg {
-  fill: rgba(255,255,255,.88);
-  stroke: rgba(212,218,214,.9);
-  stroke-width: .8;
-}
-.graph-svg .graph-label-text {
-  paint-order: stroke;
-  stroke: rgba(255,255,255,.84);
-  stroke-width: 2.4px;
-  stroke-linejoin: round;
-}
-.graph-svg .graph-label.center-label .graph-label-text {
-  paint-order: normal;
-  stroke: none;
-}
-.graph-svg .graph-label.secondary {
-  opacity: 0;
-  transition: opacity .18s ease-out;
-}
-.graph-svg g[transform]:not(.graph-node-inner):hover .graph-label.secondary { opacity: 1; }
-@keyframes graph-center-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.07); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .graph-svg .graph-edge, .graph-svg .graph-node-inner { transition: none; opacity: 1; transform: none; }
-  .graph-svg .graph-node-inner.center.visible { animation: none; }
-}
-.graph-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); margin: 10px 0; }
-.graph-legend-item { display: inline-flex; align-items: center; gap: 5px; }
-.graph-legend-line { display: inline-block; width: 22px; height: 2px; background: #cfe0db; }
-.graph-legend-line.dashed { background: repeating-linear-gradient(to right, #e7c9c0 0 4px, transparent 4px 7px); height: 2px; }
-.graph-legend-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: middle; }
-.graph-legend-dot.center { background: #2e6b66; }
-.graph-legend-dot.l1 { background: #345f86; }
-.graph-legend-dot.l2 { background: #8a8f98; }
-
-/* 2 层密图：更宽画布 + 默认淡化连线；悬停聚焦时高亮该节点的关联并显示邻居标签，其余淡出 */
-.graph-wrap.graph-dense .graph-svg { max-width: 880px; }
-.graph-wrap.graph-dense .graph-edge.visible { opacity: .5; }
-.graph-svg.focusing .graph-node-inner { opacity: .16; transition: opacity .2s ease; }
-.graph-svg.focusing .gnode.adj .graph-node-inner { opacity: 1; }
-.graph-svg.focusing .graph-edge.visible { opacity: .05; }
-.graph-svg.focusing .graph-edge.visible.adj { opacity: 1; }
-.graph-svg.focusing .gnode.adj .graph-label.secondary { opacity: 1; }
-.graph-svg.focusing .gnode.adj .graph-label-bg { fill: rgba(255,255,255,.97); }
-.graph-svg.focusing .graph-node-inner.center { animation: none; }
-
-@media (prefers-reduced-motion: reduce) {
-  .graph-svg .graph-edge, .graph-svg .graph-node-inner, .graph-svg .graph-node-inner.center {
-    animation: none; opacity: 1; transform: none;
-  }
-}
 
 /* 折点独立查询 + MIC 判读 */
 .bp-filters { margin: 12px 0 16px; }
@@ -525,6 +447,10 @@ body.route-mn .detail-title { margin-top: 18px; }
 .bp-method-toggle .cmp-add.sel { background: var(--accent-weak); border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .bp-verdict-reason { font-size: 13.5px; color: var(--ink-soft); }
 .bp-judge-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+
+/* 工具侧栏的模式/筛选按钮组（折点查询、异常药敏等共用） */
+.tool-controls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+.tool-controls .cmp-add.sel { background: var(--accent-weak); border-color: var(--accent); color: var(--accent); }
 
 /* 异常药敏 / 修正规则 —— 表格 + 等级图标，点行展开详情 */
 .ast-disclaimer { max-width: 760px; margin: 8px 0 12px; }
