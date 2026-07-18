@@ -13,6 +13,7 @@ require('../data/resistance.js');
 require('../data/biochem.js');
 require('../data/differential.js');
 require('../data/morphology.js');
+require('../data/photos.js');
 require('../data/cards.js');
 require('../data/tests.js');
 require('../data/media.js');
@@ -193,6 +194,24 @@ test('鉴定卡数据完整：每卡有适用菌关联与小节（已并入 card
   assert.ok(idCards.length >= 7, '鉴定卡数量不足 7');
   // 药敏卡（有药物组成）应仍在同一模块内
   assert.ok((global.window.DB.cards || []).filter((c) => c.药物 && c.药物.length).length >= 13, '药敏卡数量不足 13');
+});
+
+test('真实形态图（CDC PHIL）：键为存在的微生物、图片文件存在、出处字段完整', () => {
+  const ids = {};
+  global.window.DB.microbes.forEach((m) => { ids[m.id] = true; });
+  const photos = global.window.DB.photos || {};
+  const keys = Object.keys(photos);
+  assert.ok(keys.length >= 10, '试点应覆盖至少 10 个菌，实际 ' + keys.length);
+  keys.forEach((k) => {
+    assert.ok(ids[k], 'photos 引用了不存在的微生物 id：' + k);
+    assert.ok(Array.isArray(photos[k]) && photos[k].length > 0, k + ' 无图片');
+    photos[k].forEach((p) => {
+      assert.ok(fs.existsSync(path.join(__dirname, '..', p.文件)), '图片文件缺失：' + p.文件);
+      assert.ok(p.说明 && p.说明.length > 0, k + ' 图片缺中文说明：' + p.文件);
+      // 出处可追溯：必须记录 PHIL 图像 ID，便于核对公有领域授权
+      assert.ok(p.PHIL && /^\d+$/.test(String(p.PHIL)), k + ' 图片缺 PHIL 出处 ID：' + p.文件);
+    });
+  });
 });
 
 test('每个微生物与耐药机制都能生成综述链接', () => {

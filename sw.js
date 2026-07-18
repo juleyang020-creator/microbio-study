@@ -1,6 +1,6 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260702-50';
+var APP_VERSION = '20260702-51';
 // 缓存名直接由版本号派生，只需改 APP_VERSION 一处；旧缓存在 activate 时按前缀清理
 var CACHE = CACHE_PREFIX + APP_VERSION;
 function versioned(path) {
@@ -11,7 +11,7 @@ var CORE = [
   versioned('./js/core.js'), versioned('./js/view.js'), versioned('./js/validate.js'), versioned('./js/app.js'),
   versioned('./data/source-metadata.js'),
   versioned('./data/categories.js'), versioned('./data/microbes.js'), versioned('./data/antibiotics.js'), versioned('./data/resistance.js'),
-  versioned('./data/biochem.js'), versioned('./data/differential.js'), versioned('./data/morphology.js'), versioned('./data/treatment.js'),
+  versioned('./data/biochem.js'), versioned('./data/differential.js'), versioned('./data/morphology.js'), versioned('./data/photos.js'), versioned('./data/treatment.js'),
   versioned('./data/cards.js'), versioned('./data/tests.js'), versioned('./data/media.js'), versioned('./data/staining.js'),
   versioned('./data/breakpoints.js'), versioned('./data/eucast-breakpoints.js'), versioned('./data/biochem-tests.js'), versioned('./data/ast-alerts.js'), versioned('./data/qc-strains.js'), versioned('./data/ecv.js'), versioned('./data/intrinsic-resistance.js'), versioned('./data/site-reporting.js'), versioned('./data/lab-workflow.js'), versioned('./data/drug-cn.js'), versioned('./data/microbe-names.js'),
   versioned('./manifest.json'), './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'
@@ -41,6 +41,20 @@ var IMAGE_ASSETS = [
   './img/landing-antibiotics.svg',
   './img/landing-biochem.svg',
   './img/landing-cards.svg',
+  // 真实形态学图片（CDC PHIL 公有领域）
+  './img/photo-staph-aureus-26014.jpg',
+  './img/photo-e-coli-24573.jpg',
+  './img/photo-klebsiella-pneumoniae-6690.jpg',
+  './img/photo-klebsiella-pneumoniae-6689.jpg',
+  './img/photo-pseudomonas-aeruginosa-17370.jpg',
+  './img/photo-pseudomonas-aeruginosa-6688.jpg',
+  './img/photo-acinetobacter-baumannii-17069.jpg',
+  './img/photo-strep-pneumoniae-21342.jpg',
+  './img/photo-enterococcus-faecalis-2646.jpg',
+  './img/photo-candida-albicans-30264.jpg',
+  './img/photo-candida-albicans-26603.jpg',
+  './img/photo-haemophilus-influenzae-23029.jpg',
+  './img/photo-strep-pyogenes-8173.jpg',
   './img/landing-idcards.svg',
   './img/landing-media.svg',
   './img/landing-qc-strains.svg',
