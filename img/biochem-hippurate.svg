@@ -1,24 +1,61 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>马尿酸盐水解试验 (Hippurate)</title><desc>马尿酸→甘氨酸 + 苯甲酸，茚三酮与甘氨酸反应显深紫色</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">马尿酸盐水解试验 (Hippurate)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">马尿酸→甘氨酸 + 苯甲酸，茚三酮与甘氨酸反应显深紫色</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>马尿酸盐水解试验</title><desc>马尿酸酶将马尿酸钠水解为苯甲酸和甘氨酸，加茚三酮后甘氨酸显深蓝紫色为阳性；不产酶者无色至淡黄为阴性</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性管(无色) -->
-  <g>
-    <path d="M150,90 L150,232 Q150,250 168,250 Q186,250 186,232 L186,90 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="168" cy="90" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M150,140 L186,140 L186,232 Q186,250 168,250 Q150,250 150,232 Z" fill="#eef0ea"/>
-    <text x="168" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">阴性（无色/淡黄）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">马尿酸盐水解试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">马尿酸酶水解马尿酸钠放出甘氨酸，茚三酮使其显深蓝紫色</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阳性管(深紫) -->
-  <g>
-    <path d="M300,90 L300,232 Q300,250 318,250 Q336,250 336,232 L336,90 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="318" cy="90" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M300,140 L336,140 L336,232 Q336,250 318,250 Q300,250 300,232 Z" fill="#5b3a8c"/>
-    <text x="318" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#7a67a0">阳性（深紫色）</text>
-  </g>
+<!-- ===== 左：阴性对照管 ===== -->
+<text x="66" y="78" text-anchor="middle" font-size="9.5" fill="#5c6672">不产马尿酸酶</text>
+<path d="M48,92 L48,180 Q48,196 66,196 Q84,196 84,180 L84,92 Z" fill="#fdfcf8" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M48,126 L84,126 L84,180 Q84,196 66,196 Q48,196 48,180 Z" fill="#f7f2df"/>
+<ellipse cx="66" cy="92" rx="18" ry="5" fill="#ffffff" stroke="#c8b887" stroke-width="1.4"/>
+<ellipse cx="66" cy="126" rx="18" ry="4" fill="#f2ead1"/>
+<text x="66" y="212" text-anchor="middle" font-size="10" font-weight="700" fill="#8a6d2f">阴性（无色～淡黄）</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">无乳链球菌(B 群)、空肠弯曲菌、加德纳菌阳性；化脓性链球菌(A 群)阴性</text>
+<!-- ===== 中：化学转化主线 ===== -->
+<rect x="140" y="86" width="200" height="22" rx="5" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="101" text-anchor="middle" font-size="10" fill="#33404f">马尿酸钠（底物，1%）</text>
+
+<line x1="240" y1="110" x2="240" y2="132" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="252" y="112" width="80" height="16" rx="8" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="292" y="123.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">马尿酸酶水解</text>
+<text x="148" y="123.5" font-size="9.5" fill="#5c6672">35℃</text>
+
+<rect x="140" y="136" width="200" height="22" rx="5" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="151" text-anchor="middle" font-size="10" fill="#33404f">苯甲酸 ＋ 甘氨酸（关键产物）</text>
+
+<line x1="240" y1="160" x2="240" y2="182" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="252" y="162" width="94" height="16" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="299" y="173.5" text-anchor="middle" font-size="9.5" fill="#5c6672">＋茚三酮 100℃</text>
+<text x="148" y="173.5" font-size="9.5" fill="#5c6672">上清</text>
+
+<rect x="140" y="186" width="200" height="24" rx="5" fill="#e8e4f5" stroke="#8b7fb8"/>
+<text x="240" y="202" text-anchor="middle" font-size="10" fill="#463f9e">茚三酮–甘氨酸产物＝深蓝紫</text>
+
+<!-- ===== 右：阳性管 ===== -->
+<text x="414" y="78" text-anchor="middle" font-size="9.5" fill="#5c6672">产马尿酸酶</text>
+<path d="M396,92 L396,180 Q396,196 414,196 Q432,196 432,180 L432,92 Z" fill="#fdfcf8" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M396,126 L432,126 L432,180 Q432,196 414,196 Q396,196 396,180 Z" fill="#463f9e"/>
+<ellipse cx="414" cy="92" rx="18" ry="5" fill="#ffffff" stroke="#c8b887" stroke-width="1.4"/>
+<ellipse cx="414" cy="126" rx="18" ry="4" fill="#5a51b5"/>
+<text x="414" y="212" text-anchor="middle" font-size="10" font-weight="700" fill="#463f9e">阳性（深蓝紫）</text>
+
+<!-- 判读要点 -->
+<rect x="24" y="222" width="432" height="26" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="239" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#33404f">判读要点</tspan>　菌悬液须浓，菌量不足易假阴性；加茚三酮后 10–15 分钟内看色</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">显深蓝紫即水解阳性，配合 CAMP 与 β-溶血可定 B 群</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　阳性 无乳链球菌(B 群)、空肠弯曲菌　阴性 化脓链球菌(A 群)</text>
 </svg>

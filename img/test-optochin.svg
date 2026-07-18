@@ -1,41 +1,72 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>Optochin 试验（血平板）</title><desc>P 纸片（盐酸乙基氢化羟基奎宁）抑菌圈判读</desc>
-  <defs>
-    <radialGradient id="bap" cx="42%" cy="36%" r="72%">
-      <stop offset="0%" stop-color="#e7cfcf"/>
-      <stop offset="100%" stop-color="#e0c2c2"/>
-    </radialGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>Optochin 试验</title><desc>血平板上贴 Optochin（P）纸片：肺炎链球菌被抑制形成清亮抑菌圈（直径 ≥14 mm 为敏感），草绿色链球菌菌苔长至纸片边缘、无圈或圈 &lt;14 mm</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <pattern id="lawn" width="7" height="7" patternUnits="userSpaceOnUse">
+    <circle cx="3.5" cy="3.5" r="2.5" fill="#a9b489"/>
+  </pattern>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">Optochin 试验（血平板）</text>
-  <text x="240" y="44" text-anchor="middle" font-size="11" fill="#565b63">P 纸片（盐酸乙基氢化羟基奎宁）抑菌圈判读</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">Optochin 试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">鉴别试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">血平板贴 P 纸片：肺炎链球菌被抑制，草绿色链球菌照常生长</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="240" y1="66" x2="240" y2="226" stroke="#e3e7ec" stroke-dasharray="4,4"/>
 
-  <!-- 敏感 = 肺炎链球菌 -->
-  <g>
-    <circle cx="138" cy="160" r="92" fill="url(#bap)" stroke="#c9a49f" stroke-width="2.5"/>
-    <!-- 抑菌圈（清亮区） -->
-    <circle cx="138" cy="160" r="58" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2" stroke-dasharray="5 3"/>
-    <!-- P 纸片 -->
-    <circle cx="138" cy="160" r="14" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
-    <text x="138" y="164.5" text-anchor="middle" font-size="12" font-weight="700" fill="#5a80b0">P</text>
-    <!-- 抑菌圈直径标注 -->
-    <line x1="80" y1="160" x2="196" y2="160" stroke="#565b63" stroke-width="1" stroke-dasharray="2 2" opacity="0.55"/>
-    <line x1="80" y1="156" x2="80" y2="164" stroke="#565b63" stroke-width="1" opacity="0.55"/>
-    <line x1="196" y1="156" x2="196" y2="164" stroke="#565b63" stroke-width="1" opacity="0.55"/>
-    <text x="138" y="124" text-anchor="middle" font-size="11" fill="#565b63">清亮抑菌圈</text>
-  </g>
-  <text x="138" y="276" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">敏感（抑菌圈 ≥ 14 mm）</text>
-  <text x="138" y="293" text-anchor="middle" font-size="11" fill="#565b63">肺炎链球菌</text>
+<!-- ===== 左：❶ 敏感 ===== -->
+<circle cx="44" cy="76" r="7.5" fill="#1f2733"/>
+<text x="44" y="79.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="57" y="80" font-size="10" font-weight="700" fill="#33404f">敏感：肺炎链球菌（α 溶血）</text>
 
-  <!-- 耐药 = 草绿色链球菌 -->
-  <g>
-    <circle cx="346" cy="160" r="92" fill="url(#bap)" stroke="#c9a49f" stroke-width="2.5"/>
-    <!-- 菌苔密布至纸片边缘（无清亮区） -->
-    <circle cx="346" cy="160" r="14" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
-    <text x="346" y="164.5" text-anchor="middle" font-size="12" font-weight="700" fill="#5a80b0">P</text>
-    <text x="346" y="124" text-anchor="middle" font-size="11" fill="#565b63">菌苔布满，无清亮区</text>
-  </g>
-  <text x="346" y="276" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c46a62">耐药（无圈 / 圈 &lt; 14 mm）</text>
-  <text x="346" y="293" text-anchor="middle" font-size="11" fill="#565b63">草绿色链球菌</text>
+<circle cx="130" cy="144" r="52" fill="#e0c4c4" stroke="#c2413d" stroke-opacity="0.35" stroke-width="2"/>
+<!-- 菌苔（环状：仅抑菌圈外有菌） -->
+<path d="M80,144 a50,50 0 1,0 100,0 a50,50 0 1,0 -100,0 Z M98,144 a32,32 0 1,0 64,0 a32,32 0 1,0 -64,0 Z" fill="url(#lawn)" fill-rule="evenodd"/>
+<!-- 清亮抑菌圈 -->
+<circle cx="130" cy="144" r="32" fill="#f7f4ee" stroke="#8c96a2" stroke-width="1.1" stroke-dasharray="4,3"/>
+<!-- 圈径量取（含纸片） -->
+<g stroke="#33404f" stroke-width="1.3">
+  <line x1="130" y1="144" x2="102" y2="144" marker-end="url(#arr)"/>
+  <line x1="130" y1="144" x2="158" y2="144" marker-end="url(#arr)"/>
+  <line x1="98" y1="136" x2="98" y2="152"/>
+  <line x1="162" y1="136" x2="162" y2="152"/>
+</g>
+<!-- P 纸片 -->
+<circle cx="130" cy="144" r="9" fill="#f5f7f9" stroke="#5c6672" stroke-width="1.2"/>
+<text x="130" y="147.5" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">P</text>
+
+<text x="130" y="212" text-anchor="middle" font-size="9.5" fill="#5c6672">纸片周围清亮，菌苔被抑制</text>
+<text x="130" y="226" text-anchor="middle" font-size="9.5" fill="#33404f">直径 ≥14 mm → 敏感</text>
+
+<!-- ===== 右：❷ 耐药 ===== -->
+<circle cx="268" cy="76" r="7.5" fill="#1f2733"/>
+<text x="268" y="79.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="281" y="80" font-size="10" font-weight="700" fill="#33404f">耐药：草绿色链球菌群</text>
+
+<circle cx="350" cy="144" r="52" fill="#e0c4c4" stroke="#c2413d" stroke-opacity="0.35" stroke-width="2"/>
+<!-- 菌苔布满整板，直达纸片边缘 -->
+<circle cx="350" cy="144" r="50" fill="url(#lawn)"/>
+<!-- 菌苔紧贴纸片 -->
+<g stroke="#33404f" stroke-width="1.3">
+  <line x1="316" y1="144" x2="338" y2="144" marker-end="url(#arr)"/>
+  <line x1="384" y1="144" x2="362" y2="144" marker-end="url(#arr)"/>
+</g>
+<circle cx="350" cy="144" r="9" fill="#f5f7f9" stroke="#5c6672" stroke-width="1.2"/>
+<text x="350" y="147.5" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">P</text>
+
+<text x="350" y="212" text-anchor="middle" font-size="9.5" fill="#5c6672">菌苔长至纸片边缘</text>
+<text x="350" y="226" text-anchor="middle" font-size="9.5" fill="#33404f">无抑菌圈 → 耐药（6–13 mm 可疑）</text>
+
+<!-- 操作条件与可疑值处理 -->
+<rect x="24" y="232" width="432" height="20" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="246" font-size="9.5" fill="#5c6672">6 mm 纸片 · 35 ℃ 5% CO2 培养 18–24 h · 抑菌圈 6–13 mm 为可疑 → 加做胆汁溶菌试验</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">抑菌圈 ≥14 mm 判为 Optochin 敏感 → 肺炎链球菌</text>
+
+<!-- 页脚：用途 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　α 溶血链球菌定种：敏感 → 肺炎链球菌；耐药 → 草绿色链球菌群</text>
 </svg>

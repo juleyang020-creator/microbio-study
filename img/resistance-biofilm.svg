@@ -1,17 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>生物膜</title><desc>胞外多糖基质屏障 + 休眠菌，降低药物渗透与杀灭。导管/植入物相关感染常见</desc><defs>
- <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
- <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
- <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>生物膜</title><desc>细菌黏附于导管/植入物表面并分泌胞外多糖基质，形成分层三维群落：表层氧与营养充足、代谢活跃，深层缺氧贫营养形成代谢低下的持留菌；基质阻碍药物渗透、持留菌不被杀菌药杀灭，故针对浮游菌的常规药敏不能预测疗效</desc>
+<defs>
+  <marker id="arrD" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c2413d"/></marker>
+  <marker id="arrN" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
 </defs>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">生物膜</text>
-<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">胞外多糖基质屏障 + 休眠菌，降低药物渗透与杀灭</text>
-<rect x="60" y="66" width="360" height="60" rx="10" fill="#e8eef0" stroke="#b9c7cb"/> <text x="72" y="88" font-size="11" fill="#5f7378" text-anchor="start">胞外基质（EPS）</text>
- <g fill="#e4938c" stroke="#cf7c74" stroke-width="1.1"><circle cx="150" cy="178" r="16"/><circle cx="210" cy="194" r="16"/><circle cx="270" cy="178" r="16"/><circle cx="330" cy="194" r="16"/><circle cx="185" cy="214" r="13"/><circle cx="300" cy="214" r="13"/></g>
- <text x="240" y="248" font-size="11" fill="#565b63" text-anchor="middle">深层菌代谢低下（持留菌）</text>
- <g transform="translate(150,54) rotate(10) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g transform="translate(300,54) rotate(-10) scale(0.85)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="150" y1="64" x2="150" y2="70" stroke="#3a4a63" stroke-width="1.7" stroke-dasharray="3 4" marker-end="url(#arr)"/> <line x1="300" y1="64" x2="300" y2="70" stroke="#3a4a63" stroke-width="1.7" stroke-dasharray="3 4" marker-end="url(#arr)"/>
- <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="201" y1="89" x2="219" y2="107"/><line x1="201" y1="107" x2="219" y2="89"/></g> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="261" y1="89" x2="279" y2="107"/><line x1="261" y1="107" x2="279" y2="89"/></g>
- <text x="240" y="270" font-size="12" fill="#3f444b" text-anchor="middle">药物渗透受阻、疗效下降</text>
-<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">导管/植入物相关感染常见</text>
+<rect width="480" height="340" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">生物膜</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="10" fill="#6b7684">耐药机制</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">细菌黏附于异物表面，被自身分泌的基质包裹成分层三维群落</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 药物（浮游状态下敏感） ===== -->
+<rect x="160" y="68" width="60" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="190" y="79" text-anchor="middle" font-size="9.5" fill="#a3332f">抗菌药</text>
+<rect x="300" y="68" width="60" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="330" y="79" text-anchor="middle" font-size="9.5" fill="#a3332f">抗菌药</text>
+<!-- 左：被基质挡住 -->
+<line x1="190" y1="84" x2="190" y2="110" stroke="#c2413d" stroke-width="1.4" stroke-dasharray="3,3" marker-end="url(#arrD)"/>
+<g stroke="#c2413d" stroke-width="2.4" stroke-linecap="round"><line x1="183" y1="112" x2="197" y2="126"/><line x1="183" y1="126" x2="197" y2="112"/></g>
+<!-- 右：部分穿透，抵达深层 -->
+<line x1="330" y1="84" x2="330" y2="194" stroke="#c2413d" stroke-width="1.2" stroke-dasharray="3,4" marker-end="url(#arrD)"/>
+
+<!-- ===== 生物膜（三维基质团块） ===== -->
+<path d="M44,256 L58,150 Q62,120 92,118 L388,118 Q418,120 422,150 L436,256 Z" fill="#e7e2f3" stroke="#8b7fb8" stroke-width="1.2"/>
+<line x1="56" y1="186" x2="424" y2="186" stroke="#8b7fb8" stroke-width="0.9" stroke-dasharray="4,4"/>
+
+<!-- ❷ 基质 -->
+<circle cx="78" cy="130" r="7.5" fill="#1f2733"/><text x="78" y="134" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">2</text>
+<text x="90" y="134" font-size="9.5" fill="#5b4f8a">分泌胞外聚合物基质 EPS</text>
+
+<!-- ❸ 渗透受阻 -->
+<circle cx="224" cy="130" r="7.5" fill="#1f2733"/><text x="224" y="134" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">3</text>
+<text x="236" y="134" font-size="9.5" fill="#a3332f">渗透延缓（氨基糖苷被基质结合）</text>
+
+<!-- 表层：代谢活跃菌 -->
+<g fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2">
+  <ellipse cx="120" cy="154" rx="7" ry="5.5"/><ellipse cx="160" cy="154" rx="7" ry="5.5"/><ellipse cx="200" cy="154" rx="7" ry="5.5"/>
+  <ellipse cx="240" cy="154" rx="7" ry="5.5"/><ellipse cx="280" cy="154" rx="7" ry="5.5"/><ellipse cx="320" cy="154" rx="7" ry="5.5"/>
+  <ellipse cx="360" cy="154" rx="7" ry="5.5"/>
+</g>
+<g stroke="#2b6cb0" stroke-width="1"><line x1="120" y1="149" x2="120" y2="159"/><line x1="200" y1="149" x2="200" y2="159"/><line x1="280" y1="149" x2="280" y2="159"/><line x1="360" y1="149" x2="360" y2="159"/></g>
+<text x="84" y="176" font-size="9.5" fill="#1f4e79">表层：氧、营养充足 → 代谢活跃、分裂</text>
+
+<!-- 氧/营养梯度 -->
+<text x="422" y="138" text-anchor="end" font-size="9.5" fill="#5c6672">氧、营养</text>
+<line x1="410" y1="146" x2="410" y2="210" stroke="#33404f" stroke-width="1.2" marker-end="url(#arrN)"/>
+
+<!-- 深层：持留菌 -->
+<g fill="#eef1f5" stroke="#5c6672" stroke-width="1.1">
+  <ellipse cx="110" cy="204" rx="7" ry="5.5"/><ellipse cx="150" cy="204" rx="7" ry="5.5"/><ellipse cx="190" cy="204" rx="7" ry="5.5"/>
+  <ellipse cx="230" cy="204" rx="7" ry="5.5"/><ellipse cx="270" cy="204" rx="7" ry="5.5"/><ellipse cx="310" cy="204" rx="7" ry="5.5"/>
+  <ellipse cx="350" cy="204" rx="7" ry="5.5"/><ellipse cx="390" cy="204" rx="7" ry="5.5"/>
+  <ellipse cx="200" cy="236" rx="6.5" ry="5"/><ellipse cx="236" cy="236" rx="6.5" ry="5"/><ellipse cx="272" cy="236" rx="6.5" ry="5"/>
+  <ellipse cx="336" cy="236" rx="6.5" ry="5"/><ellipse cx="372" cy="236" rx="6.5" ry="5"/>
+</g>
+<text x="84" y="226" font-size="9.5" fill="#5c6672">深层：缺氧、贫营养</text>
+
+<!-- ❹ 持留菌 -->
+<circle cx="300" cy="222" r="7.5" fill="#1f2733"/><text x="300" y="226" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">4</text>
+<text x="312" y="226" font-size="9.5" fill="#5c6672">持留菌：代谢静止 → 耐受</text>
+
+<!-- ❶ 黏附 -->
+<circle cx="70" cy="242" r="7.5" fill="#1f2733"/><text x="70" y="246" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+<text x="82" y="246" font-size="9.5" fill="#5c6672">黏附、不可逆定植</text>
+
+<!-- 附着表面（异物） -->
+<rect x="24" y="256" width="432" height="20" fill="#f5f7f9" stroke="#e3e7ec"/>
+<g stroke="#e3e7ec" stroke-width="1">
+  <line x1="36" y1="276" x2="52" y2="256"/><line x1="68" y1="276" x2="84" y2="256"/><line x1="100" y1="276" x2="116" y2="256"/>
+  <line x1="132" y1="276" x2="148" y2="256"/><line x1="164" y1="276" x2="180" y2="256"/><line x1="196" y1="276" x2="212" y2="256"/>
+  <line x1="228" y1="276" x2="244" y2="256"/><line x1="260" y1="276" x2="276" y2="256"/><line x1="292" y1="276" x2="308" y2="256"/>
+  <line x1="324" y1="276" x2="340" y2="256"/><line x1="356" y1="276" x2="372" y2="256"/><line x1="388" y1="276" x2="404" y2="256"/>
+  <line x1="420" y1="276" x2="436" y2="256"/>
+</g>
+<text x="32" y="270" font-size="9.5" fill="#5c6672">导管 / 人工瓣膜等植入物（异物）表面</text>
+
+<!-- 结论 -->
+<text x="240" y="300" text-anchor="middle" font-size="11.5" fill="#33404f">常规药敏针对浮游菌，不能预测生物膜疗效 → 常需拔除导管</text>
+
+<!-- 页脚：典型例子 -->
+<rect x="24" y="310" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="326" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型例子</tspan>　凝固酶阴性葡萄球菌（icaADBC）· 铜绿假单胞菌黏液型 · 白念珠菌</text>
 </svg>

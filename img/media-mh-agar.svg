@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>M-H 琼脂（Mueller-Hinton）</title><desc>药敏试验国际标准培养基：草黄色透明琼脂，非选择、非鉴别，不含可发酵糖与指示剂故无鉴别反应色；靠可溶性淀粉吸附抑制物、低胸苷、Ca/Mg 校准、厚度约 4 mm、pH 7.2-7.4 保证抑菌圈可比；苛养菌改用加羊血与 NAD 的 MH-F</desc>
+<defs>
+  <marker id="arr" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">M-H 琼脂（Mueller-Hinton）</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">药敏试验的标准培养基：非选择、非鉴别，一切为了「结果可比」</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：平板俯视 ===== -->
+<text x="42" y="76" font-size="10" font-weight="700" fill="#33404f">M-H 平板（KB 纸片法）</text>
+
+<!-- 琼脂底色（草黄、透明） -->
+<circle cx="110" cy="154" r="68" fill="#f0e4bc" stroke="#b9a97e" stroke-width="1.4"/>
+<!-- 均匀灰白菌苔 -->
+<circle cx="110" cy="154" r="63" fill="#cbbf99"/>
+<g fill="#bdaf86" opacity="0.9">
+  <circle cx="72" cy="176" r="1.6"/><circle cx="92" cy="184" r="1.6"/><circle cx="128" cy="176" r="1.6"/>
+  <circle cx="148" cy="184" r="1.6"/><circle cx="60" cy="150" r="1.6"/><circle cx="160" cy="128" r="1.6"/>
+  <circle cx="136" cy="104" r="1.6"/><circle cx="120" cy="200" r="1.6"/><circle cx="80" cy="204" r="1.6"/>
+</g>
+
+<!-- 抑菌圈（露出琼脂本色） -->
+<circle cx="82" cy="126" r="26" fill="#f0e4bc" stroke="#a89877" stroke-width="1" stroke-dasharray="3,2"/>
+<circle cx="146" cy="150" r="15" fill="#f0e4bc" stroke="#a89877" stroke-width="1" stroke-dasharray="3,2"/>
+<!-- 纸片 -->
+<g fill="#ffffff" stroke="#9aa4b0" stroke-width="1.2">
+  <circle cx="82" cy="126" r="7"/><circle cx="146" cy="150" r="7"/><circle cx="104" cy="196" r="7"/>
+</g>
+<text x="82" y="97" text-anchor="middle" font-size="9.5" fill="#33404f">分别量各药片圈径</text>
+<text x="150" y="174" text-anchor="middle" font-size="9.5" fill="#33404f">对照该药折点表</text>
+<text x="104" y="216" text-anchor="middle" font-size="9.5" fill="#33404f">判 S/I/R，不跨片比</text>
+
+<!-- 图例 -->
+<rect x="42" y="232" width="11" height="9" fill="#cbbf99" stroke="#b9a97e"/>
+<text x="57" y="241" font-size="9.5" fill="#5c6672">菌苔</text>
+<circle cx="92" cy="236.5" r="5" fill="#ffffff" stroke="#9aa4b0"/>
+<text x="100" y="241" font-size="9.5" fill="#5c6672">纸片</text>
+<circle cx="134" cy="236.5" r="5.5" fill="#f0e4bc" stroke="#a89877" stroke-dasharray="3,2"/>
+<text x="143" y="241" font-size="9.5" fill="#5c6672">抑菌圈</text>
+
+<!-- ===== 右上：选择/鉴别成分（此处两者皆无，正是要点） ===== -->
+<rect x="196" y="66" width="260" height="56" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="208" y="82" font-size="10" font-weight="700" fill="#33404f">选择成分／鉴别成分：都没有</text>
+<text x="208" y="98" font-size="9.5" fill="#5c6672">无抑制剂 → 不压制任何常规需氧菌</text>
+<text x="208" y="114" font-size="9.5" fill="#5c6672">无可发酵糖与指示剂 → 不作鉴别（自身色素除外）</text>
+
+<!-- ===== 右下：标准化要点 ===== -->
+<rect x="196" y="130" width="260" height="112" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<text x="208" y="147" font-size="10" font-weight="700" fill="#33404f">标准化要点（决定抑菌圈可信度）</text>
+<g fill="#2b6cb0"><circle cx="211" cy="160" r="2.4"/><circle cx="211" cy="177" r="2.4"/><circle cx="211" cy="194" r="2.4"/><circle cx="211" cy="211" r="2.4"/><circle cx="211" cy="228" r="2.4"/></g>
+<text x="220" y="163.5" font-size="9.5" fill="#33404f">可溶性淀粉：吸附代谢抑制物</text>
+<text x="220" y="180.5" font-size="9.5" fill="#33404f">低胸苷：否则磺胺/TMP 假耐药</text>
+<text x="220" y="197.5" font-size="9.5" fill="#33404f">Ca²⁺/Mg²⁺ 校准：影响氨基糖苷/多黏菌素</text>
+<text x="220" y="214.5" font-size="9.5" fill="#33404f">厚度 4 mm：偏薄→圈偏大</text>
+<text x="220" y="231.5" font-size="9.5" fill="#33404f">苛养菌改用 MH-F（+5% 马血/β-NAD）</text>
+<!-- 厚度侧视小图 -->
+<rect x="392" y="200" width="52" height="10" fill="#f0e4bc" stroke="#b9a97e"/>
+<line x1="392" y1="212" x2="444" y2="212" stroke="#9aa4b0" stroke-width="1.4"/>
+<line x1="386" y1="200" x2="386" y2="210" stroke="#33404f" stroke-width="1" marker-end="url(#arr)"/>
+<text x="418" y="228" text-anchor="middle" font-size="9.5" fill="#5c6672">侧视 4 mm</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">不选择、不鉴别，用成分与厚度的标准化换取药敏可比</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　大肠埃希菌 · 金黄色葡萄球菌 · 铜绿假单胞菌（常规药敏与质控）</text>
+</svg>

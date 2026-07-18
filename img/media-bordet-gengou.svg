@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>鲍-金培养基</title><desc>鲍-金培养基平板俯视：马铃薯浸出液加甘油与血液构成深红色富血基底，青霉素或头孢氨苄抑制鼻咽部正常菌群；百日咳鲍特菌生长缓慢，长出细小、隆起、有光泽的汞滴样菌落并带窄溶血环，副百日咳鲍特菌 2–3 天即长、菌落较大亦溶血并产褐色素使培养基呈棕褐色，被抑制的革兰阳性杂菌不长</desc>
+<defs>
+  <radialGradient id="bgagar" cx="38%" cy="32%" r="78%">
+    <stop offset="0" stop-color="#a8484e"/><stop offset="1" stop-color="#83343b"/>
+  </radialGradient>
+  <radialGradient id="lysis" cx="50%" cy="50%" r="50%">
+    <stop offset="55%" stop-color="#e0cfae" stop-opacity="0.85"/>
+    <stop offset="100%" stop-color="#e0cfae" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="bgclip"><circle cx="108" cy="152" r="62"/></clipPath>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">鲍-金培养基</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">特殊培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">抗菌药挡住鼻咽杂菌，慢长的鲍特菌长出「汞滴」样细小菌落</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：平板俯视 ===== -->
+<text x="24" y="82" font-size="9.5" fill="#5c6672">平板俯视 · 35℃ 湿盒 3–7 天</text>
+<circle cx="108" cy="152" r="66" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="108" cy="152" r="62" fill="url(#bgagar)" stroke="#6f2b31" stroke-width="1.4"/>
+
+<g clip-path="url(#bgclip)">
+  <!-- 划线接种痕迹 -->
+  <g fill="none" stroke="#75282f" stroke-width="2.2" stroke-linecap="round" opacity="0.45">
+    <path d="M60,138 Q104,94 158,132"/>
+    <path d="M62,174 Q108,148 162,166"/>
+    <path d="M76,202 Q116,180 154,194"/>
+  </g>
+  <!-- ❶ 百日咳鲍特菌：细小、隆起、有光泽，窄溶血环 -->
+  <g>
+    <circle cx="86" cy="122" r="9" fill="url(#lysis)"/>
+    <circle cx="86" cy="122" r="3.6" fill="#dfe6ea" stroke="#a9b6bf" stroke-width="0.7"/>
+    <circle cx="84.6" cy="120.6" r="1.2" fill="#ffffff"/>
+    <circle cx="106" cy="110" r="8" fill="url(#lysis)"/>
+    <circle cx="106" cy="110" r="3.2" fill="#dfe6ea" stroke="#a9b6bf" stroke-width="0.7"/>
+    <circle cx="104.8" cy="108.8" r="1.1" fill="#ffffff"/>
+    <circle cx="70" cy="146" r="8" fill="url(#lysis)"/>
+    <circle cx="70" cy="146" r="3" fill="#dfe6ea" stroke="#a9b6bf" stroke-width="0.7"/>
+    <circle cx="68.9" cy="144.9" r="1" fill="#ffffff"/>
+  </g>
+  <!-- ❷ 副百日咳鲍特菌：长得快、菌落较大、亦溶血、呈棕褐色 -->
+  <g>
+    <circle cx="140" cy="166" r="12" fill="url(#lysis)"/>
+    <circle cx="126" cy="188" r="11" fill="url(#lysis)"/>
+    <circle cx="152" cy="144" r="10" fill="url(#lysis)"/>
+    <circle cx="140" cy="166" r="6.5" fill="#b0a184" stroke="#8a7c60" stroke-width="0.8"/>
+    <circle cx="126" cy="188" r="5.5" fill="#b0a184" stroke="#8a7c60" stroke-width="0.8"/>
+    <circle cx="152" cy="144" r="5" fill="#b0a184" stroke="#8a7c60" stroke-width="0.8"/>
+  </g>
+  <!-- ❸ 被抑制的鼻咽杂菌：不长 -->
+  <g fill="none" stroke="#c99a9d" stroke-width="1.2" stroke-dasharray="3,2.5">
+    <circle cx="80" cy="188" r="7"/><circle cx="100" cy="202" r="6"/>
+  </g>
+  <g stroke="#dcb9bb" stroke-width="1.4" stroke-linecap="round">
+    <line x1="76" y1="184" x2="84" y2="192"/><line x1="84" y1="184" x2="76" y2="192"/>
+    <line x1="96.5" y1="198.5" x2="103.5" y2="205.5"/><line x1="103.5" y1="198.5" x2="96.5" y2="205.5"/>
+  </g>
+</g>
+
+<!-- 平板上的编号 -->
+<g>
+  <circle cx="122" cy="130" r="7.5" fill="#1f2733"/>
+  <text x="122" y="133.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+  <circle cx="156" cy="182" r="7.5" fill="#1f2733"/>
+  <text x="156" y="185.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+  <circle cx="60" cy="178" r="7.5" fill="#1f2733"/>
+  <text x="60" y="181.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+</g>
+
+<!-- ===== 右：选择成分 ===== -->
+<rect x="186" y="70" width="270" height="76" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="196" y="86" font-size="10" font-weight="700" fill="#33404f">选择成分：抑制谁</text>
+<text x="196" y="103" font-size="9.5" fill="#5c6672">青霉素 / 头孢氨苄 → 压住鼻咽正常菌群</text>
+<text x="196" y="120" font-size="9.5" fill="#5c6672">鲍特菌天然耐受，得以从鼻咽拭子中选出</text>
+<circle cx="200" cy="134" r="6.5" fill="#1f2733"/>
+<text x="200" y="137.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+<circle cx="216" cy="134" r="5" fill="none" stroke="#c99a9d" stroke-width="1.1" stroke-dasharray="3,2.5"/>
+<text x="228" y="137.5" font-size="9.5" fill="#33404f">草绿链球菌、葡萄球菌等：不长</text>
+
+<!-- ===== 右：基础与指示成分 ===== -->
+<rect x="186" y="154" width="270" height="76" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="196" y="170" font-size="10" font-weight="700" fill="#33404f">基础成分：指示什么</text>
+<text x="196" y="187" font-size="9.5" fill="#5c6672">马铃薯浸出液 + 甘油 + 15–20% 血液（吸附脂肪酸等抑制物）</text>
+<circle cx="200" cy="201" r="6.5" fill="#1f2733"/>
+<text x="200" y="204.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<circle cx="216" cy="201" r="4" fill="#dfe6ea" stroke="#a9b6bf" stroke-width="0.8"/>
+<text x="228" y="204.5" font-size="9.5" fill="#33404f">细小隆起有光泽，绕以窄溶血环</text>
+<circle cx="200" cy="219" r="6.5" fill="#1f2733"/>
+<text x="200" y="222.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+<circle cx="216" cy="219" r="5" fill="#b0a184" stroke="#8a7c60" stroke-width="0.8"/>
+<text x="228" y="222.5" font-size="9.5" fill="#33404f">2–3 天即长，菌落大、亦溶血、呈棕褐色</text>
+
+<!-- 临床注解 -->
+<rect x="24" y="234" width="432" height="18" rx="6" fill="#f9e6e4" stroke="#e3b8b5"/>
+<text x="34" y="246.5" font-size="9.5" fill="#a3332f">含血、保存期短，须用新鲜平板；48h 无菌落不可报阴性，至少观察到 7 天</text>
+
+<!-- 结论 -->
+<text x="240" y="263" text-anchor="middle" font-size="11.5" fill="#33404f">汞滴样细小菌落 ＋ 慢生长 → 提示鲍特菌</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　百日咳鲍特菌（汞滴样）· 副百日咳鲍特菌（较大、产褐色素）</text>
+</svg>

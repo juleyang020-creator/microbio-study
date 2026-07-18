@@ -1,29 +1,72 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>H₂S 产生试验</title><desc>含硫氨基酸→H₂S，与铁盐生成黑色硫化亚铁（TSI / SIM / KIA）</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">H₂S 产生试验</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">含硫氨基酸→H₂S，与铁盐生成黑色硫化亚铁（TSI / SIM / KIA）</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>H₂S 产生试验</title><desc>TSI/KIA 穿刺培养：细菌将硫代硫酸盐还原、将含硫氨基酸脱巯基生成 H₂S，H₂S 与培养基中铁盐反应生成黑色硫化铁沉淀；左管无黑色为阴性，右管穿刺线及底层变黑为阳性</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性管(TSI) -->
-  <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <!-- 斜面(红) + 底层(黄) 无黑 -->
-    <path d="M150,150 L186,120 L186,180 L150,180 Z" fill="#cf7c74"/>
-    <path d="M150,180 L186,180 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#cdb85f"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阴性（无黑色）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">H₂S 产生试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">穿刺接种 TSI/KIA 37℃ 24h：含硫底物 → H₂S ＋铁盐 → 黑色 FeS</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阳性管 -->
-  <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M300,150 L336,120 L336,176 L300,176 Z" fill="#cf7c74"/>
-    <path d="M300,176 L336,176 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#cdb85f"/>
-    <!-- 黑色沉淀(底部) -->
-    <path d="M300,196 L336,196 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#2c3138"/>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（底部变黑）</text>
-  </g>
+<!-- ===== 左：阴性对照管 ===== -->
+<text x="87" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">阴性（不产 H₂S）</text>
+<path d="M68,88 V196 Q68,208 87,208 Q106,208 106,196 V88 Z" fill="#faf7ee" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M68,118 L106,100 L106,144 L68,144 Z" fill="#d9c34e"/>
+<path d="M68,144 H106 V196 Q106,208 87,208 Q68,208 68,196 Z" fill="#d9c34e"/>
+<line x1="68" y1="144" x2="106" y2="144" stroke="#bfa63f" stroke-width="1"/>
+<line x1="87" y1="128" x2="87" y2="200" stroke="#b3992f" stroke-width="2"/>
+<ellipse cx="87" cy="88" rx="19" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.2"/>
+<text x="62" y="122" text-anchor="end" font-size="9.5" fill="#8a6d2f">斜面</text>
+<text x="62" y="178" text-anchor="end" font-size="9.5" fill="#8a6d2f">底层</text>
+<text x="87" y="224" text-anchor="middle" font-size="9.5" fill="#5c6672">无黑色 → H₂S(−)</text>
 
-  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#565b63">沙门菌、变形杆菌、爱德华菌阳性；大肠埃希菌、志贺菌阴性</text>
+<!-- ===== 中：底物 → 酶 → 产物 → 显色 ===== -->
+<rect x="168" y="76" width="144" height="28" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="88" text-anchor="middle" font-size="9.5" fill="#1f2733">含硫氨基酸 / 硫代硫酸盐</text>
+<text x="240" y="100" text-anchor="middle" font-size="9.5" fill="#5c6672">（培养基提供的含硫底物）</text>
+<line x1="240" y1="104" x2="240" y2="114" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="174" y="115" width="132" height="18" rx="9" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="240" y="128" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">硫代硫酸盐还原酶 / 脱巯基酶</text>
+<line x1="240" y1="133" x2="240" y2="143" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="198" y="143" width="84" height="24" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="159" text-anchor="middle" font-size="10.5" fill="#1f2733">H₂S（气体）</text>
+<line x1="240" y1="167" x2="240" y2="185" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="248" y="179" font-size="9.5" fill="#5c6672">＋ 铁盐（Fe²⁺/Fe³⁺）</text>
+
+<rect x="176" y="185" width="128" height="30" rx="5" fill="#e8e9eb" stroke="#33404f" stroke-width="1.2"/>
+<circle cx="190" cy="200" r="5" fill="#1f2733"/>
+<text x="248" y="197" text-anchor="middle" font-size="9.5" fill="#1f2733" font-weight="600">FeS 黑色沉淀</text>
+<text x="248" y="209" text-anchor="middle" font-size="9.5" fill="#5c6672">沿穿刺线沉积</text>
+
+<!-- 产物 → 阳性管 -->
+<line x1="306" y1="200" x2="370" y2="200" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- 不产 H₂S → 阴性管 -->
+<line x1="196" y1="155" x2="132" y2="155" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+
+<!-- ===== 右：阳性管 ===== -->
+<text x="393" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">阳性（产 H₂S）</text>
+<path d="M374,88 V196 Q374,208 393,208 Q412,208 412,196 V88 Z" fill="#faf7ee" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M374,118 L412,100 L412,144 L374,144 Z" fill="#c0504d"/>
+<path d="M374,144 H412 V196 Q412,208 393,208 Q374,208 374,196 Z" fill="#d9c34e"/>
+<path d="M374,160 H412 V196 Q412,208 393,208 Q374,208 374,196 Z" fill="#1f2733"/>
+<line x1="393" y1="128" x2="393" y2="162" stroke="#1f2733" stroke-width="3.4"/>
+<ellipse cx="393" cy="88" rx="19" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.2"/>
+<text x="393" y="224" text-anchor="middle" font-size="9.5" fill="#5c6672">底层变黑 → H₂S(+)</text>
+
+<!-- 判读提醒 -->
+<text x="240" y="241" text-anchor="middle" font-size="9.5" fill="#c2413d">注意：斜面红/黄只反映糖发酵，与 H₂S 无关；只有黑色才判阳性</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">硫代硫酸盐被还原、含硫氨基酸脱巯基 → H₂S，遇铁盐生成黑色 FeS</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　(+) 沙门菌属(甲型副伤寒除外)·变形杆菌属·枸橼酸杆菌属(多数)　(−) 大肠埃希菌·志贺菌属</text>
 </svg>

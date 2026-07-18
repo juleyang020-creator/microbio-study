@@ -1,29 +1,93 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>Lancefield 分群（胶乳凝集）</title><desc>提取群特异性 C 多糖抗原，与抗血清致敏胶乳颗粒发生凝集</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">Lancefield 分群（胶乳凝集）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">提取群特异性 C 多糖抗原，与抗血清致敏胶乳颗粒发生凝集</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>Lancefield 分群（乳胶凝集）</title><desc>β-溶血链球菌菌落经提取酶或 0.2N HCl 提取细胞壁群特异 C 多糖，与群特异抗血清致敏的乳胶颗粒混合；同群时抗体与 C 多糖交联使乳胶聚成肉眼可见颗粒（阳性），非同群或未致敏乳胶则保持均匀乳浊（阴性）。注：A/B/C/F/G 群抗原为细胞壁 C 多糖，D 群抗原实为脂磷壁酸，现已不用本法鉴定肠球菌</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性(均匀乳浊) -->
-  <g>
-    <circle cx="148" cy="150" r="66" fill="#f3f1ea" stroke="#c8b887" stroke-width="2.5"/>
-    <g fill="#cfd6dc">
-      <circle cx="120" cy="128" r="2.2"/><circle cx="140" cy="124" r="2.2"/><circle cx="162" cy="130" r="2.2"/><circle cx="178" cy="142" r="2.2"/>
-      <circle cx="116" cy="150" r="2.2"/><circle cx="138" cy="150" r="2.2"/><circle cx="160" cy="152" r="2.2"/><circle cx="180" cy="160" r="2.2"/>
-      <circle cx="122" cy="172" r="2.2"/><circle cx="144" cy="176" r="2.2"/><circle cx="166" cy="174" r="2.2"/><circle cx="150" cy="190" r="2.2"/>
-    </g>
-    <text x="148" y="236" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">阴性（均匀乳浊）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">Lancefield 分群</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">提取细胞壁群特异 C 多糖 → 与抗血清乳胶凝集即定群</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阳性(凝集成块) -->
-  <g>
-    <circle cx="332" cy="150" r="66" fill="#f3f1ea" stroke="#c8b887" stroke-width="2.5"/>
-    <g fill="#4a6b9a">
-      <circle cx="312" cy="132" r="6"/><circle cx="352" cy="128" r="7"/><circle cx="334" cy="152" r="8"/><circle cx="360" cy="166" r="6"/><circle cx="312" cy="172" r="7"/><circle cx="340" cy="184" r="5.5"/>
-    </g>
-    <text x="332" y="236" text-anchor="middle" font-size="11" font-weight="700" fill="#2f4f8a">阳性（凝集成颗粒）</text>
-  </g>
+<!-- ===== 反应链：底物 →〔提取〕→ 抗原 ＋ 抗体乳胶 ===== -->
+<rect x="24" y="68" width="76" height="26" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="62" y="79" text-anchor="middle" font-size="9.5" fill="#1f2733">β-溶血菌落</text>
+<text x="62" y="90" text-anchor="middle" font-size="9.5" fill="#5c6672">（链球菌）</text>
+<line x1="100" y1="81" x2="118" y2="81" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<circle cx="136" cy="81" r="16" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="136" y="84.5" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1f4e79">提取</text>
+<line x1="152" y1="81" x2="170" y2="81" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="172" y="68" width="92" height="26" rx="5" fill="#e7e2f3" stroke="#8b7fb8"/>
+<text x="218" y="79" text-anchor="middle" font-size="9.5" fill="#5b4f8a">群特异 C 多糖</text>
+<text x="218" y="90" text-anchor="middle" font-size="9.5" fill="#5c6672">（细胞壁抗原）</text>
+<text x="274" y="85" text-anchor="middle" font-size="12" fill="#33404f">＋</text>
+<rect x="284" y="68" width="104" height="26" rx="5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="336" y="79" text-anchor="middle" font-size="9.5" fill="#1f4e79">群特异抗血清</text>
+<text x="336" y="90" text-anchor="middle" font-size="9.5" fill="#5c6672">致敏乳胶颗粒</text>
 
-  <text x="240" y="270" text-anchor="middle" font-size="11" fill="#565b63">按 C 多糖抗原分 A、B、C、D、F、G 群</text>
-  <text x="240" y="286" text-anchor="middle" font-size="11" fill="#565b63">A 群=化脓性链球菌；B 群=无乳链球菌；D 群=肠球菌/牛链球菌</text>
+<!-- 分流到两孔 -->
+<path d="M274,96 V104 M92,104 H388 M92,104 V124 M388,104 V124" fill="none" stroke="#33404f" stroke-width="1.2"/>
+<line x1="92" y1="116" x2="92" y2="126" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="388" y1="116" x2="388" y2="126" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+
+<!-- 孔标签 -->
+<text x="152" y="122" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5c6672">对照孔：未致敏乳胶</text>
+<text x="328" y="122" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">试验孔：同群抗血清</text>
+
+<!-- ===== 反应卡 ===== -->
+<rect x="64" y="130" width="352" height="88" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+
+<!-- 阴性孔：均匀乳浊 -->
+<circle cx="152" cy="174" r="35" fill="#f7f8fa" stroke="#b9c2cc" stroke-width="2"/>
+<g fill="#ccd4dd">
+  <circle cx="132" cy="150" r="1.9"/><circle cx="142" cy="150" r="1.9"/><circle cx="152" cy="150" r="1.9"/><circle cx="162" cy="150" r="1.9"/><circle cx="172" cy="150" r="1.9"/>
+  <circle cx="126" cy="160" r="1.9"/><circle cx="138" cy="160" r="1.9"/><circle cx="150" cy="160" r="1.9"/><circle cx="162" cy="160" r="1.9"/><circle cx="174" cy="160" r="1.9"/>
+  <circle cx="122" cy="172" r="1.9"/><circle cx="134" cy="172" r="1.9"/><circle cx="146" cy="172" r="1.9"/><circle cx="158" cy="172" r="1.9"/><circle cx="170" cy="172" r="1.9"/><circle cx="181" cy="172" r="1.9"/>
+  <circle cx="124" cy="184" r="1.9"/><circle cx="136" cy="184" r="1.9"/><circle cx="148" cy="184" r="1.9"/><circle cx="160" cy="184" r="1.9"/><circle cx="172" cy="184" r="1.9"/><circle cx="181" cy="184" r="1.9"/>
+  <circle cx="128" cy="196" r="1.9"/><circle cx="140" cy="196" r="1.9"/><circle cx="152" cy="196" r="1.9"/><circle cx="164" cy="196" r="1.9"/><circle cx="176" cy="196" r="1.9"/>
+  <circle cx="140" cy="206" r="1.9"/><circle cx="152" cy="206" r="1.9"/><circle cx="164" cy="206" r="1.9"/>
+</g>
+
+<!-- 阳性孔：背景变清亮 + 凝集颗粒 -->
+<circle cx="328" cy="174" r="35" fill="#ffffff" stroke="#b9c2cc" stroke-width="2"/>
+<g fill="#aab6c4" stroke="#78879a" stroke-width="1">
+  <circle cx="311" cy="156" r="7.5"/><circle cx="320" cy="150" r="5.5"/>
+  <circle cx="343" cy="152" r="6.5"/>
+  <circle cx="327" cy="176" r="9"/><circle cx="337" cy="182" r="6"/>
+  <circle cx="351" cy="170" r="7"/>
+  <circle cx="309" cy="188" r="8"/>
+  <circle cx="345" cy="196" r="5.5"/>
+</g>
+<g fill="#ccd4dd"><circle cx="320" cy="202" r="1.9"/><circle cx="358" cy="188" r="1.9"/></g>
+
+<!-- 中央分子机制：抗体—C 多糖—抗体 交联 -->
+<circle cx="220" cy="158" r="8" fill="#dbe3ec" stroke="#6b7684" stroke-width="1.2"/>
+<circle cx="260" cy="158" r="8" fill="#dbe3ec" stroke="#6b7684" stroke-width="1.2"/>
+<g stroke="#2b6cb0" stroke-width="1.4" fill="none">
+  <path d="M228,158 H233 M233,158 L237,154 M233,158 L237,162"/>
+  <path d="M252,158 H247 M247,158 L243,154 M247,158 L243,162"/>
+</g>
+<path d="M240,151 l6,3.5 v7 l-6,3.5 l-6,-3.5 v-7 z" fill="#e7e2f3" stroke="#8b7fb8" stroke-width="1.2"/>
+<line x1="270" y1="160" x2="290" y2="164" stroke="#33404f" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#arr)"/>
+<line x1="210" y1="160" x2="196" y2="163" stroke="#c2413d" stroke-width="1.4" marker-end="url(#blk)"/>
+<text x="240" y="182" text-anchor="middle" font-size="9.5" fill="#5b4f8a">C 多糖桥连抗体</text>
+<text x="240" y="194" text-anchor="middle" font-size="9.5" fill="#33404f">乳胶交联成块</text>
+
+<!-- 两孔判读 -->
+<text x="152" y="231" text-anchor="middle" font-size="9.5" fill="#5c6672">均匀乳浊、无颗粒 → 阴性（−）</text>
+<text x="328" y="231" text-anchor="middle" font-size="9.5" fill="#33404f">背景变清、肉眼颗粒 → 阳性（＋）</text>
+
+<!-- 临床注解 -->
+<text x="240" y="247" text-anchor="middle" font-size="9.5" fill="#5c6672">须先用提取酶或 0.2N HCl 加热提取 C 多糖；未提取、或超过 1 分钟干燥后判读易误判</text>
+
+<!-- 结论 -->
+<text x="240" y="263" text-anchor="middle" font-size="11.5" fill="#33404f">凝集＝该群抗血清认得这株菌的 C 多糖，即定为该 Lancefield 群</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="272" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="287" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　阳性：A 群化脓、B 群无乳链球菌 ｜ 阴性：多数草绿色链球菌（咽峡炎群可带 A/C/F/G）</text>
 </svg>

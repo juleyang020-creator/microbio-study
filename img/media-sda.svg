@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>沙保罗琼脂（SDA）</title><desc>沙保罗琼脂平板俯视：琥珀色半透明基底，高浓度葡萄糖约 4% 与低 pH 约 5.6 有利真菌而不利多数细菌，常加氯霉素或庆大霉素抑制细菌；平板上可见白色念珠菌的乳白奶油样酵母菌落、烟曲霉的蓝绿色绒毛状菌落伴白色边缘、黑曲霉的白色菌丝上覆黑色粉状孢子，细菌接种处不生长；SDA 无显色指示剂，主要用于真菌分离，但诺卡菌等需氧放线菌仍可生长，靠菌落形态与色泽及镜检区分</desc>
+<defs>
+  <clipPath id="sdaclip"><circle cx="108" cy="152" r="62"/></clipPath>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">沙保罗琼脂（SDA）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">选择性培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">低 pH 加高糖：真菌照常生长、多数细菌受抑；无指示剂看形态</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：平板俯视 ===== -->
+<text x="24" y="82" font-size="9.5" fill="#5c6672">平板俯视（基底琥珀色半透明）</text>
+<circle cx="108" cy="152" r="66" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="108" cy="152" r="62" fill="#e3d3a3" stroke="#bda869" stroke-width="1.4"/>
+
+<g clip-path="url(#sdaclip)">
+  <!-- 酵母：乳白奶油样、光滑凸起 -->
+  <circle cx="84" cy="120" r="8" fill="#fbf8ee" stroke="#cfc3a4" stroke-width="1"/>
+  <circle cx="104" cy="104" r="6" fill="#fbf8ee" stroke="#cfc3a4" stroke-width="1"/>
+  <circle cx="68" cy="140" r="5.5" fill="#fbf8ee" stroke="#cfc3a4" stroke-width="1"/>
+  <!-- 烟曲霉：白色绒毛边缘 + 蓝绿粉状中心 -->
+  <circle cx="140" cy="168" r="13" fill="#f2efe3" stroke="#d6cdb2" stroke-width="1"/>
+  <circle cx="140" cy="168" r="7.5" fill="#6f8f74" stroke="#4d6a52" stroke-width="1"/>
+  <g stroke="#d6cdb2" stroke-width="1" stroke-linecap="round">
+    <line x1="140" y1="155" x2="140" y2="149"/><line x1="153" y1="168" x2="159" y2="168"/>
+    <line x1="140" y1="181" x2="140" y2="187"/><line x1="127" y1="168" x2="121" y2="168"/>
+    <line x1="149" y1="159" x2="153" y2="155"/><line x1="131" y1="177" x2="127" y2="181"/>
+  </g>
+  <!-- 黑曲霉：白色菌丝 + 黑色粉状孢子头 -->
+  <circle cx="92" cy="190" r="11" fill="#f2efe3" stroke="#d6cdb2" stroke-width="1"/>
+  <circle cx="92" cy="190" r="6.5" fill="#2f2f2f" stroke="#1a1a1a" stroke-width="1"/>
+  <g fill="#2f2f2f">
+    <circle cx="84" cy="183" r="1.5"/><circle cx="100" cy="183" r="1.5"/>
+    <circle cx="84" cy="197" r="1.5"/><circle cx="100" cy="197" r="1.5"/>
+  </g>
+  <!-- 细菌接种处：不长 -->
+  <g fill="none" stroke="#a89c78" stroke-width="1.2" stroke-dasharray="3,2.5">
+    <circle cx="148" cy="124" r="7"/><circle cx="162" cy="142" r="6"/>
+  </g>
+  <g stroke="#c9bd97" stroke-width="1.4" stroke-linecap="round">
+    <line x1="144" y1="120" x2="152" y2="128"/><line x1="152" y1="120" x2="144" y2="128"/>
+    <line x1="158.5" y1="138.5" x2="165.5" y2="145.5"/><line x1="165.5" y1="138.5" x2="158.5" y2="145.5"/>
+  </g>
+</g>
+
+<!-- 平板上的编号 -->
+<g>
+  <circle cx="104" cy="132" r="7.5" fill="#1f2733"/>
+  <text x="104" y="135.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+  <circle cx="152" cy="188" r="7.5" fill="#1f2733"/>
+  <text x="152" y="191.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+  <circle cx="68" cy="196" r="7.5" fill="#1f2733"/>
+  <text x="68" y="199.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+  <circle cx="136" cy="108" r="7.5" fill="#1f2733"/>
+  <text x="136" y="111.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">4</text>
+</g>
+<text x="108" y="232" text-anchor="middle" font-size="9.5" fill="#5c6672">此板含氯霉素、不含放线菌酮</text>
+
+<!-- ===== 右：选择成分 ===== -->
+<rect x="186" y="70" width="270" height="72" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="196" y="86" font-size="10" font-weight="700" fill="#33404f">选择成分：抑制谁</text>
+<text x="196" y="103" font-size="9.5" fill="#5c6672">葡萄糖约 4% + 低 pH ≈5.6 → 利真菌、不利细菌</text>
+<text x="196" y="119" font-size="9.5" fill="#5c6672">氯霉素 / 庆大霉素 → 抑制细菌杂菌</text>
+<circle cx="200" cy="133" r="6.5" fill="#1f2733"/>
+<text x="200" y="136.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">4</text>
+<circle cx="216" cy="133" r="5" fill="none" stroke="#a89c78" stroke-width="1.1" stroke-dasharray="3,2.5"/>
+<text x="228" y="136.5" font-size="9.5" fill="#33404f">多数细菌接种处：不长或极小</text>
+
+<!-- ===== 右：读什么 ===== -->
+<rect x="186" y="150" width="270" height="82" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="196" y="166" font-size="10" font-weight="700" fill="#33404f">无鉴别指示剂：读菌落形态与色泽</text>
+<circle cx="200" cy="181" r="6.5" fill="#1f2733"/>
+<text x="200" y="184.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<circle cx="216" cy="181" r="5" fill="#fbf8ee" stroke="#cfc3a4" stroke-width="1"/>
+<text x="228" y="184.5" font-size="9.5" fill="#33404f">酵母（念珠菌）：乳白奶油样、光滑凸起</text>
+<circle cx="200" cy="199" r="6.5" fill="#1f2733"/>
+<text x="200" y="202.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+<circle cx="216" cy="199" r="5" fill="#6f8f74" stroke="#4d6a52" stroke-width="1"/>
+<text x="228" y="202.5" font-size="9.5" fill="#33404f">烟曲霉：白色绒毛边、蓝绿粉状中心</text>
+<circle cx="200" cy="217" r="6.5" fill="#1f2733"/>
+<text x="200" y="220.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+<circle cx="216" cy="217" r="5" fill="#2f2f2f" stroke="#1a1a1a" stroke-width="1"/>
+<text x="228" y="220.5" font-size="9.5" fill="#33404f">黑曲霉：白色菌丝覆黑色粉状孢子</text>
+
+<!-- 临床注解 -->
+<rect x="24" y="238" width="432" height="18" rx="6" fill="#f9e6e4" stroke="#e3b8b5"/>
+<text x="34" y="250.5" font-size="9.5" fill="#a3332f">加放线菌酮的 SDA 会抑制隐球菌、曲霉与毛霉 → 疑诊时须另接不含放线菌酮的平板</text>
+
+<!-- 结论 -->
+<text x="240" y="264" text-anchor="middle" font-size="11.5" fill="#33404f">SDA 主要选真菌；诺卡菌等仍可长，定种须镜检</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　白色念珠菌（乳白）· 烟曲霉（蓝绿绒毛）· 黑曲霉（黑色粉状）</text>
+</svg>

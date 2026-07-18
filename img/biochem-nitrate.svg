@@ -1,24 +1,89 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>硝酸盐还原试验 (Nitrate)</title><desc>硝酸盐→亚硝酸盐，加格里斯试剂（磺胺酸 + α-萘胺）显红</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">硝酸盐还原试验 (Nitrate)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">硝酸盐→亚硝酸盐，加格里斯试剂（磺胺酸 + α-萘胺）显红</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>硝酸盐还原试验</title><desc>硝酸盐肉汤孵育后加 Griess 试剂：变红为阳性；不变色须加锌粉复核——加锌变红为阴性，加锌仍不变色说明硝酸盐已被完全还原为氮气，仍判阳性</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阳性管(红) -->
-  <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M150,120 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#c46a62"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（变红）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">硝酸盐还原试验</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">硝酸盐肉汤 35℃ 24h → 加 Griess 试剂 A+B，看是否变红</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阴性管(无色,需加锌确认) -->
-  <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M300,120 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#eef0ea"/>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">阴性（不变色）</text>
-  </g>
+<!-- ===== 化学转化带 ===== -->
+<rect x="24" y="82" width="48" height="22" rx="4" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="48" y="97" text-anchor="middle" font-size="11" fill="#33404f">NO₃⁻</text>
+<line x1="72" y1="93" x2="142" y2="93" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="74" y="64" width="68" height="14" rx="7" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="108" y="74.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">硝酸盐还原酶</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌等肠杆菌阳性；不变红须加锌粉——变红=真阴性，仍不红=已还原为氮气(阳性)</text>
+<rect x="146" y="82" width="48" height="22" rx="4" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="170" y="97" text-anchor="middle" font-size="11" fill="#33404f">NO₂⁻</text>
+<line x1="194" y1="93" x2="272" y2="93" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="235" y="74.5" text-anchor="middle" font-size="9.5" fill="#5c6672">＋Griess 试剂</text>
+
+<rect x="276" y="82" width="100" height="22" rx="4" fill="#f6dedb" stroke="#c2413d"/>
+<text x="326" y="97" text-anchor="middle" font-size="10" fill="#a3332f">红色偶氮化合物</text>
+
+<text x="456" y="90" text-anchor="end" font-size="9.5" fill="#8c96a2">加试剂后须</text>
+<text x="456" y="103" text-anchor="end" font-size="9.5" fill="#8c96a2">数分钟内判读</text>
+
+<text x="24" y="118" font-size="9.5" fill="#5c6672">注意：NO₂⁻ 可被继续还原为 N₂ / N₂O，此时 Griess 同样不显色</text>
+
+<line x1="168" y1="124" x2="168" y2="254" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+<line x1="312" y1="124" x2="312" y2="254" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== ❶ 直接变红 ===== -->
+<circle cx="34" cy="130" r="7.5" fill="#1f2733"/>
+<text x="34" y="133.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="46" y="134" font-size="10" font-weight="700" fill="#33404f">加试剂→变红</text>
+<path d="M81,142 L81,196 Q81,208 96,208 Q111,208 111,196 L111,142 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M81,158 L111,158 L111,196 Q111,208 96,208 Q81,208 81,196 Z" fill="#c4453d"/>
+<ellipse cx="96" cy="142" rx="15" ry="4" fill="#efe6c6" stroke="#c8b887" stroke-width="1.2"/>
+<text x="96" y="222" text-anchor="middle" font-size="9.5" fill="#5c6672">Griess 直接显红</text>
+<text x="96" y="236" text-anchor="middle" font-size="11" font-weight="700" fill="#1f4e79">阳性 (+)</text>
+<text x="96" y="249" text-anchor="middle" font-size="9.5" fill="#5c6672">还原止于 NO₂⁻</text>
+
+<!-- ===== ❷ 不变色，加锌变红 ===== -->
+<circle cx="178" cy="130" r="7.5" fill="#1f2733"/>
+<text x="178" y="133.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="190" y="134" font-size="10" font-weight="700" fill="#33404f">不变色 → 加锌变红</text>
+<path d="M189,142 L189,196 Q189,208 204,208 Q219,208 219,196 L219,142 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M189,158 L219,158 L219,196 Q219,208 204,208 Q189,208 189,196 Z" fill="#f2f0e2"/>
+<ellipse cx="204" cy="142" rx="15" ry="4" fill="#efe6c6" stroke="#c8b887" stroke-width="1.2"/>
+<text x="240" y="163" text-anchor="middle" font-size="9.5" fill="#5c6672">＋锌粉</text>
+<line x1="224" y1="174" x2="256" y2="174" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<g fill="#b9c2cc"><circle cx="232" cy="186" r="2.4"/><circle cx="240" cy="190" r="2.4"/><circle cx="248" cy="186" r="2.4"/></g>
+<path d="M261,142 L261,196 Q261,208 276,208 Q291,208 291,196 L291,142 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M261,158 L291,158 L291,196 Q291,208 276,208 Q261,208 261,196 Z" fill="#c4453d"/>
+<ellipse cx="276" cy="142" rx="15" ry="4" fill="#efe6c6" stroke="#c8b887" stroke-width="1.2"/>
+<text x="240" y="222" text-anchor="middle" font-size="9.5" fill="#5c6672">锌将残留 NO₃⁻ 还原为 NO₂⁻ 显红</text>
+<text x="240" y="236" text-anchor="middle" font-size="11" font-weight="700" fill="#6b7684">阴性 (−)</text>
+<text x="240" y="249" text-anchor="middle" font-size="9.5" fill="#5c6672">菌未还原硝酸盐</text>
+
+<!-- ===== ❸ 不变色，加锌仍无色 ===== -->
+<circle cx="322" cy="130" r="7.5" fill="#1f2733"/>
+<text x="322" y="133.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="334" y="134" font-size="10" font-weight="700" fill="#33404f">不变色 → 加锌仍无色</text>
+<path d="M333,142 L333,196 Q333,208 348,208 Q363,208 363,196 L363,142 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M333,158 L363,158 L363,196 Q363,208 348,208 Q333,208 333,196 Z" fill="#f2f0e2"/>
+<ellipse cx="348" cy="142" rx="15" ry="4" fill="#efe6c6" stroke="#c8b887" stroke-width="1.2"/>
+<text x="384" y="163" text-anchor="middle" font-size="9.5" fill="#5c6672">＋锌粉</text>
+<line x1="368" y1="174" x2="400" y2="174" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<g fill="#b9c2cc"><circle cx="376" cy="186" r="2.4"/><circle cx="384" cy="190" r="2.4"/><circle cx="392" cy="186" r="2.4"/></g>
+<path d="M405,142 L405,196 Q405,208 420,208 Q435,208 435,196 L435,142 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M405,158 L435,158 L435,196 Q435,208 420,208 Q405,208 405,196 Z" fill="#f2f0e2"/>
+<ellipse cx="420" cy="142" rx="15" ry="4" fill="#efe6c6" stroke="#c8b887" stroke-width="1.2"/>
+<text x="384" y="222" text-anchor="middle" font-size="9.5" fill="#5c6672">硝酸盐已耗尽，无可还原物</text>
+<text x="384" y="236" text-anchor="middle" font-size="11" font-weight="700" fill="#1f4e79">阳性 (+)</text>
+<text x="384" y="249" text-anchor="middle" font-size="9.5" fill="#5c6672">已还原为 N₂ / N₂O（脱氮）</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">不变红 ≠ 阴性：必须加锌粉复核，否则脱氮菌会被误判为阴性</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　大肠埃希菌等肠杆菌科 (+) · 铜绿假单胞菌 (+，可脱氮) · 鲍曼不动杆菌 (−)</text>
 </svg>

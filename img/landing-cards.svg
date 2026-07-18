@@ -1,42 +1,106 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>药敏卡与判读总览</title><desc>系列浓度微孔测 MIC，再按折点判敏感 / 中介 / 耐药</desc>
-  <rect width="480" height="330" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">药敏卡与判读总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">系列浓度微孔测 MIC，再按折点判敏感 / 中介 / 耐药</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>药敏卡与判读总览</title><desc>药敏卡按适用菌群分型（革兰阴性 / 革兰阳性 / 链球菌 / 酵母菌）；标准菌悬液充入卡内倍比稀释微孔，仪器动力学读浊度得 MIC，再对折点判 S / I / R，最后由专家规则复核</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="up" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c2413d"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <text x="40" y="78" font-size="11.5" font-weight="700" fill="#5a80b0">① 药敏卡：每药一排系列浓度微孔（浊 = 生长，清 = 抑制）</text>
-  <!-- MIC 指示 -->
-  <text x="246" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MIC = 首个清亮孔</text>
-  <line x1="246" y1="104" x2="246" y2="116" stroke="#5a80b0" stroke-width="1.5"/><polygon points="246,118 241,108 251,108" fill="#5a80b0"/>
-  <!-- 8 微孔 -->
-  <g>
-    <circle cx="50" cy="134" r="14" fill="#d8ccb0" stroke="#b0a47c" stroke-width="1.4"/>
-    <circle cx="99" cy="134" r="14" fill="#d8ccb0" stroke="#b0a47c" stroke-width="1.4"/>
-    <circle cx="148" cy="134" r="14" fill="#ddd0b4" stroke="#b0a47c" stroke-width="1.4"/>
-    <circle cx="197" cy="134" r="14" fill="#e6dcc6" stroke="#bcae8f" stroke-width="1.4"/>
-    <circle cx="246" cy="134" r="14" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.4"/>
-    <circle cx="295" cy="134" r="14" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.4"/>
-    <circle cx="344" cy="134" r="14" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.4"/>
-    <circle cx="393" cy="134" r="14" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.4"/>
-  </g>
-  <g font-size="11" fill="#565b63" text-anchor="middle">
-    <text x="50" y="160">0.25</text><text x="99" y="160">0.5</text><text x="148" y="160">1</text><text x="197" y="160">2</text>
-    <text x="246" y="160">4</text><text x="295" y="160">8</text><text x="344" y="160">16</text><text x="393" y="160">32</text>
-    <text x="438" y="160">µg/mL</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">药敏卡与判读总览</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">药敏卡</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">按菌群选卡 → 卡内梯度微孔读 MIC → 对折点判 S / I / R</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <text x="40" y="196" font-size="11.5" font-weight="700" fill="#5a80b0">② 对照折点判读（CLSI / EUCAST）</text>
-  <!-- S / I / R 三色带 -->
-  <rect x="40" y="208" width="150" height="30" rx="6" fill="#dff0e4" stroke="#3f7a52" stroke-width="1.2"/>
-  <text x="115" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#3f7a52">敏感 S</text>
-  <rect x="190" y="208" width="90" height="30" fill="#f6edd6" stroke="#b58f2a" stroke-width="1.2"/>
-  <text x="235" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#9a8a52">中介 I</text>
-  <rect x="280" y="208" width="160" height="30" rx="6" fill="#f7dede" stroke="#c46a62" stroke-width="1.2"/>
-  <text x="360" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#c46a62">耐药 R</text>
-  <!-- MIC 轴 -->
-  <line x1="40" y1="252" x2="440" y2="252" stroke="#cbc1a8" stroke-width="1.2"/><polygon points="442,252 432,248 432,256" fill="#cbc1a8"/>
-  <text x="240" y="268" text-anchor="middle" font-size="11" fill="#565b63">MIC 增大 →（越大越耐药）</text>
+<!-- ===== A. 按适用菌群选卡 ===== -->
+<g fill="#f5f7f9" stroke="#e3e7ec">
+  <rect x="24" y="68" width="100" height="46" rx="6"/>
+  <rect x="134" y="68" width="100" height="46" rx="6"/>
+  <rect x="244" y="68" width="100" height="46" rx="6"/>
+  <rect x="354" y="68" width="100" height="46" rx="6"/>
+</g>
+<g text-anchor="middle" font-size="10" font-weight="700" fill="#1f2733">
+  <text x="74" y="83">革兰阴性卡</text><text x="184" y="83">革兰阳性卡</text><text x="294" y="83">链球菌卡</text><text x="404" y="83">酵母菌卡</text>
+</g>
+<g text-anchor="middle" font-size="9.5" fill="#5c6672">
+  <text x="74" y="96">肠杆菌目/非发酵菌</text><text x="184" y="96">葡萄球菌/肠球菌</text><text x="294" y="96">含肺炎链球菌</text><text x="404" y="96">念珠菌/隐球菌</text>
+</g>
+<g text-anchor="middle" font-size="9.5" fill="#a3332f">
+  <text x="74" y="109">碳青霉烯/头孢类</text><text x="184" y="109">万古/利奈唑胺</text><text x="294" y="109">青霉素/大环内酯</text><text x="404" y="109">唑类/棘白菌素</text>
+</g>
 
-  <text x="240" y="298" text-anchor="middle" font-size="11" fill="#565b63">仪器（如 VITEK）测各药 MIC，按折点报 S / I / R；按菌种选用 GN / GP 等不同卡</text>
-  <text x="240" y="316" text-anchor="middle" font-size="11" fill="#565b63">点击任一药敏卡查看所含药物与适用菌</text>
+<!-- ===== B. ❶ 菌悬液 ===== -->
+<circle cx="32" cy="126" r="7.5" fill="#1f2733"/>
+<text x="32" y="129.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="44" y="130" font-size="10" font-weight="700" fill="#33404f">菌悬液</text>
+<rect x="44" y="140" width="18" height="32" rx="4" fill="#f5f7f9" stroke="#b9c2cc"/>
+<path d="M45.2,154 h15.6 v14 a3,3 0 0 1 -3,3 h-9.6 a3,3 0 0 1 -3,-3 z" fill="#e6dcc6"/>
+<line x1="44" y1="154" x2="62" y2="154" stroke="#b9c2cc"/>
+<text x="53" y="184" text-anchor="middle" font-size="9.5" fill="#5c6672">0.5 McF</text>
+<text x="53" y="195" text-anchor="middle" font-size="9.5" fill="#5c6672">酵母卡浊度更高</text>
+<line x1="68" y1="156" x2="92" y2="156" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- ===== B. ❷ 卡内倍比稀释微孔 ===== -->
+<circle cx="106" cy="126" r="7.5" fill="#1f2733"/>
+<text x="106" y="129.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="118" y="130" font-size="10" font-weight="700" fill="#33404f">卡内倍比稀释微孔</text>
+<g font-size="9.5" fill="#5c6672" text-anchor="middle">
+  <text x="118" y="145">0.5</text><text x="144" y="145">1</text><text x="170" y="145">2</text><text x="196" y="145">4</text>
+  <text x="222" y="145">8</text><text x="248" y="145">16</text><text x="274" y="145">32</text>
+</g>
+<g stroke="#b0a47c" stroke-width="1.3">
+  <circle cx="118" cy="159" r="9" fill="#cfc0a0"/>
+  <circle cx="144" cy="159" r="9" fill="#d8ccb0"/>
+  <circle cx="170" cy="159" r="9" fill="#e6dcc6"/>
+  <circle cx="196" cy="159" r="9" fill="#fbfaf8" stroke="#c2413d" stroke-width="2"/>
+  <circle cx="222" cy="159" r="9" fill="#fbfaf8"/>
+  <circle cx="248" cy="159" r="9" fill="#fbfaf8"/>
+  <circle cx="274" cy="159" r="9" fill="#fbfaf8"/>
+</g>
+<line x1="196" y1="180" x2="196" y2="170" stroke="#c2413d" stroke-width="1.4" marker-end="url(#up)"/>
+<text x="196" y="191" text-anchor="middle" font-size="9.5" fill="#c2413d">MIC＝生长受抑的最低浓度　4 µg/mL</text>
+
+<!-- ===== B. ❸ 动力学浊度读数 ===== -->
+<circle cx="314" cy="126" r="7.5" fill="#1f2733"/>
+<text x="314" y="129.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="326" y="130" font-size="10" font-weight="700" fill="#33404f">动力学浊度读数</text>
+<rect x="306" y="138" width="150" height="40" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<g stroke="#b9c2cc" stroke-width="1.1">
+  <line x1="316" y1="142" x2="316" y2="173"/><line x1="316" y1="173" x2="448" y2="173"/>
+</g>
+<path d="M320,171 C352,170 366,150 396,146 L446,144" fill="none" stroke="#2b6cb0" stroke-width="1.6"/>
+<path d="M320,170 L446,169" fill="none" stroke="#8c96a2" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="404" y="155" font-size="9.5" fill="#1f4e79">浊 = 生长</text>
+<text x="404" y="167" font-size="9.5" fill="#8c96a2">清 = 抑制</text>
+<text x="381" y="191" text-anchor="middle" font-size="9.5" fill="#5c6672">每 15 min 自动读数</text>
+
+<!-- ===== C. ❹ 对折点判 S / I / R ===== -->
+<circle cx="32" cy="204" r="7.5" fill="#1f2733"/>
+<text x="32" y="207.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">4</text>
+<text x="44" y="208" font-size="10" font-weight="700" fill="#33404f">对折点判读（CLSI / EUCAST）</text>
+<text x="332" y="208" text-anchor="end" font-size="9.5" fill="#5c6672">EUCAST：I＝敏感·加大暴露量</text>
+<rect x="24" y="214" width="120" height="20" rx="4" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="144" y="214" width="60" height="20" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<rect x="204" y="214" width="128" height="20" rx="4" fill="#f9e6e4" stroke="#c2413d" stroke-width="1.2"/>
+<text x="84" y="228" text-anchor="middle" font-size="10" font-weight="700" fill="#1f4e79">敏感 S</text>
+<text x="174" y="228" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">中介 I</text>
+<text x="268" y="228" text-anchor="middle" font-size="10" font-weight="700" fill="#a3332f">耐药 R</text>
+<text x="24" y="245" font-size="9.5" fill="#5c6672">MIC 低</text>
+<text x="332" y="245" text-anchor="end" font-size="9.5" fill="#5c6672">MIC 高（折点随菌种/药物/部位而变）</text>
+
+<!-- ===== C. ❺ 专家规则 ===== -->
+<rect x="340" y="196" width="116" height="52" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="352" cy="209" r="7.5" fill="#1f2733"/>
+<text x="352" y="212.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">5</text>
+<text x="364" y="213" font-size="10" font-weight="700" fill="#33404f">专家规则</text>
+<text x="348" y="228" font-size="9.5" fill="#33404f">耐药表型 → 改报</text>
+<text x="348" y="241" font-size="9.5" fill="#5c6672">异常组合提示复核</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">卡型按菌群选，MIC 由动力学读出，S / I / R 由折点决定</text>
+
+<!-- 页脚：上机要点 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">上机要点</tspan>　菌悬液须在配制后 30 min 内上机；浊度偏高会使 MIC 假性升高</text>
 </svg>

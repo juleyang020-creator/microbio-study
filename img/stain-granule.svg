@@ -1,42 +1,100 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>异染颗粒染色（Albert / Neisser 法）</title><desc>多聚偏磷酸盐异染：颗粒深蓝紫、菌体绿黄 —— 白喉棒状杆菌</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">异染颗粒染色（Albert / Neisser 法）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">多聚偏磷酸盐异染：颗粒深蓝紫、菌体绿黄 —— 白喉棒状杆菌</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>异染颗粒染色（Albert / Neisser 法）</title><desc>多聚偏磷酸盐颗粒与菌体着色不同（异染性）：Albert 法菌体绿、颗粒蓝黑；Neisser 法菌体黄褐、颗粒紫黑；阴性者菌体着色均匀无颗粒（阳性颗粒 1~数颗，多在菌体端部）。颗粒阳性仅为提示，白喉确诊仍须培养与产毒素试验</desc>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 棒状杆菌：栅栏/V/L 排列，两端棒状膨大，极端见深色异染颗粒 -->
-  <!-- 杆菌1 斜放 -->
-  <g transform="rotate(-18 150 150)">
-    <path d="M120,142 q-6,8 0,16 h60 q6,-8 0,-16 z" fill="#c9d49a" stroke="#9aab63" stroke-width="1.2"/>
-    <circle cx="124" cy="150" r="5.5" fill="#57487a"/>
-    <circle cx="176" cy="150" r="5.5" fill="#57487a"/>
-  </g>
-  <!-- 杆菌2 斜放成 V -->
-  <g transform="rotate(20 175 168)">
-    <path d="M148,160 q-6,8 0,16 h60 q6,-8 0,-16 z" fill="#c9d49a" stroke="#9aab63" stroke-width="1.2"/>
-    <circle cx="152" cy="168" r="5.5" fill="#57487a"/>
-    <circle cx="204" cy="168" r="5.5" fill="#57487a"/>
-  </g>
-  <!-- 杆菌3 竖放(栅栏) -->
-  <g transform="rotate(80 232 150)">
-    <path d="M204,142 q-6,8 0,16 h56 q6,-8 0,-16 z" fill="#c9d49a" stroke="#9aab63" stroke-width="1.2"/>
-    <circle cx="208" cy="150" r="5.5" fill="#57487a"/>
-    <circle cx="256" cy="150" r="5.5" fill="#57487a"/>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">异染颗粒染色（Albert / Neisser 法）</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">特殊染色</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">胞内多聚偏磷酸盐与菌体着色不同（异染性）→ 颗粒深染（1~数颗，多在端部）</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 标注 -->
-  <line x1="124" y1="135" x2="330" y2="110" stroke="#cbc1a8" stroke-width="1"/>
-  <circle cx="172" cy="128" r="2.2" fill="#57487a"/>
-  <text x="336" y="106" font-size="11" font-weight="700" fill="#57487a">异染颗粒（深蓝紫）</text>
-  <text x="336" y="122" font-size="11" fill="#565b63">多位于菌体两端</text>
+<!-- ===== 上：试剂步骤（两法平行） ===== -->
+<text x="24" y="72" font-size="9.5" font-weight="700" fill="#5c6672">试剂与步骤</text>
 
-  <line x1="180" y1="166" x2="330" y2="166" stroke="#cbc1a8" stroke-width="1"/>
-  <circle cx="180" cy="166" r="2.2" fill="#9aab63"/>
-  <text x="336" y="162" font-size="11" font-weight="700" fill="#6e7d3a">菌体（绿 / 黄褐）</text>
+<!-- Albert 法 -->
+<rect x="24" y="78" width="52" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="50" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">Albert</text>
+<circle cx="50" cy="105" r="3.5" fill="#8fae62"/>
+<rect x="84" y="78" width="112" height="34" rx="6" fill="#eef2f8" stroke="#8f9ec4"/>
+<text x="92" y="93" font-size="9.5" font-weight="700" fill="#3f4f80">Ⅰ液 甲苯胺蓝+孔雀绿</text>
+<text x="92" y="106" font-size="9.5" fill="#5c6672">初染：颗粒着蓝</text>
+<polygon points="198,90 206,95 198,100" fill="#33404f"/>
+<rect x="206" y="78" width="112" height="34" rx="6" fill="#f7ecd4" stroke="#c9a94e"/>
+<text x="214" y="93" font-size="9.5" font-weight="700" fill="#8a6d2f">Ⅱ液 碘液媒染</text>
+<text x="214" y="106" font-size="9.5" fill="#5c6672">碘＋染料成复合物</text>
+<polygon points="320,90 328,95 320,100" fill="#33404f"/>
+<rect x="328" y="78" width="128" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<rect x="336" y="85.5" width="10" height="8" rx="2" fill="#2b2a5e"/>
+<text x="350" y="93" font-size="9.5" fill="#33404f">颗粒：蓝黑色</text>
+<rect x="336" y="98.5" width="10" height="8" rx="2" fill="#8fae62"/>
+<text x="350" y="106" font-size="9.5" fill="#33404f">菌体：绿色</text>
 
-  <line x1="210" y1="196" x2="330" y2="210" stroke="#cbc1a8" stroke-width="1"/>
-  <text x="336" y="214" font-size="11" font-weight="700" fill="#565b63">排列呈栅栏、V / L 形</text>
+<!-- Neisser 法 -->
+<rect x="24" y="118" width="52" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="50" y="138" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">Neisser</text>
+<circle cx="50" cy="145" r="3.5" fill="#b98b4a"/>
+<rect x="84" y="118" width="112" height="34" rx="6" fill="#eee9f4" stroke="#8b7fb8"/>
+<text x="92" y="133" font-size="9.5" font-weight="700" fill="#5b4f8a">A+B 亚甲蓝+结晶紫</text>
+<text x="92" y="146" font-size="9.5" fill="#5c6672">初染：颗粒着紫</text>
+<polygon points="198,130 206,135 198,140" fill="#33404f"/>
+<rect x="206" y="118" width="112" height="34" rx="6" fill="#f6ecdd" stroke="#b98b4a"/>
+<text x="214" y="133" font-size="9.5" font-weight="700" fill="#8a5f22">C液 俾斯麦褐复染</text>
+<text x="214" y="146" font-size="9.5" fill="#5c6672">仅菌体着色，颗粒不变</text>
+<polygon points="320,130 328,135 320,140" fill="#33404f"/>
+<rect x="328" y="118" width="128" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<rect x="336" y="125.5" width="10" height="8" rx="2" fill="#3a2a55"/>
+<text x="350" y="133" font-size="9.5" fill="#33404f">颗粒：紫黑色</text>
+<rect x="336" y="138.5" width="10" height="8" rx="2" fill="#b98b4a"/>
+<text x="350" y="146" font-size="9.5" fill="#33404f">菌体：黄褐色</text>
 
-  <text x="240" y="270" text-anchor="middle" font-size="11" fill="#565b63">异染颗粒为白喉棒状杆菌的特征，用于辅助鉴定</text>
-  <text x="240" y="288" text-anchor="middle" font-size="11" fill="#565b63">亦可用美蓝单染色快速衬托颗粒</text>
+<!-- ===== 下：镜下所见 ===== -->
+<text x="24" y="162" font-size="9.5" font-weight="700" fill="#5c6672">镜下所见（油镜）</text>
+
+<!-- 视野一：Albert 阳性 -->
+<circle cx="100" cy="196" r="32" fill="#eef4e2" stroke="#a9b98a" stroke-width="2"/>
+<g stroke="#7d9a55" stroke-width="1" fill="#a8c47a">
+  <g transform="translate(88,188) rotate(55)"><rect x="-12" y="-4" width="24" height="8" rx="4"/><circle cx="-12" cy="0" r="4.5"/><circle cx="12" cy="0" r="4.5"/></g>
+  <g transform="translate(108,188) rotate(-55)"><rect x="-12" y="-4" width="24" height="8" rx="4"/><circle cx="-12" cy="0" r="4.5"/><circle cx="12" cy="0" r="4.5"/></g>
+  <g transform="translate(100,213) rotate(8)"><rect x="-12" y="-4" width="24" height="8" rx="4"/><circle cx="-12" cy="0" r="4.5"/><circle cx="12" cy="0" r="4.5"/></g>
+</g>
+<g fill="#2b2a5e">
+  <g transform="translate(88,188) rotate(55)"><circle cx="-11" cy="0" r="3"/><circle cx="11" cy="0" r="3"/></g>
+  <g transform="translate(108,188) rotate(-55)"><circle cx="-11" cy="0" r="3"/><circle cx="11" cy="0" r="3"/></g>
+  <g transform="translate(100,213) rotate(8)"><circle cx="-11" cy="0" r="3"/><circle cx="11" cy="0" r="3"/></g>
+</g>
+<text x="100" y="240" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5f7a34">阳性 · Albert 法</text>
+<text x="100" y="251" text-anchor="middle" font-size="9.5" fill="#5c6672">绿色菌体＋蓝黑颗粒</text>
+
+<!-- 视野二：Neisser 阳性 -->
+<circle cx="240" cy="196" r="32" fill="#f7efdf" stroke="#c9ac7c" stroke-width="2"/>
+<g stroke="#9c7538" stroke-width="1" fill="#cfa762">
+  <g transform="translate(232,186) rotate(0)"><rect x="-12" y="-4" width="24" height="8" rx="4"/><circle cx="-12" cy="0" r="4.5"/><circle cx="12" cy="0" r="4.5"/></g>
+  <g transform="translate(246,200) rotate(80)"><rect x="-12" y="-4" width="24" height="8" rx="4"/><circle cx="-12" cy="0" r="4.5"/><circle cx="12" cy="0" r="4.5"/></g>
+  <g transform="translate(236,213) rotate(-8)"><rect x="-12" y="-4" width="24" height="8" rx="4"/><circle cx="-12" cy="0" r="4.5"/><circle cx="12" cy="0" r="4.5"/></g>
+</g>
+<g fill="#3a2a55">
+  <g transform="translate(232,186) rotate(0)"><circle cx="-11" cy="0" r="3"/><circle cx="11" cy="0" r="3"/></g>
+  <g transform="translate(246,200) rotate(80)"><circle cx="-11" cy="0" r="3"/><circle cx="11" cy="0" r="3"/></g>
+  <g transform="translate(236,213) rotate(-8)"><circle cx="-11" cy="0" r="3"/><circle cx="11" cy="0" r="3"/></g>
+</g>
+<text x="240" y="240" text-anchor="middle" font-size="9.5" font-weight="700" fill="#8a5f22">阳性 · Neisser 法</text>
+<text x="240" y="251" text-anchor="middle" font-size="9.5" fill="#5c6672">黄褐菌体＋紫黑颗粒</text>
+
+<!-- 视野三：阴性（同法染色但无颗粒） -->
+<circle cx="380" cy="196" r="32" fill="#eef4e2" stroke="#a9b98a" stroke-width="2"/>
+<g stroke="#7d9a55" stroke-width="1" fill="#a8c47a">
+  <g transform="translate(368,188) rotate(55)"><rect x="-12" y="-4" width="24" height="8" rx="4"/><circle cx="-12" cy="0" r="4.5"/><circle cx="12" cy="0" r="4.5"/></g>
+  <g transform="translate(388,188) rotate(-55)"><rect x="-12" y="-4" width="24" height="8" rx="4"/><circle cx="-12" cy="0" r="4.5"/><circle cx="12" cy="0" r="4.5"/></g>
+  <g transform="translate(380,213) rotate(8)"><rect x="-12" y="-4" width="24" height="8" rx="4"/><circle cx="-12" cy="0" r="4.5"/><circle cx="12" cy="0" r="4.5"/></g>
+</g>
+<text x="380" y="240" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5c6672">阴性 · Albert 法</text>
+<text x="380" y="251" text-anchor="middle" font-size="9.5" fill="#5c6672">菌体着色均匀、无异染颗粒</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">颗粒阳性只是提示，白喉确诊仍须培养与产毒素试验</text>
+
+<!-- 页脚：主要用途 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　吕氏血清斜面培养物涂片的形态学提示 · 棒状杆菌辅助鉴定（不用于直接涂片诊断）</text>
 </svg>

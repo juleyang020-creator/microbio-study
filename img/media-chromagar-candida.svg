@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>念珠菌显色培养基</title><desc>念珠菌显色培养基平板俯视：沙保罗样营养基础呈乳白色，含抑菌剂抑制细菌而酵母菌照长；不同念珠菌的特异酶切割显色底物生成不同颜色的菌落——白念珠菌翠绿、热带念珠菌蓝灰、克柔念珠菌粉红且菌落毛糙，其余念珠菌多呈白色或淡紫色，只能提示不能定种</desc>
+<defs>
+  <clipPath id="plateclip"><circle cx="108" cy="152" r="62"/></clipPath>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">念珠菌显色培养基</text>
+<rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
+<text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">选择与鉴别培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">抑菌剂先滤掉细菌；再按特异酶显色把常见念珠菌分成不同颜色</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：平板俯视 ===== -->
+<text x="24" y="82" font-size="9.5" fill="#5c6672">平板俯视（基底乳白）</text>
+<circle cx="108" cy="152" r="66" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="108" cy="152" r="62" fill="#f2ece0" stroke="#d9cfba" stroke-width="1.4"/>
+
+<g clip-path="url(#plateclip)">
+  <!-- 白念珠菌：翠绿、光滑 -->
+  <circle cx="86" cy="122" r="8" fill="#3aa757" stroke="#1f7a3c" stroke-width="1"/>
+  <circle cx="106" cy="106" r="6.5" fill="#3aa757" stroke="#1f7a3c" stroke-width="1"/>
+  <circle cx="68" cy="144" r="5.5" fill="#3aa757" stroke="#1f7a3c" stroke-width="1"/>
+  <!-- 热带念珠菌：蓝灰、周边略暗 -->
+  <circle cx="146" cy="166" r="6.5" fill="#5b7f96" stroke="#33586e" stroke-width="1"/>
+  <circle cx="130" cy="188" r="5" fill="#5b7f96" stroke="#33586e" stroke-width="1"/>
+  <circle cx="156" cy="140" r="4.5" fill="#5b7f96" stroke="#33586e" stroke-width="1"/>
+  <!-- 克柔念珠菌：粉红、大而扁平、边缘毛糙 -->
+  <circle cx="80" cy="186" r="11" fill="none" stroke="#e2a8ba" stroke-width="2.2" stroke-dasharray="2.4,2.2"/>
+  <circle cx="80" cy="186" r="8" fill="#dd8faa" stroke="#b96684" stroke-width="1"/>
+  <circle cx="102" cy="204" r="8.5" fill="none" stroke="#e2a8ba" stroke-width="2" stroke-dasharray="2.4,2.2"/>
+  <circle cx="102" cy="204" r="6" fill="#dd8faa" stroke="#b96684" stroke-width="1"/>
+  <!-- 其他念珠菌：白/淡紫，小 -->
+  <circle cx="114" cy="166" r="4.5" fill="#ece0f0" stroke="#b7a6c2" stroke-width="1"/>
+  <circle cx="96" cy="158" r="3.5" fill="#ece0f0" stroke="#b7a6c2" stroke-width="1"/>
+  <!-- 被抑制的细菌：仅示接种处、不长 -->
+  <circle cx="140" cy="112" r="7" fill="none" stroke="#b7ad99" stroke-width="1.2" stroke-dasharray="3,2.5"/>
+  <g stroke="#cfc6b3" stroke-width="1.4" stroke-linecap="round">
+    <line x1="136.5" y1="108.5" x2="143.5" y2="115.5"/><line x1="143.5" y1="108.5" x2="136.5" y2="115.5"/>
+  </g>
+</g>
+
+<!-- 平板上的编号 -->
+<g>
+  <circle cx="102" cy="134" r="7.5" fill="#1f2733"/>
+  <text x="102" y="137.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+  <circle cx="166" cy="182" r="7.5" fill="#1f2733"/>
+  <text x="166" y="185.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+  <circle cx="54" cy="204" r="7.5" fill="#1f2733"/>
+  <text x="54" y="207.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+</g>
+
+<!-- ===== 右：选择成分 ===== -->
+<rect x="186" y="70" width="270" height="58" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="196" y="86" font-size="10" font-weight="700" fill="#33404f">选择成分：抑制谁</text>
+<text x="196" y="103" font-size="9.5" fill="#5c6672">沙保罗样营养基础 + 抑菌剂（如氯霉素）</text>
+<circle cx="200" cy="117" r="4.5" fill="none" stroke="#b7ad99" stroke-width="1.1" stroke-dasharray="3,2.5"/>
+<text x="211" y="120.5" font-size="9.5" fill="#33404f">标本中的细菌不长，酵母菌照长</text>
+
+<!-- ===== 右：鉴别成分 ===== -->
+<rect x="186" y="136" width="270" height="94" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="196" y="152" font-size="10" font-weight="700" fill="#33404f">鉴别成分：指示什么</text>
+<text x="196" y="169" font-size="9.5" fill="#5c6672">显色底物被各菌特异酶切割 → 显不同颜色</text>
+<circle cx="200" cy="183" r="5" fill="#3aa757" stroke="#1f7a3c" stroke-width="1"/>
+<text x="212" y="186.5" font-size="9.5" fill="#33404f">1　翠绿、光滑　白念珠菌</text>
+<circle cx="200" cy="200" r="5" fill="#5b7f96" stroke="#33586e" stroke-width="1"/>
+<text x="212" y="203.5" font-size="9.5" fill="#33404f">2　蓝灰　热带念珠菌</text>
+<circle cx="200" cy="217" r="5" fill="#dd8faa" stroke="#b96684" stroke-width="1"/>
+<text x="212" y="220.5" font-size="9.5" fill="#33404f">3　粉红毛糙　克柔念珠菌</text>
+<circle cx="352" cy="217" r="5" fill="#ece0f0" stroke="#b7a6c2" stroke-width="1"/>
+<text x="364" y="220.5" font-size="9.5" fill="#5c6672">白/淡紫　须补鉴定</text>
+
+<!-- 临床注解 -->
+<rect x="24" y="234" width="432" height="18" rx="6" fill="#f9e6e4" stroke="#e3b8b5"/>
+<text x="34" y="246.5" font-size="9.5" fill="#a3332f">24–48h 判读，久置颜色加深或改变；耳念珠菌呈白/粉，须质谱确认</text>
+
+<!-- 结论 -->
+<text x="240" y="263" text-anchor="middle" font-size="11.5" fill="#33404f">颜色只作初筛定向：绿、蓝灰、粉糙可提示种，余色仍须鉴定</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　白念珠菌（翠绿）· 热带念珠菌（蓝灰）· 克柔念珠菌（粉红毛糙）</text>
+</svg>

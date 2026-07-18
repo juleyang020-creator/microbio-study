@@ -1,42 +1,110 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 406" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>培养基总览</title><desc>基础与营养、选择与鉴别、特殊用途三类（色示菌落/培养基特征）</desc>
-  <rect width="480" height="406" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">培养基总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">基础与营养、选择与鉴别、特殊用途三类（色示菌落/培养基特征）</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>培养基总览</title><desc>按「加不加抑制剂、加不加指示剂」分三类：基础与营养（无抑制剂，尽量都长）、选择与鉴别（抑制剂挡杂菌＋指示剂用颜色分菌）、特殊（为苛养或慢生长菌补特需营养与环境）</desc>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- ===== 基础与营养 ===== -->
-  <text x="24" y="72" font-size="12" font-weight="700" fill="#2e6b66">基础与营养</text>
-  <g text-anchor="middle" font-size="11" fill="#565b63">
-    <g><circle cx="64" cy="98" r="14" fill="#e7e0cc" stroke="#0000001a"/><text x="64" y="122">营养琼脂</text></g>
-    <g><circle cx="156" cy="98" r="14" fill="#cf7c74" stroke="#0000001a"/><text x="156" y="122">血平板</text></g>
-    <g><circle cx="248" cy="98" r="14" fill="#8a5a3a" stroke="#0000001a"/><text x="248" y="122">巧克力琼脂</text></g>
-    <g><circle cx="340" cy="98" r="14" fill="#ddd0a8" stroke="#0000001a"/><text x="340" y="122">M-H 琼脂</text></g>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">培养基总览</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">按「加不加抑制剂、加不加指示剂」分成三类</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="168" y1="64" x2="168" y2="222" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+<line x1="316" y1="64" x2="316" y2="222" stroke="#e3e7ec" stroke-dasharray="4,4"/>
 
-  <!-- ===== 选择与鉴别 ===== -->
-  <text x="24" y="150" font-size="12" font-weight="700" fill="#9a8a52">选择与鉴别</text>
-  <g text-anchor="middle" font-size="11" fill="#565b63">
-    <g><circle cx="64" cy="176" r="14" fill="#d98aa0" stroke="#0000001a"/><text x="64" y="200">麦康凯</text></g>
-    <g><circle cx="156" cy="176" r="14" fill="#2f6b4f" stroke="#0000001a"/><text x="156" y="200">EMB</text></g>
-    <g><circle cx="248" cy="176" r="14" fill="#e6dcc6" stroke="#0000001a"/><circle cx="248" cy="176" r="4.5" fill="#2c3138"/><text x="248" y="200">SS 琼脂</text></g>
-    <g><circle cx="340" cy="176" r="14" fill="#cf7c74" stroke="#0000001a"/><circle cx="340" cy="176" r="4.5" fill="#2c3138"/><text x="340" y="200">XLD</text></g>
-    <g><circle cx="432" cy="176" r="14" fill="#d8c24a" stroke="#0000001a"/><text x="432" y="200">TCBS</text></g>
-    <g><circle cx="64" cy="224" r="14" fill="#cdb85f" stroke="#0000001a"/><text x="64" y="248">甘露醇盐</text></g>
-    <g><circle cx="156" cy="224" r="14" fill="#3f9e5a" stroke="#0000001a"/><text x="156" y="248">念珠菌显色</text></g>
-  </g>
+<!-- ===================== ❶ 基础与营养 ===================== -->
+<circle cx="33" cy="74" r="7.5" fill="#1f2733"/>
+<text x="33" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="45" y="78" font-size="10" font-weight="700" fill="#33404f">基础与营养</text>
+<text x="24" y="93" font-size="9.5" fill="#5c6672">无抑制剂：让菌尽量都长，</text>
+<text x="24" y="105" font-size="9.5" fill="#5c6672">血平板以溶血作鉴别</text>
 
-  <!-- ===== 特殊用途 ===== -->
-  <text x="24" y="276" font-size="12" font-weight="700" fill="#5a80b0">特殊用途</text>
-  <g text-anchor="middle" font-size="11" fill="#565b63">
-    <g><circle cx="64" cy="302" r="14" fill="#c7d6a8" stroke="#0000001a"/><text x="64" y="326">罗氏 L-J</text></g>
-    <g><circle cx="156" cy="302" r="14" fill="#ecdfae" stroke="#0000001a"/><text x="156" y="326">沙保罗</text></g>
-    <g><circle cx="248" cy="302" r="14" fill="#6b7378" stroke="#0000001a"/><text x="248" y="326">BCYE</text></g>
-    <g><circle cx="340" cy="302" r="14" fill="#e3e7ea" stroke="#0000001a"/><text x="340" y="326">鲍-金</text></g>
-    <g><circle cx="432" cy="302" r="14" fill="#8a5a3a" stroke="#0000001a"/><text x="432" y="326">T-M</text></g>
-    <g><circle cx="64" cy="350" r="14" fill="#d98aa0" stroke="#0000001a"/><circle cx="64" cy="350" r="5" fill="#cf7c74"/><text x="64" y="374">CIN</text></g>
-    <g><circle cx="156" cy="350" r="14" fill="#8a6db0" stroke="#0000001a"/><text x="156" y="374">Ashdown</text></g>
-    <g><circle cx="248" cy="350" r="14" fill="#9a3b3b" stroke="#0000001a"/><text x="248" y="374">厌氧血平板</text></g>
-  </g>
+<!-- 血琼脂平板：β 溶血透明环 -->
+<circle cx="44" cy="124" r="17" fill="#a83a37" stroke="#00000026"/>
+<circle cx="38" cy="119" r="6" fill="#e6dcc2"/><circle cx="38" cy="119" r="2.2" fill="#f4f0e4"/>
+<circle cx="50" cy="131" r="6" fill="#e6dcc2"/><circle cx="50" cy="131" r="2.2" fill="#f4f0e4"/>
+<circle cx="52" cy="115" r="2" fill="#d7cbb2"/>
+<text x="68" y="121" font-size="9.5" font-weight="600" fill="#33404f">血琼脂平板</text>
+<text x="68" y="133" font-size="9.5" fill="#5c6672">α/β/γ 溶血分型</text>
 
-  <text x="240" y="396" text-anchor="middle" font-size="11" fill="#565b63">M-H 琼脂为药敏（KB / E-test）的标准培养基；点击任一培养基查看成分、用途与原理</text>
+<!-- 巧克力琼脂 -->
+<circle cx="44" cy="166" r="17" fill="#75462a" stroke="#00000026"/>
+<g fill="#d9d0c2"><circle cx="38" cy="160" r="2.2"/><circle cx="48" cy="163" r="2.2"/><circle cx="41" cy="172" r="2.2"/><circle cx="51" cy="172" r="2.2"/><circle cx="44" cy="155" r="1.8"/></g>
+<text x="68" y="163" font-size="9.5" font-weight="600" fill="#33404f">巧克力琼脂</text>
+<text x="68" y="175" font-size="9.5" fill="#5c6672">释放 X/V 因子</text>
+
+<!-- M-H 琼脂：均匀菌苔 + 纸片抑菌圈 -->
+<circle cx="44" cy="208" r="17" fill="#ddd2ac" stroke="#00000026"/>
+<g fill="#c3b58a"><circle cx="33" cy="200" r="1.5"/><circle cx="39" cy="196" r="1.5"/><circle cx="52" cy="197" r="1.5"/><circle cx="32" cy="212" r="1.5"/><circle cx="37" cy="219" r="1.5"/><circle cx="49" cy="219" r="1.5"/><circle cx="55" cy="210" r="1.5"/><circle cx="55" cy="203" r="1.5"/><circle cx="44" cy="222" r="1.5"/></g>
+<circle cx="44" cy="208" r="9" fill="#efe9d6"/>
+<circle cx="44" cy="208" r="3.6" fill="#ffffff" stroke="#b9c2cc"/>
+<text x="68" y="205" font-size="9.5" font-weight="600" fill="#33404f">M-H 琼脂</text>
+<text x="68" y="217" font-size="9.5" fill="#5c6672">药敏专用·非选择</text>
+
+<!-- ===================== ❷ 选择与鉴别 ===================== -->
+<circle cx="181" cy="74" r="7.5" fill="#1f2733"/>
+<text x="181" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="193" y="78" font-size="10" font-weight="700" fill="#33404f">选择与鉴别</text>
+<text x="172" y="93" font-size="9.5" fill="#5c6672">抑制剂挡住杂菌，指示</text>
+<text x="172" y="105" font-size="9.5" fill="#5c6672">剂把代谢差异变成颜色</text>
+
+<!-- 麦康凯：粉红 vs 无色 -->
+<circle cx="192" cy="124" r="17" fill="#e9c8d0" stroke="#00000026"/>
+<g><circle cx="186" cy="118" r="3" fill="#c8446e"/><circle cx="195" cy="127" r="3" fill="#c8446e"/><circle cx="185" cy="130" r="3" fill="#c8446e"/></g>
+<g fill="#f7f3ec" stroke="#c9b8bd"><circle cx="199" cy="117" r="3"/><circle cx="200" cy="132" r="3"/></g>
+<text x="216" y="121" font-size="9.5" font-weight="600" fill="#33404f">麦康凯琼脂</text>
+<text x="216" y="133" font-size="9.5" fill="#5c6672">乳糖+ 粉红／− 无色</text>
+
+<!-- XLD：红底黑心 -->
+<circle cx="192" cy="166" r="17" fill="#cd4f4f" stroke="#00000026"/>
+<g><circle cx="186" cy="161" r="3.4" fill="#b03a48"/><circle cx="186" cy="161" r="1.5" fill="#17171a"/>
+   <circle cx="197" cy="170" r="3.4" fill="#b03a48"/><circle cx="197" cy="170" r="1.5" fill="#17171a"/></g>
+<circle cx="188" cy="174" r="2.6" fill="#dd7274"/>
+<text x="216" y="163" font-size="9.5" font-weight="600" fill="#33404f">XLD 琼脂</text>
+<text x="216" y="175" font-size="9.5" fill="#5c6672">沙门菌 红底黑心</text>
+
+<!-- TCBS：黄 vs 绿 -->
+<circle cx="192" cy="208" r="17" fill="#4f9d6b" stroke="#00000026"/>
+<g fill="#e6d647"><circle cx="186" cy="203" r="3.2"/><circle cx="196" cy="212" r="3.2"/></g>
+<circle cx="197" cy="201" r="2.8" fill="#3d8256"/>
+<text x="216" y="205" font-size="9.5" font-weight="600" fill="#33404f">TCBS 琼脂</text>
+<text x="216" y="217" font-size="9.5" fill="#5c6672">霍乱弧菌呈黄色</text>
+
+<!-- ===================== ❸ 特殊 ===================== -->
+<circle cx="329" cy="74" r="7.5" fill="#1f2733"/>
+<text x="329" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="341" y="78" font-size="10" font-weight="700" fill="#33404f">特殊用途</text>
+<text x="320" y="93" font-size="9.5" fill="#5c6672">为苛养、慢生长菌补上</text>
+<text x="320" y="105" font-size="9.5" fill="#5c6672">特需营养或特殊环境</text>
+
+<!-- 罗氏 L-J：斜面管 -->
+<rect x="331" y="107" width="18" height="34" rx="8" fill="#f5f7f9" stroke="#c8ccd2"/>
+<path d="M333,139 L347,139 L347,116 L333,127 Z" fill="#4e7d4e"/>
+<circle cx="338" cy="133" r="1.7" fill="#e8e0c6"/><circle cx="343" cy="128" r="1.5" fill="#e8e0c6"/>
+<text x="364" y="121" font-size="9.5" font-weight="600" fill="#33404f">罗氏 L-J·分枝杆菌</text>
+<text x="364" y="133" font-size="9.5" fill="#5c6672">3 周长，6–8 周报阴</text>
+
+<!-- 沙保罗 SDA：绒毛霉落 -->
+<circle cx="340" cy="166" r="17" fill="#e7daa9" stroke="#00000026"/>
+<circle cx="338" cy="166" r="7.5" fill="#d9d4c8"/>
+<g stroke="#b8b2a4" stroke-width="0.8"><line x1="338" y1="158" x2="338" y2="174"/><line x1="330" y1="166" x2="346" y2="166"/><line x1="332" y1="160" x2="344" y2="172"/><line x1="344" y1="160" x2="332" y2="172"/></g>
+<circle cx="350" cy="174" r="2.4" fill="#f2ece0"/>
+<text x="364" y="163" font-size="9.5" font-weight="600" fill="#33404f">沙保罗 SDA</text>
+<text x="364" y="175" font-size="9.5" fill="#5c6672">真菌：低 pH 高糖</text>
+
+<!-- 厌氧血平板 -->
+<circle cx="340" cy="208" r="17" fill="#7d2f2f" stroke="#00000026"/>
+<g fill="#eae2d4"><circle cx="334" cy="203" r="2.6"/><circle cx="344" cy="211" r="2.6"/><circle cx="335" cy="214" r="2.2"/></g>
+<text x="364" y="205" font-size="9.5" font-weight="600" fill="#33404f">厌氧血平板</text>
+<text x="364" y="217" font-size="9.5" fill="#5c6672">须厌氧罐/产气袋</text>
+
+<!-- 临床注解 -->
+<rect x="24" y="228" width="432" height="20" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="241.5" text-anchor="middle" font-size="9.5" fill="#33404f">颜色随时间漂移：麦康凯过夜久置，迟缓发酵乳糖菌（宋内志贺、沙雷）也转粉红 → 按 18–24 h 判读</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">先看这块板加了什么抑制剂与指示剂，菌落颜色才读得懂</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">常用配伍</tspan>　粪便：麦康凯＋SS/XLD ｜ 呼吸道：血平板＋巧克力 ｜ 药敏：M-H</text>
 </svg>

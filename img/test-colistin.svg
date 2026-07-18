@@ -1,42 +1,87 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>黏菌素肉汤微量稀释（BMD）</title><desc>黏菌素扩散差，纸片/梯度法不可靠，须用肉汤微量稀释测 MIC</desc>
-  <defs>
-    <linearGradient id="wellTurbid" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#d8ccb0"/>
-      <stop offset="1" stop-color="#cdbf9e"/>
-    </linearGradient>
-    <linearGradient id="wellClear" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#fbfaf8"/>
-    </linearGradient>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">黏菌素肉汤微量稀释（BMD）</text>
-  <text x="240" y="52" text-anchor="middle" font-size="11" fill="#565b63">黏菌素扩散差，纸片/梯度法不可靠，须用肉汤微量稀释测 MIC</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>黏菌素肉汤微量稀释（BMD）</title><desc>黏菌素分子大、琼脂内扩散差，纸片法与梯度扩散法结果不可靠；须用阳离子调节 MH 肉汤微量稀释法测 MIC，首个清亮（无生长）孔的浓度即 MIC</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
 
-  <!-- 8 孔，浓度递增；浊(生长)→清(抑制) -->
-  <g>
-    <circle cx="70" cy="160" r="20" fill="url(#wellTurbid)" stroke="#b0a47c" stroke-width="1.5"/>
-    <circle cx="118" cy="160" r="20" fill="url(#wellTurbid)" stroke="#b0a47c" stroke-width="1.5"/>
-    <circle cx="166" cy="160" r="20" fill="#d6cbb0" stroke="#b0a47c" stroke-width="1.5"/>
-    <circle cx="214" cy="160" r="20" fill="#e6dcc6" stroke="#bcae8f" stroke-width="1.5"/>
-    <circle cx="262" cy="160" r="20" fill="url(#wellClear)" stroke="#cbc1a8" stroke-width="1.5"/>
-    <circle cx="310" cy="160" r="20" fill="url(#wellClear)" stroke="#cbc1a8" stroke-width="1.5"/>
-    <circle cx="358" cy="160" r="20" fill="url(#wellClear)" stroke="#cbc1a8" stroke-width="1.5"/>
-    <circle cx="406" cy="160" r="20" fill="url(#wellClear)" stroke="#cbc1a8" stroke-width="1.5"/>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">黏菌素肉汤微量稀释（BMD）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">药敏试验方法</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">黏菌素扩散差，须用肉汤微量稀释法测 MIC（CBDE 为暂定替代）</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="158" y1="66" x2="158" y2="186" stroke="#e3e7ec" stroke-dasharray="4,4"/>
 
-  <g font-size="11" fill="#565b63" text-anchor="middle">
-    <text x="70" y="196">0.25</text><text x="118" y="196">0.5</text><text x="166" y="196">1</text><text x="214" y="196">2</text>
-    <text x="262" y="196">4</text><text x="310" y="196">8</text><text x="358" y="196">16</text><text x="406" y="196">32</text>
-  </g>
-  <text x="240" y="214" text-anchor="middle" font-size="11" fill="#565b63">µg/mL（浊 = 生长，清 = 抑制）</text>
+<!-- ===== 左：❶ 扩散法不可靠 ===== -->
+<circle cx="32" cy="76" r="7.5" fill="#1f2733"/>
+<text x="32" y="79.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="44" y="79.5" font-size="10" font-weight="700" fill="#33404f">纸片/梯度法不可靠</text>
 
-  <!-- MIC 指示：首个清亮孔（浓度 4） -->
-  <line x1="262" y1="124" x2="262" y2="138" stroke="#5a80b0" stroke-width="1.5"/>
-  <polygon points="262,139 257.5,129 266.5,129" fill="#5a80b0"/>
-  <text x="262" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MIC = 4</text>
+<circle cx="88" cy="124" r="38" fill="#f5f7f9" stroke="#e3e7ec" stroke-width="1.4"/>
+<!-- 梯度试条 -->
+<rect x="60" y="102" width="10" height="44" rx="2" fill="#f9e6e4" stroke="#c2413d" stroke-width="1.1"/>
+<g stroke="#c2413d" stroke-width="0.8">
+  <line x1="60" y1="112" x2="70" y2="112"/><line x1="60" y1="122" x2="70" y2="122"/>
+  <line x1="60" y1="132" x2="70" y2="132"/><line x1="60" y1="142" x2="70" y2="142"/>
+</g>
+<!-- 纸片与勉强可见的窄抑菌圈 -->
+<circle cx="106" cy="112" r="15" fill="none" stroke="#c2413d" stroke-width="1" stroke-dasharray="3,3" opacity="0.75"/>
+<circle cx="106" cy="112" r="9" fill="#f9e6e4" stroke="#c2413d" stroke-width="1.2"/>
+<text x="106" y="115.5" text-anchor="middle" font-size="9.5" fill="#a3332f">黏</text>
+<!-- 禁用徽标 -->
+<circle cx="120" cy="92" r="9" fill="#f9e6e4" stroke="#c2413d" stroke-width="1.4"/>
+<g stroke="#c2413d" stroke-width="1.8" stroke-linecap="round">
+  <line x1="116" y1="88" x2="124" y2="96"/><line x1="124" y1="88" x2="116" y2="96"/>
+</g>
+<text x="88" y="176" text-anchor="middle" font-size="9.5" fill="#5c6672">分子大，琼脂内扩散差</text>
+<text x="88" y="189" text-anchor="middle" font-size="9.5" fill="#a3332f">抑菌圈不可靠，勿用于报告</text>
 
-  <text x="240" y="262" text-anchor="middle" font-size="12.5" fill="#565b63">首个清亮孔即 MIC；MIC ≤2 敏感（含中介）、≥4 耐药</text>
-  <text x="240" y="284" text-anchor="middle" font-size="11" fill="#565b63">用于多重耐药铜绿/不动杆菌/肠杆菌“最后一线”评估</text>
+<!-- ===== 右：❷ 肉汤微量稀释 ===== -->
+<circle cx="174" cy="76" r="7.5" fill="#1f2733"/>
+<text x="174" y="79.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="186" y="79.5" font-size="10" font-weight="700" fill="#33404f">肉汤微量稀释法测 MIC</text>
+
+<!-- MIC 指示 -->
+<text x="328" y="97" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">MIC = 4 µg/mL</text>
+<line x1="328" y1="101" x2="328" y2="111" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- 微量板一排孔：浑浊（生长）→ 清亮（无生长） -->
+<g stroke="#b0a47c" stroke-width="1.4">
+  <circle cx="184" cy="128" r="15" fill="#d8ccb0"/>
+  <circle cx="220" cy="128" r="15" fill="#d8ccb0"/>
+  <circle cx="256" cy="128" r="15" fill="#ddd2b9"/>
+  <circle cx="292" cy="128" r="15" fill="#e6dcc6"/>
+</g>
+<g fill="#a89870" opacity="0.85">
+  <circle cx="184" cy="128" r="4"/><circle cx="220" cy="128" r="4"/><circle cx="256" cy="128" r="3.4"/><circle cx="292" cy="128" r="2.8"/>
+</g>
+<g stroke="#cbc1a8" stroke-width="1.4" fill="#ffffff">
+  <circle cx="328" cy="128" r="15"/><circle cx="364" cy="128" r="15"/>
+  <circle cx="400" cy="128" r="15"/><circle cx="436" cy="128" r="15"/>
+</g>
+<circle cx="328" cy="128" r="15" fill="none" stroke="#33404f" stroke-width="1.6"/>
+
+<g font-size="9.5" fill="#5c6672" text-anchor="middle">
+  <text x="184" y="157">0.25</text><text x="220" y="157">0.5</text><text x="256" y="157">1</text><text x="292" y="157">2</text>
+  <text x="328" y="157">4</text><text x="364" y="157">8</text><text x="400" y="157">16</text><text x="436" y="157">32</text>
+</g>
+<text x="310" y="175" text-anchor="middle" font-size="9.5" fill="#5c6672">浑浊=有生长　清亮=无生长　浓度 µg/mL 倍比递增</text>
+
+<!-- ===== 要点框 ===== -->
+<rect x="24" y="194" width="210" height="52" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="210" font-size="10" font-weight="700" fill="#33404f">方法要点</text>
+<text x="36" y="226" font-size="9.5" fill="#5c6672">阳离子调节 MH 肉汤（CAMHB）倍比稀释</text>
+<text x="36" y="241" font-size="9.5" fill="#5c6672">不加表面活性剂、普通聚苯乙烯板</text>
+
+<rect x="246" y="194" width="210" height="52" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="258" y="210" font-size="10" font-weight="700" fill="#33404f">判读与折点</text>
+<text x="258" y="226" font-size="9.5" fill="#33404f">生长对照浑浊后，首个清亮孔浓度 = MIC</text>
+<text x="258" y="241" font-size="9.5" fill="#5c6672">CLSI：≤2 判中介（无敏感折点），≥4 耐药</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">CLSI 与 EUCAST 的 S/I/R 分类与适用菌种不同，须按当前版本报告</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　多重耐药铜绿假单胞菌 / 不动杆菌 / 肠杆菌目的「最后一线」用药评估</text>
 </svg>

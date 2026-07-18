@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-53';
+  var APP_VERSION = window.APP_VERSION || '20260702-54';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -1936,7 +1936,7 @@
     renderSidebar(); // 放在记录历史之后，使当前条目在「最近浏览」中即时高亮
     var extras = {
       mechanismImage: mechImg,
-      mechCaption: route.module === 'tests' ? '试验示意图' : (route.module === 'staining' ? '染色示意图' : (route.module === 'biochem-tests' ? '生化反应示意图' : '作用机制示意图')),
+      mechCaption: MECH_CAPTION[route.module] || '作用机制示意图',
       morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
       photos: (route.module === 'microbes' && entry && window.DB.photos) ? window.DB.photos[entry.id] : null,
       treatment: (entry && window.DB.treatment) ? window.DB.treatment[entry.id] : null,
@@ -1949,6 +1949,14 @@
     var vm = View.detailVM(entry, rels, extras);
     fill(document.getElementById('main'), vm ? buildDetail(vm) : buildLanding(route.module));
   }
+
+  // 条目详情页里那张示意图的图注（按模块，缺省为作用机制）
+  var MECH_CAPTION = {
+    tests: '试验示意图',
+    staining: '染色示意图',
+    'biochem-tests': '生化反应示意图',
+    media: '培养基示意图'
+  };
 
   // 未选条目时的着陆页：微生物模块展示「细菌形态总览」图，其余模块仅提示
   // 各模块主界面（未选条目）的总览图

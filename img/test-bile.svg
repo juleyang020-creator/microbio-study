@@ -1,52 +1,85 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>胆汁溶菌试验</title><desc>胆盐（去氧胆酸钠）激活肺炎链球菌自溶酶</desc>
-  <defs>
-    <linearGradient id="glassClear" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#f4f8f6"/>
-      <stop offset="0.5" stop-color="#fbfdfc"/>
-      <stop offset="1" stop-color="#eef4f1"/>
-    </linearGradient>
-    <linearGradient id="glassTurbid" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#dcd6c8"/>
-      <stop offset="0.5" stop-color="#e6e0d2"/>
-      <stop offset="1" stop-color="#d4cebf"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>胆汁溶菌试验</title><desc>胆盐（去氧胆酸钠）激活肺炎链球菌自溶酶，菌悬液由浑浊变澄清、平板上菌落溶解消失；草绿色链球菌不溶</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="29" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">胆汁溶菌试验</text>
-  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#565b63">胆盐（去氧胆酸钠）激活肺炎链球菌自溶酶</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">胆汁溶菌试验</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">鉴别试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">胆盐激活肺炎链球菌自溶酶 → 菌体溶解、悬液变澄清</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 试剂标注：胆盐（酶激活剂，金色酶 token） -->
-  <rect x="206" y="120" width="68" height="34" rx="7" fill="#f3ead0" stroke="#9a8a52" stroke-width="1.2"/>
-  <text x="240" y="135" text-anchor="middle" font-size="11" font-weight="700" fill="#7c6a34">滴加胆盐</text>
-  <text x="240" y="148" text-anchor="middle" font-size="11" fill="#9a8a52">激活自溶酶</text>
+<!-- ===================== 左组：阳性 ===================== -->
+<rect x="24" y="64" width="204" height="18" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="126" y="77" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">阳性 · 肺炎链球菌</text>
 
-  <!-- 阳性管：澄清（溶菌）→ 肺炎链球菌 -->
-  <rect x="118" y="76" width="46" height="174" rx="23" fill="url(#glassClear)" stroke="#9aa0a8" stroke-width="2"/>
-  <!-- 液面（溶菌后澄清，仅微弱液色） -->
-  <rect x="118" y="150" width="46" height="100" rx="23" fill="#eef4f1" stroke="#cfe0db" stroke-width="1"/>
-  <!-- 高光 -->
-  <rect x="127" y="86" width="6" height="150" rx="3" fill="#ffffff" opacity="0.55"/>
-  <!-- 液面线 -->
-  <line x1="120" y1="150" x2="162" y2="150" stroke="#cfe0db" stroke-width="1"/>
-  <text x="141" y="270" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">澄清（溶菌）</text>
-  <text x="141" y="287" text-anchor="middle" font-size="11" fill="#565b63">肺炎链球菌（阳性）</text>
+<!-- 左组 试管法 -->
+<text x="76" y="94" text-anchor="middle" font-size="9.5" fill="#5c6672">菌悬液＋10%胆盐</text>
+<rect x="59" y="100" width="34" height="66" rx="17" fill="#ffffff" stroke="#b9c2cc" stroke-width="1.6"/>
+<rect x="60.5" y="118" width="31" height="46.5" rx="15.5" fill="#f5f7f9" stroke="#e3e7ec"/>
+<line x1="61" y1="118" x2="91" y2="118" stroke="#cdd5dd"/>
+<rect x="65" y="106" width="4" height="42" rx="2" fill="#ffffff" opacity="0.7"/>
+<text x="76" y="180" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">悬液变澄清</text>
 
-  <!-- 阴性管：浑浊（不溶）→ 草绿色链球菌 -->
-  <rect x="316" y="76" width="46" height="174" rx="23" fill="url(#glassClear)" stroke="#9aa0a8" stroke-width="2"/>
-  <!-- 液面（不溶仍浑浊） -->
-  <rect x="316" y="150" width="46" height="100" rx="23" fill="url(#glassTurbid)" stroke="#c4bdad" stroke-width="1"/>
-  <!-- 浑浊悬浮颗粒 -->
-  <circle cx="330" cy="178" r="1.6" fill="#b0a47c"/>
-  <circle cx="346" cy="196" r="1.6" fill="#b0a47c"/>
-  <circle cx="338" cy="216" r="1.6" fill="#b0a47c"/>
-  <circle cx="326" cy="208" r="1.4" fill="#b0a47c"/>
-  <circle cx="350" cy="170" r="1.4" fill="#b0a47c"/>
-  <circle cx="334" cy="234" r="1.4" fill="#b0a47c"/>
-  <!-- 高光 -->
-  <rect x="325" y="86" width="6" height="150" rx="3" fill="#ffffff" opacity="0.4"/>
-  <line x1="318" y1="150" x2="360" y2="150" stroke="#c4bdad" stroke-width="1"/>
-  <text x="339" y="270" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c46a62">浑浊（不溶）</text>
-  <text x="339" y="287" text-anchor="middle" font-size="11" fill="#565b63">草绿色链球菌（阴性）</text>
+<!-- 左组 平板法：滴胆盐处菌落溶解消失，邻近未滴处菌落仍在 -->
+<text x="176" y="94" text-anchor="middle" font-size="9.5" fill="#5c6672">菌落上滴2%胆盐</text>
+<path d="M176,97 c-4,6 -4,10 0,10 c4,0 4,-4 0,-10 z" fill="#f7ecd4" stroke="#d9b96a"/>
+<line x1="176" y1="108" x2="176" y2="126" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<circle cx="176" cy="133" r="30" fill="#f0dbd6" stroke="#c9aca6" stroke-width="1.4"/>
+<circle cx="176" cy="133" r="6" fill="none" stroke="#b9c2cc" stroke-width="1.2" stroke-dasharray="3,2"/>
+<circle cx="171" cy="131" r="1.1" fill="#c9aca6"/><circle cx="180" cy="136" r="1.1" fill="#c9aca6"/><circle cx="177" cy="129" r="1" fill="#c9aca6"/>
+<circle cx="162" cy="120" r="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<circle cx="189" cy="147" r="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="176" y="180" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">菌落溶解消失</text>
+
+<!-- ===================== 右组：阴性 ===================== -->
+<rect x="252" y="64" width="204" height="18" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="354" y="77" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">阴性 · 草绿色链球菌</text>
+
+<!-- 右组 试管法 -->
+<text x="304" y="94" text-anchor="middle" font-size="9.5" fill="#5c6672">菌悬液＋10%胆盐</text>
+<rect x="287" y="100" width="34" height="66" rx="17" fill="#ffffff" stroke="#b9c2cc" stroke-width="1.6"/>
+<rect x="288.5" y="118" width="31" height="46.5" rx="15.5" fill="#e6e0d2" stroke="#c4bdad"/>
+<line x1="289" y1="118" x2="319" y2="118" stroke="#c4bdad"/>
+<g fill="#b0a47c">
+  <circle cx="297" cy="128" r="1.5"/><circle cx="309" cy="133" r="1.5"/><circle cx="302" cy="142" r="1.5"/>
+  <circle cx="312" cy="150" r="1.3"/><circle cx="296" cy="152" r="1.3"/><circle cx="305" cy="159" r="1.3"/>
+</g>
+<rect x="293" y="106" width="4" height="42" rx="2" fill="#ffffff" opacity="0.5"/>
+<text x="304" y="180" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">悬液仍浑浊</text>
+
+<!-- 右组 平板法：滴胆盐处菌落照旧 -->
+<text x="404" y="94" text-anchor="middle" font-size="9.5" fill="#5c6672">菌落上滴2%胆盐</text>
+<path d="M404,97 c-4,6 -4,10 0,10 c4,0 4,-4 0,-10 z" fill="#f7ecd4" stroke="#d9b96a"/>
+<line x1="404" y1="108" x2="404" y2="126" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<circle cx="404" cy="133" r="30" fill="#f0dbd6" stroke="#c9aca6" stroke-width="1.4"/>
+<circle cx="404" cy="133" r="6" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<circle cx="390" cy="120" r="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<circle cx="417" cy="147" r="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="404" y="180" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">菌落完好如初</text>
+
+<!-- ===================== 机制条 ===================== -->
+<rect x="24" y="192" width="432" height="52" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="34" y="212" font-size="9.5" font-weight="700" fill="#33404f">机制</text>
+<rect x="62" y="201" width="34" height="14" rx="7" fill="#f7ecd4" stroke="#d9b96a"/>
+<text x="79" y="211" text-anchor="middle" font-size="9.5" fill="#8a6d2f">胆盐</text>
+<line x1="99" y1="208" x2="115" y2="208" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="119" y="201" width="94" height="14" rx="4" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="166" y="211" text-anchor="middle" font-size="9.5" fill="#1f4e79">激活自溶酶 LytA</text>
+<line x1="216" y1="208" x2="232" y2="208" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="236" y="201" width="64" height="14" rx="4" fill="#e7e2f3" stroke="#8b7fb8"/>
+<text x="268" y="211" text-anchor="middle" font-size="9.5" fill="#5b4f8a">水解肽聚糖</text>
+<line x1="303" y1="208" x2="319" y2="208" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="323" y="211" font-size="9.5" fill="#33404f">菌体崩解、悬液变清</text>
+<text x="34" y="234" font-size="9.5" fill="#5c6672">草绿色链球菌无胆盐激活型 LytA 自溶酶 → 不溶；须与未加胆盐的对照管比对，防止把稀悬液误判为澄清</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">溶解变清判为肺炎链球菌，不溶则提示草绿色链球菌群</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　α 溶血链球菌的鉴别：与 Optochin 敏感试验互补，两者结果一致时判定最可靠</text>
 </svg>

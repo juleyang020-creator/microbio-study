@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>镀银染色（Warthin-Starry / Dieterle）</title><desc>组织切片经酸化硝酸银浸染、还原显色，银盐在菌体表面还原沉积增厚，使纤细、普通染色难着色的螺旋体与军团菌呈黑褐色，背景浅黄；用于梅毒螺旋体、钩端螺旋体、嗜肺军团菌等组织内病原检测</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <clipPath id="fp"><circle cx="90" cy="206" r="34"/></clipPath>
+  <clipPath id="fn"><circle cx="290" cy="206" r="34"/></clipPath>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">镀银染色（Warthin-Starry）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">染色方法</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">银盐在菌体表面还原沉积增厚 → 纤细病原显黑褐色，背景浅黄</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 上半：试剂步骤流程 ===== -->
+<text x="24" y="72" font-size="10" font-weight="700" fill="#5c6672">试剂步骤（组织银染，操作较繁）</text>
+
+<g fill="#f5f7f9" stroke="#e3e7ec">
+  <rect x="24" y="80" width="96" height="52" rx="6"/>
+  <rect x="136" y="80" width="96" height="52" rx="6"/>
+  <rect x="248" y="80" width="96" height="52" rx="6"/>
+  <rect x="360" y="80" width="96" height="52" rx="6"/>
+</g>
+<g stroke="#33404f" stroke-width="1.4">
+  <line x1="122" y1="106" x2="133" y2="106" marker-end="url(#arr)"/>
+  <line x1="234" y1="106" x2="245" y2="106" marker-end="url(#arr)"/>
+  <line x1="346" y1="106" x2="357" y2="106" marker-end="url(#arr)"/>
+</g>
+<g fill="#1f2733">
+  <circle cx="36" cy="80" r="7.5"/><circle cx="148" cy="80" r="7.5"/><circle cx="260" cy="80" r="7.5"/><circle cx="372" cy="80" r="7.5"/>
+</g>
+<g text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">
+  <text x="36" y="83.5">1</text><text x="148" y="83.5">2</text><text x="260" y="83.5">3</text><text x="372" y="83.5">4</text>
+</g>
+<g text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">
+  <text x="76" y="96">组织切片</text>
+  <text x="188" y="96">银氨液浸染</text>
+  <text x="300" y="96">还原显色液</text>
+  <text x="412" y="96">水洗·封片</text>
+</g>
+<g text-anchor="middle" font-size="9.5" fill="#5c6672">
+  <text x="76" y="111">甲醛固定石蜡切片</text>
+  <text x="76" y="124">脱蜡水化后浸银</text>
+  <text x="188" y="111">银离子吸附于</text>
+  <text x="188" y="124">菌体表面</text>
+  <text x="300" y="111">氢醌还原 Ag⁺</text>
+  <text x="300" y="124">金属银沉积增厚</text>
+  <text x="412" y="111">镜下控色终止</text>
+  <text x="412" y="124">油镜观察</text>
+</g>
+
+<text x="240" y="148" text-anchor="middle" font-size="9.5" fill="#33404f">菌体表面嗜银吸附 Ag⁺、外加还原剂显色 → 革兰染色不着色者亦可显现</text>
+<line x1="24" y1="156" x2="456" y2="156" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 下半：镜下所见 ===== -->
+<text x="24" y="170" font-size="10" font-weight="700" fill="#5c6672">镜下所见（油镜）</text>
+
+<!-- 阳性视野 -->
+<circle cx="90" cy="206" r="34" fill="#f7edd2"/>
+<g clip-path="url(#fp)">
+  <g fill="none" stroke="#d8c091" stroke-width="1">
+    <ellipse cx="70" cy="184" rx="11" ry="8"/><ellipse cx="108" cy="196" rx="12" ry="9"/>
+    <ellipse cx="78" cy="228" rx="13" ry="9"/><ellipse cx="112" cy="226" rx="10" ry="8"/>
+    <ellipse cx="62" cy="208" rx="10" ry="8"/>
+  </g>
+  <g fill="none" stroke="#3b2a17" stroke-width="1.6" stroke-linecap="round">
+    <path d="M-14,0 q3.5,-4.5 7,0 q3.5,4.5 7,0 q3.5,-4.5 7,0 q3.5,4.5 7,0" transform="translate(78,192) rotate(-25)"/>
+    <path d="M-14,0 q3.5,-4.5 7,0 q3.5,4.5 7,0 q3.5,-4.5 7,0 q3.5,4.5 7,0" transform="translate(100,212) rotate(18)"/>
+    <path d="M-14,0 q3.5,-4.5 7,0 q3.5,4.5 7,0 q3.5,-4.5 7,0 q3.5,4.5 7,0" transform="translate(76,222) rotate(40)"/>
+    <path d="M-14,0 q3.5,-4.5 7,0 q3.5,4.5 7,0 q3.5,-4.5 7,0 q3.5,4.5 7,0" transform="translate(104,186) rotate(62)"/>
+  </g>
+  <g fill="#3b2a17">
+    <rect x="84" y="204" width="7" height="2.6" rx="1.3" transform="rotate(-15 87.5 205.3)"/>
+    <rect x="92" y="230" width="7" height="2.6" rx="1.3" transform="rotate(30 95.5 231.3)"/>
+  </g>
+</g>
+<circle cx="90" cy="206" r="34" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<text x="132" y="180" font-size="9.5" font-weight="700" fill="#33404f">阳性</text>
+<text x="132" y="194" font-size="9.5" fill="#5c6672">纤细螺旋体呈黑褐色</text>
+<text x="132" y="208" font-size="9.5" fill="#5c6672">波浪状，长 6–20 μm</text>
+<text x="132" y="222" font-size="9.5" fill="#5c6672">军团菌为短杆（另标本）</text>
+<text x="132" y="236" font-size="9.5" fill="#5c6672">背景组织呈浅黄棕色</text>
+
+<!-- 阴性视野 -->
+<circle cx="290" cy="206" r="34" fill="#f7edd2"/>
+<g clip-path="url(#fn)">
+  <g fill="none" stroke="#d8c091" stroke-width="1">
+    <ellipse cx="270" cy="186" rx="11" ry="8"/><ellipse cx="308" cy="194" rx="12" ry="9"/>
+    <ellipse cx="278" cy="226" rx="13" ry="9"/><ellipse cx="312" cy="224" rx="10" ry="8"/>
+    <ellipse cx="262" cy="210" rx="10" ry="8"/><ellipse cx="296" cy="212" rx="11" ry="8"/>
+  </g>
+</g>
+<circle cx="290" cy="206" r="34" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<text x="332" y="180" font-size="9.5" font-weight="700" fill="#33404f">阴性</text>
+<text x="332" y="194" font-size="9.5" fill="#5c6672">全片仅见浅黄棕背景</text>
+<text x="332" y="208" font-size="9.5" fill="#5c6672">组织细胞轮廓淡染</text>
+<text x="332" y="222" font-size="9.5" fill="#5c6672">未见黑褐色菌体</text>
+
+<text x="240" y="248" text-anchor="middle" font-size="9.5" fill="#c2413d">银染无特异性：网状纤维、黑色素、银渣同呈黑色 → 须结合形态与部位判读</text>
+
+<!-- 结论 -->
+<text x="240" y="263" text-anchor="middle" font-size="11.5" fill="#33404f">普通染色难着色的纤细病原，在浅黄背景上显现为黑褐色菌体</text>
+
+<!-- 页脚：主要用途 -->
+<rect x="24" y="272" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="288" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　梅毒螺旋体 · 钩端螺旋体 · 嗜肺军团菌等组织内病原</text>
+</svg>

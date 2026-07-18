@@ -1,25 +1,72 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>VP 试验 (Voges-Proskauer)</title><desc>产乙酰甲基甲醇(acetoin)，加 α-萘酚 + KOH 显红</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">VP 试验 (Voges-Proskauer)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">产乙酰甲基甲醇(acetoin)，加 α-萘酚 + KOH 显红</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>VP 试验（Voges-Proskauer）</title><desc>丁二醇发酵菌把葡萄糖代谢为乙偶姻，加 Barritt 试剂（α-萘酚 + 40% KOH）后被空气氧化为二乙酰，与蛋白胨中的胍基结合，上层显红为阳性；大肠埃希菌不产乙偶姻，加试剂后不变色</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性管(铜黄,不变) -->
-  <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M150,120 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#c9a86a"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阴性（铜黄/不变）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">VP 试验（Voges-Proskauer）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">丁二醇发酵产乙偶姻 → 碱性下氧化为二乙酰 → 与胍基显红（IMViC 之一）</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阳性管(表层红,渐变) -->
-  <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M300,120 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#cf4f5e"/>
-    <path d="M300,120 L336,120 L336,150 L300,150 Z" fill="#b8324a"/>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（表层变红）</text>
-  </g>
+<!-- ===== 左：阴性试验管 ===== -->
+<text x="64" y="82" text-anchor="middle" font-size="9.5" fill="#5c6672">阴性管</text>
+<path d="M42,92 L42,182 Q42,200 64,200 Q86,200 86,182 L86,92 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+<path d="M42,120 L86,120 L86,182 Q86,200 64,200 Q42,200 42,182 Z" fill="#cbb87a"/>
+<ellipse cx="64" cy="92" rx="22" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+<rect x="42" y="120" width="44" height="30" fill="none" stroke="#8c96a2" stroke-width="1.2" stroke-dasharray="4,3"/>
+<text x="64" y="214" text-anchor="middle" font-size="10" font-weight="700" fill="#8a6d2f">阴性 (−)</text>
+<text x="64" y="228" text-anchor="middle" font-size="9.5" fill="#5c6672">无乙偶姻，不显色</text>
+<text x="64" y="242" text-anchor="middle" font-size="9.5" fill="#33404f">大肠埃希菌</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">产气肠杆菌、肺炎克雷伯菌阳性；大肠埃希菌阴性（颜色 15–60 min 由表层显现）</text>
+<!-- ===== 中：化学转化链 ===== -->
+<rect x="112" y="74" width="260" height="34" rx="6" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<circle cx="126" cy="91" r="7.5" fill="#1f2733"/>
+<text x="126" y="94.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="140" y="89" font-size="9.5" fill="#1f4e79">菌体发酵：葡萄糖 →〔丁二醇途径〕→ 乙偶姻</text>
+<text x="140" y="102" font-size="9.5" fill="#5c6672">MR-VP 肉汤，35℃ 48 h（乙偶姻 = 3-羟基丁酮）</text>
+<line x1="242" y1="108" x2="242" y2="120" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="112" y="118" width="260" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="126" cy="135" r="7.5" fill="#1f2733"/>
+<text x="126" y="138.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="140" y="133" font-size="9.5" fill="#33404f">加 Barritt 试剂：先 A 5% α-萘酚，后 B 40% KOH</text>
+<text x="140" y="146" font-size="9.5" fill="#5c6672">震荡使接触空气，静置 15–30 min</text>
+<line x1="242" y1="152" x2="242" y2="164" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- 试剂同样加入对照管 -->
+<line x1="112" y1="135" x2="94" y2="135" stroke="#33404f" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+
+<rect x="112" y="162" width="260" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="126" cy="179" r="7.5" fill="#1f2733"/>
+<text x="126" y="182.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="140" y="177" font-size="9.5" fill="#33404f">乙偶姻 →〔氧化〕→ 二乙酰（diacetyl）</text>
+<text x="140" y="190" font-size="9.5" fill="#5c6672">KOH 提供碱性，空气中 O₂ 参与氧化</text>
+<line x1="242" y1="196" x2="242" y2="208" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="112" y="206" width="260" height="34" rx="6" fill="#f9e6e4" stroke="#c2413d" stroke-width="1.2"/>
+<circle cx="126" cy="223" r="7.5" fill="#1f2733"/>
+<text x="126" y="226.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">4</text>
+<text x="140" y="221" font-size="9.5" fill="#a3332f">二乙酰 + 胍基（精氨酸）→ 红色化合物</text>
+<text x="140" y="234" font-size="9.5" fill="#5c6672">α-萘酚为增色剂，红色集中于上层</text>
+<polyline points="374,223 382,223 382,138 390,138" fill="none" stroke="#c2413d" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- ===== 右：阳性试验管 ===== -->
+<text x="416" y="82" text-anchor="middle" font-size="9.5" fill="#5c6672">试验管</text>
+<path d="M394,92 L394,182 Q394,200 416,200 Q438,200 438,182 L438,92 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
+<path d="M394,120 L438,120 L438,182 Q438,200 416,200 Q394,200 394,182 Z" fill="#cbb87a"/>
+<rect x="394" y="120" width="44" height="30" fill="#c0392b"/>
+<ellipse cx="416" cy="92" rx="22" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
+<text x="416" y="214" text-anchor="middle" font-size="10" font-weight="700" fill="#a3332f">阳性 (+)</text>
+<text x="416" y="228" text-anchor="middle" font-size="9.5" fill="#5c6672">上层显红</text>
+<text x="416" y="242" text-anchor="middle" font-size="9.5" fill="#33404f">肺炎克雷伯菌</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">静置 15–30 min 看上层：变红为 VP(+)，铜色为弱阳性须重复</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　VP(+)：肺炎克雷伯菌 · 产气克雷伯菌 · 阴沟肠杆菌 · 黏质沙雷菌　VP(−)：大肠埃希菌</text>
 </svg>

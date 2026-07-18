@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>美蓝单染色（Loeffler 亚甲蓝）</title><desc>单一碱性染料着色，无脱色与复染，只显示形态大小与排列；可衬托白喉棒状杆菌的两极异染颗粒与鼠疫耶尔森菌的两端浓染（安全别针样）</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">美蓝单染色（Loeffler 亚甲蓝）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">常规染色</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">单一碱性染料着色 → 只显形态、大小与排列，不区分类别</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 上：试剂步骤流程 ===== -->
+<!-- ① 涂片固定 -->
+<rect x="24" y="68" width="74" height="30" rx="5" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="61" y="81" text-anchor="middle" font-size="9.5" fill="#33404f">涂片·固定</text>
+<text x="61" y="93" text-anchor="middle" font-size="9.5" fill="#5c6672">干燥后热固定</text>
+<line x1="98" y1="83" x2="112" y2="83" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- ② 亚甲蓝（唯一染料，真实蓝色） -->
+<rect x="113.5" y="68" width="74" height="30" rx="5" fill="#d7e7f7" stroke="#4a7fb5"/>
+<text x="150.5" y="81" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1b4a75">亚甲蓝染液</text>
+<text x="150.5" y="93" text-anchor="middle" font-size="9.5" fill="#1b4a75">覆盖约 1 分钟</text>
+<line x1="187.5" y1="83" x2="201.5" y2="83" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- ③ 水洗 -->
+<rect x="203" y="68" width="74" height="30" rx="5" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="81" text-anchor="middle" font-size="9.5" fill="#33404f">水洗</text>
+<text x="240" y="93" text-anchor="middle" font-size="9.5" fill="#5c6672">洗去游离染料</text>
+<!-- ④ 本法缺席的步骤（虚线框，流程绕行） -->
+<rect x="292.5" y="68" width="74" height="30" rx="5" fill="#fbfbfa" stroke="#b9c2cc" stroke-dasharray="3,2.5"/>
+<text x="329.5" y="81" text-anchor="middle" font-size="9.5" fill="#8c96a2">脱色 / 复染</text>
+<text x="329.5" y="93" text-anchor="middle" font-size="9.5" fill="#8c96a2">单染无此步</text>
+<path d="M277,86 C300,112 358,112 379,88" fill="none" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- ⑤ 干燥镜检 -->
+<rect x="382" y="68" width="74" height="30" rx="5" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="419" y="81" text-anchor="middle" font-size="9.5" fill="#33404f">干燥·镜检</text>
+<text x="419" y="93" text-anchor="middle" font-size="9.5" fill="#5c6672">油镜观形态</text>
+
+<text x="240" y="114" text-anchor="middle" font-size="9.5" fill="#5c6672">全程只有一种碱性染料 · 无脱色 · 无复染 → 各类细菌一律呈蓝色，不能据色区分</text>
+
+<!-- ===== 下：镜下所见（真实美蓝色调） ===== -->
+<!-- 左：白喉棒状杆菌 -->
+<circle cx="34" cy="128" r="7.5" fill="#1f2733"/>
+<text x="34" y="131.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="47" y="132" font-size="10" font-weight="700" fill="#33404f">白喉棒状杆菌·异染颗粒</text>
+<circle cx="129" cy="178" r="38" fill="#f0f6fc" stroke="#c3d4e4"/>
+<g fill="#a9cbe8" stroke="#6ea8d4" stroke-width="1.1">
+  <g transform="rotate(-25 118 162)"><path d="M106,157 L130,155 A7,7 0 0 1 130,169 L106,167 A5,5 0 0 1 106,157 Z"/></g>
+  <g transform="rotate(30 140 178)"><path d="M128,173 L152,171 A7,7 0 0 1 152,185 L128,183 A5,5 0 0 1 128,173 Z"/></g>
+  <g transform="rotate(85 124 192)"><path d="M112,187 L136,185 A7,7 0 0 1 136,199 L112,197 A5,5 0 0 1 112,187 Z"/></g>
+</g>
+<g fill="#6b2a8c">
+  <g transform="rotate(-25 118 162)"><circle cx="106" cy="162" r="3.6"/><circle cx="130" cy="162" r="3.6"/></g>
+  <g transform="rotate(30 140 178)"><circle cx="128" cy="178" r="3.6"/><circle cx="152" cy="178" r="3.6"/></g>
+  <g transform="rotate(85 124 192)"><circle cx="112" cy="192" r="3.6"/><circle cx="136" cy="192" r="3.6"/></g>
+</g>
+<text x="129" y="228" text-anchor="middle" font-size="9.5" fill="#6b2a8c">菌体淡蓝，异染颗粒呈深紫（异染性）</text>
+<text x="129" y="240" text-anchor="middle" font-size="9.5" fill="#5c6672">一端膨大呈棒状，排列呈栅栏、V/L 形</text>
+<text x="129" y="252" text-anchor="middle" font-size="9.5" fill="#5c6672">可作 Albert 法前的快速筛看</text>
+
+<!-- 右：鼠疫耶尔森菌 -->
+<circle cx="256" cy="128" r="7.5" fill="#1f2733"/>
+<text x="256" y="131.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="269" y="132" font-size="10" font-weight="700" fill="#33404f">鼠疫耶尔森菌·两端浓染</text>
+<circle cx="351" cy="178" r="38" fill="#f0f6fc" stroke="#c3d4e4"/>
+<g>
+  <g transform="rotate(-15 334 160)"><ellipse cx="334" cy="160" rx="11" ry="6.2" fill="#dceaf6" stroke="#8ab3d8" stroke-width="1.1"/><circle cx="327.8" cy="160" r="4.3" fill="#14305e"/><circle cx="340.2" cy="160" r="4.3" fill="#14305e"/></g>
+  <g transform="rotate(20 362 170)"><ellipse cx="362" cy="170" rx="11" ry="6.2" fill="#dceaf6" stroke="#8ab3d8" stroke-width="1.1"/><circle cx="355.8" cy="170" r="4.3" fill="#14305e"/><circle cx="368.2" cy="170" r="4.3" fill="#14305e"/></g>
+  <g transform="rotate(70 340 190)"><ellipse cx="340" cy="190" rx="11" ry="6.2" fill="#dceaf6" stroke="#8ab3d8" stroke-width="1.1"/><circle cx="333.8" cy="190" r="4.3" fill="#14305e"/><circle cx="346.2" cy="190" r="4.3" fill="#14305e"/></g>
+  <g transform="rotate(-30 364 194)"><ellipse cx="364" cy="194" rx="11" ry="6.2" fill="#dceaf6" stroke="#8ab3d8" stroke-width="1.1"/><circle cx="357.8" cy="194" r="4.3" fill="#14305e"/><circle cx="370.2" cy="194" r="4.3" fill="#14305e"/></g>
+</g>
+<text x="351" y="228" text-anchor="middle" font-size="9.5" fill="#14305e">两端深染、中部淡染</text>
+<text x="351" y="240" text-anchor="middle" font-size="9.5" fill="#5c6672">短小卵圆杆菌呈「安全别针」样</text>
+<text x="351" y="252" text-anchor="middle" font-size="9.5" fill="#a3332f">疑似鼠疫应停止常规操作并上报</text>
+
+<!-- 结论 -->
+<text x="240" y="264" text-anchor="middle" font-size="11.5" fill="#33404f">只显形态不辨类别：所见特征仅作提示，仍须革兰染色与培养鉴定</text>
+
+<!-- 页脚：主要用途 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　白喉棒状杆菌异染颗粒 · 鼠疫耶尔森菌两端浓染 · 形态与排列速览</text>
+</svg>

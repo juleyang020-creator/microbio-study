@@ -1,30 +1,92 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>肉汤微量稀释法（BMD）</title><desc>抗菌药倍比稀释于 CAMHB，首个抑制生长的最低浓度即 MIC</desc>
-  <defs>
-    <linearGradient id="bmdTurbid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8ccb0"/><stop offset="1" stop-color="#cdbf9e"/></linearGradient>
-    <linearGradient id="bmdClear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbfaf8"/></linearGradient>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">肉汤微量稀释法（BMD）</text>
-  <text x="240" y="52" text-anchor="middle" font-size="11" fill="#565b63">抗菌药倍比稀释于阳离子调节 MH 肉汤，CLSI 参考 MIC 法</text>
-  <g>
-    <circle cx="70" cy="150" r="20" fill="url(#bmdTurbid)" stroke="#b0a47c" stroke-width="1.5"/>
-    <circle cx="118" cy="150" r="20" fill="url(#bmdTurbid)" stroke="#b0a47c" stroke-width="1.5"/>
-    <circle cx="166" cy="150" r="20" fill="#d6cbb0" stroke="#b0a47c" stroke-width="1.5"/>
-    <circle cx="214" cy="150" r="20" fill="#e6dcc6" stroke="#bcae8f" stroke-width="1.5"/>
-    <circle cx="262" cy="150" r="20" fill="url(#bmdClear)" stroke="#cbc1a8" stroke-width="1.5"/>
-    <circle cx="310" cy="150" r="20" fill="url(#bmdClear)" stroke="#cbc1a8" stroke-width="1.5"/>
-    <circle cx="358" cy="150" r="20" fill="url(#bmdClear)" stroke="#cbc1a8" stroke-width="1.5"/>
-    <circle cx="406" cy="150" r="20" fill="url(#bmdClear)" stroke="#cbc1a8" stroke-width="1.5"/>
-  </g>
-  <g font-size="11" fill="#565b63" text-anchor="middle">
-    <text x="70" y="186">0.5</text><text x="118" y="186">1</text><text x="166" y="186">2</text><text x="214" y="186">4</text>
-    <text x="262" y="186">8</text><text x="310" y="186">16</text><text x="358" y="186">32</text><text x="406" y="186">64</text>
-  </g>
-  <text x="240" y="204" text-anchor="middle" font-size="11" fill="#565b63">药物浓度 µg/mL（浊 = 生长，清 = 抑制）</text>
-  <line x1="262" y1="114" x2="262" y2="128" stroke="#5a80b0" stroke-width="1.5"/>
-  <polygon points="262,129 257.5,119 266.5,119" fill="#5a80b0"/>
-  <text x="262" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MIC = 8</text>
-  <text x="240" y="248" text-anchor="middle" font-size="12.5" fill="#565b63">首个无肉眼可见生长的孔浓度 = MIC</text>
-  <text x="240" y="272" text-anchor="middle" font-size="11" fill="#565b63">与折点比对判 S / I / R；黏菌素等仅此法可靠</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>肉汤微量稀释法（BMD）</title><desc>96 孔板中抗菌药作 log2 倍比稀释，接种后孵育；生长对照孔浑浊、无菌对照孔清亮方为有效，第一个无肉眼可见生长的孔浓度即 MIC</desc>
+<defs>
+  <marker id="bmdArr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">肉汤微量稀释法（BMD）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">药敏方法</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">药物在 CAMHB 中倍比稀释，第一个无肉眼生长的孔即 MIC</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 96 孔微量板（左上）===== -->
+<rect x="24" y="70" width="94" height="52" rx="5" fill="#f5f7f9" stroke="#e3e7ec"/>
+<g fill="#efece5" stroke="#d7d2c6" stroke-width="0.6">
+  <circle cx="30.5" cy="76" r="2.3"/><circle cx="37.6" cy="76" r="2.3"/><circle cx="44.7" cy="76" r="2.3"/><circle cx="51.8" cy="76" r="2.3"/><circle cx="58.9" cy="76" r="2.3"/><circle cx="66" cy="76" r="2.3"/><circle cx="73.1" cy="76" r="2.3"/><circle cx="80.2" cy="76" r="2.3"/><circle cx="87.3" cy="76" r="2.3"/><circle cx="94.4" cy="76" r="2.3"/><circle cx="101.5" cy="76" r="2.3"/><circle cx="108.6" cy="76" r="2.3"/>
+  <circle cx="30.5" cy="81.8" r="2.3"/><circle cx="37.6" cy="81.8" r="2.3"/><circle cx="44.7" cy="81.8" r="2.3"/><circle cx="51.8" cy="81.8" r="2.3"/><circle cx="58.9" cy="81.8" r="2.3"/><circle cx="66" cy="81.8" r="2.3"/><circle cx="73.1" cy="81.8" r="2.3"/><circle cx="80.2" cy="81.8" r="2.3"/><circle cx="87.3" cy="81.8" r="2.3"/><circle cx="94.4" cy="81.8" r="2.3"/><circle cx="101.5" cy="81.8" r="2.3"/><circle cx="108.6" cy="81.8" r="2.3"/>
+  <circle cx="30.5" cy="87.6" r="2.3"/><circle cx="37.6" cy="87.6" r="2.3"/><circle cx="44.7" cy="87.6" r="2.3"/><circle cx="51.8" cy="87.6" r="2.3"/><circle cx="58.9" cy="87.6" r="2.3"/><circle cx="66" cy="87.6" r="2.3"/><circle cx="73.1" cy="87.6" r="2.3"/><circle cx="80.2" cy="87.6" r="2.3"/><circle cx="87.3" cy="87.6" r="2.3"/><circle cx="94.4" cy="87.6" r="2.3"/><circle cx="101.5" cy="87.6" r="2.3"/><circle cx="108.6" cy="87.6" r="2.3"/>
+  <circle cx="30.5" cy="99.2" r="2.3"/><circle cx="37.6" cy="99.2" r="2.3"/><circle cx="44.7" cy="99.2" r="2.3"/><circle cx="51.8" cy="99.2" r="2.3"/><circle cx="58.9" cy="99.2" r="2.3"/><circle cx="66" cy="99.2" r="2.3"/><circle cx="73.1" cy="99.2" r="2.3"/><circle cx="80.2" cy="99.2" r="2.3"/><circle cx="87.3" cy="99.2" r="2.3"/><circle cx="94.4" cy="99.2" r="2.3"/><circle cx="101.5" cy="99.2" r="2.3"/><circle cx="108.6" cy="99.2" r="2.3"/>
+  <circle cx="30.5" cy="105" r="2.3"/><circle cx="37.6" cy="105" r="2.3"/><circle cx="44.7" cy="105" r="2.3"/><circle cx="51.8" cy="105" r="2.3"/><circle cx="58.9" cy="105" r="2.3"/><circle cx="66" cy="105" r="2.3"/><circle cx="73.1" cy="105" r="2.3"/><circle cx="80.2" cy="105" r="2.3"/><circle cx="87.3" cy="105" r="2.3"/><circle cx="94.4" cy="105" r="2.3"/><circle cx="101.5" cy="105" r="2.3"/><circle cx="108.6" cy="105" r="2.3"/>
+  <circle cx="30.5" cy="110.8" r="2.3"/><circle cx="37.6" cy="110.8" r="2.3"/><circle cx="44.7" cy="110.8" r="2.3"/><circle cx="51.8" cy="110.8" r="2.3"/><circle cx="58.9" cy="110.8" r="2.3"/><circle cx="66" cy="110.8" r="2.3"/><circle cx="73.1" cy="110.8" r="2.3"/><circle cx="80.2" cy="110.8" r="2.3"/><circle cx="87.3" cy="110.8" r="2.3"/><circle cx="94.4" cy="110.8" r="2.3"/><circle cx="101.5" cy="110.8" r="2.3"/><circle cx="108.6" cy="110.8" r="2.3"/>
+  <circle cx="30.5" cy="116.6" r="2.3"/><circle cx="37.6" cy="116.6" r="2.3"/><circle cx="44.7" cy="116.6" r="2.3"/><circle cx="51.8" cy="116.6" r="2.3"/><circle cx="58.9" cy="116.6" r="2.3"/><circle cx="66" cy="116.6" r="2.3"/><circle cx="73.1" cy="116.6" r="2.3"/><circle cx="80.2" cy="116.6" r="2.3"/><circle cx="87.3" cy="116.6" r="2.3"/><circle cx="94.4" cy="116.6" r="2.3"/><circle cx="101.5" cy="116.6" r="2.3"/><circle cx="108.6" cy="116.6" r="2.3"/>
+</g>
+<!-- 被放大的那一行（同一药物的浓度系列） -->
+<g fill="#d8ccb0" stroke="#b0a47c" stroke-width="0.7">
+  <circle cx="30.5" cy="93.4" r="2.3"/><circle cx="37.6" cy="93.4" r="2.3"/><circle cx="44.7" cy="93.4" r="2.3"/><circle cx="51.8" cy="93.4" r="2.3"/><circle cx="58.9" cy="93.4" r="2.3"/><circle cx="66" cy="93.4" r="2.3"/>
+</g>
+<g fill="#ffffff" stroke="#cbc1a8" stroke-width="0.7">
+  <circle cx="73.1" cy="93.4" r="2.3"/><circle cx="80.2" cy="93.4" r="2.3"/><circle cx="87.3" cy="93.4" r="2.3"/><circle cx="94.4" cy="93.4" r="2.3"/><circle cx="101.5" cy="93.4" r="2.3"/><circle cx="108.6" cy="93.4" r="2.3"/>
+</g>
+<rect x="26.6" y="87.8" width="85.4" height="11.2" rx="5.6" fill="none" stroke="#2b6cb0" stroke-width="1.1"/>
+<text x="71" y="134" text-anchor="middle" font-size="9.5" fill="#5c6672">96 孔板 · 每孔约 0.1 mL</text>
+
+<!-- ===== 三步操作（右上）===== -->
+<circle cx="140" cy="80" r="7.5" fill="#1f2733"/><text x="140" y="83.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">1</text>
+<text x="153" y="83.5" font-size="10" fill="#33404f">同一药物沿行作 log₂ 倍比稀释（CAMHB）</text>
+<circle cx="140" cy="100" r="7.5" fill="#1f2733"/><text x="140" y="103.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">2</text>
+<text x="153" y="103.5" font-size="10" fill="#33404f">接种 0.5 麦氏菌液 → 孔内约 5×10⁵ CFU/mL</text>
+<circle cx="140" cy="120" r="7.5" fill="#1f2733"/><text x="140" y="123.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">3</text>
+<text x="153" y="123.5" font-size="10" fill="#33404f">35℃ 空气 18±2 h（VRE、耐苯唑西林葡萄球菌 24 h）</text>
+
+<!-- ===== 放大的一行 ===== -->
+<text x="48" y="150" text-anchor="middle" font-size="9.5" fill="#5c6672">生长对照</text>
+<text x="422" y="150" text-anchor="middle" font-size="9.5" fill="#5c6672">无菌对照</text>
+<!-- 浑浊孔（有生长）：含纽扣状沉淀 -->
+<g stroke="#b0a47c" stroke-width="1.4">
+  <circle cx="48" cy="168" r="13" fill="#d8ccb0"/><circle cx="82" cy="168" r="13" fill="#d8ccb0"/><circle cx="116" cy="168" r="13" fill="#d8ccb0"/>
+  <circle cx="150" cy="168" r="13" fill="#d8ccb0"/><circle cx="184" cy="168" r="13" fill="#ddd2b9"/><circle cx="218" cy="168" r="13" fill="#e4dbc7"/>
+</g>
+<g fill="#a89767">
+  <ellipse cx="48" cy="170" rx="4" ry="2.6"/><ellipse cx="82" cy="170" rx="4" ry="2.6"/><ellipse cx="116" cy="170" rx="3.6" ry="2.4"/>
+  <ellipse cx="150" cy="170" rx="3.4" ry="2.2"/><ellipse cx="184" cy="170" rx="3" ry="2"/><ellipse cx="218" cy="170" rx="2.4" ry="1.7"/>
+</g>
+<!-- 清亮孔（完全抑制） -->
+<g fill="#ffffff" stroke="#cbc1a8" stroke-width="1.4">
+  <circle cx="252" cy="168" r="13"/><circle cx="286" cy="168" r="13"/><circle cx="320" cy="168" r="13"/>
+  <circle cx="354" cy="168" r="13"/><circle cx="388" cy="168" r="13"/><circle cx="422" cy="168" r="13"/>
+</g>
+
+<!-- MIC 指示 -->
+<line x1="252" y1="139" x2="252" y2="152" stroke="#2b6cb0" stroke-width="1.4" marker-end="url(#bmdArr)"/>
+<text x="252" y="134" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">MIC = 8</text>
+
+<!-- 浓度刻度 -->
+<g font-size="10" fill="#5c6672" text-anchor="middle">
+  <text x="48" y="191">0</text><text x="82" y="191">0.25</text><text x="116" y="191">0.5</text><text x="150" y="191">1</text>
+  <text x="184" y="191">2</text><text x="218" y="191">4</text><text x="252" y="191">8</text><text x="286" y="191">16</text>
+  <text x="320" y="191">32</text><text x="354" y="191">64</text><text x="388" y="191">128</text>
+</g>
+<text x="456" y="191" text-anchor="end" font-size="9.5" fill="#6b7684">µg/mL</text>
+
+<!-- 图例 -->
+<circle cx="152" cy="200" r="5" fill="#d8ccb0" stroke="#b0a47c"/><ellipse cx="152" cy="201" rx="1.8" ry="1.2" fill="#a89767"/>
+<text x="161" y="203.5" font-size="9.5" fill="#5c6672">浑浊/纽扣沉淀＝生长</text>
+<circle cx="298" cy="200" r="5" fill="#ffffff" stroke="#cbc1a8"/>
+<text x="307" y="203.5" font-size="9.5" fill="#5c6672">清亮＝完全抑制</text>
+
+<!-- 判读要点 -->
+<rect x="24" y="209" width="432" height="41" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="221" font-size="9.5" fill="#33404f">判读前提：生长对照孔须浑浊、无菌对照孔须清亮，否则整板作废</text>
+<text x="32" y="233.5" font-size="9.5" fill="#5c6672">单个跳孔取最高孔 MIC；跳孔多于一个不报告；SXT 拖尾按抑制 &gt;80% 判</text>
+<text x="32" y="246" font-size="9.5" fill="#5c6672">介质调整：达托霉素 Ca²⁺ 调至 50 mg/L；苯唑西林加 2% NaCl；头孢地尔用缺铁 CAMHB</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">完全抑制肉眼可见生长的最低孔浓度即 MIC</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="285" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　药敏参考法：建折点·耐药监测·核对异常结果；黏菌素扩散差，须用 BMD 或 CBDE</text>
 </svg>

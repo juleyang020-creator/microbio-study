@@ -1,32 +1,74 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>头孢地尔药敏（缺铁 CAMHB）</title><desc>头孢地尔为铁载体头孢，须用缺铁阳离子调节 MH 肉汤 BMD，常规培养基铁充足会假耐药</desc>
-  <defs>
-    <linearGradient id="fdcT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8ccb0"/><stop offset="1" stop-color="#cdbf9e"/></linearGradient>
-    <linearGradient id="fdcC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbfaf8"/></linearGradient>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">头孢地尔药敏（缺铁 CAMHB）</text>
-  <text x="240" y="49" text-anchor="middle" font-size="11" fill="#565b63">铁载体头孢，测试培养基须铁耗竭，否则假耐药</text>
-  <!-- 左：常规 MHB（铁充足）→ 假耐药（全浊） -->
-  <text x="120" y="82" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b0653a">常规 MHB（铁充足）</text>
-  <g>
-    <circle cx="60" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
-    <circle cx="96" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
-    <circle cx="132" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
-    <circle cx="168" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
-  </g>
-  <text x="114" y="150" text-anchor="middle" font-size="10.5" fill="#b0653a">全部生长 → 误判耐药 ✗</text>
-  <!-- 右：缺铁 CAMHB → 真实 MIC -->
-  <text x="360" y="82" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4a7a52">缺铁 ID-CAMHB</text>
-  <g>
-    <circle cx="300" cy="118" r="15" fill="url(#fdcT)" stroke="#b0a47c" stroke-width="1.3"/>
-    <circle cx="336" cy="118" r="15" fill="#e6dcc6" stroke="#bcae8f" stroke-width="1.3"/>
-    <circle cx="372" cy="118" r="15" fill="url(#fdcC)" stroke="#cbc1a8" stroke-width="1.3"/>
-    <circle cx="408" cy="118" r="15" fill="url(#fdcC)" stroke="#cbc1a8" stroke-width="1.3"/>
-  </g>
-  <line x1="372" y1="138" x2="372" y2="150" stroke="#5a80b0" stroke-width="1.4"/>
-  <text x="360" y="166" text-anchor="middle" font-size="10.5" fill="#4a7a52">真实 MIC，正确判读 ✓</text>
-  <text x="240" y="212" text-anchor="middle" font-size="12.5" fill="#565b63">缺铁诱导细菌铁载体转运系统主动摄入头孢地尔</text>
-  <text x="240" y="238" text-anchor="middle" font-size="11" fill="#565b63">回补 Ca/Mg/Zn；以铜绿假单胞菌 ATCC 27853 质控</text>
-  <text x="240" y="264" text-anchor="middle" font-size="11" fill="#565b63">见 CLSI M100 附录 H；纸片/梯度法不可靠</text>
+<title>头孢地尔药敏（缺铁 CAMHB）</title><desc>头孢地尔为铁载体头孢，经革兰阴性菌铁转运系统入胞；常规 CAMHB 铁充足会下调铁转运体并竞争干扰药–Fe 复合物的摄取，使 MIC 假性升高，肉汤微量稀释须用缺铁 CAMHB（ID-CAMHB），以首个清亮孔为 MIC</desc>
+<defs>
+  <marker id="cfArr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="cfBlk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+  <marker id="cfMic" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2b6cb0"/></marker>
+  <linearGradient id="cfTurbid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8ccb0"/><stop offset="1" stop-color="#cdbf9e"/></linearGradient>
+  <linearGradient id="cfClear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbfaf8"/></linearGradient>
+</defs>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">头孢地尔药敏（缺铁 CAMHB）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">药敏试验方法</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">铁载体头孢借细菌铁转运体入胞 → 培养基铁多少直接改变 MIC</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="240" y1="64" x2="240" y2="200" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 左：❶ 常规 CAMHB（铁充足）→ 假耐药 ===== -->
+<circle cx="31.5" cy="68" r="7.5" fill="#1f2733"/>
+<text x="31.5" y="71.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="44" y="72" font-size="10" font-weight="700" fill="#33404f">常规 CAMHB（铁充足）</text>
+<rect x="40" y="80" width="54" height="14" rx="7" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="67" y="90.5" text-anchor="middle" font-size="9.5" fill="#a3332f">头孢地尔</text>
+<text x="118" y="90" font-size="9.5" fill="#8a5a2f">游离 Fe³⁺ 过量</text>
+<g fill="#b5793a"><circle cx="120" cy="100.5" r="3.2"/><circle cx="138" cy="100.5" r="3.2"/><circle cx="156" cy="100.5" r="3.2"/><circle cx="174" cy="100.5" r="3.2"/><circle cx="192" cy="100.5" r="3.2"/></g>
+<rect x="24" y="110" width="212" height="16" fill="#f7ecd4"/>
+<g fill="#d9b96a"><circle cx="30" cy="110" r="2.4"/><circle cx="42" cy="110" r="2.4"/><circle cx="54" cy="110" r="2.4"/><circle cx="66" cy="110" r="2.4"/><circle cx="78" cy="110" r="2.4"/><circle cx="90" cy="110" r="2.4"/><circle cx="102" cy="110" r="2.4"/><circle cx="114" cy="110" r="2.4"/><circle cx="126" cy="110" r="2.4"/><circle cx="138" cy="110" r="2.4"/><circle cx="150" cy="110" r="2.4"/><circle cx="162" cy="110" r="2.4"/><circle cx="174" cy="110" r="2.4"/><circle cx="186" cy="110" r="2.4"/><circle cx="198" cy="110" r="2.4"/><circle cx="210" cy="110" r="2.4"/><circle cx="222" cy="110" r="2.4"/><circle cx="234" cy="110" r="2.4"/>
+<circle cx="30" cy="126" r="2.4"/><circle cx="42" cy="126" r="2.4"/><circle cx="54" cy="126" r="2.4"/><circle cx="66" cy="126" r="2.4"/><circle cx="78" cy="126" r="2.4"/><circle cx="90" cy="126" r="2.4"/><circle cx="102" cy="126" r="2.4"/><circle cx="114" cy="126" r="2.4"/><circle cx="126" cy="126" r="2.4"/><circle cx="138" cy="126" r="2.4"/><circle cx="150" cy="126" r="2.4"/><circle cx="162" cy="126" r="2.4"/><circle cx="174" cy="126" r="2.4"/><circle cx="186" cy="126" r="2.4"/><circle cx="198" cy="126" r="2.4"/><circle cx="210" cy="126" r="2.4"/><circle cx="222" cy="126" r="2.4"/><circle cx="234" cy="126" r="2.4"/></g>
+<rect x="60" y="106" width="16" height="24" rx="3" fill="#eceff2" stroke="#9aa5b1" stroke-width="1.2"/>
+<line x1="67" y1="96" x2="67" y2="103" stroke="#c2413d" stroke-width="1.6" marker-end="url(#cfBlk)"/>
+<text x="84" y="122" font-size="9.5" fill="#6b7684">铁转运体↓</text>
+<text x="130" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">高铁下调转运体并竞争摄取，入胞↓</text>
+<g stroke="#b0a47c" stroke-width="1.3"><circle cx="62" cy="166" r="11" fill="url(#cfTurbid)"/><circle cx="96" cy="166" r="11" fill="url(#cfTurbid)"/><circle cx="130" cy="166" r="11" fill="url(#cfTurbid)"/><circle cx="164" cy="166" r="11" fill="url(#cfTurbid)"/><circle cx="198" cy="166" r="11" fill="url(#cfTurbid)"/></g>
+<g font-size="9.5" fill="#5c6672" text-anchor="middle"><text x="62" y="192">GC</text><text x="96" y="192">0.5</text><text x="130" y="192">1</text><text x="164" y="192">2</text><text x="198" y="192">4</text></g>
+<text x="130" y="206" text-anchor="middle" font-size="9.5" fill="#a3332f">全孔浑浊 → MIC 超范围，假耐药 ✗</text>
+
+<!-- ===== 右：❷ 缺铁 ID-CAMHB → 真实 MIC ===== -->
+<circle cx="251.5" cy="68" r="7.5" fill="#1f2733"/>
+<text x="251.5" y="71.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="264" y="72" font-size="10" font-weight="700" fill="#33404f">缺铁 ID-CAMHB（正确）</text>
+<rect x="260" y="80" width="54" height="14" rx="7" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="287" y="90.5" text-anchor="middle" font-size="9.5" fill="#a3332f">头孢地尔</text>
+<line x1="314" y1="87" x2="318" y2="87" stroke="#c2413d" stroke-width="1.4"/>
+<circle cx="322" cy="87" r="4" fill="#b5793a"/>
+<text x="330" y="90" font-size="9.5" fill="#8a5a2f">螯合 Fe³⁺</text>
+<circle cx="346" cy="100.5" r="3.2" fill="#b5793a"/>
+<text x="356" y="104" font-size="9.5" fill="#8a5a2f">游离 Fe³⁺ 极低</text>
+<rect x="244" y="110" width="212" height="16" fill="#f7ecd4"/>
+<g fill="#d9b96a"><circle cx="250" cy="110" r="2.4"/><circle cx="262" cy="110" r="2.4"/><circle cx="274" cy="110" r="2.4"/><circle cx="286" cy="110" r="2.4"/><circle cx="298" cy="110" r="2.4"/><circle cx="310" cy="110" r="2.4"/><circle cx="322" cy="110" r="2.4"/><circle cx="334" cy="110" r="2.4"/><circle cx="346" cy="110" r="2.4"/><circle cx="358" cy="110" r="2.4"/><circle cx="370" cy="110" r="2.4"/><circle cx="382" cy="110" r="2.4"/><circle cx="394" cy="110" r="2.4"/><circle cx="406" cy="110" r="2.4"/><circle cx="418" cy="110" r="2.4"/><circle cx="430" cy="110" r="2.4"/><circle cx="442" cy="110" r="2.4"/><circle cx="454" cy="110" r="2.4"/>
+<circle cx="250" cy="126" r="2.4"/><circle cx="262" cy="126" r="2.4"/><circle cx="274" cy="126" r="2.4"/><circle cx="286" cy="126" r="2.4"/><circle cx="298" cy="126" r="2.4"/><circle cx="310" cy="126" r="2.4"/><circle cx="322" cy="126" r="2.4"/><circle cx="334" cy="126" r="2.4"/><circle cx="346" cy="126" r="2.4"/><circle cx="358" cy="126" r="2.4"/><circle cx="370" cy="126" r="2.4"/><circle cx="382" cy="126" r="2.4"/><circle cx="394" cy="126" r="2.4"/><circle cx="406" cy="126" r="2.4"/><circle cx="418" cy="126" r="2.4"/><circle cx="430" cy="126" r="2.4"/><circle cx="442" cy="126" r="2.4"/><circle cx="454" cy="126" r="2.4"/></g>
+<rect x="280" y="106" width="16" height="24" rx="3" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<line x1="287" y1="96" x2="287" y2="136" stroke="#33404f" stroke-width="1.4" marker-end="url(#cfArr)"/>
+<text x="300" y="122" font-size="9.5" fill="#1f4e79">铁转运体</text>
+<text x="350" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">药–Fe 复合物经转运体入胞</text>
+<line x1="384" y1="146" x2="384" y2="152" stroke="#2b6cb0" stroke-width="1.4" marker-end="url(#cfMic)"/>
+<g stroke-width="1.3"><circle cx="282" cy="166" r="11" fill="url(#cfTurbid)" stroke="#b0a47c"/><circle cx="316" cy="166" r="11" fill="url(#cfTurbid)" stroke="#b0a47c"/><circle cx="350" cy="166" r="11" fill="#e6dcc6" stroke="#bcae8f"/><circle cx="384" cy="166" r="11" fill="url(#cfClear)" stroke="#cbc1a8"/><circle cx="418" cy="166" r="11" fill="url(#cfClear)" stroke="#cbc1a8"/></g>
+<circle cx="350" cy="166" r="3" fill="#cdbf9e"/>
+<g font-size="9.5" fill="#5c6672" text-anchor="middle"><text x="282" y="192">GC</text><text x="316" y="192">0.5</text><text x="350" y="192">1</text><text x="384" y="192">2</text><text x="418" y="192">4</text></g>
+<text x="350" y="206" text-anchor="middle" font-size="9.5" fill="#1f4e79">生长明显减少（纽扣≤1mm）即终点 → MIC 1 µg/mL ✓</text>
+
+<!-- 判读注意 -->
+<rect x="24" y="212" width="432" height="38" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="224" font-size="9.5" fill="#33404f">判读前提　生长对照孔须充分生长（纽扣 ≥2 mm 或明显浑浊）</text>
+<text x="36" y="236" font-size="9.5" fill="#5c6672">拖尾（纽扣 &gt;1 mm）不算终点，多见于不动杆菌属与铜绿假单胞菌</text>
+<text x="36" y="248" font-size="9.5" fill="#5c6672">纸片扩散法（30 µg）用普通 MHA，不需缺铁处理</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">铁充足即假耐药：头孢地尔 BMD 必须用缺铁 CAMHB</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">制备</tspan>　树脂去铁 → 回补 Ca/Mg/Zn，残铁 ≤0.03 mg/L　<tspan font-weight="700" fill="#33404f">质控</tspan>　铜绿假单胞菌 ATCC 27853</text>
 </svg>

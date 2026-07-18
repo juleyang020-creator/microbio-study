@@ -1,27 +1,90 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>纸片敏感试验（杆菌肽 / 新生霉素）</title><desc>含药纸片贴于菌苔，有抑菌圈为敏感，无圈为耐药</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">纸片敏感试验（杆菌肽 / 新生霉素）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">含药纸片贴于菌苔，有抑菌圈为敏感，无圈为耐药</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>杆菌肽 / 新生霉素纸片敏感试验</title><desc>含药纸片在琼脂中扩散成浓度梯度：敏感株抑菌圈大，耐药株无圈或仅小圈。杆菌肽 0.04 U 用于推定 A 群化脓链球菌，新生霉素 5 µg 用于推定腐生葡萄球菌</desc>
+<defs>
+  <marker id="tip" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#6b7684"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 敏感(有抑菌圈) -->
-  <g>
-    <circle cx="148" cy="158" r="78" fill="#efe7d2" stroke="#c8b887" stroke-width="2.5"/>
-    <!-- 菌苔纹理 -->
-    <circle cx="148" cy="158" r="78" fill="#d9cba2" opacity="0.5"/>
-    <!-- 抑菌圈(清亮) -->
-    <circle cx="148" cy="158" r="40" fill="#f7f3e6"/>
-    <!-- 纸片 -->
-    <circle cx="148" cy="158" r="9" fill="#ffffff" stroke="#565b63" stroke-width="1.2"/>
-    <text x="148" y="252" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a52">敏感（有抑菌圈）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">杆菌肽 / 新生霉素纸片敏感试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">纸片药物扩散成浓度梯度 → 敏感株抑菌圈大，耐药株无圈或仅小圈</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 耐药(无圈) -->
-  <g>
-    <circle cx="332" cy="158" r="78" fill="#d9cba2" stroke="#c8b887" stroke-width="2.5"/>
-    <circle cx="332" cy="158" r="9" fill="#ffffff" stroke="#565b63" stroke-width="1.2"/>
-    <text x="332" y="252" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">耐药（菌长至纸片边）</text>
-  </g>
+<!-- 两组之间的竖分隔 -->
+<line x1="240" y1="70" x2="240" y2="232" stroke="#e3e7ec"/>
 
-  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#565b63">杆菌肽：A 群链球菌敏感（与其他群区分）；新生霉素：腐生葡萄球菌耐药（与其他凝固酶阴性葡萄球菌区分）</text>
+<!-- ===== ❶ 杆菌肽 ===== -->
+<circle cx="36" cy="82" r="8" fill="#1f2733"/>
+<text x="36" y="85.5" text-anchor="middle" font-size="9.5" fill="#ffffff">1</text>
+<text x="50" y="86" font-size="10.5" font-weight="700" fill="#1f2733">杆菌肽 0.04 U · 血平板</text>
+<text x="50" y="100" font-size="9.5" fill="#5c6672">35℃ 5% CO₂ 18–24 h</text>
+
+<!-- 1A 敏感：血平板上出现透明抑菌圈 -->
+<text x="76" y="116" text-anchor="middle" font-size="9.5" fill="#5c6672">透明抑菌圈</text>
+<line x1="76" y1="119" x2="76" y2="136" stroke="#6b7684" stroke-width="1" marker-end="url(#tip)"/>
+<circle cx="76" cy="154" r="30" fill="#b8434e" stroke="#7d2530" stroke-width="1.6"/>
+<circle cx="76" cy="154" r="25.5" fill="none" stroke="#ebe4d9" stroke-width="9"/>
+<circle cx="76" cy="154" r="13" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.16"/>
+<circle cx="76" cy="154" r="17" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.10"/>
+<circle cx="76" cy="154" r="21" fill="none" stroke="#ffffff" stroke-width="1.1" stroke-dasharray="3,3" opacity="0.8"/>
+<circle cx="76" cy="154" r="8" fill="#ffffff" stroke="#5c6672" stroke-width="1.1"/>
+<text x="76" y="157.5" text-anchor="middle" font-size="9.5" fill="#33404f">A</text>
+<text x="76" y="197" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2f8f5b">敏感 S</text>
+<text x="76" y="209" text-anchor="middle" font-size="9.5" fill="#33404f">有圈 ≥10 mm</text>
+<rect x="28" y="213" width="96" height="16" rx="8" fill="#e8f3ef" stroke="#2f8f83"/>
+<text x="76" y="224" text-anchor="middle" font-size="9.5" fill="#1f4e79">→ 推定 A 群链球菌</text>
+
+<!-- 1B 耐药：菌苔长满至纸片边 -->
+<circle cx="184" cy="154" r="30" fill="#b8434e" stroke="#7d2530" stroke-width="1.6"/>
+<circle cx="184" cy="154" r="29" fill="#ebe4d9"/>
+<circle cx="184" cy="154" r="8" fill="#ffffff" stroke="#5c6672" stroke-width="1.1"/>
+<text x="184" y="157.5" text-anchor="middle" font-size="9.5" fill="#33404f">A</text>
+<text x="184" y="197" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c2413d">耐药 R</text>
+<text x="184" y="209" text-anchor="middle" font-size="9.5" fill="#33404f">菌苔长至片边</text>
+<rect x="136" y="213" width="96" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="184" y="224" text-anchor="middle" font-size="9.5" fill="#a3332f">→ 非 A 群链球菌</text>
+
+<!-- ===== ❷ 新生霉素 ===== -->
+<circle cx="256" cy="82" r="8" fill="#1f2733"/>
+<text x="256" y="85.5" text-anchor="middle" font-size="9.5" fill="#ffffff">2</text>
+<text x="270" y="86" font-size="10.5" font-weight="700" fill="#1f2733">新生霉素 5 µg · MHA</text>
+<text x="270" y="100" font-size="9.5" fill="#5c6672">35℃ 24 h ｜ 靶点 DNA 旋转酶 B 亚基</text>
+
+<!-- 2A 敏感：大圈 -->
+<text x="296" y="116" text-anchor="middle" font-size="9.5" fill="#5c6672">量直径判读</text>
+<line x1="296" y1="119" x2="296" y2="131" stroke="#6b7684" stroke-width="1" marker-end="url(#tip)"/>
+<circle cx="296" cy="154" r="30" fill="#ddd2b2" stroke="#b8a879" stroke-width="1.6"/>
+<circle cx="296" cy="154" r="25.5" fill="none" stroke="#f6f2e6" stroke-width="9"/>
+<circle cx="296" cy="154" r="13" fill="none" stroke="#8b7f5a" stroke-width="1" opacity="0.26"/>
+<circle cx="296" cy="154" r="17" fill="none" stroke="#8b7f5a" stroke-width="1" opacity="0.16"/>
+<circle cx="296" cy="154" r="21" fill="none" stroke="#6b7684" stroke-width="1.1" stroke-dasharray="3,3" opacity="0.85"/>
+<circle cx="296" cy="154" r="8" fill="#ffffff" stroke="#5c6672" stroke-width="1.1"/>
+<text x="296" y="157.5" text-anchor="middle" font-size="9.5" fill="#33404f">NB</text>
+<text x="296" y="197" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2f8f5b">敏感 S</text>
+<text x="296" y="209" text-anchor="middle" font-size="9.5" fill="#33404f">大圈 ≥17 mm</text>
+<rect x="248" y="213" width="96" height="16" rx="8" fill="#e8f3ef" stroke="#2f8f83"/>
+<text x="296" y="224" text-anchor="middle" font-size="9.5" fill="#1f4e79">→ 非腐生葡萄球菌</text>
+
+<!-- 2B 耐药：仅小圈 -->
+<circle cx="404" cy="154" r="30" fill="#ddd2b2" stroke="#b8a879" stroke-width="1.6"/>
+<circle cx="404" cy="154" r="21.5" fill="none" stroke="#f6f2e6" stroke-width="17"/>
+<circle cx="404" cy="154" r="13" fill="none" stroke="#6b7684" stroke-width="1.1" stroke-dasharray="3,3" opacity="0.85"/>
+<circle cx="404" cy="154" r="8" fill="#ffffff" stroke="#5c6672" stroke-width="1.1"/>
+<text x="404" y="157.5" text-anchor="middle" font-size="9.5" fill="#33404f">NB</text>
+<text x="404" y="197" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c2413d">耐药 R</text>
+<text x="404" y="209" text-anchor="middle" font-size="9.5" fill="#33404f">小圈 ≤16 mm</text>
+<rect x="356" y="213" width="96" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="404" y="224" text-anchor="middle" font-size="9.5" fill="#a3332f">→ 腐生葡萄球菌</text>
+
+<!-- 判读要点 -->
+<text x="240" y="243" text-anchor="middle" font-size="9.5" fill="#5c6672">圈缘＝药物浓度降到该菌 MIC 处｜杆菌肽只看有无圈，新生霉素须量直径</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">杆菌肽看有无圈：S 提示 A 群链球菌；新生霉素量直径：≤16 mm 提示腐生葡萄球菌</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="285" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　杆菌肽 S＝化脓链球菌，R＝无乳链球菌；新生霉素 R＝腐生葡萄球菌</text>
 </svg>

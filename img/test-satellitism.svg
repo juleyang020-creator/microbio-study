@@ -1,22 +1,90 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>卫星现象试验</title><desc>金黄色葡萄球菌划线供给 V 因子(NAD)，嗜血杆菌沿其两侧呈卫星样生长</desc>
-  <defs>
-    <radialGradient id="plate" cx="0.5" cy="0.42" r="0.62"><stop offset="0" stop-color="#f3eddd"/><stop offset="1" stop-color="#e4dcc4"/></radialGradient>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">卫星现象试验</text>
-  <text x="240" y="49" text-anchor="middle" font-size="11" fill="#565b63">金葡菌供给 V 因子(NAD)，嗜血杆菌沿划线卫星样生长</text>
-  <!-- 平板 -->
-  <circle cx="240" cy="168" r="108" fill="url(#plate)" stroke="#b8ac84" stroke-width="2"/>
-  <!-- 金葡菌中央划线 -->
-  <line x1="240" y1="72" x2="240" y2="264" stroke="#d8b24a" stroke-width="7" stroke-linecap="round"/>
-  <text x="240" y="285" text-anchor="middle" font-size="10.5" fill="#8a7a3a">金黄色葡萄球菌划线</text>
-  <!-- 卫星菌落：近划线大、远划线小 -->
-  <g fill="#cdbf9e" stroke="#a99a72" stroke-width="0.8">
-    <circle cx="212" cy="110" r="5.5"/><circle cx="196" cy="132" r="4.5"/><circle cx="184" cy="158" r="3.6"/><circle cx="180" cy="188" r="2.8"/><circle cx="190" cy="214" r="2.2"/>
-    <circle cx="268" cy="112" r="5.5"/><circle cx="286" cy="134" r="4.5"/><circle cx="298" cy="160" r="3.6"/><circle cx="300" cy="190" r="2.8"/><circle cx="290" cy="216" r="2.2"/>
-    <circle cx="214" cy="150" r="4.8"/><circle cx="266" cy="150" r="4.8"/><circle cx="216" cy="196" r="3.2"/><circle cx="264" cy="196" r="3.2"/>
-  </g>
-  <text x="240" y="160" text-anchor="middle" font-size="10" fill="#7a6f4e">卫星菌落</text>
-  <text x="240" y="176" text-anchor="middle" font-size="9.5" fill="#8a8172">近划线大、远则小</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>卫星试验（X/V 因子）</title><desc>血琼脂上金黄色葡萄球菌划线产溶血素裂解红细胞，释出 X 因子（血红素）与 V 因子（NAD），嗜血杆菌沿划线两侧呈近大远小的卫星样生长</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">卫星试验（X/V 因子）</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef1f5"/>
+<text x="424" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">鉴别试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">金葡菌溶血释出 X／V 因子，嗜血杆菌仅在近旁生长</text>
+<text x="456" y="46" text-anchor="end" font-size="9.5" fill="#6b7684">35～37℃、5%～7% CO₂、5% 羊血琼脂</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="196" y1="70" x2="196" y2="250" stroke="#e7e4dd"/>
+
+<!-- ===== 左栏：阳性平板 ===== -->
+<text x="24" y="76" font-size="10" font-weight="600" fill="#1f2733">① 阳性：卫星现象</text>
+
+<circle cx="109" cy="155" r="60" fill="#a8434a" stroke="#7d2f34" stroke-width="1.6"/>
+<!-- β 溶血透明带 -->
+<rect x="87" y="104" width="44" height="102" rx="22" fill="#f2e8cf" opacity="0.6"/>
+<!-- 金葡菌划线 -->
+<line x1="109" y1="104" x2="109" y2="206" stroke="#e0bd5c" stroke-width="6" stroke-linecap="round"/>
+<!-- 卫星菌落：近划线大，渐远渐小 -->
+<g fill="#f0ece0" stroke="#a8a294" stroke-width="0.7">
+  <circle cx="85" cy="112" r="4.2"/><circle cx="85" cy="132" r="4.2"/><circle cx="85" cy="152" r="4.2"/><circle cx="85" cy="172" r="4.2"/><circle cx="85" cy="192" r="4.2"/>
+  <circle cx="133" cy="112" r="4.2"/><circle cx="133" cy="132" r="4.2"/><circle cx="133" cy="152" r="4.2"/><circle cx="133" cy="172" r="4.2"/><circle cx="133" cy="192" r="4.2"/>
+  <circle cx="71" cy="128" r="2.8"/><circle cx="71" cy="152" r="2.8"/><circle cx="71" cy="176" r="2.8"/>
+  <circle cx="147" cy="128" r="2.8"/><circle cx="147" cy="152" r="2.8"/><circle cx="147" cy="176" r="2.8"/>
+  <circle cx="59" cy="140" r="1.6"/><circle cx="59" cy="160" r="1.6"/><circle cx="59" cy="180" r="1.6"/>
+  <circle cx="159" cy="140" r="1.6"/><circle cx="159" cy="160" r="1.6"/><circle cx="159" cy="180" r="1.6"/>
+</g>
+
+<!-- 左栏图例 -->
+<rect x="28" y="222" width="14" height="5" rx="2.5" fill="#e8c86a" stroke="#b9a05a" stroke-width="0.8"/>
+<text x="48" y="229" font-size="9.5" fill="#5c6672">金葡菌划线（β 溶血）</text>
+<circle cx="34" cy="239" r="3.5" fill="#f0ece0" stroke="#a8a294" stroke-width="0.7"/>
+<text x="48" y="242" font-size="9.5" fill="#5c6672">卫星菌落：近大、远小至不长</text>
+<text x="24" y="256" font-size="9.5" fill="#8a6d1f">注意：肠球菌、酵母菌亦可致卫星</text>
+
+<!-- ===== 右栏上：因子来源 ===== -->
+<text x="204" y="76" font-size="10" font-weight="600" fill="#1f2733">② 因子从何而来</text>
+<rect x="202" y="82" width="254" height="84" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+
+<g fill="#e8c86a" stroke="#b9a05a" stroke-width="0.8">
+  <circle cx="222" cy="106" r="4.5"/><circle cx="232" cy="104" r="4.5"/><circle cx="226" cy="116" r="4.5"/><circle cx="236" cy="114" r="4.5"/>
+</g>
+<text x="228" y="134" text-anchor="middle" font-size="9.5" fill="#5c6672">金葡菌</text>
+
+<text x="256" y="103" text-anchor="middle" font-size="9.5" fill="#5c6672">溶血素</text>
+<line x1="244" y1="112" x2="268" y2="112" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+
+<path d="M285,101 a9,9 0 0,0 0,18 z" fill="#c0484c" stroke="#8f3236" stroke-width="0.8"/>
+<path d="M291,101 a9,9 0 0,1 0,18 z" fill="#c0484c" stroke="#8f3236" stroke-width="0.8"/>
+<circle cx="286" cy="96" r="1.6" fill="#c0484c"/><circle cx="291" cy="124" r="1.6" fill="#c0484c"/>
+<text x="288" y="134" text-anchor="middle" font-size="9.5" fill="#5c6672">红细胞裂解</text>
+
+<line x1="301" y1="106" x2="330" y2="101" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<line x1="301" y1="116" x2="330" y2="123" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+
+<rect x="334" y="90" width="116" height="18" rx="9" fill="#f7ecd4" stroke="#d9b96a"/>
+<text x="392" y="103" text-anchor="middle" font-size="9.5" fill="#8a6d1f">X 因子（血红素）</text>
+<rect x="334" y="116" width="116" height="18" rx="9" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="392" y="129" text-anchor="middle" font-size="9.5" fill="#1f4e79">V 因子（NAD）</text>
+
+<text x="210" y="148" font-size="9.5" fill="#5c6672">血琼脂已含 X 因子、游离 V 因子少 → 主要看 V 因子</text>
+<text x="210" y="160" font-size="9.5" fill="#5c6672">金葡菌还沿划线自身分泌 NAD，不只靠溶血释放</text>
+
+<!-- ===== 右栏下：阴性 ===== -->
+<rect x="202" y="174" width="254" height="74" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="212" y="188" font-size="9.5" font-weight="600" fill="#1f2733">③ 阴性</text>
+
+<circle cx="240" cy="218" r="24" fill="#a8434a" stroke="#7d2f34" stroke-width="1.2"/>
+<rect x="231" y="198" width="18" height="40" rx="9" fill="#f2e8cf" opacity="0.6"/>
+<line x1="240" y1="199" x2="240" y2="237" stroke="#e0bd5c" stroke-width="3.5" stroke-linecap="round"/>
+<g fill="#f0ece0" stroke="#a8a294" stroke-width="0.6">
+  <circle cx="226" cy="203" r="2.2"/><circle cx="255" cy="203" r="2.2"/>
+  <circle cx="220" cy="217" r="2.2"/><circle cx="260" cy="217" r="2.2"/>
+  <circle cx="226" cy="231" r="2.2"/><circle cx="255" cy="231" r="2.2"/>
+  <circle cx="240" cy="196" r="2.2"/><circle cx="240" cy="240" r="2.2"/>
+</g>
+<text x="278" y="205" font-size="9.5" fill="#33404f">菌落大小与距离无关</text>
+<text x="278" y="219" font-size="9.5" fill="#5c6672">→ 该菌不依赖 V 因子生长</text>
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">卫星现象阳性 = 该菌自身缺 V 因子，须靠邻近菌供给</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="23" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="285" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　嗜血杆菌属推测性鉴定（非常规首选）；确证靠卟啉试验或 MALDI-TOF</text>
 </svg>

@@ -1,90 +1,105 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 452" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>VITEK 2 鉴定卡原理与选卡</title><desc>64 孔密闭塑卡，比色 / 荧光生化底物 + AES 专家系统自动鉴定</desc>
-  <rect width="480" height="452" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">VITEK 2 鉴定卡原理与选卡</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">64 孔密闭塑卡，比色 / 荧光生化底物 + AES 专家系统自动鉴定</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 364" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>VITEK 2 鉴定卡原理与选卡总览</title><desc>鉴定卡各微孔预置不同生化底物，密闭温育中每 15 min 动力学读数判各孔阴阳，形成生化谱与数据库比对，输出菌名及可信度；卡型按菌群与生长需求选择，菌悬液浊度随卡型不同</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="364" fill="#ffffff"/>
 
-  <!-- ===== 64 孔卡示意 ===== -->
-  <text x="96" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#2e6b66">64 孔生化卡</text>
-  <rect x="36" y="84" width="120" height="120" rx="6" fill="#faf9f5" stroke="#c8b887" stroke-width="2"/>
-  <g>
-    <!-- 8x8 微孔，部分着色示反应阴阳 -->
-    <!-- 行列循环用显式小圆 -->
-    <g fill="#e7decb" stroke="#cabf9f" stroke-width="0.6">
-      <circle cx="50" cy="98" r="5"/><circle cx="64" cy="98" r="5"/><circle cx="78" cy="98" r="5"/><circle cx="92" cy="98" r="5"/><circle cx="106" cy="98" r="5"/><circle cx="120" cy="98" r="5"/><circle cx="134" cy="98" r="5"/><circle cx="148" cy="98" r="5"/>
-      <circle cx="50" cy="112" r="5"/><circle cx="64" cy="112" r="5"/><circle cx="78" cy="112" r="5"/><circle cx="92" cy="112" r="5"/><circle cx="106" cy="112" r="5"/><circle cx="120" cy="112" r="5"/><circle cx="134" cy="112" r="5"/><circle cx="148" cy="112" r="5"/>
-      <circle cx="50" cy="126" r="5"/><circle cx="64" cy="126" r="5"/><circle cx="78" cy="126" r="5"/><circle cx="92" cy="126" r="5"/><circle cx="106" cy="126" r="5"/><circle cx="120" cy="126" r="5"/><circle cx="134" cy="126" r="5"/><circle cx="148" cy="126" r="5"/>
-      <circle cx="50" cy="140" r="5"/><circle cx="64" cy="140" r="5"/><circle cx="78" cy="140" r="5"/><circle cx="92" cy="140" r="5"/><circle cx="106" cy="140" r="5"/><circle cx="120" cy="140" r="5"/><circle cx="134" cy="140" r="5"/><circle cx="148" cy="140" r="5"/>
-      <circle cx="50" cy="154" r="5"/><circle cx="64" cy="154" r="5"/><circle cx="78" cy="154" r="5"/><circle cx="92" cy="154" r="5"/><circle cx="106" cy="154" r="5"/><circle cx="120" cy="154" r="5"/><circle cx="134" cy="154" r="5"/><circle cx="148" cy="154" r="5"/>
-      <circle cx="50" cy="168" r="5"/><circle cx="64" cy="168" r="5"/><circle cx="78" cy="168" r="5"/><circle cx="92" cy="168" r="5"/><circle cx="106" cy="168" r="5"/><circle cx="120" cy="168" r="5"/><circle cx="134" cy="168" r="5"/><circle cx="148" cy="168" r="5"/>
-      <circle cx="50" cy="182" r="5"/><circle cx="64" cy="182" r="5"/><circle cx="78" cy="182" r="5"/><circle cx="92" cy="182" r="5"/><circle cx="106" cy="182" r="5"/><circle cx="120" cy="182" r="5"/><circle cx="134" cy="182" r="5"/><circle cx="148" cy="182" r="5"/>
-    </g>
-    <!-- 着色覆盖：黄(产酸)/紫(脱羧)/蓝(产碱)/荧光绿 -->
-    <g stroke="#0000001a" stroke-width="0.6">
-      <circle cx="64" cy="98" r="5" fill="#cdb85f"/><circle cx="106" cy="98" r="5" fill="#9d7fb4"/><circle cx="148" cy="112" r="5" fill="#cdb85f"/>
-      <circle cx="50" cy="126" r="5" fill="#2f6bb0"/><circle cx="92" cy="126" r="5" fill="#cdb85f"/><circle cx="134" cy="140" r="5" fill="#9d7fb4"/>
-      <circle cx="64" cy="154" r="5" fill="#3f9e5a"/><circle cx="120" cy="154" r="5" fill="#cdb85f"/><circle cx="78" cy="168" r="5" fill="#cf4f86"/>
-      <circle cx="106" cy="182" r="5" fill="#2f6bb0"/><circle cx="50" cy="98" r="5" fill="#cdb85f"/>
-    </g>
-  </g>
-  <text x="96" y="220" text-anchor="middle" font-size="11" fill="#565b63">各孔显色/荧光 = 一项生化反应的阴阳</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">VITEK 2 鉴定卡原理与选卡总览</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">鉴定卡</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">各孔底物显色 → 阴阳生化谱 → 比对数据库出菌名与可信度</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- ===== 原理流程(右侧竖排) ===== -->
-  <g font-size="11" fill="#565b63">
-    <text x="200" y="92" font-size="11" font-weight="700" fill="#2c3138">鉴定流程</text>
-    <g>
-      <circle cx="208" cy="112" r="9" fill="#2e6b66"/><text x="208" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1</text>
-      <text x="224" y="116">配标准菌悬液（按菌定 McFarland 浊度）</text>
-      <circle cx="208" cy="138" r="9" fill="#2e6b66"/><text x="208" y="142" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">2</text>
-      <text x="224" y="142">导液管真空充注卡片并热封</text>
-      <circle cx="208" cy="164" r="9" fill="#2e6b66"/><text x="208" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">3</text>
-      <text x="224" y="168">35℃ 密闭温育，每 15 min 光学读数</text>
-      <circle cx="208" cy="190" r="9" fill="#2e6b66"/><text x="208" y="194" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">4</text>
-      <text x="224" y="194">比色 + 荧光动力学曲线</text>
-      <circle cx="208" cy="216" r="9" fill="#7a67a0"/><text x="208" y="220" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">5</text>
-      <text x="224" y="220">AES 专家系统比对数据库</text>
-      <circle cx="208" cy="242" r="9" fill="#c46a62"/><text x="208" y="246" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">6</text>
-      <text x="224" y="246">输出菌名 + 可信度（%）</text>
-    </g>
-  </g>
+<!-- ===== ❶ 卡内微孔预置不同底物 ===== -->
+<rect x="24" y="66" width="116" height="112" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="38" cy="85" r="8" fill="#1f2733"/><text x="38" y="88.5" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+<text x="52" y="89" font-size="10.5" font-weight="700" fill="#33404f">各孔预置底物</text>
+<rect x="34" y="98" width="96" height="46" rx="4" fill="#ffffff" stroke="#b9c2cc"/>
+<g fill="#eef1f5" stroke="#b9c2cc" stroke-width="0.7">
+  <circle cx="43" cy="108" r="3.6"/><circle cx="55" cy="108" r="3.6"/><circle cx="67" cy="108" r="3.6"/><circle cx="79" cy="108" r="3.6"/><circle cx="91" cy="108" r="3.6"/><circle cx="103" cy="108" r="3.6"/><circle cx="115" cy="108" r="3.6"/>
+  <circle cx="43" cy="121" r="3.6"/><circle cx="55" cy="121" r="3.6"/><circle cx="67" cy="121" r="3.6"/><circle cx="79" cy="121" r="3.6"/><circle cx="91" cy="121" r="3.6"/><circle cx="103" cy="121" r="3.6"/><circle cx="115" cy="121" r="3.6"/>
+  <circle cx="43" cy="134" r="3.6"/><circle cx="55" cy="134" r="3.6"/><circle cx="67" cy="134" r="3.6"/><circle cx="79" cy="134" r="3.6"/><circle cx="91" cy="134" r="3.6"/><circle cx="103" cy="134" r="3.6"/><circle cx="115" cy="134" r="3.6"/>
+</g>
+<circle cx="124" cy="108" r="3.6" fill="#e3edf8" stroke="#2b6cb0" stroke-width="0.7"/>
+<circle cx="124" cy="121" r="3.6" fill="#e7e2f3" stroke="#8b7fb8" stroke-width="0.7"/>
+<circle cx="124" cy="134" r="3.6" fill="#f9e6e4" stroke="#c2413d" stroke-width="0.7"/>
+<text x="32" y="158" font-size="9.5" fill="#33404f">糖类 / 酶底物 / 抑制剂</text>
+<text x="32" y="170" font-size="9.5" fill="#5c6672">一孔一项，另设对照孔</text>
+<line x1="142" y1="120" x2="150" y2="120" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 
-  <line x1="36" y1="266" x2="444" y2="266" stroke="#e6e2d8" stroke-width="1"/>
+<!-- ===== ❷ 密闭温育、逐孔判阴阳 ===== -->
+<rect x="152" y="66" width="116" height="112" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="166" cy="85" r="8" fill="#1f2733"/><text x="166" y="88.5" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">2</text>
+<text x="180" y="89" font-size="10.5" font-weight="700" fill="#33404f">动力学逐孔读数</text>
+<circle cx="186" cy="119" r="15" fill="#e8c84a" stroke="#a08c3c" stroke-width="1.2"/>
+<text x="186" y="123.5" text-anchor="middle" font-size="12" font-weight="700" fill="#5a4a12">＋</text>
+<circle cx="234" cy="119" r="15" fill="#fbfaf6" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="234" y="123.5" text-anchor="middle" font-size="12" font-weight="700" fill="#8a929c">－</text>
+<text x="186" y="147" text-anchor="middle" font-size="9.5" fill="#33404f">底物被代谢</text>
+<text x="234" y="147" text-anchor="middle" font-size="9.5" fill="#5c6672">无变化</text>
+<text x="210" y="166" text-anchor="middle" font-size="9.5" fill="#5c6672">密闭温育，每 15 min 读数</text>
+<line x1="270" y1="120" x2="278" y2="120" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 
-  <!-- ===== 7 种鉴定卡 ===== -->
-  <text x="36" y="288" font-size="12" font-weight="700" fill="#2e6b66">七种鉴定卡（按菌选卡）</text>
-  <g font-size="11">
-    <g>
-      <rect x="36" y="300" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="48" y="314" font-weight="700" fill="#2e6b66">GN</text><text x="48" y="326" fill="#565b63" font-size="11">0.5–0.63 McF</text>
-      <text x="92" y="320" fill="#565b63">革兰阴性杆菌（肠杆菌/非发酵菌）</text>
-    </g>
-    <g>
-      <rect x="244" y="300" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="256" y="314" font-weight="700" fill="#2e6b66">GP</text><text x="256" y="326" fill="#565b63" font-size="11">0.5–0.63 McF</text>
-      <text x="300" y="320" fill="#565b63">革兰阳性球菌（葡/肠/链球菌）</text>
-    </g>
-    <g>
-      <rect x="36" y="336" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="48" y="350" font-weight="700" fill="#3f7a52">YST</text><text x="48" y="362" fill="#565b63" font-size="11">1.8–2.2 McF</text>
-      <text x="92" y="356" fill="#565b63">酵母菌（念珠菌/隐球菌）</text>
-    </g>
-    <g>
-      <rect x="244" y="336" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="256" y="350" font-weight="700" fill="#9a8a52">NH</text><text x="256" y="362" fill="#565b63" font-size="11">2.7–3.3 McF</text>
-      <text x="296" y="356" fill="#565b63">苛养菌（奈瑟/嗜血杆菌）</text>
-    </g>
-    <g>
-      <rect x="36" y="372" width="200" height="30" rx="5" fill="#f7f3ea" stroke="#cfe0dc"/>
-      <text x="48" y="386" font-weight="700" fill="#7a67a0">ANC</text><text x="48" y="398" fill="#565b63" font-size="11">2.7–3.3 McF</text>
-      <text x="96" y="392" fill="#565b63">厌氧菌 / 棒状杆菌</text>
-    </g>
-    <g>
-      <rect x="244" y="372" width="200" height="30" rx="5" fill="#f7f3ee" stroke="#e0d4c2"/>
-      <text x="256" y="386" font-weight="700" fill="#8a5a3a">BCL · CBC</text><text x="256" y="398" fill="#565b63" font-size="11">科研(RUO)</text>
-      <text x="332" y="392" fill="#565b63">芽胞杆菌 / 棒状杆菌</text>
-    </g>
-  </g>
+<!-- ===== ❸ 生化谱与数据库比对 ===== -->
+<rect x="280" y="66" width="176" height="112" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="294" cy="85" r="8" fill="#1f2733"/><text x="294" y="88.5" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">3</text>
+<text x="308" y="89" font-size="10.5" font-weight="700" fill="#33404f">生化谱比对数据库</text>
+<g stroke="#b9c2cc" stroke-width="0.8">
+  <rect x="288" y="98" width="10" height="12" rx="2" fill="#e8c84a"/>
+  <rect x="300" y="98" width="10" height="12" rx="2" fill="#ffffff"/>
+  <rect x="312" y="98" width="10" height="12" rx="2" fill="#e8c84a"/>
+  <rect x="324" y="98" width="10" height="12" rx="2" fill="#e8c84a"/>
+  <rect x="336" y="98" width="10" height="12" rx="2" fill="#ffffff"/>
+  <rect x="348" y="98" width="10" height="12" rx="2" fill="#ffffff"/>
+  <rect x="360" y="98" width="10" height="12" rx="2" fill="#e8c84a"/>
+  <rect x="372" y="98" width="10" height="12" rx="2" fill="#ffffff"/>
+  <rect x="384" y="98" width="10" height="12" rx="2" fill="#e8c84a"/>
+  <rect x="396" y="98" width="10" height="12" rx="2" fill="#ffffff"/>
+  <rect x="408" y="98" width="10" height="12" rx="2" fill="#e8c84a"/>
+  <rect x="420" y="98" width="10" height="12" rx="2" fill="#ffffff"/>
+</g>
+<text x="288" y="124" font-size="9.5" fill="#33404f">阴阳组合＝该菌的生化指纹</text>
+<line x1="368" y1="128" x2="368" y2="140" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="288" y="142" width="160" height="28" rx="6" fill="#e8f3ef" stroke="#2f8f83"/>
+<text x="368" y="154" text-anchor="middle" font-size="9.5" fill="#1f2733">与卡型对应的数据库比对</text>
+<text x="368" y="166" text-anchor="middle" font-size="9.5" fill="#2f8f83">→ 菌名 ＋ 可信度百分比</text>
 
-  <text x="240" y="424" text-anchor="middle" font-size="11" fill="#565b63">鉴定卡在前、药敏卡在后同时上机；点击任一鉴定卡查看适用菌、上机要求与主要生化反应</text>
-  <text x="240" y="442" text-anchor="middle" font-size="11" fill="#b0b4ba">数据来源：bioMérieux VITEK 2 Compact SOP（V9.02 &amp; V9.04, 2025-03）</text>
+<!-- ===== 选卡依据 ===== -->
+<text x="24" y="196" font-size="10.5" font-weight="700" fill="#33404f">选卡依据：按菌群与生长需求定卡型</text>
+<text x="456" y="196" text-anchor="end" font-size="9.5" fill="#5c6672">浊度按卡型说明书定，非按苛养程度</text>
+
+<rect x="24" y="204" width="150" height="20" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="99" y="217.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">0.5–0.63 McF</text>
+<rect x="182" y="204" width="118" height="20" rx="6" fill="#eaeff5" stroke="#dbe2ea"/>
+<text x="241" y="217.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">1.8–2.2 McF</text>
+<rect x="308" y="204" width="148" height="20" rx="6" fill="#dde6f0" stroke="#c9d5e2"/>
+<text x="382" y="217.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">2.7–3.3 McF</text>
+
+<rect x="24" y="232" width="150" height="24" rx="5" fill="#ffffff" stroke="#dfe4ea"/>
+<text x="30" y="247" font-size="9.5" fill="#33404f"><tspan font-weight="700">GN</tspan>　肠杆菌目 · 非发酵菌</text>
+<rect x="24" y="261" width="150" height="24" rx="5" fill="#ffffff" stroke="#dfe4ea"/>
+<text x="30" y="276" font-size="9.5" fill="#33404f"><tspan font-weight="700">GP</tspan>　葡萄球菌 · 肠球菌 · 链球菌</text>
+
+<rect x="182" y="232" width="118" height="24" rx="5" fill="#ffffff" stroke="#dfe4ea"/>
+<text x="188" y="247" font-size="9.5" fill="#33404f"><tspan font-weight="700">YST</tspan>　念珠菌 · 隐球菌</text>
+<rect x="182" y="261" width="118" height="24" rx="5" fill="#ffffff" stroke="#dfe4ea"/>
+<text x="188" y="276" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">BCL</tspan>　需氧芽胞杆菌</text>
+
+<rect x="308" y="232" width="148" height="24" rx="5" fill="#ffffff" stroke="#dfe4ea"/>
+<text x="314" y="247" font-size="9.5" fill="#33404f"><tspan font-weight="700">NH</tspan>　奈瑟菌 · 嗜血杆菌等苛养菌</text>
+<rect x="308" y="261" width="148" height="24" rx="5" fill="#ffffff" stroke="#dfe4ea"/>
+<text x="314" y="276" font-size="9.5" fill="#33404f"><tspan font-weight="700">ANC</tspan>　厌氧菌 · 棒状杆菌</text>
+<rect x="308" y="290" width="148" height="24" rx="5" fill="#ffffff" stroke="#dfe4ea"/>
+<text x="314" y="305" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">CBC</tspan>　棒状杆菌精细鉴定</text>
+
+<text x="24" y="305" font-size="9.5" fill="#5c6672">BCL / CBC 美国标为科研（RUO）卡，各地注册状态不同</text>
+
+<!-- 结论 -->
+<text x="240" y="330" text-anchor="middle" font-size="11.5" fill="#33404f">卡型选错＝比对了别的数据库：先定菌群，再定卡与浊度</text>
+
+<!-- 页脚 -->
+<rect x="24" y="338" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="353" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">上机前提</tspan>　纯培养、菌龄合规的新鲜菌落；混菌或陈旧菌落只会得到低可信度结果</text>
 </svg>

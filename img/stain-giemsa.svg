@@ -1,44 +1,139 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>吉姆萨染色（Giemsa）</title><desc>罗曼诺夫斯基染色：核紫红、胞质蓝；显示血内寄生虫</desc>
-  <defs>
-    <radialGradient id="gField" cx="42%" cy="38%" r="72%">
-      <stop offset="0%" stop-color="#f3eef0"/>
-      <stop offset="100%" stop-color="#ece3e6"/>
-    </radialGradient>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">吉姆萨染色（Giemsa）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">罗曼诺夫斯基染色：核紫红、胞质蓝；显示血内寄生虫</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>吉姆萨染色（Giemsa）</title><desc>罗曼诺夫斯基类染色：天青/亚甲蓝＋伊红，核酸着紫、胞质着粉；血内寄生虫呈蓝胞质＋紫红核，用于疟原虫、利什曼原虫、巴贝虫、立克次体、衣原体包涵体检测及血细胞形态分类</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <radialGradient id="gField" cx="42%" cy="36%" r="74%">
+    <stop offset="0%" stop-color="#faf4f5"/>
+    <stop offset="100%" stop-color="#f0e6e8"/>
+  </radialGradient>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 血涂片视野 -->
-  <circle cx="190" cy="158" r="104" fill="url(#gField)" stroke="#cbbcc1" stroke-width="2.5"/>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">吉姆萨染色（Giemsa）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">染色方法</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">天青-亚甲蓝＋伊红：核酸着紫、胞质着粉；血内寄生虫核紫红、胞质蓝</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 红细胞(淡粉) -->
-  <g fill="#e2bcbc" stroke="#d2a6a6" stroke-width="1">
-    <circle cx="150" cy="118" r="20"/>
-    <circle cx="232" cy="128" r="20"/>
-    <circle cx="128" cy="186" r="20"/>
-    <circle cx="206" cy="200" r="20"/>
-    <circle cx="246" cy="178" r="18"/>
-  </g>
+<!-- ===== 上半：试剂步骤流程 ===== -->
+<g fill="#f5f7f9" stroke="#e3e7ec">
+  <rect x="24" y="70" width="96" height="44" rx="6"/>
+  <rect x="136" y="70" width="96" height="44" rx="6"/>
+  <rect x="248" y="70" width="96" height="44" rx="6"/>
+  <rect x="360" y="70" width="96" height="44" rx="6"/>
+</g>
+<g stroke="#33404f" stroke-width="1.4">
+  <line x1="120" y1="92" x2="132" y2="92" marker-end="url(#arr)"/>
+  <line x1="232" y1="92" x2="244" y2="92" marker-end="url(#arr)"/>
+  <line x1="344" y1="92" x2="356" y2="92" marker-end="url(#arr)"/>
+</g>
+<g fill="#1f2733">
+  <circle cx="26" cy="72" r="7.5"/><circle cx="138" cy="72" r="7.5"/><circle cx="250" cy="72" r="7.5"/><circle cx="362" cy="72" r="7.5"/>
+</g>
+<g text-anchor="middle" font-size="9.5" fill="#ffffff">
+  <text text-anchor="middle" x="26" y="75.5">1</text><text text-anchor="middle" x="138" y="75.5">2</text><text text-anchor="middle" x="250" y="75.5">3</text><text text-anchor="middle" x="362" y="75.5">4</text>
+</g>
+<g text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">
+  <text text-anchor="middle" x="72" y="90">甲醇固定</text>
+  <text text-anchor="middle" x="184" y="90">吉姆萨稀释液</text>
+  <text text-anchor="middle" x="296" y="90">染 20~30 分钟</text>
+  <text text-anchor="middle" x="408" y="90">水洗·干燥</text>
+</g>
+<g text-anchor="middle" font-size="9.5" fill="#5c6672">
+  <text text-anchor="middle" x="72" y="104">仅薄血膜，厚膜不固定</text>
+  <text text-anchor="middle" x="184" y="104">天青·亚甲蓝＋伊红</text>
+  <text text-anchor="middle" x="296" y="104">天青染核酸·伊红染Hb</text>
+  <text text-anchor="middle" x="408" y="104">油镜（100×）观察</text>
+</g>
+<text x="240" y="132" text-anchor="middle" font-size="9.5" fill="#8c96a2">染液须用 pH 7.0~7.2 缓冲水现配现用；pH 偏酸则薛氏点不显、虫体着色差</text>
 
-  <!-- 受感染红细胞①：环状体(蓝环+红核) -->
-  <circle cx="184" cy="158" r="22" fill="#e2bcbc" stroke="#d2a6a6" stroke-width="1"/>
-  <circle cx="184" cy="158" r="9" fill="none" stroke="#3f5aa6" stroke-width="2.4"/>
-  <circle cx="191" cy="152" r="3" fill="#a75d69"/>
-  <!-- 受感染红细胞②：环状体 + 薛氏点(胀大) -->
-  <circle cx="232" cy="128" r="22" fill="#e6c2c6" stroke="#d2a6a6" stroke-width="1"/>
-  <circle cx="232" cy="128" r="8" fill="none" stroke="#3f5aa6" stroke-width="2.2"/>
-  <circle cx="238" cy="123" r="2.6" fill="#a75d69"/>
-  <g fill="#b07a86"><circle cx="222" cy="120" r="1"/><circle cx="242" cy="118" r="1"/><circle cx="226" cy="138" r="1"/><circle cx="240" cy="140" r="1"/></g>
+<!-- ===== 下半：镜下所见 ===== -->
+<text x="88" y="146" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">阳性：疟原虫感染红细胞</text>
+<text x="228" y="146" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">阴性：连续阅片未见虫体</text>
 
-  <!-- 标注 -->
-  <line x1="184" y1="158" x2="324" y2="138" stroke="#cbc1a8" stroke-width="1"/>
-  <circle cx="184" cy="158" r="2.2" fill="#3f5aa6"/>
-  <text x="330" y="134" font-size="11" font-weight="700" fill="#3f5aa6">环状体（胞质蓝环）</text>
-  <text x="330" y="150" font-size="11" font-weight="700" fill="#a75d69">核 · 紫红</text>
-  <line x1="232" y1="128" x2="324" y2="190" stroke="#cbc1a8" stroke-width="1"/>
-  <text x="330" y="194" font-size="11" fill="#565b63">被寄生红细胞可胀大、见薛氏点</text>
+<!-- 阳性视野 -->
+<circle cx="88" cy="198" r="48" fill="url(#gField)" stroke="#cbbcc1" stroke-width="2"/>
+<g fill="#e8bfc0" stroke="#d3a4a6" stroke-width="1">
+  <circle cx="64" cy="176" r="15"/>
+  <circle cx="62" cy="216" r="14"/>
+  <circle cx="108" cy="222" r="15"/>
+</g>
+<!-- 受染细胞 A：环状体（蓝胞质环＋紫红核） -->
+<circle cx="86" cy="198" r="15" fill="#e8bfc0" stroke="#d3a4a6" stroke-width="1"/>
+<circle cx="86" cy="199" r="8" fill="none" stroke="#3f5aa6" stroke-width="2.4"/>
+<circle cx="92" cy="193" r="3.4" fill="#a12f52"/>
+<!-- 受染细胞 B：胀大、薛氏点 -->
+<circle cx="109" cy="177" r="17" fill="#edc9cb" stroke="#d3a4a6" stroke-width="1"/>
+<circle cx="109" cy="177" r="6.5" fill="none" stroke="#3f5aa6" stroke-width="2"/>
+<circle cx="113.5" cy="172.5" r="2.6" fill="#a12f52"/>
+<g fill="#c0596a">
+  <circle cx="100" cy="169" r="1.1"/><circle cx="119" cy="168" r="1.1"/><circle cx="102" cy="185" r="1.1"/>
+  <circle cx="119" cy="184" r="1.1"/><circle cx="110" cy="165" r="1.1"/><circle cx="110" cy="188" r="1.1"/>
+</g>
+<!-- 阳性视野标记 -->
+<g stroke="#8c96a2" stroke-width="1">
+  <line x1="55" y1="196" x2="77" y2="199"/>
+  <line x1="112" y1="197" x2="96" y2="194"/>
+  <line x1="122" y1="163" x2="113" y2="170"/>
+</g>
+<g fill="#1f2733"><circle cx="48" cy="196" r="6.5"/><circle cx="118" cy="198" r="6.5"/><circle cx="128" cy="160" r="6.5"/></g>
+<g text-anchor="middle" font-size="9.5" fill="#ffffff">
+  <text text-anchor="middle" x="48" y="199.4">1</text><text text-anchor="middle" x="118" y="201.4">2</text><text text-anchor="middle" x="128" y="163.4">3</text>
+</g>
 
-  <text x="240" y="282" text-anchor="middle" font-size="11" fill="#565b63">用于疟原虫、利什曼原虫、立克次体、衣原体等检测</text>
+<!-- 阴性视野 -->
+<circle cx="228" cy="198" r="48" fill="url(#gField)" stroke="#cbbcc1" stroke-width="2"/>
+<g fill="#e8bfc0" stroke="#d3a4a6" stroke-width="1">
+  <circle cx="204" cy="176" r="15"/>
+  <circle cx="250" cy="178" r="15"/>
+  <circle cx="202" cy="220" r="15"/>
+  <circle cx="248" cy="220" r="15"/>
+</g>
+<!-- 白细胞：核紫蓝（染色合格内对照） -->
+<circle cx="228" cy="200" r="18" fill="#dfe3ef" stroke="#b6bdd0" stroke-width="1"/>
+<g fill="#5b4f8a">
+  <circle cx="221" cy="194" r="6"/><circle cx="234" cy="195" r="5.5"/><circle cx="228" cy="208" r="5.5"/>
+  <rect x="224" y="193" width="8" height="4"/><rect x="225" y="199" width="5" height="6"/>
+</g>
+<!-- 阴性视野标记 -->
+<g stroke="#8c96a2" stroke-width="1">
+  <line x1="192" y1="233" x2="199" y2="226"/>
+  <line x1="265" y1="211" x2="247" y2="205"/>
+</g>
+<g fill="#1f2733"><circle cx="188" cy="238" r="6.5"/><circle cx="272" cy="212" r="6.5"/></g>
+<g text-anchor="middle" font-size="9.5" fill="#ffffff">
+  <text text-anchor="middle" x="188" y="241.4">4</text><text text-anchor="middle" x="272" y="215.4">5</text>
+</g>
+
+<!-- 着色对照面板 -->
+<rect x="294" y="150" width="162" height="100" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="304" y="166" font-size="9.5" font-weight="700" fill="#33404f">镜下着色对照</text>
+<g fill="#1f2733">
+  <circle cx="310" cy="181" r="6.5"/><circle cx="310" cy="196" r="6.5"/><circle cx="310" cy="211" r="6.5"/><circle cx="310" cy="226" r="6.5"/><circle cx="310" cy="241" r="6.5"/>
+</g>
+<g text-anchor="middle" font-size="9.5" fill="#ffffff">
+  <text text-anchor="middle" x="310" y="184.4">1</text><text text-anchor="middle" x="310" y="199.4">2</text><text text-anchor="middle" x="310" y="214.4">3</text><text text-anchor="middle" x="310" y="229.4">4</text><text text-anchor="middle" x="310" y="244.4">5</text>
+</g>
+<g stroke="#b6bdd0" stroke-width="0.8">
+  <rect x="320" y="175.5" width="11" height="11" rx="2" fill="#3f5aa6"/>
+  <rect x="320" y="190.5" width="11" height="11" rx="2" fill="#a12f52"/>
+  <rect x="320" y="205.5" width="11" height="11" rx="2" fill="#c0596a"/>
+  <rect x="320" y="220.5" width="11" height="11" rx="2" fill="#e8bfc0"/>
+  <rect x="320" y="235.5" width="11" height="11" rx="2" fill="#5b4f8a"/>
+</g>
+<g font-size="9.5" fill="#33404f">
+  <text x="337" y="184">虫体胞质：蓝</text>
+  <text x="337" y="199">虫体核：紫红</text>
+  <text x="337" y="214">薛氏点：胀大红细胞＋红点</text>
+  <text x="337" y="229">红细胞：粉红均质</text>
+  <text x="337" y="244">白细胞核：紫蓝</text>
+</g>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">先看白细胞核是否紫蓝以判断染色成败，再在红细胞内找蓝胞质＋紫红核</text>
+
+<!-- 页脚：主要用途 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　疟原虫 · 利什曼原虫 · 巴贝虫 · 立克次体 · 衣原体包涵体 · 血细胞形态分类</text>
 </svg>

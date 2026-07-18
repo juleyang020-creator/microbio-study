@@ -1,26 +1,98 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>6.5% NaCl 生长试验</title><desc>高盐肉汤（含溴甲酚紫）中能生长者浑浊，产酸时由紫变黄</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">6.5% NaCl 生长试验</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">高盐肉汤（含溴甲酚紫）中能生长者浑浊，产酸时由紫变黄</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>6.5% NaCl 生长试验</title><desc>含 6.5% NaCl 的 BHI 肉汤中，耐高渗的肠球菌大量增殖使肉汤浑浊为阳性；多数链球菌被高渗脱水而不增殖，肉汤保持澄清为阴性</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="arrs" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0.5 L8,4 L0,7.5 z" fill="#8a94a1"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性管(紫,清亮) -->
-  <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M150,120 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#8a6db0"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#7a67a0">阴性（紫·清亮）</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">6.5% NaCl 生长试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生长特性</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">6.5% NaCl BHI 肉汤中能否生长——耐盐者浑浊，不耐盐者澄清</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：阴性对照 vs 阳性 实物对比 ===== -->
+<rect x="24" y="70" width="196" height="160" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<text x="122" y="86" text-anchor="middle" font-size="9.5" fill="#5c6672">6.5% NaCl BHI 肉汤 35℃ 24–48h</text>
+
+<!-- 阴性管（澄清：管后刻线清晰可见） -->
+<g>
+  <path d="M56,96 L56,182 Q56,200 76,200 Q96,200 96,182 L96,96 Z" fill="#fbfaf6" stroke="#c3ccd6" stroke-width="1.6"/>
+  <g stroke="#33404f" stroke-width="2.6" opacity="0.8">
+    <line x1="62" y1="140" x2="90" y2="140"/><line x1="62" y1="158" x2="90" y2="158"/><line x1="62" y1="176" x2="90" y2="176"/>
   </g>
+  <path d="M57,124 L95,124 L95,182 Q95,199 76,199 Q57,199 57,182 Z" fill="#efe9d6" fill-opacity="0.45"/>
+  <line x1="57" y1="124" x2="95" y2="124" stroke="#c8b887" stroke-width="1.2"/>
+  <ellipse cx="76" cy="96" rx="20" ry="5" fill="#eef1f5" stroke="#c3ccd6" stroke-width="1.4"/>
+</g>
+<text x="76" y="214" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阴性 · 澄清</text>
+<text x="76" y="225" text-anchor="middle" font-size="9.5" fill="#5c6672">（多数链球菌）</text>
 
-  <!-- 阳性管(黄,浑浊) -->
-  <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M300,120 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#d8c84a"/>
-    <!-- 浑浊颗粒 -->
-    <g fill="#b7a738" opacity="0.7"><circle cx="312" cy="150" r="3"/><circle cx="326" cy="170" r="2.6"/><circle cx="310" cy="195" r="2.8"/><circle cx="324" cy="215" r="3"/><circle cx="316" cy="232" r="2.4"/></g>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阳性（黄·浑浊）</text>
+<!-- 阳性管（浑浊：刻线被菌液遮蔽） -->
+<g>
+  <path d="M146,96 L146,182 Q146,200 166,200 Q186,200 186,182 L186,96 Z" fill="#fbfaf6" stroke="#c3ccd6" stroke-width="1.6"/>
+  <g stroke="#33404f" stroke-width="2.6" opacity="0.8">
+    <line x1="152" y1="140" x2="180" y2="140"/><line x1="152" y1="158" x2="180" y2="158"/><line x1="152" y1="176" x2="180" y2="176"/>
   </g>
+  <path d="M147,124 L185,124 L185,182 Q185,199 166,199 Q147,199 147,182 Z" fill="#ded4b4"/>
+  <g fill="#b3a578" opacity="0.85">
+    <circle cx="157" cy="136" r="2.6"/><circle cx="174" cy="146" r="2.2"/><circle cx="162" cy="155" r="2.8"/>
+    <circle cx="178" cy="166" r="2.4"/><circle cx="155" cy="172" r="2.4"/><circle cx="168" cy="182" r="2.8"/><circle cx="177" cy="191" r="2.2"/>
+  </g>
+  <line x1="147" y1="124" x2="185" y2="124" stroke="#c8b887" stroke-width="1.2"/>
+  <ellipse cx="166" cy="96" rx="20" ry="5" fill="#eef1f5" stroke="#c3ccd6" stroke-width="1.4"/>
+</g>
+<text x="166" y="214" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阳性 · 浑浊</text>
+<text x="166" y="225" text-anchor="middle" font-size="9.5" fill="#5c6672">（肠球菌属）</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">肠球菌属、金黄色葡萄球菌阳性；多数链球菌阴性（肠球菌鉴定要点）</text>
+<!-- ===== 右：为什么会分开 ===== -->
+<rect x="228" y="70" width="228" height="160" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="342" y="86" text-anchor="middle" font-size="9.5" fill="#5c6672">同一高渗环境，两种结局</text>
+<text x="236" y="101" font-size="9.5" fill="#8a94a1">Na⁺/Cl⁻</text>
+
+<!-- 高渗盐粒背景 -->
+<g fill="#b9c2cc" opacity="0.75">
+  <circle cx="238" cy="112" r="1.6"/><circle cx="268" cy="108" r="1.6"/><circle cx="282" cy="126" r="1.6"/><circle cx="236" cy="134" r="1.6"/><circle cx="262" cy="138" r="1.6"/>
+  <circle cx="240" cy="160" r="1.6"/><circle cx="276" cy="158" r="1.6"/><circle cx="234" cy="188" r="1.6"/><circle cx="284" cy="186" r="1.6"/><circle cx="258" cy="196" r="1.6"/>
+</g>
+
+<!-- 阴性机制：脱水皱缩 -->
+<circle cx="250" cy="122" r="11" fill="none" stroke="#b9c2cc" stroke-width="1.2" stroke-dasharray="3,3"/>
+<circle cx="250" cy="122" r="6" fill="#e7e2f3" stroke="#8b7fb8" stroke-width="1.4"/>
+<g stroke="#8a94a1" stroke-width="1" marker-end="url(#arrs)">
+  <line x1="250" y1="115" x2="250" y2="106"/><line x1="257" y1="122" x2="266" y2="122"/><line x1="250" y1="129" x2="250" y2="138"/>
+</g>
+<g stroke="#c2413d" stroke-width="2"><line x1="272" y1="116" x2="282" y2="126"/><line x1="282" y1="116" x2="272" y2="126"/></g>
+<text x="290" y="115" font-size="9.5" fill="#33404f">多数链球菌：水外渗、质壁分离</text>
+<text x="290" y="127" font-size="9.5" fill="#5c6672">缺渗透适应 → 不增殖 → 肉汤澄清</text>
+
+<!-- 阳性机制：耐盐增殖 -->
+<g fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.3">
+  <circle cx="245" cy="170" r="5.5"/><circle cx="245" cy="181" r="5.5"/>
+</g>
+<line x1="254" y1="176" x2="264" y2="176" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<g fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2">
+  <circle cx="273" cy="166" r="4.4"/><circle cx="273" cy="175" r="4.4"/><circle cx="273" cy="184" r="4.4"/>
+  <circle cx="283" cy="171" r="4.4"/><circle cx="283" cy="180" r="4.4"/><circle cx="283" cy="189" r="4.4"/>
+</g>
+<text x="294" y="167" font-size="9.5" fill="#33404f">肠球菌：细胞内积累相容性溶质</text>
+<text x="294" y="179" font-size="9.5" fill="#5c6672">抗衡高渗 → 大量增殖 → 肉汤浑浊</text>
+
+<!-- 指示剂配方补充 -->
+<rect x="392" y="200" width="14" height="13" rx="2" fill="#8a6db0" stroke="#6f579a"/>
+<line x1="410" y1="206" x2="420" y2="206" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="426" y="200" width="14" height="13" rx="2" fill="#d8c84a" stroke="#b3a52f"/>
+<text x="236" y="211" font-size="9.5" fill="#5c6672">含溴甲酚紫的商品肉汤：产酸另变黄</text>
+
+<!-- 判读要点 -->
+<text x="240" y="245" text-anchor="middle" font-size="9.5" fill="#c2413d">须孵育满 48h 才能报阴性；气球菌/片球菌等亦阳性，须与 BEA、PYR 联用</text>
+
+<!-- 结论 -->
+<text x="240" y="263" text-anchor="middle" font-size="11.5" fill="#33404f">能在 6.5% NaCl 中生长是肠球菌属的关键筛选（非确认）指标</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="285" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　阳性：粪肠球菌、屎肠球菌 ｜ 阴性：解没食子酸链球菌、化脓链球菌</text>
 </svg>

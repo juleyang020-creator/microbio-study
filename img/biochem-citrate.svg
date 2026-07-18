@@ -1,30 +1,72 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>枸橼酸盐利用试验 (Citrate)</title><desc>以枸橼酸为唯一碳源，产碱使溴麝香草酚蓝由绿变蓝（Simmons 斜面）</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">枸橼酸盐利用试验 (Citrate)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">以枸橼酸为唯一碳源，产碱使溴麝香草酚蓝由绿变蓝（Simmons 斜面）</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>枸橼酸盐利用试验</title><desc>Simmons 枸橼酸盐斜面：能以枸橼酸钠为唯一碳源者产碱，溴麝香草酚蓝由绿变蓝；阴性管仍为绿色</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性管(绿) -->
-  <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M150,150 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#3f9e5a"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a52">阴性（绿色）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">枸橼酸盐利用试验</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">以枸橼酸钠为唯一碳源 → 产碱 → 溴麝香草酚蓝由绿变蓝</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
 
-  <!-- 阳性管(蓝) -->
-  <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M300,150 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#2f6bb0"/>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#2f6bb0">阳性（深蓝）</text>
-  </g>
+<!-- ===== 左：阴性管（绿） ===== -->
+<text x="62" y="72" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阴性（−）</text>
+<path d="M44,78 L44,214 Q44,230 62,230 Q80,230 80,214 L80,78 Z" fill="#faf9f4" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M44,152 L80,122 L80,214 Q80,230 62,230 Q44,230 44,214 Z" fill="#3f9e5a"/>
+<line x1="44" y1="152" x2="80" y2="122" stroke="#2f7a45" stroke-width="1.2"/>
+<ellipse cx="62" cy="78" rx="18" ry="4.5" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.4"/>
+<text x="62" y="246" text-anchor="middle" font-size="9.5" fill="#2f7a45">绿色未变</text>
 
-  <g stroke="#565b63" stroke-width="1.4" fill="none">
-    <line x1="210" y1="165" x2="280" y2="165" marker-end="url(#arr2)"/>
-  </g>
-  <defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#565b63"/></marker></defs>
-  <text x="245" y="158" text-anchor="middle" font-size="11" fill="#565b63">产碱</text>
+<!-- ===== 右：阳性管（蓝，斜面有菌苔） ===== -->
+<text x="418" y="72" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阳性（＋）</text>
+<path d="M400,78 L400,214 Q400,230 418,230 Q436,230 436,214 L436,78 Z" fill="#faf9f4" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M400,152 L436,122 L436,214 Q436,230 418,230 Q400,230 400,214 Z" fill="#2f6bb0"/>
+<line x1="400" y1="152" x2="436" y2="122" stroke="#24558c" stroke-width="1.2"/>
+<ellipse cx="407" cy="147" rx="4.5" ry="2.6" fill="#f3f6da"/>
+<ellipse cx="417" cy="139" rx="5" ry="2.8" fill="#f3f6da"/>
+<ellipse cx="428" cy="130" rx="4.5" ry="2.6" fill="#f3f6da"/>
+<ellipse cx="418" cy="78" rx="18" ry="4.5" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.4"/>
+<text x="418" y="246" text-anchor="middle" font-size="9.5" fill="#24558c">蓝色·有菌苔</text>
 
-  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#565b63">克雷伯菌、产气肠杆菌、沙门菌（多数）阳性；大肠埃希菌、志贺菌阴性</text>
+<!-- ===== 中：化学转化链 ===== -->
+<rect x="136" y="76" width="208" height="26" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="93" text-anchor="middle" font-size="9.5" fill="#1f2733">枸橼酸钠＝唯一碳源　铵盐＝唯一氮源</text>
+<line x1="240" y1="103" x2="240" y2="110" stroke="#33404f" stroke-width="1.4" marker-end="url(#ar)"/>
+
+<circle cx="124" cy="124" r="7.5" fill="#1f2733"/>
+<text x="124" y="128" text-anchor="middle" font-size="9.5" fill="#ffffff">1</text>
+<rect x="136" y="112" width="208" height="24" rx="5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="240" y="128" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">枸橼酸盐透过酶 → 枸橼酸裂解酶</text>
+<line x1="240" y1="137" x2="240" y2="146" stroke="#33404f" stroke-width="1.4" marker-end="url(#ar)"/>
+
+<circle cx="124" cy="163" r="7.5" fill="#1f2733"/>
+<text x="124" y="167" text-anchor="middle" font-size="9.5" fill="#ffffff">2</text>
+<rect x="136" y="150" width="208" height="26" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="167" text-anchor="middle" font-size="9.5" fill="#1f2733">产 CO₂ 与丙酮酸；铵盐 → NH₃</text>
+<line x1="240" y1="177" x2="240" y2="184" stroke="#33404f" stroke-width="1.4" marker-end="url(#ar)"/>
+
+<circle cx="124" cy="199" r="7.5" fill="#1f2733"/>
+<text x="124" y="203" text-anchor="middle" font-size="9.5" fill="#ffffff">3</text>
+<rect x="136" y="186" width="208" height="26" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="203" text-anchor="middle" font-size="9.5" fill="#1f2733">Na₂CO₃ 与 NH₃ 积聚 → pH &gt; 7.6</text>
+<line x1="240" y1="213" x2="240" y2="220" stroke="#33404f" stroke-width="1.4" marker-end="url(#ar)"/>
+
+<circle cx="124" cy="234" r="7.5" fill="#1f2733"/>
+<text x="124" y="238" text-anchor="middle" font-size="9.5" fill="#ffffff">4</text>
+<rect x="136" y="222" width="208" height="24" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="144" y="238" font-size="9.5" fill="#1f2733">溴麝香草酚蓝</text>
+<rect x="208" y="227" width="22" height="13" rx="3" fill="#3f9e5a"/>
+<line x1="234" y1="234" x2="246" y2="234" stroke="#33404f" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="252" y="227" width="22" height="13" rx="3" fill="#2f6bb0"/>
+<text x="282" y="238" font-size="9.5" fill="#5c6672">35℃ 24–48h</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">斜面变蓝且有可见生长才判阳性；仅微量生长而不变色仍为阴性</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="285" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　＋ 克雷伯菌属、肠杆菌属、沙门菌属（伤寒/甲型副伤寒除外）｜ − 大肠埃希菌、志贺菌属</text>
 </svg>

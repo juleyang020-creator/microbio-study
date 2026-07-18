@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>Thayer-Martin 培养基</title><desc>巧克力琼脂基础加 VCNT 抗菌剂（万古霉素、黏菌素/多黏菌素、制霉菌素、甲氧苄啶）：抑制革兰阳性菌、革兰阴性杂菌、真菌与变形杆菌迁徙；致病性奈瑟菌对万古霉素与黏菌素天然不敏感而得以长出灰白湿润菌落。本身无鉴别成分，须氧化酶与革兰染色确认</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">Thayer-Martin 培养基</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">巧克力琼脂基础 ＋ VCN(T) 抗菌剂 → 富集致病性奈瑟菌（含 T ＝改良 TM）</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="245" y1="66" x2="245" y2="192" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 左：非选择性巧克力板 ===== -->
+<text x="76" y="78" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">非选择性巧克力板</text>
+<circle cx="76" cy="124" r="42" fill="#f5f7f9" stroke="#c9ced6"/>
+<circle cx="76" cy="124" r="38" fill="#7b4a2b" stroke="#5a3520"/>
+<!-- 变形杆菌迁徙的薄膜样蔓延 -->
+<g fill="none" stroke="#cbb894" stroke-width="1.1" opacity="0.55">
+  <path d="M46,132 C62,124 92,126 106,136"/>
+  <path d="M48,142 C64,134 94,136 108,146"/>
+</g>
+<!-- 酵母：奶白、大而凸 -->
+<g fill="#f3eee1" stroke="#d8cfb8" stroke-width="0.8">
+  <circle cx="76" cy="96" r="5.5"/><circle cx="90" cy="102" r="5"/>
+</g>
+<!-- 葡萄球菌：金黄／瓷白 -->
+<g fill="#d8a33a" stroke="#a97c22" stroke-width="0.8">
+  <circle cx="62" cy="132" r="4.5"/><circle cx="72" cy="140" r="4"/><circle cx="58" cy="120" r="4"/>
+</g>
+<!-- 革兰阴性杆菌：灰白大菌落 -->
+<g fill="#cfd4cd" stroke="#a8aea6" stroke-width="0.8">
+  <circle cx="92" cy="130" r="5.5"/><circle cx="97" cy="118" r="4.8"/><circle cx="86" cy="143" r="5"/>
+</g>
+<!-- 奈瑟菌：被淹没的少数灰白小菌落 -->
+<g fill="#ded9cb" stroke="#bdb49f" stroke-width="0.8">
+  <circle cx="68" cy="110" r="3.2"/><circle cx="82" cy="115" r="3"/>
+</g>
+<g fill="#e6e1d4" stroke="#c6bda8" stroke-width="0.6">
+  <circle cx="52" cy="108" r="2.8"/><circle cx="66" cy="150" r="3"/><circle cx="100" cy="140" r="3.4"/>
+</g>
+<text x="76" y="178" text-anchor="middle" font-size="9.5" fill="#5c6672">正常菌群与真菌过度生长</text>
+<text x="76" y="190" text-anchor="middle" font-size="9.5" fill="#a3332f">奈瑟菌被覆盖 → 漏检</text>
+
+<!-- 加 VCNT -->
+<text x="140" y="116" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">＋VCNT</text>
+<line x1="122" y1="126" x2="156" y2="126" stroke="#33404f" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="140" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">选择加压</text>
+
+<!-- ===== 右：Thayer-Martin 板 ===== -->
+<text x="200" y="78" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">Thayer-Martin 板</text>
+<circle cx="200" cy="124" r="42" fill="#f5f7f9" stroke="#c9ced6"/>
+<circle cx="200" cy="124" r="38" fill="#7b4a2b" stroke="#5a3520"/>
+<!-- 被抑制者：虚线幽灵菌落 ＋ ✗ -->
+<g fill="none" stroke="#b9a68c" stroke-width="0.9" stroke-dasharray="2.5,2">
+  <circle cx="176" cy="134" r="5"/><circle cx="219" cy="103" r="4.6"/><circle cx="184" cy="149" r="4.8"/>
+</g>
+<g stroke="#e08b86" stroke-width="1.4" stroke-linecap="round">
+  <line x1="172" y1="130" x2="180" y2="138"/><line x1="180" y1="130" x2="172" y2="138"/>
+  <line x1="215.5" y1="99.5" x2="222.5" y2="106.5"/><line x1="222.5" y1="99.5" x2="215.5" y2="106.5"/>
+  <line x1="180.5" y1="145.5" x2="187.5" y2="152.5"/><line x1="187.5" y1="145.5" x2="180.5" y2="152.5"/>
+</g>
+<!-- 奈瑟菌：灰白湿润、边缘整齐 -->
+<g fill="#ded9cb" stroke="#bdb49f" stroke-width="0.9">
+  <circle cx="190" cy="110" r="4"/><circle cx="201" cy="104" r="3.6"/><circle cx="211" cy="117" r="4.2"/>
+  <circle cx="194" cy="124" r="3.8"/><circle cx="205" cy="133" r="4"/><circle cx="215" cy="129" r="3.6"/>
+</g>
+<text x="200" y="178" text-anchor="middle" font-size="9.5" fill="#5c6672">灰白湿润、边缘整齐</text>
+<text x="200" y="190" text-anchor="middle" font-size="9.5" fill="#8c96a2">虚线＝被抑制</text>
+
+<!-- ===== 右列：VCNT 各抑制谁 ===== -->
+<text x="256" y="78" font-size="9.5" font-weight="700" fill="#33404f">VCNT 抗菌剂分别抑制谁</text>
+<circle cx="262" cy="91" r="7" fill="#1f2733"/>
+<text x="262" y="94.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">V</text>
+<text x="274" y="95" font-size="9.5" fill="#5c6672">万古霉素 → 革兰阳性菌</text>
+<circle cx="262" cy="115" r="7" fill="#1f2733"/>
+<text x="262" y="118.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">C</text>
+<text x="274" y="119" font-size="9.5" fill="#5c6672">黏菌素 → 革兰阴性杂菌</text>
+<circle cx="262" cy="139" r="7" fill="#1f2733"/>
+<text x="262" y="142.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">N</text>
+<text x="274" y="143" font-size="9.5" fill="#5c6672">制霉菌素 → 酵母与霉菌</text>
+<circle cx="262" cy="163" r="7" fill="#1f2733"/>
+<text x="262" y="166.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">T</text>
+<text x="274" y="167" font-size="9.5" fill="#5c6672">甲氧苄啶 → 变形杆菌迁徙</text>
+<text x="256" y="182" font-size="9.5" fill="#33404f">奈瑟菌对万古／黏菌素天然不敏感</text>
+<text x="256" y="194" font-size="9.5" fill="#a3332f">少数淋球菌株被万古抑制→并种巧克力板</text>
+
+<!-- ===== 选择 / 鉴别成分 ===== -->
+<rect x="24" y="200" width="212" height="46" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="216" font-size="9.5" font-weight="700" fill="#33404f">选择成分　VCNT</text>
+<text x="36" y="229" font-size="9.5" fill="#5c6672">万古／黏菌素／制霉菌素／甲氧苄啶</text>
+<text x="36" y="242" font-size="9.5" fill="#5c6672">压住正常菌群、真菌与迁徙</text>
+
+<rect x="244" y="200" width="212" height="46" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="256" y="216" font-size="9.5" font-weight="700" fill="#33404f">鉴别成分　无</text>
+<text x="256" y="229" font-size="9.5" fill="#5c6672">菌落颜色不区分菌种</text>
+<text x="256" y="242" font-size="9.5" fill="#5c6672">须氧化酶＋革兰染色／糖发酵确认</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">抗菌剂压住菌群、奈瑟菌天然耐受 → 从杂菌标本中分离淋球菌</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　淋病奈瑟菌 · 脑膜炎奈瑟菌（35℃、5% CO₂、湿润，48h 后再报阴性）</text>
+</svg>

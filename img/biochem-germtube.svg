@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>芽管试验</title><desc>新鲜菌落接种胎牛血清37℃孵育2~3h后湿片镜检：白念珠菌（含都柏林念珠菌）由芽生孢子直接长出管径均一、连接处无缢痕的真芽管为阳性；非白念珠菌仅见出芽、芽颈有缢痕为阴性；热带念珠菌初期短菌丝、芽生孢子更大且连接处有明显缢痕，为常见假阳性</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">芽管试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌鉴定</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">血清中 37℃ 短时孵育 → 镜下看有无「无缢痕」的真芽管</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 操作链（诱导条件） ===== -->
+<rect x="24" y="64" width="128" height="30" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="88" y="76" text-anchor="middle" font-size="9.5" fill="#33404f">SDA 30℃ 24~48h 新鲜菌落</text>
+<text x="88" y="88" text-anchor="middle" font-size="9.5" fill="#5c6672">轻触取薄层菌膜</text>
+<line x1="154" y1="79" x2="174" y2="79" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="176" y="64" width="128" height="30" rx="6" fill="#fdf6e3" stroke="#d9b96a"/>
+<text x="240" y="76" text-anchor="middle" font-size="9.5" fill="#33404f">接种胎牛血清 37℃</text>
+<text x="240" y="88" text-anchor="middle" font-size="9.5" fill="#8a6d2f">孵育约 3h（肉眼不变色）</text>
+<line x1="306" y1="79" x2="326" y2="79" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="328" y="64" width="128" height="30" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="392" y="76" text-anchor="middle" font-size="9.5" fill="#33404f">湿片镜检</text>
+<text x="392" y="88" text-anchor="middle" font-size="9.5" fill="#5c6672">须在 2~3h 内判读</text>
+
+<line x1="166" y1="102" x2="166" y2="228" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+<line x1="314" y1="102" x2="314" y2="228" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 左：阴性 ===== -->
+<text x="92" y="114" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">阴性（无芽管）</text>
+<circle cx="92" cy="162" r="36" fill="#f8fafb" stroke="#e3e7ec"/>
+<g stroke="#b9c2cc" stroke-width="2.6" stroke-linecap="round">
+  <line x1="91" y1="145" x2="99" y2="139"/>
+  <line x1="97" y1="177" x2="105" y2="171"/>
+</g>
+<g fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2">
+  <ellipse cx="82" cy="150" rx="13" ry="10"/>
+  <ellipse cx="88" cy="180" rx="12" ry="9.5"/>
+  <ellipse cx="104" cy="136" rx="7" ry="6"/>
+  <ellipse cx="110" cy="168" rx="6.5" ry="5.5"/>
+</g>
+<g fill="none" stroke="#c2413d" stroke-width="1.2" stroke-dasharray="2.5,2">
+  <circle cx="95" cy="142" r="6"/><circle cx="101" cy="174" r="5.5"/>
+</g>
+<text x="92" y="212" text-anchor="middle" font-size="9.5" fill="#33404f">只见芽生孢子出芽</text>
+<text x="92" y="225" text-anchor="middle" font-size="9.5" fill="#c2413d">芽颈有缢痕、无芽管</text>
+
+<!-- ===== 中：阳性 ===== -->
+<text x="240" y="114" text-anchor="middle" font-size="10" font-weight="700" fill="#2f8f83">阳性（真芽管）</text>
+<circle cx="240" cy="162" r="36" fill="#f8fafb" stroke="#e3e7ec"/>
+<line x1="231" y1="174" x2="262" y2="144" stroke="#b9c2cc" stroke-width="10" stroke-linecap="round"/>
+<line x1="231" y1="174" x2="262" y2="144" stroke="#f5f7f9" stroke-width="7.4" stroke-linecap="round"/>
+<ellipse cx="222" cy="180" rx="12" ry="10" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<circle cx="233" cy="172" r="6.5" fill="none" stroke="#2f8f83" stroke-width="1.2" stroke-dasharray="2.5,2"/>
+<text x="240" y="212" text-anchor="middle" font-size="9.5" fill="#33404f">母细胞直接长出芽管</text>
+<text x="240" y="225" text-anchor="middle" font-size="9.5" fill="#2f8f83">管径均一、连接处无缢痕</text>
+
+<!-- ===== 右：假阳性 ===== -->
+<text x="388" y="114" text-anchor="middle" font-size="10" font-weight="700" fill="#c2413d">假阳性（须警惕）</text>
+<circle cx="388" cy="162" r="36" fill="#f8fafb" stroke="#e3e7ec"/>
+<line x1="388" y1="163" x2="410" y2="146" stroke="#b9c2cc" stroke-width="7.5" stroke-linecap="round"/>
+<line x1="388" y1="163" x2="410" y2="146" stroke="#f5f7f9" stroke-width="5" stroke-linecap="round"/>
+<line x1="382" y1="169" x2="388" y2="163" stroke="#b9c2cc" stroke-width="2.6" stroke-linecap="round"/>
+<ellipse cx="372" cy="176" rx="16" ry="13" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<circle cx="385" cy="165.5" r="6" fill="none" stroke="#c2413d" stroke-width="1.2" stroke-dasharray="2.5,2"/>
+<text x="388" y="212" text-anchor="middle" font-size="9.5" fill="#33404f">热带念珠菌初期短菌丝</text>
+<text x="388" y="225" text-anchor="middle" font-size="9.5" fill="#c2413d">芽生孢子更大、连接处有缢痕</text>
+
+<!-- 误差提示 -->
+<text x="240" y="243" text-anchor="middle" font-size="9.5" fill="#5c6672">超时判读易因初始菌丝聚集而假阳性；接种菌量过多或标本混有细菌则易假阴性</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">阳性只作推测性鉴定：仍需厚壁孢子等形态与生化/质谱定种</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　阳性 白念珠菌、都柏林念珠菌｜假阳性 热带念珠菌｜阴性 光滑念珠菌</text>
+</svg>

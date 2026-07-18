@@ -1,37 +1,98 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>ESBL 确证试验</title><desc>同一平板：三代头孢单药 vs 加克拉维酸，比较抑菌圈</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">ESBL 确证试验</text>
-  <text x="240" y="48" text-anchor="middle" font-size="11" fill="#565b63">同一平板：三代头孢单药 vs 加克拉维酸，比较抑菌圈</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 312" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>ESBL 确证试验</title><desc>MH 平板配对纸片：头孢他啶/头孢噻肟单药与其加克拉维酸复方并列，比较抑菌圈直径；加克拉维酸后圈增大≥5mm 判为产 ESBL</desc>
+<defs>
+  <pattern id="lawn" width="7" height="7" patternUnits="userSpaceOnUse">
+    <rect width="7" height="7" fill="#f2ecdc"/>
+    <circle cx="3.5" cy="3.5" r="1.25" fill="#d9cfae"/>
+  </pattern>
+  <marker id="arr" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="312" fill="#ffffff"/>
 
-  <!-- 琼脂平板（接种待测菌的均匀菌苔） -->
-  <circle cx="240" cy="174" r="118" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.5"/>
-  <circle cx="240" cy="174" r="118" fill="none" stroke="#e4ddcd" stroke-width="6" opacity="0.5"/>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">ESBL 确证试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">耐药表型检测</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">同一平板配对纸片：头孢他啶(CAZ)、头孢噻肟(CTX) 单药 vs 加克拉维酸(CLA)</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 单药：头孢他啶 CAZ —— 小抑菌圈（酶将其水解，活性下降） -->
-  <circle cx="178" cy="174" r="27" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2" stroke-dasharray="4 3"/>
-  <circle cx="178" cy="174" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
-  <text x="178" y="171" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">CAZ</text>
-  <text x="178" y="181" text-anchor="middle" font-size="11" fill="#5a80b0">30µg</text>
+<!-- ===== 左：产 ESBL（阳性） ===== -->
+<text x="122" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">产 ESBL 株（阳性）</text>
+<circle cx="122" cy="152" r="66" fill="url(#lawn)" stroke="#cbc1a8" stroke-width="2.2"/>
+<!-- 单药：圈小（酶水解头孢） -->
+<circle cx="92" cy="127" r="16" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1"/>
+<circle cx="92" cy="177" r="16" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1"/>
+<!-- 复方：圈大（克拉维酸抑酶，头孢活性恢复） -->
+<circle cx="152" cy="127" r="22" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1"/>
+<circle cx="152" cy="177" r="22" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1"/>
+<!-- 增大量：虚线为单药时的圈缘，箭头示扩大 -->
+<circle cx="152" cy="127" r="16" fill="none" stroke="#b9c2cc" stroke-width="1" stroke-dasharray="3,2"/>
+<g stroke="#33404f" stroke-width="1.1">
+  <line x1="167" y1="127" x2="173" y2="127" marker-end="url(#arr)"/>
+  <line x1="137" y1="127" x2="131" y2="127" marker-end="url(#arr)"/>
+  <line x1="152" y1="112" x2="152" y2="106" marker-end="url(#arr)"/>
+  <line x1="152" y1="142" x2="152" y2="148" marker-end="url(#arr)"/>
+</g>
+<!-- 纸片 -->
+<g fill="#f9e6e4" stroke="#c2413d" stroke-width="1.1">
+  <circle cx="92" cy="127" r="12"/><circle cx="152" cy="127" r="12"/>
+  <circle cx="92" cy="177" r="12"/><circle cx="152" cy="177" r="12"/>
+</g>
+<line x1="142" y1="128.5" x2="162" y2="128.5" stroke="#c2413d" stroke-width="0.8"/>
+<line x1="142" y1="178.5" x2="162" y2="178.5" stroke="#c2413d" stroke-width="0.8"/>
+<text x="92" y="130.5" text-anchor="middle" font-size="9.5" fill="#a3332f">CAZ</text>
+<text x="92" y="180.5" text-anchor="middle" font-size="9.5" fill="#a3332f">CTX</text>
+<text x="152" y="125" text-anchor="middle" font-size="9.5" fill="#a3332f">CAZ</text>
+<text x="152" y="137" text-anchor="middle" font-size="9.5" fill="#a3332f">CLA</text>
+<text x="152" y="175" text-anchor="middle" font-size="9.5" fill="#a3332f">CTX</text>
+<text x="152" y="187" text-anchor="middle" font-size="9.5" fill="#a3332f">CLA</text>
+<text x="122" y="209" text-anchor="middle" font-size="9.5" fill="#8a6d2f">均匀菌苔</text>
 
-  <!-- 加药：头孢他啶+克拉维酸 CAZ/CLA —— 抑菌圈增大（克拉维酸抑酶，恢复活性） -->
-  <circle cx="306" cy="174" r="50" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2" stroke-dasharray="4 3"/>
-  <circle cx="306" cy="174" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
-  <text x="306" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">CAZ</text>
-  <text x="306" y="180" text-anchor="middle" font-size="11" fill="#5a80b0">/CLA</text>
+<!-- ===== 中：判读标尺 ===== -->
+<text x="240" y="100" text-anchor="middle" font-size="9.5" fill="#5c6672">判读标准</text>
+<text x="209" y="118" font-size="9.5" fill="#33404f">单药</text>
+<rect x="209" y="122" width="30" height="9" rx="4" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="209" y="148" font-size="9.5" fill="#33404f">＋克拉维酸</text>
+<g stroke="#2b6cb0" stroke-width="1">
+  <line x1="239" y1="131" x2="239" y2="172"/>
+  <line x1="271" y1="161" x2="271" y2="172"/>
+  <line x1="239" y1="170" x2="271" y2="170"/>
+</g>
+<rect x="209" y="152" width="62" height="9" rx="4" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="255" y="182" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1f4e79">Δ ≥5 mm</text>
 
-  <!-- 抑菌圈直径增量标注：Δ≥5mm = 阳性 -->
-  <line x1="256" y1="138" x2="356" y2="138" stroke="#3f7a52" stroke-width="1" stroke-dasharray="2 2"/>
-  <line x1="256" y1="134" x2="256" y2="142" stroke="#3f7a52" stroke-width="1"/>
-  <line x1="356" y1="134" x2="356" y2="142" stroke="#3f7a52" stroke-width="1"/>
-  <rect x="285" y="126" width="42" height="15" rx="4" fill="#ffffff" stroke="#3f7a52" stroke-width="1"/>
-  <text x="306" y="137" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a52">Δ≥5mm</text>
+<!-- ===== 右：不产 ESBL（阴性） ===== -->
+<text x="358" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">不产 ESBL 株（阴性）</text>
+<circle cx="358" cy="152" r="66" fill="url(#lawn)" stroke="#cbc1a8" stroke-width="2.2"/>
+<circle cx="328" cy="127" r="20" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1"/>
+<circle cx="328" cy="177" r="20" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1"/>
+<circle cx="388" cy="127" r="21.5" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1"/>
+<circle cx="388" cy="177" r="21.5" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1"/>
+<g fill="#f9e6e4" stroke="#c2413d" stroke-width="1.1">
+  <circle cx="328" cy="127" r="12"/><circle cx="388" cy="127" r="12"/>
+  <circle cx="328" cy="177" r="12"/><circle cx="388" cy="177" r="12"/>
+</g>
+<line x1="378" y1="128.5" x2="398" y2="128.5" stroke="#c2413d" stroke-width="0.8"/>
+<line x1="378" y1="178.5" x2="398" y2="178.5" stroke="#c2413d" stroke-width="0.8"/>
+<text x="328" y="130.5" text-anchor="middle" font-size="9.5" fill="#a3332f">CAZ</text>
+<text x="328" y="180.5" text-anchor="middle" font-size="9.5" fill="#a3332f">CTX</text>
+<text x="388" y="125" text-anchor="middle" font-size="9.5" fill="#a3332f">CAZ</text>
+<text x="388" y="137" text-anchor="middle" font-size="9.5" fill="#a3332f">CLA</text>
+<text x="388" y="175" text-anchor="middle" font-size="9.5" fill="#a3332f">CTX</text>
+<text x="388" y="187" text-anchor="middle" font-size="9.5" fill="#a3332f">CLA</text>
 
-  <!-- 下方标签 -->
-  <text x="178" y="236" text-anchor="middle" font-size="11" fill="#565b63">头孢他啶（单药）</text>
-  <text x="178" y="249" text-anchor="middle" font-size="11" fill="#565b63">圈小：被酶水解</text>
-  <text x="306" y="240" text-anchor="middle" font-size="11" fill="#565b63">头孢他啶 + 克拉维酸</text>
-  <text x="306" y="253" text-anchor="middle" font-size="11" fill="#3f7a52">圈增大：酶被抑制</text>
+<!-- ===== 平板下方判读 ===== -->
+<text x="122" y="232" text-anchor="middle" font-size="10" fill="#33404f">任一组加 CLA 后圈增大即可</text>
+<text x="122" y="246" text-anchor="middle" font-size="10" font-weight="700" fill="#1f4e79">Δ ≥5 mm → ESBL 阳性</text>
+<text x="122" y="259" text-anchor="middle" font-size="9.5" fill="#5c6672">MIC 法：降 ≥3 个稀释度亦阳性</text>
+<text x="358" y="232" text-anchor="middle" font-size="10" fill="#33404f">单药圈本就大，加 CLA 无变化</text>
+<text x="358" y="246" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">Δ &lt;5 mm → ESBL 阴性</text>
+<text x="358" y="259" text-anchor="middle" font-size="9.5" fill="#5c6672">假阴性：高产 AmpC 时圈亦不增大</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="12.5" fill="#565b63">加克拉维酸后抑菌圈增大 ≥5mm（或 MIC 下降 ≥3 个稀释度）= <tspan font-weight="700" fill="#c46a62">ESBL 阳性</tspan></text>
+<!-- 结论 -->
+<text x="240" y="278" text-anchor="middle" font-size="11.5" fill="#33404f">克拉维酸抑制 ESBL → 头孢活性恢复、抑菌圈变大，故「增大即阳性」</text>
+
+<!-- 页脚：用途 -->
+<rect x="24" y="286" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="302" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　限大肠埃希菌、克雷伯菌属、奇异变形杆菌；供感控/流行病学，治疗按实测折点报告</text>
 </svg>

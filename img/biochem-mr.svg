@@ -1,24 +1,72 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>甲基红试验 (MR)</title><desc>葡萄糖混合酸发酵使 pH&amp;lt;4.4，加甲基红显红色</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">甲基红试验 (MR)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">葡萄糖混合酸发酵使 pH&lt;4.4，加甲基红显红色</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>甲基红(MR)试验</title><desc>葡萄糖经混合酸发酵产大量稳定酸使 pH 降至 4.4 以下，甲基红显红为阳性；走丁二醇途径产中性乙偶姻者 pH 仍在 6.2 以上，指示剂呈黄色为阴性</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <linearGradient id="mrbar" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#d8c25e"/>
+    <stop offset="0.38" stop-color="#d8c25e"/>
+    <stop offset="0.62" stop-color="#d98a4a"/>
+    <stop offset="1" stop-color="#c0453f"/>
+  </linearGradient>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性管(黄) -->
-  <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M150,120 L186,120 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#cdb85f"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阴性（黄）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">甲基红(MR)试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">混合酸发酵产大量稳定酸 → pH ≤ 4.4，甲基红显红</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阳性管(红) -->
-  <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M300,120 L336,120 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#c46a62"/>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（红）</text>
-  </g>
+<!-- ===== 共同底物 ===== -->
+<rect x="204" y="70" width="72" height="22" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="85" text-anchor="middle" font-size="11" fill="#1f2733">葡萄糖</text>
+<!-- 分支箭头 -->
+<path d="M204,81 H132 V96" fill="none" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M276,81 H348 V96" fill="none" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="240" y="104" text-anchor="middle" font-size="9.5" fill="#5c6672">MR-VP 肉汤 48–72 h</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌阳性；产气肠杆菌、肺炎克雷伯菌阴性（与 VP 互补，IMViC）</text>
+<!-- ===== 左：阴性（丁二醇途径） ===== -->
+<rect x="70" y="100" width="124" height="28" rx="5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="132" y="112" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1f4e79">丁二醇发酵途径</text>
+<text x="132" y="124" text-anchor="middle" font-size="9.5" fill="#1f4e79">→ 乙偶姻（中性）</text>
+<line x1="132" y1="128" x2="132" y2="137" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- 试管 -->
+<path d="M106,140 L106,206 Q106,222 132,222 Q158,222 158,206 L158,140 Z" fill="#fbfaf7" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M106,162 L158,162 L158,206 Q158,222 132,222 Q106,222 106,206 Z" fill="#d8c25e"/>
+<ellipse cx="132" cy="162" rx="26" ry="4.5" fill="#e2d089"/>
+<ellipse cx="132" cy="140" rx="26" ry="5" fill="none" stroke="#b9c2cc" stroke-width="1.6"/>
+<text x="132" y="236" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8a7326">阴性（−）</text>
+<text x="132" y="248" text-anchor="middle" font-size="9.5" fill="#5c6672">pH 保持 ≥ 6.2</text>
+
+<!-- ===== 右：阳性（混合酸发酵） ===== -->
+<rect x="286" y="100" width="124" height="28" rx="5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="348" y="112" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1f4e79">混合酸发酵途径</text>
+<text x="348" y="124" text-anchor="middle" font-size="9.5" fill="#1f4e79">→ 乳酸/乙酸/甲酸</text>
+<line x1="348" y1="128" x2="348" y2="137" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- 试管 -->
+<path d="M322,140 L322,206 Q322,222 348,222 Q374,222 374,206 L374,140 Z" fill="#fbfaf7" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M322,162 L374,162 L374,206 Q374,222 348,222 Q322,222 322,206 Z" fill="#c0453f"/>
+<ellipse cx="348" cy="162" rx="26" ry="4.5" fill="#cf645d"/>
+<ellipse cx="348" cy="140" rx="26" ry="5" fill="none" stroke="#b9c2cc" stroke-width="1.6"/>
+<text x="348" y="236" text-anchor="middle" font-size="10.5" font-weight="700" fill="#a3332f">阳性（+）</text>
+<text x="348" y="248" text-anchor="middle" font-size="9.5" fill="#5c6672">pH 降至 ≤ 4.4</text>
+
+<!-- ===== 中：加指示剂 + 变色域标尺 ===== -->
+<text x="240" y="140" text-anchor="middle" font-size="9.5" fill="#33404f">加甲基红指示剂数滴</text>
+<text x="240" y="152" text-anchor="middle" font-size="9.5" fill="#5c6672">指示剂变色域</text>
+<rect x="176" y="158" width="128" height="16" rx="3" fill="url(#mrbar)" stroke="#c9cfd6"/>
+<line x1="176" y1="166" x2="162" y2="166" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="304" y1="166" x2="318" y2="166" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="176" y="186" font-size="9.5" fill="#8a7326">pH ≥ 6.2 黄</text>
+<text x="304" y="186" text-anchor="end" font-size="9.5" fill="#a3332f">pH ≤ 4.4 红</text>
+<text x="240" y="204" text-anchor="middle" font-size="9.5" fill="#5c6672">须孵育 48–72 h 再判读</text>
+<text x="240" y="216" text-anchor="middle" font-size="9.5" fill="#c2413d">时间不足 → 酸量不够 → 假阴性</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">MR 阳性＝混合酸发酵产酸足；与 VP 共用肉汤，同属 IMViC</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　MR（+）大肠埃希菌 · 沙门菌属　｜　MR（−）肺炎克雷伯菌 · 产气克雷伯菌</text>
 </svg>

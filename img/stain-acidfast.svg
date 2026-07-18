@@ -1,55 +1,90 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>抗酸染色（萋-尼法 Ziehl-Neelsen）</title><desc>分枝菌酸抗脱色 → 抗酸菌红、背景蓝</desc>
-  <defs>
-    <radialGradient id="afField" cx="42%" cy="38%" r="70%">
-      <stop offset="0%" stop-color="#dbe3ef"/>
-      <stop offset="100%" stop-color="#c9d4e4"/>
-    </radialGradient>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">抗酸染色（萋-尼法 Ziehl-Neelsen）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">分枝菌酸抗脱色 → 抗酸菌红、背景蓝</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抗酸染色（萋-尼法 Ziehl-Neelsen）</title><desc>石炭酸复红加热初染、3%盐酸乙醇脱色、亚甲蓝复染；分枝菌酸抗脱色故抗酸菌呈红色，背景与非抗酸菌呈蓝色</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 左：三步流程 -->
-  <g>
-    <rect x="24" y="74" width="168" height="40" rx="7" fill="#f6e6e1" stroke="#c98e8e" stroke-width="1.2"/>
-    <text x="36" y="91" font-size="11" font-weight="700" fill="#8a3a3a">①石炭酸复红 + 加热</text>
-    <text x="36" y="106" font-size="11" fill="#a55">冒蒸气勿沸，维持约 5 min</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抗酸染色（萋-尼法 Ziehl-Neelsen）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">常规染色</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">分枝菌酸能抵抗酸性乙醇脱色 → 抗酸菌留红，余者复染呈蓝</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-    <rect x="24" y="122" width="168" height="40" rx="7" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2"/>
-    <text x="36" y="139" font-size="11" font-weight="700" fill="#565b63">②盐酸乙醇脱色</text>
-    <text x="36" y="154" font-size="11" fill="#565b63">抗酸菌不被脱色（关键）</text>
+<!-- ===== ❶ 石炭酸复红 + 加热 ===== -->
+<circle cx="33" cy="72" r="7.5" fill="#1f2733"/>
+<text x="33" y="75.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="46" y="75.5" font-size="10" font-weight="700" fill="#33404f">石炭酸复红＋加热</text>
+<rect x="24" y="84" width="132" height="36" rx="6" fill="#fbfaf8" stroke="#e3e7ec"/>
+<g stroke="#b93b34" stroke-width="3.4" stroke-linecap="round"><line x1="38" y1="101" x2="62" y2="91"/></g>
+<g fill="#c95c55" stroke="#b93b34" stroke-width="0.8"><ellipse cx="104" cy="94" rx="5" ry="3.6"/><ellipse cx="118" cy="100" rx="5" ry="3.6"/></g>
+<text x="50" y="115" text-anchor="middle" font-size="9.5" fill="#8c96a2">抗酸菌</text>
+<text x="112" y="115" text-anchor="middle" font-size="9.5" fill="#8c96a2">非抗酸菌</text>
+<text x="24" y="134" font-size="9.5" fill="#33404f">加热助复红透入蜡质层</text>
+<text x="24" y="147" font-size="9.5" fill="#5c6672">冒蒸气勿煮沸，约 5 min</text>
 
-    <rect x="24" y="170" width="168" height="40" rx="7" fill="#e6ecf4" stroke="#7d93b0" stroke-width="1.2"/>
-    <text x="36" y="187" font-size="11" font-weight="700" fill="#5a80b0">③亚甲蓝复染</text>
-    <text x="36" y="202" font-size="11" fill="#5b7290">背景与非抗酸菌呈蓝色</text>
+<line x1="158" y1="102" x2="170" y2="102" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 
-    <g stroke="#cbc1a8" stroke-width="1.4" fill="#cbc1a8">
-      <line x1="108" y1="114" x2="108" y2="120"/><polygon points="108,122 105,116 111,116"/>
-      <line x1="108" y1="162" x2="108" y2="168"/><polygon points="108,170 105,164 111,164"/>
-    </g>
-  </g>
+<!-- ===== ❷ 3% 盐酸乙醇脱色 ===== -->
+<circle cx="183" cy="72" r="7.5" fill="#1f2733"/>
+<text x="183" y="75.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="196" y="75.5" font-size="10" font-weight="700" fill="#33404f">3% 盐酸乙醇脱色</text>
+<rect x="174" y="84" width="132" height="36" rx="6" fill="#fbfaf8" stroke="#c2413d" stroke-dasharray="4,3"/>
+<g stroke="#b93b34" stroke-width="3.4" stroke-linecap="round"><line x1="188" y1="101" x2="212" y2="91"/></g>
+<g fill="none" stroke="#c3c9d1" stroke-width="1.1"><ellipse cx="254" cy="94" rx="5" ry="3.6"/><ellipse cx="268" cy="100" rx="5" ry="3.6"/></g>
+<text x="200" y="115" text-anchor="middle" font-size="9.5" fill="#b93b34">仍为红</text>
+<text x="262" y="115" text-anchor="middle" font-size="9.5" fill="#8c96a2">已褪成无色</text>
+<text x="174" y="134" font-size="9.5" fill="#33404f">关键：分枝菌酸锁住染料</text>
+<text x="174" y="147" font-size="9.5" fill="#5c6672">非抗酸菌被脱成无色</text>
 
-  <!-- 右：油镜视野 -->
-  <circle cx="338" cy="150" r="92" fill="url(#afField)" stroke="#9aa7bb" stroke-width="2.5"/>
-  <!-- 蓝色背景细胞(非抗酸) -->
-  <g fill="#8ba0bd" opacity="0.7">
-    <ellipse cx="300" cy="120" rx="7" ry="5"/><ellipse cx="372" cy="186" rx="7" ry="5"/><ellipse cx="356" cy="112" rx="6" ry="4"/>
-  </g>
-  <!-- 红色抗酸杆菌(细长、串珠) -->
-  <g stroke="#c46a62" stroke-width="3.4" stroke-linecap="round">
-    <line x1="312" y1="150" x2="336" y2="138"/>
-    <line x1="330" y1="170" x2="356" y2="162"/>
-    <line x1="350" y1="132" x2="372" y2="140"/>
-    <line x1="316" y1="178" x2="340" y2="184"/>
-  </g>
-  <!-- 串珠点缀 -->
-  <g fill="#8f2f2f">
-    <circle cx="318" cy="147" r="1.6"/><circle cx="328" cy="142" r="1.6"/>
-    <circle cx="338" cy="166" r="1.6"/><circle cx="348" cy="163" r="1.6"/>
-  </g>
-  <text x="338" y="258" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">抗酸杆菌（红，细长串珠状）</text>
-  <text x="338" y="274" text-anchor="middle" font-size="11" fill="#5a80b0">背景及非抗酸菌为蓝色</text>
+<line x1="308" y1="102" x2="320" y2="102" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 
-  <text x="108" y="232" text-anchor="middle" font-size="11" fill="#565b63">用于结核分枝杆菌等抗酸菌检测</text>
+<!-- ===== ❸ 亚甲蓝复染 ===== -->
+<circle cx="333" cy="72" r="7.5" fill="#1f2733"/>
+<text x="333" y="75.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="346" y="75.5" font-size="10" font-weight="700" fill="#33404f">亚甲蓝复染</text>
+<rect x="324" y="84" width="132" height="36" rx="6" fill="#dfe6f2" stroke="#9aa7bb"/>
+<g stroke="#b93b34" stroke-width="3.4" stroke-linecap="round"><line x1="338" y1="101" x2="362" y2="91"/></g>
+<g fill="#6f8ab5" stroke="#4f6b99" stroke-width="0.8"><ellipse cx="404" cy="94" rx="5" ry="3.6"/><ellipse cx="418" cy="100" rx="5" ry="3.6"/></g>
+<text x="350" y="115" text-anchor="middle" font-size="9.5" fill="#b93b34">不吸蓝</text>
+<text x="412" y="115" text-anchor="middle" font-size="9.5" fill="#4f6b99">复染成蓝</text>
+<text x="324" y="134" font-size="9.5" fill="#33404f">只有无色者被复染</text>
+<text x="324" y="147" font-size="9.5" fill="#5c6672">背景与非抗酸菌变蓝</text>
+
+<!-- ===== 镜下所见（油镜） ===== -->
+<rect x="24" y="160" width="212" height="88" rx="8" fill="#fbfcfd" stroke="#e3e7ec"/>
+<text x="32" y="174" font-size="10" font-weight="700" fill="#b93b34">阳性视野</text>
+<circle cx="82" cy="210" r="30" fill="#dfe6f2" stroke="#9aa7bb" stroke-width="2"/>
+<g fill="#6f8ab5" opacity="0.75"><ellipse cx="96" cy="224" rx="5" ry="3.4"/><ellipse cx="64" cy="227" rx="5" ry="3.4"/><ellipse cx="100" cy="197" rx="4.4" ry="3"/></g>
+<g stroke="#b93b34" stroke-width="3.2" stroke-linecap="round" fill="none">
+  <path d="M66,197 Q76,190 87,189"/>
+  <path d="M72,216 Q83,213 94,208"/>
+  <path d="M60,209 Q68,210 77,214"/>
+</g>
+<g fill="#7d211d"><circle cx="71" cy="194" r="1.5"/><circle cx="80" cy="190" r="1.5"/><circle cx="78" cy="214" r="1.5"/><circle cx="88" cy="211" r="1.5"/></g>
+<text x="124" y="190" font-size="9.5" fill="#b93b34">红色细长杆菌</text>
+<text x="124" y="204" font-size="9.5" fill="#5c6672">微弯、可呈串珠状</text>
+<text x="124" y="218" font-size="9.5" fill="#4f6b99">其余菌与背景呈蓝</text>
+<text x="124" y="232" font-size="9.5" fill="#33404f">阳性≠结核，需培养鉴定</text>
+
+<rect x="244" y="160" width="212" height="88" rx="8" fill="#fbfcfd" stroke="#e3e7ec"/>
+<text x="252" y="174" font-size="10" font-weight="700" fill="#4f6b99">阴性视野</text>
+<circle cx="302" cy="210" r="30" fill="#dfe6f2" stroke="#9aa7bb" stroke-width="2"/>
+<g fill="#6f8ab5" opacity="0.75">
+  <ellipse cx="290" cy="199" rx="5" ry="3.4"/><ellipse cx="314" cy="205" rx="5" ry="3.4"/>
+  <ellipse cx="296" cy="222" rx="4.6" ry="3.2"/><ellipse cx="317" cy="220" rx="4.6" ry="3.2"/>
+  <ellipse cx="304" cy="191" rx="4.4" ry="3"/><ellipse cx="286" cy="214" rx="4.4" ry="3"/>
+</g>
+<text x="344" y="190" font-size="9.5" fill="#4f6b99">全视野只见蓝色</text>
+<text x="344" y="204" font-size="9.5" fill="#5c6672">无红色菌体</text>
+<text x="344" y="218" font-size="9.5" fill="#5c6672">菌量少时易漏检</text>
+<text x="344" y="232" font-size="9.5" fill="#33404f">阴性不能排除结核</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">染料靠加热渗入、靠分枝菌酸留住 → 红为抗酸菌，蓝为其余</text>
+
+<!-- 页脚：主要用途 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　痰涂片找抗酸杆菌：结核筛查与疗效随访 · 麻风分枝杆菌</text>
 </svg>
