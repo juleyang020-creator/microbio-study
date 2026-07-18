@@ -11,12 +11,10 @@ require('../data/resistance.js');
 require('../data/biochem.js');
 require('../data/differential.js');
 require('../data/morphology.js');
-require('../data/idcards.js');
 require('../data/cards.js');
 require('../data/tests.js');
 require('../data/media.js');
 require('../data/staining.js');
-require('../data/structures.js');
 require('../data/breakpoints.js');
 require('../data/biochem-tests.js');
 require('../data/ast-alerts.js');
@@ -29,7 +27,6 @@ const db = () => ({
   microbes: global.window.DB.microbes,
   antibiotics: global.window.DB.antibiotics,
   resistance: global.window.DB.resistance,
-  idcards: global.window.DB.idcards,
   cards: global.window.DB.cards,
   tests: global.window.DB.tests,
   media: global.window.DB.media,
@@ -61,59 +58,6 @@ test('intrinsicVM 无匹配返回空', () => {
   const vm = View.intrinsicVM(db(), '___不存在的菌名___');
   assert.strictEqual(vm.count, 0);
   assert.strictEqual(vm.groups.length, 0);
-});
-
-// ===== 关系图构建 =====
-test('buildGraph 找不到中心返回 null', () => {
-  assert.strictEqual(Core.buildGraph(db(), 'microbes', '___none___', 1), null);
-});
-
-test('buildGraph 中心节点 level=0，关联节点 level=1', () => {
-  const g = Core.buildGraph(db(), 'microbes', 'staph-aureus', 1);
-  assert.ok(g);
-  assert.strictEqual(g.center.id, 'staph-aureus');
-  const center = g.nodes.find((n) => n.id === 'staph-aureus');
-  assert.ok(center);
-  assert.strictEqual(center.level, 0);
-  // 应有至少一个一级关联
-  const l1 = g.nodes.filter((n) => n.level === 1);
-  assert.ok(l1.length > 0, '应有一级关联节点');
-});
-
-test('buildGraph depth=2 时节点不少于 depth=1', () => {
-  const g1 = Core.buildGraph(db(), 'microbes', 'staph-aureus', 1);
-  const g2 = Core.buildGraph(db(), 'microbes', 'staph-aureus', 2);
-  assert.ok(g2.nodes.length >= g1.nodes.length, 'depth=2 应至少与 depth=1 相同');
-  // 二级节点应存在
-  const l2 = g2.nodes.filter((n) => n.level === 2);
-  // 视数据而定，可能为 0；但若 g2 多于 g1，多出的应为 level=2
-  if (g2.nodes.length > g1.nodes.length) {
-    assert.ok(l2.length > 0, '若 depth=2 节点更多，则应有二级节点');
-  }
-});
-
-test('buildGraph 边去重：一对节点只算一条边', () => {
-  const g = Core.buildGraph(db(), 'microbes', 'staph-aureus', 1);
-  const seen = new Set();
-  g.edges.forEach((e) => {
-    const key = [e.from, e.to].sort().join('|');
-    assert.ok(!seen.has(key), '重复边：' + key);
-    seen.add(key);
-  });
-});
-
-test('graphLayoutVM 中心位于画布中心，一级节点在圆周上', () => {
-  const g = Core.buildGraph(db(), 'microbes', 'staph-aureus', 1);
-  const layout = View.graphLayoutVM(g, 600, 600);
-  assert.ok(layout);
-  assert.strictEqual(layout.center.x, 300);
-  assert.strictEqual(layout.center.y, 300);
-  const l1 = layout.nodes.filter((n) => n.level === 1);
-  l1.forEach((n) => {
-    const d = Math.hypot(n.x - 300, n.y - 300);
-    // 一级圆半径 ≈ 600*0.30 = 180
-    assert.ok(Math.abs(d - 180) < 1, '一级节点应在半径 180 的圆上，实际距离 ' + d);
-  });
 });
 
 // ===== 折点解析 =====

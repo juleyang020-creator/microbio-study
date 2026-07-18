@@ -2,7 +2,7 @@
 // 把每张教学示意图中的文字标签发给 DeepSeek 与 GLM，做事实核对，汇总疑似错误。
 // 用法（密钥从环境变量读取，切勿写入文件）：
 //   DEEPSEEK_API_KEY=xxx GLM_API_KEY=yyy node tools/review-diagrams.mjs
-// 仅审校教学示意图（stain-/test-/mechanism-/resistance-）；分子结构(struct-)来自 ChEMBL/RDKit，不送审。
+// 仅审校教学示意图（stain-/test-/mechanism-/resistance- 等）。
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -14,7 +14,7 @@ const DS_KEY = process.env.DEEPSEEK_API_KEY;
 const GLM_KEY = process.env.GLM_API_KEY;
 
 const files = fs.readdirSync(IMG)
-  .filter((f) => f.endsWith('.svg') && !f.startsWith('struct-'))
+  .filter((f) => f.endsWith('.svg'))
   .sort();
 
 function labelsOf(svg) {

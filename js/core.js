@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_KEYS = ['microbes', 'antibiotics', 'resistance', 'idcards', 'cards', 'tests', 'media', 'staining', 'biochem-tests', 'qc-strains'];
+  var MODULE_KEYS = ['microbes', 'antibiotics', 'resistance', 'cards', 'tests', 'media', 'staining', 'biochem-tests', 'qc-strains'];
   var SEARCH_ALIASES = {
     'ng': ['淋病奈瑟菌', '淋病', 'neisseria gonorrhoeae', 'gonococcus'],
     'gc': ['淋病奈瑟菌', '淋病', 'neisseria gonorrhoeae', 'gonococcus'],
@@ -285,55 +285,6 @@
     return problems;
   }
 
-  // 关系图构建：以 (moduleKey, id) 为中心，BFS 收集 depth 层关联（forward + reverse 去重）。
-  // 返回 { center, nodes: [{id,名称,module,level}], edges: [{from,to,direction}] }；找不到中心返回 null。
-  function buildGraph(db, moduleKey, id, depth) {
-    var index = buildIndex(db);  // 整个 buildGraph 只建一次索引，传给 getRelations 复用
-    var reverse = buildReverseIndex(db);  // 反向索引同样只建一次，避免每个节点全库扫描
-    var center = index[id];
-    if (!center) { return null; }
-    depth = depth || 1;
-
-    var nodes = {};
-    var edges = {};
-    nodes[id] = { id: id, 名称: center.entry.名称, module: center.module, level: 0 };
-
-    function collect(targetId) {
-      var rels = getRelations(targetId, db, index, reverse);
-      var out = [];
-      rels.forEach(function (r) {
-        if (!r.exists) { return; }
-        // 同一对节点只保留第一条边（按节点 id 排序规范化 key，忽略 direction）
-        var k = [targetId, r.id].sort().join('|');
-        if (!edges[k]) {
-          edges[k] = { from: targetId, to: r.id, direction: r.direction };
-        }
-        out.push(r);
-      });
-      return out;
-    }
-
-    var frontier = [id];
-    for (var lv = 1; lv <= depth; lv++) {
-      var next = [];
-      frontier.forEach(function (fid) {
-        collect(fid).forEach(function (r) {
-          if (!nodes[r.id]) {
-            nodes[r.id] = { id: r.id, 名称: r.名称, module: r.module, level: lv };
-            next.push(r.id);
-          }
-        });
-      });
-      frontier = next;
-    }
-
-    return {
-      center: { id: id, 名称: center.entry.名称, module: center.module },
-      nodes: Object.keys(nodes).map(function (k) { return nodes[k]; }),
-      edges: Object.keys(edges).map(function (k) { return edges[k]; })
-    };
-  }
-
   return {
     MODULE_KEYS: MODULE_KEYS,
     buildIndex: buildIndex,
@@ -341,7 +292,6 @@
     getRelations: getRelations,
     searchEntries: searchEntries,
     validateData: validateData,
-    buildGraph: buildGraph,
     collectLeaves: collectLeaves
   };
 });

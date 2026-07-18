@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', idcards: '鉴定卡', cards: '药敏卡', tests: '试验', media: '培养基', staining: '染色', 'biochem-tests': '生化反应', 'qc-strains': '质控菌株' };
+  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', cards: '检测卡', tests: '试验', media: '培养基', staining: '染色', 'biochem-tests': '生化反应', 'qc-strains': '质控菌株' };
 
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 
@@ -195,7 +195,6 @@
       拉丁名: entry.拉丁名 || '',
       生物安全: entry.生物安全 || null,
       药敏简写: entry.药敏简写 || '',
-      结构图: extras.structImage || '',
       机制图: extras.mechanismImage || null,
       机制图说明: extras.mechCaption || '示意图',
       形态: extras.morphology || null,
@@ -491,78 +490,6 @@
     };
   }
 
-  // 关系图布局：把 Core.buildGraph 的结果按同心圆分层放到 width×height 画布上。
-  // 二级节点采用「径向树」分组：每个二级节点归到它的一级父节点，并沿父节点角度成簇排布，
-  // 使连线呈放射状、显著减少交叉，便于在 2 层时阅读。
-  function graphLayoutVM(graph, width, height) {
-    if (!graph) { return null; }
-    var cx = width / 2, cy = height / 2;
-    var minWH = Math.min(width, height);
-    var r1 = minWH * 0.30;
-    var r2 = minWH * 0.43;
-
-    var byLevel = { 0: [], 1: [], 2: [] };
-    graph.nodes.forEach(function (n) {
-      var lv = n.level || 0;
-      (byLevel[lv] = byLevel[lv] || []).push(n);
-    });
-
-    var levelOf = {};
-    graph.nodes.forEach(function (n) { levelOf[n.id] = n.level || 0; });
-    // 二级节点的父节点 = 与之相连的某个一级节点
-    var parentOf = {};
-    graph.edges.forEach(function (e) {
-      var lf = levelOf[e.from], lt = levelOf[e.to];
-      if (lf === 1 && lt === 2 && !parentOf[e.to]) { parentOf[e.to] = e.from; }
-      else if (lt === 1 && lf === 2 && !parentOf[e.from]) { parentOf[e.from] = e.to; }
-    });
-
-    var pos = {};
-    (byLevel[0] || []).forEach(function (n) { pos[n.id] = { x: cx, y: cy }; });
-
-    // 一级：均匀分布在内环，并记录角度
-    var l1 = byLevel[1] || [];
-    var angleOf = {};
-    l1.forEach(function (node, i) {
-      var a = (i / Math.max(1, l1.length)) * 2 * Math.PI - Math.PI / 2;
-      angleOf[node.id] = a;
-      pos[node.id] = { x: cx + r1 * Math.cos(a), y: cy + r1 * Math.sin(a) };
-    });
-
-    // 二级：按父节点角度分组排序后均匀放到外环（同一父节点的子节点相邻成簇）
-    var l2 = byLevel[2] || [];
-    if (l2.length) {
-      l2.forEach(function (node) {
-        var pid = parentOf[node.id];
-        node.__parentId = pid || null;
-        node.__pa = (pid != null && angleOf[pid] != null) ? angleOf[pid] : -Math.PI / 2;
-      });
-      var sorted = l2.slice().sort(function (a, b) {
-        if (a.__pa !== b.__pa) { return a.__pa - b.__pa; }
-        return a.id < b.id ? -1 : 1;
-      });
-      var M = sorted.length;
-      sorted.forEach(function (node, i) {
-        var a = (i / M) * 2 * Math.PI - Math.PI / 2;
-        pos[node.id] = { x: cx + r2 * Math.cos(a), y: cy + r2 * Math.sin(a) };
-      });
-    }
-
-    return {
-      width: width, height: height,
-      center: { id: graph.center.id, 名称: graph.center.名称, module: graph.center.module, x: cx, y: cy },
-      nodes: graph.nodes.map(function (n) {
-        var p = pos[n.id] || { x: cx, y: cy };
-        return { id: n.id, 名称: n.名称, module: n.module, level: n.level, x: p.x, y: p.y, parentId: n.__parentId || null };
-      }),
-      edges: graph.edges.map(function (e) {
-        var from = pos[e.from] || { x: cx, y: cy };
-        var to = pos[e.to] || { x: cx, y: cy };
-        return { x1: from.x, y1: from.y, x2: to.x, y2: to.y, direction: e.direction, fromId: e.from, toId: e.to };
-      })
-    };
-  }
-
   // ===== 折点解析与 MIC 判读（CLSI M100 风格） =====
   function numPattern() {
     return '([\\d.]+)(?:\\s*/\\s*[\\d.]+)?';
@@ -771,7 +698,6 @@
     isRetiredBreakpointDrug: isRetiredBreakpointDrug,
     judgeableBreakpointGroups: judgeableBreakpointGroups,
     intrinsicVM: intrinsicVM,
-    graphLayoutVM: graphLayoutVM,
     parseBP: parseBP,
     normalizeSpec: normalizeSpec,
     classifyMIC: classifyMIC,

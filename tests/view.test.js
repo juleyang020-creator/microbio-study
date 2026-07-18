@@ -37,7 +37,7 @@ test('moduleLabel 返回中文标签', () => {
   assert.strictEqual(View.moduleLabel('microbes'), '微生物');
   assert.strictEqual(View.moduleLabel('antibiotics'), '抗微生物药');
   assert.strictEqual(View.moduleLabel('resistance'), '耐药');
-  assert.strictEqual(View.moduleLabel('cards'), '药敏卡');
+  assert.strictEqual(View.moduleLabel('cards'), '检测卡'); // 药敏卡 + 鉴定卡 合并后
   assert.strictEqual(View.moduleLabel('tests'), '试验');
   assert.strictEqual(View.moduleLabel('media'), '培养基');
   assert.strictEqual(View.moduleLabel('staining'), '染色');

@@ -104,7 +104,7 @@ test('searchEntries 支持检验科常见菌名简写', () => {
       { id: 'aba', 名称: '鲍曼不动杆菌', 拉丁名: 'Acinetobacter baumannii', 类别: '不动杆菌属', 小节: [], 关联: [] },
       { id: 'eco', 名称: '大肠埃希菌', 拉丁名: 'Escherichia coli', 类别: '埃希菌属', 小节: [], 关联: [] }
     ],
-    antibiotics: [], resistance: [], idcards: [], cards: [], tests: [], media: [], staining: [], 'biochem-tests': []
+    antibiotics: [], resistance: [], cards: [], tests: [], media: [], staining: [], 'biochem-tests': []
   };
   assert.deepStrictEqual(Core.searchEntries(db, 'kpn').map(r => r.id), ['kpn']);
   assert.deepStrictEqual(Core.searchEntries(db, 'aba').map(r => r.id), ['aba']);

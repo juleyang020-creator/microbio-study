@@ -24,7 +24,7 @@ window.DB.labWorkflow = {
     },
     {
       "阶段": "鉴定方法",
-      "href": "#/idcards"
+      "href": "#/cards"
     },
     {
       "阶段": "药敏方法",

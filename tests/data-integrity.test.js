@@ -13,12 +13,10 @@ require('../data/resistance.js');
 require('../data/biochem.js');
 require('../data/differential.js');
 require('../data/morphology.js');
-require('../data/idcards.js');
 require('../data/cards.js');
 require('../data/tests.js');
 require('../data/media.js');
 require('../data/staining.js');
-require('../data/structures.js');
 require('../data/breakpoints.js');
 require('../data/biochem-tests.js');
 require('../data/ast-alerts.js');
@@ -41,7 +39,6 @@ test('种子数据通过 validateData，无任何问题', () => {
     microbes: global.window.DB.microbes,
     antibiotics: global.window.DB.antibiotics,
     resistance: global.window.DB.resistance,
-    idcards: global.window.DB.idcards,
     cards: global.window.DB.cards,
     tests: global.window.DB.tests,
     media: global.window.DB.media,
@@ -158,16 +155,6 @@ test('每个试验都映射到存在的示意图', () => {
   });
 });
 
-test('分子结构(structures) 的键均为存在的抗微生物药 id', () => {
-  const ids = {};
-  global.window.DB.antibiotics.forEach((a) => { ids[a.id] = true; });
-  Object.keys(global.window.DB.structures || {}).forEach((k) => {
-    assert.ok(ids[k], 'structures 引用了不存在的抗微生物药 id：' + k);
-    assert.ok((global.window.DB.structures[k] || '').length > 0, 'SMILES 为空：' + k);
-    const svg = path.join(__dirname, '..', 'img', 'struct-' + k + '.svg');
-    assert.ok(fs.existsSync(svg), '结构式 SVG 缺失：img/struct-' + k + '.svg');
-  });
-});
 
 test('各模块主界面的总览图均存在', () => {
   [
@@ -197,12 +184,15 @@ test('生化反应示意图（若有映射）文件均存在', () => {
   });
 });
 
-test('鉴定卡数据完整：每卡有适用菌关联与小节', () => {
-  (global.window.DB.idcards || []).forEach((c) => {
+test('鉴定卡数据完整：每卡有适用菌关联与小节（已并入 cards 模块，以无药物组成区分）', () => {
+  const idCards = (global.window.DB.cards || []).filter((c) => !(c.药物 && c.药物.length));
+  idCards.forEach((c) => {
     assert.ok(Array.isArray(c.关联) && c.关联.length > 0, '鉴定卡无关联：' + c.id);
     assert.ok(Array.isArray(c.小节) && c.小节.length > 0, '鉴定卡无小节：' + c.id);
   });
-  assert.ok((global.window.DB.idcards || []).length >= 7, '鉴定卡数量不足 7');
+  assert.ok(idCards.length >= 7, '鉴定卡数量不足 7');
+  // 药敏卡（有药物组成）应仍在同一模块内
+  assert.ok((global.window.DB.cards || []).filter((c) => c.药物 && c.药物.length).length >= 13, '药敏卡数量不足 13');
 });
 
 test('每个微生物与耐药机制都能生成综述链接', () => {

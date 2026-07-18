@@ -19,12 +19,10 @@ global.window = { DB: {} };
   'differential',
   'morphology',
   'treatment',
-  'idcards',
   'cards',
   'tests',
   'media',
   'staining',
-  'structures',
   'breakpoints',
   'biochem-tests',
   'ast-alerts'
@@ -38,7 +36,6 @@ const appDb = {
   microbes: DB.microbes || [],
   antibiotics: DB.antibiotics || [],
   resistance: DB.resistance || [],
-  idcards: DB.idcards || [],
   cards: DB.cards || [],
   tests: DB.tests || [],
   media: DB.media || [],
@@ -78,7 +75,7 @@ const newAnaerobes = [
 ];
 const breakpointIds = new Set();
 (DB.breakpoints || []).forEach((group) => (group.菌种 || []).forEach((id) => breakpointIds.add(id)));
-const idAnc = (DB.idcards || []).find((card) => card.id === 'id-anc') || {};
+const idAnc = (DB.cards || []).find((card) => card.id === 'id-anc') || {};
 const idAncIds = new Set(idAnc.关联 || []);
 const anaerobicAgar = (DB.media || []).find((item) => item.id === 'anaerobic-blood-agar') || {};
 const agarIds = new Set(anaerobicAgar.关联 || []);
@@ -107,7 +104,7 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 if (!html.includes('data/source-metadata.js?v=')) {
   fail('index.html 未加载 data/source-metadata.js');
 }
-if (!html.includes("window.APP_VERSION = '20260702-49'")) {
+if (!html.includes("window.APP_VERSION = '20260702-50'")) {
   warn('index.html 的 APP_VERSION 与当前脚本期望不一致');
 }
 

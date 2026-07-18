@@ -6,7 +6,6 @@
     microbes: DB.microbes || [],
     antibiotics: DB.antibiotics || [],
     resistance: DB.resistance || [],
-    idcards: DB.idcards || [],
     cards: DB.cards || [],
     tests: DB.tests || [],
     media: DB.media || [],
