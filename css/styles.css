@@ -218,15 +218,37 @@ body.route-mn .detail-title { margin-top: 18px; }
 .morph-tag { display: inline-block; font-size: 11px; color: var(--ink-soft); background: var(--line-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; white-space: nowrap; }
 .morph-tag.morph-med { background: var(--accent-weak); border-color: var(--accent-edge); color: var(--accent); }
 
-/* 真实形态学图片（CDC PHIL 公有领域） */
-.morphology.photos { max-width: 760px; }
-.photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px; }
-.photo-fig { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
-.photo-img { display: block; width: 100%; height: auto; background: var(--line-2); }
-.photo-cap { padding: 7px 10px 9px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-.photo-cap-cn { flex: 1 1 auto; font-size: 12.5px; color: var(--ink-soft); line-height: 1.55; }
-.photo-src { flex-shrink: 0; font-size: 10.5px; font-family: var(--mono); color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; }
+/* 真实形态图轮播（CDC PHIL 公有领域）——紧凑：单图、限高，不喧宾夺主 */
+.morphology.photos { max-width: 420px; }
+.morph-title .photo-count { font-size: 11px; font-weight: 400; color: var(--muted); }
+.morph-title .photo-lic { float: right; font-size: 10.5px; font-weight: 400; color: var(--faint); }
+.photo-viewport { position: relative; margin-top: 8px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+/* 横向 scroll-snap：移动端天然支持左右滑动，无需 JS 手势 */
+/* 注意：不要设 scroll-behavior:smooth —— 与 scroll-snap-type 同用时，
+   程序化改 scrollLeft 会被吸附逻辑取消（实测停在原位）。左右按钮改为即时切换，
+   手指滑动仍由原生 scroll-snap 处理，体验不受影响。 */
+.photo-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.photo-track::-webkit-scrollbar { display: none; }
+.photo-slide { flex: 0 0 100%; scroll-snap-align: start; min-width: 0; }
+.photo-img { display: block; width: 100%; height: 210px; object-fit: contain; background: #111; }
+.photo-cap { padding: 6px 9px 8px; display: flex; align-items: baseline; gap: 8px; }
+.photo-cap-cn { flex: 1 1 auto; font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
+.photo-src { flex-shrink: 0; font-size: 10px; font-family: var(--mono); color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 3px; padding: 0 4px; }
 .photo-src:hover { color: var(--accent); border-color: var(--accent-edge); }
+/* 左右按钮：桌面端悬停显现；移动端隐藏（用滑动） */
+.photo-nav { position: absolute; top: 105px; transform: translateY(-50%); width: 28px; height: 40px; border: 0; cursor: pointer; background: rgba(0,0,0,.42); color: #fff; font-size: 20px; line-height: 1; opacity: 0; transition: opacity .18s; border-radius: 4px; }
+.photo-viewport:hover .photo-nav { opacity: 1; }
+.photo-nav:hover { background: rgba(0,0,0,.68); }
+.photo-nav.prev { left: 4px; }
+.photo-nav.next { right: 4px; }
+.photo-dots { display: flex; justify-content: center; gap: 6px; margin-top: 7px; }
+.photo-dot { width: 7px; height: 7px; padding: 0; border-radius: 50%; border: 0; background: var(--line); cursor: pointer; }
+.photo-dot.on { background: var(--accent); }
+@media (max-width: 760px) {
+  .morphology.photos { max-width: 100%; }
+  .photo-nav { display: none; }
+  .photo-img { height: 190px; }
+}
 
 /* 生化反应 */
 .biochem { margin: 22px 0; }
