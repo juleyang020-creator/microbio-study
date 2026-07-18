@@ -198,6 +198,7 @@
       机制图: extras.mechanismImage || null,
       机制图说明: extras.mechCaption || '示意图',
       形态: extras.morphology || null,
+      形态图片: extras.photos || null,
       治疗: extras.treatment || null,
       生化反应: extras.biochem || [],
       鉴别: extras.differential || [],

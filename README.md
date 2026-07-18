@@ -52,6 +52,7 @@
 |---|---|---|
 | `data/microbes.js` | 微生物分类（精选临床常用） | 187 |
 | `data/microbe-names.js` | 菌名速查索引（本库详情 / NCBI Taxonomy / PubMed，按拉丁名字母序） | 2328 |
+| `data/photos.js` | 真实形态学图片（CDC PHIL 公有领域，含出处/授权）| 10 菌 / 13 张 |
 | `data/antibiotics.js` | 抗微生物药 | 93 |
 | `data/resistance.js` | 耐药因素 | 22 |
 | `data/cards.js` | 检测卡：药敏卡 13 + 鉴定卡 7 | 20 |
@@ -122,7 +123,7 @@ DEEPSEEK_API_KEY=xxx GLM_API_KEY=yyy node tools/review-diagrams.mjs
 │   ├── app.js              # 路由、渲染、交互
 │   └── validate.js         # 浏览器端数据自检
 ├── data/                   # 全部数据（见上表）
-├── img/                    # SVG 教学示意图
+├── img/                    # SVG 教学示意图 + CDC PHIL 真实形态照片
 ├── icons/                  # PWA 图标
 ├── tests/                  # node:test 用例
 ├── tools/                  # 开发期脚本（示意图审校等）

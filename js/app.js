@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-50';
+  var APP_VERSION = window.APP_VERSION || '20260702-51';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -508,6 +508,28 @@
         mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag morph-med', text: c.培养基 }), el('span', { text: ' ' + c.形态 }) ]));
       });
       nodes.push(el('div', { cls: 'morphology' }, mNodes));
+    }
+
+    // 真实形态学图片（CDC PHIL 公有领域）——放在文字形态描述之后，便于「描述↔实图」对照
+    if (vm.形态图片 && vm.形态图片.length) {
+      var pNodes = [ el('div', { cls: 'morph-title', text: '真实形态图（CDC PHIL·公有领域）' }) ];
+      var pGrid = el('div', { cls: 'photo-grid' });
+      vm.形态图片.forEach(function (p) {
+        pGrid.appendChild(el('figure', { cls: 'photo-fig' }, [
+          el('img', { cls: 'photo-img', src: imgV(p.文件), alt: p.说明, loading: 'lazy' }),
+          el('figcaption', { cls: 'photo-cap' }, [
+            el('span', { cls: 'photo-cap-cn', text: p.说明 }),
+            el('a', {
+              cls: 'photo-src', href: 'https://wwwn.cdc.gov/PHIL/details.aspx?pid=' + p.PHIL,
+              target: '_blank', rel: 'noopener noreferrer',
+              title: (p.摄影 || p.供图 || 'CDC') + ' — 查看 PHIL 原始条目与授权说明',
+              text: 'PHIL #' + p.PHIL
+            })
+          ])
+        ]));
+      });
+      pNodes.push(pGrid);
+      nodes.push(el('div', { cls: 'morphology photos' }, pNodes));
     }
 
     // ② 药敏折点（来自 CLSI M100）—— 药物名可跳转到对应抗生素条目
@@ -1805,6 +1827,7 @@
       mechanismImage: mechImg,
       mechCaption: route.module === 'tests' ? '试验示意图' : (route.module === 'staining' ? '染色示意图' : (route.module === 'biochem-tests' ? '生化反应示意图' : '作用机制示意图')),
       morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
+      photos: (route.module === 'microbes' && entry && window.DB.photos) ? window.DB.photos[entry.id] : null,
       treatment: (entry && window.DB.treatment) ? window.DB.treatment[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
       differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,

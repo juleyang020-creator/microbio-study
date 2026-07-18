@@ -218,6 +218,16 @@ body.route-mn .detail-title { margin-top: 18px; }
 .morph-tag { display: inline-block; font-size: 11px; color: var(--ink-soft); background: var(--line-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; white-space: nowrap; }
 .morph-tag.morph-med { background: var(--accent-weak); border-color: var(--accent-edge); color: var(--accent); }
 
+/* 真实形态学图片（CDC PHIL 公有领域） */
+.morphology.photos { max-width: 760px; }
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px; }
+.photo-fig { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.photo-img { display: block; width: 100%; height: auto; background: var(--line-2); }
+.photo-cap { padding: 7px 10px 9px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.photo-cap-cn { flex: 1 1 auto; font-size: 12.5px; color: var(--ink-soft); line-height: 1.55; }
+.photo-src { flex-shrink: 0; font-size: 10.5px; font-family: var(--mono); color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; }
+.photo-src:hover { color: var(--accent); border-color: var(--accent-edge); }
+
 /* 生化反应 */
 .biochem { margin: 22px 0; }
 .biochem-rows { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; max-width: 460px; }

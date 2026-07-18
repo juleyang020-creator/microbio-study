@@ -4,6 +4,7 @@
 
 ## 2026-07
 
+- **新增真实形态学图片（试点 10 菌）**：接入美国 CDC 公共卫生图像库 PHIL 的**公有领域**照片，覆盖金葡菌/大肠/肺克/铜绿/鲍曼/肺链/粪肠球菌/白念/流感嗜血/化脓链球菌，共 13 张（革兰染色镜检 + 血平板/麦康凯菌落形态），随应用打包并进离线预缓存（合计约 400 KB）。每张均逐条核对 PHIL 详情页的 "Copyright Restrictions: None - public domain" 声明，并在图注标注 PHIL 图像 ID 可回溯出处。新增 `data/photos.js` 与详情页「真实形态图」区块。
 - **按《体验反馈与改进计划》精简模块**（4 项）：
   - **删除「关联关系图」模块** — 视觉大于学习效用，详情页关联列表已够用。移除 `Core.buildGraph` / `View.graphLayoutVM` / `renderGraph*` / `#/graph` 路由 / 工具栏按钮与相关样式测试；其他工具复用的 `.graph-controls` 改名 `.tool-controls`。
   - **删除抗菌药分子结构图** — 药化内容与检验实习无关且占预缓存体积。移除 `data/structures.js`、58 张 `img/struct-*.svg` 及渲染逻辑与预缓存条目。
