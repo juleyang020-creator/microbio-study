@@ -1,18 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>抑制叶酸代谢</title><desc>阻断四氢叶酸合成（核苷酸原料）。磺胺(DHPS) ＋ 甲氧苄啶(DHFR)，序贯双阻断</desc><defs>
- <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
- <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
- <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抑制叶酸代谢</title><desc>磺胺类竞争性抑制DHPS（PABA类似物），甲氧苄啶抑制DHFR；序贯双重阻断四氢叶酸合成，嘌呤/dTMP原料耗竭</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
 </defs>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">抑制叶酸代谢</text>
-<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">阻断四氢叶酸合成（核苷酸原料）</text>
-<text x="58" y="112" font-size="12" fill="#2c3138" text-anchor="start">PABA</text> <line x1="98" y1="108" x2="150" y2="108" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <circle cx="172" cy="108" r="17" fill="#9fb0cc" stroke="#8093b3" stroke-width="1.3"/><text x="172" y="142" font-size="11" fill="#2c3138" text-anchor="middle">DHPS</text>
- <g transform="translate(172,80) rotate(0) scale(0.82)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="172" y1="90" x2="172" y2="96" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="143" y1="101" x2="157" y2="115"/><line x1="143" y1="115" x2="157" y2="101"/></g> <text x="150" y="72" font-size="11" fill="#2c3138" text-anchor="middle">磺胺</text>
- <line x1="191" y1="108" x2="246" y2="108" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="218" y="102" font-size="11" fill="#565b63" text-anchor="middle">DHF</text>
- <circle cx="268" cy="108" r="17" fill="#b79ac9" stroke="#9d7fb4" stroke-width="1.3"/><text x="268" y="142" font-size="11" fill="#2c3138" text-anchor="middle">DHFR</text>
- <g transform="translate(268,80) rotate(0) scale(0.82)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="268" y1="90" x2="268" y2="96" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="239" y1="101" x2="253" y2="115"/><line x1="239" y1="115" x2="253" y2="101"/></g> <text x="300" y="72" font-size="11" fill="#2c3138" text-anchor="middle">甲氧苄啶</text>
- <line x1="287" y1="108" x2="342" y2="108" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="372" y="112" font-size="12" fill="#2c3138" text-anchor="start">THF</text> <line x1="372" y1="122" x2="372" y2="150" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="372" y="168" font-size="11" fill="#565b63" text-anchor="middle">核酸合成</text>
- <text x="240" y="214" font-size="12" fill="#3f444b" text-anchor="middle">叶酸耗竭 → 抑制细菌增殖</text>
-<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">磺胺(DHPS) ＋ 甲氧苄啶(DHFR)，序贯双阻断</text>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抑制叶酸代谢</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef2f7"/>
+<text x="416" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗菌机制 4/5</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">序贯双重阻断四氢叶酸（THF）合成 → 核酸原料耗竭</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- 序贯阻断标注 -->
+<path d="M146,84 v-6 h158 v6" fill="none" stroke="#c2413d" stroke-width="1.2" stroke-dasharray="4,3"/>
+<text x="225" y="72" text-anchor="middle" font-size="9.5" fill="#c2413d">序贯双重阻断 → 协同（复方 SMZ-TMP）</text>
+
+<!-- ===== 代谢通路 ===== -->
+<!-- PABA + 蝶啶 -->
+<rect x="28" y="118" width="76" height="26" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="66" y="129" text-anchor="middle" font-size="9.5" fill="#1f2733">PABA</text>
+<text x="66" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">＋ 蝶啶</text>
+<line x1="104" y1="131" x2="132" y2="131" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- DHPS -->
+<circle cx="150" cy="131" r="16" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="150" y="135" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">DHPS</text>
+<line x1="166" y1="131" x2="194" y2="131" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- DHF -->
+<rect x="196" y="118" width="64" height="26" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="228" y="129" text-anchor="middle" font-size="9.5" fill="#1f2733">二氢叶酸</text>
+<text x="228" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">DHF</text>
+<line x1="260" y1="131" x2="286" y2="131" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- DHFR -->
+<circle cx="304" cy="131" r="16" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="304" y="135" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">DHFR</text>
+<line x1="320" y1="131" x2="346" y2="131" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<!-- THF -->
+<rect x="348" y="118" width="64" height="26" rx="5" fill="#e8f3ef" stroke="#2f8f83"/>
+<text x="380" y="129" text-anchor="middle" font-size="9.5" fill="#1f2733">四氢叶酸</text>
+<text x="380" y="140" text-anchor="middle" font-size="9.5" fill="#2f8f83">THF</text>
+<!-- THF → DNA原料 -->
+<line x1="380" y1="144" x2="380" y2="162" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="328" y="164" width="104" height="28" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="380" y="176" text-anchor="middle" font-size="9.5" fill="#1f2733">嘌呤 / dTMP 合成</text>
+<text x="380" y="187" text-anchor="middle" font-size="9.5" fill="#5c6672">（DNA 原料）</text>
+
+<!-- 药物阻断 -->
+<rect x="118" y="84" width="56" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="146" y="95" text-anchor="middle" font-size="9.5" fill="#a3332f">磺胺类</text>
+<line x1="148" y1="99" x2="150" y2="113" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="146" y="110" font-size="9.5" fill="#c2413d" text-anchor="start"> </text>
+<rect x="272" y="84" width="64" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="304" y="95" text-anchor="middle" font-size="9.5" fill="#a3332f">甲氧苄啶</text>
+<line x1="304" y1="99" x2="304" y2="113" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="120" y="158" font-size="9.5" fill="#5c6672">PABA 竞争性抑制</text>
+<text x="272" y="158" font-size="9.5" fill="#5c6672">抑二氢叶酸还原酶</text>
+
+<!-- 选择性说明 -->
+<text x="240" y="220" text-anchor="middle" font-size="9.5" fill="#5c6672">选择性：人无 DHPS（磺胺）；人虽有 DHFR，但 TMP 对细菌 DHFR 亲和力高数万倍</text>
+
+<!-- 结局 -->
+<text x="240" y="246" text-anchor="middle" font-size="12" fill="#3f444b">THF 耗竭 → DNA 合成停滞 → 抑菌（合用可部分杀菌）</text>
+
+<!-- 页脚：代表药 -->
+<rect x="24" y="272" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="287" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#1f2733">代表药</tspan>　磺胺甲噁唑（SMZ）＋ 甲氧苄啶（TMP）复方 ｜ 磺胺嘧啶</text>
 </svg>

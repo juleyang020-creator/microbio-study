@@ -1,19 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>破坏细胞膜</title><desc>结合膜脂、形成孔道，胞内物质外漏。多黏菌素(LPS/磷脂)；达托霉素(革兰阳性膜去极化)</desc><defs>
- <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
- <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
- <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>破坏细胞膜</title><desc>多黏菌素结合革兰阴性菌外膜LPS脂质A、置换Ca²⁺/Mg²⁺；达托霉素Ca²⁺依赖插入革兰阳性菌膜、寡聚成孔致K⁺外流去极化</desc>
+<defs>
+  <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#3a6f8c"/></marker>
 </defs>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">破坏细胞膜</text>
-<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">结合膜脂、形成孔道，胞内物质外漏</text>
-<rect x="60" y="122" width="360" height="30" fill="#efe6c6" stroke="#c8b887"/>
- <g fill="#c8b887"><circle cx="90" cy="122" r="4"/><circle cx="120" cy="122" r="4"/><circle cx="150" cy="122" r="4"/><circle cx="330" cy="122" r="4"/><circle cx="360" cy="122" r="4"/><circle cx="390" cy="122" r="4"/></g>
- <text x="70" y="112" font-size="11" fill="#5a5740" text-anchor="start">细胞膜</text>
- <g transform="translate(210,122) rotate(90) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <g transform="translate(240,122) rotate(90) scale(0.9)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
- <rect x="204" y="122" width="42" height="30" fill="#ffffff" opacity="0.85"/>
- <g stroke="#3a6f8c" stroke-width="1.6"><line x1="216" y1="154" x2="210" y2="188" marker-end="url(#arr)"/><line x1="234" y1="154" x2="240" y2="188" marker-end="url(#arr)"/></g>
- <text x="225" y="204" font-size="11" fill="#3a6f8c" text-anchor="middle">K⁺/胞内物外漏</text>
- <text x="240" y="226" font-size="12" fill="#3f444b" text-anchor="middle">膜完整性破坏 → 快速杀菌</text>
-<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">多黏菌素(LPS/磷脂)；达托霉素(革兰阳性膜去极化)</text>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">破坏细胞膜</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef2f7"/>
+<text x="416" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗菌机制 5/5</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">直接损伤膜结构 → 内容物外漏、膜去极化 → 快速杀菌</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+<line x1="240" y1="66" x2="240" y2="224" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 左：多黏菌素 × 革兰阴性菌外膜 ===== -->
+<text x="28" y="74" font-size="10" font-weight="700" fill="#8a6d2f">多黏菌素 × 革兰阴性菌外膜</text>
+<!-- LPS 糖链 -->
+<g stroke="#b98a2f" stroke-width="1.2" fill="#d9a441">
+  <line x1="60" y1="100" x2="60" y2="86"/><circle cx="60" cy="83" r="2.2"/><circle cx="60" cy="90" r="1.8"/>
+  <line x1="104" y1="100" x2="104" y2="86"/><circle cx="104" cy="83" r="2.2"/><circle cx="104" cy="90" r="1.8"/>
+  <line x1="148" y1="100" x2="148" y2="86"/><circle cx="148" cy="83" r="2.2"/><circle cx="148" cy="90" r="1.8"/>
+  <line x1="192" y1="100" x2="192" y2="86"/><circle cx="192" cy="83" r="2.2"/><circle cx="192" cy="90" r="1.8"/>
+</g>
+<text x="220" y="84" text-anchor="end" font-size="9.5" fill="#8a6d2f">LPS</text>
+<!-- 外膜 -->
+<rect x="32" y="100" width="192" height="20" fill="#f7ecd4"/>
+<g fill="#d9a441">
+  <circle cx="38" cy="100" r="2.4"/><circle cx="50" cy="100" r="2.4"/><circle cx="62" cy="100" r="2.4"/><circle cx="74" cy="100" r="2.4"/><circle cx="86" cy="100" r="2.4"/><circle cx="98" cy="100" r="2.4"/><circle cx="110" cy="100" r="2.4"/><circle cx="122" cy="100" r="2.4"/><circle cx="134" cy="100" r="2.4"/><circle cx="146" cy="100" r="2.4"/><circle cx="158" cy="100" r="2.4"/><circle cx="170" cy="100" r="2.4"/><circle cx="182" cy="100" r="2.4"/><circle cx="194" cy="100" r="2.4"/><circle cx="206" cy="100" r="2.4"/><circle cx="218" cy="100" r="2.4"/>
+  <circle cx="38" cy="120" r="2.4"/><circle cx="50" cy="120" r="2.4"/><circle cx="62" cy="120" r="2.4"/><circle cx="74" cy="120" r="2.4"/><circle cx="86" cy="120" r="2.4"/><circle cx="98" cy="120" r="2.4"/><circle cx="110" cy="120" r="2.4"/><circle cx="122" cy="120" r="2.4"/><circle cx="134" cy="120" r="2.4"/><circle cx="146" cy="120" r="2.4"/><circle cx="158" cy="120" r="2.4"/><circle cx="170" cy="120" r="2.4"/><circle cx="182" cy="120" r="2.4"/><circle cx="194" cy="120" r="2.4"/><circle cx="206" cy="120" r="2.4"/><circle cx="218" cy="120" r="2.4"/>
+</g>
+<text x="36" y="114" font-size="9.5" fill="#8a6d2f">外膜</text>
+<!-- 多黏菌素分子（插入外膜） -->
+<rect x="86" y="94" width="8" height="32" rx="4" fill="#c2413d" transform="rotate(-12 90 110)"/>
+<rect x="126" y="94" width="8" height="32" rx="4" fill="#c2413d" transform="rotate(10 130 110)"/>
+<!-- 被置换的 Ca²⁺/Mg²⁺ -->
+<g fill="#4e8d5b"><circle cx="112" cy="108" r="2.6"/><circle cx="152" cy="106" r="2.6"/></g>
+<g stroke="#4e8d5b" stroke-width="1.2" fill="none"><path d="M112,108 l10,-8"/><path d="M152,106 l10,-6"/></g>
+<text x="166" y="96" font-size="9.5" fill="#4e8d5b">Ca²⁺/Mg²⁺</text>
+<!-- 肽聚糖薄层 -->
+<rect x="32" y="130" width="192" height="6" fill="#ece6f5" stroke="#b9a8d8" stroke-width="0.6"/>
+<text x="36" y="127" font-size="9.5" fill="#8570b3">肽聚糖</text>
+<!-- 内膜 -->
+<rect x="32" y="146" width="192" height="18" fill="#f7ecd4"/>
+<g fill="#d9a441">
+  <circle cx="38" cy="146" r="2.4"/><circle cx="50" cy="146" r="2.4"/><circle cx="62" cy="146" r="2.4"/><circle cx="74" cy="146" r="2.4"/><circle cx="86" cy="146" r="2.4"/><circle cx="98" cy="146" r="2.4"/><circle cx="110" cy="146" r="2.4"/><circle cx="122" cy="146" r="2.4"/><circle cx="134" cy="146" r="2.4"/><circle cx="146" cy="146" r="2.4"/><circle cx="158" cy="146" r="2.4"/><circle cx="170" cy="146" r="2.4"/><circle cx="182" cy="146" r="2.4"/><circle cx="194" cy="146" r="2.4"/><circle cx="206" cy="146" r="2.4"/><circle cx="218" cy="146" r="2.4"/>
+  <circle cx="38" cy="164" r="2.4"/><circle cx="50" cy="164" r="2.4"/><circle cx="62" cy="164" r="2.4"/><circle cx="74" cy="164" r="2.4"/><circle cx="86" cy="164" r="2.4"/><circle cx="98" cy="164" r="2.4"/><circle cx="110" cy="164" r="2.4"/><circle cx="122" cy="164" r="2.4"/><circle cx="134" cy="164" r="2.4"/><circle cx="146" cy="164" r="2.4"/><circle cx="158" cy="164" r="2.4"/><circle cx="170" cy="164" r="2.4"/><circle cx="182" cy="164" r="2.4"/><circle cx="194" cy="164" r="2.4"/><circle cx="206" cy="164" r="2.4"/><circle cx="218" cy="164" r="2.4"/>
+</g>
+<text x="36" y="159" font-size="9.5" fill="#8a6d2f">内膜</text>
+<text x="28" y="186" font-size="9.5" fill="#5c6672">结合脂质A、置换Ca²⁺/Mg²⁺ → 外膜通透化，继而破坏内膜</text>
+<text x="28" y="200" font-size="9.5" fill="#5c6672">→ 内容物外漏（抗铜绿假单胞菌等G⁻菌）</text>
+
+<!-- ===== 右：达托霉素 × 革兰阳性菌膜 ===== -->
+<text x="258" y="74" font-size="10" font-weight="700" fill="#8a6d2f">达托霉素 × 革兰阳性菌细胞膜</text>
+<!-- 肽聚糖厚壁 -->
+<rect x="252" y="96" width="192" height="24" fill="#ece6f5" stroke="#b9a8d8" stroke-width="0.6"/>
+<text x="256" y="92" font-size="9.5" fill="#8570b3">肽聚糖厚壁（G⁺）</text>
+<!-- 细胞膜 -->
+<rect x="252" y="132" width="192" height="20" fill="#f7ecd4"/>
+<g fill="#d9a441">
+  <circle cx="258" cy="132" r="2.4"/><circle cx="270" cy="132" r="2.4"/><circle cx="282" cy="132" r="2.4"/><circle cx="294" cy="132" r="2.4"/><circle cx="306" cy="132" r="2.4"/><circle cx="318" cy="132" r="2.4"/><circle cx="330" cy="132" r="2.4"/><circle cx="342" cy="132" r="2.4"/><circle cx="354" cy="132" r="2.4"/><circle cx="366" cy="132" r="2.4"/><circle cx="378" cy="132" r="2.4"/><circle cx="390" cy="132" r="2.4"/><circle cx="402" cy="132" r="2.4"/><circle cx="414" cy="132" r="2.4"/><circle cx="426" cy="132" r="2.4"/><circle cx="438" cy="132" r="2.4"/>
+  <circle cx="258" cy="152" r="2.4"/><circle cx="270" cy="152" r="2.4"/><circle cx="282" cy="152" r="2.4"/><circle cx="294" cy="152" r="2.4"/><circle cx="306" cy="152" r="2.4"/><circle cx="318" cy="152" r="2.4"/><circle cx="330" cy="152" r="2.4"/><circle cx="342" cy="152" r="2.4"/><circle cx="354" cy="152" r="2.4"/><circle cx="366" cy="152" r="2.4"/><circle cx="378" cy="152" r="2.4"/><circle cx="390" cy="152" r="2.4"/><circle cx="402" cy="152" r="2.4"/><circle cx="414" cy="152" r="2.4"/><circle cx="426" cy="152" r="2.4"/><circle cx="438" cy="152" r="2.4"/>
+</g>
+<text x="438" y="146" text-anchor="end" font-size="9.5" fill="#8a6d2f">细胞膜</text>
+<!-- 达托霉素寡聚孔道 -->
+<g fill="#c2413d"><rect x="324" y="126" width="7" height="32" rx="3.5"/><rect x="333" y="126" width="7" height="32" rx="3.5"/><rect x="342" y="126" width="7" height="32" rx="3.5"/></g>
+<g fill="#5b7aa8"><circle cx="320" cy="130" r="2.2"/><circle cx="353" cy="130" r="2.2"/></g>
+<text x="336" y="122" text-anchor="middle" font-size="9.5" fill="#5b7aa8">Ca²⁺依赖</text>
+<!-- K⁺ 外流 -->
+<g stroke="#3a6f8c" stroke-width="1.3" fill="none">
+  <line x1="330" y1="160" x2="324" y2="184" marker-end="url(#arr)"/>
+  <line x1="344" y1="160" x2="350" y2="184" marker-end="url(#arr)"/>
+</g>
+<text x="360" y="182" font-size="9.5" fill="#3a6f8c">K⁺外流 → 去极化</text>
+<text x="258" y="200" font-size="9.5" fill="#5c6672">插入膜、寡聚成孔 → 离子外流（快速杀菌）</text>
+<text x="258" y="214" font-size="9.5" fill="#5c6672">被肺表面活性物质灭活 → 不用于肺炎</text>
+
+<!-- 结局 -->
+<text x="240" y="246" text-anchor="middle" font-size="12" fill="#3f444b">膜完整性破坏 / 膜电位丧失 → 快速杀菌（浓度依赖）</text>
+
+<!-- 页脚：代表药 -->
+<rect x="24" y="272" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="287" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#1f2733">代表药</tspan>　多黏菌素 B/E（抗 G⁻）｜达托霉素（抗 G⁺，含 MRSA）</text>
 </svg>

@@ -1,90 +1,90 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 506" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>细菌的基本形态与排列</title><desc>光学显微镜下的典型形态（示意）；排列由分裂平面与分裂后是否分离决定</desc>
-  <rect width="480" height="506" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">细菌的基本形态与排列</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">光学显微镜下的典型形态（示意）；排列由分裂平面与分裂后是否分离决定</text>
+<title>细菌的基本形态与排列</title><desc>球菌（单/双/链/四联/八叠/葡萄状）、杆菌（杆/链杆/球杆/棒状/芽孢/分枝）、螺形菌（弧菌/螺菌/螺旋体）；排列由分裂平面与分裂后是否分离决定</desc>
+<rect width="480" height="506" fill="#ffffff"/>
 
-  <!-- ===== 球菌 Cocci ===== -->
-  <text x="24" y="74" font-size="12.5" font-weight="700" fill="#7a67a0">球菌 Cocci</text>
-  <g fill="#9d7fb4" stroke="#7a67a0" stroke-width="1">
-    <!-- 单球菌 cx96 y104 -->
-    <circle cx="96" cy="104" r="8"/>
-    <!-- 双球菌 cx240 -->
-    <circle cx="232" cy="104" r="8"/><circle cx="248" cy="104" r="8"/>
-    <!-- 链球菌 cx384 -->
-    <circle cx="360" cy="106" r="6.5"/><circle cx="372" cy="102" r="6.5"/><circle cx="384" cy="106" r="6.5"/><circle cx="396" cy="102" r="6.5"/><circle cx="408" cy="106" r="6.5"/>
-  </g>
-  <text x="96" y="132" text-anchor="middle" font-size="11" fill="#565b63">单球菌</text>
-  <text x="240" y="132" text-anchor="middle" font-size="11" fill="#565b63">双球菌</text>
-  <text x="240" y="146" text-anchor="middle" font-size="11" fill="#565b63">肺炎链球菌·奈瑟菌</text>
-  <text x="384" y="132" text-anchor="middle" font-size="11" fill="#565b63">链球菌</text>
+<!-- 页眉 -->
+<text x="24" y="28" font-size="16" font-weight="700" fill="#1f2733">细菌的基本形态与排列</text>
+<rect x="368" y="14" width="88" height="18" rx="9" fill="#eef2f7"/>
+<text x="412" y="27" text-anchor="middle" font-size="10" fill="#5c6672">形态总览 · 细菌</text>
+<text x="24" y="47" font-size="11.5" fill="#5c6672">光学显微镜下的典型形态（示意）；排列由分裂平面与分裂后是否分离决定</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
 
-  <g fill="#9d7fb4" stroke="#7a67a0" stroke-width="1">
-    <!-- 四联球菌 cx96 y172 -->
-    <circle cx="90" cy="166" r="6.5"/><circle cx="103" cy="166" r="6.5"/><circle cx="90" cy="179" r="6.5"/><circle cx="103" cy="179" r="6.5"/>
-    <!-- 八叠球菌 cx240：立方体(后4浅、前4深) -->
-    <g opacity="0.55"><circle cx="243" cy="166" r="6"/><circle cx="255" cy="166" r="6"/><circle cx="243" cy="178" r="6"/><circle cx="255" cy="178" r="6"/></g>
-    <circle cx="237" cy="171" r="6.5"/><circle cx="249" cy="171" r="6.5"/><circle cx="237" cy="183" r="6.5"/><circle cx="249" cy="183" r="6.5"/>
-    <!-- 葡萄球菌 cx384：不规则簇 -->
-    <circle cx="384" cy="166" r="6"/><circle cx="375" cy="170" r="6"/><circle cx="393" cy="170" r="6"/><circle cx="380" cy="178" r="6"/><circle cx="390" cy="178" r="6"/><circle cx="385" cy="160" r="6"/>
-  </g>
-  <text x="96" y="200" text-anchor="middle" font-size="11" fill="#565b63">四联球菌</text>
-  <text x="240" y="200" text-anchor="middle" font-size="11" fill="#565b63">八叠球菌</text>
-  <text x="384" y="200" text-anchor="middle" font-size="11" fill="#565b63">葡萄球菌</text>
+<!-- ===== 球菌 ===== -->
+<circle cx="30" cy="77" r="4" fill="#8a6fbf"/><text x="42" y="81" font-size="12.5" font-weight="700" fill="#6e5a9e">球菌 Coccus</text>
+<g fill="#e6ddf3" stroke="#7a63ad" stroke-width="1.2">
+  <!-- 单球菌 -->
+  <circle cx="96" cy="104" r="9"/>
+  <!-- 双球菌（矛头状，成双相对） -->
+  <ellipse cx="228" cy="104" rx="10" ry="7"/><ellipse cx="250" cy="104" rx="10" ry="7"/>
+  <!-- 链球菌 -->
+  <circle cx="352" cy="106" r="6"/><circle cx="364" cy="101" r="6"/><circle cx="376" cy="106" r="6"/><circle cx="388" cy="101" r="6"/><circle cx="400" cy="106" r="6"/><circle cx="412" cy="103" r="6"/>
+  <!-- 四联球菌 -->
+  <circle cx="88" cy="170" r="6.5"/><circle cx="101" cy="170" r="6.5"/><circle cx="88" cy="183" r="6.5"/><circle cx="101" cy="183" r="6.5"/>
+  <!-- 八叠球菌（立方叠） -->
+  <g opacity="0.5"><circle cx="240" cy="168" r="5.5"/><circle cx="252" cy="168" r="5.5"/><circle cx="240" cy="180" r="5.5"/><circle cx="252" cy="180" r="5.5"/></g>
+  <circle cx="233" cy="173" r="6.5"/><circle cx="245" cy="173" r="6.5"/><circle cx="233" cy="185" r="6.5"/><circle cx="245" cy="185" r="6.5"/>
+  <!-- 葡萄球菌 -->
+  <circle cx="384" cy="167" r="6"/><circle cx="372" cy="173" r="6"/><circle cx="396" cy="173" r="6"/><circle cx="378" cy="183" r="6"/><circle cx="392" cy="183" r="6"/><circle cx="384" cy="176" r="6"/><circle cx="366" cy="180" r="6"/><circle cx="402" cy="181" r="6"/>
+</g>
+<text x="96" y="136" text-anchor="middle" font-size="11" fill="#3f444b">单球菌</text>
+<text x="240" y="136" text-anchor="middle" font-size="11" fill="#3f444b">双球菌</text>
+<text x="240" y="149" text-anchor="middle" font-size="9.5" fill="#5c6672">肺炎链球菌 · 奈瑟菌</text>
+<text x="384" y="136" text-anchor="middle" font-size="11" fill="#3f444b">链球菌</text>
+<text x="96" y="206" text-anchor="middle" font-size="11" fill="#3f444b">四联球菌</text>
+<text x="240" y="206" text-anchor="middle" font-size="11" fill="#3f444b">八叠球菌</text>
+<text x="384" y="206" text-anchor="middle" font-size="11" fill="#3f444b">葡萄球菌</text>
+<line x1="24" y1="222" x2="456" y2="222" stroke="#e3e7ec"/>
 
-  <line x1="24" y1="214" x2="456" y2="214" stroke="#efe6c6" stroke-width="1"/>
+<!-- ===== 杆菌 ===== -->
+<circle cx="30" cy="241" r="4" fill="#3b9c8d"/><text x="42" y="245" font-size="12.5" font-weight="700" fill="#2f8f83">杆菌 Bacillus</text>
+<g fill="#d9efe9" stroke="#2f8f83" stroke-width="1.2">
+  <!-- 杆菌 -->
+  <rect x="78" y="261" width="36" height="14" rx="7"/>
+  <!-- 链杆菌 -->
+  <rect x="196" y="262" width="16" height="12" rx="6"/><rect x="214" y="262" width="16" height="12" rx="6"/><rect x="232" y="262" width="16" height="12" rx="6"/><rect x="250" y="262" width="16" height="12" rx="6"/>
+  <!-- 球杆菌 -->
+  <ellipse cx="384" cy="268" rx="12" ry="8"/>
+  <!-- 棒状杆菌 V 形排列 -->
+  <rect x="84" y="322" width="9" height="30" rx="4.5" transform="rotate(-24 96 338)"/>
+  <rect x="99" y="322" width="9" height="30" rx="4.5" transform="rotate(24 96 338)"/>
+  <!-- 芽孢杆菌：中央芽孢 + 端生芽孢（鼓槌） -->
+  <rect x="200" y="330" width="40" height="14" rx="7"/>
+  <rect x="268" y="331" width="24" height="12" rx="6"/>
+  <!-- 分枝杆菌（串珠） -->
+  <path d="M356,340 Q376,326 396,334 Q410,340 420,332" fill="none" stroke="#2f8f83" stroke-width="6" stroke-linecap="round"/>
+</g>
+<!-- 异染颗粒 -->
+<g fill="#57487a"><circle cx="89" cy="326" r="2.2"/><circle cx="103" cy="326" r="2.2"/></g>
+<!-- 芽孢 -->
+<ellipse cx="220" cy="337" rx="8" ry="5.5" fill="#cfe6cf" stroke="#2f8f6f" stroke-width="1"/>
+<circle cx="298" cy="337" r="8" fill="#cfe6cf" stroke="#2f8f6f" stroke-width="1"/>
+<!-- 分枝杆菌串珠 -->
+<g fill="#eafaf4"><circle cx="372" cy="334" r="1.6"/><circle cx="384" cy="331" r="1.6"/><circle cx="396" cy="334" r="1.6"/><circle cx="408" cy="336" r="1.6"/></g>
+<text x="96" y="300" text-anchor="middle" font-size="11" fill="#3f444b">杆菌</text>
+<text x="240" y="300" text-anchor="middle" font-size="11" fill="#3f444b">链杆菌</text>
+<text x="384" y="300" text-anchor="middle" font-size="11" fill="#3f444b">球杆菌</text>
+<text x="384" y="313" text-anchor="middle" font-size="9.5" fill="#5c6672">形似球菌的短杆菌</text>
+<text x="96" y="372" text-anchor="middle" font-size="11" fill="#3f444b">棒状杆菌</text>
+<text x="96" y="385" text-anchor="middle" font-size="9.5" fill="#5c6672">V/L 形排列 · 异染颗粒</text>
+<text x="240" y="372" text-anchor="middle" font-size="11" fill="#3f444b">芽孢杆菌</text>
+<text x="240" y="385" text-anchor="middle" font-size="9.5" fill="#5c6672">中央 / 端生芽孢（休眠体）</text>
+<text x="384" y="372" text-anchor="middle" font-size="11" fill="#3f444b">分枝杆菌</text>
+<text x="384" y="385" text-anchor="middle" font-size="9.5" fill="#5c6672">抗酸 · 串珠状</text>
+<line x1="24" y1="398" x2="456" y2="398" stroke="#e3e7ec"/>
 
-  <!-- ===== 杆菌 Bacilli ===== -->
-  <text x="24" y="234" font-size="12.5" font-weight="700" fill="#2e6b66">杆菌 Bacilli</text>
-  <g fill="#4f9e93" stroke="#2e6b66" stroke-width="1">
-    <!-- 单杆菌 cx96 y266 -->
-    <rect x="81" y="259" width="30" height="13" rx="6.5"/>
-    <!-- 链杆菌 cx240：首尾相连 -->
-    <rect x="212" y="259" width="17" height="12" rx="6"/><rect x="231" y="259" width="17" height="12" rx="6"/><rect x="250" y="259" width="17" height="12" rx="6"/>
-    <!-- 球杆菌 cx384：短椭圆 -->
-    <ellipse cx="384" cy="266" rx="11" ry="7"/>
-  </g>
-  <text x="96" y="292" text-anchor="middle" font-size="11" fill="#565b63">杆菌</text>
-  <text x="240" y="292" text-anchor="middle" font-size="11" fill="#565b63">链杆菌</text>
-  <text x="384" y="292" text-anchor="middle" font-size="11" fill="#565b63">球杆菌</text>
+<!-- ===== 螺形菌 ===== -->
+<circle cx="30" cy="417" r="4" fill="#4f7cc4"/><text x="42" y="421" font-size="12.5" font-weight="700" fill="#3d63a0">螺形菌 Spirillum</text>
+<g fill="none" stroke="#4f7cc4" stroke-linecap="round">
+  <!-- 弧菌：逗点状 -->
+  <path d="M78,452 Q92,424 112,434" stroke-width="7"/>
+  <!-- 螺菌：2–3 个硬弯 -->
+  <path d="M212,448 Q226,428 240,444 T268,444" stroke-width="6"/>
+  <!-- 螺旋体：细密软弯 -->
+  <path d="M356,446 q5,-12 10,0 t10,0 t10,0 t10,0 t10,0" stroke-width="2.5"/>
+</g>
+<text x="96" y="478" text-anchor="middle" font-size="11" fill="#3f444b">弧菌（逗点状）</text>
+<text x="240" y="478" text-anchor="middle" font-size="11" fill="#3f444b">螺菌（数个硬弯）</text>
+<text x="384" y="478" text-anchor="middle" font-size="11" fill="#3f444b">螺旋体（细密软弯）</text>
 
-  <!-- 棒状杆菌 cx96 y330：V/L 排列、棒状 -->
-  <g fill="#4f9e93" stroke="#2e6b66" stroke-width="1">
-    <rect x="84" y="316" width="9" height="28" rx="4.5" transform="rotate(-22 96 330)"/>
-    <rect x="99" y="316" width="9" height="28" rx="4.5" transform="rotate(22 96 330)"/>
-  </g>
-  <g fill="#57487a"><circle cx="86" cy="320" r="2.4"/><circle cx="106" cy="320" r="2.4"/></g>
-  <text x="96" y="360" text-anchor="middle" font-size="11" fill="#565b63">棒状杆菌</text>
-  <text x="96" y="373" text-anchor="middle" font-size="11" fill="#565b63">栅栏 / V·L 排列</text>
-
-  <!-- 芽孢杆菌 cx240 y328 -->
-  <rect x="222" y="320" width="36" height="15" rx="7.5" fill="#4f9e93" stroke="#2e6b66" stroke-width="1"/>
-  <ellipse cx="240" cy="327.5" rx="7.5" ry="5.5" fill="#cfe6cf" stroke="#2f8f6f" stroke-width="1"/>
-  <text x="240" y="360" text-anchor="middle" font-size="11" fill="#565b63">芽孢杆菌</text>
-  <text x="240" y="373" text-anchor="middle" font-size="11" fill="#565b63">含内生芽孢</text>
-
-  <!-- 分枝杆菌 cx384 y327：细长、串珠、略分枝 -->
-  <path d="M362,332 Q382,318 404,328" fill="none" stroke="#4f9e93" stroke-width="6.5" stroke-linecap="round"/>
-  <path d="M392,324 q6,-6 12,-3" fill="none" stroke="#4f9e93" stroke-width="5" stroke-linecap="round"/>
-  <g fill="#eafaf4"><circle cx="372" cy="326" r="1.5"/><circle cx="384" cy="322.5" r="1.5"/><circle cx="396" cy="325" r="1.5"/></g>
-  <text x="384" y="360" text-anchor="middle" font-size="11" fill="#565b63">分枝杆菌</text>
-  <text x="384" y="373" text-anchor="middle" font-size="11" fill="#565b63">抗酸、串珠分枝</text>
-
-  <line x1="24" y1="388" x2="456" y2="388" stroke="#efe6c6" stroke-width="1"/>
-
-  <!-- ===== 螺形菌 Spiral ===== -->
-  <text x="24" y="408" font-size="12.5" font-weight="700" fill="#3f5aa6">螺形菌 Spiral</text>
-  <g fill="none" stroke="#5b7aa8" stroke-linecap="round">
-    <!-- 弧菌 cx96：逗点状 -->
-    <path d="M80,448 Q92,420 112,430" stroke-width="7"/>
-    <!-- 螺菌 cx240：硬螺旋、少弯 -->
-    <path d="M214,440 Q227,420 240,436 T266,436" stroke-width="6"/>
-    <!-- 螺旋体 cx384：柔软、多细密弯曲 -->
-    <path d="M358,436 q5,-11 10,0 t10,0 t10,0 t10,0 t10,0" stroke-width="3"/>
-  </g>
-  <text x="96" y="470" text-anchor="middle" font-size="11" fill="#565b63">弧菌（逗点状）</text>
-  <text x="240" y="470" text-anchor="middle" font-size="11" fill="#565b63">螺菌</text>
-  <text x="384" y="470" text-anchor="middle" font-size="11" fill="#565b63">螺旋体</text>
-
-  <text x="240" y="496" text-anchor="middle" font-size="11" fill="#565b63">球杆菌介于球菌与杆菌之间；螺旋体菌体柔软、弯曲细密</text>
+<text x="240" y="499" text-anchor="middle" font-size="10" fill="#5c6672">芽孢为休眠体而非繁殖体；形态与排列是染色镜检初步鉴定的重要线索</text>
 </svg>
