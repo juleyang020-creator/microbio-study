@@ -185,6 +185,15 @@ test('生化反应示意图（若有映射）文件均存在', () => {
   });
 });
 
+test('培养基示意图（若有映射）文件均存在', () => {
+  global.window.DB.media.forEach((m) => {
+    const img = View.mechanismImageFor('media', m, global.window.DB.categories);
+    if (img) {
+      assert.ok(fs.existsSync(path.join(__dirname, '..', img)), '培养基示意图文件缺失：' + img);
+    }
+  });
+});
+
 test('鉴定卡数据完整：每卡有适用菌关联与小节（已并入 cards 模块，以无药物组成区分）', () => {
   const idCards = (global.window.DB.cards || []).filter((c) => !(c.药物 && c.药物.length));
   idCards.forEach((c) => {

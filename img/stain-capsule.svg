@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 344" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>荚膜染色（负染 / Hiss 法）</title><desc>荚膜为多糖/多肽不易着色且加热易变形，故用负染：墨汁或刚果红使背景着色、碱性染料复染菌体，荚膜两者都不着色，在深色背景与紫色菌体之间显出透明晕；用于肺炎克雷伯菌、肺炎链球菌等有荚膜菌的观察</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="344" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">荚膜染色（负染 / Hiss 法）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">特殊结构染色</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">本图为负染法；Hiss 法则用结晶紫染色＋硫酸铜脱色</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 上半：试剂步骤 ===== -->
+<!-- 卡①：制片，不加热 -->
+<rect x="24" y="66" width="136" height="80" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="39" cy="80" r="7.5" fill="#1f2733"/>
+<text x="39" y="83.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="52" y="84" font-size="10" font-weight="700" fill="#33404f">制片 · 不加热</text>
+<rect x="72" y="92" width="40" height="26" rx="3" fill="#ffffff" stroke="#b9c2cc"/>
+<ellipse cx="86" cy="105" rx="5.5" ry="3.6" fill="#7b5ea7" stroke="#5b4f8a" stroke-width="0.8"/>
+<ellipse cx="86" cy="105" rx="9.5" ry="7.4" fill="none" stroke="#b9c2cc" stroke-width="0.8" stroke-dasharray="2,2"/>
+<path d="M104,113 c-4,-3 -1,-6 0,-9 c3,3 6,5 3,9 z" fill="#f7ecd4" stroke="#d9b96a" stroke-width="0.8"/>
+<g stroke="#c2413d" stroke-width="1.6" stroke-linecap="round">
+  <line x1="99" y1="99" x2="110" y2="115"/><line x1="110" y1="99" x2="99" y2="115"/>
+</g>
+<text x="92" y="130" text-anchor="middle" font-size="9.5" fill="#33404f">菌液＋墨汁／刚果红混匀</text>
+<text x="92" y="142" text-anchor="middle" font-size="9.5" fill="#c2413d">自然干燥（加热收缩→假荚膜晕）</text>
+
+<line x1="162" y1="106" x2="170" y2="106" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- 卡②：负染背景 -->
+<rect x="172" y="66" width="136" height="80" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="187" cy="80" r="7.5" fill="#1f2733"/>
+<text x="187" y="83.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="200" y="84" font-size="10" font-weight="700" fill="#33404f">负染背景</text>
+<rect x="220" y="92" width="40" height="26" rx="3" fill="#3f3f46" stroke="#1f2733"/>
+<ellipse cx="234" cy="105" rx="9.5" ry="7.4" fill="#ffffff"/>
+<g fill="#6f6f78">
+  <circle cx="225" cy="96" r="1.1"/><circle cx="249" cy="97" r="1.1"/><circle cx="253" cy="108" r="1.1"/><circle cx="246" cy="114" r="1.1"/><circle cx="224" cy="114" r="1.1"/>
+</g>
+<text x="240" y="130" text-anchor="middle" font-size="9.5" fill="#33404f">墨汁／酸性染料不进荚膜</text>
+<text x="240" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">只铺满菌体之外的背景</text>
+
+<line x1="310" y1="106" x2="318" y2="106" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- 卡③：复染菌体 -->
+<rect x="320" y="66" width="136" height="80" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="335" cy="80" r="7.5" fill="#1f2733"/>
+<text x="335" y="83.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="348" y="84" font-size="10" font-weight="700" fill="#33404f">复染菌体</text>
+<rect x="368" y="92" width="40" height="26" rx="3" fill="#3f3f46" stroke="#1f2733"/>
+<ellipse cx="382" cy="105" rx="9.5" ry="7.4" fill="#ffffff"/>
+<ellipse cx="382" cy="105" rx="5.5" ry="3.6" fill="#7b5ea7" stroke="#5b4f8a" stroke-width="0.8"/>
+<g fill="#6f6f78">
+  <circle cx="373" cy="96" r="1.1"/><circle cx="397" cy="97" r="1.1"/><circle cx="401" cy="108" r="1.1"/><circle cx="394" cy="114" r="1.1"/><circle cx="372" cy="114" r="1.1"/>
+</g>
+<text x="388" y="130" text-anchor="middle" font-size="9.5" fill="#33404f">碱性染料使菌体着色</text>
+<text x="388" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">荚膜依旧不着色</text>
+
+<!-- ===== 下半：镜下所见 ===== -->
+<text x="140" y="163" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">有荚膜菌（荚膜阳性）</text>
+<text x="340" y="163" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">无荚膜菌（对照）</text>
+
+<!-- 左：有荚膜 -->
+<circle cx="140" cy="214" r="44" fill="#3f3f46" stroke="#1f2733"/>
+<g fill="#6f6f78">
+  <circle cx="118" cy="184" r="1.2"/><circle cx="160" cy="182" r="1.2"/><circle cx="172" cy="212" r="1.2"/><circle cx="150" cy="246" r="1.2"/><circle cx="110" cy="243" r="1.2"/><circle cx="106" cy="205" r="1.2"/><circle cx="136" cy="228" r="1.2"/>
+</g>
+<g>
+  <ellipse cx="122" cy="198" rx="13" ry="9.5" fill="#ffffff"/>
+  <ellipse cx="122" cy="198" rx="6.5" ry="4" fill="#7b5ea7" stroke="#5b4f8a" stroke-width="0.9"/>
+  <ellipse cx="157" cy="207" rx="12" ry="9" fill="#ffffff"/>
+  <ellipse cx="157" cy="207" rx="6" ry="3.8" fill="#7b5ea7" stroke="#5b4f8a" stroke-width="0.9"/>
+  <ellipse cx="127" cy="234" rx="12.5" ry="9.2" fill="#ffffff"/>
+  <ellipse cx="127" cy="234" rx="6.2" ry="3.9" fill="#7b5ea7" stroke="#5b4f8a" stroke-width="0.9"/>
+</g>
+<!-- 中间图例 -->
+<rect x="196" y="180" width="14" height="12" rx="2" fill="#3f3f46" stroke="#1f2733"/>
+<text x="215" y="190" font-size="9.5" fill="#33404f">深色背景</text>
+<rect x="196" y="208" width="14" height="12" rx="2" fill="#ffffff" stroke="#b9c2cc"/>
+<text x="215" y="218" font-size="9.5" fill="#33404f">透明晕＝荚膜</text>
+<rect x="196" y="236" width="14" height="12" rx="2" fill="#7b5ea7" stroke="#5b4f8a"/>
+<text x="215" y="246" font-size="9.5" fill="#33404f">复染的菌体</text>
+
+<!-- 右：无荚膜 -->
+<circle cx="340" cy="214" r="44" fill="#3f3f46" stroke="#1f2733"/>
+<g fill="#6f6f78">
+  <circle cx="318" cy="184" r="1.2"/><circle cx="360" cy="182" r="1.2"/><circle cx="372" cy="212" r="1.2"/><circle cx="350" cy="246" r="1.2"/><circle cx="310" cy="243" r="1.2"/><circle cx="306" cy="205" r="1.2"/><circle cx="336" cy="228" r="1.2"/>
+</g>
+<g fill="#7b5ea7" stroke="#5b4f8a" stroke-width="0.9">
+  <ellipse cx="322" cy="198" rx="6.5" ry="4"/>
+  <ellipse cx="357" cy="207" rx="6" ry="3.8"/>
+  <ellipse cx="327" cy="234" rx="6.2" ry="3.9"/>
+</g>
+<text x="140" y="274" text-anchor="middle" font-size="9.5" fill="#33404f">菌体外一圈透明带将其与背景隔开</text>
+<text x="140" y="286" text-anchor="middle" font-size="9.5" fill="#5c6672">如肺炎克雷伯菌、肺炎链球菌</text>
+<text x="340" y="274" text-anchor="middle" font-size="9.5" fill="#33404f">菌体直接嵌在深色背景中，无透明带</text>
+<text x="340" y="286" text-anchor="middle" font-size="9.5" fill="#5c6672">（同片对照，排除干燥收缩的假晕环）</text>
+
+<!-- 结论 -->
+<text x="240" y="306" text-anchor="middle" font-size="11.5" fill="#33404f">被染的是背景和菌体，那圈「没染上」的空白才是荚膜</text>
+
+<!-- 页脚：主要用途 -->
+<rect x="24" y="314" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="330" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　有荚膜菌的荚膜观察 · 荚膜厚薄辅助判断毒力 · 与墨汁负染同理</text>
+</svg>

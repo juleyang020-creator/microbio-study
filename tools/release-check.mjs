@@ -20,6 +20,8 @@ function run(label, command, args) {
 }
 
 run('内容自检', process.execPath, ['tools/audit-content.mjs']);
+run('示意图检查', process.execPath, ['tools/lint-svg.mjs']);
+run('离线预缓存清单', process.execPath, ['tools/sync-sw-images.mjs', '--check']);
 run('自动测试', process.execPath, ['--test']);
 run('空白字符检查', 'git', ['diff', '--check']);
 

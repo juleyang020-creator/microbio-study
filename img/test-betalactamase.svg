@@ -1,41 +1,76 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>β-内酰胺酶试验（头孢硝噻吩）</title><desc>显色头孢菌素 nitrocefin 被 β-内酰胺酶水解后由黄变红</desc>
-  <defs>
-    <radialGradient id="bl-neg" cx="42%" cy="38%" r="68%">
-      <stop offset="0%" stop-color="#efdca0"/>
-      <stop offset="100%" stop-color="#e3c873"/>
-    </radialGradient>
-    <radialGradient id="bl-pos" cx="42%" cy="38%" r="68%">
-      <stop offset="0%" stop-color="#c05656"/>
-      <stop offset="100%" stop-color="#a83f3f"/>
-    </radialGradient>
-  </defs>
+<title>β-内酰胺酶试验（头孢硝噻吩）</title><desc>头孢硝噻吩（nitrocefin）纸片湿润后涂上待检菌落：产β-内酰胺酶者水解显色剂，涂菌处由黄变红为阳性，直接预示青霉素类耐药；仍为黄色为阴性</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <radialGradient id="yel" cx="40%" cy="34%" r="70%">
+    <stop offset="0%" stop-color="#f2dda2"/><stop offset="100%" stop-color="#e3c873"/>
+  </radialGradient>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">β-内酰胺酶试验（头孢硝噻吩）</text>
-  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#565b63">显色头孢菌素 nitrocefin 被 β-内酰胺酶水解后由黄变红</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">β-内酰胺酶试验（头孢硝噻吩）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">耐药表型检测</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">显色头孢菌素被 β-内酰胺酶水解 → 涂菌处由黄变红</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阴性 黄：不产酶，纸片保持黄色 -->
-  <g>
-    <circle cx="140" cy="158" r="52" fill="url(#bl-neg)" stroke="#9a8a52" stroke-width="1.5"/>
-    <circle cx="140" cy="158" r="44" fill="none" stroke="#c8ac5e" stroke-width="1" stroke-dasharray="2 4" opacity="0.7"/>
-  </g>
-  <text x="140" y="238" text-anchor="middle" font-size="13" font-weight="700" fill="#7c6a34">阴性（黄）</text>
-  <text x="140" y="256" text-anchor="middle" font-size="11" fill="#565b63">不产 β-内酰胺酶</text>
+<!-- ===== ❶ 纸片湿润 ===== -->
+<text x="58" y="80" text-anchor="middle" font-size="9.5" fill="#5c6672">先滴 1 滴纯水</text>
+<path d="M58 84 C54 90 62 90 58 84 Z" fill="#dce6f2" stroke="#5a80b0" stroke-width="1"/>
+<circle cx="58" cy="89" r="3.2" fill="#dce6f2" stroke="#5a80b0" stroke-width="1"/>
+<circle cx="58" cy="120" r="24" fill="url(#yel)" stroke="#b89a4e" stroke-width="1.5"/>
+<circle cx="58" cy="120" r="18" fill="none" stroke="#c8ac5e" stroke-width="1" stroke-dasharray="2 4" opacity="0.7"/>
+<circle cx="34" cy="98" r="7.5" fill="#1f2733"/>
+<text x="34" y="101.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="58" y="158" text-anchor="middle" font-size="9.5" fill="#33404f">头孢硝噻吩纸片</text>
+<text x="58" y="171" text-anchor="middle" font-size="9.5" fill="#8a6d2f">本底为黄色</text>
 
-  <!-- 箭头：β-内酰胺酶水解 -->
-  <line x1="208" y1="158" x2="262" y2="158" stroke="#565b63" stroke-width="1.5"/>
-  <polygon points="266,158 256,153.5 256,162.5" fill="#565b63"/>
-  <text x="237" y="148" text-anchor="middle" font-size="11" fill="#7c6a34">β-内酰胺酶</text>
-  <text x="237" y="172" text-anchor="middle" font-size="11" fill="#565b63">水解</text>
+<!-- ===== ❷ 涂菌 ===== -->
+<text x="138" y="80" text-anchor="middle" font-size="9.5" fill="#5c6672">接种环取菌落</text>
+<circle cx="138" cy="90" r="4.2" fill="none" stroke="#5c6672" stroke-width="1.2"/>
+<line x1="141.5" y1="92.5" x2="152" y2="87" stroke="#5c6672" stroke-width="1.2"/>
+<circle cx="138" cy="120" r="24" fill="url(#yel)" stroke="#b89a4e" stroke-width="1.5"/>
+<ellipse cx="138" cy="120" rx="13" ry="9" fill="#efe7d2" stroke="#a89460" stroke-width="1"/>
+<circle cx="114" cy="98" r="7.5" fill="#1f2733"/>
+<text x="114" y="101.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="138" y="158" text-anchor="middle" font-size="9.5" fill="#33404f">涂上待检菌落</text>
+<text x="138" y="171" text-anchor="middle" font-size="9.5" fill="#5c6672">葡萄球菌须取诱导菌</text>
 
-  <!-- 阳性 红：产酶水解显色，纸片变红 -->
-  <g>
-    <circle cx="338" cy="158" r="52" fill="url(#bl-pos)" stroke="#7d2e2e" stroke-width="1.5"/>
-    <circle cx="338" cy="158" r="44" fill="none" stroke="#c98080" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
-  </g>
-  <text x="338" y="238" text-anchor="middle" font-size="13" font-weight="700" fill="#c46a62">阳性（红）</text>
-  <text x="338" y="256" text-anchor="middle" font-size="11" fill="#565b63">产 β-内酰胺酶</text>
+<!-- ===== 分支箭头 ===== -->
+<line x1="168" y1="110" x2="218" y2="101" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="168" y1="132" x2="216" y2="180" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="194" y="94" text-anchor="middle" font-size="9.5" fill="#a3332f">产 β-内酰胺酶</text>
+<text x="192" y="176" text-anchor="middle" font-size="9.5" fill="#5c6672">不产酶</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="11.5" fill="#565b63">适用：流感嗜血杆菌、淋病奈瑟菌、卡他莫拉菌、葡萄球菌（预测青霉素耐药）</text>
+<!-- ===== ❸ 判读 ===== -->
+<circle cx="234" cy="145" r="7.5" fill="#1f2733"/>
+<text x="234" y="148.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="246" y="148.5" font-size="9.5" fill="#33404f">观察纸片颜色</text>
+
+<!-- 阳性纸片：涂菌处变红 -->
+<circle cx="252" cy="100" r="26" fill="url(#yel)" stroke="#b89a4e" stroke-width="1.5"/>
+<ellipse cx="252" cy="100" rx="14" ry="9.5" fill="#c0392b" stroke="#8e2b20" stroke-width="1"/>
+<text x="290" y="88" font-size="10" font-weight="700" fill="#a3332f">阳性：涂菌处变红</text>
+<text x="290" y="103" font-size="9.5" fill="#33404f">已产 β-内酰胺酶</text>
+<text x="290" y="117" font-size="9.5" fill="#5c6672">青霉素/氨苄西林报耐药</text>
+
+<!-- 阴性纸片：仍为黄色 -->
+<circle cx="252" cy="190" r="26" fill="url(#yel)" stroke="#b89a4e" stroke-width="1.5"/>
+<ellipse cx="252" cy="190" rx="14" ry="9.5" fill="#efe7d2" stroke="#a89460" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="290" y="178" font-size="10" font-weight="700" fill="#8a6d2f">阴性：整片仍为黄色</text>
+<text x="290" y="193" font-size="9.5" fill="#33404f">未检出可水解的 β-内酰胺酶</text>
+<text x="290" y="207" font-size="9.5" fill="#5c6672">金葡菌须加做青霉素抑菌圈边缘试验</text>
+
+<!-- 判读时限提示 -->
+<rect x="24" y="220" width="432" height="30" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="234" font-size="9.5" fill="#33404f">判读时限：多数 1 分钟内显色，部分葡萄球菌需 30–60 分钟</text>
+<text x="36" y="247" font-size="9.5" fill="#5c6672">超过说明书时限才出现的显色不判为阳性；葡萄球菌须取青霉素/头孢西丁圈缘的诱导生长物</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">快速出结果（数分钟至 1 小时）：阳性可先于药敏预警青霉素类耐药</text>
+
+<!-- 页脚：用途 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　流感嗜血杆菌 · 淋病奈瑟菌 · 卡他莫拉菌 · 葡萄球菌（预测青霉素耐药）</text>
 </svg>

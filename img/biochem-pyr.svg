@@ -1,24 +1,69 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>PYR 试验</title><desc>L-吡咯烷酮酶水解 PYR→β-萘胺，加肉桂醛试剂显红色</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">PYR 试验</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">L-吡咯烷酮酶水解 PYR→β-萘胺，加肉桂醛试剂显红色</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>PYR 试验</title><desc>PYR 纸片法：产吡咯烷酮芳基酰胺酶（PYRase）的菌把 PYR 水解为 β-萘胺，加对二甲氨基肉桂醛（DMACA）试剂生成红色络合物，纸片转樱桃红；无此酶者纸片不变色或仅呈淡黄</desc>
+<defs>
+  <marker id="pa" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="pg" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#8c96a2"/></marker>
+  <marker id="pr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#a3332f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性纸片 -->
-  <g>
-    <rect x="96" y="92" width="120" height="120" rx="10" fill="#faf9f5" stroke="#c8b887" stroke-width="2"/>
-    <circle cx="156" cy="152" r="34" fill="#f1ece0" stroke="#cabf9f" stroke-width="1.5"/>
-    <circle cx="156" cy="152" r="10" fill="#e7decb"/>
-    <text x="156" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">阴性（无色）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">PYR 试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">PYR 被水解出 β-萘胺 → 与 DMACA 试剂生成红色络合物</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阳性纸片 -->
-  <g>
-    <rect x="264" y="92" width="120" height="120" rx="10" fill="#faf9f5" stroke="#c8b887" stroke-width="2"/>
-    <circle cx="324" cy="152" r="34" fill="#f1ece0" stroke="#cabf9f" stroke-width="1.5"/>
-    <circle cx="324" cy="152" r="22" fill="#c46a62"/>
-    <text x="324" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（樱红色）</text>
-  </g>
+<!-- ===== 左：阴性纸片 ===== -->
+<rect x="26" y="64" width="88" height="16" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="70" y="75.5" text-anchor="middle" font-size="9.5" fill="#5c6672">阴性（无此酶）</text>
+<circle cx="70" cy="132" r="32" fill="#fbf9f2" stroke="#b9c2cc" stroke-width="1.6"/>
+<circle cx="70" cy="132" r="32" fill="none" stroke="#e3e7ec" stroke-width="6" stroke-dasharray="2,4"/>
+<circle cx="70" cy="132" r="15" fill="#f2edda" stroke="#d8cfae" stroke-width="1.2"/>
+<text x="70" y="180" text-anchor="middle" font-size="9.5" fill="#8a6d2f">不变色／淡黄（−）</text>
 
-  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#565b63">A 群化脓性链球菌、肠球菌阳性；可快速替代杆菌肽/胆汁七叶苷初筛</text>
+<!-- ===== 右：阳性纸片 ===== -->
+<circle cx="410" cy="132" r="32" fill="#fbf9f2" stroke="#b9c2cc" stroke-width="1.6"/>
+<circle cx="410" cy="132" r="32" fill="none" stroke="#e3e7ec" stroke-width="6" stroke-dasharray="2,4"/>
+<circle cx="410" cy="132" r="20" fill="#c62b3f"/>
+<circle cx="410" cy="132" r="15" fill="#a81d33"/>
+<rect x="366" y="64" width="88" height="16" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="410" y="75.5" text-anchor="middle" font-size="9.5" fill="#5c6672">阳性（产此酶）</text>
+<text x="410" y="180" text-anchor="middle" font-size="9.5" fill="#a3332f">樱桃红（＋）</text>
+
+<!-- ===== 中：化学转化链 ===== -->
+<rect x="172" y="82" width="136" height="22" rx="11" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="97" text-anchor="middle" font-size="10" fill="#33404f">PYR 底物（纸片浸渍）</text>
+
+<line x1="240" y1="104" x2="240" y2="124" stroke="#33404f" stroke-width="1.4" marker-end="url(#pa)"/>
+<rect x="250" y="106" width="100" height="16" rx="8" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="300" y="117.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">吡咯烷酮芳基酰胺酶</text>
+
+<!-- 阴性支路：无酶 → 底物不水解 -->
+<line x1="228" y1="114" x2="110" y2="114" stroke="#8c96a2" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#pg)"/>
+<text x="169" y="110" text-anchor="middle" font-size="9.5" fill="#5c6672">无酶，底物不水解</text>
+
+<rect x="172" y="126" width="136" height="22" rx="11" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="141" text-anchor="middle" font-size="10" fill="#33404f">β-萘胺（无色）</text>
+
+<line x1="240" y1="148" x2="240" y2="166" stroke="#33404f" stroke-width="1.4" marker-end="url(#pa)"/>
+<text x="248" y="161" font-size="9.5" fill="#5c6672">＋DMACA 显色剂</text>
+
+<rect x="172" y="168" width="136" height="22" rx="11" fill="#c62b3f" stroke="#a81d33"/>
+<text x="240" y="183" text-anchor="middle" font-size="10" fill="#ffffff">红色络合物</text>
+
+<!-- 阳性支路：显色 → 右纸片 -->
+<path d="M310,176 C344,172 356,158 374,146" fill="none" stroke="#a3332f" stroke-width="1.4" marker-end="url(#pr)"/>
+
+<!-- ===== 操作与判读要点 ===== -->
+<rect x="24" y="196" width="432" height="42" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="213" font-size="9.5" fill="#33404f">方法　取纯培养菌落厚涂于湿润的 PYR 纸片，室温放置数分钟后滴加显色试剂</text>
+<text x="36" y="230" font-size="9.5" fill="#5c6672">判读　加试剂后 1–2 分钟内读取；久置纸片本底渐显粉红，会读成假阳性</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">纸片转樱桃红即阳性——革兰阳性球菌分群的一步快速试验</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　阳性：化脓链球菌（A 群）· 肠球菌属　阴性：无乳链球菌（B 群）</text>
 </svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>三糖铁/克氏双糖铁（TSI/KIA）</title><desc>斜面＋高层的糖-铁复合鉴别培养基：酚红指示糖发酵产酸（黄，A）与蛋白胨分解产碱（红，K），硫代硫酸盐还原产生的H₂S与铁盐生成黑色FeS；一次穿刺同时读糖发酵、产气与H₂S。未接种管与非发酵菌底层不变黄，沙门菌K/A并黑变，大肠埃希菌A/A并产气</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="360" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">三糖铁/克氏双糖铁（TSI/KIA）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">一支管、一次穿刺，同时读糖发酵、产气与 H₂S</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="240" y1="64" x2="240" y2="204" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- 分组标题 -->
+<text x="126" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">斜面产碱（K）</text>
+<text x="323" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">底层产酸（A）</text>
+
+<!-- 斜面 / 底层 指示 -->
+<text x="24" y="106" font-size="9.5" fill="#5c6672">斜面</text>
+<text x="24" y="118" font-size="9.5" fill="#5c6672">（需氧）</text>
+<line x1="64" y1="112" x2="76" y2="110" stroke="#b9c2cc" stroke-width="1"/>
+<text x="24" y="148" font-size="9.5" fill="#5c6672">底层</text>
+<text x="24" y="160" font-size="9.5" fill="#5c6672">（厌氧）</text>
+<line x1="64" y1="154" x2="76" y2="154" stroke="#b9c2cc" stroke-width="1"/>
+
+<!-- ===== 管1：未接种对照 ===== -->
+<polygon points="78,100 112,122 112,138 78,138" fill="#e08a6d"/>
+<path d="M78,138 h34 v23 a17,17 0 0 1 -34,0 z" fill="#e08a6d"/>
+<path d="M78,84 v77 a17,17 0 0 0 34,0 v-77" fill="none" stroke="#8c96a2" stroke-width="1.3"/>
+<line x1="78" y1="100" x2="112" y2="122" stroke="#c07257" stroke-width="1"/>
+<text x="95" y="192" text-anchor="middle" font-size="9.5" fill="#33404f">未接种对照</text>
+<text x="95" y="204" text-anchor="middle" font-size="9.5" fill="#5c6672">原始橙红色</text>
+
+<!-- ===== 管2：非发酵菌 K/无变化 ===== -->
+<polygon points="140,100 174,122 174,138 140,138" fill="#c94b32"/>
+<path d="M140,138 h34 v23 a17,17 0 0 1 -34,0 z" fill="#e08a6d"/>
+<path d="M140,84 v77 a17,17 0 0 0 34,0 v-77" fill="none" stroke="#8c96a2" stroke-width="1.3"/>
+<line x1="140" y1="100" x2="174" y2="122" stroke="#a03b26" stroke-width="1"/>
+<line x1="157" y1="140" x2="157" y2="168" stroke="#c07257" stroke-width="1.6"/>
+<text x="157" y="192" text-anchor="middle" font-size="9.5" fill="#33404f">K/无变化</text>
+<text x="157" y="204" text-anchor="middle" font-size="9.5" fill="#5c6672">仅蛋白胨代谢</text>
+
+<!-- ===== 管3：K/A ＋ H₂S ===== -->
+<polygon points="276,100 310,122 310,138 276,138" fill="#c94b32"/>
+<path d="M276,138 h34 v23 a17,17 0 0 1 -34,0 z" fill="#f2c500"/>
+<path d="M276,84 v77 a17,17 0 0 0 34,0 v-77" fill="none" stroke="#8c96a2" stroke-width="1.3"/>
+<line x1="276" y1="100" x2="310" y2="122" stroke="#a03b26" stroke-width="1"/>
+<line x1="293" y1="140" x2="293" y2="166" stroke="#2a2a2a" stroke-width="5"/>
+<ellipse cx="293" cy="166" rx="15" ry="9" fill="#2a2a2a"/>
+<text x="293" y="192" text-anchor="middle" font-size="9.5" fill="#33404f">K/A</text>
+<text x="293" y="204" text-anchor="middle" font-size="9.5" fill="#5c6672">H₂S 阳性</text>
+
+<!-- ===== 管4：A/A ＋ 产气 ===== -->
+<polygon points="336,100 370,122 370,138 336,138" fill="#f2c500"/>
+<path d="M336,138 h34 v23 a17,17 0 0 1 -34,0 z" fill="#f2c500"/>
+<path d="M336,84 v77 a17,17 0 0 0 34,0 v-77" fill="none" stroke="#8c96a2" stroke-width="1.3"/>
+<line x1="336" y1="100" x2="370" y2="122" stroke="#c9a400" stroke-width="1"/>
+<line x1="353" y1="140" x2="353" y2="168" stroke="#c9a400" stroke-width="1.6"/>
+<rect x="336" y="150" width="34" height="4" fill="#ffffff"/>
+<circle cx="345" cy="163" r="3.4" fill="#ffffff"/>
+<circle cx="360" cy="145" r="3" fill="#ffffff"/>
+<text x="353" y="192" text-anchor="middle" font-size="9.5" fill="#33404f">A/A</text>
+<text x="353" y="204" text-anchor="middle" font-size="9.5" fill="#5c6672">产气·裂隙</text>
+
+<!-- ===== 右侧方法小卡 ===== -->
+<rect x="390" y="88" width="66" height="98" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="398" y="106" font-size="9.5" font-weight="700" fill="#33404f">条件</text>
+<text x="398" y="122" font-size="9.5" fill="#5c6672">管盖旋松</text>
+<text x="398" y="136" font-size="9.5" fill="#5c6672">斜面需氧</text>
+<text x="398" y="150" font-size="9.5" fill="#5c6672">底层厌氧</text>
+<text x="398" y="166" font-size="9.5" fill="#5c6672">35～37℃</text>
+<text x="398" y="180" font-size="9.5" fill="#5c6672">18～24 h</text>
+
+<!-- ===== 化学转化 ===== -->
+<rect x="24" y="212" width="432" height="76" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="227" font-size="9.5" font-weight="700" fill="#33404f">化学转化：酚红指示 pH，硫代硫酸盐／铁盐指示 H₂S（葡萄糖 0.1%、乳/蔗糖 1%）</text>
+
+<text x="36" y="246" font-size="9.5" fill="#33404f">发酵葡萄糖/乳糖·蔗糖</text>
+<line x1="150" y1="242.5" x2="170" y2="242.5" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="176" y="246" font-size="9.5" fill="#5c6672">产酸，pH 下降</text>
+<line x1="302" y1="242.5" x2="322" y2="242.5" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="328" y="246" font-size="9.5" fill="#5c6672">酚红变黄</text>
+<rect x="420" y="236.5" width="22" height="13" rx="3" fill="#f2c500" stroke="#c9a400"/>
+<text x="431" y="246" text-anchor="middle" font-size="9.5" fill="#33404f">A</text>
+
+<text x="36" y="263" font-size="9.5" fill="#33404f">乳糖/蔗糖不利用，糖耗尽</text>
+<line x1="150" y1="259.5" x2="170" y2="259.5" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="176" y="263" font-size="9.5" fill="#5c6672">斜面酸被氧化＋蛋白胨产碱</text>
+<line x1="302" y1="259.5" x2="322" y2="259.5" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="328" y="263" font-size="9.5" fill="#5c6672">酚红变红</text>
+<rect x="420" y="253.5" width="22" height="13" rx="3" fill="#c94b32" stroke="#a03b26"/>
+<text x="431" y="263" text-anchor="middle" font-size="9.5" fill="#ffffff">K</text>
+
+<text x="36" y="280" font-size="9.5" fill="#33404f">硫代硫酸盐＋铁盐</text>
+<line x1="150" y1="276.5" x2="170" y2="276.5" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="176" y="280" font-size="9.5" fill="#5c6672">经硫代硫酸盐还原酶产 H₂S</text>
+<line x1="302" y1="276.5" x2="322" y2="276.5" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="328" y="280" font-size="9.5" fill="#5c6672">＋Fe²⁺→FeS</text>
+<rect x="420" y="270.5" width="22" height="13" rx="3" fill="#2a2a2a" stroke="#1f2733"/>
+<text x="431" y="280" text-anchor="middle" font-size="9.5" fill="#ffffff">黑</text>
+
+<!-- 注解 -->
+<text x="240" y="302" text-anchor="middle" font-size="9.5" fill="#5c6672">须在 18～24 h 内判读，超 24 h 可逆转致误判；黑变掩盖黄色，H₂S+ 即示底层产酸</text>
+
+<!-- 结论 -->
+<text x="240" y="320" text-anchor="middle" font-size="11.5" fill="#33404f">斜面/底层双色＋黑变＋气泡，一次穿刺读出三项结果</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="328" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="344" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　大肠埃希菌 A/A ｜ 沙门菌属 K/A·H₂S+ ｜ 志贺菌属 K/A ｜ 铜绿假单胞菌 K/K</text>
+</svg>

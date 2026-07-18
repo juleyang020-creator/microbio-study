@@ -1,50 +1,103 @@
 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>鞭毛染色（镀银 / 媒染增粗法）</title><desc>媒染剂沉积使纤细鞭毛增粗显现，判断有无及着生方式</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">鞭毛染色（镀银 / 媒染增粗法）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">媒染剂沉积使纤细鞭毛增粗显现，判断有无及着生方式</text>
+<title>鞭毛染色（镀银 / 媒染增粗法）</title><desc>鞭毛极细，普通染色不可见；先以单宁酸等媒染剂沉积包裹使其增粗，再用银盐或复红染色，镀银法鞭毛呈黑褐色丝状、复红（Leifson）法呈红色，据此判断鞭毛有无及单端／丛生／周身着生方式</desc>
+<defs>
+  <marker id="fa" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- ① 单端单毛 -->
-  <g>
-    <text x="118" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">单端单毛</text>
-    <rect x="92" y="104" width="52" height="20" rx="10" fill="#9d7fb4"/>
-    <path d="M92,114 q-14,-6 -24,2 q-12,8 -24,2" fill="none" stroke="#7a67a0" stroke-width="1.6"/>
-    <text x="118" y="150" text-anchor="middle" font-size="11" fill="#565b63">铜绿假单胞菌</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">鞭毛染色（镀银 / 媒染增粗法）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">特殊结构染色</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">媒染剂先把极细的鞭毛「加粗」，银染再让它显色</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- ② 丛生(一端多毛) -->
-  <g>
-    <text x="240" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">丛生（一端多毛）</text>
-    <rect x="216" y="104" width="52" height="20" rx="10" fill="#9d7fb4"/>
-    <g fill="none" stroke="#7a67a0" stroke-width="1.5">
-      <path d="M216,108 q-16,-8 -30,-2"/>
-      <path d="M216,114 q-18,-2 -32,4"/>
-      <path d="M216,120 q-16,6 -30,8"/>
-    </g>
-    <text x="240" y="150" text-anchor="middle" font-size="11" fill="#565b63">弧菌等</text>
-  </g>
+<!-- ===== 上半：试剂步骤 ===== -->
+<rect x="24" y="72" width="136" height="58" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<rect x="172" y="72" width="136" height="58" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<rect x="320" y="72" width="136" height="58" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<line x1="161" y1="101" x2="169" y2="101" stroke="#33404f" stroke-width="1.4" marker-end="url(#fa)"/>
+<line x1="309" y1="101" x2="317" y2="101" stroke="#33404f" stroke-width="1.4" marker-end="url(#fa)"/>
 
-  <!-- ③ 周身鞭毛 -->
-  <g>
-    <text x="372" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">周身鞭毛</text>
-    <rect x="346" y="104" width="52" height="20" rx="10" fill="#9d7fb4"/>
-    <g fill="none" stroke="#7a67a0" stroke-width="1.5">
-      <path d="M352,104 q-6,-12 -14,-16"/>
-      <path d="M366,103 q-2,-13 4,-18"/>
-      <path d="M384,104 q6,-12 16,-14"/>
-      <path d="M352,124 q-8,10 -16,12"/>
-      <path d="M370,125 q0,12 6,18"/>
-      <path d="M388,124 q8,10 18,10"/>
-    </g>
-    <text x="372" y="150" text-anchor="middle" font-size="11" fill="#565b63">变形杆菌、沙门菌</text>
-  </g>
+<!-- ❶ 制片 -->
+<circle cx="38" cy="85" r="7.5" fill="#1f2733"/>
+<text x="38" y="88.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="50" y="88.5" font-size="9.5" font-weight="700" fill="#33404f">菌悬液轻涂片</text>
+<path d="M70,105.5 q-9,-7 -17,-1 q-8,6 -15,1" fill="none" stroke="#d0d4d9" stroke-width="0.6"/>
+<rect x="70" y="100" width="36" height="11" rx="5.5" fill="#eef1f5" stroke="#b9c2cc"/>
+<text x="112" y="108" font-size="9.5" fill="#8c96a2">看不见</text>
+<text x="32" y="124" font-size="9.5" fill="#5c6672">自然干燥，勿加热固定</text>
 
-  <!-- 原理说明 -->
-  <g>
-    <rect x="40" y="180" width="400" height="60" rx="9" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2"/>
-    <text x="60" y="204" font-size="11" font-weight="700" fill="#565b63">原理</text>
-    <text x="60" y="222" font-size="11" fill="#565b63">鞭毛极细，普通染色不可见；先以单宁酸等媒染剂在其表面沉积增粗，</text>
-    <text x="60" y="237" font-size="11" fill="#565b63">再用银盐 / 复红染色，使鞭毛得以显现。</text>
-  </g>
-  <text x="240" y="270" text-anchor="middle" font-size="11" fill="#565b63">操作需轻柔，避免鞭毛脱落；辅助菌种鉴定与动力判断</text>
+<!-- ❷ 媒染 -->
+<circle cx="186" cy="85" r="7.5" fill="#1f2733"/>
+<text x="186" y="88.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="198" y="88.5" font-size="9.5" font-weight="700" fill="#33404f">媒染剂·单宁酸</text>
+<path d="M218,105.5 q-9,-7 -17,-1 q-8,6 -15,1" fill="none" stroke="#d9b96a" stroke-width="4.4" stroke-linecap="round" opacity="0.85"/>
+<path d="M218,105.5 q-9,-7 -17,-1 q-8,6 -15,1" fill="none" stroke="#b9c2cc" stroke-width="0.6"/>
+<rect x="218" y="100" width="36" height="11" rx="5.5" fill="#f0e6cd" stroke="#c9b48a"/>
+<text x="260" y="108" font-size="9.5" fill="#8a6d2f">已增粗</text>
+<text x="180" y="124" font-size="9.5" fill="#5c6672">沉积包裹使鞭毛增粗</text>
+
+<!-- ❸ 银染 -->
+<circle cx="334" cy="85" r="7.5" fill="#1f2733"/>
+<text x="334" y="88.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="346" y="88.5" font-size="9.5" font-weight="700" fill="#33404f">银盐（或复红）</text>
+<path d="M366,105.5 q-9,-7 -17,-1 q-8,6 -15,1" fill="none" stroke="#6b4a2f" stroke-width="2" stroke-linecap="round"/>
+<rect x="366" y="100" width="36" height="11" rx="5.5" fill="#5c3d28"/>
+<text x="408" y="108" font-size="9.5" fill="#6b4a2f">显黑褐</text>
+<text x="328" y="124" font-size="9.5" fill="#5c6672">还原沉积，鞭毛显色</text>
+
+<!-- ===== 下半：镜下所见 ===== -->
+<text x="24" y="146" font-size="10" font-weight="700" fill="#33404f">阳性：镀银法鞭毛黑褐色（复红法呈红色）</text>
+<text x="296" y="146" font-size="10" font-weight="700" fill="#33404f">阴性 / 假阴性</text>
+
+<rect x="24" y="152" width="264" height="82" rx="8" fill="#f7f0dd" stroke="#e0d5b4"/>
+<rect x="296" y="152" width="160" height="82" rx="8" fill="#f7f0dd" stroke="#e0d5b4"/>
+
+<!-- 左：单端单毛 -->
+<path d="M96,172 q-12,-8 -22,-1 q-10,7 -20,0" fill="none" stroke="#6b4a2f" stroke-width="1.8" stroke-linecap="round"/>
+<rect x="96" y="166" width="40" height="12" rx="6" fill="#5c3d28"/>
+<text x="148" y="175.5" font-size="9.5" fill="#33404f">单端单毛 · 铜绿假单胞菌</text>
+
+<!-- 左：丛生 -->
+<g fill="none" stroke="#6b4a2f" stroke-width="1.6" stroke-linecap="round">
+  <path d="M96,192 q-13,-8 -23,-4"/>
+  <path d="M96,196 q-14,-1 -24,4"/>
+  <path d="M96,200 q-12,6 -22,8"/>
+</g>
+<rect x="96" y="190" width="40" height="12" rx="6" fill="#5c3d28"/>
+<text x="148" y="199.5" font-size="9.5" fill="#33404f">丛生（一端多毛）· 幽门螺杆菌</text>
+
+<!-- 左：周身 -->
+<g fill="none" stroke="#6b4a2f" stroke-width="1.5" stroke-linecap="round">
+  <path d="M102,214 q-4,-7 -10,-9"/>
+  <path d="M116,213 q-1,-8 4,-10"/>
+  <path d="M130,214 q5,-7 11,-8"/>
+  <path d="M102,226 q-5,5 -11,6"/>
+  <path d="M116,227 q0,5 4,6"/>
+  <path d="M130,226 q6,5 12,5"/>
+</g>
+<rect x="96" y="214" width="40" height="12" rx="6" fill="#5c3d28"/>
+<text x="148" y="223.5" font-size="9.5" fill="#33404f">周身 · 变形杆菌、沙门菌</text>
+
+<!-- 右：无鞭毛菌体 + 脱落碎片 -->
+<rect x="308" y="166" width="40" height="12" rx="6" fill="#5c3d28"/>
+<rect x="372" y="188" width="40" height="12" rx="6" fill="#5c3d28"/>
+<g fill="none" stroke="#6b4a2f" stroke-width="1.5" stroke-linecap="round">
+  <path d="M360,170 q6,-5 12,-1"/>
+  <path d="M416,174 q7,4 13,-1"/>
+  <path d="M312,196 q7,-5 13,0"/>
+  <path d="M330,206 q6,5 13,1"/>
+</g>
+<text x="304" y="218" font-size="9.5" fill="#5c6672">菌体着色，未见完整丝状</text>
+<text x="304" y="232" font-size="9.5" fill="#8a6d2f">仅见散在断落的鞭毛碎片</text>
+
+<text x="24" y="248" font-size="9.5" fill="#33404f">须取 18~24 h 幼龄培养物；涂片用力或加热固定会使鞭毛脱落 → 假阴性</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">先媒染增粗、再银染显色，方能判读鞭毛有无与着生方式</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　鞭毛着生方式的形态学鉴定 · 与动力试验互为印证 · 变形杆菌／弧菌／螺杆菌</text>
 </svg>

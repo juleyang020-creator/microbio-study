@@ -1,21 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>膜通透性下降</title><desc>孔蛋白减少/关闭，药物进入减少。如肠杆菌 OmpK35/36 缺失、铜绿 OprD 下调</desc><defs>
- <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
- <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
- <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>膜通透性下降</title><desc>革兰阴性菌外膜孔蛋白减少或关闭致药物摄入减少：肠杆菌 OmpK35/OmpK36 缺失、铜绿假单胞菌 OprD 缺失致亚胺培南耐药；单独多为低水平耐药，与产酶/外排叠加才成高水平多重耐药</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
 </defs>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">膜通透性下降</text>
-<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">孔蛋白减少/关闭，药物进入减少</text>
-<rect x="60" y="60" width="360" height="182" rx="24" fill="#f6f2e2" stroke="#c8b887" stroke-width="2"/>
- <rect x="60" y="148" width="360" height="16" fill="#efe6c6" stroke="#c8b887"/> <text x="70" y="160" font-size="11" fill="#5a5740" text-anchor="start">外膜</text>
- <g fill="#9fb0cc" stroke="#8093b3" stroke-width="1.2"><rect x="150" y="144" width="16" height="24" rx="3"/><rect x="172" y="144" width="16" height="24" rx="3"/></g>
- <text x="196" y="138" font-size="11" fill="#2c3138" text-anchor="start">正常孔蛋白</text> <g transform="translate(158,108) rotate(90) scale(0.72)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="158" y1="122" x2="158" y2="144" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/>
- <g fill="#9fb0cc" stroke="#8093b3" stroke-width="1.2" opacity="0.5"><rect x="300" y="144" width="16" height="24" rx="3"/></g>
- <line x1="300" y1="148" x2="316" y2="164" stroke="#8093b3" stroke-width="2"/>
- <text x="324" y="146" font-size="11" fill="#2c3138" text-anchor="start">孔蛋白减少/关闭</text>
- <g transform="translate(308,108) rotate(90) scale(0.72)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <line x1="308" y1="122" x2="308" y2="144" stroke="#3a4a63" stroke-width="1.5" stroke-dasharray="3 4"/>
- <text x="240" y="206" font-size="12" fill="#3f444b" text-anchor="middle">胞内药物浓度不足</text>
- <text x="240" y="270" font-size="12" fill="#3f444b" text-anchor="middle">常与外排/灭活酶叠加致多重耐药</text>
-<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">如肠杆菌 OmpK35/36 缺失、铜绿 OprD 下调</text>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">膜通透性下降</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">耐药机制</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">外膜孔蛋白减少或关闭 → 亲水性药物进入减少</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="166" y1="64" x2="166" y2="192" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+<line x1="314" y1="64" x2="314" y2="192" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 左：对照（野生型） ===== -->
+<text x="24" y="74" font-size="10" font-weight="700" fill="#5c6672">对照：野生型</text>
+<rect x="52" y="82" width="22" height="12" rx="6" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="63" y="91.5" text-anchor="middle" font-size="9.5" fill="#a3332f">药</text>
+<rect x="100" y="82" width="22" height="12" rx="6" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="111" y="91.5" text-anchor="middle" font-size="9.5" fill="#a3332f">药</text>
+<rect x="24" y="110" width="136" height="18" fill="#f7ecd4"/>
+<g fill="#d9b96a">
+  <circle cx="30" cy="110" r="2.4"/><circle cx="42" cy="110" r="2.4"/><circle cx="54" cy="110" r="2.4"/><circle cx="66" cy="110" r="2.4"/><circle cx="78" cy="110" r="2.4"/><circle cx="90" cy="110" r="2.4"/><circle cx="102" cy="110" r="2.4"/><circle cx="114" cy="110" r="2.4"/><circle cx="126" cy="110" r="2.4"/><circle cx="138" cy="110" r="2.4"/><circle cx="150" cy="110" r="2.4"/>
+  <circle cx="30" cy="128" r="2.4"/><circle cx="42" cy="128" r="2.4"/><circle cx="54" cy="128" r="2.4"/><circle cx="66" cy="128" r="2.4"/><circle cx="78" cy="128" r="2.4"/><circle cx="90" cy="128" r="2.4"/><circle cx="102" cy="128" r="2.4"/><circle cx="114" cy="128" r="2.4"/><circle cx="126" cy="128" r="2.4"/><circle cx="138" cy="128" r="2.4"/><circle cx="150" cy="128" r="2.4"/>
+</g>
+<g fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2">
+  <rect x="56" y="106" width="14" height="26" rx="3"/><rect x="104" y="106" width="14" height="26" rx="3"/>
+</g>
+<text x="28" y="124" font-size="9.5" fill="#8a6d2f">外膜</text>
+<g stroke="#33404f" stroke-width="1.4">
+  <line x1="63" y1="96" x2="63" y2="134" marker-end="url(#arr)"/>
+  <line x1="111" y1="96" x2="111" y2="134" marker-end="url(#arr)"/>
+</g>
+<text x="92" y="146" text-anchor="middle" font-size="9.5" fill="#1f4e79">孔蛋白（OmpF/OmpC）</text>
+<text x="92" y="160" text-anchor="middle" font-size="9.5" fill="#5c6672">亲水小分子经孔蛋白扩散入胞</text>
+<text x="92" y="174" text-anchor="middle" font-size="9.5" fill="#33404f">胞内药物达标 → 敏感</text>
+<text x="92" y="188" text-anchor="middle" font-size="9.5" fill="#5c6672">（此列为正常参照）</text>
+
+<!-- ===== 中：❶ 肠杆菌孔蛋白缺失 ===== -->
+<circle cx="179" cy="70" r="7.5" fill="#1f2733"/>
+<text x="179" y="73.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="192" y="74" font-size="10" font-weight="700" fill="#33404f">OmpK35/36 缺失</text>
+<rect x="216" y="82" width="48" height="12" rx="6" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="240" y="91.5" text-anchor="middle" font-size="9.5" fill="#a3332f">β-内酰胺</text>
+<rect x="172" y="110" width="136" height="18" fill="#f7ecd4"/>
+<g fill="#d9b96a">
+  <circle cx="178" cy="110" r="2.4"/><circle cx="190" cy="110" r="2.4"/><circle cx="202" cy="110" r="2.4"/><circle cx="214" cy="110" r="2.4"/><circle cx="226" cy="110" r="2.4"/><circle cx="238" cy="110" r="2.4"/><circle cx="250" cy="110" r="2.4"/><circle cx="262" cy="110" r="2.4"/><circle cx="274" cy="110" r="2.4"/><circle cx="286" cy="110" r="2.4"/><circle cx="298" cy="110" r="2.4"/>
+  <circle cx="178" cy="128" r="2.4"/><circle cx="190" cy="128" r="2.4"/><circle cx="202" cy="128" r="2.4"/><circle cx="214" cy="128" r="2.4"/><circle cx="226" cy="128" r="2.4"/><circle cx="238" cy="128" r="2.4"/><circle cx="250" cy="128" r="2.4"/><circle cx="262" cy="128" r="2.4"/><circle cx="274" cy="128" r="2.4"/><circle cx="286" cy="128" r="2.4"/><circle cx="298" cy="128" r="2.4"/>
+</g>
+<g fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2" stroke-dasharray="3,2">
+  <rect x="204" y="106" width="14" height="26" rx="3"/><rect x="252" y="106" width="14" height="26" rx="3"/>
+</g>
+<g stroke="#c2413d" stroke-width="1.8" stroke-linecap="round">
+  <line x1="204" y1="110" x2="218" y2="128"/><line x1="218" y1="110" x2="204" y2="128"/>
+  <line x1="252" y1="110" x2="266" y2="128"/><line x1="266" y1="110" x2="252" y2="128"/>
+</g>
+<text x="176" y="124" font-size="9.5" fill="#8a6d2f">外膜</text>
+<line x1="240" y1="96" x2="240" y2="104" stroke="#c2413d" stroke-width="1.6" marker-end="url(#blk)"/>
+<text x="240" y="146" text-anchor="middle" font-size="9.5" fill="#8c96a2">孔蛋白缺失/关闭</text>
+<text x="240" y="160" text-anchor="middle" font-size="9.5" fill="#5c6672">跨膜摄入显著减少（非完全阻断）</text>
+<text x="240" y="174" text-anchor="middle" font-size="9.5" fill="#33404f">头孢/碳青霉烯 MIC↑</text>
+<text x="240" y="188" text-anchor="middle" font-size="9.5" fill="#5c6672">（肺炎克雷伯菌常见）</text>
+
+<!-- ===== 右：❷ 铜绿假单胞菌 OprD ===== -->
+<circle cx="327" cy="70" r="7.5" fill="#1f2733"/>
+<text x="327" y="73.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="340" y="74" font-size="10" font-weight="700" fill="#33404f">OprD 下调/失活</text>
+<rect x="364" y="82" width="48" height="12" rx="6" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="388" y="91.5" text-anchor="middle" font-size="9.5" fill="#a3332f">亚胺培南</text>
+<rect x="416" y="82" width="22" height="12" rx="6" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="427" y="91.5" text-anchor="middle" font-size="9.5" fill="#a3332f">药</text>
+<rect x="320" y="110" width="136" height="18" fill="#f7ecd4"/>
+<g fill="#d9b96a">
+  <circle cx="326" cy="110" r="2.4"/><circle cx="338" cy="110" r="2.4"/><circle cx="350" cy="110" r="2.4"/><circle cx="362" cy="110" r="2.4"/><circle cx="374" cy="110" r="2.4"/><circle cx="386" cy="110" r="2.4"/><circle cx="398" cy="110" r="2.4"/><circle cx="410" cy="110" r="2.4"/><circle cx="422" cy="110" r="2.4"/><circle cx="434" cy="110" r="2.4"/><circle cx="446" cy="110" r="2.4"/>
+  <circle cx="326" cy="128" r="2.4"/><circle cx="338" cy="128" r="2.4"/><circle cx="350" cy="128" r="2.4"/><circle cx="362" cy="128" r="2.4"/><circle cx="374" cy="128" r="2.4"/><circle cx="386" cy="128" r="2.4"/><circle cx="398" cy="128" r="2.4"/><circle cx="410" cy="128" r="2.4"/><circle cx="422" cy="128" r="2.4"/><circle cx="434" cy="128" r="2.4"/><circle cx="446" cy="128" r="2.4"/>
+</g>
+<rect x="381" y="106" width="14" height="26" rx="3" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2" stroke-dasharray="3,2"/>
+<g stroke="#c2413d" stroke-width="1.8" stroke-linecap="round">
+  <line x1="381" y1="110" x2="395" y2="128"/><line x1="395" y1="110" x2="381" y2="128"/>
+</g>
+<rect x="420" y="106" width="14" height="26" rx="3" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="324" y="124" font-size="9.5" fill="#8a6d2f">外膜</text>
+<line x1="388" y1="96" x2="388" y2="104" stroke="#c2413d" stroke-width="1.6" marker-end="url(#blk)"/>
+<line x1="427" y1="96" x2="427" y2="134" stroke="#33404f" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<text x="388" y="146" text-anchor="middle" font-size="9.5" fill="#8c96a2">OprD 通道缺失/下调</text>
+<text x="388" y="160" text-anchor="middle" font-size="9.5" fill="#5c6672">亚胺培南主要经 OprD 入胞</text>
+<text x="388" y="174" text-anchor="middle" font-size="9.5" fill="#33404f">→ 亚胺培南耐药</text>
+<text x="388" y="188" text-anchor="middle" font-size="9.5" fill="#5c6672">（美罗培南受影响较小）</text>
+
+<!-- ===== 叠加放大 ===== -->
+<rect x="24" y="196" width="432" height="48" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="216" font-size="10" fill="#5c6672">单独孔蛋白↓：常仅低水平耐药（MIC 小幅上升）</text>
+<text x="36" y="234" font-size="10" fill="#33404f">＋ 产 ESBL / AmpC 高产（或 OXA-48）或外排 → 碳青霉烯耐药</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">孔蛋白丢失使药物进入减少 → 需结合产酶/外排综合判读</text>
+
+<!-- 页脚：典型基因 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型基因</tspan>　OmpK35/OmpK36 缺失（肺炎克雷伯菌）· OprD 下调（铜绿假单胞菌）</text>
 </svg>

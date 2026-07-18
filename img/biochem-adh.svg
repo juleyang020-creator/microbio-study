@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>精氨酸双水解酶（ADH）试验</title><desc>默勒肉汤加石蜡油封层：ADH 阳性菌分解 L-精氨酸产氨碱化，溴甲酚紫由黄变紫；阴性菌仅葡萄糖发酵产酸而保持黄色</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+  <clipPath id="tubeL"><path d="M62,96 L62,196 A22,22 0 0 0 106,196 L106,96 Z"/></clipPath>
+  <clipPath id="tubeR"><path d="M374,96 L374,196 A22,22 0 0 0 418,196 L418,96 Z"/></clipPath>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">精氨酸双水解酶（ADH）试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">默勒肉汤中分解精氨酸产氨 → 碱化 → 溴甲酚紫由黄变紫</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<text x="24" y="74" font-size="9.5" fill="#5c6672">两管均覆石蜡油封层（隔氧）　·　35~37℃ 孵育，4~48 h 判读</text>
+
+<!-- ===== 左：阴性管 ===== -->
+<text x="84" y="88" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">阴性（ADH −）</text>
+<g clip-path="url(#tubeL)">
+  <rect x="62" y="108" width="44" height="112" fill="#f2ce4b"/>
+  <rect x="62" y="96" width="44" height="12" fill="#f6e7bd"/>
+</g>
+<path d="M62,96 L62,196 A22,22 0 0 0 106,196 L106,96" fill="none" stroke="#8c96a2" stroke-width="1.4"/>
+<line x1="62" y1="108" x2="106" y2="108" stroke="#c9a95f" stroke-width="1"/>
+<text x="84" y="234" text-anchor="middle" font-size="9.5" fill="#33404f">阴性：保持黄色</text>
+<text x="84" y="246" text-anchor="middle" font-size="9.5" fill="#5c6672">仅葡萄糖发酵产酸</text>
+
+<!-- ===== 右：阳性管 ===== -->
+<text x="396" y="88" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">阳性（ADH ＋）</text>
+<g clip-path="url(#tubeR)">
+  <rect x="374" y="108" width="44" height="112" fill="#7d55a8"/>
+  <rect x="374" y="96" width="44" height="12" fill="#f6e7bd"/>
+</g>
+<path d="M374,96 L374,196 A22,22 0 0 0 418,196 L418,96" fill="none" stroke="#8c96a2" stroke-width="1.4"/>
+<line x1="374" y1="108" x2="418" y2="108" stroke="#c9a95f" stroke-width="1"/>
+<text x="422" y="106" font-size="9.5" fill="#8a6d2f">石蜡油</text>
+<text x="396" y="234" text-anchor="middle" font-size="9.5" fill="#33404f">阳性：变紫色</text>
+<text x="396" y="246" text-anchor="middle" font-size="9.5" fill="#5c6672">产氨碱化，pH 升高</text>
+
+<!-- ===== 中：化学转化 ===== -->
+<rect x="168" y="100" width="144" height="22" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="115" text-anchor="middle" font-size="9.5" fill="#1f2733">底物：1% L-精氨酸</text>
+
+<!-- 阴性支路 -->
+<line x1="166" y1="111" x2="118" y2="111" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="142" y="126" text-anchor="middle" font-size="9.5" fill="#c2413d">无 ADH</text>
+<text x="142" y="138" text-anchor="middle" font-size="9.5" fill="#5c6672">底物不分解</text>
+
+<line x1="240" y1="122" x2="240" y2="134" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<circle cx="240" cy="152" r="16" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="240" y="156" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1f4e79">ADH</text>
+<text x="262" y="148" font-size="9.5" fill="#1f4e79">精氨酸双水解酶系统</text>
+<text x="262" y="160" font-size="9.5" fill="#5c6672">（逐步水解 → 脱氨）</text>
+<line x1="240" y1="168" x2="240" y2="174" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="150" y="176" width="180" height="46" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="192" text-anchor="middle" font-size="9.5" fill="#1f2733">精氨酸→瓜氨酸→鸟氨酸＋CO₂，共 2 NH₃</text>
+<text x="240" y="205" text-anchor="middle" font-size="9.5" fill="#5c6672">碱性产物累积 → pH 升高</text>
+<text x="240" y="218" text-anchor="middle" font-size="9.5" fill="#7d55a8">溴甲酚紫：黄 → 紫</text>
+<line x1="330" y1="199" x2="368" y2="199" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<text x="240" y="236" text-anchor="middle" font-size="9.5" fill="#5c6672">生长缓慢者可延长孵育，最长 7 天</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">紫色＝阳性，黄色＝阴性；须与不含氨基酸的对照管同时比对</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　阳性：铜绿假单胞菌 · 阴沟肠杆菌 ｜ 阴性：施氏假单胞菌 · 霍乱弧菌</text>
+</svg>

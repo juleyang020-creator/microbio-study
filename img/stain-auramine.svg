@@ -1,45 +1,106 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>金胺O荧光染色（金胺-罗丹明）</title><desc>荧光显微镜下抗酸菌呈亮黄绿色，灵敏、可低倍快速筛查</desc>
-  <defs>
-    <radialGradient id="auField" cx="42%" cy="38%" r="72%">
-      <stop offset="0%" stop-color="#26303a"/>
-      <stop offset="100%" stop-color="#161b22"/>
-    </radialGradient>
-    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="2.4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">金胺O荧光染色（金胺-罗丹明）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">荧光显微镜下抗酸菌呈亮黄绿色，灵敏、可低倍快速筛查</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>金胺O荧光染色（金胺-罗丹明）</title><desc>金胺O与分枝菌酸结合，酸性乙醇脱色、高锰酸钾淬灭背景后，抗酸菌在暗背景上呈亮黄绿色荧光</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <radialGradient id="fld" cx="42%" cy="38%" r="72%">
+    <stop offset="0%" stop-color="#232a33"/><stop offset="100%" stop-color="#12161c"/>
+  </radialGradient>
+  <radialGradient id="fldAll" cx="42%" cy="38%" r="75%">
+    <stop offset="0%" stop-color="#6f7d2a"/><stop offset="100%" stop-color="#4b551c"/>
+  </radialGradient>
+  <radialGradient id="fldDim" cx="42%" cy="38%" r="75%">
+    <stop offset="0%" stop-color="#39411f"/><stop offset="100%" stop-color="#252a16"/>
+  </radialGradient>
+  <filter id="glow" x="-70%" y="-70%" width="240%" height="240%">
+    <feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 荧光暗视野 -->
-  <circle cx="200" cy="158" r="104" fill="url(#auField)" stroke="#39424d" stroke-width="2"/>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">金胺O荧光染色（金胺-罗丹明）</text>
+<rect x="368" y="14" width="88" height="18" rx="9" fill="#eef1f5"/>
+<text x="412" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">抗酸染色·荧光法</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">金胺O结合分枝菌酸；脱色淬灭后仅抗酸菌在暗背景上发亮黄绿色荧光</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 亮黄绿色荧光抗酸杆菌(细长、串珠) -->
-  <g stroke="#c7e85a" stroke-width="3.4" stroke-linecap="round" filter="url(#glow)">
-    <line x1="158" y1="150" x2="186" y2="136"/>
-    <line x1="196" y1="178" x2="226" y2="168"/>
-    <line x1="214" y1="128" x2="240" y2="138"/>
-    <line x1="166" y1="190" x2="194" y2="196"/>
-    <line x1="232" y1="196" x2="256" y2="186"/>
-  </g>
-  <g fill="#eaf7a8" filter="url(#glow)">
-    <circle cx="164" cy="147" r="1.7"/><circle cx="176" cy="141" r="1.7"/>
-    <circle cx="204" cy="174" r="1.7"/><circle cx="216" cy="171" r="1.7"/>
-    <circle cx="222" cy="131" r="1.6"/><circle cx="234" cy="135" r="1.6"/>
-  </g>
+<!-- ===== 上半：试剂步骤，视野颜色随步骤演变 ===== -->
+<!-- ① 涂片固定 -->
+<circle cx="56" cy="104" r="22" fill="#eceff2" stroke="#c3cad2"/>
+<g stroke="#9aa3ad" stroke-width="2.4" stroke-linecap="round">
+  <line x1="45" y1="99" x2="57" y2="94"/><line x1="52" y1="112" x2="65" y2="109"/><line x1="62" y1="97" x2="70" y2="103"/>
+</g>
+<text x="56" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">涂片·热固定</text>
 
-  <!-- 标注 -->
-  <line x1="186" y1="136" x2="332" y2="120" stroke="#cbc1a8" stroke-width="1"/>
-  <circle cx="186" cy="136" r="2.2" fill="#c7e85a"/>
-  <text x="338" y="116" font-size="11" font-weight="700" fill="#6e7d1f">亮黄绿色荧光</text>
-  <text x="338" y="132" font-size="11" fill="#565b63">金胺O 与分枝菌酸结合</text>
+<line x1="80" y1="104" x2="138" y2="104" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="110" y="96" text-anchor="middle" font-size="9.5" fill="#33404f">❶ 金胺O</text>
+<text x="110" y="120" text-anchor="middle" font-size="9.5" fill="#5c6672">结合分枝菌酸</text>
 
-  <line x1="226" y1="168" x2="332" y2="178" stroke="#cbc1a8" stroke-width="1"/>
-  <text x="338" y="174" font-size="11" font-weight="700" fill="#565b63">抗酸杆菌（细长串珠）</text>
-  <text x="338" y="190" font-size="11" fill="#565b63">背景暗黑、对比强</text>
+<!-- ② 初染后：全片泛荧光 -->
+<circle cx="164" cy="104" r="22" fill="url(#fldAll)" stroke="#7d8a3a"/>
+<g stroke="#e9f79f" stroke-width="2.6" stroke-linecap="round" filter="url(#glow)">
+  <line x1="153" y1="99" x2="165" y2="94"/><line x1="160" y1="112" x2="173" y2="109"/><line x1="170" y1="97" x2="178" y2="103"/>
+</g>
+<text x="164" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">全片泛黄绿</text>
 
-  <text x="240" y="282" text-anchor="middle" font-size="11" fill="#565b63">灵敏度高于萋-尼法，常用于痰标本分枝杆菌筛查</text>
+<line x1="188" y1="104" x2="246" y2="104" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="218" y="96" text-anchor="middle" font-size="9.5" fill="#33404f">❷ 酸性乙醇</text>
+<text x="218" y="120" text-anchor="middle" font-size="9.5" fill="#5c6672">非抗酸菌褪色</text>
+
+<!-- ③ 脱色后 -->
+<circle cx="272" cy="104" r="22" fill="url(#fldDim)" stroke="#5a6330"/>
+<g stroke="#e9f79f" stroke-width="2.6" stroke-linecap="round" filter="url(#glow)">
+  <line x1="261" y1="99" x2="273" y2="94"/><line x1="268" y1="112" x2="281" y2="109"/>
+</g>
+<line x1="278" y1="97" x2="286" y2="103" stroke="#4e5630" stroke-width="2.4" stroke-linecap="round"/>
+<text x="272" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">仅抗酸菌留色</text>
+
+<line x1="296" y1="104" x2="354" y2="104" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="326" y="96" text-anchor="middle" font-size="9.5" fill="#33404f">❸ 高锰酸钾</text>
+<text x="326" y="120" text-anchor="middle" font-size="9.5" fill="#5c6672">淬灭背景荧光</text>
+
+<!-- ④ 复染后：暗背景 -->
+<circle cx="380" cy="104" r="22" fill="url(#fld)" stroke="#39424d"/>
+<g stroke="#d7ee63" stroke-width="2.6" stroke-linecap="round" filter="url(#glow)">
+  <line x1="369" y1="99" x2="381" y2="94"/><line x1="376" y1="112" x2="389" y2="109"/>
+</g>
+<text x="380" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">暗背景·高对比</text>
+
+<!-- ===== 下半：荧光镜下两种视野 ===== -->
+<text x="70" y="158" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阳性视野（抗酸菌）</text>
+<circle cx="70" cy="203" r="38" fill="url(#fld)" stroke="#39424d" stroke-width="1.6"/>
+<g stroke="#d7ee63" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
+  <path d="M46,190 q10,-6 21,-3" fill="none"/>
+  <path d="M56,214 q11,4 22,1" fill="none"/>
+  <path d="M74,182 q9,3 15,10" fill="none"/>
+  <path d="M62,228 q10,-3 19,-1" fill="none"/>
+</g>
+<g fill="#f2fbc0" filter="url(#glow)">
+  <circle cx="52" cy="188" r="1.6"/><circle cx="62" cy="186" r="1.6"/>
+  <circle cx="63" cy="216" r="1.6"/><circle cx="73" cy="216" r="1.6"/>
+  <circle cx="80" cy="186" r="1.5"/>
+</g>
+<text x="116" y="182" font-size="9.5" font-weight="700" fill="#7d8a2c">亮黄绿荧光杆菌（罗丹明呈黄橙）</text>
+<text x="116" y="199" font-size="9.5" fill="#5c6672">细长微弯、可见串珠</text>
+<text x="116" y="216" font-size="9.5" fill="#5c6672">低倍(200×)即可检出</text>
+
+<text x="290" y="158" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阴性视野（无抗酸菌）</text>
+<circle cx="290" cy="203" r="38" fill="url(#fld)" stroke="#39424d" stroke-width="1.6"/>
+<g stroke="#3b444f" stroke-width="2.6" stroke-linecap="round">
+  <path d="M266,190 q10,-6 21,-3" fill="none"/>
+  <path d="M276,214 q11,4 22,1" fill="none"/>
+  <path d="M294,182 q9,3 15,10" fill="none"/>
+</g>
+<g fill="#333c46"><circle cx="282" cy="226" r="4"/><circle cx="304" cy="222" r="3.2"/></g>
+<text x="336" y="182" font-size="9.5" font-weight="700" fill="#5c6672">无亮黄绿荧光</text>
+<text x="336" y="199" font-size="9.5" fill="#5c6672">菌体与细胞不发荧光</text>
+<text x="336" y="216" font-size="9.5" fill="#5c6672">背景被高锰酸钾压暗</text>
+
+<!-- 临床注解 -->
+<text x="240" y="253" text-anchor="middle" font-size="9.5" fill="#c2413d">荧光随放置衰减，制片当日阅片；阳性涂片可再用萋-尼法复染确认形态</text>
+<!-- 结论 -->
+<text x="240" y="268" text-anchor="middle" font-size="11.5" fill="#33404f">灵敏度高于萋-尼法，低倍快速筛查</text>
+<!-- 页脚 -->
+<rect x="24" y="276" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="291" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　痰等标本分枝杆菌快速筛查 ｜ 结核与非结核分枝杆菌初筛</text>
 </svg>

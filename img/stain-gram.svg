@@ -1,54 +1,108 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>革兰染色（四步）</title><desc>结晶紫 → 碘液媒染 → 乙醇脱色 → 复染；G⁺ 紫、G⁻ 红</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">革兰染色（四步）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">结晶紫 → 碘液媒染 → 乙醇脱色 → 复染；G⁺ 紫、G⁻ 红</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>革兰染色</title><desc>结晶紫初染 → 卢戈碘液媒染 → 95%乙醇脱色 → 沙黄复染；脱色为关键步骤：革兰阳性菌厚肽聚糖滞留结晶紫-碘复合物呈紫色，革兰阴性菌复合物流失、复染后呈红色</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <clipPath id="fldA"><circle cx="68" cy="218" r="27"/></clipPath>
+  <clipPath id="fldB"><circle cx="286" cy="218" r="27"/></clipPath>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 每列：上=步骤名，中=涂片(上方葡萄球菌簇 G⁺、下方杆菌 G⁻)，下=试剂时间 -->
-  <!-- col1 ①结晶紫 cx=64 -->
-  <text x="64" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">①结晶紫</text>
-  <rect x="18" y="82" width="92" height="74" rx="8" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.3"/>
-  <g fill="#7a67a0"><circle cx="44" cy="106" r="5"/><circle cx="37" cy="101" r="5"/><circle cx="51" cy="101" r="5"/><circle cx="39" cy="113" r="5"/><circle cx="50" cy="113" r="5"/></g>
-  <rect x="70" y="132" width="28" height="12" rx="6" fill="#7a67a0"/>
-  <text x="64" y="171" text-anchor="middle" font-size="11" fill="#565b63">初染约 1 min</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">革兰染色</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">常规染色</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">四步试剂法（每步后水洗）；脱色是分水岭：G⁺ 滞留紫色，G⁻ 复染呈红</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- col2 ②碘液媒染 cx=180 -->
-  <text x="180" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">②碘液媒染</text>
-  <rect x="134" y="82" width="92" height="74" rx="8" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.3"/>
-  <g fill="#4a3b78"><circle cx="160" cy="106" r="5"/><circle cx="153" cy="101" r="5"/><circle cx="167" cy="101" r="5"/><circle cx="155" cy="113" r="5"/><circle cx="166" cy="113" r="5"/></g>
-  <rect x="186" y="132" width="28" height="12" rx="6" fill="#4a3b78"/>
-  <text x="180" y="171" text-anchor="middle" font-size="11" fill="#565b63">卢戈碘液约 1 min</text>
+<!-- ===== 上半：试剂步骤流程 ===== -->
+<text x="26" y="115" font-size="9.5" fill="#5b4f8a">G⁺</text>
+<text x="26" y="135" font-size="9.5" fill="#a3332f">G⁻</text>
 
-  <!-- col3 ③乙醇脱色 cx=296 -->
-  <text x="296" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">③乙醇脱色</text>
-  <rect x="250" y="82" width="92" height="74" rx="8" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.3"/>
-  <g fill="#7a67a0"><circle cx="276" cy="106" r="5"/><circle cx="269" cy="101" r="5"/><circle cx="283" cy="101" r="5"/><circle cx="271" cy="113" r="5"/><circle cx="282" cy="113" r="5"/></g>
-  <!-- G⁻ 杆菌此步被脱色：仅留轮廓 -->
-  <rect x="302" y="132" width="28" height="12" rx="6" fill="#ffffff" stroke="#c4bdad" stroke-width="1.2" stroke-dasharray="3 2"/>
-  <text x="296" y="171" text-anchor="middle" font-size="11" fill="#565b63">95%乙醇 数秒</text>
+<!-- ❶ 结晶紫 -->
+<rect x="50" y="78" width="91" height="80" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="61" cy="90" r="7" fill="#1f2733"/>
+<text x="61" y="93.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<text x="72" y="94" font-size="10" font-weight="600" fill="#33404f">结晶紫</text>
+<g fill="#5b3a92"><circle cx="88" cy="109" r="4.5"/><circle cx="97" cy="107" r="4.5"/><circle cx="92" cy="117" r="4.5"/><circle cx="102" cy="115" r="4.5"/></g>
+<rect x="83" y="127" width="26" height="8" rx="4" fill="#5b3a92"/>
+<text x="96" y="146" text-anchor="middle" font-size="9.5" fill="#33404f">初染 1 min</text>
+<text x="96" y="156" text-anchor="middle" font-size="9.5" fill="#5c6672">两者均着紫色</text>
 
-  <!-- col4 ④沙黄复染 cx=412 -->
-  <text x="412" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">④沙黄复染</text>
-  <rect x="366" y="82" width="92" height="74" rx="8" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.3"/>
-  <g fill="#7a67a0"><circle cx="392" cy="106" r="5"/><circle cx="385" cy="101" r="5"/><circle cx="399" cy="101" r="5"/><circle cx="387" cy="113" r="5"/><circle cx="398" cy="113" r="5"/></g>
-  <rect x="418" y="132" width="28" height="12" rx="6" fill="#c46a62"/>
-  <text x="412" y="171" text-anchor="middle" font-size="11" fill="#565b63">番红/沙黄约 30 s</text>
+<!-- ❷ 卢戈碘液 -->
+<rect x="155" y="78" width="91" height="80" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="166" cy="90" r="7" fill="#1f2733"/>
+<text x="166" y="93.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+<text x="177" y="94" font-size="10" font-weight="600" fill="#33404f">卢戈碘液</text>
+<g fill="#3f2a6b"><circle cx="193" cy="109" r="4.5"/><circle cx="202" cy="107" r="4.5"/><circle cx="197" cy="117" r="4.5"/><circle cx="207" cy="115" r="4.5"/></g>
+<rect x="188" y="127" width="26" height="8" rx="4" fill="#3f2a6b"/>
+<text x="201" y="146" text-anchor="middle" font-size="9.5" fill="#33404f">媒染 1 min</text>
+<text x="201" y="156" text-anchor="middle" font-size="9.5" fill="#5c6672">形成大分子复合物</text>
 
-  <!-- 箭头 -->
-  <g stroke="#cbc1a8" stroke-width="1.4" fill="#cbc1a8">
-    <line x1="113" y1="119" x2="129" y2="119"/><polygon points="131,119 125,116 125,122"/>
-    <line x1="229" y1="119" x2="245" y2="119"/><polygon points="247,119 241,116 241,122"/>
-    <line x1="345" y1="119" x2="361" y2="119"/><polygon points="363,119 357,116 357,122"/>
-  </g>
+<!-- ❸ 乙醇脱色（关键） -->
+<rect x="260" y="78" width="91" height="80" rx="7" fill="#fdf6f5" stroke="#c2413d" stroke-width="1.4"/>
+<circle cx="271" cy="90" r="7" fill="#c2413d"/>
+<text x="271" y="93.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+<text x="282" y="94" font-size="10" font-weight="600" fill="#a3332f">乙醇脱色</text>
+<g fill="#5b3a92"><circle cx="298" cy="109" r="4.5"/><circle cx="307" cy="107" r="4.5"/><circle cx="302" cy="117" r="4.5"/><circle cx="312" cy="115" r="4.5"/></g>
+<rect x="293" y="127" width="26" height="8" rx="4" fill="#ffffff" stroke="#b9c2cc" stroke-dasharray="3,2"/>
+<text x="305" y="146" text-anchor="middle" font-size="9.5" fill="#33404f">95%乙醇 数秒</text>
+<text x="305" y="156" text-anchor="middle" font-size="9.5" fill="#a3332f">G⁻ 复合物流失</text>
 
-  <!-- 关键步骤说明 -->
-  <text x="240" y="197" text-anchor="middle" font-size="11" fill="#565b63">关键在③脱色：G⁻ 外膜溶解、复合物流失被脱色；G⁺ 厚肽聚糖滞留结晶紫–碘复合物</text>
+<!-- ❹ 沙黄复染 -->
+<rect x="365" y="78" width="91" height="80" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="376" cy="90" r="7" fill="#1f2733"/>
+<text x="376" y="93.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">4</text>
+<text x="387" y="94" font-size="10" font-weight="600" fill="#33404f">沙黄复染</text>
+<g fill="#5b3a92"><circle cx="403" cy="109" r="4.5"/><circle cx="412" cy="107" r="4.5"/><circle cx="407" cy="117" r="4.5"/><circle cx="417" cy="115" r="4.5"/></g>
+<rect x="398" y="127" width="26" height="8" rx="4" fill="#c9433c"/>
+<text x="410" y="146" text-anchor="middle" font-size="9.5" fill="#33404f">复染 30 s</text>
+<text x="410" y="156" text-anchor="middle" font-size="9.5" fill="#5c6672">G⁻ 转为红色</text>
 
-  <!-- 结果图例 -->
-  <g><circle cx="150" cy="223" r="5" fill="#7a67a0"/><circle cx="143" cy="218" r="5" fill="#7a67a0"/><circle cx="157" cy="218" r="5" fill="#7a67a0"/>
-    <text x="172" y="226" font-size="11" fill="#565b63">革兰阳性菌（紫）：葡萄球菌、链球菌</text></g>
-  <g><rect x="142" y="244" width="22" height="10" rx="5" fill="#c46a62"/>
-    <text x="172" y="253" font-size="11" fill="#565b63">革兰阴性菌（红）：大肠埃希菌、铜绿假单胞菌</text></g>
+<!-- 流程箭头 -->
+<g stroke="#33404f" stroke-width="1.3">
+  <line x1="143" y1="118" x2="152" y2="118" marker-end="url(#arr)"/>
+  <line x1="248" y1="118" x2="257" y2="118" marker-end="url(#arr)"/>
+  <line x1="353" y1="118" x2="362" y2="118" marker-end="url(#arr)"/>
+</g>
 
-  <text x="240" y="283" text-anchor="middle" font-size="11" fill="#565b63">细菌学最基本、最重要的分类染色</text>
+<!-- 临床注解 -->
+<text x="240" y="172" text-anchor="middle" font-size="9.5" fill="#c2413d">③脱色是关键：过度脱色 → G⁺ 假阴性；脱色不足 → G⁻ 假阳性</text>
+
+<!-- ===== 下半：镜下所见 ===== -->
+<text x="24" y="188" font-size="9.5" fill="#5c6672">镜下所见（油镜 ×1000）</text>
+<line x1="244" y1="194" x2="244" y2="248" stroke="#e3e7ec"/>
+
+<!-- 左视野：G⁺ -->
+<circle cx="68" cy="218" r="27" fill="#fbf5f4" stroke="#c4bdad"/>
+<g clip-path="url(#fldA)" fill="#5b3a92">
+  <circle cx="58" cy="208" r="4.2"/><circle cx="67" cy="205" r="4.2"/><circle cx="62" cy="216" r="4.2"/><circle cx="72" cy="213" r="4.2"/><circle cx="66" cy="224" r="4.2"/>
+  <circle cx="79" cy="228" r="4.2"/><circle cx="87" cy="233" r="4.2"/>
+  <circle cx="49" cy="230" r="4.2"/><circle cx="57" cy="234" r="4.2"/>
+  <circle cx="83" cy="199" r="4.2"/>
+</g>
+<text x="104" y="206" font-size="10" font-weight="700" fill="#5b4f8a">革兰阳性菌（紫）</text>
+<text x="104" y="221" font-size="9.5" fill="#33404f">球菌或杆菌，注意排列</text>
+<text x="104" y="236" font-size="9.5" fill="#5c6672">葡萄球菌 · 链球菌 · 棒状杆菌</text>
+
+<!-- 右视野：G⁻ -->
+<circle cx="286" cy="218" r="27" fill="#fbf5f4" stroke="#c4bdad"/>
+<g clip-path="url(#fldB)" fill="#c9433c">
+  <rect x="266" y="202" width="16" height="6" rx="3" transform="rotate(-22 274 205)"/>
+  <rect x="288" y="199" width="16" height="6" rx="3" transform="rotate(12 296 202)"/>
+  <rect x="270" y="217" width="16" height="6" rx="3" transform="rotate(6 278 220)"/>
+  <rect x="292" y="222" width="16" height="6" rx="3" transform="rotate(-34 300 225)"/>
+  <rect x="276" y="232" width="16" height="6" rx="3" transform="rotate(16 284 235)"/>
+  <rect x="296" y="210" width="16" height="6" rx="3" transform="rotate(-8 304 213)"/>
+  <circle cx="299" cy="234" r="3.4"/><circle cx="306" cy="231" r="3.4"/>
+</g>
+<text x="322" y="206" font-size="10" font-weight="700" fill="#a3332f">革兰阴性菌（红）</text>
+<text x="322" y="221" font-size="9.5" fill="#33404f">多为杆菌，亦有球菌</text>
+<text x="322" y="236" font-size="9.5" fill="#5c6672">大肠埃希菌 · 奈瑟菌</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">紫色报阳性、红色报阴性，并同时描述形态与排列</text>
+
+<!-- 页脚：主要用途 -->
+<rect x="24" y="270" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="285" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　标本直接涂片初筛 · 培养物鉴定 · 指导经验性抗菌治疗</text>
 </svg>

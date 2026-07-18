@@ -1,29 +1,76 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>吲哚试验 (Indole)</title><desc>色氨酸→吲哚，与 Kovac 试剂（对二甲氨基苯甲醛）形成樱红色环</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">吲哚试验 (Indole)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">色氨酸→吲哚，与 Kovac 试剂（对二甲氨基苯甲醛）形成樱红色环</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>吲哚试验（Indole）</title><desc>细菌色氨酸酶裂解蛋白胨中的色氨酸生成吲哚，加 Kovacs 试剂（对二甲氨基苯甲醛）后阳性管试剂层呈樱红色环，阴性管保持黄色</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="arrs" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8c96a2"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性管 -->
-  <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <!-- 肉汤 -->
-    <path d="M150,150 L186,150 L186,238 Q186,256 168,256 Q150,256 150,238 Z" fill="#e7decb"/>
-    <!-- Kovac 试剂层(黄,阴性) -->
-    <rect x="150" y="118" width="36" height="32" fill="#e9d36b"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阴性（黄色环）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">吲哚试验（Indole）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">色氨酸酶裂解色氨酸生成吲哚 → Kovacs 试剂显樱红色环</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阳性管 -->
-  <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M300,150 L336,150 L336,238 Q336,256 318,256 Q300,256 300,238 Z" fill="#e7decb"/>
-    <!-- 樱红色环(阳性) -->
-    <rect x="300" y="116" width="36" height="34" fill="#c46a62"/>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">阳性（樱红色环）</text>
-  </g>
+<!-- ===== 反应链：底物 →〔酶〕→ 产物 ＋ 指示剂 ===== -->
+<rect x="24" y="82" width="86" height="28" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="67" y="93" text-anchor="middle" font-size="9.5" fill="#1f2733">蛋白胨中的</text>
+<text x="67" y="104" text-anchor="middle" font-size="9.5" fill="#5c6672">色氨酸 Trp</text>
 
-  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌阳性；肺炎克雷伯菌、产气肠杆菌阴性（IMViC 经典鉴别）</text>
+<line x1="110" y1="96" x2="130" y2="96" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<circle cx="152" cy="96" r="18" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="152" y="93" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1f4e79">色氨酸</text>
+<text x="152" y="104" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1f4e79">酶</text>
+
+<line x1="172" y1="96" x2="192" y2="96" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="194" y="82" width="92" height="28" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="93" text-anchor="middle" font-size="9.5" fill="#1f2733">吲哚 indole</text>
+<text x="240" y="104" text-anchor="middle" font-size="9.5" fill="#5c6672">＋丙酮酸＋NH₃</text>
+
+<text x="298" y="101" text-anchor="middle" font-size="12" fill="#33404f">＋</text>
+
+<rect x="310" y="82" width="146" height="28" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="383" y="93" text-anchor="middle" font-size="9.5" fill="#1f2733">Kovacs 试剂</text>
+<text x="383" y="104" text-anchor="middle" font-size="9.5" fill="#5c6672">对二甲氨基苯甲醛</text>
+
+<!-- 同一试剂分别加入两管 -->
+<line x1="330" y1="112" x2="94" y2="145" stroke="#8c96a2" stroke-width="1.1" stroke-dasharray="4,3" marker-end="url(#arrs)"/>
+<line x1="378" y1="112" x2="317" y2="145" stroke="#8c96a2" stroke-width="1.1" stroke-dasharray="4,3" marker-end="url(#arrs)"/>
+
+<line x1="240" y1="126" x2="240" y2="234" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 左：阴性对照 ===== -->
+<text x="24" y="136" font-size="10" font-weight="700" fill="#5c6672">阴性对照（−）</text>
+<path d="M53,144 L53,218 Q53,232 70,232 Q87,232 87,218 L87,144 Z" fill="#f7f8fa" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M53,176 L87,176 L87,218 Q87,232 70,232 Q53,232 53,218 Z" fill="#efe9dd"/>
+<rect x="53" y="150" width="34" height="26" fill="#e9d36b"/>
+<line x1="53" y1="176" x2="87" y2="176" stroke="#b9c2cc" stroke-width="1"/>
+<ellipse cx="70" cy="144" rx="17" ry="4.5" fill="#f7f8fa" stroke="#b9c2cc" stroke-width="1.4"/>
+<text x="100" y="162" font-size="9.5" font-weight="700" fill="#33404f">试剂层仍为黄色</text>
+<text x="100" y="180" font-size="9.5" fill="#5c6672">细菌无色氨酸酶</text>
+<text x="100" y="198" font-size="9.5" fill="#5c6672">培养液中无吲哚</text>
+
+<!-- ===== 右：阳性 ===== -->
+<text x="248" y="136" font-size="10" font-weight="700" fill="#a3332f">阳性（+）</text>
+<path d="M277,144 L277,218 Q277,232 294,232 Q311,232 311,218 L311,144 Z" fill="#f7f8fa" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M277,176 L311,176 L311,218 Q311,232 294,232 Q277,232 277,218 Z" fill="#efe9dd"/>
+<rect x="277" y="150" width="34" height="26" fill="#c2413d"/>
+<line x1="277" y1="176" x2="311" y2="176" stroke="#b9c2cc" stroke-width="1"/>
+<ellipse cx="294" cy="144" rx="17" ry="4.5" fill="#f7f8fa" stroke="#b9c2cc" stroke-width="1.4"/>
+<text x="324" y="162" font-size="9.5" font-weight="700" fill="#a3332f">上层樱红色环</text>
+<text x="324" y="180" font-size="9.5" fill="#5c6672">细菌产色氨酸酶</text>
+<text x="324" y="198" font-size="9.5" fill="#5c6672">吲哚与醛缩合显色</text>
+
+<!-- 操作注意 -->
+<text x="240" y="246" text-anchor="middle" font-size="9.5" fill="#5c6672">试剂沿管壁徐徐滴加、勿振摇（摇匀色环消失）；35℃ 孵育 24 h 后判读</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">吲哚(+) 是区分大肠埃希菌与多数其他肠杆菌的标志（IMViC 之一）</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　(+) 大肠埃希菌、普通变形杆菌　(−) 肺炎克雷伯菌、奇异变形杆菌</text>
 </svg>

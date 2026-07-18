@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>ONPG 试验</title><desc>ONPG（邻硝基苯-β-D-半乳糖苷）为乳糖类似物，无色；具 β-半乳糖苷酶的细菌将其裂解，释放黄色的邻硝基苯酚。变黄为阳性，不变色为阴性。主要用于肠杆菌目鉴别：区分真正的非乳糖发酵菌与缺乏乳糖渗透酶的迟缓发酵乳糖菌。</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="arrs" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8c96a2"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">ONPG 试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">β-半乳糖苷酶裂解无色 ONPG → 释放黄色邻硝基苯酚</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：阴性对照管 ===== -->
+<text x="96" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">阴性对照（−）</text>
+<path d="M79,88 L79,178 A17,17 0 0 0 113,178 L113,88" fill="#eef3f7" stroke="none"/>
+<path d="M79,88 L79,178 A17,17 0 0 0 113,178 L113,88" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<line x1="75" y1="88" x2="117" y2="88" stroke="#b9c2cc" stroke-width="1.4"/>
+<text x="96" y="146" text-anchor="middle" font-size="9.5" fill="#8c96a2">无色</text>
+<text x="96" y="210" text-anchor="middle" font-size="9.5" fill="#5c6672">35℃ 24 h 仍无色判阴</text>
+<text x="96" y="224" text-anchor="middle" font-size="9.5" fill="#33404f">无 β-半乳糖苷酶</text>
+
+<!-- ===== 中：化学转化 ===== -->
+<rect x="176" y="88" width="128" height="30" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="101" text-anchor="middle" font-size="9.5" fill="#1f2733">ONPG（无色底物）</text>
+<text x="240" y="113" text-anchor="middle" font-size="9.5" fill="#5c6672">乳糖类似物</text>
+<line x1="240" y1="118" x2="240" y2="132" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="176" y="134" width="128" height="22" rx="11" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="240" y="149" text-anchor="middle" font-size="10" font-weight="600" fill="#1f4e79">β-半乳糖苷酶</text>
+<line x1="240" y1="156" x2="240" y2="170" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="176" y="172" width="128" height="32" rx="5" fill="#fdf3cf" stroke="#d9b96a"/>
+<text x="240" y="186" text-anchor="middle" font-size="9.5" fill="#8a6d2f">邻硝基苯酚（黄色）</text>
+<text x="240" y="198" text-anchor="middle" font-size="9.5" fill="#5c6672">＋ 半乳糖</text>
+<text x="240" y="219" text-anchor="middle" font-size="9.5" fill="#8c96a2">载体：ONPG 肉汤或浸润纸片</text>
+
+<!-- 转化指向两管 -->
+<line x1="174" y1="100" x2="120" y2="106" stroke="#8c96a2" stroke-width="1.1" stroke-dasharray="4,3" marker-end="url(#arrs)"/>
+<line x1="306" y1="188" x2="360" y2="178" stroke="#8c96a2" stroke-width="1.1" stroke-dasharray="4,3" marker-end="url(#arrs)"/>
+
+<!-- ===== 右：阳性管 ===== -->
+<text x="384" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#8a6d2f">阳性（＋）</text>
+<path d="M367,88 L367,178 A17,17 0 0 0 401,178 L401,88" fill="#f2d24b" stroke="none"/>
+<path d="M367,88 L367,178 A17,17 0 0 0 401,178 L401,88" fill="none" stroke="#c9a83c" stroke-width="1.4"/>
+<line x1="363" y1="88" x2="405" y2="88" stroke="#c9a83c" stroke-width="1.4"/>
+<text x="384" y="146" text-anchor="middle" font-size="9.5" fill="#7a5f1c">黄色</text>
+<text x="384" y="210" text-anchor="middle" font-size="9.5" fill="#5c6672">可早至 20~30 min 变黄</text>
+<text x="384" y="224" text-anchor="middle" font-size="9.5" fill="#33404f">有 β-半乳糖苷酶</text>
+
+<!-- 关键鉴别价值 -->
+<rect x="24" y="228" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="34" y="242" font-size="9.5" fill="#33404f">关键：迟发酵乳糖菌缺乳糖渗透酶，麦康凯上不发酵/迟发酵；ONPG 无需渗透酶入菌，故阳性</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">变黄＝β-半乳糖苷酶阳性，可揪出「假的」非乳糖发酵菌</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　＋：宋内志贺菌 · 柠檬酸杆菌属 ｜ −：沙门菌属 · 痢疾/福氏志贺菌</text>
+</svg>

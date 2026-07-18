@@ -1,19 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>产生灭活酶</title><desc>酶水解或修饰药物使其失活。β-内酰胺酶（水解）/ 氨基糖苷修饰酶（AAC/APH/ANT，修饰）</desc><defs>
- <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
- <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
- <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>产生灭活酶</title><desc>细菌产酶使药物失活的两条途径：①水解——β-内酰胺酶打开β-内酰胺环；②修饰——氨基糖苷修饰酶 AAC/APH/ANT 加乙酰、磷酸、腺苷酰基团</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
 </defs>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">产生灭活酶</text>
-<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">酶水解或修饰药物使其失活</text>
-<circle cx="140" cy="152" r="30" fill="#6f97c9" stroke="#5a80b0" stroke-width="1.3"/> <text x="140" y="206" font-size="12" fill="#2c3138" text-anchor="middle" font-weight="600">灭活酶</text>
- <g transform="translate(186,152) rotate(0) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g>
- <line x1="230" y1="122" x2="300" y2="98" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="252" y="112" font-size="12" fill="#2c3138" text-anchor="start">水解</text>
- <g transform="translate(330,98)"><rect x="-17" y="-7.5" width="17" height="15" rx="7.5" fill="#df8c7e" stroke="#b0a47c"/></g>
- <g transform="translate(360,98)"><rect x="0" y="-7.5" width="17" height="15" rx="7.5" fill="#e7e0c5" stroke="#b0a47c"/></g>
- <line x1="230" y1="176" x2="300" y2="200" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <text x="252" y="220" font-size="12" fill="#2c3138" text-anchor="start">修饰</text>
- <g transform="translate(345,200) rotate(0) scale(1)"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="#e7e0c5"/><rect x="-17" y="-7.5" width="17" height="15" fill="#df8c7e" clip-path="url(#cap)"/><rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="none" stroke="#b0a47c" stroke-width="1"/></g> <text x="374" y="205" font-size="13" fill="#3f444b">–CH₃/–PO₄</text>
- <text x="240" y="270" font-size="12" fill="#3f444b" text-anchor="middle">药物失去抗菌活性</text>
-<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">β-内酰胺酶（水解）/ 氨基糖苷修饰酶（AAC/APH/ANT，修饰）</text>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">产生灭活酶</text>
+<rect x="386" y="14" width="70" height="18" rx="9" fill="#eef1f5"/>
+<text x="421" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">耐药机制</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">两类酶、两种失活方式：水解打断化学键 / 共价修饰加基团</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- 分栏竖线 -->
+<line x1="240" y1="66" x2="240" y2="206" stroke="#e3e7ec"/>
+
+<!-- ===== ❶ 水解：β-内酰胺酶 ===== -->
+<circle cx="34" cy="74" r="8" fill="#1f2733"/><text x="34" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">1</text>
+<text x="48" y="78" font-size="11" font-weight="600" fill="#33404f">水解：β-内酰胺酶</text>
+
+<!-- 药物 -->
+<rect x="30" y="88" width="84" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="72" y="99.5" text-anchor="middle" font-size="9.5" fill="#a3332f">青霉素类/头孢</text>
+<line x1="66" y1="104" x2="58" y2="108" stroke="#c2413d" stroke-width="1"/>
+
+<!-- 完整 β-内酰胺环 -->
+<path d="M44,108 H72 V136 H44 Z" fill="#f9e6e4" stroke="#c2413d" stroke-width="1.6"/>
+<text x="50" y="133" font-size="9.5" fill="#a3332f">N</text>
+<text x="58" y="150" text-anchor="middle" font-size="9.5" fill="#5c6672">β-内酰胺环</text>
+
+<line x1="76" y1="122" x2="102" y2="122" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- 酶 -->
+<ellipse cx="132" cy="122" rx="27" ry="15" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="132" y="125.5" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1f4e79">β-内酰胺酶</text>
+
+<line x1="161" y1="122" x2="184" y2="122" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- 开裂的环 -->
+<path d="M186,108 H214 V136 H192" fill="none" stroke="#c2413d" stroke-width="1.6"/>
+<path d="M186,108 V115" fill="none" stroke="#c2413d" stroke-width="1.6"/>
+<text x="200" y="150" text-anchor="middle" font-size="9.5" fill="#c2413d">酰胺键断裂 · 开环</text>
+
+<text x="130" y="176" text-anchor="middle" font-size="9.5" fill="#33404f">环开裂 → 不能酰化 PBP → 抗菌活性丧失</text>
+
+<!-- ===== ❷ 修饰：氨基糖苷修饰酶 ===== -->
+<circle cx="258" cy="74" r="8" fill="#1f2733"/><text x="258" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">2</text>
+<text x="272" y="78" font-size="11" font-weight="600" fill="#33404f">修饰：氨基糖苷修饰酶</text>
+
+<!-- 底物 -->
+<rect x="250" y="92" width="66" height="32" rx="6" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="283" y="106" text-anchor="middle" font-size="9.5" fill="#a3332f">氨基糖苷</text>
+<text x="283" y="118" text-anchor="middle" font-size="9.5" fill="#a3332f">—NH₂ / —OH</text>
+
+<line x1="318" y1="104" x2="327" y2="100" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="318" y1="108" x2="327" y2="124" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="318" y1="112" x2="327" y2="148" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+
+<rect x="332" y="92" width="42" height="16" rx="8" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="353" y="103.5" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1f4e79">AAC</text>
+<text x="380" y="103.5" font-size="9.5" fill="#5c6672">加乙酰基</text>
+
+<rect x="332" y="116" width="42" height="16" rx="8" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="353" y="127.5" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1f4e79">APH</text>
+<text x="380" y="127.5" font-size="9.5" fill="#5c6672">加磷酸基</text>
+
+<rect x="332" y="140" width="42" height="16" rx="8" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="353" y="151.5" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1f4e79">ANT</text>
+<text x="380" y="151.5" font-size="9.5" fill="#5c6672">加腺苷酰基</text>
+
+<text x="352" y="176" text-anchor="middle" font-size="9.5" fill="#33404f">药物被修饰 → 对 30S 亲和力大幅下降、摄取受阻</text>
+
+<!-- 临床注解 -->
+<text x="240" y="222" text-anchor="middle" font-size="9.5" fill="#5c6672">临床注解：部分酶可被他唑巴坦/阿维巴坦阻断以保护药物；金属酶（NDM/IMP/VIM）不被抑制</text>
+<text x="240" y="238" text-anchor="middle" font-size="9.5" fill="#5c6672">氨基糖苷修饰酶无对应抑制剂 → 只能改用不被该酶修饰的品种</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">酶不改变靶点，而是水解或修饰药物本身 → 药未到靶点已失活</text>
+
+<!-- 页脚：典型基因 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型基因</tspan>　水解 blaTEM/blaSHV·blaKPC·blaNDM ｜ 修饰 aac(6′)-Ib</text>
 </svg>

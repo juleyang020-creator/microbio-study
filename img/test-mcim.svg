@@ -1,51 +1,114 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>mCIM 改良碳青霉烯灭活试验</title><desc>美罗培南纸片经待测菌孵育后，贴于敏感指示菌（大肠埃希菌）平板</desc>
-  <defs>
-    <radialGradient id="plateLawn" cx="42%" cy="36%" r="72%">
-      <stop offset="0%" stop-color="#f5f1e9"/>
-      <stop offset="100%" stop-color="#ece6da"/>
-    </radialGradient>
-    <radialGradient id="plateClear" cx="42%" cy="36%" r="72%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#fbfaf8"/>
-    </radialGradient>
-  </defs>
+<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 356" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>mCIM 改良碳青霉烯灭活试验</title><desc>美罗培南纸片先与待测菌悬液孵育，若待测菌产碳青霉烯酶则药物被水解；纸片再贴到接种大肠埃希菌 ATCC 25922 的平板上，阳性无圈或小圈，阴性为清晰大抑菌圈</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="356" fill="#ffffff"/>
 
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">mCIM 改良碳青霉烯灭活试验</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">美罗培南纸片经待测菌孵育后，贴于敏感指示菌（大肠埃希菌）平板</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">mCIM 改良碳青霉烯灭活试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">耐药表型检测</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">产酶菌先把纸片里的美罗培南水解掉 → 指示菌不再被抑制</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阳性：产碳青霉烯酶 → 药物被灭活 → 指示菌长到纸片旁，无圈 -->
-  <circle cx="138" cy="166" r="92" fill="url(#plateLawn)" stroke="#cbc1a8" stroke-width="2.5"/>
-  <!-- 指示菌菌苔满布纹理 -->
-  <g stroke="#d8d0c0" stroke-width="1" opacity="0.7">
-    <line x1="78" y1="120" x2="198" y2="120"/>
-    <line x1="68" y1="146" x2="208" y2="146"/>
-    <line x1="64" y1="172" x2="212" y2="172"/>
-    <line x1="68" y1="198" x2="208" y2="198"/>
-    <line x1="80" y1="224" x2="196" y2="224"/>
-  </g>
-  <!-- 美罗培南纸片（药物 token，已被灭活，菌长到圈边） -->
-  <circle cx="138" cy="166" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
-  <text x="138" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MEM</text>
-  <text x="138" y="274" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c46a62">阳性（产碳青霉烯酶）</text>
-  <text x="138" y="291" text-anchor="middle" font-size="11" fill="#565b63">无／极小抑菌圈（≤15&#8201;mm）</text>
+<!-- ===== ❶ 纸片预孵育 ===== -->
+<circle cx="31" cy="74" r="7.5" fill="#1f2733"/>
+<text x="31" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="44" y="78" font-size="10" font-weight="700" fill="#33404f">预孵育 35℃ 4 h±15 min</text>
 
-  <!-- 阴性：不产酶 → 药物有效 → 抑制指示菌生长，清晰抑菌圈 -->
-  <circle cx="346" cy="166" r="92" fill="url(#plateLawn)" stroke="#cbc1a8" stroke-width="2.5"/>
-  <!-- 圈外仍有指示菌菌苔 -->
-  <g stroke="#d8d0c0" stroke-width="1" opacity="0.7">
-    <line x1="286" y1="120" x2="406" y2="120"/>
-    <line x1="276" y1="146" x2="416" y2="146"/>
-    <line x1="272" y1="172" x2="416" y2="172"/>
-    <line x1="276" y1="198" x2="416" y2="198"/>
-    <line x1="288" y1="224" x2="404" y2="224"/>
-  </g>
-  <!-- 清晰抑菌圈（清亮区，盖住菌苔） -->
-  <circle cx="346" cy="166" r="62" fill="url(#plateClear)" stroke="#cbc1a8" stroke-width="1.2" stroke-dasharray="4 3"/>
-  <!-- 美罗培南纸片（药物有效） -->
-  <circle cx="346" cy="166" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
-  <text x="346" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">MEM</text>
-  <text x="346" y="274" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">阴性（不产酶）</text>
-  <text x="346" y="291" text-anchor="middle" font-size="11" fill="#565b63">清晰抑菌圈（≥19&#8201;mm）</text>
+<rect x="30" y="88" width="42" height="60" rx="9" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<rect x="34" y="96" width="34" height="48" rx="7" fill="#eef1f5"/>
+<!-- 美罗培南纸片浸在待测菌悬液中 -->
+<circle cx="51" cy="106" r="11" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="51" y="109.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">MEM</text>
+<!-- 待测菌产的碳青霉烯酶 -->
+<ellipse cx="42" cy="128" rx="8" ry="5" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1"/>
+<ellipse cx="61" cy="137" rx="7" ry="4.5" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1"/>
+<!-- 被水解的药物碎片 -->
+<g stroke="#c2413d" stroke-width="1.6" stroke-linecap="round">
+  <line x1="38" y1="118" x2="44" y2="121"/>
+  <line x1="57" y1="120" x2="63" y2="117"/>
+  <line x1="48" y1="140" x2="54" y2="137"/>
+</g>
+
+<text x="82" y="100" font-size="9.5" fill="#33404f">待测菌 TSB 肉汤 ＋ 美罗培南纸片</text>
+<text x="82" y="116" font-size="9.5" fill="#5c6672">产碳青霉烯酶 → 酶水解纸片中的</text>
+<text x="82" y="132" font-size="9.5" fill="#5c6672">美罗培南，药物失活</text>
+<text x="82" y="148" font-size="9.5" fill="#33404f">不产酶 → 药物保持完好</text>
+
+<!-- 转移箭头 -->
+<line x1="230" y1="118" x2="262" y2="118" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- ===== ❷ 贴到指示菌平板 ===== -->
+<circle cx="255" cy="74" r="7.5" fill="#1f2733"/>
+<text x="255" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="268" y="78" font-size="10" font-weight="700" fill="#33404f">取出纸片贴于指示菌平板</text>
+
+<circle cx="300" cy="118" r="30" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2"/>
+<g stroke="#ddd4c0" stroke-width="1" opacity="0.8">
+  <line x1="280" y1="102" x2="320" y2="102"/>
+  <line x1="274" y1="118" x2="326" y2="118"/>
+  <line x1="280" y1="134" x2="320" y2="134"/>
+</g>
+<circle cx="300" cy="118" r="11" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="300" y="121.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">MEM</text>
+
+<text x="336" y="106" font-size="9.5" fill="#33404f">指示菌：大肠埃希菌</text>
+<text x="336" y="122" font-size="9.5" fill="#5c6672">ATCC 25922（MEM 敏感）</text>
+<text x="336" y="138" font-size="9.5" fill="#5c6672">涂成菌苔，35℃ 过夜</text>
+
+<!-- ===== ❸ 结果判读 ===== -->
+<circle cx="31" cy="170" r="7.5" fill="#1f2733"/>
+<text x="31" y="173.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="44" y="174" font-size="10" font-weight="700" fill="#33404f">量抑菌圈直径</text>
+<text x="456" y="174" text-anchor="end" font-size="9.5" fill="#8c96a2">读圈窗口 18–24 h</text>
+
+<!-- 阳性平板 -->
+<rect x="68" y="176" width="128" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="132" y="187.5" text-anchor="middle" font-size="9.5" fill="#a3332f">阳性 · 产碳青霉烯酶</text>
+<circle cx="132" cy="238" r="44" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.2"/>
+<g stroke="#ddd4c0" stroke-width="1" opacity="0.8">
+  <line x1="104" y1="208" x2="160" y2="208"/>
+  <line x1="94" y1="224" x2="170" y2="224"/>
+  <line x1="92" y1="252" x2="172" y2="252"/>
+  <line x1="104" y1="268" x2="160" y2="268"/>
+</g>
+<!-- 极小抑菌圈，圈内散在菌落 -->
+<circle cx="132" cy="238" r="18" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1" stroke-dasharray="4 3"/>
+<g fill="#b3a583">
+  <circle cx="121" cy="252" r="2.2"/><circle cx="143" cy="250" r="2"/><circle cx="146" cy="231" r="2.1"/><circle cx="118" cy="229" r="1.9"/><circle cx="132" cy="255" r="1.8"/>
+</g>
+<circle cx="132" cy="238" r="11" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="132" y="241.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">MEM</text>
+<text x="132" y="296" text-anchor="middle" font-size="9.5" fill="#33404f">6–15 mm，或圈内散在菌落</text>
+
+<!-- 灰区 -->
+<rect x="208" y="214" width="64" height="48" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="231" text-anchor="middle" font-size="9.5" fill="#8c96a2">16–18 mm 清亮</text>
+<text x="240" y="245" text-anchor="middle" font-size="9.5" fill="#8c96a2">不能确定</text>
+<text x="240" y="259" text-anchor="middle" font-size="9.5" fill="#8c96a2">→ 复核</text>
+
+<!-- 阴性平板 -->
+<rect x="284" y="176" width="128" height="16" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="348" y="187.5" text-anchor="middle" font-size="9.5" fill="#5c6672">阴性 · 不产碳青霉烯酶</text>
+<circle cx="348" cy="238" r="44" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.2"/>
+<g stroke="#ddd4c0" stroke-width="1" opacity="0.8">
+  <line x1="320" y1="208" x2="376" y2="208"/>
+  <line x1="310" y1="224" x2="386" y2="224"/>
+  <line x1="308" y1="252" x2="388" y2="252"/>
+  <line x1="320" y1="268" x2="376" y2="268"/>
+</g>
+<!-- 清晰大抑菌圈，圈内无菌落 -->
+<circle cx="348" cy="238" r="33" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1" stroke-dasharray="4 3"/>
+<circle cx="348" cy="238" r="11" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="348" y="241.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">MEM</text>
+<text x="348" y="296" text-anchor="middle" font-size="9.5" fill="#33404f">≥19 mm 清晰圈，圈内无菌落</text>
+
+<!-- 结论 -->
+<text x="240" y="316" text-anchor="middle" font-size="11.5" fill="#33404f">药被水解 → 指示菌照长（圈小/无圈）；药完好 → 指示菌被抑制（大圈）</text>
+
+<!-- 页脚：用途 -->
+<rect x="24" y="324" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="340" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　CRE 表型确认标准方法；eCIM 须与其同步做（±EDTA），mCIM 阳性才判读、分金属/丝氨酸酶</text>
 </svg>

@@ -70,7 +70,15 @@
     'metachromatic-granule': 'img/stain-granule.svg',
     'lpcb': 'img/stain-lpcb.svg',
     'giemsa': 'img/stain-giemsa.svg',
-    'auramine': 'img/stain-auramine.svg'
+    'auramine': 'img/stain-auramine.svg',
+    'modified-acid-fast': 'img/stain-modified-acidfast.svg',
+    'methylene-blue': 'img/stain-methyleneblue.svg',
+    'capsule-stain': 'img/stain-capsule.svg',
+    'gms': 'img/stain-gms.svg',
+    'koh-wet': 'img/stain-koh.svg',
+    'silver-spirochete': 'img/stain-silver.svg',
+    // 瑞氏与吉姆萨同属 Romanowsky 类染色，原理图通用
+    'wright': 'img/stain-giemsa.svg'
   };
 
   // 生化反应：按条目 id 映射到示意图（部分复用 test-*.svg）
@@ -106,8 +114,20 @@
     'bacitracin': 'img/biochem-disk.svg',
     'novobiocin': 'img/biochem-disk.svg',
     'hemolysis': 'img/biochem-hemolysis.svg',
-    'lancefield': 'img/biochem-lancefield.svg'
+    'lancefield': 'img/biochem-lancefield.svg',
+    'germ-tube': 'img/biochem-germtube.svg',
+    'onpg': 'img/biochem-onpg.svg',
+    'xv-factor': 'img/biochem-xv.svg',
+    'adh-test': 'img/biochem-adh.svg',
+    'tsi-kia': 'img/biochem-tsi.svg'
   };
+  // 培养基：平板外观 + 选择/鉴别原理示意（文件名与条目 id 一致）
+  var MEDIA_IMAGE = {};
+  [
+    'nutrient-agar', 'blood-agar', 'chocolate-agar', 'macconkey', 'emb', 'ss-agar', 'xld',
+    'tcbs', 'mannitol-salt', 'chromagar-candida', 'lj-medium', 'sda', 'bcye', 'bordet-gengou',
+    'thayer-martin', 'cin-agar', 'ashdown', 'anaerobic-blood-agar', 'mh-agar'
+  ].forEach(function (id) { MEDIA_IMAGE[id] = 'img/media-' + id + '.svg'; });
 
   // 节点子树是否包含某叶子分类（支持任意层级）
   function nodeContainsLeaf(node, leafName) {
@@ -123,6 +143,7 @@
     if (moduleKey === 'tests') { return TEST_IMAGE[entry.id] || null; }
     if (moduleKey === 'staining') { return STAIN_IMAGE[entry.id] || null; }
     if (moduleKey === 'biochem-tests') { return BIOCHEM_IMAGE[entry.id] || null; }
+    if (moduleKey === 'media') { return MEDIA_IMAGE[entry.id] || null; }
     if (moduleKey !== 'antibiotics' && moduleKey !== 'resistance') { return null; }
     // 先按类别(叶子)直接匹配（抗真菌药、旁路代谢/生物膜按其类别区分）
     if (MECHANISM_IMAGE[entry.类别]) { return MECHANISM_IMAGE[entry.类别]; }

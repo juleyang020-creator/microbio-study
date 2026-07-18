@@ -1,34 +1,57 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>溶血型鉴定（血平板）</title><desc>观察菌落周围红细胞溶解情况：α / β / γ 三型</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">溶血型鉴定（血平板）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">观察菌落周围红细胞溶解情况：α / β / γ 三型</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>溶血型鉴定</title><desc>5% 绵羊血琼脂平板上，以不溶血（γ）为阴性对照，对比 α-溶血的草绿色不完全溶血晕与 β-溶血的完全透明溶血圈</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- α 溶血(草绿) -->
-  <g>
-    <circle cx="100" cy="148" r="60" fill="#9e2f3a" stroke="#7d2530" stroke-width="2.5"/>
-    <circle cx="100" cy="148" r="26" fill="#6f8f5a"/>
-    <circle cx="100" cy="148" r="9" fill="#cbc1a8"/>
-    <text x="100" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a52">α 溶血（草绿）</text>
-    <text x="100" y="246" text-anchor="middle" font-size="11" fill="#565b63">部分溶血·绿变</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">溶血型鉴定</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">菌落周围绵羊红细胞被破坏的程度 → 分 γ / α / β 三型</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="162" y1="66" x2="162" y2="182" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+<line x1="318" y1="66" x2="318" y2="182" stroke="#e3e7ec" stroke-dasharray="4,4"/>
 
-  <!-- β 溶血(透明) -->
-  <g>
-    <circle cx="240" cy="148" r="60" fill="#9e2f3a" stroke="#7d2530" stroke-width="2.5"/>
-    <circle cx="240" cy="148" r="26" fill="#f3ead9"/>
-    <circle cx="240" cy="148" r="9" fill="#cbc1a8"/>
-    <text x="240" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">β 溶血（透明）</text>
-    <text x="240" y="246" text-anchor="middle" font-size="11" fill="#565b63">完全溶血·清亮</text>
-  </g>
+<!-- ===== 左：γ 不溶血（阴性对照） ===== -->
+<circle cx="84" cy="116" r="41" fill="none" stroke="#b9c2cc" stroke-width="1.2"/>
+<circle cx="84" cy="116" r="38" fill="#9e2f3a" stroke="#7d2530" stroke-width="1.6"/>
+<g fill="#e2e6da" stroke="#c9ccc0" stroke-width="0.8">
+  <circle cx="84" cy="116" r="6.5"/><circle cx="66" cy="99" r="4.5"/><circle cx="101" cy="132" r="4.5"/>
+</g>
+<text x="84" y="168" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">γ 不溶血（阴性对照）</text>
+<text x="84" y="181" text-anchor="middle" font-size="9.5" fill="#5c6672">红细胞完好·底色不变</text>
 
-  <!-- γ 不溶血 -->
-  <g>
-    <circle cx="380" cy="148" r="60" fill="#9e2f3a" stroke="#7d2530" stroke-width="2.5"/>
-    <circle cx="380" cy="148" r="9" fill="#cbc1a8"/>
-    <text x="380" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">γ 不溶血</text>
-    <text x="380" y="246" text-anchor="middle" font-size="11" fill="#565b63">无变化</text>
-  </g>
+<!-- ===== 中：α 溶血 ===== -->
+<circle cx="240" cy="116" r="41" fill="none" stroke="#b9c2cc" stroke-width="1.2"/>
+<circle cx="240" cy="116" r="38" fill="#9e2f3a" stroke="#7d2530" stroke-width="1.6"/>
+<circle cx="240" cy="116" r="21" fill="#6f8f5a" opacity="0.92"/>
+<circle cx="240" cy="116" r="6.5" fill="#e2e6da" stroke="#c9ccc0" stroke-width="0.8"/>
+<text x="240" y="168" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3f7a52">α 溶血（不完全）</text>
+<text x="240" y="181" text-anchor="middle" font-size="9.5" fill="#5c6672">草绿色半透明晕·菌落可见</text>
 
-  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#565b63">A 群/B 群链球菌 β 溶血；肺炎链球菌、草绿色链球菌 α 溶血；肠球菌多为 γ</text>
+<!-- ===== 右：β 溶血 ===== -->
+<circle cx="396" cy="116" r="41" fill="none" stroke="#b9c2cc" stroke-width="1.2"/>
+<circle cx="396" cy="116" r="38" fill="#9e2f3a" stroke="#7d2530" stroke-width="1.6"/>
+<rect x="391" y="84" width="10" height="62" rx="5" fill="#f3ead9"/>
+<line x1="396" y1="86" x2="396" y2="144" stroke="#8c7a5c" stroke-width="1.1"/>
+<circle cx="396" cy="116" r="21" fill="#f3ead9"/>
+<circle cx="396" cy="116" r="6.5" fill="#e2e6da" stroke="#c9ccc0" stroke-width="0.8"/>
+<text x="396" y="168" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c2413d">β 溶血（完全）</text>
+<text x="396" y="181" text-anchor="middle" font-size="9.5" fill="#5c6672">完全透明·穿刺线下更明显</text>
+
+<!-- ===== 化学转化 ===== -->
+<rect x="24" y="190" width="432" height="54" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="206" font-size="9.5" fill="#33404f"><tspan font-weight="700">α</tspan>　红细胞 →〔过氧化氢等代谢物〕→ 血红蛋白氧化为高铁血红蛋白 → 绿变</text>
+<text x="36" y="224" font-size="9.5" fill="#33404f"><tspan font-weight="700">β</tspan>　红细胞 →〔溶血素（A 群为 SLO/SLS）〕→ 完全裂解 → 培养基清亮</text>
+<line x1="30" y1="232" x2="42" y2="232" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="48" y="238" font-size="9.5" fill="#5c6672">SLO 氧不稳定：仅看表面易把 β 误判为 α，须加穿刺接种、35℃ 5% CO₂ 18–24h</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">溶血型是链球菌分类第一步，再据此选 Lancefield 分群或 Optochin 等试验</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　β：化脓链球菌·无乳链球菌 ｜ α：肺炎链球菌·草绿色链球菌 ｜ γ：肠球菌</text>
 </svg>

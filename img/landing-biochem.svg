@@ -1,84 +1,149 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 446" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>生化反应总览</title><desc>按反应类别组织;圆点颜色示「阳性」结果</desc>
-  <rect width="480" height="446" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">生化反应总览</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">按反应类别组织;圆点颜色示「阳性」结果</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 450" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>生化反应总览</title><desc>按反应类别分区，每区画出该类「阳性」结果的真实外观：酶活性看显色与气泡、糖代谢看指示剂变色与倒管气泡、氨基酸代谢看红环/黑色/变紫、生长特性看扩散与浑浊、抑制试验看抑菌圈、溶血与凝集看血平板透光、真菌看显微芽管有无缢痕</desc>
+<rect width="480" height="450" fill="#ffffff"/>
 
-  <!-- 卡片 1：酶活性检测 -->
-  <g>
-    <rect x="22" y="60" width="214" height="116" rx="8" fill="#f7f3ea" stroke="#cfe0dc"/>
-    <text x="36" y="80" font-size="11.5" font-weight="700" fill="#2e6b66">酶活性检测</text>
-    <g font-size="11" fill="#565b63">
-      <circle cx="42" cy="98" r="4.5" fill="#9fb7d0"/><text x="52" y="101">触酶（气泡）</text>
-      <circle cx="42" cy="116" r="4.5" fill="#7a67a0"/><text x="52" y="119">氧化酶（紫）</text>
-      <circle cx="42" cy="134" r="4.5" fill="#cf4f86"/><text x="52" y="137">脲酶（粉红）</text>
-      <circle cx="148" cy="98" r="4.5" fill="#c46a62"/><text x="158" y="101">硝酸盐（红）</text>
-      <circle cx="148" cy="116" r="4.5" fill="#c46a62"/><text x="158" y="119">PYR（红）</text>
-      <circle cx="148" cy="134" r="4.5" fill="#4a8a5a"/><text x="158" y="137">苯丙氨酸（绿）</text>
-      <circle cx="42" cy="152" r="4.5" fill="#cbc1a8"/><text x="52" y="155">凝固酶（凝块）</text>
-      <circle cx="148" cy="152" r="4.5" fill="#e08aa8"/><text x="158" y="155">DNase（粉环）</text>
-    </g>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">生化反应总览</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化反应</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">按反应类别分区：每一类「阳性」的判读信号长得都不一样</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 卡片 2：碳水化合物代谢 -->
-  <g>
-    <rect x="244" y="60" width="214" height="116" rx="8" fill="#f7f3ea" stroke="#e6dcc2"/>
-    <text x="258" y="80" font-size="11.5" font-weight="700" fill="#9a8a52">碳水化合物代谢</text>
-    <g font-size="11" fill="#565b63">
-      <circle cx="264" cy="98" r="4.5" fill="#cdb85f"/><text x="274" y="101">糖发酵（黄+气）</text>
-      <circle cx="264" cy="116" r="4.5" fill="#c46a62"/><text x="274" y="119">甲基红 MR（红）</text>
-      <circle cx="264" cy="134" r="4.5" fill="#cf4f5e"/><text x="274" y="137">VP（红）</text>
-      <circle cx="264" cy="152" r="4.5" fill="#2f6bb0"/><text x="274" y="155">枸橼酸盐（蓝）</text>
-    </g>
-  </g>
+<!-- ================= 酶活性检测 ================= -->
+<rect x="24" y="66" width="208" height="84" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="34" y="82" font-size="10.5" font-weight="700" fill="#33404f">酶活性检测</text>
+<!-- 触酶：玻片上冒气泡 -->
+<rect x="43" y="94" width="32" height="22" rx="3" fill="#ffffff" stroke="#cfd6de"/>
+<ellipse cx="59" cy="105" rx="12" ry="7.5" fill="#eef4fb" stroke="#9fb7d0"/>
+<circle cx="54" cy="103" r="2.4" fill="#ffffff" stroke="#6b8cae" stroke-width="0.9"/>
+<circle cx="61" cy="100" r="1.9" fill="#ffffff" stroke="#6b8cae" stroke-width="0.9"/>
+<circle cx="64" cy="107" r="1.6" fill="#ffffff" stroke="#6b8cae" stroke-width="0.9"/>
+<text x="59" y="132" text-anchor="middle" font-size="9.5" fill="#33404f">触酶·气泡</text>
+<!-- 氧化酶：滤纸片显深紫 -->
+<rect x="114" y="92" width="28" height="26" rx="3" fill="#fdfcf8" stroke="#d9d3c4"/>
+<rect x="119" y="99" width="18" height="9" rx="4.5" fill="#6b3fa0"/>
+<text x="128" y="132" text-anchor="middle" font-size="9.5" fill="#33404f">氧化酶·紫</text>
+<!-- 脲酶：酚红管转粉红 -->
+<path d="M190,90 V112 A7,7 0 0 0 204,112 V90 Z" fill="#e05c8f" stroke="#8a94a0" stroke-width="1.1"/>
+<line x1="189" y1="90" x2="205" y2="90" stroke="#8a94a0" stroke-width="1.1"/>
+<text x="197" y="132" text-anchor="middle" font-size="9.5" fill="#33404f">脲酶·粉红</text>
+<text x="34" y="144" font-size="9.5" fill="#5c6672">氧化酶须 10 秒内判读，久置变紫为假阳性</text>
 
-  <!-- 卡片 3：氨基酸与蛋白质代谢 -->
-  <g>
-    <rect x="22" y="184" width="214" height="116" rx="8" fill="#f4f2f8" stroke="#dcd4ea"/>
-    <text x="36" y="204" font-size="11.5" font-weight="700" fill="#7a67a0">氨基酸与蛋白质代谢</text>
-    <g font-size="11" fill="#565b63">
-      <circle cx="42" cy="222" r="4.5" fill="#c46a62"/><text x="52" y="225">吲哚（红环）</text>
-      <circle cx="42" cy="240" r="4.5" fill="#2c3138"/><text x="52" y="243">H₂S（黑）</text>
-      <circle cx="42" cy="258" r="4.5" fill="#9d7fb4"/><text x="52" y="261">脱羧酶（紫）</text>
-      <circle cx="148" cy="222" r="4.5" fill="#5b3a8c"/><text x="158" y="225">马尿酸（紫）</text>
-      <circle cx="148" cy="240" r="4.5" fill="#ecdfa8"/><text x="158" y="243">明胶液化</text>
-      <circle cx="148" cy="258" r="4.5" fill="#9d7fb4"/><text x="158" y="261">赖/鸟氨酸</text>
-    </g>
-  </g>
+<!-- ================= 碳水化合物代谢 ================= -->
+<rect x="248" y="66" width="208" height="84" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="258" y="82" font-size="10.5" font-weight="700" fill="#33404f">碳水化合物与碳源利用</text>
+<!-- 糖发酵：变黄 + 杜氏小管气泡 -->
+<path d="M276,90 V112 A7,7 0 0 0 290,112 V90 Z" fill="#f2d541" stroke="#8a94a0" stroke-width="1.1"/>
+<line x1="275" y1="90" x2="291" y2="90" stroke="#8a94a0" stroke-width="1.1"/>
+<rect x="280" y="95" width="6" height="20" rx="2" fill="#ffffff" stroke="#8a94a0" stroke-width="0.8"/>
+<rect x="281" y="105" width="4" height="9" fill="#f2d541"/>
+<text x="283" y="132" text-anchor="middle" font-size="9.5" fill="#33404f">产酸产气</text>
+<!-- MR：加甲基红转红 -->
+<path d="M345,90 V112 A7,7 0 0 0 359,112 V90 Z" fill="#d94a4a" stroke="#8a94a0" stroke-width="1.1"/>
+<line x1="344" y1="90" x2="360" y2="90" stroke="#8a94a0" stroke-width="1.1"/>
+<text x="352" y="132" text-anchor="middle" font-size="9.5" fill="#33404f">MR·变红</text>
+<!-- 枸橼酸盐：斜面由绿转蓝 -->
+<path d="M414,90 V112 A7,7 0 0 0 428,112 V90 Z" fill="#ffffff" stroke="#8a94a0" stroke-width="1.1"/>
+<path d="M415,98 L427,91 V112 A6,6 0 0 1 415,112 Z" fill="#2f6bb0"/>
+<line x1="413" y1="90" x2="429" y2="90" stroke="#8a94a0" stroke-width="1.1"/>
+<text x="421" y="132" text-anchor="middle" font-size="9.5" fill="#33404f">枸橼酸·蓝</text>
+<text x="258" y="144" font-size="9.5" fill="#5c6672">变黄＝产酸；倒置小管顶端积气＝产气</text>
 
-  <!-- 卡片 4：生长特性 -->
-  <g>
-    <rect x="244" y="184" width="214" height="116" rx="8" fill="#f1f6f1" stroke="#d4e6d4"/>
-    <text x="258" y="204" font-size="11.5" font-weight="700" fill="#3f7a52">生长特性</text>
-    <g font-size="11" fill="#565b63">
-      <circle cx="264" cy="222" r="4.5" fill="#3f7a52"/><text x="274" y="225">动力（扩散）</text>
-      <circle cx="264" cy="240" r="4.5" fill="#2c3138"/><text x="274" y="243">胆汁七叶苷（黑）</text>
-      <circle cx="264" cy="258" r="4.5" fill="#d8c84a"/><text x="274" y="261">6.5% NaCl（浊）</text>
-      <circle cx="264" cy="276" r="4.5" fill="#3f8f6a"/><text x="274" y="279">色素 / 胆汁溶解</text>
-    </g>
-  </g>
+<!-- ================= 氨基酸与蛋白质代谢 ================= -->
+<rect x="24" y="156" width="208" height="84" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="34" y="172" font-size="10.5" font-weight="700" fill="#33404f">氨基酸与蛋白质代谢</text>
+<!-- 吲哚：液面红环 -->
+<path d="M52,180 V202 A7,7 0 0 0 66,202 V180 Z" fill="#f2ecdd" stroke="#8a94a0" stroke-width="1.1"/>
+<rect x="52" y="180" width="14" height="7" fill="#d9433f"/>
+<line x1="51" y1="180" x2="67" y2="180" stroke="#8a94a0" stroke-width="1.1"/>
+<text x="59" y="222" text-anchor="middle" font-size="9.5" fill="#33404f">吲哚·红环</text>
+<!-- H₂S：穿刺线与底层变黑 -->
+<path d="M121,180 V202 A7,7 0 0 0 135,202 V180 Z" fill="#f2ecdd" stroke="#8a94a0" stroke-width="1.1"/>
+<path d="M121,196 V202 A7,7 0 0 0 135,202 V196 Z" fill="#1f2733"/>
+<line x1="128" y1="184" x2="128" y2="197" stroke="#1f2733" stroke-width="2"/>
+<line x1="120" y1="180" x2="136" y2="180" stroke="#8a94a0" stroke-width="1.1"/>
+<text x="128" y="222" text-anchor="middle" font-size="9.5" fill="#33404f">H₂S·黑</text>
+<!-- 脱羧酶：默勒管产碱变紫，上覆石蜡 -->
+<path d="M190,180 V202 A7,7 0 0 0 204,202 V180 Z" fill="#7a4fae" stroke="#8a94a0" stroke-width="1.1"/>
+<rect x="190" y="180" width="14" height="5" fill="#f0dfa8"/>
+<line x1="189" y1="180" x2="205" y2="180" stroke="#8a94a0" stroke-width="1.1"/>
+<text x="197" y="222" text-anchor="middle" font-size="9.5" fill="#33404f">脱羧·紫</text>
+<text x="34" y="234" font-size="9.5" fill="#5c6672">石蜡封层隔氧；紫阳性、黄阴性，比对照管</text>
 
-  <!-- 卡片 5：生长抑制与耐受 -->
-  <g>
-    <rect x="22" y="308" width="214" height="104" rx="8" fill="#f4f4f3" stroke="#dedede"/>
-    <text x="36" y="328" font-size="11.5" font-weight="700" fill="#6b7378">生长抑制与耐受（纸片）</text>
-    <g font-size="11" fill="#565b63">
-      <circle cx="42" cy="346" r="4.5" fill="#c8b887"/><text x="52" y="349">Optochin（抑菌圈）</text>
-      <circle cx="42" cy="364" r="4.5" fill="#c8b887"/><text x="52" y="367">杆菌肽</text>
-      <circle cx="42" cy="382" r="4.5" fill="#c8b887"/><text x="52" y="385">新生霉素</text>
-    </g>
-  </g>
+<!-- ================= 生长特性 ================= -->
+<rect x="248" y="156" width="208" height="84" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="258" y="172" font-size="10.5" font-weight="700" fill="#33404f">生长特性</text>
+<!-- 动力：半固体穿刺线外扩散 -->
+<path d="M276,180 V202 A7,7 0 0 0 290,202 V180 Z" fill="#f2ecdd" stroke="#8a94a0" stroke-width="1.1"/>
+<ellipse cx="283" cy="194" rx="6" ry="12" fill="#8fb877" opacity="0.3"/>
+<ellipse cx="283" cy="194" rx="3.6" ry="10" fill="#8fb877" opacity="0.45"/>
+<line x1="283" y1="183" x2="283" y2="204" stroke="#4f7a3f" stroke-width="1.4"/>
+<line x1="275" y1="180" x2="291" y2="180" stroke="#8a94a0" stroke-width="1.1"/>
+<text x="283" y="222" text-anchor="middle" font-size="9.5" fill="#33404f">动力·扩散</text>
+<!-- 胆汁七叶苷：培养基变黑 -->
+<path d="M345,180 V202 A7,7 0 0 0 359,202 V180 Z" fill="#1f2733" stroke="#8a94a0" stroke-width="1.1"/>
+<rect x="345" y="180" width="14" height="5" fill="#d8c9a8"/>
+<line x1="344" y1="180" x2="360" y2="180" stroke="#8a94a0" stroke-width="1.1"/>
+<text x="352" y="222" text-anchor="middle" font-size="9.5" fill="#33404f">七叶苷·黑</text>
+<!-- 6.5% NaCl：肉汤变浑浊 -->
+<path d="M414,180 V202 A7,7 0 0 0 428,202 V180 Z" fill="#e8e2d2" stroke="#8a94a0" stroke-width="1.1"/>
+<g fill="#b8ad91"><circle cx="418" cy="187" r="1.3"/><circle cx="424" cy="191" r="1.3"/><circle cx="419" cy="196" r="1.3"/><circle cx="425" cy="200" r="1.3"/><circle cx="421" cy="183" r="1.3"/></g>
+<line x1="413" y1="180" x2="429" y2="180" stroke="#8a94a0" stroke-width="1.1"/>
+<text x="421" y="222" text-anchor="middle" font-size="9.5" fill="#33404f">耐盐·浑浊</text>
+<text x="258" y="234" font-size="9.5" fill="#5c6672">只沿穿刺线长、周围清亮＝无动力</text>
 
-  <!-- 卡片 6：溶血与特殊反应 -->
-  <g>
-    <rect x="244" y="308" width="214" height="104" rx="8" fill="#f7f1f1" stroke="#ecd9d9"/>
-    <text x="258" y="328" font-size="11.5" font-weight="700" fill="#c46a62">溶血与特殊反应</text>
-    <g font-size="11" fill="#565b63">
-      <circle cx="264" cy="346" r="4.5" fill="#6f8f5a"/><text x="274" y="349">溶血型（α/β/γ）</text>
-      <circle cx="264" cy="364" r="4.5" fill="#cf7c74"/><text x="274" y="367">CAMP（箭头）</text>
-      <circle cx="264" cy="382" r="4.5" fill="#4a6b9a"/><text x="274" y="385">Lancefield（凝集）</text>
-    </g>
-  </g>
+<!-- ================= 生长抑制与耐受 ================= -->
+<rect x="24" y="246" width="208" height="84" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="34" y="262" font-size="10.5" font-weight="700" fill="#33404f">生长抑制与耐受（纸片）</text>
+<circle cx="70" cy="288" r="16" fill="#cfd8c4" stroke="#9aa48f"/>
+<circle cx="70" cy="288" r="11.5" fill="#f3efe6"/>
+<circle cx="70" cy="288" r="4.5" fill="#ffffff" stroke="#8a94a0"/>
+<text x="70" y="312" text-anchor="middle" font-size="9.5" fill="#33404f">敏感·有圈</text>
+<circle cx="186" cy="288" r="16" fill="#cfd8c4" stroke="#9aa48f"/>
+<circle cx="186" cy="288" r="4.5" fill="#ffffff" stroke="#8a94a0"/>
+<text x="186" y="312" text-anchor="middle" font-size="9.5" fill="#33404f">耐药·无圈</text>
+<text x="34" y="324" font-size="9.5" fill="#5c6672">这一类读抑菌圈直径，不读颜色变化</text>
 
-  <text x="240" y="432" text-anchor="middle" font-size="11" fill="#565b63">点击任一反应查看原理 / 方法 / 结果判读与示意图</text>
+<!-- ================= 溶血与特殊反应 ================= -->
+<rect x="248" y="246" width="208" height="84" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="258" y="262" font-size="10.5" font-weight="700" fill="#33404f">溶血与特殊反应</text>
+<!-- β 溶血：菌落周围完全透明 -->
+<circle cx="283" cy="288" r="15" fill="#9e2b39" stroke="#7d1f2c"/>
+<circle cx="283" cy="288" r="9" fill="#f0e2da"/>
+<circle cx="283" cy="288" r="3.5" fill="#fdfbf8"/>
+<text x="283" y="312" text-anchor="middle" font-size="9.5" fill="#33404f">β·全透明</text>
+<!-- α 溶血：草绿色不完全溶血 -->
+<circle cx="352" cy="288" r="15" fill="#9e2b39" stroke="#7d1f2c"/>
+<circle cx="352" cy="288" r="9" fill="#6f8f5a"/>
+<circle cx="352" cy="288" r="3.5" fill="#fdfbf8"/>
+<text x="352" y="312" text-anchor="middle" font-size="9.5" fill="#33404f">α·草绿</text>
+<!-- CAMP：两线交界处箭头形增强溶血 -->
+<circle cx="421" cy="288" r="15" fill="#9e2b39" stroke="#7d1f2c"/>
+<line x1="424" y1="276" x2="424" y2="300" stroke="#fdfbf8" stroke-width="2.4"/>
+<line x1="407" y1="288" x2="414" y2="288" stroke="#fdfbf8" stroke-width="2.4"/>
+<path d="M414,281 L422,288 L414,295 Z" fill="#f0e2da"/>
+<text x="421" y="312" text-anchor="middle" font-size="9.5" fill="#33404f">CAMP·箭头</text>
+<text x="258" y="324" font-size="9.5" fill="#5c6672">须透光看；γ 型为菌落周围毫无变化</text>
+
+<!-- ================= 真菌鉴定 ================= -->
+<rect x="24" y="336" width="432" height="58" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="34" y="352" font-size="10.5" font-weight="700" fill="#33404f">真菌鉴定（显微形态）</text>
+<!-- 阳性芽管：连接处无缢痕 -->
+<ellipse cx="52" cy="372" rx="9" ry="7.5" fill="#efe9f6" stroke="#7a67a0" stroke-width="1.2"/>
+<path d="M58,368.5 H86 A3.5,3.5 0 0 1 86,375.5 H58 Z" fill="#efe9f6" stroke="#7a67a0" stroke-width="1.2"/>
+<text x="96" y="376" font-size="9.5" fill="#33404f">阳性：连接处无缢痕</text>
+<!-- 假阳性：有明显缢痕 -->
+<ellipse cx="250" cy="372" rx="10" ry="8.5" fill="#efe9f6" stroke="#7a67a0" stroke-width="1.2"/>
+<path d="M258,370.8 H265 M258,374 H265" stroke="#7a67a0" stroke-width="1.2" fill="none"/>
+<rect x="258" y="370.8" width="7" height="3.2" fill="#efe9f6"/>
+<path d="M265,368.5 H286 A3.5,3.5 0 0 1 286,375.5 H265 Z" fill="#efe9f6" stroke="#7a67a0" stroke-width="1.2"/>
+<text x="296" y="376" font-size="9.5" fill="#33404f">阴性（易误判）：有缢痕</text>
+<text x="34" y="389" font-size="9.5" fill="#5c6672">血清 37℃ 只孵育 2~3 小时即判读；过夜起菌丝会造成假阳性</text>
+
+<!-- 结论 -->
+<text x="240" y="408" text-anchor="middle" font-size="11.5" fill="#33404f">同叫「阳性」，信号各不相同：先弄清这一类看的是什么</text>
+
+<!-- 页脚：判读信号 -->
+<rect x="24" y="416" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="431" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">判读信号</tspan>　指示剂变色 · 黑色产物 · 气泡 · 抑菌圈 · 显微形态</text>
 </svg>

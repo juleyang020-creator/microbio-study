@@ -1,38 +1,83 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>糖发酵试验（葡萄糖 / 乳糖 / 甘露醇等）</title><desc>发酵糖产酸使酚红由红变黄；Durham 小管内气泡示产气</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">糖发酵试验（葡萄糖 / 乳糖 / 甘露醇等）</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">发酵糖产酸使酚红由红变黄；Durham 小管内气泡示产气</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>糖发酵试验（葡萄糖 / 乳糖 / 甘露醇）</title><desc>阴性管酚红仍红、Durham 倒管无气泡；阳性管细菌发酵糖产混合酸使 pH 下降、酚红由红变黄，产气菌另生成 H₂+CO₂ 顶入 Durham 管形成气泡</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性管(红,无气) -->
-  <g>
-    <path d="M120,78 L120,238 Q120,256 138,256 Q156,256 156,238 L156,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="138" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M120,120 L156,120 L156,238 Q156,256 138,256 Q120,256 120,238 Z" fill="#cf7c74"/>
-    <!-- Durham 小管(满液,无气) -->
-    <rect x="130" y="150" width="16" height="92" rx="3" fill="#a83f3f" stroke="#7d2f2f" stroke-width="1"/>
-    <text x="138" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">阴性（红，无气）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">糖发酵试验（葡萄糖 / 乳糖 / 甘露醇）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">含糖肉汤（酚红）＋Durham 倒管：产酸变黄、产气见气泡；甘露醇常用 MSA 平板</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 产酸不产气(黄,无气) -->
-  <g>
-    <path d="M222,78 L222,238 Q222,256 240,256 Q258,256 258,238 L258,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="240" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M222,120 L258,120 L258,238 Q258,256 240,256 Q222,256 222,238 Z" fill="#cdb85f"/>
-    <rect x="232" y="150" width="16" height="92" rx="3" fill="#cbb43f" stroke="#9a8a2f" stroke-width="1"/>
-    <text x="240" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">产酸（黄）</text>
-  </g>
+<!-- ===== 左：阴性对照管 ===== -->
+<text x="75" y="74" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5c6672">阴性：接种后不发酵</text>
+<path d="M58,84 L58,186 Q58,202 75,202 Q92,202 92,186 L92,84 Z" fill="#f7f9fb" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M58,104 L92,104 L92,186 Q92,202 75,202 Q58,202 58,186 Z" fill="#cf4b46"/>
+<rect x="67" y="128" width="16" height="70" rx="3" fill="#b8433d" stroke="#8f322d" stroke-width="1"/>
+<ellipse cx="75" cy="84" rx="17" ry="4.5" fill="#eef1f5" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="75" y="212" text-anchor="middle" font-size="9.5" fill="#5c6672">酚红仍为红色</text>
+<text x="75" y="225" text-anchor="middle" font-size="9.5" fill="#5c6672">Durham 管无气泡</text>
+<text x="75" y="238" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阴性（−）</text>
 
-  <!-- 产酸产气(黄+气泡) -->
-  <g>
-    <path d="M324,78 L324,238 Q324,256 342,256 Q360,256 360,238 L360,78 Z" fill="#faf8f1" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="342" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <path d="M324,120 L360,120 L360,238 Q360,256 342,256 Q324,256 324,238 Z" fill="#cdb85f"/>
-    <!-- Durham 小管上部气泡 -->
-    <rect x="334" y="150" width="16" height="92" rx="3" fill="#cbb43f" stroke="#9a8a2f" stroke-width="1"/>
-    <rect x="334" y="150" width="16" height="30" rx="3" fill="#faf8f1" stroke="#9a8a2f" stroke-width="1"/>
-    <text x="342" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">产酸产气</text>
-  </g>
+<!-- 阴性侧：糖未被利用 -->
+<line x1="162" y1="96" x2="112" y2="96" stroke="#c2413d" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#blk)"/>
+<text x="136" y="88" text-anchor="middle" font-size="9.5" fill="#c2413d">不发酵</text>
 
-  <text x="240" y="295" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌发酵葡萄糖/乳糖产酸产气；志贺菌、沙门菌不发酵乳糖</text>
+<!-- ===== 中：化学转化链 ===== -->
+<text x="240" y="74" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5c6672">发生了什么</text>
+
+<rect x="165" y="80" width="150" height="24" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="96" text-anchor="middle" font-size="9.5" fill="#1f2733">底物：葡萄糖 / 乳糖 / 甘露醇</text>
+<line x1="240" y1="104" x2="240" y2="114" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="165" y="112" width="150" height="22" rx="5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="240" y="127" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">细菌酶系：乳糖先水解 → 糖酵解</text>
+<line x1="240" y1="134" x2="240" y2="144" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="165" y="142" width="150" height="24" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="158" text-anchor="middle" font-size="9.5" fill="#1f2733">产酸：乳酸·乙酸·甲酸</text>
+<line x1="240" y1="166" x2="240" y2="176" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="165" y="174" width="150" height="30" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="240" y="188" text-anchor="middle" font-size="9.5" fill="#33404f">pH 下降 → 酚红变色</text>
+<rect x="205" y="192" width="22" height="10" rx="2" fill="#cf4b46" stroke="#8f322d" stroke-width="0.8"/>
+<line x1="231" y1="197" x2="249" y2="197" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="253" y="192" width="22" height="10" rx="2" fill="#e8c33a" stroke="#a8871f" stroke-width="0.8"/>
+<line x1="240" y1="204" x2="240" y2="212" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<rect x="165" y="212" width="150" height="24" rx="5" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="222" text-anchor="middle" font-size="9.5" fill="#5c6672">部分菌另产 H₂ + CO₂</text>
+<text x="240" y="232" text-anchor="middle" font-size="9.5" fill="#5c6672">→ 顶入 Durham 管成气泡</text>
+
+<!-- 中 → 右：两条结局 -->
+<line x1="318" y1="190" x2="382" y2="120" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="350" y="148" text-anchor="middle" font-size="9.5" fill="#33404f">产酸显色</text>
+<line x1="318" y1="226" x2="382" y2="145" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="350" y="178" text-anchor="middle" font-size="9.5" fill="#33404f">产气顶开小管</text>
+
+<!-- ===== 右：阳性管 ===== -->
+<text x="405" y="74" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5c6672">阳性：产酸 ± 产气</text>
+<path d="M388,84 L388,186 Q388,202 405,202 Q422,202 422,186 L422,84 Z" fill="#f7f9fb" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M388,104 L422,104 L422,186 Q422,202 405,202 Q388,202 388,186 Z" fill="#e8c33a"/>
+<rect x="397" y="128" width="16" height="70" rx="3" fill="#d9b32c" stroke="#a8871f" stroke-width="1"/>
+<rect x="397" y="128" width="16" height="24" rx="3" fill="#fdfbf5" stroke="#a8871f" stroke-width="1"/>
+<ellipse cx="405" cy="84" rx="17" ry="4.5" fill="#eef1f5" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="405" y="212" text-anchor="middle" font-size="9.5" fill="#5c6672">培养基由红变黄</text>
+<text x="405" y="225" text-anchor="middle" font-size="9.5" fill="#5c6672">Durham 管顶气泡</text>
+<text x="405" y="238" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阳性（A/G）</text>
+
+<!-- 临床注解 -->
+<text x="240" y="250" text-anchor="middle" font-size="9.5" fill="#c2413d">注意：按 24–48 h 判读，久置可因蛋白胨产碱使黄色回红</text>
+
+<!-- 结论 -->
+<text x="240" y="264" text-anchor="middle" font-size="11.5" fill="#33404f">产酸变黄即阳性，Durham 管气泡示产气；葡萄糖不发酵提示不发酵菌（NFB）</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="281" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　大肠埃希菌 葡萄糖·乳糖 (+)　沙门菌/志贺菌 乳糖 (−)</text>
+<text x="76" y="291" font-size="9.5" fill="#5c6672">金黄色葡萄球菌 甘露醇 (+)　不动杆菌/莫拉菌 葡萄糖 (−)</text>
 </svg>

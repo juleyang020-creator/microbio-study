@@ -1,37 +1,73 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>CAMP 试验（血平板）</title><desc>B 群链球菌的协同溶血鉴别</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">CAMP 试验（血平板）</text>
-  <text x="240" y="44" text-anchor="middle" font-size="11" fill="#565b63">B 群链球菌的协同溶血鉴别</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>CAMP 试验</title><desc>血平板上金黄色葡萄球菌纵划线、待测链球菌垂直划线并留 3–5 mm 间隙；无乳链球菌（B 群）产 CAMP 因子与金葡 β 溶血素协同，在两线交界处形成尖端指向金葡划线的箭头状增强溶血区为阳性，非 B 群则交界处无变化</desc>
+<defs>
+  <clipPath id="dish1"><circle cx="128" cy="152" r="52"/></clipPath>
+  <clipPath id="dish2"><circle cx="352" cy="152" r="52"/></clipPath>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <defs>
-    <radialGradient id="bloodAgar" cx="38%" cy="32%" r="75%">
-      <stop offset="0%" stop-color="#e8cfcf"/>
-      <stop offset="100%" stop-color="#e0c2c2"/>
-    </radialGradient>
-  </defs>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">CAMP 试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">鉴别试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">GBS 的 CAMP 因子与金葡 β 溶血素协同 → 交界处增强溶血</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 血平板 -->
-  <circle cx="172" cy="174" r="116" fill="url(#bloodAgar)" stroke="#c9a49f" stroke-width="2.5"/>
+<!-- 做法 -->
+<text x="24" y="74" font-size="9.5" fill="#5c6672">做法　5% 羊血琼脂上金葡 ATCC 25923 纵划线，待测菌垂直划线、间隔 3–5 mm，35℃ 有氧 18–24 h</text>
 
-  <!-- 金葡竖划线（产 β 溶血素），完全在皿内 -->
-  <rect x="224" y="92" width="9" height="164" rx="4" fill="#9a8585" stroke="#7a6a6a" stroke-width="1"/>
-  <text x="252" y="86" font-size="11" fill="#565b63">金黄色葡萄球菌</text>
-  <text x="252" y="100" font-size="11" fill="#565b63">竖划线，产 β 溶血素</text>
+<!-- ===== ❶ 阳性 ===== -->
+<circle cx="34" cy="88" r="7.5" fill="#1f2733"/>
+<text x="34" y="91.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="47" y="92" font-size="10" font-weight="700" fill="#33404f">阳性：无乳链球菌（B 群）</text>
 
-  <!-- 待测链球菌横划线，与金葡留有间隙（不相交） -->
-  <rect x="70" y="170" width="138" height="9" rx="4" fill="#9a8585" stroke="#7a6a6a" stroke-width="1"/>
-  <text x="70" y="154" font-size="11" fill="#565b63">待测链球菌（横划线）</text>
+<circle cx="128" cy="152" r="52" fill="#e6cccc" stroke="#c9a49f" stroke-width="2.2"/>
+<g clip-path="url(#dish1)">
+  <!-- 金葡 β 溶血素扩散带 -->
+  <rect x="140" y="98" width="26" height="108" fill="#eddada"/>
+  <!-- 待测链球菌的窄带 β 溶血 -->
+  <rect x="74" y="145" width="65" height="14" fill="#f4e5e2"/>
+  <!-- 菌落划线：金葡（纵）与待测菌（横），留间隙不相接 -->
+  <rect x="150" y="110" width="6" height="84" rx="3" fill="#e8e2da" stroke="#b3a79c" stroke-width="1"/>
+  <rect x="78" y="149" width="61" height="6" rx="3" fill="#e8e2da" stroke="#b3a79c" stroke-width="1"/>
+  <!-- 协同增强溶血：箭头状透明区，尖端抵金葡划线 -->
+  <path d="M139,136 L139,168 L150,152 Z" fill="#fdfaf6" stroke="#b58f8a" stroke-width="1.1" stroke-dasharray="3,2"/>
+</g>
+<line x1="137" y1="119" x2="148" y2="119" stroke="#8c96a2" stroke-width="1"/>
+<text x="96" y="122" font-size="9.5" fill="#5c6672">金葡纵划线</text>
+<text x="82" y="142" font-size="9.5" fill="#5c6672">待测菌</text>
+<line x1="131" y1="179" x2="140" y2="166" stroke="#8c96a2" stroke-width="1"/>
+<text x="118" y="188" text-anchor="middle" font-size="9.5" fill="#33404f">箭头状增强区</text>
+<text x="128" y="224" text-anchor="middle" font-size="9.5" fill="#5c6672">尖端指向金葡划线</text>
+<text x="128" y="238" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阳性 → B 群无乳链球菌（GBS）</text>
 
-  <!-- 箭头(半月)状增强溶血：跨越间隙，尖端指向金葡 β 溶血素带 -->
-  <path d="M205,174 L222,156 L222,193 Z" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2" stroke-dasharray="3 2"/>
+<!-- ===== ❷ 阴性 ===== -->
+<circle cx="258" cy="88" r="7.5" fill="#1f2733"/>
+<text x="258" y="91.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="271" y="92" font-size="10" font-weight="700" fill="#33404f">阴性：如化脓链球菌（A 群）</text>
 
-  <!-- 引线指向增强溶血区 -->
-  <line x1="216" y1="175" x2="300" y2="208" stroke="#cbc1a8" stroke-width="1"/>
-  <circle cx="216" cy="175" r="2.2" fill="#3f7a52"/>
+<circle cx="352" cy="152" r="52" fill="#e6cccc" stroke="#c9a49f" stroke-width="2.2"/>
+<g clip-path="url(#dish2)">
+  <rect x="364" y="98" width="26" height="108" fill="#eddada"/>
+  <!-- A 群为宽带 β 溶血（对比 GBS 窄带） -->
+  <rect x="298" y="140" width="65" height="24" fill="#f4e5e2"/>
+  <rect x="374" y="110" width="6" height="84" rx="3" fill="#e8e2da" stroke="#b3a79c" stroke-width="1"/>
+  <rect x="302" y="149" width="61" height="6" rx="3" fill="#e8e2da" stroke="#b3a79c" stroke-width="1"/>
+  <!-- 交界处应出现三角区的位置：空白，仅以虚线示意 -->
+  <path d="M363,136 L363,168 L374,152 Z" fill="none" stroke="#b9c2cc" stroke-width="1" stroke-dasharray="2,3"/>
+</g>
+<line x1="345" y1="177" x2="360" y2="164" stroke="#8c96a2" stroke-width="1"/>
+<text x="340" y="188" text-anchor="middle" font-size="9.5" fill="#8c96a2">交界无增强</text>
+<text x="352" y="224" text-anchor="middle" font-size="9.5" fill="#5c6672">交界处无三角形透明区</text>
+<text x="352" y="238" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阴性 → 非 B 群（如化脓链球菌）</text>
 
-  <text x="304" y="206" font-size="11.5" font-weight="700" fill="#3f7a52">箭头（半月）状增强溶血</text>
-  <text x="304" y="223" font-size="11" fill="#3f7a52">阳性 → B 群无乳链球菌</text>
+<!-- 注意 -->
+<text x="240" y="250" text-anchor="middle" font-size="9.5" fill="#8c96a2">注意　CO₂ 或厌氧孵育时 A 群可假阳性（故须有氧）；李斯特菌亦 CAMP(+)，但呈矩形区</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="12.5" fill="#565b63">CAMP 因子与金葡 β 溶血素协同，于交界处增强溶血</text>
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">CAMP 因子与金葡 β 溶血素协同，交界处箭头状增强溶血即为阳性</text>
+
+<!-- 页脚：用途 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　CAMP(+) 提示 B 群无乳链球菌（GBS）——孕妇筛查与新生儿败血症/脑膜炎的关键鉴别</text>
 </svg>

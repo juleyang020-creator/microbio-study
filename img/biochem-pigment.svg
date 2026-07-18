@@ -1,32 +1,84 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>色素产生试验 (Pigment)</title><desc>某些细菌产特征性色素，有助于初步鉴定</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">色素产生试验 (Pigment)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">某些细菌产特征性色素，有助于初步鉴定</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>色素产生试验</title><desc>阴性对照平板菌落灰白、培养基不变色；铜绿假单胞菌经 phz 基因簇酶系由分支酸合成水溶性蓝色绿脓菌素，弥散入琼脂并与黄绿色荧光素叠加使平板呈蓝绿，365 nm 紫外下荧光素显黄绿荧光</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+  <radialGradient id="pyo" cx="50%" cy="45%" r="60%">
+    <stop offset="0%" stop-color="#39a08c"/><stop offset="100%" stop-color="#1c7566"/>
+  </radialGradient>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 铜绿假单胞菌(蓝绿) -->
-  <g>
-    <circle cx="100" cy="150" r="62" fill="#e9efe6" stroke="#bcae86" stroke-width="2.5"/>
-    <path d="M70,128 Q100,120 130,128 M68,150 Q100,142 132,150 M70,172 Q100,164 130,172" stroke="#2f8f7a" stroke-width="7" fill="none" stroke-linecap="round"/>
-    <text x="100" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#2e6b66">铜绿假单胞菌</text>
-    <text x="100" y="248" text-anchor="middle" font-size="11" fill="#565b63">绿脓菌素（蓝绿）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">色素产生试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生长特性</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">菌落/培养基出现特征色素 → 可直接初步推定菌种</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 金黄色葡萄球菌(金黄) -->
-  <g>
-    <circle cx="240" cy="150" r="62" fill="#f2ead8" stroke="#bcae86" stroke-width="2.5"/>
-    <path d="M210,128 Q240,120 270,128 M208,150 Q240,142 272,150 M210,172 Q240,164 270,172" stroke="#d6a72f" stroke-width="7" fill="none" stroke-linecap="round"/>
-    <text x="240" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#9a8a52">金黄色葡萄球菌</text>
-    <text x="240" y="248" text-anchor="middle" font-size="11" fill="#565b63">金黄色类胡萝卜素</text>
-  </g>
+<!-- ===== 左：阴性对照平板 ===== -->
+<text x="88" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">阴性对照</text>
+<circle cx="88" cy="126" r="40" fill="#f4f0e4" stroke="#c9bfa3" stroke-width="2"/>
+<circle cx="88" cy="126" r="35" fill="none" stroke="#ded6c2"/>
+<g fill="#edeae2" stroke="#c8c2b4">
+  <circle cx="74" cy="112" r="3.6"/><circle cx="97" cy="109" r="3"/><circle cx="82" cy="134" r="3.4"/>
+  <circle cx="102" cy="131" r="3.6"/><circle cx="89" cy="121" r="2.8"/><circle cx="70" cy="130" r="2.6"/>
+  <circle cx="104" cy="119" r="3"/><circle cx="88" cy="143" r="2.6"/>
+</g>
+<text x="88" y="180" text-anchor="middle" font-size="9.5" fill="#33404f">菌落灰白、培养基不变色</text>
+<text x="88" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">（无 phz 途径）</text>
 
-  <!-- 黏质沙雷菌(红) -->
-  <g>
-    <circle cx="380" cy="150" r="62" fill="#f2e6e3" stroke="#bcae86" stroke-width="2.5"/>
-    <path d="M350,128 Q380,120 410,128 M348,150 Q380,142 412,150 M350,172 Q380,164 410,172" stroke="#b0414a" stroke-width="7" fill="none" stroke-linecap="round"/>
-    <text x="380" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#c46a62">黏质沙雷菌</text>
-    <text x="380" y="248" text-anchor="middle" font-size="11" fill="#565b63">灵菌红素（红，室温显著）</text>
-  </g>
+<!-- ===== 中：底物 → 酶 → 色素 ===== -->
+<text x="164" y="92.5" text-anchor="end" font-size="9.5" fill="#8c96a2">底物</text>
+<rect x="170" y="80" width="140" height="18" rx="9" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="92.5" text-anchor="middle" font-size="9.5" fill="#33404f">分支酸（chorismate）</text>
+<line x1="240" y1="98" x2="240" y2="105" stroke="#33404f" stroke-width="0.9" marker-end="url(#arr)"/>
 
-  <text x="240" y="278" text-anchor="middle" font-size="11" fill="#565b63">色素强弱受温度/培养基影响；绿脓菌素溶于氯仿可与荧光素区分</text>
+<text x="164" y="121.5" text-anchor="end" font-size="9.5" fill="#8c96a2">酶</text>
+<rect x="170" y="108" width="140" height="18" rx="4" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="240" y="120.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">phz 基因簇编码的酶系</text>
+<line x1="240" y1="126" x2="240" y2="133" stroke="#33404f" stroke-width="0.9" marker-end="url(#arr)"/>
+
+<text x="164" y="151.5" text-anchor="end" font-size="9.5" fill="#8c96a2">色素</text>
+<rect x="170" y="136" width="140" height="20" rx="4" fill="#d3ebe4" stroke="#2f8f7a"/>
+<text x="240" y="149.5" text-anchor="middle" font-size="9.5" fill="#1c6b5e">绿脓菌素 pyocyanin（蓝）</text>
+<text x="240" y="170" text-anchor="middle" font-size="9.5" fill="#5c6672">水溶性 → 弥散入琼脂，与荧光素叠加呈蓝绿</text>
+
+<!-- 阴性侧：无此途径 -->
+<line x1="167" y1="117" x2="136" y2="123" stroke="#c2413d" stroke-width="1.6" marker-end="url(#blk)"/>
+<!-- 阳性侧：色素弥散进平板 -->
+<line x1="311" y1="145" x2="345" y2="133" stroke="#2f8f7a" stroke-width="1.1" marker-end="url(#arr)"/>
+
+<text x="240" y="192" text-anchor="middle" font-size="9.5" fill="#a3332f">约 20–30% 菌株不产色素</text>
+
+<!-- ===== 右：阳性平板（P 琼脂） ===== -->
+<text x="392" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#1c6b5e">阳性（铜绿假单胞菌）</text>
+<circle cx="392" cy="126" r="40" fill="url(#pyo)" stroke="#155c50" stroke-width="2"/>
+<circle cx="392" cy="126" r="35" fill="none" stroke="#4fb2a0"/>
+<g fill="#0f5348" stroke="#0a463c">
+  <circle cx="378" cy="112" r="3.6"/><circle cx="401" cy="109" r="3"/><circle cx="386" cy="134" r="3.4"/>
+  <circle cx="406" cy="131" r="3.6"/><circle cx="393" cy="121" r="2.8"/><circle cx="374" cy="130" r="2.6"/>
+  <circle cx="408" cy="119" r="3"/><circle cx="392" cy="143" r="2.6"/>
+</g>
+<text x="392" y="180" text-anchor="middle" font-size="9.5" fill="#33404f">P 琼脂：菌落与琼脂弥散蓝绿</text>
+<text x="392" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">365 nm 下荧光素显黄绿荧光</text>
+
+<!-- ===== 其他特征色素 ===== -->
+<rect x="24" y="200" width="432" height="46" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<rect x="32" y="208" width="16" height="16" rx="3" fill="#b5cc3e" stroke="#8ea32c"/>
+<text x="54" y="219" font-size="9.5" font-weight="700" fill="#6f8a1f">荧光素（黄绿荧光）</text>
+<text x="54" y="234" font-size="9.5" fill="#5c6672">铜绿假单胞菌 · 紫外</text>
+<rect x="176" y="208" width="16" height="16" rx="3" fill="#b0414a" stroke="#8c2f38"/>
+<text x="198" y="219" font-size="9.5" font-weight="700" fill="#8c2f38">灵菌红素（砖红）</text>
+<text x="198" y="234" font-size="9.5" fill="#5c6672">黏质沙雷菌 · 25–30℃</text>
+<rect x="320" y="208" width="16" height="16" rx="3" fill="#d6a72f" stroke="#a97f14"/>
+<text x="342" y="219" font-size="9.5" font-weight="700" fill="#8a6d2f">类胡萝卜素（金黄）</text>
+<text x="342" y="234" font-size="9.5" fill="#5c6672">金黄色葡萄球菌</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">见特征色素可快速推定菌种；色素受温度与培养基影响，阴性不能排除</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　阳性：铜绿假单胞菌 · 黏质沙雷菌 · 金黄色葡萄球菌　阴性：大肠埃希菌</text>
 </svg>

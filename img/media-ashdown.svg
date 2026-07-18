@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>Ashdown 培养基</title><desc>甘油-结晶紫-中性红-庆大霉素选择性平板：庆大霉素抑制杂菌，类鼻疽伯克霍尔德菌吸附中性红形成干燥皱褶的深紫红色菌落</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">Ashdown 培养基</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">特殊培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">含庆大霉素与结晶紫的选择平板，用于分离类鼻疽伯克霍尔德菌</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="212" y1="66" x2="212" y2="250" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 左：平板俯视 ===== -->
+<text x="24" y="76" font-size="9.5" font-weight="700" fill="#5c6672">平板俯视 · 35℃ 空气 · 孵育 3–4 天</text>
+
+<!-- 皿壁与琼脂（中性红 + 结晶紫 → 粉紫底色） -->
+<circle cx="118" cy="154" r="68" fill="#f2f0f4" stroke="#cfd6de" stroke-width="1.4"/>
+<circle cx="118" cy="154" r="62" fill="#e2a9c0" stroke="#c98aa6" stroke-width="1"/>
+<!-- 划线接种痕 -->
+<g fill="none" stroke="#d693ae" stroke-width="1" opacity="0.9">
+  <path d="M70,120 q46,-8 92,10"/><path d="M64,140 q52,-6 100,12"/><path d="M64,162 q52,-6 100,12"/><path d="M70,184 q46,-6 88,10"/>
+</g>
+
+<!-- ❶ 类鼻疽菌：干燥皱褶、吸附结晶紫呈深紫 -->
+<g>
+  <circle cx="95" cy="126" r="7.5" fill="#5f2a6e"/><circle cx="95" cy="126" r="4.6" fill="none" stroke="#9057a3" stroke-width="1"/><circle cx="95" cy="126" r="2.1" fill="none" stroke="#9057a3" stroke-width="1"/>
+  <circle cx="114" cy="139" r="8" fill="#5f2a6e"/><circle cx="114" cy="139" r="5" fill="none" stroke="#9057a3" stroke-width="1"/><circle cx="114" cy="139" r="2.2" fill="none" stroke="#9057a3" stroke-width="1"/>
+  <circle cx="92" cy="152" r="6.6" fill="#5f2a6e"/><circle cx="92" cy="152" r="4" fill="none" stroke="#9057a3" stroke-width="1"/>
+</g>
+<circle cx="140" cy="113" r="7.5" fill="#1f2733"/>
+<text x="140" y="116.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<line x1="134" y1="119" x2="121" y2="131" stroke="#33404f" stroke-width="1.1" marker-end="url(#arr)"/>
+
+<!-- ❷ 其他伯克霍尔德/假单胞：光滑淡粉、不皱褶 -->
+<g fill="#f6dbe6" stroke="#cf9ab3" stroke-width="1">
+  <circle cx="152" cy="170" r="5.4"/><circle cx="137" cy="183" r="4.6"/>
+</g>
+<circle cx="152" cy="200" r="7.5" fill="#1f2733"/>
+<text x="152" y="203.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<line x1="152" y1="193" x2="152" y2="179" stroke="#33404f" stroke-width="1.1" marker-end="url(#arr)"/>
+
+<!-- 平板下的判读时机提醒 -->
+<text x="118" y="234" text-anchor="middle" font-size="9.5" fill="#c2413d">24h 菌落尚小而光滑，易漏检</text>
+<text x="118" y="246" text-anchor="middle" font-size="9.5" fill="#5c6672">须观察至 48–72h 才见典型皱褶</text>
+
+<!-- ===== 右：菌落判读 ===== -->
+<text x="228" y="76" font-size="9.5" font-weight="700" fill="#33404f">平板上长出什么</text>
+
+<circle cx="236" cy="96" r="7.5" fill="#5f2a6e"/><circle cx="236" cy="96" r="4.4" fill="none" stroke="#9057a3" stroke-width="1"/>
+<circle cx="252" cy="88" r="6" fill="#1f2733"/>
+<text x="252" y="91.2" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<text x="264" y="93" font-size="9.5" fill="#33404f">类鼻疽伯克霍尔德菌</text>
+<text x="248" y="107" font-size="9.5" fill="#5c6672">干燥皱褶「矢车菊/奶油糖」样，深紫</text>
+
+<circle cx="236" cy="134" r="6.4" fill="#f6dbe6" stroke="#cf9ab3" stroke-width="1"/>
+<circle cx="252" cy="126" r="6" fill="#1f2733"/>
+<text x="252" y="129.2" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+<text x="264" y="131" font-size="9.5" fill="#33404f">其他耐庆大霉素非发酵菌</text>
+<text x="248" y="145" font-size="9.5" fill="#5c6672">多为光滑、淡粉、不皱褶 → 不支持</text>
+<text x="248" y="156" font-size="9.5" fill="#5c6672">泰国伯克霍尔德菌形态相同，须阿拉伯糖鉴别</text>
+
+<circle cx="236" cy="174" r="6.4" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1" stroke-dasharray="3,2"/>
+<g stroke="#c2413d" stroke-width="1.6" stroke-linecap="round"><line x1="232" y1="170" x2="240" y2="178"/><line x1="240" y1="170" x2="232" y2="178"/></g>
+<text x="250" y="171" font-size="9.5" fill="#33404f">肠杆菌 / 葡萄球菌等杂菌</text>
+<text x="250" y="184" font-size="9.5" fill="#5c6672">大多被抑制，偶见耐药株少量生长</text>
+
+<!-- 成分作用 -->
+<rect x="220" y="190" width="236" height="60" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="230" y="208" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">选择</tspan> 庆大霉素抑杂菌，本菌天然耐药</text>
+<text x="230" y="226" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">鉴别</tspan> 中性红被吸附 → 菌落深紫红</text>
+<text x="230" y="243" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">选择</tspan> 庆大霉素抑杂菌＋结晶紫；甘油助皱褶</text>
+
+<!-- 结论 -->
+<text x="240" y="264" text-anchor="middle" font-size="11.5" fill="#33404f">粉红底色上出现干燥深紫皱褶菌落 → 提示类鼻疽菌，须进一步确认</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="272" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="287" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　类鼻疽伯克霍尔德菌（Burkholderia pseudomallei）</text>
+</svg>

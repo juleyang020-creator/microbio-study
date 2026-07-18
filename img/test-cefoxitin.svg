@@ -1,32 +1,76 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>头孢西丁筛选（MRSA 检测）</title><desc>头孢西丁能强诱导 mecA 表达，比苯唑西林更可靠地检出 PBP2a</desc>
-  <defs>
-    <radialGradient id="agarSheen" cx="38%" cy="32%" r="78%">
-      <stop offset="0%" stop-color="#f6f2ea"/>
-      <stop offset="100%" stop-color="#f4efe2"/>
-    </radialGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>头孢西丁筛选（MRSA 检测）</title><desc>头孢西丁纸片贴于接种平板：量抑菌圈直径，圈径 ≥22 mm 为 MSSA，≤21 mm 为 MRSA；头孢西丁强诱导 mecA 表达，作为 PBP2a 的替代指示药</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="arrS" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto-start-reverse"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+  <pattern id="lawn" width="7" height="7" patternUnits="userSpaceOnUse">
+    <rect width="7" height="7" fill="#f5f7f9"/>
+    <circle cx="2" cy="2" r="1.6" fill="#c3ccd6"/><circle cx="5.5" cy="5.5" r="1.4" fill="#cfd6de"/>
+  </pattern>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">头孢西丁筛选（MRSA 检测）</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">头孢西丁能强诱导 mecA 表达，比苯唑西林更可靠地检出 PBP2a</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">头孢西丁筛选（MRSA 检测）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">耐药表型检测</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">头孢西丁 30 µg 纸片贴 M-H 平板，35℃ 16–18 h：量圈径判 MSSA / MRSA</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 耐药 = MRSA：无抑菌圈 -->
-  <circle cx="138" cy="166" r="92" fill="url(#agarSheen)" stroke="#cbc1a8" stroke-width="2.5"/>
-  <circle cx="138" cy="166" r="92" fill="none" stroke="#d9d1bd" stroke-width="1" opacity="0.7"/>
-  <circle cx="138" cy="166" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.2"/>
-  <text x="138" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">FOX</text>
-  <text x="138" y="262" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c46a62">耐药 → MRSA（mecA 阳性）</text>
-  <text x="138" y="280" text-anchor="middle" font-size="11" fill="#565b63">无抑菌圈，菌生长至纸片边缘</text>
-  <text x="138" y="295" text-anchor="middle" font-size="11" fill="#565b63">对所有 β-内酰胺耐药（头孢洛林除外）</text>
+<!-- ===== 左：敏感（MSSA） ===== -->
+<circle cx="42" cy="74" r="7.5" fill="#1f2733"/>
+<text x="42" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="54" y="78" font-size="10" font-weight="700" fill="#33404f">阴性：抑菌圈较大</text>
+<circle cx="100" cy="134" r="50" fill="url(#lawn)" stroke="#b9c2cc" stroke-width="1.4"/>
+<circle cx="100" cy="134" r="34" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="66" y1="134" x2="134" y2="134" stroke="#33404f" stroke-width="1" marker-end="url(#arr)" marker-start="url(#arrS)"/>
+<circle cx="100" cy="134" r="12" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="100" y="137.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1f4e79">FOX</text>
+<text x="100" y="176" text-anchor="middle" font-size="9.5" fill="#5c6672">纸片 30 µg</text>
 
-  <!-- 敏感 = MSSA：清晰抑菌圈 -->
-  <circle cx="346" cy="166" r="92" fill="url(#agarSheen)" stroke="#cbc1a8" stroke-width="2.5"/>
-  <circle cx="346" cy="166" r="92" fill="none" stroke="#d9d1bd" stroke-width="1" opacity="0.7"/>
-  <circle cx="346" cy="166" r="60" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.2" stroke-dasharray="4 3"/>
-  <circle cx="346" cy="166" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.2"/>
-  <text x="346" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">FOX</text>
-  <text x="346" y="262" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">敏感 → MSSA（mecA 阴性）</text>
-  <text x="346" y="280" text-anchor="middle" font-size="11" fill="#565b63">清晰抑菌圈，菌被抑制</text>
-  <text x="346" y="295" text-anchor="middle" font-size="11" fill="#565b63">β-内酰胺类仍有效</text>
+<!-- ===== 右：耐药（MRSA） ===== -->
+<circle cx="170" cy="74" r="7.5" fill="#1f2733"/>
+<text x="170" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="182" y="78" font-size="10" font-weight="700" fill="#33404f">阳性：抑菌圈缩小</text>
+<circle cx="228" cy="134" r="50" fill="url(#lawn)" stroke="#b9c2cc" stroke-width="1.4"/>
+<circle cx="228" cy="134" r="20" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1" stroke-dasharray="4,3"/>
+<circle cx="228" cy="134" r="12" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="228" y="137.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1f4e79">FOX</text>
+<line x1="204" y1="112" x2="219" y2="127" stroke="#c2413d" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="228" y="176" text-anchor="middle" font-size="9.5" fill="#a3332f">圈明显变小</text>
+
+<!-- 判读行 -->
+<text x="100" y="198" text-anchor="middle" font-size="9.5" fill="#33404f">圈径 ≥22 mm（MIC ≤4）</text>
+<text x="228" y="198" text-anchor="middle" font-size="9.5" fill="#33404f">圈径 ≤21 mm（MIC ≥8）</text>
+<text x="100" y="214" text-anchor="middle" font-size="10" font-weight="700" fill="#2f8f83">判为 MSSA（甲氧西林敏感）</text>
+<text x="228" y="214" text-anchor="middle" font-size="10" font-weight="700" fill="#c2413d">判为 MRSA（多由 mecA 介导）</text>
+<text x="100" y="230" text-anchor="middle" font-size="9.5" fill="#5c6672">β-内酰胺类可用（青霉素另测）</text>
+<text x="228" y="230" text-anchor="middle" font-size="9.5" fill="#5c6672">所有β-内酰胺报耐药</text>
+<text x="160" y="246" text-anchor="middle" font-size="9.5" fill="#8c96a2">注：表皮葡萄球菌 S≥25/R≤24 且须 24 h 再读；假中间型改测苯唑西林</text>
+
+<!-- ===== 右栏：为何用头孢西丁 ===== -->
+<rect x="306" y="66" width="150" height="180" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="381" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">为何选头孢西丁</text>
+<rect x="343" y="90" width="76" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="381" y="101.5" text-anchor="middle" font-size="9.5" fill="#a3332f">头孢西丁纸片</text>
+<line x1="381" y1="106" x2="381" y2="117" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="325" y="118" width="112" height="20" rx="5" fill="#ffffff" stroke="#b9c2cc"/>
+<text x="381" y="131.5" text-anchor="middle" font-size="9.5" fill="#1f2733">强诱导 mecA 表达</text>
+<line x1="381" y1="138" x2="381" y2="149" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="336" y="150" width="90" height="20" rx="5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="381" y="163.5" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1f4e79">生成 PBP2a</text>
+<line x1="381" y1="170" x2="381" y2="181" stroke="#c2413d" stroke-width="1.4" marker-end="url(#blk)"/>
+<rect x="325" y="184" width="112" height="34" rx="5" fill="#ffffff" stroke="#b9c2cc"/>
+<text x="381" y="197.5" text-anchor="middle" font-size="9.5" fill="#33404f">β-内酰胺结合不上</text>
+<text x="381" y="211" text-anchor="middle" font-size="9.5" fill="#a3332f">→ 细胞壁照常合成</text>
+<text x="381" y="230" text-anchor="middle" font-size="9.5" fill="#5c6672">比苯唑西林更稳定</text>
+<text x="381" y="241" text-anchor="middle" font-size="9.5" fill="#5c6672">例外：头孢洛林仍有效</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">头孢西丁圈小 = MRSA：一张纸片决定 β-内酰胺能不能用</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　金葡菌/路邓葡萄球菌 MRSA 判定 · 表型法耐药即报耐药（mecC 株 PBP2a 检测阴性）</text>
 </svg>

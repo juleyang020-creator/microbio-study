@@ -1,50 +1,98 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>高水平氨基糖苷耐药筛选（HLAR）</title><desc>高浓度：庆大霉素 500 / 链霉素 1000–2000 µg/mL</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">高水平氨基糖苷耐药筛选（HLAR）</text>
-  <text x="240" y="46" text-anchor="middle" font-size="11" fill="#565b63">高浓度：庆大霉素 500 / 链霉素 1000–2000 µg/mL</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>高水平氨基糖苷耐药筛选（HLAR）</title><desc>含高浓度庆大霉素 500 µg/mL 或链霉素（BHI 肉汤 1000、BHI 琼脂 2000 µg/mL）的琼脂平板点种或肉汤微量孔：有生长为阳性，提示该氨基糖苷与青霉素/万古霉素的协同杀菌作用消失</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 左：有生长 = 高水平耐药 -->
-  <g>
-    <circle cx="138" cy="166" r="90" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.5"/>
-    <circle cx="138" cy="166" r="80" fill="none" stroke="#e2dccf" stroke-width="1"/>
-    <!-- 菌落（满布生长） -->
-    <g fill="#e9f0ee" stroke="#2e6b66" stroke-width="1">
-      <circle cx="108" cy="132" r="6.5"/>
-      <circle cx="150" cy="122" r="6"/>
-      <circle cx="176" cy="156" r="6.5"/>
-      <circle cx="184" cy="190" r="6"/>
-      <circle cx="120" cy="200" r="6.5"/>
-      <circle cx="158" cy="204" r="6"/>
-      <circle cx="92" cy="170" r="6"/>
-      <circle cx="100" cy="200" r="5.5"/>
-      <circle cx="166" cy="120" r="5.5"/>
-      <circle cx="190" cy="146" r="5.5"/>
-    </g>
-    <!-- 高浓度氨基糖苷（药敏纸片/孔） -->
-    <circle cx="138" cy="166" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
-    <text x="138" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">GEN</text>
-    <!-- 菌落紧贴纸片：协同消失 -->
-    <g fill="#e9f0ee" stroke="#2e6b66" stroke-width="1">
-      <circle cx="138" cy="142" r="5"/>
-      <circle cx="160" cy="178" r="5"/>
-      <circle cx="118" cy="180" r="5"/>
-    </g>
-    <text x="138" y="282" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c46a62">有生长 → 高水平耐药</text>
-    <text x="138" y="297" text-anchor="middle" font-size="11" fill="#565b63">与 β-内酰胺 / 糖肽协同消失</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">高水平氨基糖苷耐药筛选（HLAR）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">耐药表型检测</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">含高浓度氨基糖苷的介质上能生长 → 与细胞壁活性药的协同已消失</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="166" y1="64" x2="166" y2="200" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+<line x1="314" y1="64" x2="314" y2="200" stroke="#e3e7ec" stroke-dasharray="4,4"/>
 
-  <!-- 右：无生长 = 可协同 -->
-  <g>
-    <circle cx="346" cy="166" r="90" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.5"/>
-    <circle cx="346" cy="166" r="80" fill="none" stroke="#e2dccf" stroke-width="1"/>
-    <!-- 清亮无生长背景圈（敏感） -->
-    <circle cx="346" cy="166" r="58" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1" stroke-dasharray="4 4"/>
-    <text x="346" y="118" text-anchor="middle" font-size="11" fill="#3f7a52">清亮 · 无菌落</text>
-    <!-- 高浓度氨基糖苷（药敏纸片/孔） -->
-    <circle cx="346" cy="166" r="15" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1.3"/>
-    <text x="346" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#5a80b0">GEN</text>
-    <text x="346" y="282" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f7a52">无生长 → 可协同</text>
-    <text x="346" y="297" text-anchor="middle" font-size="11" fill="#565b63">联合用药仍有效</text>
-  </g>
+<!-- ===== 左：❶ 含药筛选介质 ===== -->
+<circle cx="32" cy="74" r="7.5" fill="#1f2733"/>
+<text x="32" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="45" y="78" font-size="10" font-weight="700" fill="#33404f">含药筛选介质</text>
+<!-- 琼脂平板（点种） -->
+<circle cx="62" cy="120" r="26" fill="#faf9f6" stroke="#cbd2da" stroke-width="2"/>
+<circle cx="62" cy="120" r="21" fill="none" stroke="#e3e7ec"/>
+<g fill="none" stroke="#8c96a2" stroke-dasharray="2,2">
+  <circle cx="51" cy="109" r="5"/><circle cx="73" cy="109" r="5"/>
+  <circle cx="51" cy="131" r="5"/><circle cx="73" cy="131" r="5"/>
+</g>
+<!-- 肉汤微量孔 -->
+<rect x="110" y="96" width="28" height="48" rx="5" fill="#ffffff" stroke="#b9c2cc" stroke-width="1.4"/>
+<rect x="112.5" y="112" width="23" height="29.6" rx="3" fill="#f5f7f9"/>
+<line x1="112.5" y1="112" x2="135.5" y2="112" stroke="#b9c2cc"/>
+<text x="62" y="158" text-anchor="middle" font-size="9.5" fill="#5c6672">琼脂点种</text>
+<text x="124" y="158" text-anchor="middle" font-size="9.5" fill="#5c6672">肉汤微量孔</text>
+<text x="92" y="170" text-anchor="middle" font-size="9.5" fill="#5c6672">BHI 介质，浓度 µg/mL</text>
+<text x="92" y="182" text-anchor="middle" font-size="9.5" fill="#33404f">庆大霉素 500（琼脂/肉汤同）</text>
+<text x="92" y="194" text-anchor="middle" font-size="9.5" fill="#33404f">链霉素 琼脂 2000、肉汤 1000</text>
+
+<!-- ===== 中：❷ 判读生长 ===== -->
+<circle cx="180" cy="74" r="7.5" fill="#1f2733"/>
+<text x="180" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="193" y="78" font-size="10" font-weight="700" fill="#33404f">看有无生长</text>
+<!-- 有生长 -->
+<circle cx="206" cy="118" r="27" fill="#faf9f6" stroke="#cbd2da" stroke-width="2"/>
+<circle cx="206" cy="118" r="22" fill="none" stroke="#e3e7ec"/>
+<g fill="#efe9db" stroke="#c9bfa4">
+  <circle cx="195" cy="107" r="5"/><circle cx="217" cy="107" r="5"/>
+  <circle cx="195" cy="129" r="5"/><circle cx="217" cy="129" r="5"/>
+  <circle cx="206" cy="118" r="3.2"/><circle cx="199" cy="119" r="2.6"/><circle cx="213" cy="118" r="2.6"/>
+</g>
+<!-- 无生长 -->
+<circle cx="274" cy="118" r="27" fill="#faf9f6" stroke="#cbd2da" stroke-width="2"/>
+<circle cx="274" cy="118" r="22" fill="none" stroke="#e3e7ec"/>
+<g fill="none" stroke="#cfd6dd" stroke-dasharray="2,2">
+  <circle cx="263" cy="107" r="5"/><circle cx="285" cy="107" r="5"/>
+  <circle cx="263" cy="129" r="5"/><circle cx="285" cy="129" r="5"/>
+</g>
+<text x="206" y="158" text-anchor="middle" font-size="9.5" fill="#5c6672">菌落长出</text>
+<text x="274" y="158" text-anchor="middle" font-size="9.5" fill="#5c6672">清亮</text>
+<text x="240" y="176" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a3332f">有生长 → 阳性（HLAR）</text>
+<text x="240" y="190" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1f4e79">无生长 → 阴性（可协同）</text>
+
+<!-- ===== 右：❸ 阳性意味什么 ===== -->
+<circle cx="328" cy="74" r="7.5" fill="#1f2733"/>
+<text x="328" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="341" y="78" font-size="10" font-weight="700" fill="#33404f">阴性 vs 阳性机制</text>
+<!-- 阴性：药物到达核糖体 -->
+<rect x="322" y="90" width="44" height="14" rx="7" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="344" y="100.5" text-anchor="middle" font-size="9.5" fill="#a3332f">氨基糖苷</text>
+<line x1="368" y1="97" x2="421" y2="97" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<ellipse cx="440" cy="97" rx="15" ry="11" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="440" y="100.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">核糖体</text>
+<text x="388" y="120" text-anchor="middle" font-size="9.5" fill="#5c6672">青霉素削弱细胞壁 → 促进摄取</text>
+<text x="388" y="134" text-anchor="middle" font-size="9.5" fill="#1f4e79">协同杀菌（HLAR 阴性）</text>
+<!-- 阳性：修饰酶灭活 -->
+<rect x="322" y="150" width="44" height="14" rx="7" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="344" y="160.5" text-anchor="middle" font-size="9.5" fill="#a3332f">氨基糖苷</text>
+<line x1="368" y1="157" x2="375" y2="157" stroke="#33404f" stroke-width="1.4"/>
+<rect x="378" y="149" width="34" height="16" rx="4" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="395" y="160.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">修饰酶</text>
+<line x1="414" y1="157" x2="422" y2="157" stroke="#c2413d" stroke-width="1.6" marker-end="url(#blk)"/>
+<ellipse cx="440" cy="157" rx="15" ry="11" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="440" y="160.5" text-anchor="middle" font-size="9.5" fill="#8c96a2">核糖体</text>
+<text x="388" y="180" text-anchor="middle" font-size="9.5" fill="#5c6672">修饰酶灭活/靶位突变 → 失效</text>
+<text x="388" y="194" text-anchor="middle" font-size="9.5" fill="#a3332f">协同消失（HLAR 阳性）</text>
+
+<!-- 注意事项 -->
+<rect x="24" y="204" width="432" height="42" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="222" font-size="9.5" fill="#33404f">判读时限：24h 读取；链霉素 24h 无生长须再培养 24h 复看，否则假阴性</text>
+<text x="36" y="238" font-size="9.5" fill="#5c6672">庆大与链霉素须分别筛，结果常不一致；阳性只说明协同消失</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">能生长即高水平耐药：该氨基糖苷与青霉素、万古霉素联合不再协同</text>
+
+<!-- 页脚：用途 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　肠球菌严重感染（如心内膜炎）的联合方案取舍：阳性则该药不再作协同用药</text>
 </svg>

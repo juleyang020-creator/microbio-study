@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>厌氧血平板</title><desc>强化血琼脂加氯化血红素与维生素K₁、置厌氧环境培养：不含抑菌剂，靠去氧环境而非药物选择，靠溶血型与色素鉴别；产气荚膜梭菌呈双溶血环，产黑色素普雷沃菌呈棕黑菌落，脆弱拟杆菌灰白不溶血；须与需氧血平板配对接种，仅厌氧板生长者为专性厌氧菌</desc>
+<defs>
+  <radialGradient id="agar" cx="38%" cy="32%" r="78%">
+    <stop offset="0" stop-color="#b8555b"/><stop offset="1" stop-color="#983f46"/>
+  </radialGradient>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">厌氧血平板</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">强化血琼脂＋血红素/维生素K₁，置厌氧环境：不靠抑菌剂，靠去氧</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：厌氧血平板俯视 ===== -->
+<text x="100" y="80" text-anchor="middle" font-size="9.5" fill="#5c6672">厌氧罐/箱 35℃ 48 h</text>
+<circle cx="100" cy="146" r="55" fill="#f0f2f4" stroke="#cdd4db" stroke-width="1.4"/>
+<circle cx="100" cy="146" r="52" fill="url(#agar)"/>
+<g fill="none" stroke="#8c353b" stroke-width="2.2" stroke-linecap="round" opacity="0.45">
+  <path d="M58,132 Q96,90 144,126"/>
+  <path d="M60,166 Q100,142 148,158"/>
+  <path d="M76,190 Q112,168 144,182"/>
+</g>
+
+<!-- ❶ 产气荚膜梭菌：双溶血环（外环不完全 α，内环完全 θ） -->
+<circle cx="80" cy="124" r="18" fill="#d59183" stroke="#e0b3a6" stroke-width="0.8"/>
+<circle cx="80" cy="124" r="11" fill="#e9dcbb" stroke="#c9a98a" stroke-width="0.8"/>
+<circle cx="80" cy="124" r="5" fill="#f4efe6" stroke="#cfc7b8" stroke-width="0.8"/>
+<circle cx="58" cy="138" r="7.5" fill="#1f2733"/>
+<text x="58" y="141.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+
+<!-- ❷ 产黑色素普雷沃菌：棕黑色菌落，不溶血 -->
+<circle cx="126" cy="174" r="5" fill="#2c211d" stroke="#12100f" stroke-width="0.6"/>
+<circle cx="137" cy="166" r="3.5" fill="#3b2b24" stroke="#12100f" stroke-width="0.6"/>
+<circle cx="116" cy="184" r="7.5" fill="#1f2733"/>
+<text x="116" y="187.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+
+<!-- ❸ 脆弱拟杆菌：灰白光滑、不溶血 -->
+<circle cx="70" cy="176" r="6.5" fill="#e7e0d2" stroke="#cfc7b8" stroke-width="0.8"/>
+<circle cx="60" cy="164" r="4.5" fill="#e7e0d2" stroke="#cfc7b8" stroke-width="0.8"/>
+<circle cx="88" cy="186" r="7.5" fill="#1f2733"/>
+<text x="88" y="189.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+
+<!-- ===== 中：需氧对照板（同一标本同时接种） ===== -->
+<text x="212" y="80" text-anchor="middle" font-size="9.5" fill="#5c6672">需氧对照板</text>
+<circle cx="212" cy="146" r="30" fill="#f0f2f4" stroke="#cdd4db" stroke-width="1.4"/>
+<circle cx="212" cy="146" r="27" fill="url(#agar)"/>
+<g fill="none" stroke="#8c353b" stroke-width="2" stroke-linecap="round" opacity="0.45">
+  <path d="M192,138 Q212,116 236,140"/>
+  <path d="M192,158 Q214,146 234,158"/>
+</g>
+<text x="212" y="190" text-anchor="middle" font-size="9.5" fill="#a3332f">此板无生长 → 专性厌氧</text>
+
+<!-- ===== 右：菌落判读 ===== -->
+<circle cx="262" cy="100" r="7.5" fill="#1f2733"/>
+<text x="262" y="103.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<text x="278" y="103.5" font-size="10" font-weight="700" fill="#33404f">产气荚膜梭菌</text>
+<text x="278" y="117" font-size="9.5" fill="#5c6672">双溶血环：内环透明、外环不完全</text>
+<circle cx="262" cy="136" r="7.5" fill="#1f2733"/>
+<text x="262" y="139.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+<text x="278" y="139.5" font-size="10" font-weight="700" fill="#33404f">产黑色素普雷沃菌</text>
+<text x="278" y="153" font-size="9.5" fill="#5c6672">48h灰白，5–7d渐棕黑；幼龄紫外砖红荧光</text>
+<circle cx="262" cy="172" r="7.5" fill="#1f2733"/>
+<text x="262" y="175.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+<text x="278" y="175.5" font-size="10" font-weight="700" fill="#33404f">脆弱拟杆菌</text>
+<text x="278" y="189" font-size="9.5" fill="#5c6672">灰白光滑、不溶血、边缘整齐</text>
+
+<!-- 选择成分 / 鉴别成分 -->
+<rect x="24" y="206" width="432" height="44" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="34" y="221" font-size="9.5" fill="#5c6672">选择成分：无抑菌剂——非选择性，靠厌氧环境本身而非药物筛选</text>
+<text x="34" y="235" font-size="9.5" fill="#33404f">鉴别成分：羊血→溶血型与色素；血红素＋维生素K₁ 是拟杆菌/普雷沃菌等所需</text>
+<text x="34" y="247" font-size="9.5" fill="#a3332f">取出后须尽快判读：暴露空气后专性厌氧菌停长/死亡，底色复红使溶血环难辨</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">靠去氧环境选择、靠溶血与色素鉴别的强化血平板</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　产气荚膜梭菌（双溶血环）· 产黑色素普雷沃菌（棕黑）· 脆弱拟杆菌 · 艰难梭菌</text>
+</svg>

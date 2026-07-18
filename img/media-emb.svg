@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>伊红美蓝琼脂（EMB）</title><desc>EMB 平板俯视：深紫色基础琼脂上，大肠埃希菌呈深紫近黑并带绿色金属光泽，肺炎克雷伯菌呈粉紫色黏液样大菌落，沙门菌/志贺菌不发酵乳糖呈无色透明；伊红Y与美蓝抑制革兰阳性菌，乳糖产酸使染料在菌落沉淀着色</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <clipPath id="dish"><circle cx="110" cy="146" r="62"/></clipPath>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">伊红美蓝琼脂（EMB）</text>
+<rect x="352" y="14" width="104" height="18" rx="9" fill="#eef1f5"/>
+<text x="404" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">选择与鉴别培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">染料抑制革兰阳性菌；乳糖发酵强弱决定菌落颜色</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：平板俯视 ===== -->
+<text x="24" y="76" font-size="9.5" fill="#5c6672">EMB 平板（俯视）· 孵育 18–24 h</text>
+<circle cx="110" cy="146" r="68" fill="#f5f7f9" stroke="#d5dae0"/>
+<circle cx="110" cy="146" r="62" fill="#7b3a63"/>
+<g clip-path="url(#dish)" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.6" fill="none">
+  <path d="M52,104 C90,96 140,102 176,116"/>
+  <path d="M50,150 C92,140 146,148 178,160"/>
+  <path d="M56,196 C96,184 146,192 174,200"/>
+</g>
+
+<!-- ① 大肠埃希菌：深紫近黑 + 绿色金属光泽 -->
+<g>
+  <circle cx="92" cy="118" r="7.5" fill="#231234"/>
+  <ellipse cx="90" cy="116" rx="4.6" ry="3.2" transform="rotate(-30 90 116)" fill="#3fae6e" fill-opacity="0.9"/>
+  <ellipse cx="89" cy="115" rx="2" ry="1.2" transform="rotate(-30 89 115)" fill="#b9ecc9" fill-opacity="0.9"/>
+  <circle cx="110" cy="130" r="6.5" fill="#231234"/>
+  <ellipse cx="108" cy="128" rx="4" ry="2.8" transform="rotate(-30 108 128)" fill="#3fae6e" fill-opacity="0.9"/>
+  <circle cx="80" cy="136" r="6" fill="#231234"/>
+  <ellipse cx="78.5" cy="134" rx="3.6" ry="2.5" transform="rotate(-30 78.5 134)" fill="#3fae6e" fill-opacity="0.9"/>
+</g>
+<circle cx="76" cy="110" r="7" fill="#1f2733" stroke="#ffffff" stroke-width="1.2"/>
+<text x="76" y="113.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+
+<!-- ② 肺炎克雷伯菌：粉紫黏液样大菌落 -->
+<circle cx="142" cy="124" r="13" fill="#c98cb8" stroke="#a86a97"/>
+<ellipse cx="138" cy="119" rx="5.5" ry="3.4" transform="rotate(-30 138 119)" fill="#ffffff" fill-opacity="0.35"/>
+<circle cx="158" cy="154" r="7" fill="#1f2733" stroke="#ffffff" stroke-width="1.2"/>
+<text x="158" y="157.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+
+<!-- ③ 沙门菌 / 志贺菌：无色透明，不着色 -->
+<circle cx="94" cy="176" r="8.5" fill="#efe2ef" fill-opacity="0.45" stroke="#e6d6e6" stroke-opacity="0.75"/>
+<circle cx="124" cy="182" r="7" fill="#efe2ef" fill-opacity="0.45" stroke="#e6d6e6" stroke-opacity="0.75"/>
+<circle cx="70" cy="164" r="7" fill="#1f2733" stroke="#ffffff" stroke-width="1.2"/>
+<text x="70" y="167.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+
+<!-- ===== 右：菌落对照 ===== -->
+<line x1="196" y1="70" x2="196" y2="204" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<circle cx="220" cy="92" r="7" fill="#1f2733"/>
+<text x="220" y="95.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<rect x="231" y="80" width="24" height="24" rx="4" fill="#7b3a63"/>
+<circle cx="243" cy="92" r="8" fill="#231234"/>
+<ellipse cx="241" cy="90" rx="5" ry="3.4" transform="rotate(-30 241 90)" fill="#3fae6e" fill-opacity="0.9"/>
+<ellipse cx="240" cy="89" rx="2.1" ry="1.3" transform="rotate(-30 240 89)" fill="#b9ecc9" fill-opacity="0.9"/>
+<text x="262" y="89" font-size="9.5" font-weight="700" fill="#33404f">大肠埃希菌（强发酵乳糖）</text>
+<text x="262" y="102" font-size="9.5" fill="#5c6672">深紫近黑，反射光下绿色金属光泽</text>
+
+<circle cx="220" cy="134" r="7" fill="#1f2733"/>
+<text x="220" y="137.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+<rect x="231" y="122" width="24" height="24" rx="4" fill="#7b3a63"/>
+<circle cx="243" cy="134" r="9.5" fill="#c98cb8" stroke="#a86a97"/>
+<ellipse cx="240" cy="130" rx="4.2" ry="2.6" transform="rotate(-30 240 130)" fill="#ffffff" fill-opacity="0.35"/>
+<text x="262" y="131" font-size="9.5" font-weight="700" fill="#33404f">肺炎克雷伯菌（发酵乳糖，产酸弱）</text>
+<text x="262" y="144" font-size="9.5" fill="#5c6672">粉紫色、大而黏液样，无金属光泽</text>
+
+<circle cx="220" cy="176" r="7" fill="#1f2733"/>
+<text x="220" y="179.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+<rect x="231" y="164" width="24" height="24" rx="4" fill="#7b3a63"/>
+<circle cx="243" cy="176" r="7.5" fill="#efe2ef" fill-opacity="0.45" stroke="#e6d6e6" stroke-opacity="0.75"/>
+<text x="262" y="173" font-size="9.5" font-weight="700" fill="#33404f">沙门菌 / 志贺菌（不发酵）</text>
+<text x="262" y="186" font-size="9.5" fill="#5c6672">无色透明、不着色，透见基底紫色</text>
+
+<text x="204" y="203" font-size="9.5" fill="#c2413d">金属光泽须在反射光下判读，透射光下易漏检</text>
+
+<!-- ===== 选择 / 鉴别成分 ===== -->
+<rect x="24" y="214" width="432" height="36" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<line x1="120" y1="228" x2="140" y2="228" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="120" y1="243" x2="140" y2="243" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="34" y="231" font-size="9.5" font-weight="700" fill="#33404f">选择：伊红Y＋美蓝</text>
+<text x="146" y="231" font-size="9.5" fill="#5c6672">抑制大多数革兰阳性菌（偶见针尖样小菌落）</text>
+<text x="34" y="246" font-size="9.5" font-weight="700" fill="#33404f">鉴别：乳糖发酵</text>
+<text x="146" y="246" font-size="9.5" fill="#5c6672">乳糖（部分配方含蔗糖）产酸 → 染料沉淀着色</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">产酸越强着色越深：金属光泽 ＞ 粉紫黏液 ＞ 无色透明</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　大肠埃希菌 金属光泽 · 克雷伯菌 粉紫黏液 · 沙门/志贺菌 无色</text>
+</svg>

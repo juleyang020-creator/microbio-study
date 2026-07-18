@@ -1,50 +1,81 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>触酶（过氧化氢酶）试验</title><desc>玻片菌落滴加 3% H₂O₂：触酶将其分解为水和氧（气泡）</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">触酶（过氧化氢酶）试验</text>
-  <text x="240" y="50" text-anchor="middle" font-size="11" fill="#565b63">玻片菌落滴加 3% H₂O₂：触酶将其分解为水和氧（气泡）</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>触酶（过氧化氢酶）试验</title><desc>玻片菌落滴加 3% 过氧化氢：产触酶者立即分解出氧气泡（阳性，葡萄球菌/微球菌），不产者液滴平静（阴性，链球菌/肠球菌）</desc>
+<defs>
+  <marker id="arrC" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阳性玻片 -->
-  <g>
-    <rect x="40" y="92" width="180" height="98" rx="7" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="2"/>
-    <!-- 玻片左上角磨砂标识 -->
-    <rect x="48" y="100" width="26" height="14" rx="2" fill="#f4efe2" stroke="#d9d1bd" stroke-width="1"/>
-    <!-- 菌落涂布 -->
-    <ellipse cx="130" cy="146" rx="34" ry="22" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.2"/>
-    <!-- 氧气泡（阳性：大量气泡） -->
-    <g fill="#f3ead0" stroke="#9a8a52" stroke-width="1">
-      <circle cx="116" cy="132" r="6"/>
-      <circle cx="140" cy="128" r="7.5"/>
-      <circle cx="151" cy="148" r="5"/>
-      <circle cx="123" cy="158" r="6"/>
-      <circle cx="138" cy="152" r="8"/>
-      <circle cx="107" cy="146" r="5"/>
-      <circle cx="148" cy="138" r="4.5"/>
-    </g>
-    <text x="146" y="118" font-size="11" fill="#7c6a34">O₂</text>
-  </g>
-  <text x="130" y="172" text-anchor="middle" font-size="11" fill="#2e6b66">玻片菌落</text>
-  <text x="130" y="214" text-anchor="middle" font-size="13" font-weight="700" fill="#c46a62">阳性：大量气泡</text>
-  <text x="130" y="232" text-anchor="middle" font-size="11" fill="#565b63">葡萄球菌 / 微球菌</text>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">触酶（过氧化氢酶）试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">鉴别试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">玻片菌落滴 3% H₂O₂：冒气泡＝有触酶（阳性），不冒＝无触酶（阴性）</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阴性玻片 -->
-  <g>
-    <rect x="260" y="92" width="180" height="98" rx="7" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="2"/>
-    <rect x="268" y="100" width="26" height="14" rx="2" fill="#f4efe2" stroke="#d9d1bd" stroke-width="1"/>
-    <!-- 菌落涂布（无气泡） -->
-    <ellipse cx="350" cy="146" rx="34" ry="22" fill="#e9f0ee" stroke="#2e6b66" stroke-width="1.2"/>
-  </g>
-  <text x="350" y="172" text-anchor="middle" font-size="11" fill="#2e6b66">玻片菌落</text>
-  <text x="350" y="214" text-anchor="middle" font-size="13" font-weight="700" fill="#3f7a52">阴性：无气泡</text>
-  <text x="350" y="232" text-anchor="middle" font-size="11" fill="#565b63">链球菌 / 肠球菌</text>
+<!-- 反应式 -->
+<rect x="96" y="64" width="288" height="26" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="150" y="82" text-anchor="middle" font-size="10.5" fill="#33404f">2 H₂O₂</text>
+<text x="217" y="73" text-anchor="middle" font-size="9.5" fill="#1f4e79">触酶</text>
+<line x1="182" y1="79" x2="252" y2="79" stroke="#33404f" stroke-width="1.3" marker-end="url(#arrC)"/>
+<text x="312" y="82" text-anchor="middle" font-size="10.5" fill="#33404f">2 H₂O ＋ O₂↑</text>
 
-  <!-- 中央 H₂O₂ 试剂滴 -->
-  <g>
-    <line x1="240" y1="70" x2="240" y2="84" stroke="#5a80b0" stroke-width="1.2"/>
-    <path d="M240 89 C236 83 244 83 240 89 Z" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1"/>
-    <circle cx="240" cy="86" r="3.4" fill="#e6ecf4" stroke="#5a80b0" stroke-width="1"/>
-    <text x="240" y="68" text-anchor="middle" font-size="11" fill="#5a80b0">3% H₂O₂</text>
-  </g>
+<!-- ===== 阳性玻片 ===== -->
+<rect x="26" y="98" width="208" height="134" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<!-- 滴管 -->
+<ellipse cx="130" cy="110" rx="7.5" ry="9" fill="#f5f7f9" stroke="#b9c2cc"/>
+<rect x="127" y="118" width="6" height="13" fill="#e6ecf4" stroke="#b9c2cc"/>
+<path d="M127,131 L133,131 L130,137 z" fill="#e6ecf4" stroke="#b9c2cc"/>
+<circle cx="130" cy="142" r="3.6" fill="#e6ecf4" stroke="#5a80b0"/>
+<text x="144" y="112" font-size="9.5" fill="#5c6672">3% H₂O₂</text>
+<!-- 玻片 -->
+<rect x="42" y="146" width="176" height="42" rx="4" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.6"/>
+<rect x="46" y="150" width="22" height="11" rx="2" fill="#f4efe2" stroke="#d9d1bd"/>
+<!-- 液滴铺展 + 菌落涂抹 -->
+<ellipse cx="130" cy="167" rx="42" ry="16" fill="#eef2f7" stroke="#b9c2cc"/>
+<ellipse cx="130" cy="169" rx="29" ry="11" fill="#f2efe6" stroke="#b9a97e"/>
+<!-- 氧气泡 -->
+<g fill="#ffffff" stroke="#8aa0b8">
+  <circle cx="108" cy="161" r="5"/>
+  <circle cx="120" cy="153" r="4.5"/>
+  <circle cx="133" cy="159" r="6"/>
+  <circle cx="146" cy="164" r="4"/>
+  <circle cx="115" cy="173" r="5"/>
+  <circle cx="129" cy="175" r="4"/>
+  <circle cx="143" cy="174" r="4.5"/>
+  <circle cx="153" cy="156" r="3.4"/>
+  <circle cx="160" cy="140" r="3.4"/>
+  <circle cx="166" cy="131" r="2.8"/>
+  <circle cx="171" cy="123" r="2.2"/>
+</g>
+<text x="174" y="134" font-size="9.5" fill="#1f4e79">O₂</text>
+<text x="130" y="201" text-anchor="middle" font-size="9.5" fill="#5c6672">玻片菌落涂片</text>
+<text x="130" y="216" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">阳性：立即大量气泡</text>
+<text x="130" y="229" text-anchor="middle" font-size="9.5" fill="#5c6672">葡萄球菌 / 微球菌</text>
 
-  <text x="240" y="276" text-anchor="middle" font-size="12.5" fill="#565b63">常用于革兰阳性球菌的初步区分</text>
+<!-- ===== 阴性玻片 ===== -->
+<rect x="246" y="98" width="208" height="134" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<ellipse cx="350" cy="110" rx="7.5" ry="9" fill="#f5f7f9" stroke="#b9c2cc"/>
+<rect x="347" y="118" width="6" height="13" fill="#e6ecf4" stroke="#b9c2cc"/>
+<path d="M347,131 L353,131 L350,137 z" fill="#e6ecf4" stroke="#b9c2cc"/>
+<circle cx="350" cy="142" r="3.6" fill="#e6ecf4" stroke="#5a80b0"/>
+<text x="364" y="112" font-size="9.5" fill="#5c6672">3% H₂O₂</text>
+<rect x="262" y="146" width="176" height="42" rx="4" fill="#fbfaf8" stroke="#cbc1a8" stroke-width="1.6"/>
+<rect x="266" y="150" width="22" height="11" rx="2" fill="#f4efe2" stroke="#d9d1bd"/>
+<ellipse cx="350" cy="167" rx="42" ry="16" fill="#eef2f7" stroke="#b9c2cc"/>
+<ellipse cx="350" cy="169" rx="29" ry="11" fill="#f2efe6" stroke="#b9a97e"/>
+<!-- 液面平静：仅一道反光，无气泡 -->
+<path d="M322,161 q26,-7 52,0" fill="none" stroke="#cfd8e2" stroke-width="1.2"/>
+<text x="350" y="201" text-anchor="middle" font-size="9.5" fill="#5c6672">玻片菌落涂片</text>
+<text x="350" y="216" text-anchor="middle" font-size="11" font-weight="700" fill="#5c6672">阴性：液滴平静无泡</text>
+<text x="350" y="229" text-anchor="middle" font-size="9.5" fill="#5c6672">链球菌 / 肠球菌</text>
+
+<!-- 临床注解 -->
+<text x="240" y="246" text-anchor="middle" font-size="9.5" fill="#c2413d">注意：勿取血平板上的菌落（红细胞自带触酶 → 假阳性）；10 秒内判读</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">触酶是革兰阳性球菌分群的第一步：先分开葡萄球菌与链球菌</text>
+
+<!-- 页脚 -->
+<rect x="24" y="270" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="285" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　阳性菌再做凝固酶试验分金葡与凝固酶阴性葡萄球菌；阴性菌转做溶血/胆汁等链球菌路径</text>
 </svg>

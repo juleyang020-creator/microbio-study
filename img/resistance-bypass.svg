@@ -1,20 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>靶点旁路 / 替代酶</title><desc>获得替代酶，绕过被抑制的原酶继续代谢。如获得 dfr（替代 DHFR，抗甲氧苄啶）、sul（替代 DHPS，抗磺胺）</desc><defs>
- <clipPath id="cap"><rect x="-17" y="-7.5" width="34" height="15" rx="7.5"/></clipPath>
- <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3a4a63"/></marker>
- <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3f7a52"/></marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>靶点旁路 / 替代酶</title><desc>细菌获得对药物不敏感的替代酶，绕过被抑制的原酶完成同一代谢步骤：dfr 编码替代 DHFR 抗甲氧苄啶，sul 编码替代 DHPS 抗磺胺</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
 </defs>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<text x="240" y="26" font-size="16" fill="#2c3138" text-anchor="middle" font-weight="700">靶点旁路 / 替代酶</text>
-<text x="240" y="44" font-size="12" fill="#565b63" text-anchor="middle">获得替代酶，绕过被抑制的原酶继续代谢</text>
-<text x="120" y="120" font-size="12" fill="#2c3138" text-anchor="start" font-weight="600">原代谢通路（被抑制）</text>
- <circle cx="110" cy="162" r="15" fill="#e4938c" stroke="#cf7c74"/> <text x="110" y="167" font-size="13" text-anchor="middle" fill="#7a3b36">A</text>
- <line x1="128" y1="162" x2="196" y2="162" stroke="#3a4a63" stroke-width="1.7" marker-end="url(#arr)"/> <g fill="#b79ac9" stroke="#9d7fb4"><circle cx="162" cy="146" r="11"/></g> <g stroke="#c6403a" stroke-width="3" stroke-linecap="round"><line x1="154" y1="154" x2="170" y2="170"/><line x1="154" y1="170" x2="170" y2="154"/></g> <text x="162" y="132" font-size="11" fill="#2c3138" text-anchor="middle">原酶</text>
- <circle cx="214" cy="162" r="15" fill="#e4938c" stroke="#cf7c74"/> <text x="214" y="167" font-size="13" text-anchor="middle" fill="#7a3b36">B</text>
- <circle cx="320" cy="152" r="30" fill="#a7b4c9" stroke="#8093b3" stroke-width="1.3"/> <path d="M320,146 a10 10 0 1 0 0.01 0" fill="#f6f2e2"/>
- <text x="320" y="202" font-size="12" fill="#2c3138" text-anchor="middle" font-weight="600">获得性替代酶</text>
- <path d="M124,180 C175,220 255,220 292,182" fill="none" stroke="#3f7a52" stroke-width="1.8" marker-end="url(#arrG)"/>
- <text x="208" y="232" font-size="11" fill="#3f7a52" text-anchor="middle">替代酶催化同一步骤</text>
- <text x="240" y="270" font-size="12" fill="#3f444b" text-anchor="middle">药物抑制原酶，代谢经替代酶继续</text>
-<text x="240" y="288" font-size="13" fill="#3f444b" text-anchor="middle">如获得 dfr（替代 DHFR，抗甲氧苄啶）、sul（替代 DHPS，抗磺胺）</text>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">靶点旁路 / 替代酶</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">耐药机制</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">获得对药物不敏感的替代酶，绕过被抑制的原酶完成同一步骤</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="240" y1="68" x2="240" y2="222" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== ❶ 抗甲氧苄啶：dfr → 替代 DHFR ===== -->
+<circle cx="31" cy="74" r="7" fill="#1f2733"/><text x="31" y="77.5" text-anchor="middle" font-size="9.5" fill="#ffffff">1</text>
+<text x="43" y="78" font-size="10.5" font-weight="700" fill="#33404f">抗甲氧苄啶（TMP）</text>
+
+<rect x="98" y="88" width="62" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="129" y="99" text-anchor="middle" font-size="9.5" fill="#a3332f">甲氧苄啶</text>
+<line x1="129" y1="103" x2="129" y2="106" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+
+<rect x="26" y="112" width="44" height="24" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="48" y="127" text-anchor="middle" font-size="9.5" fill="#1f2733">DHF</text>
+<line x1="70" y1="124" x2="110" y2="124" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<circle cx="129" cy="124" r="17" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="129" y="121" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">原酶</text>
+<text x="129" y="132" text-anchor="middle" font-size="9.5" fill="#1f4e79">DHFR</text>
+<line x1="146" y1="124" x2="186" y2="124" stroke="#b9c2cc" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<g stroke="#c2413d" stroke-width="2.2" stroke-linecap="round"><line x1="161" y1="119" x2="171" y2="129"/><line x1="161" y1="129" x2="171" y2="119"/></g>
+<rect x="188" y="112" width="44" height="24" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="210" y="127" text-anchor="middle" font-size="9.5" fill="#1f2733">THF</text>
+
+<path d="M48,138 C48,178 76,178 106,178" fill="none" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<circle cx="129" cy="178" r="18" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4" stroke-dasharray="5,3"/>
+<text x="129" y="175" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">替代</text>
+<text x="129" y="186" text-anchor="middle" font-size="9.5" fill="#1f4e79">DHFR</text>
+<path d="M152,178 C182,178 210,172 210,140" fill="none" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="129" y="206" text-anchor="middle" font-size="9.5" fill="#5c6672">dfr 基因编码，TMP 亲和力极低</text>
+<text x="129" y="219" text-anchor="middle" font-size="9.5" fill="#5c6672">照常催化 DHF → THF</text>
+
+<!-- ===== ❷ 抗磺胺：sul → 替代 DHPS ===== -->
+<circle cx="253" cy="74" r="7" fill="#1f2733"/><text x="253" y="77.5" text-anchor="middle" font-size="9.5" fill="#ffffff">2</text>
+<text x="265" y="78" font-size="10.5" font-weight="700" fill="#33404f">抗磺胺类（SMZ）</text>
+
+<rect x="320" y="88" width="62" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="351" y="99" text-anchor="middle" font-size="9.5" fill="#a3332f">磺胺甲噁唑</text>
+<line x1="351" y1="103" x2="351" y2="106" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+
+<rect x="248" y="112" width="50" height="24" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="273" y="127" text-anchor="middle" font-size="9.5" fill="#1f2733">PABA</text>
+<line x1="298" y1="124" x2="332" y2="124" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<circle cx="351" cy="124" r="17" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="351" y="121" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">原酶</text>
+<text x="351" y="132" text-anchor="middle" font-size="9.5" fill="#1f4e79">DHPS</text>
+<line x1="368" y1="124" x2="404" y2="124" stroke="#b9c2cc" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<g stroke="#c2413d" stroke-width="2.2" stroke-linecap="round"><line x1="381" y1="119" x2="391" y2="129"/><line x1="381" y1="129" x2="391" y2="119"/></g>
+<rect x="406" y="112" width="48" height="24" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="430" y="127" text-anchor="middle" font-size="9.5" fill="#1f2733">DHP</text>
+
+<path d="M273,138 C273,178 300,178 328,178" fill="none" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<circle cx="351" cy="178" r="18" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4" stroke-dasharray="5,3"/>
+<text x="351" y="175" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">替代</text>
+<text x="351" y="186" text-anchor="middle" font-size="9.5" fill="#1f4e79">DHPS</text>
+<path d="M374,178 C404,178 430,172 430,140" fill="none" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="351" y="206" text-anchor="middle" font-size="9.5" fill="#5c6672">sul 基因编码，磺胺亲和力极低</text>
+<text x="351" y="219" text-anchor="middle" font-size="9.5" fill="#5c6672">照常催化 PABA → DHP（再经 folC → DHF）</text>
+
+<!-- 共性说明 -->
+<text x="240" y="234" text-anchor="middle" font-size="9.5" fill="#5c6672">替代酶功能与原酶相同、对药物亲和力极低 → 通路不中断（虚线圈＝外源获得）</text>
+
+<!-- 结论 -->
+<text x="240" y="252" text-anchor="middle" font-size="11.5" fill="#33404f">原酶被抑制 ≠ 代谢中断：替代酶接手同一步骤，药物失效</text>
+
+<!-- 页脚：典型基因 -->
+<rect x="24" y="264" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="280" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型基因</tspan>　dfrA/dfrG ｜ sul1/sul2/sul3 ｜ mecA→PBP2a（替代转肽酶，抗 β-内酰胺）</text>
 </svg>

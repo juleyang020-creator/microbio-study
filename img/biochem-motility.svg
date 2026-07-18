@@ -1,26 +1,65 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>动力试验 (Motility)</title><desc>半固体培养基穿刺接种；有动力者沿穿刺线向周围扩散浑浊</desc>
-  <rect width="480" height="300" fill="#ffffff"/>
-  <text x="240" y="27" text-anchor="middle" font-size="16" font-weight="700" fill="#2c3138">动力试验 (Motility)</text>
-  <text x="240" y="45" text-anchor="middle" font-size="11" fill="#565b63">半固体培养基穿刺接种；有动力者沿穿刺线向周围扩散浑浊</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>动力试验</title><desc>半固体培养基穿刺接种：无鞭毛菌仅沿穿刺线生长、培养基澄清；有鞭毛菌穿过疏松琼脂网孔向四周游动，穿刺线周围弥漫云雾状浑浊为动力阳性</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
-  <!-- 阴性管(仅沿穿刺线生长) -->
-  <g>
-    <path d="M150,78 L150,238 Q150,256 168,256 Q186,256 186,238 L186,78 Z" fill="#f3efe4" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="168" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <line x1="168" y1="92" x2="168" y2="244" stroke="#9a8f6a" stroke-width="3"/>
-    <text x="168" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#565b63">阴性（仅沿线生长）</text>
-  </g>
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">动力试验</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">生长特性</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">半固体穿刺接种 35℃ 24h：看穿刺线周围是否弥漫浑浊</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
-  <!-- 阳性管(沿线扩散浑浊) -->
-  <g>
-    <path d="M300,78 L300,238 Q300,256 318,256 Q336,256 336,238 L336,78 Z" fill="#f3efe4" stroke="#c8b887" stroke-width="2"/>
-    <ellipse cx="318" cy="78" rx="18" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.4"/>
-    <!-- 扩散浑浊云 -->
-    <path d="M300,96 Q318,90 336,96 L336,244 Q318,250 300,244 Z" fill="#cfc6a8" opacity="0.75"/>
-    <line x1="318" y1="92" x2="318" y2="244" stroke="#9a8f6a" stroke-width="2"/>
-    <text x="318" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a52">阳性（扩散浑浊）</text>
-  </g>
+<!-- ===== 左：阴性管 ===== -->
+<text x="80" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">阴性</text>
+<path d="M58,84 L58,220 Q58,236 80,236 Q102,236 102,220 L102,84 Z" fill="#f3efe4" stroke="#c8b887" stroke-width="1.6"/>
+<ellipse cx="80" cy="84" rx="22" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.2"/>
+<line x1="80" y1="88" x2="80" y2="216" stroke="#9a8f6a" stroke-width="3.2"/>
+<text x="80" y="250" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">动力（−）</text>
 
-  <text x="240" y="290" text-anchor="middle" font-size="11" fill="#565b63">大肠埃希菌、变形杆菌、沙门菌有动力；克雷伯菌、志贺菌、不动杆菌无动力</text>
+<!-- ===== 右：阳性管 ===== -->
+<text x="400" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#5c6672">阳性</text>
+<path d="M378,84 L378,220 Q378,236 400,236 Q422,236 422,220 L422,84 Z" fill="#f3efe4" stroke="#c8b887" stroke-width="1.6"/>
+<path d="M378,92 Q400,86 422,92 L422,222 Q400,230 378,222 Z" fill="#cfc6a8" opacity="0.7"/>
+<path d="M378,120 Q400,112 422,120 L422,196 Q400,204 378,196 Z" fill="#bdb292" opacity="0.55"/>
+<ellipse cx="400" cy="84" rx="22" ry="5" fill="#efe6c6" stroke="#c8b887" stroke-width="1.2"/>
+<line x1="400" y1="88" x2="400" y2="216" stroke="#9a8f6a" stroke-width="2"/>
+<text x="400" y="250" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">动力（＋）</text>
+
+<!-- ===== 中：机制 ❶ 无鞭毛 ===== -->
+<rect x="124" y="88" width="222" height="52" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="138" cy="104" r="7.5" fill="#1f2733"/>
+<text x="138" y="107.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<ellipse cx="164" cy="104" rx="9" ry="5" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="180" y="108" font-size="10" font-weight="700" fill="#33404f">无鞭毛，不能游动</text>
+<text x="136" y="128" font-size="9.5" fill="#5c6672">只沿穿刺线呈细线状生长，两侧澄清</text>
+<line x1="122" y1="114" x2="106" y2="114" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- ===== 中：机制 ❷ 有鞭毛 ===== -->
+<rect x="124" y="150" width="222" height="64" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="138" cy="166" r="7.5" fill="#1f2733"/>
+<text x="138" y="169.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<g stroke="#2b6cb0" stroke-width="1.1" fill="none">
+  <path d="M155,166 q-6,-4 -11,-1 q-5,3 -9,0"/>
+  <path d="M156,161 q-6,-6 -12,-6 q-5,0 -8,-3"/>
+  <path d="M156,171 q-6,6 -12,6 q-5,0 -8,3"/>
+</g>
+<ellipse cx="166" cy="166" rx="9" ry="5" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="182" y="170" font-size="10" font-weight="700" fill="#33404f">鞭毛旋转推进菌体</text>
+<text x="136" y="190" font-size="9.5" fill="#5c6672">穿过疏松琼脂网孔向四周游动</text>
+<text x="136" y="206" font-size="9.5" fill="#33404f">菌体向穿刺线两侧扩散 → 云雾状浑浊</text>
+<line x1="348" y1="182" x2="372" y2="182" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+
+<!-- 关键条件 / 临床注解 -->
+<text x="124" y="232" font-size="9.5" fill="#5c6672">琼脂须 0.3–0.5%：过硬则假阴性</text>
+<text x="124" y="246" font-size="9.5" fill="#5c6672">小肠结肠炎耶尔森菌 22℃ 动、37℃ 不动</text>
+
+<!-- 结论 -->
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">穿刺线周围弥漫浑浊＝有动力；仅沿线生长＝无动力</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　＋ 变形杆菌属·沙门菌属·大肠埃希菌(多数)　− 克雷伯菌属·志贺菌属</text>
 </svg>

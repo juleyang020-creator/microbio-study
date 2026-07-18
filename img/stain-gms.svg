@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>六胺银染色（GMS, Gomori 六亚甲基四胺银）</title><desc>真菌细胞壁多糖经铬酸/高碘酸氧化生成醛基，醛基把六胺银液中的银还原沉积在壁上，真菌呈黑褐色、浅绿复染的背景衬托对比鲜明；用于组织与体液中真菌及耶氏肺孢子菌包囊的检出</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <radialGradient id="grn" cx="42%" cy="38%" r="75%">
+    <stop offset="0%" stop-color="#dbe9cc"/><stop offset="100%" stop-color="#b9d1a4"/>
+  </radialGradient>
+  <radialGradient id="pale" cx="42%" cy="38%" r="75%">
+    <stop offset="0%" stop-color="#fbfbf9"/><stop offset="100%" stop-color="#eceee9"/>
+  </radialGradient>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">六胺银染色（GMS, Gomori 六亚甲基四胺银）</text>
+<rect x="368" y="14" width="88" height="18" rx="9" fill="#eef1f5"/>
+<text x="412" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌·组织化学</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">壁多糖氧化生醛 → 醛把银还原沉积在壁上：真菌黑褐、背景浅绿</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 上半：试剂步骤，视野颜色随步骤演变 ===== -->
+<!-- ① 切片：真菌与背景同样不着色 -->
+<circle cx="56" cy="104" r="22" fill="url(#pale)" stroke="#c3cad2"/>
+<g stroke="#c0c6cc" stroke-width="2.4" stroke-linecap="round" fill="none">
+  <path d="M43,110 q10,-9 22,-6"/><path d="M57,102 q6,-8 13,-9"/>
+</g>
+<circle cx="63" cy="115" r="4.2" fill="none" stroke="#c0c6cc" stroke-width="1.6"/>
+<text x="56" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">切片·真菌无色</text>
+
+<line x1="80" y1="104" x2="138" y2="104" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="110" y="96" text-anchor="middle" font-size="9.5" fill="#33404f">❶ 铬酸氧化</text>
+<text x="110" y="120" text-anchor="middle" font-size="9.5" fill="#5c6672">壁多糖→醛基</text>
+
+<!-- ② 氧化后：壁上出现醛基（仍无色） -->
+<circle cx="164" cy="104" r="22" fill="url(#pale)" stroke="#c3cad2"/>
+<g stroke="#c0c6cc" stroke-width="2.4" stroke-linecap="round" fill="none">
+  <path d="M151,110 q10,-9 22,-6"/><path d="M165,102 q6,-8 13,-9"/>
+</g>
+<circle cx="171" cy="115" r="4.2" fill="none" stroke="#c0c6cc" stroke-width="1.6"/>
+<g fill="#c99a3a"><circle cx="153" cy="107" r="1.7"/><circle cx="161" cy="104" r="1.7"/><circle cx="170" cy="103" r="1.7"/><circle cx="176" cy="94" r="1.7"/><circle cx="167" cy="118" r="1.7"/></g>
+<text x="164" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">壁上生成醛基</text>
+
+<line x1="188" y1="104" x2="246" y2="104" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="218" y="96" text-anchor="middle" font-size="9.5" fill="#33404f">❷ 六胺银液</text>
+<text x="218" y="120" text-anchor="middle" font-size="9.5" fill="#5c6672">加温还原沉银</text>
+
+<!-- ③ 银沉积：壁变黑褐，背景仍白 -->
+<circle cx="272" cy="104" r="22" fill="url(#pale)" stroke="#c3cad2"/>
+<g stroke="#3a2c1d" stroke-width="2.8" stroke-linecap="round" fill="none">
+  <path d="M259,110 q10,-9 22,-6"/><path d="M273,102 q6,-8 13,-9"/>
+</g>
+<circle cx="279" cy="115" r="4.2" fill="none" stroke="#3a2c1d" stroke-width="2"/>
+<text x="272" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">菌壁转黑褐</text>
+
+<line x1="296" y1="104" x2="354" y2="104" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="326" y="96" text-anchor="middle" font-size="9.5" fill="#33404f">❸ 调色·定影</text>
+<text x="326" y="120" text-anchor="middle" font-size="9.5" fill="#5c6672">再以浅绿复染</text>
+
+<!-- ④ 复染后：黑褐真菌 + 浅绿背景 -->
+<circle cx="380" cy="104" r="22" fill="url(#grn)" stroke="#8faa78"/>
+<g stroke="#2f2318" stroke-width="2.8" stroke-linecap="round" fill="none">
+  <path d="M367,110 q10,-9 22,-6"/><path d="M381,102 q6,-8 13,-9"/>
+</g>
+<circle cx="387" cy="115" r="4.2" fill="none" stroke="#2f2318" stroke-width="2"/>
+<text x="380" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">黑褐配浅绿底</text>
+
+<!-- ===== 下半：镜下两种视野 ===== -->
+<text x="70" y="158" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阳性视野（查见真菌）</text>
+<circle cx="70" cy="203" r="38" fill="url(#grn)" stroke="#8faa78" stroke-width="1.6"/>
+<!-- 分隔菌丝：黑褐、45°分支 -->
+<g stroke="#2f2318" stroke-width="3" stroke-linecap="round" fill="none">
+  <path d="M40,182 q16,6 27,20"/><path d="M67,202 q9,10 8,22"/><path d="M67,202 q12,-2 21,-11"/>
+</g>
+<g stroke="#b9d1a4" stroke-width="1.2"><line x1="50" y1="186" x2="54" y2="192"/><line x1="60" y1="192" x2="64" y2="198"/><line x1="74" y1="197" x2="78" y2="202"/></g>
+<!-- 肺孢子菌包囊：黑褐圆形、杯状塌陷、囊内点 -->
+<g fill="none" stroke="#2f2318" stroke-width="2.2">
+  <circle cx="47" cy="215" r="6"/><circle cx="60" cy="226" r="6"/>
+  <path d="M85,220 a6.5,6.5 0 1,1 -5,-3"/>
+</g>
+<circle cx="51.5" cy="211" r="1.5" fill="#2f2318"/><circle cx="64.5" cy="222.5" r="1.5" fill="#2f2318"/>
+<text x="116" y="178" font-size="9.5" font-weight="700" fill="#3a2c1d">菌丝与孢子壁黑褐</text>
+<text x="116" y="195" font-size="9.5" fill="#5c6672">分隔、分支清晰可辨</text>
+<text x="116" y="212" font-size="9.5" fill="#5c6672">包囊杯状，壁见逗点增厚</text>
+<text x="116" y="229" font-size="9.5" fill="#5c6672">背景浅绿，纤维亦可发黑</text>
+
+<text x="290" y="158" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阴性视野（未见真菌）</text>
+<circle cx="290" cy="203" r="38" fill="url(#grn)" stroke="#8faa78" stroke-width="1.6"/>
+<g stroke="#a3bd8d" stroke-width="2" stroke-linecap="round" fill="none">
+  <path d="M260,196 q18,-10 34,-4"/><path d="M266,214 q20,-6 38,4"/><path d="M272,228 q16,-4 30,2"/>
+</g>
+<g fill="#a3bd8d"><circle cx="279" cy="190" r="3.2"/><circle cx="296" cy="207" r="3"/><circle cx="310" cy="196" r="2.6"/><circle cx="286" cy="223" r="2.6"/></g>
+<text x="336" y="178" font-size="9.5" font-weight="700" fill="#5c6672">全片不见黑褐结构</text>
+<text x="336" y="195" font-size="9.5" fill="#5c6672">仅浅绿背景与细胞</text>
+<text x="336" y="212" font-size="9.5" fill="#5c6672">轮廓淡染、不留银</text>
+<text x="336" y="229" font-size="9.5" fill="#5c6672">报告未查见真菌</text>
+
+<!-- 临床注解 -->
+<text x="240" y="253" text-anchor="middle" font-size="9.5" fill="#c2413d">银染标记的是醛基：死菌同样着黑，不代表活菌；网状纤维等亦可嗜银，须凭形态判读</text>
+<!-- 结论 -->
+<text x="240" y="268" text-anchor="middle" font-size="11.5" fill="#33404f">黑褐真菌衬浅绿背景，对比强、低倍即可查找</text>
+<!-- 页脚 -->
+<rect x="24" y="276" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="291" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">主要用途</tspan>　耶氏肺孢子菌包囊检出 ｜ 组织中曲霉、隐球菌等真菌形态观察</text>
+</svg>

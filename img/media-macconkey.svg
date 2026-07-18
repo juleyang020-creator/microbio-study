@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>麦康凯琼脂</title><desc>麦康凯平板俯视图：胆盐与结晶紫抑制革兰阳性菌，乳糖加中性红鉴别；发酵乳糖的大肠埃希菌呈粉红并伴胆盐沉淀环，肺炎克雷伯菌粉红黏液样，不发酵乳糖的沙门菌志贺菌变形杆菌呈无色透明菌落</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">麦康凯琼脂</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">选择与鉴别</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">胆盐结晶紫选出革兰阴性菌，乳糖＋中性红把菌落染成粉红或无色</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：平板俯视 ===== -->
+<circle cx="100" cy="138" r="67" fill="#fbf8f6" stroke="#d7dde3"/>
+<circle cx="100" cy="138" r="62" fill="#e9cfc9" stroke="#d3b3aa"/>
+<g fill="none" stroke="#dcbdb4" stroke-width="1.1" stroke-linecap="round">
+  <path d="M52,104 C74,92 116,90 146,102"/>
+  <path d="M46,124 C74,112 122,112 152,126"/>
+  <path d="M50,164 C78,152 124,152 150,166"/>
+</g>
+
+<!-- ❶ 大肠埃希菌：粉红菌落 + 胆盐沉淀环 -->
+<circle cx="72" cy="110" r="15" fill="#dfada4" opacity="0.55"/>
+<circle cx="94" cy="98" r="12" fill="#dfada4" opacity="0.55"/>
+<circle cx="50" cy="132" r="11" fill="#dfada4" opacity="0.55"/>
+<circle cx="72" cy="110" r="8" fill="#c4425f" stroke="#9c2f47"/>
+<circle cx="94" cy="98" r="6" fill="#c4425f" stroke="#9c2f47"/>
+<circle cx="50" cy="132" r="7" fill="#c4425f" stroke="#9c2f47"/>
+<text x="50" y="135.5" text-anchor="middle" font-size="9.5" fill="#ffffff">1</text>
+
+<!-- ❷ 肺炎克雷伯菌：粉红、大而黏液样 -->
+<circle cx="134" cy="146" r="12" fill="#d97f9b" stroke="#b9607c"/>
+<circle cx="140" cy="120" r="9" fill="#d97f9b" stroke="#b9607c"/>
+<ellipse cx="130" cy="141" rx="4" ry="2.4" fill="#f0c3d1" opacity="0.85"/>
+<ellipse cx="137" cy="116" rx="3" ry="1.8" fill="#f0c3d1" opacity="0.85"/>
+<circle cx="142" cy="166" r="7" fill="#d97f9b" stroke="#b9607c"/>
+<text x="142" y="169.5" text-anchor="middle" font-size="9.5" fill="#4a2230">2</text>
+
+<!-- ❸ 不发酵乳糖：无色透明菌落 -->
+<circle cx="72" cy="176" r="8" fill="#f2e2dc" stroke="#c9aa9f"/>
+<circle cx="92" cy="190" r="6" fill="#f2e2dc" stroke="#c9aa9f"/>
+<circle cx="56" cy="158" r="6" fill="#f2e2dc" stroke="#c9aa9f"/>
+<circle cx="110" cy="184" r="7" fill="#f2e2dc" stroke="#c9aa9f"/>
+<text x="110" y="187.5" text-anchor="middle" font-size="9.5" fill="#6b4a40">3</text>
+
+<text x="100" y="210" text-anchor="middle" font-size="9.5" fill="#5c6672">平板俯视 · 35℃ 18–24h</text>
+
+<!-- ===== 右上：选择成分 ===== -->
+<rect x="200" y="70" width="256" height="60" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="210" y="84" font-size="10" font-weight="700" fill="#33404f">选择成分：胆盐 + 结晶紫 → 抑制谁</text>
+<g fill="#e7e2f3" stroke="#8b7fb8" stroke-width="1.1">
+  <circle cx="212" cy="98" r="4"/><circle cx="220" cy="95" r="4"/><circle cx="217" cy="104" r="4"/>
+</g>
+<g stroke="#c2413d" stroke-width="1.8" stroke-linecap="round">
+  <line x1="206" y1="90" x2="228" y2="110"/><line x1="228" y1="90" x2="206" y2="110"/>
+</g>
+<text x="238" y="102" font-size="9.5" fill="#a3332f">革兰阳性菌（葡萄球/肠球）被抑制</text>
+<rect x="206" y="114" width="22" height="9" rx="4.5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="238" y="122" font-size="9.5" fill="#33404f">革兰阴性肠道杆菌照常生长</text>
+
+<!-- ===== 右下：鉴别成分 ===== -->
+<rect x="200" y="136" width="256" height="68" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="210" y="150" font-size="10" font-weight="700" fill="#33404f">鉴别成分：乳糖 + 中性红（pH 指示）</text>
+<rect x="210" y="158" width="56" height="16" rx="4" fill="#ffffff" stroke="#b9c2cc"/>
+<text x="238" y="169.5" text-anchor="middle" font-size="9.5" fill="#33404f">发酵乳糖</text>
+<line x1="268" y1="166" x2="282" y2="166" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="286" y="158" width="52" height="16" rx="4" fill="#ffffff" stroke="#b9c2cc"/>
+<text x="312" y="169.5" text-anchor="middle" font-size="9.5" fill="#33404f">产酸 pH↓</text>
+<line x1="340" y1="166" x2="352" y2="166" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="356" y="158" width="62" height="16" rx="4" fill="#c4425f" stroke="#9c2f47"/>
+<text x="387" y="169.5" text-anchor="middle" font-size="9.5" fill="#ffffff">菌落粉红</text>
+<rect x="210" y="180" width="56" height="16" rx="4" fill="#ffffff" stroke="#b9c2cc"/>
+<text x="238" y="191.5" text-anchor="middle" font-size="9.5" fill="#33404f">不发酵者</text>
+<line x1="268" y1="188" x2="282" y2="188" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="286" y="180" width="52" height="16" rx="4" fill="#ffffff" stroke="#b9c2cc"/>
+<text x="312" y="191.5" text-anchor="middle" font-size="9.5" fill="#33404f">不产酸</text>
+<line x1="340" y1="188" x2="352" y2="188" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="356" y="180" width="62" height="16" rx="4" fill="#f2e2dc" stroke="#c9aa9f"/>
+<text x="387" y="191.5" text-anchor="middle" font-size="9.5" fill="#7a5c52">无色透明</text>
+
+<!-- ===== 菌落对照 ===== -->
+<rect x="24" y="214" width="432" height="36" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="40" cy="234" r="7" fill="#c4425f" stroke="#9c2f47"/>
+<text x="40" y="237.5" text-anchor="middle" font-size="9.5" fill="#ffffff">1</text>
+<text x="52" y="228" font-size="9.5" fill="#33404f">大肠埃希菌</text>
+<text x="52" y="242" font-size="9.5" fill="#5c6672">粉红，伴胆盐沉淀环</text>
+<circle cx="176" cy="234" r="7" fill="#d97f9b" stroke="#b9607c"/>
+<text x="176" y="237.5" text-anchor="middle" font-size="9.5" fill="#4a2230">2</text>
+<text x="188" y="228" font-size="9.5" fill="#33404f">肺炎克雷伯菌</text>
+<text x="188" y="242" font-size="9.5" fill="#5c6672">粉红、大而黏液样</text>
+<circle cx="304" cy="234" r="7" fill="#f2e2dc" stroke="#c9aa9f"/>
+<text x="304" y="237.5" text-anchor="middle" font-size="9.5" fill="#6b4a40">3</text>
+<text x="316" y="228" font-size="9.5" fill="#33404f">沙门/志贺/变形杆菌</text>
+<text x="316" y="242" font-size="9.5" fill="#5c6672">无色透明；变形杆菌不迁徙</text>
+
+<!-- 结论 -->
+<text x="240" y="264" text-anchor="middle" font-size="11.5" fill="#33404f">粉红＝发酵乳糖，无色＝不发酵；迟缓发酵株延时可转粉红，须按时判读</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="272" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="287" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　大肠埃希菌 · 克雷伯菌（粉红）｜ 沙门菌 · 志贺菌 · 变形杆菌 · 非发酵菌（无色）</text>
+</svg>
