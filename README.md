@@ -52,7 +52,7 @@
 |---|---|---|
 | `data/microbes.js` | 微生物分类（精选临床常用） | 187 |
 | `data/microbe-names.js` | 菌名速查索引（本库详情 / NCBI Taxonomy / PubMed，按拉丁名字母序） | 2328 |
-| `data/photos.js` | 真实形态学图片（CDC PHIL 公有领域，含出处/授权）| 10 菌 / 13 张 |
+| `data/photos.js` | 真实形态学图片（CDC PHIL 公有领域，含出处/授权）| 107 菌 / 306 张 |
 | `data/antibiotics.js` | 抗微生物药 | 93 |
 | `data/resistance.js` | 耐药因素 | 22 |
 | `data/cards.js` | 检测卡：药敏卡 13 + 鉴定卡 7 | 20 |

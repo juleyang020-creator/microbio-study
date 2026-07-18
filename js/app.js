@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-51';
+  var APP_VERSION = window.APP_VERSION || '20260702-52';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -167,6 +167,7 @@
     if (opts.rel != null) { node.setAttribute('rel', opts.rel); }
     if (opts.src != null) { node.setAttribute('src', opts.src); }
     if (opts.alt != null) { node.setAttribute('alt', opts.alt); }
+    if (opts.loading != null) { node.setAttribute('loading', opts.loading); }
     if (opts.title != null) { node.setAttribute('title', opts.title); }
     if (opts.style != null) { node.setAttribute('style', opts.style); }
     if (opts.id != null) { node.id = opts.id; }
@@ -371,6 +372,86 @@
     fill(document.getElementById('sidebar'), nodes);
   }
 
+  // 形态图轮播：单图占位、高度受限（不喧宾夺主）；移动端靠 CSS scroll-snap 原生左右滑动，
+  // 桌面端用左右按钮；底部圆点指示当前位置。图片懒加载。
+  function buildPhotoCarousel(list) {
+    var track = el('div', { cls: 'photo-track' });
+    list.forEach(function (p) {
+      track.appendChild(el('div', { cls: 'photo-slide' }, [
+        el('img', {
+          cls: 'photo-img', src: imgV(p.文件), alt: p.说明, loading: 'lazy',
+          title: p.英文说明 || p.说明
+        }),
+        el('div', { cls: 'photo-cap' }, [
+          el('span', { cls: 'photo-cap-cn', text: p.说明 }),
+          el('a', {
+            cls: 'photo-src', href: 'https://wwwn.cdc.gov/PHIL/details.aspx?pid=' + p.PHIL,
+            target: '_blank', rel: 'noopener noreferrer',
+            title: (p.摄影 || p.供图 || 'CDC') + ' — 查看 PHIL 原始条目与授权说明',
+            text: 'PHIL #' + p.PHIL
+          })
+        ])
+      ]));
+    });
+
+    var single = list.length < 2;
+    var dots = el('div', { cls: 'photo-dots' });
+    var dotEls = [];
+    function go(i) {
+      var n = Math.max(0, Math.min(list.length - 1, i));
+      // 直接赋值 scrollLeft；不用 scrollTo({behavior:'smooth'})——在 scroll-snap 容器上会静默失效。
+      track.scrollLeft = n * track.clientWidth;
+      sync(); // 程序化滚动不触发 scroll 事件，需手动同步圆点（手指滑动则由下方监听兜底）
+    }
+    function current() {
+      return track.clientWidth ? Math.round(track.scrollLeft / track.clientWidth) : 0;
+    }
+    function sync() {
+      var c = current();
+      dotEls.forEach(function (d, i) {
+        if (i === c) { d.classList.add('on'); d.setAttribute('aria-current', 'true'); }
+        else { d.classList.remove('on'); d.removeAttribute('aria-current'); }
+      });
+    }
+    if (!single) {
+      list.forEach(function (p, i) {
+        var d = el('button', {
+          cls: 'photo-dot' + (i === 0 ? ' on' : ''), type: 'button',
+          'aria-label': '第 ' + (i + 1) + '/' + list.length + ' 张：' + p.说明,
+          onClick: function () { go(i); }
+        });
+        dotEls.push(d);
+        dots.appendChild(d);
+      });
+      track.addEventListener('scroll', function () {
+        if (track._t) { clearTimeout(track._t); }
+        track._t = setTimeout(sync, 60);
+      });
+    }
+
+    var viewport = el('div', { cls: 'photo-viewport' }, [ track ]);
+    if (!single) {
+      viewport.appendChild(el('button', {
+        cls: 'photo-nav prev', type: 'button', 'aria-label': '上一张',
+        onClick: function () { go(current() - 1); }, text: '‹'
+      }));
+      viewport.appendChild(el('button', {
+        cls: 'photo-nav next', type: 'button', 'aria-label': '下一张',
+        onClick: function () { go(current() + 1); }, text: '›'
+      }));
+    }
+
+    return el('div', { cls: 'morphology photos' }, [
+      el('div', { cls: 'morph-title' }, [
+        document.createTextNode('真实形态图'),
+        el('span', { cls: 'photo-count', text: list.length > 1 ? ('　' + list.length + ' 张 · 可左右滑动') : '' }),
+        el('span', { cls: 'photo-lic', text: 'CDC PHIL · 公有领域' })
+      ]),
+      viewport,
+      dots
+    ]);
+  }
+
   function buildDetail(vm) {
     if (!vm) { return [ el('div', { cls: 'empty', text: '请选择左侧的一个条目查看详情。' }) ]; }
     var nodes = [];
@@ -510,26 +591,9 @@
       nodes.push(el('div', { cls: 'morphology' }, mNodes));
     }
 
-    // 真实形态学图片（CDC PHIL 公有领域）——放在文字形态描述之后，便于「描述↔实图」对照
+    // 真实形态学图片（CDC PHIL 公有领域）——紧凑轮播：移动端左右滑动，桌面端左右按钮
     if (vm.形态图片 && vm.形态图片.length) {
-      var pNodes = [ el('div', { cls: 'morph-title', text: '真实形态图（CDC PHIL·公有领域）' }) ];
-      var pGrid = el('div', { cls: 'photo-grid' });
-      vm.形态图片.forEach(function (p) {
-        pGrid.appendChild(el('figure', { cls: 'photo-fig' }, [
-          el('img', { cls: 'photo-img', src: imgV(p.文件), alt: p.说明, loading: 'lazy' }),
-          el('figcaption', { cls: 'photo-cap' }, [
-            el('span', { cls: 'photo-cap-cn', text: p.说明 }),
-            el('a', {
-              cls: 'photo-src', href: 'https://wwwn.cdc.gov/PHIL/details.aspx?pid=' + p.PHIL,
-              target: '_blank', rel: 'noopener noreferrer',
-              title: (p.摄影 || p.供图 || 'CDC') + ' — 查看 PHIL 原始条目与授权说明',
-              text: 'PHIL #' + p.PHIL
-            })
-          ])
-        ]));
-      });
-      pNodes.push(pGrid);
-      nodes.push(el('div', { cls: 'morphology photos' }, pNodes));
+      nodes.push(buildPhotoCarousel(vm.形态图片));
     }
 
     // ② 药敏折点（来自 CLSI M100）—— 药物名可跳转到对应抗生素条目
