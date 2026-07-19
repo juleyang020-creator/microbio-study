@@ -94,6 +94,28 @@ test('工具页内的按钮逐个点击不抛异常', () => {
   assert.deepStrictEqual(fail, []);
 });
 
+test('相似菌与鉴别：指向已精简移除的菌时链到菌名速查，而非死路', () => {
+  // #74 把微生物分类精简到 187 种，differential.js 里仍有 10 条指向被移除的菌
+  // （内容有效，如幽门螺杆菌 vs 空肠弯曲菌）。这些名字必须仍可点击，落到菌名速查。
+  const app = loadApp();
+  assert.strictEqual(tryGoto(app, '#/microbes/helicobacter-pylori'), null);
+  const main = app.doc.getElementById('main');
+  const mnLinks = main.querySelectorAll('.diff-link-mn');
+  assert.ok(mnLinks.length > 0, '未生成指向菌名速查的鉴别链接');
+  const href = mnLinks[0].getAttribute('href');
+  assert.ok(href.indexOf('#/microbe-names/') === 0, '链接目标不是菌名速查：' + href);
+
+  // 目标页要能带词落地并真的筛出该菌
+  assert.strictEqual(tryGoto(app, href), null);
+  const rows = app.doc.getElementById('main').querySelectorAll('.mn-item');
+  assert.ok(rows.length >= 1 && rows.length < 50, '带词进入菌名速查未有效筛选，命中 ' + rows.length);
+
+  // 群/型概念（非结核分枝杆菌(NTM) 等）本就无条目，应保持纯文本、不给假链接
+  assert.strictEqual(tryGoto(app, '#/microbes/mycobacterium-tuberculosis'), null);
+  const plains = app.doc.getElementById('main').querySelectorAll('.diff-name');
+  assert.ok(plains.length > 0, '群概念鉴别对象不应被链接化');
+});
+
 test('搜索渲染不抛异常（含别名词）', () => {
   const app = loadApp();
   const input = app.doc.getElementById('search-input');

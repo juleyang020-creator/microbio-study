@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-59';
+  var APP_VERSION = window.APP_VERSION || '20260702-60';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -726,9 +726,17 @@
     // ③ 相似菌与鉴别
     if (vm.鉴别 && vm.鉴别.length) {
       var diffItems = vm.鉴别.map(function (d) {
-        var head = d.id
-          ? el('a', { cls: 'diff-link', text: 'vs ' + d.名称, href: '#/microbes/' + d.id })
-          : el('span', { cls: 'diff-name', text: 'vs ' + d.名称 });
+        var head;
+        if (d.id) {
+          head = el('a', { cls: 'diff-link', text: 'vs ' + d.名称, href: '#/microbes/' + d.id });
+        } else if (mnHasName(d.名称)) {
+          // 无详情页但菌名速查收录了（多为 #74 精简时移出微生物分类的菌）：
+          // 链到速查，那里有拉丁名并可外链 NCBI/PubMed，好过点不动的死路。
+          head = el('a', { cls: 'diff-link diff-link-mn', text: 'vs ' + d.名称, href: '#/microbe-names/' + encodeURIComponent(d.名称), title: '本库无详情页，去菌名速查查看：' + d.名称 });
+        } else {
+          // 「非结核分枝杆菌(NTM)」「肠侵袭性大肠埃希菌(EIEC)」这类群/型概念本就没有条目，保持纯文本
+          head = el('span', { cls: 'diff-name', text: 'vs ' + d.名称 });
+        }
         return el('div', { cls: 'diff-item' }, [
           el('div', { cls: 'diff-head' }, [ head ]),
           el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag', text: '相似点' }), el('span', { text: ' ' + d.相似点 }) ]),
@@ -1852,6 +1860,18 @@
   var MN_KIND_CLS = { '革兰阳性': 'gp', '革兰阴性': 'gn', '酵母菌': 'y', '丝状真菌': 'm', '分枝杆菌': 'tb' };
   var _mnLibIndex = null;
   function mnNorm(s) { return String(s || '').toLowerCase().replace(/\s+/g, ' ').trim(); }
+  // 菌名速查收录的名称集合（含别名），供「相似菌与鉴别」判断该不该给链接。建一次即可。
+  var _mnNameSet = null;
+  function mnHasName(name) {
+    if (!_mnNameSet) {
+      _mnNameSet = {};
+      ((window.DB && window.DB.microbeNames) || []).forEach(function (m) {
+        if (m.名称) { _mnNameSet[mnNorm(m.名称)] = true; }
+        String(m.别名 || '').split('、').forEach(function (a) { if (a) { _mnNameSet[mnNorm(a)] = true; } });
+      });
+    }
+    return !!_mnNameSet[mnNorm(name)];
+  }
   // 本库微生物索引：中文名 / 拉丁名 → id
   function mnLibIndex() {
     if (_mnLibIndex) { return _mnLibIndex; }
@@ -1886,6 +1906,11 @@
   var mnTimer = null;
   function renderMicrobeNames() {
     setActiveTool('microbe-names');
+    // 支持 #/microbe-names/<关键词> 直接带词进来。用途：详情页「相似菌与鉴别」里那些
+    // 已从微生物分类精简移除、没有详情页的菌（如空肠弯曲菌），链到这里而不是变成死路。
+    // URL 即唯一来源：带词就填词，不带就清空。否则筛选词会跨路由粘住，
+    // 用户从别处回到速查时看到一个自己没输过的过滤结果。
+    mnFilter = decodeURIComponent((location.hash || '').replace(/^#\/?/, '').split('/').slice(1).join('/') || '');
     var list = (window.DB && window.DB.microbeNames) || [];
     // 侧栏保持精简：仅说明，不放搜索框（搜索移到正文，手机端搜索与结果同屏）
     fill(document.getElementById('sidebar'), [ el('div', { cls: 'cat-group' }, [
