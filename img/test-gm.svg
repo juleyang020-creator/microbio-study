@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>GM 试验（半乳甘露聚糖）</title><desc>Platelia 曲霉 GM 试验：包被与酶标均用单抗 EBA-2 的双抗体夹心 ELISA，捕获曲霉细胞壁半乳甘露聚糖侧链的呋喃半乳糖苷；显色后以标本光密度除以阈值对照光密度得 GM 指数，&gt;0.5 判阳性；注意含糖输液、食品及青霉/篮状菌等交叉反应致假阳性，抗霉菌治疗中易假阴性</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="340" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">GM 试验（半乳甘露聚糖）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">鉴别试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">双抗体夹心 ELISA 测曲霉细胞壁半乳甘露聚糖；GM 指数 &gt;0.5 为阳性</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== ❶ 夹心 ELISA 微孔内 ===== -->
+<rect x="24" y="66" width="188" height="158" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<circle cx="36" cy="76" r="7.5" fill="#1f2733"/>
+<text x="36" y="79.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="48" y="80" font-size="10" font-weight="700" fill="#33404f">双抗体夹心 ELISA</text>
+
+<!-- 微孔（含显色液） -->
+<path d="M40,96 V146 Q40,162 56,162 H114 Q130,162 130,146 V96" fill="#fdf6da" stroke="#b9c2cc" stroke-width="1.4"/>
+
+<!-- 包被抗体（孔底，向上） -->
+<g stroke="#2b6cb0" stroke-width="1.6" fill="none" stroke-linecap="round">
+  <path d="M70,158 V150 M70,150 L64,142 M70,150 L76,142"/>
+  <path d="M100,158 V150 M100,150 L94,142 M100,150 L106,142"/>
+</g>
+<!-- GM 抗原（曲霉细胞壁多糖）＋侧链呋喃半乳糖 -->
+<rect x="56" y="128" width="58" height="14" rx="3" fill="#e7e2f3" stroke="#8b7fb8"/>
+<text x="85" y="138.5" text-anchor="middle" font-size="9.5" fill="#5b4f8a">GM</text>
+<g fill="#8b7fb8"><circle cx="64" cy="126" r="2.8"/><circle cx="78" cy="126" r="2.8"/><circle cx="92" cy="126" r="2.8"/><circle cx="106" cy="126" r="2.8"/></g>
+<!-- 酶标抗体（自上向下抓侧链） -->
+<g stroke="#2b6cb0" stroke-width="1.6" fill="none" stroke-linecap="round">
+  <path d="M70,105 V112 M70,112 L64,126 M70,112 L76,126"/>
+  <path d="M100,105 V112 M100,112 L94,126 M100,112 L106,126"/>
+</g>
+<g fill="#2b6cb0"><circle cx="70" cy="101" r="4"/><circle cx="100" cy="101" r="4"/></g>
+
+<!-- 引线与标签 -->
+<g stroke="#b9c2cc" stroke-width="1" stroke-dasharray="3,2">
+  <line x1="138" y1="104" x2="106" y2="104"/>
+  <line x1="138" y1="135" x2="116" y2="135"/>
+  <line x1="138" y1="156" x2="102" y2="156"/>
+</g>
+<text x="140" y="88" font-size="9.5" fill="#5c6672">TMB 显蓝</text><text x="140" y="99" font-size="9.5" fill="#5c6672">→终止液转黄</text>
+<text x="140" y="108" font-size="9.5" fill="#1f4e79">酶标抗体</text>
+<text x="140" y="138" font-size="9.5" fill="#5b4f8a">GM 抗原</text>
+<text x="140" y="160" font-size="9.5" fill="#1f4e79">包被抗体</text>
+<text x="36" y="182" font-size="9.5" fill="#5c6672">两侧抗体同为单抗 EBA-2</text>
+<text x="36" y="196" font-size="9.5" fill="#5c6672">识别 GM 侧链呋喃半乳糖</text>
+<text x="36" y="214" font-size="9.5" fill="#33404f">菌丝侵入血管后释放入血</text>
+
+<!-- 传递箭头 -->
+<path d="M214,126 L222,131 L214,136 Z" fill="#33404f"/>
+
+<!-- ===== ❷ 微孔板显色与 GM 指数 ===== -->
+<rect x="224" y="66" width="232" height="158" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<circle cx="236" cy="76" r="7.5" fill="#1f2733"/>
+<text x="236" y="79.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="248" y="80" font-size="10" font-weight="700" fill="#33404f">显色深浅 → GM 指数</text>
+
+<rect x="232" y="90" width="216" height="38" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="259" cy="109" r="12" fill="#fffdf5" stroke="#c9a63c"/>
+<circle cx="313" cy="109" r="12" fill="#f6dc8c" stroke="#c9a63c"/>
+<circle cx="367" cy="109" r="12" fill="#fdf3cf" stroke="#c9a63c"/>
+<circle cx="421" cy="109" r="12" fill="#d99a08" stroke="#a97a06"/>
+
+<text x="259" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">阴性对照</text>
+<text x="313" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">阈值对照</text>
+<text x="367" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">患者甲</text>
+<text x="421" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">患者乙</text>
+<text x="259" y="154" text-anchor="middle" font-size="9.5" fill="#8c96a2">近无色</text>
+<text x="313" y="154" text-anchor="middle" font-size="9.5" fill="#8c96a2">作分母</text>
+<text x="367" y="154" text-anchor="middle" font-size="9.5" fill="#5c6672">指数 0.3</text>
+<text x="421" y="154" text-anchor="middle" font-size="9.5" fill="#a3332f">指数 2.4</text>
+
+<text x="340" y="172" text-anchor="middle" font-size="9.5" fill="#33404f">GM 指数 ＝ 标本 OD ÷ 阈值对照 OD</text>
+
+<rect x="252" y="182" width="48" height="14" fill="#eef1f5" stroke="#d5dae0"/>
+<rect x="300" y="182" width="140" height="14" fill="#f9e6e4" stroke="#c2413d"/>
+<line x1="300" y1="178" x2="300" y2="200" stroke="#c2413d" stroke-width="1.6"/>
+<text x="276" y="192.5" text-anchor="middle" font-size="9.5" fill="#5c6672">阴性 &lt;0.5</text>
+<text x="370" y="192.5" text-anchor="middle" font-size="9.5" fill="#a3332f">阳性 ≥0.5</text>
+<text x="236" y="214" font-size="9.5" fill="#5c6672">血清与 BAL 阈值均 0.5；BAL 常改用 1.0</text>
+
+<!-- ===== ❸ 判读注意 ===== -->
+<rect x="24" y="230" width="432" height="58" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<line x1="240" y1="236" x2="240" y2="282" stroke="#e3e7ec"/>
+<text x="36" y="246" font-size="9.5" font-weight="700" fill="#a3332f">假阳性：GM 阳性 ≠ 曲霉感染</text>
+<text x="36" y="259" font-size="9.5" fill="#5c6672">含糖输液（勃脉力）· 意面/蔬菜/牛奶</text>
+<text x="36" y="271" font-size="9.5" fill="#5c6672">哌拉西林他唑巴坦（现已大部分解决）</text>
+<text x="36" y="283" font-size="9.5" fill="#5c6672">青霉/篮状菌、隐球菌等可交叉反应</text>
+<text x="252" y="246" font-size="9.5" font-weight="700" fill="#1f4e79">假阴性 · 时机与动态</text>
+<text x="252" y="259" font-size="9.5" fill="#5c6672">已用抗霉菌药 → 敏感性显著下降</text>
+<text x="252" y="271" font-size="9.5" fill="#5c6672">慢性肉芽肿病患者应减少检测</text>
+<text x="252" y="283" font-size="9.5" fill="#5c6672">第 1 周 GM 下降 → 预后改善</text>
+
+<!-- 结论 -->
+<text x="240" y="302" text-anchor="middle" font-size="11.5" fill="#33404f">GM 指数 &gt;0.5 提示曲霉，须结合影像与临床，不等于确诊</text>
+
+<!-- 页脚：用途 -->
+<rect x="24" y="310" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="326" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　侵袭性曲霉病标志物（EORTC/MSG）；与 G 试验联用：G 阳性提示真菌，GM 指向曲霉</text>
+</svg>
