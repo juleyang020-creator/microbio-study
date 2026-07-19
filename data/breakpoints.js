@@ -7,7 +7,7 @@ window.DB.breakpoints = [
   {
     菌组名: "肠杆菌目 (Enterobacterales，不含沙门/志贺)",
     CLSI表: "Table 2A-1",
-    菌种: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'klebsiella-aerogenes', 'proteus-mirabilis', 'proteus-vulgaris', 'enterobacter-cloacae', 'citrobacter-freundii', 'citrobacter-koseri', 'morganella-morganii', 'serratia-marcescens', 'providencia-stuartii', 'providencia-rettgeri', 'yersinia-pestis', 'hafnia-alvei', 'raoultella-ornithinolytica', 'proteus-hauseri'],
+    菌种: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'klebsiella-aerogenes', 'proteus-mirabilis', 'proteus-vulgaris', 'enterobacter-cloacae', 'enterobacter-xiangfangensis', 'citrobacter-freundii', 'citrobacter-koseri', 'morganella-morganii', 'serratia-marcescens', 'providencia-stuartii', 'providencia-rettgeri', 'yersinia-pestis', 'hafnia-alvei', 'raoultella-ornithinolytica', 'proteus-hauseri'],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "可预测阿莫西林;口服仅用于大肠埃希菌、奇异变形杆菌所致非复杂性尿路感染" },
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", 组别: "1", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "≥15", 抑菌圈_I: "12–14", 抑菌圈_R: "≤11", 备注: "" },

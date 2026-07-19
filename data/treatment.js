@@ -95,6 +95,7 @@ window.DB.treatment = {
   'taenia-solium': '肠绦虫病用吡喹酮或阿苯达唑驱虫；脑囊虫病用阿苯达唑(±吡喹酮)并联合糖皮质激素，眼囊虫禁用驱虫药需手术。',
   'acinetobacter-baumannii': '敏感株首选舒巴坦类（氨苄西林/舒巴坦或大剂量头孢哌酮/舒巴坦），CRAB需含舒巴坦/度洛巴坦或黏菌素的联合方案，须依药敏并请感染科会诊。',
   'enterobacter-cloacae': '因诱导型AmpC，重症感染避免三代头孢，首选头孢吡肟，产ESBL或耐药时用碳青霉烯。',
+  'enterobacter-xiangfangensis': '同阴沟肠杆菌复合群：因诱导型AmpC，重症感染避免三代头孢，首选头孢吡肟；碳青霉烯耐药率高，产碳青霉烯酶时按酶型选药（如产OXA-48选头孢他啶/阿维巴坦）。',
   'stenotrophomonas-maltophilia': '首选复方新诺明（TMP-SMX），不耐受或耐药时用左氧氟沙星或米诺环素，重症考虑联合；天然耐碳青霉烯，勿用。',
   'moraxella-catarrhalis': '因几乎均产β-内酰胺酶，首选阿莫西林/克拉维酸或二/三代头孢，备选大环内酯、多西环素或复方新诺明。',
   'legionella-pneumophila': '首选呼吸喹诺酮（左氧氟沙星/莫西沙星）或阿奇霉素，重症/免疫抑制者疗程延长；β-内酰胺类无效。',
