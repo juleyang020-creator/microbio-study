@@ -300,6 +300,9 @@ body.zoom-open { overflow: hidden; }
 .diff-link { color: var(--link); text-decoration: none; font-weight: 600; }
 .diff-link:hover { text-decoration: underline; }
 .diff-name { font-weight: 600; color: var(--ink-soft); }
+/* 无详情页、只链到菌名速查的鉴别对象：虚下划线以示与「本库有详情」的实链接不同 */
+.diff-link-mn { color: var(--ink-soft); text-decoration: underline dotted; text-underline-offset: 3px; }
+.diff-link-mn:hover { color: var(--accent); text-decoration: underline; }
 .diff-line { font-size: 13px; line-height: 1.65; color: var(--ink-soft); margin-top: 3px; }
 .diff-tag { display: inline-block; font-size: 11px; color: var(--muted); background: var(--line-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; }
 .diff-tag.diff-key { background: var(--accent-weak); border-color: var(--accent-edge); color: var(--accent); }
