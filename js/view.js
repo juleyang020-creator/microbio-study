@@ -57,7 +57,9 @@
     'maldi-tof': 'img/test-maldi.svg',
     'cefiderocol-ast': 'img/test-cefiderocol.svg',
     'cbde-colistin': 'img/test-colistin.svg',
-    'satellitism': 'img/test-satellitism.svg'
+    'satellitism': 'img/test-satellitism.svg',
+    'bdg-test': 'img/test-bdg.svg',
+    'gm-test': 'img/test-gm.svg'
   };
 
   // 染色：按条目 id 映射到示意图

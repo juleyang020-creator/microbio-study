@@ -117,6 +117,31 @@ export function lintSvg(file) {
   const issues = [];
   const name = path.basename(file);
 
+  // 0) XML 良构性：文本节点里裸的 < 或 > 会让整张图在浏览器中直接不渲染，
+  //    而看代码很难发现（曾把「60–80」改成「60–<80」导致整图空白）。
+  //    正则区分不了标签内外，这里用状态机逐字扫描。
+  {
+    let inTag = false, inQuote = '', bad = -1;
+    for (let i = 0; i < svg.length && bad < 0; i++) {
+      const c = svg[i];
+      if (inTag) {
+        if (inQuote) { if (c === inQuote) inQuote = ''; }
+        else if (c === '"' || c === "'") inQuote = c;
+        else if (c === '>') inTag = false;
+      } else if (c === '<') {
+        // 合法标签起始：字母、/、!、?
+        if (/[A-Za-z/!?]/.test(svg[i + 1] || '')) inTag = true;
+        else bad = i;
+      } else if (c === '>') {
+        bad = i;                       // 文本节点中的裸 >
+      }
+    }
+    if (bad >= 0) {
+      const ctx = svg.slice(Math.max(0, bad - 35), bad + 35).replace(/\n/g, ' ');
+      issues.push({ sev: 'ERR', msg: `XML 非法字符「${svg[bad]}」未转义（应写 &lt; / &gt;）：…${ctx}…` });
+    }
+  }
+
   const vb = svg.match(/viewBox="([\d.\-]+) ([\d.\-]+) ([\d.]+) ([\d.]+)"/);
   if (!vb) issues.push({ sev: 'ERR', msg: '缺少 viewBox（无法响应式缩放）' });
   if (!/<title>/.test(svg)) issues.push({ sev: 'WARN', msg: '缺少 <title>（无障碍）' });

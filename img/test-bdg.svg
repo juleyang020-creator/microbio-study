@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 362" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>G 试验（1,3-β-D-葡聚糖）</title><desc>曲霉、念珠菌、镰刀菌、肺孢子菌等细胞壁含 (1,3)-β-D-葡聚糖，侵袭感染时释入血流；隐球菌、毛霉目、芽生菌壁内极少故常阴性。血清经鲎试剂 G 因子凝固酶级联裂解显色底物，405 nm 动力学定量：＜60 pg/mL 阴性、60–80 灰区、≥80 阳性。</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="362" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">G 试验（1,3-β-D-葡聚糖）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">鉴别试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">泛真菌血清标志物：壁源葡聚糖激活鲎试剂级联 → 显色定量</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<line x1="232" y1="112" x2="232" y2="212" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== ❶ 细胞壁来源 ===== -->
+<circle cx="32" cy="72" r="7.5" fill="#1f2733"/>
+<text x="32" y="75.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="44" y="76" font-size="10" font-weight="700" fill="#33404f">细胞壁 BDG 释入血流</text>
+
+<!-- 含 BDG 的真菌 -->
+<circle cx="60" cy="100" r="18" fill="#f7f5fc" stroke="#8b7fb8" stroke-width="4"/>
+<circle cx="60" cy="100" r="10" fill="#efeaf8"/>
+<g fill="#8b7fb8">
+  <circle cx="60" cy="82" r="2.6"/><circle cx="73" cy="87" r="2.6"/><circle cx="78" cy="100" r="2.6"/><circle cx="73" cy="113" r="2.6"/><circle cx="47" cy="87" r="2.6"/><circle cx="42" cy="100" r="2.6"/>
+</g>
+<line x1="82" y1="100" x2="176" y2="100" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<g fill="#8b7fb8"><circle cx="100" cy="94" r="2.4"/><circle cx="122" cy="106" r="2.4"/><circle cx="146" cy="94" r="2.4"/><circle cx="164" cy="106" r="2.4"/></g>
+<text x="128" y="92" text-anchor="middle" font-size="9.5" fill="#5b4f8a">释放 BDG</text>
+<text x="60" y="126" text-anchor="middle" font-size="9.5" fill="#33404f">曲霉 · 念珠菌</text>
+<text x="60" y="138" text-anchor="middle" font-size="9.5" fill="#33404f">镰刀菌 · 肺孢子菌</text>
+
+<!-- 壁内极少 BDG 的真菌 -->
+<circle cx="60" cy="162" r="18" fill="#fbfbfc" stroke="#b9c2cc" stroke-width="1.6" stroke-dasharray="4,3"/>
+<circle cx="60" cy="162" r="10" fill="#f2f4f6"/>
+<line x1="82" y1="162" x2="172" y2="162" stroke="#c2413d" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#blk)"/>
+<text x="128" y="154" text-anchor="middle" font-size="9.5" fill="#a3332f">血中测不到 BDG</text>
+<text x="60" y="188" text-anchor="middle" font-size="9.5" fill="#33404f">隐球菌 · 毛霉目</text>
+<text x="60" y="200" text-anchor="middle" font-size="9.5" fill="#5c6672">芽生菌（壁内极少）</text>
+
+<!-- 血清 -->
+<rect x="180" y="84" width="32" height="112" rx="10" fill="#fdeeee" stroke="#c9797a"/>
+<g fill="#8b7fb8">
+  <circle cx="190" cy="98" r="2.6"/><circle cx="203" cy="106" r="2.6"/><circle cx="192" cy="116" r="2.6"/><circle cx="204" cy="126" r="2.6"/><circle cx="189" cy="134" r="2.6"/>
+</g>
+<text x="196" y="208" text-anchor="middle" font-size="9.5" fill="#5c6672">血清</text>
+<line x1="214" y1="96" x2="238" y2="96" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="226" y="88" text-anchor="middle" font-size="9.5" fill="#5c6672">取血清</text>
+
+<!-- ===== ❷ 鲎试剂动力学显色 ===== -->
+<circle cx="248" cy="72" r="7.5" fill="#1f2733"/>
+<text x="248" y="75.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="260" y="76" font-size="10" font-weight="700" fill="#33404f">鲎试剂动力学显色</text>
+
+<rect x="240" y="86" width="82" height="20" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="281" y="100" text-anchor="middle" font-size="9.5" fill="#33404f">血清 BDG</text>
+<line x1="281" y1="106" x2="281" y2="116" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="240" y="118" width="82" height="20" rx="5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="281" y="132" text-anchor="middle" font-size="9.5" fill="#1f4e79">G 因子活化</text>
+<line x1="281" y1="138" x2="281" y2="148" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="240" y="150" width="82" height="20" rx="5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="281" y="164" text-anchor="middle" font-size="9.5" fill="#1f4e79">凝固酶级联</text>
+<line x1="281" y1="170" x2="281" y2="180" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="240" y="182" width="82" height="20" rx="5" fill="#fdf3d8" stroke="#d9b96a"/>
+<text x="281" y="196" text-anchor="middle" font-size="9.5" fill="#8a6d2f">裂解底物显黄</text>
+
+<!-- 微量板 -->
+<rect x="336" y="86" width="112" height="52" rx="5" fill="#fbfcfd" stroke="#b9c2cc"/>
+<g stroke="#c9ced6">
+  <circle cx="356" cy="103" r="9" fill="#fdfaf0"/><circle cx="384" cy="103" r="9" fill="#f8e7b4"/><circle cx="412" cy="103" r="9" fill="#f0c65a"/><circle cx="440" cy="103" r="9" fill="#e2a017"/>
+  <circle cx="356" cy="123" r="9" fill="#fdfaf0"/><circle cx="384" cy="123" r="9" fill="#f8e7b4"/><circle cx="412" cy="123" r="9" fill="#f0c65a"/><circle cx="440" cy="123" r="9" fill="#e2a017"/>
+</g>
+<text x="392" y="150" text-anchor="middle" font-size="9.5" fill="#5c6672">同板：标准品与标本</text>
+
+<!-- 动力学曲线 -->
+<text x="340" y="162" font-size="9.5" fill="#5c6672">OD405</text>
+<line x1="344" y1="166" x2="344" y2="206" stroke="#8c96a2"/>
+<line x1="344" y1="206" x2="452" y2="206" stroke="#8c96a2"/>
+<path d="M344,204 C378,200 396,186 450,176" fill="none" stroke="#c2413d" stroke-width="1.8"/>
+<path d="M344,204 L450,198" fill="none" stroke="#8c96a2" stroke-width="1.8"/>
+<text x="448" y="170" text-anchor="end" font-size="9.5" fill="#a3332f">阳性</text>
+<text x="448" y="192" text-anchor="end" font-size="9.5" fill="#5c6672">阴性</text>
+<text x="452" y="218" text-anchor="end" font-size="9.5" fill="#5c6672">时间</text>
+
+<!-- ===== ❸ 判读刻度 ===== -->
+<circle cx="32" cy="228" r="7.5" fill="#1f2733"/>
+<text x="32" y="231.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="44" y="232" font-size="10" font-weight="700" fill="#33404f">厂家推荐判读（血清，pg/mL）</text>
+<rect x="44" y="240" width="150" height="16" fill="#e6efe9" stroke="#7aa38f"/>
+<rect x="194" y="240" width="76" height="16" fill="#fdf3d8" stroke="#d9b96a"/>
+<rect x="270" y="240" width="154" height="16" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="119" y="252" text-anchor="middle" font-size="9.5" fill="#3f6b57">阴性 &lt; 60</text>
+<text x="232" y="252" text-anchor="middle" font-size="9.5" fill="#8a6d2f">灰区 60–&lt;80</text>
+<text x="347" y="252" text-anchor="middle" font-size="9.5" fill="#a3332f">阳性 ≥ 80</text>
+<text x="430" y="252" font-size="9.5" fill="#5c6672">pg/mL</text>
+<text x="44" y="270" font-size="9.5" fill="#5c6672">连续两份标本均 ≥80 准确度最佳 → 建议每周检测 2 次；未获批用于 BAL</text>
+
+<!-- 局限提示 -->
+<rect x="24" y="276" width="432" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="290" font-size="9.5" fill="#33404f">假阳性：IVIG/白蛋白 · 纤维素膜透析 · 含葡聚糖纱布 · 菌血症/黏膜炎</text>
+<text x="36" y="304" font-size="9.5" fill="#5c6672">抗真菌治疗不降低敏感性；治疗有效数值未必下降，不宜单用于疗效判断</text>
+
+<!-- 结论 -->
+<text x="240" y="326" text-anchor="middle" font-size="11.5" fill="#33404f">阴性可助排除，阳性须结合临床；只提示真菌感染，不定属定种</text>
+
+<!-- 页脚：用途 -->
+<rect x="24" y="334" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="350" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　侵袭性念珠菌病 · 曲霉病辅助诊断 ｜ 肺孢子菌肺炎价值最高（阴性可排除）</text>
+</svg>
