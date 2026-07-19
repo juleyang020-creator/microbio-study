@@ -1,6 +1,6 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260702-56';
+var APP_VERSION = '20260702-58';
 // 缓存名直接由版本号派生，只需改 APP_VERSION 一处；旧缓存在 activate 时按前缀清理
 var CACHE = CACHE_PREFIX + APP_VERSION;
 function versioned(path) {
@@ -174,7 +174,10 @@ self.addEventListener('fetch', function (e) {
     caches.match(e.request).then(function (hit) {
       return hit || fetch(e.request).then(function (res) {
         return putIfCacheable(e.request, res);
-      }).catch(function () { return caches.match('./index.html'); });
+      // 非导航请求（图片/脚本/样式）离线且未预缓存时：不能兜底 index.html，
+      // 那会让 <img> 收到 text/html、<script> 收到 HTML 而报 SyntaxError，掩盖真实原因。
+      // 也不能再 caches.match(e.request)——上一行刚查过，必然是 undefined。
+      }).catch(function () { return Response.error(); });
     })
   );
 });
