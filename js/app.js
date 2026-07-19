@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-58';
+  var APP_VERSION = window.APP_VERSION || '20260702-59';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -332,7 +332,9 @@
     _favCache = list; lsSave(FAV_KEY, list);
   }
 
-  var HIST_KEY = 'zhiwei-history', HIST_MAX = 30;
+  // HIST_MAX 是存多少（供「清空」前回溯），HIST_SHOW 是侧栏露出多少。
+  // 侧栏还要放分类树，最近浏览占太多行会把分类挤下去，故只露 5 条。
+  var HIST_KEY = 'zhiwei-history', HIST_MAX = 30, HIST_SHOW = 5;
   var _histCache = null;
   function browseHistory() { if (!_histCache) { _histCache = lsLoad(HIST_KEY); } return _histCache; }
   function recordHistory(id, module, 名称) {
@@ -362,7 +364,7 @@
     }
     var hist = browseHistory();
     if (hist.length) {
-      var histItems = hist.slice(0, 10).map(function (h) { // 侧栏只显示最近 10 条
+      var histItems = hist.slice(0, HIST_SHOW).map(function (h) {
         var hit = index[h.id];
         return el('a', {
           cls: 'entry-link history-item' + (h.id === route.id ? ' selected' : ''),
