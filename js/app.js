@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-56';
+  var APP_VERSION = window.APP_VERSION || '20260702-58';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -190,6 +190,20 @@
       if ((key.indexOf('aria-') === 0 || key.indexOf('data-') === 0) && opts[key] != null) { node.setAttribute(key, opts[key]); }
     });
     if (opts.onClick) { node.addEventListener('click', opts.onClick); }
+    // 键盘可达的“类按钮”元素：role="button" 只是语义标注，非 <button> 元素按 Enter/Space
+    // 浏览器不会替你派发 click。用 onActivate 的地方一律补上 tabindex/role 与键盘绑定，
+    // 避免每处自己拼（此前 zoomableImg 注释写着「点击/Enter 均可打开」，实际只有点击）。
+    if (opts.onActivate) {
+      if (opts.tabindex == null) { node.setAttribute('tabindex', '0'); }
+      if (opts.role == null) { node.setAttribute('role', 'button'); }
+      node.addEventListener('click', opts.onActivate);
+      node.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
+          ev.preventDefault();          // Space 默认滚动页面
+          opts.onActivate(ev);
+        }
+      });
+    }
     (children || []).forEach(function (c) { appendChildNode(node, c); });
     return node;
   }
@@ -203,7 +217,7 @@
     var module = MODULES.indexOf(parts[0]) !== -1 ? parts[0] : MODULES[0];
     return { module: module, id: parts[1] || null };
   }
-  // 当前路由的顶层 key（compare / cardcompare / intrinsic / graph / breakpoints / ast-alerts / 模块名）
+  // 当前路由的顶层 key（compare / cardcompare / intrinsic / breakpoints / ast-alerts / lab-workflow / microbe-names / about / 模块名）
   function routeKey() {
     return (location.hash || '').replace(/^#\/?/, '').split('/')[0];
   }
@@ -409,12 +423,11 @@
     document.body.classList.add('zoom-open');
     document.addEventListener('keydown', _zoomEsc);
   }
-  // 可放大的示意图（点击 / Enter 均可打开）
+  // 可放大的示意图（点击 / Enter / Space 均可打开）
   function zoomableImg(src, alt, caption) {
     return el('img', {
       cls: 'mechanism-img zoomable', src: src, alt: alt || '', title: '点击放大',
-      tabindex: '0', role: 'button',
-      onClick: function () { openImageZoom(src, caption || alt); }
+      onActivate: function () { openImageZoom(src, caption || alt); }
     });
   }
 
@@ -426,7 +439,7 @@
       track.appendChild(el('div', { cls: 'photo-slide' }, [
         el('img', {
           cls: 'photo-img zoomable', src: imgV(p.文件), alt: p.说明, loading: 'lazy',
-          onClick: (function (q) { return function () { openImageZoom(imgV(q.文件), q.说明 + '（' + (q.英文说明 || '') + '）'); }; })(p),
+          onActivate: (function (q) { return function () { openImageZoom(imgV(q.文件), q.说明 + '（' + (q.英文说明 || '') + '）'); }; })(p),
           title: p.英文说明 || p.说明
         }),
         el('div', { cls: 'photo-cap' }, [
@@ -834,6 +847,29 @@
     { 组: '革兰阳性球菌', 项: ['凝固酶', 'PYR', '新生霉素', '胆汁七叶苷', '6.5%NaCl生长'] }
   ];
 
+  // 生化对比选择器里排在前面的常见菌（顺序即临床常见度）。生化数据的原始顺序开头是
+  // 猪链球菌、偶发分枝杆菌一类冷门菌，不排序则最常查的菌反而要翻很久。
+  // 原为关系图的 GRAPH_COMMON，#74 删关系图时定义被一并删掉、这里的引用漏删 → #/compare 崩溃。
+  var COMPARE_COMMON = [
+    'staph-aureus', 'e-coli', 'klebsiella-pneumoniae', 'pseudomonas-aeruginosa',
+    'strep-pneumoniae', 'strep-pyogenes', 'enterococcus-faecalis', 'enterococcus-faecium',
+    'acinetobacter-baumannii', 'haemophilus-influenzae',
+    'neisseria-meningitidis', 'neisseria-gonorrhoeae', 'candida-albicans', 'clostridioides-difficile',
+    'staph-epidermidis', 'strep-agalactiae', 'enterobacter-cloacae', 'proteus-mirabilis',
+    'helicobacter-pylori', 'moraxella-catarrhalis', 'listeria-monocytogenes',
+    'stenotrophomonas-maltophilia', 'salmonella-typhi'
+  ];
+  // 预建名次表：比较器里逐次 indexOf 是 O(n·m)，而选择器每敲一个字就重排一次。
+  var _commonRank = null;
+  function commonRank(id) {
+    if (!_commonRank) {
+      _commonRank = {};
+      COMPARE_COMMON.forEach(function (x, i) { _commonRank[x] = i; });
+    }
+    // 纯对象当 map 用：id 若是 'constructor' 之类会拿到原型上的值，故显式判自有属性
+    return Object.prototype.hasOwnProperty.call(_commonRank, id) ? _commonRank[id] : 1e6;
+  }
+
   function isCompareRoute() { return routeKey() === 'compare'; }
   function comparableIds() { return Object.keys((window.DB && window.DB.biochem) || {}); }
   // 缓存：window.DB 加载后不变，微生物名称映射只需建一次（同 abxIdByName 模式）
@@ -880,12 +916,8 @@
     var ids = comparableIds().filter(function (id) {
       return !q || (names[id] || '').toLowerCase().indexOf(q) !== -1;
     });
-    // 常见菌排前（按 GRAPH_COMMON 顺序），其余保持原数据顺序
-    ids.sort(function (a, b) {
-      var ia = GRAPH_COMMON.indexOf(a); if (ia === -1) { ia = 1e6; }
-      var ib = GRAPH_COMMON.indexOf(b); if (ib === -1) { ib = 1e6; }
-      return ia - ib;
-    });
+    // 常见菌排前（按 COMPARE_COMMON 顺序），其余保持原数据顺序（Array#sort 自 ES2019 起稳定）
+    ids.sort(function (a, b) { return commonRank(a) - commonRank(b); });
     return ids.map(function (id) {
       return { id: id, 名称: names[id] || id, selected: !!compareSet[id], onToggle: function () { toggleCompare(id); } };
     });
@@ -1484,7 +1516,9 @@
       box.replaceChildren(bpInfo, el('div', { cls: 'empty-sm', text: '输入' + (isZone ? '抑菌圈直径' : ' MIC 值') + '后自动判读。' }));
       return;
     }
-    var verdict = isZone ? View.judgeZone(bpJudgeMIC, bpS, bpMid, bpR) : View.judgeMIC(bpJudgeMIC, bpS, bpMid, bpR);
+    // EUCAST 的 I 不是 CLSI 的「中介」，而是「增加暴露仍可敏感」，结论行须用各自标准的措辞
+    var judgeOpts = isEu ? { midLabel: '增加暴露 I' } : null;
+    var verdict = isZone ? View.judgeZone(bpJudgeMIC, bpS, bpMid, bpR, judgeOpts) : View.judgeMIC(bpJudgeMIC, bpS, bpMid, bpR, judgeOpts);
     var clsMap = { S: 'v-s', R: 'v-r', SDD: 'v-sdd', I: 'v-i', NS: 'v-ns' };
     var cls = 'bp-verdict ' + (clsMap[verdict.result] || 'v-unknown');
     box.replaceChildren(bpInfo, el('div', { cls: cls }, [
@@ -1811,6 +1845,9 @@
   function isMicrobeNamesRoute() { return routeKey() === 'microbe-names'; }
   var mnFilter = '';
   function mnLetter(lat) { var c = (lat || '').charAt(0).toUpperCase(); return /[A-Z]/.test(c) ? c : '#'; }
+  // 革兰大类徽章（数据来自 Bruker MBT 主库的分类列）。缩到 1–2 字，否则会挤掉菌名。
+  var MN_KIND_SHORT = { '革兰阳性': 'G+', '革兰阴性': 'G−', '酵母菌': '酵母', '丝状真菌': '霉', '分枝杆菌': '分枝' };
+  var MN_KIND_CLS = { '革兰阳性': 'gp', '革兰阴性': 'gn', '酵母菌': 'y', '丝状真菌': 'm', '分枝杆菌': 'tb' };
   var _mnLibIndex = null;
   function mnNorm(s) { return String(s || '').toLowerCase().replace(/\s+/g, ' ').trim(); }
   // 本库微生物索引：中文名 / 拉丁名 → id
@@ -1874,7 +1911,11 @@
   function renderMicrobeNamesResults() {
     var list = (window.DB && window.DB.microbeNames) || [];
     var q = mnFilter.trim().toLowerCase();
-    var filtered = q ? list.filter(function (m) { return (m.名称 + ' ' + (m.拉丁名 || '')).toLowerCase().indexOf(q) !== -1; }) : list;
+    // 别名要参与检索：Bruker 软件打印的中文名常与本库首选名不同（「分散」vs「散布」不动杆菌），
+    // 不搜别名的话，照着 MALDI 报告去查反而查不到。
+    var filtered = q ? list.filter(function (m) {
+      return (m.名称 + ' ' + (m.拉丁名 || '') + ' ' + (m.别名 || '')).toLowerCase().indexOf(q) !== -1;
+    }) : list;
     // 计数反馈
     var cnt = document.getElementById('mn-count');
     if (cnt) { cnt.textContent = q ? ('共 ' + filtered.length + ' 条') : ''; }
@@ -1903,6 +1944,7 @@
       var opts = { cls: 'mn-item' + (t.tag ? ' mn-item-lib' : ''), href: t.href, title: t.title };
       if (t.external) { opts.target = '_blank'; opts.rel = 'noopener noreferrer'; }
       var kids = [ el('span', { cls: 'mn-nm', text: m.名称 }), el('span', { cls: 'mn-lt', text: m.拉丁名 || '' }) ];
+      if (m.类) { kids.push(el('span', { cls: 'mn-kind mn-kind-' + MN_KIND_CLS[m.类], text: MN_KIND_SHORT[m.类] || m.类 })); }
       if (t.tag) { kids.push(el('span', { cls: 'mn-tag', text: t.tag })); }
       grid.appendChild(el('a', opts, kids));
     });

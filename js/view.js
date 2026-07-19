@@ -285,7 +285,12 @@
   }
 
   function searchVM(results, query) {
-    var tokens = (query || '').trim().toLowerCase().split(/\s+/).filter(Boolean); // 用于结果高亮
+    // 用于结果高亮。检索本身走别名（输入 mrsa 命中「金黄色葡萄球菌」），
+    // 高亮词表若只有原词，命中片段里的别名对应词就不会被标出。
+    var raw = (query || '').trim().toLowerCase();
+    var tokens = raw.split(/\s+/).filter(Boolean);
+    var alias = (window.Core && window.Core.aliasesFor) ? window.Core.aliasesFor(raw) : [];
+    alias.forEach(function (a) { if (tokens.indexOf(a) === -1) { tokens.push(a); } });
     return {
       query: query,
       tokens: tokens,
@@ -552,11 +557,21 @@
   // 把 S / 中段 / R 三段折点字符串规整为结构化判读规格。
   //   midKind: 中段实际类别（字符串含 SDD → 'SDD'，否则 'I'）。
   //   susceptibleOnly: 仅设敏感折点（无中段、无耐药折点）——高于 S 折点判为 NS。
-  function normalizeSpec(bpS, bpMid, bpR) {
+  //   midText: 中段在结论里的措辞。CLSI 的 I 是「中介」，EUCAST 的 I 却是
+  //     「增加暴露仍可敏感」——两者定义不同，写死成「中介 I」会在 EUCAST 模式下说反。
+  function normalizeSpec(bpS, bpMid, bpR, opts) {
     var S = parseBP(bpS), mid = parseBP(bpMid), R = parseBP(bpR);
-    return { S: S, mid: mid, R: R, midKind: /SDD/i.test(String(bpMid || '')) ? 'SDD' : 'I', susceptibleOnly: !!S && !mid && !R };
+    return {
+      S: S, mid: mid, R: R,
+      midKind: /SDD/i.test(String(bpMid || '')) ? 'SDD' : 'I',
+      midText: (opts && opts.midLabel) || '',
+      susceptibleOnly: !!S && !mid && !R
+    };
   }
-  function midLabel(kind) { return kind === 'SDD' ? '剂量依赖性敏感 SDD' : '中介 I'; }
+  function midLabel(spec) {
+    if (spec.midKind === 'SDD') { return '剂量依赖性敏感 SDD'; }
+    return spec.midText || '中介 I';
+  }
   // 谓词求值：折点谓词 p 命中数值 val 时返回 true（含 ≤ < ≥ > = 与区间，容差 1e-9）。
   function bpHit(p, val) {
     if (!p) { return false; }
@@ -577,7 +592,7 @@
     var m = spec.mid;
     if (m && (m.type === 'range' || m.type === 'value' || m.type === 'le') && bpHit(m, val)) {
       var seg = m.type === 'range' ? ('在 ' + m.lo + '–' + m.hi) : (m.type === 'le' ? ('≤ ' + m.val) : ('= ' + m.val));
-      return { result: spec.midKind, reason: 'MIC ' + seg + '（' + midLabel(spec.midKind) + '）' };
+      return { result: spec.midKind, reason: 'MIC ' + seg + '（' + midLabel(spec) + '）' };
     }
     if (spec.susceptibleOnly) {
       return { result: 'NS', reason: '高于敏感折点（' + (spec.S.type === 'lt' ? '<' : '≤') + spec.S.val + '），且该药仅设敏感折点、未建立 I/R；按 CLSI 报告为非敏感(NS)，不能判为耐药，建议结合 MIC 分布/参比实验室' };
@@ -589,15 +604,16 @@
   function classifyZone(val, spec) {
     if (bpHit(spec.S, val)) { return { result: 'S', reason: '抑菌圈 ' + (spec.S.type === 'gt' ? '> ' : '≥ ') + spec.S.val + ' mm（敏感折点）' }; }
     if (bpHit(spec.R, val)) { return { result: 'R', reason: '抑菌圈 ' + (spec.R.type === 'lt' ? '< ' : '≤ ') + spec.R.val + ' mm（耐药折点）' }; }
-    if (spec.mid && spec.mid.type === 'range' && bpHit(spec.mid, val)) { return { result: spec.midKind, reason: '抑菌圈在 ' + spec.mid.lo + '–' + spec.mid.hi + ' mm（' + midLabel(spec.midKind) + '）' }; }
+    if (spec.mid && spec.mid.type === 'range' && bpHit(spec.mid, val)) { return { result: spec.midKind, reason: '抑菌圈在 ' + spec.mid.lo + '–' + spec.mid.hi + ' mm（' + midLabel(spec) + '）' }; }
     if (spec.susceptibleOnly && spec.S && spec.S.type === 'ge' && val < spec.S.val - 1e-9) { return { result: 'NS', reason: '抑菌圈小于敏感折点，且仅设敏感折点 → 非敏感(NS)' }; }
     return { result: 'unknown', reason: '抑菌圈不在任何折点区间内' };
   }
   // MIC 判读（对外）：输入数值 + S/中段(可含 SDD)/R 折点字符串。非标准梯度值按 CLSI 向上归入后重判。
-  function judgeMIC(micInput, bpS, bpMid, bpR) {
+  // opts.midLabel：中段措辞，EUCAST 传「增加暴露 I」；不传则沿用 CLSI 的「中介 I」。
+  function judgeMIC(micInput, bpS, bpMid, bpR, opts) {
     var val = parseFloat(micInput);
     if (isNaN(val) || val < 0) { return { result: 'invalid', reason: 'MIC 输入无效（请输入非负数字）' }; }
-    var spec = normalizeSpec(bpS, bpMid, bpR);
+    var spec = normalizeSpec(bpS, bpMid, bpR, opts);
     var res = classifyMIC(val, spec);
     if (res.result !== 'unknown') { return res; }
     // 非标准梯度值：按 CLSI 规则向上归入下一较高的二倍稀释点后重判
@@ -615,10 +631,10 @@
     return res;
   }
   // 抑菌圈判读（对外）：输入 mm 值 + S/I/R 抑菌圈折点字符串。圈直径为整数、不做梯度归一。
-  function judgeZone(zoneInput, zS, zMid, zR) {
+  function judgeZone(zoneInput, zS, zMid, zR, opts) {
     var val = parseFloat(zoneInput);
     if (isNaN(val) || val < 0) { return { result: 'invalid', reason: '抑菌圈输入无效（请输入非负整数，单位 mm）' }; }
-    return classifyZone(val, normalizeSpec(zS, zMid, zR));
+    return classifyZone(val, normalizeSpec(zS, zMid, zR, opts));
   }
 
   // 折点查询：按菌组名/药物名筛选

@@ -202,12 +202,17 @@
       var val = String(raw || '').toLowerCase();
       for (var i = 0; i < tokens.length; i++) {
         var t = tokens[i]; if (!t) { continue; }
-        var idx = val.indexOf(t);
-        if (idx !== -1) {
-          var s = Math.max(0, idx - 20), e = Math.min(raw.length, idx + t.length + 20);
-          out.字段 = field;
-          out.片段 = (s > 0 ? '…' : '') + String(raw).slice(s, e) + (e < raw.length ? '…' : '');
-          return;
+        // 检索命中走别名（输入 mrsa 能命中「金黄色葡萄球菌」），取片段时也必须找别名，
+        // 否则正文里没有 mrsa 字样、片段恒为空，白白丢掉上下文与高亮
+        var terms = [t].concat(aliasesFor(t));
+        for (var j = 0; j < terms.length; j++) {
+          var idx = val.indexOf(terms[j]);
+          if (idx !== -1) {
+            var s = Math.max(0, idx - 20), e = Math.min(raw.length, idx + terms[j].length + 20);
+            out.字段 = field;
+            out.片段 = (s > 0 ? '…' : '') + String(raw).slice(s, e) + (e < raw.length ? '…' : '');
+            return;
+          }
         }
       }
     }
@@ -291,6 +296,7 @@
     buildReverseIndex: buildReverseIndex,
     getRelations: getRelations,
     searchEntries: searchEntries,
+    aliasesFor: aliasesFor,   // View.searchVM 高亮时要把别名一并标出
     validateData: validateData,
     collectLeaves: collectLeaves
   };
