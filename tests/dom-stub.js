@@ -19,6 +19,33 @@ class ClassList {
   contains(c) { return this._list().indexOf(c) !== -1; }
 }
 
+// 把 ".entry-link.selected:not(.fav-item):not(.history-item)" 之类编译成判定函数。
+// 只覆盖本仓库用到的子集：标签名、#id、.类（可多个）、:not(.类)。遇到不认识的写法
+// 直接抛错——静默返回 false 会让测试假绿，正是这个 stub 犯过的错。
+function compileSelector(sel) {
+  // 选择器组（逗号分隔）：任一分支命中即算命中
+  if (sel.indexOf(',') !== -1) {
+    const parts = sel.split(',').map((s) => compileSelector(s.trim()));
+    return (n) => parts.some((f) => f(n));
+  }
+  const nots = [];
+  const base = sel.replace(/:not\(\.([\w-]+)\)/g, (_, c) => { nots.push(c); return ''; }).trim();
+  if (/[:\[\s>~+]/.test(base)) {
+    throw new Error('dom-stub 不支持的选择器：' + sel + '（如确需，请先在 compileSelector 里实现）');
+  }
+  const classes = (base.match(/\.[\w-]+/g) || []).map((c) => c.slice(1));
+  const idm = base.match(/#([\w-]+)/);
+  const tagm = base.match(/^([A-Za-z][\w-]*)/);
+  return (n) => {
+    if (tagm && n.tagName !== tagm[1].toUpperCase()) { return false; }
+    if (idm && n.id !== idm[1]) { return false; }
+    if (base === '*') { return true; }
+    for (const c of classes) { if (!n.classList.contains(c)) { return false; } }
+    for (const c of nots) { if (n.classList.contains(c)) { return false; } }
+    return !!(tagm || idm || classes.length || base === '');
+  };
+}
+
 class Node {
   constructor(tag) {
     this.tagName = String(tag || '').toUpperCase();
@@ -54,15 +81,13 @@ class Node {
   click() { this.dispatch('click', { type: 'click', preventDefault() {}, stopPropagation() {} }); }
   focus() { this.ownerDocument_activeElement = true; }
   scrollIntoView() {}
-  // 只支持 app.js 实际用到的选择器形态：.cls / #id / tag
+  // 支持 app.js 实际用到的选择器形态：tag、#id、.a.b 复合类、以及 :not(.x)。
+  // :not() 必须真的实现：曾经把它当成普通类名比较，导致选择器永远匹配不到，
+  // 于是紧随其后的代码从未被执行，一个 ReferenceError 就这样通过了全部冒烟测试。
   querySelector(sel) { return this.querySelectorAll(sel)[0] || null; }
   querySelectorAll(sel) {
     const out = [];
-    const match = (n) => {
-      if (sel[0] === '.') { return n.classList.contains(sel.slice(1)); }
-      if (sel[0] === '#') { return n.id === sel.slice(1); }
-      return n.tagName === sel.toUpperCase();
-    };
+    const match = compileSelector(sel);
     const walk = (n) => { n.children.forEach((c) => { if (match(c)) { out.push(c); } walk(c); }); };
     walk(this);
     return out;

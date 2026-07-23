@@ -3,8 +3,12 @@
   --surface: #ffffff;
   --ink: #23272e;
   --ink-soft: #454b54;
-  --muted: #8a8f98;
-  --faint: #aeb3ba;
+  /* 次级文字。取值按最差实际文字底色 --line-2 #f0ede7 校准（表头/区块底），
+     不是按白底——按白底算会得出 #6e737b 这种"白底过、正文底不过"的值。
+     #63686f: 白 5.61 / 米底 5.15 / 线底 4.81，全部 ≥4.5 (WCAG AA) */
+  --muted: #63686f;
+  /* 仅用于非文字（边框/悬停）：线底 3.19 ≥3.0 (1.4.11)。不要拿它写文字。 */
+  --faint: #7f858d;
   --line: #e7e4dd;
   --line-2: #f0ede7;
   --accent: #2e6b66;
@@ -62,13 +66,18 @@ body {
   padding-right: 7px;
   border-right: 1px solid var(--line);
 }
+/* 横滚但隐藏滚动条 → 用户看不出右边还有内容（1440px 下「染色」「培养基」完全不可见）。
+   用右端渐隐遮罩提示可滚动；滚到底时 --fade-r 由 JS 置 0 收起遮罩。 */
 .tabs { display: flex; gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
+.scroll-fade { --fade-r: 0px; --fade-l: 0px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent 100%); }
 .tab { background: none; border: 1px solid transparent; border-radius: 5px; color: var(--muted); font-size: 12px; padding: 3px 7px; min-height: 24px; cursor: pointer; font-family: inherit; white-space: nowrap; flex-shrink: 0; }
 .tab:hover { color: var(--ink); }
 .tab.active { color: var(--accent); font-weight: 600; border-color: var(--accent-edge); background: var(--accent-weak); }
 .search { border: 1px solid var(--line); border-radius: 6px; padding: 6px 11px; font-size: 13px; min-width: 180px; background: var(--surface); color: var(--ink); font-family: inherit; }
-.search::placeholder { color: var(--faint); }
+.search::placeholder { color: var(--muted); }
 .search:focus { outline: none; border-color: var(--accent); }
 .compare-btn { margin-left: auto; color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; }
 .compare-btn:hover { border-color: var(--accent); color: var(--accent); }
@@ -102,10 +111,10 @@ body {
 .fav-item:hover { color: var(--rust); }
 .history-item { color: var(--ink-soft); font-size: 12.5px; }
 .history-head { display: flex; align-items: center; justify-content: space-between; }
-.hist-clear { background: none; border: none; color: var(--faint); font-size: 11px; letter-spacing: 0; cursor: pointer; padding: 0 2px; }
+.hist-clear { background: none; border: none; color: var(--muted); font-size: 11px; letter-spacing: 0; cursor: pointer; padding: 0 2px; }
 .hist-clear:hover { color: var(--rust); }
 /* 详情头收藏星标 */
-.fav-star { background: none; border: none; cursor: pointer; font-size: 20px; line-height: 1; color: var(--faint); padding: 0 4px; align-self: center; }
+.fav-star { background: none; border: none; cursor: pointer; font-size: 20px; line-height: 1; color: var(--muted); padding: 0 4px; align-self: center; }
 .fav-star:hover { color: var(--gold); }
 .fav-star.favorited { color: var(--gold); }
 
@@ -173,7 +182,7 @@ body.route-mn .detail-title { margin-top: 18px; }
 .lw-path-node { display: inline-flex; align-items: center; text-decoration: none; font-size: 12.5px; padding: 5px 11px; border-radius: 16px; border: 1px solid var(--accent-edge); background: var(--accent-weak); color: var(--accent); white-space: nowrap; }
 .lw-path-node:hover { border-color: var(--accent); }
 .lw-path-node.plain { border-color: var(--line); background: var(--line-2); color: var(--ink-soft); }
-.lw-path-sep { color: var(--faint); font-size: 13px; }
+.lw-path-sep { color: var(--muted); font-size: 13px; }
 
 /* 生化鉴定 · 结果查菌（填结果 → 倒推候选菌）*/
 .id-form-head { display: flex; align-items: center; justify-content: space-between; max-width: 620px; margin: 6px 0 2px; }
@@ -254,7 +263,7 @@ body.zoom-open { overflow: hidden; }
 /* 真实形态图轮播（CDC PHIL 公有领域）——紧凑：单图、限高，不喧宾夺主 */
 .morphology.photos { max-width: 420px; }
 .morph-title .photo-count { font-size: 11px; font-weight: 400; color: var(--muted); }
-.morph-title .photo-lic { float: right; font-size: 10.5px; font-weight: 400; color: var(--faint); }
+.morph-title .photo-lic { float: right; font-size: 10.5px; font-weight: 400; color: var(--muted); }
 .photo-viewport { position: relative; margin-top: 8px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
 /* 横向 scroll-snap：移动端天然支持左右滑动，无需 JS 手势 */
 /* 注意：不要设 scroll-behavior:smooth —— 与 scroll-snap-type 同用时，
@@ -269,14 +278,18 @@ body.zoom-open { overflow: hidden; }
 .photo-src { flex-shrink: 0; font-size: 10px; font-family: var(--mono); color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 3px; padding: 0 4px; }
 .photo-src:hover { color: var(--accent); border-color: var(--accent-edge); }
 /* 左右按钮：桌面端悬停显现；移动端隐藏（用滑动） */
-.photo-nav { position: absolute; top: 105px; transform: translateY(-50%); width: 28px; height: 40px; border: 0; cursor: pointer; background: rgba(0,0,0,.42); color: #fff; font-size: 20px; line-height: 1; opacity: 0; transition: opacity .18s; border-radius: 4px; }
+.photo-nav { position: absolute; top: 105px; transform: translateY(-50%); width: 28px; height: 40px; border: 0; cursor: pointer; background: rgba(0,0,0,.42); color: #fff; font-size: 20px; line-height: 1; opacity: .45; transition: opacity .18s; border-radius: 4px; }  /* 原 0：仅 hover 可见，触屏设备永远看不到 */
 .photo-viewport:hover .photo-nav { opacity: 1; }
 .photo-nav:hover { background: rgba(0,0,0,.68); }
 .photo-nav.prev { left: 4px; }
 .photo-nav.next { right: 4px; }
 .photo-dots { display: flex; justify-content: center; gap: 6px; margin-top: 7px; }
-.photo-dot { width: 7px; height: 7px; padding: 0; border-radius: 50%; border: 0; background: var(--line); cursor: pointer; }
-.photo-dot.on { background: var(--accent); }
+/* 圆点视觉仍是 7px，但用透明边框把点击区扩到 23px —— 7px 的目标基本点不中。
+   background-clip: content-box 保证边框区域不被底色填上。 */
+.photo-dot { width: 7px; height: 7px; padding: 0; border-radius: 50%; border: 8px solid transparent;
+  background: var(--line); background-clip: content-box; box-sizing: content-box; cursor: pointer; }
+.photo-dot.on { background: var(--accent); background-clip: content-box; }
+.photo-dots { margin-top: 0; }
 @media (max-width: 760px) {
   .morphology.photos { max-width: 100%; }
   .photo-nav { display: none; }
@@ -357,7 +370,7 @@ body.zoom-open { overflow: hidden; }
 .bp-eu-col { color: var(--ink-soft); }
 .bp-table td.bp-eu { white-space: nowrap; color: var(--ink-soft); font-family: var(--mono); } /* 与 CLSI 单元格同一风格 */
 .bp-table td.bp-eu-diff { color: var(--accent); font-weight: 600; } /* 与 CLSI 界值不同：仅以强调色标示，不填背景 */
-.bp-eu-na { color: var(--faint); }
+.bp-eu-na { color: var(--muted); }
 .bp-eu-bracket { color: var(--muted); font-size: 11px; }
 /* 分组表头（CLSI｜EUCAST 各跨其子列） */
 .bp-table thead th.bp-grp { text-align: center; letter-spacing: .04em; font-weight: 700; }
@@ -384,11 +397,11 @@ body.zoom-open { overflow: hidden; }
 .bp-tier { display: inline-block; min-width: 15px; padding: 0 4px; margin-right: 5px; border-radius: 4px; font-size: 10.5px; font-weight: 700; line-height: 16px; text-align: center; color: #fff; vertical-align: middle; font-family: var(--mono); }
 .bp-tier-A, .bp-tier-1 { background: #2e6b66; }
 .bp-tier-B, .bp-tier-2 { background: #345f86; }
-.bp-tier-C, .bp-tier-3 { background: #7d6fae; }
-.bp-tier-4 { background: #8a8f98; }
-.bp-tier-U { background: #b58f2a; }
-.bp-tier-O { background: #8a8f98; }
-.bp-urine { display: inline-block; padding: 0 4px; margin-right: 5px; border-radius: 4px; font-size: 10.5px; font-weight: 700; line-height: 16px; color: #fff; background: #b58f2a; vertical-align: middle; }
+.bp-tier-C, .bp-tier-3 { background: #6f61a0; }  /* 原 #7d6fae 白字仅 4.41 */
+.bp-tier-4 { background: #5f646c; }  /* 原 #8a8f98 白字仅 3.25 */
+.bp-tier-U { background: #8a6d1f; }  /* 原 #b58f2a 白字仅 3.03 */
+.bp-tier-O { background: #5f646c; }
+.bp-urine { display: inline-block; padding: 0 4px; margin-right: 5px; border-radius: 4px; font-size: 10.5px; font-weight: 700; line-height: 16px; color: #fff; background: #8a6d1f; vertical-align: middle; }
 .bp-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 12px; margin-top: 8px; font-size: 11.5px; }
 .bp-legend-lead { font-weight: 600; color: var(--ink-soft); }
 .bp-legend-item { display: inline-flex; align-items: center; }
@@ -425,7 +438,7 @@ body.zoom-open { overflow: hidden; }
 .ir-table th:first-child, .ir-table td:first-child { position: sticky; left: 0; z-index: 2; background: var(--bg); min-width: 120px; max-width: 158px; border-right: 0; box-shadow: 1px 0 0 var(--line); }
 .ir-table thead th:first-child { z-index: 5; background: var(--line-2); vertical-align: bottom; }
 .ir-chip { display: inline-block; min-width: 18px; padding: 1px 6px; border-radius: 4px; background: #fdecec; color: #c0392b; border: 1px solid #f0b6b1; font-weight: 700; font-size: 11.5px; }
-.ir-dash { color: var(--line); }
+.ir-dash { color: var(--muted); }  /* 原 var(--line) 仅 1.16:1；这是「非固有耐药」标记，属数据不是装饰 */
 .ir-note { color: var(--muted); font-size: 11.5px; max-width: 220px; min-width: 150px; }
 .ir-table .latin { display: block; color: var(--muted); font-style: italic; font-size: 11px; }
 /* 手机端卡片视图：按菌列出「只显示其耐药药物」，无横滚、无空格子（默认隐藏，窄屏启用） */
@@ -617,7 +630,7 @@ body.zoom-open { overflow: hidden; }
   .nav-board-title { width: 100%; padding: 0 0 5px; border-right: 0; border-bottom: 1px solid var(--line); }
   .tools, .tabs { width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tabs::-webkit-scrollbar { display: none; }
-  .tab, .tool-btn { min-height: 34px; display: inline-flex; align-items: center; }
+  .tab, .tool-btn { min-height: 40px; display: inline-flex; align-items: center; }
 
   .layout { position: relative; }
   .sidebar { position: fixed; z-index: 40; top: 0; left: 0; bottom: 0; width: 84%; max-width: 300px; transform: translateX(-100%); transition: transform .24s ease; box-shadow: 2px 0 16px rgba(15,18,22,.18); padding-top: max(14px, env(safe-area-inset-top)); }
@@ -626,16 +639,19 @@ body.zoom-open { overflow: hidden; }
   body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
   .main { padding: 18px 16px calc(24px + env(safe-area-inset-bottom)); }
   .detail-title { font-size: 20px; }
-  .entry-link, .cmp-pick, .cat-toggle { min-height: 32px; display: flex; align-items: center; }
+  .entry-link, .cmp-pick, .cat-toggle { min-height: 40px; display: flex; align-items: center; }
   /* 表格瘦身：折点表 / 对比表在小屏更紧凑，尽量不横向溢出、行高更低 */
   .bp-table, .cmp { min-width: 0; width: 100%; font-size: 10.5px; table-layout: fixed; }
-  .bp-table th, .bp-table td { padding: 3px 4px; word-break: break-word; }
+  .bp-table th, .bp-table td { padding: 3px 4px; }
+  /* 药名不做词内断字：曾把 Sulbactam 切成「Sulbacta/m」、氨苄西林切成「氨/苄西林」。
+     数字列另有 overflow-wrap:anywhere 兜底，见下。 */
+  .bp-table .bp-drug { word-break: normal; overflow-wrap: break-word; }
   .bp-table thead th { font-size: 9.5px; white-space: normal; }
-  .bp-table .bp-drug { min-width: 0; width: 30%; }
+  .bp-table th.bp-drug, .bp-table td.bp-drug { min-width: 0; width: 30%; }
   .bp-table .bp-drug strong { font-size: 9.5px; }
   /* 数字列（含 EUCAST）在小屏一律换行、长串强制断行，避免超出单元格 */
   .bp-table .bp-mic, .bp-table .bp-disk, .bp-table td.bp-eu { white-space: normal; overflow-wrap: anywhere; word-break: break-word; font-size: 10px; }
-  .bp-table .bp-comment { width: 18%; font-size: 9px; }
+  .bp-table th.bp-comment, .bp-table td.bp-comment { width: 16%; font-size: 9px; }
   .bp-source, .bp-foot { font-size: 10.5px; }
   .cmp th, .cmp td { padding: 4px 6px; }
   .cmp .cmp-item { font-size: 10.5px; }

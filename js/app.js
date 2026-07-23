@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-60';
+  var APP_VERSION = window.APP_VERSION || '20260702-65';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -238,6 +238,24 @@
     return node;
   }
 
+  // 横滚容器的两端渐隐：只在真的还有内容可滚时才显示，滚到端点自动收起。
+  // 不这么做的话，1440px 下「染色」「培养基」被裁在视野外而没有任何可滚提示。
+  var FADE = 18;
+  function syncScrollFade(box) {
+    if (!box) { return; }
+    var max = box.scrollWidth - box.clientWidth;
+    if (max <= 1) { box.classList.remove('scroll-fade'); return; }
+    box.classList.add('scroll-fade');
+    box.style.setProperty('--fade-l', (box.scrollLeft > 1 ? FADE : 0) + 'px');
+    box.style.setProperty('--fade-r', (box.scrollLeft < max - 1 ? FADE : 0) + 'px');
+  }
+  function initScrollFades() {
+    Array.prototype.forEach.call(document.querySelectorAll('.tabs, .tools'), function (box) {
+      syncScrollFade(box);
+      box.addEventListener('scroll', function () { syncScrollFade(box); });
+    });
+  }
+
   function setActiveTab(moduleKey) {
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
       var on = t.getAttribute('data-module') === moduleKey;
@@ -381,11 +399,28 @@
     return out;
   }
 
+  // 与 CSS 的抽屉断点保持一致。定义在模块作用域：renderSidebar 等模块级函数也要用，
+  // 放进 init() 会让它们拿不到（曾因此抛 ReferenceError 使整条渲染中断）。
+  function isMobile() { return window.matchMedia('(max-width: 760px)').matches; }
+
   function renderSidebar() {
     var route = parseHash();
+    var sidebar = document.getElementById('sidebar');
     var nodes = favHistNodes(route).concat(
       buildSidebar(View.sidebarVM(route.module, categories(), db()[route.module], route.id), route.module));
-    fill(document.getElementById('sidebar'), nodes);
+    fill(sidebar, nodes);
+    // 分类树很长（微生物模块 186 项、约 9 屏），从搜索结果点进详情后，当前条目往往在
+    // 视野外，用户看不出自己在树里的哪个位置。渲染后把选中项滚进来。
+    // 用 block:'nearest' 而不是 'center'：已在视野内时不动，避免每次渲染都跳一下。
+    // 必须排除收藏/最近浏览里的同名项——它们也带 .entry-link.selected，且恒在侧栏顶部，
+    // 选到它们的话 scrollIntoView 永远认为"已在视野内"，这个修复就成了空操作。
+    var sel = sidebar && sidebar.querySelector('.entry-link.selected:not(.fav-item):not(.history-item)');
+    if (sel && sel.scrollIntoView) {
+      // 移动端侧栏是抽屉，未打开时滚动没有意义（且会连带滚动 body）
+      if (!isMobile() || document.body.classList.contains('nav-open')) {
+        sel.scrollIntoView({ block: 'nearest' });
+      }
+    }
   }
 
   // ===== 示意图点击放大 =====
@@ -643,7 +678,7 @@
 
     // ① 形态
     if (vm.形态) {
-      var mNodes = [ el('div', { cls: 'morph-title', text: '形态' }) ];
+      var mNodes = [ el('div', { cls: 'morph-title', text: '培养与镜下形态' }) ];
       if (vm.形态.镜下) {
         mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag', text: '镜下' }), el('span', { text: ' ' + vm.形态.镜下 }) ]));
       }
@@ -934,7 +969,12 @@
   }
   function renderComparePickerList() { renderPickerList('cmp-pick-list', compareItemDescriptors(), '无匹配的细菌'); }
   function buildComparePicker() {
-    return buildTogglePicker('勾选细菌（可多选）', 'cmp-pick-list', compareFilter, function (v) { compareFilter = v; renderComparePickerList(); });
+    var nSel = Object.keys(compareSet).filter(function (k) { return compareSet[k]; }).length;
+    // 规则是 ≥2 个才出结果，但勾 1 个时页面毫无反馈，用户不知道还差几个
+    var title = nSel === 0 ? '勾选细菌（可多选）'
+      : nSel === 1 ? '已选 1 个 · 再选 1 个开始对比'
+      : '已选 ' + nSel + ' 个';
+    return buildTogglePicker(title, 'cmp-pick-list', compareFilter, function (v) { compareFilter = v; renderComparePickerList(); });
   }
   function buildCompareView(vm) {
     var nodes = [];
@@ -1438,13 +1478,16 @@
     return el('td', { cls: 'bp-eu' }, [ document.createTextNode(euD.抑菌圈_S + ' / ' + euD.抑菌圈_R) ]);
   }
   // 折点表分组表头：无 EUCAST 时单行；有则两行（CLSI｜EUCAST 各跨其子列），统一风格
+  // table-layout:fixed 只按**首行**定列宽，而首行是 thead。此前列宽写在 tbody 的
+  // td.bp-drug / td.bp-comment 上，被完全忽略 → 6 列均分，药名与备注挤成 60px，
+  // 移动端行高被撑到 200px+。故列宽类必须挂在 th 上。
   function bpThead(eu) {
     if (!eu) {
-      return [ el('tr', {}, [ el('th', { text: '抗菌药物' }), el('th', { text: 'MIC (μg/mL)' }), el('th', { text: '抑菌圈 (mm)' }), el('th', { text: '备注' }) ]) ];
+      return [ el('tr', {}, [ el('th', { cls: 'bp-drug', text: '抗菌药物' }), el('th', { text: 'MIC (μg/mL)' }), el('th', { text: '抑菌圈 (mm)' }), el('th', { cls: 'bp-comment', text: '备注' }) ]) ];
     }
     var hz = euHasZone(eu);
-    var r1 = [ el('th', { rowspan: '2', text: '抗菌药物' }), el('th', { colspan: '2', cls: 'bp-grp bp-grp-clsi', text: 'CLSI' }),
-      el('th', { colspan: String(hz ? 2 : 1), cls: 'bp-grp bp-grp-eu', text: 'EUCAST' }), el('th', { rowspan: '2', text: '备注' }) ];
+    var r1 = [ el('th', { rowspan: '2', cls: 'bp-drug', text: '抗菌药物' }), el('th', { colspan: '2', cls: 'bp-grp bp-grp-clsi', text: 'CLSI' }),
+      el('th', { colspan: String(hz ? 2 : 1), cls: 'bp-grp bp-grp-eu', text: 'EUCAST' }), el('th', { rowspan: '2', cls: 'bp-comment', text: '备注' }) ];
     var r2 = [ el('th', { text: 'MIC (μg/mL)' }), el('th', { text: '抑菌圈 (mm)' }), el('th', { cls: 'bp-eu-col', text: 'MIC' }) ];
     if (hz) { r2.push(el('th', { cls: 'bp-eu-col', text: '抑菌圈' })); }
     return [ el('tr', {}, r1), el('tr', {}, r2) ];
@@ -2065,7 +2108,6 @@
   }
 
   function init() {
-    var isMobile = function () { return window.matchMedia('(max-width: 760px)').matches; };
     var menuBtn = document.getElementById('menu-btn');
     var openNav = function () { setNavOpen(true); };
     var closeNav = function () { setNavOpen(false); };
@@ -2111,6 +2153,11 @@
     });
 
     setNavOpen(false);
+    initScrollFades();
+    // 视口变化会改变是否溢出（如横竖屏切换），须重算
+    window.addEventListener('resize', function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.tabs, .tools'), syncScrollFade);
+    });
     renderRoute();
   }
 
