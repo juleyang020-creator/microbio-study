@@ -652,14 +652,20 @@ test('入口资源带版本参数以避免旧脚本缓存', () => {
 });
 
 // 13.2 文档与缓存：版本号跨文件同步
-test('版本号在 index.html / sw.js / 来源元数据间保持一致', () => {
+test('版本号在 index.html / sw.js / app.js 兜底值 / 来源元数据间保持一致', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
   const sw = fs.readFileSync(path.join(__dirname, '..', 'sw.js'), 'utf8');
+  const app = fs.readFileSync(path.join(__dirname, '..', 'js', 'app.js'), 'utf8');
   const htmlVer = (html.match(/window\.APP_VERSION = '([^']+)'/) || [])[1];
   const swVer = (sw.match(/var APP_VERSION = '([^']+)'/) || [])[1];
+  // app.js 的兜底值只在 index.html 内联脚本未执行时生效，但它参与 imgV() 拼图片 URL，
+  // 落后一个版本会让图片命中旧缓存。曾漏改过一次（三处都升了、独独漏了它）。
+  const appVer = (app.match(/window\.APP_VERSION \|\| '([^']+)'/) || [])[1];
   const metaVer = ((global.window.DB.sourceMetadata || {}).app || {}).资源版本;
   assert.ok(htmlVer, 'index.html 缺 APP_VERSION');
   assert.strictEqual(swVer, htmlVer, 'sw.js APP_VERSION 应与 index.html 一致（否则预缓存 URL 版本不匹配）');
+  assert.ok(appVer, 'js/app.js 缺 APP_VERSION 兜底值');
+  assert.strictEqual(appVer, htmlVer, 'js/app.js APP_VERSION 兜底值应与 index.html 一致（否则 imgV() 拼出旧版本图片 URL）');
   assert.strictEqual(metaVer, htmlVer, '来源元数据 资源版本 应与 index.html APP_VERSION 一致');
   // 入口页所有带版本的资源均用同一版本号
   const stray = (html.match(/\?v=20260702-\d+/g) || []).filter((s) => s !== '?v=' + htmlVer);
