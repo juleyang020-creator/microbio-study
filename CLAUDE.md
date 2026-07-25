@@ -1,0 +1,72 @@
+# 知微 · 微生物学习手册 — 项目约定
+
+医学检验方向的微生物学习/速查 PWA。本地无构建，双击 `index.html` 即可用，线上跑在 GitHub Pages。
+仓库 `juleyang020-creator/microbio-study`，**公开仓库**。
+
+内容面向临床检验的学习与速查，**不是诊疗工具**——涉及折点、判读、治疗的表述一律保守，
+宁可留空也不要推断（见下「安全攸关内容」）。
+
+## 架构约束（破坏了应用就打不开）
+
+- 数据文件写成 `window.DB.xxx = [...]`，用 `<script>` 标签加载。
+  **不要引入 fetch / ES module / 打包器**——那样 `file://` 双击打开就废了，Node 测试也不能直接 `require`。
+- `js/core.js`（关联、搜索、校验）与 `js/view.js`（纯视图模型、判读引擎）保持无 DOM 依赖，可被 Node 单测。
+- `js/app.js` 用 `createElement` / `textContent` / `replaceChildren` 渲染，**不用 `innerHTML`**。
+- 新增数据文件要同时加进 `index.html` 的 `<script>` 列表和 `sw.js` 的 `CORE` 数组。
+
+## 改完必做
+
+1. **升 `sw.js` 里的 `APP_VERSION`**（形如 `20260702-65`）。改了 `data/`、`js/`、`css/` 而不升版本，
+   老用户和线上 PWA 会继续吃缓存里的旧文件，**而测试照样全绿**（测试走 Node `require`，不经 Service Worker）。
+   这个坑踩过不止一次，症状是浏览器里 `window.DB.xxx` 是空的。
+2. 跑 `node tools/release-check.mjs`（内容自检 → 示意图 lint → 预缓存清单核对 → 119 个测试 → 空白字符）。
+3. 新增/改动 `img/*.svg` 后跑 `node tools/sync-sw-images.mjs` 同步预缓存清单；
+   新示意图还要接上 `js/view.js` 里对应的 `*_IMAGE` 映射。
+
+## git
+
+- **绝不 `git add -A` / `git add .`**，只 stage 明确列出的路径。
+  仓库公开，`docs/软著材料/` 放的是软著申请材料（曾把含身份信息的申请表推上公开仓库，见 PR #70/#71）。
+  `git diff --stat` 不显示未跟踪文件，不会替你挡住这种事——staging 前先看 `git status --short`。
+- 提交信息用中文，说清「改了什么 + 为什么」。
+- 发布流程：PR → 合并 main → GitHub Pages 自动部署。**没有 iOS 构建步骤**（原生套壳已于 2026-07-16 删除）。
+
+## 安全攸关内容（折点 / 判读 / 治疗）
+
+- **折点、抑菌圈、QC 范围、孵育参数绝不凭记忆写**，必须回查源文件。
+  源文件在 `~/Documents/资料库/微生物/`：`02-药敏标准-CLSI/`（M100 Ed36 / M45 / M27M44S / M38M51S / M57S / M60，
+  PDF + markdown 双份）、`03-药敏标准-EUCAST/`（折点 xlsx，**解析用 xlsx 不要用 md**，md 丢了菌种边界）。
+- **markdown 转换件对矩阵类表格不可靠**——PDF 转换丢了合并单元格，行列会错位。
+  读「某菌 × 某药」的具体值，尤其是 M100 附录 B 的天然耐药矩阵，必须看 PDF 页面图
+  （`pdftoppm -r 200 -f N -l M -png`）。曾据 md 差点把一条正确内容改错。
+- **审查意见本身也会出错**。agent 或评审报告给出的「更正值」，安全攸关的必须自己回源核对后才采纳——
+  曾有 verify agent 建议了一个源文件里根本不存在的抑菌圈折点。
+- 源文件已知缺陷（中文版 MCM 的 9 处误译等）见 `~/Documents/资料库/微生物/01-临床微生物学手册-第12版/源文件勘误.md`，
+  以及本仓库 `docs/审核/审核报告.md`。开工前先读。
+- 查不到就不写。某些菌属确实没有 M100 折点（棒状杆菌属属 M45；多数环境非发酵菌无标准折点），
+  **这种缺失是正确的，不要编数字补上**。
+
+## 加/改菌种
+
+一个菌的详情页内容分散在**五个文件**，都以同一个 `id` 为键：
+`data/microbes.js`（小节：形态与染色 + 致病性，两行就够）、`data/morphology.js`（形态）、
+`data/differential.js`（相似菌鉴别）、`data/biochem.js`（生化反应）、
+`data/breakpoints.js`（把 id 加进对应 CLSI 菌组的 `菌种`）。
+
+动手前读 `docs/菌种编辑规范.md`，对照黄金样例 `pseudomonas-aeruginosa`。
+药敏指的是**折点表**（breakpoints.js 接线），不是在 microbes.js 里写一段散文。
+
+新增 `类别` 必须同时在 `data/categories.js` 里加对应叶子，否则数据完整性测试会失败。
+
+## 参考资料位置
+
+`~/Documents/资料库/微生物/` — `01-临床微生物学手册-第12版/`（MCM 12 版整本 md、按章切分的 `MCM分章/`
+共 122 章、两卷源 PDF、勘误）、`02-药敏标准-CLSI/`、`03-药敏标准-EUCAST/`、
+`04-菌种库与仪器/`（Bruker 2969 菌种列表、VITEK2 SOP）。
+
+查 MCM 先用 `MCM分章索引.md` 定位章号再只读单章，不要 grep 整本 6.7 万行。
+
+## 协作方式
+
+用户是这个软件的使用者和产品负责人，不日常维护代码与内容——录入、改数据、跑测试这些活直接做掉，
+不要推回去问。设计与结构上的取舍可以自己定，重要的改动说清楚理由即可。
