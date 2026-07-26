@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抗麻风药（三联方案与超长半衰期）</title><desc>麻风病常规治疗为氨苯砜、氯法齐明与利福平三联；氨苯砜是抗叶酸的抑菌药，氯法齐明机制不明但高度亲脂、半衰期约 70 天并堆积于脂肪与网状内皮系统，起效需长达 50 天</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抗麻风药</text>
+<rect x="360" y="14" width="96" height="18" rx="9" fill="#eef2f7"/>
+<text x="408" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗分枝杆菌 2/2</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">麻风分枝杆菌不能体外培养，治疗靠固定三联方案而非药敏结果</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- 三联 -->
+<rect x="24" y="68" width="138" height="92" rx="6" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<rect x="36" y="78" width="114" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="93" y="89" text-anchor="middle" font-size="9.5" fill="#a3332f">氨苯砜 (DDS)</text>
+<line x1="93" y1="97" x2="93" y2="110" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="93" y="123" text-anchor="middle" font-size="9.5" fill="#1f4e79">叶酸合成</text>
+<text x="93" y="139" text-anchor="middle" font-size="9.5" fill="#5c6672">抑菌为主</text>
+<text x="93" y="152" text-anchor="middle" font-size="9.5" fill="#5c6672">杀菌力微弱</text>
+
+<rect x="171" y="68" width="138" height="92" rx="6" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<rect x="183" y="78" width="114" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="240" y="89" text-anchor="middle" font-size="9.5" fill="#a3332f">氯法齐明 (CFZ)</text>
+<text x="240" y="106" text-anchor="middle" font-size="9.5" fill="#33404f">机制不明</text>
+<text x="240" y="120" text-anchor="middle" font-size="9.5" fill="#33404f">高度亲脂</text>
+<text x="240" y="136" text-anchor="middle" font-size="9.5" fill="#5c6672">优先与分枝杆菌</text>
+<text x="240" y="149" text-anchor="middle" font-size="9.5" fill="#5c6672">DNA 结合</text>
+
+<rect x="318" y="68" width="138" height="92" rx="6" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<rect x="330" y="78" width="114" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="387" y="89" text-anchor="middle" font-size="9.5" fill="#a3332f">利福平 (RIF)</text>
+<line x1="387" y1="97" x2="387" y2="110" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="387" y="123" text-anchor="middle" font-size="9.5" fill="#1f4e79">RNA 聚合酶 β</text>
+<text x="387" y="139" text-anchor="middle" font-size="9.5" fill="#5c6672">方案中唯一的</text>
+<text x="387" y="152" text-anchor="middle" font-size="9.5" fill="#5c6672">强杀菌成分</text>
+
+<!-- 药代特点 -->
+<rect x="24" y="170" width="432" height="60" rx="6" fill="#eef5f0" stroke="#b7d3c3" stroke-width="0.8"/>
+<text x="34" y="185" font-size="9.5" font-weight="700" fill="#2f6b4f">超长半衰期是这类药的共同特征</text>
+<text x="34" y="200" font-size="9.5" fill="#43705c">氯法齐明半衰期约 70 天，堆积于脂肪组织与网状内皮细胞系统；起效需多达 50 天，会拉长临床响应时间</text>
+<text x="34" y="213" font-size="9.5" fill="#43705c">二乙酰氨苯砜半衰期达 46 天，每次给药后 20~35 天才在组织中达到浓度，故用药频率极低（约每年 5 次）</text>
+<text x="34" y="225" font-size="9.5" fill="#43705c">氯法齐明另用于脓肿分枝杆菌复合群与 MAC 肺病</text>
+
+<!-- 页脚 -->
+<rect x="24" y="238" width="432" height="52" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="252" font-size="9.5" fill="#a3332f">⚠️ 氯法齐明使皮肤、结膜、角膜和体液变为粉红或红色，须提前告知以免误判</text>
+<text x="32" y="265" font-size="9.5" fill="#a3332f">⚠️ 氨苯砜可致高铁血红蛋白血症</text>
+<text x="32" y="279" font-size="9.5" fill="#93a0ad">检验角度：麻风的实验室诊断依赖抗酸染色与皮肤/神经活检，不做常规药敏</text>
+</svg>

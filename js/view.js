@@ -46,7 +46,11 @@
     // 与抗病毒药同理，一类一张图
     '抗蠕虫药': 'img/mechanism-anthelmintic.svg',
     '抗疟药': 'img/mechanism-antimalarial.svg',
-    '抗原虫药': 'img/mechanism-antiprotozoal.svg'
+    '抗原虫药': 'img/mechanism-antiprotozoal.svg',
+
+    // 抗分枝杆菌药：结核一张（四靶点各配一个可做分子检测的耐药基因），麻风一张（三联与超长半衰期）
+    '抗结核药': 'img/mechanism-antitb.svg',
+    '抗麻风药': 'img/mechanism-antileprosy.svg'
   };
 
   // 试验：按条目 id 映射到示意图

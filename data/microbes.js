@@ -575,7 +575,7 @@ window.DB.microbes = [
       { 标题: '形态与染色', 正文: '抗酸染色阳性（细胞壁富含分枝菌酸）；专性需氧，生长缓慢（固体培养基常需 3～8 周）。培养物的一切操作须按生物安全三级(BSL-3)防护、在生物安全柜内进行——本菌是最常见的实验室获得性感染病原之一。' },
       { 标题: '致病性 / 所致疾病', 正文: '结核病（肺及肺外）；细胞免疫与迟发型超敏（结核菌素试验 TST，潜伏感染判定亦用 γ-干扰素释放试验 IGRA，后者不受卡介苗交叉反应影响）。属结核分枝杆菌复合群(MTBC)，NAAT/探针通常只能报告到复合群水平，而群内牛分枝杆菌对吡嗪酰胺天然耐药，必要时须鉴定到种。治疗需长程联合：一线方案为异烟肼＋利福平＋吡嗪酰胺＋乙胺丁醇(HRZE)；同时对异烟肼和利福平耐药即耐多药结核(MDR-TB)，在此基础上再对任一氟喹诺酮及至少一种二线注射剂耐药为广泛耐药结核(XDR-TB)。' }
     ],
-    关联: ['rifampicin', 'streptomycin']
+    关联: ['rifampicin', 'streptomycin', 'isoniazid', 'pyrazinamide', 'ethambutol', 'bedaquiline', 'delamanid', 'ethionamide', 'capreomycin', 'cycloserine', 'para-aminosalicylic-acid', 'katg-inha-inh', 'rpob-rifampin']
   },
   {
     id: 'mycobacterium-leprae',
@@ -586,7 +586,7 @@ window.DB.microbes = [
       { 标题: '形态与染色', 正文: '抗酸杆菌（抗酸性较弱，组织标本优先用 Fite-Faraco 等改良抗酸染色），胞内寄生，体外尚不能人工培养；诊断靠皮肤裂口涂片、组织病理与 PCR。' },
       { 标题: '致病性 / 所致疾病', 正文: '麻风：侵犯皮肤与外周神经，分瘤型与结核样型。治疗须多药联合（利福平＋氨苯砜＋氯法齐明），禁用单药。' }
     ],
-    关联: ['rifampicin']
+    关联: ['rifampicin', 'dapsone', 'clofazimine']
   },
 
   {
@@ -599,7 +599,7 @@ window.DB.microbes = [
       { 标题: '形态与染色', 正文: '抗酸染色阳性；缓慢生长、不产色的非结核分枝杆菌(NTM)，广泛存在于水和土壤。' },
       { 标题: '致病性 / 所致疾病', 正文: 'AIDS(CD4<50)播散性感染；结构性肺病(支扩/COPD)慢性肺病；儿童颈淋巴结炎。经环境获得，无人际传播。' }
     ],
-    关联: ['azithromycin', 'clarithromycin', 'amikacin', 'rifampicin', 'mycobacterium-tuberculosis']
+    关联: ['azithromycin', 'clarithromycin', 'amikacin', 'rifampicin', 'mycobacterium-tuberculosis', 'ethambutol', 'rifabutin', 'clofazimine']
   },
   {
     id: 'mycobacterium-abscessus',
@@ -611,7 +611,7 @@ window.DB.microbes = [
       { 标题: '形态与染色', 正文: '抗酸染色阳性；快速生长型 NTM(7 天内成菌落)，与水源/环境相关。' },
       { 标题: '致病性 / 所致疾病', 正文: '慢性肺病(尤支扩/囊性纤维化)、皮肤软组织及术后/导管相关感染、免疫低下者播散；疗程长、治愈率有限。' }
     ],
-    关联: ['amikacin', 'azithromycin', 'cefoxitin', 'imipenem', 'tigecycline']
+    关联: ['amikacin', 'azithromycin', 'cefoxitin', 'imipenem', 'tigecycline', 'clofazimine']
   },
   {
     id: 'mycobacterium-kansasii',
@@ -623,7 +623,7 @@ window.DB.microbes = [
       { 标题: '形态与染色', 正文: '抗酸染色阳性、菌体长而有横纹；缓慢生长、光产色(photochromogen——见光后产黄色素)。自来水为重要来源。' },
       { 标题: '致病性 / 所致疾病', 正文: '慢性肺病(临床/影像类似结核，多见于基础肺病/免疫低下者)；偶皮肤及播散感染。' }
     ],
-    关联: ['rifampicin', 'clarithromycin', 'moxifloxacin', 'mycobacterium-tuberculosis']
+    关联: ['rifampicin', 'clarithromycin', 'moxifloxacin', 'mycobacterium-tuberculosis', 'isoniazid', 'ethambutol']
   },
   {
     id: 'mycobacterium-marinum',
