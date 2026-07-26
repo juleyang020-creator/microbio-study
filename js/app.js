@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-76';
+  var APP_VERSION = window.APP_VERSION || '20260702-77';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -762,9 +762,12 @@
       var euZone = euHasZone(eu);
       var bpBodyRows = bp.药物.map(function (d) {
         var aid = abxIdByDrugText(d.药物);
+        // 该药在源表内按菌种分行时（如葡萄球菌苯唑西林），标出这一行是哪一类菌的折点——
+        // 折点表已按当前菌过滤，但不写明的话看不出「为什么这里是 ≤0.5 而不是课本上的 ≤2」。
+        var scope = d.适用说明 ? el('span', { cls: 'bp-scope', text: d.适用说明 }) : null;
         var drugCell = aid
-          ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
-          : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
+          ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }), scope ])
+          : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物), scope ]);
         var cells = [ drugCell, el('td', { cls: 'bp-mic', text: d.MIC }), el('td', { cls: 'bp-disk', text: d.抑菌圈 }) ];
         if (eu) {
           cells.push(eucastCell(eu.drug[d.药物], d.MIC)); // EUCAST MIC 置于抑菌圈之后

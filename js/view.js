@@ -410,6 +410,19 @@
     return /已撤销|历史参考/.test(retiredText(drug));
   }
 
+  // 同一菌组内,某些药按菌种分行(如葡萄球菌苯唑西林:金葡 ≤2/≥4、其余 ≤0.5/≥1)。
+  // 带 `适用` 的行只对列出的菌种生效;不带的行对全组通用。
+  function drugAppliesTo(drug, microbeId) {
+    if (!drug.适用 || !drug.适用.length) { return true; }
+    return drug.适用.indexOf(microbeId) !== -1;
+  }
+
+  // 判读工具里用户是按「菌组 + 药名」选的,拿不到具体菌种,故同名多行必须靠适用说明区分,
+  // 否则用户无从知道选中的是哪一行——那正是假敏感的来源。
+  function judgeDrugLabel(drug) {
+    return drug.适用说明 ? drug.药物 + ' — ' + drug.适用说明 : drug.药物;
+  }
+
   function judgeableBreakpointGroups(breakpoints) {
     return (breakpoints || []).filter(function (group) {
       return !isRetiredBreakpointGroup(group);
@@ -421,6 +434,12 @@
         菌种: group.菌种 || [],
         药物: (group.药物 || []).filter(function (drug) {
           return !isRetiredBreakpointDrug(drug) && (drug.MIC_S || drug.MIC_I || drug.MIC_R);
+        }).map(function (drug) {
+          if (!drug.适用说明) { return drug; }
+          var labeled = {};
+          for (var k in drug) { if (Object.prototype.hasOwnProperty.call(drug, k)) { labeled[k] = drug[k]; } }
+          labeled.药物 = judgeDrugLabel(drug);
+          return labeled;
         })
       };
       return copy;
@@ -446,11 +465,13 @@
       菌组名: group.菌组名,
       CLSI表: group.CLSI表,
       来源: group.来源 || '',
-      药物: group.药物.map(function (d) {
+      // 只保留适用于本菌的行:菌详情页上不该出现别的菌种的折点值
+      药物: group.药物.filter(function (d) { return drugAppliesTo(d, microbeId); }).map(function (d) {
         return {
           药物: d.药物,
           简写: d.简写,
           组别: d.组别 || '',
+          适用说明: d.适用说明 || '',
           仅尿路: d.仅尿路 || false,
           MIC: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / '),
           抑菌圈: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / '),
@@ -740,6 +761,7 @@
     buildCardComparison: buildCardComparison,
     breakpointGroup: breakpointGroup,
     breakpointVM: breakpointVM,
+    drugAppliesTo: drugAppliesTo,
     ecvGroup: ecvGroup,
     ecvVM: ecvVM,
     isRetiredBreakpointGroup: isRetiredBreakpointGroup,

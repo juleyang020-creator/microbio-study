@@ -741,3 +741,63 @@ test('展示文本不含 Markdown 标记（渲染层不解析，会显示字面�
     });
   }
 });
+
+// 葡萄球菌属苯唑西林/头孢西丁/万古霉素在 M100 Ed36 Table 2C 内按菌种分行，折点相差一至两个稀释度。
+// 曾把金葡的一行套给全组 9 个菌，表皮葡萄球菌 MIC=1 被判「敏感」而真值是耐药——安全攸关的假敏感。
+// 下面的值逐格核自 Table 2C 印刷页 99–101（PDF 131–133）页面图，改动前必须回源。
+test('葡萄球菌折点：按菌种选行，值与 M100 Ed36 Table 2C 一致', () => {
+  const 期望 = {
+    'staph-aureus':        { OX: '≤2 / — / ≥4',   VA: '≤2 / 4–8 / ≥16',   FOX圈: '≥22 / — / ≤21' },
+    'staph-lugdunensis':   { OX: '≤2 / — / ≥4',   VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥22 / — / ≤21' },
+    'staph-epidermidis':   { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-haemolyticus':  { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-saprophyticus': { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-capitis':       { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-hominis':       { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-cohnii':        { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-kloosii':       { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' }
+  };
+  Object.keys(期望).forEach((id) => {
+    const vm = View.breakpointVM(id, window.DB.breakpoints);
+    assert.ok(vm, id + ' 应命中葡萄球菌折点组');
+    const 取 = (re, 字段) => {
+      const 行 = vm.药物.filter((d) => re.test(d.药物));
+      assert.strictEqual(行.length, 1, id + ' 的 ' + re + ' 应恰好命中 1 行，实为 ' + 行.length);
+      return 行[0][字段];
+    };
+    assert.strictEqual(取(/苯唑西林/, 'MIC'), 期望[id].OX, id + ' 苯唑西林 MIC');
+    assert.strictEqual(取(/万古霉素/, 'MIC'), 期望[id].VA, id + ' 万古霉素 MIC');
+    assert.strictEqual(取(/头孢西丁/, '抑菌圈'), 期望[id].FOX圈, id + ' 头孢西丁抑菌圈');
+  });
+  // 头孢洛林只对金黄色葡萄球菌设折点，其余葡萄球菌详情页不应出现这一行
+  const 表皮 = View.breakpointVM('staph-epidermidis', window.DB.breakpoints);
+  assert.strictEqual(表皮.药物.filter((d) => /头孢洛林/.test(d.药物)).length, 0, '头孢洛林不适用于表皮葡萄球菌');
+});
+
+// 通用守卫：`适用` 字段一旦用错，症状就是某菌拿到别的菌种的折点（假敏感/假耐药），
+// 而现有测试只看数据结构、看不出这种错配。以下两条对全部 32 个折点组生效。
+test('折点 `适用` 字段：id 必须属于本组，且每菌每药不得命中多行', () => {
+  window.DB.breakpoints.forEach((组) => {
+    const 组内菌 = 组.菌种 || [];
+    (组.药物 || []).forEach((d) => {
+      (d.适用 || []).forEach((id) => {
+        assert.ok(组内菌.indexOf(id) !== -1,
+          组.菌组名 + ' 的「' + d.药物 + '」适用列出了不在本组菌种里的 ' + id);
+      });
+      if (d.适用 && d.适用.length) {
+        assert.ok(d.适用说明, 组.菌组名 + ' 的「' + d.药物 + '」有 适用 却缺 适用说明（判读工具里会无从区分）');
+      }
+    });
+    // 同一菌种 + 同一药名只能命中一行，否则判读取哪一行是未定义的
+    组内菌.forEach((id) => {
+      const 计数 = {};
+      (组.药物 || []).filter((d) => View.drugAppliesTo(d, id)).forEach((d) => {
+        计数[d.药物] = (计数[d.药物] || 0) + 1;
+      });
+      Object.keys(计数).forEach((药名) => {
+        assert.strictEqual(计数[药名], 1,
+          组.菌组名 + ' 中 ' + id + ' 对「' + 药名 + '」命中 ' + 计数[药名] + ' 行，应恰好 1 行');
+      });
+    });
+  });
+});

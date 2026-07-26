@@ -225,10 +225,26 @@ window.DB.breakpoints = [
       "staph-capitis", "staph-hominis", "staph-cohnii", "staph-kloosii"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "2", MIC_S: "≤0.12", MIC_I: "—", MIC_R: "≥0.25", 抑菌圈_S: "≥29", 抑菌圈_I: "—", 抑菌圈_R: "≤28", 备注: "β-内酰胺酶阴性葡萄球菌方可报告敏感" },
-      { 药物: "苯唑西林 (Oxacillin)", 简写: "OX", 组别: "1", MIC_S: "≤2", MIC_I: "—", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "金葡菌/路邓葡萄球菌折点(用头孢西丁作 mecA 替代检测);凝固酶阴性葡萄球菌(CoNS)苯唑西林 MIC 折点为 S≤0.25/R≥0.5" },
-      { 药物: "头孢西丁 (Cefoxitin)", 简写: "FOX", 组别: "1", MIC_S: "≤4", MIC_I: "—", MIC_R: "≥8", 抑菌圈_S: "≥22", 抑菌圈_I: "—", 抑菌圈_R: "≤21", 备注: "mecA/mecC 介导甲氧西林耐药(MRSA)的替代标志物;金葡菌/路邓菌纸片圈 S≥22/R≤21,表皮葡萄球菌 S≥25/R≤24" },
-      { 药物: "头孢洛林 (Ceftaroline)", 简写: "CPT", 组别: "3", MIC_S: "≤1", MIC_I: "2–4 (SDD)", MIC_R: "≥8", 抑菌圈_S: "≥25", 抑菌圈_I: "20–24 (SDD)", 抑菌圈_R: "≤19", 备注: "唯一对 MRSA 有效的β-内酰胺;仅金黄色葡萄球菌" },
-      { 药物: "万古霉素 (Vancomycin)", 简写: "VA", 组别: "1", MIC_S: "≤2", MIC_I: "4–8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "金葡菌折点;仅 MIC 法(纸片不可靠)。凝固酶阴性葡萄球菌(SOSA)折点为 S≤4/I8–16/R≥32" },
+      // ⚠️ 苯唑西林/头孢西丁/万古霉素在 M100 Ed36 Table 2C 内按菌种分成多行，折点相差一个稀释度以上。
+      // 曾经把金葡的 ≤2/≥4 一行套给全组 9 个菌，表皮葡萄球菌 MIC=1 会被判「敏感」（真值为耐药）——
+      // 这是安全攸关的假敏感。现按源的分行结构拆开，用 `适用` 限定菌种，判读引擎据此选行。
+      // 值逐格核自 CLSI M100 Ed36 Table 2C 印刷页 99–101（PDF 131–133）的页面图。
+      { 药物: "苯唑西林 (Oxacillin)", 简写: "OX", 组别: "1", 适用: ["staph-aureus", "staph-lugdunensis"], 适用说明: "金黄色葡萄球菌 / 路邓葡萄球菌",
+        MIC_S: "≤2", MIC_I: "—", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "此二菌不做苯唑西林纸片法,用头孢西丁纸片作 mecA 替代检测" },
+      { 药物: "苯唑西林 (Oxacillin)", 简写: "OX", 组别: "1", 适用: ["staph-epidermidis"], 适用说明: "表皮葡萄球菌",
+        MIC_S: "≤0.5", MIC_I: "—", MIC_R: "≥1", 抑菌圈_S: "≥18", 抑菌圈_I: "—", 抑菌圈_R: "≤17", 备注: "抑菌圈用 1 μg 苯唑西林纸片;折点比金葡菌低两个稀释度,勿套用 ≤2/≥4" },
+      { 药物: "苯唑西林 (Oxacillin)", 简写: "OX", 组别: "1", 适用: ["staph-saprophyticus", "staph-haemolyticus", "staph-capitis", "staph-hominis", "staph-cohnii", "staph-kloosii"], 适用说明: "其余葡萄球菌属",
+        MIC_S: "≤0.5", MIC_I: "—", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "源表列为「Staphylococcus spp. 除金葡/路邓/表皮/伪中间/凝固/施氏外」;此类只用头孢西丁纸片,不设苯唑西林圈径折点" },
+      { 药物: "头孢西丁 (Cefoxitin)", 简写: "FOX", 组别: "1", 适用: ["staph-aureus", "staph-lugdunensis"], 适用说明: "金黄色葡萄球菌 / 路邓葡萄球菌",
+        MIC_S: "≤4", MIC_I: "—", MIC_R: "≥8", 抑菌圈_S: "≥22", 抑菌圈_I: "—", 抑菌圈_R: "≤21", 备注: "mecA/mecC 介导甲氧西林耐药(MRSA)的替代标志物" },
+      { 药物: "头孢西丁 (Cefoxitin)", 简写: "FOX", 组别: "1", 适用: ["staph-epidermidis", "staph-saprophyticus", "staph-haemolyticus", "staph-capitis", "staph-hominis", "staph-cohnii", "staph-kloosii"], 适用说明: "金葡/路邓以外的葡萄球菌",
+        MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "≥25", 抑菌圈_I: "—", 抑菌圈_R: "≤24", 备注: "只作 30 μg 纸片替代试验,源表未给此类的头孢西丁 MIC 折点;读数需孵育 24 h" },
+      { 药物: "头孢洛林 (Ceftaroline)", 简写: "CPT", 组别: "3", 适用: ["staph-aureus"], 适用说明: "仅金黄色葡萄球菌(含 MRSA)",
+        MIC_S: "≤1", MIC_I: "2–4 (SDD)", MIC_R: "≥8", 抑菌圈_S: "≥25", 抑菌圈_I: "20–24 (SDD)", 抑菌圈_R: "≤19", 备注: "唯一对 MRSA 有效的β-内酰胺" },
+      { 药物: "万古霉素 (Vancomycin)", 简写: "VA", 组别: "1", 适用: ["staph-aureus"], 适用说明: "金黄色葡萄球菌(含 MRSA)",
+        MIC_S: "≤2", MIC_I: "4–8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅 MIC 法(纸片法不能区分 VSSA/VISA);MIC ≥8 须送参比实验室" },
+      { 药物: "万古霉素 (Vancomycin)", 简写: "VA", 组别: "1", 适用: ["staph-epidermidis", "staph-saprophyticus", "staph-haemolyticus", "staph-lugdunensis", "staph-capitis", "staph-hominis", "staph-cohnii", "staph-kloosii"], 适用说明: "金葡以外的葡萄球菌(SOSA)",
+        MIC_S: "≤4", MIC_I: "8–16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅 MIC 法;比金葡菌高一个稀释度。MIC ≥32 须送参比实验室" },
       { 药物: "达托霉素 (Daptomycin)", 简写: "DAP", 组别: "2", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点，仅MIC法" },
       { 药物: "利奈唑胺 (Linezolid)", 简写: "LZD", 组别: "2", MIC_S: "≤4", MIC_I: "—", MIC_R: "≥8", 抑菌圈_S: "≥26", 抑菌圈_I: "23–25", 抑菌圈_R: "≤22", 备注: "Ed34 改反射光读数后修订圈径折点" },
       { 药物: "克林霉素 (Clindamycin)", 简写: "CC", 组别: "1", MIC_S: "≤0.5", MIC_I: "1–2", MIC_R: "≥4", 抑菌圈_S: "≥21", 抑菌圈_I: "15–20", 抑菌圈_R: "≤14", 备注: "需做 D-test 检测诱导型耐药" },
