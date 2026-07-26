@@ -756,3 +756,5 @@ body.zoom-open { overflow: hidden; }
 .mn-cn { font-size: 13px; }
 .mn-latin { color: var(--muted); font-size: 11.5px; font-style: italic; }
 .mn-go { margin-left: auto; color: var(--accent); font-size: 11px; }
+/* 应用内临时提示（收藏挤出等），复用 update-toast 的定位与配色，仅调低视觉权重 */
+.app-toast { background: var(--ink); border-color: var(--ink); font-size: 12.5px; max-width: min(360px, calc(100vw - 36px)); }

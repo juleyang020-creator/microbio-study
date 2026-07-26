@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-83';
+  var APP_VERSION = window.APP_VERSION || '20260702-84';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -402,14 +402,34 @@
   var _favCache = null;
   function favorites() { if (!_favCache) { _favCache = lsLoad(FAV_KEY); } return _favCache; }
   function isFavorited(id) { return favorites().some(function (f) { return f.id === id; }); }
+  // 满 FAV_MAX 后新增会挤掉最早的一条。保留这个行为（最近收藏优先更符合直觉），
+  // 但把被挤掉的是谁返回给调用方去提示——此前是静默丢弃，收藏了 50 个考点的人
+  // 根本不知道第 1 个已经没了。
   function toggleFavorite(id, module, 名称) {
-    if (!id || !module) { return; }
+    if (!id || !module) { return null; }
     var list = favorites().slice();
     var i = -1;
+    var dropped = null;
     for (var k = 0; k < list.length; k++) { if (list[k].id === id) { i = k; break; } }
     if (i >= 0) { list.splice(i, 1); }
-    else { list.push({ id: id, module: module, 名称: 名称, ts: Date.now() }); if (list.length > FAV_MAX) { list.shift(); } }
+    else {
+      list.push({ id: id, module: module, 名称: 名称, ts: Date.now() });
+      if (list.length > FAV_MAX) { dropped = list.shift(); }
+    }
     _favCache = list; lsSave(FAV_KEY, list);
+    return dropped;
+  }
+
+  // 短暂的角标提示，复用 Service Worker 更新提示的样式；自身点击或超时后消失
+  var _toastTimer = null;
+  function showToast(text, ms) {
+    var old = document.getElementById('app-toast');
+    if (old) { old.remove(); }
+    if (_toastTimer) { clearTimeout(_toastTimer); }
+    var box = el('div', { cls: 'update-toast app-toast', id: 'app-toast', text: text });
+    box.addEventListener('click', function () { box.remove(); });
+    document.body.appendChild(box);
+    _toastTimer = setTimeout(function () { box.remove(); }, ms || 3200);
   }
 
   // HIST_MAX 是存多少（供「清空」前回溯），HIST_SHOW 是侧栏露出多少。
@@ -623,7 +643,11 @@
         cls: 'fav-star' + (_fav ? ' favorited' : ''), type: 'button',
         'aria-label': _fav ? '取消收藏' : '收藏', 'aria-pressed': String(_fav),
         title: _fav ? '取消收藏' : '加入收藏', text: _fav ? '★' : '☆',
-        onClick: function () { toggleFavorite(vm.id, parseHash().module, vm.名称); renderRoute(); }
+        onClick: function () {
+          var dropped = toggleFavorite(vm.id, parseHash().module, vm.名称);
+          if (dropped) { showToast('收藏已满 ' + FAV_MAX + ' 条，已移除最早的「' + dropped.名称 + '」'); }
+          renderRoute();
+        }
       }));
     }
     nodes.push(el('div', { cls: 'detail-head' }, head));
@@ -1787,6 +1811,7 @@
     caret.textContent = open ? '▸' : '▾';
   }
   function buildAstTable(list) {
+    var relIndex = Core.buildIndex(db());   // 整表建一次，勿放进逐条循环
     var head = el('tr', {}, [
       el('th', { cls: 'ast-th-level', text: '等级' }),
       el('th', { cls: 'ast-th-cat', text: '类别' }),
@@ -1805,6 +1830,20 @@
         astLine('依据', item.依据)
       ];
       if (tags.length) { detailInner.push(el('div', { cls: 'chips ast-tags' }, tags)); }
+      // 关联出口：复核时翻到这一条，下一步多半就是去看该菌的折点表、该机制或该确证试验。
+      // 此前 18 条全无关联，展开后是一条死路。
+      var relChips = (item.关联 || []).map(function (rid) {
+        var hit = relIndex[rid];
+        if (!hit) { return null; }
+        return el('a', { cls: 'chip rel-chip', href: '#/' + hit.module + '/' + rid,
+          text: View.moduleLabel(hit.module) + ' · ' + hit.entry.名称 });
+      }).filter(Boolean);
+      if (relChips.length) {
+        detailInner.push(el('div', { cls: 'ast-rel' }, [
+          el('span', { cls: 'ast-line-label', text: '相关' }),
+          el('span', { cls: 'chips' }, relChips)
+        ]));
+      }
       var detailId = 'ast-d-' + item.id;
       var detailRow = el('tr', { cls: 'ast-detail-row', id: detailId }, [
         el('td', { colspan: '4' }, [el('div', { cls: 'ast-detail' }, detailInner)])
