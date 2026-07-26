@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-86';
+  var APP_VERSION = window.APP_VERSION || '20260702-87';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -24,6 +24,25 @@
     return el('span', { cls: 'bp-urine', title: '仅适用于尿路分离株的报告限制', text: '尿' });
   }
   // 图例：仅列出该菌组中实际出现的分层
+  // 折点表下方的「试验条件」块：M100 每张 Table 2X 表头都给了 Medium / Inoculum / Incubation，
+  // 但此前软件只搬了折点数字。查折点的同一屏看不到该用什么培养基、要不要 CO₂、读多久，
+  // 就得另外翻标准——尤其苯唑西林要 CAMHB+2% NaCl、万古霉素要满 24 h 这类最容易漏。
+  // 仅对回源核对过的折点组渲染；没有该字段的组直接不显示，不编。
+  function bpConditionsNode(cond) {
+    if (!cond) { return null; }
+    var rows = [['培养基', cond.培养基], ['接种菌液', cond.接种], ['孵育', cond.孵育]]
+      .filter(function (r) { return r[1]; })
+      .map(function (r) {
+        return el('div', { cls: 'bp-cond-row' }, [
+          el('span', { cls: 'bp-cond-label', text: r[0] }),
+          el('span', { cls: 'bp-cond-text', text: r[1] })
+        ]);
+      });
+    if (cond.出处) { rows.push(el('div', { cls: 'bp-cond-src', text: cond.出处 })); }
+    return el('details', { cls: 'bp-cond' }, [
+      el('summary', { cls: 'bp-cond-head', text: '试验条件（培养基 / 接种 / 孵育）' })
+    ].concat(rows));
+  }
   function bpTierLegend(drugs) {
     var present = {}, hasUrine = false;
     (drugs || []).forEach(function (d) { if (d.组别 && BP_TIER_LABELS[d.组别]) { present[d.组别] = 1; } if (d.仅尿路) { hasUrine = true; } });
@@ -812,6 +831,7 @@
           ])
         ]),
         bpTierLegend(bp.药物),
+        bpConditionsNode(bp.试验条件),
         el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' + (bpHasCombo(bp.药物) ? '　·　' + COMBO_BP_NOTE : '') }),
         eucastNoteNode()
       ]));

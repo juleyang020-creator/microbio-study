@@ -7,6 +7,7 @@ window.DB.breakpoints = [
   {
     菌组名: "肠杆菌目 (Enterobacterales，不含沙门/志贺)",
     CLSI表: "Table 2A-1",
+    试验条件: { 培养基: "纸片法 MHA；肉汤稀释 CAMHB（头孢地尔用铁耗竭 CAMHB，见附录 H 第 H1 节）；琼脂稀释 MHA", 接种: "肉汤培养法或菌落悬液，相当于 0.5 麦氏浊度；部分药物做纸片法时可用阳性血培养肉汤", 孵育: "35°C ± 2°C，环境空气；纸片法 16~18 h；稀释法 16~20 h", 出处: "M100 Ed36 印刷 p.58 / PDF p.90" },
     菌种: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'klebsiella-aerogenes', 'proteus-mirabilis', 'proteus-vulgaris', 'enterobacter-cloacae', 'enterobacter-xiangfangensis', 'citrobacter-freundii', 'citrobacter-koseri', 'morganella-morganii', 'serratia-marcescens', 'providencia-stuartii', 'providencia-rettgeri', 'yersinia-pestis', 'hafnia-alvei', 'raoultella-ornithinolytica', 'proteus-hauseri'],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "可预测阿莫西林;口服仅用于大肠埃希菌、奇异变形杆菌所致非复杂性尿路感染" },
@@ -69,6 +70,7 @@ window.DB.breakpoints = [
   {
     菌组名: "铜绿假单胞菌 (Pseudomonas aeruginosa)",
     CLSI表: "Table 2B-1",
+    试验条件: { 培养基: "纸片法 MHA；肉汤稀释 CAMHB（头孢地尔用铁耗竭 CAMHB）；琼脂稀释 MHA", 接种: "肉汤培养法或菌落悬液，相当于 0.5 麦氏浊度；部分药物做纸片法时可用阳性血培养肉汤", 孵育: "35°C ± 2°C，环境空气；纸片法 16~18 h；稀释法 16~20 h。⚠️ 囊性纤维化患者分离株报告敏感前可能需延长孵育至 24 h", 出处: "M100 Ed36 印刷 p.74 / PDF p.106" },
     菌种: ["pseudomonas-aeruginosa"],
     药物: [
       { 药物: "哌拉西林/他唑巴坦 (Piperacillin-Tazobactam)", 简写: "TZP", 组别: "1", MIC_S: "≤16/4", MIC_I: "32/4", MIC_R: "≥64/4", 抑菌圈_S: "≥22", 抑菌圈_I: "18–21", 抑菌圈_R: "≤17", 备注: "Ed36 修订(R 由 ≥128/4 降为 ≥64/4)" },
@@ -165,6 +167,7 @@ window.DB.breakpoints = [
   {
     菌组名: "流感嗜血杆菌 / 副流感嗜血杆菌 (Haemophilus spp.)",
     CLSI表: "Table 2E",
+    试验条件: { 培养基: "纸片法 HTM（测流感/副流感嗜血杆菌的全部药物）或 MH-F 琼脂（MHA + 5% 机械去纤维马血 + 20 μg/mL NAD，用于流感嗜血杆菌的部分药物）；肉汤稀释 HTM 肉汤或 MH-F 肉汤", 接种: "菌落悬液，相当于 0.5 麦氏浊度，取自过夜（最好 20~24 h）巧克力平板的菌落。⚠️ 0.5 麦氏约含 1~4×10⁸ CFU/mL，接种过浓会使部分 β-内酰胺类出现假耐药，产 β-内酰胺酶株尤甚", 孵育: "35°C ± 2°C；纸片法 5% CO₂、16~18 h；肉汤稀释法环境空气、20~24 h", 出处: "M100 Ed36 印刷 p.112 / PDF p.144" },
     菌种: ["haemophilus-influenzae", "haemophilus-parainfluenzae"],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "≥22", 抑菌圈_I: "19–21", 抑菌圈_R: "≤18", 备注: "多数耐药株产 TEM 型β-内酰胺酶;可用β-内酰胺酶试验快速判断" },
@@ -221,6 +224,7 @@ window.DB.breakpoints = [
   {
     菌组名: "葡萄球菌属 (Staphylococcus spp.)",
     CLSI表: "Table 2C",
+    试验条件: { 培养基: "纸片法 MHA；肉汤稀释 CAMHB，⚠️ 苯唑西林须用 CAMHB + 2% NaCl、达托霉素须补钙至 50 μg/mL；琼脂稀释 MHA，苯唑西林用 MHA + 2% NaCl（达托霉素未验证琼脂稀释法）", 接种: "菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C ± 2°C，环境空气；纸片法 16~18 h（⚠️ 头孢西丁测金葡/凝固/路邓/伪中间/施氏以外的葡萄球菌时需 24 h）；稀释法 16~20 h，⚠️ 苯唑西林与万古霉素需 24 h。⚠️ 温度高于 35°C 可能检不出 MRS", 出处: "M100 Ed36 印刷 p.96 / PDF p.128" },
     菌种: ["staph-aureus", "staph-epidermidis", "staph-saprophyticus", "staph-haemolyticus", "staph-lugdunensis",
       "staph-capitis", "staph-hominis", "staph-cohnii", "staph-kloosii"],
     药物: [
@@ -261,6 +265,7 @@ window.DB.breakpoints = [
   {
     菌组名: "肠球菌属 (Enterococcus spp.)",
     CLSI表: "Table 2D",
+    试验条件: { 培养基: "纸片法 MHA；肉汤稀释 CAMHB，达托霉素须补钙至 50 μg/mL；琼脂稀释 MHA（达托霉素未验证琼脂稀释法）", 接种: "肉汤培养法或菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C ± 2°C，环境空气；纸片法 16~18 h；稀释法 16~20 h；⚠️ 万古霉素所有方法均需满 24 h，且须透射光读圈，圈内任何可见生长即为耐药", 出处: "M100 Ed36 印刷 p.106 / PDF p.138" },
     菌种: ["enterococcus-faecalis", "enterococcus-faecium", "enterococcus-gallinarum", "enterococcus-avium", "enterococcus-casseliflavus"],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "—", MIC_R: "≥16", 抑菌圈_S: "≥17", 抑菌圈_I: "—", 抑菌圈_R: "≤16", 备注: "" },

@@ -875,3 +875,35 @@ test('菌名速查索引可被检索：中文名、拉丁名、别名三条路�
   assert.deepStrictEqual(Core.searchMicrobeNames(DB, '', 5), [], '空查询不返回结果');
   assert.ok(Core.searchMicrobeNames(DB, '菌', 7).length <= 7, 'limit 参数必须生效，否则会渲染上千条');
 });
+
+// M100 每张 Table 2X 表头都有 Medium / Inoculum / Incubation，此前软件只搬了折点数字。
+// 这些值逐字读自各表首页的 PDF 页面图——md 转换把这些框与表标题错位了
+// （2E 嗜血杆菌的条件被挂到了 2F 淋球菌标题下），不可据 md 录入。
+// 只录了回源核对过的 5 组，其余 27 组无此字段、界面不显示，属「查不到就不写」。
+test('折点组试验条件：只在回源核对过的组出现，且钉住最易漏的几条', () => {
+  const groups = window.DB.breakpoints;
+  const withCond = groups.filter((g) => g.试验条件);
+  assert.strictEqual(withCond.length, 5, '有试验条件的组数变了，新增/删除时请确认是否已回源核对');
+  withCond.forEach((g) => {
+    ['培养基', '接种', '孵育', '出处'].forEach((k) => {
+      assert.ok(g.试验条件[k] && g.试验条件[k].length > 4, g.CLSI表 + ' 的试验条件缺 ' + k);
+    });
+    assert.match(g.试验条件.出处, /M100 Ed36/, g.CLSI表 + ' 的试验条件须注明出处版本');
+  });
+  const byTable = {};
+  withCond.forEach((g) => { byTable[g.CLSI表] = g.试验条件; });
+
+  // 葡萄球菌：苯唑西林的 2% NaCl 与 24 h 是最容易漏、也最影响 MRS 检出的两条
+  assert.match(byTable['Table 2C'].培养基, /2% NaCl/, '2C 须写明苯唑西林用 CAMHB + 2% NaCl');
+  assert.match(byTable['Table 2C'].孵育, /苯唑西林与万古霉素需 24 h/, '2C 须写明苯唑西林/万古霉素 24 h');
+  assert.match(byTable['Table 2C'].孵育, /35°C/, '2C 须写明温度上限相关提示');
+  // 肠球菌：万古霉素满 24 h + 透射光读圈
+  assert.match(byTable['Table 2D'].孵育, /万古霉素所有方法均需满 24 h/, '2D 须写明万古霉素 24 h');
+  assert.match(byTable['Table 2D'].孵育, /透射光/, '2D 须写明透射光读圈');
+  // 嗜血杆菌：培养基与气体条件都与其他组不同
+  assert.match(byTable['Table 2E'].培养基, /HTM/, '2E 须写明 HTM');
+  assert.match(byTable['Table 2E'].孵育, /5% CO₂/, '2E 纸片法须写明 5% CO₂');
+  // 肠杆菌目与铜绿：头孢地尔的铁耗竭 CAMHB
+  assert.match(byTable['Table 2A-1'].培养基, /铁耗竭/, '2A-1 须写明头孢地尔用铁耗竭 CAMHB');
+  assert.match(byTable['Table 2B-1'].培养基, /铁耗竭/, '2B-1 须写明头孢地尔用铁耗竭 CAMHB');
+});

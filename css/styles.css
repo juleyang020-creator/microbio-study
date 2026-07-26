@@ -758,3 +758,13 @@ body.zoom-open { overflow: hidden; }
 .mn-go { margin-left: auto; color: var(--accent); font-size: 11px; }
 /* 应用内临时提示（收藏挤出等），复用 update-toast 的定位与配色，仅调低视觉权重 */
 .app-toast { background: var(--ink); border-color: var(--ink); font-size: 12.5px; max-width: min(360px, calc(100vw - 36px)); }
+
+/* 折点表下的「试验条件」折叠块：M100 表头的 Medium/Inoculum/Incubation。
+   默认收起——查折点时多数人只要数字，需要时再展开看该用什么培养基、孵育多久。 */
+.bp-cond { margin-top: 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.bp-cond-head { padding: 7px 10px; color: var(--ink-soft); font-size: 12px; cursor: pointer; user-select: none; }
+.bp-cond-head::marker { color: var(--muted); }
+.bp-cond-row { display: flex; gap: 10px; padding: 4px 12px 4px 22px; font-size: 12px; line-height: 1.65; }
+.bp-cond-label { flex: 0 0 58px; color: var(--muted); }
+.bp-cond-text { color: var(--ink-soft); }
+.bp-cond-src { padding: 4px 12px 9px 22px; color: var(--muted); font-size: 11px; }

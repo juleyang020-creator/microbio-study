@@ -475,6 +475,10 @@
       菌组名: group.菌组名,
       CLSI表: group.CLSI表,
       来源: group.来源 || '',
+      // 该表的 Medium / Inoculum / Incubation（M100 每张 Table 2X 表头都有）。
+      // 查折点时最需要同屏看到的就是「该用 MHA 还是 MH-F、要不要 5% CO₂、读 16-18 h 还是 24 h」。
+      // 只有回源核对过的组才有此字段，其余为 null，界面上不显示。
+      试验条件: group.试验条件 || null,
       // 只保留适用于本菌的行:菌详情页上不该出现别的菌种的折点值
       药物: group.药物.filter(function (d) { return drugAppliesTo(d, microbeId); }).map(function (d) {
         return {
