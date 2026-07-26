@@ -32,7 +32,9 @@
     // 新增机制大类
     '抗真菌耐药': 'img/resistance-target.svg',
     '靶位基因突变': 'img/resistance-target.svg',
-    '多黏菌素耐药': 'img/resistance-permeability.svg'
+    '多黏菌素耐药': 'img/resistance-permeability.svg',
+    // 「旁路与其他」组本身无图，其下叶子须逐个显式映射
+    '前药活化障碍': 'img/resistance-bypass.svg'
   };
 
   // 试验：按条目 id 映射到示意图
