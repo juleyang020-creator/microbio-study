@@ -639,8 +639,11 @@ body.zoom-open { overflow: hidden; }
   .brand { grid-column: 2; grid-row: 1; font-size: 14px; }
   .search { grid-column: 3; grid-row: 1; min-width: 0; width: 100%; }
   .nav-boards { grid-column: 1 / -1; grid-row: 2; display: flex; flex-direction: column; gap: 6px; }
-  .nav-board { height: auto; min-height: 36px; align-items: flex-start; flex-direction: column; gap: 5px; padding: 6px 8px; }
-  .nav-board-title { width: 100%; padding: 0 0 5px; border-right: 0; border-bottom: 1px solid var(--line); }
+  /* 手机端顶部导航压扁：原先两个板块各占一行标题 + 一行 chips，共 156px（约 1/5 屏幕），
+     内容区被挤到 225px 以下。标题文字改为行首的小标签与 chips 同行，两块合计降到约 90px。 */
+  .nav-board { height: auto; min-height: 34px; align-items: center; flex-direction: row; gap: 6px; padding: 4px 8px; }
+  .nav-board-title { width: auto; flex: 0 0 auto; padding: 0 6px 0 0; border-right: 1px solid var(--line); border-bottom: 0;
+    font-size: 10.5px; line-height: 1.2; white-space: nowrap; }
   .tools, .tabs { width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab, .tool-btn { min-height: 40px; display: inline-flex; align-items: center; }
@@ -723,3 +726,11 @@ body.zoom-open { overflow: hidden; }
 /* 品牌副标题（主名"知微" + 小字"微生物学习手册"） */
 .brand-sub { font-weight: 400; font-size: 11px; letter-spacing: .5px; color: var(--muted); margin-left: 8px; }
 @media (max-width: 600px) { .brand-sub { display: none; } }
+
+/* 侧栏内的即时筛选框：手机上侧栏一打开就遮住顶栏搜索框，这里独立给一个入口；
+   sticky 固定在顶部，滚动长列表时不会滑走。 */
+.sb-filter-wrap { position: sticky; top: 0; z-index: 3; padding: 8px 8px 10px; background: var(--surface); border-bottom: 1px solid var(--line); }
+.sb-filter { width: 100%; box-sizing: border-box; padding: 8px 10px; font-size: 13px; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px; background: var(--bg); -webkit-appearance: none; appearance: none; }
+.sb-filter:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-weak); }
+.sb-filter::placeholder { color: var(--muted); }

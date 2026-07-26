@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-74';
+  var APP_VERSION = window.APP_VERSION || '20260702-75';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -190,6 +190,7 @@
       if ((key.indexOf('aria-') === 0 || key.indexOf('data-') === 0) && opts[key] != null) { node.setAttribute(key, opts[key]); }
     });
     if (opts.onClick) { node.addEventListener('click', opts.onClick); }
+    if (opts.onInput) { node.addEventListener('input', opts.onInput); }
     // 键盘可达的“类按钮”元素：role="button" 只是语义标注，非 <button> 元素按 Enter/Space
     // 浏览器不会替你派发 click。用 onActivate 的地方一律补上 tabindex/role 与键盘绑定，
     // 避免每处自己拼（此前 zoomableImg 注释写着「点击/Enter 均可打开」，实际只有点击）。
@@ -281,17 +282,33 @@
   }
 
   var collapsed = {}; // path -> true 表示该分类节点已折叠（跨模块、跨重渲染保持）
+  var sidebarFilter = '';   // 侧栏内的即时筛选词
+  var autoCollapsed = {};   // moduleKey -> true，表示该模块已做过「首次进入默认折叠」
 
   function toggleCollapse(key) {
     if (collapsed[key]) { delete collapsed[key]; } else { collapsed[key] = true; }
     renderSidebar();
   }
 
+  // 条目是否命中侧栏筛选词（匹配中文名与 href 里的英文 id，故拉丁名/英文缩写也能搜到）
+  function hitsFilter(e) {
+    if (!sidebarFilter) { return true; }
+    return (String(e.名称 || '') + ' ' + String(e.href || '')).toLowerCase().indexOf(sidebarFilter) !== -1;
+  }
+  // 该分类节点下（含各层子节点）是否还有命中条目——无命中的整枝不渲染
+  function nodeHasHit(node) {
+    if (!sidebarFilter) { return true; }
+    if (node.entries && node.entries.length && node.entries.some(hitsFilter)) { return true; }
+    return !!(node.children && node.children.some(nodeHasHit));
+  }
+
   // 递归渲染一个分类节点（任意层级，按深度缩进，可点击折叠/展开）
   function sidebarNodes(node, depth, parentPath) {
     var path = parentPath + '/' + node.名称;
     var collapsible = (node.children && node.children.length) || (node.entries && node.entries.length);
-    var isCollapsed = !!collapsed[path];
+    // 筛选期间强制展开，让命中项直接可见，不必再手动点开每层
+    var isCollapsed = sidebarFilter ? false : !!collapsed[path];
+    if (!nodeHasHit(node)) { return []; }
     var labelCls = (depth === 0 ? 'cat-group-name' : 'cat-subgroup') + (collapsible ? ' collapsible' : '');
     var marker = collapsible ? (isCollapsed ? '▸ ' : '▾ ') : '';
     var out = [ el(collapsible ? 'button' : 'div', {
@@ -309,15 +326,58 @@
       });
     } else {
       var epad = 'padding-left:' + (8 + (depth + 1) * 14) + 'px';
-      node.entries.forEach(function (e) {
+      node.entries.filter(hitsFilter).forEach(function (e) {
         out.push(el('a', { cls: 'entry-link' + (e.selected ? ' selected' : ''), text: e.名称, href: e.href, style: epad }));
       });
     }
     return out;
   }
 
-  function buildSidebar(vm, moduleKey) {
+  // 首次进入某模块时把二级及以下分组默认折叠：分类树全展开时侧栏长达十几屏，
+  // 手机上翻找一个词条要滚很久。只展开顶层大类（及当前选中条目所在的那一支）。
+  function autoCollapseOnce(vm, moduleKey, selectedId) {
+    // 只在手机端折叠：手机上侧栏是抽屉、全展开要滚十几屏；桌面端侧栏常驻且屏幕高，
+    // 默认折叠反而让用户每次都要多点几下，故保持原来的全展开。
+    if (!isMobile()) { return; }
+    if (autoCollapsed[moduleKey]) { return; }
+    autoCollapsed[moduleKey] = true;
+    var keepOpen = {};
+    (function markSelected(node, path) {
+      var p = path + '/' + node.名称;
+      var hit = (node.entries || []).some(function (e) { return e.id === selectedId; });
+      var childHit = (node.children || []).some(function (c) { return markSelected(c, p); });
+      if (hit || childHit) { keepOpen[p] = true; }
+      return hit || childHit;
+    });
+    vm.tree.forEach(function (root) {
+      var rootPath = moduleKey + '/' + root.名称;
+      (function walk(node, path, depth) {
+        var p = path;
+        if (depth >= 1 && ((node.children && node.children.length) || (node.entries && node.entries.length))) {
+          if (!keepOpen[p]) { collapsed[p] = true; }
+        }
+        (node.children || []).forEach(function (c) { walk(c, p + '/' + c.名称, depth + 1); });
+      })(root, rootPath, 0);
+    });
+  }
+
+  function buildSidebar(vm, moduleKey, selectedId) {
+    autoCollapseOnce(vm, moduleKey, selectedId);
     var nodes = [];
+    // 侧栏内的即时筛选：手机上侧栏一打开就遮住顶栏搜索框，这里独立提供一个入口
+    var box = el('input', {
+      cls: 'sb-filter', type: 'search', value: sidebarFilter,
+      placeholder: '筛选本页条目…', 'aria-label': '筛选本页条目',
+      onInput: function (ev) {
+        sidebarFilter = String(ev.target.value || '').trim().toLowerCase();
+        var sb = document.getElementById('sidebar');
+        var keep = ev.target.selectionStart;
+        fill(sb, buildSidebar(vm, moduleKey, selectedId));
+        var nb = sb.querySelector('.sb-filter');
+        if (nb) { nb.focus(); try { nb.setSelectionRange(keep, keep); } catch (e) {} }
+      }
+    });
+    nodes.push(el('div', { cls: 'sb-filter-wrap' }, [box]));
     vm.tree.forEach(function (root) {
       nodes.push(el('div', { cls: 'cat-group' }, sidebarNodes(root, 0, moduleKey)));
     });
@@ -328,7 +388,9 @@
       });
       nodes.push(el('div', { cls: 'cat-group' }, uc));
     }
-    if (!nodes.length) { nodes.push(el('div', { cls: 'empty-sm', text: '（暂无分类）' })); }
+    if (nodes.length <= 1) {
+      nodes.push(el('div', { cls: 'empty-sm', text: sidebarFilter ? '没有匹配「' + sidebarFilter + '」的条目' : '（暂无分类）' }));
+    }
     return nodes;
   }
 
@@ -407,7 +469,7 @@
     var route = parseHash();
     var sidebar = document.getElementById('sidebar');
     var nodes = favHistNodes(route).concat(
-      buildSidebar(View.sidebarVM(route.module, categories(), db()[route.module], route.id), route.module));
+      buildSidebar(View.sidebarVM(route.module, categories(), db()[route.module], route.id), route.module, route.id));
     fill(sidebar, nodes);
     // 分类树很长（微生物模块 186 项、约 9 屏），从搜索结果点进详情后，当前条目往往在
     // 视野外，用户看不出自己在树里的哪个位置。渲染后把选中项滚进来。
