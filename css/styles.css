@@ -655,7 +655,15 @@ body.zoom-open { overflow: hidden; }
   body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
   .main { padding: 18px 16px calc(24px + env(safe-area-inset-bottom)); }
   .detail-title { font-size: 20px; }
-  .entry-link, .cmp-pick, .cat-toggle { min-height: 40px; display: flex; align-items: center; }
+  /* 侧栏列表在手机上原为每行 40px，是桌面端（padding 2px、约 22px）的近两倍，长列表看起来过于稀疏。
+     收紧到 32px（分组标题 30px）：接近桌面观感，同一屏多看 4~5 条，仍在可单手点按的范围内。
+     只收窄纵向间距，不动字号——12.5px 已是可读下限。 */
+  .entry-link, .cmp-pick { min-height: 32px; display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+  .cat-toggle { min-height: 30px; display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+  .sidebar .cat-group-name { margin: 6px 0 1px; }
+  .sidebar .cat-subgroup { margin-top: 0; }
+  /* 收藏 / 最近浏览两块在手机上顶掉了小半屏，压缩它们与分类树之间的留白 */
+  .fav-section, .history-section { margin-bottom: 6px; padding-bottom: 4px; }
   /* 表格瘦身：折点表 / 对比表在小屏更紧凑，尽量不横向溢出、行高更低 */
   .bp-table, .cmp { min-width: 0; width: 100%; font-size: 10.5px; table-layout: fixed; }
   .bp-table th, .bp-table td { padding: 3px 4px; }
