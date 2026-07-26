@@ -78,8 +78,15 @@ test('形态数据的键均为存在的微生物 id', () => {
   });
 });
 
-test('每个抗生素都有药敏简写', () => {
+test('每个抗生素都有药敏简写（抗病毒药除外——不做常规药敏、无 CLSI 简写）', () => {
+  // 「药敏简写」是纸片/MIC 药敏报告上的缩写，只有做常规药敏的抗菌药与抗真菌药才有。
+  // 抗病毒药的敏感性试验是表型 EC50 或基因型耐药检测（见 MCM 第 115 章），没有对应简写，
+  // 强行编一个会让人误以为能开药敏——故按类别豁免，而不是填占位符。
+  const antiviralLeaves = new Set();
+  ((global.window.DB.categories.antibiotics || []).find((g) => g.名称 === '抗病毒药') || {}).子类
+    ?.forEach((c) => antiviralLeaves.add(c.名称));
   global.window.DB.antibiotics.forEach((a) => {
+    if (antiviralLeaves.has(a.类别)) { return; }
     assert.ok(a.药敏简写 && a.药敏简写.length, '缺少药敏简写：' + a.id);
   });
 });
@@ -122,16 +129,21 @@ test('药敏卡中的药物名均可跳转到药物或对应试验条目', () =>
   });
 });
 
-function isAntifungal(a, cats) {
-  const g = (cats.antibiotics || []).find((grp) => grp.名称 === '抗真菌药');
+function inDrugGroup(a, cats, groupName) {
+  const g = (cats.antibiotics || []).find((grp) => grp.名称 === groupName);
   return !!(g && (g.子类 || []).some((l) => l.名称 === a.类别));
 }
+function isAntifungal(a, cats) { return inDrugGroup(a, cats, '抗真菌药'); }
+// 抗病毒药同样豁免机制图：它们的机制彼此差异极大（核苷类链终止、神经氨酸酶抑制阻断释放、
+// CCR5 拮抗作用于宿主受体、末端酶抑制、蛋白酶抑制），现有 mechanism-*.svg 都是照抗菌药画的，
+// 硬套任何一张都会给出错误的机制示意——宁可不显示图。将来若专门画了抗病毒机制图再收紧此处。
+function isAntiviral(a, cats) { return inDrugGroup(a, cats, '抗病毒药'); }
 
-test('抗细菌药均映射到存在的机制图；抗真菌药可无图', () => {
+test('抗细菌药均映射到存在的机制图；抗真菌药与抗病毒药可无图', () => {
   const cats = global.window.DB.categories;
   global.window.DB.antibiotics.forEach((a) => {
     const img = View.mechanismImageFor('antibiotics', a, cats);
-    if (isAntifungal(a, cats)) {
+    if (isAntifungal(a, cats) || isAntiviral(a, cats)) {
       if (img) { assert.ok(fs.existsSync(path.join(__dirname, '..', img)), '机制图文件缺失：' + img); }
     } else {
       assert.ok(img, '无机制图映射：' + a.id + '（类别 ' + a.类别 + '）');
