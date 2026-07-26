@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-67';
+  var APP_VERSION = window.APP_VERSION || '20260702-69';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -1890,6 +1890,64 @@
     fill(document.getElementById('main'), nodes);
   }
 
+  // ===== 工具：病毒核酸检测时间窗 =====
+  // 回答「什么时候采样」「阴性能否排除」。核酸出现最早、抗体最晚，窗口期内抗体阴性不能排除感染。
+  function isDetectionWindowRoute() { return routeKey() === 'detection-window'; }
+  function renderDetectionWindow() {
+    setActiveTool('detection-window');
+    var dw = (window.DB && window.DB.detectionWindow) || null;
+    fill(document.getElementById('sidebar'), [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '检测时间窗' }),
+      el('div', { cls: 'cmp-hint', text: '按病毒列出各标志物可被检出的时间先后。点病毒名可跳转详情页。' })
+    ]) ]);
+    var nodes = [ el('h2', { cls: 'detail-title', text: '病毒核酸检测时间窗' }) ];
+    if (!dw || !dw.病毒) {
+      nodes.push(el('div', { cls: 'empty', text: '数据未加载。' }));
+      fill(document.getElementById('main'), nodes);
+      return;
+    }
+    nodes.push(el('div', { cls: 'lw-src', text: '来源：' + dw.来源 }));
+    nodes.push(el('div', { cls: 'lw-note', text: dw.说明 }));
+    if (dw.提示) { nodes.push(el('div', { cls: 'dw-caution', text: '⚠️ ' + dw.提示 })); }
+
+    dw.病毒.forEach(function (v) {
+      var kids = [];
+      // 标题：能对应到本库微生物条目时做成可跳转链接
+      var hasEntry = (db().microbes || []).some(function (m) { return m.id === v.id; });
+      var titleKids = [ el('span', { cls: 'dw-name', text: v.名称 }) ];
+      if (hasEntry) {
+        titleKids.push(el('a', { cls: 'dw-jump', href: '#/microbes/' + v.id, text: '详情 →' }));
+      }
+      titleKids.push(el('span', { cls: 'dw-src', text: v.源 }));
+      kids.push(el('div', { cls: 'dw-head' }, titleKids));
+
+      if (v.标志物顺序 && v.标志物顺序.length) {
+        var seq = [];
+        v.标志物顺序.forEach(function (s, i) {
+          if (i) { seq.push(el('span', { cls: 'dw-arrow', text: '→' })); }
+          seq.push(el('span', { cls: 'dw-chip', text: s }));
+        });
+        kids.push(el('div', { cls: 'dw-seq' }, seq));
+      }
+
+      kids.push(el('div', { cls: 'lw-table-wrap' }, [ el('table', { cls: 'lw-table' }, [
+        el('thead', {}, [ el('tr', {}, [ el('th', { text: '标志物' }), el('th', { text: '可检出时间' }), el('th', { text: '说明' }) ]) ]),
+        el('tbody', {}, (v.节点 || []).map(function (n) {
+          return el('tr', {}, [
+            el('td', { 'data-label': '标志物', text: n.标志物 }),
+            el('td', { 'data-label': '可检出时间', text: n.时间 }),
+            el('td', { 'data-label': '说明', text: n.说明 })
+          ]);
+        }))
+      ]) ]));
+
+      if (v.判读) { kids.push(el('div', { cls: 'dw-note', text: v.判读 })); }
+      nodes.push(el('div', { cls: 'lw-section' }, kids));
+    });
+
+    fill(document.getElementById('main'), nodes);
+  }
+
   // ===== 工具：菌名速查 =====
   // 跳转分三级（均为权威来源、国内可达；不再使用百度百科）：
   //   ① 本库已收录 → 应用内详情页（离线、已校对）
@@ -2026,6 +2084,7 @@
     document.body.classList.toggle('route-mn', isMicrobeNamesRoute());
     if (isMicrobeNamesRoute()) { renderMicrobeNames(); return; }
     if (isLabWorkflowRoute()) { renderLabWorkflow(); return; }
+    if (isDetectionWindowRoute()) { renderDetectionWindow(); return; }
     if (isAboutRoute()) { renderAbout(); return; }
     if (isCompareRoute()) { renderCompare(); return; }
     if (isCardCompareRoute()) { renderCardCompare(); return; }
