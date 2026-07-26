@@ -344,9 +344,15 @@ test('真菌固有耐药结构化数据符合 CLSI 附录（M27M44S App B / M38M
   assert.deepStrictEqual(findRow('Lomentospora prolificans').耐药, ['两性霉素B', '氟康唑'], 'Lomentospora 固有耐药错误');
   assert.deepStrictEqual(findRow('Mucorales').耐药, ['氟康唑', '伏立康唑'], '毛霉目固有耐短侧链唑类');
   assert.deepStrictEqual(findRow('Purpureocillium lilacinum').耐药, ['两性霉素B'], '淡紫紫孢霉固有耐两性霉素B');
-  // 引用的菌 id（若给出）须存在
+  // 引用的菌 id（若给出）须存在。CLSI 附录 B 有合并行（如「鹑鸡肠球菌 / 铅黄肠球菌」），
+  // 这类行的 id 是数组，名称按 " / " 与之一一对应，渲染成多个链接。
   ir.分组.forEach((g) => (g.行 || []).forEach((r) => {
-    if (r.id) assert.ok(microbeIds[r.id], '固有耐药引用了不存在的微生物 id：' + r.id);
+    const ids = Array.isArray(r.id) ? r.id : (r.id ? [r.id] : []);
+    ids.forEach((id) => assert.ok(microbeIds[id], '固有耐药引用了不存在的微生物 id：' + id));
+    if (ids.length > 1) {
+      assert.strictEqual(String(r.名称).split(' / ').length, ids.length,
+        '固有耐药合并行「' + r.名称 + '」的名称段数与 id 个数不一致，链接会错位');
+    }
     assert.ok(Array.isArray(r.耐药), '固有耐药行缺耐药数组：' + r.名称);
   }));
 });
@@ -800,4 +806,45 @@ test('折点 `适用` 字段：id 必须属于本组，且每菌每药不得命�
       });
     });
   });
+});
+
+// 以下事实逐格核自 M100 Ed36 附录 B 的 PDF 页面图（B1 印刷 p.318、B3 p.321、B4 p.322）。
+// 这些字段既供「天然耐药速查」检索，也是详情页唯一的固有耐药出处，写错就是安全攸关。
+// 曾经的问题：鹑鸡肠球菌漏了 QD、产气克雷伯菌多写了二代头孢、金葡等 5 菌整个字段缺失。
+test('天然耐药字段：与 M100 Ed36 附录 B 一致', () => {
+  const byId = {};
+  window.DB.microbes.forEach((m) => { byId[m.id] = m; });
+  const 文 = (id) => String((byId[id] || {}).天然耐药 || '');
+
+  // B4：鹑鸡与铅黄两行合并，QD 与万古霉素均标 R；屎肠球菌 QD 格为空
+  ['enterococcus-gallinarum', 'enterococcus-casseliflavus'].forEach((id) => {
+    assert.match(文(id), /奎奴普丁/, id + ' 应写明奎奴普丁-达福普汀固有耐药（附录 B4 标 R）');
+    assert.match(文(id), /vanC/, id + ' 应写明 vanC');
+  });
+  assert.doesNotMatch(文('enterococcus-faecium'), /奎奴普丁-达福普汀天然耐药|对奎奴普丁/,
+    '屎肠球菌对 QD 不固有耐药（附录 B4 该格为空），不应写成耐药');
+
+  // B1：产气克雷伯菌该行二代头孢为空白、氨苄西林/舒巴坦为 R
+  const ka = 文('klebsiella-aerogenes');
+  assert.match(ka, /氨苄西林\/舒巴坦/, '产气克雷伯菌应含氨苄西林/舒巴坦（B1 标 R）');
+  assert.doesNotMatch(ka, /二代头孢/, '产气克雷伯菌不应含二代头孢（B1 该格空白）');
+
+  // B3 NOTE 1：全部葡萄球菌对氨曲南、多黏菌素/黏菌素、萘啶酸固有耐药
+  ['staph-aureus', 'staph-epidermidis', 'staph-haemolyticus', 'staph-lugdunensis',
+   'staph-saprophyticus', 'staph-capitis', 'staph-hominis', 'staph-cohnii', 'staph-kloosii'].forEach((id) => {
+    assert.match(文(id), /氨曲南/, id + ' 缺 B3 NOTE 1 的氨曲南固有耐药');
+  });
+  // B3 表体：只有这三种有种特异性固有耐药，金葡/表皮/溶血/路邓明确写「无」
+  assert.match(文('staph-saprophyticus'), /新生霉素/, '腐生葡萄球菌新生霉素 R');
+  assert.match(文('staph-capitis'), /磷霉素/, '头葡萄球菌磷霉素 R');
+  assert.match(文('staph-cohnii'), /新生霉素/, '科氏葡萄球菌新生霉素 R');
+  ['staph-aureus', 'staph-epidermidis', 'staph-haemolyticus', 'staph-lugdunensis'].forEach((id) => {
+    assert.match(文(id), /未列本种的种特异性固有耐药/, id + ' 在 B3 表体应标注为无种特异性固有耐药');
+  });
+
+  // M27M44S 附录 B：克柔念珠菌氟康唑固有耐药——此前只写在小节里，速查工具查不到
+  assert.match(文('candida-krusei'), /氟康唑/, '克柔念珠菌应在天然耐药字段写明氟康唑');
+  const vm = View.intrinsicVM(window.DB, '氟康唑');
+  const hit = vm.groups.some((g) => g.items.some((it) => it.id === 'candida-krusei'));
+  assert.ok(hit, '「天然耐药速查」查氟康唑必须能查到克柔念珠菌');
 });

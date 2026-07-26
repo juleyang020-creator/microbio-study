@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-77';
+  var APP_VERSION = window.APP_VERSION || '20260702-78';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -1219,11 +1219,25 @@
     fill(document.getElementById('sidebar'), sb);
     renderIntrinsicMain();
   }
+  // CLSI 附录 B 有合并行（如「鹑鸡肠球菌 / 铅黄肠球菌」共用一行），软件按同样结构收录。
+  // `id` 因此允许是数组：名称按 " / " 切开与之一一对应，各自成链接，
+  // 否则合并行只能点到第一个菌，另一个菌从这张表进不去。
+  function intrinsicNameNodes(r) {
+    var ids = Array.isArray(r.id) ? r.id : (r.id ? [r.id] : []);
+    if (!ids.length) { return [el('strong', { text: r.名称 })]; }
+    var parts = String(r.名称).split(' / ');
+    if (parts.length !== ids.length) {  // 数量对不上就整体链到第一个，不猜
+      return [el('a', { cls: 'intrinsic-link', text: r.名称, href: '#/microbes/' + ids[0] })];
+    }
+    var out = [];
+    parts.forEach(function (name, i) {
+      if (i) { out.push(document.createTextNode(' / ')); }
+      out.push(el('a', { cls: 'intrinsic-link', text: name, href: '#/microbes/' + ids[i] }));
+    });
+    return out;
+  }
   function intrinsicResistanceCard(r) {
-    var nameEl = r.id
-      ? el('a', { cls: 'intrinsic-link', text: r.名称, href: '#/microbes/' + r.id })
-      : el('strong', { text: r.名称 });
-    var children = [el('div', { cls: 'ir-card-head' }, [nameEl, el('span', { cls: 'latin', text: r.拉丁 })])];
+    var children = [el('div', { cls: 'ir-card-head' }, intrinsicNameNodes(r).concat([el('span', { cls: 'latin', text: r.拉丁 })]))];
     if ((r.耐药 || []).length) {
       children.push(el('div', { cls: 'ir-card-drugs' }, r.耐药.map(function (d) {
         return el('span', { cls: 'ir-drug-chip', text: d });
@@ -1251,9 +1265,7 @@
         .concat((grp.药物列 || []).map(function (d) { return el('th', { cls: 'ir-drug-col', text: d }); }))
         .concat([el('th', { text: '备注' })]));
       var body = rows.map(function (r) {
-        var nameCell = r.id
-          ? el('td', {}, [el('a', { cls: 'intrinsic-link', text: r.名称, href: '#/microbes/' + r.id }), el('span', { cls: 'latin', text: r.拉丁 })])
-          : el('td', {}, [el('strong', { text: r.名称 }), el('span', { cls: 'latin', text: r.拉丁 })]);
+        var nameCell = el('td', {}, intrinsicNameNodes(r).concat([el('span', { cls: 'latin', text: r.拉丁 })]));
         var cells = [nameCell].concat((grp.药物列 || []).map(function (d) {
           var isR = (r.耐药 || []).indexOf(d) !== -1;
           return el('td', { cls: 'ir-cell' }, [isR ? el('span', { cls: 'ir-chip', title: '固有耐药', text: '耐' }) : el('span', { cls: 'ir-dash', text: '—' })]);
