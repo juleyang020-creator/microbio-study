@@ -41,6 +41,7 @@ window.DB.breakpoints = [
   {
     菌组名: "沙门菌 / 志贺菌 (Salmonella & Shigella spp.)",
     CLSI表: "Table 2A-2",
+    试验条件: { 培养基: "纸片法 MHA；肉汤稀释 CAMHB；琼脂稀释 MHA", 接种: "肉汤培养法或菌落悬液，相当于 0.5 麦氏浊度；部分药物做纸片法时可用阳性血培养肉汤", 孵育: "35°C ± 2°C，环境空气；纸片法 16~18 h；稀释法 16~20 h", 出处: "M100 Ed36 印刷 p.70 / PDF p.102" },
     菌种: ["salmonella-typhi", "salmonella-enteritidis", "salmonella-paratyphi-a", "shigella-dysenteriae", "shigella-flexneri"],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "可预测阿莫西林;粪便分离株常规仅报氨苄西林、氟喹诺酮、复方磺胺(志贺另可报阿奇霉素)" },
@@ -92,6 +93,7 @@ window.DB.breakpoints = [
   {
     菌组名: "不动杆菌属 (Acinetobacter spp.)",
     CLSI表: "Table 2B-2",
+    试验条件: { 培养基: "纸片法 MHA；肉汤稀释 CAMHB（头孢地尔用铁耗竭 CAMHB，见附录 H 第 H1 节）；琼脂稀释 MHA", 接种: "肉汤培养法或菌落悬液，相当于 0.5 麦氏浊度；部分药物做纸片法时可用阳性血培养肉汤", 孵育: "35°C ± 2°C，环境空气；⚠️ 所有方法均为 20~24 h（比肠杆菌目长）", 出处: "M100 Ed36 印刷 p.80 / PDF p.112" },
     菌种: ["acinetobacter-baumannii", "acinetobacter-pittii", "acinetobacter-nosocomialis", "acinetobacter-junii"],
     药物: [
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", 组别: "1", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "≥22", 抑菌圈_I: "17–21", 抑菌圈_R: "≤16", 备注: "Ed36 修订(圈);舒巴坦为抗不动杆菌活性成分" },
@@ -116,6 +118,7 @@ window.DB.breakpoints = [
   {
     菌组名: "嗜麦芽窄食单胞菌 (Stenotrophomonas maltophilia)",
     CLSI表: "Table 2B-4",
+    试验条件: { 培养基: "纸片法 MHA；肉汤稀释 CAMHB（头孢地尔用铁耗竭 CAMHB）；琼脂稀释 MHA", 接种: "肉汤培养法或菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C ± 2°C，环境空气；⚠️ 所有方法均为 20~24 h", 出处: "M100 Ed36 印刷 p.88 / PDF p.120" },
     菌种: ["stenotrophomonas-maltophilia"],
     药物: [
       { 药物: "头孢地尔 (Cefiderocol)", 简写: "FDC", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "≥17", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅敏感折点(I/R 未建立)；须用缺铁 CAMHB(见附录H)，铁浓度/接种量/厂家显著影响结果，可假敏或假耐，建议检测后续分离株并与临床/药学沟通" },
@@ -131,6 +134,7 @@ window.DB.breakpoints = [
   {
     菌组名: "洋葱伯克霍尔德菌复合群 (Burkholderia cepacia complex)",
     CLSI表: "Table 2B-3 (Ed36 已撤销折点)",
+    试验条件: { 培养基: "⚠️ 仅肉汤稀释 CAMHB（本表不设纸片法）", 接种: "肉汤培养法或菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C ± 2°C，环境空气；20~24 h", 出处: "M100 Ed36 印刷 p.86 / PDF p.118" },
     菌种: ["burkholderia-cepacia"],
     药物: [
       { 药物: "复方新诺明 (Trimethoprim-Sulfamethoxazole)", 简写: "SXT", MIC_S: "—", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "CLSI M100 Ed36 已撤销 B. cepacia 复合群全部折点(BMD 与琼脂稀释法不相关);无现行折点。SXT 临床仍为首选,判读建议参考 EUCAST 或送参考实验室" },
@@ -145,6 +149,7 @@ window.DB.breakpoints = [
   {
     菌组名: "其他非肠杆菌目 (弧菌属 / 气单胞菌属等)",
     CLSI表: "Table 2B-5",
+    试验条件: { 培养基: "⚠️ 肉汤稀释 CAMHB、琼脂稀释 MHA（本表不设纸片法折点）", 接种: "肉汤培养法或菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C ± 2°C，环境空气；16~20 h", 出处: "M100 Ed36 印刷 p.92 / PDF p.124" },
     菌种: ['vibrio-cholerae', 'vibrio-parahaemolyticus', 'vibrio-vulnificus'],
     药物: [
       { 药物: "头孢他啶 (Ceftazidime)", 简写: "CAZ", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "本组仅 MIC 法,不做纸片扩散" },
@@ -188,6 +193,7 @@ window.DB.breakpoints = [
   {
     菌组名: "淋病奈瑟菌 (Neisseria gonorrhoeae)",
     CLSI表: "Table 2F",
+    试验条件: { 培养基: "纸片法 GC 琼脂基础 + 1% 确定成分生长添加剂（纸片法不要求用无半胱氨酸添加剂）；琼脂稀释 GC 琼脂基础 + 1% 添加剂（⚠️ 碳青霉烯类与克拉维酸的琼脂稀释须用无半胱氨酸添加剂；含半胱氨酸者对其他药影响不显著）", 接种: "菌落悬液，相当于 0.5 麦氏浊度，用 MHB 或 0.9% 磷酸盐缓冲盐水(pH 7)配制，取自 5% CO₂ 孵育过夜(20~24 h)的巧克力平板菌落", 孵育: "⚠️ 36°C ± 1°C（不得超过 37°C）；5% CO₂；所有方法 20~24 h", 出处: "M100 Ed36 印刷 p.118 / PDF p.150" },
     菌种: ["neisseria-gonorrhoeae"],
     药物: [
       { 药物: "头孢曲松 (Ceftriaxone)", 简写: "CRO", 组别: "1", MIC_S: "≤0.12", MIC_I: "0.25", MIC_R: "≥0.5", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Ed36:纸片折点已暂时移除;新增中介/耐药 MIC 折点。一线治疗,CDC 推荐 500 mg IM 单剂" },
@@ -204,6 +210,7 @@ window.DB.breakpoints = [
   {
     菌组名: "脑膜炎奈瑟菌 (Neisseria meningitidis)",
     CLSI表: "Table 2I",
+    试验条件: { 培养基: "纸片法 MHA + 5% 羊血；肉汤微量稀释 CAMHB + LHB(2.5%~5% v/v)；琼脂稀释 MHA + 5% 羊血", 接种: "取 35°C、5% CO₂ 孵育 20~24 h 巧克力平板的菌落配成 0.5 麦氏浊度。⚠️ 也可用羊血平板菌落，但同样 0.5 麦氏时 CFU/mL 约少 50%，配终稀释度前须按菌落计数校正", 孵育: "35°C ± 2°C；5% CO₂；20~24 h", 出处: "M100 Ed36 印刷 p.138 / PDF p.170" },
     菌种: ["neisseria-meningitidis"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.06", MIC_I: "0.12–0.25", MIC_R: "≥0.5", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅 MIC 法(无纸片折点)" },
@@ -285,6 +292,7 @@ window.DB.breakpoints = [
   {
     菌组名: "β-溶血链球菌 (β-Hemolytic Streptococcus)",
     CLSI表: "Table 2H-1",
+    试验条件: { 培养基: "纸片法 MHA + 5% 羊血；肉汤稀释 CAMHB + LHB(2.5%~5% v/v)，⚠️ 达托霉素须补钙至 50 μg/mL；琼脂稀释 MHA + 5% 羊血（近年未经分委会复核）", 接种: "菌落悬液，相当于 0.5 麦氏浊度，取自过夜(18~20 h)羊血平板的菌落", 孵育: "35°C ± 2°C；纸片法 5% CO₂、20~24 h；稀释法 环境空气、20~24 h（琼脂稀释如生长需要可用 CO₂）", 出处: "M100 Ed36 印刷 p.128 / PDF p.160" },
     菌种: ["strep-pyogenes", "strep-agalactiae", "strep-dysgalactiae"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.12", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "≥24", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "首选药;非敏感极罕见,仅设敏感折点" },
@@ -302,6 +310,7 @@ window.DB.breakpoints = [
   {
     菌组名: "肺炎链球菌 (Streptococcus pneumoniae)",
     CLSI表: "Table 2G",
+    试验条件: { 培养基: "纸片法 MHA + 5% 羊血 或 MH-F 琼脂（MHA + 5% 机械去纤维马血 + 20 μg/mL NAD）；肉汤稀释 CAMHB + LHB(2.5%~5% v/v)；琼脂稀释 MHA + 5% 羊血（琼脂稀释法近年未经分委会复核）", 接种: "菌落悬液，相当于 0.5 麦氏浊度，取自过夜(18~20 h)羊血平板的菌落", 孵育: "35°C ± 2°C；纸片法 5% CO₂、20~24 h；稀释法 环境空气、20~24 h（琼脂稀释如生长需要可用 CO₂）", 出处: "M100 Ed36 印刷 p.122 / PDF p.154" },
     菌种: ["strep-pneumoniae"],
     药物: [
       { 药物: "青霉素 (Penicillin, 脑膜炎)", 简写: "P-mening", 组别: "1", MIC_S: "≤0.06", MIC_I: "—", MIC_R: "≥0.12", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "脑膜炎折点；仅MIC法" },
@@ -325,6 +334,7 @@ window.DB.breakpoints = [
   {
     菌组名: "草绿色链球菌群 (Viridans Group Streptococci)",
     CLSI表: "Table 2H-2",
+    试验条件: { 培养基: "纸片法 MHA + 5% 羊血；肉汤稀释 CAMHB + LHB(2.5%~5% v/v)，⚠️ 达托霉素须补钙至 50 μg/mL；琼脂稀释 MHA + 5% 羊血（近年未经分委会复核）", 接种: "菌落悬液，相当于 0.5 麦氏浊度，取自过夜(18~20 h)羊血平板的菌落", 孵育: "35°C ± 2°C；纸片法 5% CO₂、20~24 h；稀释法 环境空气、20~24 h（琼脂稀释如生长需要可用 CO₂）", 出处: "M100 Ed36 印刷 p.134 / PDF p.166" },
     菌种: ["strep-viridans", "strep-gallolyticus", "strep-anginosus"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.12", MIC_I: "0.25–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无菌部位(血/脑脊液/骨)分离株须用 MIC 法;中介株治心内膜炎需联合氨基糖苷" },
@@ -341,6 +351,7 @@ window.DB.breakpoints = [
   // ===== 单核细胞增生李斯特菌 (CLSI M45，非 M100 表) =====
   {
     菌组名: "单核细胞增生李斯特菌 (Listeria monocytogenes)",
+    试验条件: { 培养基: "肉汤微量稀释 CAMHB-LHB(2.5%~5% v/v)；⚠️ 本表不设纸片法", 接种: "直接菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C，环境空气，20~24 h", 出处: "CLSI M45 Ed3 Table 22（试验条件汇总），印刷 p.64 / PDF p.84–85" },
     CLSI表: "CLSI M45",
     菌种: ["listeria-monocytogenes"],
     药物: [
@@ -354,6 +365,7 @@ window.DB.breakpoints = [
   // ===== 卡他莫拉菌 (CLSI M45，非 M100 表) =====
   {
     菌组名: "卡他莫拉菌 (Moraxella catarrhalis)",
+    试验条件: { 培养基: "肉汤微量稀释 CAMHB；纸片法 MHA（不加添加剂）", 接种: "直接菌落悬液，相当于 0.5 麦氏浊度", 孵育: "肉汤微量稀释 35°C、环境空气、20~24 h；⚠️ 纸片法 35°C、5% CO₂、20~24 h（气体条件与肉汤法不同）", 出处: "CLSI M45 Ed3 Table 22（试验条件汇总），印刷 p.64 / PDF p.84–85" },
     CLSI表: "CLSI M45",
     菌种: ["moraxella-catarrhalis"],
     药物: [
@@ -367,6 +379,7 @@ window.DB.breakpoints = [
   // ===== 幽门螺杆菌 (CLSI M45，非 M100 表) =====
   {
     菌组名: "幽门螺杆菌 (Helicobacter pylori)",
+    试验条件: { 培养基: "⚠️ 琼脂稀释法：MHA + 陈旧（存放 ≥2 周）羊血 5% v/v。本菌不做肉汤稀释与纸片法", 接种: "⚠️ 生理盐水悬液，相当于 2.0 麦氏浊度（含 1×10⁷~1×10⁸ CFU/mL），取自 72 h 龄血平板传代物；每点 1~3 μL 直接点种到含药琼脂上", 孵育: "⚠️ 35°C ± 2°C；72 h；微需氧（10% CO₂、5% O₂、85% N₂），首选压缩气体培养箱", 出处: "CLSI M45 Ed3 Table 10（幽门螺杆菌），PDF p.56" },
     CLSI表: "CLSI M45",
     菌种: ["helicobacter-pylori"],
     药物: [
@@ -382,6 +395,7 @@ window.DB.breakpoints = [
   {
     菌组名: "厌氧菌 (Anaerobic Bacteria)",
     CLSI表: "Table 2J",
+    试验条件: { 培养基: "琼脂稀释（适用全部厌氧菌）布氏琼脂 + 氯化血红素 5 μg/mL + 维生素 K₁ 1 μg/mL + 5% 溶血羊血；⚠️ 肉汤微量稀释仅适用于脆弱拟杆菌与多形拟杆菌：布氏肉汤 + 氯化血红素 + 维生素 K₁ + 5% LHB", 接种: "肉汤培养法或菌落悬液，相当于 0.5 麦氏浊度；琼脂法每点 10⁵ CFU、肉汤法 10⁶ CFU/mL", 孵育: "⚠️ 36°C ± 1°C，厌氧环境；肉汤微量稀释 46~48 h；琼脂稀释 42~48 h（远长于需氧菌）", 出处: "M100 Ed36 印刷 p.142 / PDF p.174" },
     菌种: ['clostridium-perfringens', 'clostridium-tetani', 'clostridium-botulinum', 'clostridioides-difficile', 'bacteroides-fragilis', 'cutibacterium-acnes', 'clostridium-septicum',
       'fusobacterium-nucleatum', 'fusobacterium-necrophorum', 'porphyromonas-gingivalis', 'prevotella-melaninogenica',
       'finegoldia-magna', 'peptostreptococcus-anaerobius', 'veillonella-parvula', 'actinomyces-israelii'],
@@ -408,6 +422,7 @@ window.DB.breakpoints = [
   // 阿尼芬净、瑞扎芬净列为独立药物行；瑞扎芬净为暂定「仅敏感」折点，两性霉素B/5-氟胞嘧啶无 CLSI 临床折点(附 ECV)。
   {
     菌组名: "白念珠菌 (Candida albicans)",
+    试验条件: { 孵育: "本表折点为肉汤稀释法 24 h 孵育后读数（另有 48 h 常量稀释折点表）。⚠️ 培养基与接种量见母文件 CLSI M27，本库未收录，请查原文", 出处: "CLSI M27M44S Ed3 Table 1 标题（24 小时孵育后读数）" },
     CLSI表: "M27M44S · Table 1(BMD MIC)",
     来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-albicans"],
@@ -424,6 +439,7 @@ window.DB.breakpoints = [
   },
   {
     菌组名: "光滑念珠菌 (Nakaseomyces glabratus / C. glabrata)",
+    试验条件: { 孵育: "本表折点为肉汤稀释法 24 h 孵育后读数（另有 48 h 常量稀释折点表）。⚠️ 培养基与接种量见母文件 CLSI M27，本库未收录，请查原文", 出处: "CLSI M27M44S Ed3 Table 1 标题（24 小时孵育后读数）" },
     CLSI表: "M27M44S · Table 1(BMD MIC)",
     来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-glabrata"],
@@ -439,6 +455,7 @@ window.DB.breakpoints = [
   },
   {
     菌组名: "近平滑念珠菌 (Candida parapsilosis)",
+    试验条件: { 孵育: "本表折点为肉汤稀释法 24 h 孵育后读数（另有 48 h 常量稀释折点表）。⚠️ 培养基与接种量见母文件 CLSI M27，本库未收录，请查原文", 出处: "CLSI M27M44S Ed3 Table 1 标题（24 小时孵育后读数）" },
     CLSI表: "M27M44S · Table 1(BMD MIC)",
     来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-parapsilosis"],
@@ -454,6 +471,7 @@ window.DB.breakpoints = [
   },
   {
     菌组名: "热带念珠菌 (Candida tropicalis)",
+    试验条件: { 孵育: "本表折点为肉汤稀释法 24 h 孵育后读数（另有 48 h 常量稀释折点表）。⚠️ 培养基与接种量见母文件 CLSI M27，本库未收录，请查原文", 出处: "CLSI M27M44S Ed3 Table 1 标题（24 小时孵育后读数）" },
     CLSI表: "M27M44S · Table 1(BMD MIC)",
     来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-tropicalis"],
@@ -469,6 +487,7 @@ window.DB.breakpoints = [
   },
   {
     菌组名: "克柔念珠菌 (Pichia kudriavzevii / C. krusei)",
+    试验条件: { 孵育: "本表折点为肉汤稀释法 24 h 孵育后读数（另有 48 h 常量稀释折点表）。⚠️ 培养基与接种量见母文件 CLSI M27，本库未收录，请查原文", 出处: "CLSI M27M44S Ed3 Table 1 标题（24 小时孵育后读数）" },
     CLSI表: "M27M44S · Table 1(BMD MIC)",
     来源: "CLSI M27M44S Ed3 (2022)",
     菌种: ["candida-krusei"],
@@ -499,6 +518,7 @@ window.DB.breakpoints = [
   {
     菌组名: "芽孢杆菌属(非炭疽) (Bacillus spp., not B. anthracis)",
     CLSI表: "CLSI M45 · Table 4",
+    试验条件: { 培养基: "肉汤微量稀释 CAMHB；⚠️ 本表不设纸片法", 接种: "直接菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C，环境空气，16~20 h", 出处: "CLSI M45 Ed3 Table 22（试验条件汇总），印刷 p.64 / PDF p.84–85" },
     来源: "CLSI M45 (3rd ed., 2018)",
     菌种: ["bacillus-cereus"],
     药物: [
@@ -522,6 +542,7 @@ window.DB.breakpoints = [
   {
     菌组名: "棒状杆菌属 (Corynebacterium spp.，含白喉棒状杆菌)",
     CLSI表: "CLSI M45 · Table 6",
+    试验条件: { 培养基: "肉汤微量稀释 CAMHB-LHB(2.5%~5% v/v)；⚠️ 本表不设纸片法", 接种: "直接菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C，环境空气，⚠️ 24~48 h（比多数菌组长）", 出处: "CLSI M45 Ed3 Table 22（试验条件汇总），印刷 p.64 / PDF p.84–85" },
     来源: "CLSI M45 (3rd ed., 2018)",
     菌种: ["corynebacterium-diphtheriae", "corynebacterium-striatum"],
     药物: [
@@ -547,6 +568,7 @@ window.DB.breakpoints = [
   {
     菌组名: "微球菌属 (Micrococcus spp.)",
     CLSI表: "CLSI M45 · Table 15",
+    试验条件: { 培养基: "肉汤微量稀释 CAMHB；⚠️ 本表不设纸片法", 接种: "直接菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C，环境空气，20~24 h", 出处: "CLSI M45 Ed3 Table 22（试验条件汇总），印刷 p.64 / PDF p.84–85" },
     来源: "CLSI M45 (3rd ed., 2018)",
     菌种: ["micrococcus-luteus"],
     药物: [
@@ -559,6 +581,7 @@ window.DB.breakpoints = [
   {
     菌组名: "罗斯菌属 (Rothia mucilaginosa)",
     CLSI表: "CLSI M45 · Table 19",
+    试验条件: { 培养基: "肉汤微量稀释 CAMHB-LHB(2.5%~5% v/v)；⚠️ 本表不设纸片法", 接种: "直接菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C，环境空气，20~24 h", 出处: "CLSI M45 Ed3 Table 22（试验条件汇总），印刷 p.64 / PDF p.84–85" },
     来源: "CLSI M45 (3rd ed., 2018)",
     菌种: ["rothia-mucilaginosa"],
     药物: [
@@ -572,6 +595,7 @@ window.DB.breakpoints = [
   },
   {
     菌组名: "炭疽芽孢杆菌 (Bacillus anthracis)",
+    试验条件: { 培养基: "肉汤微量稀释 CAMHB；⚠️ 本表不设纸片法", 接种: "直接菌落悬液，相当于 0.5 麦氏浊度", 孵育: "35°C，环境空气，16~20 h", 出处: "CLSI M45 Ed3 Table 22（试验条件汇总），印刷 p.64 / PDF p.84–85" },
     CLSI表: "CLSI M45 · Table 21 (生物恐怖相关)",
     来源: "CLSI M45 (3rd ed., 2018)",
     菌种: ["bacillus-anthracis"],
@@ -585,6 +609,7 @@ window.DB.breakpoints = [
   },
   {
     菌组名: "布鲁菌属 (Brucella spp.)",
+    试验条件: { 培养基: "⚠️ 未添加的布氏肉汤(Brucella broth)，pH 调至 7.1 ± 0.1——与其他菌组用 CAMHB 不同；本表不设纸片法", 接种: "直接菌落悬液，相当于 0.5 麦氏浊度", 孵育: "⚠️ 35°C，环境空气，48 h", 出处: "CLSI M45 Ed3 Table 22（试验条件汇总），印刷 p.64 / PDF p.84–85" },
     CLSI表: "CLSI M45 · Table 21 (生物恐怖相关)",
     来源: "CLSI M45 (3rd ed., 2018)",
     菌种: ["brucella-melitensis"],

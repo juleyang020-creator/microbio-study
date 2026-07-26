@@ -883,13 +883,19 @@ test('菌名速查索引可被检索：中文名、拉丁名、别名三条路�
 test('折点组试验条件：只在回源核对过的组出现，且钉住最易漏的几条', () => {
   const groups = window.DB.breakpoints;
   const withCond = groups.filter((g) => g.试验条件);
-  assert.strictEqual(withCond.length, 5, '有试验条件的组数变了，新增/删除时请确认是否已回源核对');
+  assert.strictEqual(withCond.length, 30, '有试验条件的组数变了，新增/删除时请确认是否已回源核对');
+  // 孵育与出处必填；培养基/接种在少数组缺——M27M44S 只给折点，方法在母文件 CLSI M27（本库未收），
+  // 那几组就只写查得到的孵育，不编培养基。
   withCond.forEach((g) => {
-    ['培养基', '接种', '孵育', '出处'].forEach((k) => {
-      assert.ok(g.试验条件[k] && g.试验条件[k].length > 4, g.CLSI表 + ' 的试验条件缺 ' + k);
+    ['孵育', '出处'].forEach((k) => {
+      assert.ok(g.试验条件[k] && g.试验条件[k].length > 4, g.菌组名 + ' 的试验条件缺 ' + k);
     });
-    assert.match(g.试验条件.出处, /M100 Ed36/, g.CLSI表 + ' 的试验条件须注明出处版本');
+    assert.match(g.试验条件.出处, /M100 Ed36|CLSI M45|CLSI M27M44S/, g.菌组名 + ' 的试验条件须注明出处标准与版本');
   });
+  // 两组确实查不到：耳念珠菌用 CDC 暂定折点（原文未收）、曲霉的方法在 M38 母文件
+  const noCond = groups.filter((g) => !g.试验条件).map((g) => g.菌组名);
+  assert.strictEqual(noCond.length, 2, '无试验条件的组应仅剩源不可得的 2 组，实为：' + noCond.join('、'));
+  assert.ok(noCond.every((n) => /耳念珠菌|曲霉/.test(n)), '无条件的组变了：' + noCond.join('、'));
   const byTable = {};
   withCond.forEach((g) => { byTable[g.CLSI表] = g.试验条件; });
 
@@ -906,4 +912,24 @@ test('折点组试验条件：只在回源核对过的组出现，且钉住最�
   // 肠杆菌目与铜绿：头孢地尔的铁耗竭 CAMHB
   assert.match(byTable['Table 2A-1'].培养基, /铁耗竭/, '2A-1 须写明头孢地尔用铁耗竭 CAMHB');
   assert.match(byTable['Table 2B-1'].培养基, /铁耗竭/, '2B-1 须写明头孢地尔用铁耗竭 CAMHB');
+
+  // 与其他菌组差异最大、最容易套错的几组
+  const byName = {};
+  withCond.forEach((g) => { byName[g.菌组名] = g.试验条件; });
+  const 淋球菌 = byTable['Table 2F'];
+  assert.match(淋球菌.孵育, /36°C ± 1°C（不得超过 37°C）/, '2F 温度上限与其他组不同，须写明');
+  assert.match(byTable['Table 2J'].孵育, /厌氧环境/, '2J 须写明厌氧');
+  assert.match(byTable['Table 2J'].孵育, /4[26]~48 h/, '2J 孵育远长于需氧菌，须写明具体时长');
+
+  const hp = Object.keys(byName).filter((n) => /幽门螺杆菌/.test(n))[0];
+  assert.match(byName[hp].接种, /2\.0 麦氏/, '幽门螺杆菌用 2.0 麦氏而非常规 0.5 麦氏');
+  assert.match(byName[hp].孵育, /72 h/, '幽门螺杆菌需 72 h');
+  assert.match(byName[hp].孵育, /微需氧/, '幽门螺杆菌需微需氧环境');
+
+  const br = Object.keys(byName).filter((n) => /布鲁菌/.test(n))[0];
+  assert.match(byName[br].培养基, /布氏肉汤/, '布鲁菌用布氏肉汤而非 CAMHB');
+  assert.match(byName[br].培养基, /7\.1/, '布鲁菌须写明 pH 7.1 ± 0.1');
+
+  const mc = Object.keys(byName).filter((n) => /卡他莫拉菌/.test(n))[0];
+  assert.match(byName[mc].孵育, /5% CO₂/, '卡他莫拉菌纸片法需 CO₂，与其肉汤法的环境空气不同');
 });
