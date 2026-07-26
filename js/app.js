@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-80';
+  var APP_VERSION = window.APP_VERSION || '20260702-83';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -918,10 +918,32 @@
     if (pos < text.length) { out.push(document.createTextNode(text.slice(pos))); }
     return out;
   }
+  // 菌名速查索引里的命中：这些菌多数没有详情页，但至少能告诉用户「这个名字确实存在、是什么菌」。
+  // 从 MALDI 拿到一个陌生菌名时，此前搜索直接返回「没有找到」，是速查场景里最常见的断点。
+  function microbeNameHits(query) {
+    // 注意用 window.DB 而不是 db()：后者只挑出 9 个可检索模块，不含 microbeNames
+    var hits = Core.searchMicrobeNames(window.DB || {}, query, 12);
+    if (!hits.length) { return null; }
+    var rows = hits.map(function (h) {
+      // 本库有详情页的（按名称匹配）直接给链接，其余只作为名称参考展示
+      var entry = (db().microbes || []).filter(function (m) { return m.名称 === h.名称; })[0];
+      var kids = [ el('span', { cls: 'mn-cn', text: h.名称 }), el('span', { cls: 'mn-latin', text: h.拉丁名 }) ];
+      return entry
+        ? el('a', { cls: 'mn-hit has-entry', href: '#/microbes/' + entry.id }, kids.concat([el('span', { cls: 'mn-go', text: '查看条目' })]))
+        : el('div', { cls: 'mn-hit' }, kids);
+    });
+    return el('div', { cls: 'search-extra' }, [
+      el('div', { cls: 'search-extra-head', text: '菌名速查索引（' + hits.length + ' 条' + (hits.length >= 12 ? '，仅显示前 12 条' : '') + '）' }),
+      el('div', { cls: 'mn-hit-list' }, rows)
+    ]);
+  }
+
   function buildSearch(vm) {
     var nodes = [ el('div', { cls: 'search-head', text: '搜索：“' + vm.query + '”' }) ];
+    var nameHits = microbeNameHits(vm.query);
     if (vm.items.length === 0) {
-      nodes.push(el('div', { cls: 'empty', text: '没有找到匹配的条目。' }));
+      nodes.push(el('div', { cls: 'empty', text: nameHits ? '条目库中没有匹配项，但菌名索引里查到了下面的名称。' : '没有找到匹配的条目。' }));
+      if (nameHits) { nodes.push(nameHits); }
       return nodes;
     }
     var tokens = vm.tokens || [];
@@ -942,6 +964,7 @@
       return link;
     });
     nodes.push(el('div', { cls: 'search-list' }, items));
+    if (nameHits) { nodes.push(nameHits); }
     return nodes;
   }
 

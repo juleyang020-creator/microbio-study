@@ -851,3 +851,24 @@ test('天然耐药字段：与 M100 Ed36 附录 B 一致', () => {
   const hit = vm.groups.some((g) => g.items.some((it) => it.id === 'candida-krusei'));
   assert.ok(hit, '「天然耐药速查」查氟康唑必须能查到克柔念珠菌');
 });
+
+// 全局搜索只遍历 9 个可检索模块，菌名速查索引（4563 条）不在其中。
+// 症状：MALDI 报出一个本库没有详情页的菌（如马红球菌）时，搜索返回「没有找到」，
+// 用户得自己想起还有「菌名速查」这个工具——速查场景里最常见的断点。
+test('菌名速查索引可被检索：中文名、拉丁名、别名三条路径都能命中', () => {
+  const DB = global.window.DB;
+  assert.strictEqual(Core.searchEntries(DB, '马红球菌').length, 0,
+    '前提：马红球菌在 9 个模块里确实没有条目（若已补条目，本测试的前提需重写）');
+
+  const 中文 = Core.searchMicrobeNames(DB, '马红球菌', 5);
+  assert.strictEqual(中文.length, 1, '按中文名应命中马红球菌');
+  assert.strictEqual(中文[0].拉丁名, 'Rhodococcus equi');
+
+  assert.ok(Core.searchMicrobeNames(DB, 'Rhodococcus equi', 5).some((h) => h.名称 === '马红球菌'),
+    '按拉丁名应命中');
+  assert.ok(Core.searchMicrobeNames(DB, 'hoagii', 5).some((h) => h.名称 === '马红球菌'),
+    '按别名 Rhodococcus hoagii 应命中——更名后的旧名检索是这个索引的主要价值');
+
+  assert.deepStrictEqual(Core.searchMicrobeNames(DB, '', 5), [], '空查询不返回结果');
+  assert.ok(Core.searchMicrobeNames(DB, '菌', 7).length <= 7, 'limit 参数必须生效，否则会渲染上千条');
+});
