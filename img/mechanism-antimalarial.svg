@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抗疟药（血红素解毒途径与四个靶点）</title><desc>疟原虫消化血红蛋白产生有毒的铁原卟啉 IX，须聚合成无毒疟色素；喹啉类阻断这一聚合使毒物蓄积，青蒿素反而利用疟色素中的铁生成氧自由基；叶酸拮抗药与阿托伐醌另攻两条通路；只有伯氨喹能清除肝内休眠体</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抗疟药</text>
+<rect x="366" y="14" width="90" height="18" rx="9" fill="#eef2f7"/>
+<text x="411" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗寄生虫 2/3</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">多数药只打红内期；能否根治复发，取决于是否清除肝内休眠体</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- 红内期：血红素解毒链 -->
+<rect x="24" y="66" width="432" height="82" rx="6" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="34" y="81" font-size="10" font-weight="700" fill="#1f4e79">红内期（无性期）· 血红素解毒途径</text>
+<rect x="34" y="90" width="84" height="26" rx="4" fill="#eef1f8" stroke="#7b8ba0" stroke-width="0.9"/>
+<text x="76" y="106" text-anchor="middle" font-size="9.5" fill="#4a5768">宿主血红蛋白</text>
+<line x1="120" y1="103" x2="146" y2="103" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="150" y="90" width="96" height="26" rx="4" fill="#fdf1f0" stroke="#c2413d" stroke-width="1.1"/>
+<text x="198" y="101" text-anchor="middle" font-size="9.5" fill="#a3332f">铁原卟啉 IX</text>
+<text x="198" y="112" text-anchor="middle" font-size="9.5" fill="#a3332f">（对虫体有毒）</text>
+<line x1="250" y1="103" x2="276" y2="103" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="280" y="90" width="88" height="26" rx="4" fill="#eef5f0" stroke="#b7d3c3" stroke-width="1.1"/>
+<text x="324" y="101" text-anchor="middle" font-size="9.5" fill="#2f6b4f">疟色素</text>
+<text x="324" y="112" text-anchor="middle" font-size="9.5" fill="#2f6b4f">（无毒，已聚合）</text>
+<!-- 喹啉类阻断聚合 -->
+<line x1="264" y1="134" x2="264" y2="118" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="150" y="140" font-size="9.5" fill="#a3332f">氯喹｜奎宁｜甲氟喹：阻断聚合 → 毒物蓄积</text>
+<!-- 青蒿素反向利用 -->
+<line x1="392" y1="103" x2="372" y2="103" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="412" y="100" text-anchor="middle" font-size="9.5" fill="#1f4e79">青蒿素类</text>
+<text x="412" y="112" text-anchor="middle" font-size="9.5" fill="#5c6672">结合铁→氧自由基</text>
+
+<!-- 另两条通路 -->
+<rect x="24" y="156" width="212" height="50" rx="6" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="34" y="171" font-size="9.5" font-weight="700" fill="#1f4e79">叶酸合成通路</text>
+<text x="34" y="185" font-size="9.5" fill="#5c6672">乙胺嘧啶抑 DHFR，磺胺多辛抑上游</text>
+<text x="34" y="198" font-size="9.5" fill="#5c6672">虫体不能利用宿主叶酸 → DNA 复制停滞</text>
+
+<rect x="244" y="156" width="212" height="50" rx="6" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="254" y="171" font-size="9.5" font-weight="700" fill="#1f4e79">线粒体电子传递</text>
+<text x="254" y="185" font-size="9.5" fill="#5c6672">阿托伐醌阻断电子传递 → 嘧啶从头</text>
+<text x="254" y="198" font-size="9.5" fill="#5c6672">合成受阻；氯胍降低其有效浓度</text>
+
+<!-- 肝内期 -->
+<rect x="24" y="214" width="432" height="34" rx="6" fill="#eef5f0" stroke="#b7d3c3" stroke-width="0.8"/>
+<text x="34" y="229" font-size="9.5" font-weight="700" fill="#2f6b4f">肝内期（休眠体 hypnozoite）</text>
+<text x="34" y="242" font-size="9.5" fill="#43705c">伯氨喹/他非诺喹是唯一能清除休眠体者 —— 间日疟与卵形疟须加用，否则复发</text>
+
+<!-- 页脚 -->
+<rect x="24" y="256" width="432" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="270" font-size="9.5" fill="#a3332f">⚠️ 多数流行区恶性疟已耐氯喹；泰柬边境已出现青蒿素耐药（虫体清除延迟）</text>
+<text x="32" y="283" font-size="9.5" fill="#93a0ad">青蒿素类必须联合第二种药，单用晚期复发常见</text>
+</svg>

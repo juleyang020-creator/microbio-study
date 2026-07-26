@@ -78,15 +78,18 @@ test('形态数据的键均为存在的微生物 id', () => {
   });
 });
 
-test('每个抗生素都有药敏简写（抗病毒药除外——不做常规药敏、无 CLSI 简写）', () => {
+test('每个抗生素都有药敏简写（抗病毒药、抗寄生虫药除外——不做常规药敏、无 CLSI 简写）', () => {
   // 「药敏简写」是纸片/MIC 药敏报告上的缩写，只有做常规药敏的抗菌药与抗真菌药才有。
-  // 抗病毒药的敏感性试验是表型 EC50 或基因型耐药检测（见 MCM 第 115 章），没有对应简写，
+  // 抗病毒药的敏感性试验是表型 EC50 或基因型耐药检测（见 MCM 第 115 章）；
+  // 抗寄生虫药同样没有常规药敏与标准化简写（MCM 第 154 章的方法均属研究用途）。
   // 强行编一个会让人误以为能开药敏——故按类别豁免，而不是填占位符。
-  const antiviralLeaves = new Set();
-  ((global.window.DB.categories.antibiotics || []).find((g) => g.名称 === '抗病毒药') || {}).子类
-    ?.forEach((c) => antiviralLeaves.add(c.名称));
+  const exemptLeaves = new Set();
+  ['抗病毒药', '抗寄生虫药'].forEach((groupName) => {
+    ((global.window.DB.categories.antibiotics || []).find((g) => g.名称 === groupName) || {}).子类
+      ?.forEach((c) => exemptLeaves.add(c.名称));
+  });
   global.window.DB.antibiotics.forEach((a) => {
-    if (antiviralLeaves.has(a.类别)) { return; }
+    if (exemptLeaves.has(a.类别)) { return; }
     assert.ok(a.药敏简写 && a.药敏简写.length, '缺少药敏简写：' + a.id);
   });
 });

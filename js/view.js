@@ -40,7 +40,13 @@
     '抗疱疹病毒药': 'img/mechanism-antiherpes.svg',
     '抗流感病毒药': 'img/mechanism-antiflu.svg',
     '抗乙肝病毒药': 'img/mechanism-antihbv.svg',
-    '抗丙肝病毒药': 'img/mechanism-antihcv.svg'
+    '抗丙肝病毒药': 'img/mechanism-antihcv.svg',
+
+    // 抗寄生虫药：三类的作用靶点毫无交集（虫体微管/神经肌肉、疟原虫血红素解毒、原虫各异），
+    // 与抗病毒药同理，一类一张图
+    '抗蠕虫药': 'img/mechanism-anthelmintic.svg',
+    '抗疟药': 'img/mechanism-antimalarial.svg',
+    '抗原虫药': 'img/mechanism-antiprotozoal.svg'
   };
 
   // 试验：按条目 id 映射到示意图
