@@ -7,7 +7,7 @@ window.DB.breakpoints = [
   {
     菌组名: "肠杆菌目 (Enterobacterales，不含沙门/志贺)",
     CLSI表: "Table 2A-1",
-    菌种: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'klebsiella-aerogenes', 'proteus-mirabilis', 'proteus-vulgaris', 'enterobacter-cloacae', 'enterobacter-xiangfangensis', 'citrobacter-freundii', 'citrobacter-koseri', 'morganella-morganii', 'serratia-marcescens', 'providencia-stuartii', 'providencia-rettgeri', 'yersinia-pestis', 'hafnia-alvei', 'raoultella-ornithinolytica', 'proteus-hauseri'],
+    菌种: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'klebsiella-aerogenes', 'proteus-mirabilis', 'proteus-vulgaris', 'enterobacter-cloacae', 'enterobacter-xiangfangensis', 'citrobacter-freundii', 'citrobacter-koseri', 'morganella-morganii', 'serratia-marcescens', 'providencia-stuartii', 'providencia-rettgeri', 'hafnia-alvei', 'raoultella-ornithinolytica', 'proteus-hauseri'],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "可预测阿莫西林;口服仅用于大肠埃希菌、奇异变形杆菌所致非复杂性尿路感染" },
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", 组别: "1", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "≥15", 抑菌圈_I: "12–14", 抑菌圈_R: "≤11", 备注: "" },
@@ -365,7 +365,7 @@ window.DB.breakpoints = [
   // ===== 单核细胞增生李斯特菌 (CLSI M45，非 M100 表) =====
   {
     菌组名: "单核细胞增生李斯特菌 (Listeria monocytogenes)",
-    CLSI表: "CLSI M45",
+    CLSI表: "CLSI M45 Table 14",
     菌种: ["listeria-monocytogenes"],
     药物: [
       { 药物: "氨苄西林/阿莫西林 (Ampicillin/Amoxicillin)", 简写: "AM/AMX", MIC_S: "≤2", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "首选药物；仅设敏感折点" },
@@ -378,7 +378,7 @@ window.DB.breakpoints = [
   // ===== 卡他莫拉菌 (CLSI M45，非 M100 表) =====
   {
     菌组名: "卡他莫拉菌 (Moraxella catarrhalis)",
-    CLSI表: "CLSI M45",
+    CLSI表: "CLSI M45 Table 16",
     菌种: ["moraxella-catarrhalis"],
     药物: [
       { 药物: "阿莫西林/克拉维酸 (Amoxicillin-Clavulanate)", 简写: "AMC", MIC_S: "≤4/2", MIC_I: "—", MIC_R: "≥8/4", 抑菌圈_S: "≥24", 抑菌圈_I: "—", 抑菌圈_R: "≤23", 备注: "" },
@@ -391,7 +391,7 @@ window.DB.breakpoints = [
   // ===== 幽门螺杆菌 (CLSI M45，非 M100 表) =====
   {
     菌组名: "幽门螺杆菌 (Helicobacter pylori)",
-    CLSI表: "CLSI M45",
+    CLSI表: "CLSI M45 Table 10",
     菌种: ["helicobacter-pylori"],
     药物: [
       { 药物: "克拉霉素 (Clarithromycin)", 简写: "CLR", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "CLSI M45 仅设克拉霉素折点(琼脂稀释法);须配合质子泵抑制剂方案" },
@@ -590,6 +590,28 @@ window.DB.breakpoints = [
       { 药物: "克林霉素 (Clindamycin)", 简写: "CC", MIC_S: "≤0.5", MIC_I: "1–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "左氧氟沙星 (Levofloxacin)", 简写: "LVX", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "复方新诺明 (Trimethoprim-Sulfamethoxazole)", 简写: "SXT", MIC_S: "≤2/38", MIC_I: "—", MIC_R: "≥4/76", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
+    ]
+  },
+  // ===== 鼠疫耶尔森菌 (CLSI M45 Table 21) =====
+  // 2026-07-26 更正：原挂 M100 Table 2A-1（肠杆菌目）。鼠疫耶尔森菌虽属肠杆菌目，
+  // 但 CLSI 把它列入 M45 Table 21「潜在生物恐怖病原」，方法学与判读均另有规定
+  // （孵育 24 h，不足再加 24 h；而肠杆菌目常规为 16–20 h）。
+  // 最关键的是 Table 21 通则(5)：β-内酰胺类体外可显示活性，但动物模型证实无效，
+  // **应一律报告为耐药**——挂在 2A-1 组会显示 13 个 β-内酰胺类折点，属临床误导。
+  // 全部数值按 M45 PDF 印刷 pp.62–63 页面图逐值核对。
+  {
+    菌组名: "鼠疫耶尔森菌 (Yersinia pestis)",
+    CLSI表: "CLSI M45 Table 21 (生物恐怖相关)",
+    菌种: ['yersinia-pestis'],
+    药物: [
+      { 药物: "庆大霉素 (Gentamicin)", 简写: "GM", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "M45 建议优先测试" },
+      { 药物: "链霉素 (Streptomycin)", 简写: "STR", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "M45 建议优先测试" },
+      { 药物: "多西环素 (Doxycycline)", 简写: "DOX", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "对四环素敏感者亦视为对多西环素敏感" },
+      { 药物: "四环素 (Tetracycline)", 简写: "TE", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "环丙沙星 (Ciprofloxacin)", 简写: "CIP", MIC_S: "≤0.25", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点；若结果提示非敏感，须复核鉴定与药敏并送参考实验室确认" },
+      { 药物: "左氧氟沙星 (Levofloxacin)", 简写: "LVX", MIC_S: "≤0.25", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点，同环丙沙星" },
+      { 药物: "复方新诺明 (Trimethoprim-Sulfamethoxazole)", 简写: "SXT", MIC_S: "≤2/38", MIC_I: "—", MIC_R: "≥4/76", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "氯霉素 (Chloramphenicol)", 简写: "C", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
     ]
   },
   {
