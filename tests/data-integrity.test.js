@@ -26,6 +26,7 @@ require('../data/qc-strains.js');
 require('../data/intrinsic-resistance.js');
 require('../data/site-reporting.js');
 require('../data/lab-workflow.js');
+require('../data/detection-window.js');
 require('../data/microbe-names.js');
 require('../data/drug-cn.js');
 require('../data/source-metadata.js');
@@ -699,4 +700,34 @@ test('M100 Ed36 关键变化固定在数据中', () => {
   // 流感嗜血杆菌不得误命中任何 HACEK 组（若存在该组）
   const hacek = bps.find((g) => /HACEK/.test(g.菌组名));
   assert.ok(!hacek || (hacek.菌种 || []).indexOf('haemophilus-influenzae') === -1, '流感嗜血杆菌不应落入 HACEK 组');
+});
+
+// app.js 用 textContent / createElement 渲染，不解析 Markdown（见 CLAUDE.md「不用 innerHTML」）。
+// 正文里写 **加粗** 或 [链接](url) 只会显示成字面字符。此测试防止再次写入这类标记——
+// 本条曾在病毒条目连续踩中三次，靠人工记忆不可靠，故固定为测试。
+test('展示文本不含 Markdown 标记（渲染层不解析，会显示字面字符）', () => {
+  const MD = [
+    { re: /\*\*/, name: '**加粗**' },
+    { re: /\[[^\]]+\]\([^)]+\)/, name: '[链接](url)' },
+    { re: /^\s*#{1,6}\s/m, name: '# 标题' }
+  ];
+  const scan = (label, text) => {
+    if (typeof text !== 'string') { return; }
+    MD.forEach((m) => {
+      assert.ok(!m.re.test(text), label + ' 含 Markdown 标记 ' + m.name + '，渲染后会显示字面字符：' + text.slice(0, 60));
+    });
+  };
+  ['microbes', 'antibiotics', 'resistance', 'cards', 'tests', 'media', 'staining', 'biochem-tests', 'qc-strains'].forEach((mod) => {
+    (global.window.DB[mod] || []).forEach((e) => {
+      (e.小节 || []).forEach((s) => scan(mod + '/' + e.id + '「' + s.标题 + '」', s.正文));
+    });
+  });
+  const dw = global.window.DB.detectionWindow;
+  if (dw) {
+    scan('detectionWindow/说明', dw.说明);
+    (dw.病毒 || []).forEach((v) => {
+      scan('detectionWindow/' + v.id + '/判读', v.判读);
+      (v.节点 || []).forEach((n) => scan('detectionWindow/' + v.id + '/' + n.标志物, n.说明));
+    });
+  }
 });
