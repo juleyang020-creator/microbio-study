@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抗乙肝病毒药（核苷/核苷酸类似物抑制 HBV 逆转录酶）</title><desc>HBV DNA 聚合酶具逆转录酶活性，是抗 HBV 与抗 HIV 药共同的靶点；药物不作用于核内 cccDNA，故停药可反弹</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抗乙肝病毒药</text>
+<rect x="366" y="14" width="90" height="18" rx="9" fill="#eef2f7"/>
+<text x="411" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗病毒机制 4/5</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">核苷/核苷酸类似物抑制 HBV 逆转录酶；靶点与抗 HIV 药相通</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- 肝细胞 -->
+<rect x="30" y="68" width="420" height="128" rx="10" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="40" y="188" font-size="9.5" fill="#93a0ad">肝细胞</text>
+
+<!-- 细胞核与 cccDNA -->
+<rect x="46" y="82" width="120" height="62" rx="10" fill="#eef1f8" stroke="#7b8ba0" stroke-width="0.9"/>
+<text x="106" y="98" text-anchor="middle" font-size="9.5" fill="#4a5768">细胞核</text>
+<circle cx="106" cy="118" r="15" fill="none" stroke="#7a4b8a" stroke-width="2"/>
+<text x="106" y="121" text-anchor="middle" font-size="9.5" fill="#5f3a6e">cccDNA</text>
+<text x="106" y="140" text-anchor="middle" font-size="9.5" fill="#7a4b8a">药物不清除</text>
+
+<!-- pgRNA -->
+<line x1="170" y1="113" x2="196" y2="113" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="228" y="104" text-anchor="middle" font-size="9.5" fill="#5c6672">前基因组 RNA</text>
+<text x="228" y="118" text-anchor="middle" font-size="9.5" fill="#5c6672">(pgRNA)</text>
+
+<!-- 逆转录 -->
+<line x1="262" y1="113" x2="288" y2="113" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="292" y="96" width="112" height="34" rx="5" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="348" y="110" text-anchor="middle" font-size="9.5" fill="#1f4e79">HBV DNA 聚合酶</text>
+<text x="348" y="123" text-anchor="middle" font-size="9.5" fill="#1f4e79">（逆转录酶活性）</text>
+<line x1="348" y1="158" x2="348" y2="136" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<rect x="286" y="158" width="124" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="348" y="170" text-anchor="middle" font-size="9.5" fill="#a3332f">核苷/核苷酸类似物</text>
+
+<!-- 共同靶点提示 -->
+<text x="228" y="146" text-anchor="middle" font-size="9.5" fill="#2f6b4f">HBV 与 HIV 共用逆转录酶靶点 → 部分药兼治两病</text>
+
+<!-- 耐药屏障对比 -->
+<rect x="30" y="204" width="204" height="52" rx="6" fill="#fdf1f0" stroke="#e4bdb9" stroke-width="0.8"/>
+<text x="40" y="219" font-size="9.5" font-weight="700" fill="#a3332f">低耐药屏障</text>
+<text x="40" y="233" font-size="9.5" fill="#8a5a57">拉米夫定：合并感染者每年 20% 出现</text>
+<text x="40" y="245" font-size="9.5" fill="#8a5a57">耐药突变；替比夫定亦易耐药、非一线</text>
+
+<rect x="246" y="204" width="204" height="52" rx="6" fill="#eef5f0" stroke="#b7d3c3" stroke-width="0.8"/>
+<text x="256" y="219" font-size="9.5" font-weight="700" fill="#2f6b4f">高耐药屏障</text>
+<text x="256" y="233" font-size="9.5" fill="#43705c">替诺福韦：与拉米夫定耐药突变无交叉</text>
+<text x="256" y="245" font-size="9.5" fill="#43705c">恩替卡韦：对拉米夫定耐药株仍有活性</text>
+
+<!-- 页脚 -->
+<rect x="24" y="264" width="432" height="28" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="277" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#1f2733">代表药</tspan>　恩替卡韦｜替诺福韦（TDF/TAF）｜拉米夫定｜阿德福韦酯｜替比夫定</text>
+<text x="32" y="288" font-size="9.5" fill="#93a0ad">⚠️ 因不清除 cccDNA，停药可发生病毒血症反弹与乙肝急性恶化（耀斑）</text>
+</svg>

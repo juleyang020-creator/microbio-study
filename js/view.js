@@ -34,7 +34,13 @@
     '靶位基因突变': 'img/resistance-target.svg',
     '多黏菌素耐药': 'img/resistance-permeability.svg',
     // 「旁路与其他」组本身无图，其下叶子须逐个显式映射
-    '前药活化障碍': 'img/resistance-bypass.svg'
+    '前药活化障碍': 'img/resistance-bypass.svg',
+    // 抗病毒药：按类别（机制各异，不能共用一张）
+    '抗HIV药': 'img/mechanism-antihiv.svg',
+    '抗疱疹病毒药': 'img/mechanism-antiherpes.svg',
+    '抗流感病毒药': 'img/mechanism-antiflu.svg',
+    '抗乙肝病毒药': 'img/mechanism-antihbv.svg',
+    '抗丙肝病毒药': 'img/mechanism-antihcv.svg'
   };
 
   // 试验：按条目 id 映射到示意图

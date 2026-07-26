@@ -1,6 +1,6 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260702-73';
+var APP_VERSION = '20260702-74';
 // 缓存名直接由版本号派生，只需改 APP_VERSION 一处；旧缓存在 activate 时按前缀清理
 var CACHE = CACHE_PREFIX + APP_VERSION;
 function versioned(path) {
@@ -52,6 +52,11 @@ var IMAGE_ASSETS = [
   './img/landing-resistance.svg',
   './img/landing-staining.svg',
   './img/landing-tests.svg',
+  './img/mechanism-antiflu.svg',
+  './img/mechanism-antihbv.svg',
+  './img/mechanism-antihcv.svg',
+  './img/mechanism-antiherpes.svg',
+  './img/mechanism-antihiv.svg',
   './img/mechanism-azole.svg',
   './img/mechanism-cellwall.svg',
   './img/mechanism-echinocandin.svg',

@@ -134,16 +134,14 @@ function inDrugGroup(a, cats, groupName) {
   return !!(g && (g.子类 || []).some((l) => l.名称 === a.类别));
 }
 function isAntifungal(a, cats) { return inDrugGroup(a, cats, '抗真菌药'); }
-// 抗病毒药同样豁免机制图：它们的机制彼此差异极大（核苷类链终止、神经氨酸酶抑制阻断释放、
-// CCR5 拮抗作用于宿主受体、末端酶抑制、蛋白酶抑制），现有 mechanism-*.svg 都是照抗菌药画的，
-// 硬套任何一张都会给出错误的机制示意——宁可不显示图。将来若专门画了抗病毒机制图再收紧此处。
-function isAntiviral(a, cats) { return inDrugGroup(a, cats, '抗病毒药'); }
 
-test('抗细菌药均映射到存在的机制图；抗真菌药与抗病毒药可无图', () => {
+// 2026-07-26：抗病毒药 5 类已各自画了专属机制图（antihiv/antiherpes/antiflu/antihbv/antihcv），
+// 不再豁免——它们机制彼此差异极大，本就不能共用一张，画齐后即按抗细菌药同等要求强制校验。
+test('全部抗微生物药均映射到存在的机制图', () => {
   const cats = global.window.DB.categories;
   global.window.DB.antibiotics.forEach((a) => {
     const img = View.mechanismImageFor('antibiotics', a, cats);
-    if (isAntifungal(a, cats) || isAntiviral(a, cats)) {
+    if (isAntifungal(a, cats)) {
       if (img) { assert.ok(fs.existsSync(path.join(__dirname, '..', img)), '机制图文件缺失：' + img); }
     } else {
       assert.ok(img, '无机制图映射：' + a.id + '（类别 ' + a.类别 + '）');
