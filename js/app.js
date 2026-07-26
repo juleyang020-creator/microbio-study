@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-66';
+  var APP_VERSION = window.APP_VERSION || '20260702-88';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -24,6 +24,25 @@
     return el('span', { cls: 'bp-urine', title: '仅适用于尿路分离株的报告限制', text: '尿' });
   }
   // 图例：仅列出该菌组中实际出现的分层
+  // 折点表下方的「试验条件」块：M100 每张 Table 2X 表头都给了 Medium / Inoculum / Incubation，
+  // 但此前软件只搬了折点数字。查折点的同一屏看不到该用什么培养基、要不要 CO₂、读多久，
+  // 就得另外翻标准——尤其苯唑西林要 CAMHB+2% NaCl、万古霉素要满 24 h 这类最容易漏。
+  // 仅对回源核对过的折点组渲染；没有该字段的组直接不显示，不编。
+  function bpConditionsNode(cond) {
+    if (!cond) { return null; }
+    var rows = [['培养基', cond.培养基], ['接种菌液', cond.接种], ['孵育', cond.孵育]]
+      .filter(function (r) { return r[1]; })
+      .map(function (r) {
+        return el('div', { cls: 'bp-cond-row' }, [
+          el('span', { cls: 'bp-cond-label', text: r[0] }),
+          el('span', { cls: 'bp-cond-text', text: r[1] })
+        ]);
+      });
+    if (cond.出处) { rows.push(el('div', { cls: 'bp-cond-src', text: cond.出处 })); }
+    return el('details', { cls: 'bp-cond' }, [
+      el('summary', { cls: 'bp-cond-head', text: '试验条件（培养基 / 接种 / 孵育）' })
+    ].concat(rows));
+  }
   function bpTierLegend(drugs) {
     var present = {}, hasUrine = false;
     (drugs || []).forEach(function (d) { if (d.组别 && BP_TIER_LABELS[d.组别]) { present[d.组别] = 1; } if (d.仅尿路) { hasUrine = true; } });
@@ -190,6 +209,7 @@
       if ((key.indexOf('aria-') === 0 || key.indexOf('data-') === 0) && opts[key] != null) { node.setAttribute(key, opts[key]); }
     });
     if (opts.onClick) { node.addEventListener('click', opts.onClick); }
+    if (opts.onInput) { node.addEventListener('input', opts.onInput); }
     // 键盘可达的“类按钮”元素：role="button" 只是语义标注，非 <button> 元素按 Enter/Space
     // 浏览器不会替你派发 click。用 onActivate 的地方一律补上 tabindex/role 与键盘绑定，
     // 避免每处自己拼（此前 zoomableImg 注释写着「点击/Enter 均可打开」，实际只有点击）。
@@ -281,17 +301,33 @@
   }
 
   var collapsed = {}; // path -> true 表示该分类节点已折叠（跨模块、跨重渲染保持）
+  var sidebarFilter = '';   // 侧栏内的即时筛选词
+  var autoCollapsed = {};   // moduleKey -> true，表示该模块已做过「首次进入默认折叠」
 
   function toggleCollapse(key) {
     if (collapsed[key]) { delete collapsed[key]; } else { collapsed[key] = true; }
     renderSidebar();
   }
 
+  // 条目是否命中侧栏筛选词（匹配中文名与 href 里的英文 id，故拉丁名/英文缩写也能搜到）
+  function hitsFilter(e) {
+    if (!sidebarFilter) { return true; }
+    return (String(e.名称 || '') + ' ' + String(e.href || '')).toLowerCase().indexOf(sidebarFilter) !== -1;
+  }
+  // 该分类节点下（含各层子节点）是否还有命中条目——无命中的整枝不渲染
+  function nodeHasHit(node) {
+    if (!sidebarFilter) { return true; }
+    if (node.entries && node.entries.length && node.entries.some(hitsFilter)) { return true; }
+    return !!(node.children && node.children.some(nodeHasHit));
+  }
+
   // 递归渲染一个分类节点（任意层级，按深度缩进，可点击折叠/展开）
   function sidebarNodes(node, depth, parentPath) {
     var path = parentPath + '/' + node.名称;
     var collapsible = (node.children && node.children.length) || (node.entries && node.entries.length);
-    var isCollapsed = !!collapsed[path];
+    // 筛选期间强制展开，让命中项直接可见，不必再手动点开每层
+    var isCollapsed = sidebarFilter ? false : !!collapsed[path];
+    if (!nodeHasHit(node)) { return []; }
     var labelCls = (depth === 0 ? 'cat-group-name' : 'cat-subgroup') + (collapsible ? ' collapsible' : '');
     var marker = collapsible ? (isCollapsed ? '▸ ' : '▾ ') : '';
     var out = [ el(collapsible ? 'button' : 'div', {
@@ -309,15 +345,58 @@
       });
     } else {
       var epad = 'padding-left:' + (8 + (depth + 1) * 14) + 'px';
-      node.entries.forEach(function (e) {
+      node.entries.filter(hitsFilter).forEach(function (e) {
         out.push(el('a', { cls: 'entry-link' + (e.selected ? ' selected' : ''), text: e.名称, href: e.href, style: epad }));
       });
     }
     return out;
   }
 
-  function buildSidebar(vm, moduleKey) {
+  // 首次进入某模块时把二级及以下分组默认折叠：分类树全展开时侧栏长达十几屏，
+  // 手机上翻找一个词条要滚很久。只展开顶层大类（及当前选中条目所在的那一支）。
+  function autoCollapseOnce(vm, moduleKey, selectedId) {
+    // 只在手机端折叠：手机上侧栏是抽屉、全展开要滚十几屏；桌面端侧栏常驻且屏幕高，
+    // 默认折叠反而让用户每次都要多点几下，故保持原来的全展开。
+    if (!isMobile()) { return; }
+    if (autoCollapsed[moduleKey]) { return; }
+    autoCollapsed[moduleKey] = true;
+    var keepOpen = {};
+    (function markSelected(node, path) {
+      var p = path + '/' + node.名称;
+      var hit = (node.entries || []).some(function (e) { return e.id === selectedId; });
+      var childHit = (node.children || []).some(function (c) { return markSelected(c, p); });
+      if (hit || childHit) { keepOpen[p] = true; }
+      return hit || childHit;
+    });
+    vm.tree.forEach(function (root) {
+      var rootPath = moduleKey + '/' + root.名称;
+      (function walk(node, path, depth) {
+        var p = path;
+        if (depth >= 1 && ((node.children && node.children.length) || (node.entries && node.entries.length))) {
+          if (!keepOpen[p]) { collapsed[p] = true; }
+        }
+        (node.children || []).forEach(function (c) { walk(c, p + '/' + c.名称, depth + 1); });
+      })(root, rootPath, 0);
+    });
+  }
+
+  function buildSidebar(vm, moduleKey, selectedId) {
+    autoCollapseOnce(vm, moduleKey, selectedId);
     var nodes = [];
+    // 侧栏内的即时筛选：手机上侧栏一打开就遮住顶栏搜索框，这里独立提供一个入口
+    var box = el('input', {
+      cls: 'sb-filter', type: 'search', value: sidebarFilter,
+      placeholder: '筛选本页条目…', 'aria-label': '筛选本页条目',
+      onInput: function (ev) {
+        sidebarFilter = String(ev.target.value || '').trim().toLowerCase();
+        var sb = document.getElementById('sidebar');
+        var keep = ev.target.selectionStart;
+        fill(sb, buildSidebar(vm, moduleKey, selectedId));
+        var nb = sb.querySelector('.sb-filter');
+        if (nb) { nb.focus(); try { nb.setSelectionRange(keep, keep); } catch (e) {} }
+      }
+    });
+    nodes.push(el('div', { cls: 'sb-filter-wrap' }, [box]));
     vm.tree.forEach(function (root) {
       nodes.push(el('div', { cls: 'cat-group' }, sidebarNodes(root, 0, moduleKey)));
     });
@@ -328,7 +407,9 @@
       });
       nodes.push(el('div', { cls: 'cat-group' }, uc));
     }
-    if (!nodes.length) { nodes.push(el('div', { cls: 'empty-sm', text: '（暂无分类）' })); }
+    if (nodes.length <= 1) {
+      nodes.push(el('div', { cls: 'empty-sm', text: sidebarFilter ? '没有匹配「' + sidebarFilter + '」的条目' : '（暂无分类）' }));
+    }
     return nodes;
   }
 
@@ -340,14 +421,34 @@
   var _favCache = null;
   function favorites() { if (!_favCache) { _favCache = lsLoad(FAV_KEY); } return _favCache; }
   function isFavorited(id) { return favorites().some(function (f) { return f.id === id; }); }
+  // 满 FAV_MAX 后新增会挤掉最早的一条。保留这个行为（最近收藏优先更符合直觉），
+  // 但把被挤掉的是谁返回给调用方去提示——此前是静默丢弃，收藏了 50 个考点的人
+  // 根本不知道第 1 个已经没了。
   function toggleFavorite(id, module, 名称) {
-    if (!id || !module) { return; }
+    if (!id || !module) { return null; }
     var list = favorites().slice();
     var i = -1;
+    var dropped = null;
     for (var k = 0; k < list.length; k++) { if (list[k].id === id) { i = k; break; } }
     if (i >= 0) { list.splice(i, 1); }
-    else { list.push({ id: id, module: module, 名称: 名称, ts: Date.now() }); if (list.length > FAV_MAX) { list.shift(); } }
+    else {
+      list.push({ id: id, module: module, 名称: 名称, ts: Date.now() });
+      if (list.length > FAV_MAX) { dropped = list.shift(); }
+    }
     _favCache = list; lsSave(FAV_KEY, list);
+    return dropped;
+  }
+
+  // 短暂的角标提示，复用 Service Worker 更新提示的样式；自身点击或超时后消失
+  var _toastTimer = null;
+  function showToast(text, ms) {
+    var old = document.getElementById('app-toast');
+    if (old) { old.remove(); }
+    if (_toastTimer) { clearTimeout(_toastTimer); }
+    var box = el('div', { cls: 'update-toast app-toast', id: 'app-toast', text: text });
+    box.addEventListener('click', function () { box.remove(); });
+    document.body.appendChild(box);
+    _toastTimer = setTimeout(function () { box.remove(); }, ms || 3200);
   }
 
   // HIST_MAX 是存多少（供「清空」前回溯），HIST_SHOW 是侧栏露出多少。
@@ -407,7 +508,7 @@
     var route = parseHash();
     var sidebar = document.getElementById('sidebar');
     var nodes = favHistNodes(route).concat(
-      buildSidebar(View.sidebarVM(route.module, categories(), db()[route.module], route.id), route.module));
+      buildSidebar(View.sidebarVM(route.module, categories(), db()[route.module], route.id), route.module, route.id));
     fill(sidebar, nodes);
     // 分类树很长（微生物模块 186 项、约 9 屏），从搜索结果点进详情后，当前条目往往在
     // 视野外，用户看不出自己在树里的哪个位置。渲染后把选中项滚进来。
@@ -561,7 +662,11 @@
         cls: 'fav-star' + (_fav ? ' favorited' : ''), type: 'button',
         'aria-label': _fav ? '取消收藏' : '收藏', 'aria-pressed': String(_fav),
         title: _fav ? '取消收藏' : '加入收藏', text: _fav ? '★' : '☆',
-        onClick: function () { toggleFavorite(vm.id, parseHash().module, vm.名称); renderRoute(); }
+        onClick: function () {
+          var dropped = toggleFavorite(vm.id, parseHash().module, vm.名称);
+          if (dropped) { showToast('收藏已满 ' + FAV_MAX + ' 条，已移除最早的「' + dropped.名称 + '」'); }
+          renderRoute();
+        }
       }));
     }
     nodes.push(el('div', { cls: 'detail-head' }, head));
@@ -700,9 +805,12 @@
       var euZone = euHasZone(eu);
       var bpBodyRows = bp.药物.map(function (d) {
         var aid = abxIdByDrugText(d.药物);
+        // 该药在源表内按菌种分行时（如葡萄球菌苯唑西林），标出这一行是哪一类菌的折点——
+        // 折点表已按当前菌过滤，但不写明的话看不出「为什么这里是 ≤0.5 而不是课本上的 ≤2」。
+        var scope = d.适用说明 ? el('span', { cls: 'bp-scope', text: d.适用说明 }) : null;
         var drugCell = aid
-          ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
-          : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
+          ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }), scope ])
+          : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物), scope ]);
         var cells = [ drugCell, el('td', { cls: 'bp-mic', text: d.MIC }), el('td', { cls: 'bp-disk', text: d.抑菌圈 }) ];
         if (eu) {
           cells.push(eucastCell(eu.drug[d.药物], d.MIC)); // EUCAST MIC 置于抑菌圈之后
@@ -723,6 +831,7 @@
           ])
         ]),
         bpTierLegend(bp.药物),
+        bpConditionsNode(bp.试验条件),
         el('div', { cls: 'bp-foot', text: bp.菌组名 + '  ·  MIC 折点：S≤(敏感) / I(中介/SDD) / R≥(耐药)；抑菌圈：S≥ / I / R≤  (mm)' + (bpHasCombo(bp.药物) ? '　·　' + COMBO_BP_NOTE : '') }),
         eucastNoteNode()
       ]));
@@ -853,10 +962,32 @@
     if (pos < text.length) { out.push(document.createTextNode(text.slice(pos))); }
     return out;
   }
+  // 菌名速查索引里的命中：这些菌多数没有详情页，但至少能告诉用户「这个名字确实存在、是什么菌」。
+  // 从 MALDI 拿到一个陌生菌名时，此前搜索直接返回「没有找到」，是速查场景里最常见的断点。
+  function microbeNameHits(query) {
+    // 注意用 window.DB 而不是 db()：后者只挑出 9 个可检索模块，不含 microbeNames
+    var hits = Core.searchMicrobeNames(window.DB || {}, query, 12);
+    if (!hits.length) { return null; }
+    var rows = hits.map(function (h) {
+      // 本库有详情页的（按名称匹配）直接给链接，其余只作为名称参考展示
+      var entry = (db().microbes || []).filter(function (m) { return m.名称 === h.名称; })[0];
+      var kids = [ el('span', { cls: 'mn-cn', text: h.名称 }), el('span', { cls: 'mn-latin', text: h.拉丁名 }) ];
+      return entry
+        ? el('a', { cls: 'mn-hit has-entry', href: '#/microbes/' + entry.id }, kids.concat([el('span', { cls: 'mn-go', text: '查看条目' })]))
+        : el('div', { cls: 'mn-hit' }, kids);
+    });
+    return el('div', { cls: 'search-extra' }, [
+      el('div', { cls: 'search-extra-head', text: '菌名速查索引（' + hits.length + ' 条' + (hits.length >= 12 ? '，仅显示前 12 条' : '') + '）' }),
+      el('div', { cls: 'mn-hit-list' }, rows)
+    ]);
+  }
+
   function buildSearch(vm) {
     var nodes = [ el('div', { cls: 'search-head', text: '搜索：“' + vm.query + '”' }) ];
+    var nameHits = microbeNameHits(vm.query);
     if (vm.items.length === 0) {
-      nodes.push(el('div', { cls: 'empty', text: '没有找到匹配的条目。' }));
+      nodes.push(el('div', { cls: 'empty', text: nameHits ? '条目库中没有匹配项，但菌名索引里查到了下面的名称。' : '没有找到匹配的条目。' }));
+      if (nameHits) { nodes.push(nameHits); }
       return nodes;
     }
     var tokens = vm.tokens || [];
@@ -877,6 +1008,7 @@
       return link;
     });
     nodes.push(el('div', { cls: 'search-list' }, items));
+    if (nameHits) { nodes.push(nameHits); }
     return nodes;
   }
 
@@ -1154,11 +1286,25 @@
     fill(document.getElementById('sidebar'), sb);
     renderIntrinsicMain();
   }
+  // CLSI 附录 B 有合并行（如「鹑鸡肠球菌 / 铅黄肠球菌」共用一行），软件按同样结构收录。
+  // `id` 因此允许是数组：名称按 " / " 切开与之一一对应，各自成链接，
+  // 否则合并行只能点到第一个菌，另一个菌从这张表进不去。
+  function intrinsicNameNodes(r) {
+    var ids = Array.isArray(r.id) ? r.id : (r.id ? [r.id] : []);
+    if (!ids.length) { return [el('strong', { text: r.名称 })]; }
+    var parts = String(r.名称).split(' / ');
+    if (parts.length !== ids.length) {  // 数量对不上就整体链到第一个，不猜
+      return [el('a', { cls: 'intrinsic-link', text: r.名称, href: '#/microbes/' + ids[0] })];
+    }
+    var out = [];
+    parts.forEach(function (name, i) {
+      if (i) { out.push(document.createTextNode(' / ')); }
+      out.push(el('a', { cls: 'intrinsic-link', text: name, href: '#/microbes/' + ids[i] }));
+    });
+    return out;
+  }
   function intrinsicResistanceCard(r) {
-    var nameEl = r.id
-      ? el('a', { cls: 'intrinsic-link', text: r.名称, href: '#/microbes/' + r.id })
-      : el('strong', { text: r.名称 });
-    var children = [el('div', { cls: 'ir-card-head' }, [nameEl, el('span', { cls: 'latin', text: r.拉丁 })])];
+    var children = [el('div', { cls: 'ir-card-head' }, intrinsicNameNodes(r).concat([el('span', { cls: 'latin', text: r.拉丁 })]))];
     if ((r.耐药 || []).length) {
       children.push(el('div', { cls: 'ir-card-drugs' }, r.耐药.map(function (d) {
         return el('span', { cls: 'ir-drug-chip', text: d });
@@ -1186,9 +1332,7 @@
         .concat((grp.药物列 || []).map(function (d) { return el('th', { cls: 'ir-drug-col', text: d }); }))
         .concat([el('th', { text: '备注' })]));
       var body = rows.map(function (r) {
-        var nameCell = r.id
-          ? el('td', {}, [el('a', { cls: 'intrinsic-link', text: r.名称, href: '#/microbes/' + r.id }), el('span', { cls: 'latin', text: r.拉丁 })])
-          : el('td', {}, [el('strong', { text: r.名称 }), el('span', { cls: 'latin', text: r.拉丁 })]);
+        var nameCell = el('td', {}, intrinsicNameNodes(r).concat([el('span', { cls: 'latin', text: r.拉丁 })]));
         var cells = [nameCell].concat((grp.药物列 || []).map(function (d) {
           var isR = (r.耐药 || []).indexOf(d) !== -1;
           return el('td', { cls: 'ir-cell' }, [isR ? el('span', { cls: 'ir-chip', title: '固有耐药', text: '耐' }) : el('span', { cls: 'ir-dash', text: '—' })]);
@@ -1687,6 +1831,7 @@
     caret.textContent = open ? '▸' : '▾';
   }
   function buildAstTable(list) {
+    var relIndex = Core.buildIndex(db());   // 整表建一次，勿放进逐条循环
     var head = el('tr', {}, [
       el('th', { cls: 'ast-th-level', text: '等级' }),
       el('th', { cls: 'ast-th-cat', text: '类别' }),
@@ -1705,6 +1850,20 @@
         astLine('依据', item.依据)
       ];
       if (tags.length) { detailInner.push(el('div', { cls: 'chips ast-tags' }, tags)); }
+      // 关联出口：复核时翻到这一条，下一步多半就是去看该菌的折点表、该机制或该确证试验。
+      // 此前 18 条全无关联，展开后是一条死路。
+      var relChips = (item.关联 || []).map(function (rid) {
+        var hit = relIndex[rid];
+        if (!hit) { return null; }
+        return el('a', { cls: 'chip rel-chip', href: '#/' + hit.module + '/' + rid,
+          text: View.moduleLabel(hit.module) + ' · ' + hit.entry.名称 });
+      }).filter(Boolean);
+      if (relChips.length) {
+        detailInner.push(el('div', { cls: 'ast-rel' }, [
+          el('span', { cls: 'ast-line-label', text: '相关' }),
+          el('span', { cls: 'chips' }, relChips)
+        ]));
+      }
       var detailId = 'ast-d-' + item.id;
       var detailRow = el('tr', { cls: 'ast-detail-row', id: detailId }, [
         el('td', { colspan: '4' }, [el('div', { cls: 'ast-detail' }, detailInner)])
@@ -1890,6 +2049,64 @@
     fill(document.getElementById('main'), nodes);
   }
 
+  // ===== 工具：病毒核酸检测时间窗 =====
+  // 回答「什么时候采样」「阴性能否排除」。核酸出现最早、抗体最晚，窗口期内抗体阴性不能排除感染。
+  function isDetectionWindowRoute() { return routeKey() === 'detection-window'; }
+  function renderDetectionWindow() {
+    setActiveTool('detection-window');
+    var dw = (window.DB && window.DB.detectionWindow) || null;
+    fill(document.getElementById('sidebar'), [ el('div', { cls: 'cat-group' }, [
+      el('div', { cls: 'cat-group-name', text: '检测时间窗' }),
+      el('div', { cls: 'cmp-hint', text: '按病毒列出各标志物可被检出的时间先后。点病毒名可跳转详情页。' })
+    ]) ]);
+    var nodes = [ el('h2', { cls: 'detail-title', text: '病毒核酸检测时间窗' }) ];
+    if (!dw || !dw.病毒) {
+      nodes.push(el('div', { cls: 'empty', text: '数据未加载。' }));
+      fill(document.getElementById('main'), nodes);
+      return;
+    }
+    nodes.push(el('div', { cls: 'lw-src', text: '来源：' + dw.来源 }));
+    nodes.push(el('div', { cls: 'lw-note', text: dw.说明 }));
+    if (dw.提示) { nodes.push(el('div', { cls: 'dw-caution', text: '⚠️ ' + dw.提示 })); }
+
+    dw.病毒.forEach(function (v) {
+      var kids = [];
+      // 标题：能对应到本库微生物条目时做成可跳转链接
+      var hasEntry = (db().microbes || []).some(function (m) { return m.id === v.id; });
+      var titleKids = [ el('span', { cls: 'dw-name', text: v.名称 }) ];
+      if (hasEntry) {
+        titleKids.push(el('a', { cls: 'dw-jump', href: '#/microbes/' + v.id, text: '详情 →' }));
+      }
+      titleKids.push(el('span', { cls: 'dw-src', text: v.源 }));
+      kids.push(el('div', { cls: 'dw-head' }, titleKids));
+
+      if (v.标志物顺序 && v.标志物顺序.length) {
+        var seq = [];
+        v.标志物顺序.forEach(function (s, i) {
+          if (i) { seq.push(el('span', { cls: 'dw-arrow', text: '→' })); }
+          seq.push(el('span', { cls: 'dw-chip', text: s }));
+        });
+        kids.push(el('div', { cls: 'dw-seq' }, seq));
+      }
+
+      kids.push(el('div', { cls: 'lw-table-wrap' }, [ el('table', { cls: 'lw-table' }, [
+        el('thead', {}, [ el('tr', {}, [ el('th', { text: '标志物' }), el('th', { text: '可检出时间' }), el('th', { text: '说明' }) ]) ]),
+        el('tbody', {}, (v.节点 || []).map(function (n) {
+          return el('tr', {}, [
+            el('td', { 'data-label': '标志物', text: n.标志物 }),
+            el('td', { 'data-label': '可检出时间', text: n.时间 }),
+            el('td', { 'data-label': '说明', text: n.说明 })
+          ]);
+        }))
+      ]) ]));
+
+      if (v.判读) { kids.push(el('div', { cls: 'dw-note', text: v.判读 })); }
+      nodes.push(el('div', { cls: 'lw-section' }, kids));
+    });
+
+    fill(document.getElementById('main'), nodes);
+  }
+
   // ===== 工具：菌名速查 =====
   // 跳转分三级（均为权威来源、国内可达；不再使用百度百科）：
   //   ① 本库已收录 → 应用内详情页（离线、已校对）
@@ -2026,6 +2243,7 @@
     document.body.classList.toggle('route-mn', isMicrobeNamesRoute());
     if (isMicrobeNamesRoute()) { renderMicrobeNames(); return; }
     if (isLabWorkflowRoute()) { renderLabWorkflow(); return; }
+    if (isDetectionWindowRoute()) { renderDetectionWindow(); return; }
     if (isAboutRoute()) { renderAbout(); return; }
     if (isCompareRoute()) { renderCompare(); return; }
     if (isCardCompareRoute()) { renderCardCompare(); return; }

@@ -246,6 +246,26 @@
     return results.map(function (r) { return { id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要, 命中字段: r.命中字段, 命中片段: r.命中片段 }; });
   }
 
+  // 菌名速查索引（4563 条）不在 MODULE_KEYS 里，因此全局搜索原本搜不到它。
+  // 后果是 MALDI 报了一个本库没有详情页的菌（如马红球菌）时，搜索返回「没有找到」，
+  // 用户得自己想起还有「菌名速查」这个工具——这是速查场景里最常见的断点。
+  // 这里单独检索，由调用方作为独立分区展示，不混进 searchEntries 的结果（其结构是模块条目）。
+  function searchMicrobeNames(db, query, limit) {
+    var q = (query || '').trim().toLowerCase();
+    if (!q) { return []; }
+    var tokens = aliasesFor(q).length ? [q] : q.split(/\s+/).filter(Boolean);
+    var cap = limit || 20;
+    var out = [];
+    var list = db.microbeNames || [];
+    for (var i = 0; i < list.length && out.length < cap; i++) {
+      var n = list[i];
+      var hay = String((n.名称 || '') + ' ' + (n.拉丁名 || '') + ' ' + (n.别名 || '')).toLowerCase();
+      var hit = tokens.every(function (t) { return textHasTerm(hay, t); });
+      if (hit) { out.push({ 名称: n.名称, 拉丁名: n.拉丁名 || '', 别名: n.别名 || '' }); }
+    }
+    return out;
+  }
+
   // 递归收集"叶子"分类名（无子类的节点），支持任意层级（如 大类→形态→属）
   function collectLeaves(nodes, out) {
     (nodes || []).forEach(function (node) {
@@ -296,6 +316,7 @@
     buildReverseIndex: buildReverseIndex,
     getRelations: getRelations,
     searchEntries: searchEntries,
+    searchMicrobeNames: searchMicrobeNames,
     aliasesFor: aliasesFor,   // View.searchVM 高亮时要把别名一并标出
     validateData: validateData,
     collectLeaves: collectLeaves

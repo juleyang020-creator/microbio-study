@@ -1,6 +1,6 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260702-66';
+var APP_VERSION = '20260702-88';
 // 缓存名直接由版本号派生，只需改 APP_VERSION 一处；旧缓存在 activate 时按前缀清理
 var CACHE = CACHE_PREFIX + APP_VERSION;
 function versioned(path) {
@@ -13,7 +13,7 @@ var CORE = [
   versioned('./data/categories.js'), versioned('./data/microbes.js'), versioned('./data/antibiotics.js'), versioned('./data/resistance.js'),
   versioned('./data/biochem.js'), versioned('./data/differential.js'), versioned('./data/morphology.js'), versioned('./data/photos.js'), versioned('./data/treatment.js'),
   versioned('./data/cards.js'), versioned('./data/tests.js'), versioned('./data/media.js'), versioned('./data/staining.js'),
-  versioned('./data/breakpoints.js'), versioned('./data/eucast-breakpoints.js'), versioned('./data/biochem-tests.js'), versioned('./data/ast-alerts.js'), versioned('./data/qc-strains.js'), versioned('./data/ecv.js'), versioned('./data/intrinsic-resistance.js'), versioned('./data/site-reporting.js'), versioned('./data/lab-workflow.js'), versioned('./data/drug-cn.js'), versioned('./data/microbe-names.js'),
+  versioned('./data/breakpoints.js'), versioned('./data/eucast-breakpoints.js'), versioned('./data/biochem-tests.js'), versioned('./data/ast-alerts.js'), versioned('./data/qc-strains.js'), versioned('./data/ecv.js'), versioned('./data/intrinsic-resistance.js'), versioned('./data/site-reporting.js'), versioned('./data/lab-workflow.js'), versioned('./data/detection-window.js'), versioned('./data/drug-cn.js'), versioned('./data/microbe-names.js'),
   versioned('./manifest.json'), './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'
 ];
 var IMAGE_ASSETS = [
@@ -52,6 +52,16 @@ var IMAGE_ASSETS = [
   './img/landing-resistance.svg',
   './img/landing-staining.svg',
   './img/landing-tests.svg',
+  './img/mechanism-anthelmintic.svg',
+  './img/mechanism-antiflu.svg',
+  './img/mechanism-antihbv.svg',
+  './img/mechanism-antihcv.svg',
+  './img/mechanism-antiherpes.svg',
+  './img/mechanism-antihiv.svg',
+  './img/mechanism-antileprosy.svg',
+  './img/mechanism-antimalarial.svg',
+  './img/mechanism-antiprotozoal.svg',
+  './img/mechanism-antitb.svg',
   './img/mechanism-azole.svg',
   './img/mechanism-cellwall.svg',
   './img/mechanism-echinocandin.svg',

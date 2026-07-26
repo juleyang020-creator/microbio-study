@@ -472,7 +472,7 @@ window.DB.intrinsicResistance = {
         {
           "名称": "鹑鸡肠球菌 / 铅黄肠球菌",
           "拉丁": "Enterococcus gallinarum / E. casseliflavus",
-          "id": "enterococcus-gallinarum",
+          "id": ["enterococcus-gallinarum", "enterococcus-casseliflavus"],
           "耐药": [
             "头孢菌素类",
             "万古霉素",

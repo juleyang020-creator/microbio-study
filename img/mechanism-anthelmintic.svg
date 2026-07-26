@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抗蠕虫药（三条互不相同的致瘫路径）</title><desc>苯并咪唑类结合 β-微管蛋白并断绝葡萄糖摄取；吡喹酮提高钙通透性致挛缩；伊维菌素经谷氨酸门控氯通道使虫体超极化而弛缓性麻痹，噻嘧啶则相反——去极化阻滞致痉挛性麻痹</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抗蠕虫药</text>
+<rect x="366" y="14" width="90" height="18" rx="9" fill="#eef2f7"/>
+<text x="411" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗寄生虫 1/3</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">虫体不被杀死也可被清除：麻痹后脱离肠壁，随正常蠕动排出</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- ① 断结构与能量 -->
+<rect x="24" y="68" width="140" height="104" rx="6" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="94" y="85" text-anchor="middle" font-size="10" font-weight="700" fill="#1f4e79">① 断结构与能量</text>
+<rect x="34" y="93" width="120" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="94" y="104" text-anchor="middle" font-size="9.5" fill="#a3332f">苯并咪唑类</text>
+<line x1="94" y1="108" x2="94" y2="121" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<text x="94" y="134" text-anchor="middle" font-size="9.5" fill="#33404f">β-微管蛋白聚合</text>
+<text x="94" y="147" text-anchor="middle" font-size="9.5" fill="#33404f">＋葡萄糖摄取</text>
+<text x="94" y="163" text-anchor="middle" font-size="9.5" fill="#5c6672">肠细胞吸收↓、糖原耗竭</text>
+
+<!-- ② 钙内流致挛缩 -->
+<rect x="172" y="68" width="136" height="104" rx="6" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="240" y="85" text-anchor="middle" font-size="10" font-weight="700" fill="#1f4e79">② 钙通透性↑</text>
+<rect x="182" y="93" width="116" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="240" y="104" text-anchor="middle" font-size="9.5" fill="#a3332f">吡喹酮</text>
+<line x1="240" y1="108" x2="240" y2="123" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="240" y="136" text-anchor="middle" font-size="9.5" fill="#33404f">Ca²⁺ 在胞质蓄积</text>
+<text x="240" y="149" text-anchor="middle" font-size="9.5" fill="#33404f">→ 肌肉挛缩、成虫麻痹</text>
+<text x="240" y="164" text-anchor="middle" font-size="9.5" fill="#5c6672">体壁破坏使抗原暴露</text>
+
+<!-- ③ 神经肌肉：两个相反方向 -->
+<rect x="316" y="68" width="140" height="104" rx="6" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="386" y="85" text-anchor="middle" font-size="10" font-weight="700" fill="#1f4e79">③ 神经肌肉</text>
+<rect x="326" y="93" width="120" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="386" y="104" text-anchor="middle" font-size="9.5" fill="#a3332f">伊维菌素</text>
+<text x="386" y="120" text-anchor="middle" font-size="9.5" fill="#33404f">谷氨酸门控 Cl⁻ 通道</text>
+<text x="386" y="132" text-anchor="middle" font-size="9.5" fill="#2f6b4f">超极化 → 弛缓性麻痹</text>
+<rect x="326" y="138" width="120" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="386" y="149" text-anchor="middle" font-size="9.5" fill="#a3332f">噻嘧啶</text>
+<text x="386" y="164" text-anchor="middle" font-size="9.5" fill="#a3332f">去极化 → 痉挛性麻痹</text>
+
+<!-- 选药对照 -->
+<rect x="24" y="182" width="432" height="52" rx="6" fill="#eef5f0" stroke="#b7d3c3" stroke-width="0.8"/>
+<text x="34" y="197" font-size="9.5" font-weight="700" fill="#2f6b4f">按虫类选药（表 152-2）</text>
+<text x="34" y="211" font-size="9.5" fill="#43705c">线虫 → 阿苯达唑/甲苯达唑；粪类圆线虫与盘尾丝虫 → 伊维菌素；淋巴丝虫 → 乙胺嗪</text>
+<text x="34" y="224" font-size="9.5" fill="#43705c">吸虫与绦虫 → 吡喹酮；肝片形吸虫与肺吸虫 → 三氯苯达唑；包虫病与脑囊虫病 → 阿苯达唑</text>
+
+<!-- 页脚 -->
+<rect x="24" y="244" width="432" height="46" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="258" font-size="9.5" fill="#a3332f">⚠️ 吡喹酮对线虫无效；伊维菌素对吸虫与绦虫无效；噻嘧啶对鞭虫无效</text>
+<text x="32" y="271" font-size="9.5" fill="#a3332f">⚠️ 乙胺嗪禁用于盘尾丝虫与重度罗阿丝虫感染（Mazzotti 反应、致死性脑病）</text>
+<text x="32" y="284" font-size="9.5" fill="#93a0ad">苯并咪唑对虫体微管蛋白的亲和力是宿主的数百倍，故治疗窗宽</text>
+</svg>

@@ -26,7 +26,8 @@ global.window = { DB: {} };
   'staining',
   'breakpoints',
   'biochem-tests',
-  'ast-alerts'
+  'ast-alerts',
+  'qc-strains'
 ].forEach((name) => {
   require(path.join(root, 'data', `${name}.js`));
 });
@@ -41,7 +42,10 @@ const appDb = {
   tests: DB.tests || [],
   media: DB.media || [],
   staining: DB.staining || [],
-  'biochem-tests': DB.biochemTests || []
+  'biochem-tests': DB.biochemTests || [],
+  // qc-strains 也在 core.js 的 MODULE_KEYS 里，此处漏掉会把「菌 → 质控参考株」这类
+  // 合法关联误报成悬空（皮肤癣菌指向 ATCC MYA-4438/4439 时踩到过）
+  'qc-strains': DB['qc-strains'] || []
 };
 
 const errors = [];

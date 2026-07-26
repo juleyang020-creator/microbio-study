@@ -26,6 +26,7 @@ require('../data/qc-strains.js');
 require('../data/intrinsic-resistance.js');
 require('../data/site-reporting.js');
 require('../data/lab-workflow.js');
+require('../data/detection-window.js');
 require('../data/microbe-names.js');
 require('../data/drug-cn.js');
 require('../data/source-metadata.js');
@@ -44,7 +45,10 @@ test('种子数据通过 validateData，无任何问题', () => {
     tests: global.window.DB.tests,
     media: global.window.DB.media,
     staining: global.window.DB.staining,
-    'biochem-tests': global.window.DB.biochemTests
+    'biochem-tests': global.window.DB.biochemTests,
+    // 与 core.js 的 MODULE_KEYS 保持一致：漏掉 qc-strains 会把「菌 → 质控参考株」
+    // 这类合法关联误报成悬空
+    'qc-strains': global.window.DB['qc-strains']
   };
   const problems = Core.validateData(db, global.window.DB.categories);
   assert.deepStrictEqual(problems, [], '发现问题：' + JSON.stringify(problems, null, 2));
@@ -77,8 +81,18 @@ test('形态数据的键均为存在的微生物 id', () => {
   });
 });
 
-test('每个抗生素都有药敏简写', () => {
+test('每个抗生素都有药敏简写（抗病毒药、抗寄生虫药除外——不做常规药敏、无 CLSI 简写）', () => {
+  // 「药敏简写」是纸片/MIC 药敏报告上的缩写，只有做常规药敏的抗菌药与抗真菌药才有。
+  // 抗病毒药的敏感性试验是表型 EC50 或基因型耐药检测（见 MCM 第 115 章）；
+  // 抗寄生虫药同样没有常规药敏与标准化简写（MCM 第 154 章的方法均属研究用途）。
+  // 强行编一个会让人误以为能开药敏——故按类别豁免，而不是填占位符。
+  const exemptLeaves = new Set();
+  ['抗病毒药', '抗寄生虫药'].forEach((groupName) => {
+    ((global.window.DB.categories.antibiotics || []).find((g) => g.名称 === groupName) || {}).子类
+      ?.forEach((c) => exemptLeaves.add(c.名称));
+  });
   global.window.DB.antibiotics.forEach((a) => {
+    if (exemptLeaves.has(a.类别)) { return; }
     assert.ok(a.药敏简写 && a.药敏简写.length, '缺少药敏简写：' + a.id);
   });
 });
@@ -121,12 +135,15 @@ test('药敏卡中的药物名均可跳转到药物或对应试验条目', () =>
   });
 });
 
-function isAntifungal(a, cats) {
-  const g = (cats.antibiotics || []).find((grp) => grp.名称 === '抗真菌药');
+function inDrugGroup(a, cats, groupName) {
+  const g = (cats.antibiotics || []).find((grp) => grp.名称 === groupName);
   return !!(g && (g.子类 || []).some((l) => l.名称 === a.类别));
 }
+function isAntifungal(a, cats) { return inDrugGroup(a, cats, '抗真菌药'); }
 
-test('抗细菌药均映射到存在的机制图；抗真菌药可无图', () => {
+// 2026-07-26：抗病毒药 5 类已各自画了专属机制图（antihiv/antiherpes/antiflu/antihbv/antihcv），
+// 不再豁免——它们机制彼此差异极大，本就不能共用一张，画齐后即按抗细菌药同等要求强制校验。
+test('全部抗微生物药均映射到存在的机制图', () => {
   const cats = global.window.DB.categories;
   global.window.DB.antibiotics.forEach((a) => {
     const img = View.mechanismImageFor('antibiotics', a, cats);
@@ -333,9 +350,15 @@ test('真菌固有耐药结构化数据符合 CLSI 附录（M27M44S App B / M38M
   assert.deepStrictEqual(findRow('Lomentospora prolificans').耐药, ['两性霉素B', '氟康唑'], 'Lomentospora 固有耐药错误');
   assert.deepStrictEqual(findRow('Mucorales').耐药, ['氟康唑', '伏立康唑'], '毛霉目固有耐短侧链唑类');
   assert.deepStrictEqual(findRow('Purpureocillium lilacinum').耐药, ['两性霉素B'], '淡紫紫孢霉固有耐两性霉素B');
-  // 引用的菌 id（若给出）须存在
+  // 引用的菌 id（若给出）须存在。CLSI 附录 B 有合并行（如「鹑鸡肠球菌 / 铅黄肠球菌」），
+  // 这类行的 id 是数组，名称按 " / " 与之一一对应，渲染成多个链接。
   ir.分组.forEach((g) => (g.行 || []).forEach((r) => {
-    if (r.id) assert.ok(microbeIds[r.id], '固有耐药引用了不存在的微生物 id：' + r.id);
+    const ids = Array.isArray(r.id) ? r.id : (r.id ? [r.id] : []);
+    ids.forEach((id) => assert.ok(microbeIds[id], '固有耐药引用了不存在的微生物 id：' + id));
+    if (ids.length > 1) {
+      assert.strictEqual(String(r.名称).split(' / ').length, ids.length,
+        '固有耐药合并行「' + r.名称 + '」的名称段数与 id 个数不一致，链接会错位');
+    }
     assert.ok(Array.isArray(r.耐药), '固有耐药行缺耐药数组：' + r.名称);
   }));
 });
@@ -699,4 +722,214 @@ test('M100 Ed36 关键变化固定在数据中', () => {
   // 流感嗜血杆菌不得误命中任何 HACEK 组（若存在该组）
   const hacek = bps.find((g) => /HACEK/.test(g.菌组名));
   assert.ok(!hacek || (hacek.菌种 || []).indexOf('haemophilus-influenzae') === -1, '流感嗜血杆菌不应落入 HACEK 组');
+});
+
+// app.js 用 textContent / createElement 渲染，不解析 Markdown（见 CLAUDE.md「不用 innerHTML」）。
+// 正文里写 **加粗** 或 [链接](url) 只会显示成字面字符。此测试防止再次写入这类标记——
+// 本条曾在病毒条目连续踩中三次，靠人工记忆不可靠，故固定为测试。
+test('展示文本不含 Markdown 标记（渲染层不解析，会显示字面字符）', () => {
+  const MD = [
+    { re: /\*\*/, name: '**加粗**' },
+    { re: /\[[^\]]+\]\([^)]+\)/, name: '[链接](url)' },
+    { re: /^\s*#{1,6}\s/m, name: '# 标题' }
+  ];
+  const scan = (label, text) => {
+    if (typeof text !== 'string') { return; }
+    MD.forEach((m) => {
+      assert.ok(!m.re.test(text), label + ' 含 Markdown 标记 ' + m.name + '，渲染后会显示字面字符：' + text.slice(0, 60));
+    });
+  };
+  ['microbes', 'antibiotics', 'resistance', 'cards', 'tests', 'media', 'staining', 'biochem-tests', 'qc-strains'].forEach((mod) => {
+    (global.window.DB[mod] || []).forEach((e) => {
+      (e.小节 || []).forEach((s) => scan(mod + '/' + e.id + '「' + s.标题 + '」', s.正文));
+    });
+  });
+  const dw = global.window.DB.detectionWindow;
+  if (dw) {
+    scan('detectionWindow/说明', dw.说明);
+    (dw.病毒 || []).forEach((v) => {
+      scan('detectionWindow/' + v.id + '/判读', v.判读);
+      (v.节点 || []).forEach((n) => scan('detectionWindow/' + v.id + '/' + n.标志物, n.说明));
+    });
+  }
+});
+
+// 葡萄球菌属苯唑西林/头孢西丁/万古霉素在 M100 Ed36 Table 2C 内按菌种分行，折点相差一至两个稀释度。
+// 曾把金葡的一行套给全组 9 个菌，表皮葡萄球菌 MIC=1 被判「敏感」而真值是耐药——安全攸关的假敏感。
+// 下面的值逐格核自 Table 2C 印刷页 99–101（PDF 131–133）页面图，改动前必须回源。
+test('葡萄球菌折点：按菌种选行，值与 M100 Ed36 Table 2C 一致', () => {
+  const 期望 = {
+    'staph-aureus':        { OX: '≤2 / — / ≥4',   VA: '≤2 / 4–8 / ≥16',   FOX圈: '≥22 / — / ≤21' },
+    'staph-lugdunensis':   { OX: '≤2 / — / ≥4',   VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥22 / — / ≤21' },
+    'staph-epidermidis':   { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-haemolyticus':  { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-saprophyticus': { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-capitis':       { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-hominis':       { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-cohnii':        { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' },
+    'staph-kloosii':       { OX: '≤0.5 / — / ≥1', VA: '≤4 / 8–16 / ≥32',  FOX圈: '≥25 / — / ≤24' }
+  };
+  Object.keys(期望).forEach((id) => {
+    const vm = View.breakpointVM(id, window.DB.breakpoints);
+    assert.ok(vm, id + ' 应命中葡萄球菌折点组');
+    const 取 = (re, 字段) => {
+      const 行 = vm.药物.filter((d) => re.test(d.药物));
+      assert.strictEqual(行.length, 1, id + ' 的 ' + re + ' 应恰好命中 1 行，实为 ' + 行.length);
+      return 行[0][字段];
+    };
+    assert.strictEqual(取(/苯唑西林/, 'MIC'), 期望[id].OX, id + ' 苯唑西林 MIC');
+    assert.strictEqual(取(/万古霉素/, 'MIC'), 期望[id].VA, id + ' 万古霉素 MIC');
+    assert.strictEqual(取(/头孢西丁/, '抑菌圈'), 期望[id].FOX圈, id + ' 头孢西丁抑菌圈');
+  });
+  // 头孢洛林只对金黄色葡萄球菌设折点，其余葡萄球菌详情页不应出现这一行
+  const 表皮 = View.breakpointVM('staph-epidermidis', window.DB.breakpoints);
+  assert.strictEqual(表皮.药物.filter((d) => /头孢洛林/.test(d.药物)).length, 0, '头孢洛林不适用于表皮葡萄球菌');
+});
+
+// 通用守卫：`适用` 字段一旦用错，症状就是某菌拿到别的菌种的折点（假敏感/假耐药），
+// 而现有测试只看数据结构、看不出这种错配。以下两条对全部 32 个折点组生效。
+test('折点 `适用` 字段：id 必须属于本组，且每菌每药不得命中多行', () => {
+  window.DB.breakpoints.forEach((组) => {
+    const 组内菌 = 组.菌种 || [];
+    (组.药物 || []).forEach((d) => {
+      (d.适用 || []).forEach((id) => {
+        assert.ok(组内菌.indexOf(id) !== -1,
+          组.菌组名 + ' 的「' + d.药物 + '」适用列出了不在本组菌种里的 ' + id);
+      });
+      if (d.适用 && d.适用.length) {
+        assert.ok(d.适用说明, 组.菌组名 + ' 的「' + d.药物 + '」有 适用 却缺 适用说明（判读工具里会无从区分）');
+      }
+    });
+    // 同一菌种 + 同一药名只能命中一行，否则判读取哪一行是未定义的
+    组内菌.forEach((id) => {
+      const 计数 = {};
+      (组.药物 || []).filter((d) => View.drugAppliesTo(d, id)).forEach((d) => {
+        计数[d.药物] = (计数[d.药物] || 0) + 1;
+      });
+      Object.keys(计数).forEach((药名) => {
+        assert.strictEqual(计数[药名], 1,
+          组.菌组名 + ' 中 ' + id + ' 对「' + 药名 + '」命中 ' + 计数[药名] + ' 行，应恰好 1 行');
+      });
+    });
+  });
+});
+
+// 以下事实逐格核自 M100 Ed36 附录 B 的 PDF 页面图（B1 印刷 p.318、B3 p.321、B4 p.322）。
+// 这些字段既供「天然耐药速查」检索，也是详情页唯一的固有耐药出处，写错就是安全攸关。
+// 曾经的问题：鹑鸡肠球菌漏了 QD、产气克雷伯菌多写了二代头孢、金葡等 5 菌整个字段缺失。
+test('天然耐药字段：与 M100 Ed36 附录 B 一致', () => {
+  const byId = {};
+  window.DB.microbes.forEach((m) => { byId[m.id] = m; });
+  const 文 = (id) => String((byId[id] || {}).天然耐药 || '');
+
+  // B4：鹑鸡与铅黄两行合并，QD 与万古霉素均标 R；屎肠球菌 QD 格为空
+  ['enterococcus-gallinarum', 'enterococcus-casseliflavus'].forEach((id) => {
+    assert.match(文(id), /奎奴普丁/, id + ' 应写明奎奴普丁-达福普汀固有耐药（附录 B4 标 R）');
+    assert.match(文(id), /vanC/, id + ' 应写明 vanC');
+  });
+  assert.doesNotMatch(文('enterococcus-faecium'), /奎奴普丁-达福普汀天然耐药|对奎奴普丁/,
+    '屎肠球菌对 QD 不固有耐药（附录 B4 该格为空），不应写成耐药');
+
+  // B1：产气克雷伯菌该行二代头孢为空白、氨苄西林/舒巴坦为 R
+  const ka = 文('klebsiella-aerogenes');
+  assert.match(ka, /氨苄西林\/舒巴坦/, '产气克雷伯菌应含氨苄西林/舒巴坦（B1 标 R）');
+  assert.doesNotMatch(ka, /二代头孢/, '产气克雷伯菌不应含二代头孢（B1 该格空白）');
+
+  // B3 NOTE 1：全部葡萄球菌对氨曲南、多黏菌素/黏菌素、萘啶酸固有耐药
+  ['staph-aureus', 'staph-epidermidis', 'staph-haemolyticus', 'staph-lugdunensis',
+   'staph-saprophyticus', 'staph-capitis', 'staph-hominis', 'staph-cohnii', 'staph-kloosii'].forEach((id) => {
+    assert.match(文(id), /氨曲南/, id + ' 缺 B3 NOTE 1 的氨曲南固有耐药');
+  });
+  // B3 表体：只有这三种有种特异性固有耐药，金葡/表皮/溶血/路邓明确写「无」
+  assert.match(文('staph-saprophyticus'), /新生霉素/, '腐生葡萄球菌新生霉素 R');
+  assert.match(文('staph-capitis'), /磷霉素/, '头葡萄球菌磷霉素 R');
+  assert.match(文('staph-cohnii'), /新生霉素/, '科氏葡萄球菌新生霉素 R');
+  ['staph-aureus', 'staph-epidermidis', 'staph-haemolyticus', 'staph-lugdunensis'].forEach((id) => {
+    assert.match(文(id), /未列本种的种特异性固有耐药/, id + ' 在 B3 表体应标注为无种特异性固有耐药');
+  });
+
+  // M27M44S 附录 B：克柔念珠菌氟康唑固有耐药——此前只写在小节里，速查工具查不到
+  assert.match(文('candida-krusei'), /氟康唑/, '克柔念珠菌应在天然耐药字段写明氟康唑');
+  const vm = View.intrinsicVM(window.DB, '氟康唑');
+  const hit = vm.groups.some((g) => g.items.some((it) => it.id === 'candida-krusei'));
+  assert.ok(hit, '「天然耐药速查」查氟康唑必须能查到克柔念珠菌');
+});
+
+// 全局搜索只遍历 9 个可检索模块，菌名速查索引（4563 条）不在其中。
+// 症状：MALDI 报出一个本库没有详情页的菌（如马红球菌）时，搜索返回「没有找到」，
+// 用户得自己想起还有「菌名速查」这个工具——速查场景里最常见的断点。
+test('菌名速查索引可被检索：中文名、拉丁名、别名三条路径都能命中', () => {
+  const DB = global.window.DB;
+  assert.strictEqual(Core.searchEntries(DB, '马红球菌').length, 0,
+    '前提：马红球菌在 9 个模块里确实没有条目（若已补条目，本测试的前提需重写）');
+
+  const 中文 = Core.searchMicrobeNames(DB, '马红球菌', 5);
+  assert.strictEqual(中文.length, 1, '按中文名应命中马红球菌');
+  assert.strictEqual(中文[0].拉丁名, 'Rhodococcus equi');
+
+  assert.ok(Core.searchMicrobeNames(DB, 'Rhodococcus equi', 5).some((h) => h.名称 === '马红球菌'),
+    '按拉丁名应命中');
+  assert.ok(Core.searchMicrobeNames(DB, 'hoagii', 5).some((h) => h.名称 === '马红球菌'),
+    '按别名 Rhodococcus hoagii 应命中——更名后的旧名检索是这个索引的主要价值');
+
+  assert.deepStrictEqual(Core.searchMicrobeNames(DB, '', 5), [], '空查询不返回结果');
+  assert.ok(Core.searchMicrobeNames(DB, '菌', 7).length <= 7, 'limit 参数必须生效，否则会渲染上千条');
+});
+
+// M100 每张 Table 2X 表头都有 Medium / Inoculum / Incubation，此前软件只搬了折点数字。
+// 这些值逐字读自各表首页的 PDF 页面图——md 转换把这些框与表标题错位了
+// （2E 嗜血杆菌的条件被挂到了 2F 淋球菌标题下），不可据 md 录入。
+// 只录了回源核对过的 5 组，其余 27 组无此字段、界面不显示，属「查不到就不写」。
+test('折点组试验条件：只在回源核对过的组出现，且钉住最易漏的几条', () => {
+  const groups = window.DB.breakpoints;
+  const withCond = groups.filter((g) => g.试验条件);
+  assert.strictEqual(withCond.length, 30, '有试验条件的组数变了，新增/删除时请确认是否已回源核对');
+  // 孵育与出处必填；培养基/接种在少数组缺——M27M44S 只给折点，方法在母文件 CLSI M27（本库未收），
+  // 那几组就只写查得到的孵育，不编培养基。
+  withCond.forEach((g) => {
+    ['孵育', '出处'].forEach((k) => {
+      assert.ok(g.试验条件[k] && g.试验条件[k].length > 4, g.菌组名 + ' 的试验条件缺 ' + k);
+    });
+    assert.match(g.试验条件.出处, /M100 Ed36|CLSI M45|CLSI M27M44S/, g.菌组名 + ' 的试验条件须注明出处标准与版本');
+  });
+  // 两组确实查不到：耳念珠菌用 CDC 暂定折点（原文未收）、曲霉的方法在 M38 母文件
+  const noCond = groups.filter((g) => !g.试验条件).map((g) => g.菌组名);
+  assert.strictEqual(noCond.length, 2, '无试验条件的组应仅剩源不可得的 2 组，实为：' + noCond.join('、'));
+  assert.ok(noCond.every((n) => /耳念珠菌|曲霉/.test(n)), '无条件的组变了：' + noCond.join('、'));
+  const byTable = {};
+  withCond.forEach((g) => { byTable[g.CLSI表] = g.试验条件; });
+
+  // 葡萄球菌：苯唑西林的 2% NaCl 与 24 h 是最容易漏、也最影响 MRS 检出的两条
+  assert.match(byTable['Table 2C'].培养基, /2% NaCl/, '2C 须写明苯唑西林用 CAMHB + 2% NaCl');
+  assert.match(byTable['Table 2C'].孵育, /苯唑西林与万古霉素需 24 h/, '2C 须写明苯唑西林/万古霉素 24 h');
+  assert.match(byTable['Table 2C'].孵育, /35°C/, '2C 须写明温度上限相关提示');
+  // 肠球菌：万古霉素满 24 h + 透射光读圈
+  assert.match(byTable['Table 2D'].孵育, /万古霉素所有方法均需满 24 h/, '2D 须写明万古霉素 24 h');
+  assert.match(byTable['Table 2D'].孵育, /透射光/, '2D 须写明透射光读圈');
+  // 嗜血杆菌：培养基与气体条件都与其他组不同
+  assert.match(byTable['Table 2E'].培养基, /HTM/, '2E 须写明 HTM');
+  assert.match(byTable['Table 2E'].孵育, /5% CO₂/, '2E 纸片法须写明 5% CO₂');
+  // 肠杆菌目与铜绿：头孢地尔的铁耗竭 CAMHB
+  assert.match(byTable['Table 2A-1'].培养基, /铁耗竭/, '2A-1 须写明头孢地尔用铁耗竭 CAMHB');
+  assert.match(byTable['Table 2B-1'].培养基, /铁耗竭/, '2B-1 须写明头孢地尔用铁耗竭 CAMHB');
+
+  // 与其他菌组差异最大、最容易套错的几组
+  const byName = {};
+  withCond.forEach((g) => { byName[g.菌组名] = g.试验条件; });
+  const 淋球菌 = byTable['Table 2F'];
+  assert.match(淋球菌.孵育, /36°C ± 1°C（不得超过 37°C）/, '2F 温度上限与其他组不同，须写明');
+  assert.match(byTable['Table 2J'].孵育, /厌氧环境/, '2J 须写明厌氧');
+  assert.match(byTable['Table 2J'].孵育, /4[26]~48 h/, '2J 孵育远长于需氧菌，须写明具体时长');
+
+  const hp = Object.keys(byName).filter((n) => /幽门螺杆菌/.test(n))[0];
+  assert.match(byName[hp].接种, /2\.0 麦氏/, '幽门螺杆菌用 2.0 麦氏而非常规 0.5 麦氏');
+  assert.match(byName[hp].孵育, /72 h/, '幽门螺杆菌需 72 h');
+  assert.match(byName[hp].孵育, /微需氧/, '幽门螺杆菌需微需氧环境');
+
+  const br = Object.keys(byName).filter((n) => /布鲁菌/.test(n))[0];
+  assert.match(byName[br].培养基, /布氏肉汤/, '布鲁菌用布氏肉汤而非 CAMHB');
+  assert.match(byName[br].培养基, /7\.1/, '布鲁菌须写明 pH 7.1 ± 0.1');
+
+  const mc = Object.keys(byName).filter((n) => /卡他莫拉菌/.test(n))[0];
+  assert.match(byName[mc].孵育, /5% CO₂/, '卡他莫拉菌纸片法需 CO₂，与其肉汤法的环境空气不同');
 });

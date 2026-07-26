@@ -32,7 +32,25 @@
     // 新增机制大类
     '抗真菌耐药': 'img/resistance-target.svg',
     '靶位基因突变': 'img/resistance-target.svg',
-    '多黏菌素耐药': 'img/resistance-permeability.svg'
+    '多黏菌素耐药': 'img/resistance-permeability.svg',
+    // 「旁路与其他」组本身无图，其下叶子须逐个显式映射
+    '前药活化障碍': 'img/resistance-bypass.svg',
+    // 抗病毒药：按类别（机制各异，不能共用一张）
+    '抗HIV药': 'img/mechanism-antihiv.svg',
+    '抗疱疹病毒药': 'img/mechanism-antiherpes.svg',
+    '抗流感病毒药': 'img/mechanism-antiflu.svg',
+    '抗乙肝病毒药': 'img/mechanism-antihbv.svg',
+    '抗丙肝病毒药': 'img/mechanism-antihcv.svg',
+
+    // 抗寄生虫药：三类的作用靶点毫无交集（虫体微管/神经肌肉、疟原虫血红素解毒、原虫各异），
+    // 与抗病毒药同理，一类一张图
+    '抗蠕虫药': 'img/mechanism-anthelmintic.svg',
+    '抗疟药': 'img/mechanism-antimalarial.svg',
+    '抗原虫药': 'img/mechanism-antiprotozoal.svg',
+
+    // 抗分枝杆菌药：结核一张（四靶点各配一个可做分子检测的耐药基因），麻风一张（三联与超长半衰期）
+    '抗结核药': 'img/mechanism-antitb.svg',
+    '抗麻风药': 'img/mechanism-antileprosy.svg'
   };
 
   // 试验：按条目 id 映射到示意图
@@ -402,6 +420,19 @@
     return /已撤销|历史参考/.test(retiredText(drug));
   }
 
+  // 同一菌组内,某些药按菌种分行(如葡萄球菌苯唑西林:金葡 ≤2/≥4、其余 ≤0.5/≥1)。
+  // 带 `适用` 的行只对列出的菌种生效;不带的行对全组通用。
+  function drugAppliesTo(drug, microbeId) {
+    if (!drug.适用 || !drug.适用.length) { return true; }
+    return drug.适用.indexOf(microbeId) !== -1;
+  }
+
+  // 判读工具里用户是按「菌组 + 药名」选的,拿不到具体菌种,故同名多行必须靠适用说明区分,
+  // 否则用户无从知道选中的是哪一行——那正是假敏感的来源。
+  function judgeDrugLabel(drug) {
+    return drug.适用说明 ? drug.药物 + ' — ' + drug.适用说明 : drug.药物;
+  }
+
   function judgeableBreakpointGroups(breakpoints) {
     return (breakpoints || []).filter(function (group) {
       return !isRetiredBreakpointGroup(group);
@@ -413,6 +444,12 @@
         菌种: group.菌种 || [],
         药物: (group.药物 || []).filter(function (drug) {
           return !isRetiredBreakpointDrug(drug) && (drug.MIC_S || drug.MIC_I || drug.MIC_R);
+        }).map(function (drug) {
+          if (!drug.适用说明) { return drug; }
+          var labeled = {};
+          for (var k in drug) { if (Object.prototype.hasOwnProperty.call(drug, k)) { labeled[k] = drug[k]; } }
+          labeled.药物 = judgeDrugLabel(drug);
+          return labeled;
         })
       };
       return copy;
@@ -438,11 +475,17 @@
       菌组名: group.菌组名,
       CLSI表: group.CLSI表,
       来源: group.来源 || '',
-      药物: group.药物.map(function (d) {
+      // 该表的 Medium / Inoculum / Incubation（M100 每张 Table 2X 表头都有）。
+      // 查折点时最需要同屏看到的就是「该用 MHA 还是 MH-F、要不要 5% CO₂、读 16-18 h 还是 24 h」。
+      // 只有回源核对过的组才有此字段，其余为 null，界面上不显示。
+      试验条件: group.试验条件 || null,
+      // 只保留适用于本菌的行:菌详情页上不该出现别的菌种的折点值
+      药物: group.药物.filter(function (d) { return drugAppliesTo(d, microbeId); }).map(function (d) {
         return {
           药物: d.药物,
           简写: d.简写,
           组别: d.组别 || '',
+          适用说明: d.适用说明 || '',
           仅尿路: d.仅尿路 || false,
           MIC: [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / '),
           抑菌圈: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / '),
@@ -732,6 +775,7 @@
     buildCardComparison: buildCardComparison,
     breakpointGroup: breakpointGroup,
     breakpointVM: breakpointVM,
+    drugAppliesTo: drugAppliesTo,
     ecvGroup: ecvGroup,
     ecvVM: ecvVM,
     isRetiredBreakpointGroup: isRetiredBreakpointGroup,

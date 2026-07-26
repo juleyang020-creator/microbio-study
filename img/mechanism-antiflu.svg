@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抗流感病毒药（作用于生活周期两端）</title><desc>M2 抑制剂阻断入胞后的脱壳、只对甲型有效且已因高耐药率不再推荐；神经氨酸酶抑制剂阻断子代病毒释放，覆盖甲型与乙型</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抗流感病毒药</text>
+<rect x="366" y="14" width="90" height="18" rx="9" fill="#eef2f7"/>
+<text x="411" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗病毒机制 3/5</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">两类药分别作用于生活周期的两端：脱壳（早）与释放（晚）</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- 宿主细胞 -->
+<rect x="96" y="72" width="288" height="118" rx="12" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="240" y="184" text-anchor="middle" font-size="9.5" fill="#93a0ad">呼吸道上皮细胞</text>
+
+<!-- 左：入胞与脱壳 -->
+<circle cx="60" cy="104" r="12" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="60" y="108" text-anchor="middle" font-size="9.5" fill="#1f4e79">流感</text>
+<line x1="74" y1="106" x2="104" y2="112" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<circle cx="140" cy="118" r="16" fill="#eef1f8" stroke="#7b8ba0" stroke-width="0.9"/>
+<text x="140" y="121" text-anchor="middle" font-size="9.5" fill="#4a5768">内体</text>
+<text x="140" y="146" text-anchor="middle" font-size="9.5" fill="#33404f">H⁺ 内流 → 脱壳</text>
+<line x1="140" y1="152" x2="140" y2="134" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<rect x="98" y="152" width="84" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="140" y="164" text-anchor="middle" font-size="9.5" fill="#a3332f">M2 抑制剂</text>
+
+<!-- 中：复制 -->
+<line x1="160" y1="112" x2="198" y2="112" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="240" y="100" text-anchor="middle" font-size="9.5" fill="#5c6672">病毒基因组复制</text>
+<text x="240" y="116" text-anchor="middle" font-size="9.5" fill="#5c6672">与子代颗粒装配</text>
+<line x1="282" y1="112" x2="318" y2="112" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+
+<!-- 右：出芽与释放 -->
+<circle cx="348" cy="112" r="12" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="348" y="116" text-anchor="middle" font-size="9.5" fill="#1f4e79">子代</text>
+<text x="392" y="100" text-anchor="middle" font-size="9.5" fill="#33404f">NA 切唾液酸</text>
+<text x="392" y="116" text-anchor="middle" font-size="9.5" fill="#33404f">→ 释放扩散</text>
+<line x1="392" y1="152" x2="392" y2="126" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<rect x="342" y="152" width="100" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="392" y="164" text-anchor="middle" font-size="9.5" fill="#a3332f">神经氨酸酶抑制剂</text>
+
+<!-- 两类对比 -->
+<rect x="30" y="200" width="204" height="42" rx="6" fill="#fdf1f0" stroke="#e4bdb9" stroke-width="0.8"/>
+<text x="40" y="215" font-size="9.5" font-weight="700" fill="#a3332f">M2 抑制剂（金刚烷类）</text>
+<text x="40" y="229" font-size="9.5" fill="#8a5a57">仅甲型有效；因高耐药率</text>
+<text x="40" y="240" font-size="9.5" fill="#8a5a57">已不再推荐用于预防与经验治疗</text>
+
+<rect x="246" y="200" width="204" height="42" rx="6" fill="#eef5f0" stroke="#b7d3c3" stroke-width="0.8"/>
+<text x="256" y="215" font-size="9.5" font-weight="700" fill="#2f6b4f">神经氨酸酶抑制剂</text>
+<text x="256" y="229" font-size="9.5" fill="#43705c">甲型与乙型均覆盖；发病早期用药</text>
+<text x="256" y="240" font-size="9.5" fill="#43705c">获益最大，抗体要 10~14 天才出现</text>
+
+<!-- 页脚 -->
+<rect x="24" y="252" width="432" height="40" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="266" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#1f2733">代表药</tspan>　奥司他韦（口服）｜扎那米韦（吸入，哮喘禁用）｜帕拉米韦（静脉）</text>
+<text x="32" y="278" font-size="10" fill="#5c6672">　　　　　金刚烷胺｜金刚烷乙胺（M2，已退出一线）</text>
+<text x="32" y="289" font-size="9.5" fill="#93a0ad">⚠️ 奥司他韦耐药的 H1N1 株仍对扎那米韦敏感</text>
+</svg>

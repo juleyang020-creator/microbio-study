@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抗疱疹病毒药（是否需病毒酶活化决定耐药谱）</title><desc>阿昔洛韦类需病毒 TK/UL97 磷酸化后作为 DNA 链终止子；膦甲酸与西多福韦不需病毒酶活化，故 TK 缺陷型耐药株仍敏感；莱特莫韦靶向 CMV 末端酶</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抗疱疹病毒药</text>
+<rect x="366" y="14" width="90" height="18" rx="9" fill="#eef2f7"/>
+<text x="411" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗病毒机制 2/5</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">是否需要病毒酶活化，决定了耐药株还对哪些药敏感</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- 上路：需病毒酶活化 -->
+<rect x="30" y="68" width="420" height="70" rx="8" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="40" y="84" font-size="10" font-weight="700" fill="#1f4e79">需病毒酶活化</text>
+<rect x="40" y="94" width="74" height="17" rx="8.5" fill="#e3edf8" stroke="#2b6cb0" stroke-width="0.9"/>
+<text x="77" y="106" text-anchor="middle" font-size="9.5" fill="#1f4e79">阿昔洛韦类</text>
+<line x1="118" y1="102" x2="146" y2="102" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="150" y="94" width="96" height="17" rx="4" fill="#eaf3ec" stroke="#3f8f68" stroke-width="0.9"/>
+<text x="198" y="106" text-anchor="middle" font-size="9.5" fill="#2f6b4f">病毒 TK / UL97</text>
+<line x1="250" y1="102" x2="278" y2="102" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="316" y="106" text-anchor="middle" font-size="9.5" fill="#5c6672">三磷酸活性形式</text>
+<text x="40" y="129" font-size="9.5" fill="#c2413d">⚠️ TK 缺陷突变 → 前药无法活化 → 阿昔洛韦类整组耐药</text>
+
+<!-- 下路：不需病毒酶活化 -->
+<rect x="30" y="146" width="420" height="46" rx="8" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="40" y="162" font-size="10" font-weight="700" fill="#7a4b8a">不需病毒酶活化</text>
+<rect x="150" y="170" width="96" height="17" rx="8.5" fill="#f2ecf7" stroke="#7a4b8a" stroke-width="0.9"/>
+<text x="198" y="182" text-anchor="middle" font-size="9.5" fill="#5f3a6e">膦甲酸｜西多福韦</text>
+<text x="256" y="182" font-size="9.5" fill="#5c6672">→ 直接作用，故对上述耐药株仍有效</text>
+
+<!-- 共同靶点：病毒 DNA 聚合酶 -->
+<line x1="316" y1="112" x2="316" y2="204" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="256" y1="187" x2="300" y2="204" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="238" y="210" width="156" height="20" rx="4" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="316" y="224" text-anchor="middle" font-size="10" fill="#1f4e79">病毒 DNA 聚合酶 → 链终止</text>
+
+<!-- 莱特莫韦另一靶点 -->
+<rect x="40" y="204" width="150" height="32" rx="6" fill="#fdf4e8" stroke="#c98a2e" stroke-width="0.9"/>
+<text x="115" y="217" text-anchor="middle" font-size="9.5" fill="#8a5f18">莱特莫韦 → CMV 末端酶</text>
+<text x="115" y="230" text-anchor="middle" font-size="9.5" fill="#8a5f18">靶点不同，故无交叉耐药</text>
+
+<!-- 结局 -->
+<text x="240" y="254" text-anchor="middle" font-size="11.5" fill="#3f444b">阻断病毒 DNA 合成 → 只对正在复制的病毒有效，不清除潜伏病毒</text>
+
+<!-- 页脚 -->
+<rect x="24" y="264" width="432" height="28" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="277" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#1f2733">代表药</tspan>　阿昔洛韦/伐昔洛韦｜更昔洛韦/缬更昔洛韦｜喷昔洛韦/泛昔洛韦</text>
+<text x="32" y="288" font-size="10" fill="#5c6672">　　　　　膦甲酸｜西多福韦（二线，用于耐药株）｜莱特莫韦（CMV 预防）</text>
+</svg>

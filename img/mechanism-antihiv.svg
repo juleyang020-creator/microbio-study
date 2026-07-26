@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>抗 HIV 药（按生活周期分四类靶点）</title><desc>进入抑制剂阻断 CCR5 共受体、NRTI/NNRTI 抑制逆转录酶、INSTI 抑制整合酶链转移、PI 阻断多聚蛋白切割使病毒颗粒不成熟</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="blk" markerWidth="8" markerHeight="12" refX="6" refY="6" orient="auto"><line x1="6" y1="1" x2="6" y2="11" stroke="#c2413d" stroke-width="2.4"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">抗 HIV 药</text>
+<rect x="366" y="14" width="90" height="18" rx="9" fill="#eef2f7"/>
+<text x="411" y="27" text-anchor="middle" font-size="10" fill="#5c6672">抗病毒机制 1/5</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">按病毒生活周期分四类靶点：进入 → 逆转录 → 整合 → 成熟</text>
+<line x1="24" y1="56" x2="456" y2="56" stroke="#e3e7ec"/>
+
+<!-- 宿主 CD4 细胞 -->
+<rect x="34" y="70" width="412" height="132" rx="10" fill="#f7f9fb" stroke="#d6dee8" stroke-width="0.8"/>
+<text x="42" y="196" font-size="9.5" fill="#93a0ad">宿主 CD4+ T 细胞</text>
+
+<!-- ① 进入 -->
+<circle cx="74" cy="104" r="13" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="74" y="108" text-anchor="middle" font-size="9.5" fill="#1f4e79">HIV</text>
+<rect x="60" y="128" width="28" height="9" rx="2" fill="#cfe0f2" stroke="#2b6cb0" stroke-width="0.8"/>
+<text x="74" y="150" text-anchor="middle" font-size="9.5" fill="#1f4e79">CCR5</text>
+<text x="74" y="163" text-anchor="middle" font-size="9.5" fill="#33404f">① 进入</text>
+<rect x="38" y="171" width="72" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="74" y="182" text-anchor="middle" font-size="9.5" fill="#a3332f">马拉维诺</text>
+<line x1="74" y1="171" x2="74" y2="140" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+
+<!-- ② 逆转录 -->
+<text x="176" y="100" text-anchor="middle" font-size="9.5" fill="#5c6672">病毒 RNA</text>
+<line x1="176" y1="106" x2="176" y2="126" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="176" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">病毒 DNA</text>
+<text x="176" y="163" text-anchor="middle" font-size="9.5" fill="#33404f">② 逆转录酶</text>
+<rect x="132" y="171" width="88" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="176" y="182" text-anchor="middle" font-size="9.5" fill="#a3332f">NRTI｜NNRTI</text>
+<line x1="176" y1="171" x2="176" y2="148" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+
+<!-- ③ 整合 -->
+<line x1="230" y1="118" x2="256" y2="118" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="264" y="108" width="52" height="20" rx="3" fill="#eef1f8" stroke="#7b8ba0" stroke-width="0.8"/>
+<text x="290" y="122" text-anchor="middle" font-size="9.5" fill="#4a5768">宿主染色体</text>
+<text x="290" y="163" text-anchor="middle" font-size="9.5" fill="#33404f">③ 整合酶</text>
+<rect x="252" y="171" width="76" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="290" y="182" text-anchor="middle" font-size="9.5" fill="#a3332f">INSTI</text>
+<line x1="290" y1="171" x2="290" y2="136" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+
+<!-- ④ 成熟 -->
+<line x1="330" y1="118" x2="356" y2="118" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="400" y="100" text-anchor="middle" font-size="9.5" fill="#5c6672">多聚蛋白前体</text>
+<line x1="400" y1="106" x2="400" y2="126" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<circle cx="400" cy="140" r="11" fill="#e6f2ea" stroke="#3f8f68" stroke-width="1.2"/>
+<text x="400" y="163" text-anchor="middle" font-size="9.5" fill="#33404f">④ 蛋白酶</text>
+<rect x="366" y="171" width="68" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="400" y="182" text-anchor="middle" font-size="9.5" fill="#a3332f">PI</text>
+<line x1="400" y1="171" x2="400" y2="152" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+
+<!-- 结局 -->
+<text x="240" y="224" text-anchor="middle" font-size="12" fill="#3f444b">阻断任一环节即抑制复制 → 联合用药提高耐药屏障</text>
+<text x="240" y="243" text-anchor="middle" font-size="9.5" fill="#5c6672">⚠️ 马拉维诺用药前须做病毒亲嗜性检测；NNRTI 对 HIV-2 天然无效</text>
+
+<!-- 页脚 -->
+<rect x="24" y="262" width="432" height="30" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="276" font-size="10" fill="#5c6672"><tspan font-weight="700" fill="#1f2733">代表药</tspan>　替诺福韦｜恩曲他滨｜齐多夫定（NRTI）｜依非韦伦｜利匹韦林（NNRTI）</text>
+<text x="32" y="288" font-size="10" fill="#5c6672">　　　　　多替拉韦（INSTI）｜达芦那韦｜利托那韦（PI）｜马拉维诺（进入抑制剂）</text>
+</svg>

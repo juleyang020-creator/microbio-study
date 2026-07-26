@@ -170,6 +170,19 @@ body.route-mn .detail-title { margin-top: 18px; }
 .lw-table th, .lw-table td { border: 1px solid var(--line); padding: 6px 9px; text-align: left; vertical-align: top; }
 .lw-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; white-space: nowrap; }
 .lw-table td:first-child { white-space: nowrap; font-weight: 600; color: var(--ink-soft); }
+/* 病毒核酸检测时间窗（复用 .lw-table / .lw-section 等表格与分节样式） */
+.dw-caution { font-size: 12.5px; color: var(--ink-soft); line-height: 1.55; max-width: 760px; margin: 0 0 18px; padding: 8px 11px; border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; background: var(--accent-weak); }
+.dw-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 0 0 6px; padding-bottom: 5px; border-bottom: 1px solid var(--line); }
+.dw-name { font-size: 15px; font-weight: 700; color: var(--ink); }
+.dw-jump { font-size: 12px; color: var(--accent); text-decoration: none; }
+.dw-jump:hover { text-decoration: underline; }
+.dw-src { font-size: 11.5px; color: var(--muted); margin-left: auto; }
+/* 标志物出现顺序：核酸最早 → 抗体最晚 */
+.dw-seq { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 8px 0 10px; }
+.dw-chip { font-size: 11.5px; padding: 2px 8px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); color: var(--ink-soft); white-space: nowrap; }
+.dw-arrow { font-size: 11px; color: var(--muted); }
+.dw-note { font-size: 12.5px; color: var(--ink-soft); line-height: 1.6; margin: 9px 0 0; padding: 8px 11px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); }
+
 /* 阳性血培养流程步骤链 */
 .lw-flow { display: flex; flex-direction: column; gap: 8px; margin: 8px 0; }
 .lw-step { display: flex; gap: 10px; align-items: flex-start; padding: 9px 12px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; background: var(--surface); }
@@ -383,6 +396,8 @@ body.zoom-open { overflow: hidden; }
 .bp-table th, .bp-table td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
 .bp-table thead th { background: var(--line-2); color: var(--ink); font-weight: 600; font-size: 11.5px; white-space: nowrap; }
 .bp-table .bp-drug { color: var(--ink); min-width: 200px; }
+/* 该药在 CLSI 表内按菌种分行时，标明本行折点适用于哪一类菌（如「表皮葡萄球菌」） */
+.bp-table .bp-drug .bp-scope { display: block; margin-top: 2px; font-size: 10.5px; color: var(--muted); }
 .bp-table .bp-drug .qc-drug-cn { display: block; font-weight: 600; color: var(--ink); }
 .bp-table .bp-drug .qc-drug-en { display: block; color: var(--muted); font-size: 11px; font-family: var(--mono); margin-top: 1px; }
 .bp-table .bp-drug strong { color: var(--accent); font-family: var(--mono); font-size: 12px; }
@@ -626,8 +641,11 @@ body.zoom-open { overflow: hidden; }
   .brand { grid-column: 2; grid-row: 1; font-size: 14px; }
   .search { grid-column: 3; grid-row: 1; min-width: 0; width: 100%; }
   .nav-boards { grid-column: 1 / -1; grid-row: 2; display: flex; flex-direction: column; gap: 6px; }
-  .nav-board { height: auto; min-height: 36px; align-items: flex-start; flex-direction: column; gap: 5px; padding: 6px 8px; }
-  .nav-board-title { width: 100%; padding: 0 0 5px; border-right: 0; border-bottom: 1px solid var(--line); }
+  /* 手机端顶部导航压扁：原先两个板块各占一行标题 + 一行 chips，共 156px（约 1/5 屏幕），
+     内容区被挤到 225px 以下。标题文字改为行首的小标签与 chips 同行，两块合计降到约 90px。 */
+  .nav-board { height: auto; min-height: 34px; align-items: center; flex-direction: row; gap: 6px; padding: 4px 8px; }
+  .nav-board-title { width: auto; flex: 0 0 auto; padding: 0 6px 0 0; border-right: 1px solid var(--line); border-bottom: 0;
+    font-size: 10.5px; line-height: 1.2; white-space: nowrap; }
   .tools, .tabs { width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab, .tool-btn { min-height: 40px; display: inline-flex; align-items: center; }
@@ -639,7 +657,15 @@ body.zoom-open { overflow: hidden; }
   body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
   .main { padding: 18px 16px calc(24px + env(safe-area-inset-bottom)); }
   .detail-title { font-size: 20px; }
-  .entry-link, .cmp-pick, .cat-toggle { min-height: 40px; display: flex; align-items: center; }
+  /* 侧栏列表在手机上原为每行 40px，是桌面端（padding 2px、约 22px）的近两倍，长列表看起来过于稀疏。
+     收紧到 32px（分组标题 30px）：接近桌面观感，同一屏多看 4~5 条，仍在可单手点按的范围内。
+     只收窄纵向间距，不动字号——12.5px 已是可读下限。 */
+  .entry-link, .cmp-pick { min-height: 32px; display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+  .cat-toggle { min-height: 30px; display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+  .sidebar .cat-group-name { margin: 6px 0 1px; }
+  .sidebar .cat-subgroup { margin-top: 0; }
+  /* 收藏 / 最近浏览两块在手机上顶掉了小半屏，压缩它们与分类树之间的留白 */
+  .fav-section, .history-section { margin-bottom: 6px; padding-bottom: 4px; }
   /* 表格瘦身：折点表 / 对比表在小屏更紧凑，尽量不横向溢出、行高更低 */
   .bp-table, .cmp { min-width: 0; width: 100%; font-size: 10.5px; table-layout: fixed; }
   .bp-table th, .bp-table td { padding: 3px 4px; }
@@ -710,3 +736,35 @@ body.zoom-open { overflow: hidden; }
 /* 品牌副标题（主名"知微" + 小字"微生物学习手册"） */
 .brand-sub { font-weight: 400; font-size: 11px; letter-spacing: .5px; color: var(--muted); margin-left: 8px; }
 @media (max-width: 600px) { .brand-sub { display: none; } }
+
+/* 侧栏内的即时筛选框：手机上侧栏一打开就遮住顶栏搜索框，这里独立给一个入口；
+   sticky 固定在顶部，滚动长列表时不会滑走。 */
+.sb-filter-wrap { position: sticky; top: 0; z-index: 3; padding: 8px 8px 10px; background: var(--surface); border-bottom: 1px solid var(--line); }
+.sb-filter { width: 100%; box-sizing: border-box; padding: 8px 10px; font-size: 13px; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px; background: var(--bg); -webkit-appearance: none; appearance: none; }
+.sb-filter:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-weak); }
+.sb-filter::placeholder { color: var(--muted); }
+
+/* 搜索页的「菌名速查索引」分区：条目库搜不到时的兜底出口。
+   多数索引名只有名称与拉丁名、没有详情页，故不做成链接样式，避免点了没反应。 */
+.search-extra { margin-top: 18px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.search-extra-head { color: var(--muted); font-size: 12px; letter-spacing: 1px; margin-bottom: 8px; }
+.mn-hit-list { display: flex; flex-direction: column; gap: 2px; }
+.mn-hit { display: flex; align-items: baseline; gap: 10px; padding: 5px 8px; border-radius: 4px; color: var(--ink-soft); }
+.mn-hit.has-entry { color: var(--ink); text-decoration: none; background: var(--surface); }
+.mn-hit.has-entry:hover { background: var(--accent-weak); }
+.mn-cn { font-size: 13px; }
+.mn-latin { color: var(--muted); font-size: 11.5px; font-style: italic; }
+.mn-go { margin-left: auto; color: var(--accent); font-size: 11px; }
+/* 应用内临时提示（收藏挤出等），复用 update-toast 的定位与配色，仅调低视觉权重 */
+.app-toast { background: var(--ink); border-color: var(--ink); font-size: 12.5px; max-width: min(360px, calc(100vw - 36px)); }
+
+/* 折点表下的「试验条件」折叠块：M100 表头的 Medium/Inoculum/Incubation。
+   默认收起——查折点时多数人只要数字，需要时再展开看该用什么培养基、孵育多久。 */
+.bp-cond { margin-top: 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.bp-cond-head { padding: 7px 10px; color: var(--ink-soft); font-size: 12px; cursor: pointer; user-select: none; }
+.bp-cond-head::marker { color: var(--muted); }
+.bp-cond-row { display: flex; gap: 10px; padding: 4px 12px 4px 22px; font-size: 12px; line-height: 1.65; }
+.bp-cond-label { flex: 0 0 58px; color: var(--muted); }
+.bp-cond-text { color: var(--ink-soft); }
+.bp-cond-src { padding: 4px 12px 9px 22px; color: var(--muted); font-size: 11px; }
