@@ -1756,6 +1756,30 @@ window.DB.microbes = [
     关联: ['ceftriaxone', 'ciprofloxacin', 'azithromycin', 'salmonella-typhi']
   },
   {
+    id: 'aeromonas-hydrophila',
+    天然耐药: '对氨苄西林、阿莫西林/克拉维酸、头孢唑林一致耐药（CLSI M45）；可产 3 类染色体介导的可诱导 β-内酰胺酶，其中 CphA 金属碳青霉烯酶常规药敏可能测不出。',
+    名称: '嗜水气单胞菌',
+    拉丁名: 'Aeromonas hydrophila',
+    类别: '气单胞菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性兼性厌氧杆菌/球杆菌，末端钝圆，单端鞭毛；氧化酶阳性、触酶阳性，发酵葡萄糖并产气，对弧菌抑制剂 O/129 耐药、拉丝试验阴性——这三点是与弧菌属鉴别的关键。' },
+      { 标题: '致病性 / 所致疾病', 正文: '接触淡水或土壤后的伤口感染，可由蜂窝织炎进展为肌坏死与坏死性筋膜炎；亦致胃肠炎，及肝病、糖尿病或血液恶性肿瘤患者的菌血症。医用水蛭治疗后的伤口感染多由本菌与威隆气单胞菌引起。' }
+    ],
+    关联: ['ciprofloxacin', 'levofloxacin', 'sulfamethoxazole', 'aeromonas-caviae', 'vibrio-vulnificus']
+  },
+  {
+    id: 'aeromonas-caviae',
+    天然耐药: '对氨苄西林、阿莫西林/克拉维酸、头孢唑林一致耐药（CLSI M45）；产 D 类与 C 类 β-内酰胺酶，但通常不产 CphA 金属碳青霉烯酶，故碳青霉烯类多敏感。',
+    名称: '豚鼠气单胞菌',
+    拉丁名: 'Aeromonas caviae',
+    类别: '气单胞菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '革兰阴性兼性厌氧杆菌，氧化酶阳性、O/129 耐药；与嗜水气单胞菌的关键区别是发酵葡萄糖**不产气**、VP 阴性、纤维二糖阳性。多数临床株 β-溶血。' },
+      { 标题: '致病性 / 所致疾病', 正文: 'MCM 第 42 版列为人类分离最常见的气单胞菌，是气单胞菌胃肠炎的首位病原（儿童可类似炎性肠病）；亦见于伤口感染与菌血症。' }
+    ],
+    关联: ['ciprofloxacin', 'levofloxacin', 'sulfamethoxazole', 'aeromonas-hydrophila', 'vibrio-cholerae']
+  },
+  {
     id: 'vibrio-vulnificus',
     名称: '创伤弧菌',
     拉丁名: 'Vibrio vulnificus',
