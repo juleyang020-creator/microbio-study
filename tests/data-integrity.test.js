@@ -45,7 +45,10 @@ test('种子数据通过 validateData，无任何问题', () => {
     tests: global.window.DB.tests,
     media: global.window.DB.media,
     staining: global.window.DB.staining,
-    'biochem-tests': global.window.DB.biochemTests
+    'biochem-tests': global.window.DB.biochemTests,
+    // 与 core.js 的 MODULE_KEYS 保持一致：漏掉 qc-strains 会把「菌 → 质控参考株」
+    // 这类合法关联误报成悬空
+    'qc-strains': global.window.DB['qc-strains']
   };
   const problems = Core.validateData(db, global.window.DB.categories);
   assert.deepStrictEqual(problems, [], '发现问题：' + JSON.stringify(problems, null, 2));
