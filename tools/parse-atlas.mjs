@@ -46,6 +46,21 @@ function matchAll(text) {
   return [...ids.entries()];
 }
 
+// 拆分多联图图注："总标题 ×1000 A. xx; B. xx；C. xx" → { title, parts }
+// 与 sync-atlas-images.mjs 的 splitSubs 同逻辑：分隔为空格/分号/行首 + 字母句点（点后空格可有可无），
+// 字母须从 A 起连续（防 "E. coli" 误拆）。
+function splitSubs(raw) {
+  const t = (raw || '').replace(/\s+/g, ' ').trim();
+  const chunks = t.split(/(?:^|[\s;；])\s*(?=[A-I][\.、．])/).filter(Boolean);
+  if (chunks.length < 2) { return { title: t, parts: [] }; }
+  for (let k = 1; k < chunks.length; k++) {
+    const m = chunks[k].match(/^([A-I])[\.、．]\s*(.*)$/);
+    if (!m || m[1] !== String.fromCharCode(65 + k - 1)) { return { title: t, parts: [] }; }
+    chunks[k] = m[2].replace(/[;；]\s*$/, '');
+  }
+  return { title: chunks[0].replace(/[;；]\s*$/, ''), parts: chunks.slice(1) };
+}
+
 // ---- 解析分章（第 12 章起）----
 const files = fs.readdirSync(path.join(ATLAS, '分章')).filter(f => f.endsWith('.md')).sort()
   .filter(f => parseInt(f.split('-')[0], 10) >= 12);
@@ -70,10 +85,24 @@ for (const f of files) {
         break; // 纯正文行：不并入
       }
       const capText = parts.join(' ').replace(/\s+/g, ' ').trim();
-      const hits = matchAll(capText);
-      for (const img of pendingImgs) {
-        for (const [id, by] of hits) {
-          results.push({ img, fig: cap[1], caption: capText.slice(0, 200), chapter, id, by });
+      // 联图归属：把图注拆成「总标题 + A/B/C… 分联」，分联数与图片数一致时，
+      // 第 k 张小图只按第 k 联文本匹配菌名（避免联图里提到别的菌就整图挂给所有菌）；
+      // 拆不出/数量对不上时退回整图图注匹配。
+      const subImgs = pendingImgs.length;
+      let subs = splitSubs(capText);
+      if (subImgs >= 2 && subs.parts.length === subImgs) {
+        pendingImgs.forEach(function (img, k) {
+          const subHits = matchAll('图 ' + subs.title + ' ' + subs.parts[k]);
+          for (const [id, by] of subHits) {
+            results.push({ img, fig: cap[1], caption: capText.slice(0, 200), sub: subs.parts[k], chapter, id, by });
+          }
+        });
+      } else {
+        const hits = matchAll(capText);
+        for (const img of pendingImgs) {
+          for (const [id, by] of hits) {
+            results.push({ img, fig: cap[1], caption: capText.slice(0, 200), chapter, id, by });
+          }
         }
       }
       pendingImgs = [];

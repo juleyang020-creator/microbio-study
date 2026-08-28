@@ -96,15 +96,19 @@ for (const [id, recs] of byId) {
     const i = (figSeen.get(r.fig) || 0) + 1; figSeen.set(r.fig, i);
     const sp = figSplit.get(r.fig) || { title: '', parts: [] };
     let sub;
-    if (n > 1 && sp.parts.length === n && sp.parts[i - 1]) {
-      // 分联数与图片数吻合：每张图用自己的分联说明（A/B/C…），不再标 (i/n)
+    // 优先用 parse 阶段记下的分联文本（r.sub）——联图按联归属菌种后，
+    // 一联只命中一个菌时（如 3 联图 C 联腐生葡萄球菌），该图的说明就用这一联。
+    if (r.sub) {
+      sub = r.sub;
+    } else if (n > 1 && sp.parts.length === n && sp.parts[i - 1]) {
+      // 该菌命中了整图图注（多菌联图）：按位置取分联说明（A/B/C…），不标 (i/n)
       sub = String.fromCharCode(65 + i - 1) + '. ' + sp.parts[i - 1];
     } else {
       sub = sp.title || (r.caption || ''); // 回退：整图图注（数量对不上时不猜）
     }
     let t = sub.replace(/\s+/g, ' ').trim();
     if (t.length > 110) t = t.slice(0, 108) + '…';
-    const tag = n > 1 && sp.parts.length !== n ? '（' + i + '/' + n + '）' : '';
+    const tag = !r.sub && n > 1 && sp.parts.length !== n ? '（' + i + '/' + n + '）' : '';
     picked.push({ 文件: 'img/atlas/' + r.img + '.jpg', 说明: '图 ' + r.fig + '　' + t + tag });
   }
   if (picked.length) out[id] = picked;
