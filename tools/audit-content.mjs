@@ -19,6 +19,7 @@ global.window = { DB: {} };
   'differential',
   'morphology',
   'photos',
+  'photos-atlas',
   'treatment',
   'cards',
   'tests',
@@ -115,6 +116,21 @@ if (!sw.includes("versioned('./data/source-metadata.js')")) {
 }
 if (!sw.includes('CACHE_PREFIX')) {
   fail('sw.js 未使用 CACHE_PREFIX 限定缓存清理范围');
+}
+
+// 图谱照片（photosAtlas）：id 必须存在于 microbes，图片文件必须落盘
+const atlas = DB.photosAtlas || {};
+Object.keys(atlas).forEach((id) => {
+  if (!microbeIds.has(id)) { fail(`photosAtlas 挂到不存在的菌 id：${id}`); }
+  atlas[id].forEach((p) => {
+    if (!p.文件 || !p.说明) { fail(`photosAtlas 条目字段不全：${id}`); return; }
+    if (!fs.existsSync(path.join(root, p.文件))) { fail(`photosAtlas 图片文件缺失：${p.文件}（${id}）`); }
+  });
+});
+if (Object.keys(atlas).length) {
+  const htmlHasAtlas = fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('data/photos-atlas.js?v=');
+  if (!htmlHasAtlas) { fail('index.html 未加载 data/photos-atlas.js'); }
+  if (!sw.includes("versioned('./data/photos-atlas.js')")) { fail('sw.js 未预缓存 data/photos-atlas.js'); }
 }
 
 if (errors.length) {

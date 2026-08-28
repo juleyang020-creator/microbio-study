@@ -14,6 +14,7 @@ require('../data/biochem.js');
 require('../data/differential.js');
 require('../data/morphology.js');
 require('../data/photos.js');
+require('../data/photos-atlas.js');
 require('../data/cards.js');
 require('../data/tests.js');
 require('../data/media.js');
