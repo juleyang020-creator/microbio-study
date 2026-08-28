@@ -2199,20 +2199,6 @@ window.DB.photosAtlas = {
    "说明": "图 17-12-1　睾丸酮丛毛单胞菌 SBA 2 日"
   }
  ],
- "roseomonas-mucosa": [
-  {
-   "文件": "img/atlas/3b524dc6b5117ff97073985605bf7d4a3bfc9837742dd4163312f392d2523e0b.jpg",
-   "说明": "图 17-15-3　黏液玫瑰单胞菌革兰氏染色 × 1000"
-  },
-  {
-   "文件": "img/atlas/6a9796ffb4eb1aef30f6d24558484f48b66af8401e1a91ca77c456b2427dc7dd.jpg",
-   "说明": "图 17-15-3　黏液玫瑰单胞菌 SBA 3 日"
-  },
-  {
-   "文件": "img/atlas/7e02ac31a0750769bd071ec05b2923030e79c9e409e35fc8d59237f831b4f0ee.jpg",
-   "说明": "图 17-15-3　黏液玫瑰单胞菌 MHA 5 日"
-  }
- ],
  "sphingomonas-paucimobilis": [
   {
    "文件": "img/atlas/c5ae24e9199eb6d7d51d27927be40649e7c7602d9e373773a03173d84043e592.jpg",
@@ -2365,6 +2351,36 @@ window.DB.photosAtlas = {
    "说明": "图 18-1-7　副流感嗜血杆菌，脑心琼脂 2 日"
   }
  ],
+ "haemophilus-ducreyi": [
+  {
+   "文件": "img/atlas/d98120622178775ab2f7eecb0dd45f0f1ca2c08e5de4971bdc099f5dc74481e8.jpg",
+   "说明": "图 18-1-2　杜克雷嗜血杆菌落涂片"
+  },
+  {
+   "文件": "img/atlas/110c668a28d9c5ee281e8da0990454dab9b4abe9330c13a2042b83480737139d.jpg",
+   "说明": "图 18-1-2　杜克雷嗜血杆菌肉汤培养物涂片"
+  },
+  {
+   "文件": "img/atlas/0d8a2d2775ea8d7f7303408c67269fdd1d1a9fca2fa80fa13addfe929bebecb0.jpg",
+   "说明": "图 18-1-2　杜克雷嗜血杆菌（腹股沟淋巴结瘘管脓汁涂片）"
+  },
+  {
+   "文件": "img/atlas/2e4b3154e7334ef3a75cb012ddb328c2b17ffe141e9b31a9ab5e339ac8423a8e.jpg",
+   "说明": "图 18-1-4　杜克雷嗜血杆菌 CA7日"
+  },
+  {
+   "文件": "img/atlas/a0cfe5fe0d89ecef5ca2694416574677e72f09f5ccf6c7b3d19d3c8345c1f46f.jpg",
+   "说明": "图 18-1-4　杜克雷嗜血杆菌 SBA2日"
+  },
+  {
+   "文件": "img/atlas/21deccb7f0eecbcf7b25a113c522f776fd5787a8f1b200490d309d15c18f5b25.jpg",
+   "说明": "图 18-1-4　杜克雷嗜血杆菌盐水自凝"
+  },
+  {
+   "文件": "img/atlas/8de4d0474a254979b3d8c0ea7fc1ef966abad4fdb08fa9de468961792e3c39e4.jpg",
+   "说明": "图 18-1-4　杜克雷嗜血杆菌肉汤培养呈絮状生长"
+  }
+ ],
  "bordetella-pertussis": [
   {
    "文件": "img/atlas/1829910e946a589493e1c043db3904cbadc20f152ed4433ba08b8cef6a96562f.jpg",
@@ -2385,7 +2401,9 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/26261cbccca5a2e8b8fae27e2462497cd420fc98ac569a9d4c152861c6b51f4c.jpg",
    "说明": "图 18-2-1　ATCC 9797 BAP 8 日"
-  },
+  }
+ ],
+ "bordetella-parapertussis": [
   {
    "文件": "img/atlas/26b1476159d16fe7ad0a49502432b35c4240f5f6e6575636e324e112bb594c6c.jpg",
    "说明": "图 18-2-2　CHB, 革兰氏染色 × 1000"
@@ -2397,6 +2415,10 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/3d3ed031d91b566f06b40f0392128e016668653242b31b4cbcf89f6c1c551b24.jpg",
    "说明": "图 18-2-2　SBA 5 日"
+  },
+  {
+   "文件": "img/atlas/f09bf1d9a6febae8120622fffe9f5a02fa2820a44df1286147ccc86dc4dcf3c1.jpg",
+   "说明": "图 18-2-2　MHA 10 日"
   }
  ],
  "eikenella-corrodens": [
@@ -2471,6 +2493,36 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/9c5b6afefd029f1345f8946b500bf2ffdb08a13e4a8253c9515c77298c13c7dc.jpg",
    "说明": "图 18-8-4　聚集杆菌的鉴别试验（2/2）"
+  }
+ ],
+ "streptobacillus-moniliformis": [
+  {
+   "文件": "img/atlas/01874d23003c644bc1b9b3844975a7416a5f04b32ffed8c6659ec679b6745e8e.jpg",
+   "说明": "图 18-10-1　脓汁涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/e1b181e2411ef4b7784d95c8d27446958e24fab67ccdfe96c9f2955d57558212.jpg",
+   "说明": "图 18-10-1　革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/7bff5c65d92da9c6a317a82c64f8a14939b876fa38291e979a60f9fdd7b1136b.jpg",
+   "说明": "图 18-10-1　革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/99906f031b2688a7bbc13972629fdcf135d5edf57772b32c1a320afd157ad00b.jpg",
+   "说明": "图 18-10-1　透射电镜图 ×200000"
+  },
+  {
+   "文件": "img/atlas/bf241dced0fa119daeaafe4eb93e93b39ebd9e12e7b42eb28c86ff357bd8ffae.jpg",
+   "说明": "图 18-10-1　光滑型 SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/6a8f9e9ab8b136a8df14575e4853e9e5e0777dc30b10137b9652196b061bc13e.jpg",
+   "说明": "图 18-10-1　粗糙型 SBA 6 日"
+  },
+  {
+   "文件": "img/atlas/d78dbf237f56faaa5106c2a379fa853c612294c6796e8e9dcceff3de358e9205.jpg",
+   "说明": "图 18-10-2　念珠状链杆菌感染(鼠咬部位)"
   }
  ],
  "pasteurella-multocida": [
@@ -2715,6 +2767,42 @@ window.DB.photosAtlas = {
    "说明": "图 20-21-3　厌氧培养 7 日"
   }
  ],
+ "campylobacter-coli": [
+  {
+   "文件": "img/atlas/fde13ba2b4f0962011bfbfc7555d24f4332b96d0d0107ea48a1fe35bf43d328e.jpg",
+   "说明": "图 21-1-1　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/25ebb26d95ba2125dd9d946796f036e919d5ea28781c51a1ac6bab4d9ffd7c3e.jpg",
+   "说明": "图 21-1-1　粪便涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/128be92a4f5b0784480ec455bd3a37d39a9f47a6e697f141d5e933691b5f67b7.jpg",
+   "说明": "图 21-1-1　SBA CO23 日"
+  },
+  {
+   "文件": "img/atlas/fe26512db185b1824bb53b7c8db5f61c54d132249805a2741740b4b5290a129f.jpg",
+   "说明": "图 21-1-1　CACO ² 3日"
+  }
+ ],
+ "campylobacter-jejuni": [
+  {
+   "文件": "img/atlas/38e251923fc5a8b3258270d8b6ae89711d9d8faac46f04f1ef021b26e0fee7ba.jpg",
+   "说明": "图 21-1-3　革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/e57c32feb81efd611536ab130afba192b6edcd30397d7ef336268407139fb057.jpg",
+   "说明": "图 21-1-3　粪便涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/ef014a1e2d4630b50d0ee3b70f6d24c1f7e7004795f26a892e9166941f77847f.jpg",
+   "说明": "图 21-1-3　血培养涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/2b8c06c23fc44f7a73ab30a02ff9b6c3887ab435abb8f6b9dd30caff996af523.jpg",
+   "说明": "图 21-1-3　SBA CO₂ 2 日"
+  }
+ ],
  "helicobacter-pylori": [
   {
    "文件": "img/atlas/65822806a412b5247c4b36fcceb2ddce05a9ef112b220d3cb1d45962af02ed97.jpg",
@@ -2761,6 +2849,50 @@ window.DB.photosAtlas = {
    "说明": "图 22-3-1　暗视野下"
   }
  ],
+ "mycoplasma-hominis": [
+  {
+   "文件": "img/atlas/248bd51f322cdb9efddb5c90edac6e19bf455eda5c729456352f71e95b6fd7d0.jpg",
+   "说明": "图 23-1-1　人型支原体 (关节腔液涂片) 吉姆萨染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/5c852b1346f93d1fadacf51ede4bfed61d5e0356d4812ff5ef466f21f0de8082.jpg",
+   "说明": "图 23-1-1　人型支原体涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/571d427221a71419463d6466831fadcf3c3c755257f284982bc4efa2687b037a.jpg",
+   "说明": "图 23-1-1　人型支原体吉姆萨染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/8a87c5e7fcc710900fb98a5b0742081a2d2660210242e4e85ec9df1e91b6a00c.jpg",
+   "说明": "图 23-1-3　人型支原体 SBA CO₂ 培养 5 日"
+  },
+  {
+   "文件": "img/atlas/d636491737c2fa2ee90c937ffad96a7a2526cfd9221de188ef88a557af7586df.jpg",
+   "说明": "图 23-1-3　人型支原体菌落瑞 - 吉染色 × 400"
+  },
+  {
+   "文件": "img/atlas/637670c839252a6dc7e448e59d8245e4916e8720171f67c2d2fec15e8501cf43.jpg",
+   "说明": "图 23-1-4　固体培养基直接镜检，人型支原体（大菌落）、解脲脲原体（小菌落）×100"
+  }
+ ],
+ "ureaplasma-urealyticum": [
+  {
+   "文件": "img/atlas/41be818369dcd0d8ea425f3264e1dafb2ba006787ea8f0fde310cdc081209cad.jpg",
+   "说明": "图 23-1-2　脲原体在透射电镜下的形态特征 ×200 000"
+  },
+  {
+   "文件": "img/atlas/4c95409ee54858bd6ff14add745953466b0df2c74ec5b81063a6e6fc2e54e40e.jpg",
+   "说明": "图 23-1-4　解脲脲原体小培养 8 日亚甲蓝染色 ×400"
+  },
+  {
+   "文件": "img/atlas/0698d9e74a034e171931c94fdcf780230e629a59fd3991bf585c040ee1ae6349.jpg",
+   "说明": "图 23-1-4　解脲脲原体小培养 8 日 ×400"
+  },
+  {
+   "文件": "img/atlas/637670c839252a6dc7e448e59d8245e4916e8720171f67c2d2fec15e8501cf43.jpg",
+   "说明": "图 23-1-4　固体培养基直接镜检，人型支原体（大菌落）、解脲脲原体（小菌落）×100"
+  }
+ ],
  "chlamydia-trachomatis": [
   {
    "文件": "img/atlas/28d286f41a04839363f2dbdebc9a2ff92e8342e2a83caeb4911997155eb337cc.jpg",
@@ -2783,6 +2915,12 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/ee74f02eb6a14c46c4d051f3d5109cc42006f2043d5397c9b60d1424e26503fa.jpg",
    "说明": "图 23-3-1　日本立克次体(Rickettsia japonica)L929细胞系, 10日"
+  }
+ ],
+ "orientia-tsutsugamushi": [
+  {
+   "文件": "img/atlas/9f94c3a8d0e5f02672e6f1e8532fc8d28536d267505e30aa8f9aa7074fed9c6f.jpg",
+   "说明": "图 23-11-1　恙虫病东方体的镜下形态 吉姆萨染色,L929细胞系,10日×1000"
   }
  ],
  "mucor": [
