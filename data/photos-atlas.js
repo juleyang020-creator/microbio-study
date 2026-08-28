@@ -1827,6 +1827,24 @@ window.DB.photosAtlas = {
    "说明": "图 17-2-3　痰涂片(黏液型)革兰氏染色 ×1000"
   }
  ],
+ "pseudomonas-fluorescens": [
+  {
+   "文件": "img/atlas/270697759907873eeb8121a278d102fb2255cd9c26f216718640ca272b3f62cc.jpg",
+   "说明": "图 17-2-1　荧光假单胞菌(产荧光色素)"
+  },
+  {
+   "文件": "img/atlas/1c2b77a2e88481ae7a179b280085d3127665c0fd3ca6a6dab9ea722f60c031cc.jpg",
+   "说明": "图 17-2-2　假单胞菌荧光素检测试验结果"
+  },
+  {
+   "文件": "img/atlas/353c8a1534c217f6bd7cbffe0bf9f89fefdf859cb6ad6b405d723ce00e47b522.jpg",
+   "说明": "图 17-2-4　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/0739a144b4b84e3ddc36b0c9bdac3106c7c22d358404ae6ae4130c0e46da6c1c.jpg",
+   "说明": "图 17-2-4　SBA 24h"
+  }
+ ],
  "stenotrophomonas-maltophilia": [
   {
    "文件": "img/atlas/9d86e108a2f936ff96328ea3f27874a150c8a4bf8fcc43570806da36f7ce0749.jpg",
@@ -1919,6 +1937,46 @@ window.DB.photosAtlas = {
    "说明": "图 17-3-3　临床分离株(黏液型)SBA 24h 3. 溶血不动杆菌 符合不动杆菌属特征，在胰酶大豆血琼脂平板形成圆形、凸起、光滑、不透明菌落，菌落边缘整齐，有时可出现黏液性菌落。在马和羊血琼脂平板上 37° C 孵育 24 小时…"
   }
  ],
+ "acinetobacter-haemolyticus": [
+  {
+   "文件": "img/atlas/341251958275efaa2a6113e53a7d7d1d8b92332dfdf9a29eb763eb63e3c46bf7.jpg",
+   "说明": "图 17-3-3　临床分离株(黏液型)SBA 24h 3. 溶血不动杆菌 符合不动杆菌属特征，在胰酶大豆血琼脂平板形成圆形、凸起、光滑、不透明菌落，菌落边缘整齐，有时可出现黏液性菌落。在马和羊血琼脂平板上 37° C 孵育 24 小时…"
+  },
+  {
+   "文件": "img/atlas/d19e69c12914d6a3e52672974dbaf9a624cf917ab383c0012d9b7a9328011016.jpg",
+   "说明": "图 17-3-4　溶血不动杆菌的形态特征"
+  }
+ ],
+ "acinetobacter-lwoffii": [
+  {
+   "文件": "img/atlas/341251958275efaa2a6113e53a7d7d1d8b92332dfdf9a29eb763eb63e3c46bf7.jpg",
+   "说明": "图 17-3-3　临床分离株(黏液型)SBA 24h 3. 溶血不动杆菌 符合不动杆菌属特征，在胰酶大豆血琼脂平板形成圆形、凸起、光滑、不透明菌落，菌落边缘整齐，有时可出现黏液性菌落。在马和羊血琼脂平板上 37° C 孵育 24 小时…"
+  },
+  {
+   "文件": "img/atlas/451468cb0feb85350f11d07404339a91d20d4b6219659ff8d48703058b511fb4.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（1/6）"
+  },
+  {
+   "文件": "img/atlas/44606296e7b7b79287e93f205436bb14bb48f07e316f18f9b0742f8eee07efb0.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（2/6）"
+  },
+  {
+   "文件": "img/atlas/53422c6f8ab10f1a633ee21cc02fb30d001b7082af96012caf22e99d3c0ea051.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（3/6）"
+  },
+  {
+   "文件": "img/atlas/c466f003819ed84596b3b93a33db7135348e5163700e62f2ef833e44832cf69b.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（4/6）"
+  },
+  {
+   "文件": "img/atlas/9facc487d848d2394cb02b4e212cce8dd9734ab06d9d8f16d52589b4b40c7b14.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（5/6）"
+  },
+  {
+   "文件": "img/atlas/8b7a4f4c13abcbf209cf84346c56866c04a04c9dd73d91f9701c95e44138c0d2.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（6/6）"
+  }
+ ],
  "acinetobacter-pittii": [
   {
    "文件": "img/atlas/451468cb0feb85350f11d07404339a91d20d4b6219659ff8d48703058b511fb4.jpg",
@@ -1969,6 +2027,54 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/8b7a4f4c13abcbf209cf84346c56866c04a04c9dd73d91f9701c95e44138c0d2.jpg",
    "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（6/6）"
+  }
+ ],
+ "burkholderia-mallei": [
+  {
+   "文件": "img/atlas/37e12ae397379851a3a0c29a1ccc53098b560362a4668bae32360407a515f028.jpg",
+   "说明": "图 17-5-1　培养 2 日涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/723e4ce13ff6b5fb4ab15c6938939afb6ff2ad207b95aa20889ddc1295f3b559.jpg",
+   "说明": "图 17-5-1　SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/dfdf937bb03e554bfa6473e868b644fc77b02d57bf96cdadc8ee7b0ed9e5cd54.jpg",
+   "说明": "图 17-5-1　中国蓝平板 2 日"
+  }
+ ],
+ "burkholderia-pseudomallei": [
+  {
+   "文件": "img/atlas/7d4256bc95451b36cdf0d04ac0ab549945c20092dc5c2bacbffd3822554c4826.jpg",
+   "说明": "图 17-5-2　革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/e6aca3d9319ea7452af6fb21bd3f65a94962fcc0c527956e3bf7c5d5684281df.jpg",
+   "说明": "图 17-5-2　肝脓肿涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/09524946a41057f85d2ffbff630f8a25eb1bccef6d2a6cecd73f6d86861eb2f1.jpg",
+   "说明": "图 17-5-2　光滑型, SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/e408853bfe9073e2c7575d05ad026e856fbfd94931e9eab0bb73599625e3ecde.jpg",
+   "说明": "图 17-5-2　黏液型, SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/7cda37a8232d4c67132469580b0b140a24fcde146131309c42d713ad44e50892.jpg",
+   "说明": "图 17-5-2　SBA 4 日"
+  },
+  {
+   "文件": "img/atlas/3e8d64d4c915208621a2a33921b65547fd600b9e5dec307f86aa02a827bc0e7a.jpg",
+   "说明": "图 17-5-2　黏液型, 中国蓝平板 3 日"
+  },
+  {
+   "文件": "img/atlas/cbd2164754873fd6eb2aefef8ed798edbf0250daaa738100c5a37ffe66dba5ec.jpg",
+   "说明": "图 17-5-2　MAC 2 日"
+  },
+  {
+   "文件": "img/atlas/535b3d736ce42b7603f180965448651f2815864d4d19d9c00eaf95bd0bdb8b2b.jpg",
+   "说明": "图 17-5-2　SSA 4 日"
   }
  ],
  "burkholderia-cepacia": [
@@ -2065,6 +2171,78 @@ window.DB.photosAtlas = {
    "说明": "图 17-9-1　黏金黄杆菌 CA 3 日"
   }
  ],
+ "ochrobactrum-anthropi": [
+  {
+   "文件": "img/atlas/f7548026c2adc416753ff3d60fa6df568908d7c8b875789eee9507ddbb84551a.jpg",
+   "说明": "图 17-10-1　人苍白杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/ac8b082e755d297b1b3b47b635f60217a84ab637f762a9bfd94782d35379d612.jpg",
+   "说明": "图 17-10-1　人苍白杆菌柯氏染色 (红色是人苍白杆菌, 蓝色是大肠埃希菌) ×1000"
+  },
+  {
+   "文件": "img/atlas/41d6694a28b2f2fba2de1b897d3d38046791c65c15da676c1a2fa1e4b58d2477.jpg",
+   "说明": "图 17-10-1　人苍白杆菌 SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/ed15dc53f1b6d895db35501407219004cd66ef24ffbe8d2a974d42e614c7b3d7.jpg",
+   "说明": "图 17-10-1　人苍白杆菌中国蓝平板 24h"
+  },
+  {
+   "文件": "img/atlas/8b17769e8ed20c5b5f04653390f64eb0f88c05a7f72a92d898bc75421cd0bc02.jpg",
+   "说明": "图 17-11-1　菩萨根瘤菌中国蓝平板 3 日 2. 与木糖氧化无色杆菌的鉴别 放射根瘤菌甘露醇、尿素酶和 ONPG 试验均阳性, 木糖氧化无色杆菌结果则相反。 3. 与人苍白杆菌的鉴别 两者葡萄糖 O-F 试验为氧化型, 氧化酶、尿…"
+  }
+ ],
+ "comamonas-testosteroni": [
+  {
+   "文件": "img/atlas/3d6fab0f69be496e7487f7db6980b37e061b2b0754fbfc02f3e15d6fe5616f81.jpg",
+   "说明": "图 17-12-1　睾丸酮丛毛单胞菌 SBA 2 日"
+  }
+ ],
+ "roseomonas-mucosa": [
+  {
+   "文件": "img/atlas/3b524dc6b5117ff97073985605bf7d4a3bfc9837742dd4163312f392d2523e0b.jpg",
+   "说明": "图 17-15-3　黏液玫瑰单胞菌革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/6a9796ffb4eb1aef30f6d24558484f48b66af8401e1a91ca77c456b2427dc7dd.jpg",
+   "说明": "图 17-15-3　黏液玫瑰单胞菌 SBA 3 日"
+  },
+  {
+   "文件": "img/atlas/7e02ac31a0750769bd071ec05b2923030e79c9e409e35fc8d59237f831b4f0ee.jpg",
+   "说明": "图 17-15-3　黏液玫瑰单胞菌 MHA 5 日"
+  }
+ ],
+ "sphingomonas-paucimobilis": [
+  {
+   "文件": "img/atlas/c5ae24e9199eb6d7d51d27927be40649e7c7602d9e373773a03173d84043e592.jpg",
+   "说明": "图 17-17-1　鞘氨醇单胞菌的形态特征（1/7）"
+  },
+  {
+   "文件": "img/atlas/d6912ed990a5142c420871fe67f245ebd967a25cc4cba55045fd044276b1bfb6.jpg",
+   "说明": "图 17-17-1　鞘氨醇单胞菌的形态特征（2/7）"
+  },
+  {
+   "文件": "img/atlas/2bcc78baa2d6077aa180dde5024c6993a418e599cc63b61ac7db12c674593801.jpg",
+   "说明": "图 17-17-1　鞘氨醇单胞菌的形态特征（3/7）"
+  },
+  {
+   "文件": "img/atlas/57d9865da37fae772113d58bb3b11a4dfcc8a5a824def5e671fb3f6c6c8c68d7.jpg",
+   "说明": "图 17-17-1　鞘氨醇单胞菌的形态特征（4/7）"
+  },
+  {
+   "文件": "img/atlas/a6afc373bd6ec61abff3e26c93e5ede01e82d8c355f8b4b189c78bc4631dd2d4.jpg",
+   "说明": "图 17-17-1　鞘氨醇单胞菌的形态特征（5/7）"
+  },
+  {
+   "文件": "img/atlas/9ecd26a4788c67a0a6cfb77729af629b59cf8216cdda1e65b23ea17e3123f1ca.jpg",
+   "说明": "图 17-17-1　鞘氨醇单胞菌的形态特征（6/7）"
+  },
+  {
+   "文件": "img/atlas/f70008d7a0b0fecd649ee89f4e7fe18cadd20087db3a664f8417dfb5f1124bb8.jpg",
+   "说明": "图 17-17-1　鞘氨醇单胞菌的形态特征（7/7）"
+  }
+ ],
  "legionella-pneumophila": [
   {
    "文件": "img/atlas/18ed1fbc5677afed9813b92162fe9ed58e64df7afe79a2e07879b52ead89f75a.jpg",
@@ -2095,6 +2273,16 @@ window.DB.photosAtlas = {
    "说明": "图 17-19-4　嗜肺军团菌 fraseri 亚种（Lp4）ATCC 33156 紫外线照射下发出蓝白色荧光"
   }
  ],
+ "delftia-acidovorans": [
+  {
+   "文件": "img/atlas/9d72668cd6c4101ad12103961af26fd8c53b7fa0db7a4fc0a802774e4941e2c2.jpg",
+   "说明": "图 17-26-1　食酸代尔夫特菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/fec53b3500d72d8567d3af50c25e10c1a1a55dcc39aaae6f591dcce6e06fef98.jpg",
+   "说明": "图 17-26-1　食酸代尔夫特菌 SBA 24h"
+  }
+ ],
  "ralstonia-mannitolilytica": [
   {
    "文件": "img/atlas/e243ad5ca9d8a947719012bb6c2779834aff9c7994217592fc195e231352967b.jpg",
@@ -2113,6 +2301,16 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/b875b49abd58c6d7546f66369152484923b2f6df13b750c9dd00cd94bdf852b5.jpg",
    "说明": "图 17-29-1　皮氏罗尔斯顿菌 SBA 3 日"
+  }
+ ],
+ "myroides-odoratimimus": [
+  {
+   "文件": "img/atlas/927f00acb36538a79adc5fcf9e8efb5782ee9f5b16eb78dba4d4bc2c48923ed5.jpg",
+   "说明": "图 17-40-1　拟香味类香味菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/4b1885bebe0a715aba99e84c43d6cca78b62e261eaddac5d0e1e2e5db35afd0c.jpg",
+   "说明": "图 17-40-1　拟香味类香味菌 SBA 2 日"
   }
  ],
  "haemophilus-influenzae": [

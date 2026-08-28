@@ -855,5 +855,64 @@ window.DB.differential = {
   ],
   'salmonella-bongori': [
     { 名称: '肠沙门菌', id: 'salmonella-enteritidis', 相似点: '沙门菌两物种之一，表型无法区分', 鉴别: '血清学：邦戈尔 O 抗原不在 A~F 常见多价内；分子（DNA 杂交群 II）；临床占比极小（爬行类相关）。' }
+  ],
+
+'burkholderia-pseudomallei': [
+    { 名称: '鼻疽伯克霍尔德菌', id: 'burkholderia-mallei', 相似点: '同属近缘（生物恐怖 agent）', 鉴别: '动力：类鼻疽 +（活泼）、鼻疽 −（关键单点）；鼻疽不传人于实验室外环境（兽源），类鼻疽土壤水源。两者均 BSL-3 + 立即上报。' },
+    { 名称: '施氏假单胞菌', id: 'pseudomonas-aeruginosa', 相似点: '干燥皱缩"车轮状"菌落', 鉴别: '施氏假单胞菌精氨酸双水解酶 −、不分解乳糖；类鼻疽精氨酸 +；MALDI/分子确认（施氏菌库另有专条时以其为准）。' },
+    { 名称: '洋葱伯克霍尔德菌', id: 'burkholderia-cepacia', 相似点: '同属，CF 呼吸道分离', 鉴别: '洋葱伯克霍尔德菌复合群氧化酶 +、菌落黄色/紫色（含色素）、不两极浓染；类鼻疽两极浓染+皱缩菌落演变+败血症表现重。' }
+  ],
+  'burkholderia-mallei': [
+    { 名称: '类鼻疽伯克霍尔德菌', id: 'burkholderia-pseudomallei', 相似点: '近缘种', 鉴别: '无动力（鼻疽）vs 有动力（类鼻疽）；鼻疽兽源接触史（马骡）。' },
+    { 名称: '布鲁菌属', id: 'brucella-melitensis', 相似点: '兽源生物恐怖菌、血培养延迟报阳', 鉴别: '布鲁菌为微小球杆菌、生长更慢（7 天+）；鼻疽为杆菌 48 h 可见菌落；两者均须 BSL-3+上报。' }
+  ],
+  'acinetobacter-haemolyticus': [
+    { 名称: '鲍曼不动杆菌', id: 'acinetobacter-baumannii', 相似点: 'Acb 复合群、球杆菌', 鉴别: '溶血不动杆菌血平板溶血 +（鲍曼不溶血）；MALDI/分子确认。' }
+  ],
+  'acinetobacter-lwoffii': [
+    { 名称: '鲍曼不动杆菌', id: 'acinetobacter-baumannii', 相似点: '不动杆菌属', 鉴别: '洛菲菌落更小、光滑不溶血、葡萄糖不氧化；耐药性与毒力均低于鲍曼。' },
+    { 名称: '卡他莫拉菌', id: 'moraxella-catarrhalis', 相似点: '氧化酶阴性/阳性球杆菌形态混淆', 鉴别: '卡他莫拉菌氧化酶 +、营养要求高（血平板 24 h 大菌落）；洛菲氧化酶 −、麦康凯生长。' }
+  ],
+  'acinetobacter-radioresistens': [
+    { 名称: '鲍曼不动杆菌', id: 'acinetobacter-baumannii', 相似点: '表型无法区分', 鉴别: '分子鉴定；检出意义在感控（OXA 基因储存库）而非治疗。' }
+  ],
+  'acinetobacter-seifertii': [
+    { 名称: '鲍曼不动杆菌', id: 'acinetobacter-baumannii', 相似点: 'Acb 复合群', 鉴别: '常规不可分，rpoB/ITS 测序；报告建议"Acb 复合群"+分子复核。' }
+  ],
+  'acinetobacter-dijkshoorniae': [
+    { 名称: '鲍曼不动杆菌', id: 'acinetobacter-baumannii', 相似点: 'Acb 复合群新成员', 鉴别: '同上，分子鉴定到种。' }
+  ],
+  'pseudomonas-fluorescens': [
+    { 名称: '铜绿假单胞菌', id: 'pseudomonas-aeruginosa', 相似点: '荧光组假单胞菌、扁平扩散菌落', 鉴别: '42℃ 生长：铜绿 +、荧光 −（关键单点）；色素：铜绿产绿脓菌素（蓝绿）、荧光产荧光素（黄绿荧光无绿脓菌素）。' },
+    { 名称: '恶臭假单胞菌', id: 'pseudomonas-putida', 相似点: '荧光组', 鉴别: '荧光假单胞菌液化明胶 +（恶臭 −）；两者均 4℃ 生长、临床均以污染/医源感染为主。' }
+  ],
+  'sphingomonas-paucimobilis': [
+    { 名称: '产吲哚金黄杆菌', id: 'chryseobacterium-indologenes', 相似点: '产黄色素非发酵菌', 鉴别: '金黄杆菌吲哚 +、无动力；鞘氨醇单胞菌吲哚 −、动力弱但存在、黄色更深（类胡萝卜素）；鞘磷脂壁→多黏菌素耐药（金黄杆菌对多黏菌素也耐药，需其他点区分：金黄杆菌氧化酶更强、菌落光泽不同）。' },
+    { 名称: '洋葱伯克霍尔德菌', id: 'burkholderia-cepacia', 相似点: '水源相关、CF/医源感染', 鉴别: '洋葱伯克霍尔德氧化酶 +、赖氨酸 +；鞘氨醇单胞菌多黏菌素耐药（洋葱伯克敏感）可初筛。' }
+  ],
+  'delftia-acidovorans': [
+    { 名称: '睾丸酮丛毛单胞菌', id: 'comamonas-testosteroni', 相似点: 'Comamonadaceae 科近缘、水源环境菌', 鉴别: '鞭毛：代尔夫特周鞭毛、丛毛单胞端丛鞭毛；代尔夫特分解尿素 −、枸橼酸盐 +。' }
+  ],
+  'comamonas-testosteroni': [
+    { 名称: '食酸代尔夫特菌', id: 'delftia-acidovorans', 相似点: '同科', 鉴别: '见上条。' }
+  ],
+  'elizabethkingia-anophelis': [
+    { 名称: '脑膜脓毒伊丽莎白金菌', id: 'elizabethkingia-meningoseptica', 相似点: '同属，形态/耐药谱一致', 鉴别: '常规生化不可分，16S/MALDI 新库到种；两者均引起新生儿脑膜炎且广泛耐药。' },
+    { 名称: '产吲哚金黄杆菌', id: 'chryseobacterium-indologenes', 相似点: '黄杆菌科、黄色素氧化酶阳性', 鉴别: '金黄杆菌吲哚 +（伊丽莎白金菌 −）、麦康凯可生长（伊丽莎白金菌不生长）。' }
+  ],
+  'ochrobactrum-anthropi': [
+    { 名称: '布鲁菌', id: 'brucella-melitensis', 相似点: '布鲁菌科近缘、血培养报警时间相近、涂片易混', 鉴别: '苍白杆菌动力 +、生长较快（48 h）、脲酶快阳性；布鲁菌微小球杆菌、生长慢（3~7 天）；鉴定为"苍白杆菌"前务必排除布鲁菌（危险级别完全不同）。' },
+    { 名称: '人苍白杆菌 vs 中间苍白杆菌', id: 'ochrobactrum-anthropi', 相似点: '种间', 鉴别: '中间苍白杆菌黏菌素耐药、41℃ 生长、脲酶常阴性——因部分"人苍白杆菌"感染实为中间苍白杆菌，MALDI/分子复核。' }
+  ],
+  'myroides-odoratimimus': [
+    { 名称: '类香味菌属（Myroides spp.）', id: 'myroides-odoratimimus', 相似点: '属内种间', 鉴别: '拟香味 vs 香味类香味菌：去铁胺敏感试验（香味敏感、拟香味耐受）+脂肪酸谱；MALDI 可分。' },
+    { 名称: '粪产碱杆菌', id: 'alcaligenes-faecalis', 相似点: '水果气味、不分解糖', 鉴别: '类香味菌产黄色素、脲酶 +；粪产碱菌无色素、脲酶 −。' }
+  ],
+  'inquilinus-limosus': [
+    { 名称: '铜绿假单胞菌（黏液型）', id: 'pseudomonas-aeruginosa', 相似点: 'CF 呼吸道黏液型非发酵菌', 鉴别: '铜绿氧化酶强阳、产绿脓菌素/荧光素、42℃ 生长；异地菌菌落极黏稠无色素、粗杆菌（宽 1.5~2 μm）；MALDI/分子确认。' },
+    { 名称: '洋葱伯克霍尔德菌复合群', id: 'burkholderia-cepacia', 相似点: 'CF 定植/致病菌', 鉴别: '洋葱伯克霍尔德菌落常黄色、赖氨酸 +；异地菌七叶苷 +、L-丙氨酸肽酶谱不同；分子鉴定为准。' }
+  ],
+  'roseomonas-mucosa': [
+    { 名称: '黏液玫瑰单胞菌 vs 其他玫瑰单胞菌', id: 'roseomonas-mucosa', 相似点: '属内', 鉴别: '菌落均粉红黏液；种间靠分子。与其他粉红色菌（如某些革兰阴性球菌）区分：玫瑰单胞氧化酶弱阳/不定。' }
   ]
 };

@@ -92,7 +92,7 @@ window.DB.breakpoints = [
   {
     菌组名: "不动杆菌属 (Acinetobacter spp.)",
     CLSI表: "Table 2B-2",
-    菌种: ["acinetobacter-baumannii", "acinetobacter-pittii", "acinetobacter-nosocomialis", "acinetobacter-junii"],
+    菌种: ["acinetobacter-baumannii", "acinetobacter-pittii", "acinetobacter-nosocomialis", "acinetobacter-junii", "acinetobacter-haemolyticus", "acinetobacter-lwoffii", "acinetobacter-radioresistens", "acinetobacter-seifertii", "acinetobacter-dijkshoorniae"],
     药物: [
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", 组别: "1", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "≥22", 抑菌圈_I: "17–21", 抑菌圈_R: "≤16", 备注: "Ed36 修订(圈);舒巴坦为抗不动杆菌活性成分" },
       { 药物: "舒巴坦/度洛巴坦 (Sulbactam-Durlobactam)", 简写: "SUL-DUR", 组别: "3", MIC_S: "≤4/4", MIC_I: "8/4", MIC_R: "≥16/4", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "Ed36;针对碳青霉烯耐药鲍曼不动杆菌(CRAB)的新型药" },
@@ -809,6 +809,24 @@ window.DB.breakpoints = [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
       { 药物: "亚胺培南 (Imipenem)", 简写: "IPM", 组别: "2", MIC_S: "≤0.5", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
       { 药物: "氯霉素 (Chloramphenicol)", 简写: "C", 组别: "2", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
+    ]
+  },
+
+// ===== 类鼻疽/鼻疽伯克霍尔德菌 (M45 Table 21 生物恐怖相关) =====
+  // 2026-08-28 新建：数值按 M45 md 正文 Table 21（159190 行区）程序化提取核对。
+  // B. pseudomallei 与 B. mallei 共用同组折点（源表并列）。
+  {
+    菌组名: "类鼻疽/鼻疽伯克霍尔德菌 (B. pseudomallei / B. mallei)",
+    CLSI表: "CLSI M45 Table 21 (生物恐怖相关)",
+    来源: "CLSI M45 (3rd ed., 2018)",
+    菌种: ["burkholderia-pseudomallei", "burkholderia-mallei"],
+    药物: [
+      { 药物: "头孢他啶 (Ceftazidime)", 简写: "CAZ", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "类鼻疽诱导期首选" },
+      { 药物: "亚胺培南 (Imipenem)", 简写: "IPM", 组别: "1", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "诱导期可选（美罗培南临床常用但表内未单列折点）" },
+      { 药物: "阿莫西林/克拉维酸 (Amoxicillin-Clavulanate)", 简写: "AUG", 组别: "2", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅类鼻疽（B. pseudomallei）适用；口服根除期备选" },
+      { 药物: "多西环素 (Doxycycline)", 简写: "DOXY", 组别: "2", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "根除期" },
+      { 药物: "四环素 (Tetracycline)", 简写: "TE", 组别: "2", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "复方新诺明 (Trimethoprim-Sulfamethoxazole)", 简写: "SXT", 组别: "1", MIC_S: "≤2/38", MIC_I: "—", MIC_R: "≥4/76", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "根除期首选（12 周以上）" }
     ]
   },
 ];
