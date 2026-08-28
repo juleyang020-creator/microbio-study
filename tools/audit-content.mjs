@@ -106,11 +106,15 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 if (!html.includes('data/source-metadata.js?v=')) {
   fail('index.html 未加载 data/source-metadata.js');
 }
-if (!html.includes("window.APP_VERSION = '20260702-65'")) {
-  warn('index.html 的 APP_VERSION 与当前脚本期望不一致');
-}
 
 const sw = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
+// 版本一致性以 sw.js 的 APP_VERSION 为基准（升版本只改这一处源头），
+// index.html 内联注入值与之不符才警告——不再硬编码历史版本号。
+const swVersionMatch = sw.match(/APP_VERSION\s*=\s*'([^']+)'/);
+const expectedInline = `window.APP_VERSION = '${swVersionMatch ? swVersionMatch[1] : ''}'`;
+if (!html.includes(expectedInline)) {
+  warn('index.html 的 APP_VERSION 与 sw.js 不一致（老用户可能继续吃旧缓存）');
+}
 if (!sw.includes("versioned('./data/source-metadata.js')")) {
   fail('sw.js 未预缓存 data/source-metadata.js');
 }

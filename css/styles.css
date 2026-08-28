@@ -44,14 +44,15 @@ body {
   flex-shrink: 0;
 }
 .brand { font-weight: 600; font-size: 15px; letter-spacing: 1px; color: var(--ink); white-space: nowrap; }
-.nav-boards { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; min-width: 0; }
+.nav-boards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; min-width: 0; }
 .nav-board {
   display: flex;
   align-items: center;
   gap: 6px;
   min-width: 0;
-  height: 32px;
-  padding: 2px 6px 2px 8px;
+  flex-wrap: wrap;
+  row-gap: 4px;
+  padding: 4px 6px 4px 8px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fbfaf7;
@@ -66,9 +67,10 @@ body {
   padding-right: 7px;
   border-right: 1px solid var(--line);
 }
-/* 横滚但隐藏滚动条 → 用户看不出右边还有内容（1440px 下「染色」「培养基」完全不可见）。
-   用右端渐隐遮罩提示可滚动；滚到底时 --fade-r 由 JS 置 0 收起遮罩。 */
-.tabs { display: flex; gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+/* 顶栏导航改为上下两层（基础知识 / 快捷工具）+ 按钮自动换行：
+   此前两板块并排一行，9 个模块 tab 被挤得横滚且隐藏滚动条，「染色」「培养基」在 1440px 下完全看不见。
+   wrap 后不再溢出，scroll-fade 渐隐只在真溢出时出现（窄屏兜底）。 */
+.tabs { display: flex; flex-wrap: wrap; gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .scroll-fade { --fade-r: 0px; --fade-l: 0px;
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent 100%);
@@ -82,8 +84,8 @@ body {
 .compare-btn { margin-left: auto; color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; }
 .compare-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-/* 工具按钮组（天然耐药 / 异常药敏 / 菌名速查 / 折点判读 / 生化鉴定 / 药敏卡对比 / 标本流程） */
-.tools { display: flex; gap: 4px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+/* 工具按钮组（天然耐药 / 异常药敏 / 菌名速查 / 折点判读 / 生化鉴定 / 药敏卡对比 / 标本流程）——同样换行 */
+.tools { display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .tools::-webkit-scrollbar { display: none; }
 .tool-btn { color: var(--ink-soft); text-decoration: none; font-size: 12px; padding: 3px 7px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; flex-shrink: 0; }
 .tool-btn:hover { border-color: var(--accent); color: var(--accent); }
@@ -628,7 +630,9 @@ body.zoom-open { overflow: hidden; }
   .nav-boards { grid-column: 1 / -1; grid-row: 2; display: flex; flex-direction: column; gap: 6px; }
   .nav-board { height: auto; min-height: 36px; align-items: flex-start; flex-direction: column; gap: 5px; padding: 6px 8px; }
   .nav-board-title { width: 100%; padding: 0 0 5px; border-right: 0; border-bottom: 1px solid var(--line); }
-  .tools, .tabs { width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* 手机端保留触摸横滚设计（不 wrap）：wrap 会把顶栏撑到 300px+，吞掉近半屏；
+     桌面端（≥761px）才用 wrap 让全部按钮直接可见。scroll-fade 渐隐仍作可滚提示。 */
+  .tools, .tabs { width: 100%; min-width: 0; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab, .tool-btn { min-height: 40px; display: inline-flex; align-items: center; }
 
