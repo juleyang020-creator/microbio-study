@@ -1038,5 +1038,70 @@ window.DB.differential = {
   ],
   'bilophila-wadsworthia': [
     { 名称: '脆弱拟杆菌', id: 'bacteroides-fragilis', 相似点: '耐胆汁厌氧革兰阴性杆菌（BBE 生长）', 鉴别: '嗜胆菌 BBE 菌落周围变黑（七叶苷+H₂S）、菌落小；拟杆菌 BBE 菌落大而光滑；嗜胆菌氧化酶/触酶 +（拟杆菌触酶不定、氧化酶 −）。' }
+  ],
+
+'mycobacterium-bovis': [
+    { 名称: '结核分枝杆菌', id: 'mycobacterium-tuberculosis', 相似点: 'MTBC 成员，抗酸杆菌形态无差别', 鉴别: '牛分枝杆菌：PZA 天然耐药（关键）、烟酸试验不定、丙酮酸盐刺激生长；结核分枝杆菌：PZA 多数敏感、烟酸试验 +、常规培养基生长良好。膀胱癌 BCG 灌注后分离株须区分牛分枝杆菌野生株 vs BCG（分子）。' },
+    { 名称: '非洲分枝杆菌', id: 'mycobacterium-africanum', 相似点: 'MTBC', 鉴别: '非洲分枝杆菌西非流行、基因谱系 5/6；表型介于两者之间，分子鉴定为准。' }
+  ],
+  'mycobacterium-africanum': [
+    { 名称: '结核分枝杆菌', id: 'mycobacterium-tuberculosis', 相似点: 'MTBC', 鉴别: '分子谱系（Lineage 5/6）+ 地理来源（西非）；表型不可靠。' }
+  ],
+  'mycobacterium-canettii': [
+    { 名称: '结核分枝杆菌', id: 'mycobacterium-tuberculosis', 相似点: 'MTBC', 鉴别: '卡内蒂光滑型菌落（MTBC 唯一）；非洲之角地理来源；分子确认。' }
+  ],
+  'mycobacterium-microti': [
+    { 名称: '牛分枝杆菌', id: 'mycobacterium-bovis', 相似点: 'MTBC、动物宿主适应株', 鉴别: '宿主（田鼠 vs 牛）；部分株培养困难；分子鉴定。' }
+  ],
+  'mycobacterium-caprae': [
+    { 名称: '牛分枝杆菌', id: 'mycobacterium-bovis', 相似点: 'MTBC、兽源', 鉴别: '宿主（山羊/绵羊 vs 牛）+ 地域（欧洲）；分子鉴定。' }
+  ],
+  'mycobacterium-xenopi': [
+    { 名称: '鸟分枝杆菌复合群', id: 'mycobacterium-avium-complex', 相似点: '慢生长 NTM 肺病病原', 鉴别: '蟾：42℃ 生长、细长丝状、产色不定；MAC：25~37℃ 生长、非产色/暗产色、短杆菌。治疗格局不同（蟾以大环内酯+利福霉素为核心）。' },
+    { 名称: '堪萨斯分枝杆菌', id: 'mycobacterium-kansasii', 相似点: 'NTM 肺病', 鉴别: '堪萨斯：光产色、硝酸还原 +；蟾：42℃ 生长（堪萨斯 42℃ 不生长）、产色不定。' }
+  ],
+  'mycobacterium-szulgai': [
+    { 名称: '堪萨斯分枝杆菌', id: 'mycobacterium-kansasii', 相似点: '产色 NTM 肺病原', 鉴别: '苏尔加：37℃ 暗产色/25℃ 光产色（温度悖论）；堪萨斯：37℃ 即光产色。苏尔加分离即多数致病（污染率低）。' },
+    { 名称: '戈登分枝杆菌', id: 'mycobacterium-gordonae', 相似点: '暗产色 NTM', 鉴别: '戈登=自来水污染菌（致病罕见）；苏尔加=临床病原（分离即报）。MALDI/分子区分——"同一形态、两种处理"教学对。' }
+  ],
+  'mycobacterium-scrofulaceum': [
+    { 名称: '鸟分枝杆菌复合群', id: 'mycobacterium-avium-complex', 相似点: 'MAIS 群经典成员（鸟/胞内/瘰疬）', 鉴别: '瘰疬暗产色；MAC 非产色（多数）；儿童淋巴结炎时代差异（瘰疬已被 MAC 取代为主因）。' }
+  ],
+  'mycobacterium-gordonae': [
+    { 名称: '苏尔加分枝杆菌', id: 'mycobacterium-szulgai', 相似点: '暗产色 NTM', 鉴别: '见苏尔加条（戈登=污染/定植为主，苏尔加=病原）。' },
+    { 名称: '瘰疬分枝杆菌', id: 'mycobacterium-scrofulaceum', 相似点: '暗产色 NTM', 鉴别: '戈登自来水来源（实验室污染经典）；瘰疬儿童淋巴结炎病原。生化/MALDI 区分。' }
+  ],
+  'mycobacterium-haemophilum': [
+    { 名称: '海分枝杆菌', id: 'mycobacterium-marinum', 相似点: '低温 NTM（30~32℃）、皮肤感染', 鉴别: '嗜血分枝杆菌需血红素（巧克力培养基）、免疫抑制宿主多发小病灶；海分枝杆菌不需血红素、鱼缸手/游泳池肉芽肿（免疫力正常）。' }
+  ],
+  'mycobacterium-malmoense': [
+    { 名称: '鸟分枝杆菌复合群', id: 'mycobacterium-avium-complex', 相似点: '慢生长非产色 NTM 肺病', 鉴别: '玛尔摩生长更慢（28~42 天以上）、北欧高发；MAC 全球性。治疗格局接近（大环内酯为核心）。' }
+  ],
+  'mycobacterium-simiae': [
+    { 名称: '堪萨斯分枝杆菌', id: 'mycobacterium-kansasii', 相似点: '光产色 NTM', 鉴别: '猿猴耐药率高（克拉霉素等多数耐药——药敏个体化）；堪萨斯对利福平敏感（标准方案核心）。' }
+  ],
+  'mycobacterium-ulcerans': [
+    { 名称: '海分枝杆菌', id: 'mycobacterium-marinum', 相似点: '低温 NTM、皮肤感染、近缘种', 鉴别: '溃疡分枝杆菌致坏死性溃疡（mycolactone 毒素、不痛）；海分枝杆菌肉芽肿性结节/孢子丝菌样播散（痛、多结节淋巴管型）。溃疡 37℃ 不生长。' }
+  ],
+  'mycobacterium-celatum': [
+    { 名称: '结核分枝杆菌', id: 'mycobacterium-tuberculosis', 相似点: '16S 探针交叉（分子误报陷阱）', 鉴别: '隐藏分枝杆菌生长慢、非 MTBC（商业探针假阳性后需表型/分子复核）；"celatum=隐藏"名称由来。' }
+  ],
+  'mycobacterium-genavense': [
+    { 名称: '鸟分枝杆菌复合群', id: 'mycobacterium-avium-complex', 相似点: 'AIDS 播散性 NTM', 鉴别: '日内瓦分枝杆菌生长极慢（固体 >6 周）/血培养易检出、宠物鸟储存宿主；MAC 固体培养基可生长。' }
+  ],
+  'mycobacterium-terrae-complex': [
+    { 名称: '戈登分枝杆菌', id: 'mycobacterium-gordonae', 相似点: '环境慢生长 NTM、临床意义低', 鉴别: '土复合群非产色（戈登暗产色）；均须结合临床判断污染 vs 病原。' }
+  ],
+  'mycobacterium-smegmatis-group': [
+    { 名称: '偶发分枝杆菌', id: 'mycobacterium-fortuitum', 相似点: '快速生长 NTM', 鉴别: 'smegmatis 群多致皮肤软组织感染；fortuitum 群导管/角膜/伤口感染谱更广。药敏格局不同（fortuitum 群对头孢西丁/阿米卡星活性高）。' }
+  ],
+  'mycobacterium-goodii': [
+    { 名称: '偶发分枝杆菌', id: 'mycobacterium-fortuitum', 相似点: '快速生长 NTM', 鉴别: '见 smegmatis 群条。' }
+  ],
+  'mycobacterium-wolinskyi': [
+    { 名称: '古德分枝杆菌', id: 'mycobacterium-goodii', 相似点: 'smegmatis 群', 鉴别: '沃林斯基非产色；古德暗产色。' }
+  ],
+  'mycobacterium-peregrinum': [
+    { 名称: '偶发分枝杆菌', id: 'mycobacterium-fortuitum', 相似点: 'fortuitum 群成员', 鉴别: '外来分枝杆菌暗产色（fortuitum 群唯一产色种）——群内一票鉴别点；临床谱接近（导管/伤口/角膜炎）。' }
   ]
 };

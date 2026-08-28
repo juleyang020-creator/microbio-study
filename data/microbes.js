@@ -3354,3 +3354,175 @@ window.DB.microbes.push(
     关联: ['metronidazole', 'meropenem', 'bacteroides-fragilis', 'fusobacterium-necrophorum']
   }
 );
+
+// ============================================================================
+// 批7新增：分枝杆菌 20 种（MTBC 5 + 慢生长 NTM 11 + 快生长 NTM 4）
+// 内容源：MCM12 第 31-34 章（MTBC 章 2026-07-26 据源 PDF 转录）。
+// 名称均与 microbe-names.js 速查首选名核对一致。
+// 分枝杆菌无 CLSI 常规 MIC 折点组（M100/M45 均未设）——不接 breakpoints.js。
+// ============================================================================
+window.DB.microbes.push(
+  // ===== 结核分枝杆菌复合群（MTBC）=====
+  {
+    id: 'mycobacterium-bovis', 名称: '牛分枝杆菌', 拉丁名: 'Mycobacterium bovis', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌 1~4 μm，粗短棒状；罗氏培养基 21 天以上缓慢生长、非光产色；丙酮酸钠刺激生长（鉴别点之一）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '人兽共患结核病原（牛/鹿/麋鹿→人，生牛奶/飞沫）；19 世纪欧洲 30% 结核由本菌引起，巴氏消毒+牛群控制后消灭；美国 1995-2005 仅 1.4% 结核病例（每年约 230 例，多为境外出生者）；美墨边境与圣地亚哥患儿（>45%）高发。**吡嗪酰胺天然耐药（关键鉴定点与治疗差异——治疗不用 PZA）**；膀胱癌 BCG 灌注并发症可见牛分枝杆菌播散（与 BCG 株区分）。与 MTBC 其他成员 16S 同源 >99%、MALDI 谱一致，鉴定需分子/表型组合（硝基苯甲酸试验+/烟酸试验−+/PZA 耐药）。' }
+    ],
+    关联: ['rifampicin', 'streptomycin', 'mycobacterium-tuberculosis']
+  },
+  {
+    id: 'mycobacterium-africanum', 名称: '非洲分枝杆菌', 拉丁名: 'Mycobacterium africanum', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌，表型介于结核与牛分枝杆菌之间（生长温度与 PZA 耐药性有株间差异）；Riojas 等建议归为结核分枝杆菌非洲变种（M. tuberculosis var. africanum）——命名沿革教学点。' },
+      { 标题: '致病性 / 所致疾病', 正文: '西非人类结核病主要病原（占该地区结核病例相当比例）；基因分型属 MTBC 第 5/6 谱系；临床表现与结核分枝杆菌相似（肺结核为主）。治疗同结核分枝杆菌（含 PZA——与牛分枝杆菌差异）。' }
+    ],
+    关联: ['rifampicin', 'mycobacterium-tuberculosis', 'mycobacterium-bovis']
+  },
+  {
+    id: 'mycobacterium-canettii', 名称: '卡内蒂分枝杆菌', 拉丁名: 'Mycobacterium canettii', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌，**光滑型（smooth）菌落**——MTBC 中唯一典型光滑型（其余粗糙）；生长极慢；非洲之角（吉布提/索马里/埃塞俄比亚）特有的古老谱系。' },
+      { 标题: '致病性 / 所致疾病', 正文: '人类结核罕见病因（非洲之角地区散发）；作为 MTBC 最古老分支（"进化根"）具进化生物学教学意义；鉴定依赖分子（表型光滑易误认 NTM）。' }
+    ],
+    关联: ['mycobacterium-tuberculosis', 'mycobacterium-africanum']
+  },
+  {
+    id: 'mycobacterium-microti', 名称: '田鼠分枝杆菌', 拉丁名: 'Mycobacterium microti', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌，细长弯曲（"voles=田鼠"来源菌）；生长慢，培养难度大（部分株初次分离困难）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '田鼠/野鼠结核自然病原；人类感染罕见（免疫抑制者个案）；曾作为疫苗候选（historical Vole bacillus 疫苗研究）。' }
+    ],
+    关联: ['mycobacterium-tuberculosis', 'mycobacterium-bovis']
+  },
+  {
+    id: 'mycobacterium-caprae', 名称: '山羊分枝杆菌', 拉丁名: 'Mycobacterium caprae', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌，表型与牛分枝杆菌接近；曾称结核分枝杆菌山羊亚种/牛分枝杆菌山羊亚种（命名沿革教学点）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '山羊/绵羊/猪/野猪/赤鹿/狐狸结核病原；德国 1999-2001 年 31% 人结核病例由本菌引起（肺部表现为主）——欧洲地方性人兽共患结核。' }
+    ],
+    关联: ['mycobacterium-bovis', 'mycobacterium-tuberculosis']
+  },
+  // ===== 慢生长 NTM 11 =====
+  {
+    id: 'mycobacterium-xenopi', 名称: '蟾分枝杆菌', 拉丁名: 'Mycobacterium xenopi', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌细长/丝状；**42℃ 生长（热适应水源菌——热水系统/医院供水）**；Middlebrook 7H11/罗氏 28~42 天慢生长；黄色素（非光产色/暗产色不定）。' },
+      { 标题: '致病性 / 所致疾病', 正文: 'NTM 肺病主要病原之一（欧洲/加拿大高发，与美国地域差异教学点）；老年男性、基础肺病（支气管扩张/COPD/既往结核）；医院供水污染→医源性感染（窥镜/呼吸设备）；X 线纤维空洞型似结核。治疗：克拉霉素/利福霉素±莫西沙星（大环内酯为核心，CLSI M24 表 3 参考折点不在本库接线范围）。' }
+    ],
+    关联: ['clarithromycin', 'rifampicin', 'moxifloxacin', 'mycobacterium-avium-complex', 'mycobacterium-kansasii']
+  },
+  {
+    id: 'mycobacterium-szulgai', 名称: '苏尔加分枝杆菌', 拉丁名: 'Mycobacterium szulgai', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；**光产色性与温度相关（37℃ 暗产色、25℃ 光产色——"szulgai 悖论"教学点）**；生长慢（14~28 天）。' },
+      { 标题: '致病性 / 所致疾病', 正文: 'NTM 肺病（临床意义明确，分离即多数致病——与戈登分枝杆菌"通常污染"对比）；肺外：颈淋巴结炎、皮肤软组织感染、滑囊炎/关节炎；男性、基础肺病为主。治疗：含利福平/乙胺丁醇方案（敏感率高）。' }
+    ],
+    关联: ['rifampicin', 'clarithromycin', 'mycobacterium-kansasii', 'mycobacterium-xenopi']
+  },
+  {
+    id: 'mycobacterium-scrofulaceum', 名称: '瘰疬分枝杆菌', 拉丁名: 'Mycobacterium scrofulaceum', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸短杆菌；**暗产色（scotochromogen，避光产黄色素）**；生长慢；MAC 相关（MAIS 群经典成员——鸟/胞内/瘰疬）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '儿童颈淋巴结炎经典病原（历史上 NTM 淋巴结炎第二位，后随卫生改善被 MAC 取代）；成人肺病少见（基础肺病者）；AIDS 患者播散性感染罕见。治疗：外科切除（淋巴结炎首选）±大环内酯方案。' }
+    ],
+    关联: ['clarithromycin', 'mycobacterium-avium-complex', 'mycobacterium-marinum']
+  },
+  {
+    id: 'mycobacterium-gordonae', 名称: '戈登分枝杆菌', 拉丁名: 'Mycobacterium gordonae', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；暗产色（黄色素）；生长慢；**自来水常见污染菌（"tap water bacillus"）**。' },
+      { 标题: '致病性 / 所致疾病', 正文: '临床标本常见分离物但**致病罕见（分离多为污染/定植——"阳性培养≠感染"教学重点）**；免疫抑制者个案（播散性感染个案报告）。鉴定到种意义在于"避免过度治疗"；与 MAC/堪萨斯的光谱学鉴别（MALDI）。' }
+    ],
+    关联: ['mycobacterium-avium-complex', 'mycobacterium-kansasii']
+  },
+  {
+    id: 'mycobacterium-haemophilum', 名称: '嗜血分枝杆菌', 拉丁名: 'Mycobacterium haemophilum', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸短杆菌；**需要血红素（巧克力/含溶解马血培养基才生长——"haemophilum=嗜血"）+ 30~32℃ 低温生长（与海分枝杆菌并列的低温偏好教学点）**；生长极慢（2~4 周）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '免疫抑制宿主皮肤感染——AIDS/移植后多发性皮肤丘疹、结节、溃疡、脓肿（四肢为主）；儿童淋巴结炎（地域性：以色列/澳大利亚）；实验员皮肤接种感染。普通罗氏/7H11 不生长→"培养阴性但抗酸阳性"的皮肤病灶提示本菌。治疗：克拉霉素/利福平/氟喹诺酮联合+外科（证据有限）。' }
+    ],
+    关联: ['clarithromycin', 'rifampicin', 'moxifloxacin', 'mycobacterium-marinum']
+  },
+  {
+    id: 'mycobacterium-malmoense', 名称: '玛尔摩分枝杆菌', 拉丁名: 'Mycobacterium malmoense', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；非产色（无色素）；生长慢（28~42 天以上，"慢中之慢"）；北方欧洲（英国/斯堪的纳维亚）水源/土壤高分离。' },
+      { 标题: '致病性 / 所致疾病', 正文: '北欧 NTM 肺病主要病原（美国少见）；儿童颈淋巴结炎（欧洲）；治疗反应慢（克隆萨斯基/加拿大数据：克拉霉素+利福平+乙胺丁醇长程）。' }
+    ],
+    关联: ['clarithromycin', 'rifampicin', 'mycobacterium-avium-complex', 'mycobacterium-xenopi']
+  },
+  {
+    id: 'mycobacterium-simiae', 名称: '猿猴分枝杆菌', 拉丁名: 'Mycobacterium simiae', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；**光产色（photochromogen，黄色素需光照）**；生长慢；MAC 相关（simiae 复合群）；市政供水分离（水源性）。' },
+      { 标题: '致病性 / 所致疾病', 正文: 'NTM 肺病（老年女性、基础肺病——美国西南部/以色列地域报告）；AIDS 播散性感染；**克拉霉素/多数药物耐药率高（治疗困难——药敏指导个体化）**；医院供水爆发报告。' }
+    ],
+    关联: ['clarithromycin', 'moxifloxacin', 'mycobacterium-avium-complex']
+  },
+  {
+    id: 'mycobacterium-ulcerans', 名称: '溃疡分枝杆菌', 拉丁名: 'Mycobacterium ulcerans', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；生长慢且**低温偏好（29~33℃，37℃ 多不生长）**；非产色；与海分枝杆菌近缘（分子同源）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '**Buruli 溃疡（布鲁里溃疡）病原——WHO 被忽视热带病**；西非/澳大利亚热带湿润环境；皮肤坏死性溃疡（**mycolactone 毒素介导——细菌毒素型 NTM 的教学独例**）；初期结节→潜行性边缘大溃疡（一般不痛、少发热）；实验室：37℃ 培养阴性+低温培养/PCR 确认。治疗：利福平+克拉霉素（WHO 2017 全口服方案）±外科。' }
+    ],
+    关联: ['rifampicin', 'clarithromycin', 'mycobacterium-marinum', 'mycobacterium-haemophilum']
+  },
+  {
+    id: 'mycobacterium-celatum', 名称: '隐藏分枝杆菌', 拉丁名: 'Mycobacterium celatum', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；非产色；生长慢；**16S 与 MTBC 部分探针交叉（分子鉴定误报结核的经典陷阱）**——"celatum=隐藏"的名称由来教学点。' },
+      { 标题: '致病性 / 所致疾病', 正文: 'AIDS 患者播散性感染（个案级）；肺病散发；因其分子交叉反应，历史上曾误报为结核分枝杆菌（商业探针假阳性教学案例）。' }
+    ],
+    关联: ['mycobacterium-avium-complex', 'mycobacterium-tuberculosis']
+  },
+  {
+    id: 'mycobacterium-genavense', 名称: '日内瓦分枝杆菌', 拉丁名: 'Mycobacterium genavense', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸短杆菌；生长极慢（固体培养基常 >6 周甚至不生长——"fastidious NTM"）；血培养（BACTEC 系统）检出相对容易。' },
+      { 标题: '致病性 / 所致疾病', 正文: 'AIDS 患者播散性 NTM 病（CD4 极低者）——鸟分枝杆菌复合群之外的重要 HIV 相关 NTM；宠物鸟/鹦鹉储存宿主（人畜共患教学点）。' }
+    ],
+    关联: ['clarithromycin', 'mycobacterium-avium-complex']
+  },
+  {
+    id: 'mycobacterium-terrae-complex', 名称: '土分枝杆菌复合群', 拉丁名: 'Mycobacterium terrae complex', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；非产色/微产色；生长慢；复合群含土分枝杆菌/非产色分枝杆菌/次要分枝杆菌等（terrae-triviale 群）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '环境（土壤）来源；免疫抑制者播散性感染/腱鞘炎/皮肤感染个案；临床意义低但作为"培养污染 vs 病原"判断的常见练习对象。' }
+    ],
+    关联: ['mycobacterium-gordonae', 'mycobacterium-avium-complex']
+  },
+  // ===== 快生长 NTM 4 =====
+  {
+    id: 'mycobacterium-smegmatis-group', 名称: '耻垢分枝杆菌群', 拉丁名: 'Mycobacterium smegmatis group', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；**7 天内快速生长**；非产色；smegmatis 群含耻垢/古德/沃林斯基（M. goodii、M. wolinskyi 由其分出）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '皮肤软组织感染（外伤/手术后伤口——伤口分泌物脓性）、肺部感染少见（基础肺病）；偶见医源性（注射/手术器械）。治疗：磺胺/四环素类±外科清创（药敏指导；对多数一线抗结核药不敏感——快生长菌共同特点）。' }
+    ],
+    关联: ['cotrimoxazole', 'doxycycline', 'mycobacterium-fortuitum', 'mycobacterium-abscessus']
+  },
+  {
+    id: 'mycobacterium-goodii', 名称: '古德分枝杆菌', 拉丁名: 'M. goodii', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；快速生长；暗产色（黄色素）；smegmatis 群成员。' },
+      { 标题: '致病性 / 所致疾病', 正文: '外伤/手术后皮肤软组织感染、骨髓炎（骨关节手术）；肺病散发（基础肺病男性）。治疗：磺胺/四环素/氟喹诺酮±外科（药敏指导）。' }
+    ],
+    关联: ['cotrimoxazole', 'doxycycline', 'mycobacterium-smegmatis-group', 'mycobacterium-fortuitum']
+  },
+  {
+    id: 'mycobacterium-wolinskyi', 名称: '沃林斯基分枝杆菌', 拉丁名: 'M. wolinskyi', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；快速生长；非产色；smegmatis 群成员（与耻垢/古德近缘）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '手术后伤口感染（心脏手术/骨折内固定）、外伤感染；肺病罕见。治疗：同 smegmatis 群（磺胺/四环素±外科）。' }
+    ],
+    关联: ['cotrimoxazole', 'doxycycline', 'mycobacterium-smegmatis-group']
+  },
+  {
+    id: 'mycobacterium-peregrinum', 名称: '外来分枝杆菌', 拉丁名: 'Mycobacterium peregrinum', 类别: '分枝杆菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '抗酸杆菌；快速生长；**fortuitum 群中唯一暗产色菌种（黄色素）**——群内鉴别点。' },
+      { 标题: '致病性 / 所致疾病', 正文: '偶发分枝杆菌群第二常见种（次于偶发分枝杆菌）；导管相关感染/伤口感染/角膜炎（外伤后）；肺病散发。治疗：阿米卡星/头孢西丁/氟喹诺酮/磺胺（fortuitum 群药敏格局，个体化）。' }
+    ],
+    关联: ['amikacin', 'cefoxitin', 'ciprofloxacin', 'cotrimoxazole', 'mycobacterium-fortuitum']
+  }
+);
