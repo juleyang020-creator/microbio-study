@@ -241,7 +241,7 @@ window.DB.media = [
       { 标题: '质量控制', 正文: '产气荚膜梭菌 ATCC 13124：48 h 粗糙菌落 >3 mm，典型双溶血环（内层 β、外层宽厚 α）；产黑色素拟杆菌 ATCC 25845：48 h 光滑菌落 >2 mm，黑色素明显。' },
       { 标题: '衍生培养基', 正文: '厌氧菌脑心浸液血琼脂（更适合拟杆菌、梭杆菌）；强化布氏血琼脂（适合大多数厌氧菌，主要用于药敏前纯培养）；强化哥伦比亚血琼脂（菌落较大、特征典型）；苯乙醇血琼脂（加苯乙醇 2.5 g/L，抑制变形杆菌迁徙生长，用于被变形杆菌污染的标本）。' }
     ],
-    关联: ['clostridium-perfringens', 'clostridioides-difficile', 'clostridium-tetani', 'clostridium-botulinum', 'clostridium-septicum', 'bacteroides-fragilis', 'cutibacterium-acnes']
+    关联: ['clostridium-perfringens', 'clostridioides-difficile', 'clostridium-tetani', 'clostridium-botulinum', 'clostridium-septicum', 'bacteroides-fragilis', 'cutibacterium-acnes', 'peptostreptococcus-anaerobius', 'finegoldia-magna', 'veillonella-parvula', 'prevotella-melaninogenica', 'porphyromonas-asaccharolytica', 'fusobacterium-nucleatum', 'actinomyces-israelii']
   },
 
   // ===== 药敏试验培养基 =====
