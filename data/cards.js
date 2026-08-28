@@ -137,7 +137,7 @@ window.DB.cards = [
   // ===== 苛养菌 =====
   {
     id: 'id-nh', 名称: 'NH 奈瑟菌 / 嗜血杆菌鉴定卡', 类别: '苛养菌',
-    关联: ['neisseria-gonorrhoeae', 'neisseria-meningitidis', 'haemophilus-influenzae', 'haemophilus-parainfluenzae', 'moraxella-catarrhalis',
+    关联: ['neisseria-gonorrhoeae', 'neisseria-meningitidis', 'haemophilus-influenzae', 'haemophilus-parainfluenzae', 'moraxella-catarrhalis', 'aggregatibacter-actinomycetemcomitans', 'aggregatibacter-aphrophilus', 'eikenella-corrodens', 'kingella-kingae', 'cardiobacterium-hominis', 'pasteurella-multocida',
       'bio-oxidase', 'urease'],
     小节: [
       { 标题: '货号 / 测试数', 正文: '21346；64 孔卡，含约 30 项生化反应。20 卡/盒。' },
