@@ -56,7 +56,7 @@
 
 - [ ] **Step 1: 初始化 git 仓库**
 
-Run（在项目根目录 `/Users/juleyang/Desktop/微生物学习软件`）:
+Run（在项目根目录 `/Users/juleyang/Projects/微生物学习软件`）:
 ```bash
 git init
 ```
@@ -1240,7 +1240,7 @@ Expected: 所有测试通过（fail 0）。
 
 - [ ] **Step 2: 用 `file://` 双击打开验收**
 
-在 Finder 双击 `index.html`（或浏览器打开 `file:///Users/juleyang/Desktop/微生物学习软件/index.html`）。逐项核对：
+在 Finder 双击 `index.html`（或浏览器打开 `file:///Users/juleyang/Projects/微生物学习软件/index.html`）。逐项核对：
 
 - [ ] 顶部三个标签可切换；当前标签高亮（active）。
 - [ ] 默认进入“微生物分类”，左侧显示完整分类树骨架。

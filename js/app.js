@@ -3,9 +3,19 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260702-66';
+  var APP_VERSION = window.APP_VERSION || '20260828-77';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
+
+  // 合并图谱照片（photosAtlas，人卫教材原图）与 CDC PHIL 照片（photos）：图谱在前、CDC 在后。
+  // 图谱条目 {文件, 说明}；CDC 条目 {文件, 说明, 英文说明, 供图, 摄影, PHIL}——以 PHIL 字段区分来源。
+  function mergeAtlasPhotos(id) {
+    var atlas = (window.DB.photosAtlas && window.DB.photosAtlas[id]) || [];
+    var cdc = (window.DB.photos && window.DB.photos[id]) || [];
+    if (!atlas.length) { return cdc.length ? cdc : null; }
+    if (!cdc.length) { return atlas; }
+    return atlas.concat(cdc);
+  }
 
   // CLSI M100 Ed36 报告分层（Table 1A–1J：Tier 1–4 + 仅尿路）
   var BP_TIER_LABELS = {
@@ -472,22 +482,31 @@
   // 桌面端用左右按钮；底部圆点指示当前位置。图片懒加载。
   function buildPhotoCarousel(list) {
     var track = el('div', { cls: 'photo-track' });
+    var hasAtlas = list.some(function (p) { return !p.PHIL; });
     list.forEach(function (p) {
+      var isCDC = !!p.PHIL;
+      var capEls = [ el('span', { cls: 'photo-cap-cn', text: p.说明 }) ];
+      if (isCDC) {
+        capEls.push(el('a', {
+          cls: 'photo-src', href: 'https://wwwn.cdc.gov/PHIL/details.aspx?pid=' + p.PHIL,
+          target: '_blank', rel: 'noopener noreferrer',
+          title: (p.摄影 || p.供图 || 'CDC') + ' — 查看 PHIL 原始条目与授权说明',
+          text: 'CDC PHIL #' + p.PHIL
+        }));
+      } else {
+        capEls.push(el('span', {
+          cls: 'photo-src photo-src-atlas',
+          title: '《实用临床微生物学检验与图谱》人卫2025 · 仅供个人学习',
+          text: '图谱'
+        }));
+      }
       track.appendChild(el('div', { cls: 'photo-slide' }, [
         el('img', {
           cls: 'photo-img zoomable', src: imgV(p.文件), alt: p.说明, loading: 'lazy',
-          onActivate: (function (q) { return function () { openImageZoom(imgV(q.文件), q.说明 + '（' + (q.英文说明 || '') + '）'); }; })(p),
+          onActivate: (function (q) { return function () { openImageZoom(imgV(q.文件), q.说明 + (q.英文说明 ? '（' + q.英文说明 + '）' : '')); }; })(p),
           title: p.英文说明 || p.说明
         }),
-        el('div', { cls: 'photo-cap' }, [
-          el('span', { cls: 'photo-cap-cn', text: p.说明 }),
-          el('a', {
-            cls: 'photo-src', href: 'https://wwwn.cdc.gov/PHIL/details.aspx?pid=' + p.PHIL,
-            target: '_blank', rel: 'noopener noreferrer',
-            title: (p.摄影 || p.供图 || 'CDC') + ' — 查看 PHIL 原始条目与授权说明',
-            text: 'PHIL #' + p.PHIL
-          })
-        ])
+        el('div', { cls: 'photo-cap' }, capEls)
       ]));
     });
 
@@ -542,7 +561,7 @@
       el('div', { cls: 'morph-title' }, [
         document.createTextNode('真实形态图'),
         el('span', { cls: 'photo-count', text: list.length > 1 ? ('　' + list.length + ' 张 · 可左右滑动') : '' }),
-        el('span', { cls: 'photo-lic', text: 'CDC PHIL · 公有领域' })
+        el('span', { cls: 'photo-lic', text: hasAtlas ? '图谱 · 人卫2025 ＋ CDC PHIL' : 'CDC PHIL · 公有领域' })
       ]),
       viewport,
       dots
@@ -688,7 +707,7 @@
       nodes.push(el('div', { cls: 'morphology' }, mNodes));
     }
 
-    // 真实形态学图片（CDC PHIL 公有领域）——紧凑轮播：移动端左右滑动，桌面端左右按钮
+    // 真实形态学图片（图谱在人卫教材前、CDC PHIL 公有领域在后）——紧凑轮播：移动端左右滑动，桌面端左右按钮
     if (vm.形态图片 && vm.形态图片.length) {
       nodes.push(buildPhotoCarousel(vm.形态图片));
     }
@@ -2050,7 +2069,7 @@
       mechanismImage: mechImg,
       mechCaption: MECH_CAPTION[route.module] || '作用机制示意图',
       morphology: (entry && window.DB.morphology) ? window.DB.morphology[entry.id] : null,
-      photos: (route.module === 'microbes' && entry && window.DB.photos) ? window.DB.photos[entry.id] : null,
+      photos: (route.module === 'microbes' && entry && window.DB.photos) ? mergeAtlasPhotos(entry.id) : null,
       treatment: (entry && window.DB.treatment) ? window.DB.treatment[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
       differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,

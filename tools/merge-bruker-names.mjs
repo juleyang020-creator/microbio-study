@@ -9,9 +9,12 @@ import path from 'node:path';
 //   node tools/merge-bruker-names.mjs [Bruker表.md]
 // 注意：脚本对 data/microbe-names.js 就地改写且不幂等（重复跑会把别名追加两遍），
 // 重跑前先 git checkout 该文件。
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SRC = process.argv[2] || '/Users/juleyang/Desktop/细菌/markdown文件/Bruker MBT菌种库列表(2969种,中英对照)-DB8468-Feb2020.md';
+// 资料库 2026-07-26 由 ~/Desktop/细菌/ 迁到 ~/Documents/资料库/微生物/，文件也改了名
+const SRC = process.argv[2]
+  || path.join(os.homedir(), 'Documents/资料库/微生物/04-菌种库与仪器/Bruker菌种库列表-2969种中英对照.md');
 
 // 现有条目
 global.window = {};
@@ -19,6 +22,12 @@ await import(path.join(ROOT, 'data/microbe-names.js'));
 const cur = global.window.DB.microbeNames;
 
 // 解析 Bruker 表
+if (!fs.existsSync(SRC)) {
+  console.error(`找不到 Bruker 菌种表：${SRC}`);
+  console.error('资料库若又搬过家，把新路径作为第一个参数传进来：');
+  console.error('  node tools/merge-bruker-names.mjs <Bruker表.md>');
+  process.exit(1);
+}
 const raw = fs.readFileSync(SRC, 'utf8');
 const rows = [...raw.matchAll(/<tr>(.*?)<\/tr>/g)]
   .map((m) => [...m[1].matchAll(/<td[^>]*>(.*?)<\/td>/g)].map((c) => c[1]));
