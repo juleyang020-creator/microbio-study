@@ -711,5 +711,93 @@ window.DB.differential = {
   'helcococcus-kunzii': [
     { 名称: '浅绿气球菌', id: 'aerococcus-viridans', 相似点: '生长慢的小菌落革兰阳性球菌、PYR+/LAP−', 鉴别: '孔兹创伤球菌不溶血、兼性厌氧（厌氧生长更好）；浅绿气球菌 α-溶血、微需氧；创伤球菌生长需 48-72 h 且加血清/Tween 80 更旺。' },
     { 名称: '乏养菌属', id: 'abiotrophia-defectiva', 相似点: '生长慢/营养要求高的小菌落', 鉴别: '孔兹创伤球菌无卫星现象（乏养菌/颗粒链菌有）；创伤球菌 6.5% NaCl 生长。' }
+  ],
+
+'corynebacterium-ulcerans': [
+    { 名称: '白喉棒杆菌', id: 'corynebacterium-diphtheriae', 相似点: '同产毒棒杆菌群，Tinsdale 均黑菌落+黑晕', 鉴别: '溃疡棒杆菌脲酶 +、CAMP 抑制 +；白喉棒杆菌两者皆 −；tox 基因 PCR 两菌都可阳性（溃疡棒杆菌受体结合域不同，种特异性引物可分）。' },
+    { 名称: '假结核棒杆菌', id: 'corynebacterium-pseudotuberculosis', 相似点: '近缘种，脲酶+/CAMP 抑制+同表型', 鉴别: '溃疡棒杆菌发酵糖原/淀粉/海藻糖；假结核棒杆菌不定；确切区分靠 rpoB 测序或 MALDI。' }
+  ],
+  'corynebacterium-pseudotuberculosis': [
+    { 名称: '溃疡棒杆菌', id: 'corynebacterium-ulcerans', 相似点: '产毒棒杆菌群', 鉴别: '见溃疡棒杆菌条；动物源（羊马）接触史偏向假结核。' }
+  ],
+  'corynebacterium-jeikeium': [
+    { 名称: '结核硬脂酸棒杆菌', id: 'corynebacterium-tuberculostearicum', 相似点: '亲脂性、多耐药、菌落相似', 鉴别: '结核硬脂酸棒杆菌发酵果糖 +、厌氧生长 +；杰氏棒杆菌果糖 −、厌氧不生长。' },
+    { 名称: '解脲棒杆菌', id: 'corynebacterium-urealyticum', 相似点: '亲脂性多耐药临床重要棒杆菌', 鉴别: '解脲棒杆菌脲酶快速强阳性；杰氏棒杆菌脲酶阴性。' }
+  ],
+  'corynebacterium-urealyticum': [
+    { 名称: '杰氏棒杆菌', id: 'corynebacterium-jeikeium', 相似点: '亲脂、多耐药', 鉴别: '解脲棒杆菌脲酶数分钟强阳性；临床场景（碱性尿/结晶尿）指向性强。' }
+  ],
+  'corynebacterium-amycolatum': [
+    { 名称: '纹带棒杆菌', id: 'corynebacterium-striatum', 相似点: '干燥蜡状菌落、生化重叠，历史上互误鉴', 鉴别: '20℃ 生长：纹带 +、无枝菌酸 −；甲酸盐产碱：纹带 +、无枝菌酸 −；MALDI 可分。' },
+    { 名称: '干燥棒杆菌', id: 'corynebacterium-xerosis', 相似点: '近缘（16S 相似），干燥菌落', 鉴别: '干燥棒杆菌 20℃ 生长 +、42℃ 葡萄糖不发酵；无枝菌酸两者相反；α-葡糖苷酶干燥恒 +。' },
+    { 名称: '极小棒杆菌', id: 'corynebacterium-minutissimum', 相似点: '菌落相似（白/灰、凸起）', 鉴别: '极小棒杆菌菌落更湿润光泽、20℃ 不生长（同无枝菌酸）；CAMP 均可阳性，rpoB 区分。' }
+  ],
+  'corynebacterium-pseudodiphtheriticum': [
+    { 名称: '丙酸棒杆菌（C. propinquum）', 相似点: '近缘种，硝酸盐还原 +、不分解糖', 鉴别: '经典区别是假白喉棒杆菌脲酶 +、丙酸棒杆菌 −；但近年发现产脲酶的丙酸棒杆菌，MALDI 亦难分——必要时 rpoB。' },
+    { 名称: '白喉棒杆菌', id: 'corynebacterium-diphtheriae', 相似点: '形态相似（棒杆菌栅栏）', 鉴别: '假白喉不产毒（tox 阴性）、吡嗪酰胺酶 +（白喉 −）、亚碲酸盐还原仍可阳性但不产黑晕。' }
+  ],
+  'corynebacterium-minutissimum': [
+    { 名称: '模仿棒杆菌（C. imitans）', 相似点: '生化极似（曾长期互误鉴）', 鉴别: '模仿棒杆菌 CAMP +；极小棒杆菌 CAMP −。' },
+    { 名称: '无枝菌酸棒杆菌', id: 'corynebacterium-amycolatum', 相似点: '皮肤棒杆菌', 鉴别: '菌落：极小更湿润光泽 vs 无枝菌酸干燥蜡状。' }
+  ],
+  'corynebacterium-xerosis': [
+    { 名称: '无枝菌酸棒杆菌', id: 'corynebacterium-amycolatum', 相似点: '历史上大量互误鉴', 鉴别: '干燥棒杆菌 20℃ +、42℃ 葡萄糖 −、α-葡糖苷酶恒 +；需分子确认。' }
+  ],
+  'corynebacterium-bovis': [
+    { 名称: '杰氏棒杆菌', id: 'corynebacterium-jeikeium', 相似点: '亲脂性', 鉴别: '牛棒杆菌氧化酶 +（罕见）、敏感谱广；杰氏多耐药。' }
+  ],
+  'corynebacterium-macginleyi': [
+    { 名称: '杰氏棒杆菌', id: 'corynebacterium-jeikeium', 相似点: '亲脂性小菌落', 鉴别: '麦氏棒杆菌甘露醇发酵 +（多数棒杆菌阴性）、眼部来源；对氟喹诺酮可高度耐药。' }
+  ],
+  'corynebacterium-tuberculostearicum': [
+    { 名称: '杰氏棒杆菌', id: 'corynebacterium-jeikeium', 相似点: '亲脂性多耐药', 鉴别: '果糖发酵 +、厌氧生长 +（杰氏均阴性）。' }
+  ],
+  'turicella-otitidis': [
+    { 名称: '耳棒杆菌（C. auris）', 相似点: '耳部来源、CAMP 强阳性、API 代码同（2100004）', 鉴别: '苏黎世菌菌体更长（革兰片可辨）、对琼脂不黏附；耳棒杆菌菌落干燥轻度黏附。' },
+    { 名称: '非发酵棒杆菌', id: 'corynebacterium-amycolatum', 相似点: '代谢不活跃棒杆菌群', 鉴别: '非发酵棒杆菌非发酵亚种菌落黏稠、细胞更短；耳炎苏黎世菌杆长。' }
+  ],
+  'arcanobacterium-haemolyticum': [
+    { 名称: '化脓链球菌', id: 'strep-pyogenes', 相似点: '青少年咽炎+猩红热样皮疹、β-溶血小菌落', 鉴别: '溶血隐秘杆菌革兰阳性杆菌（球菌 vs 杆菌直接区分）、触酶 −、CAMP 抑制 +（链球菌无此反应）、杆菌肽不定。' },
+    { 名称: '产单核细胞李斯特菌', id: 'listeria-monocytogenes', 相似点: 'β-溶血革兰阳性小杆菌', 鉴别: '李斯特菌触酶 +、CAMP 增强 +（与金葡）、动力 +（伞状/翻滚）；溶血隐秘杆菌触酶 −、CAMP 抑制 +、无动力。' }
+  ],
+  'trueperella-pyogenes': [
+    { 名称: '溶血隐秘杆菌', id: 'arcanobacterium-haemolyticum', 相似点: '触酶阴性 β-溶血革兰阳性杆菌', 鉴别: '化脓储珀菌菌落更大（48 h 1 mm vs ≤0.5 mm）、β-葡糖醛酸苷酶 +、发酵木糖；溶血隐秘杆菌 CAMP 抑制 +（储珀菌无反应）。' }
+  ],
+  'erysipelothrix-rhusiopathiae': [
+    { 名称: '产单核细胞李斯特菌', id: 'listeria-monocytogenes', 相似点: '革兰阳性短小杆菌', 鉴别: '丹毒丝菌触酶 −、动力 −、TSI 产 H₂S +；李斯特菌触酶 +、动力 +（翻滚）、H₂S −、CAMP +。' },
+    { 名称: '棒杆菌属', id: 'corynebacterium-jeikeium', 相似点: '革兰阳性杆菌', 鉴别: '丹毒丝菌不产触酶、菌落小、TSI 黑变；万古霉素耐药是其独有警报（棒杆菌敏感）。' }
+  ],
+  'rhodococcus-equi': [
+    { 名称: '棒杆菌属', id: 'corynebacterium-amycolatum', 相似点: '曾被误鉴为"无关紧要的棒杆菌"（致死病例教训）', 鉴别: '马红球菌黏液样粉红/橙红色素菌落、部分弱抗酸阳性、CAMP +；多次血培养"棒杆菌"阳性且免疫低下时必须排除。' },
+    { 名称: '诺卡菌属', id: 'nocardia', 相似点: '需氧放线菌、弱抗酸阳性', 鉴别: '诺卡菌为分枝丝状、气生菌丝粉状菌落；马红球菌为球杆菌/多形性、黏液红色菌落、无气生菌丝。' }
+  ],
+  'nocardia-abscessus': [
+    { 名称: '星形诺卡菌（严格意义）', id: 'nocardia', 相似点: '星形诺卡菌复合群药物模式 I 型', 鉴别: '严格意义星形诺卡菌很少致病；临床"星形诺卡菌"大多为脓肿/圣乔治/皮疽等——需 16S/secA1 分子鉴定到种。' },
+    { 名称: '皮疽诺卡菌', id: 'nocardia-farcinica', 相似点: '肺部/脑脓肿诺卡菌病', 鉴别: '药敏谱：脓肿诺卡菌头孢曲松 S/环丙沙星 R；皮疽头孢曲松 R/环丙沙星 S——方向相反可初筛。' }
+  ],
+  'nocardia-cyriacigeorgica': [
+    { 名称: '脓肿诺卡菌', id: 'nocardia-abscessus', 相似点: '星形复合群', 鉴别: '圣乔治阿莫西林-克拉维酸 R（脓肿 S）；既往"星形诺卡菌"最大实际归属。' }
+  ],
+  'nocardia-farcinica': [
+    { 名称: '圣乔治诺卡菌', id: 'nocardia-cyriacigeorgica', 相似点: '最常见临床诺卡菌之二', 鉴别: '皮疽环丙沙星 S/头孢曲松 R；圣乔治环丙沙星 R/头孢曲松 S。播散与中枢累及倾向皮疽更重。' }
+  ],
+  'nocardia-nova': [
+    { 名称: '脓肿诺卡菌', id: 'nocardia-abscessus', 相似点: '星形复合群近缘', 鉴别: '新诺卡菌复合群克拉霉素 S（独特）、阿莫西林-克拉维酸 R；脓肿诺卡菌相反。' }
+  ],
+  'nocardia-brasiliensis': [
+    { 名称: '假巴西诺卡菌', id: 'nocardia-otitidiscaviarum', 相似点: '1995 年前大量混淆', 鉴别: '假巴西诺卡菌（库内暂无专条）：腺嘌呤水解 +、环丙沙星 S/克拉霉素 S/米诺环素 R；巴西诺卡菌环丙沙星 R/克拉霉素 R/米诺环素 S。侵袭性感染多归假巴西。' }
+  ],
+  'nocardia-otitidiscaviarum': [
+    { 名称: '巴西诺卡菌', id: 'nocardia-brasiliensis', 相似点: '皮肤/足菌肿相关诺卡菌', 鉴别: '豚鼠耳炎环丙沙星 S、头孢曲松/亚胺培南 R；巴西亚胺培南 R、米诺环素 S。' }
+  ],
+  'bacillus-subtilis': [
+    { 名称: '蜡样芽孢杆菌', id: 'bacillus-cereus', 相似点: '大菌落芽孢杆菌', 鉴别: '蜡样芽孢杆菌 β-溶血明显、根状菌丝体（网络状）、甘露醇 −；枯草芽孢杆菌溶血弱/无、根状边缘、甘露醇 +。' },
+    { 名称: '炭疽芽孢杆菌', id: 'bacillus-anthracis', 相似点: '大革兰阳性杆菌', 鉴别: '炭疽无动力、不溶血（早期）、菌落黏液样"水母头"缠丝；枯草动力 +——枯草群的"运动性"是与炭疽鉴别的第一道关卡。' }
+  ],
+  'bacillus-licheniformis': [
+    { 名称: '枯草芽孢杆菌', id: 'bacillus-subtilis', 相似点: '枯草群（subtilis group）', 鉴别: '地衣芽孢杆菌菌落更湿润/黏液样；常规生化区分有限，MALDI/分子确认。' }
+  ],
+  'bacillus-pumilus': [
+    { 名称: '枯草芽孢杆菌', id: 'bacillus-subtilis', 相似点: '枯草群', 鉴别: '短小芽孢杆菌菌落更小、光滑；MALDI 确认。' }
   ]
 };

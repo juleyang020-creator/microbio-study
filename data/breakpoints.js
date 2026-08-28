@@ -526,7 +526,7 @@ window.DB.breakpoints = [
     菌组名: "芽孢杆菌属(非炭疽) (Bacillus spp., not B. anthracis)",
     CLSI表: "CLSI M45 · Table 4",
     来源: "CLSI M45 (3rd ed., 2018)",
-    菌种: ["bacillus-cereus"],
+    菌种: ["bacillus-cereus", "bacillus-subtilis", "bacillus-licheniformis", "bacillus-pumilus"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.12", MIC_I: "—", MIC_R: "≥0.25", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "蜡样/苏云金芽孢杆菌产广谱β-内酰胺酶,对青霉素类及头孢菌素耐药" },
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", MIC_S: "≤0.25", MIC_I: "—", MIC_R: "≥0.5", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
@@ -549,7 +549,11 @@ window.DB.breakpoints = [
     菌组名: "棒状杆菌属 (Corynebacterium spp.，含白喉棒状杆菌)",
     CLSI表: "CLSI M45 · Table 6",
     来源: "CLSI M45 (3rd ed., 2018)",
-    菌种: ["corynebacterium-diphtheriae", "corynebacterium-striatum"],
+    菌种: ["corynebacterium-diphtheriae", "corynebacterium-striatum",
+      "corynebacterium-ulcerans", "corynebacterium-pseudotuberculosis", "corynebacterium-jeikeium",
+      "corynebacterium-urealyticum", "corynebacterium-amycolatum", "corynebacterium-pseudodiphtheriticum",
+      "corynebacterium-minutissimum", "corynebacterium-xerosis", "corynebacterium-bovis",
+      "corynebacterium-macginleyi", "corynebacterium-tuberculostearicum"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.12", MIC_I: "0.25–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "头孢吡肟 (Cefepime)", 简写: "FEP", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
