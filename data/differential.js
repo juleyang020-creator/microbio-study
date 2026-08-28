@@ -980,5 +980,63 @@ window.DB.differential = {
   'streptobacillus-moniliformis': [
     { 名称: '多杀巴斯德菌', id: 'pasteurella-multocida', 相似点: '动物咬伤相关、鼠咬热鉴别', 鉴别: '念珠状链杆菌：鼠咬/鼠接触、多形性串珠样杆菌、生长慢（3 天+，需 CO₂）、皮疹+多关节炎三联；巴斯德菌：猫犬咬伤、生长快、两极浓染小杆菌。' },
     { 名称: '小螺菌（Spirillum minus）', id: 'streptobacillus-moniliformis', 相似点: '鼠咬热两种病原（亚洲小螺菌型）', 鉴别: '小螺菌：螺菌形（暗视野）、不可培养（诊断靠涂片/动物接种）、局部淋巴结炎为主；念珠状链杆菌：可培养（血培养延长）、皮疹关节炎更突出。' }
+  ],
+
+'bacteroides-thetaiotaomicron': [
+    { 名称: '脆弱拟杆菌', id: 'bacteroides-fragilis', 相似点: '脆弱拟杆菌群，耐胆汁不产色素', 鉴别: '脆弱拟杆菌：阿拉伯糖 −、海藻糖 −（多形拟杆菌均 +）；MALDI/分子确认。临床意义与药敏方案相同（2J 组）。' },
+    { 名称: '卵形拟杆菌', id: 'bacteroides-ovatus', 相似点: '同群', 鉴别: '卵形拟杆菌鼠李糖 +（多形不定）；MALDI 到种。' }
+  ],
+  'bacteroides-ovatus': [
+    { 名称: '多形拟杆菌', id: 'bacteroides-thetaiotaomicron', 相似点: '同群', 鉴别: '见上。' }
+  ],
+  'bacteroides-vulgatus': [
+    { 名称: '多形拟杆菌', id: 'bacteroides-thetaiotaomicron', 相似点: '同群', 鉴别: '普通拟杆菌海藻糖 −、阿拉伯糖 +（多形均相反组合差异）；毒力弱于脆弱/多形（教学重点）。' }
+  ],
+  'bacteroides-uniformis': [
+    { 名称: '多形拟杆菌', id: 'bacteroides-thetaiotaomicron', 相似点: '同群', 鉴别: '生化谱差异（单形拟杆菌分解糖谱窄）；MALDI。' }
+  ],
+  'parabacteroides-distasonis': [
+    { 名称: '脆弱拟杆菌', id: 'bacteroides-fragilis', 相似点: '拟杆菌科、耐胆汁', 鉴别: '副拟杆菌属 2006 年分出；MALDI/分子鉴定；cfiA 样碳青霉烯酶携带率提示——碳青霉烯耐药厌氧菌报告时想到本属与 cfiA 阳性脆弱拟杆菌。' }
+  ],
+  'prevotella-bivia': [
+    { 名称: '解糖胨普雷沃菌', id: 'prevotella-disiens', 相似点: '生殖道非产色素普雷沃菌双雄', 鉴别: '二者生化谱接近（传统靠糖发酵组合：二路分解葡萄糖+蔗糖弱、解糖胨谱更窄），MALDI/分子为准；临床意义相同（妇科感染）。' },
+    { 名称: '脆弱拟杆菌', id: 'bacteroides-fragilis', 相似点: '革兰阴性厌氧杆菌、妇科/腹腔感染', 鉴别: '胆汁生长：拟杆菌属 +、普雷沃菌 −（BBE 一刀切）；药敏：普雷沃菌对甲硝唑/青霉素敏感率高，拟杆菌属产 β-内酰胺酶需按 2J 组选药。' }
+  ],
+  'prevotella-intermedia': [
+    { 名称: '产黑素普雷沃菌', id: 'prevotella-melaninogenica', 相似点: '产黑素普雷沃菌群（菌落转黑+红荧光）', 鉴别: '中间普雷沃菌：吲哚 +、脂酶 +；产黑素普雷沃菌：吲哚 −、脂酶 −——两试验组合是群内经典鉴别。' },
+    { 名称: '牙龈卟啉单胞菌', id: 'porphyromonas-gingivalis', 相似点: '产黑色素牙周病原、红色复合体', 鉴别: '卟啉单胞菌不分解糖（asaccharolytic）+类胰蛋白酶斑点试验 +；普雷沃菌分解糖弱阳性。' }
+  ],
+  'prevotella-disiens': [
+    { 名称: '二路普雷沃菌', id: 'prevotella-bivia', 相似点: '生殖道普雷沃菌', 鉴别: '见二路普雷沃菌条。' }
+  ],
+  'porphyromonas-gingivalis': [
+    { 名称: '不解糖卟啉单胞菌', id: 'porphyromonas-asaccharolytica', 相似点: '卟啉单胞菌属，不分解糖产黑色素', 鉴别: '牙龈卟啉单胞菌类胰蛋白酶 +（苯甲酰-DL-精氨酸-β-萘酰胺 BANA 试验）；不解糖卟啉单胞菌 BANA −、多分离自皮肤软组织/妇科而非牙周。' },
+    { 名称: '中间普雷沃菌', id: 'prevotella-intermedia', 相似点: '牙周黑色菌', 鉴别: '见上（分解糖 vs 不分解糖）。' }
+  ],
+  'fusobacterium-necrophorum': [
+    { 名称: '具核梭杆菌', id: 'fusobacterium-nucleatum', 相似点: '梭菌形革兰阴性厌氧菌、头颈/胸感染', 鉴别: '坏死梭杆菌 β-溶血明显、菌体更长（多形梭形）、Lemierre 综合征专属；具核梭杆菌不溶血/弱、两端尖"梭形"经典、牙周与菌血症。' }
+  ],
+  'fusobacterium-mortiferum': [
+    { 名称: '变形梭杆菌', id: 'fusobacterium-varium', 相似点: '肠源耐胆汁梭杆菌（第一簇）', 鉴别: '死亡梭杆菌高度多形性（怪物细胞）名片；变形梭杆菌形态较规则短梭形；MALDI 分。' }
+  ],
+  'fusobacterium-varium': [
+    { 名称: '死亡梭杆菌', id: 'fusobacterium-mortiferum', 相似点: '同簇', 鉴别: '见上。' }
+  ],
+  'clostridium-novyi': [
+    { 名称: '产气荚膜梭菌', id: 'clostridium-perfringens', 相似点: '气性坏疽、Nagler 阳性梭菌', 鉴别: '产气荚膜梭菌：芽孢罕见（体内不易见）、双层溶血（完整+不完全）、暴风雨发酵（"stormy fermentation"牛乳试验）；诺维氏梭菌芽孢次极端常见、菌落更不规则。毒素型别（α/β/ε/ι 分型）由参考实验室做。' },
+    { 名称: '败血梭菌', id: 'clostridium-septicum', 相似点: '气性坏疽/自发性坏疽（注射吸毒/恶性病）', 鉴别: '败血梭菌泳动菌落（爬行迁徙）、Nagler 阴性；诺维氏 Nagler 阳性；二者都与结直肠癌自发性气性坏疽相关（败血梭菌更经典——"查肠道肿瘤"教学点）。' }
+  ],
+  'clostridium-sordellii': [
+    { 名称: '产气荚膜梭菌', id: 'clostridium-perfringens', 相似点: 'Nagler 阳性、创口气性坏疽', 鉴别: '索氏梭菌尿素酶 +、卵黄反应弱、菌落匍匐迁徙；产气荚膜尿素酶 −、菌落规整；索氏梭菌的临床标志是"无发热干性水肿+极高清白细胞"暴发型——识别组合即想本菌。' }
+  ],
+  'clostridium-baratii': [
+    { 名称: '肉毒梭菌', id: 'clostridium-botulinum', 相似点: '产肉毒毒素（F 型）', 鉴别: '巴拉特氏梭菌为"非经典肉毒梭菌但携带 F 型毒素基因"的罕见来源；鉴定到种无意义，关键在毒素检测（小鼠试验/PCR）+公共卫生流程。' }
+  ],
+  'parvimonas-micra': [
+    { 名称: '厌氧消化链球菌', id: 'peptostreptococcus-anaerobius', 相似点: '厌氧革兰阳性球菌', 鉴别: '微小微单胞菌菌体极小（0.3~0.7 μm vs 消化链球菌 0.5~0.8 μm 稍大）、徽章样凝固酶试验（SPS 线抑制试验）消化链球菌 + 而微单胞菌 −。' },
+    { 名称: '大芬戈尔德菌', id: 'finegoldia-magna', 相似点: '厌氧革兰阳性球菌', 鉴别: '大芬戈尔德菌菌体更大（0.7~1.5 μm）、菌落稍大；MALDI 到种。' }
+  ],
+  'bilophila-wadsworthia': [
+    { 名称: '脆弱拟杆菌', id: 'bacteroides-fragilis', 相似点: '耐胆汁厌氧革兰阴性杆菌（BBE 生长）', 鉴别: '嗜胆菌 BBE 菌落周围变黑（七叶苷+H₂S）、菌落小；拟杆菌 BBE 菌落大而光滑；嗜胆菌氧化酶/触酶 +（拟杆菌触酶不定、氧化酶 −）。' }
   ]
 };

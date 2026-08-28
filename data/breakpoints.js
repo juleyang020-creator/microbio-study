@@ -412,7 +412,11 @@ window.DB.breakpoints = [
   {
     菌组名: "厌氧菌 (Anaerobic Bacteria)",
     CLSI表: "Table 2J",
-    菌种: ['clostridium-perfringens', 'clostridium-tetani', 'clostridium-botulinum', 'clostridioides-difficile', 'bacteroides-fragilis', 'cutibacterium-acnes', 'clostridium-septicum', 'peptostreptococcus-anaerobius', 'finegoldia-magna', 'veillonella-parvula', 'prevotella-melaninogenica', 'porphyromonas-asaccharolytica', 'fusobacterium-nucleatum', 'actinomyces-israelii'],
+    菌种: ['clostridium-perfringens', 'clostridium-tetani', 'clostridium-botulinum', 'clostridioides-difficile', 'bacteroides-fragilis', 'cutibacterium-acnes', 'clostridium-septicum', 'peptostreptococcus-anaerobius', 'finegoldia-magna', 'veillonella-parvula', 'prevotella-melaninogenica', 'porphyromonas-asaccharolytica', 'fusobacterium-nucleatum', 'actinomyces-israelii',
+      'bacteroides-thetaiotaomicron', 'bacteroides-ovatus', 'bacteroides-vulgatus', 'bacteroides-uniformis',
+      'parabacteroides-distasonis', 'prevotella-bivia', 'prevotella-intermedia', 'prevotella-disiens',
+      'porphyromonas-gingivalis', 'fusobacterium-necrophorum', 'fusobacterium-mortiferum', 'fusobacterium-varium',
+      'clostridium-novyi', 'clostridium-sordellii', 'clostridium-baratii', 'parvimonas-micra', 'bilophila-wadsworthia'],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "革兰阳性厌氧菌(梭菌)多敏感;脆弱拟杆菌等革兰阴性厌氧菌天然耐药" },
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "可预测阿莫西林;仅 MIC 法(琼脂稀释/肉汤微量稀释)" },

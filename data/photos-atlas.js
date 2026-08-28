@@ -2563,6 +2563,24 @@ window.DB.photosAtlas = {
    "说明": "图 20-1-1　厌氧消化链球菌厌氧培养 8 日"
   }
  ],
+ "parvimonas-micra": [
+  {
+   "文件": "img/atlas/931463f37a0512647c838e87a9e750b3c4a61b254e056ffd684443f17023a7c8.jpg",
+   "说明": "图 20-2-1　微小小单胞菌的形态特征（1/4）"
+  },
+  {
+   "文件": "img/atlas/7afb241d1c2f1b7a129b5347f53e99b7baf7789cd197c34c9818cf4b2697f146.jpg",
+   "说明": "图 20-2-1　微小小单胞菌的形态特征（2/4）"
+  },
+  {
+   "文件": "img/atlas/60a95e35585009af05db8f14083286dac27db848d5a6a65e327aa2653bef355d.jpg",
+   "说明": "图 20-2-1　微小小单胞菌的形态特征（3/4）"
+  },
+  {
+   "文件": "img/atlas/e24c14ccfec57e3ffaf16ff65aa1ce5ba6ed90a17fb8b845e7c7cb62840150c4.jpg",
+   "说明": "图 20-2-1　微小小单胞菌的形态特征（4/4）"
+  }
+ ],
  "veillonella-parvula": [
   {
    "文件": "img/atlas/065de81315019e4a8fd35a90f09ab8be5ddd2cf643c8c93cab2457073e75819d.jpg",
@@ -2599,6 +2617,70 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/440650d86edc738376192070754c0e6df327801ef3edd0a8a939d7f684573cd6.jpg",
    "说明": "图 20-14-1　ATCC 25285 厌氧培养 2 日"
+  }
+ ],
+ "prevotella-intermedia": [
+  {
+   "文件": "img/atlas/fdf05a27b5421047c3f8e0fb80592aa29354399d36b04de8c2b2000ce6d770e6.jpg",
+   "说明": "图 20-15-3　中间普雷沃菌的形态特征（1/7）"
+  },
+  {
+   "文件": "img/atlas/6e8120769e326a785a462112da8d431e4211f2ce46744f64175d6526889910b6.jpg",
+   "说明": "图 20-15-3　中间普雷沃菌的形态特征（2/7）"
+  },
+  {
+   "文件": "img/atlas/83acdda690c0ee44a6523603f64968960364b25e74cf3f6904c804896e580be1.jpg",
+   "说明": "图 20-15-3　中间普雷沃菌的形态特征（3/7）"
+  },
+  {
+   "文件": "img/atlas/adaebf54d91f3796eded232e40d3ab62d9304b56db75b0e23173c8fc8fc8f542.jpg",
+   "说明": "图 20-15-3　中间普雷沃菌的形态特征（4/7）"
+  },
+  {
+   "文件": "img/atlas/f87bf9ce710e34060ac3563403b2178e1b9fd4d0dc61931239b55e84f00f5877.jpg",
+   "说明": "图 20-15-3　中间普雷沃菌的形态特征（5/7）"
+  },
+  {
+   "文件": "img/atlas/b2d7064b0854de9bce60ffa92dac1b53fb3a32149b8de4393a6474672ee5f24b.jpg",
+   "说明": "图 20-15-3　中间普雷沃菌的形态特征（6/7）"
+  },
+  {
+   "文件": "img/atlas/00baaf8970b7e0f8cdee9df09412023681f68afe87e45260346b331aae3cf02d.jpg",
+   "说明": "图 20-15-3　中间普雷沃菌的形态特征（7/7）"
+  }
+ ],
+ "prevotella-bivia": [
+  {
+   "文件": "img/atlas/6fd4422515278f57661af851219755b8570dc3414ecb6e3a63f0e2b3b2a2b0a1.jpg",
+   "说明": "图 20-15-4　双路普雷沃菌"
+  },
+  {
+   "文件": "img/atlas/7532918a3a0173301f9bf7af78f4c904a98f8c4822ea89a857394d12ff9e64a6.jpg",
+   "说明": "图 20-15-5　双路普雷沃菌厌氧培养 2 日"
+  }
+ ],
+ "prevotella-disiens": [
+  {
+   "文件": "img/atlas/fc6b92c1c913c6b12b81818f82ffa919be97972c9e7d20194be8fe053a386abd.jpg",
+   "说明": "图 20-15-5　解糖胨普雷沃菌厌氧培养 4 日"
+  }
+ ],
+ "porphyromonas-gingivalis": [
+  {
+   "文件": "img/atlas/be29cce73c930fb1386a9abbaec5a6c03e87715bc3588b5d4451dbb6c79ddfb0.jpg",
+   "说明": "图 20-16-1　牙龈卟啉单胞菌的形态特征（1/4）"
+  },
+  {
+   "文件": "img/atlas/b01c4c23e27cda70ae96716dac5c21cfb24415ad8c25e76bbdcdb3ca54feb710.jpg",
+   "说明": "图 20-16-1　牙龈卟啉单胞菌的形态特征（2/4）"
+  },
+  {
+   "文件": "img/atlas/660e7964932ad70832e731397afbad07b850c70fa4ce94facf9a4a23d1deac5b.jpg",
+   "说明": "图 20-16-1　牙龈卟啉单胞菌的形态特征（3/4）"
+  },
+  {
+   "文件": "img/atlas/21242815e3364e46f083990819c2c04fd8cbd174a0b0f52c59ff90b9c56a1185.jpg",
+   "说明": "图 20-16-1　牙龈卟啉单胞菌的形态特征（4/4）"
   }
  ],
  "porphyromonas-asaccharolytica": [
@@ -2647,6 +2729,30 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/eb1a02814ee28ac4964b95032d0280ae104eb3bce1361981c0c76bbe7eca24e7.jpg",
    "说明": "图 20-17-1　具核梭杆菌动物亚种厌氧培养 6 日"
+  }
+ ],
+ "fusobacterium-necrophorum": [
+  {
+   "文件": "img/atlas/857e10d7b0c8b6432bf99920390566b25956de2371845e49519e0910fcc0887a.jpg",
+   "说明": "图 20-17-2　坏死梭杆菌(箭头所示), 腹壁脓肿脓液涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/b944ea4562726cbb85bb4f22197f42ee09e74e41a18a32c64e9b66d8589449fd.jpg",
+   "说明": "图 20-17-2　坏死梭杆菌厌氧培养 3 日"
+  }
+ ],
+ "fusobacterium-mortiferum": [
+  {
+   "文件": "img/atlas/cad7b44669de59de923af64a64556b9f7a9ae5f0ab6550ce6489d012dbe915c2.jpg",
+   "说明": "图 20-17-2　死亡梭杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/edf5afb980de3b0e3eaf5913dae1bb8c4e7c246957fbeb0072ede67e4ae9b2b8.jpg",
+   "说明": "图 20-17-2　死亡梭杆菌(光滑型)厌氧培养 5 日"
+  },
+  {
+   "文件": "img/atlas/2660ff8dbcded9766602375fc84803f28f2022a6d25750c3658ca3e58c5983ed.jpg",
+   "说明": "图 20-17-2　死亡梭杆菌(粗糙型)厌氧培养 3 日"
   }
  ],
  "clostridium-perfringens": [
@@ -2765,6 +2871,30 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/14aac4dbbda84920d4c1920ea18fbab26ee7df2bcfbc7139e3d8b24795caf169.jpg",
    "说明": "图 20-21-3　厌氧培养 7 日"
+  }
+ ],
+ "parabacteroides-distasonis": [
+  {
+   "文件": "img/atlas/2252a49df399e65c6b870f96a9d7351621dbe2287e0a05c6e245e711a27fff61.jpg",
+   "说明": "图 20-21-8　迪氏副拟杆菌的形态特征（1/3）"
+  },
+  {
+   "文件": "img/atlas/379b572f2f31f122955b8e05038d0d5211bbba53da2ff9dce9f6410b7113ab62.jpg",
+   "说明": "图 20-21-8　迪氏副拟杆菌的形态特征（2/3）"
+  },
+  {
+   "文件": "img/atlas/561b29a3fac3f996660d9e441eea2288f5bf35ecf17ced6726b92e8cc1702923.jpg",
+   "说明": "图 20-21-8　迪氏副拟杆菌的形态特征（3/3）"
+  }
+ ],
+ "bilophila-wadsworthia": [
+  {
+   "文件": "img/atlas/3541b9693e8a1444571c26d0e11fc241e64f2278465a28140a671101833b4c30.jpg",
+   "说明": "图 20-21-25　革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/ba26f8e61ab4aee44ec8777a50b785ac6ec70f5cf8ddeefbd2950870c26be0c4.jpg",
+   "说明": "图 20-21-25　厌氧培养 8 日"
   }
  ],
  "campylobacter-coli": [
