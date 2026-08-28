@@ -29,10 +29,6 @@ window.DB.photosAtlas = {
    "说明": "图 12-2-2　L 型菌株在高渗琼脂平板上的“油煎蛋”样菌落，4 日"
   },
   {
-   "文件": "img/atlas/9fb7d6419fa207bcc710eb893050c8b07913050c58b196a23b92ea1a840efa38.jpg",
-   "说明": "图 14-2-9　棒杆菌 CAMP 试验结果"
-  },
-  {
    "文件": "img/atlas/b6609b9646c068f16ded35140ca259c62ebfbf29362093416b9860f56bd3c292.jpg",
    "说明": "图 14-2-10　上为划种金黄色葡萄球菌，下为滴加吐温 -80, SBA 2 日"
   }
@@ -55,14 +51,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/8892d65a390915ac33c1523af17909ac5537a9db6304f03ffa617d6c9d06e034.jpg",
    "说明": "图 12-2-3　表皮葡萄球菌的菌落形态"
-  },
-  {
-   "文件": "img/atlas/406001e624d35ab3788ff3560b0f5c9a32a8ef4cb76c10b3f8c64345781315a6.jpg",
-   "说明": "图 18-1-6　点种不同指示菌的卫星试验结果（1/2）"
-  },
-  {
-   "文件": "img/atlas/01085a1db1edd8f637004a8072eac6bc381994e429ce505b64b72b731dbe8dfb.jpg",
-   "说明": "图 18-1-6　点种不同指示菌的卫星试验结果（2/2）"
   }
  ],
  "staph-cohnii": [
@@ -79,22 +67,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/c7f303ac9c0c2f9a050aae73954cb5fe1cca5bc87b250717e414f42935a7211b.jpg",
    "说明": "图 12-2-6　假中间葡萄球菌 SBA 24h"
-  },
-  {
-   "文件": "img/atlas/44aefcf5ec4901ebd5afe531a0ea8ded96e8fb06e8913da0d50f95ab4e057c94.jpg",
-   "说明": "图 34-9-19　改良三维法检测 β-内酰胺酶结果判读（1/4）"
-  },
-  {
-   "文件": "img/atlas/a6f0008d5bc3005d1d3aafa2d11c45e2bc702c2fd98a9e8bc2163b2bd2638a21.jpg",
-   "说明": "图 34-9-19　改良三维法检测 β-内酰胺酶结果判读（2/4）"
-  },
-  {
-   "文件": "img/atlas/a8a26e3547a56b7201b73c2e58b749affcdd3839c580bf64121aa63958cea799.jpg",
-   "说明": "图 34-9-19　改良三维法检测 β-内酰胺酶结果判读（3/4）"
-  },
-  {
-   "文件": "img/atlas/b24ebd77e2e6b902dd5b7afdbfb45c1b033490009fbd31e40816aa5828aa48ab.jpg",
-   "说明": "图 34-9-19　改良三维法检测 β-内酰胺酶结果判读（4/4）"
   }
  ],
  "staph-haemolyticus": [
@@ -149,20 +121,8 @@ window.DB.photosAtlas = {
    "说明": "图 12-4-2　临床分离株SBA24h"
   },
   {
-   "文件": "img/atlas/4989e2236051295dbd63e9583efed13f65361e6c75f352e02c3e8487b1c62408.jpg",
-   "说明": "图 12-4-17　CAMP 试验结果"
-  },
-  {
-   "文件": "img/atlas/9fb7d6419fa207bcc710eb893050c8b07913050c58b196a23b92ea1a840efa38.jpg",
-   "说明": "图 14-2-9　棒杆菌 CAMP 试验结果"
-  },
-  {
    "文件": "img/atlas/4a6588cef75f02bcb180e0faae28820a934ac8fefca8180550a6e39e4bd72b41.jpg",
    "说明": "图 20-20-12　产气荚膜梭菌与无乳链球菌的 CAMP 试验阳性结果"
-  },
-  {
-   "文件": "img/atlas/428b59761612761e1ca6fc17ed06c49cb2759f087f9a2c0731dd81862d2253d3.jpg",
-   "说明": "图 34-9-26　无乳链球菌 D 试验检测阳性结果"
   }
  ],
  "strep-dysgalactiae": [
@@ -173,6 +133,10 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/f5b304b33d1a4f97b7fd9c9342a14c863693f06dca670bbd9ed8b59539abea10.jpg",
    "说明": "图 12-4-3　ATCC 6644 SBA 24h"
+  },
+  {
+   "文件": "img/atlas/a231b6099dcfeca494619456d4a4041fe43034a941cabc0f52e10fb2a3e6c716.jpg",
+   "说明": "图 12-4-22　假肺炎链球菌胆汁溶菌试验结果"
   }
  ],
  "strep-constellatus": [
@@ -187,10 +151,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/fdc2b5d7c6e776f51a1fbd444871af71f9d63765820b4a023c70b37fefdb5b83.jpg",
    "说明": "图 12-4-7　SBA 3 日 ×40"
-  },
-  {
-   "文件": "img/atlas/a231b6099dcfeca494619456d4a4041fe43034a941cabc0f52e10fb2a3e6c716.jpg",
-   "说明": "图 12-4-22　假肺炎链球菌胆汁溶菌试验结果"
   }
  ],
  "strep-anginosus": [
@@ -205,10 +165,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/6ba9cd28e9308fd8ce569ddd8a40919450aeb5a6ca18e9ae4367be79e2f55f76.jpg",
    "说明": "图 12-4-8　黏液型 SBA 2 日"
-  },
-  {
-   "文件": "img/atlas/a231b6099dcfeca494619456d4a4041fe43034a941cabc0f52e10fb2a3e6c716.jpg",
-   "说明": "图 12-4-22　假肺炎链球菌胆汁溶菌试验结果"
   }
  ],
  "strep-pneumoniae": [
@@ -237,12 +193,12 @@ window.DB.photosAtlas = {
    "说明": "图 12-4-9　肉汤培养沉淀生长"
   },
   {
-   "文件": "img/atlas/fd945023211dc6fec0990226006ac8a81afbdf33d5a17cc409edebcb8a231067.jpg",
-   "说明": "图 12-4-10　菌落涂片革兰氏染色 × 1000"
+   "文件": "img/atlas/6a68f5f538177fc991d093e0a3ad843278f985fe1e20d02140968515db59aff9.jpg",
+   "说明": "图 12-4-19　肺炎链球菌免疫层析法试验结果"
   },
   {
-   "文件": "img/atlas/23e09465942e48b48edf0e0db9b62ca754d9228dc8572d238b0bbfae839f330d.jpg",
-   "说明": "图 12-4-10　痰涂片革兰氏染色 × 1000"
+   "文件": "img/atlas/8a7e6b3bacc9b5f13de15a779ecf0d26c95a207fafdd543133994d86698a3213.jpg",
+   "说明": "图 12-4-20　肺炎链球菌乳胶凝集试验结果"
   }
  ],
  "strep-pseudopneumoniae": [
@@ -293,10 +249,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/29aa15f50a08c0d677c4c397a3111bf1d298886b0312f4b645948281a1cb1fbe.jpg",
    "说明": "图 12-4-12　MHB 2 日"
-  },
-  {
-   "文件": "img/atlas/4989e2236051295dbd63e9583efed13f65361e6c75f352e02c3e8487b1c62408.jpg",
-   "说明": "图 12-4-17　CAMP 试验结果"
   }
  ],
  "strep-gallolyticus": [
@@ -307,6 +259,10 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/e377301b6245cff3f5f7aced47ad789f19e6a2b9570252844b75937149df6bc7.jpg",
    "说明": "图 12-4-13　CPS3 2 日"
+  },
+  {
+   "文件": "img/atlas/a231b6099dcfeca494619456d4a4041fe43034a941cabc0f52e10fb2a3e6c716.jpg",
+   "说明": "图 12-4-22　假肺炎链球菌胆汁溶菌试验结果"
   }
  ],
  "strep-salivarius": [
@@ -331,10 +287,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/16f406c7398bd3b760ff09014b829f94467bac964a0a7b308bfd258169cca741.jpg",
    "说明": "图 12-4-14　血液链球菌 SBA 2 日"
-  },
-  {
-   "文件": "img/atlas/29b3e3bc35c58237dd8a38d478ffbf88a71d098c941722df466c5dc71d44bbf5.jpg",
-   "说明": "图 12-4-14　副血链球菌 SBA 2 日"
   }
  ],
  "strep-parasanguinis": [
@@ -351,10 +303,6 @@ window.DB.photosAtlas = {
  ],
  "corynebacterium-pseudotuberculosis": [
   {
-   "文件": "img/atlas/4989e2236051295dbd63e9583efed13f65361e6c75f352e02c3e8487b1c62408.jpg",
-   "说明": "图 12-4-17　CAMP 试验结果"
-  },
-  {
    "文件": "img/atlas/930357cc954057b1af3e42e55dc100b904a5e5bfb9487e5c547ae8d0f5e6331d.jpg",
    "说明": "图 14-2-7　其他临床不常见棒杆菌革兰氏染色的镜下形态特征 ×1000（1/2）"
   },
@@ -365,10 +313,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/af0841850f59b886170cb1286d4256a55c5af2c8b342f94edd5bf0458df49702.jpg",
    "说明": "图 14-2-8　假结核棒杆菌 SBA 4 日"
-  },
-  {
-   "文件": "img/atlas/9fb7d6419fa207bcc710eb893050c8b07913050c58b196a23b92ea1a840efa38.jpg",
-   "说明": "图 14-2-9　棒杆菌 CAMP 试验结果"
   }
  ],
  "enterococcus-faecalis": [
@@ -387,18 +331,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/6893ecc5bca6689a07defe2d628bdfda1f7d31d1302cd85f3a0805ac19c42939.jpg",
    "说明": "图 12-5-1　CPS ID3平板3日"
-  },
-  {
-   "文件": "img/atlas/e43e1738a9436263066ede50ca0918172a9a25550ec79ba1fce58fad4e7feec3.jpg",
-   "说明": "图 14-17-5　沙尔放线棒杆菌(Actinotignum schaalii)的镜下形态特征（1/3）"
-  },
-  {
-   "文件": "img/atlas/b85f4492441800fa522ba27a554f9f7c0a2f9d23387fe4b02a8d4926fb0c76fe.jpg",
-   "说明": "图 14-17-5　沙尔放线棒杆菌(Actinotignum schaalii)的镜下形态特征（2/3）"
-  },
-  {
-   "文件": "img/atlas/470d7f9c5dc932db9db32291e07be5176126a3832002056ef4c2197ddd684281.jpg",
-   "说明": "图 14-17-5　沙尔放线棒杆菌(Actinotignum schaalii)的镜下形态特征（3/3）"
   }
  ],
  "enterococcus-faecium": [
@@ -409,10 +341,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/fbcbfab9bfee8b687c7dbdb5750ad5b217924bfce642e2ee9a1e0d530942b401.jpg",
    "说明": "图 12-5-2　SBA 24h"
-  },
-  {
-   "文件": "img/atlas/b3bd0fc509db7c4e4e7cda4fa2b38cda258e88761b6393604bb470bd134dc4d6.jpg",
-   "说明": "图 34-9-24　显色琼脂法, 屎肠球菌 (VRE) 呈紫色小菌落"
   }
  ],
  "enterococcus-casseliflavus": [
@@ -667,14 +595,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/be711e9df6a1a85274d221941d6cfdceac6d305047935a8969e7a29a8be3dc96.jpg",
    "说明": "图 14-2-1　白喉棒杆菌的形态特征 D. ATCC 13812 SBA 3 日；E. 重型，SBA 2 日；F. 重型，亚碲酸盐平板 5 日（6/6）"
-  },
-  {
-   "文件": "img/atlas/d864ca028d82821e6f4fe8d258028f381fa86ecf39087aded4f11047ae1f9046.jpg",
-   "说明": "图 14-2-2　假白喉棒杆菌的形态特征（1/3）"
-  },
-  {
-   "文件": "img/atlas/6beb7bd627271cbd0e6ee6ba98ff193e68dc6dd50b0f622c3957f6a342adb9e1.jpg",
-   "说明": "图 14-2-2　假白喉棒杆菌的形态特征（2/3）"
   }
  ],
  "corynebacterium-pseudodiphtheriticum": [
@@ -769,12 +689,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/f4e5313f6c1a1049f9b94d4dcee731429fffb69eb7a95eedf30999378c63c78b.jpg",
    "说明": "图 14-2-8　结核硬脂酸棒杆菌 SBA 5 日"
-  }
- ],
- "staph-lugdunensis": [
-  {
-   "文件": "img/atlas/9fb7d6419fa207bcc710eb893050c8b07913050c58b196a23b92ea1a840efa38.jpg",
-   "说明": "图 14-2-9　棒杆菌 CAMP 试验结果"
   }
  ],
  "turicella-otitidis": [
@@ -1021,10 +935,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/a5d5d014dad9d02527aeaa091ece5a2993e7b65d74829d55c96cbff025bb68c3.jpg",
    "说明": "图 14-7-21　麻风分枝杆菌感染特征（3/3）"
-  },
-  {
-   "文件": "img/atlas/e23e195ef277519bc1fb03c097f9506be22872f2074b6eabfbaeec005eaf367f.jpg",
-   "说明": "图 42-2-10　肝硬化患者的肝穿标本 Masson 三色染色, 苯胺蓝将汇管区内的纤维成分染成深蓝色, 丽春红则衬染出肝细胞等细胞成分 ×200 4. 抗酸染色法 主要用于抗酸杆菌的染色。染液主要为苯酚复红液，抗酸杆菌菌体细胞胞壁内…"
   }
  ],
  "nocardia": [
@@ -1049,16 +959,16 @@ window.DB.photosAtlas = {
    "说明": "图 14-8-1　诺卡菌小培养方法（5/5）"
   },
   {
-   "文件": "img/atlas/2ee35983e141fb4a093573222114b8ae4ff606b5874c0db58af497e929c0363a.jpg",
-   "说明": "图 14-8-2　角膜刮片 10%KOH 压片 ×400"
+   "文件": "img/atlas/683233eb68eb7a34a981c12000ae18d9ad7b7ccc695851558a6cea98b993c071.jpg",
+   "说明": "图 14-8-6　痰涂片弱抗酸染色 ×1000"
   },
   {
-   "文件": "img/atlas/217a905ecc4a3eb76f110fa1d355f65d6151b19da6af55a084dfec4dee7e4260.jpg",
-   "说明": "图 14-8-2　角膜刮片革兰氏染色 ×1000"
+   "文件": "img/atlas/8242274018a815faf138de88c07a97839bb1e4478c35a05366e331bd71f57607.jpg",
+   "说明": "图 14-8-6　小培养 12 日, 革兰氏染色 ×1000"
   },
   {
-   "文件": "img/atlas/e3fb6b3a0bf195a1df53fd0d38ce9fbccaa738c1beb8024acd637c7a9a0dbc73.jpg",
-   "说明": "图 14-8-2　角膜刮片弱抗酸染色 ×1000"
+   "文件": "img/atlas/fa44ea549dd3d948d7ded7d3a348ee49e72a171d0823215d3cfd122a70405af5.jpg",
+   "说明": "图 14-8-6　SBA 5 日"
   }
  ],
  "nocardia-abscessus": [
@@ -1255,18 +1165,6 @@ window.DB.photosAtlas = {
  ],
  "e-coli": [
   {
-   "文件": "img/atlas/e43e1738a9436263066ede50ca0918172a9a25550ec79ba1fce58fad4e7feec3.jpg",
-   "说明": "图 14-17-5　沙尔放线棒杆菌(Actinotignum schaalii)的镜下形态特征（1/3）"
-  },
-  {
-   "文件": "img/atlas/b85f4492441800fa522ba27a554f9f7c0a2f9d23387fe4b02a8d4926fb0c76fe.jpg",
-   "说明": "图 14-17-5　沙尔放线棒杆菌(Actinotignum schaalii)的镜下形态特征（2/3）"
-  },
-  {
-   "文件": "img/atlas/470d7f9c5dc932db9db32291e07be5176126a3832002056ef4c2197ddd684281.jpg",
-   "说明": "图 14-17-5　沙尔放线棒杆菌(Actinotignum schaalii)的镜下形态特征（3/3）"
-  },
-  {
    "文件": "img/atlas/718e3c9a79e5b895b30ba7be73bb054d0ea09a57e0f186eefe93a6deade66d18.jpg",
    "说明": "图 15-2-1　大肠埃希菌(光滑型)"
   },
@@ -1285,6 +1183,28 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/9d588b94922281c62bfcf1234da8e750b04f9876a41fa54ef8a1f97a5cc46d67.jpg",
    "说明": "图 15-2-2　大肠埃希菌的菌落形态特征（2/7）"
+  },
+  {
+   "文件": "img/atlas/e1041a0fb77ef6785f135c30a4c6e5502a996cbdff02296e2271e5a4ad3564d9.jpg",
+   "说明": "图 15-2-2　大肠埃希菌的菌落形态特征（3/7）"
+  },
+  {
+   "文件": "img/atlas/bf9c476b522a53317f710661e83aaa36d3dd386af9c97096acb875d828635a1f.jpg",
+   "说明": "图 15-2-2　大肠埃希菌的菌落形态特征（4/7）"
+  },
+  {
+   "文件": "img/atlas/d0e94680d1b1780208e3f6b950c5e44baa14b07d396141d9e8c0fd2ff2f28ceb.jpg",
+   "说明": "图 15-2-2　大肠埃希菌的菌落形态特征（5/7）"
+  }
+ ],
+ "escherichia-fergusonii": [
+  {
+   "文件": "img/atlas/4296e3110dc31a5cef26627c67071a400a8b321916b43401f8bf04f0db9b2d65.jpg",
+   "说明": "图 15-2-1　费格森埃希菌"
+  },
+  {
+   "文件": "img/atlas/f15a1e02edf3051561aa6db20e33c9a0bc5254ded09d61ccba4e267578b89b81.jpg",
+   "说明": "图 15-2-4　弗格森埃希菌 SBA 24h"
   }
  ],
  "shigella-dysenteriae": [
@@ -1321,6 +1241,28 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/43a71c0905320ed5a05959145bc8d24142ecab9ddab5431cd03da3747960f370.jpg",
    "说明": "图 15-3-2　中国蓝 24h"
+  }
+ ],
+ "shigella-boydii": [
+  {
+   "文件": "img/atlas/c39d356a9c385823088ff907e0af56072164fc728c5a163e879d8cd8db8de9cb.jpg",
+   "说明": "图 15-3-4　鲍氏志贺菌的形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/6a645fd4807ada9ae7cafc20aa5fbfd70a9b77ee52216e0317eff985a1b16cef.jpg",
+   "说明": "图 15-3-4　鲍氏志贺菌的形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/3bfd3e2c8c18a108d4f10852307e2ed0e910c7fc42e4b0cff7de181d54cb59b9.jpg",
+   "说明": "图 15-3-4　鲍氏志贺菌的形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/82ce543706f9c1e21f99eed21fc1924c63cb705cb84e8180a49f067e01c87b1c.jpg",
+   "说明": "图 15-3-4　鲍氏志贺菌的形态特征（4/5）"
+  },
+  {
+   "文件": "img/atlas/126e7c339f719dd4f7f4f810fc5750a8644d749fa2d62df0b538b85fbcf76a0c.jpg",
+   "说明": "图 15-3-4　鲍氏志贺菌的形态特征（5/5）"
   }
  ],
  "salmonella-typhi": [
@@ -1487,6 +1429,20 @@ window.DB.photosAtlas = {
    "说明": "图 15-7-1　SSA 24h"
   }
  ],
+ "citrobacter-braakii": [
+  {
+   "文件": "img/atlas/2e72275a32ce8805807c3f9e3336400d30489e1134b110695654dec1f7eb4e8c.jpg",
+   "说明": "图 15-7-2　革兰氏染色 × 2000"
+  },
+  {
+   "文件": "img/atlas/3b8bce031fbd56521095d5e7993b6805f05bc01728384945e87ad2047ab579ff.jpg",
+   "说明": "图 15-7-2　SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/fd00316014a03c7243b311ac750f52a1723e4fd46b040b8a09ffbb432ac69596.jpg",
+   "说明": "图 15-7-2　SSA 24h"
+  }
+ ],
  "raoultella-ornithinolytica": [
   {
    "文件": "img/atlas/5ef80ef15c956ab4a77df324689b4e07ac3b03dcc9d19d48045412a3da0d5192.jpg",
@@ -1507,6 +1463,32 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/d05f21f62dc375dcfdb39229d3f5110adefb1742a1c7210f28bebc616865ff7a.jpg",
    "说明": "图 15-14-1　解鸟氨酸拉乌尔菌的形态特征（5/5）"
+  }
+ ],
+ "cronobacter-sakazakii": [
+  {
+   "文件": "img/atlas/124d1fdb6e2bc375935af620b7d56b46dd6091ff88ad8972929a47ed3b9b3058.jpg",
+   "说明": "图 15-15-1　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/4ba258602467e67aacda9ee481af8a875aba2f898ab68fe287284ec0af79f678.jpg",
+   "说明": "图 15-15-1　SBA 24h"
+  },
+  {
+   "文件": "img/atlas/d4940b923391aea1756409aebd3e854da2b94d68acdee408dbd7b747cd5cd075.jpg",
+   "说明": "图 15-15-1　中国蓝平板 24h"
+  },
+  {
+   "文件": "img/atlas/272b76cfd5f2cf6501d20a3bc8a301d563d1b470013046228c3b2182e9403623.jpg",
+   "说明": "图 15-15-1　黏液型, SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/3cf6bef39e1816b8587b13bc868c0340bef929c73eed426b2c6732d9cc301224.jpg",
+   "说明": "图 15-15-1　黏液型, 中国蓝平板 4 日"
+  },
+  {
+   "文件": "img/atlas/857f4e4f889f7cdf300b4107780a8c877c3639c1c311cde1ed659f9f52c550de.jpg",
+   "说明": "图 15-15-1　粗糙型, 中国蓝平板 24h"
   }
  ],
  "morganella-morganii": [
@@ -1605,6 +1587,46 @@ window.DB.photosAtlas = {
    "说明": "图 15-24-2　CA 24h"
   }
  ],
+ "yersinia-enterocolitica": [
+  {
+   "文件": "img/atlas/dc161e13e32bde7ddd94939a278d00b42fe4e0d3cb2b73027ec2b69caeb41120.jpg",
+   "说明": "图 15-24-4　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/6631cb45ab0222836373f02067001f78933bd5274d58cd54507ea72e689bd619.jpg",
+   "说明": "图 15-24-4　SBA 24h"
+  },
+  {
+   "文件": "img/atlas/1fc5efc9d7aa153b0d059c3e9066b8ab39b43696ce543d664959cecbe4b6d940.jpg",
+   "说明": "图 15-24-4　中国蓝平板 24h"
+  },
+  {
+   "文件": "img/atlas/8e53c540b1580a1b1300080620b011e8125a2c937d309ff5b872ff5f20e97887.jpg",
+   "说明": "图 15-24-4　SSA 24h"
+  },
+  {
+   "文件": "img/atlas/15d2e7eac5f534e70bbe2865a879e4b7e12654b222750d21b989a3863902de14.jpg",
+   "说明": "图 15-24-4　MAC 24h"
+  },
+  {
+   "文件": "img/atlas/5ed28c89f17fc39840488617d26c5f15ce5ddf230b96eff2dff1e5d78af79b06.jpg",
+   "说明": "图 15-24-4　EMB 2 日"
+  }
+ ],
+ "yersinia-pseudotuberculosis": [
+  {
+   "文件": "img/atlas/74de311a29a8f33871d618bdc19abd0dcaa6cb9239c97724003812a12e293c1f.jpg",
+   "说明": "图 15-24-5　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/161c1cc6daf4bb1192c89c4298126a6bd4690ddb14a76e1e14baa83eb2d6a74d.jpg",
+   "说明": "图 15-24-5　SBA 3 日"
+  },
+  {
+   "文件": "img/atlas/5c15e8d448232bd67a51a775d927091dbbf526889ea9a82cad39636041e5c33f.jpg",
+   "说明": "图 15-24-5　中国蓝平板 3 日"
+  }
+ ],
  "serratia-marcescens": [
   {
    "文件": "img/atlas/49a52c67c7650f89fce930a0675b1813cd3a9817e3feb14626eaced4e7942a0c.jpg",
@@ -1671,6 +1693,32 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/85c8b70fb4f5af84f7cae768e1fc14dfca2d101a18cd1376ae12c7df33b1b2c3.jpg",
    "说明": "图 15-28-2　SBA 24h"
+  }
+ ],
+ "plesiomonas-shigelloides": [
+  {
+   "文件": "img/atlas/db4f3e65bb4cba3684fbbcc8fe048651ed0207bc14100e939ba3153ce7e89e9c.jpg",
+   "说明": "图 15-37-1　革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/eac890ea8ff6c21119776da3695398438da8c7c116e91301779d2b0ec255bbec.jpg",
+   "说明": "图 15-37-1　SBA 24h"
+  },
+  {
+   "文件": "img/atlas/a8bb80900e625e21d12e3f9fa71eb5994e114af59b7d014275be15f4b2dcc90d.jpg",
+   "说明": "图 15-37-1　中国蓝平板 24h"
+  },
+  {
+   "文件": "img/atlas/b02c3490c6969e4813e1e5cdbc2d29077eaf5ae77d997c7c44dca465b1f9a1d7.jpg",
+   "说明": "图 15-37-1　MAC 24h"
+  },
+  {
+   "文件": "img/atlas/83b5f3f2b46d35faa181b1f81d533efa2fc4dc318e8692f0a3789ad0db24b8f4.jpg",
+   "说明": "图 15-37-1　EMB 24h"
+  },
+  {
+   "文件": "img/atlas/361e559aeb6a3e8462c2bc768d1a523ad21d7ab617132a7719fe92e5efec50d4.jpg",
+   "说明": "图 15-37-1　SSA 24h"
   }
  ],
  "vibrio-cholerae": [
@@ -1767,23 +1815,19 @@ window.DB.photosAtlas = {
    "说明": "图 17-2-1　铜绿假单胞菌(不产色素)"
   },
   {
-   "文件": "img/atlas/1c2b77a2e88481ae7a179b280085d3127665c0fd3ca6a6dab9ea722f60c031cc.jpg",
-   "说明": "图 17-2-2　假单胞菌荧光素检测试验结果"
-  },
-  {
    "文件": "img/atlas/91606483062245b91e05f09e79da5783bdd5f322f6ff24497024702ca1e726a9.jpg",
    "说明": "图 17-2-3　菌落涂片(光滑型)革兰氏染色 ×1000"
   },
   {
    "文件": "img/atlas/c13cfc3b7becafafc59ec816f943afc840341df7b66ea62233dd62610005bad8.jpg",
    "说明": "图 17-2-3　菌落涂片(黏液型)革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/3e823dc19ac0b3cf9671f00913e7214e352f76d4f2487071b9c980fe839e3c7a.jpg",
+   "说明": "图 17-2-3　痰涂片(黏液型)革兰氏染色 ×1000"
   }
  ],
  "stenotrophomonas-maltophilia": [
-  {
-   "文件": "img/atlas/1c2b77a2e88481ae7a179b280085d3127665c0fd3ca6a6dab9ea722f60c031cc.jpg",
-   "说明": "图 17-2-2　假单胞菌荧光素检测试验结果"
-  },
   {
    "文件": "img/atlas/9d86e108a2f936ff96328ea3f27874a150c8a4bf8fcc43570806da36f7ce0749.jpg",
    "说明": "图 17-4-1　痰涂片革兰氏染色 × 1000"
@@ -1799,14 +1843,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/7b282f06b5047b46ef3545bfa0b40cee1f4be200ef04fd05bc9d6a35de74c299.jpg",
    "说明": "图 17-4-1　黏液型 (灰色、白色两种菌落) SBA 2 日"
-  },
-  {
-   "文件": "img/atlas/406001e624d35ab3788ff3560b0f5c9a32a8ef4cb76c10b3f8c64345781315a6.jpg",
-   "说明": "图 18-1-6　点种不同指示菌的卫星试验结果（1/2）"
-  },
-  {
-   "文件": "img/atlas/01085a1db1edd8f637004a8072eac6bc381994e429ce505b64b72b731dbe8dfb.jpg",
-   "说明": "图 18-1-6　点种不同指示菌的卫星试验结果（2/2）"
   }
  ],
  "pseudomonas-putida": [
@@ -1881,10 +1917,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/341251958275efaa2a6113e53a7d7d1d8b92332dfdf9a29eb763eb63e3c46bf7.jpg",
    "说明": "图 17-3-3　临床分离株(黏液型)SBA 24h 3. 溶血不动杆菌 符合不动杆菌属特征，在胰酶大豆血琼脂平板形成圆形、凸起、光滑、不透明菌落，菌落边缘整齐，有时可出现黏液性菌落。在马和羊血琼脂平板上 37° C 孵育 24 小时…"
-  },
-  {
-   "文件": "img/atlas/406001e624d35ab3788ff3560b0f5c9a32a8ef4cb76c10b3f8c64345781315a6.jpg",
-   "说明": "图 18-1-6　点种不同指示菌的卫星试验结果（1/2）"
   }
  ],
  "acinetobacter-pittii": [
@@ -1967,10 +1999,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/d704f550ef3fb984ee3119551686dfb1321973a4e19b83b354268f118bc51230.jpg",
    "说明": "图 17-5-6　新洋葱伯克霍尔德菌 SBA 4 日"
-  },
-  {
-   "文件": "img/atlas/80915345371bdbc687d65c798899a12051a251ea5f398d6d85deda3e5eadbea6.jpg",
-   "说明": "图 17-5-6　普通伯克霍尔德菌 SBA 2 日"
   }
  ],
  "alcaligenes-faecalis": [
@@ -2029,20 +2057,12 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/27262117a64249e4717179d12243c8bd5edc084d3363e72c4bd0bfc7c12f39aa.jpg",
    "说明": "图 17-9-1　产吲哚金黄杆菌 SBA 5 日"
-  },
-  {
-   "文件": "img/atlas/2937fb1767da8beff4ce048a75ee5e7da3911ea254a7c5d6e33420c06654932d.jpg",
-   "说明": "图 17-9-2　金黄杆菌属对万古霉素敏感性试验结果 4. 脑膜脓毒伊丽莎白金菌与短稳杆菌的鉴别 脑膜脓毒伊丽莎白金菌分解甘露醇,胆汁七叶苷试验阳性,而短稳杆菌相反。 5. 常见金黄杆菌与产黄色色素的非发酵菌的鉴别见表 17-9-2。…"
   }
  ],
  "chryseobacterium-gleum": [
   {
    "文件": "img/atlas/78b69d1401d0a1a70f961101f8dcae511dd72a459106e1d2dfd68c3343ed8cc4.jpg",
    "说明": "图 17-9-1　黏金黄杆菌 CA 3 日"
-  },
-  {
-   "文件": "img/atlas/2937fb1767da8beff4ce048a75ee5e7da3911ea254a7c5d6e33420c06654932d.jpg",
-   "说明": "图 17-9-2　金黄杆菌属对万古霉素敏感性试验结果 4. 脑膜脓毒伊丽莎白金菌与短稳杆菌的鉴别 脑膜脓毒伊丽莎白金菌分解甘露醇,胆汁七叶苷试验阳性,而短稳杆菌相反。 5. 常见金黄杆菌与产黄色色素的非发酵菌的鉴别见表 17-9-2。…"
   }
  ],
  "legionella-pneumophila": [
@@ -2113,10 +2133,6 @@ window.DB.photosAtlas = {
    "说明": "图 18-1-1　前庭大腺脓液涂片"
   },
   {
-   "文件": "img/atlas/3fbfdaef7bdbbdba5a8cc7cb8a1506cbf80f74379c6e76e8195bbff2f6d3d74b.jpg",
-   "说明": "图 18-1-2　副流感嗜血杆菌"
-  },
-  {
    "文件": "img/atlas/d356afb47df545a88a9d93f12f49d90edf7df803a0499f1455a3051e97625137.jpg",
    "说明": "图 18-1-3　ATCC 49247 CA 2 日"
   },
@@ -2127,6 +2143,10 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/7237991adf846428fb87bca107fe7996c791a96f4608e48c99ee3958666f56ab.jpg",
    "说明": "图 18-1-3　ATCC 10211 CA 2 日"
+  },
+  {
+   "文件": "img/atlas/0e854cf62426b009627f1e6206ffbec757cb4400eb670928e8ef80f5730875d9.jpg",
+   "说明": "图 18-1-3　ATCC 49766 CA 2 日"
   }
  ],
  "haemophilus-parainfluenzae": [
@@ -2517,18 +2537,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/280e2824602b686385d9f2764a8553b15c6c6a15dde9a713b5e0e9cc20f9bacf.jpg",
    "说明": "图 21-2-2　幽门螺杆菌的菌落形态特征"
-  },
-  {
-   "文件": "img/atlas/087fa353cc5772c23a2f723bb2e0ec4b601d798d8a60c6cb57988cf523eb606a.jpg",
-   "说明": "图 42-2-6　艾滋病患者全身播散性曲霉菌感染脑组织活检 脑组织病变,PAS 染色 ×400 2. Grocott六胺银染色法 主要用于真菌、螺旋体的染色，也可用于幽门螺杆菌等小部分细菌的诊断。染液主要包括六胺银原液、六胺银硼砂染色…"
-  },
-  {
-   "文件": "img/atlas/d40ce9b5325750ff126d962f6b087088b2bc5c8c5fa5779c0760111d4bf9f362.jpg",
-   "说明": "图 42-2-13　胃炎患者的胃镜黏膜活检 HE 染色,可见幽门螺杆菌 ×400"
-  },
-  {
-   "文件": "img/atlas/151f5185fbc62637402b8b382c1d0373222d5f3f94cac4f7fb424e9ef27580df.jpg",
-   "说明": "图 42-2-14　胃炎患者的胃镜黏膜活检通过免疫组织化学染色确认幽门螺杆菌 幽门螺杆菌特异性抗体染色,免疫组化染色 ×400 3. 真菌 HE 染色和特殊染色虽然能够识别真菌感染,但是不能区别形态上相似却有不同抗药性的真菌。免疫组化技…"
   }
  ],
  "leptospira": [
@@ -2723,10 +2731,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/5b0b98fc705c19e22c2b422abbfef2c894e40a68b8f5ddf08ae9374afa41f8e4.jpg",
    "说明": "图 25-1-1　ATCC 90028 CHROMagar 3 日"
-  },
-  {
-   "文件": "img/atlas/a13a251d25af7e4b90c65cddb08557e1bf82302872182d06e93f8dcb5db21fe6.jpg",
-   "说明": "图 35-2-1　白念珠菌药敏试验 24h 结果判读"
   }
  ],
  "candida-tropicalis": [
@@ -2745,10 +2749,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/50472781792c8cb7c54ae50dc38fda838b944e074db28a9e313f2bc2951a8b02.jpg",
    "说明": "图 25-1-2　ATCC 750 CHROMagar 3 日"
-  },
-  {
-   "文件": "img/atlas/38eb87fb25fa0cebe5cc6477d882bd30059878c38799a9a8ecd7219259f32bb4.jpg",
-   "说明": "图 35-2-1　热带念珠菌药敏试验 24h 结果判读"
   }
  ],
  "candida-glabrata": [
@@ -2760,105 +2760,27 @@ window.DB.photosAtlas = {
  "candida-parapsilosis": [
   {
    "文件": "img/atlas/b9c13db04a4b3376799fe6a0bcc100b8b8ee13a0f6b5aac2a160286e37f35cb3.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（1/6）"
+   "说明": "图 25-1-4　近平滑念珠菌革兰氏染色 ×1 000"
   },
   {
    "文件": "img/atlas/2b34a3d04b6d8ded6183d82ae7352bdae80fa6d5f305ed6327072bb40924bdfd.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（2/6）"
+   "说明": "图 25-1-4　近平滑念珠菌小培养 ×1 000"
   },
   {
    "文件": "img/atlas/c2fb2c4ff0fdcc89126128fbdf911ef23d8791faba2305014a9bd74891eb32c3.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（3/6）"
-  },
-  {
-   "文件": "img/atlas/0ca54d230161c4abfe9aed414f4349e0bd311d4518d0cfa7d96c7e4deb77c99d.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（4/6）"
-  },
-  {
-   "文件": "img/atlas/8a588bfbd24a6cf300751e05bc7c6c2ec35ae313b0601668926ddf56f6ffe98e.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（5/6）"
-  },
-  {
-   "文件": "img/atlas/3699eaee848ff2c661247ea44807d8bfec652dd0472e8e67dd47faaffd7c317e.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（6/6）"
-  }
- ],
- "candida-orthopsilosis": [
-  {
-   "文件": "img/atlas/b9c13db04a4b3376799fe6a0bcc100b8b8ee13a0f6b5aac2a160286e37f35cb3.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（1/6）"
-  },
-  {
-   "文件": "img/atlas/2b34a3d04b6d8ded6183d82ae7352bdae80fa6d5f305ed6327072bb40924bdfd.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（2/6）"
-  },
-  {
-   "文件": "img/atlas/c2fb2c4ff0fdcc89126128fbdf911ef23d8791faba2305014a9bd74891eb32c3.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（3/6）"
-  },
-  {
-   "文件": "img/atlas/0ca54d230161c4abfe9aed414f4349e0bd311d4518d0cfa7d96c7e4deb77c99d.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（4/6）"
-  },
-  {
-   "文件": "img/atlas/8a588bfbd24a6cf300751e05bc7c6c2ec35ae313b0601668926ddf56f6ffe98e.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（5/6）"
-  },
-  {
-   "文件": "img/atlas/3699eaee848ff2c661247ea44807d8bfec652dd0472e8e67dd47faaffd7c317e.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（6/6）"
+   "说明": "图 25-1-4　近平滑念珠菌 ATCC 22019 CHROMagar 5 日"
   }
  ],
  "candida-metapsilosis": [
   {
-   "文件": "img/atlas/b9c13db04a4b3376799fe6a0bcc100b8b8ee13a0f6b5aac2a160286e37f35cb3.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（1/6）"
-  },
-  {
-   "文件": "img/atlas/2b34a3d04b6d8ded6183d82ae7352bdae80fa6d5f305ed6327072bb40924bdfd.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（2/6）"
-  },
-  {
-   "文件": "img/atlas/c2fb2c4ff0fdcc89126128fbdf911ef23d8791faba2305014a9bd74891eb32c3.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（3/6）"
-  },
-  {
    "文件": "img/atlas/0ca54d230161c4abfe9aed414f4349e0bd311d4518d0cfa7d96c7e4deb77c99d.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（4/6）"
-  },
-  {
-   "文件": "img/atlas/8a588bfbd24a6cf300751e05bc7c6c2ec35ae313b0601668926ddf56f6ffe98e.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（5/6）"
-  },
-  {
-   "文件": "img/atlas/3699eaee848ff2c661247ea44807d8bfec652dd0472e8e67dd47faaffd7c317e.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（6/6）"
+   "说明": "图 25-1-4　似平滑念珠菌 CHROMagar 3 日"
   }
  ],
- "kodamaea-ohmeri": [
-  {
-   "文件": "img/atlas/b9c13db04a4b3376799fe6a0bcc100b8b8ee13a0f6b5aac2a160286e37f35cb3.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（1/6）"
-  },
-  {
-   "文件": "img/atlas/2b34a3d04b6d8ded6183d82ae7352bdae80fa6d5f305ed6327072bb40924bdfd.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（2/6）"
-  },
-  {
-   "文件": "img/atlas/c2fb2c4ff0fdcc89126128fbdf911ef23d8791faba2305014a9bd74891eb32c3.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（3/6）"
-  },
-  {
-   "文件": "img/atlas/0ca54d230161c4abfe9aed414f4349e0bd311d4518d0cfa7d96c7e4deb77c99d.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（4/6）"
-  },
+ "candida-orthopsilosis": [
   {
    "文件": "img/atlas/8a588bfbd24a6cf300751e05bc7c6c2ec35ae313b0601668926ddf56f6ffe98e.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（5/6）"
-  },
-  {
-   "文件": "img/atlas/3699eaee848ff2c661247ea44807d8bfec652dd0472e8e67dd47faaffd7c317e.jpg",
-   "说明": "图 25-1-4　近平滑念珠菌复合群的形态特征 A. 近平滑念珠菌革兰氏染色 ×1 000；B. 近平滑念珠菌小培养 ×1 000；C. 近平滑念珠菌 ATCC 22019 CHROMagar 5 日；D. 似平滑念珠菌 CHROMa…（6/6）"
+   "说明": "图 25-1-4　拟平滑念珠菌 CHROMagar 4 日"
   }
  ],
  "candida-rugosa": [
@@ -2887,10 +2809,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/da74002e64585eab3565741598ef3b077a18a447c2efcbde9e1fe85dff493fbf.jpg",
    "说明": "图 25-1-7　双希木龙念珠菌 CHROMagar 7 日"
-  },
-  {
-   "文件": "img/atlas/cb20afe5dfd2e64e0d0ca3f69668f8df0ab501c8ec3381901691e3cdbcf56810.jpg",
-   "说明": "图 25-1-7　假西木龙念珠菌 CHROMagar 4 日"
   }
  ],
  "candida-auris": [
@@ -3077,14 +2995,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/391c6515f3ef7d53d5e935f8aff65983d1a489d1052ef65a73565208c4dbfca9.jpg",
    "说明": "图 25-16-2　肺泡灌洗液钙白荧光染色"
-  },
-  {
-   "文件": "img/atlas/1deaf3886669617ea722e953edc96a43fdb3529a6b5d7b9a4bcb9f85c3070d5e.jpg",
-   "说明": "图 42-2-7　艾滋病患者耶氏肺孢子菌肺炎的支气管灌洗液标本 左图为支气管灌洗液涂片 HE 染色 ×400，上方泡沫样的红色无定型物为滋养体；中图为 Grocott 六胺银染色，耶氏肺孢子菌呈现黑色的银染色阳性结果 ×400，仔细观…"
-  },
-  {
-   "文件": "img/atlas/8b8f62d2cd7c4995957598c2c2866651be6de4a1689c2352076c707172c886ee.jpg",
-   "说明": "图 42-2-15　艾滋病患者的支气管灌洗液标本免疫组化染色检测耶氏肺孢子菌"
   }
  ],
  "aspergillus-flavus": [
@@ -3179,10 +3089,6 @@ window.DB.photosAtlas = {
  ],
  "scedosporium-apiospermum": [
   {
-   "文件": "img/atlas/c07f754185120426ecca0bcbaebd2b8df45dff2814469e862fb38ddd7c6dba5f.jpg",
-   "说明": "图 27-27-1　赛多孢示意图"
-  },
-  {
    "文件": "img/atlas/652fd501403bd4ccf074ebb996abda92f459ecb13f30640e89e6cd87e4f94992.jpg",
    "说明": "图 27-27-2　尖端赛多孢 PDA 28℃ 培养 12 日 × 1000"
   },
@@ -3253,14 +3159,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/411dd4f61c03ba5c7dc3d65fc0937593c167b8352c36bc2049befd3ab1d29d25.jpg",
    "说明": "图 33-1-10　蓝氏贾第鞭毛虫滋养体（3/3）"
-  },
-  {
-   "文件": "img/atlas/4ed6777c02cf616e6f68a96fdc98659b7195466e0decf116ef6a46260b629b5f.jpg",
-   "说明": "图 42-4-15　艾滋病患者粪便标本的液基细胞学巴氏染色找到蓝氏贾第鞭毛虫 ×1000"
-  },
-  {
-   "文件": "img/atlas/383cc260e6ca281aa87794904291bf10b753bc81b76c0598dd58c8a54c3c773b.jpg",
-   "说明": "图 42-4-16　艾滋病患者粪便标本的液基细胞学巴氏染色找到蓝氏贾第鞭毛虫和真菌菌丝 ×1000"
   }
  ],
  "plasmodium-vivax": [
@@ -3375,10 +3273,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/1e5fd6dc263746bec6d72f93e5feb118315a3fa5d92a626cdd177baf32d94761.jpg",
    "说明": "图 33-2-35　粪便涂片钙白荧光染色 3. 实验室诊断 检出虫卵或成虫可确诊。检查虫卵常采用透明胶纸拭子法或棉签拭子法。夜间在患儿肛周查看有无成虫。"
-  },
-  {
-   "文件": "img/atlas/a9c978013dede1d4a33f15b473dd7a772b2a3e5327e0c320deaf721fa4756654.jpg",
-   "说明": "图 42-5-2　残存虫体的形态结构, 虫体大小符合蛲虫 (HE 染色 × 400) 2. 病理学形态特点和检测 在手术切除标本中,肝包虫包囊可以分为三层: ①最外层是人体对寄生虫炎症反应而形成的炎性肉芽组织层,也称为“囊外层”。在这…"
   }
  ],
  "hookworm": [
@@ -3423,50 +3317,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/44d384b4488e8d3dcbd8eda4c8cbec06438e00cba6a52566a8849fc91e30fbda.jpg",
    "说明": "图 33-2-48　痰涂片 (与曲霉混合感染) 钙白荧光染色 ×200"
-  }
- ],
- "sars-cov-2": [
-  {
-   "文件": "img/atlas/60ed9cb7efad9dc4bee8f9f351d14becbbfe5ae28c1908d22b1e1adf9fadd0eb.jpg",
-   "说明": "图 42-1-2　电子显微镜下所见的新型冠状病毒形态 新型冠状病毒病在呼吸道纤毛柱状上皮内形成的病毒包囊,呈现球状的规则形态(透射电镜 × 12 000)"
-  },
-  {
-   "文件": "img/atlas/f720560d4a3ad05c1c126cfc9068ef1fc258bd13e74d2a21aa534ed9e34ee62c.jpg",
-   "说明": "图 42-2-21　胸腔积液细胞学涂片的原位杂交 RT-PCR 检测新型冠状病毒患者胸腔积液涂片的原位杂交 RT-PCR 检测 (DAB 显色 ×400)"
-  },
-  {
-   "文件": "img/atlas/6f71b60c05717e4446de30b67e9352d173ee6558e680b009abaad47d308c2592.jpg",
-   "说明": "图 42-3-29　新型冠状病毒典型的病理学所见 HE 染色 ×400, 新型冠状病毒患者的肺支气管灌洗液标本, 可见簇状的呼吸道柱状上皮, 部分细胞核深染、固缩, 胞质嗜酸性变, 呈现典型的病毒感染后的 CPE 特点"
-  },
-  {
-   "文件": "img/atlas/2519e18d34a7947c8ede3e3e717e38c3e6b26bdf0708066ade04dff045f70e58.jpg",
-   "说明": "图 42-3-30　新型冠状病毒典型的病理学所见 HE 染色 ×40, 新型冠状病毒患者的肺脏切除标本, 低倍镜下可见典型的病毒性间质肺炎的特点: 肺泡腔内大量蛋白渗出液形成透明膜, 肺泡间隔破坏融合成肺大疱 (感谢首都医科大学附属北京…"
-  }
- ],
- "hpv": [
-  {
-   "文件": "img/atlas/303d579d7a048de1f0bf90a4c6bac6ac7395f079a44eaf63406e6ace8b9d383b.jpg",
-   "说明": "图 42-2-18　浆母细胞型淋巴瘤患者的 EBER 原位杂交弥漫强阳性 EBER-ISH×400 2. HPV 人乳头瘤病毒(HPV)是一类无包膜小DNA病毒,常见于外阴、阴道、肛周和口咽部的乳头状病变中,可采用组织学、电镜、免疫组化…"
-  }
- ],
- "ebv": [
-  {
-   "文件": "img/atlas/ce0a69940a37f3dd8a6fa9a51c7edb5523aa20cc10177009ee954dbb2ad26155.jpg",
-   "说明": "图 42-3-10　淋巴结 Hodgkin 淋巴瘤活检标本可见典型的 R-S 细胞 HE 染色 × 400 2. 病理学形态特点和检测 见到外周血中的异形淋巴细胞、鼻咽癌、特定的淋巴瘤等，都提示EBV的存在。检测方法上，虽然可以检测血清…"
-  }
- ],
- "adenovirus": [
-  {
-   "文件": "img/atlas/655f13ec9061f44236580af27917a1ee5386ced315e359420ea7ccd8bc621fcb.jpg",
-   "说明": "图 42-3-23　艾滋病患者颅内发生的 HIV 相关淋巴瘤可检测到 HIV 病毒片段 ×400 2. 病理学形态特点和检测 呼吸道病毒感染常先累及上呼吸道,然后向下蔓延引起间质性肺炎。病变可见气管和支气管黏膜上皮发生变性、坏死,坏死细…"
-  },
-  {
-   "文件": "img/atlas/51d19ebcf2f4a856e6d655645eedb78fb2014ab8237be3d00100efd704f3c8f0.jpg",
-   "说明": "图 42-3-24　腺病毒感染性肺炎患者的间质性肺炎病理切片可见典型的病毒包涵体 ×400"
-  },
-  {
-   "文件": "img/atlas/5315cf783ebea4da945f8acf04fe53eaefe6aaa57170f3bcfc9c56cca503194a.jpg",
-   "说明": "图 42-3-25　腺病毒感染性肝炎患者的病毒特异性抗体染色 ×400"
   }
  ]
 };
