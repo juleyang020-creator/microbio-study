@@ -24,6 +24,7 @@ const EXCLUDE = new Set([
   'achromobacter-xylosoxidans|17-11-1', // 放射根瘤菌图误挂（章节正文串扰）
   'taenia-saginata|33-2-19',        // 猪带绦虫染色图误挂到牛带绦虫
   'plasmodium-falciparum|33-1-19',  // 微小巴贝虫图误挂到恶性疟原虫
+  'strep-intermedius|12-4-22',      // 假肺炎链球菌胆汁溶菌试验误挂到中间链球菌（图注含"中间"字样触发误配）
 ]);
 
 // 每菌限 12 张（多联图按出现顺序取前 N，保证形态/菌落/镜下多样）

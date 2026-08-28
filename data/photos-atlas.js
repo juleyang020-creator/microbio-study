@@ -75,6 +75,28 @@ window.DB.photosAtlas = {
    "说明": "图 12-2-5　解脲亚种 SBA 2 日"
   }
  ],
+ "staph-pseudintermedius": [
+  {
+   "文件": "img/atlas/c7f303ac9c0c2f9a050aae73954cb5fe1cca5bc87b250717e414f42935a7211b.jpg",
+   "说明": "图 12-2-6　假中间葡萄球菌 SBA 24h"
+  },
+  {
+   "文件": "img/atlas/44aefcf5ec4901ebd5afe531a0ea8ded96e8fb06e8913da0d50f95ab4e057c94.jpg",
+   "说明": "图 34-9-19　改良三维法检测 β-内酰胺酶结果判读（1/4）"
+  },
+  {
+   "文件": "img/atlas/a6f0008d5bc3005d1d3aafa2d11c45e2bc702c2fd98a9e8bc2163b2bd2638a21.jpg",
+   "说明": "图 34-9-19　改良三维法检测 β-内酰胺酶结果判读（2/4）"
+  },
+  {
+   "文件": "img/atlas/a8a26e3547a56b7201b73c2e58b749affcdd3839c580bf64121aa63958cea799.jpg",
+   "说明": "图 34-9-19　改良三维法检测 β-内酰胺酶结果判读（3/4）"
+  },
+  {
+   "文件": "img/atlas/b24ebd77e2e6b902dd5b7afdbfb45c1b033490009fbd31e40816aa5828aa48ab.jpg",
+   "说明": "图 34-9-19　改良三维法检测 β-内酰胺酶结果判读（4/4）"
+  }
+ ],
  "staph-haemolyticus": [
   {
    "文件": "img/atlas/641002408a2d8dc9a004de1f550ff01714215246f6c2962c27826cc40b25257d.jpg",
@@ -153,6 +175,24 @@ window.DB.photosAtlas = {
    "说明": "图 12-4-3　ATCC 6644 SBA 24h"
   }
  ],
+ "strep-constellatus": [
+  {
+   "文件": "img/atlas/2c12087f1d3c1cd331a33cc5fbce5f8c6a351a84b6841102c91044c2b11acef2.jpg",
+   "说明": "图 12-4-7　胸腔积液涂片革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/bf8dee40a82ccb7fd1938a35dd9ca3deded40992b44b9c8ee43b9ef97552f7cb.jpg",
+   "说明": "图 12-4-7　SBA 3 日"
+  },
+  {
+   "文件": "img/atlas/fdc2b5d7c6e776f51a1fbd444871af71f9d63765820b4a023c70b37fefdb5b83.jpg",
+   "说明": "图 12-4-7　SBA 3 日 ×40"
+  },
+  {
+   "文件": "img/atlas/a231b6099dcfeca494619456d4a4041fe43034a941cabc0f52e10fb2a3e6c716.jpg",
+   "说明": "图 12-4-22　假肺炎链球菌胆汁溶菌试验结果"
+  }
+ ],
  "strep-anginosus": [
   {
    "文件": "img/atlas/cebe4bfb6bc0a54445b3293d7e0a51258f845fa431059a10b503200516fbf1e9.jpg",
@@ -205,6 +245,42 @@ window.DB.photosAtlas = {
    "说明": "图 12-4-10　痰涂片革兰氏染色 × 1000"
   }
  ],
+ "strep-pseudopneumoniae": [
+  {
+   "文件": "img/atlas/fd945023211dc6fec0990226006ac8a81afbdf33d5a17cc409edebcb8a231067.jpg",
+   "说明": "图 12-4-10　菌落涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/23e09465942e48b48edf0e0db9b62ca754d9228dc8572d238b0bbfae839f330d.jpg",
+   "说明": "图 12-4-10　痰涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/96eb5ae04a24f4f5f28e395d70301358527d142a30793b6b02dfcbd0bb0cfd58.jpg",
+   "说明": "图 12-4-10　SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/cb3eb68b8a75fdd60b1b11d59dde2f2336637fd82524e672c4e4faa5547ad8c2.jpg",
+   "说明": "图 12-4-10　SBA 24h"
+  },
+  {
+   "文件": "img/atlas/487f08b138e56f6e7056fe1ff17a1b5bb63221c21d8c6b4754a0beeba6a2b2f9.jpg",
+   "说明": "图 12-4-21　假肺炎链球菌(左为耐药, 右为敏感)"
+  },
+  {
+   "文件": "img/atlas/a231b6099dcfeca494619456d4a4041fe43034a941cabc0f52e10fb2a3e6c716.jpg",
+   "说明": "图 12-4-22　假肺炎链球菌胆汁溶菌试验结果"
+  }
+ ],
+ "strep-intermedius": [
+  {
+   "文件": "img/atlas/b6cbbce0dd7d632ffc041a1097780ef8af4dd8f9166a3e93670f396fce3fed92.jpg",
+   "说明": "图 12-4-11　胸腔积液涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/6086337e3fc1a6254247a317ae34124098e758a20465b572b7f221fc54d620cf.jpg",
+   "说明": "图 12-4-11　SBA 2 日"
+  }
+ ],
  "streptococcus-suis": [
   {
    "文件": "img/atlas/8268016628f9c3f2bb2c7ca128d1914f3c28dfdf4df1b71c43227c4ce4bbba96.jpg",
@@ -231,6 +307,46 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/e377301b6245cff3f5f7aced47ad789f19e6a2b9570252844b75937149df6bc7.jpg",
    "说明": "图 12-4-13　CPS3 2 日"
+  }
+ ],
+ "strep-salivarius": [
+  {
+   "文件": "img/atlas/006406de9ff32cb0bfccbb7ffe7c60857a78ef540f5d2a648b56e9b05bc5ba69.jpg",
+   "说明": "图 12-4-14　唾液链球菌 SBA 24h"
+  }
+ ],
+ "strep-mitis": [
+  {
+   "文件": "img/atlas/b8731b34a6c1442e80a0c4813abdcd4242fa44e76419e05dfd5cd562d47606a5.jpg",
+   "说明": "图 12-4-14　缓症链球菌 SBA 2 日"
+  }
+ ],
+ "strep-oralis": [
+  {
+   "文件": "img/atlas/6695b5fa61bc07b735be2bb4aecbf5de182f3375d67ab26e9b6e95b1daf5e89b.jpg",
+   "说明": "图 12-4-14　口腔链球菌 SBA 24h"
+  }
+ ],
+ "strep-sanguinis": [
+  {
+   "文件": "img/atlas/16f406c7398bd3b760ff09014b829f94467bac964a0a7b308bfd258169cca741.jpg",
+   "说明": "图 12-4-14　血液链球菌 SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/29b3e3bc35c58237dd8a38d478ffbf88a71d098c941722df466c5dc71d44bbf5.jpg",
+   "说明": "图 12-4-14　副血链球菌 SBA 2 日"
+  }
+ ],
+ "strep-parasanguinis": [
+  {
+   "文件": "img/atlas/29b3e3bc35c58237dd8a38d478ffbf88a71d098c941722df466c5dc71d44bbf5.jpg",
+   "说明": "图 12-4-14　副血链球菌 SBA 2 日"
+  }
+ ],
+ "strep-mutans": [
+  {
+   "文件": "img/atlas/990e4b22b43110385643cca72696c8548f7d255d40c273986e6e775f39890e9c.jpg",
+   "说明": "图 12-4-14　变异链球菌 SBA 2 日"
   }
  ],
  "enterococcus-faecalis": [
@@ -299,10 +415,124 @@ window.DB.photosAtlas = {
    "说明": "图 12-5-5　铅黄肠球菌动力试验"
   }
  ],
+ "enterococcus-hirae": [
+  {
+   "文件": "img/atlas/7ee143ddd58112655ec6388aac7d8d26314db0ac7bfbef69632916c8818b21a9.jpg",
+   "说明": "图 12-5-4　海氏肠球菌 SBA 24h"
+  },
+  {
+   "文件": "img/atlas/5ca5f417f2e43222bee14f4e378e1e642e346a40077f5cb6db7693f929351a3e.jpg",
+   "说明": "图 12-5-4　小肠肠球菌 SBA 24h"
+  }
+ ],
  "enterococcus-avium": [
   {
    "文件": "img/atlas/f4a052d1c0582db4cf6a493b4ea609edaa1c4d05d0955fe8b0a8453275356834.jpg",
    "说明": "图 12-5-4　鸟肠球菌 SBA 24h"
+  }
+ ],
+ "enterococcus-durans": [
+  {
+   "文件": "img/atlas/c20c643facf62199dcc0bb07f046aa5dbe02069711ff209c2875536fe3ef8456.jpg",
+   "说明": "图 12-5-4　耐久肠球菌 SBA 24h"
+  }
+ ],
+ "enterococcus-raffinosus": [
+  {
+   "文件": "img/atlas/1dd7c1683d86060f4489e993c762227048623290132ea01fe7278fa97669620c.jpg",
+   "说明": "图 12-5-4　棉子糖肠球菌 SBA 24h"
+  }
+ ],
+ "granulicatella-adiacens": [
+  {
+   "文件": "img/atlas/92024f3e43889dc7e23ec37878df3c21959389ca2297d1c4e83c503ad98d283e.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/623649bca7ec0798de5845fe581b63befaab5538b904925a1c79776ceb6b9206.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/949021522c6d9bf5dcfafc5674be01f97ad233cf7c312a86c886a951bd0252f3.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/0888810cbbaee7ebb281d9845fe25f712a9df98871ce14dcf9675a628e739360.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（4/5）"
+  },
+  {
+   "文件": "img/atlas/6a94c39ea9e6a31cf872ed655c6f813dffa9dd27a043de594c10eed4c5cd7d72.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（5/5）"
+  }
+ ],
+ "gemella-morbillorum": [
+  {
+   "文件": "img/atlas/f62b26e00a43aef9814eec401d0629b9e0e9a89aac490d3136d03abbcb4024fe.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（1/7）"
+  },
+  {
+   "文件": "img/atlas/cebfa6b9f59b01c43505efa5ecb356b4664f9b1fd2528cbeab2603bed496227b.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（2/7）"
+  },
+  {
+   "文件": "img/atlas/0e8633d980d3deec6437c92d35cc98dcd87589e25f75369753462a8210f0fbcd.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（3/7）"
+  },
+  {
+   "文件": "img/atlas/b534d95cf31cba0c96ffb32feee66a3ee8466ee6c397d7728da1b814dddf1861.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（4/7）"
+  },
+  {
+   "文件": "img/atlas/d9a08fef863f0ead7b92e4b2cad3f24867e56796eee745c3d6a12c6167fa96ea.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（5/7）"
+  },
+  {
+   "文件": "img/atlas/2ac1cd80a84ee59ef3b4b0512a8d4078006ff65012bbb1c9da7bca2788d9e50f.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（6/7）"
+  },
+  {
+   "文件": "img/atlas/e4d31637a4421814a8967a77a62325f33e0c06eca5d9bf68355c3cc8018270a3.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（7/7）"
+  }
+ ],
+ "gemella-haemolysans": [
+  {
+   "文件": "img/atlas/f62b26e00a43aef9814eec401d0629b9e0e9a89aac490d3136d03abbcb4024fe.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（1/7）"
+  },
+  {
+   "文件": "img/atlas/cebfa6b9f59b01c43505efa5ecb356b4664f9b1fd2528cbeab2603bed496227b.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（2/7）"
+  },
+  {
+   "文件": "img/atlas/0e8633d980d3deec6437c92d35cc98dcd87589e25f75369753462a8210f0fbcd.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（3/7）"
+  },
+  {
+   "文件": "img/atlas/b534d95cf31cba0c96ffb32feee66a3ee8466ee6c397d7728da1b814dddf1861.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（4/7）"
+  },
+  {
+   "文件": "img/atlas/d9a08fef863f0ead7b92e4b2cad3f24867e56796eee745c3d6a12c6167fa96ea.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（5/7）"
+  },
+  {
+   "文件": "img/atlas/2ac1cd80a84ee59ef3b4b0512a8d4078006ff65012bbb1c9da7bca2788d9e50f.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（6/7）"
+  },
+  {
+   "文件": "img/atlas/e4d31637a4421814a8967a77a62325f33e0c06eca5d9bf68355c3cc8018270a3.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（7/7）"
+  }
+ ],
+ "helcococcus-kunzii": [
+  {
+   "文件": "img/atlas/41dca3fc774ef79f5ea54d844ef8727db642c0468117e65afa3ca50a30f9fcc8.jpg",
+   "说明": "图 12-12-1　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/9f506e46365195bd6de183a952ca1e5b38753b812b3b265301a0127c6854d53c.jpg",
+   "说明": "图 12-12-1　SBA 2 日"
   }
  ],
  "neisseria-gonorrhoeae": [
