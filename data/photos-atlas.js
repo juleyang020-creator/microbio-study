@@ -3909,6 +3909,62 @@ window.DB.photosAtlas = {
    "说明": "图 27-16-3　藤仓镰刀菌 PDA 28℃ 培养 4 日 ×1000"
   }
  ],
+ "cladosporium": [
+  {
+   "文件": "img/atlas/39a203dd093ab33fc874cc4cef884b4842e7cf2e8c09fcd8eab66401a6a32345.jpg",
+   "说明": "图 27-20-3　尖孢枝孢霉 PDA 28℃ 培养 14 日 × 1000"
+  },
+  {
+   "文件": "img/atlas/f5a53966425f1f06b7833b575d660205d1edd91fa136c30158a468588393b625.jpg",
+   "说明": "图 27-20-3　尖孢枝孢霉 SDA 28℃ 培养 14 日"
+  },
+  {
+   "文件": "img/atlas/640735ae639a4806f89458c21752e7d0fb1ae0d7d2098e294bdaf794ed7523c4.jpg",
+   "说明": "图 27-20-3　枝状枝孢霉 PDA 28℃ 培养 7 日，乳酸酚棉蓝染色 × 400"
+  },
+  {
+   "文件": "img/atlas/e00b740854afaf4ea056535385b04dec8e939ce1e425c7598d1223fbe17845f3.jpg",
+   "说明": "图 27-20-3　枝状枝孢霉 SDA 28℃ 培养 14 日"
+  },
+  {
+   "文件": "img/atlas/aa3902187a91687e50ac23461b41552b0d51c62329b0575d252951508430d029.jpg",
+   "说明": "图 27-20-3　Cladosporium colombiae PSA 28℃ 培养 3 日 × 200"
+  },
+  {
+   "文件": "img/atlas/7cda4ec0358bac040c1450e9be5c45a25900b0e7ce872777b8d0250352c118b9.jpg",
+   "说明": "图 27-20-3　Cladosporium colombiae SDA 28℃ 培养 14 日"
+  }
+ ],
+ "cladophialophora": [
+  {
+   "文件": "img/atlas/4dcec3c00d7cd76b9aefcd4ab2ac4d6a57bd490ab851071596b1076cee75df94.jpg",
+   "说明": "图 27-20-4　斑替枝孢瓶霉 PDA 28℃ 培养 14 日，乳酸酚棉蓝染色 ×400"
+  },
+  {
+   "文件": "img/atlas/7935647777a67e885b500bea0a6347380ffc36257d07e2db9704a49052f87f51.jpg",
+   "说明": "图 27-20-4　斑替枝孢瓶霉 PDA 28℃ 培养 14 日"
+  },
+  {
+   "文件": "img/atlas/210d0ade2561ff192eab53192bdc50f2ed1180b0c8643ea4111efab587004423.jpg",
+   "说明": "图 27-20-4　卡氏枝孢瓶霉 PDA 28℃ 培养 7 日，乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/186103205486ebe9f3a26c2befd540014b58df106f57a7005e820b98f3b813a3.jpg",
+   "说明": "图 27-20-4　卡氏枝孢瓶霉 PDA 28℃ 培养 14 日"
+  }
+ ],
+ "curvularia": [
+  {
+   "文件": "img/atlas/30674d8c87312cb4b23655b09e11f753710aaca94ec2d2aaad135477a7784368.jpg",
+   "说明": "图 27-21-3　弯孢霉属内菌种鉴定索引"
+  }
+ ],
+ "phoma": [
+  {
+   "文件": "img/atlas/7a79bb41986b4a54b249f98e6f848e0dc80f593035f6dd0ba1404650c4d2bf56.jpg",
+   "说明": "图 27-25-5　茎点霉属间与属内鉴别索引"
+  }
+ ],
  "scedosporium-apiospermum": [
   {
    "文件": "img/atlas/652fd501403bd4ccf074ebb996abda92f459ecb13f30640e89e6cd87e4f94992.jpg",
