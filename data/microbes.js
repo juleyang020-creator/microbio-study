@@ -3526,3 +3526,147 @@ window.DB.microbes.push(
     关联: ['amikacin', 'cefoxitin', 'ciprofloxacin', 'cotrimoxazole', 'mycobacterium-fortuitum']
   }
 );
+
+// 批8 第1段：念珠菌属 3 种（都柏林/高里/乳酒）
+window.DB.microbes.push(
+  {
+    id: 'candida-dubliniensis', 名称: '都柏林念珠菌', 拉丁名: 'Candida dubliniensis', 类别: '念珠菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样细胞，芽管阳性、厚壁孢子丰富（与白色念珠菌共用表型鉴定系统）；45℃ 不生长（白色念珠菌 45℃ 生长——关键差异点）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '白念珠菌复合群成员（与白色/非洲念珠菌）；HIV 患者反复口腔念珠菌病经典病原；毒力弱于白色念珠菌（体内模型）；血流感染少见。药敏谱与白色念珠菌接近（HIV 口腔分离株氟康唑耐药比例较高）。CLSI M27M44S Table 1 仅 rezafungin 设折点（S≤0.12，仅敏感折点）；其余药物无临床折点，白色念珠菌折点不可套用（隐匿种规则），ECV 见 M57S。' }
+    ],
+    关联: ['fluconazole', 'rezafungin', 'candida-albicans', 'candida-tropicalis']
+  },
+  {
+    id: 'candida-guilliermondii', 名称: '高里念珠菌', 拉丁名: 'Candida guilliermondii', 类别: '念珠菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样细胞；无厚壁孢子/芽管；菌落光滑奶油状。有性型 Meyerozyma guilliermondii（备用分类名，M27M44S 脚注 b）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '侵袭性念珠菌病少见病因（<1%）；氟康唑/棘白菌素敏感性下降的报道渐多（化疗后粒缺患者血流感染）。棘白菌素类（阿尼芬净/卡泊芬净/米卡芬净均 S≤2/I 4/R≥8——天然偏高折点，与近平滑念珠菌同款；M27M44S Table 1）；其余药物无临床折点（ECV 见 M57S）。' }
+    ],
+    关联: ['micafungin', 'anidulafungin', 'caspofungin', 'fluconazole', 'candida-parapsilosis', 'candida-tropicalis']
+  },
+  {
+    id: 'candida-kefyr', 名称: '乳酒念珠菌', 才拉丁名: 'Candida kefyr', 类别: '念珠菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样细胞，长椭圆形；无厚壁孢子；同化发酵乳糖（临床念珠菌中少见——名称"kefyr=开菲尔乳酒"来源）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '血流感染少见病因（血液恶性肿瘤患者）；口咽/阴道粘膜定植。CLSI 无任何临床折点（M27M44S Table 1 无本菌条目，ECV 见 M57S）。' }
+    ],
+    念关联: ['fluconazole', 'candida-tropicalis', 'candida-parapsilosis']
+  }
+);
+
+// 批8 第2段：隐球菌 1 + 曲霉 2
+window.DB.microbes.push(
+  {
+    id: 'cryptococcus-gattii', 名称: '格特隐球菌', 拉丁名: 'Cryptococcus gattii', 类别: '隐球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样细胞，圆形/卵圆形，荚膜（墨汁负染阳性）；尿素酶阳性、咖啡酸试验阳性（同新型隐球菌）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '血清型 B/C（新型为 A/D）；免疫功能正常者也可致病（温哥华岛爆发、澳大利亚地方性）——与新型隐球菌"免疫抑制宿主为主"的关键流行病学差异；肺炎+脑膜炎（脑实质肉芽肿性病变比例较高）；骆驼刺/桉树环境关联。治疗同新型隐球菌（诱导期两性霉素 B+氟胞嘧啶，巩固期氟康唑）；CLSI 无临床折点（ECV 见 M57S）。' }
+    ],
+    关联: ['fluconazole', 'amphotericin-b', 'flucytosine', 'cryptococcus-neoformans']
+  },
+  {
+    id: 'aspergillus-terreus', 名称: '土曲霉', 拉丁名: 'Aspergillus terreus', 类别: '曲霉属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分枝分隔菌丝 45°；分生孢子头柱状（compact biseriate）；小分生孢子球形光滑，**对生（doubling）排列——土曲霉名片**；40~42℃ 生长。' },
+      { 标题: '致病性 / 所致疾病', 正文: '侵袭性曲霉病病因之一（血液恶性肿瘤/移植受者）；**两性霉素 B 天然耐药（M38M51S Appendix 天然耐药表）——治疗首选伏立康唑**；无种特异 MIC 临床折点（伏立康唑折点仅设烟曲霉 sensu stricto）；QC 参考株 MYA-3633 纸片伏立康唑 23-33mm/48h。' }
+    ],
+    关联: ['voriconazole', 'amphotericin-b', 'aspergillus-fumigatus']
+  },
+  {
+    id: 'aspergillus-nidulans', 名称: '构巢曲霉', 拉丁名: 'Aspergillus nidulans', 类别: '曲霉属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分枝分隔菌丝；分生孢子头短柱状；小分生孢子表面棘刺（echinulate）；**裸囊壳（cleistothecia）有性型——曲霉中常见有性型（教学名片）**；菌落背面紫红色。' },
+      { 标题: '致病性 / 所致疾病', 正文: '慢性肉芽肿病（CGD）患者侵袭性曲霉病**最常见病原**（超过烟曲霉——MCM 122 章经典教学点）；也见于其他免疫抑制；CGD 患者病程较慢（肉芽肿包裹）。治疗伏立康唑/伊曲康唑；无种特异临床折点（伏立康唑折点仅烟曲霉 sensu stricto）。' }
+    ],
+    关联: ['voriconazole', 'itraconazole', 'aspergillus-fumigatus']
+  }
+);
+
+// 批8 第3段：毛霉目 3 种
+window.DB.microbes.push(
+  {
+    id: 'rhizopus-arrhizus-complex', 名称: '少根根霉复合群', 拉丁名: 'Rhizopus arrhizus complex', 类别: '根霉属',
+    小节: [
+      { 标题: '形态与染色', 正文: '宽大无分隔菌丝（6~15 μm，直角分支——毛霉目共性）；孢子囊球形；假根发达、匍匐菌丝明显（根霉属特征）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '毛霉病最常见病原（全球病例 >60%）；鼻脑毛霉病（糖尿病酮症酸中毒经典）+ 肺毛霉病 + 皮肤毛霉病；去铁胺铁载体治疗相关。治疗：两性霉素 B（脂质体）+ 广泛清创；**对氟康唑/伏立康唑/棘白菌素天然耐药（M38M51S Appendix B）**——泊沙康唑/艾沙康唑可用于挽救治疗。' }
+    ],
+    关联: ['amphotericin-b', 'posaconazole', 'isavuconazole', 'mucor']
+  },
+  {
+    id: 'lichtheimia-corymbifera', 名称: '伞状横梗霉', 拉丁名: 'Lichtheimia corymbifera', 类别: '横梗霉属',
+    小节: [
+      { 标题: '形态与染色', 正文: '宽大无分隔菌丝直角分支；孢子囊球形、囊托明显（apophysis）；无假根（与根霉鉴别）；高温耐受（45℃ 生长）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '毛霉病第二常见属（Lichtheimia 属）；皮肤/鼻脑/肺毛霉病；创伤后（车祸/战伤）报告多。药敏谱同毛霉目（两性霉素 B 活性保留，唑类耐药格局）。' }
+    ],
+    关联: ['amphotericin-b', 'posaconazole', 'rhizopus-arrhizus-complex']
+  },
+);
+
+// 批8 第4段：皮肤癣菌 8 种
+window.DB.microbes.push(
+  {
+    id: 'trichophyton-rubrum', 名称: '红色毛癣菌', 拉丁名: 'Trichophyton rubrum', 类别: '毛癣菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分隔菌丝；小分生孢子多（梨形侧生簇状）；大分生孢子罕见（铅笔状薄壁光滑）；菌落白色绒毛状→面粉样，背面酒红色素（名称由来）；生长慢（14~21 天）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '全球足癣/甲癣/体癣第一病原（皮肤癣菌感染 >80%）；足癣→自身传染甲癣/股癣（"两只脚两个部位"经典模式）；慢性感染具家族易感性（常染色体显性倾向）。治疗：特比萘芬（甲癣首选）/唑类；M38M51S 无皮肤癣菌临床折点（仅有参考株 QC MIC 范围如 T. rubrum MYA-4438；判读参考 ECV 见 M57S）。' }
+    ],
+    关联: ['itraconazole', 'voriconazole', 'posaconazole']
+  },
+  {
+    id: 'trichophyton-mentagrophytes', 名称: '须癣毛癣菌', 拉丁名: 'Trichophyton mentagrophytes', 类别: '毛癣菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分隔菌丝；小分生孢子多（球形葡萄串状）；大分生孢子可见（雪茄状薄壁）；螺旋菌丝（spirals）常见；毛发穿孔试验阳性——与红色毛癣菌阴性对照鉴别。' },
+      { 标题: '致病性 / 所致疾病', 正文: '足癣/体癣（亲动物/亲土型炎症明显——脓疱/肉芽肿）；近年印度 T. indotineae（原归 mentagrophytes）特比萘芬耐药株全球播散（MCM 更新要点）；M38M51S 无皮肤癣菌临床折点（参考株 MYA-4439 仅 QC 用途）。治疗：特比萘芬（耐药株换伊曲康唑/泊沙康唑）。' }
+    ],
+    关联: ['itraconazole', 'trichophyton-rubrum']
+  },
+  {
+    id: 'trichophyton-tonsurans', 名称: '发癣毛孢子菌', 拉丁名: 'Trichophyton tonsurans', 类别: '毛癣菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分隔菌丝；小分生孢子数量多且形态多变（气球样/棒状——"多形小分生孢子"名片）；大分生孢子罕见；菌落黄色粉末样，背面巧克力棕色；毛发穿孔试验阳性（内生型为主）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '全球儿童头癣第一病原（速查名"发癣毛孢子菌"为 T. tonsurans 旧译保留）；摔跤手等接触性运动传播；成人携带者（母亲传儿童）。治疗：特比萘芬/灰黄霉素（头癣口服 4~6 周）；皮肤癣菌组通用参考。' }
+    ],
+    关联: ['itraconazole', 'trichophyton-rubrum', 'microsporum-canis']
+  },
+  {
+    id: 'trichophyton-verrucosum', 名称: '疣状毛癣菌', 拉丁名: 'Trichophyton verrucosum', 类别: '毛癣菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分隔菌丝；**37℃ 刺激生长 + 牛奶固体培养基厚壁孢子链（鼠尾样）——牛源慢性感染适应名片**；大分生孢子极少；菌落脑回状慢生长。' },
+      { 标题: '致病性 / 所致疾病', 正文: '牛源亲动物癣菌（兽医/农牧职业暴露）；人头癣/须癣（脓癣高发——炎症剧烈）；牛群感染经济损耗。治疗：特比萘芬/灰黄霉素；动物治疗+畜舍消毒。' }
+    ],
+    关联: ['itraconazole', 'trichophyton-tonsurans', 'trichophyton-rubrum']
+  },
+  {
+    id: 'trichophyton-violaceum', 名称: '紫色毛癣菌', 拉丁名: 'Trichophyton violaceum', 类别: '毛癣菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分隔菌丝；小分生孢子少、大分生孢子缺如；菌落紫色/深紫色蜡样（名称由来）；生长慢。' },
+      { 标题: '致病性 / 所致疾病', 正文: '亲人性头癣病原（中国/北非/中东地方性）；"黑点癣"（发内型孢子使毛干在头皮处断裂）；成人可慢性携带。治疗：灰黄霉素/特比萘芬+口服。' }
+    ],
+    关联: ['itraconazole', 'trichophyton-tonsurans']
+  },
+  {
+    id: 'microsporum-canis', 名称: '犬小孢子菌', 拉丁名: 'Microsporum canis', 类别: '小孢子菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分隔菌丝；大分生孢子丰富（纺锤形厚壁疣状——小孢子菌属名片）；小分生孢子少；菌落羊毛状、背面橙黄色；毛发穿孔试验阳性（发外型小孢子镶嵌）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '猫/狗源亲动物癣菌（新收养流浪猫经典）；儿童头癣（发外型——伍德灯绿色荧光）；体癣炎症明显。治疗：人局部特比萘芬/唑类；猫源须同时治疗动物+环境消毒。' }
+    ],
+    关联: ['itraconazole', 'trichophyton-rubrum']
+  },
+  {
+    id: 'microsporum-gypseum', 名称: '石膏小孢子菌', 拉丁名: 'Microsporum gypseum', 类别: '小孢子菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分隔菌丝；大分生孢子丰富（对称纺锤形薄壁粗糙）；菌落颗粒粉末状、背面棕黄色；亲土性。' },
+      { 标题: '致病性 / 所致疾病', 正文: '土源性癣菌（土壤→人）；体癣/头癣（炎症明显——脓癣）；园林/农业暴露史。治疗：特比萘芬/唑类。' }
+    ],
+    关联: ['itraconazole', 'microsporum-canis']
+  },
+  {
+    id: 'epidermophyton-floccosum', 名称: '絮状表皮癣菌', 拉丁名: 'Epidermophyton floccosum', 类别: '表皮癣菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分隔菌丝；大分生孢子丰富（棒状薄壁光滑、顶端钝圆、<6 隔）；**无小分生孢子——表皮癣菌属独有特征**；早期厚壁孢子多；菌落奶酪黄→羊毛样变异扇形区。' },
+      { 标题: '致病性 / 所致疾病', 正文: '股癣/足癣/体癣（侵皮肤+甲，**不侵毛发**——三属鉴别关键）；全球性；治疗：特比萘芬/唑类局部。' }
+    ],
+    关联: ['itraconazole', 'trichophyton-rubrum']
+  }
+);

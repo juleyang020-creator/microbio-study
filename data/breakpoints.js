@@ -713,6 +713,19 @@ window.DB.breakpoints = [
     ]
   },
 
+// ===== 高里念珠菌 (M27M44S Table 1) =====
+  {
+    菌组名: "高里念珠菌 (Candida guilliermondii)",
+    CLSI表: "M27M44S Ed3 · Table 1",
+    来源: "CLSI M27M44S (3rd ed., 2022)",
+    菌种: ["candida-guilliermondii"],
+    药物: [
+      { 药物: "阿尼芬净 (Anidulafungin)", 简写: "AND", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "M27M44S Table 1；棘白菌素天然偏高折点（与近平滑念珠菌同款）" },
+      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "M27M44S Table 1；同阿尼芬净" },
+      { 药物: "米卡芬净 (Micafungin)", 简写: "MCF", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "M27M44S Table 1；同上" }
+    ]
+  },
+
 // ===== 乏养菌属/颗粒链菌属 (M45 Table 1) =====
   {
     菌组名: "乏养菌属/颗粒链菌属 (Abiotrophia spp. / Granulicatella spp.)",

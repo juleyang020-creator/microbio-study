@@ -1103,5 +1103,54 @@ window.DB.differential = {
   ],
   'mycobacterium-peregrinum': [
     { 名称: '偶发分枝杆菌', id: 'mycobacterium-fortuitum', 相似点: 'fortuitum 群成员', 鉴别: '外来分枝杆菌暗产色（fortuitum 群唯一产色种）——群内一票鉴别点；临床谱接近（导管/伤口/角膜炎）。' }
+  ],
+
+'candida-dubliniensis': [
+    { 名称: '白色念珠菌', id: 'candida-albicans', 相似点: '白念珠菌复合群，芽管+/厚壁孢子+共表型', 鉴别: '45℃ 生长：白色 +、都柏林 −（关键单点）；厚壁孢子：都柏林顶部成链、白色单个为主；MALDI/分子确认。' }
+  ],
+  'candida-guilliermondii': [
+    { 名称: '近平滑念珠菌', id: 'candida-parapsilosis', 相似点: '非白色念珠菌群、棘白菌素天然偏高折点（S≤2）', 鉴别: '高里念珠菌同化 Profile 不同（API/MALDI 区分）；临床均需注意棘白菌素折点解读。' }
+  ],
+  'candida-kefyr': [
+    { 名称: '热带念珠菌', id: 'candida-tropicalis', 相似点: ' elongated 酵母细胞形态接近', 鉴别: '乳糖同化：乳酒 +（临床念珠菌少见）、热带不定；显色培养基/MALDI。' }
+  ],
+  'cryptococcus-gattii': [
+    { 名称: '新型隐球菌', id: 'cryptococcus-neoformans', 相似点: '荚膜酵母、尿素酶+/咖啡酸+', 鉴别: 'CAN（刀豆氨酸）琼脂：格特生长、新型多数不长（经典鉴别培养基）；宿主差异：格特感染免疫正常者（温哥华岛爆发）；分子（MALDI 弱、ITS 测序准）。' }
+  ],
+  'aspergillus-terreus': [
+    { 名称: '烟曲霉', id: 'aspergillus-fumigatus', 相似点: '侵袭性曲霉病病原', 鉴别: '土曲霉小分生孢子对生排列+菌落肉桂褐色；两性霉素 B 天然耐药（治疗首选伏立康唑而非两性霉素）。' }
+  ],
+  'aspergillus-nidulans': [
+    { 名称: '烟曲霉', id: 'aspergillus-fumigatus', 相似点: '曲霉属肺病原', 鉴别: '构巢有性型（裸囊壳）+背面紫红色；CGD 患者最常见曲霉（超过烟曲霉）；小分生孢子棘刺。' }
+  ],
+  'rhizopus-arrhizus-complex': [
+    { 名称: '毛霉', id: 'mucor', 相似点: '毛霉目、宽菌丝直角分支', 鉴别: '根霉假根发达+匍匐菌丝（毛霉无假根）；根霉孢子囊大、囊托不明显。治疗格局相同（两性霉素 B 脂质体+清创）。' }
+  ],
+  'lichtheimia-corymbifera': [
+    { 名称: '少根根霉复合群', id: 'rhizopus-arrhizus-complex', 相似点: '毛霉目病原', 鉴别: '横梗霉无假根、囊托明显（apophysis 漏斗状——"横梗"名称由来）；45℃ 高温生长。' }
+  ],
+  'trichophyton-rubrum': [
+    { 名称: '须癣毛癣菌', id: 'trichophyton-mentagrophytes', 相似点: '毛癣菌属、足癣/体癣', 鉴别: '红色：尿素酶 −、毛发穿孔 −、背面酒红、慢性光滑菌落；须癣：尿素酶 +、毛发穿孔 +、粉末颗粒菌落、炎症重（亲动物/土型）。"一对镜像鉴别"教学对。' }
+  ],
+  'trichophyton-mentagrophytes': [
+    { 名称: '红色毛癣菌', id: 'trichophyton-rubrum', 相似点: '足癣双雄', 鉴别: '见红色毛癣菌条。' }
+  ],
+  'trichophyton-tonsurans': [
+    { 名称: '犬小孢子菌', id: 'microsporum-canis', 相似点: '儿童头癣主病原', 鉴别: '断发（发癣毛孢子菌）：发内型（黑点癣）、伍德灯无荧光、小分生孢子多形；犬小孢子：发外型镶嵌、伍德灯绿荧光、大分生孢子纺锤形。' }
+  ],
+  'trichophyton-verrucosum': [
+    { 名称: '发癣毛孢子菌', id: 'trichophyton-tonsurans', 相似点: '头癣病原', 鉴别: '疣状：牛源、37℃+牛奶固体刺激生长、脓癣高发；断发：人传人、多形小分生孢子。' }
+  ],
+  'trichophyton-violaceum': [
+    { 名称: '发癣毛孢子菌', id: 'trichophyton-tonsurans', 相似点: '亲人性头癣', 鉴别: '紫色毛癣菌：紫蜡样菌落、发内型黑点癣、孢子少；断发：粉末菌落、多形小分生孢子。' }
+  ],
+  'microsporum-canis': [
+    { 名称: '石膏小孢子菌', id: 'microsporum-gypseum', 相似点: '小孢子菌属、大分生孢子丰富', 鉴别: '犬：猫狗源、厚壁疣状大分生孢子、羊毛菌落；石膏：土源、薄壁对称大分生孢子、颗粒菌落。' }
+  ],
+  'microsporum-gypseum': [
+    { 名称: '犬小孢子菌', id: 'microsporum-canis', 相似点: '小孢子菌属', 鉴别: '见犬小孢子菌条。' }
+  ],
+  'epidermophyton-floccosum': [
+    { 名称: '红色毛癣菌', id: 'trichophyton-rubrum', 相似点: '足癣/股癣病原', 鉴别: '表皮癣菌：无小分生孢子、大分生孢子棒状光滑、不侵毛发；红色毛癣菌：小分生孢子梨形簇状、可侵毛发（发外型）。' }
   ]
 };

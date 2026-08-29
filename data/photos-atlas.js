@@ -3303,6 +3303,24 @@ window.DB.photosAtlas = {
    "说明": "图 25-1-8　梳状试条药敏试验 2 日结果"
   }
  ],
+ "candida-dubliniensis": [
+  {
+   "文件": "img/atlas/8d1b5ac634d1930047e4d80be186151aedc0c2ed80e41341e4ed55f2da627026.jpg",
+   "说明": "图 25-1-9　其他少见念珠菌的形态特征（1/4）"
+  },
+  {
+   "文件": "img/atlas/b43baf9d938f0cece4f090a992ca7d99bd4f3e09705d6307483a8a3cdd3d046b.jpg",
+   "说明": "图 25-1-9　其他少见念珠菌的形态特征（2/4）"
+  },
+  {
+   "文件": "img/atlas/c74af935d0a9a1bc69c637e2627dff82cc1456abcdd2600893135da8e70f4bc9.jpg",
+   "说明": "图 25-1-9　其他少见念珠菌的形态特征（3/4）"
+  },
+  {
+   "文件": "img/atlas/9acfe738d20cb82496852985855387eff15b302a9154043e413e57e12da0d4b6.jpg",
+   "说明": "图 25-1-9　其他少见念珠菌的形态特征（4/4）"
+  }
+ ],
  "candida-krusei": [
   {
    "文件": "img/atlas/197b53441147c626f4cff8301a57ad6d07281ff069e09580658f71e9c768c549.jpg",
@@ -3389,6 +3407,24 @@ window.DB.photosAtlas = {
    "说明": "图 25-2-2　新型隐球菌新生变种 SBA 5 日"
   }
  ],
+ "cryptococcus-gattii": [
+  {
+   "文件": "img/atlas/355979dcda98da73e9e9b504b8cb701c989860678e5e684f99f8444fe8b6d4b8.jpg",
+   "说明": "图 25-2-3　革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/206421a73640e9e5ebb35ddebc6160530b2a7dcdddc65e489bc96d9a26c8bdcc.jpg",
+   "说明": "图 25-2-3　ATCC MYA-4560 SDA 5 日"
+  },
+  {
+   "文件": "img/atlas/05ac9a66691f174a7313135d1643eddaadcf319cb5f326e1df1f7398731694f9.jpg",
+   "说明": "图 25-2-3　ATCC MYA-4560 CHROMagar 3 日"
+  },
+  {
+   "文件": "img/atlas/2d5d9c94682ea2b9c23414417152d94ccb5ed77d038734cbd6fb1946acef2775.jpg",
+   "说明": "图 25-2-3　CGB 平板 (上为格特隐球菌, 下为新型隐球菌) 37℃ 4 日"
+  }
+ ],
  "histoplasma-capsulatum": [
   {
    "文件": "img/atlas/321a3b7c87a9bdfc3b4a235bd71116923cd24c8c1a164cae9a6334f061d60b19.jpg",
@@ -3463,6 +3499,152 @@ window.DB.photosAtlas = {
    "说明": "图 25-16-2　肺泡灌洗液钙白荧光染色"
   }
  ],
+ "trichophyton-rubrum": [
+  {
+   "文件": "img/atlas/563c531c2f664aedfc58ea6ea81119e8c56c5aaa255df7f12328a470f83ec0c2.jpg",
+   "说明": "图 26-1-1　红色毛癣菌示意图"
+  },
+  {
+   "文件": "img/atlas/2ec5d6e38c0f22ae42365865703785ed208da658ee17841ba5cb9d4bb5463256.jpg",
+   "说明": "图 26-1-1　PDA 28℃ 7 日，乳酸酚棉蓝染色 ×400"
+  },
+  {
+   "文件": "img/atlas/bb162eb2cf96d062abe62c3ac3a4884f029069ba389befff51123df2306835e6.jpg",
+   "说明": "图 26-1-1　试管斜面培养 SDA 28℃ 14 日"
+  },
+  {
+   "文件": "img/atlas/ad9a46f36f8c256c661e0708dddcd0d68aa236f46690122d6f7855a8e577ebb9.jpg",
+   "说明": "图 26-1-1　试管斜面培养，SDA 28℃ 14 日（背面）"
+  },
+  {
+   "文件": "img/atlas/3d92b881384cb1e90d55c3770c481545b9ac771787f9981aad6457f4d0a3ecec.jpg",
+   "说明": "图 26-1-10　红色毛癣菌感染(甲沟炎)"
+  },
+  {
+   "文件": "img/atlas/97b618de48c119ef9ada6bc9bf58e25214171b3da0a2d6b68ecb9ed9879fca0e.jpg",
+   "说明": "图 26-1-10　红色毛癣菌感染, 甲屑10% KOH 压片, 钙白荧光染色 ×400"
+  }
+ ],
+ "trichophyton-mentagrophytes": [
+  {
+   "文件": "img/atlas/412836c907dc2c3a69fd38b2cdab080ea8e81e42a10d8fde8799841323496ef6.jpg",
+   "说明": "图 26-1-2　须癣毛癣菌复合群菌示意图"
+  },
+  {
+   "文件": "img/atlas/0748795dea1b7247bdf9e5bb3db091c9835cfe00364f6a4b6d0743c35adcf82f.jpg",
+   "说明": "图 26-1-10　须癣毛癣菌须癣变种感染(脓癣)"
+  },
+  {
+   "文件": "img/atlas/6a4ec0ffc28a5bcf8639572b80f53767d54bf5083f7da23ac2f3d7dee9499863.jpg",
+   "说明": "图 26-1-10　须癣毛癣菌须癣变种感染, 脓癣病发直接镜检 ×200"
+  }
+ ],
+ "trichophyton-tonsurans": [
+  {
+   "文件": "img/atlas/30c358a81d1a69fd24e2cf372754a64bb6d1ccbf6b58dde2d9eb887f8e826855.jpg",
+   "说明": "图 26-1-3　断发毛癣菌的形态特征（1/3）"
+  },
+  {
+   "文件": "img/atlas/c722b213cd237c4786a4735d1484b619df8594d0adb03cd76b042c693d4ab1a1.jpg",
+   "说明": "图 26-1-3　断发毛癣菌的形态特征（2/3）"
+  },
+  {
+   "文件": "img/atlas/b7edceb4d748d10891c1151aaa351d6d4b4e90a0461439045543e172437a73dc.jpg",
+   "说明": "图 26-1-3　断发毛癣菌的形态特征（3/3）"
+  },
+  {
+   "文件": "img/atlas/0022a15a2ac09f94a5585fd77f4fa7c765c69cebfcc05de3041c5d348278cf13.jpg",
+   "说明": "图 26-1-10　断发毛癣菌感染(头癣)"
+  },
+  {
+   "文件": "img/atlas/38aa579322950b69614ae71fd159f5b35744bca1d5b67bf0461971ef67d16106.jpg",
+   "说明": "图 26-1-10　断发毛癣菌感染, 病发直接镜检, 发内成串孢子 ×400"
+  }
+ ],
+ "trichophyton-violaceum": [
+  {
+   "文件": "img/atlas/0a0fdf596012dd94a5d16ca7d41c1e3e1cd39613bf0d1b2627a14018e7366bb2.jpg",
+   "说明": "图 26-1-4　PDA 28℃ 28 日 5. 紫色毛癣菌 生长缓慢,初期为圆形,白色,膜状,湿润发亮的菌落,后期中央产生紫色色素,无绒毛,蜡质样,边缘呈淡紫色,外周有一圈无色环,菌落表面有皱褶,反复转种后紫色色素可减退。少数菌种不…"
+  },
+  {
+   "文件": "img/atlas/849e934c205291e732b573f0cb8c68e21c69affc490856aaee91b14db3cd091a.jpg",
+   "说明": "图 26-1-5　PDA(添加维生素 B1 ) 28℃ 10 日 × 1 000"
+  },
+  {
+   "文件": "img/atlas/0708f1a983b54c07c714fcc5dd93e69532591e4166aeae093c34bcbaaec81f94.jpg",
+   "说明": "图 26-1-5　SDA(添加维生素 B1 ) 28℃ 14 日"
+  },
+  {
+   "文件": "img/atlas/48bf7df6b0365741694a400971774b9a62ea58483e98a4a06aadd22c91199d43.jpg",
+   "说明": "图 26-1-5　SDA(添加维生素 B1 ) 28℃ 14 日 (背面)"
+  },
+  {
+   "文件": "img/atlas/6f076b95670a8defcdc1dcd81f5d3da551ba68baf892334d5cd3ee521a2c3bcc.jpg",
+   "说明": "图 26-1-5　PDA(添加维生素 B1 ) 28℃ 14 日"
+  },
+  {
+   "文件": "img/atlas/c4d7ed3f78eb28d3ada8e77685f7bde047b75877a764773e3afd137b33120be1.jpg",
+   "说明": "图 26-1-10　紫色毛癣菌感染(脓癣)"
+  },
+  {
+   "文件": "img/atlas/2d3a5e400bbed0cd54dd6a4d22d2a2d3f0dd4e1520c262f80e20704ab9fd1ed2.jpg",
+   "说明": "图 26-1-10　紫色毛癣菌感染, 脓癣标本直接镜检可见大量菌丝 ×200"
+  },
+  {
+   "文件": "img/atlas/4cff5be20338234143ff47047c953066ce727ef26660c092c16cdefc24b2727f.jpg",
+   "说明": "图 26-1-10　紫色毛癣菌感染, 受感染毛发10% KOH 压片, 大量孢子 ×400"
+  }
+ ],
+ "trichophyton-verrucosum": [
+  {
+   "文件": "img/atlas/c87ac66d1b327962aa099064d56a2f89b0db003d2ee8c286242081aeda7050be.jpg",
+   "说明": "图 26-1-6　疣状毛癣菌的形态特征（1/3）"
+  },
+  {
+   "文件": "img/atlas/992050f205252161f8297b307302cac99d51417467f052c7ba95df6912b9b4d6.jpg",
+   "说明": "图 26-1-6　疣状毛癣菌的形态特征（2/3）"
+  },
+  {
+   "文件": "img/atlas/e66114fdc89e1a89c7153ba0eb40377ad05f3191a89ef935abf0a34ca2f39b09.jpg",
+   "说明": "图 26-1-6　疣状毛癣菌的形态特征（3/3）"
+  }
+ ],
+ "epidermophyton-floccosum": [
+  {
+   "文件": "img/atlas/5350aa41055ba3d40d709ae0ce3a4ec100b196fad8e79d9c0cf374155c7e8b0d.jpg",
+   "说明": "图 26-2-1　示意图"
+  },
+  {
+   "文件": "img/atlas/2fb0ba9fd2315559fe6770009fb91f61eca2902d5cfb4deef02b4871e921b263.jpg",
+   "说明": "图 26-2-1　PDA 28℃ 12 日，乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/5db2c11b6678bfc5ec189f96ace0aeb12ad52a1aff8f5a124c41a22ec34dbbec.jpg",
+   "说明": "图 26-2-1　PDA 28℃ 18 日"
+  },
+  {
+   "文件": "img/atlas/3fff4fb83b9a2d470659af720c78c1ab270a23125637658561c71fc4c41bc0e6.jpg",
+   "说明": "图 26-2-1　传代多次后 SDA 28℃ 14 日"
+  }
+ ],
+ "microsporum-canis": [
+  {
+   "文件": "img/atlas/898fa925082d5568c81366b828b4ac50e286a35fe91a0ed33c107484354c6589.jpg",
+   "说明": "图 26-3-1　示意图"
+  },
+  {
+   "文件": "img/atlas/d6355225fe1fdf40043d54bbfe2965446662586025569e127ff97d18ab9c9bb6.jpg",
+   "说明": "图 26-3-1　PDA 28℃ 4 日，乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/244f95677ff291a53bc2d3fcd362a656b9012f2aa91c8e22dad8dd99116285dc.jpg",
+   "说明": "图 26-3-1　SDA 28℃ 14 日"
+  },
+  {
+   "文件": "img/atlas/62104a527de11e2ab176ee1c8327733a27576406e33fd478405b104608fc119a.jpg",
+   "说明": "图 26-3-1　PDA 28℃ 14 日 2. 石膏样小孢子菌复合群 石膏样小孢子菌复合群在 SDA 培养基上室温生长迅速，3\\~5 日可见菌落，初为白色绒毛状，随后表面呈现颗粒状，粉末状，颜色转为棕黄色，中心颜色较深，边缘色浅，背…"
+  }
+ ],
  "aspergillus-flavus": [
   {
    "文件": "img/atlas/b0234564d644f11f6d5a2c51bee665947b870d2dc5549c2baf29bd3569cfadc9.jpg",
@@ -3517,6 +3699,50 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/bc991cde7b68c56e87df1b3c3a8f1a8e1b8e53f5a682c8c44b35d80b79f186c2.jpg",
    "说明": "图 27-1-7　黑曲霉 SDA 28℃ 5 日（背面）"
+  }
+ ],
+ "aspergillus-nidulans": [
+  {
+   "文件": "img/atlas/003e2a15d728555358dd73a6f51f2c38abca22ea8c50dfdcbd9620552dc80635.jpg",
+   "说明": "图 27-1-8　构巢曲霉菌的形态特征 A: 构巢曲霉菌示意图; B: SDA 3 日, 乳酸酚棉蓝染色, ×400; C: 菌核和壳细胞 PDA 7 日, 乳酸酚棉蓝染色, ×400; D: 壳细胞 PDA 7 日, 乳酸酚棉蓝染色…（1/6）"
+  },
+  {
+   "文件": "img/atlas/b54ef1e2a1f6fd51550ca81071980e25b95884eab84fd71f1ad7f81908ea948f.jpg",
+   "说明": "图 27-1-8　构巢曲霉菌的形态特征 A: 构巢曲霉菌示意图; B: SDA 3 日, 乳酸酚棉蓝染色, ×400; C: 菌核和壳细胞 PDA 7 日, 乳酸酚棉蓝染色, ×400; D: 壳细胞 PDA 7 日, 乳酸酚棉蓝染色…（2/6）"
+  },
+  {
+   "文件": "img/atlas/6636b51aa79b84d0e994a8f6419b5e76f6407e391093b114e14e5e93480833bb.jpg",
+   "说明": "图 27-1-8　构巢曲霉菌的形态特征 A: 构巢曲霉菌示意图; B: SDA 3 日, 乳酸酚棉蓝染色, ×400; C: 菌核和壳细胞 PDA 7 日, 乳酸酚棉蓝染色, ×400; D: 壳细胞 PDA 7 日, 乳酸酚棉蓝染色…（3/6）"
+  },
+  {
+   "文件": "img/atlas/5cb98c355f6b0427a97efa275df710a263f4ad35e7bae3e243c93ca41376b43f.jpg",
+   "说明": "图 27-1-8　构巢曲霉菌的形态特征 A: 构巢曲霉菌示意图; B: SDA 3 日, 乳酸酚棉蓝染色, ×400; C: 菌核和壳细胞 PDA 7 日, 乳酸酚棉蓝染色, ×400; D: 壳细胞 PDA 7 日, 乳酸酚棉蓝染色…（4/6）"
+  },
+  {
+   "文件": "img/atlas/9ae8bfa21b4480c1eab4f0652d52f3fb235d1a9f2a4397fb1331c3de6acf7be2.jpg",
+   "说明": "图 27-1-8　构巢曲霉菌的形态特征 A: 构巢曲霉菌示意图; B: SDA 3 日, 乳酸酚棉蓝染色, ×400; C: 菌核和壳细胞 PDA 7 日, 乳酸酚棉蓝染色, ×400; D: 壳细胞 PDA 7 日, 乳酸酚棉蓝染色…（5/6）"
+  },
+  {
+   "文件": "img/atlas/455600482ce2fc6d021739b670893e9217b57834951c8d7ddc3e693128e97d6e.jpg",
+   "说明": "图 27-1-8　构巢曲霉菌的形态特征 A: 构巢曲霉菌示意图; B: SDA 3 日, 乳酸酚棉蓝染色, ×400; C: 菌核和壳细胞 PDA 7 日, 乳酸酚棉蓝染色, ×400; D: 壳细胞 PDA 7 日, 乳酸酚棉蓝染色…（6/6）"
+  }
+ ],
+ "aspergillus-terreus": [
+  {
+   "文件": "img/atlas/352671322be837d26a74e7086a56ffaba54ee09221968f4cf77a3288dbfe901c.jpg",
+   "说明": "图 27-1-14　土曲霉菌分生孢子梗结构图 ×1 000"
+  },
+  {
+   "文件": "img/atlas/6fec4e9d997b29dd20eac827b16937d7b45cfd4371fbca5fbe7a06548d911252.jpg",
+   "说明": "图 27-1-14　SDA 3 日, 钙白荧光染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/06097821a8534f8623820c5741940863099db3b327b119f3496aea7aa8d0e690.jpg",
+   "说明": "图 27-1-14　粉孢子 PDA 28℃ 3 日, 一次性小培养未染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/7541b87024e512d11e20b25e48c3ef576b9550c0a95ad0762e1f2bcbbe563dea.jpg",
+   "说明": "图 27-1-14　SDA 28℃ 7 日"
   }
  ],
  "fusarium": [
