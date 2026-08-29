@@ -89,6 +89,30 @@ window.DB.photosAtlas = {
    "说明": "图 12-3-1　藤黄微球菌(粗糙型) SBA 2 日"
   }
  ],
+ "kocuria": [
+  {
+   "文件": "img/atlas/4cae3ddc5303f02f887116eff323e895a256aaf1f4045b3ef8ef81f524e6db24.jpg",
+   "说明": "图 12-3-2　克氏库克菌革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/cd7a5d7feee86d0219ab2ee2b97583282619fabacf3f384f647f547d8ac083ba.jpg",
+   "说明": "图 12-3-2　克氏库克菌 SBA 5 日"
+  },
+  {
+   "文件": "img/atlas/67d40aaa3ce09ec7a6da3f82eba419137d3fcab0abf72eb5f1e7cacff328697e.jpg",
+   "说明": "图 12-3-2　玫瑰库克菌 SBA 5 日"
+  },
+  {
+   "文件": "img/atlas/69666590cc1027277c227c9d0910fea7b2fa81f5f8170a64965a7081ab31478e.jpg",
+   "说明": "图 12-3-2　变异库克菌 SBA 3 日"
+  }
+ ],
+ "kytococcus": [
+  {
+   "文件": "img/atlas/5e1a40a2833b7b5f7e34b61ac32cee86edc41292aead0ca086612c711b6db843.jpg",
+   "说明": "图 12-3-5　皮肤球菌属形态特征"
+  }
+ ],
  "strep-pyogenes": [
   {
    "文件": "img/atlas/fb52f74f6962ea43646bac2383247e478c83618047243c1bf1f6ced8b19c0be4.jpg",
@@ -707,6 +731,46 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/a6b9e483e6859b9e3819636c962a27f8b107c86f0d1fe33cacd3d7dadadfd39d.jpg",
    "说明": "图 14-2-11　CAMP试验结果SBA4日"
+  }
+ ],
+ "cellulomonas": [
+  {
+   "文件": "img/atlas/6786f3e6f165cf6fc520172b1c8913324da8ab20e7f206d79d3eed24a80b44b6.jpg",
+   "说明": "图 14-2-15　纤维单胞菌属内鉴别试验"
+  }
+ ],
+ "microbacterium": [
+  {
+   "文件": "img/atlas/87a475572433cced083f007799e7a310dc3ddbc444cefec63e555ca71b9d1330.jpg",
+   "说明": "图 14-2-21　人微杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/677533c32033ce602d52f845faf3d13d74e45a4e813bb3bc93fc300b6cd43415.jpg",
+   "说明": "图 14-2-21　人微杆菌 SBA 3 日"
+  },
+  {
+   "文件": "img/atlas/732d584faca86c7cf62539f7827094efa17cf832c0f87810a828a12763a37aad.jpg",
+   "说明": "图 14-2-21　乳微杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/9739c89e5ace916b64e54616a330acd4cec1987f443dcd61826084a62d65f762.jpg",
+   "说明": "图 14-2-21　乳微杆菌 SBA 5 日"
+  },
+  {
+   "文件": "img/atlas/054caa3f8234eb35f47c4ccbc76e26edd557bdf5214eb562d9ff030577908804.jpg",
+   "说明": "图 14-2-21　氧化微杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/c85af3a0d3957a05968b26d57a8170a78f9b42eb231c1de7657345677df492c6.jpg",
+   "说明": "图 14-2-21　氧化微杆菌 SBA 3 日"
+  },
+  {
+   "文件": "img/atlas/7d40319f6e8abca0286d51b95c9b28eccd091803409cab32e8caa6e3433768b8.jpg",
+   "说明": "图 14-2-21　气生微杆菌 SBA 4 日"
+  },
+  {
+   "文件": "img/atlas/99ec1a3d229bf2de6bd4a64c011c0e9e6e410b6ccc2d8d35157543e2e7104964.jpg",
+   "说明": "图 14-2-21　巴氏微杆菌 SBA 4 日"
   }
  ],
  "listeria-monocytogenes": [
