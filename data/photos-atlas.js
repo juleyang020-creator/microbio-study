@@ -3489,6 +3489,20 @@ window.DB.photosAtlas = {
    "说明": "图 25-2-3　CGB 平板 (上为格特隐球菌, 下为新型隐球菌) 37℃ 4 日"
   }
  ],
+ "saccharomyces": [
+  {
+   "文件": "img/atlas/124371ffe9ba1331d614343a31e531655331f0b3c0ab92016185c213c4abc519.jpg",
+   "说明": "图 25-3-1　革兰氏染色 × 1 000"
+  },
+  {
+   "文件": "img/atlas/3f00815ce941564b74dd5a357c611a717f869bf76b9580aa7eb08eb335f05a8d.jpg",
+   "说明": "图 25-3-1　CHROMagar 6 日"
+  },
+  {
+   "文件": "img/atlas/2a89dad5c2ed1cb91bc1a15665d63282a664b85ddf6cd6c89c07af11ccb0088e.jpg",
+   "说明": "图 25-3-1　SDA 6 日"
+  }
+ ],
  "histoplasma-capsulatum": [
   {
    "文件": "img/atlas/321a3b7c87a9bdfc3b4a235bd71116923cd24c8c1a164cae9a6334f061d60b19.jpg",
@@ -3519,6 +3533,40 @@ window.DB.photosAtlas = {
    "说明": "图 25-6-2　荚膜组织胞浆菌的菌落形态"
   }
  ],
+ "sporothrix": [
+  {
+   "文件": "img/atlas/e6c5ec0ffb813495c183dfa6f5a4e84317969bd44050e7bc3f7a674a7665d740.jpg",
+   "说明": "图 25-11-1　申克孢子丝菌, 皮肤组织切片 PAS 染色"
+  },
+  {
+   "文件": "img/atlas/d025d61047965376e2104550ad121f5d24da6a121da5777ff87d6aea025d554f.jpg",
+   "说明": "图 25-11-1　申克孢子丝菌, 皮肤组织切片六胺银染色"
+  },
+  {
+   "文件": "img/atlas/394fab7f2e1c426f2163db1bb2c915462156f28bbf896985f98cfb26e6b59cc0.jpg",
+   "说明": "图 25-11-1　申克孢子丝菌 PDA 28℃ 4 日"
+  },
+  {
+   "文件": "img/atlas/f73ff0a6e5320792592a0e507068fe83cbf0060978afc98380cf61f40f6743e0.jpg",
+   "说明": "图 25-11-1　申克孢子丝菌 PDA 25℃ 7 日"
+  },
+  {
+   "文件": "img/atlas/f97aaa83de10535fb36534d60c3be7242aa212df47434c0faa16fccf29a8ba44.jpg",
+   "说明": "图 25-11-1　球形孢子丝菌小培养 PDA 30℃ 9 日"
+  },
+  {
+   "文件": "img/atlas/c8416dcc78dda0fb542c272fd2abfc27b0a8310b03be003a2dd310ce0dbf23f1.jpg",
+   "说明": "图 25-11-1　球形孢子丝菌 SDA 30℃ 13 日, 乳酸酚棉蓝胶封染"
+  },
+  {
+   "文件": "img/atlas/5579c36e00fafffb532330bc3674f8aeba491db569e9af9fb4b44c1833df161a.jpg",
+   "说明": "图 25-11-2　申克孢子丝菌 SDA 30℃ 24 日"
+  },
+  {
+   "文件": "img/atlas/d944e9bf29eaffaaff13f1325d275bac58eab9c14a691a7b1d64984c7c1a25d1.jpg",
+   "说明": "图 25-11-2　申克孢子丝菌 SDA 35℃ 35 日"
+  }
+ ],
  "trichosporon-asahii": [
   {
    "文件": "img/atlas/0bb6bbf43f68200e9e5f912f4e03efeb275191d71010441661bcc77b87a49226.jpg",
@@ -3535,6 +3583,24 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/63ebfedd3c91f266cd342c2af66902a2941c4c46513195139e4173cdd65ce9ea.jpg",
    "说明": "图 25-13-1　SDA 30℃ 14 日"
+  }
+ ],
+ "malassezia": [
+  {
+   "文件": "img/atlas/826227426e9bd6e08a272233d21b490e3272d99af34c6435ad640b95b118f74b.jpg",
+   "说明": "图 25-15-3　七叶苷分解吐温试验结果(左为阴性不变色, 右为阳性黑色)"
+  },
+  {
+   "文件": "img/atlas/60e06f2aeeec4c6f593fa7308228ad5b9f175db42740291e6ae32fb0d39b2c92.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(糠秕马拉色菌)"
+  },
+  {
+   "文件": "img/atlas/0f8f0cd17b32607a8ee0e0247222322f4e27998b837bb11677121cb6f3b75848.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(合轴马拉色菌)"
+  },
+  {
+   "文件": "img/atlas/f4dbc2db5b73c9563becb20f7210d6ba62213d5d9f9e130e2844548bd44538bd.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(M. dermatis)"
   }
  ],
  "pneumocystis-jirovecii": [
