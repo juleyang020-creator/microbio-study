@@ -36,14 +36,32 @@ for (const n of DB.microbeNames || []) {
 const CN_SORTED = [...name2id.keys()].sort((a, b) => b.length - a.length);
 
 function matchAll(text) {
-  const ids = new Map(); // id -> 命中名
+  // 先按「位置」收集所有命中，再剔除被更长名包含的短名命中
+  // （如「副流感嗜血杆菌」包含「流感嗜血杆菌」，短名命中落在长名区间内时丢弃）。
+  const hits = []; // {id, name, start, end}
   for (const nm of CN_SORTED) {
-    if (text.includes(nm)) { const id = name2id.get(nm); if (!ids.has(id)) ids.set(id, nm); }
+    let from = 0;
+    for (;;) {
+      const p = text.indexOf(nm, from);
+      if (p < 0) break;
+      hits.push({ id: name2id.get(nm), name: nm, start: p, end: p + nm.length });
+      from = p + 1;
+    }
   }
+  const kept = hits.filter(h => !hits.some(o => o !== h && o.start <= h.start && o.end >= h.end && (o.end - o.start) > (h.end - h.start)));
+  const ids = new Map();
+  for (const h of kept) if (!ids.has(h.id)) ids.set(h.id, h.name);
   for (const { lat, id } of LAT_KEYS) {
     if (lat.length >= 8 && text.toLowerCase().includes(lat) && !ids.has(id)) ids.set(id, lat);
   }
   return [...ids.entries()];
+}
+
+// 清洗分图/标题文本中的非归属语境：括号内含「对照/混合」的整段括注剔除；
+// 紧跟菌名的 (阳性对照)/(阴性对照) 标签连同菌名一起剔除不了，但括注本身
+// 会被去掉，剩下的「左为金黄色葡萄球菌」这类对照描述由 EXCLUDE 定点处理。
+function cleanCtx(text) {
+  return text.replace(/[（(][^（）()]*?(?:对照|混合)[^（）()]*?[）)]/g, ' ');
 }
 
 // 拆分多联图图注："总标题 ×1000 A. xx; B. xx；C. xx" → { title, parts }
@@ -53,17 +71,29 @@ function splitSubs(raw) {
   const t = (raw || '').replace(/\s+/g, ' ').trim();
   const chunks = t.split(/(?:^|[\s;；])\s*(?=[A-I][\.、．])/).filter(Boolean);
   if (chunks.length < 2) { return { title: t, parts: [] }; }
+  // 按字母序取最长连续前缀（A,B,C…），序列中断即截断：
+  // 聚合窗口可能把下一张图的 A./B. 行吸进来（如 25-1-4 的 A~F 后紧跟
+  // 25-1-5 的 A~D），此时丢弃尾巴而不是整组作废——整组作废会退回整图
+  // 匹配，导致联图全部成员互相误挂（2026-08-28 全量审计教训）。
+  let end = 0;
   for (let k = 1; k < chunks.length; k++) {
     const m = chunks[k].match(/^([A-I])[\.、．]\s*(.*)$/);
-    if (!m || m[1] !== String.fromCharCode(65 + k - 1)) { return { title: t, parts: [] }; }
-    chunks[k] = m[2].replace(/[;；]\s*$/, '');
+    if (!m || m[1] !== String.fromCharCode(65 + k - 1)) break;
+    end = k;
   }
-  return { title: chunks[0].replace(/[;；]\s*$/, ''), parts: chunks.slice(1) };
+  if (end < 1) { return { title: t, parts: [] }; }
+  const parts = [];
+  for (let k = 1; k <= end; k++) {
+    parts.push(chunks[k].match(/^([A-I])[\.、．]\s*(.*)$/)[2].replace(/[;；]\s*$/, ''));
+  }
+  return { title: chunks[0].replace(/[;；]\s*$/, ''), parts };
 }
 
-// ---- 解析分章（第 12 章起）----
+// ---- 解析分章（第 12-33 章：菌种各论篇）----
+// 34 章起为药敏方法篇（试验演示图不挂菌）、42 章为组织病理方法篇（方法图不挂菌），
+// 曾因这些章的试验示意图/病例图误挂各菌，2026-08-28 全量审计后收窄。
 const files = fs.readdirSync(path.join(ATLAS, '分章')).filter(f => f.endsWith('.md')).sort()
-  .filter(f => parseInt(f.split('-')[0], 10) >= 12);
+  .filter(f => { const n = parseInt(f.split('-')[0], 10); return n >= 12 && n <= 33; });
 const results = [];
 for (const f of files) {
   const lines = fs.readFileSync(path.join(ATLAS, '分章', f), 'utf8').split('\n');
@@ -75,9 +105,10 @@ for (const f of files) {
     if (m) { pendingImgs.push(m[1]); continue; }
     const cap = ln.match(/^图\s*(\d+-\d+-\d+)/);
     if (cap && pendingImgs.length) {
-      // 聚合图注首行 + 后续分图行（A. / B. … 或以分号/× 结尾的短行），最多 4 行
+      // 聚合图注首行 + 后续分图行（A. / B. … 或以分号/× 结尾的短行），最多 8 行
+      // （2026-08-28：4→8，6 联图如 25-1-4 近平滑复合群 A~F 曾拆不开而整图误挂全部成员）
       const parts = [ln.replace(/^图\s*\d+-\d+-\d+[、.．]?\s*/, '')];
-      for (let j = i + 1; j < Math.min(i + 5, lines.length); j++) {
+      for (let j = i + 1; j < Math.min(i + 9, lines.length); j++) {
         const t = lines[j].trim();
         if (!t) continue;
         if (/^!\[/.test(t) || /^图\s*\d/.test(t) || /^#{1,3}\s/.test(t)) break;
@@ -88,17 +119,24 @@ for (const f of files) {
       // 联图归属：把图注拆成「总标题 + A/B/C… 分联」，分联数与图片数一致时，
       // 第 k 张小图只按第 k 联文本匹配菌名（避免联图里提到别的菌就整图挂给所有菌）；
       // 拆不出/数量对不上时退回整图图注匹配。
+      // 注：分图行可能在图注首行行内（如 25-1-4「图 …特征 A. …；B. …；C. …」一行写完），
+      // splitSubs 对聚合文本统一处理，天然覆盖两种排法。
       const subImgs = pendingImgs.length;
       let subs = splitSubs(capText);
       if (subImgs >= 2 && subs.parts.length === subImgs) {
+        // 标题含「复合群」时（如「近平滑念珠菌复合群的形态特征」），标题名指整个群
+        // 而非模式种——分图只按自己的文本匹配，不继承标题，避免复合群成员的分图
+        // 全部误挂给模式种（2026-08-28：D 似平滑/E 拟平滑/F 罗德酵母曾全挂近平滑）。
+        const isComplex = /复合群/.test(subs.title);
         pendingImgs.forEach(function (img, k) {
-          const subHits = matchAll('图 ' + subs.title + ' ' + subs.parts[k]);
+          const ctx = isComplex ? subs.parts[k] : '图 ' + subs.title + ' ' + subs.parts[k];
+          const subHits = matchAll(cleanCtx(ctx));
           for (const [id, by] of subHits) {
             results.push({ img, fig: cap[1], caption: capText.slice(0, 200), sub: subs.parts[k], chapter, id, by });
           }
         });
       } else {
-        const hits = matchAll(capText);
+        const hits = matchAll(cleanCtx(capText));
         for (const img of pendingImgs) {
           for (const [id, by] of hits) {
             results.push({ img, fig: cap[1], caption: capText.slice(0, 200), chapter, id, by });

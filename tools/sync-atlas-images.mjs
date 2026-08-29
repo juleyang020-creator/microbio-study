@@ -24,6 +24,32 @@ const EXCLUDE = new Set([
   'achromobacter-xylosoxidans|17-11-1', // 放射根瘤菌图误挂（章节正文串扰）
   'taenia-saginata|33-2-19',        // 猪带绦虫染色图误挂到牛带绦虫
   'plasmodium-falciparum|33-1-19',  // 微小巴贝虫图误挂到恶性疟原虫
+  'strep-intermedius|12-4-22',      // 假肺炎链球菌胆汁溶菌试验误挂（正文段串扰）
+  // ==== 2026-08-28 全量审计补充（对照/混合/卫星试验指示菌等非归属语境）====
+  'enterococcus-faecalis|14-17-5',  // 沙尔放线棒杆菌镜下图，粪肠球菌仅为混合涂片提及（用户发现）
+  'e-coli|14-17-5',                 // 同上，大肠埃希菌为混合涂片提及
+  'strep-anginosus|12-4-22',        // 假肺炎链球菌胆汁溶菌试验，正文段提及咽峡炎链球菌群
+  'strep-constellatus|12-4-22',     // 同上
+  'strep-agalactiae|12-4-17',       // CAMP 试验方法图（多菌对照演示）
+  'corynebacterium-pseudotuberculosis|12-4-17', // 同上
+  'streptococcus-suis|12-4-17',     // 同上
+  'staph-aureus|14-2-9',            // 棒杆菌 CAMP 试验图，金葡为指示菌
+  'staph-lugdunensis|14-2-9',       // 同上
+  'strep-agalactiae|14-2-9',        // 同上
+  'corynebacterium-pseudotuberculosis|14-2-9', // 同上
+  'staph-aureus|18-1-6',            // 卫星试验指示菌演示图（多菌）
+  'staph-epidermidis|18-1-6',       // 同上
+  'pseudomonas-aeruginosa|18-1-6',  // 同上
+  'acinetobacter-baumannii|18-1-6', // 同上
+  'moraxella-catarrhalis|18-1-6',   // 同上
+  'stenotrophomonas-maltophilia|18-1-6', // 同上
+  'staph-aureus|18-1-8',            // 嗜血杆菌溶血试验（卫星现象），金葡为指示菌
+  'staph-aureus|17-3-5',            // 不动杆菌 CAMP 演示图，金葡为对照
+  'stenotrophomonas-maltophilia|17-2-2', // 荧光素试验方法图
+  'cryptococcus-neoformans|25-2-3', // 格特隐球菌 CGB 平板鉴别图，新型隐球菌为对比株
+  'chryseobacterium-indologenes|17-9-2', // 万古敏感性试验演示图
+  'chryseobacterium-gleum|17-9-2',  // 同上
+  'scedosporium-apiospermum|27-27-1', // 赛多孢示意图（含多育节荚孢霉示意）
 ]);
 
 // 每菌限 12 张（多联图按出现顺序取前 N，保证形态/菌落/镜下多样）

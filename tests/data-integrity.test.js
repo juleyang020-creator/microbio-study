@@ -537,7 +537,8 @@ test('菌名速查：Bruker MBT 主库字段（类 / 别名 / MALDI）取值合�
     }
   });
   // Bruker DB8468 收录 2969 种，合并后带 MALDI 标记的条目数应与之相当
-  assert.ok(maldi > 2900 && maldi <= 2969, 'MALDI 标记数异常：' + maldi);
+  // 2026-08-28 补录解脲脲原体/微小脲原体（Bruker 主库本就收录，速查表此前只有属级条目），2969→2971
+  assert.ok(maldi > 2900 && maldi <= 2971, 'MALDI 标记数异常：' + maldi);
   assert.ok(kinds > 2900, '革兰大类字段过少：' + kinds);
   assert.ok(alias > 100, '别名过少（Bruker 异名未并入？）：' + alias);
   // 「需氧/厌氧」列未采用（该列 60% 缺失且弯曲菌属无一标注微需氧），不得混入

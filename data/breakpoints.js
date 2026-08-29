@@ -7,7 +7,9 @@ window.DB.breakpoints = [
   {
     菌组名: "肠杆菌目 (Enterobacterales，不含沙门/志贺)",
     CLSI表: "Table 2A-1",
-    菌种: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'klebsiella-aerogenes', 'proteus-mirabilis', 'proteus-vulgaris', 'enterobacter-cloacae', 'enterobacter-xiangfangensis', 'citrobacter-freundii', 'citrobacter-koseri', 'morganella-morganii', 'serratia-marcescens', 'providencia-stuartii', 'providencia-rettgeri', 'hafnia-alvei', 'raoultella-ornithinolytica', 'proteus-hauseri'],
+    菌种: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'klebsiella-aerogenes', 'proteus-mirabilis', 'proteus-vulgaris', 'enterobacter-cloacae', 'enterobacter-xiangfangensis', 'citrobacter-freundii', 'citrobacter-koseri', 'morganella-morganii', 'serratia-marcescens', 'providencia-stuartii', 'providencia-rettgeri', 'hafnia-alvei', 'raoultella-ornithinolytica', 'proteus-hauseri', 'yersinia-enterocolitica', 'yersinia-pseudotuberculosis', 'citrobacter-braakii',
+      'citrobacter-amalonaticus', 'providencia-alcalifaciens', 'raoultella-planticola', 'leclercia-adecarboxylata',
+      'escherichia-fergusonii', 'plesiomonas-shigelloides'],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "可预测阿莫西林;口服仅用于大肠埃希菌、奇异变形杆菌所致非复杂性尿路感染" },
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", 组别: "1", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "≥15", 抑菌圈_I: "12–14", 抑菌圈_R: "≤11", 备注: "" },
@@ -40,7 +42,7 @@ window.DB.breakpoints = [
   {
     菌组名: "沙门菌 / 志贺菌 (Salmonella & Shigella spp.)",
     CLSI表: "Table 2A-2",
-    菌种: ["salmonella-typhi", "salmonella-enteritidis", "salmonella-paratyphi-a", "shigella-dysenteriae", "shigella-flexneri"],
+    菌种: ["salmonella-typhi", "salmonella-enteritidis", "salmonella-paratyphi-a", "shigella-dysenteriae", "shigella-flexneri", "shigella-boydii", "salmonella-bongori"],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "可预测阿莫西林;粪便分离株常规仅报氨苄西林、氟喹诺酮、复方磺胺(志贺另可报阿奇霉素)" },
       { 药物: "头孢噻肟 (Cefotaxime)", 简写: "CTX", 组别: "1", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "≥26", 抑菌圈_I: "23–25", 抑菌圈_R: "≤22", 备注: "一/二代头孢及头霉素体外可假敏感,勿报敏感(仅伤寒/肠外沙门菌需测三代头孢)" },
@@ -90,7 +92,7 @@ window.DB.breakpoints = [
   {
     菌组名: "不动杆菌属 (Acinetobacter spp.)",
     CLSI表: "Table 2B-2",
-    菌种: ["acinetobacter-baumannii", "acinetobacter-pittii", "acinetobacter-nosocomialis", "acinetobacter-junii"],
+    菌种: ["acinetobacter-baumannii", "acinetobacter-pittii", "acinetobacter-nosocomialis", "acinetobacter-junii", "acinetobacter-haemolyticus", "acinetobacter-lwoffii", "acinetobacter-radioresistens", "acinetobacter-seifertii", "acinetobacter-dijkshoorniae"],
     药物: [
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", 组别: "1", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "≥22", 抑菌圈_I: "17–21", 抑菌圈_R: "≤16", 备注: "Ed36 修订(圈);舒巴坦为抗不动杆菌活性成分" },
       { 药物: "舒巴坦/度洛巴坦 (Sulbactam-Durlobactam)", 简写: "SUL-DUR", 组别: "3", MIC_S: "≤4/4", MIC_I: "8/4", MIC_R: "≥16/4", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "Ed36;针对碳青霉烯耐药鲍曼不动杆菌(CRAB)的新型药" },
@@ -267,7 +269,8 @@ window.DB.breakpoints = [
     菌组名: "葡萄球菌属 (Staphylococcus spp.)",
     CLSI表: "Table 2C",
     菌种: ["staph-aureus", "staph-epidermidis", "staph-saprophyticus", "staph-haemolyticus", "staph-lugdunensis",
-      "staph-capitis", "staph-hominis", "staph-cohnii", "staph-kloosii"],
+      "staph-capitis", "staph-hominis", "staph-cohnii", "staph-kloosii",
+      "staph-schleiferi", "staph-simulans", "staph-warneri", "staph-pseudintermedius"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "2", MIC_S: "≤0.12", MIC_I: "—", MIC_R: "≥0.25", 抑菌圈_S: "≥29", 抑菌圈_I: "—", 抑菌圈_R: "≤28", 备注: "β-内酰胺酶阴性葡萄球菌方可报告敏感" },
       { 药物: "苯唑西林 (Oxacillin)", 简写: "OX", 组别: "1", MIC_S: "≤2", MIC_I: "—", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "金葡菌/路邓葡萄球菌折点(用头孢西丁作 mecA 替代检测);凝固酶阴性葡萄球菌(CoNS)苯唑西林 MIC 折点为 S≤0.25/R≥0.5" },
@@ -290,7 +293,8 @@ window.DB.breakpoints = [
   {
     菌组名: "肠球菌属 (Enterococcus spp.)",
     CLSI表: "Table 2D",
-    菌种: ["enterococcus-faecalis", "enterococcus-faecium", "enterococcus-gallinarum", "enterococcus-avium", "enterococcus-casseliflavus"],
+    菌种: ["enterococcus-faecalis", "enterococcus-faecium", "enterococcus-gallinarum", "enterococcus-avium", "enterococcus-casseliflavus",
+      "enterococcus-durans", "enterococcus-hirae", "enterococcus-raffinosus", "enterococcus-mundtii"],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "—", MIC_R: "≥16", 抑菌圈_S: "≥17", 抑菌圈_I: "—", 抑菌圈_R: "≤16", 备注: "" },
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤8", MIC_I: "—", MIC_R: "≥16", 抑菌圈_S: "≥15", 抑菌圈_I: "—", 抑菌圈_R: "≤14", 备注: "" },
@@ -309,7 +313,7 @@ window.DB.breakpoints = [
   {
     菌组名: "β-溶血链球菌 (β-Hemolytic Streptococcus)",
     CLSI表: "Table 2H-1",
-    菌种: ["strep-pyogenes", "strep-agalactiae", "strep-dysgalactiae"],
+    菌种: ["strep-pyogenes", "strep-agalactiae", "strep-dysgalactiae", "strep-canis", "strep-zooepidemicus", "strep-iniae"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.12", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "≥24", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "首选药;非敏感极罕见,仅设敏感折点" },
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤0.25", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "≥24", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
@@ -349,7 +353,9 @@ window.DB.breakpoints = [
   {
     菌组名: "草绿色链球菌群 (Viridans Group Streptococci)",
     CLSI表: "Table 2H-2",
-    菌种: ["strep-viridans", "strep-gallolyticus", "strep-anginosus"],
+    菌种: ["strep-viridans", "strep-gallolyticus", "strep-anginosus", "strep-mitis", "strep-oralis", "strep-sanguinis", "strep-gordonii",
+      "strep-parasanguinis", "strep-salivarius", "strep-vestibularis", "strep-mutans", "strep-sobrinus", "strep-pseudopneumoniae",
+      "strep-intermedius", "strep-constellatus"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.12", MIC_I: "0.25–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无菌部位(血/脑脊液/骨)分离株须用 MIC 法;中介株治心内膜炎需联合氨基糖苷" },
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤0.25", MIC_I: "0.5–4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
@@ -406,7 +412,11 @@ window.DB.breakpoints = [
   {
     菌组名: "厌氧菌 (Anaerobic Bacteria)",
     CLSI表: "Table 2J",
-    菌种: ['clostridium-perfringens', 'clostridium-tetani', 'clostridium-botulinum', 'clostridioides-difficile', 'bacteroides-fragilis', 'cutibacterium-acnes', 'clostridium-septicum', 'peptostreptococcus-anaerobius', 'finegoldia-magna', 'veillonella-parvula', 'prevotella-melaninogenica', 'porphyromonas-asaccharolytica', 'fusobacterium-nucleatum', 'actinomyces-israelii'],
+    菌种: ['clostridium-perfringens', 'clostridium-tetani', 'clostridium-botulinum', 'clostridioides-difficile', 'bacteroides-fragilis', 'cutibacterium-acnes', 'clostridium-septicum', 'peptostreptococcus-anaerobius', 'finegoldia-magna', 'veillonella-parvula', 'prevotella-melaninogenica', 'porphyromonas-asaccharolytica', 'fusobacterium-nucleatum', 'actinomyces-israelii',
+      'bacteroides-thetaiotaomicron', 'bacteroides-ovatus', 'bacteroides-vulgatus', 'bacteroides-uniformis',
+      'parabacteroides-distasonis', 'prevotella-bivia', 'prevotella-intermedia', 'prevotella-disiens',
+      'porphyromonas-gingivalis', 'fusobacterium-necrophorum', 'fusobacterium-mortiferum', 'fusobacterium-varium',
+      'clostridium-novyi', 'clostridium-sordellii', 'clostridium-baratii', 'parvimonas-micra', 'bilophila-wadsworthia'],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "革兰阳性厌氧菌(梭菌)多敏感;脆弱拟杆菌等革兰阴性厌氧菌天然耐药" },
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "可预测阿莫西林;仅 MIC 法(琼脂稀释/肉汤微量稀释)" },
@@ -522,7 +532,7 @@ window.DB.breakpoints = [
     菌组名: "芽孢杆菌属(非炭疽) (Bacillus spp., not B. anthracis)",
     CLSI表: "CLSI M45 · Table 4",
     来源: "CLSI M45 (3rd ed., 2018)",
-    菌种: ["bacillus-cereus"],
+    菌种: ["bacillus-cereus", "bacillus-subtilis", "bacillus-licheniformis", "bacillus-pumilus"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.12", MIC_I: "—", MIC_R: "≥0.25", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "蜡样/苏云金芽孢杆菌产广谱β-内酰胺酶,对青霉素类及头孢菌素耐药" },
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", MIC_S: "≤0.25", MIC_I: "—", MIC_R: "≥0.5", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
@@ -545,7 +555,11 @@ window.DB.breakpoints = [
     菌组名: "棒状杆菌属 (Corynebacterium spp.，含白喉棒状杆菌)",
     CLSI表: "CLSI M45 · Table 6",
     来源: "CLSI M45 (3rd ed., 2018)",
-    菌种: ["corynebacterium-diphtheriae", "corynebacterium-striatum"],
+    菌种: ["corynebacterium-diphtheriae", "corynebacterium-striatum",
+      "corynebacterium-ulcerans", "corynebacterium-pseudotuberculosis", "corynebacterium-jeikeium",
+      "corynebacterium-urealyticum", "corynebacterium-amycolatum", "corynebacterium-pseudodiphtheriticum",
+      "corynebacterium-minutissimum", "corynebacterium-xerosis", "corynebacterium-bovis",
+      "corynebacterium-macginleyi", "corynebacterium-tuberculostearicum"],
     药物: [
       { 药物: "青霉素 (Penicillin)", 简写: "P", MIC_S: "≤0.12", MIC_I: "0.25–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
       { 药物: "头孢吡肟 (Cefepime)", 简写: "FEP", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
@@ -696,6 +710,140 @@ window.DB.breakpoints = [
     菌种: ["aspergillus-fumigatus"],
     药物: [
       { 药物: "伏立康唑 (Voriconazole)", 简写: "VRC", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "唯一有 CLSI 临床折点的丝状真菌药物组合；仅适用于序列确认的 A. fumigatus sensu stricto，不适用于烟曲霉复合群其他成员。伊曲康唑/泊沙康唑/艾沙康唑目前为 ECV(流行病学界值)而非临床折点。" }
+    ]
+  },
+
+// ===== 高里念珠菌 (M27M44S Table 1) =====
+  {
+    菌组名: "高里念珠菌 (Candida guilliermondii)",
+    CLSI表: "M27M44S Ed3 · Table 1",
+    来源: "CLSI M27M44S (3rd ed., 2022)",
+    菌种: ["candida-guilliermondii"],
+    药物: [
+      { 药物: "阿尼芬净 (Anidulafungin)", 简写: "AND", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "M27M44S Table 1；棘白菌素天然偏高折点（与近平滑念珠菌同款）" },
+      { 药物: "卡泊芬净 (Caspofungin)", 简写: "CAS", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "M27M44S Table 1；同阿尼芬净" },
+      { 药物: "米卡芬净 (Micafungin)", 简写: "MCF", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "M27M44S Table 1；同上" }
+    ]
+  },
+
+// ===== 乏养菌属/颗粒链菌属 (M45 Table 1) =====
+  {
+    菌组名: "乏养菌属/颗粒链菌属 (Abiotrophia spp. / Granulicatella spp.)",
+    CLSI表: "M45 Table 1",
+    菌种: ["abiotrophia-defectiva", "granulicatella-adiacens"],
+    药物: [
+      { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.12", MIC_I: "0.25–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "心内膜炎按 MIC 分层;联合庆大霉素" },
+      { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤0.25", MIC_I: "0.5–4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "头孢吡肟 (Cefepime)", 简写: "FEP", 组别: "2", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "头孢噻肟 (Cefotaxime)", 简写: "CTX", 组别: "2", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "头孢曲松 (Ceftriaxone)", 简写: "CRO", 组别: "2", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "亚胺培南 (Imipenem)", 简写: "IPM", 组别: "2", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "美罗培南 (Meropenem)", 简写: "MEM", 组别: "2", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "万古霉素 (Vancomycin)", 简写: "VA", 组别: "3", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
+      { 药物: "红霉素 (Erythromycin)", 简写: "E", 组别: "3", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "环丙沙星 (Ciprofloxacin)", 简写: "CIP", 组别: "3", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "免疫抑制患者中已有耐药报道" },
+      { 药物: "左氧氟沙星 (Levofloxacin)", 简写: "LVX", 组别: "3", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "氯霉素 (Chloramphenicol)", 简写: "C", 组别: "3", MIC_S: "≤4", MIC_I: "—", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "克林霉素 (Clindamycin)", 简写: "DA", 组别: "3", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
+    ]
+  },
+
+  // ===== 气球菌属 (M45 Table 2) =====
+  {
+    菌组名: "气球菌属 (Aerococcus spp.)",
+    CLSI表: "M45 Table 2",
+    菌种: ["aerococcus-urinae", "aerococcus-sanguinicola", "aerococcus-viridans"],
+    药物: [
+      { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.12", MIC_I: "0.25–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "尿气球菌对β-内酰胺多敏感" },
+      { 药物: "头孢噻肟 (Cefotaxime)", 简写: "CTX", 组别: "2", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "头孢曲松 (Ceftriaxone)", 简写: "CRO", 组别: "2", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "美罗培南 (Meropenem)", 简写: "MEM", 组别: "2", MIC_S: "≤0.5", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
+      { 药物: "万古霉素 (Vancomycin)", 简写: "VA", 组别: "3", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
+      { 药物: "环丙沙星 (Ciprofloxacin)", 简写: "CIP", 组别: "3", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "左氧氟沙星 (Levofloxacin)", 简写: "LVX", 组别: "3", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "栖血气球菌/浅绿气球菌常见耐药" },
+      { 药物: "四环素 (Tetracycline)", 简写: "TE", 组别: "3", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "复方磺胺甲噁唑 (Trimethoprim-sulfamethoxazole)", 简写: "SXT", 组别: "3", MIC_S: "≤2/38", MIC_I: "—", MIC_R: "≥4/76", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "尿气球菌禁用本药药敏(含溶血培养基致假敏感)" },
+      { 药物: "利奈唑胺 (Linezolid)", 简写: "LZD", 组别: "3", MIC_S: "≤2", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" }
+    ]
+  },
+
+  // ===== 孪生球菌属 (M45 Table 8) =====
+  {
+    菌组名: "孪生球菌属 (Gemella spp.)",
+    CLSI表: "M45 Table 8",
+    菌种: ["gemella-morbillorum", "gemella-haemolysans"],
+    药物: [
+      { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤0.12", MIC_I: "0.25–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "心内膜炎联合庆大霉素" },
+      { 药物: "头孢噻肟 (Cefotaxime)", 简写: "CTX", 组别: "2", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "头孢曲松 (Ceftriaxone)", 简写: "CRO", 组别: "2", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "美罗培南 (Meropenem)", 简写: "MEM", 组别: "2", MIC_S: "≤0.5", MIC_I: "1", MIC_R: "≥2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "万古霉素 (Vancomycin)", 简写: "VA", 组别: "3", MIC_S: "≤1", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
+      { 药物: "红霉素 (Erythromycin)", 简写: "E", 组别: "3", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "左氧氟沙星 (Levofloxacin)", 简写: "LVX", 组别: "3", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "克林霉素 (Clindamycin)", 简写: "DA", 组别: "3", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
+    ]
+  },
+
+  // ===== 乳球菌属 (M45 Table 12) =====
+  {
+    菌组名: "乳球菌属 (Lactococcus spp.)",
+    CLSI表: "M45 Table 12",
+    菌种: ["lactococcus-garvieae"],
+    药物: [
+      { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "加氏乳球菌敏感性低于乳乳球菌" },
+      { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "头孢曲松 (Ceftriaxone)", 简写: "CRO", 组别: "2", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "美罗培南 (Meropenem)", 简写: "MEM", 组别: "2", MIC_S: "≤0.25", MIC_I: "0.5", MIC_R: "≥1", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "万古霉素 (Vancomycin)", 简写: "VA", 组别: "3", MIC_S: "≤2", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
+      { 药物: "四环素 (Tetracycline)", 简写: "TE", 组别: "3", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "红霉素 (Erythromycin)", 简写: "E", 组别: "3", MIC_S: "≤0.5", MIC_I: "1–4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "克林霉素 (Clindamycin)", 简写: "DA", 组别: "3", MIC_S: "≤0.5", MIC_I: "1–2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "加氏乳球菌对克林霉素天然耐药" },
+      { 药物: "左氧氟沙星 (Levofloxacin)", 简写: "LVX", 组别: "3", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "复方磺胺甲噁唑 (Trimethoprim-sulfamethoxazole)", 简写: "SXT", 组别: "3", MIC_S: "≤2/38", MIC_I: "—", MIC_R: "≥4/76", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
+    ]
+  },
+
+  // ===== 明串珠菌属 (M45 Table 13) =====
+  {
+    菌组名: "明串珠菌属 (Leuconostoc spp.)",
+    CLSI表: "M45 Table 13",
+    菌种: ["leuconostoc-mesenteroides"],
+    药物: [
+      { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤8", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点;万古霉素天然耐药不需测" },
+      { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
+      { 药物: "米诺环素 (Minocycline)", 简写: "MIN", 组别: "2", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "氯霉素 (Chloramphenicol)", 简写: "C", 组别: "2", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
+    ]
+  },
+
+  // ===== 片球菌属 (M45 Table 18) =====
+  {
+    菌组名: "片球菌属 (Pediococcus spp.)",
+    CLSI表: "M45 Table 18",
+    菌种: ["pediococcus-acidilactici"],
+    药物: [
+      { 药物: "青霉素 (Penicillin)", 简写: "P", 组别: "1", MIC_S: "≤8", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点;万古霉素天然耐药不需测" },
+      { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
+      { 药物: "亚胺培南 (Imipenem)", 简写: "IPM", 组别: "2", MIC_S: "≤0.5", MIC_I: "—", MIC_R: "—", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅设敏感折点" },
+      { 药物: "氯霉素 (Chloramphenicol)", 简写: "C", 组别: "2", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" }
+    ]
+  },
+
+// ===== 类鼻疽/鼻疽伯克霍尔德菌 (M45 Table 21 生物恐怖相关) =====
+  // 2026-08-28 新建：数值按 M45 md 正文 Table 21（159190 行区）程序化提取核对。
+  // B. pseudomallei 与 B. mallei 共用同组折点（源表并列）。
+  {
+    菌组名: "类鼻疽/鼻疽伯克霍尔德菌 (B. pseudomallei / B. mallei)",
+    CLSI表: "CLSI M45 Table 21 (生物恐怖相关)",
+    来源: "CLSI M45 (3rd ed., 2018)",
+    菌种: ["burkholderia-pseudomallei", "burkholderia-mallei"],
+    药物: [
+      { 药物: "头孢他啶 (Ceftazidime)", 简写: "CAZ", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "类鼻疽诱导期首选" },
+      { 药物: "亚胺培南 (Imipenem)", 简写: "IPM", 组别: "1", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "诱导期可选（美罗培南临床常用但表内未单列折点）" },
+      { 药物: "阿莫西林/克拉维酸 (Amoxicillin-Clavulanate)", 简写: "AUG", 组别: "2", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "仅类鼻疽（B. pseudomallei）适用；口服根除期备选" },
+      { 药物: "多西环素 (Doxycycline)", 简写: "DOXY", 组别: "2", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "根除期" },
+      { 药物: "四环素 (Tetracycline)", 简写: "TE", 组别: "2", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "复方新诺明 (Trimethoprim-Sulfamethoxazole)", 简写: "SXT", 组别: "1", MIC_S: "≤2/38", MIC_I: "—", MIC_R: "≥4/76", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "根除期首选（12 周以上）" }
     ]
   },
 ];
