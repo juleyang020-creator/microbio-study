@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 406" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>微生物遗传与变异总览</title><desc>微生物变异的两大来源：左路基因突变经垂直传递由亲代传给子代（回复突变为其1/10），右路水平基因转移经转化摄取游离DNA、接合经性菌毛传质粒、转导以噬菌体为载体获得外源基因；两条路汇成耐药性变异、S-R/H-O/位相/V-W菌落与抗原变异、细菌L型、真菌双相型与病毒抗原漂移/转换等经典变异现象。</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="arrs" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0.5 L8,4 L0,7.5 z" fill="#5c6672"/></marker>
+</defs>
+<rect width="480" height="406" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">微生物遗传与变异总览</text>
+<rect x="366" y="14" width="90" height="18" rx="9" fill="#eef2f7"/>
+<text x="411" y="27" text-anchor="middle" font-size="10" fill="#5c6672">遗传与变异总览</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">变异的两条来路：突变垂直传代，水平转移横向获得基因</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左列：基因突变（垂直） ===== -->
+<rect x="24" y="66" width="210" height="150" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<circle cx="42" cy="82" r="7.5" fill="#1f2733"/>
+<text x="42" y="85.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="55" y="86" font-size="10.5" font-weight="700" fill="#1f2733">基因突变 · 垂直传递</text>
+<!-- DNA 螺旋简化：两条平行链 -->
+<g stroke="#2b6cb0" stroke-width="1.6" fill="none">
+  <path d="M 44 104 q 10 6 20 0 t 20 0"/>
+  <path d="M 44 118 q 10 -6 20 0 t 20 0"/>
+  <line x1="50" y1="106" x2="50" y2="116"/><line x1="60" y1="109" x2="60" y2="113"/>
+  <line x1="70" y1="106" x2="70" y2="116"/><line x1="80" y1="109" x2="80" y2="113"/>
+</g>
+<!-- 突变位点（红点） -->
+<circle cx="60" cy="111" r="3.4" fill="#c2413d"/>
+<text x="94" y="103" font-size="9.5" fill="#33404f">点突变 / 缺失 / 插入</text>
+<text x="94" y="117" font-size="9.5" fill="#5c6672">基因重排·倒位·重复</text>
+<!-- 亲代→子代竖直箭头 -->
+<line x1="58" y1="126" x2="58" y2="144" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<ellipse cx="58" cy="152" rx="10" ry="8" fill="#f9e6e4" stroke="#c2413d"/>
+<circle cx="58" cy="152" r="3" fill="#c2413d"/>
+<text x="76" y="149" font-size="9.5" fill="#33404f">突变株稳定传给子代</text>
+<text x="76" y="163" font-size="9.5" fill="#5c6672">回复突变 ≈ 正向的 1/10</text>
+<text x="44" y="182" font-size="9.5" fill="#5c6672">SOS 应急修复 · 差错倾向修复</text>
+<text x="44" y="196" font-size="9.5" fill="#5c6672">rpoB→利福平耐药 · pbp→青霉素耐药</text>
+<text x="44" y="210" font-size="9.5" fill="#5c6672">23S rRNA→大环内酯耐药</text>
+
+<!-- ===== 右列：水平基因转移 ===== -->
+<rect x="246" y="66" width="210" height="150" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<circle cx="264" cy="82" r="7.5" fill="#1f2733"/>
+<text x="264" y="85.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="277" y="86" font-size="10.5" font-weight="700" fill="#1f2733">水平基因转移 · 横向获得</text>
+<!-- 转化：摄取游离 DNA 片段 -->
+<ellipse cx="270" cy="112" rx="11" ry="9" fill="#f9e6e4" stroke="#c2413d"/>
+<path d="M 288 104 l 4 4 l -8 8" fill="none" stroke="#5c6672" stroke-width="1.5"/>
+<path d="M 288 118 l 4 -4" fill="none" stroke="#5c6672" stroke-width="1.5"/>
+<text x="300" y="110" font-size="9.5" fill="#33404f">转化：摄取游离 DNA</text>
+<text x="300" y="124" font-size="9.5" fill="#5c6672">肺炎链球菌 pbp 重组→PRSP</text>
+<!-- 接合：性菌毛桥 -->
+<ellipse cx="270" cy="148" rx="11" ry="9" fill="#e3edf8" stroke="#2b6cb0"/>
+<path d="M 281 146 q 8 -6 16 0" fill="none" stroke="#2b6cb0" stroke-width="1.6"/>
+<ellipse cx="303" cy="148" rx="11" ry="9" fill="#eef1f5" stroke="#b9c2cc"/>
+<text x="322" y="152" font-size="9.5" fill="#33404f">接合：性菌毛传 R 质粒</text>
+<!-- 转导：噬菌体头部 -->
+<g>
+  <polygon points="265,166 279,166 272,178" fill="#8b7fb8"/>
+  <rect x="266.5" y="178" width="11" height="6" fill="#5b4f8a"/>
+  <line x1="272" y1="184" x2="272" y2="192" stroke="#5b4f8a" stroke-width="1.8"/>
+  <line x1="272" y1="192" x2="267" y2="196" stroke="#5b4f8a" stroke-width="1.8"/>
+  <line x1="272" y1="192" x2="277" y2="196" stroke="#5b4f8a" stroke-width="1.8"/>
+</g>
+<text x="290" y="178" font-size="9.5" fill="#33404f">转导：噬菌体带货宿主基因</text>
+<text x="290" y="192" font-size="9.5" fill="#5c6672">毒力基因播散的载体</text>
+<text x="258" y="210" font-size="9.5" fill="#5c6672">溶原性转换：前噬菌体整合获新性状</text>
+
+<!-- ===== 汇流箭头 ===== -->
+<path d="M 129 216 q 0 14 22 14" fill="none" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M 351 216 q 0 14 -22 14" fill="none" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+
+<!-- ===== 经典变异现象（横向长卡） ===== -->
+<rect x="24" y="230" width="432" height="120" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<circle cx="42" cy="246" r="7.5" fill="#1f2733"/>
+<text x="42" y="249.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="55" y="250" font-size="10.5" font-weight="700" fill="#1f2733">经典变异现象 —— 两条来路在表型的落脚点</text>
+
+<!-- S 型菌落 → R 型菌落 -->
+<circle cx="64" cy="272" r="10" fill="#f9e6e4" stroke="#c2413d"/>
+<circle cx="64" cy="272" r="6.5" fill="#ffffff"/>
+<text x="64" y="275.5" text-anchor="middle" font-size="9.5" fill="#a3332f">S</text>
+<circle cx="90" cy="272" r="10" fill="#e7e2f3" stroke="#8b7fb8"/>
+<path d="M 84 268 l 5 5 l -5 5 l -3 -4 z" fill="#5b4f8a" opacity="0.5"/>
+<path d="M 92 267 l 5 6 l -5 5" fill="none" stroke="#5b4f8a" stroke-width="0.9" opacity="0.5"/>
+<text x="77" y="275.5" font-size="9.5" fill="#33404f">→</text>
+<text x="64" y="294" text-anchor="middle" font-size="9.5" fill="#5c6672">S-R 变异</text>
+<text x="64" y="306" text-anchor="middle" font-size="9.5" fill="#5c6672">O 抗原丢失</text>
+
+<!-- H-O：鞭毛消失 -->
+<ellipse cx="168" cy="272" rx="8" ry="6.5" fill="#f9e6e4" stroke="#c2413d"/>
+<path d="M 176 272 q 8 3 14 -2 q 5 -4 10 0" fill="none" stroke="#c2413d" stroke-width="1.4"/>
+<line x1="205" y1="266" x2="205" y2="278" stroke="#c2413d" stroke-width="1.6"/>
+<ellipse cx="228" cy="272" rx="8" ry="6.5" fill="#eef1f5" stroke="#b9c2cc"/>
+<text x="168" y="294" text-anchor="middle" font-size="9.5" fill="#5c6672">H-O 变异</text>
+<text x="168" y="306" text-anchor="middle" font-size="9.5" fill="#5c6672">鞭毛丢失·动力阴</text>
+
+<!-- 位相变异：两相切换 -->
+<text x="258" y="268" font-size="9.5" font-weight="700" fill="#1f4e79">H1</text>
+<text x="272" y="268" font-size="9.5" font-weight="700" fill="#5b4f8a">H2</text>
+<path d="M 258 274 h 22" stroke="#33404f" stroke-width="1.1" marker-end="url(#arrs)"/>
+<path d="M 280 280 h -22" stroke="#33404f" stroke-width="1.1" marker-end="url(#arrs)"/>
+<text x="258" y="294" text-anchor="middle" font-size="9.5" fill="#5c6672">位相变异</text>
+<text x="258" y="306" text-anchor="middle" font-size="9.5" fill="#5c6672">双相 H 切换</text>
+
+<!-- V-W：Vi 抗原脱落 -->
+<ellipse cx="322" cy="272" rx="11" ry="8" fill="#f7ecd4" stroke="#d9b96a"/>
+<text x="322" y="275.5" text-anchor="middle" font-size="9.5" fill="#8a6d2f">Vi</text>
+<path d="M 336 272 l 8 0" stroke="#d9b96a" stroke-width="1.6" stroke-dasharray="2,2"/>
+<ellipse cx="360" cy="272" rx="9" ry="7" fill="#eef1f5" stroke="#b9c2cc"/>
+<text x="341" y="294" text-anchor="middle" font-size="9.5" fill="#5c6672">V-W 变异</text>
+<text x="341" y="306" text-anchor="middle" font-size="9.5" fill="#5c6672">Vi 抗原丧失</text>
+
+<!-- L 型：细胞壁缺损 -->
+<ellipse cx="412" cy="268" rx="13" ry="9" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<ellipse cx="407" cy="265" rx="5" ry="4" fill="#ffffff" stroke="#2b6cb0" stroke-width="1"/>
+<circle cx="418" cy="271" r="3" fill="#ffffff" stroke="#2b6cb0" stroke-width="1"/>
+<circle cx="412" cy="262" r="1.8" fill="#2b6cb0"/>
+<text x="412" y="294" text-anchor="middle" font-size="9.5" fill="#5c6672">细菌 L 型</text>
+<text x="412" y="306" text-anchor="middle" font-size="9.5" fill="#5c6672">缺壁·高渗培养</text>
+
+<!-- 真菌与病毒变异行 -->
+<text x="40" y="330" font-size="9.5" fill="#33404f"><tspan font-weight="700">真菌</tspan>　双相型（37℃ 酵母 ↔ 25℃ 霉菌）· 唑类靶位 ERG11 突变</text>
+<text x="40" y="344" font-size="9.5" fill="#33404f"><tspan font-weight="700">病毒</tspan>　抗原漂移（点突变）· 抗原转换（节段重排→大流行株）· ts 条件致死突变</text>
+
+<!-- 结论 -->
+<text x="240" y="372" text-anchor="middle" font-size="11.5" fill="#33404f">耐药、菌落、抗原之「变」，都能追溯到突变与水平转移这两条来路</text>
+
+<!-- 页脚 -->
+<rect x="24" y="380" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="396" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">检验落点</tspan>　R 质粒接合→接触隔离 · 单相沙门菌需诱导 · L 型需高渗低琼脂培养基</text>
+</svg>
