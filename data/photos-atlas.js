@@ -4021,6 +4021,34 @@ window.DB.photosAtlas = {
    "说明": "图 27-1-8　构巢曲霉菌的形态特征 A: 构巢曲霉菌示意图; B: SDA 3 日, 乳酸酚棉蓝染色, ×400; C: 菌核和壳细胞 PDA 7 日, 乳酸酚棉蓝染色, ×400; D: 壳细胞 PDA 7 日, 乳酸酚棉蓝染色…（6/6）"
   }
  ],
+ "aspergillus-versicolor": [
+  {
+   "文件": "img/atlas/ea22c59e27d058e5965b25c7e8268772466d1523cd9a885f9d5c53acbbeec59f.jpg",
+   "说明": "图 27-1-12　杂色曲霉菌的形态特征（1/3）"
+  },
+  {
+   "文件": "img/atlas/c5911ca7669d4d07f55b694d88a5c09dc46a9eb6bd224fef82b154111772ab20.jpg",
+   "说明": "图 27-1-12　杂色曲霉菌的形态特征（2/3）"
+  },
+  {
+   "文件": "img/atlas/40acdbf4422eac742131e0b7c116d90be436cba72bf62f5d73e1c9f370bc96ce.jpg",
+   "说明": "图 27-1-12　杂色曲霉菌的形态特征（3/3）"
+  }
+ ],
+ "aspergillus-sydowii": [
+  {
+   "文件": "img/atlas/4afb4689604294744c6896d36dcbe2da637a75fd701ed006f880d8461b0888dd.jpg",
+   "说明": "图 27-1-13　PDA 28℃ 2 日，乳酸酚棉蓝染色 ×200"
+  },
+  {
+   "文件": "img/atlas/117a17381a4e1aa50527aafbcef8aa6a9171bff919578f7e6b522183df95d572.jpg",
+   "说明": "图 27-1-13　PDA 28℃ 12 日"
+  },
+  {
+   "文件": "img/atlas/73e9dc971ccc608eb2f6d0a43cfb1c423520e4ebaff653f9e91891305fca9687.jpg",
+   "说明": "图 27-1-13　SDA 28℃ 7 日"
+  }
+ ],
  "aspergillus-terreus": [
   {
    "文件": "img/atlas/352671322be837d26a74e7086a56ffaba54ee09221968f4cf77a3288dbfe901c.jpg",
@@ -4045,6 +4073,28 @@ window.DB.photosAtlas = {
    "说明": "图 27-16-1　镰刀菌镜下形态特征"
   },
   {
+   "文件": "img/atlas/a63e9883b9cc7bcf6f6007905bf37c51a1a20fde9fd6224997be6d2613f241f1.jpg",
+   "说明": "图 27-16-3　藤仓镰刀菌 PDA 28℃ 培养 4 日 ×1000"
+  },
+  {
+   "文件": "img/atlas/78d241db5331b99e7b571406331e0b7b9980f2654957226773875c9c250d7d0f.jpg",
+   "说明": "图 27-16-3　藤仓镰刀菌 SDA 28℃ 培养 7 日"
+  },
+  {
+   "文件": "img/atlas/9355530eec829c095274da9844edfd168af83c8240bee9f4371c416e6b36ca93.jpg",
+   "说明": "图 27-16-3　层生镰刀菌 PDA 28℃ 培养 3 日, 乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/72a78543efa01a9b2bd6337dbce1b47751237ebc92b519f5372672cde0477ec3.jpg",
+   "说明": "图 27-16-3　层生镰刀菌 SDA 28℃ 培养 7 日"
+  },
+  {
+   "文件": "img/atlas/b4e510bea856eefc423da5e078104f0a400591d613dea8f57a6d37d35048eb91.jpg",
+   "说明": "图 27-16-8　临床常见镰刀菌形态鉴定索引"
+  }
+ ],
+ "fusarium-solani": [
+  {
    "文件": "img/atlas/8680242b8f4b7b53bb5f6791178b6f122d9e1219eada298966242302b62a294a.jpg",
    "说明": "图 27-16-2　茄病镰刀菌复合群的形态特征（1/6）"
   },
@@ -4067,10 +4117,100 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/0f2317bafe271ca59a454806f9854c31e2597cf8cbef9e31c7df380f7841a783.jpg",
    "说明": "图 27-16-2　茄病镰刀菌复合群的形态特征（6/6）"
+  }
+ ],
+ "fusarium-verticillioides": [
+  {
+   "文件": "img/atlas/dc37e34e76f72595d3b30a6b2d99d99f60e03c4bc32fa4188eff757d81d61b5e.jpg",
+   "说明": "图 27-16-3　轮枝镰刀菌 PDA 28℃ 培养 3 日, 乳酸酚棉蓝染色 ×400"
   },
   {
-   "文件": "img/atlas/a63e9883b9cc7bcf6f6007905bf37c51a1a20fde9fd6224997be6d2613f241f1.jpg",
-   "说明": "图 27-16-3　藤仓镰刀菌 PDA 28℃ 培养 4 日 ×1000"
+   "文件": "img/atlas/a493f8051abc977ae5176621a6e81e8ff3287905bc7d2fd1ca4ba572f3fe415f.jpg",
+   "说明": "图 27-16-3　轮枝镰刀菌 PDA 28℃ 培养 7 日"
+  }
+ ],
+ "fusarium-oxysporum": [
+  {
+   "文件": "img/atlas/8ea5e2a97407b40a1d8089bd57b9c075e6b4d0f73d2e7f99f6d7edd339fa829f.jpg",
+   "说明": "图 27-16-4　分生孢子座 PDA 28℃ 培养 24h，乳酸酚棉蓝染色 ×400"
+  },
+  {
+   "文件": "img/atlas/3b7f78736f3949606419de07546f1f17f6bf67a1c80b104b41560f589d972c36.jpg",
+   "说明": "图 27-16-4　厚壁孢子 PDA 28℃ 培养 2 日，钙白荧光染色 ×400"
+  },
+  {
+   "文件": "img/atlas/4c4a06704f2613bb8beb4d32010f3d89a43ba738bd13613a2521b3e84a65ddfb.jpg",
+   "说明": "图 27-16-4　SDA 28℃ 培养 4 日"
+  },
+  {
+   "文件": "img/atlas/7160cae218a587fb04306c34589feacc563c67ca94568b7d334b2054ca21d66f.jpg",
+   "说明": "图 27-16-4　SDA 28℃ 培养 4 日（背面）"
+  }
+ ],
+ "fusarium-dimerum": [
+  {
+   "文件": "img/atlas/35af469428f9d8c33065c5fefa3e30751798c275f32581e96601d4049b33947f.jpg",
+   "说明": "图 27-16-5　双孢镰刀菌(大分生孢子及厚壁孢子)PDA 28℃培养7日, 乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/e78cafdea3aebb63c2b8189b34750efa4ade40730b68281404a0fe22d25e4fc9.jpg",
+   "说明": "图 27-16-5　双孢镰刀菌 SDA 28℃培养5日"
+  }
+ ],
+ "fusarium-delphinoides": [
+  {
+   "文件": "img/atlas/e769fce6bc286a9cc25b517df1980b35518f595f0e58fd02f4d65d13cce49921.jpg",
+   "说明": "图 27-16-5　海豚镰刀菌 SDA 28℃培养7日, 乳酸酚棉蓝染色 ×400"
+  },
+  {
+   "文件": "img/atlas/caa28295689dd3abd2109c3215185d022d4160fc51c7448c0015cf90a8dfd464.jpg",
+   "说明": "图 27-16-5　海豚镰刀菌 PDA 28℃培养7日"
+  }
+ ],
+ "fusarium-chlamydosporum": [
+  {
+   "文件": "img/atlas/5747ce30e1fc0beff59799d1d5b18d7ce8b190d9c0f1359bbd61bd1ef8e093a8.jpg",
+   "说明": "图 27-16-6　复瓶梗 PDA 28℃ 培养 7 日，乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/1030d48d4238f03be4277465fe7083afd00f2881720062ab74c3eb092473591c.jpg",
+   "说明": "图 27-16-6　大分生孢子 PDA 28℃ 培养 2 日，钙白荧光染色 ×2000"
+  },
+  {
+   "文件": "img/atlas/8a22c3c58c241fa7f953e5e7e795e06edf96201a5a1109b9a99e3c22fea64da2.jpg",
+   "说明": "图 27-16-6　厚壁孢子 PDA 28℃ 培养 2 日，钙白荧光染色 ×2000"
+  },
+  {
+   "文件": "img/atlas/1a565dc88ffdeb54578a9fa35a95466262edea1988528c7366f6aae99acd3147.jpg",
+   "说明": "图 27-16-6　SDA 28℃ 培养 6 日"
+  }
+ ],
+ "fusarium-incarnatum": [
+  {
+   "文件": "img/atlas/2a2bb21a95d771ed1fa7f7757b97d7bf2b50dba5ad78c4daa439bc6d6bae0bfc.jpg",
+   "说明": "图 27-16-7　肉色镰刀菌 PDA 28℃培养 3 日，乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/e8349857d42e51332f4d522f034c76a07c8258951449695aed69e86e0b2a8d09.jpg",
+   "说明": "图 27-16-7　肉色镰刀菌 SDA 28℃培养 3 日"
+  },
+  {
+   "文件": "img/atlas/e5cec9079a1f14f17361cb1875a3269ab2596449925cc71795e62d0cfa450e1c.jpg",
+   "说明": "图 27-16-7　肉色镰刀菌 PDA 28℃培养 3 日"
+  }
+ ],
+ "fusarium-equiseti": [
+  {
+   "文件": "img/atlas/7cee1205ef39a9222f8688ba2d095ae9dfe9f5e4eaf0be3c0601d3f750e485a8.jpg",
+   "说明": "图 27-16-7　木贼镰刀菌小分生孢子（假头）PDA 28℃培养 2 日 ×400"
+  },
+  {
+   "文件": "img/atlas/d32e31f84a2579f60618d10138c1a5b3595458c1e2fe7c889b937dfeadb7b541.jpg",
+   "说明": "图 27-16-7　木贼镰刀菌大分生孢子和分生孢子座 PDA 28℃培养 3 日，钙白荧光染色 ×400"
+  },
+  {
+   "文件": "img/atlas/c241e8a1885fe495ded710fcd8b2b51892d41f8d7962b493717282f4ef8dad9d.jpg",
+   "说明": "图 27-16-7　木贼镰刀菌 SDA 28℃培养 14 日"
   }
  ],
  "fonsecaea-pedrosoi": [
@@ -4149,7 +4289,22 @@ window.DB.photosAtlas = {
    "说明": "图 27-25-5　茎点霉属间与属内鉴别索引"
   }
  ],
- "scedosporium-apiospermum": [
+ "scedosporium-prolificans": [],
+  "scedosporium-prolificans": [
+ {
+  "文件": "img/atlas/bc52723dd95f5f01c88887766a7e39f3a59fa4b1b5c4df7ec55b28b7a06c3a8c.jpg",
+  "说明": "图 27-27-3　PDA 35℃ 培养 9 日，乳酸酚棉蓝染色 ×1000"
+ },
+ {
+  "文件": "img/atlas/04d8c2d61ad0a97df56f17711771472b0b110b16e31c65732ef2c12a7bb39ffe.jpg",
+  "说明": "图 27-27-3　SDA 35℃ 培养 9 日"
+ },
+ {
+  "文件": "img/atlas/5bb11b610ce911d148f81892110ac19ddd0a255e6f58720e1e715027694e9875.jpg",
+  "说明": "图 27-27-3　PDA 28℃ 培养 9 日"
+ }
+],
+  "scedosporium-apiospermum": [
   {
    "文件": "img/atlas/652fd501403bd4ccf074ebb996abda92f459ecb13f30640e89e6cd87e4f94992.jpg",
    "说明": "图 27-27-2　尖端赛多孢 PDA 28℃ 培养 12 日 × 1000"
