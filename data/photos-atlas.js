@@ -3289,6 +3289,16 @@ window.DB.photosAtlas = {
    "说明": "图 21-1-3　SBA CO₂ 2 日"
   }
  ],
+ "campylobacter-concisus": [
+  {
+   "文件": "img/atlas/2d6345e6a9d60065a5c8081aef16ca0e5475a9c1e686d942e786779114466255.jpg",
+   "说明": "图 21-1-4　简明弯曲杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/1457cfbaaeb0d7b66946d7772b32bc40a5c2c2c292204a4e0d4c9945e24106a2.jpg",
+   "说明": "图 21-1-4　简明弯曲杆菌厌氧培养 4 日"
+  }
+ ],
  "helicobacter-pylori": [
   {
    "文件": "img/atlas/65822806a412b5247c4b36fcceb2ddce05a9ef112b220d3cb1d45962af02ed97.jpg",
