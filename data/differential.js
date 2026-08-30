@@ -1513,5 +1513,18 @@ window.DB.differential = {
 ],
 'cronobacter-universalis': [
   {名称: '阪崎克洛诺杆菌', id: 'cronobacter-sakazakii', 相似点: '同属黄色素菌', 鉴别: '普通克洛诺杆菌丙二酸盐可变、反乌头酸 +；对多西环素耐药。'}
+],
+
+'candida-kefyr': [
+  {名称: '热带念珠菌', id: 'candida-tropicalis', 相似点: '均发酵多糖、形态相近', 鉴别: '乳酒念珠菌发酵乳糖（+*）、木糖阴性；热带念珠菌乳糖 −、木糖 +；热带菌 CHROMagar 蓝灰色。'}
+],
+'candida-guilliermondii': [
+  {名称: '近平滑念珠菌', id: 'candida-parapsilosis', 相似点: '均细长假菌丝+小分生孢子、淡粉色菌落', 鉴别: '高里复合群同化密二糖/纤维二糖/海藻糖更广（近平滑群阴性）、陈旧菌落变黄~粉红；近平滑群同化 L-阿拉伯糖。'}
+],
+'candida-catenuroides': [
+  {名称: '近平滑念珠菌', id: 'candida-parapsilosis', 相似点: '假菌丝+轮生孢子', 鉴别: '链状念珠菌（现 Diutina）蔗糖同化阴性、假菌丝更细长。'}
+],
+'candida-zeylanoides': [
+  {名称: '其他念珠菌', 相似点: '酵母样菌落', 鉴别: '涎沫念珠菌 37℃ 不生长（多数临床念珠菌可生长）——温度耐受是初筛点。'}
 ]
 };

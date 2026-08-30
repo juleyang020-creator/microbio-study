@@ -3545,42 +3545,6 @@ window.DB.microbes.push(
     ],
     关联: ['micafungin', 'anidulafungin', 'caspofungin', 'fluconazole', 'candida-parapsilosis', 'candida-tropicalis']
   },
-  {
-    id: 'candida-kefyr', 名称: '乳酒念珠菌', 才拉丁名: 'Candida kefyr', 类别: '念珠菌属',
-    小节: [
-      { 标题: '形态与染色', 正文: '酵母样细胞，长椭圆形；无厚壁孢子；同化发酵乳糖（临床念珠菌中少见——名称"kefyr=开菲尔乳酒"来源）。' },
-      { 标题: '致病性 / 所致疾病', 正文: '血流感染少见病因（血液恶性肿瘤患者）；口咽/阴道粘膜定植。CLSI 无任何临床折点（M27M44S Table 1 无本菌条目，ECV 见 M57S）。' }
-    ],
-    念关联: ['fluconazole', 'candida-tropicalis', 'candida-parapsilosis']
-  }
-);
-
-// 批8 第2段：隐球菌 1 + 曲霉 2
-window.DB.microbes.push(
-  {
-    id: 'cryptococcus-gattii', 名称: '格特隐球菌', 拉丁名: 'Cryptococcus gattii', 类别: '隐球菌属',
-    小节: [
-      { 标题: '形态与染色', 正文: '酵母样细胞，圆形/卵圆形，荚膜（墨汁负染阳性）；尿素酶阳性、咖啡酸试验阳性（同新型隐球菌）。' },
-      { 标题: '致病性 / 所致疾病', 正文: '血清型 B/C（新型为 A/D）；免疫功能正常者也可致病（温哥华岛爆发、澳大利亚地方性）——与新型隐球菌"免疫抑制宿主为主"的关键流行病学差异；肺炎+脑膜炎（脑实质肉芽肿性病变比例较高）；骆驼刺/桉树环境关联。治疗同新型隐球菌（诱导期两性霉素 B+氟胞嘧啶，巩固期氟康唑）；CLSI 无临床折点（ECV 见 M57S）。' }
-    ],
-    关联: ['fluconazole', 'amphotericin-b', 'flucytosine', 'cryptococcus-neoformans']
-  },
-  {
-    id: 'aspergillus-terreus', 名称: '土曲霉', 拉丁名: 'Aspergillus terreus', 类别: '曲霉属',
-    小节: [
-      { 标题: '形态与染色', 正文: '分枝分隔菌丝 45°；分生孢子头柱状（compact biseriate）；小分生孢子球形光滑，**对生（doubling）排列——土曲霉名片**；40~42℃ 生长。' },
-      { 标题: '致病性 / 所致疾病', 正文: '侵袭性曲霉病病因之一（血液恶性肿瘤/移植受者）；**两性霉素 B 天然耐药（M38M51S Appendix 天然耐药表）——治疗首选伏立康唑**；无种特异 MIC 临床折点（伏立康唑折点仅设烟曲霉 sensu stricto）；QC 参考株 MYA-3633 纸片伏立康唑 23-33mm/48h。' }
-    ],
-    关联: ['voriconazole', 'amphotericin-b', 'aspergillus-fumigatus']
-  },
-  {
-    id: 'aspergillus-nidulans', 名称: '构巢曲霉', 拉丁名: 'Aspergillus nidulans', 类别: '曲霉属',
-    小节: [
-      { 标题: '形态与染色', 正文: '分枝分隔菌丝；分生孢子头短柱状；小分生孢子表面棘刺（echinulate）；**裸囊壳（cleistothecia）有性型——曲霉中常见有性型（教学名片）**；菌落背面紫红色。' },
-      { 标题: '致病性 / 所致疾病', 正文: '慢性肉芽肿病（CGD）患者侵袭性曲霉病**最常见病原**（超过烟曲霉——MCM 122 章经典教学点）；也见于其他免疫抑制；CGD 患者病程较慢（肉芽肿包裹）。治疗伏立康唑/伊曲康唑；无种特异临床折点（伏立康唑折点仅烟曲霉 sensu stricto）。' }
-    ],
-    关联: ['voriconazole', 'itraconazole', 'aspergillus-fumigatus']
-  }
 );
 
 // 批8 第3段：毛霉目 3 种
@@ -4355,4 +4319,56 @@ window.DB.microbes.push(
   {标题: '形态与染色', 正文: '革兰阴性杆菌；丙二酸盐可变、反乌头酸 +。'},
   {标题: '致病性 / 所致疾病', 正文: '环境来源为主；对多西环素耐药（与香料克洛诺杆菌同），对其余常用抗菌药多敏感。'}],
  关联: ['cronobacter-sakazakii']}
+);
+window.DB.microbes.push(
+{id: 'candida-pseudohaemulonii', 名称: '假希木龙念珠菌', 拉丁名: 'Candida pseudohaemulonii', 类别: '念珠菌属',
+ 小节: [
+  {标题: '形态与染色', 正文: '希木龙念珠菌复合群成员：细胞圆形/椭圆形，培养特征与希木龙念珠菌相似（粉红→紫色产色菌落），40℃ 不生长。'},
+  {标题: '致病性 / 所致疾病', 正文: '临床罕见；耐药谱与希木龙念珠菌相近（多重耐药），表型无法与复合群内其他种区分，需分子鉴定。'}],
+ 关联: ['candida-haemulonii', 'candida-auris']},
+);
+
+// 批8 第2段：隐球菌 1 + 曲霉 2
+window.DB.microbes.push(
+  {
+    id: 'cryptococcus-gattii', 名称: '格特隐球菌', 拉丁名: 'Cryptococcus gattii', 类别: '隐球菌属',
+    小节: [
+      { 标题: '形态与染色', 正文: '酵母样细胞，圆形/卵圆形，荚膜（墨汁负染阳性）；尿素酶阳性、咖啡酸试验阳性（同新型隐球菌）。' },
+      { 标题: '致病性 / 所致疾病', 正文: '血清型 B/C（新型为 A/D）；免疫功能正常者也可致病（温哥华岛爆发、澳大利亚地方性）——与新型隐球菌"免疫抑制宿主为主"的关键流行病学差异；肺炎+脑膜炎（脑实质肉芽肿性病变比例较高）；骆驼刺/桉树环境关联。治疗同新型隐球菌（诱导期两性霉素 B+氟胞嘧啶，巩固期氟康唑）；CLSI 无临床折点（ECV 见 M57S）。' }
+    ],
+    关联: ['fluconazole', 'amphotericin-b', 'flucytosine', 'cryptococcus-neoformans']
+  },
+  {
+    id: 'aspergillus-terreus', 名称: '土曲霉', 拉丁名: 'Aspergillus terreus', 类别: '曲霉属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分枝分隔菌丝 45°；分生孢子头柱状（compact biseriate）；小分生孢子球形光滑，**对生（doubling）排列——土曲霉名片**；40~42℃ 生长。' },
+      { 标题: '致病性 / 所致疾病', 正文: '侵袭性曲霉病病因之一（血液恶性肿瘤/移植受者）；**两性霉素 B 天然耐药（M38M51S Appendix 天然耐药表）——治疗首选伏立康唑**；无种特异 MIC 临床折点（伏立康唑折点仅设烟曲霉 sensu stricto）；QC 参考株 MYA-3633 纸片伏立康唑 23-33mm/48h。' }
+    ],
+    关联: ['voriconazole', 'amphotericin-b', 'aspergillus-fumigatus']
+  },
+  {
+    id: 'aspergillus-nidulans', 名称: '构巢曲霉', 拉丁名: 'Aspergillus nidulans', 类别: '曲霉属',
+    小节: [
+      { 标题: '形态与染色', 正文: '分枝分隔菌丝；分生孢子头短柱状；小分生孢子表面棘刺（echinulate）；**裸囊壳（cleistothecia）有性型——曲霉中常见有性型（教学名片）**；菌落背面紫红色。' },
+      { 标题: '致病性 / 所致疾病', 正文: '慢性肉芽肿病（CGD）患者侵袭性曲霉病**最常见病原**（超过烟曲霉——MCM 122 章经典教学点）；也见于其他免疫抑制；CGD 患者病程较慢（肉芽肿包裹）。治疗伏立康唑/伊曲康唑；无种特异临床折点（伏立康唑折点仅烟曲霉 sensu stricto）。' }
+    ],
+    关联: ['voriconazole', 'itraconazole', 'aspergillus-fumigatus']
+  }
+);
+window.DB.microbes.push(
+{id: 'candida-kefyr', 名称: '乳酒念珠菌', 拉丁名: 'Kluyveromyces marxianus（旧称 Candida kefyr）', 类别: '念珠菌属',
+ 小节: [
+  {标题: '形态与染色', 正文: '孢子卵形至长形；玉米-吐温培养基菌丝多、分枝，长棒状/圆木形分生孢子；发酵乳糖（临床念珠菌中少见——"kefyr=开菲尔乳酒"名称来源）。'},
+  {标题: '致病性 / 所致疾病', 正文: '血液恶性肿瘤患者血流感染的少见病因；口咽/消化道定植。对氟康唑多敏感。'}],
+ 关联: ['fluconazole', 'amphotericin-b', 'candida-tropicalis']},
+{id: 'candida-catenuroides', 名称: '链状念珠菌', 拉丁名: 'Diutina catenulata（旧称 Candida catenulata）', 类别: '念珠菌属',
+ 小节: [
+  {标题: '形态与染色', 正文: '假菌丝发达，芽生孢子沿假菌丝轮生或短链；37℃ 生长可变、发酵葡萄糖可变。'},
+  {标题: '致病性 / 所致疾病', 正文: '皮肤/黏膜定植菌，罕见深部感染；免疫低下者偶有真菌血症报告。'}],
+ 关联: ['candida-parapsilosis']},
+{id: 'candida-zeylanoides', 名称: '涎沫念珠菌', 拉丁名: 'Candida zeylanoides', 类别: '念珠菌属',
+ 小节: [
+  {标题: '形态与染色', 正文: '假菌丝 + 芽生孢子；37℃ 不生长（本批念珠菌中的低温种）。'},
+  {标题: '致病性 / 所致疾病', 正文: '环境/食品相关酵母，罕见致病；偶从临床标本分离（意义多需评估）。'}],
+ 关联: ['candida-parapsilosis']}
 );
