@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-16';
+  var APP_VERSION = window.APP_VERSION || '20260830-17';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -613,7 +613,19 @@
     var dict = {};
     var DB = window.DB || {};
     (DB.microbes || []).forEach(function (m) { if (m.名称 && m.id) { dict[m.名称] = '#/microbes/' + m.id; } });
-    (DB.antibiotics || []).forEach(function (a) { if (a.名称 && a.id && !dict[a.名称]) { dict[a.名称] = '#/antibiotics/' + a.id; } });
+    (DB.antibiotics || []).forEach(function (a) {
+      if (!a.名称 || !a.id || dict[a.名称]) { return; }
+      dict[a.名称] = '#/antibiotics/' + a.id;
+      // 复方药的连字符/全角斜杠变体也注册：正文写「阿莫西林-克拉维酸」时整串命中，
+      // 避免只有前半成分成链、后半落空造成「半截复方」的破碎观感（诺卡菌药敏实测踩过）。
+      if (/[\/／]/.test(a.名称)) {
+        var parts = a.名称.split(/[\/／]/).map(function (x) { return x.trim(); }).filter(Boolean);
+        ['- ', '／'].forEach(function (sep) {
+          var variant = parts.join(sep.trim());
+          if (variant && !dict[variant]) { dict[variant] = '#/antibiotics/' + a.id; }
+        });
+      }
+    });
     // 其他内容模块条目名：试验/培养基/染色/检测卡/耐药因素——正文提到即链
     [['tests', 'tests'], ['media', 'media'], ['staining', 'staining'], ['cards', 'cards'], ['resistance', 'resistance'], ['biochemTests', 'biochem-tests']].forEach(function (pair) {
       (DB[pair[0]] || []).forEach(function (t) { if (t.名称 && t.id && !dict[t.名称]) { dict[t.名称] = '#/' + pair[1] + '/' + t.id; } });
