@@ -2885,6 +2885,32 @@ window.DB.photosAtlas = {
    "说明": "图 19-3-1　半胱氨酸心琼脂培养基孵育 2 日"
   }
  ],
+ "streptococcus-genus": [
+  {
+   "文件": "img/atlas/ce1c73f0cae66eaf8f7cee3f4d7700f67aa2470a47276dbb99e74bc8ef71e0c2.jpg",
+   "说明": "图 20-1-1　脓汁涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/081d414ee94677a762b9524823d8230ade5ec9a7cbc9cd025ec75ea8b97f3171.jpg",
+   "说明": "图 20-1-1　痰涂片(肺脓肿)革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/9e8bf93984d92b17ecf2c7aac42bdb4d48c48b4c63da1f4b7769cda8d29ff23a.jpg",
+   "说明": "图 20-1-1　厌氧消化链球菌革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/6059932a03235a2b7eb10afc2d063325916813a62bf26b1559127a4a9b3c1d90.jpg",
+   "说明": "图 20-1-1　厌氧消化链球菌厌氧培养 8 日"
+  },
+  {
+   "文件": "img/atlas/e9d8e999b806a56788733ba10af3d8062987be3bd986c99bf4f9f51288c6063d.jpg",
+   "说明": "图 20-1-1　口腔消化链球菌革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/6464f237186de7809adcb5a9439f04c6d20ad899c061da581a05521466e5991e.jpg",
+   "说明": "图 20-1-1　口腔消化链球菌厌氧培养 13 日"
+  }
+ ],
  "peptostreptococcus-anaerobius": [
   {
    "文件": "img/atlas/9e8bf93984d92b17ecf2c7aac42bdb4d48c48b4c63da1f4b7769cda8d29ff23a.jpg",
