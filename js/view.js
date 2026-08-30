@@ -271,10 +271,13 @@
 
     function buildNode(node) {
       var hasChildren = node.子类 && node.子类.length;
+      // 属级总览条目去重：树上属标题本身已渲染为可点的总览链接（app.js genus-row），
+      // 展开后的子条目列表不再重复列出同名「XX属」条目。
+      var entries = hasChildren ? [] : (byCat[node.名称] || []).filter(function (e) { return e.名称 !== node.名称; });
       return {
         名称: node.名称,
         children: hasChildren ? node.子类.map(buildNode) : [],
-        entries: hasChildren ? [] : (byCat[node.名称] || [])
+        entries: entries.length ? entries : (hasChildren ? [] : (byCat[node.名称] || []))
       };
     }
 
