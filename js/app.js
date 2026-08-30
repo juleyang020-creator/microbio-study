@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-24';
+  var APP_VERSION = window.APP_VERSION || '20260830-25';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -559,6 +559,9 @@
     } else {
       var epad = 'padding-left:' + (8 + (depth + 1) * 14) + 'px';
       node.entries.forEach(function (e) {
+        // 标题行已是属介绍链接（genus-row），展开的子条目列表跳过同名条目，避免两层重复。
+        // 去重发生在渲染层而非 VM 层——VM 必须保留同名条目供 genusEntry 查找（见 view.js buildNode 注释）。
+        if (genusEntry && e.id === genusEntry.id) { return; }
         out.push(el('a', { cls: 'entry-link' + (e.selected ? ' selected' : ''), text: e.名称, href: e.href, style: epad }));
       });
     }

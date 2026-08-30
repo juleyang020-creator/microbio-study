@@ -271,13 +271,14 @@
 
     function buildNode(node) {
       var hasChildren = node.子类 && node.子类.length;
-      // 属级总览条目去重：树上属标题本身已渲染为可点的总览链接（app.js genus-row），
-      // 展开后的子条目列表不再重复列出同名「XX属」条目。
-      var entries = hasChildren ? [] : (byCat[node.名称] || []).filter(function (e) { return e.名称 !== node.名称; });
+      // 注意：同名属条目必须保留在 entries 里——app.js 的「大属双控件行」靠
+      // (node.entries||[]).find(e => e.名称 === node.名称) 把属标题渲染成可点的总览链接。
+      // 「子列表不重复列同名条目」的职责在 app.js 渲染层（跳过 genusEntry），
+      // 不在 VM 层滤数据（7aca6d7 曾在 VM 层滤掉，导致 34 个大属的属介绍在侧栏消失）。
       return {
         名称: node.名称,
         children: hasChildren ? node.子类.map(buildNode) : [],
-        entries: entries.length ? entries : (hasChildren ? [] : (byCat[node.名称] || []))
+        entries: hasChildren ? [] : (byCat[node.名称] || [])
       };
     }
 
