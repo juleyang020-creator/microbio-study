@@ -1797,7 +1797,7 @@ window.DB.differential = {
 ],
 
 'bacteroides-eggerthii': [
-  {名称: '脆弱拟杆菌', id: 'bacteroides-fragilis', 相似点: '同脆弱拟杆菌群、BBE+耐胆汁', 鉴别: '埃格拟杆菌靛基质+蔗糖−（脆弱拟杆菌靛基质−蔗糖+）；表 20-14-2 行级区分。'}
+  {名称: '脆弱拟杆菌', id: 'bacteroides-fragilis', 相似点: '同脆弱拟杆菌群、BBE+耐胆汁', 鉴别: '埃氏拟杆菌靛基质+蔗糖−（脆弱拟杆菌靛基质−蔗糖+）；表 20-14-2 行级区分。'}
 ],
 'bacteroides-stercoris': [
   {名称: '卵形拟杆菌', id: 'bacteroides-ovatus', 相似点: 'BBE+靛基质+', 鉴别: '粪便拟杆菌触酶−蕈糖−（卵形拟杆菌两者+）；水杨素−（卵形+）。'}

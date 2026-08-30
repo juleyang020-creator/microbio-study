@@ -4824,7 +4824,7 @@ window.DB.microbes.push(
  关联: ['neisseria-elongata']}
 );
 window.DB.microbes.push(
-{id: 'bacteroides-eggerthii', 名称: '埃格拟杆菌', 拉丁名: 'Bacteroides eggerthii', 类别: '拟杆菌属',
+{id: 'bacteroides-eggerthii', 名称: '埃氏拟杆菌', 拉丁名: 'Bacteroides eggerthii', 类别: '拟杆菌属',
  小节: [
   {标题: '形态与染色', 正文: '革兰阴性杆菌（脆弱拟杆菌群成员，耐胆汁）；BBE 生长+、靛基质+；**蔗糖不发酵**（脆弱拟杆菌群内区分轴）、鼠李糖可变、阿拉伯糖+。'},
   {标题: '致病性 / 所致疾病', 正文: '肠道正常菌群；腹腔感染混合菌群成员之一，临床意义低于脆弱拟杆菌。'}],
