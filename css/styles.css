@@ -106,6 +106,10 @@ body {
 .entry-link { display: block; color: var(--ink-soft); text-decoration: none; padding: 2px 8px 2px 14px; border-radius: 4px; border-left: 2px solid transparent; }
 .entry-link:hover { color: var(--ink); background: var(--line-2); }
 .entry-link.selected { color: var(--accent); font-weight: 600; border-left-color: var(--accent); }
+/* 属级单条目：叶子下唯一同名条目折叠成属节点本身可点（js/app.js sidebarNodes） */
+.cat-genus-link { display: block; text-decoration: none; margin-top: 1px; }
+.cat-genus-link::before { content: '• '; color: var(--line-3, #bbb); }
+.cat-genus-link.selected::before { color: var(--accent); }
 
 /* 侧栏：收藏夹 + 浏览历史 */
 .fav-section, .history-section { margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); }
