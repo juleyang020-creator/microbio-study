@@ -15,7 +15,7 @@ const require = createRequire(import.meta.url);
 const ATLAS = path.join(process.env.HOME, 'Documents/资料库/微生物/93-实用临床微生物学检验与图谱-人卫2025');
 
 global.window = { DB: {} };
-for (const f of ['microbes', 'microbe-names']) require(path.join(root, 'data', f + '.js'));
+for (const f of ['microbes', 'microbes-gram-positive', 'microbes-gram-negative', 'microbes-anaerobe', 'microbes-atypical', 'microbes-fungi', 'microbes-parasite', 'microbes-virus', 'microbes-misc', 'microbe-names']) require(path.join(root, 'data', f + '.js'));
 const DB = global.window.DB;
 
 // ---- 菌名 → id 索引 ----

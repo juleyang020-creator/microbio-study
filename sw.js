@@ -1,6 +1,6 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260830-08';
+var APP_VERSION = '20260830-25';
 // 缓存名直接由版本号派生，只需改 APP_VERSION 一处；旧缓存在 activate 时按前缀清理
 var CACHE = CACHE_PREFIX + APP_VERSION;
 function versioned(path) {
@@ -10,7 +10,12 @@ var CORE = [
   './', './index.html', versioned('./css/styles.css'),
   versioned('./js/core.js'), versioned('./js/view.js'), versioned('./js/validate.js'), versioned('./js/app.js'),
   versioned('./data/source-metadata.js'),
-  versioned('./data/categories.js'), versioned('./data/microbes.js'), versioned('./data/antibiotics.js'), versioned('./data/resistance.js'),
+  versioned('./data/categories.js'), versioned('./data/microbes.js'),
+  versioned('./data/microbes-gram-positive.js'), versioned('./data/microbes-gram-negative.js'), versioned('./data/microbes-anaerobe.js'),
+  versioned('./data/microbes-atypical.js'), versioned('./data/microbes-fungi.js'), versioned('./data/microbes-parasite.js'),
+  versioned('./data/microbes-virus.js'), versioned('./data/microbes-misc.js'), versioned('./data/antibiotics.js'), versioned('./data/resistance.js'),
+  versioned('./data/virulence.js'),
+  versioned('./data/genetics.js'),
   versioned('./data/biochem.js'), versioned('./data/differential.js'), versioned('./data/morphology.js'), versioned('./data/photos.js'), versioned('./data/photos-atlas.js'), versioned('./data/treatment.js'),
   versioned('./data/cards.js'), versioned('./data/tests.js'), versioned('./data/media.js'), versioned('./data/staining.js'),
   versioned('./data/breakpoints.js'), versioned('./data/eucast-breakpoints.js'), versioned('./data/biochem-tests.js'), versioned('./data/ast-alerts.js'), versioned('./data/qc-strains.js'), versioned('./data/ecv.js'), versioned('./data/intrinsic-resistance.js'), versioned('./data/site-reporting.js'), versioned('./data/lab-workflow.js'), versioned('./data/drug-cn.js'), versioned('./data/microbe-names.js'),

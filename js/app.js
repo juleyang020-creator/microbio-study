@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-08';
+  var APP_VERSION = window.APP_VERSION || '20260830-25';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -61,7 +61,7 @@
 
   function db() {
     var DB = window.DB || {};
-    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [], 'qc-strains': DB['qc-strains'] || [] };
+    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], virulence: DB.virulence || [], genetics: DB.genetics || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [], 'qc-strains': DB['qc-strains'] || [] };
   }
 
   // 缓存：window.DB 加载后不变，名称→id 映射只需建一次
@@ -126,7 +126,211 @@
       '明胶酶': 'gelatinase',
       'DNase': 'dnase',
       '迁徙生长': 'motility',
-      '动力(25℃/37℃)': 'motility'
+      '动力(25℃/37℃)': 'motility',
+      // ==== 批量归一映射（tools/_tmp-biomap.py 生成，2026-08-30）====
+      '25℃ 绵羊血环形溶血': 'hemolysis',
+      '42~43℃ 生长+尿素酶': 'urease',
+      '42℃ 葡萄糖发酵': 'glucose-fermentation',
+      '6.5% NaCl': 'nacl-65',
+      '6.5% NaCl 生长': 'nacl-65',
+      '6.5% NaCl生长': 'nacl-65',
+      '6.5%NaCl 生长': 'nacl-65',
+      '7% 高盐耐受': 'nacl-65',
+      'CAMP': 'bio-camp',
+      'CAMP 抑制试验': 'bio-camp',
+      'CAMP 试验': 'bio-camp',
+      'CAMP(金黄色葡萄球菌)': 'bio-camp',
+      'CAMP(马红球菌)': 'bio-camp',
+      'CAMP试验': 'bio-camp',
+      'DNase': 'dnase',
+      'H2S': 'h2s',
+      'H₂S': 'h2s',
+      'H₂S(醋酸铅试纸法)': 'h2s',
+      'H₂S（TSI）': 'h2s',
+      'Lancefield': 'lancefield',
+      'Lancefield 群': 'lancefield',
+      'Lancefield群': 'lancefield',
+      'O/129': 'o129',
+      'O/129 (150μg)': 'o129',
+      'O/129 敏感': 'o129',
+      'O/129 敏感性': 'o129',
+      'ONPG': 'onpg',
+      'ONPG/吲哚/尿素酶': 'urease',
+      'ONPG试验': 'onpg',
+      'Optochin': 'bio-optochin',
+      'PYR': 'pyr-test',
+      'PYR/LAP': 'pyr-test',
+      'TSI 产 H₂S': 'tsi-kia',
+      'V 因子需求': 'xv-factor',
+      'V-P': 'vp-test',
+      'V-P 试验': 'vp-test',
+      'V-P（25℃）': 'vp-test',
+      'VP': 'vp-test',
+      'VP 试验': 'vp-test',
+      'VP(22℃)': 'vp-test',
+      'VP(35℃)': 'vp-test',
+      'VP(乙酰甲基甲醇)': 'vp-test',
+      'V因子(NAD)需求': 'xv-factor',
+      'V因子需求': 'xv-factor',
+      'X 因子需求': 'xv-factor',
+      'X/V 因子': 'xv-factor',
+      'X/V因子需求': 'xv-factor',
+      'X因子(血红素)需求': 'xv-factor',
+      'β-半乳糖苷酶': 'onpg',
+      'β-溶血': 'hemolysis',
+      '七叶苷': 'bile-esculin',
+      '七叶苷水解': 'bile-esculin',
+      '三糖铁 H2S': 'tsi-kia',
+      '丙二酸盐利用': 'malonate',
+      '乙酰胺培养基生长': 'acetamide',
+      '乙酰胺生长': 'acetamide',
+      '乳糖': 'lactose-fermentation',
+      '乳糖发酵': 'lactose-fermentation',
+      '亚硝酸盐还原': 'nitrate-reduction',
+      '亚硝酸盐还原为氮气(脱氮)': 'nitrate-reduction',
+      '产色素': 'pigment',
+      '产过氧化氢': 'bio-catalase',
+      '兰氏(Lancefield)血清分群': 'lancefield',
+      '兰氏分群': 'lancefield',
+      '凝固酶': 'bio-coagulase',
+      '凝固酶(玻片法)': 'bio-coagulase',
+      '凝固酶(试管法)': 'bio-coagulase',
+      '凝固酶（试管法）': 'bio-coagulase',
+      '动力': 'motility',
+      '动力 25℃': 'motility',
+      '动力 37℃': 'motility',
+      '动力(25℃/36℃)': 'motility',
+      '动力(36℃)': 'motility',
+      '动力(36℃/25℃)': 'motility',
+      '动力（22–25℃）': 'motility',
+      '卵磷脂酶': 'lecithinase',
+      '卵磷脂酶(Nagler)': 'lecithinase',
+      '卵磷脂酶(Nagler反应)': 'lecithinase',
+      '卵磷脂酶/脂肪酶': 'lecithinase',
+      '卵磷脂酶（Nagler 反应）': 'lecithinase',
+      '卵磷脂酶（Nagler）': 'lecithinase',
+      '卵磷脂酶（蛋黄反应）': 'lecithinase',
+      '双圈(双区)溶血(血平板)': 'hemolysis',
+      '发酵葡萄糖': 'glucose-fermentation',
+      '发酵葡萄糖/蔗糖': 'glucose-fermentation',
+      '可溶性色素': 'pigment',
+      '吲哚': 'indole',
+      '吲哚/VP': 'indole',
+      '吲哚/尿素酶/七叶苷': 'indole',
+      '吲哚/硫化氢/硝酸盐': 'indole',
+      '吲哚酚乙酸盐水解': 'indole',
+      '奥普托欣': 'bio-optochin',
+      '尿素酶': 'urease',
+      '尿素酶(7日)': 'urease',
+      '尿素酶（7 天）': 'urease',
+      '改良氧化酶': 'bio-oxidase',
+      '新生霉素': 'novobiocin',
+      '明胶水解': 'gelatinase',
+      '明胶液化': 'gelatinase',
+      '明胶液化(28℃)': 'gelatinase',
+      '明胶酶': 'gelatinase',
+      '木糖发酵': 'glucose-fermentation',
+      '杆菌肽': 'bacitracin',
+      '杆菌肽(0.04U)': 'bacitracin',
+      '果糖/甘露醇发酵': 'mannitol-fermentation',
+      '果糖发酵': 'glucose-fermentation',
+      '枸橼酸盐': 'citrate',
+      '枸橼酸盐利用': 'citrate',
+      '氧化酶': 'bio-oxidase',
+      '氧化酶(改良法)': 'bio-oxidase',
+      '氧化酶/尿素酶/明胶/七叶苷': 'bio-oxidase',
+      '氧化酶/触酶': 'bio-catalase',
+      '氧化酶/触酶/硝酸盐': 'bio-catalase',
+      '海藻糖发酵': 'glucose-fermentation',
+      '海藻糖发酵/同化': 'glucose-fermentation',
+      '溶血': 'hemolysis',
+      '溶血型': 'hemolysis',
+      '热触酶(68℃)': 'bio-catalase',
+      '玉米培养基产红色素': 'pigment',
+      '玻片凝固酶': 'bio-coagulase',
+      '甘露醇': 'mannitol-fermentation',
+      '甘露醇产酸': 'mannitol-fermentation',
+      '甘露醇发酵': 'mannitol-fermentation',
+      '甲基红': 'mr-test',
+      '甲基红(MR)': 'mr-test',
+      '硝酸盐还原': 'nitrate-reduction',
+      '硝酸盐还原/同化': 'nitrate-reduction',
+      '硝酸盐还原为亚硝酸盐': 'nitrate-reduction',
+      '硝酸盐还原产气': 'nitrate-reduction',
+      '硝酸盐还原（硝基还原亚种）': 'nitrate-reduction',
+      '硫化氢': 'h2s',
+      '硫化氢(H₂S)': 'h2s',
+      '硫化氢(SIM)': 'h2s',
+      '硫化氢(TSI)': 'h2s',
+      '硫化氢(TSI/KIA)': 'h2s',
+      '硫化氢(TSI/PIA)': 'h2s',
+      '类解脲生物变种尿素酶': 'urease',
+      '精氨酸双水解酶': 'adh-test',
+      '糖原/淀粉/海藻糖发酵': 'glucose-fermentation',
+      '糖发酵': 'glucose-fermentation',
+      '糖发酵(葡萄糖等)': 'glucose-fermentation',
+      '糖发酵：葡萄糖/麦芽糖': 'glucose-fermentation',
+      '紫色色素': 'pigment',
+      '红色可扩散色素(25℃)': 'pigment',
+      '耐热核酸酶(DNase)': 'dnase',
+      '胆汁七叶苷': 'bile-esculin',
+      '胆汁七叶苷(BBE，20%胆盐)': 'bile-esculin',
+      '胆汁七叶苷(BEA)': 'bile-esculin',
+      '胆汁溶菌': 'bio-bile-solubility',
+      '胆汁溶解': 'bio-bile-solubility',
+      '背面色素': 'pigment',
+      '脲酶': 'urease',
+      '脲酶（尿素水解）': 'urease',
+      '色素': 'pigment',
+      '色素产生': 'pigment',
+      '色素（血平板避光 5~7 日）': 'pigment',
+      '芽管试验': 'germ-tube',
+      '芽管试验(血清37℃ 2-3h)': 'germ-tube',
+      '苯丙氨酸脱氨酶': 'phenylalanine-deaminase',
+      '菌落色素': 'pigment',
+      '葡萄糖': 'glucose-fermentation',
+      '葡萄糖/乳糖发酵': 'lactose-fermentation',
+      '葡萄糖/蔗糖/山梨醇/甘露糖发酵': 'glucose-fermentation',
+      '葡萄糖/麦芽糖/蔗糖发酵': 'glucose-fermentation',
+      '葡萄糖/麦芽糖发酵': 'glucose-fermentation',
+      '葡萄糖产气': 'glucose-fermentation',
+      '葡萄糖产酸': 'glucose-fermentation',
+      '葡萄糖发酵': 'glucose-fermentation',
+      '葡萄糖发酵(O-F)': 'glucose-fermentation',
+      '葡萄糖发酵/同化': 'glucose-fermentation',
+      '葡萄糖发酵产气': 'glucose-fermentation',
+      '葡萄糖（氧化型产酸）': 'glucose-fermentation',
+      '葡萄糖（氧化型）': 'glucose-fermentation',
+      '蔗糖发酵': 'glucose-fermentation',
+      '蔗糖发酵(TCBS)': 'glucose-fermentation',
+      '蔗糖发酵产酸': 'glucose-fermentation',
+      '血平板溶血': 'hemolysis',
+      '血浆凝固酶': 'bio-coagulase',
+      '血清芽管': 'germ-tube',
+      '触酶': 'bio-catalase',
+      '触酶 (68℃)': 'bio-catalase',
+      '触酶(过氧化氢酶)': 'bio-catalase',
+      '试管凝固酶': 'bio-coagulase',
+      '赖氨酸脱羧酶': 'lysine-decarboxylase',
+      '赖氨酸脱羧酶（LDC）': 'lysine-decarboxylase',
+      '酚氧化酶': 'bio-oxidase',
+      '酚氧化酶(咖啡酸)': 'bio-oxidase',
+      '酚氧化酶/咖啡酸(鸟食)培养基(产黑色素)': 'bio-oxidase',
+      '酚氧化酶（黑素）': 'bio-oxidase',
+      '阿拉伯糖发酵': 'glucose-fermentation',
+      '马尿酸水解': 'hippurate',
+      '马尿酸盐': 'hippurate',
+      '马尿酸盐水解': 'hippurate',
+      '高盐(10% NaCl)耐受': 'nacl-65',
+      '鸟氨酸脱羧酶': 'ornithine-decarboxylase',
+      '鸟氨酸脱羧酶（ODC）': 'ornithine-decarboxylase',
+      '麦芽糖/蔗糖发酵': 'glucose-fermentation',
+      '麦芽糖发酵': 'glucose-fermentation',
+      '黄色素': 'pigment',
+      '黄色素（25℃）': 'pigment',
+      '黄色色素': 'pigment',
+      '黑色素': 'pigment',
+      '鼠李糖发酵': 'glucose-fermentation'
     };
     Object.keys(aliases).forEach(function (k) { m[k] = aliases[k]; });
 
@@ -297,14 +501,14 @@
     renderSidebar();
   }
 
-  // 递归渲染一个分类节点（任意层级，按深度缩进，可点击折叠/展开）
+  // 递归渲染一个分类节点（任意层级，按深度缩进）。
+  // 属节点双控件：标题本身可点（有同名属级条目时直达属介绍），独立小箭头负责折叠/展开种列表。
   function sidebarNodes(node, depth, parentPath) {
     var path = parentPath + '/' + node.名称;
     var collapsible = (node.children && node.children.length) || (node.entries && node.entries.length);
     var isCollapsed = !!collapsed[path];
-    // 属级条目折叠：叶子分类下唯一条目与属同名（如批11~17 补的「库克菌属」属级条目），
-    // 树上会出现「库克菌属 ▾ / 库克菌属」两层重复。此时属节点直接渲染为可点击链接
-    // （点开即显示该属介绍），不再挂子条目——树更矮，点击少一层。
+    // 属级条目折叠：叶子分类下唯一条目与属同名（批11~17 的属级条目），树上会两层重复——
+    // 直接渲染为链接（点开即属介绍），不再挂子条目。
     if (!node.children.length && node.entries.length === 1 && node.entries[0].名称 === node.名称) {
       var only = node.entries[0];
       return [ el('a', {
@@ -315,16 +519,38 @@
         title: '查看' + node.名称 + '介绍'
       }) ];
     }
+    // 「大属」：分类节点存在同名条目（如批32+ 的链球菌属 spp. 条目）且还有其他子条目——
+    // 标题渲染为可点击链接（直达属介绍），折叠箭头独立放在标题行内，两者互不干扰。
+    var genusEntry = collapsible ? (node.entries || []).find(function (e) { return e.名称 === node.名称; }) : null;
     var labelCls = (depth === 0 ? 'cat-group-name' : 'cat-subgroup') + (collapsible ? ' collapsible' : '');
-    var marker = collapsible ? (isCollapsed ? '▸ ' : '▾ ') : '';
-    var out = [ el(collapsible ? 'button' : 'div', {
-      cls: labelCls + (collapsible ? ' cat-toggle' : ''),
-      text: marker + node.名称,
-      type: collapsible ? 'button' : null,
-      style: 'padding-left:' + (8 + depth * 14) + 'px',
-      'aria-expanded': collapsible ? String(!isCollapsed) : null,
-      onClick: collapsible ? function () { toggleCollapse(path); } : null
-    }) ];
+    var marker = collapsible ? (isCollapsed ? '▸' : '▾') : '';
+    var pad = 'padding-left:' + (8 + depth * 14) + 'px';
+    var out;
+    if (genusEntry) {
+      // 标题=链接 + 独立箭头按钮（flex 行：箭头 | 属名链接）
+      var rowKids = [];
+      if (collapsible) {
+        rowKids.push(el('button', {
+          cls: 'cat-toggle genus-arrow', text: marker, type: 'button',
+          'aria-expanded': String(!isCollapsed), title: isCollapsed ? '展开种列表' : '折叠种列表',
+          onClick: function () { toggleCollapse(path); }
+        }));
+      }
+      rowKids.push(el('a', {
+        cls: 'cat-genus-title entry-link' + (genusEntry.selected ? ' selected' : ''),
+        text: node.名称, href: genusEntry.href, title: '查看' + node.名称 + '总览'
+      }));
+      out = [ el('div', { cls: 'genus-row', style: pad }, rowKids) ];
+    } else {
+      out = [ el(collapsible ? 'button' : 'div', {
+        cls: labelCls + (collapsible ? ' cat-toggle' : ''),
+        text: (marker ? marker + ' ' : '') + node.名称,
+        type: collapsible ? 'button' : null,
+        style: pad,
+        'aria-expanded': collapsible ? String(!isCollapsed) : null,
+        onClick: collapsible ? function () { toggleCollapse(path); } : null
+      }) ];
+    }
     if (isCollapsed) { return out; }
     if (node.children && node.children.length) {
       node.children.forEach(function (c) {
@@ -333,6 +559,9 @@
     } else {
       var epad = 'padding-left:' + (8 + (depth + 1) * 14) + 'px';
       node.entries.forEach(function (e) {
+        // 标题行已是属介绍链接（genus-row），展开的子条目列表跳过同名条目，避免两层重复。
+        // 去重发生在渲染层而非 VM 层——VM 必须保留同名条目供 genusEntry 查找（见 view.js buildNode 注释）。
+        if (genusEntry && e.id === genusEntry.id) { return; }
         out.push(el('a', { cls: 'entry-link' + (e.selected ? ' selected' : ''), text: e.名称, href: e.href, style: epad }));
       });
     }
@@ -581,6 +810,155 @@
     ]);
   }
 
+  // ===== 详情页正文富渲染：分层 + 站内链接 =====
+  // ① 长正文（>120 字或含「；」「。」分句）拆成要点列表，视觉分层；
+  // ② 正文中出现库内菌名/药名时自动变为可点击链接（跳对应词条）。
+  // 词典： microbes 名称→#/microbes/id；药物名→#/antibiotics/id；速查别名→#/microbe-names/<名>。
+  var _linkDict = null;
+  function linkDict() {
+    if (_linkDict) { return _linkDict; }
+    var dict = {};
+    var DB = window.DB || {};
+    (DB.microbes || []).forEach(function (m) { if (m.名称 && m.id) { dict[m.名称] = '#/microbes/' + m.id; } });
+    (DB.antibiotics || []).forEach(function (a) {
+      if (!a.名称 || !a.id || dict[a.名称]) { return; }
+      dict[a.名称] = '#/antibiotics/' + a.id;
+      // 复方药的连字符/全角斜杠变体也注册：正文写「阿莫西林-克拉维酸」时整串命中，
+      // 避免只有前半成分成链、后半落空造成「半截复方」的破碎观感（诺卡菌药敏实测踩过）。
+      if (/[\/／]/.test(a.名称)) {
+        var parts = a.名称.split(/[\/／]/).map(function (x) { return x.trim(); }).filter(Boolean);
+        ['- ', '／'].forEach(function (sep) {
+          var variant = parts.join(sep.trim());
+          if (variant && !dict[variant]) { dict[variant] = '#/antibiotics/' + a.id; }
+        });
+      }
+    });
+    // 药敏简写（白名单）：MEM=美罗培南等 34 个无歧义高频简写。不能全收——
+    // CF（囊性纤维化）、CT（CT 扫描/霍乱肠毒素）、OXA（OXA 酶）等会误伤，实测踩过。
+    var ABBR_OK = ['MEM','IPM','ETP','VAN','TEC','LZD','TZD','CZD','DAP','CIP','OFX','GEN','TOB','AZM','ERY','CLR','CLI','TGC','DOX','CHL','RIF','FOS','NIT','SXT','TZP','CST','AMB','FLU','VRC','POS','ISA','MCF','CAS','5FC'];
+    (DB.antibiotics || []).forEach(function (a) {
+      var ab = (a.药敏简写 || '').trim();
+      if (ab && ABBR_OK.indexOf(ab) !== -1 && !dict[ab]) { dict[ab] = '#/antibiotics/' + a.id; }
+    });
+    // 菌群/耐药表型简写 → 对应词条（或模块）。均为约定俗成缩写，无正文歧义。
+    [['MRSA','staph-aureus'],['MSSA','staph-aureus'],['VISA','staph-aureus'],['VRSA','staph-aureus'],
+     ['CoNS','staphylococcus-genus'],['VRE','enterococcus-genus'],['CRE','klebsiella-genus'],
+     ['BLNAR','haemophilus-influenzae'],['GBS','strep-agalactiae'],['GAS','strep-pyogenes'],
+     ['CRAB','acinetobacter-baumannii'],['CRKP','klebsiella-pneumoniae'],['NTM','mycobacterium-genus']
+    ].forEach(function (p) {
+      if (!dict[p[0]] && (DB.microbes || []).some(function (m) { return m.id === p[1]; })) { dict[p[0]] = '#/microbes/' + p[1]; }
+    });
+    // 其他内容模块条目名：试验/培养基/染色/检测卡/耐药因素——正文提到即链
+    [['tests', 'tests'], ['media', 'media'], ['staining', 'staining'], ['cards', 'cards'], ['resistance', 'resistance'], ['virulence', 'virulence'], ['genetics', 'genetics'], ['biochemTests', 'biochem-tests']].forEach(function (pair) {
+      (DB[pair[0]] || []).forEach(function (t) { if (t.名称 && t.id && !dict[t.名称]) { dict[t.名称] = '#/' + pair[1] + '/' + t.id; } });
+    });
+    // 分类树属叶子名兜底：正文中「XX菌属」指到该属的 spp. 总览条目（无 spp. 则指第一个种）
+    (DB.categories && DB.categories.microbes || []).forEach(function walkCat(n) {
+      if (!n || !n.名称) { return; }
+      if (n.子类 && n.子类.length) { n.子类.forEach(walkCat); return; }
+      if (!dict[n.名称]) {
+        var genusEntry = (DB.microbes || []).find(function (m) { return m.名称 === n.名称; });
+        if (genusEntry) { dict[n.名称] = '#/microbes/' + genusEntry.id; }
+      }
+    });
+    (DB.microbeNames || []).forEach(function (n) {
+      if (!n.别名) { return; }
+      var target = dict[n.名称] || ('#/microbe-names/' + encodeURIComponent(n.名称));
+      String(n.别名).split(/[/、,，]/).forEach(function (raw) {
+        var a = raw.trim();
+        // 别名太短会误伤正文（如「金葡」「肺链」这类只收长度 ≥3 且未被占用的）
+        if (a.length >= 3 && !dict[a]) { dict[a] = target; }
+      });
+    });
+    _linkDict = Object.keys(dict).sort(function (a, b) { return b.length - a.length; })
+      .reduce(function (o, k) { o[k] = dict[k]; return o; }, {});
+    return _linkDict;
+  }
+
+  // 把一段纯文本渲染为「带站内链接的行内节点数组」。匹配规则：长名优先，已命中区间不再嵌套匹配。
+  function richInline(text) {
+    var keys = linkDict();
+    var out = [];
+    var rest = String(text == null ? '' : text);
+    var guard = 0;
+    while (rest.length && guard++ < 4000) {
+      var hit = null;
+      for (var k in keys) {
+        var at = rest.indexOf(k);
+        if (at === 0 || (at > 0)) {
+          // 纯拉丁字母词（药敏简写/菌群缩写）要求两侧词边界，防止 SXT 命中 SXTabc、MEM 命中 eMEMbers
+          if (/^[A-Za-z0-9]+$/.test(k)) {
+            var L = at > 0 ? rest.charAt(at - 1) : '';
+            var R = rest.charAt(at + k.length) || '';
+            if (/[A-Za-z0-9]/.test(L) || /[A-Za-z]/.test(R)) { continue; }
+          }
+          if (at === 0) { hit = { name: k, len: k.length }; break; }
+          if (hit === null || at < hit.at) { hit = { name: k, len: k.length, at: at }; }
+        }
+      }
+      if (!hit) { out.push(document.createTextNode(rest)); break; }
+      var at = hit.at || 0;
+      if (at > 0) { out.push(document.createTextNode(rest.slice(0, at))); }
+      out.push(el('a', { cls: 'wiki-link', text: hit.name, href: keys[hit.name], title: '查看词条：' + hit.name }));
+      rest = rest.slice(at + hit.len);
+    }
+    return out;
+  }
+
+  // 长正文分层：按中文分号/句号切句，超过 2 句且总长 >120 字时渲染为要点列表；括号引导语提亮。
+  function richBody(text) {
+    var s = String(text == null ? '' : text);
+    var lines = [];
+    // 先按换行分段（white-space:pre-wrap 时代的手动换行保留为段落）
+    s.split(/\n+/).forEach(function (para) {
+      para = para.trim();
+      if (!para) { return; }
+      var isBulleted = /^[•·\-\*]/.test(para);
+      if (isBulleted) { lines.push({ t: 'li', text: para.replace(/^[•·\-\*]\s*/, '') }); return; }
+      // 拆「；」分句（保留括号内嵌套——只在括号深度 0 时切）
+      var depth = 0, buf = '', parts = [];
+      for (var i = 0; i < para.length; i++) {
+        var c = para[i];
+        if (c === '（' || c === '(') { depth++; }
+        if (c === '）' || c === ')') { depth = Math.max(0, depth - 1); }
+        buf += c;
+        if (depth === 0 && (c === '；' || c === '。')) { parts.push(buf.trim()); buf = ''; }
+      }
+      if (buf.trim()) { parts.push(buf.trim()); }
+      var parenGroups = (para.match(/（/g) || []).length;
+      if ((parts.length >= 3 || parenGroups >= 3) && para.length > 100) {
+        if (parts.length >= 3) {
+          parts.forEach(function (p) { lines.push({ t: 'li', text: p }); });
+        } else {
+          // 句子少但括号组多（罗列型长段）：按 顿号+括号组 边界再切一层
+          var chunks = para.split(/(?<=）)、|(?<=）)，/);
+          if (chunks.length >= 3) { chunks.forEach(function (p) { lines.push({ t: 'li', text: p }); }); }
+          else { lines.push({ t: 'p', text: para }); }
+        }
+      } else {
+        lines.push({ t: 'p', text: para });
+      }
+    });
+    var nodes = [];
+    if (lines.length === 1) {
+      nodes.push(el('div', { cls: 'section-body' }, richInline(lines[0].text)));
+      return nodes;
+    }
+    var lis = [];
+    lines.forEach(function (ln) {
+      if (ln.t === 'p') {
+        lis.push(el('li', { cls: 'rich-p' }, [el('span', { cls: 'rich-p-text' }, richInline(ln.text))]));
+      } else {
+        lis.push(el('li', { cls: 'rich-li' }, [
+          el('span', { cls: 'rich-li-dot', text: '·' }),
+          el('span', { cls: 'rich-li-text' }, richInline(ln.text))
+        ]));
+      }
+    });
+    nodes.push(el('div', { cls: 'section-body rich-body' }, [ el('ul', { cls: 'rich-list' }, lis) ]));
+    return nodes;
+  }
+
   function buildDetail(vm) {
     if (!vm) { return [ el('div', { cls: 'empty', text: '请选择左侧的一个条目查看详情。' }) ]; }
     var nodes = [];
@@ -606,7 +984,7 @@
           el('span', { cls: 'biosafety-title', text: '生物安全警示' }),
           bio.级别 ? el('span', { cls: 'biosafety-level', text: bio.级别 }) : null
         ]),
-        el('div', { cls: 'biosafety-body', text: bio.提示 || '' })
+        el('div', { cls: 'biosafety-body' }, richInline(bio.提示 || ''))
       ]));
     }
     if (vm.机制图) {
@@ -620,10 +998,9 @@
       nodes.push(el('div', { cls: 'empty-sm', text: '（暂无内容小节）' }));
     } else {
       vm.小节.forEach(function (s) {
-        nodes.push(el('div', { cls: 'section-card' }, [
-          el('div', { cls: 'section-title', text: s.标题 }),
-          el('div', { cls: 'section-body', text: s.正文 })
-        ]));
+        var card = [ el('div', { cls: 'section-title', text: s.标题 }) ];
+        richBody(s.正文).forEach(function (n) { card.push(n); });
+        nodes.push(el('div', { cls: 'section-card' }, card));
       });
     }
 
@@ -677,18 +1054,16 @@
     }
 
     if (vm.天然耐药) {
-      nodes.push(el('div', { cls: 'intrinsic' }, [
-        el('div', { cls: 'intrinsic-title', text: '天然耐药' }),
-        el('div', { cls: 'intrinsic-body', text: vm.天然耐药 })
-      ]));
+      var intrCard = [ el('div', { cls: 'intrinsic-title', text: '天然耐药' }) ];
+      richBody(vm.天然耐药).forEach(function (n) { intrCard.push(n); });
+      nodes.push(el('div', { cls: 'intrinsic' }, intrCard));
     }
 
-    // 治疗要点（经验首选，来自 IDSA/CDC/Sanford 等指南）
+    // 治疗要点（经验首选，来自 IDSA/CDC/Sanford 等指南）—— 富渲染（分层+站内药名/菌名链接）
     if (vm.治疗) {
-      nodes.push(el('div', { cls: 'treatment' }, [
-        el('div', { cls: 'treatment-title', text: '治疗要点' }),
-        el('div', { cls: 'treatment-body', text: vm.治疗 })
-      ]));
+      var treatCard = [ el('div', { cls: 'treatment-title', text: '治疗要点' }) ];
+      richBody(vm.治疗).forEach(function (n) { treatCard.push(n); });
+      nodes.push(el('div', { cls: 'treatment' }, treatCard));
     }
 
     if (vm.药物 && vm.药物.length) {
@@ -712,10 +1087,10 @@
     if (vm.形态) {
       var mNodes = [ el('div', { cls: 'morph-title', text: '培养与镜下形态' }) ];
       if (vm.形态.镜下) {
-        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag', text: '镜下' }), el('span', { text: ' ' + vm.形态.镜下 }) ]));
+        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag', text: '镜下' }), el('span', { cls: 'morph-rich' }, richInline(' ' + vm.形态.镜下)) ]));
       }
       (vm.形态.培养 || []).forEach(function (c) {
-        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag morph-med', text: c.培养基 }), el('span', { text: ' ' + c.形态 }) ]));
+        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag morph-med', text: c.培养基 }), el('span', { cls: 'morph-rich' }, richInline(' ' + c.形态)) ]));
       });
       nodes.push(el('div', { cls: 'morphology' }, mNodes));
     }
@@ -806,8 +1181,8 @@
         }
         return el('div', { cls: 'diff-item' }, [
           el('div', { cls: 'diff-head' }, [ head ]),
-          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag', text: '相似点' }), el('span', { text: ' ' + d.相似点 }) ]),
-          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag diff-key', text: '鉴别' }), el('span', { text: ' ' + d.鉴别 }) ])
+          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag', text: '相似点' }), el('span', { cls: 'diff-rich' }, richInline(' ' + d.相似点)) ]),
+          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag diff-key', text: '鉴别' }), el('span', { cls: 'diff-rich' }, richInline(' ' + d.鉴别)) ])
         ]);
       });
       nodes.push(el('div', { cls: 'differential' }, [ el('div', { cls: 'diff-title', text: '相似菌与鉴别' }) ].concat(diffItems)));
@@ -1708,7 +2083,7 @@
   function astLine(label, text) {
     return el('div', { cls: 'ast-line' }, [
       el('span', { cls: 'ast-line-label', text: label }),
-      el('span', { cls: 'ast-line-text', text: text || '—' })
+      el('span', { cls: 'ast-line-text' }, richInline(text || '—'))
     ]);
   }
   function toggleAstRow(sumRow, detailRow, caret, btn) {

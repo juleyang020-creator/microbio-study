@@ -34,8 +34,8 @@
 ## 安全攸关内容（折点 / 判读 / 治疗）
 
 - **折点、抑菌圈、QC 范围、孵育参数绝不凭记忆写**，必须回查源文件。
-  源文件在 `~/Documents/资料库/微生物/`：`02-药敏标准-CLSI/`（M100 Ed36 / M45 / M27M44S / M38M51S / M57S / M60，
-  PDF + markdown 双份）、`03-药敏标准-EUCAST/`（折点 xlsx，**解析用 xlsx 不要用 md**，md 丢了菌种边界）。
+  源文件在 `~/Documents/资料库/微生物/`：`01-药敏标准-CLSI/`（M100 Ed36 / M45 / M27M44S / M38M51S / M57S / M60，
+  PDF + markdown 双份）、`02-药敏标准-EUCAST/`（折点 xlsx，**解析用 xlsx 不要用 md**，md 丢了菌种边界）。
 - **markdown 转换件对矩阵类表格不可靠**——PDF 转换丢了合并单元格，行列会错位。
   读「某菌 × 某药」的具体值，尤其是 M100 附录 B 的天然耐药矩阵，必须看 PDF 页面图
   （`pdftoppm -r 200 -f N -l M -png`）。曾据 md 差点把一条正确内容改错。
@@ -53,7 +53,18 @@
 `data/differential.js`（相似菌鉴别）、`data/biochem.js`（生化反应）、
 `data/breakpoints.js`（把 id 加进对应 CLSI 菌组的 `菌种`）。
 
-动手前读 `docs/菌种编辑规范.md`，对照黄金样例 `pseudomonas-aeruginosa`。
+**microbes.js 已拆为骨架 + 8 个类域文件**（2026-08-30）：新条目按类别写进对应域文件的
+`window.DB.microbes.push(...)` 块——G+球菌/棒状/李斯特/芽孢→`microbes-gram-positive.js`、
+G-杆菌→`microbes-gram-negative.js`、厌氧→`microbes-anaerobe.js`、苛养/胞内/分枝→`microbes-atypical.js`、
+真菌→`microbes-fungi.js`、寄生虫→`microbes-parasite.js`、病毒→`microbes-virus.js`、其余→`microbes-misc.js`。
+`data/microbes.js` 本体只剩初始化，不要再追加。
+**新增 data/ 文件接线是六处**：index.html script 列表、sw.js CORE、tests/data-integrity、tests/tools、
+tools/audit-content.mjs、tools/parse-atlas.mjs（漏一处数据静默丢）。
+**新增「基础知识模块」（如 virulence/genetics）另需三处模块接线**：js/core.js MODULE_KEYS、
+js/view.js MODULE_LABEL、js/app.js db() 映射 + 链接词典对 + index.html tab 按钮。
+
+动手前读 `docs/菌种编辑规范.md`（含 §8 属级条目写法与侧栏渲染链路——2026-08-30 曾因在 VM 层滤同名条目
+导致 34 个属介绍从侧栏消失，修复与教训见该节），对照黄金样例 `pseudomonas-aeruginosa`。
 药敏指的是**折点表**（breakpoints.js 接线），不是在 microbes.js 里写一段散文。
 
 新增 `类别` 必须同时在 `data/categories.js` 里加对应叶子，否则数据完整性测试会失败。
@@ -62,7 +73,7 @@
 
 `~/Documents/资料库/微生物/`（检索入口见 `00-检索总入口.md`，新书从 94 起编号）：
 - `01-药敏标准-CLSI/`、`02-药敏标准-EUCAST/` — 折点源文件（M100 Ed36 / M45 / M27M44S / M38M51S / M57S / M60，PDF + markdown 双份）。
-- `03-菌种库与仪器/`（Bruker 2969 菌种列表、VITEK2 SOP）、`04-技术流程/`、`05-专题-耳念珠菌/`、`06-专题-泌尿系感染与血流感染/`、`07-文献学习/`。
+- `03-菌种库与仪器/`（Bruker 2969 菌种列表、VITEK2 SOP）、`04-技术流程/`、`05-专题-耳念珠菌/`、`06-专题-泌尿系感染与血流感染/`、`07-文献学习/`。（2026-08-28 重排后编号）
 - `90-临床微生物学手册-第12版/` — MCM 12 版（案头权威字典，128 章 + 勘误）。
 - `91-临床微生物学检验技术-人卫2015/` — 旧版教材（留痕对照，优先查 92）。
 - `92-临床微生物学检验技术-人卫2025-第2版/` — **现行教材，日常查询首选**（分章索引定位后只读单章）。

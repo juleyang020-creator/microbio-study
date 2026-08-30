@@ -101,6 +101,12 @@ window.DB.photosAtlas = {
    "说明": "图 12-3-1　藤黄微球菌(粗糙型) SBA 2 日"
   }
  ],
+ "micrococcus-lylae": [
+  {
+   "文件": "img/atlas/f379f2e51abc9db692887be0f739db7d7938e15a5afc75856f7de8eb6205b420.jpg",
+   "说明": "图 12-3-1　里拉微球菌 SBA 3 日"
+  }
+ ],
  "kocuria-kristinae": [
   {
    "文件": "img/atlas/4cae3ddc5303f02f887116eff323e895a256aaf1f4045b3ef8ef81f524e6db24.jpg",
@@ -133,6 +139,12 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/5e1a40a2833b7b5f7e34b61ac32cee86edc41292aead0ca086612c711b6db843.jpg",
    "说明": "图 12-3-5　皮肤球菌属形态特征"
+  }
+ ],
+ "rothia-aerolata": [
+  {
+   "文件": "img/atlas/84ef8adcb81ae74ead60ed4889197c85e6de75ced3e81c8f8d51ea86cb310ed0.jpg",
+   "说明": "图 12-3-6　气生罗氏菌(Rothia aerolata)SBA 3 日"
   }
  ],
  "strep-pyogenes": [
@@ -1377,6 +1389,12 @@ window.DB.photosAtlas = {
    "说明": "图 14-8-13　新诺卡菌 SBA 7 日"
   }
  ],
+ "mycobacterium-genus": [
+  {
+   "文件": "img/atlas/3dc43b2218bb3943b621125d423084bc46ebef32db692258f3cf70f35b505401.jpg",
+   "说明": "图 14-8-14　脓液诺卡菌肉汤培养 2 日 1. 与链霉菌属、放线菌属和拟诺卡菌属的鉴别 四者镜下形态均为分枝丝状，但诺卡菌属改良抗酸染色阳性(图 14-8-3H)，并且所有诺卡菌耐受溶菌酶，而后三者抗酸阴性且不耐受溶菌酶。诺卡菌菌…"
+  }
+ ],
  "rhodococcus-equi": [
   {
    "文件": "img/atlas/d0d2d711c824bd34d9dad9e6743a3ed6e2a1aa54d353dc24013820e29492fb8d.jpg",
@@ -1407,6 +1425,24 @@ window.DB.photosAtlas = {
    "说明": "图 14-9-5　马红球菌 CAMP 试验结果"
   }
  ],
+ "gordonia-bronchialis": [
+  {
+   "文件": "img/atlas/8f90c2356a171ceeb57f63be2d010f5101defbb450d945d7959afe2bcfa8740f.jpg",
+   "说明": "图 14-12-2　菌落涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/e28744d2ce9e99686b34adb9c186a6259c4a23374f6b9c5098a4149f96bcfce5.jpg",
+   "说明": "图 14-12-2　小培养 MHA9 日, 革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/7817b303aa15a6f2fe15fe35156923b15622da24c30beb64b779b7d87d0fd498.jpg",
+   "说明": "图 14-12-2　小培养 MHA15 日, 弱抗酸染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/3ba0165333cf430537d06294e0f2b9fb6481feed604923d5a1a1db24acd7cf98.jpg",
+   "说明": "图 14-12-2　SBA7 日"
+  }
+ ],
  "bacillus-anthracis": [
   {
    "文件": "img/atlas/efb7fae068b3d423bf91b5fbd5732ade6837cb7b8ada8f16acedc4d7e2a47954.jpg",
@@ -1431,6 +1467,40 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/4374246f3414f21b16f5957cc4234abba34d9fae3beea739b4725b6f46507f3b.jpg",
    "说明": "图 14-16-1　炭疽芽胞杆菌(B. anthracis)的形态特征（6/6）"
+  }
+ ],
+ "bacillus-genus": [
+  {
+   "文件": "img/atlas/4313595a79d7b9593cbb56ec5dfc47d68436dbbfda5d612e89d58307eeb99dc6.jpg",
+   "说明": "图 14-16-2　革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/8467ff8930f94df0c6041773adc512616c2a3e58c0be1c7337a9d205db9630dc.jpg",
+   "说明": "图 14-16-2　ATCC 14579 SBA 24h"
+  },
+  {
+   "文件": "img/atlas/caa93261ebb27361dddd3732679c164726a750c447e0d836885e50fa44c24836.jpg",
+   "说明": "图 14-16-2　ATCC 14579 MHA 2 日"
+  },
+  {
+   "文件": "img/atlas/cc2934cb89cb47f49e8a63440abe4a0092e87ecf5d20dbbeb5fcc047dd881654.jpg",
+   "说明": "图 14-16-2　临床分离株 SBA 24h"
+  },
+  {
+   "文件": "img/atlas/65d897f10cb1a29132a84312ea356bb3b4bcbed9bee9d1522bba6e09fb034eaa.jpg",
+   "说明": "图 14-16-3　枯草芽胞杆菌(B. subtilis)的形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/1c312f0a6b5eccbee3efa860c8c123bcf70dd45960d63d235df71fa61fba16d7.jpg",
+   "说明": "图 14-16-3　枯草芽胞杆菌(B. subtilis)的形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/d59b39878441917f852407de94bd7db7fdd61e4cb02adc95a22b9cb792c1d82a.jpg",
+   "说明": "图 14-16-3　枯草芽胞杆菌(B. subtilis)的形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/cbeee7dcd4736140a55b880d7596833e41707e6cb96c1e4f4d551cfe3228b939.jpg",
+   "说明": "图 14-16-3　枯草芽胞杆菌(B. subtilis)的形态特征（4/5）"
   }
  ],
  "e-coli": [
@@ -1931,6 +2001,24 @@ window.DB.photosAtlas = {
    "说明": "图 15-25-1　临床分离株 MHA (产色素情况)"
   }
  ],
+ "serratia-liquefaciens": [
+  {
+   "文件": "img/atlas/56ab47b5520ecee6311585c609873bf02c748c8f0ee18287ea47440d7ee6ea5e.jpg",
+   "说明": "图 15-25-2　革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/cd5691573b0b38e891b963e756a1c37b92e38848705903e79a411bd4a50bf99d.jpg",
+   "说明": "图 15-25-2　SBA 24h"
+  },
+  {
+   "文件": "img/atlas/1d77f7c4c058e1d06f9bf08712ffc8bd8f6ad970048f23c419d675ee2fa38b37.jpg",
+   "说明": "图 15-25-2　中国蓝平板 24h"
+  },
+  {
+   "文件": "img/atlas/4d82e0cc87cf89f303fa40d314bfa456b15735405a5bd91a99b4f65ab3ab70eb.jpg",
+   "说明": "图 15-25-2　MAC 24h"
+  }
+ ],
  "hafnia-alvei": [
   {
    "文件": "img/atlas/950c3d38c10087df6fb91add3c700bc15ec3478baa5615b97c7f72afc8860e1a.jpg",
@@ -2009,6 +2097,24 @@ window.DB.photosAtlas = {
    "说明": "图 16-1-5　霍乱弧菌在碱性蛋白胨水中培养后产生菌膜"
   }
  ],
+ "vibrio-genus": [
+  {
+   "文件": "img/atlas/e059a96529fc1779735d513f14f6b755881c6fa352877670b03d10bb7e24f7d2.jpg",
+   "说明": "图 16-1-1　霍乱弧菌 O1 群"
+  },
+  {
+   "文件": "img/atlas/972c63856fabf4a25f7bdfbc9c08a002c79c484ca9b3fac6eafe32d6dd41c0bd.jpg",
+   "说明": "图 16-1-1　非 O1 非 O139 群霍乱弧菌(肉汤培养涂片)"
+  },
+  {
+   "文件": "img/atlas/087d78e3b7557e8ee5229296e2b7541689eabf7c0de74cc314e68aca275e07d9.jpg",
+   "说明": "图 16-1-1　创伤弧菌"
+  },
+  {
+   "文件": "img/atlas/9b53e95532ea364f94cddcb5c233983b3f58b03529ef35fa5861cf1cee9f3807.jpg",
+   "说明": "图 16-1-1　副溶血弧菌"
+  }
+ ],
  "vibrio-vulnificus": [
   {
    "文件": "img/atlas/087d78e3b7557e8ee5229296e2b7541689eabf7c0de74cc314e68aca275e07d9.jpg",
@@ -2035,6 +2141,16 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/b8ebcbcd4ff06c5e214e9d1975506c69a1af00c3fffccd3e647fcabfa7a4c98c.jpg",
    "说明": "图 16-1-3　副溶血弧菌庆大平板 24h"
+  }
+ ],
+ "photobacterium-damselae": [
+  {
+   "文件": "img/atlas/bf6463909c0de998cab8faa9ee6299b1f4d8028f4752001bd0bb84beb2cae4b9.jpg",
+   "说明": "图 16-1-4　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/aba88122d7e5ffae219cd3186ce008bdb37da4ba63d46fe7f21a00a120319d6a.jpg",
+   "说明": "图 16-1-4　SBA2日"
   }
  ],
  "aeromonas-hydrophila": [
@@ -2203,6 +2319,32 @@ window.DB.photosAtlas = {
    "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（6/6）"
   }
  ],
+ "pseudomonas-genus": [
+  {
+   "文件": "img/atlas/35f7b9fe06b562d7a37cdfabd97826e26f14da5c9facce1ee73d6bfbd4a18e2e.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（1/6）"
+  },
+  {
+   "文件": "img/atlas/03831b695b99479d2e3a82a814f74646b46243a9b53ff49d0cf872f26fac4af2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（2/6）"
+  },
+  {
+   "文件": "img/atlas/33f2951c31b889a2ca92cb7f935739a8a8719dd335096cb91a0e1c800e5f4eec.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（3/6）"
+  },
+  {
+   "文件": "img/atlas/7ede776bcea784a5d3d8725ee8af83cc16dff9a9059f42b4dc2825bf3f17b5bd.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（4/6）"
+  },
+  {
+   "文件": "img/atlas/a3c68faf9217848e753a6b7b053c7d799faf1c1b585f1459d4442a99b3190f6f.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（5/6）"
+  },
+  {
+   "文件": "img/atlas/1b705b418893e900dc0d46ec928038a1247d4e6a518293d980d3700e74bccba2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（6/6）"
+  }
+ ],
  "acinetobacter-baumannii": [
   {
    "文件": "img/atlas/4cc047be620165892279f9e80572f4f5817f1fb6b99931f52a819a7b75db2a77.jpg",
@@ -2231,6 +2373,40 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/341251958275efaa2a6113e53a7d7d1d8b92332dfdf9a29eb763eb63e3c46bf7.jpg",
    "说明": "图 17-3-3　临床分离株(黏液型)SBA 24h 3. 溶血不动杆菌 符合不动杆菌属特征，在胰酶大豆血琼脂平板形成圆形、凸起、光滑、不透明菌落，菌落边缘整齐，有时可出现黏液性菌落。在马和羊血琼脂平板上 37° C 孵育 24 小时…"
+  }
+ ],
+ "acinetobacter-genus": [
+  {
+   "文件": "img/atlas/8a182da683c7da42a285cc85f8300139799d4100f33c574acbcbb33b90c505d7.jpg",
+   "说明": "图 17-3-2　乙酸钙不动杆菌的形态特征"
+  },
+  {
+   "文件": "img/atlas/341251958275efaa2a6113e53a7d7d1d8b92332dfdf9a29eb763eb63e3c46bf7.jpg",
+   "说明": "图 17-3-3　临床分离株(黏液型)SBA 24h 3. 溶血不动杆菌 符合不动杆菌属特征，在胰酶大豆血琼脂平板形成圆形、凸起、光滑、不透明菌落，菌落边缘整齐，有时可出现黏液性菌落。在马和羊血琼脂平板上 37° C 孵育 24 小时…"
+  },
+  {
+   "文件": "img/atlas/451468cb0feb85350f11d07404339a91d20d4b6219659ff8d48703058b511fb4.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（1/6）"
+  },
+  {
+   "文件": "img/atlas/44606296e7b7b79287e93f205436bb14bb48f07e316f18f9b0742f8eee07efb0.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（2/6）"
+  },
+  {
+   "文件": "img/atlas/53422c6f8ab10f1a633ee21cc02fb30d001b7082af96012caf22e99d3c0ea051.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（3/6）"
+  },
+  {
+   "文件": "img/atlas/c466f003819ed84596b3b93a33db7135348e5163700e62f2ef833e44832cf69b.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（4/6）"
+  },
+  {
+   "文件": "img/atlas/9facc487d848d2394cb02b4e212cce8dd9734ab06d9d8f16d52589b4b40c7b14.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（5/6）"
+  },
+  {
+   "文件": "img/atlas/8b7a4f4c13abcbf209cf84346c56866c04a04c9dd73d91f9701c95e44138c0d2.jpg",
+   "说明": "图 17-3-5　其他不动杆菌属细菌的菌落形态特征（6/6）"
   }
  ],
  "acinetobacter-haemolyticus": [
@@ -2873,6 +3049,32 @@ window.DB.photosAtlas = {
    "说明": "图 19-3-1　半胱氨酸心琼脂培养基孵育 2 日"
   }
  ],
+ "streptococcus-genus": [
+  {
+   "文件": "img/atlas/ce1c73f0cae66eaf8f7cee3f4d7700f67aa2470a47276dbb99e74bc8ef71e0c2.jpg",
+   "说明": "图 20-1-1　脓汁涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/081d414ee94677a762b9524823d8230ade5ec9a7cbc9cd025ec75ea8b97f3171.jpg",
+   "说明": "图 20-1-1　痰涂片(肺脓肿)革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/9e8bf93984d92b17ecf2c7aac42bdb4d48c48b4c63da1f4b7769cda8d29ff23a.jpg",
+   "说明": "图 20-1-1　厌氧消化链球菌革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/6059932a03235a2b7eb10afc2d063325916813a62bf26b1559127a4a9b3c1d90.jpg",
+   "说明": "图 20-1-1　厌氧消化链球菌厌氧培养 8 日"
+  },
+  {
+   "文件": "img/atlas/e9d8e999b806a56788733ba10af3d8062987be3bd986c99bf4f9f51288c6063d.jpg",
+   "说明": "图 20-1-1　口腔消化链球菌革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/6464f237186de7809adcb5a9439f04c6d20ad899c061da581a05521466e5991e.jpg",
+   "说明": "图 20-1-1　口腔消化链球菌厌氧培养 13 日"
+  }
+ ],
  "peptostreptococcus-anaerobius": [
   {
    "文件": "img/atlas/9e8bf93984d92b17ecf2c7aac42bdb4d48c48b4c63da1f4b7769cda8d29ff23a.jpg",
@@ -2923,6 +3125,20 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/f544d2428e733d50c05941af258368e93726f60ee389455e93f8c5aaf8999800.jpg",
    "说明": "图 20-8-5　厌氧培养 8 日 ×40"
+  }
+ ],
+ "actinomyces-naeslundii": [
+  {
+   "文件": "img/atlas/2c1b16ebbd3a4837fa32b26625d1f95004bd985d0ad7e13547886eac54d6b83a.jpg",
+   "说明": "图 20-8-7　其他放线菌革兰氏染色的镜下形态特征 ×1000（1/2）"
+  },
+  {
+   "文件": "img/atlas/59fc28c542c5cc4cc8ec51b91571f96ddf123ddc3ed3184f4a834d504d48c8aa.jpg",
+   "说明": "图 20-8-7　其他放线菌革兰氏染色的镜下形态特征 ×1000（2/2）"
+  },
+  {
+   "文件": "img/atlas/4bf443755e438c7ebc42bed54c28387b51a0cec00a92141baf2a97d7d932b416.jpg",
+   "说明": "图 20-8-8　内氏放线菌厌氧培养 5 日"
   }
  ],
  "bifidobacterium-longum": [
@@ -3205,6 +3421,62 @@ window.DB.photosAtlas = {
    "说明": "图 20-20-5　厌氧培养 2 日"
   }
  ],
+ "clostridium-tertium": [
+  {
+   "文件": "img/atlas/cc72bad312731858ed16102cc3d1cfa1886b111a4e44ea6f00581b1c50486e61.jpg",
+   "说明": "图 20-20-7　厌氧培养 3 日, 革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/fb8a5af8027beb9b4aaa777931bb69f15169da82c5e43e9a25ca002ef1712d87.jpg",
+   "说明": "图 20-20-7　大气培养 3 日, 革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/88eb59dfc96ffc877d28dbc370bc677d3dc32fd6e23af260c0a5463d0852fa57.jpg",
+   "说明": "图 20-20-7　粪便涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/3f11251ca117add9f0d0ca5552fc0aaf9745c1313f47753e2164177b7a947ffe.jpg",
+   "说明": "图 20-20-7　粪便涂片芽胞染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/23f6e066d0e91f023258825278606ff57514edb82b49206328a972f07a855e87.jpg",
+   "说明": "图 20-20-7　厌氧培养 2 日"
+  },
+  {
+   "文件": "img/atlas/43b5fc2f6dbd2622fdec0b837d767ffad9a011834670efb1383555f1c037abcb.jpg",
+   "说明": "图 20-20-7　大气培养 5 日"
+  }
+ ],
+ "clostridium-bifermentans": [
+  {
+   "文件": "img/atlas/d7573143fa317af4864b8de8b425f277f298a62a4e15228435ae07d5f8b687f4.jpg",
+   "说明": "图 20-20-8　双酶梭菌"
+  },
+  {
+   "文件": "img/atlas/027ccbca1a63534ba8ef290f2f4a0b70bf54e42c41b37445d4e6416c748e72ae.jpg",
+   "说明": "图 20-20-9　双酶梭菌厌氧培养 5 日"
+  }
+ ],
+ "clostridium-innocuum": [
+  {
+   "文件": "img/atlas/5dd9f72c6b355688ceb75753394a4daf2a58abd657636b4d09061d5928673d02.jpg",
+   "说明": "图 20-20-8　无害梭菌"
+  },
+  {
+   "文件": "img/atlas/72f8272621887a03149586fa5f2b2f91ef1a73f7ca0ad1d4523e1adc94859e16.jpg",
+   "说明": "图 20-20-9　无害梭菌厌氧培养 8 日"
+  }
+ ],
+ "clostridium-ramosum": [
+  {
+   "文件": "img/atlas/b2069db9c2f019c785b696cb27a1171a7c7deccba1386f6efdef7fe643f10f65.jpg",
+   "说明": "图 20-20-8　多枝梭菌"
+  },
+  {
+   "文件": "img/atlas/ce9eb60bede4100e1c696a71de1c233ecd610381c0951725ce1e8b0253bfef83.jpg",
+   "说明": "图 20-20-9　多枝梭菌厌氧培养 4 日"
+  }
+ ],
  "finegoldia-magna": [
   {
    "文件": "img/atlas/4b2754a22428523e351d720884a8cd5ab6a2367d8d5ae102749eb4f2d48bc35d.jpg",
@@ -3297,6 +3569,26 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/1457cfbaaeb0d7b66946d7772b32bc40a5c2c2c292204a4e0d4c9945e24106a2.jpg",
    "说明": "图 21-1-4　简明弯曲杆菌厌氧培养 4 日"
+  }
+ ],
+ "campylobacter-rectus": [
+  {
+   "文件": "img/atlas/0826e69de9be9ae3b95b9e5957e1d3e9a5671fb7b0a9f1c26c82bd85a56ca439.jpg",
+   "说明": "图 21-1-4　直肠弯曲杆菌透射电镜图 ×200000"
+  },
+  {
+   "文件": "img/atlas/daa3e28d448d847914d42f0265fedd4e44a87b0298b5c4d5fb2b8754b92a9af9.jpg",
+   "说明": "图 21-1-4　直肠弯曲杆菌厌氧培养 13 日"
+  }
+ ],
+ "campylobacter-ureolyticus": [
+  {
+   "文件": "img/atlas/b2b83dd71aa6c6f974552537dcab37cebe18826fbe2fe9d3bac252af8d3a8e29.jpg",
+   "说明": "图 21-1-4　解脲弯曲杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/b4bd91d028a7a313bbe955a659e0bf30906385766e863c997b463e0fd5939241.jpg",
+   "说明": "图 21-1-4　解脲弯曲杆菌厌氧培养 9 日"
   }
  ],
  "helicobacter-pylori": [

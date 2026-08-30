@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', cards: '检测卡', tests: '试验', media: '培养基', staining: '染色', 'biochem-tests': '生化反应', 'qc-strains': '质控菌株' };
+  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', virulence: '致病', genetics: '遗传变异', cards: '检测卡', tests: '试验', media: '培养基', staining: '染色', 'biochem-tests': '生化反应', 'qc-strains': '质控菌株' };
 
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 
@@ -271,6 +271,10 @@
 
     function buildNode(node) {
       var hasChildren = node.子类 && node.子类.length;
+      // 注意：同名属条目必须保留在 entries 里——app.js 的「大属双控件行」靠
+      // (node.entries||[]).find(e => e.名称 === node.名称) 把属标题渲染成可点的总览链接。
+      // 「子列表不重复列同名条目」的职责在 app.js 渲染层（跳过 genusEntry），
+      // 不在 VM 层滤数据（7aca6d7 曾在 VM 层滤掉，导致 34 个大属的属介绍在侧栏消失）。
       return {
         名称: node.名称,
         children: hasChildren ? node.子类.map(buildNode) : [],

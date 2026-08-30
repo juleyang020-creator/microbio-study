@@ -110,6 +110,13 @@ body {
 .cat-genus-link { display: block; text-decoration: none; margin-top: 1px; }
 .cat-genus-link::before { content: '• '; color: var(--line-3, #bbb); }
 .cat-genus-link.selected::before { color: var(--accent); }
+/* 大属双控件行：独立箭头按钮 + 属名链接（直达属总览） */
+.genus-row { display: flex; align-items: center; flex-wrap: nowrap; gap: 0; margin-top: 1px; min-width: 0; }
+.genus-row .cat-genus-title { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-left: 0 !important; border-left-width: 0; }
+.genus-arrow { flex: 0 0 auto; width: auto !important; border: 0; background: transparent; color: var(--muted); font-size: 11px; padding: 2px 4px; line-height: 1.3; cursor: pointer; user-select: none; }
+.genus-arrow:hover { color: var(--accent); }
+.cat-genus-title { font-weight: 500; color: var(--ink-soft); display: block; padding: 2px 8px 2px 4px !important; }
+.cat-genus-title::after { content: ' ⌐总览'; font-size: 10px; color: var(--line-3, #bbb); font-weight: 400; }
 
 /* 侧栏：收藏夹 + 浏览历史 */
 .fav-section, .history-section { margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); }
@@ -259,6 +266,21 @@ body.zoom-open { overflow: hidden; }
 /* 文字小节（无卡片框，编辑式分隔） */
 .section-card { background: none; border: none; border-top: 1px solid var(--line); padding: 14px 0 0; margin: 0 0 14px; max-width: 700px; }
 .section-body { color: var(--ink-soft); line-height: 1.72; white-space: pre-wrap; }
+/* 富渲染正文：分层要点 + 站内词条链接 */
+.wiki-link { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent); padding: 0 1px; cursor: pointer; }
+.wiki-link:hover { background: var(--accent); color: #fff; border-bottom-color: transparent; border-radius: 2px; }
+.rich-body { white-space: normal; }
+.rich-list { list-style: none; margin: 2px 0 0; padding: 0; }
+.rich-list li { display: flex; gap: 8px; align-items: baseline; padding: 3px 0; }
+.rich-list .rich-li-dot { flex: 0 0 auto; color: var(--accent); font-weight: 700; }
+.rich-list .rich-li-text, .rich-list .rich-p-text { flex: 1; min-width: 0; }
+.rich-list li.rich-p { padding: 4px 0 2px; }
+.rich-list li.rich-p:first-child { padding-top: 0; }
+.rich-list li + li.rich-p { border-top: 1px dashed var(--line); margin-top: 4px; padding-top: 6px; }
+/* 治疗/天然耐药/生物安全卡片内的富列表适配（卡片自带背景时弱化分隔） */
+.treatment .rich-list, .intrinsic .rich-list { margin-top: 4px; }
+.treatment .rich-list .rich-li-dot, .intrinsic .rich-list .rich-li-dot { color: var(--treatment-accent, var(--accent)); }
+.diff-rich .wiki-link, .morph-rich .wiki-link, .ast-line-text .wiki-link, .biosafety-body .wiki-link { font-weight: 500; }
 
 /* 形态 */
 .morphology { margin: 22px 0; max-width: 660px; }
