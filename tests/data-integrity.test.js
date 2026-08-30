@@ -8,6 +8,7 @@ global.window = global.window || {};
 global.window.DB = global.window.DB || {};
 require('../data/categories.js');
 require('../data/microbes.js');
+['gram-positive','gram-negative','anaerobe','atypical','fungi','parasite','virus','misc'].forEach(d => require('../data/microbes-' + d + '.js'));
 require('../data/antibiotics.js');
 require('../data/resistance.js');
 require('../data/biochem.js');

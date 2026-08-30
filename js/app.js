@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-13';
+  var APP_VERSION = window.APP_VERSION || '20260830-14';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -297,14 +297,14 @@
     renderSidebar();
   }
 
-  // 递归渲染一个分类节点（任意层级，按深度缩进，可点击折叠/展开）
+  // 递归渲染一个分类节点（任意层级，按深度缩进）。
+  // 属节点双控件：标题本身可点（有同名属级条目时直达属介绍），独立小箭头负责折叠/展开种列表。
   function sidebarNodes(node, depth, parentPath) {
     var path = parentPath + '/' + node.名称;
     var collapsible = (node.children && node.children.length) || (node.entries && node.entries.length);
     var isCollapsed = !!collapsed[path];
-    // 属级条目折叠：叶子分类下唯一条目与属同名（如批11~17 补的「库克菌属」属级条目），
-    // 树上会出现「库克菌属 ▾ / 库克菌属」两层重复。此时属节点直接渲染为可点击链接
-    // （点开即显示该属介绍），不再挂子条目——树更矮，点击少一层。
+    // 属级条目折叠：叶子分类下唯一条目与属同名（批11~17 的属级条目），树上会两层重复——
+    // 直接渲染为链接（点开即属介绍），不再挂子条目。
     if (!node.children.length && node.entries.length === 1 && node.entries[0].名称 === node.名称) {
       var only = node.entries[0];
       return [ el('a', {
@@ -315,16 +315,38 @@
         title: '查看' + node.名称 + '介绍'
       }) ];
     }
+    // 「大属」：分类节点存在同名条目（如批32+ 的链球菌属 spp. 条目）且还有其他子条目——
+    // 标题渲染为可点击链接（直达属介绍），折叠箭头独立放在标题行内，两者互不干扰。
+    var genusEntry = collapsible ? (node.entries || []).find(function (e) { return e.名称 === node.名称; }) : null;
     var labelCls = (depth === 0 ? 'cat-group-name' : 'cat-subgroup') + (collapsible ? ' collapsible' : '');
-    var marker = collapsible ? (isCollapsed ? '▸ ' : '▾ ') : '';
-    var out = [ el(collapsible ? 'button' : 'div', {
-      cls: labelCls + (collapsible ? ' cat-toggle' : ''),
-      text: marker + node.名称,
-      type: collapsible ? 'button' : null,
-      style: 'padding-left:' + (8 + depth * 14) + 'px',
-      'aria-expanded': collapsible ? String(!isCollapsed) : null,
-      onClick: collapsible ? function () { toggleCollapse(path); } : null
-    }) ];
+    var marker = collapsible ? (isCollapsed ? '▸' : '▾') : '';
+    var pad = 'padding-left:' + (8 + depth * 14) + 'px';
+    var out;
+    if (genusEntry) {
+      // 标题=链接 + 独立箭头按钮（flex 行：箭头 | 属名链接）
+      var rowKids = [];
+      if (collapsible) {
+        rowKids.push(el('button', {
+          cls: 'cat-toggle genus-arrow', text: marker, type: 'button',
+          'aria-expanded': String(!isCollapsed), title: isCollapsed ? '展开种列表' : '折叠种列表',
+          onClick: function () { toggleCollapse(path); }
+        }));
+      }
+      rowKids.push(el('a', {
+        cls: 'cat-genus-title entry-link' + (genusEntry.selected ? ' selected' : ''),
+        text: node.名称, href: genusEntry.href, title: '查看' + node.名称 + '总览'
+      }));
+      out = [ el('div', { cls: 'genus-row', style: pad }, rowKids) ];
+    } else {
+      out = [ el(collapsible ? 'button' : 'div', {
+        cls: labelCls + (collapsible ? ' cat-toggle' : ''),
+        text: (marker ? marker + ' ' : '') + node.名称,
+        type: collapsible ? 'button' : null,
+        style: pad,
+        'aria-expanded': collapsible ? String(!isCollapsed) : null,
+        onClick: collapsible ? function () { toggleCollapse(path); } : null
+      }) ];
+    }
     if (isCollapsed) { return out; }
     if (node.children && node.children.length) {
       node.children.forEach(function (c) {
