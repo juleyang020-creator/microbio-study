@@ -1425,6 +1425,24 @@ window.DB.photosAtlas = {
    "说明": "图 14-9-5　马红球菌 CAMP 试验结果"
   }
  ],
+ "gordonia-bronchialis": [
+  {
+   "文件": "img/atlas/8f90c2356a171ceeb57f63be2d010f5101defbb450d945d7959afe2bcfa8740f.jpg",
+   "说明": "图 14-12-2　菌落涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/e28744d2ce9e99686b34adb9c186a6259c4a23374f6b9c5098a4149f96bcfce5.jpg",
+   "说明": "图 14-12-2　小培养 MHA9 日, 革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/7817b303aa15a6f2fe15fe35156923b15622da24c30beb64b779b7d87d0fd498.jpg",
+   "说明": "图 14-12-2　小培养 MHA15 日, 弱抗酸染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/3ba0165333cf430537d06294e0f2b9fb6481feed604923d5a1a1db24acd7cf98.jpg",
+   "说明": "图 14-12-2　SBA7 日"
+  }
+ ],
  "bacillus-anthracis": [
   {
    "文件": "img/atlas/efb7fae068b3d423bf91b5fbd5732ade6837cb7b8ada8f16acedc4d7e2a47954.jpg",
@@ -1983,6 +2001,24 @@ window.DB.photosAtlas = {
    "说明": "图 15-25-1　临床分离株 MHA (产色素情况)"
   }
  ],
+ "serratia-liquefaciens": [
+  {
+   "文件": "img/atlas/56ab47b5520ecee6311585c609873bf02c748c8f0ee18287ea47440d7ee6ea5e.jpg",
+   "说明": "图 15-25-2　革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/cd5691573b0b38e891b963e756a1c37b92e38848705903e79a411bd4a50bf99d.jpg",
+   "说明": "图 15-25-2　SBA 24h"
+  },
+  {
+   "文件": "img/atlas/1d77f7c4c058e1d06f9bf08712ffc8bd8f6ad970048f23c419d675ee2fa38b37.jpg",
+   "说明": "图 15-25-2　中国蓝平板 24h"
+  },
+  {
+   "文件": "img/atlas/4d82e0cc87cf89f303fa40d314bfa456b15735405a5bd91a99b4f65ab3ab70eb.jpg",
+   "说明": "图 15-25-2　MAC 24h"
+  }
+ ],
  "hafnia-alvei": [
   {
    "文件": "img/atlas/950c3d38c10087df6fb91add3c700bc15ec3478baa5615b97c7f72afc8860e1a.jpg",
@@ -2105,6 +2141,16 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/b8ebcbcd4ff06c5e214e9d1975506c69a1af00c3fffccd3e647fcabfa7a4c98c.jpg",
    "说明": "图 16-1-3　副溶血弧菌庆大平板 24h"
+  }
+ ],
+ "photobacterium-damselae": [
+  {
+   "文件": "img/atlas/bf6463909c0de998cab8faa9ee6299b1f4d8028f4752001bd0bb84beb2cae4b9.jpg",
+   "说明": "图 16-1-4　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/aba88122d7e5ffae219cd3186ce008bdb37da4ba63d46fe7f21a00a120319d6a.jpg",
+   "说明": "图 16-1-4　SBA2日"
   }
  ],
  "aeromonas-hydrophila": [
@@ -3081,6 +3127,20 @@ window.DB.photosAtlas = {
    "说明": "图 20-8-5　厌氧培养 8 日 ×40"
   }
  ],
+ "actinomyces-naeslundii": [
+  {
+   "文件": "img/atlas/2c1b16ebbd3a4837fa32b26625d1f95004bd985d0ad7e13547886eac54d6b83a.jpg",
+   "说明": "图 20-8-7　其他放线菌革兰氏染色的镜下形态特征 ×1000（1/2）"
+  },
+  {
+   "文件": "img/atlas/59fc28c542c5cc4cc8ec51b91571f96ddf123ddc3ed3184f4a834d504d48c8aa.jpg",
+   "说明": "图 20-8-7　其他放线菌革兰氏染色的镜下形态特征 ×1000（2/2）"
+  },
+  {
+   "文件": "img/atlas/4bf443755e438c7ebc42bed54c28387b51a0cec00a92141baf2a97d7d932b416.jpg",
+   "说明": "图 20-8-8　内氏放线菌厌氧培养 5 日"
+  }
+ ],
  "bifidobacterium-longum": [
   {
    "文件": "img/atlas/ac31c8f91ed65e7fc531037d541a0d2bf0cc7df7027314d23ceca935af75d17a.jpg",
@@ -3361,6 +3421,62 @@ window.DB.photosAtlas = {
    "说明": "图 20-20-5　厌氧培养 2 日"
   }
  ],
+ "clostridium-tertium": [
+  {
+   "文件": "img/atlas/cc72bad312731858ed16102cc3d1cfa1886b111a4e44ea6f00581b1c50486e61.jpg",
+   "说明": "图 20-20-7　厌氧培养 3 日, 革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/fb8a5af8027beb9b4aaa777931bb69f15169da82c5e43e9a25ca002ef1712d87.jpg",
+   "说明": "图 20-20-7　大气培养 3 日, 革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/88eb59dfc96ffc877d28dbc370bc677d3dc32fd6e23af260c0a5463d0852fa57.jpg",
+   "说明": "图 20-20-7　粪便涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/3f11251ca117add9f0d0ca5552fc0aaf9745c1313f47753e2164177b7a947ffe.jpg",
+   "说明": "图 20-20-7　粪便涂片芽胞染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/23f6e066d0e91f023258825278606ff57514edb82b49206328a972f07a855e87.jpg",
+   "说明": "图 20-20-7　厌氧培养 2 日"
+  },
+  {
+   "文件": "img/atlas/43b5fc2f6dbd2622fdec0b837d767ffad9a011834670efb1383555f1c037abcb.jpg",
+   "说明": "图 20-20-7　大气培养 5 日"
+  }
+ ],
+ "clostridium-bifermentans": [
+  {
+   "文件": "img/atlas/d7573143fa317af4864b8de8b425f277f298a62a4e15228435ae07d5f8b687f4.jpg",
+   "说明": "图 20-20-8　双酶梭菌"
+  },
+  {
+   "文件": "img/atlas/027ccbca1a63534ba8ef290f2f4a0b70bf54e42c41b37445d4e6416c748e72ae.jpg",
+   "说明": "图 20-20-9　双酶梭菌厌氧培养 5 日"
+  }
+ ],
+ "clostridium-innocuum": [
+  {
+   "文件": "img/atlas/5dd9f72c6b355688ceb75753394a4daf2a58abd657636b4d09061d5928673d02.jpg",
+   "说明": "图 20-20-8　无害梭菌"
+  },
+  {
+   "文件": "img/atlas/72f8272621887a03149586fa5f2b2f91ef1a73f7ca0ad1d4523e1adc94859e16.jpg",
+   "说明": "图 20-20-9　无害梭菌厌氧培养 8 日"
+  }
+ ],
+ "clostridium-ramosum": [
+  {
+   "文件": "img/atlas/b2069db9c2f019c785b696cb27a1171a7c7deccba1386f6efdef7fe643f10f65.jpg",
+   "说明": "图 20-20-8　多枝梭菌"
+  },
+  {
+   "文件": "img/atlas/ce9eb60bede4100e1c696a71de1c233ecd610381c0951725ce1e8b0253bfef83.jpg",
+   "说明": "图 20-20-9　多枝梭菌厌氧培养 4 日"
+  }
+ ],
  "finegoldia-magna": [
   {
    "文件": "img/atlas/4b2754a22428523e351d720884a8cd5ab6a2367d8d5ae102749eb4f2d48bc35d.jpg",
@@ -3453,6 +3569,26 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/1457cfbaaeb0d7b66946d7772b32bc40a5c2c2c292204a4e0d4c9945e24106a2.jpg",
    "说明": "图 21-1-4　简明弯曲杆菌厌氧培养 4 日"
+  }
+ ],
+ "campylobacter-rectus": [
+  {
+   "文件": "img/atlas/0826e69de9be9ae3b95b9e5957e1d3e9a5671fb7b0a9f1c26c82bd85a56ca439.jpg",
+   "说明": "图 21-1-4　直肠弯曲杆菌透射电镜图 ×200000"
+  },
+  {
+   "文件": "img/atlas/daa3e28d448d847914d42f0265fedd4e44a87b0298b5c4d5fb2b8754b92a9af9.jpg",
+   "说明": "图 21-1-4　直肠弯曲杆菌厌氧培养 13 日"
+  }
+ ],
+ "campylobacter-ureolyticus": [
+  {
+   "文件": "img/atlas/b2b83dd71aa6c6f974552537dcab37cebe18826fbe2fe9d3bac252af8d3a8e29.jpg",
+   "说明": "图 21-1-4　解脲弯曲杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/b4bd91d028a7a313bbe955a659e0bf30906385766e863c997b463e0fd5939241.jpg",
+   "说明": "图 21-1-4　解脲弯曲杆菌厌氧培养 9 日"
   }
  ],
  "helicobacter-pylori": [
