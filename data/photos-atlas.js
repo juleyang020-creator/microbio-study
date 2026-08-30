@@ -63,6 +63,12 @@ window.DB.photosAtlas = {
    "说明": "图 12-2-5　解脲亚种 SBA 2 日"
   }
  ],
+ "staphylococcus-intermedius": [
+  {
+   "文件": "img/atlas/8ba42d5e14b172f93156d9894e0989a4be9a54f53761947c797f1231d1bb1364.jpg",
+   "说明": "图 12-2-6　中间葡萄球菌 SBA 24h"
+  }
+ ],
  "staph-pseudintermedius": [
   {
    "文件": "img/atlas/c7f303ac9c0c2f9a050aae73954cb5fe1cca5bc87b250717e414f42935a7211b.jpg",
@@ -73,6 +79,12 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/641002408a2d8dc9a004de1f550ff01714215246f6c2962c27826cc40b25257d.jpg",
    "说明": "图 12-2-6　溶血葡萄球菌 SBA 2 日"
+  }
+ ],
+ "staphylococcus-hyicus": [
+  {
+   "文件": "img/atlas/935a961e64f65e79c09a4e72c656b43f8d0200bb2a28d8c142effcc217c21b8e.jpg",
+   "说明": "图 12-2-6　猪葡萄球菌 SBA 2 日"
   }
  ],
  "micrococcus-luteus": [
@@ -87,6 +99,16 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/6b071c5ec078aa3dd061b75032cb4a3fd3b74e35862bdd6077c3d5dcbf631fb4.jpg",
    "说明": "图 12-3-1　藤黄微球菌(粗糙型) SBA 2 日"
+  }
+ ],
+ "kocuria-kristinae": [
+  {
+   "文件": "img/atlas/4cae3ddc5303f02f887116eff323e895a256aaf1f4045b3ef8ef81f524e6db24.jpg",
+   "说明": "图 12-3-2　克氏库克菌革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/cd7a5d7feee86d0219ab2ee2b97583282619fabacf3f384f647f547d8ac083ba.jpg",
+   "说明": "图 12-3-2　克氏库克菌 SBA 5 日"
   }
  ],
  "kocuria": [
@@ -499,6 +521,54 @@ window.DB.photosAtlas = {
    "说明": "图 12-9-1　孪生球菌的形态特征（7/7）"
   }
  ],
+ "gemella-sanguinis": [
+  {
+   "文件": "img/atlas/f62b26e00a43aef9814eec401d0629b9e0e9a89aac490d3136d03abbcb4024fe.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（1/7）"
+  },
+  {
+   "文件": "img/atlas/cebfa6b9f59b01c43505efa5ecb356b4664f9b1fd2528cbeab2603bed496227b.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（2/7）"
+  },
+  {
+   "文件": "img/atlas/0e8633d980d3deec6437c92d35cc98dcd87589e25f75369753462a8210f0fbcd.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（3/7）"
+  },
+  {
+   "文件": "img/atlas/b534d95cf31cba0c96ffb32feee66a3ee8466ee6c397d7728da1b814dddf1861.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（4/7）"
+  },
+  {
+   "文件": "img/atlas/d9a08fef863f0ead7b92e4b2cad3f24867e56796eee745c3d6a12c6167fa96ea.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（5/7）"
+  },
+  {
+   "文件": "img/atlas/2ac1cd80a84ee59ef3b4b0512a8d4078006ff65012bbb1c9da7bca2788d9e50f.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（6/7）"
+  },
+  {
+   "文件": "img/atlas/e4d31637a4421814a8967a77a62325f33e0c06eca5d9bf68355c3cc8018270a3.jpg",
+   "说明": "图 12-9-1　孪生球菌的形态特征（7/7）"
+  }
+ ],
+ "pediococcus-pentosaceus": [
+  {
+   "文件": "img/atlas/1725244f4211b7e8820f99e169bc05aa81312d288193db7be6402dbd2aeb7490.jpg",
+   "说明": "图 12-11-1　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/4d6b70eb497af0dd02c12b524ec700f47f86b06478f2fc641446ecba78861fce.jpg",
+   "说明": "图 12-11-1　透射电镜, 铀染"
+  },
+  {
+   "文件": "img/atlas/3ae89c5b93d99f97cd1abed957ff0ecc67412beb2ec366f38e452604630825d7.jpg",
+   "说明": "图 12-11-1　SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/3bb1f227b91f456f88fafdc0e4af2b1a35fc251689ab20cd29c0e0b455253de7.jpg",
+   "说明": "图 12-11-1　CA (加万古霉素) 2 日"
+  }
+ ],
  "helcococcus-kunzii": [
   {
    "文件": "img/atlas/41dca3fc774ef79f5ea54d844ef8727db642c0468117e65afa3ca50a30f9fcc8.jpg",
@@ -507,6 +577,50 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/9f506e46365195bd6de183a952ca1e5b38753b812b3b265301a0127c6854d53c.jpg",
    "说明": "图 12-12-1　SBA 2 日"
+  }
+ ],
+ "helcococcus-sueciensis": [
+  {
+   "文件": "img/atlas/bdcec4f46d300b9e2f9696dd8da665e0db4b0f73c9d4864b54bf42e769333f52.jpg",
+   "说明": "图 12-12-2　革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/aadf2c4668e1d9fd506c8d544b600d6c6dc5a44dc2349566b8176930356f5ba6.jpg",
+   "说明": "图 12-12-2　SBA 4 日"
+  }
+ ],
+ "dolosigranulum-pigrum": [
+  {
+   "文件": "img/atlas/be1d0af1ffea96bf40db4b1254d9834c4fecca6efbe843e3a3adcba762815682.jpg",
+   "说明": "图 12-13-1　其他少见需氧革兰氏阳性球菌革兰氏染色的镜下形态特征 ×1000（1/4）"
+  },
+  {
+   "文件": "img/atlas/9586af658b2194ba601e99d19ce65617ed9a5e404829dac235bfdfcb5a136ce6.jpg",
+   "说明": "图 12-13-1　其他少见需氧革兰氏阳性球菌革兰氏染色的镜下形态特征 ×1000（2/4）"
+  },
+  {
+   "文件": "img/atlas/d31f8a6c89e6d0d280dc0640f803c7977e8b1cc32ee45554c8d6ac4af0152d71.jpg",
+   "说明": "图 12-13-1　其他少见需氧革兰氏阳性球菌革兰氏染色的镜下形态特征 ×1000（3/4）"
+  },
+  {
+   "文件": "img/atlas/4492e3c69d6342bbcb42f61d8309cc2746e74361b4b5991d6bb62d2b5ab205ba.jpg",
+   "说明": "图 12-13-1　其他少见需氧革兰氏阳性球菌革兰氏染色的镜下形态特征 ×1000（4/4）"
+  },
+  {
+   "文件": "img/atlas/bca5543750945dd5819f14c89b74fdb6c022baa6eccdeab5e2d0cddefe9c3217.jpg",
+   "说明": "图 12-13-2　其他少见需氧革兰氏阳性球菌的菌落形态特征（1/7）"
+  },
+  {
+   "文件": "img/atlas/a1df5b0952ba288c756ef55b697a6fe1b1645045f2c90485c34895a15cab22b1.jpg",
+   "说明": "图 12-13-2　其他少见需氧革兰氏阳性球菌的菌落形态特征（2/7）"
+  },
+  {
+   "文件": "img/atlas/6295d8ce746818bc696708f5bf45fc1f6fb5e08076fc8e486fdbe179c045b89f.jpg",
+   "说明": "图 12-13-2　其他少见需氧革兰氏阳性球菌的菌落形态特征（3/7）"
+  },
+  {
+   "文件": "img/atlas/91c17a08f3b19e89830f062794f44927126f7c9ed25591be8df351c8b32ef82c.jpg",
+   "说明": "图 12-13-2　其他少见需氧革兰氏阳性球菌的菌落形态特征（4/7）"
   }
  ],
  "neisseria-gonorrhoeae": [
@@ -737,6 +851,24 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/6786f3e6f165cf6fc520172b1c8913324da8ab20e7f206d79d3eed24a80b44b6.jpg",
    "说明": "图 14-2-15　纤维单胞菌属内鉴别试验"
+  }
+ ],
+ "rothia-dentocariosa": [
+  {
+   "文件": "img/atlas/5f7151ff8801e5da6068f7967232e9a24bfbc18e84562413c729276b1ecc03d0.jpg",
+   "说明": "图 14-2-20　菌落涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/68bc95af4c6307cab78ff7d9a6edf6634f22cd8660b7b2c7a84f3f40e8c5f3e6.jpg",
+   "说明": "图 14-2-20　痰涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/501cb592782d0edfcdd66678840fc9051b944f332392c0231191f7476f9203df.jpg",
+   "说明": "图 14-2-20　SBA 5 日"
+  },
+  {
+   "文件": "img/atlas/0330a261ed3c3393e489d214993830f04c0d6f101928ffa2dcb309374d65a8e9.jpg",
+   "说明": "图 14-2-20　纽扣样菌落, MHA 2 日"
   }
  ],
  "microbacterium": [
@@ -4289,22 +4421,7 @@ window.DB.photosAtlas = {
    "说明": "图 27-25-5　茎点霉属间与属内鉴别索引"
   }
  ],
- "scedosporium-prolificans": [],
-  "scedosporium-prolificans": [
- {
-  "文件": "img/atlas/bc52723dd95f5f01c88887766a7e39f3a59fa4b1b5c4df7ec55b28b7a06c3a8c.jpg",
-  "说明": "图 27-27-3　PDA 35℃ 培养 9 日，乳酸酚棉蓝染色 ×1000"
- },
- {
-  "文件": "img/atlas/04d8c2d61ad0a97df56f17711771472b0b110b16e31c65732ef2c12a7bb39ffe.jpg",
-  "说明": "图 27-27-3　SDA 35℃ 培养 9 日"
- },
- {
-  "文件": "img/atlas/5bb11b610ce911d148f81892110ac19ddd0a255e6f58720e1e715027694e9875.jpg",
-  "说明": "图 27-27-3　PDA 28℃ 培养 9 日"
- }
-],
-  "scedosporium-apiospermum": [
+ "scedosporium-apiospermum": [
   {
    "文件": "img/atlas/652fd501403bd4ccf074ebb996abda92f459ecb13f30640e89e6cd87e4f94992.jpg",
    "说明": "图 27-27-2　尖端赛多孢 PDA 28℃ 培养 12 日 × 1000"
