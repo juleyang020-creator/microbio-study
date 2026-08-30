@@ -20,6 +20,8 @@ const matched = JSON.parse(fs.readFileSync(path.join(root, 'tools/.atlas-matched
 // 人工核对排除的误挂（菌名仅作为对照/示例出现在图注中，或多联图属别章菌）：
 // 格式 '菌id|图号'。新增菌种若发现误挂，在此追加后重跑本脚本。
 const EXCLUDE = new Set([
+  'flavobacterium|17-9-2',         // 金黄杆菌属万古霉素药敏图，正文段（伊丽莎白金菌与短稳杆菌鉴别）串扰
+  'streptomyces|14-8-14',          // 诺卡菌肉汤生长图，图注正文串扰（「与链霉菌属鉴别」段落）
   'staph-aureus|13-2-2',            // 卡他莫拉菌鉴别试验，金葡仅为 DNA 酶阳性对照
   'achromobacter-xylosoxidans|17-11-1', // 放射根瘤菌图误挂（章节正文串扰）
   'taenia-saginata|33-2-19',        // 猪带绦虫染色图误挂到牛带绦虫

@@ -89,6 +89,30 @@ window.DB.photosAtlas = {
    "说明": "图 12-3-1　藤黄微球菌(粗糙型) SBA 2 日"
   }
  ],
+ "kocuria": [
+  {
+   "文件": "img/atlas/4cae3ddc5303f02f887116eff323e895a256aaf1f4045b3ef8ef81f524e6db24.jpg",
+   "说明": "图 12-3-2　克氏库克菌革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/cd7a5d7feee86d0219ab2ee2b97583282619fabacf3f384f647f547d8ac083ba.jpg",
+   "说明": "图 12-3-2　克氏库克菌 SBA 5 日"
+  },
+  {
+   "文件": "img/atlas/67d40aaa3ce09ec7a6da3f82eba419137d3fcab0abf72eb5f1e7cacff328697e.jpg",
+   "说明": "图 12-3-2　玫瑰库克菌 SBA 5 日"
+  },
+  {
+   "文件": "img/atlas/69666590cc1027277c227c9d0910fea7b2fa81f5f8170a64965a7081ab31478e.jpg",
+   "说明": "图 12-3-2　变异库克菌 SBA 3 日"
+  }
+ ],
+ "kytococcus": [
+  {
+   "文件": "img/atlas/5e1a40a2833b7b5f7e34b61ac32cee86edc41292aead0ca086612c711b6db843.jpg",
+   "说明": "图 12-3-5　皮肤球菌属形态特征"
+  }
+ ],
  "strep-pyogenes": [
   {
    "文件": "img/atlas/fb52f74f6962ea43646bac2383247e478c83618047243c1bf1f6ced8b19c0be4.jpg",
@@ -707,6 +731,46 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/a6b9e483e6859b9e3819636c962a27f8b107c86f0d1fe33cacd3d7dadadfd39d.jpg",
    "说明": "图 14-2-11　CAMP试验结果SBA4日"
+  }
+ ],
+ "cellulomonas": [
+  {
+   "文件": "img/atlas/6786f3e6f165cf6fc520172b1c8913324da8ab20e7f206d79d3eed24a80b44b6.jpg",
+   "说明": "图 14-2-15　纤维单胞菌属内鉴别试验"
+  }
+ ],
+ "microbacterium": [
+  {
+   "文件": "img/atlas/87a475572433cced083f007799e7a310dc3ddbc444cefec63e555ca71b9d1330.jpg",
+   "说明": "图 14-2-21　人微杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/677533c32033ce602d52f845faf3d13d74e45a4e813bb3bc93fc300b6cd43415.jpg",
+   "说明": "图 14-2-21　人微杆菌 SBA 3 日"
+  },
+  {
+   "文件": "img/atlas/732d584faca86c7cf62539f7827094efa17cf832c0f87810a828a12763a37aad.jpg",
+   "说明": "图 14-2-21　乳微杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/9739c89e5ace916b64e54616a330acd4cec1987f443dcd61826084a62d65f762.jpg",
+   "说明": "图 14-2-21　乳微杆菌 SBA 5 日"
+  },
+  {
+   "文件": "img/atlas/054caa3f8234eb35f47c4ccbc76e26edd557bdf5214eb562d9ff030577908804.jpg",
+   "说明": "图 14-2-21　氧化微杆菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/c85af3a0d3957a05968b26d57a8170a78f9b42eb231c1de7657345677df492c6.jpg",
+   "说明": "图 14-2-21　氧化微杆菌 SBA 3 日"
+  },
+  {
+   "文件": "img/atlas/7d40319f6e8abca0286d51b95c9b28eccd091803409cab32e8caa6e3433768b8.jpg",
+   "说明": "图 14-2-21　气生微杆菌 SBA 4 日"
+  },
+  {
+   "文件": "img/atlas/99ec1a3d229bf2de6bd4a64c011c0e9e6e410b6ccc2d8d35157543e2e7104964.jpg",
+   "说明": "图 14-2-21　巴氏微杆菌 SBA 4 日"
   }
  ],
  "listeria-monocytogenes": [
@@ -3425,6 +3489,20 @@ window.DB.photosAtlas = {
    "说明": "图 25-2-3　CGB 平板 (上为格特隐球菌, 下为新型隐球菌) 37℃ 4 日"
   }
  ],
+ "saccharomyces": [
+  {
+   "文件": "img/atlas/124371ffe9ba1331d614343a31e531655331f0b3c0ab92016185c213c4abc519.jpg",
+   "说明": "图 25-3-1　革兰氏染色 × 1 000"
+  },
+  {
+   "文件": "img/atlas/3f00815ce941564b74dd5a357c611a717f869bf76b9580aa7eb08eb335f05a8d.jpg",
+   "说明": "图 25-3-1　CHROMagar 6 日"
+  },
+  {
+   "文件": "img/atlas/2a89dad5c2ed1cb91bc1a15665d63282a664b85ddf6cd6c89c07af11ccb0088e.jpg",
+   "说明": "图 25-3-1　SDA 6 日"
+  }
+ ],
  "histoplasma-capsulatum": [
   {
    "文件": "img/atlas/321a3b7c87a9bdfc3b4a235bd71116923cd24c8c1a164cae9a6334f061d60b19.jpg",
@@ -3455,6 +3533,40 @@ window.DB.photosAtlas = {
    "说明": "图 25-6-2　荚膜组织胞浆菌的菌落形态"
   }
  ],
+ "sporothrix": [
+  {
+   "文件": "img/atlas/e6c5ec0ffb813495c183dfa6f5a4e84317969bd44050e7bc3f7a674a7665d740.jpg",
+   "说明": "图 25-11-1　申克孢子丝菌, 皮肤组织切片 PAS 染色"
+  },
+  {
+   "文件": "img/atlas/d025d61047965376e2104550ad121f5d24da6a121da5777ff87d6aea025d554f.jpg",
+   "说明": "图 25-11-1　申克孢子丝菌, 皮肤组织切片六胺银染色"
+  },
+  {
+   "文件": "img/atlas/394fab7f2e1c426f2163db1bb2c915462156f28bbf896985f98cfb26e6b59cc0.jpg",
+   "说明": "图 25-11-1　申克孢子丝菌 PDA 28℃ 4 日"
+  },
+  {
+   "文件": "img/atlas/f73ff0a6e5320792592a0e507068fe83cbf0060978afc98380cf61f40f6743e0.jpg",
+   "说明": "图 25-11-1　申克孢子丝菌 PDA 25℃ 7 日"
+  },
+  {
+   "文件": "img/atlas/f97aaa83de10535fb36534d60c3be7242aa212df47434c0faa16fccf29a8ba44.jpg",
+   "说明": "图 25-11-1　球形孢子丝菌小培养 PDA 30℃ 9 日"
+  },
+  {
+   "文件": "img/atlas/c8416dcc78dda0fb542c272fd2abfc27b0a8310b03be003a2dd310ce0dbf23f1.jpg",
+   "说明": "图 25-11-1　球形孢子丝菌 SDA 30℃ 13 日, 乳酸酚棉蓝胶封染"
+  },
+  {
+   "文件": "img/atlas/5579c36e00fafffb532330bc3674f8aeba491db569e9af9fb4b44c1833df161a.jpg",
+   "说明": "图 25-11-2　申克孢子丝菌 SDA 30℃ 24 日"
+  },
+  {
+   "文件": "img/atlas/d944e9bf29eaffaaff13f1325d275bac58eab9c14a691a7b1d64984c7c1a25d1.jpg",
+   "说明": "图 25-11-2　申克孢子丝菌 SDA 35℃ 35 日"
+  }
+ ],
  "trichosporon-asahii": [
   {
    "文件": "img/atlas/0bb6bbf43f68200e9e5f912f4e03efeb275191d71010441661bcc77b87a49226.jpg",
@@ -3471,6 +3583,24 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/63ebfedd3c91f266cd342c2af66902a2941c4c46513195139e4173cdd65ce9ea.jpg",
    "说明": "图 25-13-1　SDA 30℃ 14 日"
+  }
+ ],
+ "malassezia": [
+  {
+   "文件": "img/atlas/826227426e9bd6e08a272233d21b490e3272d99af34c6435ad640b95b118f74b.jpg",
+   "说明": "图 25-15-3　七叶苷分解吐温试验结果(左为阴性不变色, 右为阳性黑色)"
+  },
+  {
+   "文件": "img/atlas/60e06f2aeeec4c6f593fa7308228ad5b9f175db42740291e6ae32fb0d39b2c92.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(糠秕马拉色菌)"
+  },
+  {
+   "文件": "img/atlas/0f8f0cd17b32607a8ee0e0247222322f4e27998b837bb11677121cb6f3b75848.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(合轴马拉色菌)"
+  },
+  {
+   "文件": "img/atlas/f4dbc2db5b73c9563becb20f7210d6ba62213d5d9f9e130e2844548bd44538bd.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(M. dermatis)"
   }
  ],
  "pneumocystis-jirovecii": [
@@ -3777,6 +3907,62 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/a63e9883b9cc7bcf6f6007905bf37c51a1a20fde9fd6224997be6d2613f241f1.jpg",
    "说明": "图 27-16-3　藤仓镰刀菌 PDA 28℃ 培养 4 日 ×1000"
+  }
+ ],
+ "cladosporium": [
+  {
+   "文件": "img/atlas/39a203dd093ab33fc874cc4cef884b4842e7cf2e8c09fcd8eab66401a6a32345.jpg",
+   "说明": "图 27-20-3　尖孢枝孢霉 PDA 28℃ 培养 14 日 × 1000"
+  },
+  {
+   "文件": "img/atlas/f5a53966425f1f06b7833b575d660205d1edd91fa136c30158a468588393b625.jpg",
+   "说明": "图 27-20-3　尖孢枝孢霉 SDA 28℃ 培养 14 日"
+  },
+  {
+   "文件": "img/atlas/640735ae639a4806f89458c21752e7d0fb1ae0d7d2098e294bdaf794ed7523c4.jpg",
+   "说明": "图 27-20-3　枝状枝孢霉 PDA 28℃ 培养 7 日，乳酸酚棉蓝染色 × 400"
+  },
+  {
+   "文件": "img/atlas/e00b740854afaf4ea056535385b04dec8e939ce1e425c7598d1223fbe17845f3.jpg",
+   "说明": "图 27-20-3　枝状枝孢霉 SDA 28℃ 培养 14 日"
+  },
+  {
+   "文件": "img/atlas/aa3902187a91687e50ac23461b41552b0d51c62329b0575d252951508430d029.jpg",
+   "说明": "图 27-20-3　Cladosporium colombiae PSA 28℃ 培养 3 日 × 200"
+  },
+  {
+   "文件": "img/atlas/7cda4ec0358bac040c1450e9be5c45a25900b0e7ce872777b8d0250352c118b9.jpg",
+   "说明": "图 27-20-3　Cladosporium colombiae SDA 28℃ 培养 14 日"
+  }
+ ],
+ "cladophialophora": [
+  {
+   "文件": "img/atlas/4dcec3c00d7cd76b9aefcd4ab2ac4d6a57bd490ab851071596b1076cee75df94.jpg",
+   "说明": "图 27-20-4　斑替枝孢瓶霉 PDA 28℃ 培养 14 日，乳酸酚棉蓝染色 ×400"
+  },
+  {
+   "文件": "img/atlas/7935647777a67e885b500bea0a6347380ffc36257d07e2db9704a49052f87f51.jpg",
+   "说明": "图 27-20-4　斑替枝孢瓶霉 PDA 28℃ 培养 14 日"
+  },
+  {
+   "文件": "img/atlas/210d0ade2561ff192eab53192bdc50f2ed1180b0c8643ea4111efab587004423.jpg",
+   "说明": "图 27-20-4　卡氏枝孢瓶霉 PDA 28℃ 培养 7 日，乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/186103205486ebe9f3a26c2befd540014b58df106f57a7005e820b98f3b813a3.jpg",
+   "说明": "图 27-20-4　卡氏枝孢瓶霉 PDA 28℃ 培养 14 日"
+  }
+ ],
+ "curvularia": [
+  {
+   "文件": "img/atlas/30674d8c87312cb4b23655b09e11f753710aaca94ec2d2aaad135477a7784368.jpg",
+   "说明": "图 27-21-3　弯孢霉属内菌种鉴定索引"
+  }
+ ],
+ "phoma": [
+  {
+   "文件": "img/atlas/7a79bb41986b4a54b249f98e6f848e0dc80f593035f6dd0ba1404650c4d2bf56.jpg",
+   "说明": "图 27-25-5　茎点霉属间与属内鉴别索引"
   }
  ],
  "scedosporium-apiospermum": [
