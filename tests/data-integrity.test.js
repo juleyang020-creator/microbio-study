@@ -31,6 +31,7 @@ require('../data/intrinsic-resistance.js');
 require('../data/site-reporting.js');
 require('../data/lab-workflow.js');
 require('../data/microbe-names.js');
+require('../data/nprc-catalogue.js');
 require('../data/drug-cn.js');
 require('../data/source-metadata.js');
 require('../data/treatment.js');
