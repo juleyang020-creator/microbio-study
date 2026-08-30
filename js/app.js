@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-25';
+  var APP_VERSION = window.APP_VERSION || '20260830-26';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -2487,6 +2487,8 @@
     ],
     antibiotics: [{ src: 'img/landing-antibiotics.svg', cap: '抗微生物药作用机制总览' }],
     resistance: [{ src: 'img/landing-resistance.svg', cap: '细菌耐药机制总览' }],
+    virulence: [{ src: 'img/landing-virulence.svg', cap: '病原毒力因子总览（按感染进程）' }],
+    genetics: [{ src: 'img/landing-genetics.svg', cap: '微生物遗传与变异总览（突变与水平转移两条来路）' }],
     cards: [
       { src: 'img/landing-cards.svg', cap: '药敏卡与判读总览' },
       { src: 'img/landing-idcards.svg', cap: 'VITEK 2 鉴定卡原理与选卡总览' }

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 424" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>病原毒力因子总览</title><desc>以感染进程为骨架定位病原毒力因子：黏附素介导定植、侵袭性酶与III型分泌系统突破组织屏障、荚膜与胞内生存和抗原变异实现免疫逃逸、外毒素与内毒素造成细胞组织损伤；铁载体夺铁与生物膜为支撑系统，群体感应按种群密度统一调控毒力表达。</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="arrs" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0.5 L8,4 L0,7.5 z" fill="#5c6672"/></marker>
+</defs>
+<rect width="480" height="424" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">病原毒力因子总览</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef2f7"/>
+<text x="416" y="27" text-anchor="middle" font-size="10" fill="#5c6672">致病因素总览</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">沿感染进程看毒力因子：定植 → 侵袭扩散 → 免疫逃逸 → 毒素损伤</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 进程主轴 ===== -->
+<line x1="40" y1="76" x2="440" y2="76" stroke="#b9c2cc" stroke-width="1.2" marker-end="url(#arrs)"/>
+
+<!-- ===== ❶ 黏附 · 定植 ===== -->
+<rect x="24" y="86" width="210" height="96" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<circle cx="42" cy="102" r="7.5" fill="#1f2733"/>
+<text x="42" y="105.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="55" y="106" font-size="10.5" font-weight="700" fill="#1f2733">黏附 · 定植</text>
+<!-- 黏膜上皮细胞 -->
+<rect x="36" y="122" width="58" height="42" rx="4" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="65" y="146" text-anchor="middle" font-size="9.5" fill="#1f4e79">黏膜</text>
+<text x="65" y="158" text-anchor="middle" font-size="9.5" fill="#1f4e79">上皮</text>
+<!-- 菌毛结合受体 -->
+<line x1="104" y1="136" x2="94" y2="136" stroke="#c2413d" stroke-width="1.8"/>
+<ellipse cx="114" cy="136" rx="9" ry="7" fill="#f9e6e4" stroke="#c2413d"/>
+<line x1="123" y1="136" x2="130" y2="136" stroke="#c2413d" stroke-width="1.8"/>
+<line x1="104" y1="152" x2="94" y2="152" stroke="#c2413d" stroke-width="1.8"/>
+<ellipse cx="114" cy="152" rx="9" ry="7" fill="#f9e6e4" stroke="#c2413d"/>
+<line x1="123" y1="152" x2="130" y2="152" stroke="#c2413d" stroke-width="1.8"/>
+<text x="146" y="130" font-size="9.5" fill="#33404f">菌毛 / 黏附素</text>
+<text x="146" y="144" font-size="9.5" fill="#5c6672">结合组织特异性受体</text>
+<text x="146" y="158" font-size="9.5" fill="#5c6672">UPEC P 菌毛·淋菌菌毛</text>
+<text x="146" y="172" font-size="9.5" fill="#5c6672">导尿管生物膜第一步</text>
+
+<!-- ===== ❷ 侵袭 · 扩散 ===== -->
+<rect x="246" y="86" width="210" height="96" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<circle cx="264" cy="102" r="7.5" fill="#1f2733"/>
+<text x="264" y="105.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="277" y="106" font-size="10.5" font-weight="700" fill="#1f2733">侵袭 · 扩散</text>
+<!-- 组织屏障 + 破坏酶 -->
+<rect x="256" y="124" width="52" height="40" rx="4" fill="#e7e2f3" stroke="#8b7fb8"/>
+<text x="282" y="140" text-anchor="middle" font-size="9.5" fill="#5b4f8a">组织</text>
+<text x="282" y="152" text-anchor="middle" font-size="9.5" fill="#5b4f8a">屏障</text>
+<!-- 注射器 T3SS -->
+<g stroke="#33404f" stroke-width="1.3">
+  <line x1="326" y1="128" x2="326" y2="144"/>
+  <line x1="320" y1="128" x2="332" y2="128"/>
+  <line x1="326" y1="144" x2="326" y2="152" marker-end="url(#arr)"/>
+</g>
+<circle cx="326" cy="158" r="7" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="344" y="132" font-size="9.5" fill="#33404f">III 型分泌系统</text>
+<text x="344" y="146" font-size="9.5" fill="#5c6672">「注射器」直注效应蛋白</text>
+<text x="344" y="160" font-size="9.5" fill="#5c6672">侵袭性酶水解基质扩散</text>
+<text x="344" y="174" font-size="9.5" fill="#5c6672">透明质酸酶·链激酶·胶原酶</text>
+
+<!-- ===== ❸ 免疫逃逸（横向长卡） ===== -->
+<rect x="24" y="190" width="432" height="96" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<circle cx="42" cy="206" r="7.5" fill="#1f2733"/>
+<text x="42" y="209.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="55" y="210" font-size="10.5" font-weight="700" fill="#1f2733">免疫逃逸 —— 躲避免疫的识别与清除</text>
+<!-- 荚膜遮蔽 -->
+<circle cx="66" cy="244" r="17" fill="#f7ecd4" stroke="#d9b96a" stroke-dasharray="4,2"/>
+<circle cx="66" cy="244" r="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="66" y="273" text-anchor="middle" font-size="9.5" fill="#5c6672">荚膜抗吞噬</text>
+<!-- 吞噬细胞内生存 -->
+<circle cx="176" cy="244" r="19" fill="#eef1f5" stroke="#b9c2cc"/>
+<circle cx="176" cy="244" r="9" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="176" y="273" text-anchor="middle" font-size="9.5" fill="#5c6672">胞内生存</text>
+<!-- IgA 蛋白酶切断抗体 -->
+<path d="M 262 244 q 6 -12 12 0 q 6 12 12 0 q 6 -12 12 0" transform="translate(0,-4)" fill="none" stroke="#2b6cb0" stroke-width="1.6"/>
+<line x1="312" y1="232" x2="322" y2="252" stroke="#c2413d" stroke-width="2"/>
+<text x="292" y="273" text-anchor="middle" font-size="9.5" fill="#5c6672">IgA 蛋白酶</text>
+<!-- 抗原变异 -->
+<ellipse cx="382" cy="240" rx="13" ry="10" fill="#f9e6e4" stroke="#c2413d"/>
+<ellipse cx="408" cy="240" rx="13" ry="10" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="395" y="243" text-anchor="middle" font-size="9.5" fill="#a3332f">Ag₁</text>
+<text x="421" y="243" text-anchor="middle" font-size="9.5" fill="#1f4e79">Ag₂</text>
+<path d="M 397 240 h 6" stroke="#33404f" stroke-width="1.2" marker-end="url(#arrs)"/>
+<text x="396" y="273" text-anchor="middle" font-size="9.5" fill="#5c6672">抗原变异</text>
+<text x="100" y="230" font-size="9.5" fill="#5c6672">补体抵抗</text>
+<text x="100" y="244" font-size="9.5" fill="#5c6672">fHbp·血清杀菌↑</text>
+<text x="214" y="230" font-size="9.5" fill="#5c6672">PVL 杀白细胞素</text>
+<text x="214" y="244" font-size="9.5" fill="#5c6672">穿孔溶解吞噬细胞</text>
+<text x="330" y="222" font-size="9.5" fill="#5c6672">重复感染不免疫</text>
+
+<!-- ===== ❹ 毒素损伤（横向长卡） ===== -->
+<rect x="24" y="294" width="432" height="76" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
+<circle cx="42" cy="310" r="7.5" fill="#1f2733"/>
+<text x="42" y="313.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">4</text>
+<text x="55" y="314" font-size="10.5" font-weight="700" fill="#1f2733">毒素损伤 —— 病变的直接推手</text>
+<!-- 外毒素 -->
+<circle cx="70" cy="344" r="12" fill="#f9e6e4" stroke="#c2413d"/>
+<circle cx="70" cy="344" r="4" fill="#a3332f"/>
+<text x="70" y="367" text-anchor="middle" font-size="9.5" fill="#5c6672">外毒素</text>
+<text x="92" y="338" font-size="9.5" fill="#33404f">蛋白毒素·靶器官特异</text>
+<text x="92" y="352" font-size="9.5" fill="#5c6672">超抗原/溶血素/A-B 结构</text>
+<!-- 内毒素 -->
+<rect x="246" y="334" width="26" height="18" rx="3" fill="#f7ecd4" stroke="#d9b96a"/>
+<circle cx="253" cy="343" r="2.4" fill="#d9b96a"/><circle cx="262" cy="343" r="2.4" fill="#d9b96a"/>
+<text x="280" y="338" font-size="9.5" fill="#33404f">内毒素（G⁻ 脂多糖）</text>
+<text x="280" y="352" font-size="9.5" fill="#5c6672">脂质A→TNF-α 风暴→休克</text>
+<text x="440" y="346" text-anchor="end" font-size="9.5" fill="#5c6672">裂解释放 · 耐热</text>
+
+<!-- 结论 -->
+<text x="240" y="388" text-anchor="middle" font-size="11.5" fill="#33404f">毒力不是单一武器，而是一条按进程部署的攻击链</text>
+
+<!-- 页脚 -->
+<rect x="24" y="396" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="411" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">支撑系统</tspan>　铁载体夺铁 · 生物膜屏障 · 群体感应（QS）按密度统一调控毒力表达</text>
+</svg>
