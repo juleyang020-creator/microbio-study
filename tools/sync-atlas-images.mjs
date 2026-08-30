@@ -20,6 +20,12 @@ const matched = JSON.parse(fs.readFileSync(path.join(root, 'tools/.atlas-matched
 // 人工核对排除的误挂（菌名仅作为对照/示例出现在图注中，或多联图属别章菌）：
 // 格式 '菌id|图号'。新增菌种若发现误挂，在此追加后重跑本脚本。
 const EXCLUDE = new Set([
+  // 批28 新增：链球菌/嗜血批次审计补充
+  'streptococcus-porcinus|12-4-14',  // 第七分联实为「假豕链球菌」（S. pseudoporcinus≠豕链球菌）
+  'streptococcus-porcinus|12-4-17',  // CAMP 试验方法图（多菌对照演示）
+  'streptococcus-porcinus|12-4-22',  // 假肺炎链球菌胆汁溶菌试验，正文串扰
+  'streptococcus-infantarius|12-4-22', // 同上
+  'strep-dysgalactiae|12-4-22',      // 同上（此前漏加）
   'flavobacterium|17-9-2',         // 金黄杆菌属万古霉素药敏图，正文段（伊丽莎白金菌与短稳杆菌鉴别）串扰
   'streptomyces|14-8-14',          // 诺卡菌肉汤生长图，图注正文串扰（「与链霉菌属鉴别」段落）
   'staph-aureus|13-2-2',            // 卡他莫拉菌鉴别试验，金葡仅为 DNA 酶阳性对照

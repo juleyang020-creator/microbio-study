@@ -179,10 +179,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/f5b304b33d1a4f97b7fd9c9342a14c863693f06dca670bbd9ed8b59539abea10.jpg",
    "说明": "图 12-4-3　ATCC 6644 SBA 24h"
-  },
-  {
-   "文件": "img/atlas/a231b6099dcfeca494619456d4a4041fe43034a941cabc0f52e10fb2a3e6c716.jpg",
-   "说明": "图 12-4-22　假肺炎链球菌胆汁溶菌试验结果"
   }
  ],
  "strep-constellatus": [
@@ -2623,6 +2619,30 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/aa84b644825aed57cfc6eba4fd205d25761255d5caf13d35045d1a1666b77b85.jpg",
    "说明": "图 18-1-7　副流感嗜血杆菌，脑心琼脂 2 日"
+  }
+ ],
+ "haemophilus-parahaemolyticus": [
+  {
+   "文件": "img/atlas/accc52a774228a4f00ee61031149ef3be96776a1a0f7bd428239b608322d6f5f.jpg",
+   "说明": "图 18-1-2　副溶血嗜血杆菌"
+  },
+  {
+   "文件": "img/atlas/5f5aa7f44b732368454e691f309f528c043fba8a7d908accc317ffd43fdc0da9.jpg",
+   "说明": "图 18-1-4　副溶血嗜血杆菌 CA2日"
+  },
+  {
+   "文件": "img/atlas/38869d2174591bc79abed63a9e69416dead546e10ee927ae77dae146c4485e6b.jpg",
+   "说明": "图 18-1-4　副溶血嗜血杆菌 BAP7日"
+  }
+ ],
+ "haemophilus-haemolyticus": [
+  {
+   "文件": "img/atlas/ce9dfd866ec3b2b492c36d6523c0502404ec6705e60f98ff4280019b7318b200.jpg",
+   "说明": "图 18-1-2　溶血嗜血杆菌"
+  },
+  {
+   "文件": "img/atlas/e36067773aa14732adbcd61ad6c033d4586c15eade8eefb24651469717648dbe.jpg",
+   "说明": "图 18-1-4　溶血嗜血杆菌 CA2日"
   }
  ],
  "haemophilus-ducreyi": [
