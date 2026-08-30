@@ -20,6 +20,12 @@ const matched = JSON.parse(fs.readFileSync(path.join(root, 'tools/.atlas-matched
 // 人工核对排除的误挂（菌名仅作为对照/示例出现在图注中，或多联图属别章菌）：
 // 格式 '菌id|图号'。新增菌种若发现误挂，在此追加后重跑本脚本。
 const EXCLUDE = new Set([
+  // 批28 新增：链球菌/嗜血批次审计补充
+  'streptococcus-porcinus|12-4-14',  // 第七分联实为「假豕链球菌」（S. pseudoporcinus≠豕链球菌）
+  'streptococcus-porcinus|12-4-17',  // CAMP 试验方法图（多菌对照演示）
+  'streptococcus-porcinus|12-4-22',  // 假肺炎链球菌胆汁溶菌试验，正文串扰
+  'streptococcus-infantarius|12-4-22', // 同上
+  'strep-dysgalactiae|12-4-22',      // 同上（此前漏加）
   'flavobacterium|17-9-2',         // 金黄杆菌属万古霉素药敏图，正文段（伊丽莎白金菌与短稳杆菌鉴别）串扰
   'streptomyces|14-8-14',          // 诺卡菌肉汤生长图，图注正文串扰（「与链霉菌属鉴别」段落）
   'staph-aureus|13-2-2',            // 卡他莫拉菌鉴别试验，金葡仅为 DNA 酶阳性对照
@@ -102,6 +108,13 @@ for (const [id, recs] of byId) {
       figSplit.set(r.fig, splitSubs(base.caption));
     }
   }
+  const SUB_EXCLUDE = [
+    // 分联说明尾部粘连相邻菌正文（源书 OCR 段落粘连）：图片归属正确，仅截断说明文字
+    // [id, 图号, 说明截断锚点]
+    ['trichophyton-schoenleinii', '26-1-4', ' 5. 紫色毛癣菌'],
+    ['trichophyton-violaceum', '26-1-4', ' 5. 紫色毛癣菌'],
+    ['microsporum-nanum', '26-3-3', ' 4. 杂色小孢子菌'],
+  ];
   for (const r of recs) {
     if (EXCLUDE.has(id + '|' + r.fig)) continue;
     if (picked.length >= PER_MICROBE) break;
@@ -124,6 +137,9 @@ for (const [id, recs] of byId) {
     const i = (figSeen.get(r.fig) || 0) + 1; figSeen.set(r.fig, i);
     const sp = figSplit.get(r.fig) || { title: '', parts: [] };
     let sub;
+    // 分联说明尾部粘连相邻菌正文时截断（SUB_EXCLUDE trim 模式）
+    const tr = SUB_EXCLUDE.find(([sid, fig, anchor]) => id === sid && r.fig === fig && (r.sub || '').includes(anchor));
+    if (tr && r.sub) r.sub = r.sub.slice(0, r.sub.indexOf(tr[2]));
     // 优先用 parse 阶段记下的分联文本（r.sub）——联图按联归属菌种后，
     // 一联只命中一个菌时（如 3 联图 C 联腐生葡萄球菌），该图的说明就用这一联。
     if (r.sub) {

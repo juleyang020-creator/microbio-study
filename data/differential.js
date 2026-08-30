@@ -1482,5 +1482,411 @@ window.DB.differential = {
 'paecilomyces': [
   {名称: '青霉属', id: 'penicillium', 相似点: '帚状枝、链状分生孢子', 鉴别: '拟青霉瓶梗顶端细长喙状管状体、帚状枝疏散；青霉瓶梗烧瓶状顶端厚、束状紧密；拟青霉菌落无绿色调。'},
   {名称: '淡紫紫孢菌（原淡紫拟青霉）', 相似点: '原同属', 鉴别: '宛氏拟青霉耐热 40℃ 生长、黄褐/沙色菌落；淡紫紫孢菌 37℃ 以上不生长、絮状酒红/紫红色、多次传代褪色变白。'}
+],
+
+'listeria-innocua': [
+  {名称: '产单核细胞李斯特菌', id: 'listeria-monocytogenes', 相似点: '形态培养生化高度相似（曾长期混淆）', 鉴别: '无害李斯特菌不 β-溶血、CAMP 双侧阴性、α-甲基-D-甘露糖苷 + 但 L-鼠李糖可变；产单核细胞李斯特菌 β-溶血 +、CAMP（金葡）+、鼠李糖 +。临床报告前必须排除。'}
+],
+'listeria-ivanovii': [
+  {名称: '产单核细胞李斯特菌', id: 'listeria-monocytogenes', 相似点: 'β-溶血李斯特菌', 鉴别: '伊氏李斯特菌溶血环更宽（++）、CAMP 马红球菌 + / 金葡 −、D-木糖 +；产单核细胞李斯特菌溶血窄、CAMP 金葡 + / 马红球菌 v、木糖 −。'}
+],
+'listeria-seeligeri': [
+  {名称: '产单核细胞李斯特菌', id: 'listeria-monocytogenes', 相似点: 'CAMP（金葡）阳性的溶血种', 鉴别: '斯氏李斯特菌 D-木糖 +、L-鼠李糖 −；产单核细胞李斯特菌木糖 −、鼠李糖 +。'}
+],
+'listeria-welshimeri': [
+  {名称: '无害李斯特菌', id: 'listeria-innocua', 相似点: '不溶血非病原种', 鉴别: '威氏李斯特菌 D-木糖 +；无害李斯特菌木糖 −、蔗糖 +。'}
+],
+'listeria-grayi': [
+  {名称: '无害李斯特菌', id: 'listeria-innocua', 相似点: '不溶血非病原种', 鉴别: '格氏李斯特菌甘露醇 +、淀粉 +（属内唯一）；无害李斯特菌两者均 −。'}
+],
+'cronobacter-malonaticus': [
+  {名称: '阪崎克洛诺杆菌', id: 'cronobacter-sakazakii', 相似点: '同属产黄色素、临床最常见两种', 鉴别: '丙二酸克洛诺杆菌丙二酸盐 +、反乌头酸 +（阪崎种均 −）；人群倾向：成人 vs 新生儿。阪崎克洛诺杆菌是属内唯一利用唾液酸的种。'}
+],
+'cronobacter-turicensis': [
+  {名称: '阪崎克洛诺杆菌', id: 'cronobacter-sakazakii', 相似点: '同属黄色素菌', 鉴别: '图列茨克洛诺杆菌卫矛醇 +、松三糖 +、吲哚 −（莫氏/都柏林种吲哚 +）。'}
+],
+'cronobacter-muytjensii': [
+  {名称: '阪崎克洛诺杆菌', id: 'cronobacter-sakazakii', 相似点: '同属黄色素菌', 鉴别: '莫氏克洛诺杆菌吲哚 +、麦芽糖醇 −。'}
+],
+'cronobacter-dublinensis': [
+  {名称: '阪崎克洛诺杆菌', id: 'cronobacter-sakazakii', 相似点: '同属黄色素菌', 鉴别: '都柏林克洛诺杆菌吲哚 +（多数亚种）、松三糖 +（都柏林亚种）。'}
+],
+'cronobacter-universalis': [
+  {名称: '阪崎克洛诺杆菌', id: 'cronobacter-sakazakii', 相似点: '同属黄色素菌', 鉴别: '普通克洛诺杆菌丙二酸盐可变、反乌头酸 +；对多西环素耐药。'}
+],
+
+'candida-kefyr': [
+  {名称: '热带念珠菌', id: 'candida-tropicalis', 相似点: '均发酵多糖、形态相近', 鉴别: '乳酒念珠菌发酵乳糖（+*）、木糖阴性；热带念珠菌乳糖 −、木糖 +；热带菌 CHROMagar 蓝灰色。'}
+],
+'candida-guilliermondii': [
+  {名称: '近平滑念珠菌', id: 'candida-parapsilosis', 相似点: '均细长假菌丝+小分生孢子、淡粉色菌落', 鉴别: '高里复合群同化密二糖/纤维二糖/海藻糖更广（近平滑群阴性）、陈旧菌落变黄~粉红；近平滑群同化 L-阿拉伯糖。'}
+],
+'candida-catenuroides': [
+  {名称: '近平滑念珠菌', id: 'candida-parapsilosis', 相似点: '假菌丝+轮生孢子', 鉴别: '链状念珠菌（现 Diutina）蔗糖同化阴性、假菌丝更细长。'}
+],
+'candida-zeylanoides': [
+  {名称: '其他念珠菌', 相似点: '酵母样菌落', 鉴别: '涎沫念珠菌 37℃ 不生长（多数临床念珠菌可生长）——温度耐受是初筛点。'}
+],
+
+'cryptococcus-albidus': [
+  {名称: '新型隐球菌', id: 'cryptococcus-neoformans', 相似点: '有荚膜、尿素酶阳性', 鉴别: '浅白隐球菌硝酸盐还原阳性（新型阴性）、37℃ 生长可变、酚氧化酶阴性（新型阳性——咖啡酸试验阴性）。'}
+],
+'cryptococcus-laurentii': [
+  {名称: '新型隐球菌', id: 'cryptococcus-neoformans', 相似点: '有荚膜、尿素酶阳性、硝酸盐阴性', 鉴别: '劳伦隐球菌同化乳糖/密二糖（新型均阴性）、酚氧化酶阴性（咖啡酸试验 3 日无棕色色素）。'}
+],
+'cryptococcus-flavescens': [
+  {名称: '劳伦隐球菌', id: 'cryptococcus-laurentii', 相似点: '近缘环境酵母（现同归 Papiliotrema/Naganishia 系）', 鉴别: '浅黄隐球菌无荚膜、37℃ 不生长；劳伦隐球菌有荚膜、37℃ 生长。'}
+],
+'cryptococcus-terreus': [
+  {名称: '浅白隐球菌', id: 'cryptococcus-albidus', 相似点: '硝酸盐还原阳性、荚膜阳性', 鉴别: '地生隐球菌不同化蔗糖/密二糖（浅白两者均 +）。'}
+],
+'cryptococcus-uniguttulatus': [
+  {名称: '其他环境隐球菌', 相似点: '尿素酶阳性酵母', 鉴别: '指甲隐球菌糖谱最窄（蔗糖/半乳糖/密二糖均不同化）、37℃ 不生长。'}
+],
+
+'achromobacter-piechaudii': [
+  {名称: '木糖氧化无色杆菌', id: 'achromobacter-xylosoxidans', 相似点: '同属、氧化酶触酶阳性、鞭毛动力', 鉴别: '皮氏不脱硝（脱硝作用 −）、不同化葡萄糖/木糖/己二酸（木糖氧化全 +）；对氨曲南耐药（木糖氧化可变）。'}
+],
+'achromobacter-ruhlandii': [
+  {名称: '脱硝化无色杆菌（速查表有条目无详情页）', id: '', 相似点: '同化葡萄糖/木糖/己二酸谱相近', 鉴别: '卢氏不脱硝、七叶苷不水解（ND~−），脱硝无色杆菌两者均阳性。'}
+],
+'achromobacter-spanius': [
+  {名称: '皮氏无色杆菌', id: 'achromobacter-piechaudii', 相似点: '硝酸盐还原阳性、不产色素', 鉴别: '少见无色杆菌同化二氨基丁烷（皮氏可变）、乙酰胺培养基不生长（皮氏可变）。'}
+],
+'achromobacter-insolitus': [
+  {名称: '少见无色杆菌', id: 'achromobacter-spanius', 相似点: '临床罕见环境种', 鉴别: '稀有无色杆菌乙酰胺培养基生长、中康酸盐同化 +；少见无色杆菌两者均 −。'}
+],
+'eubacterium-nodatum': [
+  {名称: '衣氏放线菌', id: 'actinomyces-israelii', 相似点: '菌体串珠/丝状/分枝、菌落树莓/臼齿样', 鉴别: '缠结真杆菌为专性厌氧（放线菌微需氧~兼性）、触酶阴性一致但放线菌可发酵部分糖；代谢终产物气相色谱定属（丁酸为主）。'}
+],
+'eubacterium-rectale': [
+  {名称: '粘液真杆菌', id: 'eubacterium', 相似点: '同属发酵活泼群', 鉴别: '直肠真杆菌不水解精氨酸（粘液可变）、甘露醇 −；粘液真杆菌甘露醇 +（属内少见）。'}
+],
+'eubacterium-saphenum': [
+  {名称: '真杆菌属（短真杆菌等不活泼群）', id: 'eubacterium', 相似点: '生化全阴的「不活泼群」', 鉴别: '两者表型几乎无法区分，需 16S rRNA 测序；短真杆菌更常与牙周炎相关。'}
+],
+'eubacterium-sulci': [
+  {名称: '藏匿真杆菌', id: 'eubacterium-saphenum', 相似点: '口腔龈沟不活泼小杆菌', 鉴别: '表型不可分，分子鉴定区分。'}
+],
+'eubacterium-minutum': [
+  {名称: '真杆菌属（短真杆菌等不活泼群）', id: 'eubacterium', 相似点: '细小不活泼厌氧杆菌', 鉴别: '分子鉴定区分。'}
+],
+'eubacterium-contortum': [
+  {名称: '直肠真杆菌', id: 'eubacterium-rectale', 相似点: '发酵葡萄糖/乳糖/麦芽糖/蔗糖、七叶苷 +', 鉴别: '扭曲真杆菌阿拉伯糖 +、甘露醇 −（直肠甘露醇可变）。'}
+],
+'eubacterium-moniliforme': [
+  {名称: '念珠样排列的其他厌氧杆菌', 相似点: '串珠形态', 鉴别: '硝酸盐还原可变（多数真杆菌阴性）、发酵麦芽糖 + 葡萄糖 + 乳糖 − 组合。'}
+],
+'eggerthella-sinensis': [
+  {名称: '迟缓埃格特菌', id: 'eggerthella-lenta', 相似点: '同属、触酶阳性不发酵群', 鉴别: '中华埃格特菌硝酸盐还原阴性（迟缓阳性）——关键单点区别。'}
+],
+'eggerthella-lenta': [
+  {名称: '真杆菌属（不活泼群）', id: 'eubacterium', 相似点: '曾同属、革兰阳性厌氧不发酵小杆菌', 鉴别: '埃格特菌触酶阳性 + 硝酸盐还原阳性 + 精氨酸促生长；真杆菌属触酶阴性。历史上「迟缓真杆菌」即本菌误归类。'}
+],
+
+'fonsecaea-pedrosoi': [
+  {名称: '卡氏枝孢瓶霉', id: 'cladophialophora', 相似点: '着色芽生菌病病原、暗色真菌', 鉴别: '着色霉属 4 型产孢并存（含喙枝孢型）且孢子链短（<3）；枝孢瓶霉仅枝孢型长链、无喙枝孢型。'}
+],
+'fonsecaea-monophora': [
+  {名称: '裴氏着色霉', id: 'fonsecaea-pedrosoi', 相似点: '同属、形态高度交叉', 鉴别: '裴氏产孢细胞有明显齿状突起、每突 1~2 孢子；单瓶无明显齿状突起、每突 2~3 孢子。ITS 序列分子鉴定为金标准。'}
+],
+'ochroconis': [
+  {名称: '其他暗色真菌', 相似点: '脑暗色丝孢霉病病原', 鉴别: '奔马赭霉 37~42℃ 生长（嗜热）+ 双细胞分生孢子基细胞暗色横隔（「分裂眼」）——组合独特。'}
+],
+'neoscytalidium-dimidiatum': [
+  {名称: '皮肤癣菌', 相似点: '足部/甲浅部感染', 鉴别: '新柱顶孢关节孢子成链（暗色）、KOH 镜下宽大分隔菌丝；皮肤癣菌小分生孢子/大分生孢子形态不同、培养基产彩色粉末。'}
+],
+'pythium-insidiosum': [
+  {名称: '毛霉目真菌', 相似点: '宽大无隔/稀疏分隔菌丝、组织病理难以区分', 鉴别: '腐霉菌菌丝直角分枝更规则、无隔；培养见游动孢子（双鞭毛）；β-内酰胺/唑类无效提示非真菌（卵菌）。分子鉴定确诊。'}
+],
+'apophysomyces': [
+  {名称: '毛霉/根霉', id: 'rhizopus-arrhizus-complex', 相似点: '毛霉病病原、宽大菌丝', 鉴别: '鳞质霉囊梗不分枝、囊托漏斗状极明显；普通培养基不产孢（根霉产孢丰富）——不产孢的「毛霉样」分离株要想到本属。'}
+],
+'cokeromyces': [
+  {名称: '念珠菌属（酵母相误报）', id: 'candida-albicans', 相似点: '37℃ 酵母相芽生细胞', 鉴别: '换 25~30℃ 培养恢复菌丝+球形小孢子囊形态即可纠正；科克霉厚壁孢子大量、乳酚棉蓝染色下结构典型。'}
+],
+
+'trichophyton-concentricum': [
+  {名称: '许兰毛癣菌', id: 'trichophyton-schoenleinii', 相似点: '均无大小分生孢子、缓慢生长', 鉴别: '同心毛癣菌厚壁孢子丰富（许兰为鹿角状菌丝+黄癣痂临床背景）；叠瓦癣皮损多环同心圆 vs 头黄癣碟形痂。'}
+],
+'trichophyton-schoenleinii': [
+  {名称: '疣状毛癣菌', id: 'trichophyton-verrucosum', 相似点: '均可见鹿角状菌丝、脑回状菌落', 鉴别: '疣状 37℃ 生长快（许兰慢）、加维生素 B1/肌醇后出鼠尾大分生孢子+珍珠项链状厚壁孢子链；亲动物（牛）vs 亲人（头黄癣）。'}
+],
+'trichophyton-soudanense': [
+  {名称: '红色毛癣菌', id: 'trichophyton-rubrum', 相似点: '同属红色毛癣菌复合体、形态相近', 鉴别: '苏丹毛癣菌反向分枝/直角菌丝（红毛无）、玉米培养基不产红色素；红毛背面葡萄酒色+产红素 +。'}
+],
+'trichophyton-equinum': [
+  {名称: '须癣毛癣菌复合群', id: 'trichophyton-mentagrophytes', 相似点: '大小分生孢子形态相似（棍棒大分生+梨形小分生）', 鉴别: '马毛癣菌**需要烟酸**（酪蛋白基础培养基不生长、加烟酸生长）——表 26-1-3 生长试验关键行。'}
+],
+'trichophyton-simii': [
+  {名称: '犬小孢子菌', id: 'microsporum-canis', 相似点: '亲动物癣菌、厚壁大分生孢子', 鉴别: '猴毛癣菌大分生孢子隔数更多（5~8 vs 犬小 5~8 但纺锤形尖端棘状突起）；宿主猴/禽 vs 猫/狗。'}
+],
+'trichophyton-ajelloi': [
+  {名称: '石膏小孢子菌', id: 'microsporum-gypseum', 相似点: '土壤来源、生长快', 鉴别: '阿耶罗背面紫红~蓝黑黑色素弥散（石膏黄棕）；阿耶罗小分生孢子罕见（石膏少见）。多为污染菌。'}
+],
+'trichophyton-indotineae': [
+  {名称: '须癣毛癣菌复合群', id: 'trichophyton-mentagrophytes', 相似点: '形态培养无法区分（曾长期误定趾间变种）', 鉴别: '只能靠 ITS 等分子鉴定；**特比萘芬高度耐药+顽固性体癣流行病学史强烈提示本菌**。'}
+],
+'microsporum-ferrugineum': [
+  {名称: '紫色毛癣菌', id: 'trichophyton-violaceum', 相似点: '儿童头癣、菌落色素、少孢子', 鉴别: '铁锈色菌丝粗竹节状（紫色粗短畸形+厚壁孢子链）；铁锈黄蜡样菌落 vs 紫色蜡样菌落。'}
+],
+'microsporum-audouinii': [
+  {名称: '犬小孢子菌', id: 'microsporum-canis', 相似点: '头白癣病原、发外型', 鉴别: '奥杜盎亲人性（人间传播）、大分生孢子罕见；犬小亲动物性、大分生孢子丰富纺锤形。'}
+],
+'microsporum-nanum': [
+  {名称: '石膏小孢子菌', id: 'microsporum-gypseum', 相似点: '亲土性来源', 鉴别: '猪小孢子菌大分生孢子 2 隔短桶形（石膏样 3~5 隔纺锤形壁粗糙）。'}
+],
+'microsporum-persicolor': [
+  {名称: '红色毛癣菌', id: 'trichophyton-rubrum', 相似点: '小分生孢子丰富易误判为毛癣菌属', 鉴别: '桃色小孢子菌属小孢子菌属（大分生孢子壁薄梭形偶见）；菌落桃红色。'}
+],
+'microsporum-cookei': [
+  {名称: '石膏小孢子菌', id: 'microsporum-gypseum', 相似点: '土壤腐生、亲土性', 鉴别: '库克背面深红~紫色素浓（石膏黄棕）；疣状粗糙大分生孢子。人类感染均罕见。'}
+],
+'microsporum-gallinae': [
+  {名称: '犬小孢子菌', id: 'microsporum-canis', 相似点: '亲动物头癣/体癣', 鉴别: '鸡禽大分生孢子壁薄光滑（犬小厚壁棘状尖端）；宿主禽类 vs 猫狗。'}
+],
+'epidermophyton-stockdaleae': [
+  {名称: '絮状表皮癣菌', id: 'epidermophyton-floccosum', 相似点: '同属、杵状大分生孢子无小分生孢子', 鉴别: '斯托克分生孢子更细长、壁薄尖端渐细、生长更快；絮状为人类唯一常见表皮癣菌病原。'}
+],
+
+'fusarium-solani': [
+  {名称: '尖孢镰刀菌', id: 'fusarium-oxysporum', 相似点: '镰刀菌病最常见两个复合群、小分生孢子均丰富', 鉴别: 'FSSC 小分生孢子**假头状**着生、瓶梗细长+领口明显；FOSC 小分生孢子**从不成链**（散生）、瓶梗短粗、部分株丁香气味。'}
+],
+'fusarium-verticillioides': [
+  {名称: '茄病镰刀菌', id: 'fusarium-solani', 相似点: '临床常见复合群', 鉴别: '轮枝镰刀菌小分生孢子**链状排列**（FFSC 唯一）、严格单瓶梗、蓝色菌核/菌落蓝紫；FSSC 假头状。'}
+],
+'fusarium-oxysporum': [
+  {名称: '轮枝镰刀菌', id: 'fusarium-verticillioides', 相似点: '均白色→紫色菌落', 鉴别: 'FOSC 小分生孢子从不成链（FFSC 链状）；FOSC 厚壁孢子更丰富。'}
+],
+'fusarium-incarnatum': [
+  {名称: '木贼镰刀菌', id: 'fusarium-equiseti', 相似点: '同 FIESC 复合群、形态交叉', 鉴别: '木贼大分生孢子背腹弯曲显著（马蹄形）+顶细胞长喙；肉色轻弯短喙。分子鉴定为复合群内定种金标准。'}
+],
+'fusarium-equiseti': [
+  {名称: '肉色镰刀菌', id: 'fusarium-incarnatum', 相似点: '同 FIESC', 鉴别: '见肉色条目——大分生孢子弯曲度与喙长。'}
+],
+'fusarium-dimerum': [
+  {名称: '厚孢镰刀菌', id: 'fusarium-chlamydosporum', 相似点: '厚壁孢子丰富', 鉴别: 'FDSC 大分生孢子 1~3 隔（属内最少）、无小分生孢子、橙色黏性菌落生长慢；FCSC 厚壁孢子成链成团壁粗糙、粉色菌落生长快、小分生孢子梭形存在。'}
+],
+'fusarium-delphinoides': [
+  {名称: '双孢镰刀菌', id: 'fusarium-dimerum', 相似点: '同 FDSC、少隔无小分生孢子', 鉴别: '大分生孢子喙部更长更尖（海豚喙状）；分子鉴定区分。'}
+],
+'fusarium-lichenicola': [
+  {名称: '茄病镰刀菌', id: 'fusarium-solani', 相似点: '同 FSSC 复合群', 鉴别: '种级区分需分子（ITS/TEF1-α）；苔藓产孢梗多芽生型更常见。'}
+],
+'fusarium-chlamydosporum': [
+  {名称: '双孢镰刀菌', id: 'fusarium-dimerum', 相似点: '厚壁孢子突出', 鉴别: '见双孢条目——隔数/小分生孢子有无/菌落颜色三轴。'}
+],
+'aspergillus-versicolor': [
+  {名称: '构巢曲霉', id: 'aspergillus-nidulans', 相似点: '杂色组近缘、双层产孢、壳细胞', 鉴别: '构巢分生孢子梗**淡褐色**、见闭囊壳（有性型裸囊壳）+壳细胞环绕；花斑分生孢子梗无色、无完整闭囊壳。检索表：6a 构巢/6b 花斑。'}
+],
+'aspergillus-sydowii': [
+  {名称: '花斑曲霉', id: 'aspergillus-versicolor', 相似点: '杂色组、形态相近（双层产孢球形顶囊）', 鉴别: '聚多大量青霉样不完整顶囊、背面红茶水色；花斑壳细胞大量、背面多变（黄~紫红）。'}
+],
+'scedosporium-boydii': [
+  {名称: '尖端赛多孢', id: 'scedosporium-apiospermum', 相似点: '同复合群（曾为同种异名）', 鉴别: '现按分子分类拆分：尖端为复合群总代表，波氏为其中最常见临床种之一——常规实验室报告「尖端赛多孢复合群」即可。'}
+],
+'scedosporium-prolificans': [
+  {名称: '波氏赛多孢霉', id: 'scedosporium-boydii', 相似点: '同属、环痕产孢', 鉴别: '多育环痕梗**基部膨大烧瓶状**+花簇样孢子聚集；多重耐药谱（全药高 MIC）为最强临床提示——波氏伏立康唑多敏感。'}
+],
+'scedosporium-aurantiacum': [
+  {名称: '波氏赛多孢霉', id: 'scedosporium-boydii', 相似点: '同复合群', 鉴别: '橙黄可溶性色素扩散入培养基（波氏无）；42℃ 生长（耐热更强）。'}
+],
+
+'aerococcus-christensenii': [
+  {名称: '草绿色气球菌', id: 'aerococcus-viridans', 相似点: '同属四联排列+α-溶血小菌落', 鉴别: '柯氏 LAP+（草绿色 LAP−）；柯氏山梨糖产酸（属内唯一）、不水解七叶苷（草绿色+）。表 12-6-2 属内鉴别轴。'}
+],
+'aerococcus-urinaehominis': [
+  {名称: '尿道气球菌', id: 'aerococcus-urinae', 相似点: '泌尿道来源、表型相近', 鉴别: '人尿气球菌尿素酶+（尿道气球菌−，属内唯一尿素酶阳性）；甘露醇−（尿道气球菌+）。'}
+],
+'aerococcus-vaginalis': [
+  {名称: '柯氏气球菌', id: 'aerococcus-christensenii', 相似点: '阴道来源、LAP+', 鉴别: '阴道气球菌 β-半乳糖苷酶+、蔗糖−（柯氏山梨糖+、蔗糖−但 LAP 谱不同）；最终需分子鉴定。'}
+],
+'gemella-sanguinis': [
+  {名称: '麻疹孪生球菌', id: 'gemella-morbillorum', 相似点: '同属、着色不定', 鉴别: '血孪生球菌发酵谱更宽（麦芽糖/蔗糖+）；麻疹孪生球菌发酵更惰性。商品化系统常混淆，质谱/分子复核。'}
+],
+'gemella-cuniculi': [
+  {名称: '溶血孪生球菌', id: 'gemella-haemolysans', 相似点: '生化惰性群', 鉴别: '动物宿主史（兔接触）；分子鉴定。'}
+],
+'gemella-parahaemolysans': [
+  {名称: '溶血孪生球菌', id: 'gemella-haemolysans', 相似点: '溶血可变', 鉴别: '副溶血 β-溶血弱且可变；发酵谱区别+分子鉴定。'}
+],
+'lactococcus-lactis': [
+  {名称: '肠球菌属', id: 'enterococcus-faecalis', 相似点: 'N 群抗原、成对/短链', 鉴别: '乳球菌 45℃ 不生长、10℃ 生长（肠球菌两者均+）；胆汁七叶苷可变（肠球菌+）。表 12-6-1 经典鉴别行。'}
+],
+'leuconostoc-pseudomesenteroides': [
+  {名称: '肠膜样明串珠菌', id: 'leuconostoc-mesenteroides', 相似点: '同属、异型发酵产气、万古霉素耐药', 鉴别: '假肠膜明串珠菌菊糖+/蜜二糖−组合；分子鉴定区分近缘。'}
+],
+'leuconostoc-lactis': [
+  {名称: '肠膜样明串珠菌', id: 'leuconostoc-mesenteroides', 相似点: '同属', 鉴别: '乳明串珠菌多见于乳制品源；糖发酵谱+分子鉴定。'}
+],
+'weissella-viridescens': [
+  {名称: '混乱魏斯菌', id: 'weissella-confusa', 相似点: '同属', 鉴别: '绿色魏斯菌肉制品腐败指示、形态更杆；混乱魏斯菌临床分离更多。'}
+],
+'weissella-cibaria': [
+  {名称: '混乱魏斯菌', id: 'weissella-confusa', 相似点: '同属发酵食品来源', 鉴别: '分子鉴定（16S）区分近缘。'}
+],
+'pediococcus-pentosaceus': [
+  {名称: '乳酸片球菌', id: 'pediococcus-acidilactici', 相似点: '同属四联排列、万古霉素耐药', 鉴别: '戊糖片球菌发酵阿拉伯糖−（乳酸片球菌可变）；临床常规报「片球菌属」即可。'}
+],
+'helcococcus-sueciensis': [
+  {名称: '孔兹创伤球菌', id: 'helcococcus-kunzii', 相似点: '同属缓慢生长+卫星现象+PYR+/LAP−', 鉴别: '瑞典创伤球菌糖尿病足/深部伤口多见、生长更慢；分子鉴定。'}
+],
+'helcococcus-ovis': [
+  {名称: '孔兹创伤球菌', id: 'helcococcus-kunzii', 相似点: '同属', 鉴别: '绵羊接触史；分子鉴定。'}
+],
+'dolosigranulum-pigrum': [
+  {名称: '草绿色气球菌', id: 'aerococcus-viridans', 相似点: '四联成簇、触酶阴性、6.5% NaCl 生长', 鉴别: '懒惰狡诈菌生长极慢（3~5 日，气球菌 48h）；常被商品化系统漏报——眼部分离+缓慢生长提示本菌。'}
+],
+'kocuria-rosea': [
+  {名称: '表皮葡萄球菌', id: 'staph-epidermidis', 相似点: '皮肤来源、成簇排列、免疫低下机会感染', 鉴别: '库克菌氧化酶阳性（葡萄球菌阴性）、菌落色素粉红/黄（CoNS 白色为主）、盐水不易混悬；葡萄球菌样临床报告前应复核。'}
+],
+'kocuria-kristinae': [
+  {名称: '玫瑰色库克菌', id: 'kocuria-rosea', 相似点: '同属', 鉴别: '克氏黄色素（玫瑰色粉红/玫瑰）；四联立方体堆叠更规则。'}
+],
+'rothia-dentocariosa': [
+  {名称: '粘滑罗斯菌', id: 'rothia-mucilaginosa', 相似点: '同属口腔来源', 鉴别: '龋齿罗氏菌杆状为主+菌落干燥辐轮状；粘滑罗斯菌球形+黏液型菌落（胞外多糖）。'}
+],
+'granulicatella-elegans': [
+  {名称: '毗邻颗粒链菌', id: 'granulicatella-adiacens', 相似点: '同属营养苛求+卫星现象', 鉴别: '细长颗粒链菌菌体更细长、生化更惰性（毗邻发酵谱稍宽）。'}
+],
+'granulicatella-balaenopterae': [
+  {名称: '毗邻颗粒链菌', id: 'granulicatella-adiacens', 相似点: '同属', 鉴别: '动物源罕见种；分子鉴定。'}
+],
+'staphylococcus-hyicus': [
+  {名称: '中间葡萄球菌', id: 'staphylococcus-intermedius', 相似点: '兽医源三剑客、犬猪接触史', 鉴别: '猪葡萄球菌凝固酶玻片+/试管−（中间两种均+或可变）；PYR 阴性（中间阳性）。'}
+],
+'staphylococcus-intermedius': [
+  {名称: '金黄色葡萄球菌', id: 'staph-aureus', 相似点: '凝固酶阳性葡萄球菌', 鉴别: '中间葡萄球菌 PYR+（金葡−）——单点快速区分；犬/鸽接触史强烈提示；MALDI 需注意与假中间葡萄球菌区分。'}
+],
+'enterococcus-pallens': [
+  {名称: '鸟肠球菌', id: 'enterococcus-avium', 相似点: '阿拉伯糖阳性群', 鉴别: '淡黄肠球菌菌落黄色素（属内独特）+动力−；山梨醇谱区别。'}
+],
+'enterococcus-pseudoavium': [
+  {名称: '鸟肠球菌', id: 'enterococcus-avium', 相似点: '生化谱极近', 鉴别: '假鸟肠球菌山梨醇−（鸟肠球菌+）。'}
+],
+
+'neisseria-lactamica': [
+  {名称: '脑膜炎奈瑟菌', id: 'neisseria-meningitidis', 相似点: '葡萄糖+麦芽糖+糖谱相同、MTM 生长', 鉴别: '乳糖奈瑟菌乳糖+/ONPG+（脑膜炎−）；营养琼脂 35℃ 生长（脑膜炎可变）；儿童携带者背景+不致病提示乳糖奈瑟菌。'}
+],
+'neisseria-polysaccharea': [
+  {名称: '脑膜炎奈瑟菌', id: 'neisseria-meningitidis', 相似点: '葡萄糖+麦芽糖+（易混对）', 鉴别: '多糖奈瑟菌蔗糖可变+多糖合成+（脑膜炎全−）；22℃ 生长（脑膜炎−）。'}
+],
+'neisseria-cinerea': [
+  {名称: '淋病奈瑟菌', id: 'neisseria-gonorrhoeae', 相似点: '糖谱全阴性、选择性培养基菌落相似——经典混淆对', 鉴别: '灰色奈瑟菌 Superoxol 弱阳性（淋病++++爆破式）；营养琼脂/22℃ 生长+（淋病全−）；酶底物显色淋病羟脯氨酰基氨肽酶+。'}
+],
+'neisseria-subflava': [
+  {名称: '乳糖奈瑟菌', id: 'neisseria-lactamica', 相似点: '鼻咽定植、部分糖阳性', 鉴别: '微黄奈瑟菌蔗糖可变+果糖可变（乳糖奈瑟菌两者−）+乳糖−；黄绿色素菌落。'}
+],
+'neisseria-flavescens': [
+  {名称: '灰色奈瑟菌', id: 'neisseria-cinerea', 相似点: '糖谱全阴', 鉴别: '浅黄奈瑟菌黄色素菌落（灰色奈瑟米色~淡黄）；多糖合成+（灰色奈瑟−）。'}
+],
+'neisseria-sicca': [
+  {名称: '粘液奈瑟菌', id: 'neisseria-mucosa', 相似点: '糖谱全同（葡/麦/蔗/果+）', 鉴别: '干燥奈瑟菌硝酸盐还原−（粘液+——单点区分）；菌落干燥皱褶 vs 黏液样。'}
+],
+'neisseria-mucosa': [
+  {名称: '干燥奈瑟菌', id: 'neisseria-sicca', 相似点: '糖谱同', 鉴别: '硝酸盐还原+（干燥−）；黏液样荚膜菌落。'}
+],
+'neisseria-elongata': [
+  {名称: '念珠状链杆菌', id: 'streptobacillus-moniliformis', 相似点: '革兰阴性杆状、口咽来源', 鉴别: '长奈瑟菌触酶弱+/需复杂营养但生长相对容易；链杆菌触酶−/鼠咬热暴露史。血培养报「革兰阴性杆菌」前先考虑奈瑟杆状群。'}
+],
+'neisseria-weaveri': [
+  {名称: '狗咬二氧化碳噬纤维菌', id: 'capnocytophaga-canimorsus', 相似点: '犬咬伤伤口、革兰阴性杆菌', 鉴别: '编织奈瑟菌亚硝酸盐还原+、氧化酶+；噬纤维菌滑行运动、氧化酶可变。常混合存在，培养条件（CO2 需求）不同。'}
+],
+'neisseria-bacilliformis': [
+  {名称: '长奈瑟球菌', id: 'neisseria-elongata', 相似点: '杆状奈瑟菌', 鉴别: '生化谱+分子鉴定区分杆状群内种。'}
+],
+
+'bacteroides-eggerthii': [
+  {名称: '脆弱拟杆菌', id: 'bacteroides-fragilis', 相似点: '同脆弱拟杆菌群、BBE+耐胆汁', 鉴别: '埃氏拟杆菌靛基质+蔗糖−（脆弱拟杆菌靛基质−蔗糖+）；表 20-14-2 行级区分。'}
+],
+'bacteroides-stercoris': [
+  {名称: '卵形拟杆菌', id: 'bacteroides-ovatus', 相似点: 'BBE+靛基质+', 鉴别: '粪便拟杆菌触酶−蕈糖−（卵形拟杆菌两者+）；水杨素−（卵形+）。'}
+],
+'porphyromonas-endodontalis': [
+  {名称: '牙龈卟啉单胞菌', id: 'porphyromonas-gingivalis', 相似点: '同属黑色色素+不解糖', 鉴别: '牙髓卟啉单胞菌牙髓/根管来源（牙龈卟啉单胞菌牙周来源）；胰蛋白酶样酶谱与凝集试验区分，分子鉴定为金标准。'}
+],
+'bifidobacterium-longum': [
+  {名称: '阴道加德纳菌', id: 'gardnerella-vaginalis', 相似点: '革兰阳性（可变）杆菌、阴道来源', 鉴别: '双歧杆菌严格厌氧+分叉形态+不溶血；加德纳菌兼性厌氧、线索细胞背景。双歧杆菌阴道检出多为正常菌群成分。'}
+],
+'bifidobacterium-bifidum': [
+  {名称: '长双歧杆菌', id: 'bifidobacterium-longum', 相似点: '同属分叉形态、益生菌种', 鉴别: '发酵谱（长双歧更宽）；商品化益生菌菌株多标注亚种信息，分子鉴定区分。'}
+],
+
+'haemophilus-haemolyticus': [
+  {名称: '流感嗜血杆菌', id: 'haemophilus-influenzae', 相似点: 'X+V 因子需求相同、生化卡大量误报', 鉴别: '溶血嗜血杆菌 β-溶血+（流感−）；吲哚多数阴性+木糖+组合参考；分子鉴定（16S/质谱）复核血培养与无菌体液的「流感嗜血杆菌」。'}
+],
+'haemophilus-parahaemolyticus': [
+  {名称: '副流感嗜血杆菌', id: 'haemophilus-parainfluenzae', 相似点: 'V 因子需求、口咽定植', 鉴别: '副溶血嗜血杆菌 β-溶血+/尿素酶+/木糖−；副流感溶血−、尿素酶可变。'}
+],
+'haemophilus-sputorum': [
+  {名称: '副流感嗜血杆菌', id: 'haemophilus-parainfluenzae', 相似点: 'V 因子需求', 鉴别: '唾液嗜血杆菌 ONPG+/吲哚+/尿素酶+ 三阳组合（副流感谱散）；痰背景菌致病性均低。'}
+],
+'streptococcus-infantarius': [
+  {名称: '牛链球菌（解没食子酸链球菌）', id: 'strep-gallolyticus', 相似点: '牛链球菌群、D 群、胆汁七叶苷+', 鉴别: '小儿链球菌不溶血/弱 α、甘露醇−（解没食子酸链球菌马其顿亚种可+）；群内最终需分子鉴定。'}
+],
+'streptococcus-lutetiensis': [
+  {名称: '小儿链球菌', id: 'streptococcus-infantarius', 相似点: '牛链球菌群', 鉴别: '巴黎链球菌甘露醇+（小儿链球菌−）；分子鉴定区分。'}
+],
+'streptococcus-porcinus': [
+  {名称: '无乳链球菌（B 群）', id: 'strep-agalactiae', 相似点: 'β-溶血、可携带类似群抗原、阴道定植', 鉴别: '豕链球菌 CAMP 阴性/马尿酸盐阴性（B 群双阳）；杆菌肽耐药（B 群可变）；Lancefield 分群 E/F/G。'}
+],
+'streptococcus-uberis': [
+  {名称: '无乳链球菌（B 群）', id: 'strep-agalactiae', 相似点: '牛乳房炎背景、马尿酸盐+', 鉴别: '乳房链球菌 CAMP 阴性（B 群阳性）、无 B 群抗原；环境来源非专性乳腺寄生。'}
+],
+
+'vibrio-alginolyticus': [
+  {名称: '副溶血性弧菌', id: 'vibrio-parahaemolyticus', 相似点: '海水来源、周生鞭毛聚集生长', 鉴别: '溶藻弧菌 TCBS 黄色（蔗糖+；副溶血绿色）；VP+（副溶血−）；赖氨酸/鸟氨酸谱区别。'}
+],
+'vibrio-fluvialis': [
+  {名称: '霍乱弧菌', id: 'vibrio-cholerae', 相似点: 'TCBS 黄色、精氨酸可变', 鉴别: '河流弧菌嗜盐（无盐不生长；霍乱弧菌可）、不凝集 O1/O139 抗血清；弧菌属生化分群（Heiberg 群）。'}
+],
+'vibrio-furnissii': [
+  {名称: '河流弧菌', id: 'vibrio-fluvialis', 相似点: '近缘（曾同种）', 鉴别: '弗尼斯弧菌葡萄糖产气+（河流弧菌−）。'}
+],
+'vibrio-mimicus': [
+  {名称: '霍乱弧菌', id: 'vibrio-cholerae', 相似点: '霍乱样腹泻、生化谱极近', 鉴别: '拟态弧菌蔗糖−（TCBS 绿色；霍乱黄色）、产气+；O1/O139 血清不凝集——「绿色菌落的霍乱样弧菌」直接提示。'}
+],
+'vibrio-metschnikovii': [
+  {名称: '其他弧菌', id: 'vibrio-cholerae', 相似点: 'TCBS 黄色', 鉴别: '梅氏弧菌氧化酶−（属内唯一例外——按氧化酶+筛选弧菌会漏）；硝酸盐还原−。'}
+],
+'aeromonas-veronii': [
+  {名称: '嗜水气单胞菌', id: 'aeromonas-hydrophila', 相似点: '临床气单胞菌检出前两位、β-溶血', 鉴别: '维隆气单胞菌鸟氨酸脱羧酶+（嗜水−——气单胞菌属内少见阳性）、七叶苷−（嗜水+）；EL Tor 样溶血均可阳性。'}
+],
+'aeromonas-sobria': [
+  {名称: '维隆气单胞菌温和生物变种', id: 'aeromonas-veronii', 相似点: '分类学上已并入（同物异名）', 鉴别: '常规生化无法稳定区分，报告「维隆气单胞菌」为现行正确命名；旧名保留供检索。'}
+],
+'aeromonas-dhakensis': [
+  {名称: '嗜水气单胞菌', id: 'aeromonas-hydrophila', 相似点: '表型极近（长期被误报）', 鉴别: '达卡气单胞菌 42℃ 生长+、头孢噻吩耐药（嗜水可变）；需质谱/分子鉴定——坏死性软组织感染报告尤其应复核。'}
+],
+'aeromonas-media': [
+  {名称: '豚鼠气单胞菌', id: 'aeromonas-caviae', 相似点: '不溶血/弱溶血群、腹泻来源', 鉴别: '中间气单胞菌 VP+（豚鼠−）；生化谱+分子鉴定区分。'}
+],
+
+'campylobacter-fetus': [
+  {名称: '空肠弯曲菌', id: 'campylobacter-jejuni', 相似点: '同属微需氧弯曲杆菌', 鉴别: '胎儿弯曲菌 25℃ 生长+（空肠 42℃ 不生长 25℃）、头孢噻吩敏感+萘啶酸耐药（空肠正相反）；临床型别：胎儿=菌血症/肠外，空肠=腹泻+GBS。'}
+],
+'campylobacter-lari': [
+  {名称: '空肠弯曲菌', id: 'campylobacter-jejuni', 相似点: '42℃ 选择平板检出、腹泻', 鉴别: '红嘴鸥弯曲菌马尿酸盐−（空肠+）、尿素酶可变（空肠−）；海鸥/贝类暴露史。'}
+],
+'campylobacter-upsaliensis': [
+  {名称: '空肠弯曲菌', id: 'campylobacter-jejuni', 相似点: '腹泻、人畜共患', 鉴别: '乌普萨拉触酶−/弱（空肠+）、42℃ 生长差（漏检主因）；犬猫幼崽暴露史。'}
+],
+'campylobacter-concisus': [
+  {名称: '空肠弯曲菌', id: 'campylobacter-jejuni', 相似点: '弯曲菌肠炎', 鉴别: '简明弯曲菌需 H2、触酶−、42℃ 不生长；口腔来源（牙周/IBD 关联）。'}
+],
+'campylobacter-curvus': [
+  {名称: '简明弯曲杆菌', id: 'campylobacter-concisus', 相似点: '口腔 H2 群组', 鉴别: '曲形弯曲菌马尿酸盐可变（简明−）；分子鉴定区分近缘。'}
+],
+'campylobacter-showae': [
+  {名称: '简明弯曲杆菌', id: 'campylobacter-concisus', 相似点: '口腔 H2 群组', 鉴别: '昭和弯曲菌触酶+（简明−）；侧鞭毛束形态。'}
+],
+'campylobacter-sputorum': [
+  {名称: '幽门螺杆菌', id: 'helicobacter-pylori', 相似点: '弯曲菌样、口腔来源', 鉴别: '唾液弯曲菌尿素酶−（幽门+）；三糖铁 H2S+（幽门−）。'}
+],
+'helicobacter-fennelliae': [
+  {名称: '同性恋螺杆菌', id: 'helicobacter-cinaedi', 相似点: '肠源性螺杆菌、免疫低下菌血症', 鉴别: '芬纳尔螺杆菌触酶+/尿素酶−（同性恋螺杆菌触酶可变）；生化谱+分子鉴定。'}
+],
+'helicobacter-pullorum': [
+  {名称: '空肠弯曲菌', id: 'campylobacter-jejuni', 相似点: '禽类来源胃肠炎', 鉴别: '幼禽螺杆菌尿素酶−、42℃ 不生长（空肠+）；禽肉直接接触史。'}
 ]
 };

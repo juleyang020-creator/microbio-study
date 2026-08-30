@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260829-93';
+  var APP_VERSION = window.APP_VERSION || '20260830-08';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -302,6 +302,19 @@
     var path = parentPath + '/' + node.名称;
     var collapsible = (node.children && node.children.length) || (node.entries && node.entries.length);
     var isCollapsed = !!collapsed[path];
+    // 属级条目折叠：叶子分类下唯一条目与属同名（如批11~17 补的「库克菌属」属级条目），
+    // 树上会出现「库克菌属 ▾ / 库克菌属」两层重复。此时属节点直接渲染为可点击链接
+    // （点开即显示该属介绍），不再挂子条目——树更矮，点击少一层。
+    if (!node.children.length && node.entries.length === 1 && node.entries[0].名称 === node.名称) {
+      var only = node.entries[0];
+      return [ el('a', {
+        cls: 'cat-subgroup entry-link cat-genus-link' + (only.selected ? ' selected' : ''),
+        text: node.名称,
+        href: only.href,
+        style: 'padding-left:' + (8 + depth * 14) + 'px',
+        title: '查看' + node.名称 + '介绍'
+      }) ];
+    }
     var labelCls = (depth === 0 ? 'cat-group-name' : 'cat-subgroup') + (collapsible ? ' collapsible' : '');
     var marker = collapsible ? (isCollapsed ? '▸ ' : '▾ ') : '';
     var out = [ el(collapsible ? 'button' : 'div', {
