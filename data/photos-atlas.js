@@ -3937,6 +3937,26 @@ window.DB.photosAtlas = {
    "说明": "图 27-16-3　藤仓镰刀菌 PDA 28℃ 培养 4 日 ×1000"
   }
  ],
+ "fonsecaea-pedrosoi": [
+  {
+   "文件": "img/atlas/15ac4ba4ff7ea8fff4fd8ecb37e3bbac9c6ec39d7bf240ac6ebd5efe9a28e246.jpg",
+   "说明": "图 27-17-2　裴氏着色霉 PDA 28℃ 培养 21 日，乳酸酚棉蓝染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/311302deffe385f3659d1da81ac29bc816db47ebcc65abd3fe1405ae6709724b.jpg",
+   "说明": "图 27-17-2　裴氏着色霉 PDA 28℃ 培养 17 日"
+  }
+ ],
+ "fonsecaea-monophora": [
+  {
+   "文件": "img/atlas/d1fad9ef6710091dfc282970f33a863d5c96c7061be152c7790fcc54eca8decb.jpg",
+   "说明": "图 27-17-2　单瓶着色霉 PDA 28℃ 培养 7 日，乳酸酚棉蓝染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/3f7c27242dc6f695131b1467993d71245642ef15c411f2d2967a76bb48b18435.jpg",
+   "说明": "图 27-17-2　单瓶着色霉 PDA 28℃ 培养 17 日"
+  }
+ ],
  "cladosporium": [
   {
    "文件": "img/atlas/39a203dd093ab33fc874cc4cef884b4842e7cf2e8c09fcd8eab66401a6a32345.jpg",
@@ -4009,6 +4029,24 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/61898bb9a60d39d1fc0a68aaaa969b472be6586474cc209c23c45101dc773af5.jpg",
    "说明": "图 27-27-2　尖端赛多孢 (关节液肉汤培养) 35℃ 培养 3 日"
+  }
+ ],
+ "neoscytalidium-dimidiatum": [
+  {
+   "文件": "img/atlas/2376f4ca397eb704c154959fbd0a33cc92f52a9a4b6f61b5e2f7847992476639.jpg",
+   "说明": "图 27-36-1　暗色关节孢子 PDA 28℃ 培养 4 日，乳酸酚棉蓝染色 ×400"
+  },
+  {
+   "文件": "img/atlas/a88eb6754c10bee44fe1da613a65f7ba494a29e7e76168c91b77209f70bef344.jpg",
+   "说明": "图 27-36-1　关节孢子 PDA 28℃ 培养 3 日，乳酸酚棉蓝染色 ×400"
+  },
+  {
+   "文件": "img/atlas/538a3b46070b30e86c24cd525bba0b6c82bb475258607ad3ff597352a4ae3b22.jpg",
+   "说明": "图 27-36-1　PDA 28℃ 培养 5 日"
+  },
+  {
+   "文件": "img/atlas/2c59863c0b492821bcf1d76173a931af7b811c771585e6ab6ae9271ca1aa99c9.jpg",
+   "说明": "图 27-36-1　关节孢子和分生孢子 PDA 28℃ 培养 32 日 ×1000"
   }
  ],
  "respiratory-syncytial-virus": [
