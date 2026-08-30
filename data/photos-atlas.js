@@ -2063,6 +2063,32 @@ window.DB.photosAtlas = {
    "说明": "图 16-2-1　XLD 24h"
   }
  ],
+ "aeromonas-veronii": [
+  {
+   "文件": "img/atlas/a0e52fde5486ebe078e4e2b988a3074fcfa452bf7af034b9402dca59a8c33740.jpg",
+   "说明": "图 16-2-3　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/370d198136487d9cc98c55eb3fb16d7c54d8fa28680d628ed17f9af6d95284a8.jpg",
+   "说明": "图 16-2-3　SBA 24h"
+  },
+  {
+   "文件": "img/atlas/1be285a79b1d6696002b15fb6f80341065965e4f2cef449b188a7be69be90c2b.jpg",
+   "说明": "图 16-2-3　庆大平板 24h"
+  },
+  {
+   "文件": "img/atlas/4d836fcc03d6d3ce3ff9aec2b9aa4593c3201f1043a5ade8896b26cf0d35bcfc.jpg",
+   "说明": "图 16-2-4　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/f3bd8832da67e56303cda56d07578be493553ec5b2121176ac00ce218c6a8096.jpg",
+   "说明": "图 16-2-4　SBA 4 日"
+  },
+  {
+   "文件": "img/atlas/7c2a47aa57150f20738e0b4cb7de7452def544a1590cb6989ac107fac8197493.jpg",
+   "说明": "图 16-2-4　黏液型 SBA 2 日"
+  }
+ ],
  "pseudomonas-aeruginosa": [
   {
    "文件": "img/atlas/23b75ec4325d647e4b401f13644b1a3e9c2770303afadb02336fafc9144e217f.jpg",
