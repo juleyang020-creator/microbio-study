@@ -1888,5 +1888,15 @@ window.DB.differential = {
 ],
 'helicobacter-pullorum': [
   {名称: '空肠弯曲菌', id: 'campylobacter-jejuni', 相似点: '禽类来源胃肠炎', 鉴别: '幼禽螺杆菌尿素酶−、42℃ 不生长（空肠+）；禽肉直接接触史。'}
+],
+
+'micrococcus-lylae': [
+  {名称: '藤黄微球菌', id: 'micrococcus-luteus', 相似点: '同属四联排列、氧化酶+', 鉴别: '里拉微球菌乳白色素（藤黄黄色）、有机氮琼脂生长不良+溶菌酶抵抗（藤黄生长良好+溶菌酶敏感）；无机氮琼脂不生长（藤黄+）。'}
+],
+'rothia-aerolata': [
+  {名称: '粘滑罗斯菌', id: 'rothia-mucilaginosa', 相似点: '同属、微球菌相似菌', 鉴别: '气生罗氏菌非黏液菌落（黏滑罗氏菌白色胶状紧黏琼脂）；空气来源背景。'}
+],
+'rothia-terrae': [
+  {名称: '气生罗氏菌', id: 'rothia-aerolata', 相似点: '环境来源微球菌相似菌', 鉴别: '来源差异（土壤 vs 空气）；分子鉴定区分。'}
 ]
 };

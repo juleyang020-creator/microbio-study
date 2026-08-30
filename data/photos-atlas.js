@@ -101,6 +101,12 @@ window.DB.photosAtlas = {
    "说明": "图 12-3-1　藤黄微球菌(粗糙型) SBA 2 日"
   }
  ],
+ "micrococcus-lylae": [
+  {
+   "文件": "img/atlas/f379f2e51abc9db692887be0f739db7d7938e15a5afc75856f7de8eb6205b420.jpg",
+   "说明": "图 12-3-1　里拉微球菌 SBA 3 日"
+  }
+ ],
  "kocuria-kristinae": [
   {
    "文件": "img/atlas/4cae3ddc5303f02f887116eff323e895a256aaf1f4045b3ef8ef81f524e6db24.jpg",
@@ -133,6 +139,12 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/5e1a40a2833b7b5f7e34b61ac32cee86edc41292aead0ca086612c711b6db843.jpg",
    "说明": "图 12-3-5　皮肤球菌属形态特征"
+  }
+ ],
+ "rothia-aerolata": [
+  {
+   "文件": "img/atlas/84ef8adcb81ae74ead60ed4889197c85e6de75ced3e81c8f8d51ea86cb310ed0.jpg",
+   "说明": "图 12-3-6　气生罗氏菌(Rothia aerolata)SBA 3 日"
   }
  ],
  "strep-pyogenes": [
