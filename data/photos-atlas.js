@@ -2879,6 +2879,32 @@ window.DB.photosAtlas = {
    "说明": "图 20-8-5　厌氧培养 8 日 ×40"
   }
  ],
+ "bifidobacterium-longum": [
+  {
+   "文件": "img/atlas/ac31c8f91ed65e7fc531037d541a0d2bf0cc7df7027314d23ceca935af75d17a.jpg",
+   "说明": "图 20-9-1　双歧杆菌的形态特征（1/6）"
+  },
+  {
+   "文件": "img/atlas/dfade3dbbb8d6649356c5c0add4e8765ea9d000905e7ecbdf338339668dbda37.jpg",
+   "说明": "图 20-9-1　双歧杆菌的形态特征（2/6）"
+  },
+  {
+   "文件": "img/atlas/01a9ec1af33080d336722d599f5a55d39992b38174ce039874b9df58a1d6a77d.jpg",
+   "说明": "图 20-9-1　双歧杆菌的形态特征（3/6）"
+  },
+  {
+   "文件": "img/atlas/3278779c9bfdaf5820cbdd0a580db1009f3f8332d0fafb6267bf0fa5d94f3ed1.jpg",
+   "说明": "图 20-9-1　双歧杆菌的形态特征（4/6）"
+  },
+  {
+   "文件": "img/atlas/67a889dfc3a8ff777143ee657a5e2169ba2879539eda545f1df7625007f26ca3.jpg",
+   "说明": "图 20-9-1　双歧杆菌的形态特征（5/6）"
+  },
+  {
+   "文件": "img/atlas/0fa226f8350b2b59aa9ad606fe81a92143f091c4d44b2ef8ead98f007191a965.jpg",
+   "说明": "图 20-9-1　双歧杆菌的形态特征（6/6）"
+  }
+ ],
  "bacteroides-fragilis": [
   {
    "文件": "img/atlas/c637da70af588f892cf0ffcf8167c03c97ba31650d6514ccd19e8e8e7ffaf163.jpg",

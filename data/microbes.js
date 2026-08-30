@@ -2171,7 +2171,7 @@ window.DB.microbes = [
     关联: ['metronidazole', 'clindamycin', 'bacteroides-fragilis', 'porphyromonas-asaccharolytica']
   },
   {
-    id: 'porphyromonas-asaccharolytica', 名称: '不解糖卟啉单胞菌', 拉丁名: 'Porphyromonas asaccharolytica', 类别: '叶啉单胞菌属',
+    id: 'porphyromonas-asaccharolytica', 名称: '不解糖卟啉单胞菌', 拉丁名: 'Porphyromonas asaccharolytica', 类别: '卟啉单胞菌属',
     小节: [
       { 标题: '形态与染色', 正文: '革兰阴性杆菌或球杆菌（0.8～1.5 × 1.5～3.5 μm），两端圆、染色不均，无鞭毛、无荚膜。厌氧血平板 3～5 日形成 1～2 mm 凸起、光滑、边缘整齐的棕色或黑色菌落；产色素前紫外灯（366 nm）下显红色荧光（原卟啉）。' },
       { 标题: '致病性 / 所致疾病', 正文: '人与动物口腔、泌尿生殖道及肠道正常菌群；牙周感染（牙龈炎、牙周炎、牙髓炎、根尖周炎）及泌尿生殖道等部位感染。' }
@@ -3279,7 +3279,7 @@ window.DB.microbes.push(
   },
   // ===== 卟啉单胞菌属 =====
   {
-    id: 'porphyromonas-gingivalis', 名称: '牙龈卟啉单胞菌', 拉丁名: 'Porphyromonas gingivalis', 类别: '叶啉单胞菌属',
+    id: 'porphyromonas-gingivalis', 名称: '牙龈卟啉单胞菌', 拉丁名: 'Porphyromonas gingivalis', 类别: '卟啉单胞菌属',
     小节: [
       { 标题: '形态与染色', 正文: '革兰阴性短杆菌/球杆菌，不分解糖（asaccharolytic——卟啉单胞菌属共性）、产黑褐色素（原卟啉/粪卟啉沉积，血平板 5~7 天转黑+UV 红荧光）；吲哚阳性、类胰蛋白酶阳性（红色斑点试验名片）。' },
       { 标题: '致病性 / 所致疾病', 正文: '牙周炎"红色复合体"核心病原（与福赛坦纳菌/齿垢密螺旋体）——慢性牙周炎检出率随年龄增长；牙龈炎→牙周袋形成→牙槽骨吸收；口腔外：根尖周脓肿、植入物周围炎；菌血症与动脉粥样硬化/类风湿关节炎的相关性是研究热点（教学提示：相关性≠因果）。治疗：牙周基础治疗（清创）+ 甲硝唑/阿莫西林辅助。' }
@@ -4822,4 +4822,31 @@ window.DB.microbes.push(
   {标题: '形态与染色', 正文: '革兰阴性杆菌（杆状群）；从人体分离的正式名单成员。'},
   {标题: '致病性 / 所致疾病', 正文: '临床意义有限，个案报告。'}],
  关联: ['neisseria-elongata']}
+);
+window.DB.microbes.push(
+{id: 'bacteroides-eggerthii', 名称: '埃格拟杆菌', 拉丁名: 'Bacteroides eggerthii', 类别: '拟杆菌属',
+ 小节: [
+  {标题: '形态与染色', 正文: '革兰阴性杆菌（脆弱拟杆菌群成员，耐胆汁）；BBE 生长+、靛基质+；**蔗糖不发酵**（脆弱拟杆菌群内区分轴）、鼠李糖可变、阿拉伯糖+。'},
+  {标题: '致病性 / 所致疾病', 正文: '肠道正常菌群；腹腔感染混合菌群成员之一，临床意义低于脆弱拟杆菌。'}],
+ 关联: ['bacteroides-fragilis', 'bacteroides-ovatus', 'metronidazole']},
+{id: 'bacteroides-stercoris', 名称: '粪便拟杆菌', 拉丁名: 'Bacteroides stercoris', 类别: '拟杆菌属',
+ 小节: [
+  {标题: '形态与染色', 正文: '脆弱拟杆菌群；BBE+、靛基质+、**触酶阴性**（群内少见）、蕈糖阴性、水杨素阴性（表 20-14-2 鉴别轴）。'},
+  {标题: '致病性 / 所致疾病', 正文: '肠道菌群；偶从腹腔/盆腔混合感染分离。'}],
+ 关联: ['bacteroides-fragilis', 'bacteroides-eggerthii']},
+{id: 'porphyromonas-endodontalis', 名称: '牙髓卟啉单胞菌', 拉丁名: 'Porphyromonas endodontalis', 类别: '卟啉单胞菌属',
+ 小节: [
+  {标题: '形态与染色', 正文: '革兰阴性短杆菌/球杆菌；**黑色色素菌落**（属特征——卟啉代谢产黑色素）、不解糖（属名由来）；专性厌氧。'},
+  {标题: '致病性 / 所致疾病', 正文: '**牙髓感染标志菌**（根管感染）；牙周炎、根尖周脓肿；深部感染罕见。'}],
+ 关联: ['porphyromonas-gingivalis', 'porphyromonas-asaccharolytica']},
+{id: 'bifidobacterium-longum', 名称: '长双歧杆菌', 拉丁名: 'Bifidobacterium longum', 类别: '双歧杆菌属',
+ 小节: [
+  {标题: '形态与染色', 正文: '革兰阳性杆菌，**分叉/棒状末端**（属特征形态——「双歧」名称来源）、排列 V/Y/栅栏状；厌氧、触酶阴性；葡萄糖发酵主要产物乳酸+乙酸（3:2，不产 CO2/丁酸——与梭杆菌区分）。'},
+  {标题: '致病性 / 所致疾病', 正文: '肠道有益菌群（益生菌制剂常用种）；感染极罕见——仅免疫低下/粒细胞缺乏个案（应注意勿将粪便/口腔检出当病原）。'}],
+ 关联: ['bifidobacterium', 'gardnerella-vaginalis']},
+{id: 'bifidobacterium-bifidum', 名称: '两叉双歧杆菌', 拉丁名: 'Bifidobacterium bifidum', 类别: '双歧杆菌属',
+ 小节: [
+  {标题: '形态与染色', 正文: '同属分叉末端形态；发酵谱窄于长双歧（不长双歧杆菌葡萄糖+乳糖+）。'},
+  {标题: '致病性 / 所致疾病', 正文: '肠道/阴道有益菌；益生菌制剂成分；致病罕见。'}],
+ 关联: ['bifidobacterium-longum', 'bifidobacterium']}
 );
