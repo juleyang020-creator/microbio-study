@@ -1451,6 +1451,40 @@ window.DB.photosAtlas = {
    "说明": "图 14-16-1　炭疽芽胞杆菌(B. anthracis)的形态特征（6/6）"
   }
  ],
+ "bacillus-genus": [
+  {
+   "文件": "img/atlas/4313595a79d7b9593cbb56ec5dfc47d68436dbbfda5d612e89d58307eeb99dc6.jpg",
+   "说明": "图 14-16-2　革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/8467ff8930f94df0c6041773adc512616c2a3e58c0be1c7337a9d205db9630dc.jpg",
+   "说明": "图 14-16-2　ATCC 14579 SBA 24h"
+  },
+  {
+   "文件": "img/atlas/caa93261ebb27361dddd3732679c164726a750c447e0d836885e50fa44c24836.jpg",
+   "说明": "图 14-16-2　ATCC 14579 MHA 2 日"
+  },
+  {
+   "文件": "img/atlas/cc2934cb89cb47f49e8a63440abe4a0092e87ecf5d20dbbeb5fcc047dd881654.jpg",
+   "说明": "图 14-16-2　临床分离株 SBA 24h"
+  },
+  {
+   "文件": "img/atlas/65d897f10cb1a29132a84312ea356bb3b4bcbed9bee9d1522bba6e09fb034eaa.jpg",
+   "说明": "图 14-16-3　枯草芽胞杆菌(B. subtilis)的形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/1c312f0a6b5eccbee3efa860c8c123bcf70dd45960d63d235df71fa61fba16d7.jpg",
+   "说明": "图 14-16-3　枯草芽胞杆菌(B. subtilis)的形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/d59b39878441917f852407de94bd7db7fdd61e4cb02adc95a22b9cb792c1d82a.jpg",
+   "说明": "图 14-16-3　枯草芽胞杆菌(B. subtilis)的形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/cbeee7dcd4736140a55b880d7596833e41707e6cb96c1e4f4d551cfe3228b939.jpg",
+   "说明": "图 14-16-3　枯草芽胞杆菌(B. subtilis)的形态特征（4/5）"
+  }
+ ],
  "e-coli": [
   {
    "文件": "img/atlas/718e3c9a79e5b895b30ba7be73bb054d0ea09a57e0f186eefe93a6deade66d18.jpg",
