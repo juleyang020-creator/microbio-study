@@ -3719,10 +3719,28 @@ window.DB.photosAtlas = {
    "说明": "图 26-1-10　断发毛癣菌感染, 病发直接镜检, 发内成串孢子 ×400"
   }
  ],
+ "trichophyton-schoenleinii": [
+  {
+   "文件": "img/atlas/6efec9a735f9e2212fd3627acf3575173823407085f7bc9487c5966f0d445e8e.jpg",
+   "说明": "图 26-1-4　示意图"
+  },
+  {
+   "文件": "img/atlas/6cf5afededcabc412a531751c61777d2a119459a7aded53467299624c3b21f82.jpg",
+   "说明": "图 26-1-4　PDA 28℃ 14 日，乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/b2dcf9b3aa616755c7e4218d5e12b1e0094309182c7ce6703d292d320557c30f.jpg",
+   "说明": "图 26-1-4　SDA 28℃ 28 日"
+  },
+  {
+   "文件": "img/atlas/0a0fdf596012dd94a5d16ca7d41c1e3e1cd39613bf0d1b2627a14018e7366bb2.jpg",
+   "说明": "图 26-1-4　PDA 28℃ 28 日"
+  }
+ ],
  "trichophyton-violaceum": [
   {
    "文件": "img/atlas/0a0fdf596012dd94a5d16ca7d41c1e3e1cd39613bf0d1b2627a14018e7366bb2.jpg",
-   "说明": "图 26-1-4　PDA 28℃ 28 日 5. 紫色毛癣菌 生长缓慢,初期为圆形,白色,膜状,湿润发亮的菌落,后期中央产生紫色色素,无绒毛,蜡质样,边缘呈淡紫色,外周有一圈无色环,菌落表面有皱褶,反复转种后紫色色素可减退。少数菌种不…"
+   "说明": "图 26-1-4　PDA 28℃ 28 日"
   },
   {
    "文件": "img/atlas/849e934c205291e732b573f0cb8c68e21c69affc490856aaee91b14db3cd091a.jpg",
@@ -3767,6 +3785,62 @@ window.DB.photosAtlas = {
    "说明": "图 26-1-6　疣状毛癣菌的形态特征（3/3）"
   }
  ],
+ "trichophyton-ajelloi": [
+  {
+   "文件": "img/atlas/f39143cb17d834368467fedcb14ab3effcee95d7b6d5c9edcc1b6fb132fee255.jpg",
+   "说明": "图 26-1-7　阿耶罗毛癣菌的形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/e0d129c719c3ba9cfc83eb191f24489c8f33d9bd970a9a727e9a47f9814517da.jpg",
+   "说明": "图 26-1-7　阿耶罗毛癣菌的形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/3e2d956461ded6626ca8cd9962aaeeabc128d00bfe41c1f7095a2802fbdc81f4.jpg",
+   "说明": "图 26-1-7　阿耶罗毛癣菌的形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/2d2ef83e6fe3536d7c3fedbd7e260ff75874300dccb44b72c8b33963daf5a091.jpg",
+   "说明": "图 26-1-7　阿耶罗毛癣菌的形态特征（4/5）"
+  },
+  {
+   "文件": "img/atlas/34a58bb5541fa5e6ad62c3faf477ada3e3b2e8fc7a5555f0536b20664789ad0a.jpg",
+   "说明": "图 26-1-7　阿耶罗毛癣菌的形态特征（5/5）"
+  }
+ ],
+ "trichophyton-soudanense": [
+  {
+   "文件": "img/atlas/8bfaffd1aed59e74a5831611895ff51140b941ef91db90181e00c836275d67b1.jpg",
+   "说明": "图 26-1-8　苏丹毛癣菌的形态特征（1/2）"
+  },
+  {
+   "文件": "img/atlas/2832c07ba6afa8be7a9a80d38c0dcc46d5e5e1013713cb042ec8c1ff807c5253.jpg",
+   "说明": "图 26-1-8　苏丹毛癣菌的形态特征（2/2）"
+  }
+ ],
+ "trichophyton-equinum": [
+  {
+   "文件": "img/atlas/fd65b2a26ce48c7cf2da3d53eb50b10f77279c3e894c9913e75a2d03c3ac7736.jpg",
+   "说明": "图 26-1-9　马毛癣菌(小分生孢子 + 透明菌丝)PDA 28℃ 7 日 × 1000"
+  },
+  {
+   "文件": "img/atlas/65f86883004a6ca91909fa617389c27f9c0382037d49d53f740f02a7f284f692.jpg",
+   "说明": "图 26-1-9　马毛癣菌 MHA(添加烟酸)28℃ 14 日, 乳酸酚棉蓝染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/ea73110bfa94d09d6df4aaff22957d31f2687902dd5d2224254cfd3a76b25fab.jpg",
+   "说明": "图 26-1-9　马毛癣菌 PDA 28℃ 14 日"
+  }
+ ],
+ "trichophyton-simii": [
+  {
+   "文件": "img/atlas/66996174f2a5f7b1f9be83f271055b5ce21f3f970f4df9d0136faabc27df6df1.jpg",
+   "说明": "图 26-1-9　猴毛癣菌 PSA 25℃ 5 日, 钙白荧光染色 × 400"
+  },
+  {
+   "文件": "img/atlas/df6d33b229e1b8ffe2a458b250726c11c595325f5a5e93434dd0b5894c53a771.jpg",
+   "说明": "图 26-1-9　猴毛癣菌 PDA 25℃ 14 日"
+  }
+ ],
  "epidermophyton-floccosum": [
   {
    "文件": "img/atlas/5350aa41055ba3d40d709ae0ce3a4ec100b196fad8e79d9c0cf374155c7e8b0d.jpg",
@@ -3801,6 +3875,68 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/62104a527de11e2ab176ee1c8327733a27576406e33fd478405b104608fc119a.jpg",
    "说明": "图 26-3-1　PDA 28℃ 14 日 2. 石膏样小孢子菌复合群 石膏样小孢子菌复合群在 SDA 培养基上室温生长迅速，3\\~5 日可见菌落，初为白色绒毛状，随后表面呈现颗粒状，粉末状，颜色转为棕黄色，中心颜色较深，边缘色浅，背…"
+  }
+ ],
+ "microsporum-nanum": [
+  {
+   "文件": "img/atlas/15fffcf929b689492717e45b3f0d0e367ea050549f60512b320e8f4eb3b0a981.jpg",
+   "说明": "图 26-3-3　示意图"
+  },
+  {
+   "文件": "img/atlas/8082c218a0d05e9156614c9098b1bd3662ed288a4b2a26de3d40651d221cfae4.jpg",
+   "说明": "图 26-3-3　PDA 28℃ 7 日，乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/fd1b2dfc9e08bc13100408ac3961cc86c406824ba6736adbb694182678fb094e.jpg",
+   "说明": "图 26-3-3　PDA 28℃ 7 日，乳酸酚棉蓝染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/dc5fe3f125be065bbcc4c5982163c2e84c9bdd7cee5ec205788a0dfa88106ef2.jpg",
+   "说明": "图 26-3-3　SDA 28℃ 7 日"
+  },
+  {
+   "文件": "img/atlas/5c72f0305f0f33ea381377ca7ba53acdd94c11ad0d98215d402dad1a65612aa5.jpg",
+   "说明": "图 26-3-3　SDA 28℃ 7 日（背面）"
+  },
+  {
+   "文件": "img/atlas/2f3ddda40371e70e86991eb797fd52e7b91af76c5b7c6f804d7ae9c416c6b013.jpg",
+   "说明": "图 26-3-3　PDA 28℃ 7 日"
+  }
+ ],
+ "microsporum-cookei": [
+  {
+   "文件": "img/atlas/fe47f72d756d99166c8d4155ba48f259b0efdefa58b06c0a358b3459d35f6961.jpg",
+   "说明": "图 26-3-5　库克小孢子菌的形态特征（1/3）"
+  },
+  {
+   "文件": "img/atlas/540dd831e8c59b575d1510954cc261d64e20fcae434dcde9bb2bd13b5eeabfe2.jpg",
+   "说明": "图 26-3-5　库克小孢子菌的形态特征（2/3）"
+  },
+  {
+   "文件": "img/atlas/76b30671a6e384db506c3a8262aba2040f56c6f3707b82e596237c834ee014d8.jpg",
+   "说明": "图 26-3-5　库克小孢子菌的形态特征（3/3）"
+  }
+ ],
+ "microsporum-ferrugineum": [
+  {
+   "文件": "img/atlas/6751c66dd8087eb216f2433345f669a7d5c59cda21fa214505e26660e031e8ba.jpg",
+   "说明": "图 26-3-6　铁锈色小孢子菌的形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/48df53fb5884b198e70858b4ad82370812f3fd0b93acc5c66e8130d6156eb51d.jpg",
+   "说明": "图 26-3-6　铁锈色小孢子菌的形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/e13d5253467adb33c22405e586e38e0e7598fddb522b44acc6d6ebb9c2ab1f8c.jpg",
+   "说明": "图 26-3-6　铁锈色小孢子菌的形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/7c7bbe822303ed01183fd3b94bc6c4c0877c2a3ae33d29fe80c7b0b6fbcc772b.jpg",
+   "说明": "图 26-3-6　铁锈色小孢子菌的形态特征（4/5）"
+  },
+  {
+   "文件": "img/atlas/11fa76ab8f15914fc0931dba85b5e7092790fc167d6267856a97dc989e339d1e.jpg",
+   "说明": "图 26-3-6　铁锈色小孢子菌的形态特征（5/5）"
   }
  ],
  "aspergillus-flavus": [
