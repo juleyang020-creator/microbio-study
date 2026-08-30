@@ -675,6 +675,72 @@ window.DB.photosAtlas = {
    "说明": "图 13-1-7　脑膜炎奈瑟菌血流感染皮肤出血性瘀斑"
   }
  ],
+ "neisseria-bacilliformis": [
+  {
+   "文件": "img/atlas/7f3714c795577be06c35707004859a32866d1202cd2b543b59213a0cccdfcb36.jpg",
+   "说明": "图 13-1-3　菌落涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/636f5da7e1b7c660ee9f0320b88729d4ac2cfe9800016e0d90753afe12642445.jpg",
+   "说明": "图 13-1-3　SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/156b3df0d9a20d74a0e4c01100ead06c565b68651b2e8f0ed4b35aa461b6d33e.jpg",
+   "说明": "图 13-1-3　CA 2 日"
+  },
+  {
+   "文件": "img/atlas/e6480e4bba9f3261cfb8901048a016fe935eacfcd0e7e605e519bceded0ed849.jpg",
+   "说明": "图 13-1-3　中国蓝平板 3 日"
+  }
+ ],
+ "neisseria-elongata": [
+  {
+   "文件": "img/atlas/f63afb6a749d73b6e3c485a501b83f27c9c2aa9845a8a68a0747c85f3caece11.jpg",
+   "说明": "图 13-1-4　长奈瑟菌硝酸盐还原亚种革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/80d64e50de29ba77bb704d612b2be87838a1a342e82e116ca7790fbef61c6295.jpg",
+   "说明": "图 13-1-4　长奈瑟菌长亚种革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/e281109a163ef5de1611de6f2f65849890c6ef6cf510aacf38f1faf6878b0225.jpg",
+   "说明": "图 13-1-4　长奈瑟菌长亚种 SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/f72e5189b31a0478ed2f6e68664b5aff189c886a0229daa1ffcdba77986d9fa6.jpg",
+   "说明": "图 13-1-4　长奈瑟菌长亚种 CA 2 日"
+  },
+  {
+   "文件": "img/atlas/9faa6b6e2c57eaf27974ea6ea3bd816cd7498d0805b28fe2a3cd2cc3cdbb5547.jpg",
+   "说明": "图 13-1-4　长奈瑟菌硝酸盐还原亚种 SBA 24h"
+  },
+  {
+   "文件": "img/atlas/db61a32cfb970798f932a16ff8add2a34671e2f41c151c4c2089b2b6c627ee17.jpg",
+   "说明": "图 13-1-4　长奈瑟菌硝酸盐还原亚种 CA 24h"
+  }
+ ],
+ "neisseria-cinerea": [
+  {
+   "文件": "img/atlas/e51b707bcf39b30ac00cf483d4919076a0aec8b3e8d5f0c3e67aaa26817e910a.jpg",
+   "说明": "图 13-1-5　灰色奈瑟菌 SBA 3 日"
+  }
+ ],
+ "neisseria-lactamica": [
+  {
+   "文件": "img/atlas/fb08cee0bc3dcdbaed7400373b80a31559736ccf73749c248c7a26f40674331d.jpg",
+   "说明": "图 13-1-5　解乳糖奈瑟菌 CA 2 日"
+  },
+  {
+   "文件": "img/atlas/e62eaa055931651b2ecdb314a190a092343ac6d981d442b25fd77ad89de7322b.jpg",
+   "说明": "图 13-1-6　解乳糖奈瑟菌 ++"
+  }
+ ],
+ "neisseria-sicca": [
+  {
+   "文件": "img/atlas/78f0100419c60e61db9027249afebb2c5ea0d1e05d2cd2304796886dd934cda1.jpg",
+   "说明": "图 13-1-5　干燥奈瑟菌 SBA 4 日"
+  }
+ ],
  "moraxella-catarrhalis": [
   {
    "文件": "img/atlas/ad0b8412b5c37ddfe2babf537a2b8c8e8fbaf0216c3ea6e0340f821271d895b0.jpg",
