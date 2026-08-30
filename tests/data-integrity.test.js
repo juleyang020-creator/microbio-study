@@ -11,6 +11,7 @@ require('../data/microbes.js');
 ['gram-positive','gram-negative','anaerobe','atypical','fungi','parasite','virus','misc'].forEach(d => require('../data/microbes-' + d + '.js'));
 require('../data/antibiotics.js');
 require('../data/resistance.js');
+require('../data/virulence.js');
 require('../data/biochem.js');
 require('../data/differential.js');
 require('../data/morphology.js');

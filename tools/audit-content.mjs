@@ -23,6 +23,7 @@ global.window = { DB: {} };
   'microbes-misc',
   'antibiotics',
   'resistance',
+  'virulence',
   'biochem',
   'differential',
   'morphology',
