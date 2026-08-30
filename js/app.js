@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-14';
+  var APP_VERSION = window.APP_VERSION || '20260830-15';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -603,6 +603,116 @@
     ]);
   }
 
+  // ===== 详情页正文富渲染：分层 + 站内链接 =====
+  // ① 长正文（>120 字或含「；」「。」分句）拆成要点列表，视觉分层；
+  // ② 正文中出现库内菌名/药名时自动变为可点击链接（跳对应词条）。
+  // 词典： microbes 名称→#/microbes/id；药物名→#/antibiotics/id；速查别名→#/microbe-names/<名>。
+  var _linkDict = null;
+  function linkDict() {
+    if (_linkDict) { return _linkDict; }
+    var dict = {};
+    var DB = window.DB || {};
+    (DB.microbes || []).forEach(function (m) { if (m.名称 && m.id) { dict[m.名称] = '#/microbes/' + m.id; } });
+    (DB.antibiotics || []).forEach(function (a) { if (a.名称 && a.id && !dict[a.名称]) { dict[a.名称] = '#/antibiotics/' + a.id; } });
+    // 分类树属叶子名兜底：正文中「XX菌属」指到该属的 spp. 总览条目（无 spp. 则指第一个种）
+    (DB.categories && DB.categories.microbes || []).forEach(function walkCat(n) {
+      if (!n || !n.名称) { return; }
+      if (n.子类 && n.子类.length) { n.子类.forEach(walkCat); return; }
+      if (!dict[n.名称]) {
+        var genusEntry = (DB.microbes || []).find(function (m) { return m.名称 === n.名称; });
+        if (genusEntry) { dict[n.名称] = '#/microbes/' + genusEntry.id; }
+      }
+    });
+    (DB.microbeNames || []).forEach(function (n) {
+      if (!n.别名) { return; }
+      var target = dict[n.名称] || ('#/microbe-names/' + encodeURIComponent(n.名称));
+      String(n.别名).split(/[/、,，]/).forEach(function (raw) {
+        var a = raw.trim();
+        // 别名太短会误伤正文（如「金葡」「肺链」这类只收长度 ≥3 且未被占用的）
+        if (a.length >= 3 && !dict[a]) { dict[a] = target; }
+      });
+    });
+    _linkDict = Object.keys(dict).sort(function (a, b) { return b.length - a.length; })
+      .reduce(function (o, k) { o[k] = dict[k]; return o; }, {});
+    return _linkDict;
+  }
+
+  // 把一段纯文本渲染为「带站内链接的行内节点数组」。匹配规则：长名优先，已命中区间不再嵌套匹配。
+  function richInline(text) {
+    var keys = linkDict();
+    var out = [];
+    var rest = String(text == null ? '' : text);
+    var guard = 0;
+    while (rest.length && guard++ < 4000) {
+      var hit = null;
+      for (var k in keys) {
+        var at = rest.indexOf(k);
+        if (at === 0) { hit = { name: k, len: k.length }; break; }        // 贪长优先：从最长词开始找「开头即命中」
+        if (at > 0 && (hit === null || at < hit.at)) { hit = { name: k, len: k.length, at: at }; }
+      }
+      if (!hit) { out.push(document.createTextNode(rest)); break; }
+      var at = hit.at || 0;
+      if (at > 0) { out.push(document.createTextNode(rest.slice(0, at))); }
+      out.push(el('a', { cls: 'wiki-link', text: hit.name, href: keys[hit.name], title: '查看词条：' + hit.name }));
+      rest = rest.slice(at + hit.len);
+    }
+    return out;
+  }
+
+  // 长正文分层：按中文分号/句号切句，超过 2 句且总长 >120 字时渲染为要点列表；括号引导语提亮。
+  function richBody(text) {
+    var s = String(text == null ? '' : text);
+    var lines = [];
+    // 先按换行分段（white-space:pre-wrap 时代的手动换行保留为段落）
+    s.split(/\n+/).forEach(function (para) {
+      para = para.trim();
+      if (!para) { return; }
+      var isBulleted = /^[•·\-\*]/.test(para);
+      if (isBulleted) { lines.push({ t: 'li', text: para.replace(/^[•·\-\*]\s*/, '') }); return; }
+      // 拆「；」分句（保留括号内嵌套——只在括号深度 0 时切）
+      var depth = 0, buf = '', parts = [];
+      for (var i = 0; i < para.length; i++) {
+        var c = para[i];
+        if (c === '（' || c === '(') { depth++; }
+        if (c === '）' || c === ')') { depth = Math.max(0, depth - 1); }
+        buf += c;
+        if (depth === 0 && (c === '；' || c === '。')) { parts.push(buf.trim()); buf = ''; }
+      }
+      if (buf.trim()) { parts.push(buf.trim()); }
+      var parenGroups = (para.match(/（/g) || []).length;
+      if ((parts.length >= 3 || parenGroups >= 3) && para.length > 100) {
+        if (parts.length >= 3) {
+          parts.forEach(function (p) { lines.push({ t: 'li', text: p }); });
+        } else {
+          // 句子少但括号组多（罗列型长段）：按 顿号+括号组 边界再切一层
+          var chunks = para.split(/(?<=）)、|(?<=）)，/);
+          if (chunks.length >= 3) { chunks.forEach(function (p) { lines.push({ t: 'li', text: p }); }); }
+          else { lines.push({ t: 'p', text: para }); }
+        }
+      } else {
+        lines.push({ t: 'p', text: para });
+      }
+    });
+    var nodes = [];
+    if (lines.length === 1) {
+      nodes.push(el('div', { cls: 'section-body' }, richInline(lines[0].text)));
+      return nodes;
+    }
+    var lis = [];
+    lines.forEach(function (ln) {
+      if (ln.t === 'p') {
+        lis.push(el('li', { cls: 'rich-p' }, [el('span', { cls: 'rich-p-text' }, richInline(ln.text))]));
+      } else {
+        lis.push(el('li', { cls: 'rich-li' }, [
+          el('span', { cls: 'rich-li-dot', text: '·' }),
+          el('span', { cls: 'rich-li-text' }, richInline(ln.text))
+        ]));
+      }
+    });
+    nodes.push(el('div', { cls: 'section-body rich-body' }, [ el('ul', { cls: 'rich-list' }, lis) ]));
+    return nodes;
+  }
+
   function buildDetail(vm) {
     if (!vm) { return [ el('div', { cls: 'empty', text: '请选择左侧的一个条目查看详情。' }) ]; }
     var nodes = [];
@@ -642,10 +752,9 @@
       nodes.push(el('div', { cls: 'empty-sm', text: '（暂无内容小节）' }));
     } else {
       vm.小节.forEach(function (s) {
-        nodes.push(el('div', { cls: 'section-card' }, [
-          el('div', { cls: 'section-title', text: s.标题 }),
-          el('div', { cls: 'section-body', text: s.正文 })
-        ]));
+        var card = [ el('div', { cls: 'section-title', text: s.标题 }) ];
+        richBody(s.正文).forEach(function (n) { card.push(n); });
+        nodes.push(el('div', { cls: 'section-card' }, card));
       });
     }
 

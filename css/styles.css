@@ -266,6 +266,17 @@ body.zoom-open { overflow: hidden; }
 /* 文字小节（无卡片框，编辑式分隔） */
 .section-card { background: none; border: none; border-top: 1px solid var(--line); padding: 14px 0 0; margin: 0 0 14px; max-width: 700px; }
 .section-body { color: var(--ink-soft); line-height: 1.72; white-space: pre-wrap; }
+/* 富渲染正文：分层要点 + 站内词条链接 */
+.wiki-link { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent); padding: 0 1px; cursor: pointer; }
+.wiki-link:hover { background: var(--accent); color: #fff; border-bottom-color: transparent; border-radius: 2px; }
+.rich-body { white-space: normal; }
+.rich-list { list-style: none; margin: 2px 0 0; padding: 0; }
+.rich-list li { display: flex; gap: 8px; align-items: baseline; padding: 3px 0; }
+.rich-list .rich-li-dot { flex: 0 0 auto; color: var(--accent); font-weight: 700; }
+.rich-list .rich-li-text, .rich-list .rich-p-text { flex: 1; min-width: 0; }
+.rich-list li.rich-p { padding: 4px 0 2px; }
+.rich-list li.rich-p:first-child { padding-top: 0; }
+.rich-list li + li.rich-p { border-top: 1px dashed var(--line); margin-top: 4px; padding-top: 6px; }
 
 /* 形态 */
 .morphology { margin: 22px 0; max-width: 660px; }
