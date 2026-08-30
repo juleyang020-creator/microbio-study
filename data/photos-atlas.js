@@ -3501,6 +3501,12 @@ window.DB.photosAtlas = {
    "说明": "图 25-2-3　CGB 平板 (上为格特隐球菌, 下为新型隐球菌) 37℃ 4 日"
   }
  ],
+ "cryptococcus-albidus": [
+  {
+   "文件": "img/atlas/e5a086784b87336a971e626d7b9ac280eb52e3e90b2c515e575cb0fd68c4ffc9.jpg",
+   "说明": "图 25-2-4　其他少见隐球菌的形态特征"
+  }
+ ],
  "saccharomyces": [
   {
    "文件": "img/atlas/124371ffe9ba1331d614343a31e531655331f0b3c0ab92016185c213c4abc519.jpg",
