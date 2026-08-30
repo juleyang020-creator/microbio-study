@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-26';
+  var APP_VERSION = window.APP_VERSION || '20260830-30';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -842,7 +842,7 @@
     });
     // 菌群/耐药表型简写 → 对应词条（或模块）。均为约定俗成缩写，无正文歧义。
     [['MRSA','staph-aureus'],['MSSA','staph-aureus'],['VISA','staph-aureus'],['VRSA','staph-aureus'],
-     ['CoNS','staphylococcus-genus'],['VRE','enterococcus-genus'],['CRE','klebsiella-genus'],
+     ['CoNS','staph-cons'],['VRE','enterococcus-genus'],['CRE','klebsiella-genus'],
      ['BLNAR','haemophilus-influenzae'],['GBS','strep-agalactiae'],['GAS','strep-pyogenes'],
      ['CRAB','acinetobacter-baumannii'],['CRKP','klebsiella-pneumoniae'],['NTM','mycobacterium-genus']
     ].forEach(function (p) {
@@ -2339,6 +2339,43 @@
     if (id) {
       return { href: '#/microbes/' + id, external: false, title: '本库已收录，查看详情：' + m.名称, tag: '本库' };
     }
+    // 中国 CDC《人间传染的病原微生物目录》优先：中文界面，直出危害程度分类 / BSL 等级 / 运输包装——
+    // 检验科拿到陌生菌最先要查的就是这些。命中条件（按序）：
+    // ① 中文名与目录条目全等；② 拉丁属名全拼在目录属集合；③ 缩写式拉丁名（B. abortus）用中文属词根消歧
+    //    ——中文名含词根、且缩写首字母与词根对应属一致；短词根（≤2 字）要求「词根+菌」连写，
+    //    防「布鲁塞尔酒香酵母(Brettanomyces)」「马来布鲁丝虫(Brugia)」这类同首字母误伤。
+    // 目录未收的（环境菌、非管制菌如曲霉/念珠菌多数种）回落 NCBI / PubMed。
+    var nprc = (window.DB && window.DB.nprcCatalogue) || null;
+    if (nprc) {
+      var hitCn = nprc.中文.indexOf(m.名称) !== -1;
+      // 属名后允许串尾（裸属名「Brucella」也要能命中），不强制后跟空格/点
+      var g = String(m.拉丁名 || '').trim().match(/^([A-Z][a-z]+)(?:[\s.]|$)/);
+      var hitGenus = !!(g && nprc.拉丁属.indexOf(g[1]) !== -1);
+      var rootGenus = null;
+      if (!hitCn && !hitGenus && /^[A-Z]\.\s?\S/.test(String(m.拉丁名 || '').trim())) {
+        var roots = nprc.属词根 || {};
+        for (var k in roots) {
+          if (!Object.prototype.hasOwnProperty.call(roots, k)) { continue; }
+          if (m.名称.indexOf(k) === -1 || roots[k].charAt(0) !== String(m.拉丁名).charAt(0)) { continue; }
+          if (k.length <= 2 && m.名称.indexOf(k + '菌') === -1) { continue; }
+          rootGenus = roots[k]; break;
+        }
+      }
+      if (hitCn || hitGenus || rootGenus) {
+        // 搜索词必须保证 NPRC 有结果（目录仅 513 条，种名未必在列，搜种名会落到「暂无相关数据」空页）：
+        // 中文名精确命中 → 搜中文名（直出该条目）；属级命中 → 只搜拉丁属名全拼——
+        // 属名必能命中目录的模糊匹配（该属的种级/属级 spp. 条目全部带出）。
+        var genus = g ? g[1] : rootGenus;
+        var term = hitCn ? m.名称 : genus;
+        var cls = hitCn ? (nprc.分类[m.名称] || '') : '';
+        return {
+          href: 'https://www.nprc.org.cn/#/DiseaseSearch?selectall=' + encodeURIComponent(term),
+          external: true,
+          title: '在中国 CDC 病原微生物目录查询：' + m.名称 + (cls ? '（' + cls + '）' : (genus ? '（按属检索：' + genus + '）' : '')),
+          tag: 'CDC目录'
+        };
+      }
+    }
     var lat = String(m.拉丁名 || '').trim();
     if (/^[A-Z][a-z]{2,}\s+\S/.test(lat)) { // 全写「属 种」→ NCBI 分类可精确命中
       return {
@@ -2376,7 +2413,7 @@
     });
     fill(document.getElementById('main'), [
       el('h2', { cls: 'detail-title', text: '菌名速查' }),
-      el('div', { cls: 'lw-note', text: '微生物名称索引（中文 + 拉丁，共 ' + list.length + ' 条，按拉丁名字母顺序）——标「本库」者跳应用内详情页（离线）；其余跳 NCBI Taxonomy（全写拉丁名）或 PubMed 文献检索。' }),
+      el('div', { cls: 'lw-note', text: '微生物名称索引（中文 + 拉丁，共 ' + list.length + ' 条，按拉丁名字母顺序）——标「本库」者跳应用内详情页（离线）；标「CDC目录」者跳中国 CDC《人间传染的病原微生物目录》（中文，含危害程度分类 / BSL 等级 / 运输包装）；其余跳 NCBI Taxonomy（全写拉丁名）或 PubMed 文献检索。' }),
       el('div', { cls: 'mn-head' }, [
         el('div', { cls: 'mn-searchwrap' }, [ search, el('span', { cls: 'mn-count', id: 'mn-count' }) ]),
         el('div', { cls: 'mn-az', id: 'mn-az' })
