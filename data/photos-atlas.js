@@ -787,6 +787,18 @@ window.DB.photosAtlas = {
    "说明": "图 14-3-1　单核细胞增生李斯特菌溶血性观察, SBA 3 日"
   }
  ],
+ "listeria-ivanovii": [
+  {
+   "文件": "img/atlas/a202a1178c28511464717d80519fd923bf0a558cf0105f0101aa6ab2252776b6.jpg",
+   "说明": "图 14-3-1　伊氏李斯特菌 SBA 2 日"
+  }
+ ],
+ "listeria-innocua": [
+  {
+   "文件": "img/atlas/a95c5ae391c5df41f1628435ac22f4ea3a3e76f76282cb8985117e9d53ce7075.jpg",
+   "说明": "图 14-3-1　无害李斯特菌 SBA 24h"
+  }
+ ],
  "erysipelothrix-rhusiopathiae": [
   {
    "文件": "img/atlas/e7db907156ac273ecfafca7ef70739573ea3c76a8dc6e612976ecf03d975f674.jpg",
