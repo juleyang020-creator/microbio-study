@@ -37,7 +37,8 @@ global.window = { DB: {} };
   'staining',
   'breakpoints',
   'biochem-tests',
-  'ast-alerts'
+  'ast-alerts',
+  'nprc-catalogue'
 ].forEach((name) => {
   require(path.join(root, 'data', `${name}.js`));
 });
