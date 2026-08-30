@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-17';
+  var APP_VERSION = window.APP_VERSION || '20260830-18';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -626,6 +626,21 @@
         });
       }
     });
+    // 药敏简写（白名单）：MEM=美罗培南等 34 个无歧义高频简写。不能全收——
+    // CF（囊性纤维化）、CT（CT 扫描/霍乱肠毒素）、OXA（OXA 酶）等会误伤，实测踩过。
+    var ABBR_OK = ['MEM','IPM','ETP','VAN','TEC','LZD','TZD','CZD','DAP','CIP','OFX','GEN','TOB','AZM','ERY','CLR','CLI','TGC','DOX','CHL','RIF','FOS','NIT','SXT','TZP','CST','AMB','FLU','VRC','POS','ISA','MCF','CAS','5FC'];
+    (DB.antibiotics || []).forEach(function (a) {
+      var ab = (a.药敏简写 || '').trim();
+      if (ab && ABBR_OK.indexOf(ab) !== -1 && !dict[ab]) { dict[ab] = '#/antibiotics/' + a.id; }
+    });
+    // 菌群/耐药表型简写 → 对应词条（或模块）。均为约定俗成缩写，无正文歧义。
+    [['MRSA','staph-aureus'],['MSSA','staph-aureus'],['VISA','staph-aureus'],['VRSA','staph-aureus'],
+     ['CoNS','staphylococcus-genus'],['VRE','enterococcus-genus'],['CRE','klebsiella-genus'],
+     ['BLNAR','haemophilus-influenzae'],['GBS','strep-agalactiae'],['GAS','strep-pyogenes'],
+     ['CRAB','acinetobacter-baumannii'],['CRKP','klebsiella-pneumoniae'],['NTM','mycobacterium-genus']
+    ].forEach(function (p) {
+      if (!dict[p[0]] && (DB.microbes || []).some(function (m) { return m.id === p[1]; })) { dict[p[0]] = '#/microbes/' + p[1]; }
+    });
     // 其他内容模块条目名：试验/培养基/染色/检测卡/耐药因素——正文提到即链
     [['tests', 'tests'], ['media', 'media'], ['staining', 'staining'], ['cards', 'cards'], ['resistance', 'resistance'], ['biochemTests', 'biochem-tests']].forEach(function (pair) {
       (DB[pair[0]] || []).forEach(function (t) { if (t.名称 && t.id && !dict[t.名称]) { dict[t.名称] = '#/' + pair[1] + '/' + t.id; } });
@@ -663,8 +678,16 @@
       var hit = null;
       for (var k in keys) {
         var at = rest.indexOf(k);
-        if (at === 0) { hit = { name: k, len: k.length }; break; }        // 贪长优先：从最长词开始找「开头即命中」
-        if (at > 0 && (hit === null || at < hit.at)) { hit = { name: k, len: k.length, at: at }; }
+        if (at === 0 || (at > 0)) {
+          // 纯拉丁字母词（药敏简写/菌群缩写）要求两侧词边界，防止 SXT 命中 SXTabc、MEM 命中 eMEMbers
+          if (/^[A-Za-z0-9]+$/.test(k)) {
+            var L = at > 0 ? rest.charAt(at - 1) : '';
+            var R = rest.charAt(at + k.length) || '';
+            if (/[A-Za-z0-9]/.test(L) || /[A-Za-z]/.test(R)) { continue; }
+          }
+          if (at === 0) { hit = { name: k, len: k.length }; break; }
+          if (hit === null || at < hit.at) { hit = { name: k, len: k.length, at: at }; }
+        }
       }
       if (!hit) { out.push(document.createTextNode(rest)); break; }
       var at = hit.at || 0;
