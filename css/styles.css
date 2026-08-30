@@ -277,6 +277,10 @@ body.zoom-open { overflow: hidden; }
 .rich-list li.rich-p { padding: 4px 0 2px; }
 .rich-list li.rich-p:first-child { padding-top: 0; }
 .rich-list li + li.rich-p { border-top: 1px dashed var(--line); margin-top: 4px; padding-top: 6px; }
+/* 治疗/天然耐药/生物安全卡片内的富列表适配（卡片自带背景时弱化分隔） */
+.treatment .rich-list, .intrinsic .rich-list { margin-top: 4px; }
+.treatment .rich-list .rich-li-dot, .intrinsic .rich-list .rich-li-dot { color: var(--treatment-accent, var(--accent)); }
+.diff-rich .wiki-link, .morph-rich .wiki-link, .ast-line-text .wiki-link, .biosafety-body .wiki-link { font-weight: 500; }
 
 /* 形态 */
 .morphology { margin: 22px 0; max-width: 660px; }

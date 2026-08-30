@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-15';
+  var APP_VERSION = window.APP_VERSION || '20260830-16';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -614,6 +614,10 @@
     var DB = window.DB || {};
     (DB.microbes || []).forEach(function (m) { if (m.名称 && m.id) { dict[m.名称] = '#/microbes/' + m.id; } });
     (DB.antibiotics || []).forEach(function (a) { if (a.名称 && a.id && !dict[a.名称]) { dict[a.名称] = '#/antibiotics/' + a.id; } });
+    // 其他内容模块条目名：试验/培养基/染色/检测卡/耐药因素——正文提到即链
+    [['tests', 'tests'], ['media', 'media'], ['staining', 'staining'], ['cards', 'cards'], ['resistance', 'resistance'], ['biochemTests', 'biochem-tests']].forEach(function (pair) {
+      (DB[pair[0]] || []).forEach(function (t) { if (t.名称 && t.id && !dict[t.名称]) { dict[t.名称] = '#/' + pair[1] + '/' + t.id; } });
+    });
     // 分类树属叶子名兜底：正文中「XX菌属」指到该属的 spp. 总览条目（无 spp. 则指第一个种）
     (DB.categories && DB.categories.microbes || []).forEach(function walkCat(n) {
       if (!n || !n.名称) { return; }
@@ -738,7 +742,7 @@
           el('span', { cls: 'biosafety-title', text: '生物安全警示' }),
           bio.级别 ? el('span', { cls: 'biosafety-level', text: bio.级别 }) : null
         ]),
-        el('div', { cls: 'biosafety-body', text: bio.提示 || '' })
+        el('div', { cls: 'biosafety-body' }, richInline(bio.提示 || ''))
       ]));
     }
     if (vm.机制图) {
@@ -808,18 +812,16 @@
     }
 
     if (vm.天然耐药) {
-      nodes.push(el('div', { cls: 'intrinsic' }, [
-        el('div', { cls: 'intrinsic-title', text: '天然耐药' }),
-        el('div', { cls: 'intrinsic-body', text: vm.天然耐药 })
-      ]));
+      var intrCard = [ el('div', { cls: 'intrinsic-title', text: '天然耐药' }) ];
+      richBody(vm.天然耐药).forEach(function (n) { intrCard.push(n); });
+      nodes.push(el('div', { cls: 'intrinsic' }, intrCard));
     }
 
-    // 治疗要点（经验首选，来自 IDSA/CDC/Sanford 等指南）
+    // 治疗要点（经验首选，来自 IDSA/CDC/Sanford 等指南）—— 富渲染（分层+站内药名/菌名链接）
     if (vm.治疗) {
-      nodes.push(el('div', { cls: 'treatment' }, [
-        el('div', { cls: 'treatment-title', text: '治疗要点' }),
-        el('div', { cls: 'treatment-body', text: vm.治疗 })
-      ]));
+      var treatCard = [ el('div', { cls: 'treatment-title', text: '治疗要点' }) ];
+      richBody(vm.治疗).forEach(function (n) { treatCard.push(n); });
+      nodes.push(el('div', { cls: 'treatment' }, treatCard));
     }
 
     if (vm.药物 && vm.药物.length) {
@@ -843,10 +845,10 @@
     if (vm.形态) {
       var mNodes = [ el('div', { cls: 'morph-title', text: '培养与镜下形态' }) ];
       if (vm.形态.镜下) {
-        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag', text: '镜下' }), el('span', { text: ' ' + vm.形态.镜下 }) ]));
+        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag', text: '镜下' }), el('span', { cls: 'morph-rich' }, richInline(' ' + vm.形态.镜下)) ]));
       }
       (vm.形态.培养 || []).forEach(function (c) {
-        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag morph-med', text: c.培养基 }), el('span', { text: ' ' + c.形态 }) ]));
+        mNodes.push(el('div', { cls: 'morph-row' }, [ el('span', { cls: 'morph-tag morph-med', text: c.培养基 }), el('span', { cls: 'morph-rich' }, richInline(' ' + c.形态)) ]));
       });
       nodes.push(el('div', { cls: 'morphology' }, mNodes));
     }
@@ -937,8 +939,8 @@
         }
         return el('div', { cls: 'diff-item' }, [
           el('div', { cls: 'diff-head' }, [ head ]),
-          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag', text: '相似点' }), el('span', { text: ' ' + d.相似点 }) ]),
-          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag diff-key', text: '鉴别' }), el('span', { text: ' ' + d.鉴别 }) ])
+          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag', text: '相似点' }), el('span', { cls: 'diff-rich' }, richInline(' ' + d.相似点)) ]),
+          el('div', { cls: 'diff-line' }, [ el('span', { cls: 'diff-tag diff-key', text: '鉴别' }), el('span', { cls: 'diff-rich' }, richInline(' ' + d.鉴别)) ])
         ]);
       });
       nodes.push(el('div', { cls: 'differential' }, [ el('div', { cls: 'diff-title', text: '相似菌与鉴别' }) ].concat(diffItems)));
@@ -1839,7 +1841,7 @@
   function astLine(label, text) {
     return el('div', { cls: 'ast-line' }, [
       el('span', { cls: 'ast-line-label', text: label }),
-      el('span', { cls: 'ast-line-text', text: text || '—' })
+      el('span', { cls: 'ast-line-text' }, richInline(text || '—'))
     ]);
   }
   function toggleAstRow(sumRow, detailRow, caret, btn) {
