@@ -2027,6 +2027,24 @@ window.DB.photosAtlas = {
    "说明": "图 16-1-5　霍乱弧菌在碱性蛋白胨水中培养后产生菌膜"
   }
  ],
+ "vibrio-genus": [
+  {
+   "文件": "img/atlas/e059a96529fc1779735d513f14f6b755881c6fa352877670b03d10bb7e24f7d2.jpg",
+   "说明": "图 16-1-1　霍乱弧菌 O1 群"
+  },
+  {
+   "文件": "img/atlas/972c63856fabf4a25f7bdfbc9c08a002c79c484ca9b3fac6eafe32d6dd41c0bd.jpg",
+   "说明": "图 16-1-1　非 O1 非 O139 群霍乱弧菌(肉汤培养涂片)"
+  },
+  {
+   "文件": "img/atlas/087d78e3b7557e8ee5229296e2b7541689eabf7c0de74cc314e68aca275e07d9.jpg",
+   "说明": "图 16-1-1　创伤弧菌"
+  },
+  {
+   "文件": "img/atlas/9b53e95532ea364f94cddcb5c233983b3f58b03529ef35fa5861cf1cee9f3807.jpg",
+   "说明": "图 16-1-1　副溶血弧菌"
+  }
+ ],
  "vibrio-vulnificus": [
   {
    "文件": "img/atlas/087d78e3b7557e8ee5229296e2b7541689eabf7c0de74cc314e68aca275e07d9.jpg",
@@ -2196,6 +2214,32 @@ window.DB.photosAtlas = {
    "文件": "img/atlas/58b9c152eeb98102b64d47aa484124c9ab0148db20669ffc29409d5668014a6d.jpg",
    "说明": "图 17-2-7　SBA 24h 7. 产碱假单胞菌与假产碱假单胞菌 多数菌株在 42° C 能生长, 在麦凯康平板上可生长, 一端单鞭毛, 氧化酶阳性, 不分解任何糖类, 在未封闭的 O-F 培养基表面产碱, 醋酸盐可作为碳源和能源…"
   },
+  {
+   "文件": "img/atlas/35f7b9fe06b562d7a37cdfabd97826e26f14da5c9facce1ee73d6bfbd4a18e2e.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（1/6）"
+  },
+  {
+   "文件": "img/atlas/03831b695b99479d2e3a82a814f74646b46243a9b53ff49d0cf872f26fac4af2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（2/6）"
+  },
+  {
+   "文件": "img/atlas/33f2951c31b889a2ca92cb7f935739a8a8719dd335096cb91a0e1c800e5f4eec.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（3/6）"
+  },
+  {
+   "文件": "img/atlas/7ede776bcea784a5d3d8725ee8af83cc16dff9a9059f42b4dc2825bf3f17b5bd.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（4/6）"
+  },
+  {
+   "文件": "img/atlas/a3c68faf9217848e753a6b7b053c7d799faf1c1b585f1459d4442a99b3190f6f.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（5/6）"
+  },
+  {
+   "文件": "img/atlas/1b705b418893e900dc0d46ec928038a1247d4e6a518293d980d3700e74bccba2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（6/6）"
+  }
+ ],
+ "pseudomonas-genus": [
   {
    "文件": "img/atlas/35f7b9fe06b562d7a37cdfabd97826e26f14da5c9facce1ee73d6bfbd4a18e2e.jpg",
    "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（1/6）"
