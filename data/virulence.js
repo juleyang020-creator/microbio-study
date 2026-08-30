@@ -76,7 +76,7 @@ window.DB.virulence = [
       { 标题: '机制', 正文: '病原通过高频改变表面抗原逃避已建立免疫：淋病奈瑟菌菌毛/Opa 基因转换（重复感染不产生保护免疫——疫苗研发最大障碍）；流感病毒抗原漂移（点突变）/抗原转换（节段重排，大流行根源）；HIV 包膜糖蛋白高突变率；回归热疏螺旋体 Vmp 抗原切换（周期性热型机制）；锥虫 VSG。链球菌 M 蛋白分型（>200 型）与抗体型特异性是再感染基础。' },
       { 标题: '临床意义', 正文: '解释「感染后不免疫」的病原（淋病、链球菌咽炎可反复）；流感疫苗年度更新依据（WHO 南北半球毒株预测）；HIV 单靶点药物迅速耐药的进化基础（三联疗法原理）。' }
     ],
-    关联: ['neisseria-gonorrhoeae', 'influenza', 'hiv', 'borrelia', 'strep-pyogenes']
+    关联: ['neisseria-gonorrhoeae', 'influenza-a', 'hiv', 'borrelia-burgdorferi', 'strep-pyogenes']
   },
   {
     id: 'siderophore-iron',
@@ -109,7 +109,7 @@ window.DB.virulence = [
       { 标题: '机制', 正文: '兼性胞内菌在吞噬细胞内生存复制：结核分枝杆菌阻断吞噬体-溶酶体融合（PtpA/SecA2）并抑制吞噬体酸化——肉芽肿隔离（免疫病理与免疫保护双刃剑）；李斯特菌溶血素 O 逃逸入胞浆（细胞间「弹弓」直接扩散，避开体液免疫）；军团菌 Dot/Icm（T4SS）改造吞噬体为复制巢（内质网样）；布鲁氏菌/柯克斯体在吞噬溶酶体酸性区内抵抗杀伤（Coxiella 需酸性 pH 才复制——培养模拟依据）。' },
       { 标题: '临床意义', 正文: '胞内菌共同治疗特点：细胞内活性的药物（利福平/氟喹诺酮/大环内酯/四环素类）优于单纯β-内酰胺（胞内浓度低）；复发倾向与长疗程依据（布鲁氏病 6 周联合、结核 6 个月）；细胞免疫（Th1/IFN-γ）而非抗体是保护免疫——HIV 患者胞内菌感染加重的免疫学解释。' }
     ],
-    关联: ['mycobacterium-tuberculosis', 'listeria-monocytogenes', 'legionella', 'brucella-melitensis', 'coxiella']
+    关联: ['mycobacterium-tuberculosis', 'listeria-monocytogenes', 'legionella-pneumophila', 'brucella-melitensis', 'coxiella']
   },
   {
     id: 'quorum-sensing',
@@ -121,5 +121,49 @@ window.DB.virulence = [
       { 标题: '临床意义', 正文: 'QS 抑制（抗毒力治疗）不杀细菌、无选择压力——耐药时代新思路（研究阶段）；agr 功能缺失的金葡菌株持续生物膜表型（慢性感染分离株常见）。' }
     ],
     关联: ['pseudomonas-aeruginosa', 'staph-aureus', 'vibrio-cholerae']
+  },
+  {
+    id: 'iga-protease',
+    名称: 'IgA 蛋白酶（黏膜免疫逃逸）',
+    英文: 'IgA protease (mucosal immune evasion)',
+    类别: '免疫逃逸',
+    小节: [
+      { 标题: '机制', 正文: '黏膜表面 slgA 是黏膜免疫第一道防线，病原菌分泌 IgA 蛋白酶（以 IgA1 为底物，铰链区特异性裂解）使抗体失去交联聚集细菌的能力：淋病奈瑟菌、脑膜炎奈瑟菌（致病物质含 IgA1 蛋白酶）、流感嗜血杆菌、肺炎链球菌、脲原体等均产 IgA 蛋白酶（脲原体的编码基因尚未在基因组中识别出来，但可检测到该酶活性并经尿素水解释放氨）。变形杆菌属各种蛋白水解酶对 IgA 也有高度水解活性，是促进感染扩散、逃避免疫攻击的毒力因子。' },
+      { 标题: '临床意义', 正文: 'IgA 蛋白酶解释了这些病原为何能长期定植黏膜（鼻咽、尿道）而局部抗体不足以清除；slgA 缺乏患者反复黏膜感染（慢性腹泻、呼吸道感染）的对照说明黏膜抗体的重要性。检测层面：IgA 蛋白酶活性曾用于奈瑟菌属内鉴别的研究工具，常规实验室不检测，意义在于理解「带菌/定植」状态。' }
+    ],
+    关联: ['neisseria-gonorrhoeae', 'neisseria-meningitidis', 'haemophilus-influenzae', 'strep-pneumoniae', 'proteus-vulgaris', 'ureaplasma-urealyticum']
+  },
+  {
+    id: 'pvl-leukocidin',
+    名称: '杀白细胞素（PVL）',
+    英文: 'Panton-Valentine leukocidin (PVL)',
+    类别: '毒素',
+    小节: [
+      { 标题: '机制', 正文: 'PVL 是金黄色葡萄球菌的打孔毒素（pore-forming cytotoxin），由 lukS-PV/lukF-PV 基因编码（携带于前噬菌体），具有强效细胞溶解及炎症活性——攻击中性粒细胞与巨噬细胞细胞膜，形成孔道致细胞溶解。CA-MRSA（社区相关 MRSA）更可能携带 PVL，但 PVL 拥有权不限于 CA-MRSA：许多流行的 MSSA 谱系也携带 PVL 基因（非洲人群中 PVL 阳性 MSSA 患病率很高）；LA-MRSA（家畜相关）中 PVL 及免疫逃逸簇基因典型阴性。' },
+      { 标题: '临床意义', 正文: 'PVL 阳性菌株与皮肤软组织感染（脓肿、坏死性筋膜炎）、坏死性肺炎相关——呼吸道病毒感染（最常见流感）后，PVL 阳性的 MRSA/MSSA 坏死性肺炎在年轻健康儿童中可为致命性疾病。检测：培养物中 PVL 编码基因可经 RIDA GENE PVL 试剂盒单项检测，或作为 GenoType Staphylococcus/MRSA 测试板的一部分；表型方法有 ELISA、免疫层析侧流试验。常规实验室不强制检测，重症坏死性肺炎/反复脓肿流行病学调查时送检。' }
+    ],
+    关联: ['staph-aureus', 'influenza-a']
+  },
+  {
+    id: 'complement-resistance',
+    名称: '补体抵抗（血清杀菌作用抵抗）',
+    英文: 'Complement resistance (serum bactericidal activity)',
+    类别: '免疫逃逸',
+    小节: [
+      { 标题: '机制', 正文: '革兰阴性菌血症须先逃过血清补体级联（膜攻击复合物 MAC 插入外膜）：①脑膜炎奈瑟菌——H 因子结合蛋白（fHbp）结合补体 H 因子下调替代途径、可用作新一代流脑疫苗覆盖率分析的靶标；包膜/荚膜与脂寡糖唾液酸化协同；晚期补体缺陷（含依库珠单抗 eculizumab 用药后）、脾切除患者 IMD 风险显著升高（对照说明补体的保护作用）；②b 型流感嗜血杆菌——荚膜天然抗吞噬，无抗荚膜抗体时细菌大量繁殖、浓度超阈值即播散（脑膜、关节、心包）；③狗咬/犬咬二氧化碳噬纤维菌——抵抗巨噬细胞吞噬及补体与白细胞杀伤，并使巨噬细胞不能产生炎性细胞因子（脾切除/酗酒者暴发性败血症、DIC 的机制基础）。' },
+      { 标题: '临床意义', 正文: '补体抵抗是把「定植菌」变成「侵入性病原」的关键一步——携带率（脑膜炎奈瑟菌约 10% 鼻咽定植）与发病率（IMD 仅小部分）的差距由此解释。血清杀菌试验（SBA，体外用幼兔或人补体）是流脑疫苗保护评估的最佳替代试验。反复侵袭性奈瑟菌感染应查补体（晚期补体成分 C5-C9）缺陷。' }
+    ],
+    关联: ['neisseria-meningitidis', 'haemophilus-influenzae', 'capnocytophaga-canimorsus']
+  },
+  {
+    id: 'internalin-invasion',
+    名称: '内化素与侵袭性蛋白',
+    英文: 'Internalin and invasive proteins',
+    类别: '侵袭与扩散',
+    小节: [
+      { 标题: '机制', 正文: '「主动钻入」非吞噬细胞的分子工具：单核细胞性李斯特菌毒力基因集聚在一个 8.2 kb 毒力岛上，内化蛋白 A/B（InlA/InlB）介导侵入宿主肠道上皮细胞——InlA 与上皮钙黏蛋白（滋养层受体）相互作用促进母体向胎儿传播（妊娠李斯特菌病）；李斯特溶胞素（溶血素）介导胞内逃逸与肌动蛋白弹弓扩散。志贺菌 IpaB、IpaC 等侵袭性蛋白帮助细菌向邻近细胞扩散（T3SS 效应蛋白）；EPEC 经 LEE 毒力岛编码的紧密黏附素（intimin，eae 基因）与 T3SS 造成 A/E 附着抹平损伤。' },
+      { 标题: '临床意义', 正文: '分子检测层面：EPEC 确认采用 eae 基因（编码 intimin 黏附因子）PCR 或 LEE 毒力岛基因检测；EIEC 侵袭力验证用细胞培养侵袭试验或 ipaC/ipaH 基因 PCR。李斯特菌病「越过血胎/血脑屏障」的能力与 InlA/InlB 直接相关——孕妇、新生儿、免疫抑制、老年高危人群的食品安全宣教（即食食品、未灭菌乳制品）是预防核心。' }
+    ],
+    关联: ['listeria-monocytogenes', 'shigella-flexneri', 'e-coli', 'type-iii-secretion']
   }
 ];

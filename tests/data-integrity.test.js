@@ -12,6 +12,7 @@ require('../data/microbes.js');
 require('../data/antibiotics.js');
 require('../data/resistance.js');
 require('../data/virulence.js');
+require('../data/genetics.js');
 require('../data/biochem.js');
 require('../data/differential.js');
 require('../data/morphology.js');
