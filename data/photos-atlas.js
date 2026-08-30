@@ -2949,6 +2949,16 @@ window.DB.photosAtlas = {
    "说明": "图 20-21-3　厌氧培养 7 日"
   }
  ],
+ "eggerthella-lenta": [
+  {
+   "文件": "img/atlas/668fd6587820f4e28946bbf0e700b02df5cba947db899da53322ffc03aebdd03.jpg",
+   "说明": "图 20-21-4　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/f71b8b2cd156e0df44e4a7a2dd73e516df239212b82280ef0786f085cc24e55c.jpg",
+   "说明": "图 20-21-4　厌氧培养 3 日"
+  }
+ ],
  "parabacteroides-distasonis": [
   {
    "文件": "img/atlas/2252a49df399e65c6b870f96a9d7351621dbe2287e0a05c6e245e711a27fff61.jpg",
