@@ -101,6 +101,24 @@ window.DB.photosAtlas = {
    "说明": "图 12-3-1　藤黄微球菌(粗糙型) SBA 2 日"
   }
  ],
+ "micrococcus-genus": [
+  {
+   "文件": "img/atlas/2ac99c470e6c093fa572fdfe98022d322a4cd8af6e900593bac238036c0bb62c.jpg",
+   "说明": "图 12-3-1　藤黄微球菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/d93e5986a32827749e7e81b75a427dbf04163ae88d275f29c88286176fa77b1e.jpg",
+   "说明": "图 12-3-1　藤黄微球菌(光滑型)SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/6b071c5ec078aa3dd061b75032cb4a3fd3b74e35862bdd6077c3d5dcbf631fb4.jpg",
+   "说明": "图 12-3-1　藤黄微球菌(粗糙型) SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/f379f2e51abc9db692887be0f739db7d7938e15a5afc75856f7de8eb6205b420.jpg",
+   "说明": "图 12-3-1　里拉微球菌 SBA 3 日"
+  }
+ ],
  "micrococcus-lylae": [
   {
    "文件": "img/atlas/f379f2e51abc9db692887be0f739db7d7938e15a5afc75856f7de8eb6205b420.jpg",
@@ -448,6 +466,28 @@ window.DB.photosAtlas = {
   }
  ],
  "granulicatella-adiacens": [
+  {
+   "文件": "img/atlas/92024f3e43889dc7e23ec37878df3c21959389ca2297d1c4e83c503ad98d283e.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/623649bca7ec0798de5845fe581b63befaab5538b904925a1c79776ceb6b9206.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/949021522c6d9bf5dcfafc5674be01f97ad233cf7c312a86c886a951bd0252f3.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/0888810cbbaee7ebb281d9845fe25f712a9df98871ce14dcf9675a628e739360.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（4/5）"
+  },
+  {
+   "文件": "img/atlas/6a94c39ea9e6a31cf872ed655c6f813dffa9dd27a043de594c10eed4c5cd7d72.jpg",
+   "说明": "图 12-7-2　颗粒链菌的形态特征（5/5）"
+  }
+ ],
+ "granulicatella-genus": [
   {
    "文件": "img/atlas/92024f3e43889dc7e23ec37878df3c21959389ca2297d1c4e83c503ad98d283e.jpg",
    "说明": "图 12-7-2　颗粒链菌的形态特征（1/5）"
@@ -1219,40 +1259,6 @@ window.DB.photosAtlas = {
    "说明": "图 14-7-21　麻风分枝杆菌感染特征（3/3）"
   }
  ],
- "nocardia": [
-  {
-   "文件": "img/atlas/e3aaa5e3362d50e4d211ba21aed9da251bde94b454f93139a0883c3e5aa53800.jpg",
-   "说明": "图 14-8-1　诺卡菌小培养方法（1/5）"
-  },
-  {
-   "文件": "img/atlas/f2d869178e3679affd06d0ee64e83bd214e6c574c27342848f42997e6788920c.jpg",
-   "说明": "图 14-8-1　诺卡菌小培养方法（2/5）"
-  },
-  {
-   "文件": "img/atlas/539aed7c3f77ae6b08175614ea80fded66fdbb74355d22532e3bb575f9a90768.jpg",
-   "说明": "图 14-8-1　诺卡菌小培养方法（3/5）"
-  },
-  {
-   "文件": "img/atlas/6463fd31406ff6b3077c1bca58ba608c82a82f21a331305897fa7508f02496b1.jpg",
-   "说明": "图 14-8-1　诺卡菌小培养方法（4/5）"
-  },
-  {
-   "文件": "img/atlas/cc66e8d2e516a7fa6c5eab4629bbb08d31b196629430168c70132540284cbbf7.jpg",
-   "说明": "图 14-8-1　诺卡菌小培养方法（5/5）"
-  },
-  {
-   "文件": "img/atlas/683233eb68eb7a34a981c12000ae18d9ad7b7ccc695851558a6cea98b993c071.jpg",
-   "说明": "图 14-8-6　痰涂片弱抗酸染色 ×1000"
-  },
-  {
-   "文件": "img/atlas/8242274018a815faf138de88c07a97839bb1e4478c35a05366e331bd71f57607.jpg",
-   "说明": "图 14-8-6　小培养 12 日, 革兰氏染色 ×1000"
-  },
-  {
-   "文件": "img/atlas/fa44ea549dd3d948d7ded7d3a348ee49e72a171d0823215d3cfd122a70405af5.jpg",
-   "说明": "图 14-8-6　SBA 5 日"
-  }
- ],
  "nocardia-abscessus": [
   {
    "文件": "img/atlas/2ee35983e141fb4a093573222114b8ae4ff606b5874c0db58af497e929c0363a.jpg",
@@ -1393,6 +1399,46 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/3dc43b2218bb3943b621125d423084bc46ebef32db692258f3cf70f35b505401.jpg",
    "说明": "图 14-8-14　脓液诺卡菌肉汤培养 2 日 1. 与链霉菌属、放线菌属和拟诺卡菌属的鉴别 四者镜下形态均为分枝丝状，但诺卡菌属改良抗酸染色阳性(图 14-8-3H)，并且所有诺卡菌耐受溶菌酶，而后三者抗酸阴性且不耐受溶菌酶。诺卡菌菌…"
+  }
+ ],
+ "nocardia": [
+  {
+   "文件": "img/atlas/3dc43b2218bb3943b621125d423084bc46ebef32db692258f3cf70f35b505401.jpg",
+   "说明": "图 14-8-14　脓液诺卡菌肉汤培养 2 日 1. 与链霉菌属、放线菌属和拟诺卡菌属的鉴别 四者镜下形态均为分枝丝状，但诺卡菌属改良抗酸染色阳性(图 14-8-3H)，并且所有诺卡菌耐受溶菌酶，而后三者抗酸阴性且不耐受溶菌酶。诺卡菌菌…"
+  }
+ ],
+ "actinomyces-genus": [
+  {
+   "文件": "img/atlas/3dc43b2218bb3943b621125d423084bc46ebef32db692258f3cf70f35b505401.jpg",
+   "说明": "图 14-8-14　脓液诺卡菌肉汤培养 2 日 1. 与链霉菌属、放线菌属和拟诺卡菌属的鉴别 四者镜下形态均为分枝丝状，但诺卡菌属改良抗酸染色阳性(图 14-8-3H)，并且所有诺卡菌耐受溶菌酶，而后三者抗酸阴性且不耐受溶菌酶。诺卡菌菌…"
+  },
+  {
+   "文件": "img/atlas/4036dd0dbc6b4c4a888518092d871f988c3907f6a824e0790db917fea5a17540.jpg",
+   "说明": "图 14-10-3　马杜拉放线菌的形态特征"
+  },
+  {
+   "文件": "img/atlas/b31404274c1f7a2778c275da59c955ba2e5beaef27da709f4c9d61f706c668eb.jpg",
+   "说明": "图 20-8-2　阑尾切片革兰氏染色 ×400"
+  },
+  {
+   "文件": "img/atlas/a8f69449a94b34893a7ba8a14e414d1365239c12b5ddb8e2628e58629bc747d0.jpg",
+   "说明": "图 20-8-2　阑尾切片 PSAM 染色 ×400"
+  },
+  {
+   "文件": "img/atlas/60a9ff8e0626500a538b8b9f5ba4464a9ce500ed71610841dad9083bb6a3b4e0.jpg",
+   "说明": "图 20-8-2　泪道 - 结膜结石压片, 革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/0ad41b3bcd27a1240849365e41843b09d7eff5e3b5b645213b85ae84c0d1c643.jpg",
+   "说明": "图 20-8-2　脓胸抽吸物涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/6ff97aaa9e6c3c30b0fd16d324398a480bc0ff7dec9613e6dba7c446165ce26a.jpg",
+   "说明": "图 20-8-2　腹壁脓肿脓液涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/ea847c09c8d1d32de2696e9fa4b4b5d1acbd1e934f4f4ef816510e4f6a0a2e06.jpg",
+   "说明": "图 20-8-2　上颌窦分泌物涂片革兰氏染色 ×2000"
   }
  ],
  "rhodococcus-equi": [
@@ -2643,6 +2689,12 @@ window.DB.photosAtlas = {
    "说明": "图 17-9-1　黏金黄杆菌 CA 3 日"
   }
  ],
+ "chryseobacterium-genus": [
+  {
+   "文件": "img/atlas/2937fb1767da8beff4ce048a75ee5e7da3911ea254a7c5d6e33420c06654932d.jpg",
+   "说明": "图 17-9-2　金黄杆菌属对万古霉素敏感性试验结果 4. 脑膜脓毒伊丽莎白金菌与短稳杆菌的鉴别 脑膜脓毒伊丽莎白金菌分解甘露醇,胆汁七叶苷试验阳性,而短稳杆菌相反。 5. 常见金黄杆菌与产黄色色素的非发酵菌的鉴别见表 17-9-2。…"
+  }
+ ],
  "ochrobactrum-anthropi": [
   {
    "文件": "img/atlas/f7548026c2adc416753ff3d60fa6df568908d7c8b875789eee9507ddbb84551a.jpg",
@@ -2729,6 +2781,70 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/0038186789a749dcd84b77a4b5abf4a7f4e9f4ab4b9838ed46f7917cba256b2c.jpg",
    "说明": "图 17-19-4　嗜肺军团菌 fraseri 亚种（Lp4）ATCC 33156 紫外线照射下发出蓝白色荧光"
+  }
+ ],
+ "legionella-genus": [
+  {
+   "文件": "img/atlas/18ed1fbc5677afed9813b92162fe9ed58e64df7afe79a2e07879b52ead89f75a.jpg",
+   "说明": "图 17-19-1　痰涂片嗜肺军团菌（I型）革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/eb2c4ad3f9b3f72feb284750be0aefb908d7e3ec5c849c510e47091cfb5845f8.jpg",
+   "说明": "图 17-19-1　嗜肺军团菌（I型）菌落涂片革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/b66f3a7dc6c37bc199b53ca1524309bc236cd63e22801d8e83fcd50f29927141.jpg",
+   "说明": "图 17-19-1　嗜肺军团菌（I型）扫描电镜图 ×200000"
+  },
+  {
+   "文件": "img/atlas/35ae9b22c145dddda12376387d741b262a0f848f1c023fb0f33909e03142261f.jpg",
+   "说明": "图 17-19-1　庆义军团菌扫描电镜图 ×200000"
+  },
+  {
+   "文件": "img/atlas/dd9a8f7965b68e7ce8d2204219605f6a40bb9056abd7ec29ee623618e5d20890.jpg",
+   "说明": "图 17-19-1　茴香军团菌 ATCC 35292 革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/d771a1ea87edcaf5bfec15efa0a95f7bb5cfff70b8f7d18fa82d865330e2bd6c.jpg",
+   "说明": "图 17-19-1　圣海伦军团菌 ATCC 35248 革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/06e95eff33d4162797f327cbb9ee1b848b0503cb1c28b6297a0721b889d48aed.jpg",
+   "说明": "图 17-19-3　约旦军团菌, BCYE 3 日强光照射 ×40"
+  },
+  {
+   "文件": "img/atlas/a2be6a2b441be0b66e13a9f3c314a58a3b24b7b464e64578c393b8f2ea77f611.jpg",
+   "说明": "图 17-19-3　米克戴德军团菌, BCYE 5 日强光照射 ×40"
+  }
+ ],
+ "legionella-anisa": [
+  {
+   "文件": "img/atlas/dd9a8f7965b68e7ce8d2204219605f6a40bb9056abd7ec29ee623618e5d20890.jpg",
+   "说明": "图 17-19-1　茴香军团菌 ATCC 35292 革兰氏染色 ×1000"
+  }
+ ],
+ "legionella-sainthelensi": [
+  {
+   "文件": "img/atlas/d771a1ea87edcaf5bfec15efa0a95f7bb5cfff70b8f7d18fa82d865330e2bd6c.jpg",
+   "说明": "图 17-19-1　圣海伦军团菌 ATCC 35248 革兰氏染色 ×1000"
+  }
+ ],
+ "legionella-jordanis": [
+  {
+   "文件": "img/atlas/06e95eff33d4162797f327cbb9ee1b848b0503cb1c28b6297a0721b889d48aed.jpg",
+   "说明": "图 17-19-3　约旦军团菌, BCYE 3 日强光照射 ×40"
+  }
+ ],
+ "legionella-micdadei": [
+  {
+   "文件": "img/atlas/a2be6a2b441be0b66e13a9f3c314a58a3b24b7b464e64578c393b8f2ea77f611.jpg",
+   "说明": "图 17-19-3　米克戴德军团菌, BCYE 5 日强光照射 ×40"
+  }
+ ],
+ "legionella-bozemanae": [
+  {
+   "文件": "img/atlas/499d7d1b4ae8e362ef48e3191d4d30659c1fe9c176aa334fd8e12def81c48c6a.jpg",
+   "说明": "图 17-19-3　博兹曼军团菌, BCYE 5 日强光照射 ×40"
   }
  ],
  "delftia-acidovorans": [
@@ -2917,6 +3033,20 @@ window.DB.photosAtlas = {
    "说明": "图 18-2-2　MHA 10 日"
   }
  ],
+ "bordetella-trematum": [
+  {
+   "文件": "img/atlas/f70fb2160dc51a381b7c296b32e824d60a44f2efbba380b9f6048a1f9dd6d311.jpg",
+   "说明": "图 18-2-4　创口博德特菌革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/71f547f80001baa7414d5fa1e5ee71786ef30c07214e5c9df18cc09bbe41d03c.jpg",
+   "说明": "图 18-2-4　创口博德特菌 SBA(光滑型)2 日"
+  },
+  {
+   "文件": "img/atlas/73c5d6b3e076ab4a6420a933d19d19433de1bed7e61f0bfb32687e32a8eef448.jpg",
+   "说明": "图 18-2-4　创口博德特菌 SBA(粗糙型)2 日"
+  }
+ ],
  "eikenella-corrodens": [
   {
    "文件": "img/atlas/ebecd2f4e7baa0be8ce0d24988e439065453a15dd3490f4d91bcc04b32515ed4.jpg",
@@ -2989,6 +3119,62 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/9c5b6afefd029f1345f8946b500bf2ffdb08a13e4a8253c9515c77298c13c7dc.jpg",
    "说明": "图 18-8-4　聚集杆菌的鉴别试验（2/2）"
+  }
+ ],
+ "capnocytophaga-sputigena": [
+  {
+   "文件": "img/atlas/1acaabb7dd98b378227ebad1f67244f69403a536c47147006942b043f5deb23c.jpg",
+   "说明": "图 18-9-1　革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/b990b47714221a528dd5933e6a995e2c392c22c9d61c3c976be261d10128cf26.jpg",
+   "说明": "图 18-9-1　口腔脓汁涂片革兰氏染色 ×1 000"
+  },
+  {
+   "文件": "img/atlas/f2b98f31e04451fadf2d5cc7e3d86c76277cbc874767f4d1ecf16897ad6b2d6d.jpg",
+   "说明": "图 18-9-1　光滑型 SBA 3 日"
+  },
+  {
+   "文件": "img/atlas/df64ad95fe542753f141be4697551bdb4284bbd2b8b6c0c447b6d8ccea2ac14f.jpg",
+   "说明": "图 18-9-1　扩展型 SBA 4 日"
+  },
+  {
+   "文件": "img/atlas/ce06bcd0ac49cebdf17e3ad89ee813d892cd71dc65a03224fdf705e0ec41c0cc.jpg",
+   "说明": "图 18-9-1　扩展型 SBA 4 日"
+  },
+  {
+   "文件": "img/atlas/83bd6fc34e8e2b06c2ad9744ff15c28647dafd0ed384b09eeaa899f8356bed4f.jpg",
+   "说明": "图 18-9-1　厌氧培养 3 日"
+  }
+ ],
+ "capnocytophaga-gingivalis": [
+  {
+   "文件": "img/atlas/3e84f7df8b6b391e2b500f85b46987122e50e8f0c27f726173d79b5146eace33.jpg",
+   "说明": "图 18-9-2　牙龈二氧化碳噬纤维菌 SBA 2 日"
+  },
+  {
+   "文件": "img/atlas/d0ccc47e30c27f026d84a623d41b5fa9d111b846b08c0c8f283931f0f4b6ddfd.jpg",
+   "说明": "图 18-9-3　E-test 法 (ESBL 阳性)"
+  },
+  {
+   "文件": "img/atlas/38c2677e08cef97607c75e4bb4f99001cfd9c51d2ad042ca49736770b1ced8f3.jpg",
+   "说明": "图 18-9-3　K-B 法 (ESBL 阳性)"
+  }
+ ],
+ "capnocytophaga-ochracea": [
+  {
+   "文件": "img/atlas/8e8bb67cb139779bda3c655da3732d0c4ab6e1e7909395992f9f76a7f870203b.jpg",
+   "说明": "图 18-9-2　黄褐二氧化碳噬纤维菌 SBA 4 日"
+  }
+ ],
+ "capnocytophaga-haemolytica": [
+  {
+   "文件": "img/atlas/09327c7e397c501b4d59dbf62f64effe018286e7891877c87d25f920c8bb50d0.jpg",
+   "说明": "图 18-9-2　溶血二氧化碳噬纤维菌 SBA 7 日"
+  },
+  {
+   "文件": "img/atlas/f9d367edeafbcee14b5f594dc5773ef83aaa8fe816e1ab01213d27c71eb959dc.jpg",
+   "说明": "图 18-9-2　溶血二氧化碳噬纤维菌 SBA 12 日（溶血）"
   }
  ],
  "streptobacillus-moniliformis": [
@@ -3637,6 +3823,40 @@ window.DB.photosAtlas = {
    "说明": "图 22-3-1　暗视野下"
   }
  ],
+ "mycoplasma-genus": [
+  {
+   "文件": "img/atlas/b0b6bf6365184199d52e55f32f9dee70011808e1d9e4b725c83c74c7a6c48548.jpg",
+   "说明": "图 23-1-1　支原体感染绿猴肾细胞 (vero cell), DNA 荧光染色 × 400"
+  },
+  {
+   "文件": "img/atlas/248bd51f322cdb9efddb5c90edac6e19bf455eda5c729456352f71e95b6fd7d0.jpg",
+   "说明": "图 23-1-1　人型支原体 (关节腔液涂片) 吉姆萨染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/5c852b1346f93d1fadacf51ede4bfed61d5e0356d4812ff5ef466f21f0de8082.jpg",
+   "说明": "图 23-1-1　人型支原体涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/571d427221a71419463d6466831fadcf3c3c755257f284982bc4efa2687b037a.jpg",
+   "说明": "图 23-1-1　人型支原体吉姆萨染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/8a87c5e7fcc710900fb98a5b0742081a2d2660210242e4e85ec9df1e91b6a00c.jpg",
+   "说明": "图 23-1-3　人型支原体 SBA CO₂ 培养 5 日"
+  },
+  {
+   "文件": "img/atlas/0ba0f642cee8bd9c3ffdd5193c8b6f673654bcae2a1a5674f790208eac2b141e.jpg",
+   "说明": "图 23-1-3　支原体专用固体培养基"
+  },
+  {
+   "文件": "img/atlas/4429fdb9ae78492e54568ef3fbe7dedb290b7ef0f9492f0229abcc533c5f8d4b.jpg",
+   "说明": "图 23-1-3　小培养镜下直接观察生长状态"
+  },
+  {
+   "文件": "img/atlas/d636491737c2fa2ee90c937ffad96a7a2526cfd9221de188ef88a557af7586df.jpg",
+   "说明": "图 23-1-3　人型支原体菌落瑞 - 吉染色 × 400"
+  }
+ ],
  "mycoplasma-hominis": [
   {
    "文件": "img/atlas/248bd51f322cdb9efddb5c90edac6e19bf455eda5c729456352f71e95b6fd7d0.jpg",
@@ -3682,6 +3902,20 @@ window.DB.photosAtlas = {
   }
  ],
  "chlamydia-trachomatis": [
+  {
+   "文件": "img/atlas/28d286f41a04839363f2dbdebc9a2ff92e8342e2a83caeb4911997155eb337cc.jpg",
+   "说明": "图 23-2-1　结膜囊分泌物, 被吞噬的沙眼衣原体网状体, 亦称始体 (瑞氏 - 吉姆萨染色, 内有较多红色的未成熟原体) × 1000"
+  },
+  {
+   "文件": "img/atlas/d43ec3b05a41d1d0ed5a3456c66e4b0859f54f2379c03dcf0109b06e28c8b812.jpg",
+   "说明": "图 23-2-1　结膜囊分泌物, 被上皮细胞等包围的单个成熟沙眼衣原体原体 (瑞氏 - 吉姆萨染色, 蓝色有包膜, 有明显的包膜) × 1000"
+  },
+  {
+   "文件": "img/atlas/dca806b7505aaa7259ecdef744f75a5b41b33558e01125bfa7927044ff0722bd.jpg",
+   "说明": "图 23-2-1　结膜囊分泌物中沙眼衣原体包涵体, 瑞氏 - 吉姆萨染色 × 1000"
+  }
+ ],
+ "chlamydia-genus": [
   {
    "文件": "img/atlas/28d286f41a04839363f2dbdebc9a2ff92e8342e2a83caeb4911997155eb337cc.jpg",
    "说明": "图 23-2-1　结膜囊分泌物, 被吞噬的沙眼衣原体网状体, 亦称始体 (瑞氏 - 吉姆萨染色, 内有较多红色的未成熟原体) × 1000"
@@ -4639,32 +4873,6 @@ window.DB.photosAtlas = {
    "说明": "图 27-1-14　SDA 28℃ 7 日"
   }
  ],
- "fusarium": [
-  {
-   "文件": "img/atlas/1c1a59412983f61c8533e1cd553c694ab76921f3576a8bf0d59694a57a57de76.jpg",
-   "说明": "图 27-16-1　镰刀菌镜下形态特征"
-  },
-  {
-   "文件": "img/atlas/a63e9883b9cc7bcf6f6007905bf37c51a1a20fde9fd6224997be6d2613f241f1.jpg",
-   "说明": "图 27-16-3　藤仓镰刀菌 PDA 28℃ 培养 4 日 ×1000"
-  },
-  {
-   "文件": "img/atlas/78d241db5331b99e7b571406331e0b7b9980f2654957226773875c9c250d7d0f.jpg",
-   "说明": "图 27-16-3　藤仓镰刀菌 SDA 28℃ 培养 7 日"
-  },
-  {
-   "文件": "img/atlas/9355530eec829c095274da9844edfd168af83c8240bee9f4371c416e6b36ca93.jpg",
-   "说明": "图 27-16-3　层生镰刀菌 PDA 28℃ 培养 3 日, 乳酸酚棉蓝染色 ×1000"
-  },
-  {
-   "文件": "img/atlas/72a78543efa01a9b2bd6337dbce1b47751237ebc92b519f5372672cde0477ec3.jpg",
-   "说明": "图 27-16-3　层生镰刀菌 SDA 28℃ 培养 7 日"
-  },
-  {
-   "文件": "img/atlas/b4e510bea856eefc423da5e078104f0a400591d613dea8f57a6d37d35048eb91.jpg",
-   "说明": "图 27-16-8　临床常见镰刀菌形态鉴定索引"
-  }
- ],
  "fusarium-solani": [
   {
    "文件": "img/atlas/8680242b8f4b7b53bb5f6791178b6f122d9e1219eada298966242302b62a294a.jpg",
@@ -4793,6 +5001,24 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/311302deffe385f3659d1da81ac29bc816db47ebcc65abd3fe1405ae6709724b.jpg",
    "说明": "图 27-17-2　裴氏着色霉 PDA 28℃ 培养 17 日"
+  }
+ ],
+ "fonsecaea-genus": [
+  {
+   "文件": "img/atlas/15ac4ba4ff7ea8fff4fd8ecb37e3bbac9c6ec39d7bf240ac6ebd5efe9a28e246.jpg",
+   "说明": "图 27-17-2　裴氏着色霉 PDA 28℃ 培养 21 日，乳酸酚棉蓝染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/311302deffe385f3659d1da81ac29bc816db47ebcc65abd3fe1405ae6709724b.jpg",
+   "说明": "图 27-17-2　裴氏着色霉 PDA 28℃ 培养 17 日"
+  },
+  {
+   "文件": "img/atlas/d1fad9ef6710091dfc282970f33a863d5c96c7061be152c7790fcc54eca8decb.jpg",
+   "说明": "图 27-17-2　单瓶着色霉 PDA 28℃ 培养 7 日，乳酸酚棉蓝染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/3f7c27242dc6f695131b1467993d71245642ef15c411f2d2967a76bb48b18435.jpg",
+   "说明": "图 27-17-2　单瓶着色霉 PDA 28℃ 培养 17 日"
   }
  ],
  "fonsecaea-monophora": [
@@ -5079,6 +5305,32 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/906b2f0086fd4b50439013c0346a45cf08d4bc93935ef14fa27df36ccbd32483.jpg",
    "说明": "图 33-2-12　日本血吸虫成虫雄性盐酸卡红染色"
+  }
+ ],
+ "taenia-genus": [
+  {
+   "文件": "img/atlas/cac84c3473248f3614ac4dee2373d9046a64b3eff865770ae4f36bb140e29f2d.jpg",
+   "说明": "图 33-2-17　猪带绦虫囊尾蚴 脑组织切片 HE 染色 ×200"
+  },
+  {
+   "文件": "img/atlas/9430202936cc432582bfed2e7a60fcf7f281a58592cc739990c2dfe1a0c59f3d.jpg",
+   "说明": "图 33-2-18　盐水压片"
+  },
+  {
+   "文件": "img/atlas/bd9ab328cf4840b59ca5ac606cf4d99a59438d19852ed7a3887b6c4bea96e37a.jpg",
+   "说明": "图 33-2-18　碘染"
+  },
+  {
+   "文件": "img/atlas/4a4af8383859388eaf2ab7129f8bcb1bab48ba57b0e8267d3cc2ba171d5dafbd.jpg",
+   "说明": "图 33-2-19　孕节"
+  },
+  {
+   "文件": "img/atlas/200d9262e6e01031458769fc2e13059e27d1f73a0ab1f97729871e5832a9ccc5.jpg",
+   "说明": "图 33-2-19　头节 3. 实验室诊断 猪带绦虫病的诊断: 粪便检获虫卵可确诊, 但检出率较低, 应连续数日送检以提高检出率。光镜下很难区分猪带绦虫卵和牛带绦虫卵, 统称带绦虫卵。可收集患者全部粪便, 用水淘洗检查孕节和头节以确定虫…"
+  },
+  {
+   "文件": "img/atlas/5fbe5a4ace014ad1f6bdce6978a38391a68622209c21e3bb2b90326d0bdb32ac.jpg",
+   "说明": "图 33-2-22　牛带绦虫孕节墨汁及盐酸卡红染色 3. 实验室诊断 从患者粪便中查到虫卵或孕节可确诊。直接涂片法检出率较低，也可采用肛门拭子法或透明胶纸法从肛周检获虫卵，但无法区分猪带绦虫卵和牛带绦虫卵。"
   }
  ],
  "taenia-saginata": [
