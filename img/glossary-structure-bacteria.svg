@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>细菌表面结构与抗原总览（芽孢 · 荚膜 · 鞭毛 · 菌毛 · 细胞壁）</title>
+<desc>革兰阳性菌细胞壁：肽聚糖多层交联+壁磷壁酸/膜磷壁酸（LTA）；革兰阴性菌：外膜含 LPS（O 抗原-核心-脂质 A）与磷脂；表面附属结构：芽孢（多层孢壁+DPA-Ca）、荚膜（Vi/K 抗原）、鞭毛（H 抗原）、菌毛（黏附与接合）；异染颗粒为胞内偏磷酸盐储存</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="340" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">细菌表面结构与抗原</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">术语</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">一层层看：从最外的荚膜到胞内的异染颗粒，各带什么抗原</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 左：G+ 菌（纵切面） ===== -->
+<text x="118" y="74" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2f6b45">革兰阳性菌</text>
+<!-- 荚膜 -->
+<path d="M62,104 C82,92 154,92 174,104 C154,116 82,116 62,104 Z" fill="#dbe9f5" stroke="#9fb7d0" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="118" y="90" text-anchor="middle" font-size="9.5" fill="#2b5686">荚膜（Vi/K 抗原）</text>
+<!-- 菌体 -->
+<rect x="66" y="106" width="104" height="150" rx="14" fill="#eaf3ec"/>
+<!-- 细胞壁（厚肽聚糖） -->
+<rect x="66" y="106" width="12" height="150" fill="#9fc98e"/>
+<rect x="158" y="106" width="12" height="150" fill="#9fc98e"/>
+<text x="118" y="272" text-anchor="middle" font-size="9.5" fill="#2f6b45">肽聚糖多层＋磷壁酸</text>
+<!-- 壁内磷壁酸示意（螺旋线） -->
+<path d="M72,120 q6,8 0,16 q-6,8 0,16 q6,8 0,16" fill="none" stroke="#5c8a4a" stroke-width="1.2"/>
+<!-- 鞭毛 -->
+<path d="M96,256 C88,274 104,286 96,304" fill="none" stroke="#7d8a98" stroke-width="1.6"/>
+<path d="M100,300 l-8,2 M98,292 l-8,2 M101,284 l-8,2" stroke="#7d8a98" stroke-width="1.2"/>
+<text x="112" y="308" font-size="9.5" fill="#5c6672">鞭毛（H 抗原）</text>
+<!-- 菌毛 -->
+<g stroke="#a8b2bd" stroke-width="1">
+  <line x1="130" y1="256" x2="126" y2="270"/><line x1="140" y1="256" x2="137" y2="272"/>
+  <line x1="150" y1="256" x2="148" y2="270"/>
+</g>
+<text x="152" y="286" font-size="9.5" fill="#5c6672">菌毛</text>
+<!-- 异染颗粒 -->
+<circle cx="102" cy="140" r="4" fill="#5d4230"/>
+<circle cx="96" cy="156" r="3.2" fill="#5d4230"/>
+<text x="88" y="180" font-size="9.5" fill="#5d4030">异染颗粒</text>
+<text x="88" y="192" font-size="9.5" fill="#5c6672">（白喉棒状杆菌）</text>
+<!-- 芽孢（中央卵圆） -->
+<ellipse cx="118" cy="222" rx="26" ry="13" fill="#f2ede3" stroke="#a8894e" stroke-width="1.4"/>
+<ellipse cx="118" cy="222" rx="17" ry="8" fill="#d9c9a4"/>
+<text x="118" y="242" text-anchor="middle" font-size="9.5" fill="#8a6d3a">芽孢（DPA-Ca）</text>
+
+<!-- ===== 右：G− 菌（纵切面） ===== -->
+<text x="362" y="74" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8f3b3b">革兰阴性菌</text>
+<!-- 性菌毛（左侧，标签在左） -->
+<path d="M330,106 C324,92 328,82 334,74" fill="none" stroke="#7d8a98" stroke-width="1.4"/>
+<text x="248" y="72" font-size="9.5" fill="#5c6672">性菌毛（接合）</text>
+<!-- 荚膜 -->
+<path d="M306,104 C326,92 398,92 418,104 C398,116 326,116 306,104 Z" fill="#dbe9f5" stroke="#9fb7d0" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="362" y="90" text-anchor="middle" font-size="9.5" fill="#2b5686">荚膜 / K 抗原</text>
+<!-- 菌体 -->
+<rect x="310" y="106" width="104" height="150" rx="14" fill="#f5ecec"/>
+<!-- 外膜 + LPS -->
+<rect x="310" y="106" width="16" height="150" fill="#d99a9a"/>
+<rect x="404" y="106" width="10" height="150" fill="#d99a9a"/>
+<!-- LPS 分子示意（左外膜外侧：多糖链+脂质A） -->
+<g>
+  <line x1="308" y1="130" x2="294" y2="130" stroke="#8f3b3b" stroke-width="1.4"/>
+  <circle cx="290" cy="130" r="2.4" fill="#8f3b3b"/><circle cx="285" cy="126" r="2" fill="#8f3b3b"/>
+  <circle cx="283" cy="134" r="2" fill="#8f3b3b"/>
+  <line x1="308" y1="170" x2="296" y2="170" stroke="#8f3b3b" stroke-width="1.4"/>
+  <circle cx="292" cy="170" r="2.2" fill="#8f3b3b"/>
+</g>
+<!-- LPS 标签放中区 gutter -->
+<text x="216" y="196" font-size="9.5" fill="#8f3b3b">LPS（内毒素·TLR4）</text>
+<text x="216" y="208" font-size="9.5" fill="#8f3b3b">O 抗原·核心·脂质 A</text>
+<!-- 肽聚糖薄层 -->
+<rect x="328" y="106" width="5" height="150" fill="#9fc98e"/>
+<text x="362" y="272" text-anchor="middle" font-size="9.5" fill="#2f6b45">外膜（LPS）＋薄肽聚糖</text>
+<!-- 鞭毛 -->
+<path d="M386,256 C380,272 394,282 388,298" fill="none" stroke="#7d8a98" stroke-width="1.6"/>
+<text x="404" y="298" font-size="9.5" fill="#5c6672">端生鞭毛</text>
+
+<!-- 中间箭头：对比 -->
+<line x1="212" y1="150" x2="238" y2="150" stroke="#33404f" stroke-width="1.4" marker-end="url(#ar)"/>
+<line x1="268" y1="150" x2="242" y2="150" stroke="#33404f" stroke-width="1.4" marker-end="url(#ar)"/>
+
+<!-- 页脚 -->
+<rect x="24" y="310" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="325" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">检验关联</tspan>　染色差异源于壁结构 · LAL 测 LPS · Quellung 看荚膜 · 动力试验看鞭毛</text>
+</svg>

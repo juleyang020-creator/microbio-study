@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>白喉棒状杆菌与诺卡菌酶类试验</title>
+<desc>淀粉水解试验区分白喉棒杆菌生物型（重型+轻/中型−）；碱性磷酸酶试验白喉+假白喉−；LAP 试验区分链球菌（+）与凝固酶阴性葡萄球菌（−）；DNA 酶试验倾 HCl 后透明环，金葡耐热核酸酶+、黏质沙雷菌+周环大</desc>
+<rect width="480" height="310" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">棒状杆菌 · 链球菌 · 葡萄球菌酶类试验</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">四根种间鉴别轴：碘染透明区 · 变黄 · 底物黄 · 盐酸透明环</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 象限 1：淀粉水解（白喉分型） ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">淀粉水解 —— 白喉生物型分型</text>
+<text x="24" y="93" font-size="9.5" fill="#5c6672">淀粉血清琼脂＋革兰碘液</text>
+<ellipse cx="80" cy="146" rx="54" ry="34" fill="#2c4a7c" stroke="#8c96a2" stroke-width="1.2"/>
+<circle cx="80" cy="146" r="16" fill="#f0ece2"/>
+<circle cx="80" cy="146" r="5" fill="#c8b7a0"/>
+<text x="80" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">重型＋（透明区）</text>
+<text x="80" y="203" text-anchor="middle" font-size="9.5" fill="#5c6672">轻/中型−（全蓝）</text>
+
+<!-- ===== 象限 2：碱性磷酸酶 ===== -->
+<text x="168" y="80" font-size="10.5" font-weight="700" fill="#33404f">碱性磷酸酶</text>
+<text x="168" y="93" font-size="9.5" fill="#5c6672">对硝基苯酚磷酸盐底物</text>
+<rect x="176" y="106" width="44" height="28" rx="4" fill="#fdfcf6" stroke="#cfd6de"/>
+<rect x="186" y="114" width="24" height="12" rx="2" fill="#f2ce4b"/>
+<text x="198" y="124" text-anchor="middle" font-size="9.5" fill="#8a6d1a">变黄</text>
+<text x="198" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">白喉＋ · 假白喉−</text>
+
+<!-- ===== 象限 3：LAP ===== -->
+<text x="268" y="80" font-size="10.5" font-weight="700" fill="#33404f">亮氨酸氨肽酶（LAP）</text>
+<text x="268" y="93" font-size="9.5" fill="#5c6672">L-亮氨酸对硝基苯胺底物</text>
+<rect x="284" y="106" width="44" height="28" rx="4" fill="#fdfcf6" stroke="#cfd6de"/>
+<rect x="294" y="114" width="24" height="12" rx="2" fill="#f2ce4b"/>
+<text x="306" y="124" text-anchor="middle" font-size="9.5" fill="#8a6d1a">变黄＝＋</text>
+<text x="306" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">草绿链球菌＋ · CoNS−</text>
+<text x="306" y="203" text-anchor="middle" font-size="9.5" fill="#5c6672">（LAP＋/触酶− → 链球菌）</text>
+
+<!-- ===== 象限 4：DNA 酶（透明环） ===== -->
+<text x="376" y="80" font-size="10.5" font-weight="700" fill="#33404f">DNA 酶（倾 HCl）</text>
+<text x="376" y="93" font-size="9.5" fill="#5c6672">0.2% DNA 琼脂平板</text>
+<ellipse cx="424" cy="146" rx="48" ry="34" fill="#e8ecf0" stroke="#b9c2cc" stroke-width="1.2"/>
+<circle cx="424" cy="146" r="18" fill="#ffffff"/>
+<circle cx="424" cy="146" r="5.5" fill="#c8b7a0"/>
+<text x="424" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">透明环＝＋</text>
+<text x="424" y="204" text-anchor="middle" font-size="9.5" fill="#5c6672">金葡耐热 DNase＋</text>
+<text x="424" y="215" text-anchor="middle" font-size="9.5" fill="#5c6672">黏质沙雷菌＋</text>
+
+<!-- ===== 下半：耐热核酸酶流程 ===== -->
+<text x="24" y="228" font-size="10.5" font-weight="700" fill="#33404f">耐热核酸酶（heat-stable DNase）—— 金葡确认试验</text>
+<rect x="24" y="240" width="128" height="26" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="88" y="257" text-anchor="middle" font-size="9.5" fill="#33404f">菌落悬液 100℃ 煮 15 min</text>
+<line x1="152" y1="253" x2="166" y2="253" stroke="#33404f" stroke-width="1.3" marker-end="url(#ar)"/>
+<rect x="172" y="240" width="128" height="26" rx="5" fill="#f5f7f9" stroke="#b9c2cc"/>
+<text x="236" y="257" text-anchor="middle" font-size="9.5" fill="#33404f">点种甲苯胺蓝 DNA 平板</text>
+<line x1="300" y1="253" x2="314" y2="253" stroke="#33404f" stroke-width="1.3" marker-end="url(#ar)"/>
+<rect x="320" y="240" width="136" height="26" rx="5" fill="#e3f3e8" stroke="#2f7a45"/>
+<text x="388" y="257" text-anchor="middle" font-size="9.5" fill="#1f5c33">粉色晕圈＝耐热 DNase＋</text>
+
+<!-- 页脚 -->
+<rect x="24" y="284" width="432" height="18" rx="5" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="297" text-anchor="middle" font-size="9.5" fill="#5c6672">链道酶（Streptodornase）为化脓性链球菌 DNase 活力差异的来源 · 雷极普鲁威登菌 DNA 酶−</text>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+</svg>

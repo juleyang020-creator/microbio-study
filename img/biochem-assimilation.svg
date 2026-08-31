@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>糖同化试验与胞外多糖合成</title>
+<desc>糖同化试验：氮源基础培养基加单一碳源观察能否生长（同化看生长、发酵看产酸，「同化+发酵−」是鉴别要点，API 20C AUX/Vitek YST 卡原理）；胞外多糖合成：变异链球菌在蔗糖底物上经葡糖基转移酶合成不溶性葡聚糖，菌落周围形成黏性凝胶团块</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="310" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">糖同化试验 与 胞外多糖合成</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">同化看「长不长」，发酵看「酸不酸」——酵母与非发酵菌鉴定主轴</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 上：糖同化 ===== -->
+<text x="24" y="78" font-size="10.5" font-weight="700" fill="#33404f">糖同化试验（碳源利用谱）</text>
+<text x="24" y="91" font-size="9.5" fill="#5c6672">氮源基础培养基＋单一碳源（葡萄糖/麦芽糖/蔗糖/乳糖/肌醇…）</text>
+<!-- 同化 + -->
+<text x="66" y="110" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2f7a45">同化 ＋</text>
+<circle cx="66" cy="140" r="22" fill="#e6eef5" stroke="#9fb7d0" stroke-width="1.3"/>
+<circle cx="60" cy="136" r="2.6" fill="#7d94ab"/><circle cx="72" cy="142" r="2.2" fill="#7d94ab"/>
+<circle cx="66" cy="130" r="1.8" fill="#7d94ab"/><circle cx="58" cy="146" r="1.8" fill="#7d94ab"/>
+<text x="66" y="176" text-anchor="middle" font-size="9.5" fill="#33404f">生长浑浊 / 指示剂变色</text>
+<!-- 同化 − -->
+<text x="150" y="110" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c2413d">同化 −</text>
+<circle cx="150" cy="140" r="22" fill="#f7f8f9" stroke="#c3cbd4" stroke-width="1.3"/>
+<text x="150" y="144" text-anchor="middle" font-size="9.5" fill="#8c96a2">清晰不生长</text>
+<text x="150" y="176" text-anchor="middle" font-size="9.5" fill="#33404f">无利用途径 → 不长</text>
+<!-- 对比框 -->
+<rect x="212" y="100" width="244" height="84" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="222" y="118" font-size="9.5" font-weight="700" fill="#33404f">同化 vs 发酵 —— 别混</text>
+<text x="222" y="134" font-size="9.5" fill="#5c6672">同化：有无利用途径 → 只看生长（浑浊）</text>
+<text x="222" y="147" font-size="9.5" fill="#5c6672">发酵：有无发酵酶 → 看产酸（指示剂变色+产气）</text>
+<text x="222" y="163" font-size="9.5" fill="#33404f">「同化＋ 发酵−」组合是鉴别要点</text>
+<text x="222" y="178" font-size="9.5" fill="#5c6672">API 20C AUX、Vitek YST 卡即为此类</text>
+
+<!-- ===== 下：胞外多糖（变异链球菌） ===== -->
+<text x="24" y="206" font-size="10.5" font-weight="700" fill="#33404f">胞外多糖合成试验（蔗糖底物）</text>
+<text x="24" y="219" font-size="9.5" fill="#5c6672">葡糖基转移酶（GTF）合成水不溶性葡聚糖——菌落周围黏性凝胶团块</text>
+<!-- 蔗糖 → GTF → 葡聚糖链 -->
+<text x="52" y="248" font-size="9.5" fill="#33404f">蔗糖</text>
+<line x1="76" y1="244" x2="94" y2="244" stroke="#33404f" stroke-width="1.3" marker-end="url(#ar)"/>
+<rect x="100" y="232" width="64" height="22" rx="5" fill="#e3edf8" stroke="#2b6cb0"/>
+<text x="132" y="247" text-anchor="middle" font-size="9.5" fill="#1f4e79">GTF 酶</text>
+<line x1="168" y1="244" x2="186" y2="244" stroke="#33404f" stroke-width="1.3" marker-end="url(#ar)"/>
+<text x="196" y="248" font-size="9.5" fill="#33404f">葡聚糖/变聚糖（黏团）</text>
+<!-- 平板示意 -->
+<ellipse cx="366" cy="252" rx="86" ry="34" fill="#f2ede3" stroke="#c9bfa8" stroke-width="1.3"/>
+<circle cx="348" cy="252" r="16" fill="#d4e6c8" stroke="#7cb56e" stroke-width="1"/>
+<circle cx="348" cy="252" r="5" fill="#9fc98e"/>
+<path d="M332,252 q8,-6 16,0 q8,6 16,0" fill="none" stroke="#7cb56e" stroke-width="1.2"/>
+<text x="348" y="296" text-anchor="middle" font-size="9.5" fill="#5c6672">胶状黏团（挑起拉丝）＝＋</text>
+
+<!-- 页脚 -->
+<rect x="24" y="290" width="432" height="14" fill="none"/>
+<text x="240" y="304" text-anchor="middle" font-size="9.5" fill="#5c6672">典型：变异链球菌群强阳性（龋齿毒力因子）· 血链球菌弱 · 明串珠菌（工业产葡聚糖）借此区分</text>
+</svg>

@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260831-33';
+  var APP_VERSION = window.APP_VERSION || '20260831-35';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -2685,6 +2685,11 @@
     var route = parseHash();
     var data = db();
     setActiveTab(route.module);
+    // 详情/着陆页都在视口顶部，切换条目或模块后若停在原滚动位置，新页内容会被
+    // 「错过」大半屏。无论从链接跳转还是手动选侧栏/模块，都先把主区滚回顶部。
+    // exceptions（mn-az 跳转、着色页内锚点）各自在自身渲染函数内处理，不经此路径。
+    var mainEl = document.getElementById('main');
+    if (mainEl) { mainEl.scrollTop = 0; }
 
     var entry = null, rels = [], mechImg = null;
     if (route.id) {
@@ -2717,7 +2722,8 @@
     tests: '试验示意图',
     staining: '染色示意图',
     'biochem-tests': '生化反应示意图',
-    media: '培养基示意图'
+    media: '培养基示意图',
+    glossary: '结构示意图'
   };
 
   // 未选条目时的着陆页：微生物模块展示「细菌形态总览」图，其余模块仅提示
@@ -2732,6 +2738,7 @@
     resistance: [{ src: 'img/landing-resistance.svg', cap: '细菌耐药机制总览' }],
     virulence: [{ src: 'img/landing-virulence.svg', cap: '病原毒力因子总览（按感染进程）' }],
     genetics: [{ src: 'img/landing-genetics.svg', cap: '微生物遗传与变异总览（突变与水平转移两条来路）' }],
+    glossary: [{ src: 'img/landing-glossary.svg', cap: '术语表总览（8 大类 66 条 · 正文缩写都有落地页）' }],
     cards: [
       { src: 'img/landing-cards.svg', cap: '药敏卡与判读总览' },
       { src: 'img/landing-idcards.svg', cap: 'VITEK 2 鉴定卡原理与选卡总览' }

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>真菌鉴定试验（伍德灯 · 毛发穿孔 · 葡萄糖酸盐氧化）</title>
+<desc>伍德灯 365nm：犬小孢子菌/奥杜盎小孢子菌亮绿色荧光、断发与红色毛癣菌不发、红癣珊瑚红、花斑糠疹黄白铜橙；毛发穿孔试验：亲动物/亲土壤癣菌楔形穿孔（犬小孢子+红色毛癣菌−）；葡萄糖酸盐氧化：班氏试剂砖红色沉淀（肺炎克雷伯+大肠−）</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">真菌鉴定试验</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">紫外荧光看头发 · 显微镜看毛发穿孔 · 试管看砖红沉淀</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：伍德灯 ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">伍德灯（365 nm 长波紫外 · 暗室）</text>
+<!-- 紫外灯 -->
+<rect x="36" y="96" width="12" height="52" rx="4" fill="#3a3f45"/>
+<rect x="39" y="92" width="6" height="6" fill="#9b6fd4"/>
+<path d="M48,100 L120,100" stroke="#9b6fd4" stroke-width="1" stroke-dasharray="2 2" opacity="0.7"/>
+<path d="M48,112 L120,112" stroke="#9b6fd4" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+<path d="M48,124 L120,124" stroke="#9b6fd4" stroke-width="1" stroke-dasharray="2 2" opacity="0.4"/>
+<!-- 发荧光的毛发 -->
+<path d="M52,148 C72,138 92,152 116,142" fill="none" stroke="#7ee787" stroke-width="3" stroke-linecap="round"/>
+<text x="84" y="166" text-anchor="middle" font-size="9.5" fill="#2f7a45">亮绿荧光：犬小/奥杜盎</text>
+<path d="M52,180 C72,172 92,184 116,174" fill="none" stroke="#b9c2cc" stroke-width="2.4" stroke-linecap="round"/>
+<text x="84" y="196" text-anchor="middle" font-size="9.5" fill="#5c6672">不发：断发/红色毛癣菌</text>
+<text x="84" y="212" text-anchor="middle" font-size="9.5" fill="#c2413d">红癣珊瑚红 · 花斑糠疹铜橙</text>
+<text x="84" y="228" text-anchor="middle" font-size="9.5" fill="#8a6d3a">外用药膏/肥皂残留→假荧光</text>
+
+<!-- ===== 中：毛发穿孔 ===== -->
+<text x="212" y="80" font-size="10.5" font-weight="700" fill="#33404f">毛发穿孔试验（28℃ 2~4 周）</text>
+<text x="212" y="93" font-size="9.5" fill="#5c6672">灭菌毛发＋酵母浸膏，乳酸酚棉蓝压片</text>
+<!-- 毛发 + 楔形穿孔 -->
+<path d="M220,116 L376,116 L376,124 L220,124 Z" fill="#d9c9a4" stroke="#a8894e" stroke-width="1"/>
+<path d="M280,116 l10,4 l-10,4 z" fill="#ffffff" stroke="#a8894e" stroke-width="0.9"/>
+<path d="M322,116 l10,4 l-10,4 z" fill="#ffffff" stroke="#a8894e" stroke-width="0.9"/>
+<text x="298" y="142" text-anchor="middle" font-size="9.5" fill="#2f7a45">楔形穿孔（斧凿状）＝＋</text>
+<text x="298" y="158" text-anchor="middle" font-size="9.5" fill="#5c6672">＋：犬小孢子/石膏样/断发毛癣菌</text>
+<text x="298" y="170" text-anchor="middle" font-size="9.5" fill="#5c6672">−：红色毛癣菌（仅表面生长）</text>
+<text x="298" y="186" text-anchor="middle" font-size="9.5" fill="#5c6672">头癣服药随访的疗效评估手段</text>
+
+<!-- ===== 右：葡萄糖酸盐氧化 ===== -->
+<text x="396" y="80" font-size="9.5" font-weight="700" fill="#33404f">葡萄糖酸盐氧化</text>
+<text x="376" y="93" font-size="9.5" fill="#5c6672">48h＋班氏试剂煮沸</text>
+<rect x="388" y="102" width="36" height="60" rx="4" fill="#fdfcf6" stroke="#cfd6de"/>
+<rect x="392" y="132" width="28" height="24" rx="3" fill="#b3543a"/>
+<text x="406" y="177" text-anchor="middle" font-size="9.5" fill="#8a3a24">砖红沉淀＝＋</text>
+<text x="406" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">肺炎克雷伯＋ 大肠−</text>
+<text x="406" y="204" text-anchor="middle" font-size="9.5" fill="#5c6672">铜绿等非发酵菌亦可＋</text>
+
+<!-- 页脚 -->
+<rect x="24" y="240" width="432" height="52" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="40" y="260" font-size="9.5" font-weight="700" fill="#1f2733">组合思路</text>
+<text x="40" y="276" font-size="9.5" fill="#5c6672">头癣筛查：伍德灯直接照（无创）→ 阳性毛发送穿孔试验/培养定种 → 药物治疗随访再照灯计数荧光毛发</text>
+</svg>

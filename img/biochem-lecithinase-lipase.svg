@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>卵磷脂酶与脂酶试验（卵黄琼脂）</title>
+<desc>卵磷脂酶阳性菌落周围乳白色浑浊环（产气荚膜梭菌+，Nagler 试验半边涂 α-抗毒素可抑制）；脂酶阳性菌落周围珠光虹彩层（肉毒梭菌+、产气荚膜−——经典鉴别对：脂酶+卵磷脂酶− vs 卵磷脂酶+脂酶−）</desc>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">卵磷脂酶 与 脂酶试验（卵黄琼脂）</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">同一块卵黄平板上的两种活性：乳白浑浊环 vs 珠光虹彩层</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+<text x="24" y="74" font-size="9.5" fill="#5c6672">点种/划线 1% 卵黄琼脂，35℃（厌氧菌置厌氧环境）3～6 h 即可观察</text>
+
+<!-- ===== 左：卵磷脂酶（乳白浑浊环） ===== -->
+<text x="24" y="98" font-size="10.5" font-weight="700" fill="#33404f">卵磷脂酶（α-毒素）</text>
+<ellipse cx="120" cy="170" rx="90" ry="56" fill="#f7f2e2" stroke="#d8cca8" stroke-width="1.4"/>
+<circle cx="120" cy="170" r="30" fill="#f3ead0" stroke="#e0d5b4" stroke-width="1"/>
+<circle cx="120" cy="170" r="8" fill="#c8b7a0" stroke="#8c96a2" stroke-width="1"/>
+<line x1="120" y1="170" x2="150" y2="170" stroke="#33404f" stroke-width="1.1"/>
+<text x="153" y="173" font-size="9.5" fill="#8a6d3a">乳白色浑浊环</text>
+<text x="120" y="244" text-anchor="middle" font-size="9.5" fill="#5c6672">磷脂分解 → 甘油酯＋磷酸胆碱（水不溶）</text>
+<text x="120" y="256" text-anchor="middle" font-size="9.5" fill="#33404f">＋：产气荚膜梭菌 · 蜡样芽胞杆菌 · 诺维梭菌</text>
+
+<!-- ===== 右：Nagler + 脂酶 ===== -->
+<text x="252" y="98" font-size="10.5" font-weight="700" fill="#33404f">Nagler 试验 与 脂酶</text>
+<!-- Nagler 半板 -->
+<rect x="252" y="110" width="204" height="52" rx="5" fill="#f7f2e2" stroke="#d8cca8" stroke-width="1.2"/>
+<rect x="252" y="110" width="102" height="52" fill="#e8e0c8" fill-opacity="0.5"/>
+<text x="303" y="124" text-anchor="middle" font-size="9.5" fill="#8a6d3a">半边涂 α-抗毒素</text>
+<circle cx="286" cy="140" r="5" fill="#c8b7a0"/><circle cx="320" cy="140" r="5" fill="#c8b7a0"/>
+<circle cx="320" cy="140" r="16" fill="none" stroke="#c9b98e" stroke-width="2.5"/>
+<text x="372" y="136" font-size="9.5" fill="#33404f">抗毒素侧无环</text>
+<text x="372" y="148" font-size="9.5" fill="#33404f">另侧浑浊环＝＋</text>
+<text x="354" y="174" text-anchor="middle" font-size="9.5" fill="#5c6672">抑制试验快速鉴定产气荚膜梭菌</text>
+<!-- 脂酶珠光 -->
+<rect x="252" y="184" width="204" height="52" rx="5" fill="#f7f2e2" stroke="#d8cca8" stroke-width="1.2"/>
+<circle cx="310" cy="210" r="7" fill="#c8b7a0" stroke="#8c96a2" stroke-width="1"/>
+<path d="M296,210 a14,7 0 0 1 28,0" fill="none" stroke="#d9c9a4" stroke-width="1"/>
+<path d="M290,210 a20,10 0 0 0 40,0" fill="none" stroke="#e6d9b8" stroke-width="1"/>
+<text x="298" y="196" text-anchor="middle" font-size="9.5" fill="#8a6d3a">珠光/虹彩层</text>
+<text x="368" y="204" font-size="9.5" fill="#33404f">＋：肉毒梭菌</text>
+<text x="368" y="216" font-size="9.5" fill="#33404f">荧光假单胞菌</text>
+<text x="368" y="228" font-size="9.5" fill="#33404f">−：产气荚膜梭菌</text>
+
+<!-- 页脚：经典鉴别对 -->
+<rect x="24" y="252" width="432" height="38" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="268" text-anchor="middle" font-size="9.5" fill="#33404f" font-weight="700">梭菌经典鉴别对（卵黄平板双读）</text>
+<text x="240" y="284" text-anchor="middle" font-size="9.5" fill="#5c6672">产气荚膜梭菌：卵磷脂酶＋ · 脂酶−　⇄　肉毒梭菌：脂酶＋ · 卵磷脂酶−</text>
+</svg>

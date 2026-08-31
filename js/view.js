@@ -121,7 +121,57 @@
     'onpg': 'img/biochem-onpg.svg',
     'xv-factor': 'img/biochem-xv.svg',
     'adh-test': 'img/biochem-adh.svg',
-    'tsi-kia': 'img/biochem-tsi.svg'
+    'tsi-kia': 'img/biochem-tsi.svg',
+    // 2026-08-31 新增 35 个词条：同族共用一张（试验外观一致，差别在底物与格局）
+    'o129': 'img/biochem-vibrio-panel.svg',
+    'string-test': 'img/biochem-vibrio-panel.svg',
+    'miu': 'img/biochem-miu.svg',
+    'koh-string': 'img/biochem-koh-string.svg',
+    'malonate': 'img/biochem-carbon-utilization.svg',
+    'acetate': 'img/biochem-carbon-utilization.svg',
+    'acetamide': 'img/biochem-carbon-utilization.svg',
+    'starch-hydrolysis': 'img/biochem-esculin-starch.svg',
+    'esculin-hydrolysis': 'img/biochem-esculin-starch.svg',
+    'gluconate-oxidation': 'img/biochem-fungal-panel.svg',
+    'tryptophan-deaminase': 'img/biochem-protein-panel.svg',
+    'casein-hydrolysis': 'img/biochem-protein-panel.svg',
+    'hypoxanthine-decomposition': 'img/biochem-protein-panel.svg',
+    'xanthine-decomposition': 'img/biochem-protein-panel.svg',
+    'slide-agglutination': 'img/biochem-agglutination.svg',
+    'tube-agglutination': 'img/biochem-agglutination.svg',
+    'assimilation-panel': 'img/biochem-assimilation.svg',
+    'extracellular-polysaccharide-test': 'img/biochem-assimilation.svg',
+    'lap-test': 'img/biochem-corynebacterium-panel.svg',
+    'dna-ase-ccnu': 'img/biochem-corynebacterium-panel.svg',
+    'alkaline-phosphatase-test': 'img/biochem-corynebacterium-panel.svg',
+    'pyrazinamidase-test': 'img/biochem-mycobacteria-panel.svg',
+    'niacin-test': 'img/biochem-mycobacteria-panel.svg',
+    'tween80-hydrolysis': 'img/biochem-mycobacteria-panel.svg',
+    'arylsulfatase-test': 'img/biochem-mycobacteria-panel.svg',
+    'arginine-dihydrolase-note': 'img/biochem-adh.svg',
+    'kcn-growth-test': 'img/biochem-growth-panel.svg',
+    'growth-temperature-panel': 'img/biochem-growth-panel.svg',
+    'bile-growth-test': 'img/biochem-growth-panel.svg',
+    'fluorescein-production': 'img/biochem-growth-panel.svg',
+    'lecithinase': 'img/biochem-lecithinase-lipase.svg',
+    'lipase-test-ccnu': 'img/biochem-lecithinase-lipase.svg',
+    'wood-lamp': 'img/biochem-fungal-panel.svg',
+    'hair-perforation-test': 'img/biochem-fungal-panel.svg',
+    'sorbitol-fermentation': 'img/biochem-sugar-panel.svg',
+    'arabinose-fermentation': 'img/biochem-sugar-panel.svg',
+    'rhamnose-fermentation': 'img/biochem-sugar-panel.svg',
+    'trehalose-fermentation': 'img/biochem-sugar-panel.svg',
+    'maltose-fermentation': 'img/biochem-sugar-panel.svg',
+    'sucrose-fermentation': 'img/biochem-sugar-panel.svg',
+    'xylose-fermentation': 'img/biochem-sugar-panel.svg',
+    'inositol-fermentation': 'img/biochem-sugar-panel.svg',
+    'adonitol-fermentation': 'img/biochem-sugar-panel.svg',
+    'dulcitol-fermentation': 'img/biochem-sugar-panel.svg',
+    'melibiose-fermentation': 'img/biochem-sugar-panel.svg',
+    'raffinose-fermentation': 'img/biochem-sugar-panel.svg',
+    'salicin-fermentation': 'img/biochem-sugar-panel.svg',
+    'cellobiose-fermentation': 'img/biochem-sugar-panel.svg',
+    'melezitose-fermentation': 'img/biochem-sugar-panel.svg'
   };
   // 培养基：平板外观 + 选择/鉴别原理示意（文件名与条目 id 一致）
   var MEDIA_IMAGE = {};
@@ -130,6 +180,23 @@
     'tcbs', 'mannitol-salt', 'chromagar-candida', 'lj-medium', 'sda', 'bcye', 'bordet-gengou',
     'thayer-martin', 'cin-agar', 'ashdown', 'anaerobic-blood-agar', 'mh-agar'
   ].forEach(function (id) { MEDIA_IMAGE[id] = 'img/media-' + id + '.svg'; });
+
+  // 术语表：结构类按条目 id 映射；其余类别共用总览图不挂条目图（词条以文字为主）
+  var GLOSSARY_IMAGE = {
+    'gloss-spore': 'img/glossary-structure-bacteria.svg',
+    'gloss-capsule': 'img/glossary-structure-bacteria.svg',
+    'gloss-flagella': 'img/glossary-structure-bacteria.svg',
+    'gloss-pili': 'img/glossary-structure-bacteria.svg',
+    'gloss-teichoic': 'img/glossary-structure-bacteria.svg',
+    'gloss-peptidoglycan': 'img/glossary-structure-bacteria.svg',
+    'gloss-lps': 'img/glossary-structure-bacteria.svg',
+    'gloss-biofilm-structure': 'img/glossary-structure-bacteria.svg',
+    'gloss-s-layer': 'img/glossary-structure-bacteria.svg',
+    'gloss-metachromatic': 'img/glossary-structure-bacteria.svg',
+    'gloss-vi-antigen': 'img/glossary-structure-bacteria.svg',
+    'gloss-hypha-spore-fungi': 'img/glossary-structure-fungi-virus.svg',
+    'gloss-virus-structure': 'img/glossary-structure-fungi-virus.svg'
+  };
 
   // 节点子树是否包含某叶子分类（支持任意层级）
   function nodeContainsLeaf(node, leafName) {
@@ -146,6 +213,7 @@
     if (moduleKey === 'staining') { return STAIN_IMAGE[entry.id] || null; }
     if (moduleKey === 'biochem-tests') { return BIOCHEM_IMAGE[entry.id] || null; }
     if (moduleKey === 'media') { return MEDIA_IMAGE[entry.id] || null; }
+    if (moduleKey === 'glossary') { return GLOSSARY_IMAGE[entry.id] || null; }
     if (moduleKey !== 'antibiotics' && moduleKey !== 'resistance') { return null; }
     // 先按类别(叶子)直接匹配（抗真菌药、旁路代谢/生物膜按其类别区分）
     if (MECHANISM_IMAGE[entry.类别]) { return MECHANISM_IMAGE[entry.类别]; }

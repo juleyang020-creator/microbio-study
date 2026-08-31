@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>蛋白质与氨基酸代谢试验（TDA / 酪蛋白 / 嘌呤分解）</title>
+<desc>色氨酸脱氨酶试验加三氯化铁立即深褐色（变形杆菌族阳性）；酪蛋白分解试验脱脂牛奶平板菌落周围透明圈；次黄嘌呤/黄嘌呤分解试验晶体消失培养基透明——诺卡菌属三底物组合鉴别：星形酪蛋白+而嘌呤−、巴西次黄嘌呤+、豚鼠黄嘌呤+</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="310" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">蛋白质与氨基酸代谢试验</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">脱氨显色 · 蛋白酶透明圈 · 嘌呤晶体溶解：三个「看形状不看颜色」的试验</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：TDA（深褐色） ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">色氨酸脱氨酶（TDA）</text>
+<text x="24" y="94" font-size="9.5" fill="#5c6672">色氨酸液体培养基 35℃ 18～24 h，加 3.4% FeCl₃ 1 滴</text>
+<!-- 阴性管（浅） -->
+<text x="64" y="114" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">−</text>
+<path d="M48,120 L48,196 Q48,210 64,210 Q80,210 80,196 L80,120 Z" fill="#f2ecdd" stroke="#b9c2cc" stroke-width="1.4"/>
+<ellipse cx="64" cy="120" rx="16" ry="4.2" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="64" y="226" text-anchor="middle" font-size="9.5" fill="#5c6672">不变色</text>
+<!-- 阳性管（深褐） -->
+<text x="146" y="114" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">＋</text>
+<path d="M130,120 L130,196 Q130,210 146,210 Q162,210 162,196 L162,120 Z" fill="#5d4230" stroke="#b9c2cc" stroke-width="1.4"/>
+<ellipse cx="146" cy="120" rx="16" ry="4.2" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="146" y="226" text-anchor="middle" font-size="9.5" fill="#5d4030">立即深褐色</text>
+<text x="105" y="244" text-anchor="middle" font-size="9.5" fill="#5c6672">＋：变形杆菌/普罗威登斯/摩根菌</text>
+<text x="105" y="255" text-anchor="middle" font-size="9.5" fill="#5c6672">（苯丙氨酸脱氨酶 PPA 同阳群）</text>
+
+<!-- ===== 右上：酪蛋白透明圈 ===== -->
+<text x="252" y="80" font-size="10.5" font-weight="700" fill="#33404f">酪蛋白分解（脱脂牛奶平板）</text>
+<text x="252" y="94" font-size="9.5" fill="#5c6672">培养后透射光观察菌落周围透明圈</text>
+<ellipse cx="330" cy="166" rx="66" ry="44" fill="#f5f0e4" stroke="#c9bfa8" stroke-width="1.4"/>
+<circle cx="330" cy="166" r="22" fill="#ffffff" fill-opacity="0.9"/>
+<circle cx="330" cy="166" r="6.5" fill="#c8b7a0" stroke="#8c96a2" stroke-width="1"/>
+<line x1="330" y1="166" x2="352" y2="166" stroke="#33404f" stroke-width="1.1"/>
+<text x="405" y="169" font-size="9.5" fill="#33404f">透明圈</text>
+<text x="330" y="226" text-anchor="middle" font-size="9.5" fill="#5c6672">＋：星形诺卡菌、巴西诺卡菌（部分）</text>
+<text x="330" y="237" text-anchor="middle" font-size="9.5" fill="#5c6672">−：豚鼠诺卡菌</text>
+
+<!-- ===== 右下：嘌呤晶体溶解 ===== -->
+<text x="252" y="258" font-size="10.5" font-weight="700" fill="#33404f">次黄嘌呤 / 黄嘌呤分解</text>
+<text x="252" y="271" font-size="9.5" fill="#5c6672">晶体消失、培养基透明＝＋ · 诺卡菌三底物组合成员</text>
+<!-- 小示意：晶体 -->
+<rect x="398" y="250" width="18" height="24" rx="3" fill="#f2ecdd" stroke="#b9c2cc" stroke-width="1"/>
+<path d="M403,256 L410,262 L405,268 L401,262 Z" fill="none" stroke="#8c96a2" stroke-width="0.9"/>
+<text x="407" y="284" text-anchor="middle" font-size="9.5" fill="#5c6672">晶体</text>
+
+<!-- 页脚：诺卡菌组合 -->
+<rect x="24" y="262" width="220" height="38" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="277" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">诺卡菌格局</tspan>　星形：酪蛋白＋ · 嘌呤−</text>
+<text x="32" y="293" font-size="9.5" fill="#5c6672">巴西：次黄嘌呤＋　·　豚鼠：黄嘌呤＋</text>
+</svg>

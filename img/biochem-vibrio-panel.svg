@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>O/129 抑菌试验与黏丝试验</title>
+<desc>左：O/129 蝶啶纸片抑制弧菌属与邻单胞菌属（敏感=有抑菌环），气单胞菌属耐药无环，为腹泻标本弧菌科属间鉴别的关键试验；右：0.5% 去氧胆酸钠悬液 1 分钟内由混变清并拉出黏丝为霍乱弧菌阳性，气单胞菌阴性，两者互证</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">O/129 抑菌试验 与 黏丝试验</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">弧菌科鉴别的经典组合：蝶啶纸片看抑菌环，去氧胆酸钠看拉丝</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：O/129 平板 ===== -->
+<text x="24" y="78" font-size="10.5" font-weight="700" fill="#33404f">O/129（2,4-二氨基-6,7-二异丙基蝶啶）纸片</text>
+<text x="24" y="92" font-size="9.5" fill="#5c6672">贴于碱性琼脂 / MH 平板，35℃ 16～24 h 读抑菌环</text>
+<!-- 平板 -->
+<ellipse cx="128" cy="182" rx="96" ry="62" fill="#f2ede3" stroke="#c9bfa8" stroke-width="1.6"/>
+<ellipse cx="128" cy="182" rx="88" ry="55" fill="none" stroke="#ddd3bc" stroke-width="1"/>
+<!-- 菌落散布 -->
+<g fill="#c8b7a0">
+  <circle cx="76" cy="160" r="2.2"/><circle cx="92" cy="196" r="2"/><circle cx="110" cy="146" r="1.8"/>
+  <circle cx="150" cy="200" r="2.1"/><circle cx="172" cy="166" r="1.9"/><circle cx="196" cy="196" r="2.2"/>
+  <circle cx="200" cy="140" r="1.8"/><circle cx="64" cy="190" r="1.9"/><circle cx="144" cy="222" r="1.7"/>
+</g>
+<!-- 敏感纸片 + 抑菌环 -->
+<circle cx="96" cy="176" r="26" fill="#ffffff" fill-opacity="0.85"/>
+<circle cx="96" cy="176" r="26" fill="none" stroke="#c9bfa8" stroke-width="1" stroke-dasharray="3 2"/>
+<circle cx="96" cy="176" r="9" fill="#e8e4da" stroke="#8c96a2" stroke-width="1.3"/>
+<text x="96" y="179" text-anchor="middle" font-size="9.5" fill="#33404f">150μg</text>
+<!-- 耐药纸片（无环，菌落长到贴边） -->
+<circle cx="182" cy="192" r="9" fill="#e8e4da" stroke="#8c96a2" stroke-width="1.3"/>
+<text x="182" y="195" text-anchor="middle" font-size="9.5" fill="#33404f">150μg</text>
+<circle cx="176" cy="188" r="2" fill="#c8b7a0"/><circle cx="188" cy="198" r="2" fill="#c8b7a0"/>
+<circle cx="184" cy="184" r="1.7" fill="#c8b7a0"/><circle cx="177" cy="199" r="1.7" fill="#c8b7a0"/>
+<!-- 标注 -->
+<line x1="96" y1="176" x2="122" y2="176" stroke="#33404f" stroke-width="1.2"/>
+<text x="96" y="216" text-anchor="middle" font-size="9.5" fill="#2f7a45" font-weight="600">敏感：抑菌环≥任何含量</text>
+<text x="182" y="230" text-anchor="middle" font-size="9.5" fill="#c2413d" font-weight="600">耐药：150μg 无环</text>
+<text x="128" y="258" text-anchor="middle" font-size="9.5" fill="#33404f">敏感＝弧菌属 · 邻单胞菌属</text>
+<text x="128" y="270" text-anchor="middle" font-size="9.5" fill="#33404f">耐药＝气单胞菌属 · 假单胞菌属</text>
+
+<!-- ===== 右：黏丝试验 ===== -->
+<text x="272" y="78" font-size="10.5" font-weight="700" fill="#33404f">黏丝试验（0.5% 去氧胆酸钠）</text>
+<text x="272" y="92" font-size="9.5" fill="#5c6672">浓菌悬液滴加试剂，1 分钟内接种环挑起观察</text>
+<!-- 阳性：拉丝 -->
+<rect x="284" y="106" width="76" height="46" rx="6" fill="#ffffff" stroke="#cfd6de"/>
+<text x="322" y="100" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2f7a45">阳性（＋）</text>
+<path d="M300,128 C316,118 332,140 348,126" fill="none" stroke="#7d8a98" stroke-width="1.6"/>
+<path d="M300,128 C316,118 332,140 348,126" fill="none" stroke="#7d8a98" stroke-width="1.6" transform="translate(0,7)"/>
+<path d="M348,126 C360,120 366,116 372,110" fill="none" stroke="#7d8a98" stroke-width="1.5"/>
+<circle cx="372" cy="110" r="2" fill="#7d8a98"/>
+<text x="322" y="162" text-anchor="middle" font-size="9.5" fill="#33404f">1 min 内悬液变清变黏</text>
+<text x="322" y="173" text-anchor="middle" font-size="9.5" fill="#2f7a45">挑起拉丝：霍乱弧菌＋</text>
+<!-- 阴性：不拉丝 -->
+<rect x="284" y="188" width="76" height="46" rx="6" fill="#ffffff" stroke="#cfd6de"/>
+<text x="322" y="182" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c2413d">阴性（−）</text>
+<path d="M300,208 C316,200 332,216 348,204" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<circle cx="336" cy="211" r="3" fill="#8c96a2" stroke="#6b7684" stroke-width="0.8"/>
+<circle cx="312" cy="216" r="2.4" fill="#8c96a2" stroke="#6b7684" stroke-width="0.8"/>
+<text x="322" y="244" text-anchor="middle" font-size="9.5" fill="#33404f">仍混浊、环上无丝</text>
+<text x="322" y="255" text-anchor="middle" font-size="9.5" fill="#c2413d">气单胞菌−（与 O/129 耐药互证）</text>
+<!-- 提示 -->
+<text x="378" y="112" font-size="9.5" fill="#5c6672">悬液由混</text>
+<line x1="378" y1="116" x2="378" y2="124" stroke="#5c6672" stroke-width="1.1" marker-end="url(#ar)"/>
+<text x="378" y="136" font-size="9.5" fill="#5c6672">变清变黏</text>
+
+<!-- 页脚 -->
+<rect x="24" y="272" width="432" height="20" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">组合判读</tspan>　霍乱弧菌：O/129 敏感＋黏丝＋　·　气单胞菌：O/129 耐药＋黏丝−　·　邻单胞菌：敏感＋黏丝−（部分）</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>生长特性试验（温度 · 胆汁 · KCN · 色素荧光）</title>
+<desc>生长温度试验按 25/37/42/45℃ 耐受谱鉴别（铜绿 42℃+、耶尔森 25℃ 动力、烟曲霉 45℃+）；20% 胆汁生长试验分群厌氧革兰阴性杆菌（脆弱拟杆菌群+）；KCN 培养基生长看浑浊（克雷伯+沙门−）；King B 紫外下荧光素亮绿色荧光（铜绿/荧光群）</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="310" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">生长特性试验</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">不给底物、只看「能不能长」：温度谱 · 胆汁 · KCN · 色素荧光</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左上：温度谱 ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">生长温度谱（同一菌多管分温孵育）</text>
+<!-- 三支温度管 -->
+<g>
+  <text x="56" y="98" text-anchor="middle" font-size="9.5" fill="#5c6672">25℃</text>
+  <path d="M42,104 L42,150 Q42,160 56,160 Q70,160 70,150 L70,104 Z" fill="#f7f5ee" stroke="#b9c2cc" stroke-width="1.2"/>
+  <rect x="42" y="118" width="28" height="38" fill="#dfe6ec"/>
+  <ellipse cx="56" cy="104" rx="14" ry="3.6" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1"/>
+  <text x="56" y="174" text-anchor="middle" font-size="9.5" fill="#2f7a45">耶尔森＋</text>
+
+  <text x="120" y="98" text-anchor="middle" font-size="9.5" fill="#5c6672">37℃</text>
+  <path d="M106,104 L106,150 Q106,160 120,160 Q134,160 134,150 L134,104 Z" fill="#f7f5ee" stroke="#b9c2cc" stroke-width="1.2"/>
+  <rect x="106" y="118" width="28" height="38" fill="#dfe6ec"/>
+  <ellipse cx="120" cy="104" rx="14" ry="3.6" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1"/>
+  <text x="120" y="174" text-anchor="middle" font-size="9.5" fill="#5c6672">多数菌＋</text>
+
+  <text x="184" y="98" text-anchor="middle" font-size="9.5" fill="#5c6672">42℃</text>
+  <path d="M170,104 L170,150 Q170,160 184,160 Q198,160 198,150 L198,104 Z" fill="#f7f5ee" stroke="#b9c2cc" stroke-width="1.2"/>
+  <rect x="170" y="118" width="28" height="38" fill="#dfe6ec"/>
+  <ellipse cx="184" cy="104" rx="14" ry="3.6" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1"/>
+  <text x="184" y="174" text-anchor="middle" font-size="9.5" fill="#2f7a45">铜绿/副溶血＋</text>
+</g>
+<text x="120" y="190" text-anchor="middle" font-size="9.5" fill="#5c6672">经典：铜绿 42℃＋ · 耶尔森 25℃ 动力＋/37℃−</text>
+<text x="120" y="201" text-anchor="middle" font-size="9.5" fill="#5c6672">烟曲霉 45℃＋ · 皮特不动 44℃− 与鲍曼＋</text>
+
+<!-- ===== 右上：胆汁生长 ===== -->
+<text x="276" y="80" font-size="10.5" font-weight="700" fill="#33404f">胆汁生长（20% 牛磺胆汁）</text>
+<text x="276" y="93" font-size="9.5" fill="#5c6672">厌氧革兰阴性杆菌分群轴（BBE 平板基础）</text>
+<ellipse cx="316" cy="136" rx="34" ry="22" fill="#c8a86e" fill-opacity="0.35" stroke="#a8894e" stroke-width="1.2"/>
+<circle cx="308" cy="132" r="2.6" fill="#8a6d3a"/><circle cx="326" cy="142" r="2.2" fill="#8a6d3a"/>
+<text x="316" y="170" text-anchor="middle" font-size="9.5" fill="#2f7a45">生长＝＋：脆弱拟杆菌群</text>
+<text x="316" y="181" text-anchor="middle" font-size="9.5" fill="#c2413d">不长＝−：普雷沃/卟啉单胞</text>
+<text x="424" y="120" font-size="9.5" fill="#5c6672">粪肠球菌</text>
+<text x="424" y="131" font-size="9.5" fill="#5c6672">胆汁七叶苷＋</text>
+<text x="424" y="142" font-size="9.5" fill="#5c6672">消化链球菌−</text>
+
+<!-- ===== 左下：KCN 生长 ===== -->
+<text x="24" y="212" font-size="10.5" font-weight="700" fill="#33404f">KCN 生长试验</text>
+<text x="24" y="225" font-size="9.5" fill="#5c6672">剧毒！细胞色素氧化酶被抑制后能否生长</text>
+<path d="M48,232 L48,278 Q48,288 62,288 Q76,288 76,278 L76,232 Z" fill="#f7f5ee" stroke="#b9c2cc" stroke-width="1.2"/>
+<rect x="48" y="244" width="28" height="36" fill="#dfe6ec"/>
+<ellipse cx="62" cy="232" rx="14" ry="3.6" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1"/>
+<text x="62" y="300" text-anchor="middle" font-size="9.5" fill="#5c6672">浑浊＝＋</text>
+<text x="110" y="248" font-size="9.5" fill="#5c6672">＋：克雷伯菌属/哈夫尼亚/变形杆菌族</text>
+<text x="110" y="260" font-size="9.5" fill="#5c6672">−：沙门菌、志贺菌</text>
+
+<!-- ===== 右下：荧光素（King B 紫外） ===== -->
+<text x="252" y="212" font-size="10.5" font-weight="700" fill="#33404f">荧光素产生（King B · 365 nm）</text>
+<text x="252" y="225" font-size="9.5" fill="#5c6672">缺铁培养基产 pyoverdin，紫外下亮绿荧光</text>
+<ellipse cx="292" cy="258" rx="34" ry="22" fill="#d9f2d0" stroke="#7cb56e" stroke-width="1.2"/>
+<ellipse cx="292" cy="258" rx="24" ry="14" fill="#a8e29a" fill-opacity="0.6"/>
+<text x="292" y="293" text-anchor="middle" font-size="9.5" fill="#2f7a45">亮绿色荧光</text>
+<text x="352" y="248" font-size="9.5" fill="#5c6672">＋：铜绿假单胞菌</text>
+<text x="352" y="260" font-size="9.5" fill="#5c6672">恶臭/荧光假单胞菌（荧光群）</text>
+<text x="352" y="272" font-size="9.5" fill="#5c6672">绿脓菌素（蓝色）需 King A</text>
+
+<!-- 页脚 -->
+<rect x="24" y="304" width="432" height="0" fill="none"/>
+<text x="240" y="306" text-anchor="middle" font-size="9.5" fill="#5c6672">冷增菌（4℃）即利用耶尔森菌/李斯特菌的低温生长能力 · 皮特不动 44℃− 与鲍曼＋</text>
+</svg>
