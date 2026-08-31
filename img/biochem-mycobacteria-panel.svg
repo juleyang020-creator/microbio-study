@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>分枝杆菌酶类试验（吡嗪酰胺酶 / 烟酸 / 吐温-80 / 芳香硫酸酯酶）</title>
+<desc>吡嗪酰胺酶 Wayne 法阳性呈橙色带（结核＋牛分枝−）；烟酸试验联苯胺试剂黄色沉淀（结核蓄积烟酸）；吐温-80 水解 5～10 天出现絮状皂钙沉淀（堪萨斯＋结核−）；芳香硫酸酯酶 3 天与 14 天两档判读分快慢生长群（偶发 3 天＋）</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="310" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">分枝杆菌酶类试验</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">传统分枝杆菌鉴别的四根轴：橙带 · 黄沉淀 · 絮状沉淀 · 紫红色</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 象限 1：吡嗪酰胺酶（橙带） ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">吡嗪酰胺酶（Wayne 法）</text>
+<text x="24" y="93" font-size="9.5" fill="#5c6672">加硫酸亚铁铵：铁-吡嗪酸复合物</text>
+<path d="M40,102 L40,160 Q40,172 54,172 Q68,172 68,160 L68,102 Z" fill="#f2ecdd" stroke="#b9c2cc" stroke-width="1.3"/>
+<rect x="40" y="108" width="28" height="12" fill="#e8963c"/>
+<ellipse cx="54" cy="102" rx="14" ry="3.8" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.1"/>
+<text x="54" y="188" text-anchor="middle" font-size="9.5" fill="#b06a1e">表面橙色带＝＋</text>
+<text x="54" y="200" text-anchor="middle" font-size="9.5" fill="#5c6672">结核＋ · 牛分枝/BCG −</text>
+
+<!-- ===== 象限 2：烟酸（黄沉淀） ===== -->
+<text x="156" y="80" font-size="10.5" font-weight="700" fill="#33404f">烟酸试验（niacin）</text>
+<text x="156" y="93" font-size="9.5" fill="#5c6672">联苯胺-氰溴化物试剂</text>
+<rect x="166" y="104" width="52" height="30" rx="4" fill="#fdfcf6" stroke="#cfd6de"/>
+<rect x="182" y="112" width="20" height="14" rx="2" fill="#f2d541" stroke="#c9a95f" stroke-width="0.8"/>
+<text x="192" y="123" text-anchor="middle" font-size="9.5" fill="#8a6d1a">黄色沉淀</text>
+<text x="192" y="188" text-anchor="middle" font-size="9.5" fill="#8a6d1a">试纸黄色＝＋</text>
+<text x="192" y="200" text-anchor="middle" font-size="9.5" fill="#5c6672">结核（人型）＋ · 多数 NTM −</text>
+
+<!-- ===== 象限 3：吐温-80 水解（絮状沉淀） ===== -->
+<text x="280" y="80" font-size="10.5" font-weight="700" fill="#33404f">吐温-80 水解（5～10 天）</text>
+<text x="280" y="93" font-size="9.5" fill="#5c6672">游离油酸＋钙 → 皂钙浑浊</text>
+<path d="M306,102 L306,160 Q306,172 320,172 Q334,172 334,160 L334,102 Z" fill="#f7f5ee" stroke="#b9c2cc" stroke-width="1.3"/>
+<path d="M312,128 l6,-5 l6,5 l-6,5 z" fill="none" stroke="#a8b2bd" stroke-width="1"/>
+<path d="M318,146 l6,-5 l6,5 l-6,5 z" fill="none" stroke="#a8b2bd" stroke-width="1"/>
+<path d="M308,155 l5,-4 l5,4 l-5,4 z" fill="none" stroke="#a8b2bd" stroke-width="1"/>
+<ellipse cx="320" cy="102" rx="14" ry="3.8" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.1"/>
+<text x="320" y="188" text-anchor="middle" font-size="9.5" fill="#5c6672">云雾/絮状沉淀＝＋</text>
+<text x="320" y="200" text-anchor="middle" font-size="9.5" fill="#5c6672">堪萨斯＋ · 结核多数−</text>
+
+<!-- ===== 象限 4：芳香硫酸酯酶（紫红） ===== -->
+<text x="392" y="80" font-size="10.5" font-weight="700" fill="#33404f">芳香硫酸酯酶</text>
+<text x="378" y="93" font-size="9.5" fill="#5c6672">酚酞硫酸酯底物＋NaOH</text>
+<rect x="394" y="104" width="52" height="30" rx="4" fill="#fdfcf6" stroke="#cfd6de"/>
+<rect x="402" y="112" width="36" height="14" rx="2" fill="#b04a8a"/>
+<text x="420" y="123" text-anchor="middle" font-size="9.5" fill="#ffffff">紫红色</text>
+<text x="420" y="188" text-anchor="middle" font-size="9.5" fill="#8a3a5e">3 天档与 14 天档两读</text>
+<text x="420" y="200" text-anchor="middle" font-size="9.5" fill="#5c6672">偶发 3 天＋ · 戈登 14 天＋</text>
+
+<!-- ===== 下半：快慢生长轴 ===== -->
+<text x="240" y="226" text-anchor="middle" font-size="10.5" font-weight="700" fill="#33404f">快 / 慢生长群是分枝杆菌试验的主轴</text>
+<line x1="60" y1="248" x2="420" y2="248" stroke="#33404f" stroke-width="1.4" marker-end="url(#ar)"/>
+<circle cx="120" cy="248" r="4" fill="#2f7a45"/>
+<text x="120" y="240" text-anchor="middle" font-size="9.5" fill="#2f7a45">慢生长群（结核/堪萨斯/戈登）</text>
+<circle cx="360" cy="248" r="4" fill="#c2413d"/>
+<text x="360" y="240" text-anchor="middle" font-size="9.5" fill="#c2413d">快生长群（偶发/脓肿）</text>
+<text x="240" y="264" text-anchor="middle" font-size="9.5" fill="#5c6672">芳香硫酸酯酶 3 天＝快群特征；14 天档用于慢群种间（堪萨斯 − / 戈登 ＋）</text>
+
+<!-- 页脚 -->
+<rect x="24" y="276" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="291" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">现状</tspan>　传统试验正被分子探针与 MALDI-TOF 替代，但 PZA 耐药（牛分枝）判读仍在使用</text>
+</svg>

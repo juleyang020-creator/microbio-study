@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>MIU 综合试验（动力·吲哚·脲酶）</title>
+<desc>MIU 半固体一管三检：有动力菌沿穿刺线呈云雾状扩散；加 Kovacs 试剂后上层玫瑰红为吲哚阳性；分解尿素产氨整体变红为脲酶阳性。典型格局：大肠埃希菌 +/+/−、奇异变形杆菌 +/−/++、肺炎克雷伯菌 −/−/+、志贺菌 −/不定/−</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="330" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">MIU 试验（动力 · 吲哚 · 脲酶）</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">酚红指示的半固体培养基：一管穿刺，读动力、吲哚、脲酶三项</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+<text x="24" y="74" font-size="9.5" fill="#5c6672">35℃ 18～24 h：先读动力与颜色，再加 Kovacs 试剂读上层吲哚</text>
+
+<!-- ===== 左：动力 + ===== -->
+<text x="66" y="94" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">动力 ＋</text>
+<path d="M48,102 L48,224 Q48,240 66,240 Q84,240 84,224 L84,102 Z" fill="#faf9f4" stroke="#b9c2cc" stroke-width="1.5"/>
+<!-- 云雾状扩散 -->
+<path d="M66,112 C74,124 58,140 66,154 C74,168 58,184 66,198 C72,208 60,216 66,226" fill="none" stroke="#d8e0e8" stroke-width="9" stroke-linecap="round"/>
+<path d="M66,112 C74,124 58,140 66,154 C74,168 58,184 66,198 C72,208 60,216 66,226" fill="none" stroke="#aebdc9" stroke-width="4.5" stroke-linecap="round"/>
+<path d="M66,112 L66,226" stroke="#7d8a98" stroke-width="1.8" stroke-dasharray="1 2"/>
+<ellipse cx="66" cy="102" rx="18" ry="4.5" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.3"/>
+<text x="66" y="256" text-anchor="middle" font-size="9.5" fill="#33404f">沿穿刺线云雾状</text>
+<text x="66" y="267" text-anchor="middle" font-size="9.5" fill="#33404f">羽毛状扩散生长</text>
+
+<!-- ===== 中左：吲哚 + ===== -->
+<text x="178" y="94" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">吲哚 ＋</text>
+<path d="M160,102 L160,224 Q160,240 178,240 Q196,240 196,224 L196,102 Z" fill="#f2ecdd" stroke="#b9c2cc" stroke-width="1.5"/>
+<rect x="160" y="102" width="36" height="16" fill="#d9433f"/>
+<ellipse cx="178" cy="102" rx="18" ry="4.5" fill="#e8d9a8" stroke="#b9c2cc" stroke-width="1.3"/>
+<text x="178" y="256" text-anchor="middle" font-size="9.5" fill="#33404f">加 Kovacs 试剂后</text>
+<text x="178" y="267" text-anchor="middle" font-size="9.5" fill="#c2413d">上层玫瑰红环</text>
+
+<!-- ===== 中右：脲酶 + ===== -->
+<text x="290" y="94" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">脲酶 ＋</text>
+<path d="M272,102 L272,224 Q272,240 290,240 Q308,240 308,224 L308,102 Z" fill="#e05c8f" stroke="#b9c2cc" stroke-width="1.5"/>
+<ellipse cx="290" cy="102" rx="18" ry="4.5" fill="#f3c1d4" stroke="#b9c2cc" stroke-width="1.3"/>
+<text x="290" y="256" text-anchor="middle" font-size="9.5" fill="#33404f">尿素 → NH₃ 整管</text>
+<text x="290" y="267" text-anchor="middle" font-size="9.5" fill="#8a3a5e">变红（碱）</text>
+
+<!-- ===== 右：脲酶 − 对照 ===== -->
+<text x="402" y="94" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">脲酶 −</text>
+<path d="M384,102 L384,224 Q384,240 402,240 Q420,240 420,224 L420,102 Z" fill="#f2d541" stroke="#b9c2cc" stroke-width="1.5"/>
+<ellipse cx="402" cy="102" rx="18" ry="4.5" fill="#f6e7bd" stroke="#b9c2cc" stroke-width="1.3"/>
+<text x="402" y="256" text-anchor="middle" font-size="9.5" fill="#33404f">保持酚红黄色</text>
+<text x="402" y="267" text-anchor="middle" font-size="9.5" fill="#5c6672">（或仅微量橙）</text>
+
+<!-- ===== 底部：典型格局表 ===== -->
+<rect x="24" y="282" width="432" height="38" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="296" text-anchor="middle" font-size="9.5" fill="#33404f" font-weight="700">典型格局（动力 / 吲哚 / 脲酶）</text>
+<text x="240" y="313" text-anchor="middle" font-size="9.5" fill="#5c6672">大肠埃希菌 ＋/＋/−　奇异变形杆菌 ＋/−/＋＋</text>
+<text x="240" y="326" text-anchor="middle" font-size="9.5" fill="#5c6672">肺炎克雷伯菌 −/−/＋　志贺菌 −/不定/−</text>
+</svg>

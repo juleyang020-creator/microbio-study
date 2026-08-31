@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>碳源利用试验（丙二酸盐 / 醋酸盐 / 乙酰胺）</title>
+<desc>唯一碳源培养基：细菌分解丙二酸盐或醋酸盐生成碳酸盐、脱酰胺释放氨，产碱使溴麝香草酚蓝由绿转蓝（乙酰胺版为酚红变红）；阳性斜面有菌苔，阴性保持绿色且无生长</desc>
+<defs>
+  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="330" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">碳源利用试验（同化产碱型）</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">唯一碳源被利用 → 分解产碱 → 指示剂绿转蓝（乙酰胺版红）</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- 通用原理链 -->
+<circle cx="34" cy="76" r="7.5" fill="#1f2733"/>
+<text x="34" y="79.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1</text>
+<text x="46" y="80" font-size="9.5" fill="#33404f">基础培养基只给一种碳源（丙二酸盐 / 醋酸盐 / 乙酰胺）＋唯一氮源</text>
+<circle cx="34" cy="96" r="7.5" fill="#1f2733"/>
+<text x="34" y="99.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="46" y="100" font-size="9.5" fill="#33404f">能利用者生长并分解 → Na₂CO₃ / NH₃ 积聚 → 培养基变碱</text>
+<circle cx="34" cy="116" r="7.5" fill="#1f2733"/>
+<text x="34" y="119.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<rect x="46" y="108" width="46" height="14" rx="3" fill="#3f9e5a"/>
+<text x="96" y="119" font-size="9.5" fill="#33404f">溴麝香草酚蓝</text>
+<line x1="150" y1="115" x2="162" y2="115" stroke="#33404f" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="168" y="108" width="46" height="14" rx="3" fill="#2f6bb0"/>
+<text x="222" y="119" font-size="9.5" fill="#33404f">变蓝＝阳性（35℃ 24–48h；醋酸盐可观察至 7 日）</text>
+
+<!-- ===== 左：阴性（绿） ===== -->
+<text x="84" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">阴性（−）</text>
+<path d="M66,158 L66,256 Q66,272 84,272 Q102,272 102,256 L102,158 Z" fill="#faf9f4" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M66,224 L102,196 L102,256 Q102,272 84,272 Q66,272 66,256 Z" fill="#3f9e5a"/>
+<line x1="66" y1="224" x2="102" y2="196" stroke="#2f7a45" stroke-width="1.2"/>
+<ellipse cx="84" cy="158" rx="18" ry="4.5" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.4"/>
+<text x="84" y="288" text-anchor="middle" font-size="9.5" fill="#2f7a45">绿色未变 · 无生长</text>
+
+<!-- ===== 右：阳性（蓝 + 菌苔） ===== -->
+<text x="396" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">阳性（＋）</text>
+<path d="M378,158 L378,256 Q378,272 396,272 Q414,272 414,256 L414,158 Z" fill="#faf9f4" stroke="#b9c2cc" stroke-width="1.6"/>
+<path d="M378,224 L414,196 L414,256 Q414,272 396,272 Q378,272 378,256 Z" fill="#2f6bb0"/>
+<line x1="378" y1="224" x2="414" y2="196" stroke="#24558c" stroke-width="1.2"/>
+<ellipse cx="385" cy="219" rx="4.5" ry="2.6" fill="#f3f6da"/>
+<ellipse cx="395" cy="211" rx="5" ry="2.8" fill="#f3f6da"/>
+<ellipse cx="406" cy="202" rx="4.5" ry="2.6" fill="#f3f6da"/>
+<ellipse cx="396" cy="158" rx="18" ry="4.5" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.4"/>
+<text x="396" y="288" text-anchor="middle" font-size="9.5" fill="#24558c">蓝色 · 斜面有菌苔</text>
+
+<!-- 中部：乙酰胺版（酚红变红） -->
+<text x="240" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">乙酰胺版：酚红黄→红</text>
+<path d="M226,158 L226,252 Q226,266 240,266 Q254,266 254,252 L254,158 Z" fill="#faf9f4" stroke="#b9c2cc" stroke-width="1.4"/>
+<rect x="226" y="170" width="28" height="92" fill="#e05c8f"/>
+<line x1="226" y1="170" x2="254" y2="170" stroke="#8a94a0" stroke-width="1"/>
+<ellipse cx="240" cy="158" rx="14" ry="3.8" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="240" y="288" text-anchor="middle" font-size="9.5" fill="#8a3a5e">非发酵菌鉴定用</text>
+
+<!-- 页脚：典型菌 -->
+<rect x="24" y="300" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="315" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　丙二酸盐＋：克雷伯菌属｜−：大肠、沙门、志贺、变形杆菌　·　醋酸盐＋：埃希菌属/铜绿；−：志贺菌属　·　乙酰胺＋：铜绿、木糖氧化无色杆菌</text>
+</svg>

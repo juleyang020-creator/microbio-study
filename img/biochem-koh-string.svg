@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>KOH 拉丝试验</title>
+<desc>40 g/L KOH 中革兰阴性菌细胞壁破裂释放 DNA，5～10 秒内搅拌可拉出黏丝；革兰阳性菌肽聚糖厚、60 秒后仍无黏丝。用于革兰染色结果可疑时快速复核革兰反应属性</desc>
+<rect width="480" height="300" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">KOH 拉丝试验（氢氧化钾拉丝）</text>
+<rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
+<text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">碱液裂壁释 DNA：阴性菌 5～10 s 拉丝，阳性菌 60 s 后仍无丝</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+<text x="24" y="74" font-size="9.5" fill="#5c6672">载玻片上 1～2 滴 40 g/L KOH ＋新鲜菌落，接种环搅拌提起观察</text>
+
+<!-- ===== 左：阳性（G−） ===== -->
+<text x="110" y="96" text-anchor="middle" font-size="10" font-weight="700" fill="#2f7a45">阳性（＋）＝ 革兰阴性</text>
+<rect x="32" y="106" width="156" height="96" rx="6" fill="#ffffff" stroke="#cfd6de"/>
+<text x="110" y="122" text-anchor="middle" font-size="9.5" fill="#5c6672">菌落＋KOH 混匀 5～10 s</text>
+<!-- 黏丝 -->
+<path d="M56,168 C76,150 96,182 116,160 C130,146 140,152 148,144" fill="none" stroke="#7d8a98" stroke-width="2" stroke-linecap="round"/>
+<path d="M60,172 C80,156 100,186 120,166 C132,154 142,158 150,150" fill="none" stroke="#9aa7b4" stroke-width="1.4"/>
+<circle cx="148" cy="144" r="2.2" fill="#7d8a98"/>
+<text x="110" y="196" text-anchor="middle" font-size="9.5" fill="#33404f">提起接种环拉出黏丝（DNA）</text>
+<text x="110" y="218" text-anchor="middle" font-size="9.5" fill="#5c6672">假单胞菌/无色杆菌/黄杆菌 5～10 s 即阳</text>
+<text x="110" y="229" text-anchor="middle" font-size="9.5" fill="#5c6672">不动杆菌/莫拉菌较慢（60 s 内阳）</text>
+
+<!-- ===== 右：阴性（G+） ===== -->
+<text x="370" y="96" text-anchor="middle" font-size="10" font-weight="700" fill="#c2413d">阴性（−）＝ 革兰阳性</text>
+<rect x="292" y="106" width="156" height="96" rx="6" fill="#ffffff" stroke="#cfd6de"/>
+<text x="370" y="122" text-anchor="middle" font-size="9.5" fill="#5c6672">同样操作 60 s 后</text>
+<!-- 无丝：均匀悬液 -->
+<circle cx="340" cy="160" r="3" fill="#8c96a2"/><circle cx="356" cy="150" r="2.6" fill="#8c96a2"/>
+<circle cx="374" cy="164" r="2.2" fill="#8c96a2"/><circle cx="392" cy="152" r="2.8" fill="#8c96a2"/>
+<circle cx="404" cy="166" r="2.2" fill="#8c96a2"/><circle cx="364" cy="172" r="2" fill="#8c96a2"/>
+<text x="370" y="196" text-anchor="middle" font-size="9.5" fill="#33404f">仍为均匀悬液、无黏丝</text>
+<text x="370" y="218" text-anchor="middle" font-size="9.5" fill="#5c6672">肽聚糖层厚，碱液不裂壁</text>
+<text x="370" y="229" text-anchor="middle" font-size="9.5" fill="#5c6672">陈旧培养物/脱色过度时复核用</text>
+
+<!-- 原理条 -->
+<rect x="24" y="244" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="259" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">原理</tspan>　G⁻ 细胞壁在稀碱中破裂 → 未断裂的 DNA 使悬液变黏稠可拉丝；G⁺ 肽聚糖厚、无此变化</text>
+
+<!-- 页脚 -->
+<rect x="24" y="272" width="432" height="20" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　革兰染色结果可疑（陈旧培养物、脱色过度）时，快速复核细菌的革兰反应属性</text>
+</svg>

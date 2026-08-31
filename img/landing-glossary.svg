@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 430" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>术语表总览</title>
+<desc>术语模块 8 大类 66 条：耐药表型（CRE/ESBL/MRSA/VRE 等 15）、药敏试验概念（MIC/SIR/ECV 等 6）、标准与机构（CLSI/EUCAST/ATCC 3）、培养基缩写（MHA/HTM/TCBS 等 8）、菌群与综合征（CoNS/HACEK/NTM/UTI 等 10）、鉴定技术（MALDI/16S/PCR 等 6）、病毒与血清学（HIV/HBsAg/IgM-IgG 等 5）、微生物结构（芽孢/荚膜/LPS 等 13）。正文里的裸缩写全部链到对应词条</desc>
+<rect width="480" height="430" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">术语表总览</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">术语</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">8 大类 66 条：正文里遇到的缩写，点开就有落地页</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+
+<!-- ===== 行 1：耐药表型（大格，15 条） ===== -->
+<rect x="24" y="66" width="208" height="120" rx="8" fill="#fdf0f0" stroke="#e8c9c9"/>
+<text x="34" y="84" font-size="10.5" font-weight="700" fill="#8f3b3b">耐药表型 · 15 条</text>
+<text x="34" y="102" font-size="9.5" fill="#33404f">CRE · CPE · MBL · MDR/XDR/PDR</text>
+<text x="34" y="117" font-size="9.5" fill="#33404f">HLAR · BLNAR · MRSA · VRE</text>
+<text x="34" y="132" font-size="9.5" fill="#33404f">MSSA/VISA/VRSA · CRAB/CRKP</text>
+<text x="34" y="147" font-size="9.5" fill="#33404f">ESBL · AmpC · MLSB · PRSP · PVL</text>
+<text x="34" y="170" font-size="9.5" fill="#8f3b3b"> β-内酰胺类耐药缩写占了半壁江山</text>
+
+<!-- ===== 行 1：药敏试验 ===== -->
+<rect x="248" y="66" width="208" height="56" rx="8" fill="#eef4fb" stroke="#c9d8ec"/>
+<text x="258" y="84" font-size="10.5" font-weight="700" fill="#2b5686">药敏试验 · 6 条</text>
+<text x="258" y="100" font-size="9.5" fill="#33404f">MIC · S/I/R · SDD · ECV/ECOFF</text>
+<text x="258" y="114" font-size="9.5" fill="#33404f">WT/NWT · 麦氏比浊（McFarland）</text>
+
+<!-- ===== 行 1：标准与机构 + 培养基 ===== -->
+<rect x="248" y="130" width="208" height="56" rx="8" fill="#f0f6f1" stroke="#c9e0cc"/>
+<text x="258" y="148" font-size="10.5" font-weight="700" fill="#2f6b45">标准机构 3 条 ＋ 培养基 8 条</text>
+<text x="258" y="164" font-size="9.5" fill="#33404f">CLSI · EUCAST · ATCC</text>
+<text x="258" y="177" font-size="9.5" fill="#33404f">MHA/CAMHB · HTM · SDA/PDA</text>
+<text x="258" y="190" font-size="9.5" fill="#33404f">TCBS · TSI/KIA · SMAC · ONPG/PYR/XV</text>
+
+<!-- ===== 行 2：菌群与综合征 ===== -->
+<rect x="24" y="196" width="208" height="104" rx="8" fill="#f6f1fb" stroke="#dcccec"/>
+<text x="34" y="214" font-size="10.5" font-weight="700" fill="#5f3d8c">菌群与综合征 · 10 条</text>
+<text x="34" y="232" font-size="9.5" fill="#33404f">CoNS · HACEK · NTM · GBS/GAS</text>
+<text x="34" y="247" font-size="9.5" fill="#33404f">UTI · HUS · EHEC · Stx · UPEC</text>
+<text x="34" y="262" font-size="9.5" fill="#33404f">ETEC/EPEC/EIEC/EAEC（致腹泻大肠）</text>
+<text x="34" y="286" font-size="9.5" fill="#5f3d8c"> 报告单与文献里的「菌群黑话」</text>
+
+<!-- ===== 行 2：鉴定技术 + 病毒血清学 ===== -->
+<rect x="248" y="196" width="208" height="104" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="258" y="214" font-size="10.5" font-weight="700" fill="#33404f">鉴定技术 6 条 ＋ 病毒血清 5 条</text>
+<text x="258" y="232" font-size="9.5" fill="#33404f">MALDI-TOF MS · 16S rRNA · PCR</text>
+<text x="258" y="247" font-size="9.5" fill="#33404f">NAAT · ELISA/EIA · BSL</text>
+<text x="258" y="262" font-size="9.5" fill="#33404f">HIV/AIDS · PCP · HBsAg/抗-HBs</text>
+<text x="258" y="277" font-size="9.5" fill="#33404f">HCV · IgM/IgG（抗体动力学判读）</text>
+
+<!-- ===== 行 3：微生物结构 ===== -->
+<rect x="24" y="310" width="432" height="76" rx="8" fill="#fbf6ec" stroke="#e6d9b8"/>
+<text x="34" y="328" font-size="10.5" font-weight="700" fill="#8a6d1a">微生物结构 · 13 条</text>
+<text x="34" y="346" font-size="9.5" fill="#33404f">芽孢 · 荚膜 · 鞭毛 · 菌毛 · 磷壁酸 · 肽聚糖 · LPS · 生物膜 · S 层 · 异染颗粒 · Vi/K 抗原</text>
+<text x="34" y="361" font-size="9.5" fill="#33404f">真菌菌丝与孢子 · 病毒衣壳/包膜/刺突</text>
+<text x="34" y="380" font-size="9.5" fill="#8a6d1a"> 详细结构图见本模块「结构」类词条内示意图</text>
+
+<!-- 页脚 -->
+<rect x="24" y="398" width="432" height="20" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="412" text-anchor="middle" font-size="9.5" fill="#5c6672">词条只写概念与检验意义，不写折点/QC 数值（数值以折点表模块为准，避免双源失同步）</text>
+</svg>
