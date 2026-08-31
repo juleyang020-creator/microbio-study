@@ -3299,6 +3299,34 @@ window.DB.photosAtlas = {
    "说明": "图 20-4-1　小韦荣球菌厌氧培养 2 日"
   }
  ],
+ "actinomyces-neuii": [
+  {
+   "文件": "img/atlas/7901f69224c3bc2b1e4adcce6f88ffd1f7cd60cb20137f39b5413abf37f16d0e.jpg",
+   "说明": "图 20-8-3　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/17b2d789f8e6e51394da45146f70b9e10d697e501b20cbc67ba3224ca710ce8e.jpg",
+   "说明": "图 20-8-3　CO₂ 培养 2 日"
+  },
+  {
+   "文件": "img/atlas/13a78326dd02d0a2786463c09e5885a031eaae0d544054fb49fdbf93dd938924.jpg",
+   "说明": "图 20-8-3　厌氧培养 2 日"
+  }
+ ],
+ "actinomyces-radingae": [
+  {
+   "文件": "img/atlas/426010a961c28a8a9ff577e325c67a57ea46c4e02d8a84e044a7642655e2d556.jpg",
+   "说明": "图 20-8-4　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/209ef08adac3fbd68444b0c83fc3f180fe2de667f00b66ab1eba823eb220c723.jpg",
+   "说明": "图 20-8-4　CO₂ 培养 5 日"
+  },
+  {
+   "文件": "img/atlas/234fed93ecbc45c0e9668cf152da8327400179dcc843a36dcaa1f7fb82804ed3.jpg",
+   "说明": "图 20-8-4　厌氧培养 7 日"
+  }
+ ],
  "actinomyces-israelii": [
   {
    "文件": "img/atlas/a14ac0c4165b94a78d3711af5a27233b4ab35ebe2a8495d7f17ff5dcfb9e9f06.jpg",
@@ -3313,6 +3341,20 @@ window.DB.photosAtlas = {
    "说明": "图 20-8-5　厌氧培养 8 日 ×40"
   }
  ],
+ "actinomyces-europaeus": [
+  {
+   "文件": "img/atlas/2c1b16ebbd3a4837fa32b26625d1f95004bd985d0ad7e13547886eac54d6b83a.jpg",
+   "说明": "图 20-8-7　其他放线菌革兰氏染色的镜下形态特征 ×1000（1/2）"
+  },
+  {
+   "文件": "img/atlas/59fc28c542c5cc4cc8ec51b91571f96ddf123ddc3ed3184f4a834d504d48c8aa.jpg",
+   "说明": "图 20-8-7　其他放线菌革兰氏染色的镜下形态特征 ×1000（2/2）"
+  },
+  {
+   "文件": "img/atlas/4defba509d79930e6c775e039bdcd6ac9fb278d2e4ab1fbdcc1bbef4734bb1cf.jpg",
+   "说明": "图 20-8-8　欧洲放线菌 CO2 培养 5 日"
+  }
+ ],
  "actinomyces-naeslundii": [
   {
    "文件": "img/atlas/2c1b16ebbd3a4837fa32b26625d1f95004bd985d0ad7e13547886eac54d6b83a.jpg",
@@ -3325,6 +3367,24 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/4bf443755e438c7ebc42bed54c28387b51a0cec00a92141baf2a97d7d932b416.jpg",
    "说明": "图 20-8-8　内氏放线菌厌氧培养 5 日"
+  }
+ ],
+ "actinomyces-viscosus": [
+  {
+   "文件": "img/atlas/2c1b16ebbd3a4837fa32b26625d1f95004bd985d0ad7e13547886eac54d6b83a.jpg",
+   "说明": "图 20-8-7　其他放线菌革兰氏染色的镜下形态特征 ×1000（1/2）"
+  },
+  {
+   "文件": "img/atlas/59fc28c542c5cc4cc8ec51b91571f96ddf123ddc3ed3184f4a834d504d48c8aa.jpg",
+   "说明": "图 20-8-7　其他放线菌革兰氏染色的镜下形态特征 ×1000（2/2）"
+  },
+  {
+   "文件": "img/atlas/9435e1f3e187b20d395599c82fdb820cb74991db02301c6d8835771d98fdb9ef.jpg",
+   "说明": "图 20-8-8　黏放线菌 CO2 培养 2 日"
+  },
+  {
+   "文件": "img/atlas/f38a1e3b644a64054ff0a6da76d4ea78c8844a4b7d1cc46a9f688a26c4bd22ff.jpg",
+   "说明": "图 20-8-8　黏放线菌厌氧培养 9 日"
   }
  ],
  "bifidobacterium-longum": [
@@ -3353,6 +3413,238 @@ window.DB.photosAtlas = {
    "说明": "图 20-9-1　双歧杆菌的形态特征（6/6）"
   }
  ],
+ "lactobacillus-salivarius": [
+  {
+   "文件": "img/atlas/51d37b171dd5d6d8da77cd00d60d2e51b3987af6278f1eb285c762d66efa8a57.jpg",
+   "说明": "图 20-12-1　革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/52dd62a79082abbd02d330e3dd09f738fa01a7d805fb314ac312501b891bc9c2.jpg",
+   "说明": "图 20-12-1　SBA CO 2 2 日"
+  },
+  {
+   "文件": "img/atlas/0846bb5e7b0a0c94364092f54666cddd79a1f3d0c32f3715435942bb9950c0a4.jpg",
+   "说明": "图 20-12-1　CA CO 2 3 日"
+  }
+ ],
+ "lactobacillus-crispatus": [
+  {
+   "文件": "img/atlas/dd4168a24bda5a35514f5cf0782096fa73d70e77d4de4ebcf3afd254ca33551a.jpg",
+   "说明": "图 20-12-2　革兰氏染色 ×1000"
+  },
+  {
+   "文件": "img/atlas/0f03ec52096dad4abe31bcf955e493fefd6bd4f71402ffc61cad5bcc17be4c13.jpg",
+   "说明": "图 20-12-2　SBACO 2 培养3日"
+  },
+  {
+   "文件": "img/atlas/1c6df44958bcfe12a7ac2999511933c49665cc52fa23ce4da176a6ccd18bc9bb.jpg",
+   "说明": "图 20-12-2　厌氧培养7日"
+  }
+ ],
+ "lactobacillus-rhamnosus": [
+  {
+   "文件": "img/atlas/16d7780271e81b6f3249a2f7d14fa1d56128b6db79fa0eabc3d7049beccab596.jpg",
+   "说明": "图 20-12-4　其他乳杆菌革兰氏染色的镜下形态特征 ×1000"
+  },
+  {
+   "文件": "img/atlas/af71d74eba83bc5e0cccead309de500d61c632f888a978bebf1d1a6fe4e13f23.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（1/10）"
+  },
+  {
+   "文件": "img/atlas/c4e9f92eefda888b27afb8362c7aef5ea914132f8774fba206533f27bf059cf4.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（2/10）"
+  },
+  {
+   "文件": "img/atlas/4980a9e6cee7d47bf597e65f3199ab6f5ecfceb18437b9cffee7ec6373457788.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（3/10）"
+  },
+  {
+   "文件": "img/atlas/668f7130b9014ca43b66185f3dfe24ca2edc5c6f2679b83081c20982bbaa6aa7.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（4/10）"
+  },
+  {
+   "文件": "img/atlas/343c77918633d560ab5ede00831c95c94e22f45c741b4ba6ccfcca6340130c6e.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（5/10）"
+  },
+  {
+   "文件": "img/atlas/a51b8f07865c160abf5949b37682073223e2314a00918f80604ec3dea5d77b15.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（6/10）"
+  },
+  {
+   "文件": "img/atlas/177ef96e05f443ea7192dda9fd25009f1315c5c732760ff104364e46b376f76a.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（7/10）"
+  }
+ ],
+ "lactobacillus-acidophilus": [
+  {
+   "文件": "img/atlas/16d7780271e81b6f3249a2f7d14fa1d56128b6db79fa0eabc3d7049beccab596.jpg",
+   "说明": "图 20-12-4　其他乳杆菌革兰氏染色的镜下形态特征 ×1000"
+  },
+  {
+   "文件": "img/atlas/af71d74eba83bc5e0cccead309de500d61c632f888a978bebf1d1a6fe4e13f23.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（1/10）"
+  },
+  {
+   "文件": "img/atlas/c4e9f92eefda888b27afb8362c7aef5ea914132f8774fba206533f27bf059cf4.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（2/10）"
+  },
+  {
+   "文件": "img/atlas/4980a9e6cee7d47bf597e65f3199ab6f5ecfceb18437b9cffee7ec6373457788.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（3/10）"
+  },
+  {
+   "文件": "img/atlas/668f7130b9014ca43b66185f3dfe24ca2edc5c6f2679b83081c20982bbaa6aa7.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（4/10）"
+  },
+  {
+   "文件": "img/atlas/343c77918633d560ab5ede00831c95c94e22f45c741b4ba6ccfcca6340130c6e.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（5/10）"
+  },
+  {
+   "文件": "img/atlas/a51b8f07865c160abf5949b37682073223e2314a00918f80604ec3dea5d77b15.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（6/10）"
+  },
+  {
+   "文件": "img/atlas/177ef96e05f443ea7192dda9fd25009f1315c5c732760ff104364e46b376f76a.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（7/10）"
+  }
+ ],
+ "lactobacillus-jensenii": [
+  {
+   "文件": "img/atlas/16d7780271e81b6f3249a2f7d14fa1d56128b6db79fa0eabc3d7049beccab596.jpg",
+   "说明": "图 20-12-4　其他乳杆菌革兰氏染色的镜下形态特征 ×1000"
+  },
+  {
+   "文件": "img/atlas/af71d74eba83bc5e0cccead309de500d61c632f888a978bebf1d1a6fe4e13f23.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（1/10）"
+  },
+  {
+   "文件": "img/atlas/c4e9f92eefda888b27afb8362c7aef5ea914132f8774fba206533f27bf059cf4.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（2/10）"
+  },
+  {
+   "文件": "img/atlas/4980a9e6cee7d47bf597e65f3199ab6f5ecfceb18437b9cffee7ec6373457788.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（3/10）"
+  },
+  {
+   "文件": "img/atlas/668f7130b9014ca43b66185f3dfe24ca2edc5c6f2679b83081c20982bbaa6aa7.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（4/10）"
+  },
+  {
+   "文件": "img/atlas/343c77918633d560ab5ede00831c95c94e22f45c741b4ba6ccfcca6340130c6e.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（5/10）"
+  },
+  {
+   "文件": "img/atlas/a51b8f07865c160abf5949b37682073223e2314a00918f80604ec3dea5d77b15.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（6/10）"
+  },
+  {
+   "文件": "img/atlas/177ef96e05f443ea7192dda9fd25009f1315c5c732760ff104364e46b376f76a.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（7/10）"
+  }
+ ],
+ "lactobacillus-casei": [
+  {
+   "文件": "img/atlas/16d7780271e81b6f3249a2f7d14fa1d56128b6db79fa0eabc3d7049beccab596.jpg",
+   "说明": "图 20-12-4　其他乳杆菌革兰氏染色的镜下形态特征 ×1000"
+  },
+  {
+   "文件": "img/atlas/af71d74eba83bc5e0cccead309de500d61c632f888a978bebf1d1a6fe4e13f23.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（1/10）"
+  },
+  {
+   "文件": "img/atlas/c4e9f92eefda888b27afb8362c7aef5ea914132f8774fba206533f27bf059cf4.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（2/10）"
+  },
+  {
+   "文件": "img/atlas/4980a9e6cee7d47bf597e65f3199ab6f5ecfceb18437b9cffee7ec6373457788.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（3/10）"
+  },
+  {
+   "文件": "img/atlas/668f7130b9014ca43b66185f3dfe24ca2edc5c6f2679b83081c20982bbaa6aa7.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（4/10）"
+  },
+  {
+   "文件": "img/atlas/343c77918633d560ab5ede00831c95c94e22f45c741b4ba6ccfcca6340130c6e.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（5/10）"
+  },
+  {
+   "文件": "img/atlas/a51b8f07865c160abf5949b37682073223e2314a00918f80604ec3dea5d77b15.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（6/10）"
+  },
+  {
+   "文件": "img/atlas/177ef96e05f443ea7192dda9fd25009f1315c5c732760ff104364e46b376f76a.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（7/10）"
+  }
+ ],
+ "lactobacillus-gasseri": [
+  {
+   "文件": "img/atlas/16d7780271e81b6f3249a2f7d14fa1d56128b6db79fa0eabc3d7049beccab596.jpg",
+   "说明": "图 20-12-4　其他乳杆菌革兰氏染色的镜下形态特征 ×1000"
+  },
+  {
+   "文件": "img/atlas/af71d74eba83bc5e0cccead309de500d61c632f888a978bebf1d1a6fe4e13f23.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（1/10）"
+  },
+  {
+   "文件": "img/atlas/c4e9f92eefda888b27afb8362c7aef5ea914132f8774fba206533f27bf059cf4.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（2/10）"
+  },
+  {
+   "文件": "img/atlas/4980a9e6cee7d47bf597e65f3199ab6f5ecfceb18437b9cffee7ec6373457788.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（3/10）"
+  },
+  {
+   "文件": "img/atlas/668f7130b9014ca43b66185f3dfe24ca2edc5c6f2679b83081c20982bbaa6aa7.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（4/10）"
+  },
+  {
+   "文件": "img/atlas/343c77918633d560ab5ede00831c95c94e22f45c741b4ba6ccfcca6340130c6e.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（5/10）"
+  },
+  {
+   "文件": "img/atlas/a51b8f07865c160abf5949b37682073223e2314a00918f80604ec3dea5d77b15.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（6/10）"
+  },
+  {
+   "文件": "img/atlas/177ef96e05f443ea7192dda9fd25009f1315c5c732760ff104364e46b376f76a.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（7/10）"
+  }
+ ],
+ "lactobacillus-brevis": [
+  {
+   "文件": "img/atlas/16d7780271e81b6f3249a2f7d14fa1d56128b6db79fa0eabc3d7049beccab596.jpg",
+   "说明": "图 20-12-4　其他乳杆菌革兰氏染色的镜下形态特征 ×1000"
+  },
+  {
+   "文件": "img/atlas/af71d74eba83bc5e0cccead309de500d61c632f888a978bebf1d1a6fe4e13f23.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（1/10）"
+  },
+  {
+   "文件": "img/atlas/c4e9f92eefda888b27afb8362c7aef5ea914132f8774fba206533f27bf059cf4.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（2/10）"
+  },
+  {
+   "文件": "img/atlas/4980a9e6cee7d47bf597e65f3199ab6f5ecfceb18437b9cffee7ec6373457788.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（3/10）"
+  },
+  {
+   "文件": "img/atlas/668f7130b9014ca43b66185f3dfe24ca2edc5c6f2679b83081c20982bbaa6aa7.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（4/10）"
+  },
+  {
+   "文件": "img/atlas/343c77918633d560ab5ede00831c95c94e22f45c741b4ba6ccfcca6340130c6e.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（5/10）"
+  },
+  {
+   "文件": "img/atlas/a51b8f07865c160abf5949b37682073223e2314a00918f80604ec3dea5d77b15.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（6/10）"
+  },
+  {
+   "文件": "img/atlas/177ef96e05f443ea7192dda9fd25009f1315c5c732760ff104364e46b376f76a.jpg",
+   "说明": "图 20-12-5　其他乳杆菌的菌落形态特征（7/10）"
+  }
+ ],
  "bacteroides-fragilis": [
   {
    "文件": "img/atlas/c637da70af588f892cf0ffcf8167c03c97ba31650d6514ccd19e8e8e7ffaf163.jpg",
@@ -3365,6 +3657,40 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/440650d86edc738376192070754c0e6df327801ef3edd0a8a939d7f684573cd6.jpg",
    "说明": "图 20-14-1　ATCC 25285 厌氧培养 2 日"
+  }
+ ],
+ "prevotella-buccae": [
+  {
+   "文件": "img/atlas/9aba43da751ea04278fb91c628bf8700708159e743bdfd3748325fe7d6d0f332.jpg",
+   "说明": "图 20-15-2　颊普雷沃菌的形态特征（1/15）"
+  },
+  {
+   "文件": "img/atlas/4171509d6070a573d840878e5d5438a1d6cf56371c9925013d72645f324d0df0.jpg",
+   "说明": "图 20-15-2　颊普雷沃菌的形态特征（2/15）"
+  },
+  {
+   "文件": "img/atlas/1bb12a1ada226a1ed8124b4296dc7e3b10f030cb8b854c8ce29300858c57dc2d.jpg",
+   "说明": "图 20-15-2　颊普雷沃菌的形态特征（3/15）"
+  },
+  {
+   "文件": "img/atlas/0b584643b87a65535846c47451a39e800c85e8e1019f1ce2d543b2a481280b26.jpg",
+   "说明": "图 20-15-2　颊普雷沃菌的形态特征（4/15）"
+  },
+  {
+   "文件": "img/atlas/b906e79e74f570813c6e14e7670ebdb1288c69492c0c6c02a1f68ec1e019dad3.jpg",
+   "说明": "图 20-15-2　颊普雷沃菌的形态特征（5/15）"
+  },
+  {
+   "文件": "img/atlas/bd0908880266c703a4897ace8e00573b867dc70c3fe5a0e0f94c83ca914aed34.jpg",
+   "说明": "图 20-15-2　颊普雷沃菌的形态特征（6/15）"
+  },
+  {
+   "文件": "img/atlas/d789468c5f8b1c672bb0bb7a7fd7c40f6f4709c54cb247abee52186428a12dae.jpg",
+   "说明": "图 20-15-2　颊普雷沃菌的形态特征（7/15）"
+  },
+  {
+   "文件": "img/atlas/eb7e14ccd84dffd2980ac62f72b05c74abb519c21806ce4672f2238ee2ba7dea.jpg",
+   "说明": "图 20-15-2　颊普雷沃菌的形态特征（8/15）"
   }
  ],
  "prevotella-intermedia": [
@@ -3397,6 +3723,16 @@ window.DB.photosAtlas = {
    "说明": "图 20-15-3　中间普雷沃菌的形态特征（7/7）"
   }
  ],
+ "prevotella-nigrescens": [
+  {
+   "文件": "img/atlas/dbfb9536c258f3e5e828d7426d18e37c0a15461d7c6b3c8b5d8d16358c91eddb.jpg",
+   "说明": "图 20-15-4　变黑普雷沃菌"
+  },
+  {
+   "文件": "img/atlas/ac9bfe468e1de97aaf365e48d6301e304ebef8628ed3f1fc094882a58ba05e8f.jpg",
+   "说明": "图 20-15-5　变黑普雷沃菌厌氧培养 8 日"
+  }
+ ],
  "prevotella-bivia": [
   {
    "文件": "img/atlas/6fd4422515278f57661af851219755b8570dc3414ecb6e3a63f0e2b3b2a2b0a1.jpg",
@@ -3407,10 +3743,28 @@ window.DB.photosAtlas = {
    "说明": "图 20-15-5　双路普雷沃菌厌氧培养 2 日"
   }
  ],
+ "prevotella-heparinolytica": [
+  {
+   "文件": "img/atlas/775d215d2c28bbc40a9bb9b9ac54a085cfc3d14a399cd96693efb2540df8d79f.jpg",
+   "说明": "图 20-15-5　解肝素普雷沃菌厌氧培养 2 日"
+  }
+ ],
+ "prevotella-oralis": [
+  {
+   "文件": "img/atlas/8c1e7ee28a2d2e9f3fceea6640f795db738ec13ae4d37c8b32024dac08bde25e.jpg",
+   "说明": "图 20-15-5　口腔普雷沃菌厌氧培养 3 日"
+  }
+ ],
  "prevotella-disiens": [
   {
    "文件": "img/atlas/fc6b92c1c913c6b12b81818f82ffa919be97972c9e7d20194be8fe053a386abd.jpg",
    "说明": "图 20-15-5　解糖胨普雷沃菌厌氧培养 4 日"
+  }
+ ],
+ "prevotella-loescheii": [
+  {
+   "文件": "img/atlas/12b0c412bb906549232c9f661cba5c662a0935ae9ae2f520d62e44e5de406438.jpg",
+   "说明": "图 20-15-5　洛氏普雷沃菌厌氧培养 8 日"
   }
  ],
  "porphyromonas-gingivalis": [

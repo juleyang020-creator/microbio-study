@@ -33,6 +33,8 @@ const EXCLUDE = new Set([
   'taenia-saginata|33-2-19',        // 猪带绦虫染色图误挂到牛带绦虫
   'plasmodium-falciparum|33-1-19',  // 微小巴贝虫图误挂到恶性疟原虫
   'strep-intermedius|12-4-22',      // 假肺炎链球菌胆汁溶菌试验误挂（正文段串扰）
+  // ==== 批40 审计补充（近缘种一字之差：口颊 P.buccalis ≠ 颊 P.buccae）====
+  'prevotella-buccae|20-15-5',       // D 分联实为口颊普雷沃菌（P. buccalis），误挂颊普雷沃菌（P. buccae）
   // ==== 2026-08-28 全量审计补充（对照/混合/卫星试验指示菌等非归属语境）====
   'enterococcus-faecalis|14-17-5',  // 沙尔放线棒杆菌镜下图，粪肠球菌仅为混合涂片提及（用户发现）
   'e-coli|14-17-5',                 // 同上，大肠埃希菌为混合涂片提及
