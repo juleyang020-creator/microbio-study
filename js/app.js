@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260830-30';
+  var APP_VERSION = window.APP_VERSION || '20260831-33';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -61,7 +61,7 @@
 
   function db() {
     var DB = window.DB || {};
-    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], virulence: DB.virulence || [], genetics: DB.genetics || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [], 'qc-strains': DB['qc-strains'] || [] };
+    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], virulence: DB.virulence || [], genetics: DB.genetics || [], glossary: DB.glossary || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [], 'qc-strains': DB['qc-strains'] || [] };
   }
 
   // 缓存：window.DB 加载后不变，名称→id 映射只需建一次
@@ -122,8 +122,7 @@
       '葡萄糖发酵': 'glucose-fermentation',
       'TCBS(蔗糖)': 'glucose-fermentation',
       '蔗糖发酵(TCBS)': 'glucose-fermentation',
-      '麦芽糖氧化': 'oxidase',
-      '明胶酶': 'gelatinase',
+            '明胶酶': 'gelatinase',
       'DNase': 'dnase',
       '迁徙生长': 'motility',
       '动力(25℃/37℃)': 'motility',
@@ -330,7 +329,184 @@
       '黄色素（25℃）': 'pigment',
       '黄色色素': 'pigment',
       '黑色素': 'pigment',
-      '鼠李糖发酵': 'glucose-fermentation'
+      '鼠李糖发酵': 'glucose-fermentation',
+      // ==== 2026-08-31 补：糖发酵底物新词条的裸名/变体映射 ====
+      '山梨醇': 'sorbitol-fermentation',
+      '山梨醇发酵': 'sorbitol-fermentation',
+      '山梨醇产酸': 'sorbitol-fermentation',
+      'D-山梨醇发酵': 'sorbitol-fermentation',
+      'D-山梨醇产酸': 'sorbitol-fermentation',
+      '阿拉伯糖': 'arabinose-fermentation',
+      '阿拉伯糖发酵': 'arabinose-fermentation',
+      'L-阿拉伯糖': 'arabinose-fermentation',
+      '鼠李糖': 'rhamnose-fermentation',
+      'L-鼠李糖': 'rhamnose-fermentation',
+      'L-鼠李糖产酸': 'rhamnose-fermentation',
+      '海藻糖': 'trehalose-fermentation',
+      '木糖': 'xylose-fermentation',
+      'D-木糖': 'xylose-fermentation',
+      '木糖发酵': 'xylose-fermentation',
+      '木糖氧化': 'xylose-fermentation',
+      '木糖同化': 'xylose-fermentation',
+      'D-木糖同化': 'xylose-fermentation',
+      '肌醇': 'inositol-fermentation',
+      '肌醇发酵': 'inositol-fermentation',
+      '肌醇同化': 'inositol-fermentation',
+      '侧金盏花醇': 'adonitol-fermentation',
+      '侧金盏花醇发酵': 'adonitol-fermentation',
+      '卫矛醇': 'dulcitol-fermentation',
+      '蜜二糖': 'melibiose-fermentation',
+      '棉子糖': 'raffinose-fermentation',
+      '棉子糖产酸': 'raffinose-fermentation',
+      '水杨素': 'salicin-fermentation',
+      '纤维二糖': 'cellobiose-fermentation',
+      '松三糖': 'melezitose-fermentation',
+      '果糖发酵': 'glucose-fermentation',
+      '麦芽糖发酵': 'glucose-fermentation',
+      '蔗糖发酵': 'glucose-fermentation',
+      '核糖/麦芽糖/蔗糖/海藻糖': 'assimilation-panel',
+      '核糖/麦芽糖/甘露糖': 'assimilation-panel',
+      '葡萄糖/麦芽糖/蔗糖/果糖': 'assimilation-panel',
+      '葡萄糖/麦芽糖': 'assimilation-panel',
+      '葡萄糖/麦芽糖发酵': 'glucose-fermentation',
+      '葡萄糖/麦芽糖/蔗糖发酵': 'glucose-fermentation',
+      '葡萄糖/麦芽糖/蔗糖同化': 'assimilation-panel',
+      '麦芽糖/蔗糖同化': 'assimilation-panel',
+      '麦芽糖/蔗糖发酵': 'glucose-fermentation',
+      '葡萄糖/蔗糖同化': 'assimilation-panel',
+      '蔗糖同化': 'assimilation-panel',
+      '半乳糖同化': 'assimilation-panel',
+      '乳糖同化': 'assimilation-panel',
+      '乳糖同化/发酵': 'lactose-fermentation',
+      '乳糖产酸/ONPG': 'lactose-fermentation',
+      '密二糖同化': 'assimilation-panel',
+      '蔗糖/半乳糖/密二糖同化': 'assimilation-panel',
+      '蔗糖/果糖': 'glucose-fermentation',
+      '全部糖产酸': 'glucose-fermentation',
+      '多数糖同化': 'assimilation-panel',
+      '碳水化合物发酵': 'glucose-fermentation',
+      '碳水化合物产酸': 'glucose-fermentation',
+      '糖产酸': 'glucose-fermentation',
+      '果糖产酸': 'glucose-fermentation',
+      '蔗糖氧化产酸': 'glucose-fermentation',
+      '麦芽糖（氧化型产酸）': 'glucose-fermentation',
+      '葡萄糖（氧化型产酸）': 'glucose-fermentation',
+      '葡萄糖氧化': 'glucose-fermentation',
+      '葡萄糖氧化产酸': 'glucose-fermentation',
+      '葡萄糖利用': 'glucose-fermentation',
+      '发酵葡萄糖/蔗糖': 'glucose-fermentation',
+      '发酵谱': 'assimilation-panel',
+      '同化谱': 'assimilation-panel',
+      'O-F试验(葡萄糖)': 'glucose-fermentation',
+      'O-F 试验': 'glucose-fermentation',
+      '糖酵解': 'glucose-fermentation',
+      // ==== 2026-08-31 补：新词条简名/全角括号变体（归一只处理半角括号）====
+      '烟酸试验': 'niacin-test',
+      '烟酰胺(niacin)': 'niacin-test',
+      '吡嗪酰胺酶': 'pyrazinamidase-test',
+      '吐温-80 水解': 'tween80-hydrolysis',
+      '吐温-80 水解 (5 天)': 'tween80-hydrolysis',
+      '芳香硫酸酯酶': 'arylsulfatase-test',
+      '芳香硫酸酯酶 (3 天)': 'arylsulfatase-test',
+      '芳香硫酸酯酶试验': 'arylsulfatase-test',
+      '3天芳基硫酸酯酶试验': 'arylsulfatase-test',
+      '3日芳基硫酸酯酶': 'arylsulfatase-test',
+      '亮氨酸氨肽酶(LAP)': 'lap-test',
+      'LAP': 'lap-test',
+      '亮氨酸芳胺酶(LeuA)': 'lap-test',
+      '亮氨酸芳胺酶': 'lap-test',
+      '精氨酸水解': 'arginine-dihydrolase-note',
+      '水解精氨酸': 'arginine-dihydrolase-note',
+      '精氨酸促生长': 'arginine-dihydrolase-note',
+      '酪蛋白分解': 'casein-hydrolysis',
+      '淀粉/蛋白质水解': 'casein-hydrolysis',
+      '次黄嘌呤分解': 'hypoxanthine-decomposition',
+      'DNA酶': 'dnase',
+      'DNA 酶': 'dnase',
+      '硝酸还原': 'nitrate-reduction',
+      '脱硝作用': 'nitrate-reduction',
+      '硝酸盐利用': 'nitrate-reduction',
+      '亚硝酸盐还原为氮气(脱氮)': 'nitrate-reduction',
+      'KCN 生长': 'kcn-growth-test',
+      '20% 胆汁生长': 'bile-growth-test',
+      '20%胆汁生长': 'bile-growth-test',
+      '胆汁七叶苷(BBE，20%胆盐)': 'bile-esculin',
+      '脂酶': 'lipase-test-ccnu',
+      '脂肪酶': 'lipase-test-ccnu',
+      '脂酶(玉米油/吐温)': 'lipase-test-ccnu',
+      '碱性磷酸酶': 'alkaline-phosphatase-test',
+      '磷酸酶': 'alkaline-phosphatase-test',
+      '荧光素': 'fluorescein-production',
+      '荧光素（King B 紫外）': 'fluorescein-production',
+      '绿脓菌素(荧光)': 'pigment',
+      '生物发光': 'fluorescein-production',
+                        '生长速度': 'growth-temperature-panel',
+      '生长速率': 'growth-temperature-panel',
+      '生长温度': 'growth-temperature-panel',
+      '最适生长温度': 'growth-temperature-panel',
+      '最高生长温度': 'growth-temperature-panel',
+      '最适温度': 'growth-temperature-panel',
+      '37℃ 生长': 'growth-temperature-panel',
+      '42℃ 生长': 'growth-temperature-panel',
+      '42℃生长': 'growth-temperature-panel',
+      '44℃生长': 'growth-temperature-panel',
+      '45℃ 生长': 'growth-temperature-panel',
+      '40℃ 生长': 'growth-temperature-panel',
+      '25℃ 生长': 'growth-temperature-panel',
+      '20℃ 生长': 'growth-temperature-panel',
+      '22℃ 生长': 'growth-temperature-panel',
+      '10℃ 生长': 'growth-temperature-panel',
+      '4℃ 生长': 'growth-temperature-panel',
+      '4℃ 存活': 'growth-temperature-panel',
+      '50~55℃ 生长': 'growth-temperature-panel',
+      '35℃ 以上生长': 'growth-temperature-panel',
+      '37℃~40℃ 生长': 'growth-temperature-panel',
+      '25℃/35℃ 生长': 'growth-temperature-panel',
+      '温度双相': 'growth-temperature-panel',
+      '冷增菌（4℃生长）': 'growth-temperature-panel',
+      '厌氧生长': 'growth-temperature-panel',
+      '需氧': 'growth-temperature-panel',
+      '代谢类型': 'growth-temperature-panel',
+      '嗜盐性': 'growth-temperature-panel',
+      '嗜盐': 'growth-temperature-panel',
+                                                            '营养琼脂 35℃': 'growth-temperature-panel',
+                        '伍德灯': 'wood-lamp',
+      '365nm紫外荧光': 'wood-lamp',
+      '紫外荧光': 'wood-lamp',
+      '毛发穿孔试验': 'hair-perforation-test',
+      '毛发穿孔': 'hair-perforation-test',
+      '侵毛发能力': 'hair-perforation-test',
+      '毛发侵犯型': 'hair-perforation-test',
+      '胞外多糖(蔗糖)': 'extracellular-polysaccharide-test',
+      '多糖合成': 'extracellular-polysaccharide-test',
+      '蔗糖多糖合成': 'extracellular-polysaccharide-test',
+      '蔗糖产酸': 'glucose-fermentation',
+      // ==== 2026-08-31 补：血清试验/同化谱变体；染色/药物/培养基生长走 linkDict（跨模块）====
+      '柠檬酸盐': 'citrate',
+      '靛基质': 'indole',
+      '血清学': 'slide-agglutination',
+      '血清学(IFA)': 'slide-agglutination',
+      '山梨糖': 'assimilation-panel',
+      '山梨糖产酸': 'assimilation-panel',
+      'L-山梨糖利用': 'assimilation-panel',
+      '葡萄糖同化': 'assimilation-panel',
+      'D-葡萄糖同化': 'assimilation-panel',
+      '葡萄糖发酵/同化': 'glucose-fermentation',
+      '海藻糖同化': 'trehalose-fermentation',
+      '海藻糖发酵/同化': 'trehalose-fermentation',
+      '鼠李糖同化': 'rhamnose-fermentation',
+      '蔗糖/麦芽糖同化': 'assimilation-panel',
+      '乳糖/麦芽糖/蔗糖': 'glucose-fermentation',
+      '乳糖/密二糖同化': 'assimilation-panel',
+      '密二糖/纤维二糖同化': 'assimilation-panel',
+      '己二酸同化': 'assimilation-panel',
+      '同化癸酸盐/苹果酸盐/苯乙酸盐': 'assimilation-panel',
+      '同化葡萄糖酸盐/L-苹果酸盐': 'assimilation-panel',
+      '中康酸盐同化': 'assimilation-panel',
+      '二氨基丁烷同化': 'assimilation-panel',
+      '麦芽糖醇': 'assimilation-panel',
+      '蕈糖': 'trehalose-fermentation',
+      '可溶性淀粉': 'starch-hydrolysis'
     };
     Object.keys(aliases).forEach(function (k) { m[k] = aliases[k]; });
 
@@ -841,16 +1017,30 @@
       if (ab && ABBR_OK.indexOf(ab) !== -1 && !dict[ab]) { dict[ab] = '#/antibiotics/' + a.id; }
     });
     // 菌群/耐药表型简写 → 对应词条（或模块）。均为约定俗成缩写，无正文歧义。
-    [['MRSA','staph-aureus'],['MSSA','staph-aureus'],['VISA','staph-aureus'],['VRSA','staph-aureus'],
-     ['CoNS','staph-cons'],['VRE','enterococcus-genus'],['CRE','klebsiella-genus'],
-     ['BLNAR','haemophilus-influenzae'],['GBS','strep-agalactiae'],['GAS','strep-pyogenes'],
-     ['CRAB','acinetobacter-baumannii'],['CRKP','klebsiella-pneumoniae'],['NTM','mycobacterium-genus']
-    ].forEach(function (p) {
+    // 注意：glossary 模块上线后 MRSA/VRE/CoNS 等已有专属术语条目，
+    // 这张表退为「无术语条目时」的兜底代理（链接到最相关微生物/耐药条目）。
+    [['VISA','staph-aureus'],['VRSA','staph-aureus'],['BLNAR','haemophilus-influenzae'],['NTM','mycobacterium-genus']].forEach(function (p) {
       if (!dict[p[0]] && (DB.microbes || []).some(function (m) { return m.id === p[1]; })) { dict[p[0]] = '#/microbes/' + p[1]; }
     });
-    // 其他内容模块条目名：试验/培养基/染色/检测卡/耐药因素——正文提到即链
-    [['tests', 'tests'], ['media', 'media'], ['staining', 'staining'], ['cards', 'cards'], ['resistance', 'resistance'], ['virulence', 'virulence'], ['genetics', 'genetics'], ['biochemTests', 'biochem-tests']].forEach(function (pair) {
+    // 其他内容模块条目名：试验/培养基/染色/检测卡/耐药因素/术语——正文提到即链
+    [['tests', 'tests'], ['media', 'media'], ['staining', 'staining'], ['cards', 'cards'], ['resistance', 'resistance'], ['virulence', 'virulence'], ['genetics', 'genetics'], ['glossary', 'glossary'], ['biochemTests', 'biochem-tests']].forEach(function (pair) {
       (DB[pair[0]] || []).forEach(function (t) { if (t.名称 && t.id && !dict[t.名称]) { dict[t.名称] = '#/' + pair[1] + '/' + t.id; } });
+    });
+    // 裸缩写注册：把条目名前缀的英文缩写（如「ESBL（超广谱β-内酰胺酶）」的 ESBL、
+    // 「MHA / CAMHB（药敏培养基）」的 MHA 与 CAMHB）也注册为链接键——正文写裸缩写同样可跳。
+    // 规则：名称以拉丁串开头且紧跟全角/半角括号；只收纯字母数字词（≥3 字符），
+    // 用「/」分隔的多个缩写各自注册；后面已有全名条目占用的不覆盖。
+    // 注意排除单字母（S/I/R 这类单字母上下文歧义太大，不注册）。
+    [['tests', 'tests'], ['media', 'media'], ['staining', 'staining'], ['cards', 'cards'], ['resistance', 'resistance'], ['virulence', 'virulence'], ['genetics', 'genetics'], ['glossary', 'glossary'], ['biochemTests', 'biochem-tests']].forEach(function (pair) {
+      (DB[pair[0]] || []).forEach(function (t) {
+        if (!t.名称 || !t.id) { return; }
+        var m = /^([A-Za-z][A-Za-z0-9][A-Za-z0-9\/\-\+ ]*?)\s*[（(]/.exec(t.名称);
+        if (!m) { return; }
+        m[1].split(/\s*\/\s*/).forEach(function (raw) {
+          var ab = raw.trim();
+          if (/^[A-Za-z][A-Za-z0-9-]+$/.test(ab) && ab.length >= 3 && !dict[ab]) { dict[ab] = '#/' + pair[1] + '/' + t.id; }
+        });
+      });
     });
     // 分类树属叶子名兜底：正文中「XX菌属」指到该属的 spp. 总览条目（无 spp. 则指第一个种）
     (DB.categories && DB.categories.microbes || []).forEach(function walkCat(n) {
@@ -860,6 +1050,12 @@
         var genusEntry = (DB.microbes || []).find(function (m) { return m.名称 === n.名称; });
         if (genusEntry) { dict[n.名称] = '#/microbes/' + genusEntry.id; }
       }
+    });
+    // 真菌形态结构名 → 术语·微生物结构「真菌菌丝与孢子」条目：
+    // biochem.js 真菌条目的「大分生孢子」「厚壁孢子」「假菌丝」等项目高频出现，
+    // 不是独立条目名，这里显式注册指向术语总览。
+    [['大分生孢子','gloss-hypha-spore-fungi'],['小分生孢子','gloss-hypha-spore-fungi'],['厚壁孢子','gloss-hypha-spore-fungi'],['厚膜孢子','gloss-hypha-spore-fungi'],['假菌丝','gloss-hypha-spore-fungi'],['真假菌丝','gloss-hypha-spore-fungi'],['假根','gloss-hypha-spore-fungi'],['匍匐菌丝','gloss-hypha-spore-fungi'],['分生孢子','gloss-hypha-spore-fungi'],['分生孢子链','gloss-hypha-spore-fungi'],['关节孢子','gloss-hypha-spore-fungi'],['芽生孢子','gloss-hypha-spore-fungi'],['子囊孢子','gloss-hypha-spore-fungi'],['瓶梗','gloss-hypha-spore-fungi'],['帚状枝','gloss-hypha-spore-fungi'],['荚膜','gloss-capsule'],['芽孢','gloss-spore'],['异染颗粒','gloss-metachromatic']].forEach(function (p) {
+      if (!dict[p[0]] && (DB.glossary || []).some(function (g) { return g.id === p[1]; })) { dict[p[0]] = '#/glossary/' + p[1]; }
     });
     (DB.microbeNames || []).forEach(function (n) {
       if (!n.别名) { return; }
@@ -1188,14 +1384,24 @@
       nodes.push(el('div', { cls: 'differential' }, [ el('div', { cls: 'diff-title', text: '相似菌与鉴别' }) ].concat(diffItems)));
     }
 
-    // ④ 生化反应 —— 项目名可跳转到对应生化试验条目
+    // ④ 生化反应 —— 项目名可跳转到对应生化试验条目；
+    //    生化试验条目查不到时回落到站内链接词典（linkDict）：
+    //    染色（革兰染色/抗酸染色）、药物（万古霉素/克林霉素纸片试验）、
+    //    培养基（TCBS/麦康凯生长）、术语·微生物结构（大分生孢子/厚壁孢子/荚膜）等
+    //    跨模块项目同样成链，直接跳各自词条。
     if (vm.生化反应 && vm.生化反应.length) {
       var bioTestMap = biochemTestIdByName();
+      var dict = linkDict();
       var bioRows = vm.生化反应.map(function (b) {
         var tid = bioTestMap[b.项目];
-        var keyEl = tid
-          ? el('a', { cls: 'biochem-key biochem-link', text: b.项目, href: '#/biochem-tests/' + tid })
-          : el('span', { cls: 'biochem-key', text: b.项目 });
+        var keyEl;
+        if (tid) {
+          keyEl = el('a', { cls: 'biochem-key biochem-link', text: b.项目, href: '#/biochem-tests/' + tid });
+        } else if (dict[b.项目]) {
+          keyEl = el('a', { cls: 'biochem-key biochem-link', text: b.项目, href: dict[b.项目] });
+        } else {
+          keyEl = el('span', { cls: 'biochem-key', text: b.项目 });
+        }
         return el('div', { cls: 'biochem-row' }, [ keyEl, el('span', { cls: 'biochem-val', text: b.结果 }) ]);
       });
       nodes.push(el('div', { cls: 'biochem' }, [

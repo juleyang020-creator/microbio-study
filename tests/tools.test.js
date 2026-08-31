@@ -11,6 +11,7 @@ require('../data/antibiotics.js');
 require('../data/resistance.js');
 require('../data/virulence.js');
 require('../data/genetics.js');
+require('../data/glossary.js');
 require('../data/biochem.js');
 require('../data/differential.js');
 require('../data/morphology.js');
