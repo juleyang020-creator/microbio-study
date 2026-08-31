@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', virulence: '致病', genetics: '遗传变异', cards: '检测卡', tests: '试验', media: '培养基', staining: '染色', 'biochem-tests': '生化反应', 'qc-strains': '质控菌株' };
+  var MODULE_LABEL = { microbes: '微生物', antibiotics: '抗微生物药', resistance: '耐药', virulence: '致病', genetics: '遗传变异', glossary: '术语', cards: '检测卡', tests: '试验', media: '培养基', staining: '染色', 'biochem-tests': '生化反应', 'qc-strains': '质控菌株' };
 
   function moduleLabel(key) { return MODULE_LABEL[key] || '未知'; }
 

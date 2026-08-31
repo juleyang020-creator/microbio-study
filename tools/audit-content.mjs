@@ -25,6 +25,7 @@ global.window = { DB: {} };
   'resistance',
   'virulence',
   'genetics',
+  'glossary',
   'biochem',
   'differential',
   'morphology',
