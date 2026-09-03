@@ -59,7 +59,14 @@
     'cbde-colistin': 'img/test-colistin.svg',
     'satellitism': 'img/test-satellitism.svg',
     'bdg-test': 'img/test-bdg.svg',
-    'gm-test': 'img/test-gm.svg'
+    'gm-test': 'img/test-gm.svg',
+    // 批43 新增（94书第23章真菌血清学）：复用 G/GM 同族示意图
+    'crag-test': 'img/test-gm.svg',
+    'aspergillus-antibody': 'img/test-gm.svg',
+    'candida-mannan': 'img/test-bdg.svg',
+    'blastomyces-antigen': 'img/test-bdg.svg',
+    'coccidioides-serology': 'img/test-bdg.svg',
+    'histoplasma-antigen': 'img/test-bdg.svg'
   };
 
   // 染色：按条目 id 映射到示意图
@@ -171,7 +178,16 @@
     'raffinose-fermentation': 'img/biochem-sugar-panel.svg',
     'salicin-fermentation': 'img/biochem-sugar-panel.svg',
     'cellobiose-fermentation': 'img/biochem-sugar-panel.svg',
-    'melezitose-fermentation': 'img/biochem-sugar-panel.svg'
+    'melezitose-fermentation': 'img/biochem-sugar-panel.svg',
+    // 批43 新增（94书第3章）：复用同族试验图
+    'of-test': 'img/biochem-sugar.svg',
+    'reverse-camp': 'img/test-camp.svg',
+    'indophenol-oxidase': 'img/test-oxidase.svg',
+    'acetyl-esterase': 'img/biochem-corynebacterium-panel.svg',
+    'capsule-swelling': 'img/biochem-agglutination.svg',
+    'heat-stable-catalase': 'img/biochem-mycobacteria-panel.svg',
+    'pnb-growth': 'img/biochem-mycobacteria-panel.svg',
+    'growth-28c': 'img/biochem-growth-panel.svg'
   };
   // 培养基：平板外观 + 选择/鉴别原理示意（文件名与条目 id 一致）
   var MEDIA_IMAGE = {};
