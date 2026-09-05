@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>亚碲酸钾血琼脂（白喉棒状杆菌黑色菌落）</title>
+<desc>营养琼脂加 1% 亚碲酸钾与 10% 脱纤维绵羊血：白喉棒状杆菌不受抑制并将亚碲酸钾还原为黑色碲单质使菌落变黑，大多数咽部杂菌被抑制；产毒株与无毒株菌落形态不同（轻型/重型）可作初步分型。吕氏血清斜面用于快速培养（8~12 h 灰白色金属光泽菌落+异染颗粒典型）</desc>
+<defs>
+  <radialGradient id="telagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#f3d9d9"/><stop offset="1" stop-color="#d9a8a8"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="330" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">亚碲酸钾血琼脂</text>
+<rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
+<text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">选择与鉴别培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">咽拭子里的找针活：杂菌被亚碲酸钾按住，白喉杆菌反而把它染黑</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：平板俯视 ===== -->
+<text x="24" y="80" font-size="9.5" fill="#5c6672">血琼脂基底 · 35℃ 24~48 h</text>
+<circle cx="120" cy="170" r="72" fill="#f0f2f4" stroke="#cdd4db" stroke-width="1.4"/>
+<circle cx="120" cy="170" r="68" fill="url(#telagar)"/>
+<!-- 黑色菌落群 -->
+<g fill="#26262a">
+  <circle cx="102" cy="150" r="4.5"/><circle cx="116" cy="142" r="3.6"/><circle cx="130" cy="152" r="4"/><circle cx="96" cy="166" r="3.4"/><circle cx="122" cy="168" r="3.8"/>
+</g>
+<circle cx="90" cy="128" r="6.6" fill="#1f2733"/>
+<text x="90" y="131.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<!-- 灰白金属光泽菌落（吕氏对照提示） -->
+<circle cx="158" cy="196" r="5" fill="#e8e4da" stroke="#a8a294" stroke-width="1"/>
+<!-- 杂菌被抑制 -->
+<g fill="none" stroke="#b98a8a" stroke-width="1.1" stroke-dasharray="3,2.5">
+  <circle cx="170" cy="140" r="6"/><circle cx="78" cy="200" r="5"/>
+</g>
+<path d="M167,137 l6,6 m0,-6 l-6,6 M75,197 l6,6 m0,-6 l-6,6" stroke="#a33a3a" stroke-width="1.2"/>
+<text x="120" y="252" text-anchor="middle" font-size="9.5" fill="#5c6672">黑色菌落＝白喉棒状杆菌（还原 Te⁴⁺→Te⁰）</text>
+
+<!-- ===== 右：机制与分型 ===== -->
+<text x="232" y="80" font-size="10.5" font-weight="700" fill="#33404f">选择、显色、初步分型一次完成</text>
+<g font-size="9.5">
+  <rect x="232" y="92" width="224" height="38" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="242" y="107" font-weight="700" fill="#33404f">① 选择：亚碲酸钾抑咽部杂菌</text>
+  <text x="242" y="121" fill="#5c6672">白喉棒状杆菌天然耐受，照常生长</text>
+
+  <rect x="232" y="138" width="224" height="38" rx="7" fill="#fdf6f0" stroke="#e3c8b8"/>
+  <text x="242" y="153" font-weight="700" fill="#33404f">② 显色：还原 Te⁴⁺ → 黑色碲单质</text>
+  <text x="242" y="167" fill="#5c6672">菌落由灰转黑，与抑制背景形成强对比</text>
+
+  <rect x="232" y="184" width="224" height="38" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="242" y="199" font-weight="700" fill="#2f6b45">③ 初步分型（质控株）</text>
+  <text x="242" y="213" fill="#5c6672">产毒株 E-13812 轻型菌落 · 无毒株 E-11913 重型</text>
+</g>
+<!-- 吕氏对照 -->
+<rect x="232" y="232" width="224" height="44" rx="7" fill="#f5f0fa" stroke="#b9a5d9"/>
+<text x="242" y="248" font-size="9.5" font-weight="700" fill="#5b4f8a">搭档：吕氏血清斜面</text>
+<text x="242" y="262" font-size="9.5" fill="#33404f">8~12 h 快速培养：灰白金属光泽菌落</text>
+<text x="242" y="275" font-size="9.5" fill="#5c6672">异染颗粒最典型（Albert/Neisser 染色）</text>
+
+<!-- 结论 -->
+<text x="240" y="294" text-anchor="middle" font-size="11.5" fill="#33404f">黑色只是入场券——毒力确认靠 Elek 平板或 tox 基因检测</text>
+
+<!-- 页脚 -->
+<rect x="24" y="302" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="317" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　咽/鼻拭子白喉棒状杆菌选择性分离与初步分型</text>
+</svg>

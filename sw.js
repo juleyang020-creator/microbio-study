@@ -1,6 +1,6 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260905-46';
+var APP_VERSION = '20260905-48';
 // 缓存名直接由版本号派生，只需改 APP_VERSION 一处；旧缓存在 activate 时按前缀清理
 var CACHE = CACHE_PREFIX + APP_VERSION;
 function versioned(path) {
@@ -100,21 +100,39 @@ var IMAGE_ASSETS = [
   './img/mechanism-protein.svg',
   './img/media-anaerobic-blood-agar.svg',
   './img/media-ashdown.svg',
+  './img/media-baird-parker.svg',
   './img/media-bcye.svg',
   './img/media-blood-agar.svg',
   './img/media-bordet-gengou.svg',
+  './img/media-camp-bap.svg',
+  './img/media-cary-blair.svg',
+  './img/media-ccfa.svg',
   './img/media-chocolate-agar.svg',
+  './img/media-christensen-urea-agar.svg',
   './img/media-chromagar-candida.svg',
   './img/media-cin-agar.svg',
+  './img/media-cna-agar.svg',
+  './img/media-coffee-acid-agar.svg',
+  './img/media-corn-rice-tween.svg',
+  './img/media-cza.svg',
+  './img/media-dtm.svg',
   './img/media-emb.svg',
+  './img/media-kvlb-bbe.svg',
   './img/media-lj-medium.svg',
+  './img/media-lpm-oxford.svg',
   './img/media-macconkey.svg',
+  './img/media-malassezia-media.svg',
   './img/media-mannitol-salt.svg',
   './img/media-mh-agar.svg',
+  './img/media-middlebrook-7h10.svg',
   './img/media-nutrient-agar.svg',
+  './img/media-pda.svg',
+  './img/media-rice-agar.svg',
+  './img/media-rpmi-1640.svg',
   './img/media-sda.svg',
   './img/media-ss-agar.svg',
   './img/media-tcbs.svg',
+  './img/media-tellurite-blood-agar.svg',
   './img/media-thayer-martin.svg',
   './img/media-xld.svg',
   './img/morphology-fungi.svg',

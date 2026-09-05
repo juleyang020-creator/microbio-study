@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>马铃薯葡萄糖琼脂（PDA，真菌分离培养基）</title>
+<desc>马铃薯浸出液＋葡萄糖＋琼脂：真菌分离鉴定的基础培养基之一，刺激皮肤癣菌、小孢子菌、暗色孢科真菌产生孢子；皮肤癣菌在 PDA 上产不同色素——红色毛癣菌产红色素、犬小孢子菌产黄色素、须癣毛癣菌不产色素，菌落色素是癣菌鉴别的重要线索；可加抗生素（青霉素/链霉素/氯霉素）或放线菌酮抑制杂菌</desc>
+<defs>
+  <radialGradient id="pdaagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#fbf3e2"/><stop offset="1" stop-color="#ecd9b0"/></radialGradient>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">马铃薯葡萄糖琼脂（PDA）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌分离培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">马铃薯汤打底：催孢子、显色素——癣菌的「身份证照片」在这拍</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：三种癣菌色素 ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">同一培养基，三种癣菌三种色</text>
+<!-- 红色毛癣菌 -->
+<circle cx="86" cy="140" r="40" fill="url(#pdaagar)" stroke="#c9a95f" stroke-width="1.3"/>
+<circle cx="86" cy="140" r="26" fill="#c98d8d" opacity="0.75"/>
+<circle cx="86" cy="140" r="12" fill="#b96a6a"/>
+<text x="86" y="196" text-anchor="middle" font-size="9.5" fill="#8f3b3b">红色毛癣菌：红色素</text>
+<!-- 犬小孢子菌 -->
+<circle cx="216" cy="140" r="40" fill="url(#pdaagar)" stroke="#c9a95f" stroke-width="1.3"/>
+<circle cx="216" cy="140" r="26" fill="#e8d88a" opacity="0.8"/>
+<circle cx="216" cy="140" r="12" fill="#d4bc4a"/>
+<text x="216" y="196" text-anchor="middle" font-size="9.5" fill="#8a6d2f">犬小孢子菌：黄色素</text>
+<!-- 须癣毛癣菌 -->
+<circle cx="346" cy="140" r="40" fill="url(#pdaagar)" stroke="#c9a95f" stroke-width="1.3"/>
+<circle cx="346" cy="140" r="26" fill="#f0ece2" opacity="0.9"/>
+<circle cx="346" cy="140" r="12" fill="#e2dccf"/>
+<text x="346" y="196" text-anchor="middle" font-size="9.5" fill="#5c6672">须癣毛癣菌：不产色素</text>
+
+<text x="216" y="224" text-anchor="middle" font-size="9.5" fill="#5c6672">色素＋大分生孢子形态＋毛发穿孔，三件套定皮肤癣菌</text>
+
+<!-- ===== 下：配方与用途 ===== -->
+<g font-size="9.5">
+  <rect x="24" y="238" width="212" height="52" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="34" y="254" font-weight="700" fill="#33404f">配方极简</text>
+  <text x="34" y="268" fill="#33404f">马铃薯 200 g 煮汁＋葡萄糖 20 g＋琼脂</text>
+  <text x="34" y="282" fill="#5c6672">121℃ 15 min；可用商品干粉</text>
+
+  <rect x="244" y="238" width="212" height="52" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="254" y="254" font-weight="700" fill="#2f6b45">促产孢场景</text>
+  <text x="254" y="268" fill="#33404f">皮肤癣菌 · 小孢子菌 · 暗色孢科真菌</text>
+  <text x="254" y="282" fill="#5c6672">孢子形态是定种依据之一</text>
+</g>
+
+<!-- 加剂提示 -->
+<rect x="24" y="298" width="432" height="26" rx="6" fill="#eef4fb" stroke="#b9cde4"/>
+<text x="32" y="315" font-size="9.5" fill="#33404f"><tspan font-weight="700" fill="#1f4e79">抑制杂菌</tspan>　青霉素 20 μg/ml＋链霉素 40 μg/ml（灭菌后加）· 氯霉素（耐热，灭菌前可加）· 放线菌酮 0.5 mg/ml（抑腐生霉）</text>
+</svg>

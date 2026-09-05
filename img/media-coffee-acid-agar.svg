@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>咖啡酸琼脂（CAA，新型隐球菌黑色菌落）</title>
+<desc>咖啡酸琼脂（含咖啡酸+枸橼酸铁）：鉴定新型隐球菌与其他隐球菌——新型隐球菌产生酚氧化酶分解咖啡酸，与铁离子反应使菌落呈黑色或深棕色；其他隐球菌（如罗伦特隐球菌、浅白隐球菌）不变色。黑色素是新型隐球菌的毒力因子之一（抗吞噬、抗氧化），本培养基是快速初筛工具</desc>
+<defs>
+  <radialGradient id="caaagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#fbf9f3"/><stop offset="1" stop-color="#e6ddc8"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">咖啡酸琼脂（CAA）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌鉴定培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">酚氧化酶把咖啡酸变成黑色素——新型隐球菌的「黑」身份证</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：平板 ===== -->
+<text x="24" y="80" font-size="9.5" fill="#5c6672">25~30℃ 2~5 日观察</text>
+<circle cx="120" cy="168" r="70" fill="#f0f2f4" stroke="#cdd4db" stroke-width="1.4"/>
+<circle cx="120" cy="168" r="66" fill="url(#caaagar)"/>
+<!-- 黑色菌落群（新型隐球菌） -->
+<g fill="#26262a">
+  <circle cx="102" cy="150" r="4.4"/><circle cx="118" cy="142" r="3.6"/><circle cx="132" cy="152" r="4"/><circle cx="98" cy="166" r="3.2"/><circle cx="124" cy="168" r="3.6"/><circle cx="142" cy="180" r="3"/>
+</g>
+<circle cx="94" cy="128" r="6.6" fill="#1f2733"/>
+<text x="94" y="131.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<!-- 对照：其他隐球菌不变色 -->
+<circle cx="162" cy="198" r="4" fill="#efe8dc" stroke="#c9bfa8" stroke-width="1"/>
+<text x="120" y="252" text-anchor="middle" font-size="9.5" fill="#5c6672">黑/深棕菌落＝新型隐球菌；浅色＝其他隐球菌</text>
+
+<!-- ===== 右：机制与意义 ===== -->
+<text x="232" y="80" font-size="10.5" font-weight="700" fill="#33404f">变黑的不只是颜色，是毒力</text>
+<g font-size="9.5">
+  <rect x="232" y="92" width="224" height="44" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="242" y="108" font-weight="700" fill="#33404f">机制：酚氧化酶＋咖啡酸＋Fe³⁺</text>
+  <text x="242" y="122" fill="#5c6672">酶解咖啡酸 → 黑色素沉积于细胞壁</text>
+
+  <rect x="232" y="144" width="224" height="44" rx="7" fill="#fdf0ef" stroke="#dfa0a0"/>
+  <text x="242" y="160" font-weight="700" fill="#a3332f">意义：黑色素＝毒力因子</text>
+  <text x="242" y="174" fill="#5c6672">抗吞噬、抗氧化损伤，与致病力相关</text>
+
+  <rect x="232" y="196" width="224" height="44" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="242" y="212" font-weight="700" fill="#2f6b45">快速初筛</text>
+  <text x="242" y="226" fill="#5c6672">疑似隐球菌落接 CAA：黑＝新型，不黑＝其他</text>
+</g>
+
+<!-- 鉴别链 -->
+<rect x="24" y="270" width="432" height="40" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+<text x="36" y="286" font-size="9.5" font-weight="700" fill="#1f4e79">隐球菌鉴别链</text>
+<text x="36" y="300" font-size="9.5" fill="#33404f">墨汁负染（荚膜）→ CAA 黑色（酚氧化酶）→ 乳胶凝集（荚膜多糖抗原）确证</text>
+
+<!-- 页脚 -->
+<rect x="24" y="314" width="432" height="15" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="325" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　脑脊液/血/痰中新型隐球菌的快速初筛与和其他隐球菌属鉴别</text>
+</svg>

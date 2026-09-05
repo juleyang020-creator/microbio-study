@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>Baird-Parker 琼脂（黑色菌落＋卵黄透明环）</title>
+<desc>含氯化锂（抑制杂菌）与卵黄亚碲酸钾增菌剂：金黄色葡萄球菌耐锂并将亚碲酸钾还原为黑色碲单质（菌落中心黑色），其卵磷脂酶水解卵黄磷脂形成周围透明环——「黑色菌落＋透明环」为典型特征；大肠埃希菌被抑制不生长。加苯唑西林/头孢西丁即成 MRSA 初筛培养基</desc>
+<defs>
+  <radialGradient id="bpagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#f5ecd8"/><stop offset="1" stop-color="#e3cfa8"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="330" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">Baird-Parker 琼脂</text>
+<rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
+<text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">选择与鉴别培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">氯化锂选出金葡，亚碲酸钾染黑菌落，卵磷脂酶再画一圈透明环</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：平板俯视 ===== -->
+<text x="24" y="80" font-size="9.5" fill="#5c6672">平板俯视 · 35℃ 24~48 h</text>
+<circle cx="120" cy="170" r="72" fill="#f0f2f4" stroke="#cdd4db" stroke-width="1.4"/>
+<circle cx="120" cy="170" r="68" fill="url(#bpagar)"/>
+<!-- 卵黄浑浊基底纹理 -->
+<g fill="#d9c9a4" opacity="0.5">
+  <circle cx="92" cy="140" r="2"/><circle cx="150" cy="150" r="1.6"/><circle cx="110" cy="196" r="2"/><circle cx="158" cy="190" r="1.4"/><circle cx="86" cy="186" r="1.6"/>
+</g>
+<!-- 典型菌落：黑心 + 透明环 -->
+<circle cx="104" cy="152" r="15" fill="#f5ecd8" stroke="#d9c9a4" stroke-width="0.8"/>
+<circle cx="104" cy="152" r="4.5" fill="#26262a"/>
+<circle cx="96" cy="132" r="6.6" fill="#1f2733"/>
+<text x="96" y="135.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<!-- 第二个 -->
+<circle cx="148" cy="188" r="12" fill="#f5ecd8" stroke="#d9c9a4" stroke-width="0.8"/>
+<circle cx="148" cy="188" r="3.6" fill="#26262a"/>
+<!-- 杂菌被抑制 -->
+<g fill="none" stroke="#c9b28a" stroke-width="1.1" stroke-dasharray="3,2.5">
+  <circle cx="80" cy="200" r="6"/><circle cx="170" cy="146" r="5"/>
+</g>
+<path d="M77,197 l6,6 m0,-6 l-6,6 M167,143 l6,6 m0,-6 l-6,6" stroke="#c9a95f" stroke-width="1.2"/>
+<text x="120" y="252" text-anchor="middle" font-size="9.5" fill="#5c6672">透明环内黑色菌落；杂菌（虚线×）被锂抑制</text>
+
+<!-- ===== 右：机制三步 ===== -->
+<text x="232" y="80" font-size="10.5" font-weight="700" fill="#33404f">三重机制各管一段</text>
+<g font-size="9.5">
+  <rect x="232" y="92" width="224" height="40" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="242" y="108" font-weight="700" fill="#33404f">① 选择：氯化锂 5 g/L</text>
+  <text x="242" y="122" fill="#5c6672">抑制大多数革兰阴性菌与杂菌，金葡耐锂生长</text>
+
+  <rect x="232" y="140" width="224" height="40" rx="7" fill="#fdf6f0" stroke="#e3c8b8"/>
+  <text x="242" y="156" font-weight="700" fill="#33404f">② 显色：亚碲酸钾 → 黑色碲</text>
+  <text x="242" y="170" fill="#5c6672">金葡还原 Te⁴⁺ → 黑色单质沉积于菌落中心</text>
+
+  <rect x="232" y="188" width="224" height="40" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="242" y="204" font-weight="700" fill="#8a6d2f">③ 鉴别：卵磷脂酶 → 透明环</text>
+  <text x="242" y="218" fill="#5c6672">水解卵黄磷脂 → 菌落周围浑浊消退成透明环</text>
+</g>
+
+<!-- 质控 -->
+<rect x="232" y="238" width="224" height="40" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+<text x="242" y="254" font-size="9.5" font-weight="700" fill="#2f6b45">质控</text>
+<text x="242" y="268" font-size="9.5" fill="#33404f">金葡 ATCC 25923：黑心＋透明环；大肠 25922：不长</text>
+
+<!-- 结论 -->
+<text x="240" y="292" text-anchor="middle" font-size="11.5" fill="#33404f">「黑色菌落＋透明环」先锁定金葡，凝固酶/乳胶试验再确认</text>
+
+<!-- 页脚 -->
+<rect x="24" y="300" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="316" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">扩展</tspan>　加苯唑西林/头孢西丁 → MRSA 初筛；换色原底物 → 金葡显色培养基</text>
+</svg>

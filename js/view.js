@@ -190,12 +190,22 @@
     'growth-28c': 'img/biochem-growth-panel.svg'
   };
   // 培养基：平板外观 + 选择/鉴别原理示意（文件名与条目 id 一致）
+  // 培养基：按文件名约定自动映射；两个吐温80鉴定培养基共用一张图（2026-09-05 新增 16 张）
   var MEDIA_IMAGE = {};
   [
     'nutrient-agar', 'blood-agar', 'chocolate-agar', 'macconkey', 'emb', 'ss-agar', 'xld',
     'tcbs', 'mannitol-salt', 'chromagar-candida', 'lj-medium', 'sda', 'bcye', 'bordet-gengou',
     'thayer-martin', 'cin-agar', 'ashdown', 'anaerobic-blood-agar', 'mh-agar'
   ].forEach(function (id) { MEDIA_IMAGE[id] = 'img/media-' + id + '.svg'; });
+  // 以下 16 张为 2026-09-05 补绘（同名文件直接在 img/ 下）
+  [
+    'baird-parker', 'lpm-oxford', 'tellurite-blood-agar', 'kvlb-bbe', 'ccfa', 'camp-bap',
+    'cna-agar', 'middlebrook-7h10', 'rpmi-1640', 'cary-blair', 'pda', 'rice-agar',
+    'christensen-urea-agar', 'cza', 'malassezia-media', 'dtm', 'coffee-acid-agar'
+  ].forEach(function (id) { MEDIA_IMAGE[id] = 'img/media-' + id + '.svg'; });
+  // 米粉吐温80与玉米吐温80内容高度重叠，共用一张合并图
+  MEDIA_IMAGE['rice-tween-agar'] = 'img/media-corn-rice-tween.svg';
+  MEDIA_IMAGE['corn-tween-agar'] = 'img/media-corn-rice-tween.svg';
 
   // 术语表：结构类按条目 id 映射；其余类别共用总览图不挂条目图（词条以文字为主）
   var GLOSSARY_IMAGE = {

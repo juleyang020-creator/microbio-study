@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>马拉色菌培养基（亲脂酵母的油脂供给）</title>
+<desc>马拉色菌为亲脂性酵母，需含油脂/长链脂肪酸的培养基：Leeming-Notman（蛋白胨+葡萄糖+酵母浸膏+牛胆盐+甘油+单硬脂酸甘油酯+吐温60+全脂牛奶+橄榄油）对马拉色菌复苏培养优于狄克逊（Dixon）琼脂，Dixon 上某些菌落形态特征更典型；糠秕马拉色菌（花斑糠疹病原）与头皮屑相关种均依赖外源脂质；常规 SDA 上不长——培养阴性不能排除马拉色菌</desc>
+<defs>
+  <radialGradient id="oilagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#fdf9ec"/><stop offset="1" stop-color="#efe3b8"/></radialGradient>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">马拉色菌培养基</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌分离培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">亲脂酵母：不给油不长——培养阴性≠没有马拉色菌</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：SDA 不长 vs 含油生长 ===== -->
+<text x="96" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#a3332f">SDA（无脂补充）</text>
+<circle cx="96" cy="150" r="46" fill="#f5f0fa" stroke="#b9a5d9" stroke-width="1.3"/>
+<path d="M80,134 l32,32 m0,-32 l-32,32" stroke="#b9a5d9" stroke-width="1.6"/>
+<text x="96" y="212" text-anchor="middle" font-size="9.5" fill="#a3332f">不长（缺脂质）</text>
+
+<text x="256" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2f6b45">Leeming-Notman / Dixon</text>
+<circle cx="256" cy="150" r="46" fill="url(#oilagar)" stroke="#c9a95f" stroke-width="1.3"/>
+<!-- 油滴 -->
+<g fill="#f2e3b5" opacity="0.8">
+  <circle cx="236" cy="136" r="4"/><circle cx="266" cy="130" r="3"/><circle cx="276" cy="152" r="3.6"/><circle cx="246" cy="164" r="2.6"/>
+</g>
+<!-- 酵母细胞 -->
+<g fill="#d4bc4a" stroke="#a8892e" stroke-width="0.8">
+  <circle cx="252" cy="146" r="3.4"/><circle cx="262" cy="142" r="3"/><circle cx="258" cy="156" r="3.2"/><circle cx="246" cy="152" r="2.8"/>
+</g>
+<text x="256" y="212" text-anchor="middle" font-size="9.5" fill="#2f6b45">生长（橄榄油/吐温60/奶脂供脂）</text>
+
+<!-- ===== 右：两种培养基分工 ===== -->
+<g font-size="9.5">
+  <rect x="330" y="78" width="126" height="56" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="340" y="94" font-weight="700" fill="#33404f">Leeming-Notman</text>
+  <text x="340" y="108" fill="#33404f">复苏培养更优</text>
+  <text x="340" y="121" fill="#5c6672">（油+奶+吐温60+胆盐）</text>
+
+  <rect x="330" y="142" width="126" height="56" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="340" y="158" font-weight="700" fill="#33404f">Dixon 琼脂</text>
+  <text x="340" y="172" fill="#33404f">某些菌落形态</text>
+  <text x="340" y="185" fill="#5c6672">特征更典型（分型用）</text>
+</g>
+
+<!-- ===== 下：临床要点 ===== -->
+<g font-size="9.5">
+  <rect x="24" y="230" width="212" height="54" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="34" y="246" font-weight="700" fill="#8a6d2f">相关疾病</text>
+  <text x="34" y="260" fill="#33404f">花斑糠疹（糠秕马拉色菌）</text>
+  <text x="34" y="274" fill="#5c6672">头皮屑/脂溢性皮炎·马拉色菌毛囊炎</text>
+
+  <rect x="244" y="230" width="212" height="54" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
+  <text x="254" y="246" font-weight="700" fill="#a3332f">诊断陷阱</text>
+  <text x="254" y="260" fill="#33404f">镜检（KOH「面条肉丸」孢+芽孢）阳性</text>
+  <text x="254" y="274" fill="#5c6672">但 SDA 培养阴性＝常见，不等于无感染</text>
+</g>
+
+<!-- 结论 -->
+<text x="240" y="306" text-anchor="middle" font-size="11.5" fill="#33404f">马拉色菌的诊断靠镜检与临床，培养只是辅助（且必须用含脂培养基）</text>
+
+<!-- 页脚 -->
+<rect x="24" y="314" width="432" height="15" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="325" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">变体</tspan>　七叶苷琼脂（Leeming 法）与橄榄油覆盖 SDA 亦可用于分离</text>
+</svg>

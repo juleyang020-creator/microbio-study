@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>米饭培养基（Rice agar，犬小孢子菌产孢鉴别）</title>
+<desc>大米 30 g＋蒸馏水 100 ml：刺激犬小孢子菌产生大分生孢子且生长良好——用于鉴别奥杜盎小孢子菌（在米饭培养基上不产大分生孢子）；也刺激部分皮肤癣菌产孢。大分生孢子梭形、壁厚有隔，是镜下鉴别要点</desc>
+<defs>
+  <radialGradient id="macro" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fbf3e2"/><stop offset="1" stop-color="#d9c9a4"/></radialGradient>
+</defs>
+<rect width="480" height="330" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">米饭培养基（Rice agar）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌鉴定培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">一碗米饭分两种小孢子菌：产大分生孢子的才是犬小</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：两种小孢子菌对照 ===== -->
+<text x="120" y="78" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2f6b45">犬小孢子菌（M. canis）</text>
+<!-- 大分生孢子（梭形有隔） -->
+<g>
+  <ellipse cx="120" cy="130" rx="34" ry="12" fill="url(#macro)" stroke="#a8894e" stroke-width="1.4"/>
+  <g stroke="#5d4a26" stroke-width="0.9">
+    <line x1="104" y1="122" x2="104" y2="138"/><line x1="120" y1="119" x2="120" y2="141"/><line x1="136" y1="122" x2="136" y2="138"/>
+  </g>
+</g>
+<text x="120" y="158" text-anchor="middle" font-size="9.5" fill="#2f6b45">大分生孢子：梭形·壁厚·多隔 ＋</text>
+<text x="120" y="172" text-anchor="middle" font-size="9.5" fill="#5c6672">生长良好、产孢丰富</text>
+
+<text x="350" y="78" text-anchor="middle" font-size="10.5" font-weight="700" fill="#a3332f">奥杜盎小孢子菌（M. audouinii）</text>
+<!-- 无大分生孢子，仅菌丝 -->
+<g stroke="#a8894e" stroke-width="2.4" fill="none" stroke-linecap="round">
+  <path d="M310,140 Q330,118 356,114"/>
+  <path d="M324,146 Q344,132 366,132"/>
+</g>
+<g stroke="#5d4a26" stroke-width="0.9">
+  <line x1="330" y1="122" x2="332" y2="132"/><line x1="346" y1="116" x2="348" y2="126"/>
+</g>
+<path d="M316,158 l6,6 m0,-6 l-6,6" stroke="#c2413d" stroke-width="1.6"/>
+<text x="350" y="158" text-anchor="middle" font-size="9.5" fill="#a3332f">不产大分生孢子 −</text>
+<text x="350" y="172" text-anchor="middle" font-size="9.5" fill="#5c6672">仅见菌丝</text>
+
+<!-- 中缝对照线 -->
+<line x1="240" y1="70" x2="240" y2="190" stroke="#e3e7ec" stroke-dasharray="4,4"/>
+
+<!-- ===== 下：机制与用途 ===== -->
+<g font-size="9.5">
+  <rect x="24" y="200" width="212" height="54" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="34" y="216" font-weight="700" fill="#33404f">为什么用米饭</text>
+  <text x="34" y="230" fill="#33404f">贫瘠谷物营养模拟毛发/皮肤环境</text>
+  <text x="34" y="244" fill="#5c6672">诱导犬小孢子菌亮出产孢特征</text>
+
+  <rect x="244" y="200" width="212" height="54" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="254" y="216" font-weight="700" fill="#2f6b45">附加用途</text>
+  <text x="254" y="230" fill="#33404f">刺激部分皮肤癣菌产孢</text>
+  <text x="254" y="244" fill="#5c6672">（配合 PDA 观察色素与孢子形态）</text>
+</g>
+
+<!-- 结论 -->
+<text x="240" y="276" text-anchor="middle" font-size="11.5" fill="#33404f">米饭上长不出大分生孢子的小孢子菌，指向奥杜盎</text>
+
+<!-- 页脚 -->
+<rect x="24" y="288" width="432" height="30" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="302" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">组合</tspan>　头癣病原鉴别链：伍德灯荧光（犬小亮绿/奥杜盎亮绿相似）→ 米饭培养基</text>
+<text x="32" y="314" font-size="9.5" fill="#5c6672">分犬小 vs 奥杜盎 → 毛发穿孔试验/镜下定种</text>
+</svg>
