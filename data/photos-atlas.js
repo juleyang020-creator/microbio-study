@@ -6101,6 +6101,20 @@ window.DB.photosAtlas = {
    "说明": "图 25-5-4　酿酒酵母镜检(血琼脂平板,35℃,2日,革兰染色,×1000)"
   }
  ],
+ "rhodotorula-mucilaginosa": [
+  {
+   "文件": "img/atlas/bd0dfb1b7d6f6e21c8caf722aabc7881e80caab413e95d28e3413afa061555e0.jpg",
+   "说明": "图 25-4-1　红酵母的形态特征"
+  },
+  {
+   "文件": "img/atlas/9568c785ea706685d9e9275de29da28f5673474a7bc31b602c809c7568712b83.jpg",
+   "说明": "图 25-3-1　胶红酵母(SDA, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/995f8c50b1b823e177c881415dc79696ee35dc6de59a9dc9f7a01b08d1219576.jpg",
+   "说明": "图 25-3-2　胶红酵母镜下形态(玉米粉吐温 80 培养基, 3 日, 未染色, ×400)"
+  }
+ ],
  "histoplasma-capsulatum": [
   {
    "文件": "img/atlas/321a3b7c87a9bdfc3b4a235bd71116923cd24c8c1a164cae9a6334f061d60b19.jpg",
@@ -6203,6 +6217,120 @@ window.DB.photosAtlas = {
    "说明": "图 25-4-4　阿萨希毛孢子菌镜下形态(乳酸酚棉蓝染色, ×1000)"
   }
  ],
+ "trichosporon-inkin": [
+  {
+   "文件": "img/atlas/abca0f26599d472a7d1bf2461a1db44f161296dd5cc97e4835f299821b4eb1af.jpg",
+   "说明": "图 25-13-2　皮瘤毛孢子菌革兰氏染色 ×1000; F"
+  },
+  {
+   "文件": "img/atlas/3d08b21d1315bba164f5b47a9ec2b0b142cb42c4b3c1348695766273f0792b36.jpg",
+   "说明": "图 25-13-2　皮瘤毛孢子菌 SDA 35℃ 3 日; G"
+  }
+ ],
+ "geotrichum-candidum": [
+  {
+   "文件": "img/atlas/005ad00481047d4e3598c5c6701a676e27ced13f866f10e4f8355bd44a7e1136.jpg",
+   "说明": "图 25-14-1　革兰氏染色 × 1000; B"
+  },
+  {
+   "文件": "img/atlas/7b04603538a1eb1b0f0b59e0c63b3ff3d9f43a84d8450069ee439e12f1e8c605.jpg",
+   "说明": "图 25-14-1　SDA 30℃ 3 日, 乳酸酚棉蓝染色 × 400; C"
+  },
+  {
+   "文件": "img/atlas/14ddec8c90314baf0fb7cdd2412538ef4e57f76d1832fb9981b5715e6e81363f.jpg",
+   "说明": "图 25-14-1　SDA 30℃ 3 日; D"
+  },
+  {
+   "文件": "img/atlas/7ccb347d8266cd7ab6e06557befa89d17ae7e7670f0431d25669cf17515cd449.jpg",
+   "说明": "图 25-14-1　CHROMagar 30℃ 3 日"
+  },
+  {
+   "文件": "img/atlas/c95c0fd905d80f8c3d3afa196af70597f73a77b98d57baea88a9474821884c05.jpg",
+   "说明": "图 25-10-1　白地霉菌落(血琼脂平板,25℃,3日)"
+  },
+  {
+   "文件": "img/atlas/1d462c33062613c3888d1ef641c08117b9caf43076430afaa39fcce20014e0fa.jpg",
+   "说明": "图 25-10-4　白地霉菌落(PDA, 25℃, 3 日)"
+  },
+  {
+   "文件": "img/atlas/6445f2b69b5f84589e438abfc154577c8e823c57c5a9c6685c864c21c216b987.jpg",
+   "说明": "图 25-10-2　白地霉菌落(SDA, 25℃, 3 日)"
+  },
+  {
+   "文件": "img/atlas/5c34ba80aa7bfeac1764f395ab4bc467320ad562f29289c7288602e17b54474f.jpg",
+   "说明": "图 25-10-5　白地霉菌落(CHROMagar Candida 显色平板, 25℃, 3 日)"
+  }
+ ],
+ "malassezia-furfur": [
+  {
+   "文件": "img/atlas/3e097de7c7fe924a38ec66036743fd1f865a486fed330252ddef398f98ac6c55.jpg",
+   "说明": "图 25-15-1　角质层中的糠秕马拉色菌菌丝和出芽孢子 HE 染色 × 200（图片由四川大学华西医院冉玉平教授提供）；B"
+  },
+  {
+   "文件": "img/atlas/32a896499e6597a23892122393429af2c5d3729a2fa7406789c1337045fd0ade.jpg",
+   "说明": "图 25-15-1　糠秕马拉色菌菌落涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/9b383ef5018253ff5ea9c2ffc227f664eeeb9ee462fc950a1eafebd8cd09e3f3.jpg",
+   "说明": "图 25-15-2　糠秕马拉色菌，橄榄油 CHROMagar 培养基 3 日；B"
+  },
+  {
+   "文件": "img/atlas/82e00083b06f370d2c8f87c98d3e23fd4177e59317fb45e967a5f4bf4c13f062.jpg",
+   "说明": "图 25-15-2　糠秕马拉色菌 ATCC 14521, 1% 吐温 -60 SDA 10 日；C"
+  },
+  {
+   "文件": "img/atlas/e9af2b51b2516d7af72da9e22731ef0d0429e8d0b9428c26c58b343b6c73deca.jpg",
+   "说明": "图 25-15-2　糠秕马拉色菌 ATCC 14521, 1% 吐温 -60 CHROMagar 10 日；D"
+  },
+  {
+   "文件": "img/atlas/60e06f2aeeec4c6f593fa7308228ad5b9f175db42740291e6ae32fb0d39b2c92.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(糠秕马拉色菌); C"
+  },
+  {
+   "文件": "img/atlas/026022b9f8bd0886e99962c46bdfac40a7a4c671973c1698c60c0a1a876c3481.jpg",
+   "说明": "图 25-7-4　糠秕马拉色菌菌落(橄榄油培养基,37℃,7日)"
+  },
+  {
+   "文件": "img/atlas/f4fc7e30baa1223acd7ee3b8449edc5e671e8af98ad1731c8623afb5cdf598d0.jpg",
+   "说明": "图 25-7-5　糠秕马拉色菌皮屑直接镜检, 可见孢子和菌丝(未染色, ×400)"
+  }
+ ],
+ "malassezia-globosa": [
+  {
+   "文件": "img/atlas/ed3eaca59741146e1da7f06d8b462b8dbacb4a7e7c7a7df2bc1549b52fae4d43.jpg",
+   "说明": "图 25-15-1　花斑糠疹鳞屑（球形马拉色菌菌丝和出芽孢子）电镜图（图片由四川大学华西医院冉玉平教授提供）；D"
+  },
+  {
+   "文件": "img/atlas/c95deb004aa109388b3f964ce0b8c70dc63d9db2c4c221c94203c6b8e1a84e50.jpg",
+   "说明": "图 25-15-1　球形马拉色菌电镜图（图片由四川大学华西医院冉玉平教授提供）；E"
+  },
+  {
+   "文件": "img/atlas/f72517aadae1c0e3cf8433669d7e43757e0aec6ed7309fe16929df33e8fbf760.jpg",
+   "说明": "图 25-15-1　球形马拉色菌钙白荧光染色 × 1000；F"
+  },
+  {
+   "文件": "img/atlas/089820e383305af22dcc70bb692e7cf81f2976e92c3b861a22d77c1559e59108.jpg",
+   "说明": "图 25-15-2　球形马拉色菌，1% 吐温 -40 SDA 35℃ 14 日；E"
+  },
+  {
+   "文件": "img/atlas/702078735a36201e8d75659aff182445e69e0259adbaaac91b35c624fe8affcf.jpg",
+   "说明": "图 25-15-2　球形马拉色菌，1% 吐温 -40 CHROMagar 35℃ 7 日；F"
+  },
+  {
+   "文件": "img/atlas/22139be58f69183f202507c67d4eaf66b293e2d7a472165c13a224988e56af23.jpg",
+   "说明": "图 25-7-3　球形马拉色菌纯培养的镜下形态(革兰染色, ×400)"
+  }
+ ],
+ "malassezia-pachydermatis": [
+  {
+   "文件": "img/atlas/9584c01fbd6bff2c968e0d4328099a89de3b95dbd3089b9ea07d823d4ca86cc5.jpg",
+   "说明": "图 25-15-2　厚皮马拉色菌，1% 吐温 -80 PDA 35℃ 10 日"
+  },
+  {
+   "文件": "img/atlas/0ec9dcd3517c7a91fe295553125be5ab3073a19518db1061d9f137c81a4de2ab.jpg",
+   "说明": "图 25-7-1　厚皮马拉色菌纯培养的镜下形态(革兰染色, ×400)"
+  }
+ ],
  "malassezia": [
   {
    "文件": "img/atlas/826227426e9bd6e08a272233d21b490e3272d99af34c6435ad640b95b118f74b.jpg",
@@ -6219,6 +6347,16 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/f4dbc2db5b73c9563becb20f7210d6ba62213d5d9f9e130e2844548bd44538bd.jpg",
    "说明": "图 25-15-3　打孔法吐温依赖试验结果(M. dermatis)"
+  }
+ ],
+ "malassezia-sympodialis": [
+  {
+   "文件": "img/atlas/0f8f0cd17b32607a8ee0e0247222322f4e27998b837bb11677121cb6f3b75848.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(合轴马拉色菌); D"
+  },
+  {
+   "文件": "img/atlas/f2564b7eaacf1305ddef243750728f199c0899bac9f5ba45350c613348780857.jpg",
+   "说明": "图 25-7-6　合轴马拉色菌培养物镜下形态(革兰染色, ×400)"
   }
  ],
  "pneumocystis-jirovecii": [
@@ -8495,6 +8633,68 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/02c2cf3595751a2b6f9e4ff25f0069d055b3dda00f5ed3b178811de475759969.jpg",
    "说明": "图 25-1-43　乳酒念珠菌镜检(乳酸酚棉蓝染色, ×600)"
+  }
+ ],
+ "candida-lipolytica": [
+  {
+   "文件": "img/atlas/4e8be9d20db145aa6d5e1eafee55410544c15d48719e6b7d8cad7164388f2fa4.jpg",
+   "说明": "图 25-1-48　解脂念珠菌在 BA 上的菌落特征(35℃)。A. 1 日；B. 3 日；C. 5 日"
+  },
+  {
+   "文件": "img/atlas/d1a722987741a43b3d79f881df6262eae15f80c0fbe573421fa1e0de63b9d3eb.jpg",
+   "说明": "图 25-1-49　解脂念珠菌在 SDA 上的菌落特征(35℃)。A. 1 日；B. 3 日；C. 5 日"
+  },
+  {
+   "文件": "img/atlas/890687519f97cf0ec0700a165287feb7135b55771019ced7fbb93487510b4506.jpg",
+   "说明": "图 25-1-50　1 日；B"
+  },
+  {
+   "文件": "img/atlas/166149629003501619852d226e6a9f0ede34535e44b1ca4d37783d7066802b4d.jpg",
+   "说明": "图 25-1-50　3 日；C"
+  },
+  {
+   "文件": "img/atlas/98026d0b567d0a45a8ba4c206e2b1f8ef45b3cb1319b6ee876aa6b41c92a4c4d.jpg",
+   "说明": "图 25-1-50　5 日"
+  },
+  {
+   "文件": "img/atlas/ac32e7063c6b0b8a5700c8d45f7191567f3cf30a1c31264cb7c68f7211988af4.jpg",
+   "说明": "图 25-1-51　示意图；B"
+  },
+  {
+   "文件": "img/atlas/c20e3b2ce047fc776992a705bba1ac13348c680f0b8a38c1697fbdaeb16c4431.jpg",
+   "说明": "图 25-1-51　BA, 35℃培养，革兰染色，×1000"
+  }
+ ],
+ "candida-norvegensis": [
+  {
+   "文件": "img/atlas/ea383c93134730e49776e19cfda9150ec25657ede6cca97805bd44e6c69f9fe6.jpg",
+   "说明": "图 25-1-52　挪威念珠菌在 BA 上的菌落特征(35℃)。A. 1 日；B. 3 日；C. 5 日（1/2）"
+  },
+  {
+   "文件": "img/atlas/f84c02b71bb199d079c4deceb424e08d1822e23dd7fb780cdff14e300fb17638.jpg",
+   "说明": "图 25-1-52　挪威念珠菌在 BA 上的菌落特征(35℃)。A. 1 日；B. 3 日；C. 5 日（2/2）"
+  },
+  {
+   "文件": "img/atlas/74e5f041dcc23bf2adcb32a69fef2e2ac205e85f8f8d2ea5b14556b3eb563f09.jpg",
+   "说明": "图 25-1-53　1 日"
+  },
+  {
+   "文件": "img/atlas/d3ca7dd64994faac1b17abde71b16e32a3c0abff5804f8a7c053029e06f4b3fa.jpg",
+   "说明": "图 25-1-53　3 日"
+  },
+  {
+   "文件": "img/atlas/f7b857110729728fd74be4c253df28ae6526b6a22ab2b65f9b4088edd4e80e66.jpg",
+   "说明": "图 25-1-53　5 日"
+  },
+  {
+   "文件": "img/atlas/f257ad4418025165851cca5d2651e19e9156b22c26b7ea6a8d3163d359433712.jpg",
+   "说明": "图 25-1-55　挪威念珠菌镜检(BA, 35℃培养, 革兰染色, ×1000)"
+  }
+ ],
+ "malassezia-slooffiae": [
+  {
+   "文件": "img/atlas/3199c222479c430ae8788f985270b5f9c1fbda987093e23a8c4301bb491e9e25.jpg",
+   "说明": "图 25-7-7　斯洛菲马拉色菌培养物镜下形态(革兰染色, ×400)"
   }
  ],
  "trichophyton-indotineae": [

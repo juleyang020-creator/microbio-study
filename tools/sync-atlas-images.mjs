@@ -55,6 +55,9 @@ const EXCLUDE = new Set([
   // ==== 批46 审计补充（94 书铜绿荧光素图：鉴别段提及浅黄/栖稻造成串扰）====
   'pseudomonas-luteola|94|11-2-7',
   'pseudomonas-oryzihabitans|94|11-2-7',
+  // ==== 批48 审计补充（93 多联图 25-13-2 分联为 coremiiforme/真皮/皮瘤/弯曲皮肤毛孢子——
+  // 「皮肤毛孢子菌」裸名匹配不到任何分联，标题级匹配属串扰；皮瘤 E/F 分联合法保留）====
+  'trichosporon-cutaneum|93|25-13-2',
   'pseudomonas-aeruginosa|93|18-1-6',  // 同上
   'acinetobacter-baumannii|93|18-1-6', // 同上
   'moraxella-catarrhalis|93|18-1-6',   // 同上
