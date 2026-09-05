@@ -44,7 +44,8 @@ window.DB.breakpoints = [
   {
     菌组名: "沙门菌 / 志贺菌 (Salmonella & Shigella spp.)",
     CLSI表: "Table 2A-2",
-    菌种: ["salmonella-typhi", "salmonella-enteritidis", "salmonella-paratyphi-a", "shigella-dysenteriae", "shigella-flexneri", "shigella-boydii", "salmonella-bongori"],
+    菌种: ["salmonella-typhi", "salmonella-enteritidis", "salmonella-paratyphi-a", "shigella-dysenteriae", "shigella-flexneri", "shigella-boydii", "salmonella-bongori",
+      'salmonella-typhimurium', 'salmonella-choleraesuis', 'salmonella-paratyphi-b', 'salmonella-paratyphi-c', 'salmonella-bovismorbificans'],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "可预测阿莫西林;粪便分离株常规仅报氨苄西林、氟喹诺酮、复方磺胺(志贺另可报阿奇霉素)" },
       { 药物: "头孢噻肟 (Cefotaxime)", 简写: "CTX", 组别: "1", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "≥26", 抑菌圈_I: "23–25", 抑菌圈_R: "≤22", 备注: "一/二代头孢及头霉素体外可假敏感,勿报敏感(仅伤寒/肠外沙门菌需测三代头孢)" },

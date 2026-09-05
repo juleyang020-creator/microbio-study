@@ -2161,6 +2161,20 @@ window.DB.photosAtlas = {
    "说明": "图 15-4-1　XLD 2 日"
   },
   {
+   "文件": "img/atlas/64fd0d875a3027b2ddadfca7139e032caefa98d87cfbbf6f79a0b08052fdfaa5.jpg",
+   "说明": "图 8-3-1　伤寒沙门菌纯培养的镜下形态(革兰染色)（1/2）"
+  },
+  {
+   "文件": "img/atlas/0c605ea6e5306d4a0963361f8d5363d2f72b5a56ba5f39ae681557b46529b02f.jpg",
+   "说明": "图 8-3-1　伤寒沙门菌纯培养的镜下形态(革兰染色)（2/2）"
+  },
+  {
+   "文件": "img/atlas/d71f3c0084ce030fee6dbab4f98d926bf5781710458782fdbd4c8adb679a80de.jpg",
+   "说明": "图 8-3-2　伤寒沙门菌在血琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "salmonella-typhimurium": [
+  {
    "文件": "img/atlas/f24a416c765019dc3cd0aa5ce58411e087531e5662730f6f2bf01f51d2f939e2.jpg",
    "说明": "图 15-4-2　革兰氏染色 × 1000; B"
   },
@@ -2171,6 +2185,26 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/a0ec0a07152b8212876b288f33af5511ad6ab296e0264ec035b61a1729f121ab.jpg",
    "说明": "图 15-4-2　粗糙型, SBA 3 日; D"
+  },
+  {
+   "文件": "img/atlas/84718249f848d0ef7dfa090117f84e096a47b73dbb6c0e89f6f5cdee08b82ae3.jpg",
+   "说明": "图 15-4-2　SSA 24h"
+  },
+  {
+   "文件": "img/atlas/a2dee333527314c3b50a19087de174502d8c70ab64bb517940814bf2af17656d.jpg",
+   "说明": "图 8-3-20　鼠伤寒沙门菌纯培养的镜下形态(革兰染色, ×100)"
+  },
+  {
+   "文件": "img/atlas/f556206129bc156c13d26cc6d940532e5ea1bdb9cef2ff69bd90327a33238be2.jpg",
+   "说明": "图 8-3-21　鼠伤寒沙门菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/cf2f42ba5cd46aec5ff9e8deae8f2f2b537178f6a88758a67c3b5df6ce32ac28.jpg",
+   "说明": "图 8-3-22　鼠伤寒沙门菌在 XLD 琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/8d21a4c8a88b5d5bed29ef0379784a4f0dccb5d11c2a1e9455f8f95e070b4011.jpg",
+   "说明": "图 8-3-23　粪便标本中鼠伤寒沙门菌在 XLD 琼脂平板上的菌落特征（箭头所示，18～24 h）"
   }
  ],
  "klebsiella-pneumoniae": [
@@ -8621,6 +8655,40 @@ window.DB.photosAtlas = {
    "说明": "图 8-3-39　粪便标本中肠炎沙门菌在 SS 琼脂平板上的菌落特征(箭头所示,18～24 h)（2/2）"
   }
  ],
+ "salmonella-choleraesuis": [
+  {
+   "文件": "img/atlas/fc622e105b48f2568f9fdf485358d6abae04adc927dc18c3bffd2398665b7559.jpg",
+   "说明": "图 8-3-44　猪霍乱沙门菌纯培养(24 h)镜下特征(革兰染色)"
+  },
+  {
+   "文件": "img/atlas/ac5ac714b65813a1b180dcce90cd4d7da306baddbafb8104ffd6e731e6a53b8d.jpg",
+   "说明": "图 8-3-45　猪霍乱沙门菌在血琼脂平板上菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/7c68460dc581f6c3767e76e2413de84d12de547009b1de19e74e58ca2e3338fb.jpg",
+   "说明": "图 8-3-46　猪霍乱沙门菌在 XLD 琼脂平板上菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/a1a1cf15a587964c26be8d0fb744cf06406068cbbdd9c4a8d9159a4a41bd7ba0.jpg",
+   "说明": "图 8-3-47　正常菌群较少，产酸少，使培养基偏红色；B"
+  },
+  {
+   "文件": "img/atlas/14c2d71577ade69d6833236679c3af66cd37982c4176c22e9be36c8422cbeb17.jpg",
+   "说明": "图 8-3-47　正常菌群多，由于发酵木糖、乳糖或蔗糖产酸，使培养基偏黄色"
+  },
+  {
+   "文件": "img/atlas/a53b465ac3ef21f1a807e8821c785c2961ba116b04692a94a33a14a00018c9de.jpg",
+   "说明": "图 8-3-48　猪霍乱沙门菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/6c9eb99b2e4180557a4f955706ca382a491f32c9871f38ec16f66e158b3ccae2.jpg",
+   "说明": "图 8-3-49　粪便标本中猪霍乱沙门菌在麦康凯琼脂平板上的菌落特征（箭头所示，18～24 h）"
+  },
+  {
+   "文件": "img/atlas/b8a56b570d8ee31ef7f1c0182355da6791e2898d2eebd0f187f32ca6d643ecc1.jpg",
+   "说明": "图 8-3-50　猪霍乱沙门菌在 HE 琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
  "salmonella-paratyphi-a": [
   {
    "文件": "img/atlas/7a636bea6ec70764a6b13df382bdf23f0ba1c4d14811491de6ff8a414f1078a3.jpg",
@@ -8633,6 +8701,48 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/553ed70f40af2e679e88d54c19ffde400565e8929406f1a44cffbfa2a3286f6d.jpg",
    "说明": "图 8-3-58　甲型副伤寒沙门菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "salmonella-paratyphi-b": [
+  {
+   "文件": "img/atlas/12d900fd843459ba28492c0a47dbc223a554f26ba2e312eb6aebda9c35cb433a.jpg",
+   "说明": "图 8-3-59　乙型副伤寒沙门菌纯培养的镜下形态(革兰染色, ×1000)"
+  },
+  {
+   "文件": "img/atlas/35a0969fb26be86e3b8d769a6a605a6f0651615ecef82cb3f6196982d2d2c38a.jpg",
+   "说明": "图 8-3-60　乙型副伤寒沙门菌在 XLD 琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/e4b09702777b7ea0d04d8a9c4c2dc839802b12853a6905e1e5e4af01603c8f33.jpg",
+   "说明": "图 8-3-61　乙型副伤寒沙门菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "salmonella-paratyphi-c": [
+  {
+   "文件": "img/atlas/e00e7b35441e9912177590523ad49004412a1ec4132f82ac8e02d42fc4ceadf2.jpg",
+   "说明": "图 8-3-62　丙型副伤寒沙门菌在 XLD 琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/69daec516b4a1e1c180bfa6e2e137681565ce18111ad2667de39a627e79f0335.jpg",
+   "说明": "图 8-3-63　丙型副伤寒沙门菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "salmonella-bovismorbificans": [
+  {
+   "文件": "img/atlas/d9d7c17551475122ee1517103146bc759a99e129e976478445bcb538ad301947.jpg",
+   "说明": "图 8-3-64　病牛沙门菌纯培养的镜下形态(革兰染色, ×100)"
+  },
+  {
+   "文件": "img/atlas/0a3c2ed87a880d04e0f61085c206fc8b7049187ac4934c802343185dac0169e9.jpg",
+   "说明": "图 8-3-65　病牛沙门菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/c015abda6831fd09f5d0a35246b1eaf82853de2d1c7a3c385aff1b9234ed6dea.jpg",
+   "说明": "图 8-3-66　病牛沙门菌在 XLD 琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/3466aacda03a1b4929249b55e141c295f3deae620bf1c666dcec517494306ad2.jpg",
+   "说明": "图 8-3-67　病牛沙门菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
   }
  ],
  "shigella-sonnei": [
