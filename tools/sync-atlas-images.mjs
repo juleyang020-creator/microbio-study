@@ -58,6 +58,9 @@ const EXCLUDE = new Set([
   // ==== 批48 审计补充（93 多联图 25-13-2 分联为 coremiiforme/真皮/皮瘤/弯曲皮肤毛孢子——
   // 「皮肤毛孢子菌」裸名匹配不到任何分联，标题级匹配属串扰；皮瘤 E/F 分联合法保留）====
   'trichosporon-cutaneum|93|25-13-2',
+  // ==== 批49 审计补充（93 图 27-19-2 分联 A/B 皮炎、C 甄氏、D 裴氏、E 暗色砖块、F oligosperma——
+  // 棘状外瓶霉不在分联，by 級标题命中属串扰；27-19-1B 棘状示意图正文明确、合法保留）====
+  'exophiala-spinifera|93|27-19-2',
   'pseudomonas-aeruginosa|93|18-1-6',  // 同上
   'acinetobacter-baumannii|93|18-1-6', // 同上
   'moraxella-catarrhalis|93|18-1-6',   // 同上
