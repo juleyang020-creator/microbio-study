@@ -2341,6 +2341,28 @@ window.DB.photosAtlas = {
    "说明": "图 15-7-2　SSA 24h"
   }
  ],
+ "cedecea-davisae": [
+  {
+   "文件": "img/atlas/dc5dd5408904b8de6b3c45c40768ba381ed3b0691b97d08b7ab2acd3c05d1a8b.jpg",
+   "说明": "图 15-12-1　戴氏西地西菌的形态特征（1/3）"
+  },
+  {
+   "文件": "img/atlas/2c4b0afbc62d9e3d0fba72d4fc42a633f9211c704c070c1271b61096f4e64e0b.jpg",
+   "说明": "图 15-12-1　戴氏西地西菌的形态特征（2/3）"
+  },
+  {
+   "文件": "img/atlas/6f19b0acfe16e6cea59efc50c32a6d72db23640b5e98dce84d224f0e4b61ffd9.jpg",
+   "说明": "图 15-12-1　戴氏西地西菌的形态特征（3/3）"
+  },
+  {
+   "文件": "img/atlas/22e6cb3826ad12d87185d4d87ea871864e42f0d3c8f18d7ac270836536d27557.jpg",
+   "说明": "图 10-1-1　戴氏西地西菌的镜下形态(革兰染色)"
+  },
+  {
+   "文件": "img/atlas/0b0ac831c36c6542715c409f0d58423199d6e9f0e1a9985f06721e406af23924.jpg",
+   "说明": "图 10-1-2　戴氏西地西菌在麦康凯琼脂平板上的菌落特征(18～24h)"
+  }
+ ],
  "raoultella-ornithinolytica": [
   {
    "文件": "img/atlas/5ef80ef15c956ab4a77df324689b4e07ac3b03dcc9d19d48045412a3da0d5192.jpg",
@@ -2663,6 +2685,40 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/1df5a42ef5fe74484b6daa5b4eb1de55eaa21bc791cea99950200a8d5483b7c0.jpg",
    "说明": "图 8-10-17　液化沙雷菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "serratia-rubidaea": [
+  {
+   "文件": "img/atlas/50f4210a2e57ae1edac2bda12589651dc6d5c6b2d23fe77a9e363b9d34acf536.jpg",
+   "说明": "图 15-25-3　革兰氏染色 × 1000; B"
+  },
+  {
+   "文件": "img/atlas/c5caf3ada5abfaf71b15fa1ec9d4d1d270269993b9f5fbc1dfc559c3cedd2dac.jpg",
+   "说明": "图 15-25-3　SBA 24h; C"
+  },
+  {
+   "文件": "img/atlas/77ca35518682a834047e0dc93fd9eb1bb62d7dcf7b210193e526ba23d9bcbc99.jpg",
+   "说明": "图 15-25-3　中国蓝平板 24h; D"
+  },
+  {
+   "文件": "img/atlas/ae06a2fd152e654c4ac0c9f6cb572c5a443cab19cc24e1681b8f32ae292c253c.jpg",
+   "说明": "图 15-25-3　MAC 24h"
+  },
+  {
+   "文件": "img/atlas/1eaae36ba16e65fa78caad24ea0e513aef1b3e93ab4363ffb30b6b30d4dc01cd.jpg",
+   "说明": "图 15-25-4　产红色素株, MHA 24h; B"
+  },
+  {
+   "文件": "img/atlas/339b8d684ce91b489c33577c3572aec5ae54192c5ceddffc438492af8f1340e3.jpg",
+   "说明": "图 15-25-4　不产色素株, MHA 24h; C"
+  },
+  {
+   "文件": "img/atlas/9ba25e2e90a0ce8e429648ae0f0068d68395f098d472d6ab4ded23059487f9ec.jpg",
+   "说明": "图 15-25-4　产褐色色素株, MHA 3 日"
+  },
+  {
+   "文件": "img/atlas/2ff39789dd042ed09131634b26ffc5bf66440a7bdff2b624911095a323cdb77b.jpg",
+   "说明": "图 8-10-8　深红沙雷菌纯培养的镜下形态(革兰染色)"
   }
  ],
  "hafnia-alvei": [
@@ -3615,6 +3671,32 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/3d6fab0f69be496e7487f7db6980b37e061b2b0754fbfc02f3e15d6fe5616f81.jpg",
    "说明": "图 17-12-1　睾丸酮丛毛单胞菌 SBA 2 日; D"
+  }
+ ],
+ "roseomonas-cervicalis": [
+  {
+   "文件": "img/atlas/e4bbf3ac037eae6cb63b824cc1022839020d4802b76261ddac34d40d2d9c0f86.jpg",
+   "说明": "图 17-15-1　宫颈玫瑰单胞菌的形态特征（1/2）"
+  },
+  {
+   "文件": "img/atlas/ac6d58b6d0c03a429fc72ea316087bdfc6a199bbe0c752871a1bb3b8e7899f41.jpg",
+   "说明": "图 17-15-1　宫颈玫瑰单胞菌的形态特征（2/2）"
+  },
+  {
+   "文件": "img/atlas/2c7ff64b56ada3079c3bd5c85a9a578c81272f760bfc6f400cb810428f536c14.jpg",
+   "说明": "图 12-18-4　颈玫瑰单胞菌纯培养的镜下形态(革兰染色)"
+  },
+  {
+   "文件": "img/atlas/6d6203b0ae15babc605e64ff8bb46be5675db0372f52d692380c426553922cb1.jpg",
+   "说明": "图 12-18-5　颈玫瑰单胞菌血培养肉汤阳性培养物直接涂片镜下形态（箭头所示，革兰染色）"
+  },
+  {
+   "文件": "img/atlas/4f9e323400d64ac344f100a599cab32264321b8eba0ce88f0f8753e78488dc2d.jpg",
+   "说明": "图 12-18-6　颈玫瑰单胞菌在血琼脂平板上的菌落特征(24 h)"
+  },
+  {
+   "文件": "img/atlas/00e34c2fc988e21756fa2c643a7b403a83aadb804d37d28d34e9e8d1310f6994.jpg",
+   "说明": "图 12-18-7　颈玫瑰单胞菌在血琼脂平板上的菌落特征(72 h)"
   }
  ],
  "sphingomonas-paucimobilis": [
@@ -8095,6 +8177,20 @@ window.DB.photosAtlas = {
    "说明": "图 8-4-18　宋内志贺菌在 SS 琼脂平板上纯培养的菌落特征(18～24 h)"
   }
  ],
+ "enterobacter-asburiae": [
+  {
+   "文件": "img/atlas/0b1ab2b728090d3a012c8efb73b7bad7b67e0e509db31a1f3989565276c81f83.jpg",
+   "说明": "图 8-7-8　阿氏肠杆菌在血琼脂平板上的菌落特征（1/2）"
+  },
+  {
+   "文件": "img/atlas/ab921c014fc6b15329213ecbff774ccfb46a7e974a2e0ec029f40b7678d6cc4b.jpg",
+   "说明": "图 8-7-8　阿氏肠杆菌在血琼脂平板上的菌落特征（2/2）"
+  },
+  {
+   "文件": "img/atlas/3056906a289df108cf9ddbbd8573f95250e629afff020b715cec4178abb76dc5.jpg",
+   "说明": "图 8-7-9　阿氏肠杆菌在麦康凯琼脂平板上的菌落特征"
+  }
+ ],
  "providencia-rettgeri": [
   {
    "文件": "img/atlas/ead77781f7982ca498dccdae40dc0d2c4d38095f77b287194e32d3cde6444c64.jpg",
@@ -8191,6 +8287,22 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/a2e849683f541eae7cf3a2551f9e285a99a3068f243cdef39c8022b53ddf8c85.jpg",
    "说明": "图 9-3-7　豚鼠气单胞菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "kluyvera-cryocrescens": [
+  {
+   "文件": "img/atlas/ae42180cbe4413b6ee1cd16110e2fcf87ac89ac5bda520415b42ca6a4b88743e.jpg",
+   "说明": "图 10-2-1　栖冷克吕沃尔菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "tatumella-ptyseos": [
+  {
+   "文件": "img/atlas/d9bb6216bc1f42e0ea2b2aa302a9b3d54aeff1d9b127071bf837a8aad261f682.jpg",
+   "说明": "图 10-3-1　痰塔特姆菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/3addd514ecc0412459de00986874b783058a640ff5c68db85b906c10cffe5aa6.jpg",
+   "说明": "图 10-3-2　痰塔特姆菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
   }
  ],
  "pseudomonas-luteola": [
