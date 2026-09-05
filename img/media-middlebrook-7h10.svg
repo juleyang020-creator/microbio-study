@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>Middlebrook 7H10/7H11 琼脂（分枝杆菌药敏与分离培养基）</title>
+<desc>完全人工合成培养基（磷酸盐缓冲、谷氨酸钠、柠檬酸铁铵、硫酸镁、生物素、微量元素、甘油、孔雀绿），不含鸡蛋液故对抗分枝杆菌药物无拮抗作用；使用前加 OADC 增菌液：分枝杆菌（结核与非结核）及需氧放线菌（诺卡菌、链霉菌）的药敏试验（琼脂比例法）与首代分离培养；7H11 加 0.1% 胰酶消化酪蛋白，非结核分枝杆菌生长更迅速</desc>
+<defs>
+  <radialGradient id="mbagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#f0f4ec"/><stop offset="1" stop-color="#d5dcc4"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">Middlebrook 7H10/7H11</text>
+<rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
+<text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">药敏试验培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">不含鸡蛋的全合成配方——药物不被拮抗，折点才作数</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：为什么药敏要用它 ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">鸡蛋培养基（L-J） vs 7H10</text>
+<g font-size="9.5">
+  <rect x="24" y="92" width="212" height="66" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="34" y="108" font-weight="700" fill="#8a6d2f">L-J（含鸡蛋）：培养用</text>
+  <text x="34" y="122" fill="#33404f">鸡蛋成分可结合/拮抗部分抗结核药</text>
+  <text x="34" y="136" fill="#5c6672">（如乙胺丁醇、部分氟喹诺酮）</text>
+  <text x="34" y="150" fill="#a3332f">→ 药敏结果失真</text>
+
+  <rect x="244" y="92" width="212" height="66" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="254" y="108" font-weight="700" fill="#2f6b45">7H10（全合成）：药敏用</text>
+  <text x="254" y="122" fill="#33404f">成分明确、无鸡蛋 → 不拮抗药物</text>
+  <text x="254" y="136" fill="#5c6672">加 OADC（油酸-白蛋白-葡萄糖-</text>
+  <text x="254" y="150" fill="#5c6672">过氧化氢酶）后供分枝杆菌生长</text>
+</g>
+
+<!-- ===== 左下：琼脂比例法 ===== -->
+<text x="24" y="182" font-size="10.5" font-weight="700" fill="#33404f">琼脂比例法药敏（7H10 四联板）</text>
+<!-- 四个扇区平板 -->
+<circle cx="96" cy="248" r="52" fill="url(#mbagar)" stroke="#b9c2a0" stroke-width="1.4"/>
+<line x1="96" y1="196" x2="96" y2="300" stroke="#b9c2a0" stroke-width="1.2"/>
+<line x1="44" y1="248" x2="148" y2="248" stroke="#b9c2a0" stroke-width="1.2"/>
+<!-- 对照区长菌、含药区不长 -->
+<g fill="#8a7a4a"><circle cx="70" cy="224" r="2.4"/><circle cx="78" cy="232" r="2"/><circle cx="72" cy="240" r="2.2"/></g>
+<text x="70" y="222" font-size="9.5" fill="#33404f">对照：长</text>
+<text x="118" y="222" font-size="9.5" fill="#33404f">INH</text>
+<text x="70" y="282" font-size="9.5" fill="#33404f">RFP</text>
+<text x="118" y="282" font-size="9.5" fill="#33404f">EMB</text>
+<text x="96" y="314" text-anchor="middle" font-size="9.5" fill="#5c6672">含药区生长 ≥1% 对照＝耐药</text>
+
+<!-- ===== 右：7H10 vs 7H11 与用途 ===== -->
+<text x="196" y="182" font-size="10.5" font-weight="700" fill="#33404f">7H10 vs 7H11</text>
+<g font-size="9.5">
+  <rect x="196" y="194" width="260" height="36" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="206" y="209" font-weight="700" fill="#33404f">7H10：基础配方</text>
+  <text x="206" y="222" fill="#5c6672">结核分枝杆菌复合群药敏与首代分离</text>
+
+  <rect x="196" y="238" width="260" height="36" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="206" y="253" font-weight="700" fill="#1f4e79">7H11：＋0.1% 胰酶消化酪蛋白</text>
+  <text x="206" y="266" fill="#5c6672">非结核分枝杆菌（NTM）生长更迅速</text>
+</g>
+
+<rect x="196" y="284" width="260" height="36" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+<text x="206" y="299" font-size="9.5" font-weight="700" fill="#2f6b45">兼用</text>
+<text x="206" y="313" font-size="9.5" fill="#33404f">需氧放线菌：诺卡菌、链霉菌的分离培养</text>
+
+<!-- 页脚 -->
+<rect x="24" y="318" width="432" height="15" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="329" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">注意</tspan>　质控：结核 ATCC 27294——不含药对照管生长、含药管不长</text>
+</svg>

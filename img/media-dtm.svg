@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>皮肤癣菌鉴定培养基（DTM，黄→红变色）</title>
+<desc>DTM（葡萄糖+蛋白胨+酚红+放线菌酮/庆大霉素/氯霉素）：98% 的皮肤癣菌利用蛋白胨产碱，使酚红指示剂由酸变碱，培养基 1 周内由黄色变红色；多数非皮肤癣菌真菌不变色。放线菌酮+庆大霉素+氯霉素抑制杂菌。注意：颜色反应仅作提示，污染真菌（某些曲霉、念珠菌）偶可迟缓变色，最终鉴定仍需镜检形态</desc>
+<defs>
+  <linearGradient id="dtmph" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#e9b949"/><stop offset="1" stop-color="#d6407f"/>
+  </linearGradient>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">皮肤癣菌鉴定培养基（DTM）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌鉴定培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">皮肤癣菌吃蛋白胨产碱——一周之内黄变红</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：变色过程 ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">一周内观察变色（斜面）</text>
+<!-- 三支管：黄 → 橙 → 红 -->
+<g>
+  <path d="M52,96 L52,196 Q52,210 68,210 Q84,210 84,196 L84,96 Z" fill="#fdfcf8" stroke="#b9c2cc" stroke-width="1.4"/>
+  <path d="M52,140 L84,124 L84,196 Q84,210 68,210 Q52,210 52,196 Z" fill="#e9b949"/>
+  <text x="68" y="224" text-anchor="middle" font-size="9.5" fill="#8a6d2f">接种时：黄</text>
+
+  <path d="M118,96 L118,196 Q118,210 134,210 Q150,210 150,196 L150,96 Z" fill="#fdfcf8" stroke="#b9c2cc" stroke-width="1.4"/>
+  <path d="M118,140 L150,124 L150,196 Q150,210 134,210 Q118,210 118,196 Z" fill="#e09a50"/>
+  <text x="134" y="224" text-anchor="middle" font-size="9.5" fill="#b06a1e">3~4 日：转橙</text>
+
+  <path d="M184,96 L184,196 Q184,210 200,210 Q216,210 216,196 L216,96 Z" fill="#fdfcf8" stroke="#b9c2cc" stroke-width="1.4"/>
+  <path d="M184,140 L216,124 L216,196 Q216,210 200,210 Q184,210 184,196 Z" fill="#d6407f"/>
+  <text x="200" y="224" text-anchor="middle" font-size="9.5" fill="#a3332f">≤1 周：红</text>
+</g>
+<!-- 指示剂色带 -->
+<rect x="52" y="238" width="164" height="10" rx="5" fill="url(#dtmph)" stroke="#e3e7ec"/>
+<text x="52" y="262" font-size="9.5" fill="#8a6d2f">酸（黄）</text>
+<text x="216" y="262" text-anchor="end" font-size="9.5" fill="#a3332f">碱（红）</text>
+
+<!-- ===== 右：配方与陷阱 ===== -->
+<text x="268" y="80" font-size="10.5" font-weight="700" fill="#33404f">选择剂压住杂菌</text>
+<g font-size="9.5">
+  <rect x="268" y="92" width="188" height="46" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="278" y="108" font-weight="700" fill="#33404f">放线菌酮＋庆大霉素＋氯霉素</text>
+  <text x="278" y="122" fill="#5c6672">抑腐生霉与细菌，让皮肤癣菌从容生长</text>
+
+  <rect x="268" y="146" width="188" height="46" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="278" y="162" font-weight="700" fill="#2f6b45">机制：蛋白胨代谢产碱</text>
+  <text x="278" y="176" fill="#5c6672">皮肤癣菌分解蛋白胨 → NH₃ → 酚红变红</text>
+</g>
+
+<!-- 陷阱 -->
+<rect x="268" y="200" width="188" height="56" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
+<text x="278" y="216" font-size="9.5" font-weight="700" fill="#a3332f">假阳性陷阱</text>
+<text x="278" y="230" font-size="9.5" fill="#33404f">污染真菌（某些曲霉、念珠菌）可迟缓变色</text>
+<text x="278" y="243" font-size="9.5" fill="#a3332f">→ 变色只是提示，定种必须镜检形态</text>
+
+<!-- 页脚 -->
+<rect x="24" y="286" width="432" height="38" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="301" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用法</tspan>　皮肤/甲屑/毛发标本直接接种 DTM：红色＋显微镜菌丝/大分生孢子＝皮肤癣菌；</text>
+<text x="32" y="314" font-size="9.5" fill="#5c6672">变红但镜检阴性 → 复查或转 SDA 纯化后再判。1 周不变色判阴性</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>CCFA 培养基（艰难拟梭菌选择培养基）</title>
+<desc>环丝氨酸-头孢西丁-果糖琼脂：环丝氨酸与头孢西丁抑制肠道杂菌（产气荚膜梭菌、奇异变形杆菌、大肠埃希菌完全抑制），艰难拟梭菌发酵果糖产酸，中性红指示下菌落呈暗黄到黄色；标本须厌氧运送、碱处理或乙醇冲击预处理后接种，厌氧环境培养 48 h</desc>
+<defs>
+  <radialGradient id="ccfaagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#fdf6ee"/><stop offset="1" stop-color="#f0dcc8"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">CCFA 培养基</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">特殊培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">两种抗生素清场，果糖发酵给艰难拟梭菌染上黄色</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：平板 ===== -->
+<text x="24" y="80" font-size="9.5" fill="#5c6672">厌氧 48 h 判读</text>
+<circle cx="118" cy="168" r="70" fill="#f0f2f4" stroke="#cdd4db" stroke-width="1.4"/>
+<circle cx="118" cy="168" r="66" fill="url(#ccfaagar)"/>
+<!-- 黄色菌落 -->
+<g fill="#e8c33a" stroke="#c9a41c" stroke-width="0.9">
+  <circle cx="100" cy="148" r="4.6"/><circle cx="116" cy="140" r="3.8"/><circle cx="130" cy="152" r="4.2"/><circle cx="94" cy="166" r="3.4"/><circle cx="124" cy="168" r="3.8"/><circle cx="140" cy="180" r="3.2"/>
+</g>
+<circle cx="92" cy="126" r="6.6" fill="#1f2733"/>
+<text x="92" y="129.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<!-- 被抑制 -->
+<g fill="none" stroke="#d4b8a8" stroke-width="1.1" stroke-dasharray="3,2.5">
+  <circle cx="164" cy="144" r="6"/><circle cx="76" cy="196" r="5"/>
+</g>
+<path d="M161,141 l6,6 m0,-6 l-6,6 M73,193 l6,6 m0,-6 l-6,6" stroke="#b08a6a" stroke-width="1.2"/>
+<text x="118" y="248" text-anchor="middle" font-size="9.5" fill="#8a6d2f">暗黄→黄色菌落（果糖产酸，中性红指示）</text>
+
+<!-- ===== 右：三步机制 ===== -->
+<text x="228" y="80" font-size="10.5" font-weight="700" fill="#33404f">标本预处理 → 抗生素选择 → 产酸显色</text>
+<g font-size="9.5">
+  <rect x="228" y="92" width="228" height="42" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="238" y="108" font-weight="700" fill="#1f4e79">① 标本预处理（粪便）</text>
+  <text x="238" y="122" fill="#33404f">厌氧运送；碱处理或乙醇冲击杀灭繁殖体，</text>
+  <text x="238" y="134" fill="#5c6672">富集芽孢后再接种</text>
+
+  <rect x="228" y="142" width="228" height="42" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="238" y="158" font-weight="700" fill="#33404f">② 选择：环丝氨酸＋头孢西丁</text>
+  <text x="238" y="172" fill="#5c6672">产气荚膜梭菌/变形杆菌/大肠：完全抑制</text>
+
+  <rect x="228" y="192" width="228" height="42" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="238" y="208" font-weight="700" fill="#8a6d2f">③ 鉴别：果糖发酵 → 黄色</text>
+  <text x="238" y="222" fill="#5c6672">艰难拟梭菌产酸，中性红指示菌落暗黄→黄</text>
+</g>
+
+<!-- 质控 -->
+<rect x="228" y="244" width="228" height="36" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+<text x="238" y="259" font-size="9.5" fill="#33404f"><tspan font-weight="700" fill="#2f6b45">质控</tspan>　艰难拟梭菌 ATCC 9689：厚重生长黄色菌落</text>
+
+<!-- 结论 -->
+<text x="240" y="294" text-anchor="middle" font-size="11.5" fill="#33404f">培养只是初筛——确诊靠毒素基因（tcdA/tcdB）或 GDH＋毒素 EIA</text>
+
+<!-- 页脚 -->
+<rect x="24" y="302" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="317" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　抗生素相关性腹泻/伪膜性肠炎的艰难拟梭菌选择性分离</text>
+</svg>

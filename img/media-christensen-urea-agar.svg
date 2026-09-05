@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>尿素琼脂（Christensen，癣菌与酵母鉴别）</title>
+<desc>Christensen 尿素琼脂（葡萄糖+蛋白胨+尿素+酚红）：鉴别红色毛癣菌与须癣毛癣菌——须癣毛癣菌生长 3~4 日分解尿素产氨使培养基由黄变红（阳性），红色毛癣菌阴性不变色；隐球菌尿素酶阳性（新生隐球菌强阳性）亦用于酵母鉴别。尿素不耐热，须抽滤灭菌后在培养基冷却后加入</desc>
+<defs>
+  <linearGradient id="ureaph" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#e9b949"/><stop offset="1" stop-color="#d6407f"/>
+  </linearGradient>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">尿素琼脂（Christensen）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌鉴定培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">一支斜面分两种毛癣菌：三四天后变红的是须癣</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：两支斜面对照 ===== -->
+<text x="90" y="78" text-anchor="middle" font-size="10.5" font-weight="700" fill="#a3332f">须癣毛癣菌（＋）</text>
+<path d="M66,92 L66,196 Q66,212 86,212 Q106,212 106,196 L106,92 Z" fill="#fdfcf8" stroke="#b9c2cc" stroke-width="1.5"/>
+<path d="M66,140 L106,120 L106,196 Q106,212 86,212 Q66,212 66,196 Z" fill="#d6407f"/>
+<ellipse cx="86" cy="92" rx="20" ry="5" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="86" y="228" text-anchor="middle" font-size="9.5" fill="#a3332f">3~4 日：黄→红（产氨碱化）</text>
+
+<text x="196" y="78" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8a6d2f">红色毛癣菌（−）</text>
+<path d="M172,92 L172,196 Q172,212 192,212 Q212,212 212,196 L212,92 Z" fill="#fdfcf8" stroke="#b9c2cc" stroke-width="1.5"/>
+<path d="M172,140 L212,120 L212,196 Q212,212 192,212 Q172,212 172,196 Z" fill="#e9b949"/>
+<ellipse cx="192" cy="92" rx="20" ry="5" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="192" y="228" text-anchor="middle" font-size="9.5" fill="#8a6d2f">保持黄色（不分解尿素）</text>
+
+<!-- 指示剂条 -->
+<rect x="66" y="246" width="146" height="12" rx="6" fill="url(#ureaph)" stroke="#e3e7ec"/>
+<text x="66" y="270" font-size="9.5" fill="#8a6d2f">黄＝酸（阴性）</text>
+<text x="212" y="270" text-anchor="end" font-size="9.5" fill="#a3332f">红＝碱（阳性）</text>
+
+<!-- ===== 右：原理与第二用途 ===== -->
+<text x="268" y="78" font-size="10.5" font-weight="700" fill="#33404f">原理与第二用途</text>
+<g font-size="9.5">
+  <rect x="268" y="90" width="188" height="50" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="278" y="106" font-weight="700" fill="#33404f">脲酶 → 尿素分解产氨</text>
+  <text x="278" y="120" fill="#5c6672">须癣毛癣菌脲酶阳性（慢，3~4 日）</text>
+  <text x="278" y="133" fill="#5c6672">红色毛癣菌阴性</text>
+
+  <rect x="268" y="148" width="188" height="50" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="278" y="164" font-weight="700" fill="#1f4e79">第二用途：酵母鉴别</text>
+  <text x="278" y="178" fill="#33404f">新生隐球菌尿素酶强阳性（快）</text>
+  <text x="278" y="191" fill="#5c6672">念珠菌属多阴性（可作初筛分流）</text>
+</g>
+
+<!-- 配制要点 -->
+<rect x="268" y="206" width="188" height="48" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
+<text x="278" y="222" font-size="9.5" font-weight="700" fill="#a3332f">配制关键</text>
+<text x="278" y="236" font-size="9.5" fill="#33404f">尿素不耐热：抽滤灭菌后，培养基冷至</text>
+<text x="278" y="249" font-size="9.5" fill="#33404f">50℃ 再加入——高压灭菌会分解尿素</text>
+
+<!-- 结论 -->
+<text x="240" y="292" text-anchor="middle" font-size="11.5" fill="#33404f">同是皮肤癣菌，一个变红一个不变——慢阳性与快阳性的读表时钟不同</text>
+
+<!-- 页脚 -->
+<rect x="24" y="300" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="315" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　红色/须癣毛癣菌鉴别 · 隐球菌与其他酵母的脲酶初筛</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>察氏培养基（CZA，曲霉与青霉鉴定培养基）</title>
+<desc>察氏培养基（硝酸钠+磷酸氢二钾+硫酸镁+氯化钾+硫酸亚铁+蔗糖 30 g/L，无天然有机物、成分全知）：曲霉与青霉分离鉴定的标准参照培养基——菌落颜色在 CZA 上更典型：溜曲霉由绿渐变深棕至板栗色的颜色变化链、高渗曲霉在 CZA 上生长受限的表现均以 CZA 为参照；高蔗糖浓度（30 g/L）对多数细菌有抑制作用</desc>
+<defs>
+  <radialGradient id="czaagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#fbfaf5"/><stop offset="1" stop-color="#e8e2d0"/></radialGradient>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">察氏培养基（CZA）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌鉴定培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">全合成无天然成分——曲霉在这块「标准背景板」上才显出真颜色</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：溜曲霉变色链 ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">溜曲霉在 CZA 上的颜色变化链</text>
+<!-- 三个平板：绿 → 深棕 → 板栗色 -->
+<g>
+  <circle cx="80" cy="140" r="38" fill="url(#czaagar)" stroke="#c9bfa8" stroke-width="1.3"/>
+  <circle cx="80" cy="140" r="24" fill="#8fae6e"/>
+  <circle cx="80" cy="140" r="11" fill="#6e8f52"/>
+  <text x="80" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">初期：绿</text>
+
+  <circle cx="196" cy="140" r="38" fill="url(#czaagar)" stroke="#c9bfa8" stroke-width="1.3"/>
+  <circle cx="196" cy="140" r="24" fill="#7a6248"/>
+  <circle cx="196" cy="140" r="11" fill="#5d4a36"/>
+  <text x="196" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">中期：深棕</text>
+
+  <circle cx="312" cy="140" r="38" fill="url(#czaagar)" stroke="#c9bfa8" stroke-width="1.3"/>
+  <circle cx="312" cy="140" r="24" fill="#6e4a30"/>
+  <circle cx="312" cy="140" r="11" fill="#4e3320"/>
+  <text x="312" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">后期：板栗色</text>
+
+  <line x1="122" y1="140" x2="154" y2="140" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)" marker-start="url(#arr)" marker-mid="url(#arr)"/>
+  <line x1="238" y1="140" x2="270" y2="140" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+</g>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<text x="196" y="216" text-anchor="middle" font-size="9.5" fill="#5c6672">这条颜色链以 CZA 为参照描述——换培养基颜色可能完全不同</text>
+
+<!-- ===== 右：为什么用全合成 ===== -->
+<g font-size="9.5">
+  <rect x="368" y="78" width="88" height="52" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="378" y="94" font-weight="700" fill="#2f6b45">全合成</text>
+  <text x="378" y="108" fill="#33404f">成分全知</text>
+  <text x="378" y="121" fill="#5c6672">批间稳定</text>
+
+  <rect x="368" y="138" width="88" height="52" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="378" y="154" font-weight="700" fill="#33404f">蔗糖 30 g/L</text>
+  <text x="378" y="168" fill="#33404f">高渗环境</text>
+  <text x="378" y="181" fill="#5c6672">抑制多数细菌</text>
+</g>
+
+<!-- ===== 下：两种参照场景 ===== -->
+<g font-size="9.5">
+  <rect x="24" y="236" width="212" height="54" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="34" y="252" font-weight="700" fill="#33404f">参照场景 ①：颜色描述</text>
+  <text x="34" y="266" fill="#33404f">曲霉/青霉菌落颜色、反面色泽、</text>
+  <text x="34" y="280" fill="#5c6672">渗出液均以 CZA 培养为准记录</text>
+
+  <rect x="244" y="236" width="212" height="54" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="254" y="252" font-weight="700" fill="#1f4e79">参照场景 ②：高渗曲霉</text>
+  <text x="254" y="266" fill="#33404f">高渗曲霉（嗜高渗）在 CZA 上生长</text>
+  <text x="254" y="280" fill="#5c6672">受限——「长不好」本身也是鉴别线索</text>
+</g>
+
+<!-- 结论 -->
+<text x="240" y="312" text-anchor="middle" font-size="11.5" fill="#33404f">定种的形态描述必须注明培养基——CZA 是曲霉青霉的通用参照</text>
+
+<!-- 页脚 -->
+<rect x="24" y="318" width="432" height="15" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="329" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　曲霉属、青霉属的分离鉴定与形态学描述参照培养基</text>
+</svg>

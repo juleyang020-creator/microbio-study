@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>Cary-Blair 运送培养基（维持存活、不增菌）</title>
+<desc>半固体低营养运送培养基（硫乙醇酸钠+磷酸盐缓冲+氯化钠+氯化钙+少量琼脂）：含弯曲菌、霍乱弧菌、沙门菌及志贺菌标本的采集与运送——含还原剂维持存活而不增菌，35℃ 放置 3 日仍可存活；改良配方（加 L-半胱氨酸、亚硫酸钠、刃天青指示剂、充氮密封）用于厌氧菌标本运送；变体：Amies（含活性炭，奈瑟菌/链球菌/白喉）、缓冲甘油盐水（粪便，橘红变黄弃用）</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">Cary-Blair 运送培养基</text>
+<rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
+<text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">运送与保存培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">不是培养，是「保鲜」——让病原活着到实验室，但一个都不许多长</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：半固体管 ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">半固体：穿刺后菌体就地「待命」</text>
+<path d="M56,92 L56,230 Q56,246 76,246 Q96,246 96,230 L96,92 Z" fill="#f7f5ee" stroke="#b9c2cc" stroke-width="1.4"/>
+<rect x="56" y="110" width="40" height="120" fill="#eee9dc" opacity="0.7"/>
+<ellipse cx="76" cy="92" rx="20" ry="5" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.2"/>
+<!-- 穿刺线 -->
+<line x1="76" y1="104" x2="76" y2="216" stroke="#8a6d3a" stroke-width="2" stroke-dasharray="4,3"/>
+<g fill="#8a6d3a"><circle cx="76" cy="130" r="2"/><circle cx="76" cy="156" r="2"/><circle cx="76" cy="184" r="2"/></g>
+<text x="76" y="258" text-anchor="middle" font-size="9.5" fill="#5c6672">沿穿刺线存活</text>
+
+<!-- 性状要点 -->
+<g font-size="9.5">
+  <rect x="126" y="92" width="150" height="40" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="136" y="108" font-weight="700" fill="#2f6b45">低营养＋还原剂</text>
+  <text x="136" y="122" fill="#5c6672">维持存活，避免过生长掩盖病原</text>
+
+  <rect x="126" y="140" width="150" height="40" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="136" y="156" font-weight="700" fill="#1f4e79">pH 8.4 缓冲</text>
+  <text x="136" y="170" fill="#5c6672">对霍乱弧菌等碱耐受菌友好</text>
+
+  <rect x="126" y="188" width="150" height="40" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="136" y="204" font-weight="700" fill="#33404f">有效期 3 周（冷藏）</text>
+  <text x="136" y="218" fill="#5c6672">35℃ 放 3 日质控菌仍存活</text>
+</g>
+
+<!-- ===== 右：适用病原 ===== -->
+<text x="306" y="80" font-size="10.5" font-weight="700" fill="#33404f">适用标本与病原</text>
+<g font-size="9.5" fill="#33404f">
+  <text x="306" y="102">肠道感染粪便/肛拭：</text>
+  <text x="306" y="118">弯曲菌 · 霍乱弧菌 · 沙门菌</text>
+  <text x="306" y="133">志贺菌（质控 3 日存活）</text>
+  
+</g>
+
+<!-- 变体对照 -->
+<g font-size="9.5">
+  <rect x="306" y="148" width="150" height="40" rx="7" fill="#f5f0fa" stroke="#b9a5d9"/>
+  <text x="316" y="164" font-weight="700" fill="#5b4f8a">Amies（含活性炭）</text>
+  <text x="316" y="178" fill="#5c6672">奈瑟菌/链球菌/白喉棒杆菌</text>
+
+  <rect x="306" y="196" width="150" height="40" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="316" y="212" font-weight="700" fill="#8a6d2f">缓冲甘油盐水</text>
+  <text x="316" y="226" fill="#5c6672">粪便保存：橘红→变黄弃用</text>
+</g>
+
+<!-- 厌氧改良 -->
+<rect x="24" y="252" width="432" height="40" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+<text x="36" y="268" font-size="9.5" font-weight="700" fill="#1f4e79">厌氧菌标本用改良配方</text>
+<text x="36" y="282" font-size="9.5" fill="#33404f">加 L-半胱氨酸＋亚硫酸钠（强化还原）＋刃天青指示剂（氧化变粉提示失效）＋充氮密封</text>
+
+<!-- 页脚 -->
+<rect x="24" y="302" width="432" height="22" rx="6" fill="#fdf6f5" stroke="#e3c8c8"/>
+<text x="32" y="317" font-size="9.5" fill="#a3332f"><tspan font-weight="700">要点</tspan>　运送培养基长菌≠检出——必须转种分离培养基确认，不能以运送管结果报告</text>
+</svg>

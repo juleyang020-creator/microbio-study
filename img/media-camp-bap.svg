@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>布氏琼脂（Camp-BAP，微需氧分离培养基）</title>
+<desc>布氏琼脂基础（胰酪蛋白胨+胃酶蛋白胨+酵母粉+葡萄糖+氯化血红素+硫酸亚铁+丙酮酸钠+重亚硫酸钠）加 10% 脱纤维羊血、维生素 K₁ 与抗菌选择剂：基础加血用于布鲁菌、链球菌与嗜血杆菌；加选择剂后用于弯曲菌/螺杆菌的微需氧分离（42℃ 或 37℃、5% O₂+10% CO₂+85% N₂）；Skirrow 配方适合幽门螺杆菌</desc>
+<defs>
+  <radialGradient id="campagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#b8555b"/><stop offset="1" stop-color="#983f46"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">布氏琼脂（Camp-BAP）</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">特殊培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">微需氧三气体环境（5% O₂·10% CO₂·85% N₂）＋选择剂，把弯曲菌请出来</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：三气体环境 ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">微需氧环境（弯曲菌的舒适区）</text>
+<!-- 厌氧罐/三气罐示意 -->
+<rect x="30" y="92" width="180" height="108" rx="10" fill="#eef4fb" stroke="#b9cde4" stroke-width="1.3"/>
+<rect x="42" y="104" width="156" height="58" rx="6" fill="#ffffff" stroke="#b9cde4"/>
+<!-- 罐内平板 -->
+<circle cx="120" cy="133" r="24" fill="url(#campagar)" stroke="#7d2e33"/>
+<g fill="#f0e6e6"><circle cx="112" cy="128" r="2.6"/><circle cx="126" cy="132" r="2.2"/><circle cx="118" cy="140" r="2.4"/></g>
+<!-- 气体标注 -->
+<text x="60" y="182" font-size="9.5" fill="#1f4e79">5% O₂</text>
+<text x="110" y="182" font-size="9.5" fill="#2f6b45">10% CO₂</text>
+<text x="162" y="182" font-size="9.5" fill="#5c6672">85% N₂</text>
+<text x="120" y="212" text-anchor="middle" font-size="9.5" fill="#5c6672">42℃（弯曲菌）或 37℃（螺杆菌）</text>
+
+<!-- ===== 中：配方逻辑 ===== -->
+<text x="252" y="80" font-size="10.5" font-weight="700" fill="#33404f">一层基础、一层血、一层选择</text>
+<g font-size="9.5">
+  <rect x="252" y="92" width="204" height="36" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="262" y="107" font-weight="700" fill="#33404f">基础：蛋白胨＋酵母粉＋氯化血红素</text>
+  <text x="262" y="120" fill="#5c6672">重亚硫酸钠降低氧化还原电位</text>
+
+  <rect x="252" y="136" width="204" height="36" rx="7" fill="#fdf0ef" stroke="#dfa0a0"/>
+  <text x="262" y="151" font-weight="700" fill="#a3332f">＋10% 脱纤维羊血＋维生素 K₁</text>
+  <text x="262" y="164" fill="#5c6672">营养支持布鲁菌/链球菌/嗜血杆菌</text>
+
+  <rect x="252" y="180" width="204" height="36" rx="7" fill="#f5f0fa" stroke="#b9a5d9"/>
+  <text x="262" y="195" font-weight="700" fill="#5b4f8a">＋抗菌选择剂 → 弯曲菌/螺杆菌</text>
+  <text x="262" y="208" fill="#5c6672">抑制肠道正常菌群，粪便标本可分离</text>
+</g>
+
+<!-- 质控 -->
+<rect x="252" y="226" width="204" height="40" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+<text x="262" y="242" font-size="9.5" fill="#33404f"><tspan font-weight="700" fill="#2f6b45">质控</tspan>　空肠弯曲杆菌 ATCC 33291：</text>
+<text x="262" y="256" font-size="9.5" fill="#33404f">48 h 菌落＞1 mm；大肠/粪肠球菌不长</text>
+
+<!-- 结论 -->
+<text x="240" y="284" text-anchor="middle" font-size="11.5" fill="#33404f">环境不对，再好的培养基也长不出弯曲菌</text>
+
+<!-- 页脚 -->
+<rect x="24" y="296" width="432" height="30" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="310" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">变体</tspan>　Skirrow's：胃酶蛋白胨 15 g＋肝消化液＋冻融马血 → 幽门螺杆菌分离</text>
+<text x="32" y="322" font-size="9.5" fill="#5c6672">快速脲酶/尿素呼气试验可与培养互相印证</text>
+</svg>

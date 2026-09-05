@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>哥伦比亚 CNA 血琼脂（革兰阳性球菌选择培养基）</title>
+<desc>哥伦比亚琼脂基础（营养优于普通营养琼脂）＋5% 绵羊血＋萘啶酸 15 mg/L＋黏菌素 10 mg/L：两种抗生素抑制革兰阴性菌，选择性分离革兰阳性球菌，尤其适用于从含杂菌标本中分离链球菌；营养好，肺炎链球菌 24 h 菌落可达约 2 mm，淋病/脑膜炎奈瑟菌亦可生长</desc>
+<defs>
+  <radialGradient id="cnaagar" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#b8555b"/><stop offset="1" stop-color="#983f46"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">哥伦比亚 CNA 血琼脂</text>
+<rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
+<text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">选择与鉴别培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">萘啶酸＋黏菌素拦住革兰阴性菌，让 G⁺ 球菌在好营养里现形</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：平板 ===== -->
+<text x="24" y="80" font-size="9.5" fill="#5c6672">35℃ 24~48 h · 5% 羊血</text>
+<circle cx="118" cy="168" r="70" fill="#f0f2f4" stroke="#cdd4db" stroke-width="1.4"/>
+<circle cx="118" cy="168" r="66" fill="url(#cnaagar)"/>
+<!-- α 溶血环小菌落（链球菌） -->
+<g>
+  <circle cx="102" cy="150" r="10" fill="#7d9256" opacity="0.55"/>
+  <circle cx="102" cy="150" r="2.8" fill="#e6ded0"/>
+  <circle cx="140" cy="182" r="9" fill="#7d9256" opacity="0.5"/>
+  <circle cx="140" cy="182" r="2.5" fill="#e6ded0"/>
+</g>
+<circle cx="94" cy="128" r="6.6" fill="#1f2733"/>
+<text x="94" y="131.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<!-- 被抑制的 G- -->
+<g fill="none" stroke="#c98a8a" stroke-width="1.1" stroke-dasharray="3,2.5">
+  <circle cx="166" cy="146" r="6"/><circle cx="76" cy="192" r="5"/>
+</g>
+<path d="M163,143 l6,6 m0,-6 l-6,6 M73,189 l6,6 m0,-6 l-6,6" stroke="#a33a3a" stroke-width="1.2"/>
+<text x="118" y="248" text-anchor="middle" font-size="9.5" fill="#5c6672">G⁺ 球菌（草绿环＝α 溶血）；G⁻ 杂菌被抑制</text>
+
+<!-- ===== 右：配方分工 ===== -->
+<text x="228" y="80" font-size="10.5" font-weight="700" fill="#33404f">营养、选择、鉴别各管一段</text>
+<g font-size="9.5">
+  <rect x="228" y="92" width="228" height="40" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="238" y="108" font-weight="700" fill="#33404f">哥伦比亚基础：营养优于普通营养琼脂</text>
+  <text x="238" y="122" fill="#5c6672">肺炎链球菌 24 h 菌落可达约 2 mm</text>
+
+  <rect x="228" y="140" width="228" height="40" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="238" y="156" font-weight="700" fill="#1f4e79">选择：萘啶酸 15 mg/L＋黏菌素 10 mg/L</text>
+  <text x="238" y="170" fill="#5c6672">双重抑制革兰阴性菌（肠道/咽部杂菌）</text>
+
+  <rect x="228" y="188" width="228" height="40" rx="7" fill="#fdf0ef" stroke="#dfa0a0"/>
+  <text x="238" y="204" font-weight="700" fill="#a3332f">鉴别：5% 绵羊血 → 溶血环</text>
+  <text x="238" y="218" fill="#5c6672">α/β/γ 溶血分型（同普通血琼脂判读）</text>
+</g>
+
+<!-- 奈瑟菌提示 -->
+<rect x="228" y="238" width="228" height="40" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+<text x="238" y="254" font-size="9.5" fill="#33404f">淋病/脑膜炎奈瑟菌（G⁻ 球菌）可生长——</text>
+<text x="238" y="268" font-size="9.5" fill="#5c6672">它们不被这两种抗生素抑制</text>
+
+<!-- 结论 -->
+<text x="240" y="294" text-anchor="middle" font-size="11.5" fill="#33404f">杂菌多的标本找链球菌，CNA 比普通血平板干净得多</text>
+
+<!-- 页脚 -->
+<rect x="24" y="302" width="432" height="22" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="317" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　咽拭子/痰/伤口等含杂菌标本的 G⁺ 球菌（链球菌为主）选择性分离</text>
+</svg>

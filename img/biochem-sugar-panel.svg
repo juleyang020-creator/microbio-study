@@ -1,47 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>糖发酵试验底物总览（山梨醇 / 阿拉伯糖 / 鼠李糖 / 海藻糖 / 麦芽糖 / 蔗糖 / 木糖 / 肌醇 / 卫矛醇等 15 种）</title>
-<desc>各种糖醇底物的发酵管判读一致：阳性变黄（可伴产气），阴性保持紫色；关键鉴别格局——山梨醇：O157:H7−/宋内志贺＋；肌醇：肺炎克雷伯＋/催娩克雷伯−；海藻糖：化脓链球菌＋；蔗糖：霍乱弧菌＋/副溶血−（TCBS 基础）；阿拉伯糖：志贺菌属分群轴</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 392" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>糖发酵试验底物总览（戊糖/双糖/三糖/糖醇等底物共用同一判读）</title>
+<desc>蛋白胨水加单一糖醇底物与溴甲酚紫（或酚红）：变黄＝产酸，倒管（Durham 管）顶端积气＝产气，紫色不变＝不发酵；迟缓发酵株 48h 后才阳性。底物按化学族分四组，关键格局：山梨醇 O157:H7 阴性（SMAC 筛查）、蔗糖霍乱阳/副溶血阴（TCBS）、肌醇黏质沙雷阳、阿拉伯糖志贺分群、鼠李糖李斯特鉴别、海藻糖与卫矛醇肠球菌/沙门轴</desc>
 <defs>
-  <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
 </defs>
-<rect width="480" height="300" fill="#ffffff"/>
+<rect width="480" height="392" fill="#ffffff"/>
 
 <!-- 页眉 -->
 <text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">糖发酵底物总览</text>
 <rect x="392" y="14" width="64" height="18" rx="9" fill="#eef2f7"/>
 <text x="424" y="27" text-anchor="middle" font-size="10" fill="#5c6672">生化试验</text>
-<text x="24" y="46" font-size="11.5" fill="#5c6672">管子都长一样：变黄＝发酵产酸，倒管积气＝产气——差别在底物与格局</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">同一支管判读所有底物：变黄＝产酸，倒管积气＝产气</text>
 <line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
 
-<!-- 判读示意（一阳一阴） -->
-<text x="76" y="78" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">＋ 变黄产气</text>
-<path d="M58,86 L58,140 Q58,150 76,150 Q94,150 94,140 L94,86 Z" fill="#f2d541" stroke="#8c96a2" stroke-width="1.3"/>
-<rect x="71" y="94" width="10" height="30" rx="2" fill="#ffffff" stroke="#8c96a2" stroke-width="0.7"/>
-<rect x="72.5" y="108" width="7" height="14" fill="#f2d541"/>
-<ellipse cx="76" cy="86" rx="18" ry="4.2" fill="#f6e7bd" stroke="#8c96a2" stroke-width="1.1"/>
-<text x="76" y="166" text-anchor="middle" font-size="9.5" fill="#8a6d1a">紫色 → 黄色</text>
-<text x="172" y="78" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">− 保持紫色</text>
-<path d="M154,86 L154,140 Q154,150 172,150 Q190,150 190,140 L190,86 Z" fill="#8a5fa8" stroke="#8c96a2" stroke-width="1.3"/>
-<ellipse cx="172" cy="86" rx="18" ry="4.2" fill="#c9b8d8" stroke="#8c96a2" stroke-width="1.1"/>
-<text x="172" y="166" text-anchor="middle" font-size="9.5" fill="#6b4a86">不变色</text>
-<line x1="208" y1="80" x2="208" y2="152" stroke="#e3e7ec"/>
+<!-- ===== 判读三态 ===== -->
+<text x="24" y="74" font-size="10.5" font-weight="700" fill="#33404f">判读三态</text>
 
-<!-- 底物清单 -->
-<text x="228" y="78" font-size="9.5" font-weight="700" fill="#33404f">15 种常用底物</text>
-<text x="228" y="94" font-size="9.5" fill="#33404f">山梨醇 · 阿拉伯糖 · 鼠李糖 · 海藻糖</text>
-<text x="228" y="107" font-size="9.5" fill="#33404f">麦芽糖 · 蔗糖 · 木糖 · 肌醇</text>
-<text x="228" y="120" font-size="9.5" fill="#33404f">侧金盏花醇 · 卫矛醇 · 蜜二糖 · 棉子糖</text>
-<text x="228" y="133" font-size="9.5" fill="#33404f">水杨素 · 纤维二糖 · 松三糖</text>
-<text x="228" y="152" font-size="9.5" fill="#5c6672">迟缓发酵株 48 h 后才阳——别早下结论</text>
+<!-- 管1：产酸产气 -->
+<path d="M48,84 L48,146 Q48,158 64,158 Q80,158 80,146 L80,84 Z" fill="#f2d541" stroke="#8c96a2" stroke-width="1.3"/>
+<rect x="58" y="90" width="12" height="34" rx="2" fill="#ffffff" stroke="#8c96a2" stroke-width="0.9"/>
+<rect x="59" y="104" width="10" height="19" fill="#f2d541"/>
+<ellipse cx="64" cy="84" rx="16" ry="3.6" fill="#f6e7bd" stroke="#8c96a2" stroke-width="1"/>
+<text x="64" y="172" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">＋＋ 产酸产气</text>
+<text x="64" y="184" text-anchor="middle" font-size="9.5" fill="#8a6d1a">黄＋倒管积气</text>
+
+<!-- 管2：仅产酸 -->
+<path d="M114,84 L114,146 Q114,158 130,158 Q146,158 146,146 L146,84 Z" fill="#f2d541" stroke="#8c96a2" stroke-width="1.3"/>
+<rect x="124" y="90" width="12" height="34" rx="2" fill="#f2d541" stroke="#8c96a2" stroke-width="0.9"/>
+<ellipse cx="130" cy="84" rx="16" ry="3.6" fill="#f6e7bd" stroke="#8c96a2" stroke-width="1"/>
+<text x="130" y="172" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">＋ 仅产酸</text>
+<text x="130" y="184" text-anchor="middle" font-size="9.5" fill="#8a6d1a">黄，倒管无气</text>
+
+<!-- 管3：不发酵 -->
+<path d="M180,84 L180,146 Q180,158 196,158 Q212,158 212,146 L212,84 Z" fill="#8a5fa8" stroke="#8c96a2" stroke-width="1.3"/>
+<rect x="190" y="90" width="12" height="34" rx="2" fill="#8a5fa8" stroke="#8c96a2" stroke-width="0.9"/>
+<ellipse cx="196" cy="84" rx="16" ry="3.6" fill="#c9b8d8" stroke="#8c96a2" stroke-width="1"/>
+<text x="196" y="172" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">− 不发酵</text>
+<text x="196" y="184" text-anchor="middle" font-size="9.5" fill="#6b4a86">紫色不变</text>
+
+<!-- 指示剂与要点 -->
+<rect x="232" y="66" width="224" height="118" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="244" y="84" font-size="10" font-weight="700" fill="#1f2733">指示剂与判读要点</text>
+<text x="244" y="102" font-size="9.5" fill="#33404f">溴甲酚紫：紫 → 黄＝产酸</text>
+<text x="244" y="118" font-size="9.5" fill="#33404f">酚红管：红 → 黄，判读相同</text>
+<text x="244" y="134" font-size="9.5" fill="#33404f">倒管（Durham）集气：见气泡＝产气</text>
+<text x="244" y="150" font-size="9.5" fill="#a3332f">迟缓发酵株 48 h 后才阳——勿早判</text>
+<text x="244" y="170" font-size="9.5" fill="#5c6672">每管只含一种底物，另设未接种对照</text>
+
+<!-- ===== 底物按化学族分组 ===== -->
+<text x="24" y="216" font-size="10.5" font-weight="700" fill="#33404f">底物按化学族分组</text>
+<text x="24" y="232" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">戊糖与脱氧糖</tspan>　阿拉伯糖 · 木糖 · 鼠李糖</text>
+<text x="24" y="245" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">双糖</tspan>　麦芽糖 · 蔗糖 · 海藻糖 · 蜜二糖 · 纤维二糖</text>
+<text x="24" y="258" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">三糖与糖苷</tspan>　棉子糖 · 松三糖 · 水杨素</text>
+<text x="24" y="271" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">糖醇</tspan>　山梨醇 · 肌醇 · 侧金盏花醇 · 卫矛醇</text>
 
 <!-- ===== 关键鉴别格局 ===== -->
-<rect x="24" y="176" width="432" height="96" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
-<text x="40" y="196" font-size="10" font-weight="700" fill="#1f2733">关键格局（考试与实战高频）</text>
-<text x="40" y="214" font-size="9.5" fill="#33404f">山梨醇：EHEC O157:H7 −（SMAC 无色菌落）· 宋内志贺 ＋ · 霍乱弧菌 ＋</text>
-<text x="40" y="230" font-size="9.5" fill="#33404f">蔗糖：霍乱弧菌 ＋（TCBS 黄）· 副溶血弧菌 −（TCBS 绿）· 伤寒沙门 −</text>
-<text x="40" y="246" font-size="9.5" fill="#33404f">肌醇：肺炎克雷伯 ＋ · 催娩克雷伯 −（克雷伯属内鉴别）· 沙门多数 −</text>
-<text x="40" y="262" font-size="9.5" fill="#33404f">海藻糖：化脓链球菌 ＋ · 木糖：非发酵菌鉴别轴 · 阿拉伯糖：志贺菌分群</text>
+<text x="24" y="291" font-size="10.5" font-weight="700" fill="#33404f">关键鉴别格局</text>
+<text x="32" y="307" font-size="9.5" fill="#33404f">山梨醇：O157:H7 − · 宋内志贺 ＋</text>
+<text x="32" y="322" font-size="9.5" fill="#33404f">蔗糖：霍乱 ＋（TCBS 黄）· 副溶血 −</text>
+<text x="32" y="337" font-size="9.5" fill="#33404f">肌醇：黏质沙雷 ＋（属特征）· 变形族 −</text>
+<text x="32" y="352" font-size="9.5" fill="#33404f">海藻糖：屎肠球菌多数＋ · 粪肠多变</text>
+<text x="248" y="307" font-size="9.5" fill="#33404f">木糖：志贺 − · 伤寒沙门 ＋（XLD）</text>
+<text x="248" y="322" font-size="9.5" fill="#33404f">阿拉伯糖：宋内 ＋ · 福氏 −（分群轴）</text>
+<text x="248" y="337" font-size="9.5" fill="#33404f">鼠李糖：伊氏李斯特 ＋ · 单增 −</text>
+<text x="248" y="352" font-size="9.5" fill="#33404f">卫矛醇：伤寒沙门 − · 非伤寒多数＋</text>
 
 <!-- 页脚 -->
-<text x="240" y="290" text-anchor="middle" font-size="9.5" fill="#5c6672">蛋白胨水基础＋糖醇＋溴甲酚紫（或酚红）· 35℃ 24～48 h 判读</text>
+<rect x="24" y="360" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="376" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">方法</tspan>　蛋白胨水＋单一底物＋溴甲酚紫（或酚红）· 35 ℃ · 24～48 h 判读</text>
 </svg>

@@ -1,103 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 396" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>真菌与病毒结构总览（菌丝 · 孢子 · 衣壳 · 包膜）</title>
-<desc>真菌：假菌丝（白念珠菌芽殖链状缢窄）、有隔/无隔菌丝（门级分类轴）、大/小分生孢子（曲霉顶囊/镰刀）、厚壁孢子（白念顶端）、孢子囊孢子（毛霉）；病毒：裸病毒=衣壳+核酸（二十面体/螺旋对称），包膜病毒出芽获得脂蛋白膜与刺突——包膜病毒对脂溶剂敏感、裸病毒需高水平消毒</desc>
-<rect width="480" height="330" fill="#ffffff"/>
+<desc>真菌：假菌丝（白念珠菌芽殖链缢窄）、有隔/无隔菌丝（门级分类轴：曲霉有隔 45° 锐角分枝 vs 毛霉无隔直角分枝）、产孢结构（曲霉分生孢子头=顶囊+小梗+分生孢子链、毛霉孢子囊=孢囊梗+囊轴+假根）、厚壁孢子（白念顶端鉴别点）；病毒：裸病毒=衣壳+核酸（二十面体腺病毒/螺旋流感核衣壳/复合噬菌体），包膜病毒出芽获得脂蛋白膜与刺突（HA/NA）——包膜对脂溶剂敏感、裸病毒需高水平消毒</desc>
+<defs>
+  <radialGradient id="spore" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fbf6ec"/><stop offset="1" stop-color="#e8d9b8"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="396" fill="#ffffff"/>
 
 <!-- 页眉 -->
 <text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">真菌与病毒结构总览</text>
 <rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
 <text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">术语</text>
-<text x="24" y="46" font-size="11.5" fill="#5c6672">丝与孢子认真菌，衣壳与包膜认病毒</text>
-<line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">丝与孢子认真菌，衣壳与包膜认病毒——结构即鉴定</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
 
-<!-- ===== 左上：菌丝类 ===== -->
-<rect x="24" y="66" width="216" height="120" rx="8" fill="#fbf6ec" stroke="#e6d9b8"/>
-<text x="34" y="84" font-size="10.5" font-weight="700" fill="#8a6d1a">菌丝类</text>
-<!-- 假菌丝：芽殖链缢窄 -->
-<text x="36" y="100" font-size="9.5" fill="#33404f">假菌丝（缢窄连接）</text>
-<g fill="#e8d9b8" stroke="#a8894e" stroke-width="1">
-  <ellipse cx="52" cy="112" rx="8" ry="5.5"/>
-  <ellipse cx="66" cy="116" rx="8" ry="5.5"/>
-  <ellipse cx="80" cy="112" rx="8" ry="5.5"/>
-  <ellipse cx="94" cy="116" rx="8" ry="5.5"/>
+<!-- ===== 左上：菌丝形态 ===== -->
+<text x="24" y="78" font-size="10.5" font-weight="700" fill="#8a6d1a">菌丝形态（压片看结构）</text>
+<!-- 假菌丝 -->
+<text x="28" y="98" font-size="9.5" fill="#33404f">假菌丝</text>
+<g fill="url(#spore)" stroke="#a8894e" stroke-width="1">
+  <ellipse cx="70" cy="94" rx="8" ry="5.5"/><ellipse cx="84" cy="98" rx="8" ry="5.5"/><ellipse cx="98" cy="94" rx="8" ry="5.5"/><ellipse cx="112" cy="98" rx="8" ry="5.5"/>
 </g>
-<text x="120" y="119" font-size="9.5" fill="#5c6672">白念珠菌</text>
-<!-- 有隔菌丝 -->
-<text x="36" y="140" font-size="9.5" fill="#33404f">有隔菌丝</text>
-<path d="M36,152 L130,152" stroke="#a8894e" stroke-width="3"/>
+<text x="126" y="98" font-size="9.5" fill="#5c6672">白念珠菌（缢窄连接）</text>
+<!-- 有隔 vs 无隔 -->
+<text x="28" y="126" font-size="9.5" fill="#33404f">有隔菌丝</text>
+<path d="M70,132 L150,118" stroke="#a8894e" stroke-width="3" fill="none"/>
 <g stroke="#5d4a26" stroke-width="1">
-  <line x1="52" y1="146" x2="52" y2="158"/><line x1="72" y1="146" x2="72" y2="158"/><line x1="92" y1="146" x2="92" y2="158"/><line x1="112" y1="146" x2="112" y2="158"/>
+  <line x1="88" y1="122" x2="90" y2="133"/><line x1="106" y1="119" x2="108" y2="130"/><line x1="124" y1="115" x2="126" y2="126"/>
 </g>
-<text x="140" y="156" font-size="9.5" fill="#5c6672">隔膜（门级分类轴）</text>
-<!-- 无隔 -->
-<text x="36" y="176" font-size="9.5" fill="#33404f">无隔菌丝</text>
-<path d="M36,170 L130,170" stroke="#a8894e" stroke-width="3" transform="translate(0,8)"/>
-<text x="140" y="182" font-size="9.5" fill="#5c6672">毛霉目（多核）</text>
+<text x="158" y="126" font-size="9.5" fill="#5c6672">曲霉型（45° 锐角分枝）</text>
+<text x="28" y="154" font-size="9.5" fill="#33404f">无隔菌丝</text>
+<path d="M70,158 L150,158 M110,158 L130,142" stroke="#a8894e" stroke-width="3" fill="none"/>
+<text x="158" y="158" font-size="9.5" fill="#5c6672">毛霉型（直角分枝 · 多核）</text>
 
-<!-- ===== 右上：孢子类 ===== -->
-<rect x="248" y="66" width="208" height="120" rx="8" fill="#fbf6ec" stroke="#e6d9b8"/>
-<text x="258" y="84" font-size="10.5" font-weight="700" fill="#8a6d1a">孢子类</text>
-<!-- 大分生孢子（梭形） -->
-<text x="258" y="100" font-size="9.5" fill="#33404f">大分生孢子（梭形）</text>
-<ellipse cx="300" cy="112" rx="16" ry="6" fill="#e8d9b8" stroke="#a8894e" stroke-width="1"/>
-<path d="M290,112 h20 M300,106 v12" stroke="#5d4a26" stroke-width="0.8"/>
-<text x="324" y="116" font-size="9.5" fill="#5c6672">曲霉/镰刀</text>
-<!-- 小分生孢子（链状） -->
-<text x="258" y="138" font-size="9.5" fill="#33404f">小分生孢子</text>
-<circle cx="270" cy="150" r="3.5" fill="#e8d9b8" stroke="#a8894e" stroke-width="1"/>
-<circle cx="278" cy="150" r="3.5" fill="#e8d9b8" stroke="#a8894e" stroke-width="1"/>
-<circle cx="286" cy="150" r="3.5" fill="#e8d9b8" stroke="#a8894e" stroke-width="1"/>
-<text x="298" y="154" font-size="9.5" fill="#5c6672">链状/假头状着生</text>
+<!-- ===== 左下：产孢结构（鉴定主轴） ===== -->
+<text x="24" y="188" font-size="10.5" font-weight="700" fill="#8a6d1a">产孢结构（LPCB 压片定种）</text>
+<!-- 曲霉分生孢子头 -->
+<circle cx="76" cy="212" r="12" fill="url(#spore)" stroke="#a8894e" stroke-width="1.2"/>
+<g stroke="#a8894e" stroke-width="0.9">
+  <line x1="76" y1="200" x2="76" y2="188"/><line x1="68" y1="202" x2="62" y2="192"/><line x1="84" y1="202" x2="90" y2="192"/>
+</g>
+<g fill="#5d4a26">
+  <circle cx="76" cy="186" r="2.2"/><circle cx="60" cy="190" r="2.2"/><circle cx="92" cy="190" r="2.2"/>
+  <circle cx="76" cy="181" r="1.8"/><circle cx="58" cy="185" r="1.8"/><circle cx="94" cy="185" r="1.8"/>
+</g>
+<line x1="76" y1="224" x2="76" y2="242" stroke="#a8894e" stroke-width="2"/>
+<text x="96" y="206" font-size="9.5" fill="#33404f">曲霉：顶囊＋小梗＋分生孢子链</text>
+<text x="96" y="219" font-size="9.5" fill="#5c6672">（大分生孢子梭形 · 小分生孢子链状）</text>
+<!-- 毛霉孢子囊 -->
+<circle cx="76" cy="276" r="13" fill="url(#spore)" stroke="#a8894e" stroke-width="1.2"/>
+<g fill="#5d4a26"><circle cx="72" cy="272" r="2"/><circle cx="80" cy="272" r="2"/><circle cx="76" cy="280" r="2"/></g>
+<line x1="76" y1="289" x2="76" y2="306" stroke="#a8894e" stroke-width="2"/>
+<path d="M76,306 q-8,8 -14,6 M76,306 q8,8 14,6" fill="none" stroke="#a8894e" stroke-width="1.2"/>
+<text x="96" y="272" font-size="9.5" fill="#33404f">毛霉：孢子囊（囊轴＋孢囊孢子）</text>
+<text x="96" y="285" font-size="9.5" fill="#5c6672">孢囊梗＋假根（根霉「葡萄枝」）</text>
 <!-- 厚壁孢子 -->
-<text x="382" y="138" font-size="9.5" fill="#33404f">厚壁孢子</text>
-<circle cx="398" cy="150" r="7" fill="#d9c9a4" stroke="#8a6d1a" stroke-width="1.4"/>
-<circle cx="398" cy="150" r="3.5" fill="#b39755"/>
-<text x="412" y="154" font-size="9.5" fill="#5c6672">白念顶端</text>
-<!-- 孢子囊孢子 -->
-<text x="258" y="176" font-size="9.5" fill="#33404f">孢子囊孢子（囊内内生）</text>
-<circle cx="346" cy="172" r="8" fill="#f2ecdd" stroke="#a8894e" stroke-width="1.2"/>
-<circle cx="343" cy="172" r="2" fill="#5d4a26"/><circle cx="349" cy="170" r="2" fill="#5d4a26"/><circle cx="347" cy="175" r="2" fill="#5d4a26"/>
-<text x="362" y="176" font-size="9.5" fill="#5c6672">毛霉目</text>
+<circle cx="196" cy="286" r="8" fill="#d9c9a4" stroke="#8a6d1a" stroke-width="1.5"/>
+<circle cx="196" cy="286" r="4" fill="#b39755"/>
+<text x="212" y="282" font-size="9.5" fill="#33404f">厚壁孢子（顶端）</text>
+<text x="212" y="295" font-size="9.5" fill="#5c6672">白念鉴别点</text>
 
-<!-- ===== 下：病毒 ===== -->
-<rect x="24" y="196" width="216" height="100" rx="8" fill="#eef2f7" stroke="#d3dbe6"/>
-<text x="34" y="214" font-size="10.5" font-weight="700" fill="#33404f">裸病毒＝衣壳＋核酸</text>
+<!-- ===== 右：病毒三种对称 + 包膜 ===== -->
+<text x="272" y="78" font-size="10.5" font-weight="700" fill="#33404f">病毒：衣壳对称三型</text>
 <!-- 二十面体 -->
-<g transform="translate(66,246)">
-  <polygon points="0,-20 19,-6 12,17 -12,17 -19,-6" fill="#cdd8e6" stroke="#6b7684" stroke-width="1.2"/>
-  <polygon points="0,-20 19,-6 0,4" fill="#a9bacd"/>
-  <polygon points="0,-20 -19,-6 0,4" fill="#c2cfdd"/>
-</g>
-<text x="66" y="284" text-anchor="middle" font-size="9.5" fill="#5c6672">二十面体（腺病毒）</text>
+<polygon points="310,96 328,104 322,124 298,124 292,104" fill="#cdd8e6" stroke="#6b7684" stroke-width="1.2"/>
+<polygon points="310,96 328,104 310,112" fill="#a9bacd"/>
+<text x="310" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">二十面体（腺病毒）</text>
 <!-- 螺旋 -->
-<g transform="translate(160,246)">
-  <path d="M-24,14 q6,-24 12,0 q6,24 12,0 q6,-24 12,0" fill="none" stroke="#6b7684" stroke-width="2"/>
-</g>
-<text x="160" y="284" text-anchor="middle" font-size="9.5" fill="#5c6672">螺旋对称（流感核衣壳）</text>
+<path d="M356,120 q6,-22 12,0 q6,22 12,0 q6,-22 12,0" fill="none" stroke="#6b7684" stroke-width="2"/>
+<text x="380" y="140" text-anchor="middle" font-size="9.5" fill="#5c6672">螺旋（流感核衣壳）</text>
+<!-- 复合（噬菌体） -->
+<polygon points="428,96 440,96 444,106 434,110 424,106" fill="#cdd8e6" stroke="#6b7684" stroke-width="1.1"/>
+<line x1="434" y1="110" x2="434" y2="126" stroke="#6b7684" stroke-width="1.8"/>
+<line x1="434" y1="126" x2="426" y2="134" stroke="#6b7684" stroke-width="1"/>
+<line x1="434" y1="126" x2="442" y2="134" stroke="#6b7684" stroke-width="1"/>
+<text x="434" y="148" text-anchor="middle" font-size="9.5" fill="#5c6672">复合（噬菌体）</text>
 
-<!-- 包膜病毒 -->
-<rect x="248" y="196" width="208" height="100" rx="8" fill="#fdf0f0" stroke="#e8c9c9"/>
-<text x="258" y="214" font-size="10.5" font-weight="700" fill="#8f3b3b">包膜病毒＝核衣壳＋脂蛋白膜</text>
-<!-- 出芽示意 -->
-<circle cx="300" cy="258" r="17" fill="#f5d9d9" stroke="#c17a7a" stroke-width="1.4"/>
-<circle cx="300" cy="258" r="8" fill="#c17a7a"/>
-<!-- 刺突 -->
-<g stroke="#8f3b3b" stroke-width="1.6">
-  <line x1="300" y1="239" x2="300" y2="233"/>
-  <line x1="312" y1="246" x2="317" y2="242"/>
-  <line x1="317" y1="258" x2="323" y2="258"/>
-  <line x1="288" y1="246" x2="283" y2="242"/>
-  <line x1="283" y1="258" x2="277" y2="258"/>
-  <line x1="312" y1="270" x2="316" y2="274"/>
+<!-- 包膜病毒（大幅） -->
+<text x="272" y="186" font-size="10.5" font-weight="700" fill="#8f3b3b">包膜病毒＝核衣壳＋脂蛋白膜</text>
+<!-- 出芽过程 -->
+<rect x="280" y="196" width="60" height="44" rx="6" fill="#f7ecd4" stroke="#d9b96a"/>
+<text x="310" y="250" text-anchor="middle" font-size="9.5" fill="#8a6d2f">宿主细胞膜</text>
+<circle cx="310" cy="216" r="10" fill="#f5d9d9" stroke="#c17a7a" stroke-width="1.2"/>
+<circle cx="310" cy="216" r="4" fill="#c17a7a"/>
+<line x1="346" y1="218" x2="366" y2="218" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<!-- 成熟包膜病毒 -->
+<circle cx="400" cy="218" r="22" fill="#f5d9d9" stroke="#c17a7a" stroke-width="1.6"/>
+<circle cx="400" cy="218" r="10" fill="#c17a7a"/>
+<g stroke="#8f3b3b" stroke-width="1.8">
+  <line x1="400" y1="194" x2="400" y2="188"/><line x1="415" y1="203" x2="420" y2="199"/><line x1="422" y1="218" x2="428" y2="218"/>
+  <line x1="385" y1="203" x2="380" y2="199"/><line x1="378" y1="218" x2="372" y2="218"/><line x1="415" y1="233" x2="420" y2="237"/>
 </g>
-<circle cx="312" cy="247" r="1.6" fill="#8f3b3b"/><circle cx="288" cy="247" r="1.6" fill="#8f3b3b"/>
-<text x="300" y="290" text-anchor="middle" font-size="9.5" fill="#5c6672">刺突（HA/NA 等）</text>
-<text x="400" y="240" font-size="9.5" fill="#8f3b3b">对脂溶剂敏感</text>
-<text x="400" y="255" font-size="9.5" fill="#5c6672">流感 · HIV · HBV</text>
-<text x="400" y="270" font-size="9.5" fill="#8f3b3b">脂溶剂可灭活</text>
-<text x="400" y="283" font-size="9.5" fill="#5c6672">裸病毒高水平消毒</text>
+<text x="400" y="252" text-anchor="middle" font-size="9.5" fill="#5c6672">刺突（HA/NA/S）</text>
+<text x="272" y="272" font-size="9.5" fill="#8f3b3b">包膜来自宿主 → 脂溶剂敏感（乙醇/肥皂可灭活）</text>
+<text x="272" y="285" font-size="9.5" fill="#5c6672">流感 · 冠状 · HIV · HBV</text>
+<text x="272" y="298" font-size="9.5" fill="#33404f">裸病毒（无包膜）→ 耐干燥，需高水平消毒</text>
 
 <!-- 页脚 -->
-<rect x="24" y="304" width="432" height="20" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
-<text x="240" y="318" text-anchor="middle" font-size="9.5" fill="#5c6672">LPCB 压片看产孢结构定丝状真菌 · 玉米吐温琼脂促厚壁孢子与假菌丝（白念鉴定）· 包膜有无决定消毒等级</text>
+<rect x="24" y="320" width="432" height="60" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="338" font-size="10" font-weight="700" fill="#1f2733">检验关联</text>
+<text x="36" y="354" font-size="9.5" fill="#33404f">LPCB 压片看产孢结构定丝状真菌 · 有隔/无隔是门级分类轴（接合菌 vs 子囊菌）</text>
+<text x="36" y="368" font-size="9.5" fill="#33404f">包膜有无决定消毒等级与传播途径（包膜病毒多经体液/飞沫，裸病毒多经粪-口）</text>
 </svg>

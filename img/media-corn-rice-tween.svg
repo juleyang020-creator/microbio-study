@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>玉米/米粉吐温80琼脂（白念珠菌厚壁孢子与假菌丝诱导）</title>
+<desc>玉米粉（或米粉）＋琼脂＋吐温80：贫瘠营养＋表面活性剂诱导白念珠菌产生厚壁孢子与假菌丝——厚壁孢子位于假菌丝顶端、壁厚圆形，是白念珠菌的关键鉴别点（玉米吐温 25~30℃ 24~48 h 小培养观察；米粉吐温同样诱导，且可观察菌丝）；红色毛癣菌在玉米吐温上产色素较好</desc>
+<defs>
+  <radialGradient id="chlamy" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fbf3e2"/><stop offset="1" stop-color="#d9c9a4"/></radialGradient>
+</defs>
+<rect width="480" height="336" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">玉米 / 米粉吐温80琼脂</text>
+<rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
+<text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">真菌鉴定培养基</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">贫瘠＋吐温：逼着白念珠菌亮出厚壁孢子这张身份证</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：小培养镜下 ===== -->
+<text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">镜下所见（小培养法）</text>
+<!-- 假菌丝链 -->
+<g fill="none" stroke="#7a9c6e" stroke-width="2.2" stroke-linecap="round">
+  <path d="M60,150 Q90,120 130,110 Q170,100 210,108"/>
+  <path d="M80,168 Q120,150 160,148"/>
+</g>
+<!-- 缢缩点 -->
+<g fill="#7a9c6e">
+  <circle cx="102" cy="127" r="3"/><circle cx="150" cy="106" r="3"/><circle cx="184" cy="104" r="3"/>
+  <circle cx="116" cy="156" r="3"/><circle cx="146" cy="149" r="3"/>
+</g>
+<!-- 厚壁孢子（顶端大圆） -->
+<circle cx="218" cy="110" r="14" fill="url(#chlamy)" stroke="#8a6d1a" stroke-width="1.6"/>
+<circle cx="218" cy="110" r="6" fill="#b39755"/>
+<line x1="206" y1="117" x2="198" y2="122" stroke="#8a6d1a" stroke-width="1.4"/>
+<text x="238" y="100" font-size="9.5" font-weight="700" fill="#8a6d1a">厚壁孢子</text>
+<text x="238" y="113" font-size="9.5" fill="#5c6672">（顶端·壁厚圆形）</text>
+<text x="120" y="188" font-size="9.5" fill="#33404f">假菌丝（缢缩成链的芽生孢子）</text>
+
+<!-- 与芽管试验关系 -->
+<rect x="24" y="206" width="216" height="46" rx="7" fill="#f5f0fa" stroke="#b9a5d9"/>
+<text x="34" y="222" font-size="9.5" font-weight="700" fill="#5b4f8a">与芽管试验互补</text>
+<text x="34" y="236" font-size="9.5" fill="#33404f">芽管 2~3 h 快筛；厚壁孢子 24~48 h 确证</text>
+<text x="34" y="248" font-size="9.5" fill="#5c6672">两者都阳性 → 白念珠菌</text>
+
+<!-- ===== 右：两种配方与用途 ===== -->
+<text x="268" y="80" font-size="10.5" font-weight="700" fill="#33404f">两种配方，同一目的</text>
+<g font-size="9.5">
+  <rect x="268" y="92" width="188" height="46" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="278" y="108" font-weight="700" fill="#8a6d2f">玉米吐温80（Corn Tween-80）</text>
+  <text x="278" y="122" fill="#33404f">厚壁孢子＋假菌丝观察首选</text>
+  <text x="278" y="134" fill="#5c6672">红色毛癣菌产色素较好</text>
+
+  <rect x="268" y="146" width="188" height="46" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="278" y="162" font-weight="700" fill="#33404f">米粉吐温80（Rice Tween-80）</text>
+  <text x="278" y="176" fill="#33404f">同样诱导厚壁孢子与菌丝</text>
+  <text x="278" y="188" fill="#5c6672">小培养观察形态更方便</text>
+</g>
+
+<!-- 条件 -->
+<rect x="268" y="202" width="188" height="50" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+<text x="278" y="218" font-size="9.5" font-weight="700" fill="#2f6b45">培养条件</text>
+<text x="278" y="232" font-size="9.5" fill="#33404f">25~30℃（非 35℃！）· 24~48 h</text>
+<text x="278" y="245" font-size="9.5" fill="#5c6672">盖玻片小培养，原位数镜</text>
+
+<!-- 结论 -->
+<text x="240" y="276" text-anchor="middle" font-size="11.5" fill="#33404f">厚壁孢子＝白念珠菌的鉴别点，其他念珠菌不产生</text>
+
+<!-- 页脚 -->
+<rect x="24" y="290" width="432" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="305" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">注意</tspan>　吐温80 改变膜通透性诱导产孢；培养温度超过 30℃ 厚壁孢子形成受抑，</text>
+<text x="32" y="318" font-size="9.5" fill="#5c6672">易假阴性。临床酵母鉴定现多以 MALDI-TOF 为主，本试验作形态学佐证</text>
+</svg>
