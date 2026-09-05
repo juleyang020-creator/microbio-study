@@ -1,6 +1,6 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260903-41';
+var APP_VERSION = '20260905-46';
 // 缓存名直接由版本号派生，只需改 APP_VERSION 一处；旧缓存在 activate 时按前缀清理
 var CACHE = CACHE_PREFIX + APP_VERSION;
 function versioned(path) {
@@ -63,8 +63,20 @@ var IMAGE_ASSETS = [
   './img/biochem-vibrio-panel.svg',
   './img/biochem-vp.svg',
   './img/biochem-xv.svg',
+  './img/genetics-classic-variation.svg',
+  './img/genetics-fungal-viral.svg',
+  './img/genetics-hgt.svg',
+  './img/genetics-integron.svg',
+  './img/genetics-material.svg',
+  './img/genetics-mutation.svg',
+  './img/glossary-ast-terms.svg',
+  './img/glossary-flora-syndromes.svg',
+  './img/glossary-id-tech.svg',
+  './img/glossary-media-terms.svg',
+  './img/glossary-resist-phenotypes.svg',
   './img/glossary-structure-bacteria.svg',
   './img/glossary-structure-fungi-virus.svg',
+  './img/glossary-virus-serology.svg',
   './img/landing-antibiotics.svg',
   './img/landing-biochem.svg',
   './img/landing-cards.svg',
@@ -150,7 +162,13 @@ var IMAGE_ASSETS = [
   './img/test-mcim.svg',
   './img/test-optochin.svg',
   './img/test-oxidase.svg',
-  './img/test-satellitism.svg'
+  './img/test-satellitism.svg',
+  './img/virulence-adhesion.svg',
+  './img/virulence-immune-evasion.svg',
+  './img/virulence-intracellular.svg',
+  './img/virulence-invasion.svg',
+  './img/virulence-qs-iron.svg',
+  './img/virulence-toxins.svg'
 ];
 // 图片也带版本号预缓存，与页面里 <img src=...?v=> 一致，避免版本更新后手机端命中旧图
 var PRECACHE = CORE.concat(IMAGE_ASSETS.map(versioned));

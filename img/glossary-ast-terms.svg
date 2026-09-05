@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 368" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>药敏试验术语（MIC · S/I/R · SDD · ECV/WT · 比浊）</title>
+<desc>MIC＝抑制肉眼可见生长的最低药物浓度（稀释法核心读数，μg/ml）；S/I/R＝以折点把 MIC 或抑菌圈转成临床类别，SDD＝剂量依赖敏感（高剂量方案下可报敏感，如头孢洛林）；ECV/ECOFF＝流行病学临界值，区分 WT（野生型，无获得性耐药机制）与 NWT——ECV 不是临床折点，不能当 S/I/R 发报告；麦氏比浊标准＝接种物浊度基准（0.5 号 ≈ 1.5×10⁸ CFU/ml）；CLSI/EUCAST 两套折点体系，ATCC 标准菌株做质控</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="368" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">药敏试验术语</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">术语</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">从浓度读数到报告类别：每一步都有专门名词</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== MIC 梯度管 ===== -->
+<text x="24" y="78" font-size="10.5" font-weight="700" fill="#33404f">MIC：第一支「不长」的管</text>
+<g>
+  <path d="M40,92 L40,128 Q40,136 50,136 Q60,136 60,128 L60,92 Z" fill="#e8eef5" stroke="#8c96a2" stroke-width="1.2"/>
+  <path d="M74,92 L74,128 Q74,136 84,136 Q94,136 94,128 L94,92 Z" fill="#e8eef5" stroke="#8c96a2" stroke-width="1.2"/>
+  <path d="M108,92 L108,128 Q108,136 118,136 Q128,136 128,128 L128,92 Z" fill="#ffffff" stroke="#8c96a2" stroke-width="1.2"/>
+  <path d="M142,92 L142,128 Q142,136 152,136 Q162,136 162,128 L162,92 Z" fill="#ffffff" stroke="#8c96a2" stroke-width="1.2"/>
+</g>
+<text x="50" y="88" text-anchor="middle" font-size="9.5" fill="#5c6672">8</text>
+<text x="84" y="88" text-anchor="middle" font-size="9.5" fill="#5c6672">4</text>
+<text x="118" y="88" text-anchor="middle" font-size="9.5" fill="#5c6672">2</text>
+<text x="152" y="88" text-anchor="middle" font-size="9.5" fill="#5c6672">1</text>
+<line x1="118" y1="142" x2="118" y2="152" stroke="#c2413d" stroke-width="1.6"/>
+<text x="128" y="156" font-size="9.5" fill="#a3332f">MIC = 2 μg/ml（浊→清分界）</text>
+
+<!-- ===== S/I/R 与 SDD ===== -->
+<text x="250" y="78" font-size="10.5" font-weight="700" fill="#33404f">S / I / R：折点划三档</text>
+<g>
+  <rect x="250" y="88" width="70" height="18" rx="9" fill="#e8f3ea" stroke="#7ba98a"/>
+  <text x="285" y="101" text-anchor="middle" font-size="9.5" fill="#2f6b45">S 敏感</text>
+  <rect x="328" y="88" width="70" height="18" rx="9" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="363" y="101" text-anchor="middle" font-size="9.5" fill="#8a6d2f">I 中介</text>
+  <rect x="250" y="112" width="70" height="18" rx="9" fill="#f9e6e4" stroke="#c2413d"/>
+  <text x="285" y="125" text-anchor="middle" font-size="9.5" fill="#a3332f">R 耐药</text>
+  <rect x="328" y="112" width="70" height="18" rx="9" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="363" y="125" text-anchor="middle" font-size="9.5" fill="#1f4e79">SDD</text>
+</g>
+<text x="250" y="146" font-size="9.5" fill="#5c6672">SDD＝剂量依赖敏感：提高剂量/频次可达效</text>
+<text x="250" y="159" font-size="9.5" fill="#5c6672">（头孢洛林对金葡设 SDD 类别）</text>
+
+<!-- ===== ECV / WT ===== -->
+<text x="24" y="186" font-size="10.5" font-weight="700" fill="#33404f">ECV / WT：分布曲线切一刀</text>
+<!-- MIC 分布曲线 -->
+<path d="M40,240 Q70,240 86,206 Q100,180 120,196 Q150,224 190,232 L190,244 L40,244 Z" fill="#eef4fb" stroke="#b9cde4"/>
+<line x1="150" y1="196" x2="150" y2="244" stroke="#c2413d" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="150" y="192" text-anchor="middle" font-size="9.5" fill="#a3332f">ECV</text>
+<text x="80" y="258" font-size="9.5" fill="#1f4e79">WT 野生型（左峰＝无耐药机制群体）</text>
+<text x="250" y="258" font-size="9.5" fill="#a3332f">NWT（右尾＝疑似获得耐药）</text>
+<text x="250" y="240" font-size="9.5" fill="#5c6672">ECV ≠ 临床折点</text>
+<text x="250" y="226" font-size="9.5" fill="#5c6672">不能据 ECV 发 S/I/R 报告</text>
+
+<!-- ===== 比浊 + 机构 ===== -->
+<text x="24" y="286" font-size="10.5" font-weight="700" fill="#33404f">接种与体系</text>
+<circle cx="60" cy="312" r="14" fill="#f2ecdd" stroke="#c9a95f"/>
+<text x="60" y="316" text-anchor="middle" font-size="9.5" fill="#8a6d2f">0.5</text>
+<text x="84" y="308" font-size="9.5" fill="#33404f">麦氏比浊标准 0.5 号</text>
+<text x="84" y="321" font-size="9.5" fill="#5c6672">≈ 1.5×10⁸ CFU/ml 接种量基准</text>
+<g font-size="9.5">
+  <rect x="280" y="296" width="80" height="30" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="320" y="315" text-anchor="middle" fill="#33404f">CLSI（美）</text>
+  <rect x="368" y="296" width="88" height="30" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="412" y="315" text-anchor="middle" fill="#33404f">EUCAST（欧）</text>
+</g>
+<text x="280" y="340" font-size="9.5" fill="#5c6672">两套折点并存；ATCC 标准菌株做日常质控</text>
+
+<!-- 页脚 -->
+<text x="240" y="360" text-anchor="middle" font-size="9.5" fill="#5c6672">报告链条：比浊接种 → 测 MIC/抑菌圈 → 折点判 S/I/R → 疑耐药机制加表型试验</text>
+</svg>

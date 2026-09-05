@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 380" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>整合子与 R 质粒（耐药基因装配线与运输车）</title>
+<desc>整合子＝基因捕获系统：intI 整合酶催化基因盒（ORF+attC）插入/切离，Ⅰ类最常见，携带 aadB/dfr/bla 基因盒——「整合子-转座子-质粒」复合体是多重耐药的装配线；R 质粒＝耐药决定因子（r 决定因子，串联多耐药基因）+ 耐药转移因子（RTF，编码性菌毛负责接合转移），一次接合转移整套耐药；不相容性分组（IncF/IncI/IncX）用于碳青霉烯耐药质粒流行病学追踪</desc>
+<defs>
+  <radialGradient id="plas2" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe9f8"/><stop offset="1" stop-color="#c9b8e2"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="380" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">整合子与 R 质粒</text>
+<rect x="380" y="14" width="76" height="18" rx="9" fill="#eef1f5"/>
+<text x="418" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">遗传与变异</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">一个负责把耐药基因「串成套餐」，一个负责「整车发货」</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 上：整合子 ===== -->
+<text x="24" y="76" font-size="10.5" font-weight="700" fill="#33404f">整合子：基因捕获装配线（Ⅰ类最常见）</text>
+<!-- 5' 保守段 -->
+<rect x="36" y="88" width="76" height="26" rx="5" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="74" y="105" text-anchor="middle" font-size="9.5" fill="#1f4e79">intI1＋P1</text>
+<!-- 基因盒阵列 -->
+<rect x="118" y="90" width="34" height="22" rx="4" fill="#f9e6e4" stroke="#c2413d" stroke-width="1.2"/>
+<text x="135" y="105" text-anchor="middle" font-size="9.5" fill="#a3332f">aadB</text>
+<rect x="156" y="90" width="34" height="22" rx="4" fill="#f9e6e4" stroke="#c2413d" stroke-width="1.2"/>
+<text x="173" y="105" text-anchor="middle" font-size="9.5" fill="#a3332f">dfr</text>
+<rect x="194" y="90" width="34" height="22" rx="4" fill="#f9e6e4" stroke="#c2413d" stroke-width="1.2"/>
+<text x="211" y="105" text-anchor="middle" font-size="9.5" fill="#a3332f">bla</text>
+<path d="M232,101 l10,0 m-3,-3 l3,3 l-3,3" stroke="#c9a95f" stroke-width="1.4" fill="none"/>
+<text x="252" y="96" font-size="9.5" fill="#8a6d2f">attC 位点捕获新盒</text>
+<text x="252" y="109" font-size="9.5" fill="#5c6672">（随时插入/切离）</text>
+<!-- 3' 保守段 -->
+<rect x="330" y="88" width="50" height="26" rx="5" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="355" y="105" text-anchor="middle" font-size="9.5" fill="#1f4e79">3′ 保守</text>
+<text x="386" y="105" font-size="9.5" fill="#5c6672">P1 统一转录</text>
+
+<!-- 装配线说明 -->
+<text x="36" y="132" font-size="9.5" fill="#33404f">整合子多挂在转座子（Tn402）上 → 再插进质粒：「整合子-转座子-质粒」装配线</text>
+
+<!-- ===== 下：R 质粒 ===== -->
+<text x="24" y="164" font-size="10.5" font-weight="700" fill="#33404f">R 质粒：耐药基因运输车（两大部件）</text>
+<!-- 大环 -->
+<circle cx="130" cy="230" r="46" fill="none" stroke="#7a63ad" stroke-width="2.6"/>
+<circle cx="130" cy="230" r="46" fill="url(#plas2)" opacity="0.15"/>
+<!-- RTF 弧段 -->
+<path d="M130,184 a46,46 0 0,1 44,32" fill="none" stroke="#c2413d" stroke-width="6"/>
+<text x="196" y="200" font-size="9.5" fill="#c2413d">RTF（转移因子）</text>
+<text x="196" y="213" font-size="9.5" fill="#5c6672">编码性菌毛→接合转移</text>
+<!-- r 决定因子弧段 -->
+<path d="M92,256 a46,46 0 0,1 -6,-44" fill="none" stroke="#2f8f83" stroke-width="6"/>
+<text x="36" y="252" font-size="9.5" fill="#2f6b45">r 决定因子</text>
+<text x="36" y="265" font-size="9.5" fill="#5c6672">串联多耐药基因</text>
+<text x="130" y="234" text-anchor="middle" font-size="9.5" fill="#5b4f8a">R 质粒</text>
+
+<!-- 转移示意 -->
+<circle cx="310" cy="230" r="15" fill="url(#plas2)" stroke="#7a63ad" stroke-width="1.3"/>
+<circle cx="400" cy="230" r="15" fill="#e6f4f1" stroke="#2f8f83" stroke-width="1.3"/>
+<line x1="326" y1="230" x2="384" y2="230" stroke="#7d8a98" stroke-width="2.2"/>
+<path d="M336,222 q20,-10 44,0" fill="none" stroke="#c2413d" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="355" y="216" text-anchor="middle" font-size="9.5" fill="#c2413d">一次接合</text>
+<text x="355" y="258" text-anchor="middle" font-size="9.5" fill="#a3332f">＝整套耐药表型转移（ESBL/碳青霉烯酶）</text>
+
+<!-- 非接合搭车 -->
+<text x="24" y="292" font-size="9.5" fill="#33404f">非接合型 R 质粒：先插入转座子，再借接合质粒「搭车」转移（如 Tn1546-VanA）</text>
+
+<!-- 页脚 -->
+<rect x="24" y="308" width="432" height="56" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="326" font-size="10" font-weight="700" fill="#1f2733">流行病学追踪</text>
+<text x="36" y="342" font-size="9.5" fill="#33404f">质粒不相容性分组（IncF / IncI / IncX 等）是碳青霉烯耐药质粒传播链的</text>
+<text x="36" y="356" font-size="9.5" fill="#33404f">分子标记；同一 Inc 组质粒出现在不同科室/地区 → 提示水平传播事件。</text>
+</svg>

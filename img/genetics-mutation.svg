@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>突变与 SOS 修复（点突变 → 稳定遗传的耐药）</title>
+<desc>点突变＝碱基置换/插入/缺失，是基因型变异的分子基础——与表型变异（环境引起、可逆）相对；DNA 受损时 SOS 反应启动差错倾向修复，修复本身制造新突变（喹诺酮/呋喃类亚抑浓度诱导耐药的机制）；结核 rpoB RRDR 点突变→利福平耐药（分子药敏 GeneXpert 检测）、katG/inhA→异烟肼耐药；肺炎链球菌 pbp 逐步突变累积 PSSP→PRSP</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="340" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">突变与 SOS 修复</text>
+<rect x="380" y="14" width="76" height="18" rx="9" fill="#eef1f5"/>
+<text x="418" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">遗传与变异</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">一个碱基写错，可能换来一整类抗生素失效</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：点突变三种 ===== -->
+<text x="120" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#33404f">点突变的三种写法</text>
+<!-- 正常链 -->
+<rect x="36" y="90" width="120" height="14" rx="3" fill="#e6f4f1" stroke="#2f8f83"/>
+<text x="96" y="101" text-anchor="middle" font-size="9.5" fill="#2f6b45">A T G C A T G</text>
+<text x="170" y="101" font-size="9.5" fill="#5c6672">正常</text>
+<!-- 置换 -->
+<rect x="36" y="118" width="120" height="14" rx="3" fill="#e6f4f1" stroke="#2f8f83"/>
+<text x="96" y="129" text-anchor="middle" font-size="9.5" fill="#2f6b45">A T <tspan fill="#c2413d" font-weight="700">A</tspan> C A T G</text>
+<text x="170" y="129" font-size="9.5" fill="#33404f">置换（错义）</text>
+<!-- 插入 -->
+<rect x="36" y="146" width="120" height="14" rx="3" fill="#e6f4f1" stroke="#2f8f83"/>
+<text x="96" y="157" text-anchor="middle" font-size="9.5" fill="#2f6b45">A T G <tspan fill="#c2413d" font-weight="700">G</tspan> C A T G</text>
+<text x="170" y="157" font-size="9.5" fill="#33404f">插入（移码）</text>
+<!-- 缺失 -->
+<rect x="36" y="174" width="120" height="14" rx="3" fill="#e6f4f1" stroke="#2f8f83"/>
+<text x="96" y="185" text-anchor="middle" font-size="9.5" fill="#2f6b45">A T C A T G <tspan fill="#c2413d">△</tspan></text>
+<text x="170" y="185" font-size="9.5" fill="#33404f">缺失（移码）</text>
+<text x="120" y="206" text-anchor="middle" font-size="9.5" fill="#a3332f">稳定遗传 → 可传代、可累积</text>
+
+<!-- ===== 右：SOS 差错修复 ===== -->
+<text x="370" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#33404f">SOS：救急但添乱</text>
+<rect x="290" y="88" width="160" height="46" rx="8" fill="#fdf6f5" stroke="#e3c8c8"/>
+<text x="370" y="104" text-anchor="middle" font-size="9.5" fill="#33404f">DNA 受损（紫外线/药物）→ SOS 反应</text>
+<text x="370" y="117" text-anchor="middle" font-size="9.5" fill="#33404f">无模板差错倾向修复 → 错误率↑</text>
+<text x="370" y="130" text-anchor="middle" font-size="9.5" fill="#a3332f">修复本身在制造突变</text>
+<text x="370" y="152" text-anchor="middle" font-size="9.5" fill="#5c6672">喹诺酮/呋喃类亚抑浓度可诱导——</text>
+<text x="370" y="165" text-anchor="middle" font-size="9.5" fill="#5c6672">剂量不足反而「培养」耐药</text>
+
+<!-- 与表型变异对照 -->
+<rect x="290" y="180" width="160" height="34" rx="8" fill="#f0f6f2" stroke="#c8dcc5"/>
+<text x="370" y="195" text-anchor="middle" font-size="9.5" fill="#2f6b45">对照：表型变异（环境引起）</text>
+<text x="370" y="208" text-anchor="middle" font-size="9.5" fill="#5c6672">换回适宜条件即恢复，不需重鉴定</text>
+
+<!-- ===== 底部：临床检验的突变 ===== -->
+<rect x="24" y="228" width="432" height="76" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="246" font-size="10" font-weight="700" fill="#1f2733">临床每天要面对的点突变</text>
+<text x="36" y="263" font-size="9.5" fill="#33404f">结核：rpoB RRDR 点突变 → 利福平耐药（约 95%）→ GeneXpert MTB/RIF 直接检出</text>
+<text x="36" y="277" font-size="9.5" fill="#33404f">结核：katG / inhA 突变 → 异烟肼耐药 → LPA 线探针检测</text>
+<text x="36" y="291" font-size="9.5" fill="#33404f">肺炎链球菌：pbp 逐步突变累积 → PSSP → PRSP（转化来的嵌合基因加速此过程）</text>
+
+<!-- 页脚 -->
+<text x="240" y="326" text-anchor="middle" font-size="10" fill="#5c6672">突变是「垂直」的慢变量；水平转移是「横向」的快变量（见 HGT 图）</text>
+</svg>

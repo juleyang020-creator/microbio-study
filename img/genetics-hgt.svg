@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 384" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>水平基因转移（转化 · 接合 · 转导 · 溶原性转换）</title>
+<desc>转化：感受态菌摄取环境游离 DNA 重组（Griffith 肺炎链球菌实验；PRSP 的 pbp 嵌合基因来自草绿色链球菌）；接合：F⁺ 菌经性菌毛把质粒传给 F⁻（R 质粒接合是医院内耐药传播主路，LEE 毒力岛）；转导：噬菌体误包装宿主 DNA 再感染转移（金葡 β-内酰胺酶质粒经噬菌体传播）；溶原性转换：前噬菌体自身基因在宿主表达赋予新性状——白喉毒素、A 群链球菌红疹毒素、肉毒 C/D 毒素、EHEC 志贺毒素（抗生素诱导释放 → 禁用）</desc>
+<defs>
+  <radialGradient id="donor" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe9f8"/><stop offset="1" stop-color="#c9b8e2"/></radialGradient>
+  <radialGradient id="recip" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#e6f4f1"/><stop offset="1" stop-color="#bfe3dc"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="384" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">水平基因转移（HGT）</text>
+<rect x="380" y="14" width="76" height="18" rx="9" fill="#eef1f5"/>
+<text x="418" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">遗传与变异</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">耐药与毒力不靠慢慢突变，靠四条「快递通道」跨菌搬运</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== ① 转化 ===== -->
+<text x="120" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#33404f">① 转化：捡裸 DNA</text>
+<path d="M56,96 l8,0 M60,92 l0,8" stroke="#2f8f83" stroke-width="1.4"/>
+<path d="M78,102 l8,0 M82,98 l0,8" stroke="#2f8f83" stroke-width="1.4"/>
+<text x="66" y="88" font-size="9.5" fill="#2f6b45">游离 DNA</text>
+<circle cx="120" cy="112" r="15" fill="url(#recip)" stroke="#2f8f83" stroke-width="1.4"/>
+<path d="M96,100 q12,4 12,12" fill="none" stroke="#2f8f83" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="152" y="108" font-size="9.5" fill="#33404f">感受态菌直接摄取重组</text>
+<text x="152" y="121" font-size="9.5" fill="#5c6672">Griffith 肺炎链球菌实验</text>
+<text x="60" y="140" font-size="9.5" fill="#33404f">PRSP：pbp 嵌合基因来自草绿色链球菌</text>
+
+<!-- ===== ② 接合 ===== -->
+<text x="360" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#33404f">② 接合：性菌毛搭桥</text>
+<circle cx="310" cy="112" r="15" fill="url(#donor)" stroke="#7a63ad" stroke-width="1.4"/>
+<circle cx="410" cy="112" r="15" fill="url(#recip)" stroke="#2f8f83" stroke-width="1.4"/>
+<line x1="326" y1="112" x2="394" y2="112" stroke="#7d8a98" stroke-width="2.4"/>
+<text x="360" y="104" text-anchor="middle" font-size="9.5" fill="#5c6672">性菌毛</text>
+<circle cx="322" cy="104" r="4" fill="none" stroke="#c2413d" stroke-width="1.2"/>
+<path d="M330,102 q30,-10 60,0" fill="none" stroke="#c2413d" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="360" y="92" text-anchor="middle" font-size="9.5" fill="#c2413d">R 质粒 →</text>
+<text x="360" y="140" text-anchor="middle" font-size="9.5" fill="#33404f">F⁺ → F⁻：医院内耐药传播主路</text>
+<text x="360" y="153" text-anchor="middle" font-size="9.5" fill="#5c6672">LEE 毒力岛 · Tn916（tetM）</text>
+
+<!-- ===== ③ 转导 ===== -->
+<text x="120" y="188" text-anchor="middle" font-size="11" font-weight="700" fill="#33404f">③ 转导：噬菌体快递</text>
+<!-- 噬菌体 -->
+<polygon points="84,204 98,204 104,216 91,222 78,216" fill="url(#donor)" stroke="#7a63ad" stroke-width="1.3"/>
+<line x1="91" y1="222" x2="91" y2="238" stroke="#7a63ad" stroke-width="1.8"/>
+<text x="112" y="210" font-size="9.5" fill="#33404f">误装宿主 DNA 的噬菌体</text>
+<circle cx="150" cy="230" r="14" fill="url(#recip)" stroke="#2f8f83" stroke-width="1.4"/>
+<line x1="98" y1="236" x2="134" y2="232" stroke="#7a63ad" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="60" y="256" font-size="9.5" fill="#33404f">金葡 β-内酰胺酶质粒经噬菌体传播</text>
+
+<!-- ===== ④ 溶原性转换 ===== -->
+<text x="360" y="188" text-anchor="middle" font-size="11" font-weight="700" fill="#33404f">④ 溶原性转换：基因随身带</text>
+<rect x="290" y="200" width="140" height="44" rx="8" fill="#f0f6f2" stroke="#7ba98a"/>
+<path d="M306,222 q10,-12 22,0 q12,12 24,0" fill="none" stroke="#2f8f83" stroke-width="1.6"/>
+<rect x="330" y="214" width="24" height="14" rx="3" fill="url(#donor)" stroke="#7a63ad" stroke-width="1.2"/>
+<text x="342" y="225" text-anchor="middle" font-size="9.5" fill="#5b4f8a">tox</text>
+<text x="360" y="258" text-anchor="middle" font-size="9.5" fill="#33404f">前噬菌体基因在宿主表达 → 新性状</text>
+<text x="360" y="272" text-anchor="middle" font-size="9.5" fill="#a3332f">白喉毒素 · 红疹毒素 · 肉毒 C/D · Stx</text>
+
+<!-- ===== 对照与警示 ===== -->
+<rect x="24" y="290" width="432" height="56" rx="8" fill="#fdf6f5" stroke="#e3c8c8"/>
+<text x="36" y="308" font-size="10" font-weight="700" fill="#a3332f">EHEC 禁用抗生素的分子原因</text>
+<text x="36" y="324" font-size="9.5" fill="#33404f">志贺毒素（Stx）由温和噬菌体编码——抗生素诱导噬菌体进入裂解周期，</text>
+<text x="36" y="338" font-size="9.5" fill="#33404f">毒素大量释放 → HUS 风险↑。转导「搬运」≠溶原性转换「自带」。</text>
+<text x="240" y="372" text-anchor="middle" font-size="9.5" fill="#5c6672">KPC 能从克雷伯菌跳到铜绿/不动杆菌——隔离携带者比治好一个病人更重要</text>
+</svg>

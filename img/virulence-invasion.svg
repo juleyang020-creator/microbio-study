@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>侵袭与扩散（侵袭性酶 + III 型分泌系统）</title>
+<desc>侵袭性酶直接破坏组织屏障：化脓性链球菌透明质酸酶+链激酶+链道酶（坏死性筋膜炎）、产气荚膜梭菌胶原酶（气性坏疽）、金葡凝固酶（纤维蛋白屏障护菌）；III 型分泌系统是革兰阴性菌的分子注射器，跨膜针状装置把效应蛋白注入宿主细胞（沙门菌/志贺菌诱导内吞、铜绿 ExoS/ExoU、EPEC 附着抹平、耶尔森菌 Yop 抗吞噬）</desc>
+<defs>
+  <radialGradient id="strep" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe9f8"/><stop offset="1" stop-color="#c9b8e2"/></radialGradient>
+  <radialGradient id="t3ss" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fbeaea"/><stop offset="1" stop-color="#dfa0a0"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="340" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">侵袭与扩散</text>
+<rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
+<text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">致病因素 · 侵袭</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">两套打法：分泌酶「拆墙」，或用注射器「直接投毒」进细胞</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：侵袭性酶 ===== -->
+<text x="120" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#6e5a9e">侵袭性酶：化学拆墙</text>
+<!-- 组织屏障 -->
+<rect x="30" y="150" width="180" height="12" rx="3" fill="#eaf3ec" stroke="#7ba98a"/>
+<text x="120" y="176" text-anchor="middle" font-size="9.5" fill="#2f6b45">组织间质 / 筋膜屏障</text>
+<!-- 缺口 -->
+<rect x="96" y="150" width="48" height="12" fill="#ffffff"/>
+<path d="M96,150 l-4,12 M144,150 l4,12" stroke="#7ba98a" stroke-width="1.2"/>
+<!-- 三种酶楔入 -->
+<g>
+  <circle cx="90" cy="118" r="9" fill="url(#strep)" stroke="#7a63ad" stroke-width="1.2"/>
+  <text x="90" y="121" text-anchor="middle" font-size="9.5" fill="#5b4f8a">酶</text>
+  <circle cx="120" cy="110" r="9" fill="url(#strep)" stroke="#7a63ad" stroke-width="1.2"/>
+  <text x="120" y="113" text-anchor="middle" font-size="9.5" fill="#5b4f8a">酶</text>
+  <circle cx="150" cy="118" r="9" fill="url(#strep)" stroke="#7a63ad" stroke-width="1.2"/>
+  <text x="150" y="121" text-anchor="middle" font-size="9.5" fill="#5b4f8a">酶</text>
+  <line x1="90" y1="128" x2="96" y2="146" stroke="#7a63ad" stroke-width="1.2" marker-end="url(#arr)"/>
+  <line x1="120" y1="120" x2="120" y2="146" stroke="#7a63ad" stroke-width="1.2" marker-end="url(#arr)"/>
+  <line x1="150" y1="128" x2="144" y2="146" stroke="#7a63ad" stroke-width="1.2" marker-end="url(#arr)"/>
+</g>
+<text x="120" y="196" text-anchor="middle" font-size="9.5" fill="#33404f">透明质酸酶 · 链激酶 · 链道酶（GAS）</text>
+<text x="120" y="210" text-anchor="middle" font-size="9.5" fill="#33404f">胶原酶（产气荚膜梭菌）· 凝固酶（金葡）</text>
+<text x="120" y="224" text-anchor="middle" font-size="9.5" fill="#a3332f">→ 沿筋膜快速蔓延（捻发音）</text>
+
+<!-- ===== 右：T3SS ===== -->
+<text x="370" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#8f3b3b">III 型分泌系统：分子注射器</text>
+<!-- 宿主细胞 -->
+<rect x="290" y="150" width="160" height="56" rx="8" fill="#f7ecd4" stroke="#d9b96a"/>
+<text x="370" y="224" text-anchor="middle" font-size="9.5" fill="#8a6d2f">宿主细胞胞浆</text>
+<!-- 细菌 -->
+<rect x="352" y="96" width="36" height="16" rx="8" fill="url(#t3ss)" stroke="#a85a5a" stroke-width="1.4"/>
+<text x="370" y="90" text-anchor="middle" font-size="9.5" fill="#8f3b3b">G⁻ 菌</text>
+<!-- 针状装置 -->
+<rect x="366" y="112" width="8" height="38" fill="#c9a95f"/>
+<line x1="370" y1="112" x2="370" y2="150" stroke="#8a6d2f" stroke-width="1" stroke-dasharray="2 2"/>
+<!-- 效应蛋白注入 -->
+<g fill="#c2413d">
+  <circle cx="352" cy="168" r="2.6"/><circle cx="370" cy="176" r="2.6"/><circle cx="390" cy="166" r="2.6"/><circle cx="408" cy="178" r="2.6"/>
+</g>
+<text x="370" y="196" text-anchor="middle" font-size="9.5" fill="#a3332f">效应蛋白（ExoS/Yop 等）</text>
+<text x="370" y="240" text-anchor="middle" font-size="9.5" fill="#33404f">沙门/志贺：诱导内吞入胞</text>
+<text x="370" y="254" text-anchor="middle" font-size="9.5" fill="#33404f">铜绿 ExoU · EPEC A/E 损伤 · 耶尔森 Yop</text>
+<text x="370" y="268" text-anchor="middle" font-size="9.5" fill="#a3332f">→ T3SS 缺失株毒力剧降（药物靶点）</text>
+
+<!-- 页脚 -->
+<rect x="24" y="292" width="432" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="307" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">临床</tspan>　坏死性筋膜炎须外科清创（药物到不了无血供区）；胞内菌需胞内浓度高的药</text>
+<text x="32" y="320" font-size="9.5" fill="#5c6672">（氟喹诺酮 / 三代头孢）；T3SS 抑制剂与抗毒力治疗在研</text>
+</svg>

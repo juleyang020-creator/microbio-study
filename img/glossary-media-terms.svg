@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>培养基与快速试验缩写（药敏 · 真菌 · 选择鉴别 · 快检）</title>
+<desc>药敏培养基：MHA（纸片扩散）/CAMHB（微量稀释）、HTM（嗜血杆菌专用）；真菌培养：SDA（沙保罗，低 pH 选择性）、PDA（促产孢）；选择鉴别：TCBS（弧菌，蔗糖黄/绿）、TSI/KIA（三糖/双糖铁，斜面/底层+产气+H₂S）、SMAC（山梨醇麦康凯，O157:H7 无色）；快速试验：ONPG（β-半乳糖苷酶）、PYR（吡咯烷酮酶，化脓链球菌/肠球菌）、X/V 因子（嗜血杆菌需求试验）</desc>
+<defs>
+  <radialGradient id="agar2" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fdf6f0"/><stop offset="1" stop-color="#ecd9c9"/></radialGradient>
+</defs>
+<rect width="480" height="360" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">培养基与快速试验缩写</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">术语</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">字母背后都对应一个明确用途——按任务分四组记</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== ① 药敏培养基 ===== -->
+<text x="24" y="78" font-size="10.5" font-weight="700" fill="#2b6cb0">① 药敏试验用</text>
+<g font-size="9.5">
+  <rect x="24" y="90" width="140" height="52" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="34" y="106" font-weight="700" fill="#1f4e79">MHA / CAMHB</text>
+  <text x="34" y="120" fill="#5c6672">MH 琼脂（纸片法）/ 阳离子调整</text>
+  <text x="34" y="133" fill="#5c6672">MH 肉汤（微量稀释法）</text>
+  <rect x="176" y="90" width="120" height="52" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="186" y="106" font-weight="700" fill="#1f4e79">HTM</text>
+  <text x="186" y="120" fill="#5c6672">嗜血杆菌药敏培养基</text>
+  <text x="186" y="133" fill="#5c6672">（补充 X/V 生长因子）</text>
+  <rect x="308" y="90" width="148" height="52" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="318" y="106" font-weight="700" fill="#1f4e79">质控 ATCC</text>
+  <text x="318" y="120" fill="#5c6672">药敏质控用标准菌株编号体系</text>
+  <text x="318" y="133" fill="#5c6672">（如 ATCC 25922 大肠埃希菌）</text>
+</g>
+
+<!-- ===== ② 真菌培养 ===== -->
+<text x="24" y="164" font-size="10.5" font-weight="700" fill="#6e5a9e">② 真菌培养</text>
+<circle cx="60" cy="196" r="20" fill="url(#agar2)" stroke="#c9a95f" stroke-width="1.2"/>
+<text x="60" y="200" text-anchor="middle" font-size="9.5" fill="#8a6d2f">SDA</text>
+<text x="92" y="192" font-size="9.5" fill="#33404f">沙保罗葡萄糖琼脂：低 pH 抑细菌</text>
+<text x="92" y="205" font-size="9.5" fill="#5c6672">真菌通用分离（念珠菌/癣菌）</text>
+<circle cx="280" cy="196" r="20" fill="url(#agar2)" stroke="#c9a95f" stroke-width="1.2"/>
+<text x="280" y="200" text-anchor="middle" font-size="9.5" fill="#8a6d2f">PDA</text>
+<text x="312" y="192" font-size="9.5" fill="#33404f">马铃薯葡萄糖琼脂：促产孢</text>
+<text x="312" y="205" font-size="9.5" fill="#5c6672">丝状真菌形态学鉴定用</text>
+
+<!-- ===== ③ 选择鉴别 ===== -->
+<text x="24" y="240" font-size="10.5" font-weight="700" fill="#8f3b3b">③ 选择鉴别（颜色即语言）</text>
+<g font-size="9.5">
+  <rect x="24" y="252" width="140" height="40" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="34" y="268" font-weight="700" fill="#8a6d2f">TCBS</text>
+  <text x="34" y="282" fill="#5c6672">霍乱黄 / 副溶血绿（蔗糖）</text>
+  <rect x="172" y="252" width="140" height="40" rx="7" fill="#f5f0fa" stroke="#b9a5d9"/>
+  <text x="182" y="268" font-weight="700" fill="#5b4f8a">TSI / KIA</text>
+  <text x="182" y="282" fill="#5c6672">斜面/底层＋产气＋H₂S 三读</text>
+  <rect x="320" y="252" width="136" height="40" rx="7" fill="#fdf0ef" stroke="#dfa0a0"/>
+  <text x="330" y="268" font-weight="700" fill="#a3332f">SMAC</text>
+  <text x="330" y="282" fill="#5c6672">O157:H7 山梨醇− 无色菌落</text>
+</g>
+
+<!-- ===== ④ 快速试验 ===== -->
+<text x="24" y="314" font-size="10.5" font-weight="700" fill="#2f6b45">④ 快速鉴定试验</text>
+<g font-size="9.5" fill="#33404f">
+  <text x="36" y="334"><tspan font-weight="700" fill="#2f6b45">ONPG</tspan>　β-半乳糖苷酶（黄＋）：迟缓乳糖发酵的判官</text>
+  <text x="250" y="334"><tspan font-weight="700" fill="#2f6b45">PYR</tspan>　吡咯烷酮酶：化脓链球菌/肠球菌（红＋）</text>
+  <text x="36" y="349"><tspan font-weight="700" fill="#2f6b45">X/V 因子</tspan>　嗜血杆菌需求试验：X＝血红素，V＝NAD</text>
+</g>
+</svg>

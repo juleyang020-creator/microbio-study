@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>定植、抗吞噬与生物膜（感染建立三步）</title>
+<desc>感染建立的三步防线：①黏附——菌毛特异性结合宿主受体（UPEC P 菌毛→肾小管 Gal-Gal 受体、1 型菌毛→膀胱甘露糖；霍乱弧菌 TCP 菌毛是肠道定植与 CTXφ 受体）；②抗吞噬——荚膜遮蔽补体与吞噬识别（肺炎链球菌 90+ 血清型、金葡蛋白 A 结合 IgG Fc、隐球菌 GXM）；③生物膜——EPS 基质包裹使药物渗透降 100~1000 倍、持留菌代谢低下（表皮葡萄球菌/铜绿 CF 型/念珠菌导管感染），需拔除装置</desc>
+<defs>
+  <radialGradient id="cell" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#f2ecfa"/><stop offset="1" stop-color="#c9b8e2"/></radialGradient>
+  <radialGradient id="phago" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fdeeee"/><stop offset="1" stop-color="#dfa0a0"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="360" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">定植 · 抗吞噬 · 生物膜</text>
+<rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
+<text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">致病因素 · 感染建立</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">病原站稳脚跟的三步：先黏住，再躲掉吞噬，最后抱团成膜</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== ① 黏附 ===== -->
+<circle cx="40" cy="76" r="8" fill="#1f2733"/><text x="40" y="80" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<text x="56" y="80" font-size="11" font-weight="700" fill="#33404f">黏附：菌毛钥匙开受体锁</text>
+<!-- 上皮表面 -->
+<rect x="30" y="132" width="180" height="14" rx="3" fill="#f7ecd4" stroke="#d9b96a"/>
+<text x="120" y="158" text-anchor="middle" font-size="9.5" fill="#8a6d2f">宿主上皮（受体 ▲）</text>
+<g fill="#c9a95f"><path d="M66,132 l5,-8 l5,8 z"/><path d="M108,132 l5,-8 l5,8 z"/><path d="M150,132 l5,-8 l5,8 z"/></g>
+<!-- 细菌+菌毛 -->
+<circle cx="108" cy="102" r="13" fill="url(#cell)" stroke="#7a63ad" stroke-width="1.4"/>
+<g stroke="#7a63ad" stroke-width="1.2">
+  <line x1="100" y1="112" x2="92" y2="124"/><line x1="108" y1="115" x2="108" y2="124"/><line x1="116" y1="112" x2="124" y2="124"/>
+</g>
+<text x="152" y="100" font-size="9.5" fill="#33404f">P 菌毛→肾（肾盂肾炎）</text>
+<text x="152" y="113" font-size="9.5" fill="#33404f">1 型→膀胱（膀胱炎）</text>
+<text x="152" y="126" font-size="9.5" fill="#5c6672">TCP→肠道（霍乱）</text>
+
+<!-- ===== ② 抗吞噬 ===== -->
+<circle cx="268" cy="76" r="8" fill="#1f2733"/><text x="268" y="80" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+<text x="284" y="80" font-size="11" font-weight="700" fill="#33404f">抗吞噬：荚膜当隐身衣</text>
+<!-- 荚膜菌 -->
+<circle cx="330" cy="112" r="19" fill="none" stroke="#9fb7d0" stroke-width="3" stroke-dasharray="4 3" opacity="0.9"/>
+<circle cx="330" cy="112" r="11" fill="url(#cell)" stroke="#7a63ad" stroke-width="1.4"/>
+<text x="330" y="150" text-anchor="middle" font-size="9.5" fill="#2b5686">荚膜遮蔽补体</text>
+<!-- 吞噬细胞被挡 -->
+<path d="M398,100 q12,-8 22,0 q10,8 4,18 q-6,10 -18,8 q-14,-2 -14,-14 q0,-8 6,-12 z" fill="url(#phago)" stroke="#a85a5a" stroke-width="1.3"/>
+<text x="416" y="146" text-anchor="middle" font-size="9.5" fill="#a3332f">吞噬细胞</text>
+<line x1="392" y1="112" x2="352" y2="112" stroke="#c2413d" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="372" y="106" text-anchor="middle" font-size="9.5" fill="#c2413d">被挡</text>
+
+<!-- ===== ③ 生物膜 ===== -->
+<circle cx="40" cy="196" r="8" fill="#1f2733"/><text x="40" y="200" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+<text x="56" y="200" font-size="11" font-weight="700" fill="#33404f">生物膜：EPS 堡垒里的慢生活</text>
+<!-- 导管表面 + 蘑菇状群落 -->
+<rect x="30" y="262" width="180" height="10" rx="3" fill="#d7dee6" stroke="#9fb0c0"/>
+<text x="120" y="286" text-anchor="middle" font-size="9.5" fill="#5c6672">导管 / 人工关节表面</text>
+<g>
+  <ellipse cx="78" cy="246" rx="26" ry="16" fill="#e8f0f5" stroke="#9fb7d0" stroke-width="1.2"/>
+  <ellipse cx="140" cy="240" rx="30" ry="22" fill="#e8f0f5" stroke="#9fb7d0" stroke-width="1.2"/>
+  <g fill="url(#cell)" stroke="#7a63ad" stroke-width="0.9">
+    <circle cx="70" cy="244" r="4"/><circle cx="84" cy="248" r="4"/><circle cx="78" cy="238" r="4"/>
+    <circle cx="132" cy="238" r="4"/><circle cx="148" cy="242" r="4"/><circle cx="140" cy="230" r="4"/><circle cx="126" cy="248" r="4"/>
+  </g>
+</g>
+<text x="236" y="230" font-size="9.5" fill="#33404f">EPS 基质：药物渗透↓100~1000×</text>
+<text x="236" y="244" font-size="9.5" fill="#33404f">持留菌：代谢低下、杀灭困难</text>
+<text x="236" y="258" font-size="9.5" fill="#5c6672">表葡 · 铜绿 CF 型 · 念珠菌</text>
+<text x="236" y="272" font-size="9.5" fill="#5c6672">QS 群体感应协调成膜</text>
+
+<!-- 临床处理原则 -->
+<rect x="24" y="300" width="432" height="44" rx="8" fill="#fdf6f5" stroke="#e3c8c8"/>
+<text x="32" y="318" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#a3332f">临床</tspan>　生物膜感染治愈三原则：拔除装置 · 外科清创 · 长疗程联合（人工关节可试利福平＋氟喹诺酮）</text>
+<text x="32" y="333" font-size="9.5" fill="#5c6672">疫苗思路对应三步：菌毛疫苗（在研）· 荚膜多糖疫苗（PCV13/Hib）· 抗 QS/抗膜剂（研究中）</text>
+</svg>

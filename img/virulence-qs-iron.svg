@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 348" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>群体感应与铁载体（密度感知 · 夺铁战争）</title>
+<desc>群体感应（QS）：以信号分子密度感知种群规模——G⁻ 用 AHL（铜绿 Las/Rhl 级联调弹力蛋白酶/绿脓菌素/生物膜），G⁺ 用寡肽信息素（金葡 agr 高密度切换毒素表型），AI-2 为种间通用信号；铁载体：宿主转铁蛋白/乳铁蛋白螯合使游离铁极低，病原分泌肠杆菌素/pyoverdin（铜绿荧光的分子本质）/yersiniabactin 竞夺取铁——血色病/补铁期感染风险升高，铁载体通路是头孢地尔「特洛伊木马」摄取的机制</desc>
+<defs>
+  <radialGradient id="qcell" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe9f8"/><stop offset="1" stop-color="#c9b8e2"/></radialGradient>
+  <radialGradient id="fe" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fdeeee"/><stop offset="1" stop-color="#dfa0a0"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="348" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">群体感应与铁载体</text>
+<rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
+<text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">致病因素 · 调节与营养</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">一件是按兵数量决定何时开火，一件是从宿主嘴里抢口粮</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 左：群体感应 ===== -->
+<text x="126" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#6e5a9e">群体感应：看密度行事</text>
+<!-- 低密度：静默 -->
+<circle cx="70" cy="120" r="11" fill="url(#qcell)" stroke="#7a63ad" stroke-width="1.3"/>
+<circle cx="104" cy="132" r="11" fill="url(#qcell)" stroke="#7a63ad" stroke-width="1.3"/>
+<text x="88" y="158" text-anchor="middle" font-size="9.5" fill="#33404f">低密度：按兵不动</text>
+<text x="88" y="171" text-anchor="middle" font-size="9.5" fill="#5c6672">（不暴露毒力）</text>
+<!-- 信号分子累积箭头 -->
+<g fill="#c9a95f"><circle cx="140" cy="106" r="2.2"/><circle cx="150" cy="118" r="2.2"/><circle cx="144" cy="132" r="2.2"/></g>
+<line x1="152" y1="126" x2="176" y2="126" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<text x="164" y="116" text-anchor="middle" font-size="9.5" fill="#8a6d2f">信号累积</text>
+<!-- 高密度：开火 -->
+<g>
+  <circle cx="196" cy="106" r="10" fill="url(#qcell)" stroke="#7a63ad" stroke-width="1.2"/>
+  <circle cx="218" cy="112" r="10" fill="url(#qcell)" stroke="#7a63ad" stroke-width="1.2"/>
+  <circle cx="206" cy="128" r="10" fill="url(#qcell)" stroke="#7a63ad" stroke-width="1.2"/>
+  <circle cx="228" cy="132" r="10" fill="url(#qcell)" stroke="#7a63ad" stroke-width="1.2"/>
+  <circle cx="190" cy="136" r="10" fill="url(#qcell)" stroke="#7a63ad" stroke-width="1.2"/>
+</g>
+<text x="212" y="158" text-anchor="middle" font-size="9.5" fill="#a3332f">高密度：切换毒素表型</text>
+<text x="126" y="188" text-anchor="middle" font-size="9.5" fill="#33404f">G⁻ AHL（铜绿 Las/Rhl → 绿脓菌素/生物膜）</text>
+<text x="126" y="201" text-anchor="middle" font-size="9.5" fill="#33404f">G⁺ 寡肽（金葡 agr → 毒素分泌）· AI-2 通用</text>
+<text x="126" y="214" text-anchor="middle" font-size="9.5" fill="#5c6672">抗 QS＝不杀菌的抗毒力新思路（在研）</text>
+
+<!-- ===== 右：铁载体 ===== -->
+<text x="376" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#8f3b3b">铁载体：宿主口里夺铁</text>
+<!-- 转铁蛋白抱铁 -->
+<circle cx="330" cy="120" r="15" fill="#e8eef5" stroke="#7d8a98" stroke-width="1.3"/>
+<circle cx="330" cy="120" r="5" fill="url(#fe)" stroke="#a85a5a" stroke-width="1"/>
+<text x="330" y="146" text-anchor="middle" font-size="9.5" fill="#5c6672">转铁蛋白（锁铁）</text>
+<!-- 铁载体螯合抢走 -->
+<path d="M362,112 l8,8 m0,-8 l-8,8 M362,126 l8,8 m0,-8 l-8,8" stroke="#c9a95f" stroke-width="2"/>
+<text x="382" y="110" font-size="9.5" fill="#8a6d2f">铁载体螯合 Fe³⁺</text>
+<line x1="380" y1="126" x2="408" y2="126" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
+<!-- 菌体摄入 -->
+<circle cx="428" cy="126" r="14" fill="url(#qcell)" stroke="#7a63ad" stroke-width="1.3"/>
+<circle cx="428" cy="126" r="4" fill="url(#fe)"/>
+<text x="428" y="150" text-anchor="middle" font-size="9.5" fill="#33404f">菌体回收铁</text>
+<text x="376" y="178" text-anchor="middle" font-size="9.5" fill="#33404f">肠杆菌素（亲和力极高）· pyoverdin</text>
+<text x="376" y="191" text-anchor="middle" font-size="9.5" fill="#33404f">（＝铜绿荧光的本质）· 鼠疫 yersiniabactin</text>
+<text x="376" y="204" text-anchor="middle" font-size="9.5" fill="#a3332f">血色病/补铁期：创伤弧菌等重症风险↑</text>
+
+<!-- 中缝：特洛伊木马 -->
+<rect x="130" y="228" width="220" height="54" rx="8" fill="#eef4fb" stroke="#b9cde4"/>
+<text x="240" y="246" text-anchor="middle" font-size="10" font-weight="700" fill="#1f4e79">「特洛伊木马」策略</text>
+<text x="240" y="261" text-anchor="middle" font-size="9.5" fill="#33404f">头孢地尔挂铁载体基团 → 被菌体铁转运</text>
+<text x="240" y="274" text-anchor="middle" font-size="9.5" fill="#33404f">系统主动摄入，绕过孔蛋白耐药屏障</text>
+
+<!-- 页脚 -->
+<rect x="24" y="300" width="432" height="34" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="315" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">检验关联</tspan>　King B 培养基荧光＝pyoverdin 铁载体复合物；</text>
+<text x="32" y="328" font-size="9.5" fill="#5c6672">金葡 agr 功能缺失株＝持续生物膜表型（慢性感染分离株常见）</text>
+</svg>

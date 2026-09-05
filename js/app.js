@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20260903-41';
+  var APP_VERSION = window.APP_VERSION || '20260905-46';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -2723,7 +2723,9 @@
     staining: '染色示意图',
     'biochem-tests': '生化反应示意图',
     media: '培养基示意图',
-    glossary: '结构示意图'
+    glossary: '结构示意图',
+    virulence: '致病机制示意图',
+    genetics: '遗传变异示意图'
   };
 
   // 未选条目时的着陆页：微生物模块展示「细菌形态总览」图，其余模块仅提示

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 368" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>细菌遗传物质基础（染色体 · 质粒 · 转座子 · 噬菌体）</title>
+<desc>拟核：单一闭环 DNA 反复盘绕，无核膜无组蛋白（16S rRNA 基因测序是鉴定金标准）；质粒：染色体外独立复制的环状 DNA——R 质粒（耐药）/F 质粒（性菌毛）/Col 质粒/毒力质粒（炭疽 pXO1/pXO2），非必需但可水平转移；转座因子：IS/Tn/转座噬菌体，携带耐药基因「搭车」移动（Tn916-tetM、Tn1546-VanA）；噬菌体：毒性（裂解）与温和（溶原整合）两型</desc>
+<defs>
+  <radialGradient id="dna" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#e6f4f1"/><stop offset="1" stop-color="#bfe3dc"/></radialGradient>
+  <radialGradient id="plas" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe9f8"/><stop offset="1" stop-color="#c9b8e2"/></radialGradient>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="368" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">遗传物质基础</text>
+<rect x="380" y="14" width="76" height="18" rx="9" fill="#eef1f5"/>
+<text x="418" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">遗传与变异</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">一个主基因组打天下，一群可移动元件负责「快递」性状</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== ① 拟核 ===== -->
+<circle cx="40" cy="78" r="8" fill="#1f2733"/><text x="40" y="82" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">1</text>
+<text x="56" y="82" font-size="11" font-weight="700" fill="#33404f">拟核（染色体）：单闭环主基因组</text>
+<!-- 菌体 + 盘绕 DNA -->
+<rect x="40" y="96" width="120" height="56" rx="16" fill="#f0f6f2" stroke="#7ba98a" stroke-width="1.3"/>
+<path d="M56,124 q10,-14 22,0 q12,14 24,0 q10,-12 20,-2" fill="none" stroke="#2f8f83" stroke-width="1.8"/>
+<path d="M60,132 q10,-10 20,0 q10,10 22,0" fill="none" stroke="#2f8f83" stroke-width="1.4"/>
+<text x="176" y="114" font-size="9.5" fill="#33404f">无核膜 · 无组蛋白 · 闭环</text>
+<text x="176" y="128" font-size="9.5" fill="#5c6672">16S rRNA 基因测序＝鉴定金标准</text>
+<text x="176" y="141" font-size="9.5" fill="#5c6672">（高保守区引物 · V1～V9 高变区鉴别）</text>
+
+<!-- ===== ② 质粒 ===== -->
+<circle cx="296" cy="78" r="8" fill="#1f2733"/><text x="296" y="82" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">2</text>
+<text x="312" y="82" font-size="11" font-weight="700" fill="#33404f">质粒：可快递的迷你环</text>
+<!-- 环状质粒 + 标注 -->
+<circle cx="340" cy="124" r="20" fill="none" stroke="#7a63ad" stroke-width="2.4"/>
+<circle cx="340" cy="124" r="13" fill="none" stroke="#b9a5d9" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="340" y="158" text-anchor="middle" font-size="9.5" fill="#5b4f8a">独立复制 · 非必需</text>
+<text x="372" y="104" font-size="9.5" fill="#33404f">R 质粒＝耐药基因</text>
+<text x="372" y="117" font-size="9.5" fill="#33404f">F 质粒＝性菌毛</text>
+<text x="372" y="130" font-size="9.5" fill="#33404f">毒力质粒（炭疽）</text>
+<text x="372" y="143" font-size="9.5" fill="#5c6672">质粒耐药 → 接触隔离</text>
+
+<!-- ===== ③ 转座子 ===== -->
+<circle cx="40" cy="186" r="8" fill="#1f2733"/><text x="40" y="190" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
+<text x="56" y="190" font-size="11" font-weight="700" fill="#33404f">转座因子：基因搭车客</text>
+<!-- 染色体带 + 转座子跳跃 -->
+<rect x="40" y="206" width="130" height="10" rx="5" fill="url(#dna)" stroke="#2f8f83"/>
+<rect x="82" y="200" width="30" height="22" rx="4" fill="url(#plas)" stroke="#7a63ad" stroke-width="1.3"/>
+<text x="97" y="215" text-anchor="middle" font-size="9.5" fill="#5b4f8a">Tn</text>
+<path d="M112,204 q40,-22 66,4" fill="none" stroke="#7a63ad" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+<rect x="180" y="206" width="70" height="10" rx="5" fill="url(#dna)" stroke="#2f8f83"/>
+<text x="56" y="238" font-size="9.5" fill="#33404f">IS（插入序列）· Tn（转座子）· 转座噬菌体</text>
+<text x="56" y="251" font-size="9.5" fill="#33404f">Tn916 带 tet(M) · Tn1546 带 VanA</text>
+<text x="56" y="264" font-size="9.5" fill="#a3332f">一次转移＝多重耐药「套餐」</text>
+
+<!-- ===== ④ 噬菌体 ===== -->
+<circle cx="296" cy="186" r="8" fill="#1f2733"/><text x="296" y="190" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">4</text>
+<text x="312" y="190" font-size="11" font-weight="700" fill="#33404f">噬菌体：细菌的病毒</text>
+<!-- 蝌蚪形噬菌体 -->
+<polygon points="352,204 366,204 372,216 359,222 346,216" fill="url(#plas)" stroke="#7a63ad" stroke-width="1.3"/>
+<line x1="359" y1="222" x2="359" y2="240" stroke="#7a63ad" stroke-width="2"/>
+<line x1="359" y1="240" x2="350" y2="250" stroke="#7a63ad" stroke-width="1.2"/>
+<line x1="359" y1="240" x2="368" y2="250" stroke="#7a63ad" stroke-width="1.2"/>
+<text x="372" y="214" font-size="9.5" fill="#33404f">毒性 → 裂解宿主</text>
+<text x="372" y="227" font-size="9.5" fill="#33404f">温和 → 整合（溶原）</text>
+<text x="372" y="240" font-size="9.5" fill="#5c6672">（可携带毒力基因）</text>
+<text x="296" y="262" font-size="9.5" fill="#5c6672">伤寒 Vi 噬菌体分型 96 型＝流行病学追踪</text>
+
+<!-- 页脚 -->
+<rect x="24" y="284" width="432" height="70" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="36" y="302" font-size="10" font-weight="700" fill="#1f2733">检验意义速记</text>
+<text x="36" y="319" font-size="9.5" fill="#33404f">耐药在质粒还是染色体，决定传播速度：质粒＝水平传播（ESBL/KPC/mcr，</text>
+<text x="36" y="333" font-size="9.5" fill="#33404f">检出即隔离）；染色体＝只垂直传（结核 rpoB）。转座子+整合子把多个耐药</text>
+<text x="36" y="347" font-size="9.5" fill="#33404f">基因串成「套餐」，一次转移全端走。</text>
+</svg>

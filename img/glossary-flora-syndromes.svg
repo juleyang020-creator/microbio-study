@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 372" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>菌群分组与综合征缩写（CoNS · HACEK · NTM · 致腹泻大肠五型 · Stx/HUS）</title>
+<desc>菌群分组：CoNS＝凝固酶阴性葡萄球菌（表葡/腐生，导管感染与污染鉴别）、HACEK＝苛养 G⁻ 小杆菌组（心内膜炎）、NTM＝非结核分枝杆菌（环境源）、GBS/GAS＝B 群（新生儿筛查）/A 群链球菌；致腹泻大肠埃希菌五型：ETEC（旅行者腹泻 ST/LT）、EPEC（婴幼儿 A/E 损伤）、EIEC（侵袭痢疾样）、EAEC（持续性）、EHEC（O157:H7，Stx→HUS，禁用抗生素）；UPEC＝尿路致病大肠（UTI 主因）；Stx＝志贺毒素</desc>
+<defs>
+  <radialGradient id="staph" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fbf3e2"/><stop offset="1" stop-color="#e8d9b5"/></radialGradient>
+</defs>
+<rect width="480" height="372" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">菌群分组与综合征缩写</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">术语</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">一边是按生物学归堆的菌群，一边是按致病毒力分型的大肠</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== 上：菌群分组四卡 ===== -->
+<g font-size="9.5">
+  <rect x="24" y="70" width="108" height="60" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="34" y="86" font-weight="700" fill="#8a6d2f">CoNS</text>
+  <text x="34" y="100" fill="#33404f">凝固酶阴性葡萄球菌</text>
+  <text x="34" y="113" fill="#5c6672">表葡＝导管生物膜</text>
+  <text x="34" y="126" fill="#5c6672">血培养污染鉴别要点</text>
+
+  <rect x="140" y="70" width="108" height="60" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="150" y="86" font-weight="700" fill="#2f6b45">HACEK</text>
+  <text x="150" y="100" fill="#33404f">苛养 G⁻ 小杆菌组</text>
+  <text x="150" y="113" fill="#5c6672">血培养阴性的</text>
+  <text x="150" y="126" fill="#5c6672">心内膜炎病原</text>
+
+  <rect x="256" y="70" width="96" height="60" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="266" y="86" font-weight="700" fill="#1f4e79">NTM</text>
+  <text x="266" y="100" fill="#33404f">非结核分枝杆菌</text>
+  <text x="266" y="113" fill="#5c6672">环境水/土壤源</text>
+  <text x="266" y="126" fill="#5c6672">鸟胞内/堪萨斯/脓肿</text>
+
+  <rect x="360" y="70" width="96" height="60" rx="7" fill="#f5f0fa" stroke="#b9a5d9"/>
+  <text x="370" y="86" font-weight="700" fill="#5b4f8a">GBS / GAS</text>
+  <text x="370" y="100" fill="#33404f">B 群 / A 群链球菌</text>
+  <text x="370" y="113" fill="#5c6672">孕晚期 GBS 筛查</text>
+  <text x="370" y="126" fill="#5c6672">GAS＝咽炎/猩红热</text>
+</g>
+
+<!-- ===== 下：致腹泻大肠五型 ===== -->
+<text x="24" y="156" font-size="10.5" font-weight="700" fill="#33404f">致腹泻大肠埃希菌：五种分型，五种打法</text>
+<g font-size="9.5">
+  <rect x="24" y="168" width="86" height="64" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="34" y="184" font-weight="700" fill="#33404f">ETEC</text>
+  <text x="34" y="197" fill="#5c6672">旅行者腹泻</text>
+  <text x="34" y="210" fill="#5c6672">ST/LT 肠毒素</text>
+  <text x="34" y="223" fill="#5c6672">水样泻</text>
+
+  <rect x="114" y="168" width="86" height="64" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="124" y="184" font-weight="700" fill="#33404f">EPEC</text>
+  <text x="124" y="197" fill="#5c6672">婴幼儿腹泻</text>
+  <text x="124" y="210" fill="#5c6672">A/E 损伤（eae）</text>
+  <text x="124" y="223" fill="#5c6672">T3SS 附着抹平</text>
+
+  <rect x="204" y="168" width="86" height="64" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="214" y="184" font-weight="700" fill="#33404f">EIEC</text>
+  <text x="214" y="197" fill="#5c6672">痢疾样（血便）</text>
+  <text x="214" y="210" fill="#5c6672">侵袭上皮</text>
+  <text x="214" y="223" fill="#5c6672">与志贺菌近缘</text>
+
+  <rect x="294" y="168" width="76" height="64" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="304" y="184" font-weight="700" fill="#33404f">EAEC</text>
+  <text x="304" y="197" fill="#5c6672">持续性腹泻</text>
+  <text x="304" y="210" fill="#5c6672">聚集性黏附</text>
+  <text x="304" y="223" fill="#5c6672">砖块状排列</text>
+
+  <rect x="374" y="168" width="82" height="64" rx="7" fill="#fdf0ef" stroke="#dfa0a0"/>
+  <text x="384" y="184" font-weight="700" fill="#a3332f">EHEC</text>
+  <text x="384" y="197" fill="#5c6672">O157:H7</text>
+  <text x="384" y="210" fill="#a3332f">Stx → HUS</text>
+  <text x="384" y="223" fill="#a3332f">禁用抗生素</text>
+</g>
+
+<!-- UPEC / Stx 双卡 -->
+<g font-size="9.5">
+  <rect x="24" y="246" width="212" height="44" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="34" y="262" font-weight="700" fill="#1f4e79">UPEC（尿路致病性大肠埃希菌）</text>
+  <text x="34" y="276" fill="#33404f">UTI 首位病原：P 菌毛＋1 型菌毛＋溶血素</text>
+  <text x="34" y="288" fill="#5c6672">复发性 UTI 须排除结构与功能异常</text>
+
+  <rect x="244" y="246" width="212" height="44" rx="7" fill="#fdf0ef" stroke="#dfa0a0"/>
+  <text x="254" y="262" font-weight="700" fill="#a3332f">Stx（志贺毒素）→ HUS</text>
+  <text x="254" y="276" fill="#33404f">志贺菌与 EHEC 共有；噬菌体编码</text>
+  <text x="254" y="288" fill="#a3332f">HUS＝溶血性贫血＋血小板↓＋急性肾损伤</text>
+</g>
+
+<!-- 页脚 -->
+<rect x="24" y="304" width="432" height="52" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="322" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">分型即处理</tspan>　CoNS 两套瓶均阳才报菌血症（排污染）；EHEC 疑似不报抗生素建议；</text>
+<text x="32" y="336" font-size="9.5" fill="#5c6672">NTM 肺病须影像＋两次痰阳才诊断；UPEC 单纯膀胱炎短程、肾盂肾炎长程</text>
+<text x="32" y="350" font-size="9.5" fill="#5c6672">HACEK 心内膜炎：延长孵育＋瓣膜/血标本；GBS 阳性孕妇产时青霉素预防</text>
+</svg>

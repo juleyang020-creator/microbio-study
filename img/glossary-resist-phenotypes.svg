@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 380" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+<title>耐药表型缩写总览（酶型 · 菌名 · 分级）</title>
+<desc>耐药表型三类缩写：①酶型——ESBL（超广谱）、AmpC（染色体头孢菌素酶）、CPE/CRE（产碳青霉烯酶/碳青霉烯耐药肠杆菌）、MBL（金属酶 NDM/VIM/IMP）、MLSB（红霉素诱导克林霉素耐药）；②菌名——MRSA、VRE、PRSP、CRAB/CRKP、HLAR、BLNAR；③分级——MDR/XDR/PDR 与 MSSA/VISA/VRSA 梯度。报告须注明机制（mCIM/eCIM 分酶型），MLSB 诱导试验（D 试验）阳性时克林霉素报耐药</desc>
+<defs>
+  <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
+</defs>
+<rect width="480" height="380" fill="#ffffff"/>
+
+<!-- 页眉 -->
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">耐药表型缩写总览</text>
+<rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
+<text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">术语</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">三类读法：说的是酶、说的是菌、说的是耐药程度</text>
+<line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
+
+<!-- ===== ① 酶型 ===== -->
+<text x="24" y="78" font-size="10.5" font-weight="700" fill="#a3332f">① 酶型（产生了什么酶）</text>
+<g font-size="9.5">
+  <rect x="24" y="90" width="136" height="58" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
+  <text x="34" y="106" font-weight="700" fill="#a3332f">ESBL / AmpC</text>
+  <text x="34" y="120" fill="#5c6672">超广谱 / 染色体头孢菌素酶</text>
+  <text x="34" y="134" fill="#5c6672">水解青霉素与多数头孢</text>
+
+  <rect x="170" y="90" width="136" height="58" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
+  <text x="180" y="106" font-weight="700" fill="#a3332f">CPE / CRE</text>
+  <text x="180" y="120" fill="#5c6672">产碳青霉烯酶 / 碳青霉烯耐药</text>
+  <text x="180" y="134" fill="#5c6672">mCIM+eCIM 区分丝氨酸酶/金属酶</text>
+
+  <rect x="316" y="90" width="140" height="58" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
+  <text x="326" y="106" font-weight="700" fill="#a3332f">MBL / MLSB</text>
+  <text x="326" y="120" fill="#5c6672">金属酶 · 红霉素诱导</text>
+  <text x="326" y="134" fill="#5c6672">克林霉素耐药（D 试验确证）</text>
+</g>
+
+<!-- ===== ② 菌名 ===== -->
+<text x="24" y="170" font-size="10.5" font-weight="700" fill="#2b6cb0">② 菌名（哪个菌耐了什么）</text>
+<g font-size="9.5">
+  <rect x="24" y="182" width="104" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="34" y="198" font-weight="700" fill="#1f4e79">MRSA</text>
+  <text x="34" y="212" fill="#5c6672">mecA/PBP2a</text>
+  <rect x="136" y="182" width="96" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="146" y="198" font-weight="700" fill="#1f4e79">VRE</text>
+  <text x="146" y="212" fill="#5c6672">VanA/B 靶位改变</text>
+  <rect x="240" y="182" width="96" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="250" y="198" font-weight="700" fill="#1f4e79">PRSP</text>
+  <text x="250" y="212" fill="#5c6672">pbp 逐步突变累积</text>
+  <rect x="344" y="182" width="112" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="354" y="198" font-weight="700" fill="#1f4e79">CRAB / CRKP</text>
+  <text x="354" y="212" fill="#5c6672">碳青霉烯耐药不动/克雷伯</text>
+</g>
+<text x="24" y="244" font-size="9.5" fill="#5c6672">HLAR＝高水平氨基糖苷耐药（肠球菌联合用药判断）；BLNAR＝酶阴性但氨苄耐药的流感嗜血杆菌</text>
+
+<!-- ===== ③ 分级与梯度 ===== -->
+<text x="24" y="274" font-size="10.5" font-weight="700" fill="#2f6b45">③ 分级与梯度（耐到什么程度）</text>
+<!-- MDR→XDR→PDR 箭头 -->
+<line x1="40" y1="308" x2="440" y2="308" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<circle cx="110" cy="308" r="5" fill="#c9a95f"/><text x="110" y="296" text-anchor="middle" font-size="9.5" fill="#8a6d2f">MDR ≥3 类</text>
+<circle cx="250" cy="308" r="5" fill="#e8963c"/><text x="250" y="296" text-anchor="middle" font-size="9.5" fill="#b06a1e">XDR 仅 1~2 类可用</text>
+<circle cx="390" cy="308" r="5" fill="#c2413d"/><text x="390" y="296" text-anchor="middle" font-size="9.5" fill="#a3332f">PDR 全类耐药</text>
+<!-- MSSA→VISA→VRSA -->
+<line x1="40" y1="346" x2="440" y2="346" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<circle cx="110" cy="346" r="5" fill="#2f7a45"/><text x="110" y="334" text-anchor="middle" font-size="9.5" fill="#2f6b45">MSSA 敏感</text>
+<circle cx="250" cy="346" r="5" fill="#e8963c"/><text x="250" y="334" text-anchor="middle" font-size="9.5" fill="#b06a1e">VISA 中介（细胞壁增厚）</text>
+<circle cx="390" cy="346" r="5" fill="#c2413d"/><text x="390" y="334" text-anchor="middle" font-size="9.5" fill="#a3332f">VRSA 耐药（vanA 获得）</text>
+
+<!-- 页脚 -->
+<rect x="24" y="360" width="432" height="15" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="240" y="371" text-anchor="middle" font-size="9.5" fill="#5c6672">报告规则：耐甲氧西林葡萄球菌对所有 β-内酰胺类（头孢洛林除外）均报耐药，无论体外是否敏感</text>
+</svg>

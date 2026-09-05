@@ -211,7 +211,108 @@
     'gloss-metachromatic': 'img/glossary-structure-bacteria.svg',
     'gloss-vi-antigen': 'img/glossary-structure-bacteria.svg',
     'gloss-hypha-spore-fungi': 'img/glossary-structure-fungi-virus.svg',
-    'gloss-virus-structure': 'img/glossary-structure-fungi-virus.svg'
+    'gloss-virus-structure': 'img/glossary-structure-fungi-virus.svg',
+    // 其余 53 条按族共用六张总览图（2026-09-05 新增）
+    'gloss-cre': 'img/glossary-resist-phenotypes.svg',
+    'gloss-cpe': 'img/glossary-resist-phenotypes.svg',
+    'gloss-mbl': 'img/glossary-resist-phenotypes.svg',
+    'gloss-mdr': 'img/glossary-resist-phenotypes.svg',
+    'gloss-hlar': 'img/glossary-resist-phenotypes.svg',
+    'gloss-blnar': 'img/glossary-resist-phenotypes.svg',
+    'gloss-mrsa': 'img/glossary-resist-phenotypes.svg',
+    'gloss-vre': 'img/glossary-resist-phenotypes.svg',
+    'gloss-mssa-visa-vrsa': 'img/glossary-resist-phenotypes.svg',
+    'gloss-crab-crkp': 'img/glossary-resist-phenotypes.svg',
+    'gloss-esbl': 'img/glossary-resist-phenotypes.svg',
+    'gloss-ampc': 'img/glossary-resist-phenotypes.svg',
+    'gloss-mlsb': 'img/glossary-resist-phenotypes.svg',
+    'gloss-prsp': 'img/glossary-resist-phenotypes.svg',
+    'gloss-pvl': 'img/glossary-resist-phenotypes.svg',
+    'gloss-mic': 'img/glossary-ast-terms.svg',
+    'gloss-sir': 'img/glossary-ast-terms.svg',
+    'gloss-sdd': 'img/glossary-ast-terms.svg',
+    'gloss-ecv': 'img/glossary-ast-terms.svg',
+    'gloss-wt-nwt': 'img/glossary-ast-terms.svg',
+    'gloss-mcfarland': 'img/glossary-ast-terms.svg',
+    'gloss-clsi': 'img/glossary-ast-terms.svg',
+    'gloss-eucast': 'img/glossary-ast-terms.svg',
+    'gloss-atcc': 'img/glossary-ast-terms.svg',
+    'gloss-mha-camhb': 'img/glossary-media-terms.svg',
+    'gloss-htm': 'img/glossary-media-terms.svg',
+    'gloss-sda': 'img/glossary-media-terms.svg',
+    'gloss-pda': 'img/glossary-media-terms.svg',
+    'gloss-tcbs': 'img/glossary-media-terms.svg',
+    'gloss-tsi-kia': 'img/glossary-media-terms.svg',
+    'gloss-smac': 'img/glossary-media-terms.svg',
+    'gloss-onpg-pyr-xv': 'img/glossary-media-terms.svg',
+    'gloss-cons': 'img/glossary-flora-syndromes.svg',
+    'gloss-hacek': 'img/glossary-flora-syndromes.svg',
+    'gloss-ntm': 'img/glossary-flora-syndromes.svg',
+    'gloss-gbs-gas': 'img/glossary-flora-syndromes.svg',
+    'gloss-uti': 'img/glossary-flora-syndromes.svg',
+    'gloss-hus': 'img/glossary-flora-syndromes.svg',
+    'gloss-ehec': 'img/glossary-flora-syndromes.svg',
+    'gloss-etec-epec-eiec-eaec': 'img/glossary-flora-syndromes.svg',
+    'gloss-stx': 'img/glossary-flora-syndromes.svg',
+    'gloss-upec': 'img/glossary-flora-syndromes.svg',
+    'gloss-malditof': 'img/glossary-id-tech.svg',
+    'gloss-16s': 'img/glossary-id-tech.svg',
+    'gloss-pcr': 'img/glossary-id-tech.svg',
+    'gloss-naat': 'img/glossary-id-tech.svg',
+    'gloss-elisa': 'img/glossary-id-tech.svg',
+    'gloss-bsl': 'img/glossary-id-tech.svg',
+    'gloss-hiv-aids': 'img/glossary-virus-serology.svg',
+    'gloss-pcp': 'img/glossary-virus-serology.svg',
+    'gloss-hbsag': 'img/glossary-virus-serology.svg',
+    'gloss-hcv': 'img/glossary-virus-serology.svg',
+    'gloss-igg-igm': 'img/glossary-virus-serology.svg'
+  };
+
+  // 致病因素：按条目 id 映射（2026-09-05 新增，内容回源 data/virulence.js 词条正文）
+  var VIRULENCE_IMAGE = {
+    'exotoxin-table': 'img/virulence-toxins.svg',
+    'endotoxin-lps': 'img/virulence-toxins.svg',
+    'adhesion-pili-fimbriae': 'img/virulence-adhesion.svg',
+    'capsule-antiphagocytosis': 'img/virulence-adhesion.svg',
+    'biofilm-formation': 'img/virulence-adhesion.svg',
+    'invasion-enzymes': 'img/virulence-invasion.svg',
+    'type-iii-secretion': 'img/virulence-invasion.svg',
+    'antigenic-variation': 'img/virulence-immune-evasion.svg',
+    'complement-resistance': 'img/virulence-immune-evasion.svg',
+    'iga-protease': 'img/virulence-immune-evasion.svg',
+    'pvl-leukocidin': 'img/virulence-immune-evasion.svg',
+    'intracellular-survival': 'img/virulence-intracellular.svg',
+    'internalin-invasion': 'img/virulence-intracellular.svg',
+    'quorum-sensing': 'img/virulence-qs-iron.svg',
+    'siderophore-iron': 'img/virulence-qs-iron.svg'
+  };
+
+  // 遗传与变异：按条目 id 映射（2026-09-05 新增，内容回源 data/genetics.js 词条正文）
+  var GENETICS_IMAGE = {
+    'bacterial-chromosome': 'img/genetics-material.svg',
+    'plasmid': 'img/genetics-material.svg',
+    'transposable-elements': 'img/genetics-material.svg',
+    'phage-genetics': 'img/genetics-material.svg',
+    'mutation-types': 'img/genetics-mutation.svg',
+    'genotype-vs-phenotype': 'img/genetics-mutation.svg',
+    'sr-variation': 'img/genetics-classic-variation.svg',
+    'ho-variation': 'img/genetics-classic-variation.svg',
+    'phase-variation-salmonella': 'img/genetics-classic-variation.svg',
+    'vw-variation': 'img/genetics-classic-variation.svg',
+    'bacterial-l-form': 'img/genetics-classic-variation.svg',
+    'transformation': 'img/genetics-hgt.svg',
+    'conjugation': 'img/genetics-hgt.svg',
+    'transduction': 'img/genetics-hgt.svg',
+    'lysogenic-conversion': 'img/genetics-hgt.svg',
+    'horizontal-gene-transfer': 'img/genetics-hgt.svg',
+    'r-plasmid-transfer': 'img/genetics-integron.svg',
+    'integron': 'img/genetics-integron.svg',
+    'fungal-variation': 'img/genetics-fungal-viral.svg',
+    'viral-variation': 'img/genetics-fungal-viral.svg',
+    'colony-phase-variation': 'img/genetics-classic-variation.svg',
+    'drug-resistance-variation': 'img/genetics-integron.svg',
+    'virulence-variation': 'img/genetics-fungal-viral.svg',
+    'enzymatic-variation': 'img/genetics-mutation.svg'
   };
 
   // 节点子树是否包含某叶子分类（支持任意层级）
@@ -230,6 +331,8 @@
     if (moduleKey === 'biochem-tests') { return BIOCHEM_IMAGE[entry.id] || null; }
     if (moduleKey === 'media') { return MEDIA_IMAGE[entry.id] || null; }
     if (moduleKey === 'glossary') { return GLOSSARY_IMAGE[entry.id] || null; }
+    if (moduleKey === 'virulence') { return VIRULENCE_IMAGE[entry.id] || null; }
+    if (moduleKey === 'genetics') { return GENETICS_IMAGE[entry.id] || null; }
     if (moduleKey !== 'antibiotics' && moduleKey !== 'resistance') { return null; }
     // 先按类别(叶子)直接匹配（抗真菌药、旁路代谢/生物膜按其类别区分）
     if (MECHANISM_IMAGE[entry.类别]) { return MECHANISM_IMAGE[entry.类别]; }
