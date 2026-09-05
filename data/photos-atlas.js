@@ -6765,6 +6765,14 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/2f3ddda40371e70e86991eb797fd52e7b91af76c5b7c6f804d7ae9c416c6b013.jpg",
    "说明": "图 26-3-3　PDA 28℃ 7 日 4. 杂色小孢子菌 在 SDA 培养基上 25° C 培养生长快速, 菌落从粉状到绒毛状, 表面呈浅黄色到粉色, 背面无色、粉色到红褐色, 在无糖的蛋白胨培养基上呈现特征性的桃红色, 毛发穿孔…"
+  },
+  {
+   "文件": "img/atlas/3992be80ef5043b2db16fb29cc07482176ac1a7fb726fcebb6c1f7ef5c5befe2.jpg",
+   "说明": "图 26-4-11　猪奈尼兹皮菌(SDA, 28℃, 14 日)"
+  },
+  {
+   "文件": "img/atlas/999cc8189bef242f0f804d83679a4ec302872b8312a8774367dbc08218f4e3e6.jpg",
+   "说明": "图 26-4-12　猪奈尼兹皮菌示意图"
   }
  ],
  "microsporum-cookei": [
@@ -8949,6 +8957,74 @@ window.DB.photosAtlas = {
    "说明": "图 25-7-7　斯洛菲马拉色菌培养物镜下形态(革兰染色, ×400)"
   }
  ],
+ "microsporum-gypseum": [
+  {
+   "文件": "img/atlas/b8396965abed01b7abaa121b630594ba2012e3b1518217c58cfa09a6e1b0394a.jpg",
+   "说明": "图 26-4-1　正面; B"
+  },
+  {
+   "文件": "img/atlas/d2cd9de47729cf9c34668576152bf44185d400bc9f15c4755eee00fd5aab71b0.jpg",
+   "说明": "图 26-4-1　反面; C"
+  },
+  {
+   "文件": "img/atlas/35c9947e1fe4de87688a856090144c65a6f27c4666568e65c17c12417256a2a9.jpg",
+   "说明": "图 26-4-1　侧面"
+  },
+  {
+   "文件": "img/atlas/6cdd27118c2e9728283bc14df1fa859df8b4a0ac06435ceb5fd5a087b0884d89.jpg",
+   "说明": "图 26-4-2　正面; B"
+  },
+  {
+   "文件": "img/atlas/eacf356de4093caae3776dd4605eb9c7f3a2a585784d1e2f24bfed297459c6e4.jpg",
+   "说明": "图 26-4-2　反面; C"
+  },
+  {
+   "文件": "img/atlas/a5d2d568776d99b1624f948c634f830d1eebb6facdecfc3a40f7b283adb0044d.jpg",
+   "说明": "图 26-4-2　侧面"
+  },
+  {
+   "文件": "img/atlas/e561308d3f2de5ed7f36242535650a182cb93c80b2a144a9851fe55604d5d315.jpg",
+   "说明": "图 26-4-3　石膏样奈尼兹皮菌示意图: a. 大分生孢子, b. 小分生孢子"
+  },
+  {
+   "文件": "img/atlas/a1e87198c622ac4d0a37877de7d16e770fe030d48141f88cd124540d7e5e3b9b.jpg",
+   "说明": "图 26-4-4　石膏样奈尼兹皮菌镜检: 箭头示小分生孢子(PDA, 25℃ 小培养 7 日, 乳酸酚棉蓝染色, ×400)"
+  }
+ ],
+ "trichophyton-interdigitale": [
+  {
+   "文件": "img/atlas/e514356a3e28957380764f60b8f7ace7abd1305dd426330fead10f88da8b5b04.jpg",
+   "说明": "图 26-1-33　正面; B"
+  },
+  {
+   "文件": "img/atlas/dd5bdf67428c6aea2dc05e64cde0b05d99b3ae0a2d9dc40b750f7218a6914e67.jpg",
+   "说明": "图 26-1-33　反面; C"
+  },
+  {
+   "文件": "img/atlas/81ce7a28139b1c7076114cb999eaf524b4cbc28f7169367cff5725488bb9fc11.jpg",
+   "说明": "图 26-1-33　侧面"
+  },
+  {
+   "文件": "img/atlas/43a72fe553c64fbb7362e04036778ccadc1b9d323e34194af226578894572a1c.jpg",
+   "说明": "图 26-1-34　正面; B"
+  },
+  {
+   "文件": "img/atlas/bea9c4ff6576c3b5ecc3e40260768e6766751c5ee7ecc01ba9307fea38a83ae6.jpg",
+   "说明": "图 26-1-34　反面; C"
+  },
+  {
+   "文件": "img/atlas/fb6b4feaa80787f4d99a62399739cc8ec95420201fdc05e356f4a127edef0610.jpg",
+   "说明": "图 26-1-34　侧面"
+  },
+  {
+   "文件": "img/atlas/ae6514e463f3578dcc8bcbe78a0e9d8fafb161f8f05fbaad88b3fbedded66198.jpg",
+   "说明": "图 26-1-35　趾间毛癣菌示意图: a. 大小分生孢子, b. 小分生孢子"
+  },
+  {
+   "文件": "img/atlas/4f1997570e43d172d8f992fa2c03038e38e2d6ab1a5bf016d83a80bd08f1702b.jpg",
+   "说明": "图 26-1-36　趾间毛癣菌镜检: 箭头示螺旋菌丝(PDA, 25℃小培养7日, 未染色, ×400)"
+  }
+ ],
  "trichophyton-indotineae": [
   {
    "文件": "img/atlas/67405c8773c8255bbcd87e9b77392efcb797b0f0f784345dec75b7e54cbb60af.jpg",
@@ -8957,6 +9033,40 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/077727b059844997ef23030b9c3ec136b93e7e690bf5f4cfec8451384f5e9776.jpg",
    "说明": "图 26-1-55　印度毛癣菌镜检(SDA, 27℃, 7日, 乳酸酚棉蓝染色, ×1000。图片由徐和平老师提供)"
+  }
+ ],
+ "trichophyton-benhamiae": [
+  {
+   "文件": "img/atlas/6759cdb917c89f951c5d62267b217fd4da434c0fd57769284b811d0f3c567bf9.jpg",
+   "说明": "图 26-1-56　正面；B"
+  },
+  {
+   "文件": "img/atlas/86ebc0de9f5a6e6c0c87c4a03c37ae82c51091f5f06e61c56196d779ca006721.jpg",
+   "说明": "图 26-1-56　反面"
+  },
+  {
+   "文件": "img/atlas/ccd1b546d3a584c39fee17f89e2e80f72aebc39907c888866d812ded54a83c1a.jpg",
+   "说明": "图 26-1-57　正面; B"
+  },
+  {
+   "文件": "img/atlas/d836c1f3fb30011d60ad8ef61607a97b68a2208cf66e7bdd62405e7e83a84c74.jpg",
+   "说明": "图 26-1-57　反面"
+  },
+  {
+   "文件": "img/atlas/0bcc62f0499be369779131886f97d776720261fc13e80fcbf542be6929907abc.jpg",
+   "说明": "图 26-1-59　苯海姆毛癣菌镜检: a. 大分生孢子, b. 小分生孢子 (PDA, 25℃ 小培养 7 日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/3332380bad4384d0976061b67db966ccfe71b9df835cbaa65f4b95992c0b4d95.jpg",
+   "说明": "图 26-1-61　苯海姆毛癣菌镜检: a. 大分生孢子, b. 小分生孢子 (PDA, 25℃ 小培养 7 日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/cf179c6683639184dec98efd2d1c3ffe8e912113b80da32f13d1e733c6477f29.jpg",
+   "说明": "图 26-1-62　苯海姆毛癣菌镜检: a. 大分生孢子, b. 小分生孢子 (PDA, 25℃ 小培养 7 日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/2350eab6df4de218da28360f3f6b6b5cf34d41392736269850b4567f48d1ab83.jpg",
+   "说明": "图 26-1-64　苯海姆毛癣菌镜检: a. 大分生孢子, b. 小分生孢子 (PDA, 25℃ 小培养 7 日, 乳酸酚棉蓝染色, ×400)"
   }
  ],
  "microsporum-audouinii": [
@@ -8971,6 +9081,46 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/7e27a396e8c9032fb04e1cadccb4a472a409ab1eccb2743c481a1e1a3b64b3f6.jpg",
    "说明": "图 26-3-14　奥杜盎小孢子菌示意图: a. 大分生孢子, b. 小分生孢子, c. 厚垣孢子"
+  }
+ ],
+ "microsporum-persicolor": [
+  {
+   "文件": "img/atlas/b76fdd7d4d7c6cdfc76ddb8478f92e3b7f5a4d7d9acc35e9fd4e4684cdb5cd2a.jpg",
+   "说明": "图 26-4-13　杂色奈尼兹皮菌菌落(SDA, 28℃, 7 日)"
+  }
+ ],
+ "paraphyton-cookei": [
+  {
+   "文件": "img/atlas/d25eb443a8b79a820ec335687dcd55e1d2e7cdbf0f40fb8c87f2913cf267e7e3.jpg",
+   "说明": "图 26-6-1　库克帕拉癣菌在 SDA 上的菌落特征(25℃,7 日)。A. 正面; B. 反面; C. 侧面"
+  },
+  {
+   "文件": "img/atlas/4ef091e7b79ad143239e973edfb48bb99595c886cdbb0beb56c7e3967bc55f3b.jpg",
+   "说明": "图 26-6-2　库克帕拉癣菌在 PDA 上的菌落特征(25℃,7 日)。A. 正面；B. 反面；C. 侧面"
+  },
+  {
+   "文件": "img/atlas/2a7449309062df6d97180c2bee757dc97bcd699236d16bdcf7f756021d84258f.jpg",
+   "说明": "图 26-6-3　库克帕拉癣菌: a. 大分生孢子, b. 小分生孢子"
+  },
+  {
+   "文件": "img/atlas/31c463646f72b2ac6fe92591629b0d534a87de54c78900d8cdfa6ed710a61e5d.jpg",
+   "说明": "图 26-6-4　库克帕拉癣菌镜检: a. 大分生孢子, b. 小分生孢子 (PDA, 25℃培养7日, 胶带粘取, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/eb63241dab186056202cdfd7e36328578592316a9a9f280fe879abecd574ec63.jpg",
+   "说明": "图 26-6-5　库克帕拉癣菌镜检: a. 大分生孢子, b. 小分生孢子 (PDA, 25℃ 小培养 7 日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/167122f6e026489946b3a1c078862d0be4eb52a71545767e8792e5cc05552901.jpg",
+   "说明": "图 26-6-6　库克帕拉癣菌镜检: 箭头示大分生孢子(PDA, 25℃培养7日,乳酸酚棉蓝染色,×400)"
+  },
+  {
+   "文件": "img/atlas/f2d6af6fd3fd6b888ec27acff29b40f51f1029291d82b1e445c3a643d0e3af99.jpg",
+   "说明": "图 26-6-7　库克帕拉癣菌镜检: 箭头示小分生孢子(PDA, 25℃培养7日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/81a03a5658a58e770c8a7dc40cb7b9de47813021ef3477b0947a433bf4096feb.jpg",
+   "说明": "图 26-6-9　库克帕拉癣菌镜检: 箭头示大分生孢子(PDA, 25℃培养7日,乳酸酚棉蓝染色,×400)"
   }
  ],
  "penicillium-chrysogenum": [

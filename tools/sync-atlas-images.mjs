@@ -61,6 +61,8 @@ const EXCLUDE = new Set([
   // ==== 批49 审计补充（93 图 27-19-2 分联 A/B 皮炎、C 甄氏、D 裴氏、E 暗色砖块、F oligosperma——
   // 棘状外瓶霉不在分联，by 級标题命中属串扰；27-19-1B 棘状示意图正文明确、合法保留）====
   'exophiala-spinifera|93|27-19-2',
+  // ==== 批51 审计补充（94 图 26-1-32 须癣毛癣菌皮屑镜检图，鉴别段提及石膏样奈尼兹皮菌串扰）====
+  'microsporum-gypseum|94|26-1-32',
   'pseudomonas-aeruginosa|93|18-1-6',  // 同上
   'acinetobacter-baumannii|93|18-1-6', // 同上
   'moraxella-catarrhalis|93|18-1-6',   // 同上
