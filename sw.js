@@ -1,6 +1,6 @@
 /* 离线缓存：核心文件与图片预缓存，入口页网络优先以便更新能及时到达。 */
 var CACHE_PREFIX = 'microbio-';
-var APP_VERSION = '20260905-56';
+var APP_VERSION = '20260905-57';
 // 缓存名直接由版本号派生，只需改 APP_VERSION 一处；旧缓存在 activate 时按前缀清理
 var CACHE = CACHE_PREFIX + APP_VERSION;
 function versioned(path) {
@@ -8,7 +8,10 @@ function versioned(path) {
 }
 var CORE = [
   './', './index.html', versioned('./css/styles.css'),
-  versioned('./js/core.js'), versioned('./js/view.js'), versioned('./js/validate.js'), versioned('./js/app.js'),
+  versioned('./js/core.js'), versioned('./js/view.js'), versioned('./js/validate.js'),
+  versioned('./js/app/helpers.js'), versioned('./js/app/sidebar.js'), versioned('./js/app/search.js'),
+  versioned('./js/app/compare.js'), versioned('./js/app/bp-table.js'), versioned('./js/app/tools-info.js'),
+  versioned('./js/app/detail.js'), versioned('./js/app/tools-drug.js'), versioned('./js/app/router.js'),
   versioned('./data/source-metadata.js'),
   versioned('./data/categories.js'), versioned('./data/microbes.js'),
   versioned('./data/microbes-gram-positive.js'), versioned('./data/microbes-gram-negative.js'), versioned('./data/microbes-anaerobe.js'),

@@ -11,8 +11,16 @@
 - 数据文件写成 `window.DB.xxx = [...]`，用 `<script>` 标签加载。
   **不要引入 fetch / ES module / 打包器**——那样 `file://` 双击打开就废了，Node 测试也不能直接 `require`。
 - `js/core.js`（关联、搜索、校验）与 `js/view.js`（纯视图模型、判读引擎）保持无 DOM 依赖，可被 Node 单测。
-- `js/app.js` 用 `createElement` / `textContent` / `replaceChildren` 渲染，**不用 `innerHTML`**。
+- 渲染层 `js/app/`（2026-09 由 2830 行单文件 app.js 拆成 9 个：helpers/sidebar/search/compare/bp-table/tools-info/detail/tools-drug/router）
+  用 `createElement` / `textContent` / `replaceChildren` 渲染，**不用 `innerHTML`**。
+  各文件是独立 IIFE，跨文件函数经 `window.AppNS`（代码里别名 `NS`）共享：本文件定义的顶层名在末尾 `Object.assign(NS, {...})` 导出，
+  依赖的前序文件函数在开头 `var x = NS.x` 导入；**`<script>` 加载顺序即依赖顺序**（helpers 最先、router 最后），
+  引用**后面**文件的函数必须写成 `NS.x()` 调用点形式（否则加载时捕获到 undefined）。js/app 新增文件只接两处：
+  `index.html` script 列表（按依赖顺序插入）+ `sw.js` CORE——data-integrity 测试自动核对全接线与首末顺序。
+  常用符号位置：`db()`/`el()`/版本兜底→helpers.js、侧栏/收藏历史→sidebar.js、buildDetail/linkDict→detail.js、
+  折点表构建（buildBpTable/eucast*）→bp-table.js、renderRoute/init→router.js。
 - 新增数据文件要同时加进 `index.html` 的 `<script>` 列表和 `sw.js` 的 `CORE` 数组。
+- `tools/_archive/` 是已完成批次的一次性脚本留档，**现役工具不要引用其中文件**；新批次的一次性脚本用完也归档进去。
 
 ## 改完必做
 
@@ -61,7 +69,7 @@ G-杆菌→`microbes-gram-negative.js`、厌氧→`microbes-anaerobe.js`、苛�
 **新增 data/ 文件接线是六处**：index.html script 列表、sw.js CORE、tests/data-integrity、tests/tools、
 tools/audit-content.mjs、tools/parse-atlas.mjs（漏一处数据静默丢）。
 **新增「基础知识模块」（如 virulence/genetics）另需三处模块接线**：js/core.js MODULE_KEYS、
-js/view.js MODULE_LABEL、js/app.js db() 映射 + 链接词典对 + index.html tab 按钮。
+js/view.js MODULE_LABEL、js/app/helpers.js db() 映射 + js/app/detail.js 链接词典对 + index.html tab 按钮。
 
 动手前读 `docs/菌种编辑规范.md`（含 §8 属级条目写法与侧栏渲染链路——2026-08-30 曾因在 VM 层滤同名条目
 导致 34 个属介绍从侧栏消失，修复与教训见该节），对照黄金样例 `pseudomonas-aeruginosa`。
