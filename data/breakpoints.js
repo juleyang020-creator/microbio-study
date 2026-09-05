@@ -9,7 +9,9 @@ window.DB.breakpoints = [
     CLSI表: "Table 2A-1",
     菌种: ['e-coli', 'klebsiella-pneumoniae', 'klebsiella-oxytoca', 'klebsiella-aerogenes', 'proteus-mirabilis', 'proteus-vulgaris', 'enterobacter-cloacae', 'enterobacter-xiangfangensis', 'citrobacter-freundii', 'citrobacter-koseri', 'morganella-morganii', 'serratia-marcescens', 'providencia-stuartii', 'providencia-rettgeri', 'hafnia-alvei', 'raoultella-ornithinolytica', 'proteus-hauseri', 'yersinia-enterocolitica', 'yersinia-pseudotuberculosis', 'citrobacter-braakii',
       'citrobacter-amalonaticus', 'providencia-alcalifaciens', 'raoultella-planticola', 'leclercia-adecarboxylata',
-      'escherichia-fergusonii', 'plesiomonas-shigelloides'],
+      'escherichia-fergusonii', 'plesiomonas-shigelloides',
+      'serratia-rubidaea', 'proteus-penneri', 'escherichia-hermannii', 'enterobacter-asburiae',
+      'cedecea-davisae', 'kluyvera-ascorbata', 'kluyvera-cryocrescens', 'tatumella-ptyseos', 'rahnella-aquatilis'],
     药物: [
       { 药物: "氨苄西林 (Ampicillin)", 简写: "AM", 组别: "1", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "≥17", 抑菌圈_I: "14–16", 抑菌圈_R: "≤13", 备注: "可预测阿莫西林;口服仅用于大肠埃希菌、奇异变形杆菌所致非复杂性尿路感染" },
       { 药物: "氨苄西林/舒巴坦 (Ampicillin-Sulbactam)", 简写: "SAM", 组别: "1", MIC_S: "≤8/4", MIC_I: "16/8", MIC_R: "≥32/16", 抑菌圈_S: "≥15", 抑菌圈_I: "12–14", 抑菌圈_R: "≤11", 备注: "" },
@@ -85,6 +87,41 @@ window.DB.breakpoints = [
       { 药物: "妥布霉素 (Tobramycin)", 简写: "TOB", 组别: "1", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "≥19", 抑菌圈_I: "13–18", 抑菌圈_R: "≤12", 备注: "Ed36 修订(折点下调);不预测庆大霉素敏感性" },
       { 药物: "阿米卡星 (Amikacin)", 简写: "AK", 组别: "2", 仅尿路: true, MIC_S: "≤16", MIC_I: "32", MIC_R: "≥64", 抑菌圈_S: "≥17", 抑菌圈_I: "15–16", 抑菌圈_R: "≤14", 备注: "Ed36 标注仅用于尿路分离株(U)" },
       { 药物: "黏菌素 (Colistin)", 简写: "CT", MIC_S: "—", MIC_I: "≤2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "无敏感折点(仅中介/耐药);仅 BMD/CBDE/CAT;疗效有限须联合(注:Ed36 已无铜绿庆大霉素折点)" }
+    ]
+  },
+
+  // ===== 其他非肠杆菌目 (Table 2B-5，含非铜绿假单胞菌) =====
+  // 按 M100 Ed36 定义：本组收录 Pseudomonas spp.（除铜绿外）及其他非苛养、葡萄糖非发酵
+  // 革兰阴性杆菌，不含不动杆菌/洋葱伯克/嗜麦芽（各有专表）。全部数值按 M100 Ed36 PDF
+  // 印刷页 p.92–94（PDF 页 124–126）页面图逐值核对（2026-09-05）。
+  // CLSI General Comment (3)：本组纸片扩散法未经系统研究、不推荐——仅 MIC 法（肉汤/琼脂稀释）。
+  {
+    菌组名: "其他非肠杆菌目 (Other Non-Enterobacterales，含非铜绿假单胞菌)",
+    CLSI表: "Table 2B-5",
+    菌种: ["pseudomonas-stutzeri", "pseudomonas-luteola", "pseudomonas-oryzihabitans", "pseudomonas-mendocina", "pseudomonas-pseudoalcaligenes", "pseudomonas-veronii", "pseudomonas-monteilii", "pseudomonas-mosselii"],
+    药物: [
+      { 药物: "哌拉西林 (Piperacillin)", 简写: "PIP", MIC_S: "≤16", MIC_I: "32–64", MIC_R: "≥128", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "带 * 类药物（未列入 Table 1 常规报告清单）；本组纸片法不推荐，仅 MIC 法" },
+      { 药物: "哌拉西林/他唑巴坦 (Piperacillin-Tazobactam)", 简写: "TZP", MIC_S: "≤16/4", MIC_I: "32/4–64/4", MIC_R: "≥128/4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "单药敏感者可推定复方敏感，反之不可（注 4）" },
+      { 药物: "替卡西林/克拉维酸 (Ticarcillin-Clavulanate)", 简写: "TCC", MIC_S: "≤16/2", MIC_I: "32/2–64/2", MIC_R: "≥128/2", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "带 * 类药物" },
+      { 药物: "头孢他啶 (Ceftazidime)", 简写: "CAZ", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 1 常规测试报告药（Table 1B-5）" },
+      { 药物: "头孢吡肟 (Cefepime)", 简写: "FEP", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 2（按级联报告规则报告）" },
+      { 药物: "头孢噻肟 (Cefotaxime)", 简写: "CTX", MIC_S: "≤8", MIC_I: "16–32", MIC_R: "≥64", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "头孢曲松 (Ceftriaxone)", 简写: "CRO", MIC_S: "≤8", MIC_I: "16–32", MIC_R: "≥64", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "" },
+      { 药物: "头孢唑肟 (Ceftizoxime)", 简写: "ZOX", MIC_S: "≤8", MIC_I: "16–32", MIC_R: "≥64", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "带 * 类药物" },
+      { 药物: "氨曲南 (Aztreonam)", 简写: "ATM", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 2" },
+      { 药物: "亚胺培南 (Imipenem)", 简写: "IPM", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 2" },
+      { 药物: "美罗培南 (Meropenem)", 简写: "MEM", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 2" },
+      { 药物: "庆大霉素 (Gentamicin)", 简写: "GM", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 1" },
+      { 药物: "妥布霉素 (Tobramycin)", 简写: "TOB", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 1" },
+      { 药物: "阿米卡星 (Amikacin)", 简写: "AK", MIC_S: "≤16", MIC_I: "32", MIC_R: "≥64", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 2" },
+      { 药物: "四环素 (Tetracycline)", 简写: "TE", 仅尿路: true, MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "(U) 仅报告尿路分离株；四环素敏感者可推定多西环素/米诺环素敏感（注 5）" },
+      { 药物: "多西环素 (Doxycycline)", 简写: "DOX", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "带 * 类药物；四环素中介/耐药株如需用药应单独测试（注 5）" },
+      { 药物: "米诺环素 (Minocycline)", 简写: "MI", MIC_S: "≤4", MIC_I: "8", MIC_R: "≥16", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 2" },
+      { 药物: "环丙沙星 (Ciprofloxacin)", 简写: "CIP", MIC_S: "≤1", MIC_I: "2", MIC_R: "≥4", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 2" },
+      { 药物: "左氧氟沙星 (Levofloxacin)", 简写: "LVX", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 2" },
+      { 药物: "氧氟沙星 (Ofloxacin)", 简写: "OFX", MIC_S: "≤2", MIC_I: "4", MIC_R: "≥8", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "带 * 类药物" },
+      { 药物: "复方新诺明 (Trimethoprim-Sulfamethoxazole)", 简写: "SXT", MIC_S: "≤2/38", MIC_I: "—", MIC_R: "≥4/76", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "Tier 1；无中介区间" },
+      { 药物: "氯霉素 (Chloramphenicol)", 简写: "C", MIC_S: "≤8", MIC_I: "16", MIC_R: "≥32", 抑菌圈_S: "—", 抑菌圈_I: "—", 抑菌圈_R: "—", 备注: "带 * 类药物；尿路分离株不常规报告（注 6）" }
     ]
   },
 

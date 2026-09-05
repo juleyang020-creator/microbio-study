@@ -2341,6 +2341,28 @@ window.DB.photosAtlas = {
    "说明": "图 15-7-2　SSA 24h"
   }
  ],
+ "cedecea-davisae": [
+  {
+   "文件": "img/atlas/dc5dd5408904b8de6b3c45c40768ba381ed3b0691b97d08b7ab2acd3c05d1a8b.jpg",
+   "说明": "图 15-12-1　戴氏西地西菌的形态特征（1/3）"
+  },
+  {
+   "文件": "img/atlas/2c4b0afbc62d9e3d0fba72d4fc42a633f9211c704c070c1271b61096f4e64e0b.jpg",
+   "说明": "图 15-12-1　戴氏西地西菌的形态特征（2/3）"
+  },
+  {
+   "文件": "img/atlas/6f19b0acfe16e6cea59efc50c32a6d72db23640b5e98dce84d224f0e4b61ffd9.jpg",
+   "说明": "图 15-12-1　戴氏西地西菌的形态特征（3/3）"
+  },
+  {
+   "文件": "img/atlas/22e6cb3826ad12d87185d4d87ea871864e42f0d3c8f18d7ac270836536d27557.jpg",
+   "说明": "图 10-1-1　戴氏西地西菌的镜下形态(革兰染色)"
+  },
+  {
+   "文件": "img/atlas/0b0ac831c36c6542715c409f0d58423199d6e9f0e1a9985f06721e406af23924.jpg",
+   "说明": "图 10-1-2　戴氏西地西菌在麦康凯琼脂平板上的菌落特征(18～24h)"
+  }
+ ],
  "raoultella-ornithinolytica": [
   {
    "文件": "img/atlas/5ef80ef15c956ab4a77df324689b4e07ac3b03dcc9d19d48045412a3da0d5192.jpg",
@@ -2663,6 +2685,40 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/1df5a42ef5fe74484b6daa5b4eb1de55eaa21bc791cea99950200a8d5483b7c0.jpg",
    "说明": "图 8-10-17　液化沙雷菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "serratia-rubidaea": [
+  {
+   "文件": "img/atlas/50f4210a2e57ae1edac2bda12589651dc6d5c6b2d23fe77a9e363b9d34acf536.jpg",
+   "说明": "图 15-25-3　革兰氏染色 × 1000; B"
+  },
+  {
+   "文件": "img/atlas/c5caf3ada5abfaf71b15fa1ec9d4d1d270269993b9f5fbc1dfc559c3cedd2dac.jpg",
+   "说明": "图 15-25-3　SBA 24h; C"
+  },
+  {
+   "文件": "img/atlas/77ca35518682a834047e0dc93fd9eb1bb62d7dcf7b210193e526ba23d9bcbc99.jpg",
+   "说明": "图 15-25-3　中国蓝平板 24h; D"
+  },
+  {
+   "文件": "img/atlas/ae06a2fd152e654c4ac0c9f6cb572c5a443cab19cc24e1681b8f32ae292c253c.jpg",
+   "说明": "图 15-25-3　MAC 24h"
+  },
+  {
+   "文件": "img/atlas/1eaae36ba16e65fa78caad24ea0e513aef1b3e93ab4363ffb30b6b30d4dc01cd.jpg",
+   "说明": "图 15-25-4　产红色素株, MHA 24h; B"
+  },
+  {
+   "文件": "img/atlas/339b8d684ce91b489c33577c3572aec5ae54192c5ceddffc438492af8f1340e3.jpg",
+   "说明": "图 15-25-4　不产色素株, MHA 24h; C"
+  },
+  {
+   "文件": "img/atlas/9ba25e2e90a0ce8e429648ae0f0068d68395f098d472d6ab4ded23059487f9ec.jpg",
+   "说明": "图 15-25-4　产褐色色素株, MHA 3 日"
+  },
+  {
+   "文件": "img/atlas/2ff39789dd042ed09131634b26ffc5bf66440a7bdff2b624911095a323cdb77b.jpg",
+   "说明": "图 8-10-8　深红沙雷菌纯培养的镜下形态(革兰染色)"
   }
  ],
  "hafnia-alvei": [
@@ -3017,6 +3073,36 @@ window.DB.photosAtlas = {
    "说明": "图 11-6-4　嗜麦芽窄食单胞菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
   }
  ],
+ "pseudomonas-mendocina": [
+  {
+   "文件": "img/atlas/1c2b77a2e88481ae7a179b280085d3127665c0fd3ca6a6dab9ea722f60c031cc.jpg",
+   "说明": "图 17-2-2　假单胞菌荧光素检测试验结果"
+  },
+  {
+   "文件": "img/atlas/35f7b9fe06b562d7a37cdfabd97826e26f14da5c9facce1ee73d6bfbd4a18e2e.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（1/6）"
+  },
+  {
+   "文件": "img/atlas/03831b695b99479d2e3a82a814f74646b46243a9b53ff49d0cf872f26fac4af2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（2/6）"
+  },
+  {
+   "文件": "img/atlas/33f2951c31b889a2ca92cb7f935739a8a8719dd335096cb91a0e1c800e5f4eec.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（3/6）"
+  },
+  {
+   "文件": "img/atlas/7ede776bcea784a5d3d8725ee8af83cc16dff9a9059f42b4dc2825bf3f17b5bd.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（4/6）"
+  },
+  {
+   "文件": "img/atlas/a3c68faf9217848e753a6b7b053c7d799faf1c1b585f1459d4442a99b3190f6f.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（5/6）"
+  },
+  {
+   "文件": "img/atlas/1b705b418893e900dc0d46ec928038a1247d4e6a518293d980d3700e74bccba2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（6/6）"
+  }
+ ],
  "pseudomonas-putida": [
   {
    "文件": "img/atlas/2d7049bfe91514b4096e642bdc52411863804a8dc405d6c88ccbec4cce4f4f50.jpg",
@@ -3049,6 +3135,70 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/d44658be0331107787ff753c6bce26d0ec7a982049c22e31be847039d80dcff5.jpg",
    "说明": "图 11-2-13　恶臭假单胞菌在营养琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "pseudomonas-stutzeri": [
+  {
+   "文件": "img/atlas/33fab0b02743b984fc80e113005a656feb3c6b09d5ae9bd991a6a0c3301c8485.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/4aef5316d861cea1f91f0438b7a53889b829d17d5939951ee9ae2a8e8de03778.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/c9abbaa0a97299987ba750183af1ecf4c535c09fbc8bb0748586ecfe347a5b76.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/13a2289ed107cbd1773dc549233a523edce45fc8b7b4e689ee65d831d5f0a79a.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（4/5）"
+  },
+  {
+   "文件": "img/atlas/7a2161ae75d17efeef6a86151913464d55f63606876e76ec4abb8444d6325b2f.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（5/5）"
+  },
+  {
+   "文件": "img/atlas/d9ec99dc92bc32e1df1cff90ab0359713aec795d8e9b25c06953598eed68027f.jpg",
+   "说明": "图 11-2-18　斯氏假单胞菌纯培养的镜下形态(革兰染色)"
+  },
+  {
+   "文件": "img/atlas/e5f9dc2c9a3e9b3e32ad8073b8124e00af123f0f90311988c01ede59367fd211.jpg",
+   "说明": "图 11-2-19　斯氏假单胞菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/475e266e129757d5b62a5271b27f06d53df48f56fa0f29ab8f2188f306676c1b.jpg",
+   "说明": "图 11-2-20　斯氏假单胞菌在血琼脂平板上的皱起型菌落特征(48 h)"
+  }
+ ],
+ "pseudomonas-pseudoalcaligenes": [
+  {
+   "文件": "img/atlas/58b9c152eeb98102b64d47aa484124c9ab0148db20669ffc29409d5668014a6d.jpg",
+   "说明": "图 17-2-7　SBA 24h 7. 产碱假单胞菌与假产碱假单胞菌 多数菌株在 42° C 能生长, 在麦凯康平板上可生长, 一端单鞭毛, 氧化酶阳性, 不分解任何糖类, 在未封闭的 O-F 培养基表面产碱, 醋酸盐可作为碳源和能源…"
+  },
+  {
+   "文件": "img/atlas/35f7b9fe06b562d7a37cdfabd97826e26f14da5c9facce1ee73d6bfbd4a18e2e.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（1/6）"
+  },
+  {
+   "文件": "img/atlas/03831b695b99479d2e3a82a814f74646b46243a9b53ff49d0cf872f26fac4af2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（2/6）"
+  },
+  {
+   "文件": "img/atlas/33f2951c31b889a2ca92cb7f935739a8a8719dd335096cb91a0e1c800e5f4eec.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（3/6）"
+  },
+  {
+   "文件": "img/atlas/7ede776bcea784a5d3d8725ee8af83cc16dff9a9059f42b4dc2825bf3f17b5bd.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（4/6）"
+  },
+  {
+   "文件": "img/atlas/a3c68faf9217848e753a6b7b053c7d799faf1c1b585f1459d4442a99b3190f6f.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（5/6）"
+  },
+  {
+   "文件": "img/atlas/1b705b418893e900dc0d46ec928038a1247d4e6a518293d980d3700e74bccba2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（6/6）"
   }
  ],
  "pseudomonas-alcaligenes": [
@@ -3521,6 +3671,32 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/3d6fab0f69be496e7487f7db6980b37e061b2b0754fbfc02f3e15d6fe5616f81.jpg",
    "说明": "图 17-12-1　睾丸酮丛毛单胞菌 SBA 2 日; D"
+  }
+ ],
+ "roseomonas-cervicalis": [
+  {
+   "文件": "img/atlas/e4bbf3ac037eae6cb63b824cc1022839020d4802b76261ddac34d40d2d9c0f86.jpg",
+   "说明": "图 17-15-1　宫颈玫瑰单胞菌的形态特征（1/2）"
+  },
+  {
+   "文件": "img/atlas/ac6d58b6d0c03a429fc72ea316087bdfc6a199bbe0c752871a1bb3b8e7899f41.jpg",
+   "说明": "图 17-15-1　宫颈玫瑰单胞菌的形态特征（2/2）"
+  },
+  {
+   "文件": "img/atlas/2c7ff64b56ada3079c3bd5c85a9a578c81272f760bfc6f400cb810428f536c14.jpg",
+   "说明": "图 12-18-4　颈玫瑰单胞菌纯培养的镜下形态(革兰染色)"
+  },
+  {
+   "文件": "img/atlas/6d6203b0ae15babc605e64ff8bb46be5675db0372f52d692380c426553922cb1.jpg",
+   "说明": "图 12-18-5　颈玫瑰单胞菌血培养肉汤阳性培养物直接涂片镜下形态（箭头所示，革兰染色）"
+  },
+  {
+   "文件": "img/atlas/4f9e323400d64ac344f100a599cab32264321b8eba0ce88f0f8753e78488dc2d.jpg",
+   "说明": "图 12-18-6　颈玫瑰单胞菌在血琼脂平板上的菌落特征(24 h)"
+  },
+  {
+   "文件": "img/atlas/00e34c2fc988e21756fa2c643a7b403a83aadb804d37d28d34e9e8d1310f6994.jpg",
+   "说明": "图 12-18-7　颈玫瑰单胞菌在血琼脂平板上的菌落特征(72 h)"
   }
  ],
  "sphingomonas-paucimobilis": [
@@ -5373,28 +5549,28 @@ window.DB.photosAtlas = {
    "说明": "图 24-2-4　厚壁孢子 2. 孢子囊孢子(ssporangiospore) 孢子囊孢子为无性孢子, 是由繁殖菌丝的末端形成一个膨大的结构, 称为孢子囊(sporangial)。其内密集着许多细胞核, 每个核都被细胞质包围, 分隔割…"
   },
   {
-   "文件": "img/atlas/c668b025e3cd6dbd4d78546e6dcc3bb5db4f7acea8afa511a7538fdb9cdd5123.jpg",
-   "说明": "图 27-3-2　卷枝毛霉的形态特征（1/10）"
+   "文件": "img/atlas/48b0a3f0e83cbec4b7b07973988605f54afe550b4afa282ed57a405609a26243.jpg",
+   "说明": "图 27-3-3　拉斯坦毛霉的形态特征（1/3）"
   },
   {
-   "文件": "img/atlas/ef6ecb7997ac3fa7568fdd9a464ed0a647278f7f650f173b098249196f111373.jpg",
-   "说明": "图 27-3-2　卷枝毛霉的形态特征（2/10）"
+   "文件": "img/atlas/39e76c9eb4f57bd426ea56ca31852bf6d96b446aa17ae21c550e9a8a7bf758fd.jpg",
+   "说明": "图 27-3-3　拉斯坦毛霉的形态特征（2/3）"
   },
   {
-   "文件": "img/atlas/bc03ab439374dd311e27eaffb0e823f2959db87e7c580cd7dbf3f804dcf7e7c8.jpg",
-   "说明": "图 27-3-2　卷枝毛霉的形态特征（3/10）"
+   "文件": "img/atlas/7f7eaff2cb2bcc486fb436087c2e432ca5463aeee140412fdbebc4a8ae058648.jpg",
+   "说明": "图 27-3-3　拉斯坦毛霉的形态特征（3/3）"
   },
   {
-   "文件": "img/atlas/cba12d3a60ef5cb3a4ae4e986fcbfd9fdf49945089de9613c1d3da7bd2992b87.jpg",
-   "说明": "图 27-3-2　卷枝毛霉的形态特征（4/10）"
+   "文件": "img/atlas/12702beae5e2b0743bc4a26b26c32e871aab1509edb07911838c7978db7d8689.jpg",
+   "说明": "图 27-6-1　根毛霉示意图"
   },
   {
-   "文件": "img/atlas/35042a6b9d9b0ab694b95dd9cf2e5eb31f8771a411e0b9ad9b409dd76009c520.jpg",
-   "说明": "图 27-3-2　卷枝毛霉的形态特征（5/10）"
+   "文件": "img/atlas/14455cab341b3a073a4f228d54010719a48eb530970b09af57d277da13282487.jpg",
+   "说明": "图 27-13-3　有囊托的毛霉目菌属鉴定索引"
   },
   {
-   "文件": "img/atlas/0a53d724271c3391e31fdd39f5f59c9dc7608b79a409c08686ca134822f35ee3.jpg",
-   "说明": "图 27-3-2　卷枝毛霉的形态特征（6/10）"
+   "文件": "img/atlas/3e564b251f8a7353c67570a8d550df9a10e29d51615e9fda31d1ff9f65a3aeb7.jpg",
+   "说明": "图 29-0-1　肺毛霉病组织病理学见大量菌丝(HE 染色, ×400)"
   }
  ],
  "aspergillus-fumigatus": [
@@ -5925,6 +6101,20 @@ window.DB.photosAtlas = {
    "说明": "图 25-5-4　酿酒酵母镜检(血琼脂平板,35℃,2日,革兰染色,×1000)"
   }
  ],
+ "rhodotorula-mucilaginosa": [
+  {
+   "文件": "img/atlas/bd0dfb1b7d6f6e21c8caf722aabc7881e80caab413e95d28e3413afa061555e0.jpg",
+   "说明": "图 25-4-1　红酵母的形态特征"
+  },
+  {
+   "文件": "img/atlas/9568c785ea706685d9e9275de29da28f5673474a7bc31b602c809c7568712b83.jpg",
+   "说明": "图 25-3-1　胶红酵母(SDA, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/995f8c50b1b823e177c881415dc79696ee35dc6de59a9dc9f7a01b08d1219576.jpg",
+   "说明": "图 25-3-2　胶红酵母镜下形态(玉米粉吐温 80 培养基, 3 日, 未染色, ×400)"
+  }
+ ],
  "histoplasma-capsulatum": [
   {
    "文件": "img/atlas/321a3b7c87a9bdfc3b4a235bd71116923cd24c8c1a164cae9a6334f061d60b19.jpg",
@@ -6027,6 +6217,120 @@ window.DB.photosAtlas = {
    "说明": "图 25-4-4　阿萨希毛孢子菌镜下形态(乳酸酚棉蓝染色, ×1000)"
   }
  ],
+ "trichosporon-inkin": [
+  {
+   "文件": "img/atlas/abca0f26599d472a7d1bf2461a1db44f161296dd5cc97e4835f299821b4eb1af.jpg",
+   "说明": "图 25-13-2　皮瘤毛孢子菌革兰氏染色 ×1000; F"
+  },
+  {
+   "文件": "img/atlas/3d08b21d1315bba164f5b47a9ec2b0b142cb42c4b3c1348695766273f0792b36.jpg",
+   "说明": "图 25-13-2　皮瘤毛孢子菌 SDA 35℃ 3 日; G"
+  }
+ ],
+ "geotrichum-candidum": [
+  {
+   "文件": "img/atlas/005ad00481047d4e3598c5c6701a676e27ced13f866f10e4f8355bd44a7e1136.jpg",
+   "说明": "图 25-14-1　革兰氏染色 × 1000; B"
+  },
+  {
+   "文件": "img/atlas/7b04603538a1eb1b0f0b59e0c63b3ff3d9f43a84d8450069ee439e12f1e8c605.jpg",
+   "说明": "图 25-14-1　SDA 30℃ 3 日, 乳酸酚棉蓝染色 × 400; C"
+  },
+  {
+   "文件": "img/atlas/14ddec8c90314baf0fb7cdd2412538ef4e57f76d1832fb9981b5715e6e81363f.jpg",
+   "说明": "图 25-14-1　SDA 30℃ 3 日; D"
+  },
+  {
+   "文件": "img/atlas/7ccb347d8266cd7ab6e06557befa89d17ae7e7670f0431d25669cf17515cd449.jpg",
+   "说明": "图 25-14-1　CHROMagar 30℃ 3 日"
+  },
+  {
+   "文件": "img/atlas/c95c0fd905d80f8c3d3afa196af70597f73a77b98d57baea88a9474821884c05.jpg",
+   "说明": "图 25-10-1　白地霉菌落(血琼脂平板,25℃,3日)"
+  },
+  {
+   "文件": "img/atlas/1d462c33062613c3888d1ef641c08117b9caf43076430afaa39fcce20014e0fa.jpg",
+   "说明": "图 25-10-4　白地霉菌落(PDA, 25℃, 3 日)"
+  },
+  {
+   "文件": "img/atlas/6445f2b69b5f84589e438abfc154577c8e823c57c5a9c6685c864c21c216b987.jpg",
+   "说明": "图 25-10-2　白地霉菌落(SDA, 25℃, 3 日)"
+  },
+  {
+   "文件": "img/atlas/5c34ba80aa7bfeac1764f395ab4bc467320ad562f29289c7288602e17b54474f.jpg",
+   "说明": "图 25-10-5　白地霉菌落(CHROMagar Candida 显色平板, 25℃, 3 日)"
+  }
+ ],
+ "malassezia-furfur": [
+  {
+   "文件": "img/atlas/3e097de7c7fe924a38ec66036743fd1f865a486fed330252ddef398f98ac6c55.jpg",
+   "说明": "图 25-15-1　角质层中的糠秕马拉色菌菌丝和出芽孢子 HE 染色 × 200（图片由四川大学华西医院冉玉平教授提供）；B"
+  },
+  {
+   "文件": "img/atlas/32a896499e6597a23892122393429af2c5d3729a2fa7406789c1337045fd0ade.jpg",
+   "说明": "图 25-15-1　糠秕马拉色菌菌落涂片革兰氏染色 × 1000"
+  },
+  {
+   "文件": "img/atlas/9b383ef5018253ff5ea9c2ffc227f664eeeb9ee462fc950a1eafebd8cd09e3f3.jpg",
+   "说明": "图 25-15-2　糠秕马拉色菌，橄榄油 CHROMagar 培养基 3 日；B"
+  },
+  {
+   "文件": "img/atlas/82e00083b06f370d2c8f87c98d3e23fd4177e59317fb45e967a5f4bf4c13f062.jpg",
+   "说明": "图 25-15-2　糠秕马拉色菌 ATCC 14521, 1% 吐温 -60 SDA 10 日；C"
+  },
+  {
+   "文件": "img/atlas/e9af2b51b2516d7af72da9e22731ef0d0429e8d0b9428c26c58b343b6c73deca.jpg",
+   "说明": "图 25-15-2　糠秕马拉色菌 ATCC 14521, 1% 吐温 -60 CHROMagar 10 日；D"
+  },
+  {
+   "文件": "img/atlas/60e06f2aeeec4c6f593fa7308228ad5b9f175db42740291e6ae32fb0d39b2c92.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(糠秕马拉色菌); C"
+  },
+  {
+   "文件": "img/atlas/026022b9f8bd0886e99962c46bdfac40a7a4c671973c1698c60c0a1a876c3481.jpg",
+   "说明": "图 25-7-4　糠秕马拉色菌菌落(橄榄油培养基,37℃,7日)"
+  },
+  {
+   "文件": "img/atlas/f4fc7e30baa1223acd7ee3b8449edc5e671e8af98ad1731c8623afb5cdf598d0.jpg",
+   "说明": "图 25-7-5　糠秕马拉色菌皮屑直接镜检, 可见孢子和菌丝(未染色, ×400)"
+  }
+ ],
+ "malassezia-globosa": [
+  {
+   "文件": "img/atlas/ed3eaca59741146e1da7f06d8b462b8dbacb4a7e7c7a7df2bc1549b52fae4d43.jpg",
+   "说明": "图 25-15-1　花斑糠疹鳞屑（球形马拉色菌菌丝和出芽孢子）电镜图（图片由四川大学华西医院冉玉平教授提供）；D"
+  },
+  {
+   "文件": "img/atlas/c95deb004aa109388b3f964ce0b8c70dc63d9db2c4c221c94203c6b8e1a84e50.jpg",
+   "说明": "图 25-15-1　球形马拉色菌电镜图（图片由四川大学华西医院冉玉平教授提供）；E"
+  },
+  {
+   "文件": "img/atlas/f72517aadae1c0e3cf8433669d7e43757e0aec6ed7309fe16929df33e8fbf760.jpg",
+   "说明": "图 25-15-1　球形马拉色菌钙白荧光染色 × 1000；F"
+  },
+  {
+   "文件": "img/atlas/089820e383305af22dcc70bb692e7cf81f2976e92c3b861a22d77c1559e59108.jpg",
+   "说明": "图 25-15-2　球形马拉色菌，1% 吐温 -40 SDA 35℃ 14 日；E"
+  },
+  {
+   "文件": "img/atlas/702078735a36201e8d75659aff182445e69e0259adbaaac91b35c624fe8affcf.jpg",
+   "说明": "图 25-15-2　球形马拉色菌，1% 吐温 -40 CHROMagar 35℃ 7 日；F"
+  },
+  {
+   "文件": "img/atlas/22139be58f69183f202507c67d4eaf66b293e2d7a472165c13a224988e56af23.jpg",
+   "说明": "图 25-7-3　球形马拉色菌纯培养的镜下形态(革兰染色, ×400)"
+  }
+ ],
+ "malassezia-pachydermatis": [
+  {
+   "文件": "img/atlas/9584c01fbd6bff2c968e0d4328099a89de3b95dbd3089b9ea07d823d4ca86cc5.jpg",
+   "说明": "图 25-15-2　厚皮马拉色菌，1% 吐温 -80 PDA 35℃ 10 日"
+  },
+  {
+   "文件": "img/atlas/0ec9dcd3517c7a91fe295553125be5ab3073a19518db1061d9f137c81a4de2ab.jpg",
+   "说明": "图 25-7-1　厚皮马拉色菌纯培养的镜下形态(革兰染色, ×400)"
+  }
+ ],
  "malassezia": [
   {
    "文件": "img/atlas/826227426e9bd6e08a272233d21b490e3272d99af34c6435ad640b95b118f74b.jpg",
@@ -6043,6 +6347,16 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/f4dbc2db5b73c9563becb20f7210d6ba62213d5d9f9e130e2844548bd44538bd.jpg",
    "说明": "图 25-15-3　打孔法吐温依赖试验结果(M. dermatis)"
+  }
+ ],
+ "malassezia-sympodialis": [
+  {
+   "文件": "img/atlas/0f8f0cd17b32607a8ee0e0247222322f4e27998b837bb11677121cb6f3b75848.jpg",
+   "说明": "图 25-15-3　打孔法吐温依赖试验结果(合轴马拉色菌); D"
+  },
+  {
+   "文件": "img/atlas/f2564b7eaacf1305ddef243750728f199c0899bac9f5ba45350c613348780857.jpg",
+   "说明": "图 25-7-6　合轴马拉色菌培养物镜下形态(革兰染色, ×400)"
   }
  ],
  "pneumocystis-jirovecii": [
@@ -6599,58 +6913,6 @@ window.DB.photosAtlas = {
    "说明": "图 27-2-37　黑曲霉在 PDA 上的镜下形态(25℃,6 日,×200)"
   }
  ],
- "aspergillus-oryzae": [
-  {
-   "文件": "img/atlas/0b71d8303848ad4fcc0b787768735865225eb1a0ac74b4ee432c024ef5ea1318.jpg",
-   "说明": "图 27-2-18　米曲霉菌落(SDA, 35℃, 2日)"
-  },
-  {
-   "文件": "img/atlas/908181e9c129b3c92623359a8fe81f9e42cf2354b9b4224b0dd5d38a5bdb5bd5.jpg",
-   "说明": "图 27-2-19　米曲霉菌落(血琼脂平板,35℃,3日)"
-  },
-  {
-   "文件": "img/atlas/8a92ecf1344e9e42b71ba0166dd8bb1a88f637e3e79b858b7e29ad89049e45b7.jpg",
-   "说明": "图 27-2-20　米曲霉菌落(PDA, 35℃, 3日)"
-  },
-  {
-   "文件": "img/atlas/2e68e6ee96d59d48dc1b7bbc8e6d059c0b62a1b4b5f91bd578c8c7b8da4b89f6.jpg",
-   "说明": "图 27-2-21　米曲霉菌落(PDA, 35℃, 7日)"
-  },
-  {
-   "文件": "img/atlas/69af5095f6a9b8956327659f725a0c40859a3ce7019610553cc7426e60c4171c.jpg",
-   "说明": "图 27-2-22　米曲霉镜检(乳酸酚棉蓝染色, ×1000)"
-  },
-  {
-   "文件": "img/atlas/c90dd81d400dcb2ab99bb9094af0ec5879ac5c38b2ab5eb9540c0840e32295d9.jpg",
-   "说明": "图 27-2-23　米曲霉镜检(乳酸酚棉蓝染色, ×1000)"
-  }
- ],
- "aspergillus-oryzae": [
-  {
-   "文件": "img/atlas/0b71d8303848ad4fcc0b787768735865225eb1a0ac74b4ee432c024ef5ea1318.jpg",
-   "说明": "图 27-2-18　米曲霉菌落(SDA, 35℃, 2日)"
-  },
-  {
-   "文件": "img/atlas/908181e9c129b3c92623359a8fe81f9e42cf2354b9b4224b0dd5d38a5bdb5bd5.jpg",
-   "说明": "图 27-2-19　米曲霉菌落(血琼脂平板,35℃,3日)"
-  },
-  {
-   "文件": "img/atlas/8a92ecf1344e9e42b71ba0166dd8bb1a88f637e3e79b858b7e29ad89049e45b7.jpg",
-   "说明": "图 27-2-20　米曲霉菌落(PDA, 35℃, 3日)"
-  },
-  {
-   "文件": "img/atlas/2e68e6ee96d59d48dc1b7bbc8e6d059c0b62a1b4b5f91bd578c8c7b8da4b89f6.jpg",
-   "说明": "图 27-2-21　米曲霉菌落(PDA, 35℃, 7日)"
-  },
-  {
-   "文件": "img/atlas/69af5095f6a9b8956327659f725a0c40859a3ce7019610553cc7426e60c4171c.jpg",
-   "说明": "图 27-2-22　米曲霉镜检(乳酸酚棉蓝染色, ×1000)"
-  },
-  {
-   "文件": "img/atlas/c90dd81d400dcb2ab99bb9094af0ec5879ac5c38b2ab5eb9540c0840e32295d9.jpg",
-   "说明": "图 27-2-23　米曲霉镜检(乳酸酚棉蓝染色, ×1000)"
-  }
- ],
  "aspergillus-nidulans": [
   {
    "文件": "img/atlas/003e2a15d728555358dd73a6f51f2c38abca22ea8c50dfdcbd9620552dc80635.jpg",
@@ -7001,6 +7263,108 @@ window.DB.photosAtlas = {
    "说明": "图 27-2-43　亮白曲霉菌落(PDA, 28℃, 28 日)"
   }
  ],
+ "mucor-circinelloides": [
+  {
+   "文件": "img/atlas/c668b025e3cd6dbd4d78546e6dcc3bb5db4f7acea8afa511a7538fdb9cdd5123.jpg",
+   "说明": "图 27-3-2　卷枝毛霉的形态特征（1/10）"
+  },
+  {
+   "文件": "img/atlas/ef6ecb7997ac3fa7568fdd9a464ed0a647278f7f650f173b098249196f111373.jpg",
+   "说明": "图 27-3-2　卷枝毛霉的形态特征（2/10）"
+  },
+  {
+   "文件": "img/atlas/bc03ab439374dd311e27eaffb0e823f2959db87e7c580cd7dbf3f804dcf7e7c8.jpg",
+   "说明": "图 27-3-2　卷枝毛霉的形态特征（3/10）"
+  },
+  {
+   "文件": "img/atlas/cba12d3a60ef5cb3a4ae4e986fcbfd9fdf49945089de9613c1d3da7bd2992b87.jpg",
+   "说明": "图 27-3-2　卷枝毛霉的形态特征（4/10）"
+  },
+  {
+   "文件": "img/atlas/35042a6b9d9b0ab694b95dd9cf2e5eb31f8771a411e0b9ad9b409dd76009c520.jpg",
+   "说明": "图 27-3-2　卷枝毛霉的形态特征（5/10）"
+  },
+  {
+   "文件": "img/atlas/0a53d724271c3391e31fdd39f5f59c9dc7608b79a409c08686ca134822f35ee3.jpg",
+   "说明": "图 27-3-2　卷枝毛霉的形态特征（6/10）"
+  },
+  {
+   "文件": "img/atlas/0c712cf67909ab417ec9d4602343ac99602ddb40f88e88c86b338602e4f9b960.jpg",
+   "说明": "图 27-3-2　卷枝毛霉的形态特征（7/10）"
+  },
+  {
+   "文件": "img/atlas/1a0bf1d82153e0d886d58b981ce8a0f1cd926bb3d735d1e5c97709cafff1863b.jpg",
+   "说明": "图 27-3-2　卷枝毛霉的形态特征（8/10）"
+  }
+ ],
+ "rhizopus-arrhizus": [
+  {
+   "文件": "img/atlas/246cb4522966a3f8e1b3b49df2bc572308b4bbe4bb44faf74ba9c1fc450218c3.jpg",
+   "说明": "图 27-4-2　根霉菌的形态学特征 A. 少根根霉菌(孢囊梗颈和孢子囊) SDA 25℃ 7 日 ×200; B. 少根根霉菌(小培养) SDA 28℃ 2 日 ×200; C. 少根根霉菌(厚壁孢子与无隔菌丝) SDA 25℃ 2…（1/9）"
+  },
+  {
+   "文件": "img/atlas/e589cd075a7e9b444be9fd3438423f46aa4be9bc1c6e4a41015b0288ed98dea8.jpg",
+   "说明": "图 27-4-2　根霉菌的形态学特征 A. 少根根霉菌(孢囊梗颈和孢子囊) SDA 25℃ 7 日 ×200; B. 少根根霉菌(小培养) SDA 28℃ 2 日 ×200; C. 少根根霉菌(厚壁孢子与无隔菌丝) SDA 25℃ 2…（2/9）"
+  },
+  {
+   "文件": "img/atlas/eda2e9f7e80ea84694cb861d4c73efef5ad0ca478184eaa8869c8826a793ec1a.jpg",
+   "说明": "图 27-4-2　根霉菌的形态学特征 A. 少根根霉菌(孢囊梗颈和孢子囊) SDA 25℃ 7 日 ×200; B. 少根根霉菌(小培养) SDA 28℃ 2 日 ×200; C. 少根根霉菌(厚壁孢子与无隔菌丝) SDA 25℃ 2…（3/9）"
+  },
+  {
+   "文件": "img/atlas/42b5434b3e68908d399a803a8585bcd72ea5bcf53359e38c5669be04101b84db.jpg",
+   "说明": "图 27-4-2　根霉菌的形态学特征 A. 少根根霉菌(孢囊梗颈和孢子囊) SDA 25℃ 7 日 ×200; B. 少根根霉菌(小培养) SDA 28℃ 2 日 ×200; C. 少根根霉菌(厚壁孢子与无隔菌丝) SDA 25℃ 2…（4/9）"
+  },
+  {
+   "文件": "img/atlas/0c14c13bc7391dd93a2d451fc0db605d7b13b6893d6c5adc51d55618dcb03787.jpg",
+   "说明": "图 27-4-2　根霉菌的形态学特征 A. 少根根霉菌(孢囊梗颈和孢子囊) SDA 25℃ 7 日 ×200; B. 少根根霉菌(小培养) SDA 28℃ 2 日 ×200; C. 少根根霉菌(厚壁孢子与无隔菌丝) SDA 25℃ 2…（5/9）"
+  },
+  {
+   "文件": "img/atlas/ab754c0dd4701c76708ec7b61fc99d57ff8d9dbf7c6ad63766a02079fee5d377.jpg",
+   "说明": "图 27-4-2　根霉菌的形态学特征 A. 少根根霉菌(孢囊梗颈和孢子囊) SDA 25℃ 7 日 ×200; B. 少根根霉菌(小培养) SDA 28℃ 2 日 ×200; C. 少根根霉菌(厚壁孢子与无隔菌丝) SDA 25℃ 2…（6/9）"
+  },
+  {
+   "文件": "img/atlas/5e8a0e218288230cee025f283dd22b4e347e177a019026cc2854b549b2bfe50f.jpg",
+   "说明": "图 27-4-2　根霉菌的形态学特征 A. 少根根霉菌(孢囊梗颈和孢子囊) SDA 25℃ 7 日 ×200; B. 少根根霉菌(小培养) SDA 28℃ 2 日 ×200; C. 少根根霉菌(厚壁孢子与无隔菌丝) SDA 25℃ 2…（7/9）"
+  },
+  {
+   "文件": "img/atlas/2faa94aa0fb3af5e5fafae8156df35efc1b8cffc118e68ffe4b6463f8a286dc0.jpg",
+   "说明": "图 27-4-2　根霉菌的形态学特征 A. 少根根霉菌(孢囊梗颈和孢子囊) SDA 25℃ 7 日 ×200; B. 少根根霉菌(小培养) SDA 28℃ 2 日 ×200; C. 少根根霉菌(厚壁孢子与无隔菌丝) SDA 25℃ 2…（8/9）"
+  }
+ ],
+ "rhizomucor-pusillus": [
+  {
+   "文件": "img/atlas/4bccefcd370039b4465a0714268ffb36d61eb0204b06c7d17b4d675eb754d68a.jpg",
+   "说明": "图 27-6-2　PDA 28℃ 培养 5 日 ×200；B"
+  },
+  {
+   "文件": "img/atlas/1460b8a2081fee9eee4029a845d81457a455b6295bc779ecf4938f4e17d4c0c2.jpg",
+   "说明": "图 27-6-2　囊轴和孢子囊孢子 PDA 28℃ 培养 5 日 ×400；C"
+  },
+  {
+   "文件": "img/atlas/4d392617849c4df31a398fbe01731134df2eb87c11ac158d90027a6da3d7b337.jpg",
+   "说明": "图 27-6-2　菌丝（不分隔）PDA 28℃ 培养 3 日，钙白荧光染色 ×400；D"
+  },
+  {
+   "文件": "img/atlas/fcf121fb2c62b409b1b7267707ded2e076c89f27e4821c1a0701bf85f1b373f9.jpg",
+   "说明": "图 27-6-2　假根 PDA 28℃ 培养 3 日，钙白荧光染色 ×200；E"
+  },
+  {
+   "文件": "img/atlas/0d6f4f4de4fd19cfa3e3dcfa6360793562a29a57505d8ad498725fede651642d.jpg",
+   "说明": "图 27-6-2　SDA 28℃ 培养 3 日；F"
+  },
+  {
+   "文件": "img/atlas/6059037f14ca09a3653ade5f7cbcc9f6042345a481bd810fb1dfc189d0f19399.jpg",
+   "说明": "图 27-6-2　SDA 28℃ 培养 7 日"
+  },
+  {
+   "文件": "img/atlas/66c1c92e3512c7f6e0ea8507af2744e5aef88666680cbbfc6fb3675556d3ba02.jpg",
+   "说明": "图 29-4-1　微小根毛霉菌落(SDA, 25℃, 3 日)"
+  },
+  {
+   "文件": "img/atlas/b9d75c5300d67a72390638c8c15210c925fc145629591f72693fccdccda1f67b.jpg",
+   "说明": "图 29-4-2　微小根毛霉菌落(SDA, 25℃, 5 日)"
+  }
+ ],
  "fusarium-solani": [
   {
    "文件": "img/atlas/8680242b8f4b7b53bb5f6791178b6f122d9e1219eada298966242302b62a294a.jpg",
@@ -7251,6 +7615,100 @@ window.DB.photosAtlas = {
    "说明": "图 27-17-2　单瓶着色霉 PDA 28℃ 培养 17 日"
   }
  ],
+ "exophiala-dermatitidis": [
+  {
+   "文件": "img/atlas/07dcec163c5d8e4ff5542b1a95507a362f016e560eb91857b18ec771a7b366df.jpg",
+   "说明": "图 27-19-1　外瓶霉镜下形态示意图"
+  },
+  {
+   "文件": "img/atlas/cf51573019513b4f33134c5ef6890c87ee4d57a8c766e443e97bf01055d36ceb.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/ae47a612a46046c72ad593d0f7e82380cf3de81761053893aee22426ee0dc1e9.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/e9b1f06310becd225bd5bbfe18aaf35cd0762b45493d4ab1a1991494644abd7c.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/48e917cc87dbda07ab8f9c1ad3ff508af2110293db1424364dd4b22fa7056017.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（4/5）"
+  },
+  {
+   "文件": "img/atlas/728831e2bfe3f9ef632436cb729f953b39ab4fe58a4e51c14a804748b0b54788.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（5/5）"
+  },
+  {
+   "文件": "img/atlas/2691f1056dac1dada6dec0b2b5a0ae3fdf75de14ad1c93431c9102041d73bd0f.jpg",
+   "说明": "图 27-19-3　皮炎外瓶霉菌 PDA 35℃培养 12 日；B"
+  },
+  {
+   "文件": "img/atlas/85e93a5eda70ae1ecdaa9f349762cf6cd3dc317c9cf1f0c420ac793d4a93daee.jpg",
+   "说明": "图 27-19-3　皮炎外瓶霉菌 SDA28℃培养 14 日；C"
+  }
+ ],
+ "exophiala-jeanselmei": [
+  {
+   "文件": "img/atlas/07dcec163c5d8e4ff5542b1a95507a362f016e560eb91857b18ec771a7b366df.jpg",
+   "说明": "图 27-19-1　外瓶霉镜下形态示意图"
+  },
+  {
+   "文件": "img/atlas/cf51573019513b4f33134c5ef6890c87ee4d57a8c766e443e97bf01055d36ceb.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/ae47a612a46046c72ad593d0f7e82380cf3de81761053893aee22426ee0dc1e9.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/e9b1f06310becd225bd5bbfe18aaf35cd0762b45493d4ab1a1991494644abd7c.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/48e917cc87dbda07ab8f9c1ad3ff508af2110293db1424364dd4b22fa7056017.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（4/5）"
+  },
+  {
+   "文件": "img/atlas/728831e2bfe3f9ef632436cb729f953b39ab4fe58a4e51c14a804748b0b54788.jpg",
+   "说明": "图 27-19-2　外瓶霉的镜下形态特征（5/5）"
+  },
+  {
+   "文件": "img/atlas/6f060d99ce712f77a56a08cf886720da8a3e1764548b942ebe6eef497085cc9a.jpg",
+   "说明": "图 27-19-3　甄氏外瓶霉 PDA 28℃培养 14 日；E"
+  },
+  {
+   "文件": "img/atlas/8cca46b1ebfcc520b88e0f5082a17927ebd39c511a88877f76caed8b3a97a3c8.jpg",
+   "说明": "图 28-5-4　正面; B"
+  }
+ ],
+ "exophiala-spinifera": [
+  {
+   "文件": "img/atlas/07dcec163c5d8e4ff5542b1a95507a362f016e560eb91857b18ec771a7b366df.jpg",
+   "说明": "图 27-19-1　外瓶霉镜下形态示意图"
+  },
+  {
+   "文件": "img/atlas/4dc84a6129a847e797f7eac964ef4c6e7a7734f10baecbbd8aea869a8816e567.jpg",
+   "说明": "图 28-5-15　7 日; B"
+  },
+  {
+   "文件": "img/atlas/5cc6f20a56de002ded37e29bcb2bfec026e85accbbc328acb51da693f51932f2.jpg",
+   "说明": "图 28-5-15　21 日"
+  },
+  {
+   "文件": "img/atlas/9514e2ca537c322ba53b0fdf10c8943cfc1dc8117e0ac9273f1b68d64e02c9f7.jpg",
+   "说明": "图 28-5-16　7 日; B"
+  },
+  {
+   "文件": "img/atlas/10f213d0432cc16b0ce324f8c95cb5abef0943a513e96a1dbd95dcf751dacee2.jpg",
+   "说明": "图 28-5-16　21 日"
+  },
+  {
+   "文件": "img/atlas/4d5955420c21a97c4f61b2f96bda148a1fe43f542699ce683a71926a223c0a7d.jpg",
+   "说明": "图 28-5-17　棘状外瓶霉引起的皮肤感染"
+  }
+ ],
  "cladosporium": [
   {
    "文件": "img/atlas/39a203dd093ab33fc874cc4cef884b4842e7cf2e8c09fcd8eab66401a6a32345.jpg",
@@ -7293,6 +7751,62 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/186103205486ebe9f3a26c2befd540014b58df106f57a7005e820b98f3b813a3.jpg",
    "说明": "图 27-20-4　卡氏枝孢瓶霉 PDA 28℃ 培养 14 日"
+  }
+ ],
+ "cladophialophora-carrionii": [
+  {
+   "文件": "img/atlas/210d0ade2561ff192eab53192bdc50f2ed1180b0c8643ea4111efab587004423.jpg",
+   "说明": "图 27-20-4　卡氏枝孢瓶霉 PDA 28℃ 培养 7 日，乳酸酚棉蓝染色 ×1000；D"
+  },
+  {
+   "文件": "img/atlas/186103205486ebe9f3a26c2befd540014b58df106f57a7005e820b98f3b813a3.jpg",
+   "说明": "图 27-20-4　卡氏枝孢瓶霉 PDA 28℃ 培养 14 日"
+  },
+  {
+   "文件": "img/atlas/91a732018148334c167faabdb4a53fdb91004f07492caf7bed9d114efada3ee2.jpg",
+   "说明": "图 28-9-1　卡氏枝孢瓶霉(SDA, 28℃, 5 日)"
+  },
+  {
+   "文件": "img/atlas/763bb9f67979dd8ef6d803a95b4597b5168e4b9f4a0b3d166e5547c8ef1b4743.jpg",
+   "说明": "图 28-9-2　卡氏枝孢瓶霉示意图: a. 分生孢子梗, b. 分生孢子"
+  },
+  {
+   "文件": "img/atlas/561cf2492be8424c14bb77b8103f5ae6776f433e138a06c1e29a4e78f43174a8.jpg",
+   "说明": "图 28-9-3　卡氏枝孢瓶霉镜下形态(乳酸酚棉蓝染色, ×400)"
+  }
+ ],
+ "curvularia-lunata": [
+  {
+   "文件": "img/atlas/6264c2d7cf764a9d9f08bd8631df6257f0229441a686283b78855a0ba7feaf1b.jpg",
+   "说明": "图 27-21-2　新月弯孢霉 PDA28℃ 培养 3 日，乳酸酚棉蓝染色 ×1000；B"
+  },
+  {
+   "文件": "img/atlas/45029a6b14a9b9ab37f401920d52129c5be9cb8cb0c7909150b72ff72631e0fd.jpg",
+   "说明": "图 27-21-2　新月弯孢霉（双极出芽）PDA 28℃ 培养 24h ×400；C"
+  },
+  {
+   "文件": "img/atlas/8d63cfd190369781a345d5934594b2e2b1e1e19f4f9ac727f65de907c7be8f58.jpg",
+   "说明": "图 27-21-2　新月弯孢霉 SDA 28℃ 培养 5 日；D"
+  },
+  {
+   "文件": "img/atlas/1d075c6cda45e25916faaaa953ac70c51cfd52130bc2a2dea5bcfce18330217b.jpg",
+   "说明": "图 27-21-2　新月弯孢霉 SDA 35℃ 培养 5 日；E"
+  },
+  {
+   "文件": "img/atlas/d08630d0e79adf3e2b10a1b59f1a6fd5ce6ae3b6aa57017ec5b12e89e56c8425.jpg",
+   "说明": "图 28-10-1　新月弯孢霉菌落(SDA, 28℃, 4日)。A. 正面; B. 背面"
+  },
+  {
+   "文件": "img/atlas/32f69d15260e8edccc311f657e451d8045b884dcef336d1b23c3be4040e1a8fd.jpg",
+   "说明": "图 28-10-2　×400; B"
+  },
+  {
+   "文件": "img/atlas/e8f5d9dfcc7f51e8d653b265ee2770917fa1aecfdc30bef947e08d12f5c894e4.jpg",
+   "说明": "图 28-10-2　×1000"
+  },
+  {
+   "文件": "img/atlas/3da42d8fdf85471092486cbf2ec330bff358280b5aaa5948c0e55204b4d6772f.jpg",
+   "说明": "图 28-10-16　新月弯孢霉镜检: a. 分生孢子梗, b. 分生孢子(PDA, 25℃小培养7日, 乳酸酚棉蓝染色, ×400)"
   }
  ],
  "curvularia": [
@@ -8053,6 +8567,20 @@ window.DB.photosAtlas = {
    "说明": "图 8-4-18　宋内志贺菌在 SS 琼脂平板上纯培养的菌落特征(18～24 h)"
   }
  ],
+ "enterobacter-asburiae": [
+  {
+   "文件": "img/atlas/0b1ab2b728090d3a012c8efb73b7bad7b67e0e509db31a1f3989565276c81f83.jpg",
+   "说明": "图 8-7-8　阿氏肠杆菌在血琼脂平板上的菌落特征（1/2）"
+  },
+  {
+   "文件": "img/atlas/ab921c014fc6b15329213ecbff774ccfb46a7e974a2e0ec029f40b7678d6cc4b.jpg",
+   "说明": "图 8-7-8　阿氏肠杆菌在血琼脂平板上的菌落特征（2/2）"
+  },
+  {
+   "文件": "img/atlas/3056906a289df108cf9ddbbd8573f95250e629afff020b715cec4178abb76dc5.jpg",
+   "说明": "图 8-7-9　阿氏肠杆菌在麦康凯琼脂平板上的菌落特征"
+  }
+ ],
  "providencia-rettgeri": [
   {
    "文件": "img/atlas/ead77781f7982ca498dccdae40dc0d2c4d38095f77b287194e32d3cde6444c64.jpg",
@@ -8149,6 +8677,54 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/a2e849683f541eae7cf3a2551f9e285a99a3068f243cdef39c8022b53ddf8c85.jpg",
    "说明": "图 9-3-7　豚鼠气单胞菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "kluyvera-cryocrescens": [
+  {
+   "文件": "img/atlas/ae42180cbe4413b6ee1cd16110e2fcf87ac89ac5bda520415b42ca6a4b88743e.jpg",
+   "说明": "图 10-2-1　栖冷克吕沃尔菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "tatumella-ptyseos": [
+  {
+   "文件": "img/atlas/d9bb6216bc1f42e0ea2b2aa302a9b3d54aeff1d9b127071bf837a8aad261f682.jpg",
+   "说明": "图 10-3-1　痰塔特姆菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/3addd514ecc0412459de00986874b783058a640ff5c68db85b906c10cffe5aa6.jpg",
+   "说明": "图 10-3-2　痰塔特姆菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "pseudomonas-luteola": [
+  {
+   "文件": "img/atlas/cc9daf8c6112f979badbdb9bc4fce9d4fb6f859fef0ce7f8d5f130eef972f7fe.jpg",
+   "说明": "图 11-2-16　浅黄假单胞菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/e57657afbdd675d39022832cb363a0679b82ff846d32aca42be4d9fa62abc6b0.jpg",
+   "说明": "图 11-2-17　浅黄假单胞菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "pseudomonas-oryzihabitans": [
+  {
+   "文件": "img/atlas/ea71d4fd4f20b0cd8d92cf41274c2f37d503a4824bf7fd1408355a3d44314166.jpg",
+   "说明": "图 11-2-24　栖稻假单胞菌纯培养的镜下形态(革兰染色)"
+  },
+  {
+   "文件": "img/atlas/88ce7db4aa88aab3f8df8811061971fa524c0097460121b758a26ec67756d9a0.jpg",
+   "说明": "图 11-2-25　栖稻假单胞菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/f5075c2d52ac438c69337084e3a325619b30d57ed9854be8f9cc07f47de4962e.jpg",
+   "说明": "图 11-2-26　栖稻假单胞菌在血琼脂平板上的菌落特征(72 h)"
+  },
+  {
+   "文件": "img/atlas/0457f9fe28a5092dc7055d8061b5384e9ae8ee01f30e682e73110b264ed07daf.jpg",
+   "说明": "图 11-2-27　栖稻假单胞菌在麦康凯琼脂平板上(18～24 h)的菌落特征(箭头所示)"
+  },
+  {
+   "文件": "img/atlas/c6ac5678b33933e7d85e47ae972e0c7ae9af7412611e73f773e11eec54bf8fc9.jpg",
+   "说明": "图 11-2-28　栖稻假单胞菌在巧克力琼脂平板上(18～24 h)的菌落特征（箭头所示）"
   }
  ],
  "moraxella-osloensis": [
@@ -8311,6 +8887,68 @@ window.DB.photosAtlas = {
    "说明": "图 25-1-43　乳酒念珠菌镜检(乳酸酚棉蓝染色, ×600)"
   }
  ],
+ "candida-lipolytica": [
+  {
+   "文件": "img/atlas/4e8be9d20db145aa6d5e1eafee55410544c15d48719e6b7d8cad7164388f2fa4.jpg",
+   "说明": "图 25-1-48　解脂念珠菌在 BA 上的菌落特征(35℃)。A. 1 日；B. 3 日；C. 5 日"
+  },
+  {
+   "文件": "img/atlas/d1a722987741a43b3d79f881df6262eae15f80c0fbe573421fa1e0de63b9d3eb.jpg",
+   "说明": "图 25-1-49　解脂念珠菌在 SDA 上的菌落特征(35℃)。A. 1 日；B. 3 日；C. 5 日"
+  },
+  {
+   "文件": "img/atlas/890687519f97cf0ec0700a165287feb7135b55771019ced7fbb93487510b4506.jpg",
+   "说明": "图 25-1-50　1 日；B"
+  },
+  {
+   "文件": "img/atlas/166149629003501619852d226e6a9f0ede34535e44b1ca4d37783d7066802b4d.jpg",
+   "说明": "图 25-1-50　3 日；C"
+  },
+  {
+   "文件": "img/atlas/98026d0b567d0a45a8ba4c206e2b1f8ef45b3cb1319b6ee876aa6b41c92a4c4d.jpg",
+   "说明": "图 25-1-50　5 日"
+  },
+  {
+   "文件": "img/atlas/ac32e7063c6b0b8a5700c8d45f7191567f3cf30a1c31264cb7c68f7211988af4.jpg",
+   "说明": "图 25-1-51　示意图；B"
+  },
+  {
+   "文件": "img/atlas/c20e3b2ce047fc776992a705bba1ac13348c680f0b8a38c1697fbdaeb16c4431.jpg",
+   "说明": "图 25-1-51　BA, 35℃培养，革兰染色，×1000"
+  }
+ ],
+ "candida-norvegensis": [
+  {
+   "文件": "img/atlas/ea383c93134730e49776e19cfda9150ec25657ede6cca97805bd44e6c69f9fe6.jpg",
+   "说明": "图 25-1-52　挪威念珠菌在 BA 上的菌落特征(35℃)。A. 1 日；B. 3 日；C. 5 日（1/2）"
+  },
+  {
+   "文件": "img/atlas/f84c02b71bb199d079c4deceb424e08d1822e23dd7fb780cdff14e300fb17638.jpg",
+   "说明": "图 25-1-52　挪威念珠菌在 BA 上的菌落特征(35℃)。A. 1 日；B. 3 日；C. 5 日（2/2）"
+  },
+  {
+   "文件": "img/atlas/74e5f041dcc23bf2adcb32a69fef2e2ac205e85f8f8d2ea5b14556b3eb563f09.jpg",
+   "说明": "图 25-1-53　1 日"
+  },
+  {
+   "文件": "img/atlas/d3ca7dd64994faac1b17abde71b16e32a3c0abff5804f8a7c053029e06f4b3fa.jpg",
+   "说明": "图 25-1-53　3 日"
+  },
+  {
+   "文件": "img/atlas/f7b857110729728fd74be4c253df28ae6526b6a22ab2b65f9b4088edd4e80e66.jpg",
+   "说明": "图 25-1-53　5 日"
+  },
+  {
+   "文件": "img/atlas/f257ad4418025165851cca5d2651e19e9156b22c26b7ea6a8d3163d359433712.jpg",
+   "说明": "图 25-1-55　挪威念珠菌镜检(BA, 35℃培养, 革兰染色, ×1000)"
+  }
+ ],
+ "malassezia-slooffiae": [
+  {
+   "文件": "img/atlas/3199c222479c430ae8788f985270b5f9c1fbda987093e23a8c4301bb491e9e25.jpg",
+   "说明": "图 25-7-7　斯洛菲马拉色菌培养物镜下形态(革兰染色, ×400)"
+  }
+ ],
  "trichophyton-indotineae": [
   {
    "文件": "img/atlas/67405c8773c8255bbcd87e9b77392efcb797b0f0f784345dec75b7e54cbb60af.jpg",
@@ -8333,20 +8971,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/7e27a396e8c9032fb04e1cadccb4a472a409ab1eccb2743c481a1e1a3b64b3f6.jpg",
    "说明": "图 26-3-14　奥杜盎小孢子菌示意图: a. 大分生孢子, b. 小分生孢子, c. 厚垣孢子"
-  }
- ],
- "penicillium-citrinum": [
-  {
-   "文件": "img/atlas/ca50e0a9f83d3e76a4dadb8bfd35d57fee7c829a30735c81c7e1f843dc846158.jpg",
-   "说明": "图 27-1-2　桔青霉菌落(PDA, 28℃, 7日)"
-  },
-  {
-   "文件": "img/atlas/bb7f31bca74cfc83a172c626fb1d602a14d42fe3215e21ad2126d16d44db179c.jpg",
-   "说明": "图 27-1-3　桔青霉纯培养镜下形态(乳酸酚棉蓝染色, ×400)"
-  },
-  {
-   "文件": "img/atlas/c24da9b5f0159332891db4a9163742af6c7b3130721a13e2bb184562572576bd.jpg",
-   "说明": "图 27-1-5　桔青霉帚状枝(25℃, 7日)"
   }
  ],
  "penicillium-chrysogenum": [
@@ -8661,10 +9285,406 @@ window.DB.photosAtlas = {
    "说明": "图 27-16-2　平行排列的菌丝, 假头状分生孢子"
   }
  ],
+ "pleurostoma-richardsiae": [
+  {
+   "文件": "img/atlas/df60d779777547f583a1f2688c7ad8e4a4ecfdc1c77ccd3405c8d61017407528.jpg",
+   "说明": "图 28-3-1　正面; B"
+  },
+  {
+   "文件": "img/atlas/10882fcf4b04e006d4e3e80aa714602239304421a480fc1763556926fe54ac3e.jpg",
+   "说明": "图 28-3-1　反面; C"
+  },
+  {
+   "文件": "img/atlas/9dbdaf26a98128a67423c274fd072af14a4869aca1737c1f198ab49bdffa0586.jpg",
+   "说明": "图 28-3-1　侧面"
+  },
+  {
+   "文件": "img/atlas/1ab1bee6027b0858310eea359f793f828012b1fcb93abb3741b764fc2ae3831e.jpg",
+   "说明": "图 28-3-2　正面; B"
+  },
+  {
+   "文件": "img/atlas/0e078a7e6b53d773b73b339106db60f534cce5d2a301826fe15d207d5b6449fc.jpg",
+   "说明": "图 28-3-2　反面; C"
+  },
+  {
+   "文件": "img/atlas/6f7b2eaf947b7a114cd89b3949d4b56849b3d02ad2d51179389db8d055aaf5e4.jpg",
+   "说明": "图 28-3-2　侧面"
+  },
+  {
+   "文件": "img/atlas/a8e0c2d9c8db6e931fa036c0f8d131af61dd9b47850367590a72ae07564934c5.jpg",
+   "说明": "图 28-3-3　烂木歪嘴座壳霉示意图: a. 瓶梗, b. 瓶口, c. 分生孢子"
+  },
+  {
+   "文件": "img/atlas/1b3b1e362bfdf0052b87133d00bdc713f72491b25b96259bd22edb20684ee896.jpg",
+   "说明": "图 28-3-4　烂木歪嘴座壳霉镜检(PDA, 25℃ 小培养 6 日, 空气介质, ×400)"
+  }
+ ],
+ "cladosporium-herbarum": [
+  {
+   "文件": "img/atlas/fa387c92f4dbcc93d82eb86986097f6418361111b2c8d6488d8235dfff869888.jpg",
+   "说明": "图 28-8-1　7 日；B"
+  },
+  {
+   "文件": "img/atlas/aa75d33ee1deb6909e13610733fe54e33d0e084e5c19770bda025d13fcd63ee1.jpg",
+   "说明": "图 28-8-1　21 日"
+  },
+  {
+   "文件": "img/atlas/c14004dda1132f2ab18a06bed37aa35b92f0b74efa18800d2fec98d36eabc173.jpg",
+   "说明": "图 28-8-2　7 日; B"
+  },
+  {
+   "文件": "img/atlas/6cebcfe5778983a4ab542eb66be5965d5b3022add3df3493f31c5eb0ccf42a9d.jpg",
+   "说明": "图 28-8-2　21 日"
+  },
+  {
+   "文件": "img/atlas/58d1afecf70b3e2bdc18a978459edaba81ceb65f32fd9a9901c0a3bb0af9ff89.jpg",
+   "说明": "图 28-8-3　草本枝孢霉菌落(CHROMagar Candida 显色平板, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/79aa38a5e807cc0349e4a3b49a809d6ecf65cf8796de6640f3cfaf6af63d2e09.jpg",
+   "说明": "图 28-8-4　草本枝孢霉纯培养的镜下形态(乳酸酚棉蓝染色, ×400)"
+  }
+ ],
+ "cladosporium-sphaerospermum": [
+  {
+   "文件": "img/atlas/2dee71b8aea187b63c59703a1edacfe186b2a84229fa32c82e6ff386d3c2804f.jpg",
+   "说明": "图 28-8-5　球孢枝孢霉菌落(SDA, 25℃培养7日)"
+  },
+  {
+   "文件": "img/atlas/fc158147c6c5bbe67accc2f2fddd8675076052d12bc7ba09068ac0f0a602e895.jpg",
+   "说明": "图 28-8-6　球孢枝孢霉菌落反面形态(SDA, 25℃培养7日)"
+  },
+  {
+   "文件": "img/atlas/6f72228c210bae85277d160c94f1262119bb9560fac9b45863e10e52d406ce6c.jpg",
+   "说明": "图 28-8-7　球孢枝孢霉菌落(PDA, 25℃培养7日)"
+  },
+  {
+   "文件": "img/atlas/28c6a53485edc025ce9a998a84ebd7795c659c7d0d38d962def90040a7429d89.jpg",
+   "说明": "图 28-8-8　球孢枝孢霉菌落反面形态(PDA, 25℃培养7日)"
+  },
+  {
+   "文件": "img/atlas/628eb17fce34516f6c874ed38a2536b7eca1baf110954d5b548ff2feba21ae06.jpg",
+   "说明": "图 28-8-9　球孢枝孢霉镜检: a. 分生孢子梗, b. 枝分生孢子, c. 分生孢子, d. 脐(PDA, 25℃ 小培养 7 日, 盐水介质, ×1000)"
+  },
+  {
+   "文件": "img/atlas/585e4cad5eb3f5c1a62a92882b1318b42cbb4ab272844dbe6447b46ca85cf9d1.jpg",
+   "说明": "图 28-8-10　球孢枝孢霉镜检: a. 分生孢子梗, b. 枝分生孢子, c. 分生孢子, d. 脐(PDA, 25℃ 小培养 7 日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/9e92b1ec6a2b0368bead5d91b643106794958126dafb5e8f64beae095b4ca7d3.jpg",
+   "说明": "图 28-8-11　球孢枝孢霉镜检: a. 分生孢子梗, b. 枝分生孢子, c. 分生孢子, d. 脐(PDA, 25℃小培养7日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/a8c3705ef7200e2960d2b436202a7d322f4d66d202e9fe6730ff1a1cabcdcd6c.jpg",
+   "说明": "图 28-8-12　球孢枝孢霉镜检: a. 分生孢子梗, b. 枝分生孢子, c. 分生孢子, d. 脐(PDA, 25℃小培养7日, 乳酸酚棉蓝染色, ×400)"
+  }
+ ],
+ "cladophialophora-bantiana": [
+  {
+   "文件": "img/atlas/40629d6ba3c4affd0e09fdc4d1eab786da9cb5a2ab90b7a1caf384951d477098.jpg",
+   "说明": "图 28-9-4　班替枝孢瓶霉菌落(PDA, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/c59564ca91035e9fc2820bf7ee6e178917c7c00a7d58a2d5bc4d48b11f8b5c3d.jpg",
+   "说明": "图 28-9-5　班替枝孢瓶霉菌落(SDA, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/e58d81c424f6733202304ae0e46deb2f7e4c6b8c17a642da25a983084ecf110b.jpg",
+   "说明": "图 28-9-6　班替枝孢瓶霉菌落(血琼脂平板,28℃,7日)"
+  },
+  {
+   "文件": "img/atlas/ba2f121a1139875bb5da96f11f65140a33742f99d1664700510bdf30c0a3c0de.jpg",
+   "说明": "图 28-9-7　班替枝孢瓶霉菌落(CHROMagar Candida 显色平板, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/0e9890b1b804eb7271ec95e8177630c71cfe116ac836a3488b6e00a4054b97b0.jpg",
+   "说明": "图 28-9-8　班替枝孢瓶霉示意图: a. 分生孢子梗, b. 分生孢子"
+  },
+  {
+   "文件": "img/atlas/6a9da46f9a30581f7a7f42ba1a0a1db7da6bc967a17135d330b9f67c45a9cbb8.jpg",
+   "说明": "图 28-9-10　班替枝孢瓶霉镜下形态(亚甲蓝染色, ×400)（1/2）"
+  },
+  {
+   "文件": "img/atlas/42b3530ecb2fc63889bc9de6d506eef689f2a08586e349c304ab712f859a1a06.jpg",
+   "说明": "图 28-9-10　班替枝孢瓶霉镜下形态(亚甲蓝染色, ×400)（2/2）"
+  },
+  {
+   "文件": "img/atlas/7eced228f095964958ffb6ae96d2232a51c596e9ce6069fc4461f497009a34c7.jpg",
+   "说明": "图 28-9-11　班替枝孢瓶霉镜下形态(乳酸酚棉蓝染色, ×400)"
+  }
+ ],
+ "curvularia-spicifera": [
+  {
+   "文件": "img/atlas/64daadd5fd01e293efbb3089f0568a92e0491157533caa4408f0f7f399972a01.jpg",
+   "说明": "图 28-10-6　长穗弯孢霉菌落(SDA, 28℃, 3日)。A. 正面; B. 背面"
+  },
+  {
+   "文件": "img/atlas/2496ed725f3e51c1645da79880556a2a894bf6297564f6f377f26a27ef001119.jpg",
+   "说明": "图 28-10-7　长穗弯孢霉镜下形态(棉蓝染色, SDA, 4 日, ×400)"
+  }
+ ],
+ "curvularia-americana": [
+  {
+   "文件": "img/atlas/6a13a41df9826b973b771208baecd46ebb98cfc95d9a2784ee55c2ebeea376cf.jpg",
+   "说明": "图 28-10-8　美洲弯孢霉在 SDA 上的菌落特征(25℃,7 日)。A. 正面; B. 反面"
+  },
+  {
+   "文件": "img/atlas/d5e286fb86c95b442ffbfdfb419c2f9d50cafac0cee60e8162f34e5fe106162d.jpg",
+   "说明": "图 28-10-9　正面；B"
+  },
+  {
+   "文件": "img/atlas/54b9a7fc8a212862a76211cbda8ea84f8dfbb0769bf83b9781f3ce7032800fc4.jpg",
+   "说明": "图 28-10-9　反面"
+  },
+  {
+   "文件": "img/atlas/e23aa7e7f62c69508d011070e8e5596a282a12ecbe710e5922334dfbc1752448.jpg",
+   "说明": "图 28-10-10　美洲弯孢霉示意图: a. 分生孢子梗, b. 分生孢子"
+  },
+  {
+   "文件": "img/atlas/67c8ef1efcbda8dbc7307ee53ee42b8f966d6249e6fdfb78f3c740c25ab6f120.jpg",
+   "说明": "图 28-10-11　美洲弯孢霉镜检: a. 分生孢子梗, b. 分生孢子(PDA, 25℃小培养7日,乳酸酚棉蓝染色,×400)"
+  },
+  {
+   "文件": "img/atlas/6b95cff5af2f3db428f21414c0b0f4397eba8f12a2b2e090dbe5ebef66e58883.jpg",
+   "说明": "图 28-10-12　美洲弯孢霉镜检: a. 分生孢子梗, b. 分生孢子(PDA, 25℃小培养7日,乳酸酚棉蓝染色,×400)"
+  },
+  {
+   "文件": "img/atlas/ffd24e1ab52a683851f7ebd8e5912279fddbd57804b12fe50ad13071fdb69649.jpg",
+   "说明": "图 28-10-13　美洲弯孢霉镜检: a. 分生孢子梗, b. 分生孢子(PDA, 25℃小培养7日,乳酸酚棉蓝染色,×400)"
+  },
+  {
+   "文件": "img/atlas/ad3840376149263c49e8fe881c812a56adfd5e042bc0f7fef0906c17cef52cd5.jpg",
+   "说明": "图 28-10-14　美洲弯孢霉镜检: a. 分生孢子梗, b. 分生孢子(PDA, 25℃小培养7日,乳酸酚棉蓝染色,×400) 2. 与新月弯孢相鉴别 美洲弯孢的分生孢子为离壁隔膜, 新月弯孢的分生孢子为真隔膜(图 28-10-15 …"
+  }
+ ],
+ "curvularia-hawaiiensis": [
+  {
+   "文件": "img/atlas/d09ed8760e8575628b6dea8b16fef471f428ce0783d1ae928c1ff50b50e65033.jpg",
+   "说明": "图 28-10-17　夏威夷弯孢霉在 SDA 上的菌落特征(25℃, 7 日)。A. 正面; B. 反面; C. 侧面"
+  },
+  {
+   "文件": "img/atlas/4d7d7b34a0d089c1340e82fb4bd60f149956e2c90b15aa0a60a734aa74056d97.jpg",
+   "说明": "图 28-10-18　夏威夷弯孢霉在 PDA 上的菌落特征(25℃,7 日)。A. 正面；B. 反面；C. 侧面"
+  },
+  {
+   "文件": "img/atlas/4bfe435b99e866fec6efa0321c41927b0d07aeb3ccf5060e0adf17966a71506d.jpg",
+   "说明": "图 28-10-19　夏威夷弯孢霉示意图: a. 分生孢子梗, b. 分生孢子"
+  },
+  {
+   "文件": "img/atlas/6b6c2cf5aa5db393dd281b3adf114cc46fa1e0f2deb9b6e27678836d7b380b8f.jpg",
+   "说明": "图 28-10-20　夏威夷弯孢霉镜检: a. 分生孢子梗, b. 分生孢子 (PDA, 25℃ 小培养 7 日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/714f6ed9a8d205e901ee81f411752590efd87c6038ee3c8b4bf4c92f47a3f9a2.jpg",
+   "说明": "图 28-10-21　夏威夷弯孢霉镜检: a. 分生孢子梗, b. 分生孢子 (PDA, 25℃ 小培养 7 日, 乳酸酚棉蓝染色, ×400)"
+  }
+ ],
  "scedosporium-boydii": [
   {
    "文件": "img/atlas/4d741b98cffa3bae75eeaf5f3a79523a791127994781f5d6a3c9c0a6445f1ebe.jpg",
    "说明": "图 28-16-19　波氏赛多孢黏束产孢(PDA, 35℃, 7日, 乳酸酚棉蓝染色, ×1000) 2. 与菌属内其他菌种的鉴别 位于菌丝两侧的分生孢子梗形成“小竹枝条样”或不典型“帚状枝样”，镜下形态结构和少见分隔的分生孢子是波氏赛多…"
+  }
+ ],
+ "stachybotrys-chartarum": [
+  {
+   "文件": "img/atlas/b4970765bbf3474cc57f7367b83aaee8d7e7d1bcb0154ae3713166af81da76dd.jpg",
+   "说明": "图 28-24-1　黑葡萄穗霉菌落正面(SDA, 25℃, 12 日)"
+  },
+  {
+   "文件": "img/atlas/32a1d8fa40a3ae643cdc7d9e23d8060ada8753d5ac21a17d24e7ac8ab9fbe8dc.jpg",
+   "说明": "图 28-24-2　黑葡萄穗霉菌落反面(SDA, 25℃, 12 日)"
+  },
+  {
+   "文件": "img/atlas/0ef060e0e1d73de06470b441db3f70fe39bd2ca6908c8eac589ec39b707c2a4f.jpg",
+   "说明": "图 28-24-3　黑葡萄穗霉菌落正面(PDA, 25℃, 12 日)"
+  },
+  {
+   "文件": "img/atlas/5cbf03e6a57acd217e874f152c754f534bce8e368ac7bf57b0c6a0cce62dd75a.jpg",
+   "说明": "图 28-24-4　黑葡萄穗霉菌落反面(PDA, 25℃, 12日)"
+  },
+  {
+   "文件": "img/atlas/dae40a409bec153f6428c671c3835ad0e5d9126adb5cda4af34dfff0e31a8aa2.jpg",
+   "说明": "图 28-24-6　黑葡萄穗霉镜检(SDA, 25℃, 6 日, 乳酸酚棉蓝染色, ×1000)"
+  },
+  {
+   "文件": "img/atlas/d21c95f36592b73e1d2480bd6e4c6bc721e7aeec86a3b8b75799ec6eabb6c3ed.jpg",
+   "说明": "图 28-24-7　黑葡萄穗霉镜检(SDA, 25℃, 6 日, 乳酸酚棉蓝染色, ×1000) 2. 与曼农孢霉的鉴别 两者在显微镜下形态相似；但葡萄穗霉分生孢子呈肾形或长卵圆形，在瓶梗顶端聚集成葡萄状排列(图 28-24-8)；而曼…"
+  },
+  {
+   "文件": "img/atlas/e264a0c3f3c51269e14eb42157327c1a123d0e7ac7fcb4ee4f46945fdbd5bdd6.jpg",
+   "说明": "图 28-24-8　黑葡萄穗霉镜检(SDA, 25℃, 6 日, 乳酸酚棉蓝染色, ×1000)"
+  },
+  {
+   "文件": "img/atlas/76c18f24cc25b572609ff9551eca220c50b9d3788178583b486927ea2280d52b.jpg",
+   "说明": "图 28-24-10　正面; B"
+  }
+ ],
+ "chaetomium-globosum": [
+  {
+   "文件": "img/atlas/6eb9d605560e9ddd0a639ab45b2943ee37ceec79359e12a5f09115a57b792977.jpg",
+   "说明": "图 28-29-4　正面; B"
+  },
+  {
+   "文件": "img/atlas/f9acf8b95925702cd1795a87158ee4846701505287390f0f5409024188aa133b.jpg",
+   "说明": "图 28-29-4　反面"
+  },
+  {
+   "文件": "img/atlas/21b35c1dedafe852009ddb57e2e5f308a6b30c8d7ad660eb4088deab68732d81.jpg",
+   "说明": "图 28-29-5　正面; B"
+  },
+  {
+   "文件": "img/atlas/04a9425d9727378f3f04229cd36802e9ad2b97067c00aeb40251f6f063c52fa7.jpg",
+   "说明": "图 28-29-5　反面"
+  },
+  {
+   "文件": "img/atlas/c86beac71344e0df2e91a323a284d6e32a5ce06062b94066b478206685172b70.jpg",
+   "说明": "图 28-29-6　球毛壳菌镜检: a. 子囊果, b. 附属丝(PDA, 25℃培养14日,乳酸酚棉蓝染色, ×100)"
+  },
+  {
+   "文件": "img/atlas/d6ef98c4676eb3790898fbda6c720768df0e7076d5780d18b44f85ff37ab248b.jpg",
+   "说明": "图 28-29-7　球毛壳菌镜检: a. 子囊果, b. 子囊, c. 子囊孢子, d. 附属丝 (PDA, 25℃培养14日, 透明胶粘取, 乳酸酚棉蓝染色, ×400)"
+  }
+ ],
+ "mucor-racemosus": [
+  {
+   "文件": "img/atlas/729271e79e558fb52454f7ce1ee3da0e9befc711a671fe88348f6dba74ed88f1.jpg",
+   "说明": "图 29-1-1　总状毛霉菌落(PDA, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/c3728898b32887ffad44c0ee1b055097b1d5c0378ac5d773dadef67a1527d5b5.jpg",
+   "说明": "图 29-1-2　总状毛霉菌落(SDA, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/c84820f33f3e8c45b34a652654ef12fcf4545b46da3b7369e0260a42ceeddf06.jpg",
+   "说明": "图 29-1-3　总状毛霉菌落(CZA, 28℃, 7日)"
+  },
+  {
+   "文件": "img/atlas/85fb6b3208fe468d78536704e21eb326b8b7a1cd3c0804e03ec52fdfd0bb5129.jpg",
+   "说明": "图 29-1-4　总状毛霉菌落(血琼脂平板,28℃,7日)"
+  },
+  {
+   "文件": "img/atlas/5982a9d0295626a4579dec202e7d50672a9971e2a86c87a04682c7a46559aa93.jpg",
+   "说明": "图 29-1-5　总状毛霉菌落(CHROMagar Candida 显色平板, 28℃, 7 日)"
+  }
+ ],
+ "mucor-irregularis": [
+  {
+   "文件": "img/atlas/2bf31b63cfd52af389043895328d3e4dc5d4ee807ca86ebae6eb03751cdfc694.jpg",
+   "说明": "图 29-1-8　正面，B"
+  },
+  {
+   "文件": "img/atlas/92d0b6d4fc3683f64e656178505713c80e5e4d88b7bb7e505744f59629265637.jpg",
+   "说明": "图 29-1-8　反面"
+  },
+  {
+   "文件": "img/atlas/4db2c4e98fdc66df02902e89248280fba6b051c9938486791e3ae01aa4a57286.jpg",
+   "说明": "图 29-1-9　正面, B"
+  },
+  {
+   "文件": "img/atlas/588a6146706099cd243ed7a872206d1cf9634fd610083da6f35d14c7caa9f35a.jpg",
+   "说明": "图 29-1-9　反面"
+  },
+  {
+   "文件": "img/atlas/62aa414123a469bfd4f0ac16dae735a2c74b1aa08fc2acbe6e390105049a2b5c.jpg",
+   "说明": "图 29-1-11　不规则毛霉镜下形态(PDA, 25℃培养4日, 乳酸酚棉蓝染色, ×400)"
+  }
+ ],
+ "mucor-ellipsoideus": [
+  {
+   "文件": "img/atlas/83c23acf0924e6acfaa12d430c98fc7a2d41fd76321f54192c8c9177e63f821a.jpg",
+   "说明": "图 29-1-16　椭圆毛霉菌落(SDA, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/19d6be0899bc071f6cce6c98ec76cea284fce5fb1692a0530efb614a3c0e7986.jpg",
+   "说明": "图 29-1-17　椭圆毛霉菌落(PDA, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/fa8f4d66f098c6208faa74e3c60971a0bc33de0c9b3ce0f5623071a97cdda396.jpg",
+   "说明": "图 29-1-18　椭圆毛霉镜检(PDA, 28℃, 2 日, 乳酸酚棉蓝染色, ×1000)"
+  },
+  {
+   "文件": "img/atlas/3353d644b693255cac385a3891a1287638665e33a9ba7f20abebb65b2a660776.jpg",
+   "说明": "图 29-1-19　椭圆毛霉镜检(PDA, 28℃, 4 日, 乳酸酚棉蓝染色, ×1000)"
+  },
+  {
+   "文件": "img/atlas/08aa1e43510c1fa0e1270dfb752298f1c7c3e6efc70de7b09ac45aae9f8b9c93.jpg",
+   "说明": "图 29-1-20　椭圆毛霉镜检: 大量的厚壁孢子(PDA, 28℃, 4 日, 乳酸酚棉蓝染色, ×1000)"
+  },
+  {
+   "文件": "img/atlas/fbd0d4f1c81e2a2611093ac792cac0b051d0d84ebd1ae1ae98e4993c3cc23b89.jpg",
+   "说明": "图 29-1-22　椭圆毛霉镜检: 大量的厚壁孢子(PDA, 28℃, 4日, 未染色, ×1000)"
+  },
+  {
+   "文件": "img/atlas/9d8438844c3f38519793c037d5e39321f3bcbc2ca37ee98ae3a3742e030dbdd5.jpg",
+   "说明": "图 29-1-21　椭圆毛霉镜检: 大量的厚壁孢子(PDA, 28℃, 4 日, 乳酸酚棉蓝染色, ×1000)"
+  },
+  {
+   "文件": "img/atlas/6949e30f2dcfd0e6e9892ebf6a52507f50e6aa4f3fbadb933a2a934f463d7d37.jpg",
+   "说明": "图 29-1-23　椭圆毛霉镜检: 大量的厚壁孢子(PDA, 28℃, 4 日, 未染色, ×1000)"
+  }
+ ],
+ "lichtheimia-coerulea": [
+  {
+   "文件": "img/atlas/0ee8aa6986a6413df83cce9303b953cf224afd00c994d2386849fa86d664ed63.jpg",
+   "说明": "图 29-2-10　蓝色横梗霉菌落(PDA, 28℃, 7日)"
+  },
+  {
+   "文件": "img/atlas/c4dec41bdc2ab1f2237ab725d9197bf051b9ad5d3e67e62359c875d311c6ef9a.jpg",
+   "说明": "图 29-2-11　蓝色横梗霉菌落(SDA, 28℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/f1f4506806c6714c80ee8701886983382436de670a6f22889f0e71bf13427ef4.jpg",
+   "说明": "图 29-2-12　蓝色横梗霉菌落 (CHROMagar Candida 显色平板, 28 ℃, 7 日)"
+  },
+  {
+   "文件": "img/atlas/d389707e441edd2adeac757500391953bce96322f93b4acccce37a73091a94b5.jpg",
+   "说明": "图 29-2-13　蓝色横梗霉纯培养的镜下形态(乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/642c1864b96939487092185e907848b89530b3c05f95e497c1f5279aa2b120dd.jpg",
+   "说明": "图 29-2-14　蓝色横梗霉纯培养的镜下形态(未染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/a9339dafb1478f696b99b2d3704581baa51ed190f2cc19099af875ad57f1c057.jpg",
+   "说明": "图 29-2-15　蓝色横梗霉镜下形态(乳酸酚棉蓝染色, ×1000)（1/2）"
+  },
+  {
+   "文件": "img/atlas/a0ae14584672e04bf65d4b26dbba55549ba976df469d8912fc69c899f715ed98.jpg",
+   "说明": "图 29-2-15　蓝色横梗霉镜下形态(乳酸酚棉蓝染色, ×1000)（2/2）"
+  }
+ ],
+ "rhizopus-microsporus": [
+  {
+   "文件": "img/atlas/1807e6bc6fa80eecd3b2c4fb8adb231f42dcc2d6b4d9fdde4025ebbf91d1e067.jpg",
+   "说明": "图 29-3-8　小孢根霉菌落(血琼脂平板,28℃,3日)"
+  },
+  {
+   "文件": "img/atlas/b167629dc54dedd06dc975ca9e819578fb710b6c790e2b57f6f6a08d353078cd.jpg",
+   "说明": "图 29-3-9　小孢根霉菌落(PDA, 28℃, 3 日)"
+  },
+  {
+   "文件": "img/atlas/d53032dedcdcd4663a151f057ca74da6172f86964236607bd2978a22ffe45ab7.jpg",
+   "说明": "图 29-3-10　小孢根霉菌落(PDA, 35℃, 3 日)"
+  },
+  {
+   "文件": "img/atlas/debf5094b2bfe1b8e113608ef63b9c8c5682ad2b56265db1e48724ed8319cb4f.jpg",
+   "说明": "图 29-3-11　小孢根霉菌落(SDA, 28℃, 2 日)"
+  },
+  {
+   "文件": "img/atlas/4851a7a67b22e3902efe465d423bfed65bda030d25973d39ee7dd1cd2ee5b414.jpg",
+   "说明": "图 29-3-12　小孢根霉菌落(中国蓝琼脂平板,28℃,5日)"
+  },
+  {
+   "文件": "img/atlas/567c04d05abe12c47a6e12ce1ffbf65768fe7c9e88b165beb2ab699a2d75070c.jpg",
+   "说明": "图 29-3-13　小孢根霉镜检: 假根与孢囊梗对生 (PDA, 35℃, 3日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/085e1f29ec1883059be6847e6bdeb3b90483ef30f5cf5e01188d4b9344adda2c.jpg",
+   "说明": "图 29-3-14　小孢根霉镜检: 假根与孢囊梗对生(SDA, 28℃, 3日, 乳酸酚棉蓝染色, ×400)"
+  },
+  {
+   "文件": "img/atlas/b23084f6aff8c0beafbf933ba86ba00dacf73bea11698960ffd3be44001739d7.jpg",
+   "说明": "图 29-3-15　小孢根霉镜检: 顶囊和孢子囊孢子(PDA, 35℃, 3日, 乳酸酚棉蓝染色, ×1000)"
   }
  ],
  "pythium-insidiosum": [
