@@ -3017,6 +3017,36 @@ window.DB.photosAtlas = {
    "说明": "图 11-6-4　嗜麦芽窄食单胞菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
   }
  ],
+ "pseudomonas-mendocina": [
+  {
+   "文件": "img/atlas/1c2b77a2e88481ae7a179b280085d3127665c0fd3ca6a6dab9ea722f60c031cc.jpg",
+   "说明": "图 17-2-2　假单胞菌荧光素检测试验结果"
+  },
+  {
+   "文件": "img/atlas/35f7b9fe06b562d7a37cdfabd97826e26f14da5c9facce1ee73d6bfbd4a18e2e.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（1/6）"
+  },
+  {
+   "文件": "img/atlas/03831b695b99479d2e3a82a814f74646b46243a9b53ff49d0cf872f26fac4af2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（2/6）"
+  },
+  {
+   "文件": "img/atlas/33f2951c31b889a2ca92cb7f935739a8a8719dd335096cb91a0e1c800e5f4eec.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（3/6）"
+  },
+  {
+   "文件": "img/atlas/7ede776bcea784a5d3d8725ee8af83cc16dff9a9059f42b4dc2825bf3f17b5bd.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（4/6）"
+  },
+  {
+   "文件": "img/atlas/a3c68faf9217848e753a6b7b053c7d799faf1c1b585f1459d4442a99b3190f6f.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（5/6）"
+  },
+  {
+   "文件": "img/atlas/1b705b418893e900dc0d46ec928038a1247d4e6a518293d980d3700e74bccba2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（6/6）"
+  }
+ ],
  "pseudomonas-putida": [
   {
    "文件": "img/atlas/2d7049bfe91514b4096e642bdc52411863804a8dc405d6c88ccbec4cce4f4f50.jpg",
@@ -3049,6 +3079,70 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/d44658be0331107787ff753c6bce26d0ec7a982049c22e31be847039d80dcff5.jpg",
    "说明": "图 11-2-13　恶臭假单胞菌在营养琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "pseudomonas-stutzeri": [
+  {
+   "文件": "img/atlas/33fab0b02743b984fc80e113005a656feb3c6b09d5ae9bd991a6a0c3301c8485.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（1/5）"
+  },
+  {
+   "文件": "img/atlas/4aef5316d861cea1f91f0438b7a53889b829d17d5939951ee9ae2a8e8de03778.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（2/5）"
+  },
+  {
+   "文件": "img/atlas/c9abbaa0a97299987ba750183af1ecf4c535c09fbc8bb0748586ecfe347a5b76.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（3/5）"
+  },
+  {
+   "文件": "img/atlas/13a2289ed107cbd1773dc549233a523edce45fc8b7b4e689ee65d831d5f0a79a.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（4/5）"
+  },
+  {
+   "文件": "img/atlas/7a2161ae75d17efeef6a86151913464d55f63606876e76ec4abb8444d6325b2f.jpg",
+   "说明": "图 17-2-6　斯氏假单胞菌的形态特征（5/5）"
+  },
+  {
+   "文件": "img/atlas/d9ec99dc92bc32e1df1cff90ab0359713aec795d8e9b25c06953598eed68027f.jpg",
+   "说明": "图 11-2-18　斯氏假单胞菌纯培养的镜下形态(革兰染色)"
+  },
+  {
+   "文件": "img/atlas/e5f9dc2c9a3e9b3e32ad8073b8124e00af123f0f90311988c01ede59367fd211.jpg",
+   "说明": "图 11-2-19　斯氏假单胞菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/475e266e129757d5b62a5271b27f06d53df48f56fa0f29ab8f2188f306676c1b.jpg",
+   "说明": "图 11-2-20　斯氏假单胞菌在血琼脂平板上的皱起型菌落特征(48 h)"
+  }
+ ],
+ "pseudomonas-pseudoalcaligenes": [
+  {
+   "文件": "img/atlas/58b9c152eeb98102b64d47aa484124c9ab0148db20669ffc29409d5668014a6d.jpg",
+   "说明": "图 17-2-7　SBA 24h 7. 产碱假单胞菌与假产碱假单胞菌 多数菌株在 42° C 能生长, 在麦凯康平板上可生长, 一端单鞭毛, 氧化酶阳性, 不分解任何糖类, 在未封闭的 O-F 培养基表面产碱, 醋酸盐可作为碳源和能源…"
+  },
+  {
+   "文件": "img/atlas/35f7b9fe06b562d7a37cdfabd97826e26f14da5c9facce1ee73d6bfbd4a18e2e.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（1/6）"
+  },
+  {
+   "文件": "img/atlas/03831b695b99479d2e3a82a814f74646b46243a9b53ff49d0cf872f26fac4af2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（2/6）"
+  },
+  {
+   "文件": "img/atlas/33f2951c31b889a2ca92cb7f935739a8a8719dd335096cb91a0e1c800e5f4eec.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（3/6）"
+  },
+  {
+   "文件": "img/atlas/7ede776bcea784a5d3d8725ee8af83cc16dff9a9059f42b4dc2825bf3f17b5bd.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（4/6）"
+  },
+  {
+   "文件": "img/atlas/a3c68faf9217848e753a6b7b053c7d799faf1c1b585f1459d4442a99b3190f6f.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（5/6）"
+  },
+  {
+   "文件": "img/atlas/1b705b418893e900dc0d46ec928038a1247d4e6a518293d980d3700e74bccba2.jpg",
+   "说明": "图 17-2-8　其他假单胞菌属细菌的菌落形态特征（6/6）"
   }
  ],
  "pseudomonas-alcaligenes": [
@@ -6599,58 +6693,6 @@ window.DB.photosAtlas = {
    "说明": "图 27-2-37　黑曲霉在 PDA 上的镜下形态(25℃,6 日,×200)"
   }
  ],
- "aspergillus-oryzae": [
-  {
-   "文件": "img/atlas/0b71d8303848ad4fcc0b787768735865225eb1a0ac74b4ee432c024ef5ea1318.jpg",
-   "说明": "图 27-2-18　米曲霉菌落(SDA, 35℃, 2日)"
-  },
-  {
-   "文件": "img/atlas/908181e9c129b3c92623359a8fe81f9e42cf2354b9b4224b0dd5d38a5bdb5bd5.jpg",
-   "说明": "图 27-2-19　米曲霉菌落(血琼脂平板,35℃,3日)"
-  },
-  {
-   "文件": "img/atlas/8a92ecf1344e9e42b71ba0166dd8bb1a88f637e3e79b858b7e29ad89049e45b7.jpg",
-   "说明": "图 27-2-20　米曲霉菌落(PDA, 35℃, 3日)"
-  },
-  {
-   "文件": "img/atlas/2e68e6ee96d59d48dc1b7bbc8e6d059c0b62a1b4b5f91bd578c8c7b8da4b89f6.jpg",
-   "说明": "图 27-2-21　米曲霉菌落(PDA, 35℃, 7日)"
-  },
-  {
-   "文件": "img/atlas/69af5095f6a9b8956327659f725a0c40859a3ce7019610553cc7426e60c4171c.jpg",
-   "说明": "图 27-2-22　米曲霉镜检(乳酸酚棉蓝染色, ×1000)"
-  },
-  {
-   "文件": "img/atlas/c90dd81d400dcb2ab99bb9094af0ec5879ac5c38b2ab5eb9540c0840e32295d9.jpg",
-   "说明": "图 27-2-23　米曲霉镜检(乳酸酚棉蓝染色, ×1000)"
-  }
- ],
- "aspergillus-oryzae": [
-  {
-   "文件": "img/atlas/0b71d8303848ad4fcc0b787768735865225eb1a0ac74b4ee432c024ef5ea1318.jpg",
-   "说明": "图 27-2-18　米曲霉菌落(SDA, 35℃, 2日)"
-  },
-  {
-   "文件": "img/atlas/908181e9c129b3c92623359a8fe81f9e42cf2354b9b4224b0dd5d38a5bdb5bd5.jpg",
-   "说明": "图 27-2-19　米曲霉菌落(血琼脂平板,35℃,3日)"
-  },
-  {
-   "文件": "img/atlas/8a92ecf1344e9e42b71ba0166dd8bb1a88f637e3e79b858b7e29ad89049e45b7.jpg",
-   "说明": "图 27-2-20　米曲霉菌落(PDA, 35℃, 3日)"
-  },
-  {
-   "文件": "img/atlas/2e68e6ee96d59d48dc1b7bbc8e6d059c0b62a1b4b5f91bd578c8c7b8da4b89f6.jpg",
-   "说明": "图 27-2-21　米曲霉菌落(PDA, 35℃, 7日)"
-  },
-  {
-   "文件": "img/atlas/69af5095f6a9b8956327659f725a0c40859a3ce7019610553cc7426e60c4171c.jpg",
-   "说明": "图 27-2-22　米曲霉镜检(乳酸酚棉蓝染色, ×1000)"
-  },
-  {
-   "文件": "img/atlas/c90dd81d400dcb2ab99bb9094af0ec5879ac5c38b2ab5eb9540c0840e32295d9.jpg",
-   "说明": "图 27-2-23　米曲霉镜检(乳酸酚棉蓝染色, ×1000)"
-  }
- ],
  "aspergillus-nidulans": [
   {
    "文件": "img/atlas/003e2a15d728555358dd73a6f51f2c38abca22ea8c50dfdcbd9620552dc80635.jpg",
@@ -8151,6 +8193,38 @@ window.DB.photosAtlas = {
    "说明": "图 9-3-7　豚鼠气单胞菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
   }
  ],
+ "pseudomonas-luteola": [
+  {
+   "文件": "img/atlas/cc9daf8c6112f979badbdb9bc4fce9d4fb6f859fef0ce7f8d5f130eef972f7fe.jpg",
+   "说明": "图 11-2-16　浅黄假单胞菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/e57657afbdd675d39022832cb363a0679b82ff846d32aca42be4d9fa62abc6b0.jpg",
+   "说明": "图 11-2-17　浅黄假单胞菌在麦康凯琼脂平板上的菌落特征(18～24 h)"
+  }
+ ],
+ "pseudomonas-oryzihabitans": [
+  {
+   "文件": "img/atlas/ea71d4fd4f20b0cd8d92cf41274c2f37d503a4824bf7fd1408355a3d44314166.jpg",
+   "说明": "图 11-2-24　栖稻假单胞菌纯培养的镜下形态(革兰染色)"
+  },
+  {
+   "文件": "img/atlas/88ce7db4aa88aab3f8df8811061971fa524c0097460121b758a26ec67756d9a0.jpg",
+   "说明": "图 11-2-25　栖稻假单胞菌在血琼脂平板上的菌落特征(18～24 h)"
+  },
+  {
+   "文件": "img/atlas/f5075c2d52ac438c69337084e3a325619b30d57ed9854be8f9cc07f47de4962e.jpg",
+   "说明": "图 11-2-26　栖稻假单胞菌在血琼脂平板上的菌落特征(72 h)"
+  },
+  {
+   "文件": "img/atlas/0457f9fe28a5092dc7055d8061b5384e9ae8ee01f30e682e73110b264ed07daf.jpg",
+   "说明": "图 11-2-27　栖稻假单胞菌在麦康凯琼脂平板上(18～24 h)的菌落特征(箭头所示)"
+  },
+  {
+   "文件": "img/atlas/c6ac5678b33933e7d85e47ae972e0c7ae9af7412611e73f773e11eec54bf8fc9.jpg",
+   "说明": "图 11-2-28　栖稻假单胞菌在巧克力琼脂平板上(18～24 h)的菌落特征（箭头所示）"
+  }
+ ],
  "moraxella-osloensis": [
   {
    "文件": "img/atlas/f5e7df2af4fe7e6be7cd0c62118089a617c42dde61baa33c0e283c5c816c277c.jpg",
@@ -8333,20 +8407,6 @@ window.DB.photosAtlas = {
   {
    "文件": "img/atlas/7e27a396e8c9032fb04e1cadccb4a472a409ab1eccb2743c481a1e1a3b64b3f6.jpg",
    "说明": "图 26-3-14　奥杜盎小孢子菌示意图: a. 大分生孢子, b. 小分生孢子, c. 厚垣孢子"
-  }
- ],
- "penicillium-citrinum": [
-  {
-   "文件": "img/atlas/ca50e0a9f83d3e76a4dadb8bfd35d57fee7c829a30735c81c7e1f843dc846158.jpg",
-   "说明": "图 27-1-2　桔青霉菌落(PDA, 28℃, 7日)"
-  },
-  {
-   "文件": "img/atlas/bb7f31bca74cfc83a172c626fb1d602a14d42fe3215e21ad2126d16d44db179c.jpg",
-   "说明": "图 27-1-3　桔青霉纯培养镜下形态(乳酸酚棉蓝染色, ×400)"
-  },
-  {
-   "文件": "img/atlas/c24da9b5f0159332891db4a9163742af6c7b3130721a13e2bb184562572576bd.jpg",
-   "说明": "图 27-1-5　桔青霉帚状枝(25℃, 7日)"
   }
  ],
  "penicillium-chrysogenum": [

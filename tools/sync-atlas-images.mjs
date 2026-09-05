@@ -52,6 +52,9 @@ const EXCLUDE = new Set([
   'corynebacterium-pseudotuberculosis|93|14-2-9', // 同上
   'staph-aureus|93|18-1-6',            // 卫星试验指示菌演示图（多菌）
   'staph-epidermidis|93|18-1-6',       // 同上
+  // ==== 批46 审计补充（94 书铜绿荧光素图：鉴别段提及浅黄/栖稻造成串扰）====
+  'pseudomonas-luteola|94|11-2-7',
+  'pseudomonas-oryzihabitans|94|11-2-7',
   'pseudomonas-aeruginosa|93|18-1-6',  // 同上
   'acinetobacter-baumannii|93|18-1-6', // 同上
   'moraxella-catarrhalis|93|18-1-6',   // 同上
