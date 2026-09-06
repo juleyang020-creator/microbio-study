@@ -54,6 +54,8 @@
     'hbsag-elisa': 'img/test-bdg.svg',
     'hcv-ab-elisa': 'img/test-bdg.svg',
     'hiv-ab-screen': 'img/test-bdg.svg',
+    // 批61 新增（95书实验二十一）：分子检测复用 MALDI 谱线图（核酸扩增示意）
+    'sars2-rtqpcr': 'img/test-maldi.svg',
     'colistin-bmd': 'img/test-colistin.svg',
     'coagulase': 'img/test-coagulase.svg',
     'catalase': 'img/test-catalase.svg',
