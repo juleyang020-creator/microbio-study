@@ -49,6 +49,7 @@
     'carbapenemase-ict': 'img/test-mcim.svg',
     'carbapenemase-inhibitor-enhancement': 'img/test-mcim.svg',
     'checkerboard-fic': 'img/test-bmd.svg',
+    'yeast-ast': 'img/test-bmd.svg',
     'colistin-bmd': 'img/test-colistin.svg',
     'coagulase': 'img/test-coagulase.svg',
     'catalase': 'img/test-catalase.svg',
@@ -83,6 +84,8 @@
     'flagella-stain': 'img/stain-flagella.svg',
     'metachromatic-granule': 'img/stain-granule.svg',
     'lpcb': 'img/stain-lpcb.svg',
+    // 批58 新增（95书实验十五）：钙荧光白复用 LPCB 真菌图
+    'calcofluor-white': 'img/stain-lpcb.svg',
     'giemsa': 'img/stain-giemsa.svg',
     'auramine': 'img/stain-auramine.svg',
     'modified-acid-fast': 'img/stain-modified-acidfast.svg',
