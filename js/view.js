@@ -48,6 +48,7 @@
     'penicillin-edge-test': 'img/test-betalactamase.svg',
     'carbapenemase-ict': 'img/test-mcim.svg',
     'carbapenemase-inhibitor-enhancement': 'img/test-mcim.svg',
+    'checkerboard-fic': 'img/test-bmd.svg',
     'colistin-bmd': 'img/test-colistin.svg',
     'coagulase': 'img/test-coagulase.svg',
     'catalase': 'img/test-catalase.svg',
