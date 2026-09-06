@@ -174,6 +174,10 @@ body.route-mn .detail-title { margin-top: 18px; }
 .lw-src { font-size: 12px; color: var(--muted); margin: 2px 0 2px; }
 .lw-note { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.55; max-width: 760px; }
 .lw-section { margin: 8px 0 22px; }
+.lw-nav { display: flex; flex-direction: column; gap: 2px; margin-top: 10px; }
+.lw-nav-item { display: block; padding: 5px 8px; border-radius: 6px; font-size: 13px; color: var(--accent, #0a6); text-decoration: none; }
+.lw-nav-item:hover { background: var(--line, #eee); }
+.lw-nav-item.sub { padding-left: 18px; font-size: 12.5px; }
 .lw-h { font-size: 15px; font-weight: 700; color: var(--ink); margin: 0 0 4px; padding-bottom: 5px; border-bottom: 1px solid var(--line); }
 .lw-sub { font-weight: 600; font-size: 13px; color: var(--ink-soft); margin: 12px 0 5px; }
 .lw-list { margin: 4px 0; padding-left: 18px; }
