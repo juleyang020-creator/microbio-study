@@ -83,9 +83,22 @@
   }
   function renderLabWorkflow() {
     setActiveTool('lab-workflow');
+    // 侧栏分组导航：五个板块锚点
+    var lwGroups = [
+      { id: 'lw-gw', name: '① 工作流总览' },
+      { id: 'lw-sm', name: '② 标本采集与拒收' },
+      { id: 'lw-sp', name: '③ 七类标本检验路径', sub: true },
+      { id: 'lw-hai', name: '④ 医院感染监测', sub: true },
+      { id: 'lw-virus', name: '⑤ 病毒分离培养', sub: true },
+      { id: 'lw-bc', name: '⑥ 阳性血培养处理' },
+      { id: 'lw-idm', name: '⑦ 鉴定方法与局限' }
+    ];
     fill(document.getElementById('sidebar'), [ el('div', { cls: 'cat-group' }, [
       el('div', { cls: 'cat-group-name', text: '标本与实验室流程' }),
-      el('div', { cls: 'cmp-hint', text: '标本→染色→培养→鉴定→药敏→报告的实验室流程教学参考（MCM 第12版）。' })
+      el('div', { cls: 'cmp-hint', text: '标本→染色→培养→鉴定→药敏→报告的流程教学参考。总览/采集/鉴定摘自 MCM 第12版；标本路径/院感监测/病毒培养摘自《检验技术实验指导》第2版。' }),
+      el('div', { cls: 'lw-nav' }, lwGroups.map(function (g) {
+        return el('a', { cls: 'lw-nav-item' + (g.sub ? ' sub' : ''), href: '#/lab-workflow', onclick: function (e) { e.preventDefault(); var t = document.getElementById(g.id); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } , text: g.name });
+      }))
     ]) ]);
     var wf = (window.DB && window.DB.labWorkflow) || null;
     var nodes = [ el('h2', { cls: 'detail-title', text: '标本与实验室流程' }) ];
@@ -106,7 +119,7 @@
           ? el('a', { cls: 'lw-path-node', href: n.href, text: n.阶段 })
           : el('span', { cls: 'lw-path-node plain', text: n.阶段 }));
       });
-      nodes.push(el('div', { cls: 'lw-section' }, [
+      nodes.push(el('div', { cls: 'lw-section', id: 'lw-gw', }, [
         el('div', { cls: 'lw-h', text: '教学工作流' }),
         el('div', { cls: 'lw-path' }, pathKids)
       ]));
@@ -115,8 +128,8 @@
     // ② 标本采集、运输与拒收
     var sm = wf.标本管理 || {};
     var smKids = [ el('div', { cls: 'lw-h', text: '标本采集、运输与拒收' }) ];
-    if (sm.通则 && sm.通则.length) { smKids.push(el('div', { cls: 'lw-sub', text: '总则' }), lwList(sm.通则)); }
     if (sm.拒收 && sm.拒收.length) { smKids.push(el('div', { cls: 'lw-sub', text: '拒收标准' }), lwList(sm.拒收)); }
+    if (sm.通则 && sm.通则.length) { smKids.push(el('div', { cls: 'lw-sub', text: '采集通则' }), lwList(sm.通则)); }
     if (sm.常见标本 && sm.常见标本.length) {
       smKids.push(el('div', { cls: 'lw-sub', text: '常见标本采集与转运' }));
       smKids.push(el('div', { cls: 'lw-table-wrap' }, [ el('table', { cls: 'lw-table' }, [
@@ -126,7 +139,58 @@
         }))
       ]) ]));
     }
-    nodes.push(el('div', { cls: 'lw-section' }, smKids));
+    nodes.push(el('div', { cls: 'lw-section', id: 'lw-sm' }, smKids));
+
+    // ②b 七类标本检验路径（95书第六章）
+    var sp = wf.标本检验流程 || {};
+    if (sp.标本 && sp.标本.length) {
+      var spKids = [ el('div', { cls: 'lw-h', text: '七类标本检验路径' }) ];
+      if (sp.说明) spKids.push(el('div', { cls: 'lw-note', text: sp.说明 }));
+      spKids.push(el('div', { cls: 'lw-table-wrap' }, [ el('table', { cls: 'lw-table' }, [
+        el('thead', {}, [ el('tr', {}, [ el('th', { text: '标本' }), el('th', { text: '涂片镜检' }), el('th', { text: '培养要点' }), el('th', { text: '结果判读' }), el('th', { text: '提示' }) ]) ]),
+        el('tbody', {}, sp.标本.map(function (s) {
+          return el('tr', {}, [
+            el('td', { 'data-label': '标本', text: s.name }),
+            el('td', { 'data-label': '涂片镜检', text: s.镜检 || '' }),
+            el('td', { 'data-label': '培养要点', text: s.培养 || '' }),
+            el('td', { 'data-label': '结果判读', text: s.结果 || '' }),
+            el('td', { 'data-label': '提示', text: s.提示 || '' })
+          ]);
+        }))
+      ]) ]));
+      nodes.push(el('div', { cls: 'lw-section', id: 'lw-sp' }, spKids));
+    }
+
+    // ②c 医院感染监测（95书实验六）
+    var hai = wf.医院感染监测 || {};
+    if (hai.项目 && hai.项目.length) {
+      var haiKids = [ el('div', { cls: 'lw-h', text: '医院感染监测' }) ];
+      if (hai.说明) haiKids.push(el('div', { cls: 'lw-note', text: hai.说明 }));
+      haiKids.push(el('div', { cls: 'lw-table-wrap' }, [ el('table', { cls: 'lw-table' }, [
+        el('thead', {}, [ el('tr', {}, [ el('th', { text: '监测项目' }), el('th', { text: '采样' }), el('th', { text: '培养' }), el('th', { text: '标准与计算' }) ]) ]),
+        el('tbody', {}, hai.项目.map(function (p) {
+          return el('tr', {}, [
+            el('td', { 'data-label': '监测项目', text: p.name }),
+            el('td', { 'data-label': '采样', text: p.采样 || '' }),
+            el('td', { 'data-label': '培养', text: p.培养 || '' }),
+            el('td', { 'data-label': '标准与计算', text: p.标准 || '' })
+          ]);
+        }))
+      ]) ]));
+      nodes.push(el('div', { cls: 'lw-section', id: 'lw-hai' }, haiKids));
+    }
+
+    // ②d 病毒分离培养（95书实验十九）
+    var vir = wf.病毒分离培养 || {};
+    if (vir.方法 && vir.方法.length) {
+      var virKids = [ el('div', { cls: 'lw-h', text: '病毒分离培养' }) ];
+      if (vir.说明) virKids.push(el('div', { cls: 'lw-note', text: vir.说明 }));
+      vir.方法.forEach(function (m) {
+        virKids.push(el('div', { cls: 'lw-sub', text: m.name }));
+        virKids.push(el('div', { cls: 'lw-note', text: m.要点 || '' }));
+      });
+      nodes.push(el('div', { cls: 'lw-section', id: 'lw-virus' }, virKids));
+    }
 
     // ③ 阳性血培养处理流程
     var bc = wf.血培养 || {};
@@ -142,7 +206,7 @@
       })));
     }
     if (bc.污染判断 && bc.污染判断.length) { bcKids.push(el('div', { cls: 'lw-sub', text: '污染菌判断' }), lwList(bc.污染判断)); }
-    nodes.push(el('div', { cls: 'lw-section' }, bcKids));
+    nodes.push(el('div', { cls: 'lw-section', id: 'lw-bc' }, bcKids));
 
     // ④ 鉴定方法与局限
     var idm = wf.鉴定方法 || {};
@@ -156,7 +220,7 @@
       ]) ]));
     }
     if (idm.局限 && idm.局限.length) { idKids.push(el('div', { cls: 'lw-sub', text: '总体局限与常见误鉴定陷阱' }), lwList(idm.局限)); }
-    nodes.push(el('div', { cls: 'lw-section' }, idKids));
+    nodes.push(el('div', { cls: 'lw-section', id: 'lw-idm' }, idKids));
 
     fill(document.getElementById('main'), nodes);
   }
