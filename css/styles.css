@@ -517,7 +517,7 @@ body.zoom-open { overflow: hidden; }
 /* 天然耐药速查（独立模块） */
 .intrinsic-group { margin: 18px 0; }
 .intrinsic-group-title { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; margin-bottom: 8px; }
-.intrinsic-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; }
+.intrinsic-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 10px; }
 .intrinsic-card { background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--rust); border-radius: 6px; padding: 10px 14px; }
 .intrinsic-card-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }
 .intrinsic-link { color: var(--link); text-decoration: none; font-weight: 600; font-size: 14px; }
@@ -532,8 +532,8 @@ body.zoom-open { overflow: hidden; }
 .bp-group-list { display: flex; flex-direction: column; gap: 2px; }
 .bp-judge-form { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; margin: 16px 0; max-width: 560px; }
 .bp-judge-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
-.bp-judge-row label { width: 50px; color: var(--muted); font-size: 13px; }
-.bp-select { flex: 1; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px; font-family: inherit; background: var(--surface); color: var(--ink); }
+.bp-judge-row label { width: 50px; color: var(--muted); font-size: 13px; flex-shrink: 0; }
+.bp-select { flex: 1; width: 100%; min-width: 0; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px; font-family: inherit; background: var(--surface); color: var(--ink); }
 .bp-select:focus { outline: none; border-color: var(--accent); }
 .bp-judge-result { margin: 16px 0; }
 .bp-judge-bp { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-family: var(--mono); }
@@ -715,18 +715,32 @@ body.zoom-open { overflow: hidden; }
   .lw-table-wrap { overflow-x: visible; }
   .lw-table, .lw-table tbody, .lw-table tr, .lw-table td { display: block; width: 100%; }
   .lw-table { min-width: 0; font-size: 12.5px; }
+  /* 桌面端 td:first-child 的 nowrap 会泄漏进卡片视图（首格是整行长文本），必须重置 */
+  .lw-table td, .lw-table td:first-child { white-space: normal; overflow-wrap: break-word; }
   .lw-table thead { display: none; }
   .lw-table tr { border: 1px solid var(--line); border-radius: 8px; margin: 0 0 10px; padding: 5px 2px; background: var(--surface); }
   .lw-table td { border: 0; padding: 4px 12px; display: grid; grid-template-columns: 52px 1fr; gap: 10px; line-height: 1.6; vertical-align: top; }
   .lw-table td:empty { display: none; }
   .lw-table td::before { content: attr(data-label); font-weight: 700; color: var(--muted); font-size: 11px; padding-top: 1px; }
   .lw-table td:first-child { color: var(--ink); font-weight: 600; padding-top: 7px; }
+  /* 折点判读表单：窄屏改纵向堆叠——select 的 min-content（最长选项文本）会撑破横向 flex */
+  .bp-judge-row { flex-direction: column; align-items: stretch; gap: 4px; }
+  .bp-judge-row label { width: auto; }
+  .bp-judge-form { padding: 12px 14px; }
 }
 
 @media (max-width: 1120px) and (min-width: 761px) {
   .topbar { gap: 10px; padding: 8px 14px; }
   .tab { padding: 3px 6px; }
   .search { min-width: 150px; }
+}
+
+/* 超窄屏（iPhone SE 级 ≤360px）：菌名速查行放不下就换行；卡片内长药名/拉丁名允许断行 */
+@media (max-width: 360px) {
+  .mn-item { flex-wrap: wrap; gap: 2px 6px; }
+  .mn-item .mn-tag { margin-left: 0; }
+  .mn-item .mn-nm, .mn-item .mn-lt { min-width: 0; overflow-wrap: anywhere; }
+  .intrinsic-card, .ir-card { overflow-wrap: anywhere; }
 }
 
 /* 页脚免责声明 + 关于页 */
