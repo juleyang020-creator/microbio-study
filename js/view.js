@@ -50,6 +50,10 @@
     'carbapenemase-inhibitor-enhancement': 'img/test-mcim.svg',
     'checkerboard-fic': 'img/test-bmd.svg',
     'yeast-ast': 'img/test-bmd.svg',
+    // 批60 新增（95书实验二十）：病毒血清学复用 GM/BDG 抗原抗体图族
+    'hbsag-elisa': 'img/test-bdg.svg',
+    'hcv-ab-elisa': 'img/test-bdg.svg',
+    'hiv-ab-screen': 'img/test-bdg.svg',
     'colistin-bmd': 'img/test-colistin.svg',
     'coagulase': 'img/test-coagulase.svg',
     'catalase': 'img/test-catalase.svg',
