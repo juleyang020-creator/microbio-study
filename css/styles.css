@@ -819,4 +819,10 @@ body.zoom-open { overflow: hidden; }
   .bp-verdict.v-sdd .bp-verdict-tag { color: #9aa8e0; }
   .bp-verdict.v-ns .bp-verdict-tag { color: #d4a05c; }
   .update-toast { box-shadow: 0 6px 22px rgba(0,0,0,.5); }
+  /* 详情页三张浅色底卡片（天然耐药 #fbf3ef / 治疗要点 #eef7f4 / 生物安全已在上面），
+     深色下必须换暗色垫，否则像贴在暗页上的两张白纸（用户实测反馈刺眼）。
+     about-card 用 var(--surface) 已自动适配，无需处理。 */
+  .intrinsic { background: #2a201c; }
+  .treatment { background: #1e2b28; }
+  .treatment-title { color: #6fb8a8; }
 }
