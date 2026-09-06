@@ -22,6 +22,7 @@
 }
 
 * { box-sizing: border-box; }
+:root { color-scheme: light dark; }  /* 系统原生控件（select/scrollbar）跟随明暗 */
 html, body { margin: 0; height: 100%; }
 body {
   font-family: -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
@@ -674,6 +675,8 @@ body.zoom-open { overflow: hidden; }
   .main { padding: 18px 16px calc(24px + env(safe-area-inset-bottom)); }
   .detail-title { font-size: 20px; }
   .entry-link, .cmp-pick, .cat-toggle { min-height: 40px; display: flex; align-items: center; }
+  /* 收藏星：触控区扩到 44px 高（上下各 12px padding），视觉大小不变 */
+  .fav-star { padding: 12px 10px; margin: -12px -10px; }
   /* 表格瘦身：折点表 / 对比表在小屏更紧凑，尽量不横向溢出、行高更低 */
   .bp-table, .cmp { min-width: 0; width: 100%; font-size: 10.5px; table-layout: fixed; }
   .bp-table th, .bp-table td { padding: 3px 4px; }
@@ -758,3 +761,62 @@ body.zoom-open { overflow: hidden; }
 /* 品牌副标题（主名"知微" + 小字"微生物学习手册"） */
 .brand-sub { font-weight: 400; font-size: 11px; letter-spacing: .5px; color: var(--muted); margin-left: 8px; }
 @media (max-width: 600px) { .brand-sub { display: none; } }
+
+/* ===== 深色模式（跟随系统；只覆盖变量与少量硬编码浅色底，浅色规则不动） =====
+   设计原则：
+   - 文字对比度仍按 WCAG AA ≥4.5 校准（muted 按最差底 #262b32 表头底色算）；
+   - 语义色（绿=敏感/红=耐药/金=中介）保持色相，提亮降饱和以在暗底可读；
+   - 163 个示意图 SVG 自带白画布，深色下作为"亮色插图卡"呈现，不处理（与照片/图谱同理）；
+   - mask-image 的 #000 与灯箱/照片轮播的黑白底是中性色，无需覆盖。 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #191c21;
+    --surface: #20242b;
+    --ink: #e6e4de;
+    --ink-soft: #c3c1ba;
+    --muted: #9a9890;      /* 底 #262b32 上 4.6:1 */
+    --faint: #6e7178;
+    --line: #343a43;
+    --line-2: #262b32;
+    --accent: #66b3ab;
+    --accent-weak: #24312f;
+    --accent-edge: #3a524e;
+    --link: #7fa8d4;
+    --green: #7dba8f;
+    --rust: #d4925f;
+    --gold: #c9a84c;
+  }
+  /* 硬编码浅色底 → 暗色等价（逐条对应浅色区的注释来源） */
+  .nav-board { background: #23272e; }                                /* 原 #fbfaf7 */
+  .biosafety-alert { background: #2d2019; border-color: #6e3a26; }   /* 原 #fbf1ec */
+  .biosafety-icon { color: #e08666; }
+  .biosafety-title { color: #e8a184; }
+  .biosafety-level { background: #a3492c; }
+  .mechanism-img { background: #f4f2ec; }                            /* SVG 白画布镶边，保留浅底避免图内容贴暗边 */
+  .zoom-img { background: #f4f2ec; }
+  .cmp tr.cmp-diff td { background: #2e2a1c; }                       /* 原 #faf5e6 */
+  .cmp tr.cmp-diff .cmp-item { background: #3a3420; color: #cdb96a; }
+  .ir-chip { background: #3a211e; color: #e08a7c; border-color: #5e322b; }
+  .ir-drug-chip { background: #3a211e; color: #e08a7c; border-color: #5e322b; }
+  .bp-verdict.v-s { background: #1f2e23; border-color: #3c5a45; }
+  .bp-verdict.v-i { background: #2e2919; border-color: #5a5033; }
+  .bp-verdict.v-sdd { background: #232a3e; border-color: #3e4866; }
+  .bp-verdict.v-r { background: #34211e; border-color: #5e3a33; }
+  .bp-verdict.v-ns { background: #2f2619; border-color: #554526; }
+  .ast-critical { color: #e8a184; background: #31241d; border-color: #5e4536; }
+  .ast-review { color: #d4c078; background: #2e2a1a; border-color: #55502e; }
+  .ast-limit { color: #9cbce0; background: #212b36; border-color: #39506a; }
+  .search-hit { background: #6b5c1e; color: var(--ink); }            /* 原 #fff3a8 */
+  .mn-kind-gp { color: #c4a3ec; background: #2c2438; border-color: #453a58; }
+  .mn-kind-gn { color: #e79a90; background: #33221f; border-color: #54302b; }
+  .mn-kind-y  { color: #d4ba6a; background: #2e2917; border-color: #4d452a; }
+  .mn-kind-m  { color: #cfa878; background: #2d261c; border-color: #4a3e2c; }
+  .mn-kind-tb { color: #85c4b4; background: #1f2d29; border-color: #35504a; }
+  .chip-cards, .tag-cards { color: #8fb4d4; }
+  .chip-media, .tag-media { color: #b598d4; }
+  .chip-staining, .tag-staining { color: #d49ab8; }
+  .chip-biochem-tests, .tag-biochem-tests { color: #8ac2ad; }
+  .bp-verdict.v-sdd .bp-verdict-tag { color: #9aa8e0; }
+  .bp-verdict.v-ns .bp-verdict-tag { color: #d4a05c; }
+  .update-toast { box-shadow: 0 6px 22px rgba(0,0,0,.5); }
+}

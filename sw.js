@@ -7,7 +7,7 @@ function versioned(path) {
   return path + '?v=' + APP_VERSION;
 }
 var CORE = [
-  './', './index.html', versioned('./css/styles.css'),
+  './', './index.html', './favicon.ico', versioned('./css/styles.css'),
   versioned('./js/core.js'), versioned('./js/view.js'), versioned('./js/validate.js'),
   versioned('./js/app/helpers.js'), versioned('./js/app/sidebar.js'), versioned('./js/app/search.js'),
   versioned('./js/app/compare.js'), versioned('./js/app/bp-table.js'), versioned('./js/app/tools-info.js'),
