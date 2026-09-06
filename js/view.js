@@ -44,6 +44,10 @@
     'cefoxitin-screen': 'img/test-cefoxitin.svg',
     'hlar': 'img/test-hlar.svg',
     'beta-lactamase-test': 'img/test-betalactamase.svg',
+    // 批56 新增（95书实验五耐药检测）：复用同族示意图
+    'penicillin-edge-test': 'img/test-betalactamase.svg',
+    'carbapenemase-ict': 'img/test-mcim.svg',
+    'carbapenemase-inhibitor-enhancement': 'img/test-mcim.svg',
     'colistin-bmd': 'img/test-colistin.svg',
     'coagulase': 'img/test-coagulase.svg',
     'catalase': 'img/test-catalase.svg',
