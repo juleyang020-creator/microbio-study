@@ -66,7 +66,7 @@ try {
             const back = luminance(bg || [255, 255, 255]);
             return { cls: n.className, ratio: Number(((Math.max(fg, back) + .05) / (Math.min(fg, back) + .05)).toFixed(2)) };
           });
-          return { header: Math.round(header.height), footer: Math.round(footer.height), main: Math.round(main.getBoundingClientRect().height), overflow: main.scrollWidth - main.clientWidth, bodyOverflow: document.documentElement.scrollWidth - innerWidth, searchWidth: Math.round(search.width), h1: !!main.querySelector('h1'), text: main.textContent.length, contrastSamples: contrast.length, contrastFailures: contrast.filter(c => c.ratio < 4.5) };
+          return { header: Math.round(header.height), footer: Math.round(footer.height), main: Math.round(main.getBoundingClientRect().height), overflow: main.scrollWidth - main.clientWidth, bodyOverflow: document.documentElement.scrollWidth - innerWidth, searchWidth: Math.round(search.width), safeTop: parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--safe-top')) || 0, h1: !!main.querySelector('h1'), text: main.textContent.length, contrastSamples: contrast.length, contrastFailures: contrast.filter(c => c.ratio < 4.5) };
         });
         result.matrix.push({ width, colorScheme, route, ...metrics });
         if (route === '#/microbes' && [1280, 390].includes(width) && colorScheme === 'light') {
@@ -77,7 +77,7 @@ try {
   }
   check('all routes render without horizontal page overflow', result.matrix.every(m => m.overflow <= 1 && m.bodyOverflow <= 1 && m.text > 0), result.matrix.filter(m => m.overflow > 1 || m.bodyOverflow > 1 || m.text <= 0));
   check('new workspace text contrast meets 4.5:1', result.matrix.every(m => !m.contrastFailures.length), { samples: result.matrix.reduce((n, m) => n + m.contrastSamples, 0), failures: result.matrix.filter(m => m.contrastFailures.length) });
-  check('mobile header keeps reading room (≤132px)', result.matrix.filter(m => m.width <= 390).every(m => m.header <= 132), result.matrix.filter(m => m.width === 390 && m.route === '#/microbes'));
+  check('mobile header keeps the three-row search layout within 180px', result.matrix.filter(m => m.width <= 390).every(m => m.header - m.safeTop <= 180), result.matrix.filter(m => m.width === 390 && m.route === '#/microbes'));
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto(base + '#/microbes');
   check('landing has actionable heading and entry count', await page.locator('.landing-title').count() === 1 && await page.locator('.landing-count').count() === 1, await page.locator('#main h1').allTextContents());

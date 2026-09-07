@@ -16,7 +16,8 @@
   function _zoomEsc(e) { if (e.key === 'Escape') { closeImageZoom(); } }
   function openImageZoom(src, caption) {
     closeImageZoom();
-    var img = el('img', { cls: 'zoom-img', src: src, alt: caption || '' });
+    var diagram = /\.svg(?:[?#]|$)/i.test(src || '');
+    var img = el('img', { cls: 'zoom-img' + (diagram ? ' diagram-image' : ''), src: src, alt: caption || '' });
     // 竖屏手机看横向示意图时，宽度只有约 340px，放大等于没放大；
     // 此时旋转 90° 改用屏幕长边显示，可得约 2.4 倍尺寸。
     img.addEventListener('load', function () {
@@ -36,6 +37,18 @@
       caption ? el('div', { cls: 'zoom-cap', text: caption }) : null,
       el('button', { cls: 'zoom-close', type: 'button', 'aria-label': '关闭', text: '×', onClick: closeImageZoom })
     ]);
+    if (diagram) {
+      var overlay = _zoomEl, original = false;
+      var brightness = el('button', { cls: 'zoom-brightness', type: 'button', text: '查看原图亮度', 'aria-pressed': 'false',
+        onClick: function (ev) {
+          ev.stopPropagation();
+          original = !original; overlay.classList.toggle('zoom-original', original);
+          brightness.setAttribute('aria-pressed', String(original));
+          brightness.textContent = original ? '恢复柔和亮度' : '查看原图亮度';
+        }
+      });
+      overlay.appendChild(brightness);
+    }
     document.body.appendChild(_zoomEl);
     document.body.classList.add('zoom-open');
     document.addEventListener('keydown', _zoomEsc);
@@ -43,7 +56,7 @@
   // 可放大的示意图（点击 / Enter / Space 均可打开）
   function zoomableImg(src, alt, caption) {
     return el('img', {
-      cls: 'mechanism-img zoomable', src: src, alt: alt || '', title: '点击放大',
+      cls: 'mechanism-img zoomable' + (/\.svg(?:[?#]|$)/i.test(src || '') ? ' diagram-image' : ''), src: src, alt: alt || '', title: '点击放大',
       onActivate: function () { openImageZoom(src, caption || alt); }
     });
   }
