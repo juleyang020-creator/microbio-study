@@ -182,7 +182,8 @@ try {
     const cacheState = await pwa.evaluate(async () => {
       const name = 'microbio-' + window.APP_VERSION;
       const cache = await caches.open(name);
-      const assets = ['navigation', 'landing', 'search'].map(n => './js/app/' + n + '.js?v=' + window.APP_VERSION);
+      const assets = ['navigation', 'landing', 'search', 'common-names'].map(n => './js/app/' + n + '.js?v=' + window.APP_VERSION);
+      assets.push('./js/common-names.js?v=' + window.APP_VERSION);
       return { version: window.APP_VERSION, name, present: await Promise.all(assets.map(async p => !!(await cache.match(p)))) };
     });
     check('new UI scripts are actually precached', cacheState.present.every(Boolean), cacheState);
@@ -191,6 +192,12 @@ try {
     await pwa.locator('#search-input').fill('金葡');
     await pwa.waitForTimeout(240);
     check('installed PWA reloads and searches offline', await pwa.locator('.search-item').count() > 0);
+    await pwa.evaluate(() => { location.hash = '#/common-names'; });
+    await pwa.locator('#common-name').fill('示例离线名单');
+    await pwa.locator('#common-abbr').fill('Offline-01');
+    await pwa.locator('.common-save').click();
+    await pwa.reload();
+    check('personal name list saves and survives offline reload', await pwa.locator('.common-row').count() === 1 && (await pwa.locator('#common-list').innerText()).includes('Offline-01'));
     await cached.close();
   }
   await context.close();

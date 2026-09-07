@@ -8,11 +8,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="知微">
-  <link rel="manifest" href="manifest.json?v=20260907-71">
+  <link rel="manifest" href="manifest.json?v=20260907-72">
   <link rel="icon" href="favicon.ico" sizes="48x48 32x32 16x16">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <title>知微 · 微生物学习手册</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260907-71">
+  <link rel="stylesheet" href="css/styles.css?v=20260907-72">
 </head>
 <body>
   <a class="skip-link" href="#main">跳到正文</a>
@@ -44,6 +44,7 @@
           <a class="tool-btn" data-tool="intrinsic" href="#/intrinsic">天然耐药</a>
           <a class="tool-btn" data-tool="ast-alerts" href="#/ast-alerts">异常药敏</a>
           <a class="tool-btn" data-tool="microbe-names" href="#/microbe-names">菌名速查</a>
+          <a class="tool-btn" data-tool="common-names" href="#/common-names">常见菌菌名速查</a>
           <a class="tool-btn" data-tool="compare" href="#/compare">生化鉴定</a>
           <a class="tool-btn" data-tool="cardcompare" href="#/cardcompare">药敏卡对比</a>
           <a class="tool-btn" data-tool="breakpoints" href="#/breakpoints">折点判读</a>
@@ -75,61 +76,63 @@
   </footer>
 
   <!-- 数据（定义 window.DB） -->
-  <script>window.APP_VERSION = '20260907-71';</script>
-  <script src="data/source-metadata.js?v=20260907-71"></script>
-  <script src="data/categories.js?v=20260907-71"></script>
-  <script src="data/microbes.js?v=20260907-71"></script>
-  <script src="data/microbes-gram-positive.js?v=20260907-71"></script>
-  <script src="data/microbes-gram-negative.js?v=20260907-71"></script>
-  <script src="data/microbes-anaerobe.js?v=20260907-71"></script>
-  <script src="data/microbes-atypical.js?v=20260907-71"></script>
-  <script src="data/microbes-fungi.js?v=20260907-71"></script>
-  <script src="data/microbes-parasite.js?v=20260907-71"></script>
-  <script src="data/microbes-virus.js?v=20260907-71"></script>
-  <script src="data/microbes-misc.js?v=20260907-71"></script>
-  <script src="data/antibiotics.js?v=20260907-71"></script>
-  <script src="data/resistance.js?v=20260907-71"></script>
-  <script src="data/virulence.js?v=20260907-71"></script>
-  <script src="data/genetics.js?v=20260907-71"></script>
-  <script src="data/glossary.js?v=20260907-71"></script>
-  <script src="data/biochem.js?v=20260907-71"></script>
-  <script src="data/differential.js?v=20260907-71"></script>
-  <script src="data/identification-tables.js?v=20260907-71"></script>
-  <script src="data/morphology.js?v=20260907-71"></script>
-  <script src="data/photos.js?v=20260907-71"></script>
-  <script src="data/photos-atlas.js?v=20260907-71"></script>
-  <script src="data/treatment.js?v=20260907-71"></script>
-  <script src="data/cards.js?v=20260907-71"></script>
-  <script src="data/tests.js?v=20260907-71"></script>
-  <script src="data/media.js?v=20260907-71"></script>
-  <script src="data/staining.js?v=20260907-71"></script>
-  <script src="data/breakpoints.js?v=20260907-71"></script>
-  <script src="data/eucast-breakpoints.js?v=20260907-71"></script>
-  <script src="data/biochem-tests.js?v=20260907-71"></script>
-  <script src="data/ast-alerts.js?v=20260907-71"></script>
-  <script src="data/qc-strains.js?v=20260907-71"></script>
-  <script src="data/ecv.js?v=20260907-71"></script>
-  <script src="data/intrinsic-resistance.js?v=20260907-71"></script>
-  <script src="data/site-reporting.js?v=20260907-71"></script>
-  <script src="data/lab-workflow.js?v=20260907-71"></script>
-  <script src="data/drug-cn.js?v=20260907-71"></script>
-  <script src="data/microbe-names.js?v=20260907-71"></script>
-  <script src="data/nprc-catalogue.js?v=20260907-71"></script>
+  <script>window.APP_VERSION = '20260907-72';</script>
+  <script src="data/source-metadata.js?v=20260907-72"></script>
+  <script src="data/categories.js?v=20260907-72"></script>
+  <script src="data/microbes.js?v=20260907-72"></script>
+  <script src="data/microbes-gram-positive.js?v=20260907-72"></script>
+  <script src="data/microbes-gram-negative.js?v=20260907-72"></script>
+  <script src="data/microbes-anaerobe.js?v=20260907-72"></script>
+  <script src="data/microbes-atypical.js?v=20260907-72"></script>
+  <script src="data/microbes-fungi.js?v=20260907-72"></script>
+  <script src="data/microbes-parasite.js?v=20260907-72"></script>
+  <script src="data/microbes-virus.js?v=20260907-72"></script>
+  <script src="data/microbes-misc.js?v=20260907-72"></script>
+  <script src="data/antibiotics.js?v=20260907-72"></script>
+  <script src="data/resistance.js?v=20260907-72"></script>
+  <script src="data/virulence.js?v=20260907-72"></script>
+  <script src="data/genetics.js?v=20260907-72"></script>
+  <script src="data/glossary.js?v=20260907-72"></script>
+  <script src="data/biochem.js?v=20260907-72"></script>
+  <script src="data/differential.js?v=20260907-72"></script>
+  <script src="data/identification-tables.js?v=20260907-72"></script>
+  <script src="data/morphology.js?v=20260907-72"></script>
+  <script src="data/photos.js?v=20260907-72"></script>
+  <script src="data/photos-atlas.js?v=20260907-72"></script>
+  <script src="data/treatment.js?v=20260907-72"></script>
+  <script src="data/cards.js?v=20260907-72"></script>
+  <script src="data/tests.js?v=20260907-72"></script>
+  <script src="data/media.js?v=20260907-72"></script>
+  <script src="data/staining.js?v=20260907-72"></script>
+  <script src="data/breakpoints.js?v=20260907-72"></script>
+  <script src="data/eucast-breakpoints.js?v=20260907-72"></script>
+  <script src="data/biochem-tests.js?v=20260907-72"></script>
+  <script src="data/ast-alerts.js?v=20260907-72"></script>
+  <script src="data/qc-strains.js?v=20260907-72"></script>
+  <script src="data/ecv.js?v=20260907-72"></script>
+  <script src="data/intrinsic-resistance.js?v=20260907-72"></script>
+  <script src="data/site-reporting.js?v=20260907-72"></script>
+  <script src="data/lab-workflow.js?v=20260907-72"></script>
+  <script src="data/drug-cn.js?v=20260907-72"></script>
+  <script src="data/microbe-names.js?v=20260907-72"></script>
+  <script src="data/nprc-catalogue.js?v=20260907-72"></script>
   <!-- 逻辑 -->
-  <script src="js/core.js?v=20260907-71"></script>
-  <script src="js/view.js?v=20260907-71"></script>
-  <script src="js/validate.js?v=20260907-71"></script>
-  <script src="js/app/helpers.js?v=20260907-71"></script>
-  <script src="js/app/sidebar.js?v=20260907-71"></script>
-  <script src="js/app/search.js?v=20260907-71"></script>
-  <script src="js/app/compare.js?v=20260907-71"></script>
-  <script src="js/app/bp-table.js?v=20260907-71"></script>
-  <script src="js/app/tools-info.js?v=20260907-71"></script>
-  <script src="js/app/detail.js?v=20260907-71"></script>
-  <script src="js/app/tools-drug.js?v=20260907-71"></script>
-  <script src="js/app/navigation.js?v=20260907-71"></script>
-  <script src="js/app/landing.js?v=20260907-71"></script>
-  <script src="js/app/router.js?v=20260907-71"></script>
+  <script src="js/core.js?v=20260907-72"></script>
+  <script src="js/common-names.js?v=20260907-72"></script>
+  <script src="js/view.js?v=20260907-72"></script>
+  <script src="js/validate.js?v=20260907-72"></script>
+  <script src="js/app/helpers.js?v=20260907-72"></script>
+  <script src="js/app/sidebar.js?v=20260907-72"></script>
+  <script src="js/app/search.js?v=20260907-72"></script>
+  <script src="js/app/compare.js?v=20260907-72"></script>
+  <script src="js/app/bp-table.js?v=20260907-72"></script>
+  <script src="js/app/tools-info.js?v=20260907-72"></script>
+  <script src="js/app/common-names.js?v=20260907-72"></script>
+  <script src="js/app/detail.js?v=20260907-72"></script>
+  <script src="js/app/tools-drug.js?v=20260907-72"></script>
+  <script src="js/app/navigation.js?v=20260907-72"></script>
+  <script src="js/app/landing.js?v=20260907-72"></script>
+  <script src="js/app/router.js?v=20260907-72"></script>
   <script>
     function showUpdateNotice(text) {
       var btn = document.createElement('button');

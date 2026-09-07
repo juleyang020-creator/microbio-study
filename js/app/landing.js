@@ -3,7 +3,7 @@
   var Core = window.Core, View = window.View;
   var NS = window.AppNS = window.AppNS || {};
   var el = NS.el;
-  // 总览图仍保留在各模块下；先提供可操作的条目入口，再进入图示阅读。
+  // 总览图置于模块首页最前；介绍、最近浏览与分类入口接在图后。
   var LANDING = {
     microbes: [
       { src: 'img/morphology-overview.svg', cap: '细菌形态总览（按形态与排列）' },
@@ -80,7 +80,7 @@
       el('h2', { cls: 'landing-section-title', text: '分类浏览' }),
       el('div', { cls: 'landing-grid' }, cards)
     ]));
-    nodes.push(el('section', { cls: 'landing-diagrams' }, [
+    nodes.unshift(el('section', { cls: 'landing-diagrams' }, [
       el('h2', { cls: 'landing-section-title', text: '图示总览' }),
       el('p', { cls: 'landing-intro', text: '点击图片可放大阅读。' }),
       el('div', { cls: 'landing-figures' }, (LANDING[moduleKey] || []).map(function (g) {

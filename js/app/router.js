@@ -10,6 +10,7 @@
     document.body.classList.toggle('route-mn', isMicrobeNamesRoute());
     if (NS.renderSearchRoute()) { return; }
     NS.syncSearchInput('');
+    if (NS.isCommonNamesRoute()) { NS.renderCommonNames(); return; }
     if (isMicrobeNamesRoute()) { renderMicrobeNames(); return; }
     if (isLabWorkflowRoute()) { renderLabWorkflow(); return; }
     if (isAboutRoute()) { renderAbout(); return; }

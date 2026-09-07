@@ -388,7 +388,9 @@
       var kids = [ el('span', { cls: 'mn-nm', text: m.名称 }), el('span', { cls: 'mn-lt', text: m.拉丁名 || '' }) ];
       if (m.类) { kids.push(el('span', { cls: 'mn-kind mn-kind-' + MN_KIND_CLS[m.类], text: MN_KIND_SHORT[m.类] || m.类 })); }
       if (t.tag) { kids.push(el('span', { cls: 'mn-tag', text: t.tag })); }
-      grid.appendChild(el('a', opts, kids));
+      grid.appendChild(el('div', { cls: 'mn-entry' }, [
+        el('a', opts, kids), NS.commonNameButton({ name: m.名称, latin: m.拉丁名 || '' }, true)
+      ]));
     });
     if (filtered.length === 0) { nodes.push(el('div', { cls: 'empty', text: '没有匹配的菌名。' })); }
     fill(document.getElementById('mn-results'), nodes);

@@ -9,6 +9,7 @@ test('模块首页提供标题、真实条目数与有效的直接入口', () =>
   app.win.Core.MODULE_KEYS.forEach(module => {
     goto(app, '#/' + module);
     const main = app.doc.getElementById('main');
+    assert.ok(main.querySelector('.landing').children[0].classList.contains('landing-diagrams'), module + ' 总览图必须位于页面最开始');
     assert.equal(main.querySelector('.landing-title')?.textContent, app.win.View.moduleLabel(module));
     assert.ok(main.querySelector('.landing-count').textContent.includes(String(app.win.AppNS.db()[module].length)));
     const links = main.querySelectorAll('.landing-entry');
