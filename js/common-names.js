@@ -83,6 +83,22 @@
     });
   }
 
+  var SORT_MODES = ['manual', 'name', 'latin', 'abbr'];
+  var SORT_KEY = 'zhiwei-common-names-sort';
+  var nameCollator = new Intl.Collator('zh-CN-u-co-pinyin', { numeric: true, sensitivity: 'base' });
+  var codeCollator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
+  // 自动排序只生成显示副本；持久化数组始终保留手动顺序。
+  function sortItems(items, mode) {
+    if (mode === 'manual' || SORT_MODES.indexOf(mode) === -1) { return list(items).slice(); }
+    var compare = mode === 'name' ? nameCollator.compare : codeCollator.compare;
+    return list(items).map(function (item, index) { return { item: item, index: index, key: normalize(item && item[mode]) }; })
+      .sort(function (a, b) {
+        if (!a.key && b.key) { return 1; }
+        if (a.key && !b.key) { return -1; }
+        return compare(a.key, b.key) || a.index - b.index;
+      }).map(function (row) { return row.item; });
+  }
+
   var FORMAT = 'zhiwei-common-names';
   var ITEM_FIELDS = ['id', 'name', 'latin', 'abbr', 'microbeId'];
   var MAX_ITEMS = 500;
@@ -173,6 +189,21 @@
       return result;
     }
 
+    function loadSortMode() {
+      try {
+        var mode = storage.getItem(SORT_KEY);
+        return { ok: true, mode: SORT_MODES.indexOf(mode) !== -1 ? mode : 'manual' };
+      } catch (error) { return failure('无法读取排序偏好，暂用手动顺序。'); }
+    }
+    function saveSortMode(mode) {
+      if (SORT_MODES.indexOf(mode) === -1) { return failure('不支持此排序方式。'); }
+      try {
+        storage.setItem(SORT_KEY, mode);
+        if (storage.getItem(SORT_KEY) !== mode) { return failure('排序偏好未能保存，请检查浏览器存储。'); }
+        return { ok: true, mode: mode };
+      } catch (error) { return failure('排序偏好未能保存，请检查浏览器存储。'); }
+    }
+
     function load() {
       var snapshot = readSnapshot();
       return snapshot.ok ? { ok: true, items: snapshot.items } : snapshot;
@@ -237,6 +268,25 @@
       return write(current.items, current.raw);
     }
 
+    // 基于完整名单的 ID 顺序快照移动；不使用旧界面中的内容覆盖最新字段。
+    function move(id, direction, expectedIds) {
+      if (['up', 'down', 'top'].indexOf(direction) === -1 || !Array.isArray(expectedIds)) { return failure('排序操作无效。'); }
+      var current = readSnapshot();
+      if (!current.ok) { return current; }
+      if (expectedIds.length !== current.items.length || current.items.some(function (item, index) { return expectedIds[index] !== item.id; })) {
+        return failure('名单或顺序已被其他页面更新，请重新查看后再移动。');
+      }
+      var from = current.items.findIndex(function (item) { return item.id === id; });
+      if (from === -1) { return failure('条目已不存在，无法移动。'); }
+      var to = direction === 'top' ? 0 : Math.max(0, Math.min(current.items.length - 1, from + (direction === 'up' ? -1 : 1)));
+      if (to === from) { return { ok: true, items: current.items, position: to }; }
+      var item = current.items.splice(from, 1)[0];
+      current.items.splice(to, 0, item);
+      var result = write(current.items, current.raw);
+      if (result.ok) { result.position = to; }
+      return result;
+    }
+
     function exportBackup() {
       var current = load();
       if (!current.ok) { return current; }
@@ -265,11 +315,11 @@
       return result;
     }
 
-    return { load: load, save: save, remove: remove, exportBackup: exportBackup, importBackup: importBackup };
+    return { load: load, save: save, remove: remove, move: move, loadSortMode: loadSortMode, saveSortMode: saveSortMode, exportBackup: exportBackup, importBackup: importBackup };
   }
 
   return {
     STORAGE_KEY: STORAGE_KEY, buildCatalog: buildCatalog, suggest: suggest,
-    filter: filter, createStore: createStore
+    filter: filter, createStore: createStore, sortItems: sortItems, SORT_MODES: SORT_MODES.slice(), SORT_KEY: SORT_KEY
   };
 });
