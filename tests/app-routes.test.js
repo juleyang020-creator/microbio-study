@@ -116,6 +116,73 @@ test('相似菌与鉴别：指向已精简移除的菌时链到菌名速查，�
   assert.ok(plains.length > 0, '群概念鉴别对象不应被链接化');
 });
 
+test('沙门和志贺全部详情页挂载分型表，表头、行名、结果及来源实际渲染', () => {
+  const app = loadApp();
+  const DB = app.win.DB;
+  const targets = DB.microbes.filter((m) => ['沙门菌属', '志贺菌属'].includes(m.类别));
+  assert.ok(targets.some((m) => m.id === 'salmonella-genus'), '必须覆盖沙门菌属总览');
+  assert.ok(targets.some((m) => m.id === 'shigella-genus'), '必须覆盖志贺菌属总览');
+  targets.forEach((entry) => {
+    goto(app, '#/microbes/' + entry.id);
+    const main = app.doc.getElementById('main');
+    const group = DB.identificationTables.find((g) => g.类别 === entry.类别);
+    const section = main.querySelector('.identification-tables');
+    assert.ok(section, entry.id + ' 未挂载分型鉴定表');
+    const jump = main.querySelector('.ident-jump');
+    assert.ok(jump, entry.id + ' 缺少顶部跳转入口');
+    assert.strictEqual(jump.getAttribute('aria-controls'), section.id);
+    jump.click();
+    assert.ok(section.ownerDocument_activeElement, '跳转应把键盘焦点移到分型鉴定表');
+    const tables = section.querySelectorAll('.ident-table');
+    assert.strictEqual(tables.length, group.表格.length, entry.id + ' 表格数量不符');
+    group.表格.forEach((item, i) => {
+      const table = tables[i];
+      assert.strictEqual(table.querySelector('caption').textContent, item.标题);
+      const heads = table.querySelector('thead').querySelectorAll('th');
+      assert.deepStrictEqual(heads.map((h) => h.textContent), Array.from(item.列));
+      heads.forEach((h) => assert.strictEqual(h.getAttribute('scope'), 'col'));
+      const rows = table.querySelector('tbody').querySelectorAll('tr');
+      assert.strictEqual(rows.length, item.行.length);
+      item.行.forEach((row, r) => {
+        const th = rows[r].querySelector('th');
+        assert.strictEqual(th.getAttribute('scope'), 'row');
+        assert.strictEqual(th.textContent, row.名称);
+        assert.deepStrictEqual(rows[r].querySelectorAll('td').map((td) => td.textContent), Array.from(row.结果));
+        const link = th.querySelector('a');
+        if (row.id) { assert.strictEqual(link.getAttribute('href'), '#/microbes/' + row.id); }
+        else { assert.strictEqual(link, null); }
+      });
+      const scroller = table.parentNode;
+      assert.strictEqual(scroller.getAttribute('tabindex'), '0');
+      assert.strictEqual(scroller.getAttribute('role'), 'region');
+      assert.ok(scroller.getAttribute('aria-label').includes(item.标题));
+      item.说明.forEach((note) => assert.ok(section.textContent.includes(note)));
+      item.来源.forEach((source) => {
+        assert.ok(section.textContent.includes(source.名称));
+        if (source.url) {
+          const sourceLink = section.querySelectorAll('a').find((a) => a.textContent === source.名称 && a.getAttribute('href') === source.url);
+          assert.ok(sourceLink, '来源外链未渲染：' + source.名称);
+          assert.strictEqual(sourceLink.getAttribute('target'), '_blank');
+          assert.strictEqual(sourceLink.getAttribute('rel'), 'noopener noreferrer');
+        }
+      });
+    });
+  });
+});
+
+test('分型鉴定表不会出现在其他类别或无数据详情页', () => {
+  const app = loadApp();
+  ['#/microbes/escherichia-coli', '#/antibiotics/ampicillin', '#/microbes'].forEach((route) => {
+    goto(app, route);
+    const main = app.doc.getElementById('main');
+    assert.strictEqual(main.querySelector('.identification-tables'), null, route);
+    assert.strictEqual(main.querySelector('.ident-jump'), null, route);
+  });
+  delete app.win.DB.identificationTables;
+  assert.doesNotThrow(() => goto(app, '#/microbes/salmonella-genus'));
+  assert.strictEqual(app.doc.getElementById('main').querySelector('.identification-tables'), null);
+});
+
 test('搜索渲染不抛异常（含别名词）', () => {
   const app = loadApp();
   const input = app.doc.getElementById('search-input');

@@ -307,6 +307,56 @@
     return nodes;
   }
 
+  function buildIdentificationTables(groups) {
+    if (!groups || !groups.length) { return null; }
+    var children = [el('h3', { cls: 'ident-title', text: '分型鉴定表' })];
+    groups.forEach(function (group) {
+      var groupNodes = [el('h4', { cls: 'ident-group-title', text: group.标题 })];
+      if (group.说明) { groupNodes.push(el('p', { cls: 'ident-intro', text: group.说明 })); }
+      (group.表格 || []).forEach(function (item) {
+        var heads = item.列.map(function (name) {
+          var th = el('th', { text: name });
+          th.setAttribute('scope', 'col');
+          return th;
+        });
+        var rows = item.行.map(function (row) {
+          var label = row.id ? el('a', { href: '#/microbes/' + row.id, text: row.名称 }) : document.createTextNode(row.名称);
+          var th = el('th', {}, [label]);
+          th.setAttribute('scope', 'row');
+          return el('tr', {}, [th].concat(row.结果.map(function (value) {
+            return el('td', { text: value });
+          })));
+        });
+        groupNodes.push(el('div', {
+          cls: 'table-scroll ident-scroll', tabindex: '0', role: 'region',
+          'aria-label': item.标题 + '，可左右滚动'
+        }, [el('table', { cls: 'ident-table', id: item.id }, [
+          el('caption', { text: item.标题 }),
+          el('thead', {}, [el('tr', {}, heads)]),
+          el('tbody', {}, rows)
+        ])]));
+        if (item.说明 && item.说明.length) {
+          groupNodes.push(el('ul', { cls: 'ident-notes' }, item.说明.map(function (note) {
+            return el('li', { text: note });
+          })));
+        }
+        if (item.来源 && item.来源.length) {
+          groupNodes.push(el('div', { cls: 'ident-sources' }, [
+            el('span', { text: '来源：' })
+          ].concat(item.来源.map(function (source) {
+            return source.url ? el('a', {
+              text: source.名称, href: source.url, target: '_blank', rel: 'noopener noreferrer'
+            }) : el('span', { text: source.名称 });
+          }))));
+        }
+      });
+      children.push(el('div', { cls: 'ident-group', id: group.id }, groupNodes));
+    });
+    return el('section', {
+      cls: 'identification-tables', id: 'identification-tables', tabindex: '-1', 'aria-label': '分型鉴定表'
+    }, children);
+  }
+
   function buildDetail(vm) {
     if (!vm) { return [ el('div', { cls: 'empty', text: '请选择左侧的一个条目查看详情。' }) ]; }
     var nodes = [];
@@ -324,6 +374,16 @@
     }
     nodes.push(el('div', { cls: 'detail-head' }, head));
     if (vm.拉丁名) { nodes.push(el('div', { cls: 'latin', text: vm.拉丁名 })); }
+    var identificationSection = buildIdentificationTables(vm.分型鉴定表);
+    if (identificationSection) {
+      nodes.push(el('button', {
+        cls: 'ident-jump', type: 'button', text: '分型鉴定表 ↓', 'aria-controls': 'identification-tables',
+        onClick: function () {
+          identificationSection.focus({ preventScroll: true });
+          identificationSection.scrollIntoView({ block: 'start' });
+        }
+      }));
+    }
     if (vm.生物安全) {
       var bio = vm.生物安全;
       nodes.push(el('div', { cls: 'biosafety-alert', role: 'alert' }, [
@@ -512,6 +572,8 @@
         el('div', { cls: 'bp-legend-note', text: '⚠️ ECV 只区分野生型(WT，≤ECV)与非野生型(NWT，>ECV，提示获得性耐药机制)，' + (ecv.注 || '不是临床折点，不得按 S/I/R 报告。') })
       ]));
     }
+
+    if (identificationSection) { nodes.push(identificationSection); }
 
     // ③ 相似菌与鉴别
     if (vm.鉴别 && vm.鉴别.length) {

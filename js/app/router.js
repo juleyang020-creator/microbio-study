@@ -40,6 +40,7 @@
       treatment: (entry && window.DB.treatment) ? window.DB.treatment[entry.id] : null,
       biochem: (entry && window.DB.biochem) ? window.DB.biochem[entry.id] : null,
       differential: (entry && window.DB.differential) ? window.DB.differential[entry.id] : null,
+      identificationTables: route.module === 'microbes' ? window.DB.identificationTables : [],
       links: View.referenceLinks(route.module, entry),
       breakpoints: (route.module === 'microbes' && route.id) ? View.breakpointVM(route.id, window.DB.breakpoints) : null,
       ecv: (route.module === 'microbes' && route.id) ? View.ecvVM(route.id, window.DB.ecv) : null
