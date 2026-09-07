@@ -702,6 +702,80 @@ body.zoom-open { overflow: hidden; }
 .detail-anchor:focus { outline: 2px solid var(--accent-edge); outline-offset: 5px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
 
+/* 常见菌菌名速查：个人清单与名称补全，不使用医学判读配色。 */
+.landing-diagrams { margin-bottom: 24px; }
+.landing-diagrams > .landing-section-title { margin-top: 0; }
+.common-workspace { max-width: 1120px; }
+.common-head, .common-backup-tools, .common-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.common-head { justify-content: space-between; gap: 12px; }
+.common-head .eyebrow { margin-bottom: 4px; }
+.common-help { color: var(--muted); font-size: 12.5px; line-height: 1.7; margin: 10px 0; }
+.common-backup-tools .common-help { margin: 0; }
+.common-backup > summary { min-height: 40px; padding: 8px 0; color: var(--accent); font-size: 13px; cursor: pointer; }
+.common-backup-tools { padding: 6px 0 12px; }
+.common-editor:not([open]) { display: none; }
+.common-filter-field { flex: 1; min-width: 0; }
+.common-filter-field > label { display: block; margin-bottom: 5px; font-size: 11px; color: var(--muted); }
+.common-status { color: var(--accent); font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+.common-status:empty { display: none; }
+.common-status.is-error { color: var(--rust); }
+.common-editor { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); margin: 14px 0; scroll-margin-top: 12px; }
+.common-editor > summary { min-height: 44px; padding: 12px 16px; font-weight: 600; color: var(--ink-soft); cursor: pointer; }
+.common-editor[open] > summary { border-bottom: 1px solid var(--line); }
+.common-form { padding: 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.common-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; font-size: 13px; color: var(--ink-soft); }
+.common-name-field, .common-form > .common-help, .common-form > .common-actions { grid-column: 1 / -1; }
+.common-form > .common-code-confirm { grid-column: 1 / -1; display: flex; align-items: flex-start; gap: 8px; padding: 12px; border: 1px solid var(--accent-edge); border-radius: 8px; background: var(--accent-weak); color: var(--ink-soft); font-size: 13px; }
+.common-code-confirm span { min-width: 0; overflow-wrap: anywhere; }
+.common-code-confirm input { margin-top: 4px; flex-shrink: 0; }
+.common-field .common-help, .common-form > .common-help { margin: 0; }
+.common-input { display: block; width: 100%; min-width: 0; min-height: 44px; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: var(--surface); color: var(--ink); font: inherit; font-size: 14px; }
+.common-input::placeholder { color: var(--muted); }
+.common-input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.common-completion-box { position: relative; }
+.common-suggestions { position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 12; max-height: 250px; overflow-y: auto; margin: 0; padding: 4px; list-style: none; border: 1px solid var(--accent-edge); border-radius: 8px; background: var(--surface); box-shadow: 0 8px 24px rgba(15,18,22,.16); }
+.common-option { display: flex; flex-direction: column; gap: 3px; padding: 10px; border-radius: 6px; cursor: pointer; overflow-wrap: anywhere; }
+.common-option:hover, .common-option[aria-selected="true"] { background: var(--accent-weak); color: var(--accent); }
+.common-option span { color: var(--muted); font-size: 12px; }
+.common-list-toolbar { display: flex; align-items: center; gap: 10px; margin: 16px 0 12px; position: sticky; top: 0; z-index: 5; padding: 8px 0; background: var(--bg); }
+.common-count { flex-shrink: 0; color: var(--muted); font-size: 12px; }
+.common-list { display: flex; flex-direction: column; gap: 10px; }
+.common-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(130px, .55fr) auto; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.common-row-name, .common-row-code { min-width: 0; overflow-wrap: anywhere; }
+.common-row-name h2 { margin: 0; font-size: 16px; line-height: 1.5; }
+.common-latin { font-style: italic; color: var(--ink-soft); font-size: 13px; line-height: 1.65; margin: 6px 0 0; }
+.common-row-code { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.common-label, .common-missing { font-size: 12px; color: var(--muted); }
+.common-abbr { font: 600 17px var(--mono); color: var(--accent); background: var(--accent-weak); padding: 4px 8px; border-radius: 5px; max-width: 100%; white-space: pre-wrap; }
+.common-row-actions { display: grid; grid-template-columns: repeat(2, max-content); gap: 6px; }
+.common-workspace .action-btn { min-height: 44px; }
+.common-row .action-btn { font-size: 12px; padding: 8px 10px; }
+.common-row .action-btn:disabled { color: var(--muted); background: var(--line-2); cursor: default; }
+.common-remove-ask { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+.common-remove-ask > span { color: var(--ink-soft); font-size: 13px; overflow-wrap: anywhere; }
+.common-empty { border: 1px dashed var(--line); border-radius: 10px; padding: 24px; color: var(--muted); }
+.common-empty h2 { color: var(--ink-soft); font-size: 17px; margin-top: 0; }
+.common-copy-panel textarea { min-height: 100px; max-height: 300px; resize: vertical; font-family: var(--mono); }
+.common-add-control { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+.common-add-btn { min-height: 44px; padding: 6px 10px; border: 1px solid var(--accent-edge); border-radius: 7px; background: var(--accent-weak); color: var(--accent); font: inherit; font-size: 12px; cursor: pointer; }
+.common-add-btn:disabled { color: var(--muted); background: var(--line-2); border-color: var(--line); cursor: default; }
+.common-add-feedback { font-size: 11px; color: var(--muted); max-width: 160px; overflow-wrap: anywhere; }
+.common-add-feedback a { color: var(--accent); }
+.mn-entry { display: flex; gap: 6px; align-items: flex-start; min-width: 0; padding: 4px 0; }
+.mn-entry .mn-item { flex: 1; min-width: 0; }
+.mn-entry .common-add-control { flex: 0 0 76px; align-items: stretch; }
+.mn-entry .common-add-btn { padding: 6px; font-size: 11.5px; }
+@media (max-width: 760px) {
+  .common-form, .common-row { grid-template-columns: minmax(0, 1fr); }
+  .common-form { padding: 12px; }
+  .common-form .common-input, #common-filter { font-size: 16px; }
+  .common-row-code { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .common-row-code > .common-label { grid-column: 1 / -1; }
+  .common-row-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .common-row-actions .action-btn { justify-content: center; }
+  .common-head .common-new { width: 100%; justify-content: center; }
+}
+
 /* ===== 移动端 ===== */
 @media (max-width: 760px) {
   .topbar { grid-template-columns: auto auto minmax(0, 1fr); gap: 6px 10px; padding: max(8px, env(safe-area-inset-top)) 12px 8px; }

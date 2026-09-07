@@ -416,6 +416,9 @@
         onClick: function () { toggleFavorite(vm.id, parseHash().module, vm.名称); NS.renderRoute(); }
       }));
     }
+    if (vm.id && parseHash().module === 'microbes') {
+      head.push(NS.commonNameButton({ name: vm.名称, latin: vm.拉丁名 || '', microbeId: vm.id }));
+    }
     nodes.push(el('div', { cls: 'detail-head' }, head));
     if (vm.拉丁名) { nodes.push(el('div', { cls: 'latin', text: vm.拉丁名 })); }
     var identificationSection = buildIdentificationTables(vm.分型鉴定表);

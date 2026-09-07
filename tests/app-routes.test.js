@@ -9,7 +9,7 @@ const { loadApp, goto } = require('./dom-stub.js');
 
 const TOOL_ROUTES = [
   '#/compare', '#/cardcompare', '#/intrinsic', '#/breakpoints',
-  '#/ast-alerts', '#/lab-workflow', '#/microbe-names', '#/about'
+  '#/ast-alerts', '#/lab-workflow', '#/microbe-names', '#/common-names', '#/about'
 ];
 
 function tryGoto(app, hash) {
