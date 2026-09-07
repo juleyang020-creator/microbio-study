@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>念珠菌显色培养基</title><desc>念珠菌显色培养基平板俯视：沙保罗样营养基础呈乳白色，含抑菌剂抑制细菌而酵母菌照长；不同念珠菌的特异酶切割显色底物生成不同颜色的菌落——白念珠菌翠绿、热带念珠菌蓝灰、克柔念珠菌粉红且菌落毛糙，其余念珠菌多呈白色或淡紫色，只能提示不能定种</desc>
+<title>念珠菌显色培养基（常见颜色示意）</title><desc>本图按教材的常见显色表现作示意，不覆盖全部商品配方。不同产品、菌种及观察条件的颜色可不同，应按产品说明和本地验证规则解释。任何颜色均不能独立定种；典型显色也只能作为初筛线索，疑难或相似结果须进一步鉴定。</desc>
 <defs>
   <clipPath id="plateclip"><circle cx="108" cy="152" r="62"/></clipPath>
 </defs>
@@ -9,7 +9,7 @@
 <text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">念珠菌显色培养基</text>
 <rect x="356" y="14" width="100" height="18" rx="9" fill="#eef1f5"/>
 <text x="406" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">选择与鉴别培养基</text>
-<text x="24" y="46" font-size="11.5" fill="#5c6672">抑菌剂先滤掉细菌；再按特异酶显色把常见念珠菌分成不同颜色</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">菌落颜色仅供初筛；不同产品和菌种可有差异</text>
 <line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
 <!-- ===== 左：平板俯视 ===== -->
@@ -56,7 +56,7 @@
 <text x="196" y="86" font-size="10" font-weight="700" fill="#33404f">选择成分：抑制谁</text>
 <text x="196" y="103" font-size="9.5" fill="#5c6672">沙保罗样营养基础 + 抑菌剂（如氯霉素）</text>
 <circle cx="200" cy="117" r="4.5" fill="none" stroke="#b7ad99" stroke-width="1.1" stroke-dasharray="3,2.5"/>
-<text x="211" y="120.5" font-size="9.5" fill="#33404f">标本中的细菌不长，酵母菌照长</text>
+<text x="211" y="120.5" font-size="9.5" fill="#33404f">选择性抑制范围依具体产品</text>
 
 <!-- ===== 右：鉴别成分 ===== -->
 <rect x="186" y="136" width="270" height="94" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
@@ -73,10 +73,10 @@
 
 <!-- 临床注解 -->
 <rect x="24" y="234" width="432" height="18" rx="6" fill="#f9e6e4" stroke="#e3b8b5"/>
-<text x="34" y="246.5" font-size="9.5" fill="#a3332f">24–48h 判读，久置颜色加深或改变；耳念珠菌呈白/粉，须质谱确认</text>
+<text x="34" y="246.5" font-size="9.5" fill="#a3332f">颜色随产品与观察条件变化；疑似耳念珠菌须进一步确认</text>
 
 <!-- 结论 -->
-<text x="240" y="263" text-anchor="middle" font-size="11.5" fill="#33404f">颜色只作初筛定向：绿、蓝灰、粉糙可提示种，余色仍须鉴定</text>
+<text x="240" y="263" text-anchor="middle" font-size="11.5" fill="#33404f">任何颜色仅作初筛线索，不能独立定种</text>
 
 <!-- 页脚 -->
 <rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>

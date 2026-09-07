@@ -190,9 +190,14 @@ test('每个耐药机制都映射到存在的机制图', () => {
   });
 });
 
-test('每个试验都映射到存在的示意图', () => {
+test('试验配图存在；已确认缺少合适图片的条目不得借错图', () => {
+  const awaitingDiagram = new Set(['hbsag-elisa', 'hcv-ab-elisa', 'hiv-ab-screen', 'sars2-rtqpcr']);
   global.window.DB.tests.forEach((t) => {
     const img = View.mechanismImageFor('tests', t, global.window.DB.categories);
+    if (awaitingDiagram.has(t.id)) {
+      assert.strictEqual(img, null, '未绘制合适专用图前应留空：' + t.id);
+      return;
+    }
     assert.ok(img, '无示意图映射：' + t.id);
     assert.ok(fs.existsSync(path.join(__dirname, '..', img)), '示意图文件缺失：' + img);
   });

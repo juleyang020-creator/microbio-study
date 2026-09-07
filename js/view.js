@@ -50,12 +50,7 @@
     'carbapenemase-inhibitor-enhancement': 'img/test-mcim.svg',
     'checkerboard-fic': 'img/test-bmd.svg',
     'yeast-ast': 'img/test-bmd.svg',
-    // 批60 新增（95书实验二十）：病毒血清学复用 GM/BDG 抗原抗体图族
-    'hbsag-elisa': 'img/test-bdg.svg',
-    'hcv-ab-elisa': 'img/test-bdg.svg',
-    'hiv-ab-screen': 'img/test-bdg.svg',
-    // 批61 新增（95书实验二十一）：分子检测复用 MALDI 谱线图（核酸扩增示意）
-    'sars2-rtqpcr': 'img/test-maldi.svg',
+    // 病毒血清学与核酸检测暂不挂图，不能借用 G 试验或质谱专用图。
     'colistin-bmd': 'img/test-colistin.svg',
     'coagulase': 'img/test-coagulase.svg',
     'catalase': 'img/test-catalase.svg',
@@ -90,8 +85,7 @@
     'flagella-stain': 'img/stain-flagella.svg',
     'metachromatic-granule': 'img/stain-granule.svg',
     'lpcb': 'img/stain-lpcb.svg',
-    // 批58 新增（95书实验十五）：钙荧光白复用 LPCB 真菌图
-    'calcofluor-white': 'img/stain-lpcb.svg',
+    // 钙荧光白暂不挂图，LPCB 专用图不能代替荧光染色图。
     'giemsa': 'img/stain-giemsa.svg',
     'auramine': 'img/stain-auramine.svg',
     'modified-acid-fast': 'img/stain-modified-acidfast.svg',
@@ -230,7 +224,7 @@
     'gloss-teichoic': 'img/glossary-structure-bacteria.svg',
     'gloss-peptidoglycan': 'img/glossary-structure-bacteria.svg',
     'gloss-lps': 'img/glossary-structure-bacteria.svg',
-    'gloss-biofilm-structure': 'img/glossary-structure-bacteria.svg',
+    'gloss-biofilm-structure': 'img/resistance-biofilm.svg',
     'gloss-s-layer': 'img/glossary-structure-bacteria.svg',
     'gloss-metachromatic': 'img/glossary-structure-bacteria.svg',
     'gloss-vi-antigen': 'img/glossary-structure-bacteria.svg',

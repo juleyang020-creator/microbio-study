@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>病毒与血清学术语（HIV · PCP · 乙肝两对半 · HCV · IgM/IgG）</title>
-<desc>HIV/AIDS：CD4⁺T 细胞进行性破坏，确诊须筛查＋确证（抗原/抗体联合筛查→免疫印迹或核酸），CD4 计数与病毒载量指导治疗；PCP＝肺孢子菌肺炎，AIDS 或免疫抑制者标志性机会感染（β-D-葡聚糖升高，六胺银/免疫荧光镜检）；乙肝两对半：HBsAg＝现症感染，抗-HBs＝保护性抗体（疫苗成功标志）；HCV：抗-HCV 筛查＋HCV RNA 确证，RNA 阳性即现症；IgM/IgG 动力学：IgM 早峰提示新近感染，IgG 迟峰＋亲和成熟提示既往/恢复期，双份血清 4 倍升高为确诊依据</desc>
+<desc>病毒血清学与核酸检测回答不同问题，具体结果依病原、宿主和检测方法解释。IgM/IgG 曲线仅示典型初次免疫应答，不代表所有感染；IgM 阳性不能单独确定原发感染，IgG 阳性不能单独确定感染时间。HIV、HBV、HCV 及机会感染标志物应结合各自的诊断规则和临床背景解释。</desc>
 <defs>
   <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
 </defs>
@@ -10,7 +10,7 @@
 <text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">病毒与血清学术语</text>
 <rect x="396" y="14" width="60" height="18" rx="9" fill="#eef1f5"/>
 <text x="426" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">术语</text>
-<text x="24" y="46" font-size="11.5" fill="#5c6672">病毒靠血清学+核酸定乾坤；机会感染是免疫功能的晴雨表</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">血清学与核酸各有解释边界；结果需结合临床背景</text>
 <line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
 
 <!-- ===== HIV / PCP ===== -->
@@ -49,15 +49,15 @@
 <text x="34" y="277" font-size="9.5" fill="#5c6672">RNA 阳性＝现症（可治愈，DAA 时代）</text>
 
 <!-- ===== IgM/IgG 曲线 ===== -->
-<text x="268" y="162" font-size="10.5" font-weight="700" fill="#33404f">IgM / IgG：时间轴读感染阶段</text>
+<text x="268" y="162" font-size="10.5" font-weight="700" fill="#33404f">典型初次免疫应答（示意）</text>
 <!-- 曲线 -->
 <line x1="268" y1="318" x2="456" y2="318" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
 <path d="M268,318 Q290,318 300,272 Q308,244 322,262 Q340,290 360,314" fill="none" stroke="#c2413d" stroke-width="1.8"/>
 <path d="M268,318 Q300,318 316,296 Q340,264 380,268 Q420,272 448,282" fill="none" stroke="#2b6cb0" stroke-width="1.8"/>
-<text x="296" y="258" font-size="9.5" fill="#c2413d">IgM 早峰＝新近</text>
-<text x="392" y="262" font-size="9.5" fill="#2b6cb0">IgG 迟峰＋持久</text>
-<text x="330" y="334" font-size="9.5" fill="#5c6672">双份血清 IgG 4 倍升高＝确诊依据</text>
+<text x="296" y="258" font-size="9.5" fill="#c2413d">IgM 常较早</text>
+<text x="392" y="262" font-size="9.5" fill="#2b6cb0">IgG 可持续</text>
+<text x="330" y="334" font-size="9.5" fill="#5c6672">配对血清依病原与方法解释</text>
 
 <!-- 页脚 -->
-<text x="132" y="334" font-size="9.5" fill="#5c6672">IgM 阳性≠确诊：类风湿因子可致假阳性</text>
+<text x="132" y="334" font-size="9.5" fill="#5c6672">IgM/IgG 阳性不等于确定感染阶段</text>
 </svg>
