@@ -499,10 +499,9 @@
   function searchVM(results, query) {
     // 用于结果高亮。检索本身走别名（输入 mrsa 命中「金黄色葡萄球菌」），
     // 高亮词表若只有原词，命中片段里的别名对应词就不会被标出。
-    var raw = (query || '').trim().toLowerCase();
-    var tokens = raw.split(/\s+/).filter(Boolean);
-    var alias = (window.Core && window.Core.aliasesFor) ? window.Core.aliasesFor(raw) : [];
-    alias.forEach(function (a) { if (tokens.indexOf(a) === -1) { tokens.push(a); } });
+    var tokens = (window.Core && window.Core.searchTokens)
+      ? window.Core.searchTokens(query)
+      : String(query || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
     return {
       query: query,
       tokens: tokens,

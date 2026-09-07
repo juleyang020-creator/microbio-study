@@ -357,6 +357,50 @@
     }, children);
   }
 
+  // 目录只读取已渲染的顶层块与标题，不维护另一份内容清单。
+  function buildDetailToc(nodes) {
+    var sections = [];
+    nodes.forEach(function (node, index) {
+      var title = node.querySelector('.section-title, .intrinsic-title, .treatment-title, .card-drugs-title, .morph-title, .bp-title, .ident-title, .diff-title, .biochem-title, .relations-label, .refs-label, figcaption');
+      if (!title || !title.textContent.trim() || node.querySelector('.empty-sm')) { return; }
+      var label = title.textContent;
+      title.querySelectorAll('.photo-count, .photo-lic').forEach(function (meta) {
+        label = label.replace(meta.textContent, '');
+      });
+      sections.push({ node: node, title: label.trim(), index: index });
+    });
+    if (sections.length < 3) { return null; }
+    // 仅核对这次生成的内容；旧详情尚未卸载，查整个 document 会让重渲染的 ID 漂移。
+    var usedIds = Object.create(null);
+    nodes.forEach(function (node) {
+      if (node.id) { usedIds[node.id] = true; }
+      node.querySelectorAll('*').forEach(function (child) {
+        if (child.id) { usedIds[child.id] = true; }
+      });
+    });
+    var links = sections.map(function (section) {
+      var node = section.node;
+      if (!node.id) {
+        var base = 'detail-section-' + (section.index + 1), id = base, suffix = 1;
+        while (usedIds[id]) { id = base + '-' + suffix++; }
+        node.id = id;
+        usedIds[id] = true;
+      }
+      node.classList.add('detail-anchor');
+      node.setAttribute('tabindex', '-1');
+      return el('button', {
+        cls: 'detail-toc-link', type: 'button', text: section.title, 'aria-controls': node.id,
+        onClick: function () {
+          node.focus({ preventScroll: true });
+          node.scrollIntoView({ block: 'start' });
+        }
+      });
+    });
+    return el('nav', { cls: 'detail-toc', 'aria-label': '本页速览' }, [
+      el('div', { cls: 'detail-toc-title', text: '本页速览' })
+    ].concat(links));
+  }
+
   function buildDetail(vm) {
     if (!vm) { return [ el('div', { cls: 'empty', text: '请选择左侧的一个条目查看详情。' }) ]; }
     var nodes = [];
@@ -395,6 +439,7 @@
         el('div', { cls: 'biosafety-body' }, richInline(bio.提示 || ''))
       ]));
     }
+    var tocIndex = nodes.length;
     if (vm.机制图) {
       var diagramMeta = ((window.DB || {}).sourceMetadata || {}).diagrams || {};
       var diagram = diagramMeta[vm.机制图];
@@ -666,8 +711,10 @@
         el('div', { cls: 'refs-label', text: '综述 / 参考' })
       ].concat([ el('div', { cls: 'chips' }, refChips) ])));
     }
+    var toc = buildDetailToc(nodes);
+    if (toc) { nodes.splice(tocIndex, 0, toc); }
     return nodes;
   }
 
-  Object.assign(NS, { _linkDict, _zoomEl, _zoomEsc, buildDetail, buildPhotoCarousel, closeImageZoom, linkDict, openImageZoom, richBody, richInline, zoomableImg });
+  Object.assign(NS, { _linkDict, _zoomEl, _zoomEsc, buildDetail, buildDetailToc, buildPhotoCarousel, closeImageZoom, linkDict, openImageZoom, richBody, richInline, zoomableImg });
 })();
