@@ -3,7 +3,8 @@
   var Common = window.CommonNames;
   var NS = window.AppNS = window.AppNS || {};
   var el = NS.el;
-  var refreshList = null, announce = null, catalog = null, importing = false, importMessage = null;
+  var refreshList = null, refreshSort = null, announce = null, catalog = null, importing = false, importMessage = null;
+  var SORT_LABELS = { manual: '手动顺序', name: '自动：中文拼音', latin: '自动：拉丁名', abbr: '自动：简写' };
   function finishImport(text, error) {
     importing = false;
     if (isCommonNamesRoute() && refreshList && announce) {
@@ -44,6 +45,9 @@
     NS.setActiveTool('common-names');
     var store = commonNameStore();
     var initial = store.load();
+    var sortPreference = store.loadSortMode();
+    var sortMode = sortPreference.ok ? sortPreference.mode : 'manual';
+    var arranging = false;
     var main = document.getElementById('main');
     main.scrollTop = 0;
     NS.fill(document.getElementById('sidebar'), [ el('section', { cls: 'search-guide' }, [
@@ -187,6 +191,39 @@
     filter.setAttribute('aria-label', '筛选常用菌名单');
     var count = el('span', { cls: 'common-count', id: 'common-count' });
     var list = el('div', { cls: 'common-list', id: 'common-list' });
+    var sortSelect = el('select', { cls: 'common-input common-sort-select', id: 'common-sort', 'aria-label': '常用菌名排序方式' }, Common.SORT_MODES.map(function (mode) {
+      return el('option', { value: mode, text: SORT_LABELS[mode] });
+    }));
+    sortSelect.value = sortMode;
+    var orderHelp = el('p', { cls: 'common-help common-order-help' });
+    var arrangeButton = el('button', { cls: 'action-btn common-arrange-toggle', type: 'button', text: '调整顺序', 'aria-pressed': 'false', onClick: function () {
+      if (sortMode !== 'manual') { notify('请先选择手动顺序。'); return; }
+      if (!arranging && filter.value.trim()) { notify('请先清空名单内搜索，再调整完整名单的顺序。'); return; }
+      arranging = !arranging; renderList();
+      notify(arranging ? '可用上移、下移或置顶调整顺序，每次移动都会保存。' : '手动顺序已保留。');
+    } });
+    sortSelect.addEventListener('change', function () {
+      if (Common.SORT_MODES.indexOf(sortSelect.value) === -1) { sortSelect.value = sortMode; return; }
+      sortMode = sortSelect.value; arranging = false;
+      var saved = store.saveSortMode(sortMode);
+      renderList();
+      notify(saved.ok ? '已切换为' + SORT_LABELS[sortMode] + '，手动顺序不会被改动。' : '当前排序已应用，但' + saved.error, !saved.ok);
+    });
+    function moveItem(item, direction, expectedIds) {
+      if (sortMode !== 'manual' || !arranging || filter.value.trim()) { notify('请在未筛选的手动排序模式下调整顺序。', true); return; }
+      var moved = store.move(item.id, direction, expectedIds);
+      renderList();
+      if (moved.ok) { notify(item.name + ' 已移到第 ' + (moved.position + 1) + ' 位，顺序已保存。'); }
+      else { notify(moved.error, true); }
+      var row = Array.prototype.find.call(list.querySelectorAll('.common-row'), function (node) { return node.getAttribute('data-id') === item.id; });
+      if (row) {
+        var button = row.querySelector('.common-move-' + direction);
+        (button && !button.disabled ? button : row).focus({ preventScroll: true });
+        row.scrollIntoView({ block: 'nearest' });
+      } else {
+        (!arrangeButton.disabled ? arrangeButton : !sortSelect.disabled ? sortSelect : main).focus({ preventScroll: true });
+      }
+    }
     function removePrompt(item, row) {
       if (row.querySelector('.common-remove-ask')) { return; }
       var ask = el('div', { cls: 'common-remove-ask' }, [
@@ -204,12 +241,20 @@
     function renderList() {
       var loaded = store.load();
       save.disabled = !loaded.ok;
+      sortSelect.disabled = !loaded.ok;
+      if (!loaded.ok || loaded.items.length < 2 || sortMode !== 'manual') { arranging = false; }
+      arrangeButton.disabled = !loaded.ok || sortMode !== 'manual' || loaded.items.length < 2;
+      arrangeButton.textContent = arranging ? '完成排序' : '调整顺序';
+      arrangeButton.setAttribute('aria-pressed', String(arranging));
+      list.classList.toggle('is-arranging', arranging);
+      orderHelp.textContent = arranging && filter.value.trim() ? '筛选中，移动暂不可用；清空名单内搜索即可继续。' : '自动排序不改动手动顺序；切回手动可继续调整。';
       if (importButton) { importButton.disabled = importing; }
       if (!loaded.ok) { notify(loaded.error, true); count.textContent = '本机数据暂不可用'; list.replaceChildren(); return false; }
-      var matches = Common.filter(loaded.items, filter.value);
+      var manualIds = loaded.items.map(function (item) { return item.id; });
+      var matches = Common.filter(Common.sortItems(loaded.items, sortMode), filter.value);
       count.textContent = filter.value.trim() ? matches.length + ' / ' + loaded.items.length + ' 条' : loaded.items.length + ' 条常用菌名';
       NS.fill(list, matches.map(function (item) {
-        var row = el('article', { cls: 'common-row', 'data-id': item.id });
+        var row = el('article', { cls: 'common-row', 'data-id': item.id, tabindex: '-1' });
         row.appendChild(el('div', { cls: 'common-row-name' }, [
           el('h2', { text: item.name }), el('p', { cls: 'common-latin', text: item.latin || '未填写拉丁名' })
         ]));
@@ -223,6 +268,18 @@
           el('button', { cls: 'action-btn common-edit', type: 'button', text: '编辑', 'aria-label': '编辑 ' + item.name, onClick: function () { edit(item); } }),
           el('button', { cls: 'action-btn common-remove', type: 'button', text: '移除', 'aria-label': '移除 ' + item.name, onClick: function () { removePrompt(item, row); } })
         ]));
+        if (arranging) {
+          var position = manualIds.indexOf(item.id);
+          row.appendChild(el('div', { cls: 'common-order-controls' }, [
+            el('span', { cls: 'common-order-position', text: '第 ' + (position + 1) + ' 位' })
+          ].concat([['up', '上移'], ['down', '下移'], ['top', '置顶']].map(function (action) {
+            return el('button', { cls: 'action-btn common-move-' + action[0], type: 'button', text: action[1],
+              'aria-label': action[1] + ' ' + item.name,
+              disabled: !!filter.value.trim() || (action[0] === 'down' ? position === manualIds.length - 1 : position === 0),
+              onClick: function () { moveItem(item, action[0], manualIds); }
+            });
+          }))));
+        }
         return row;
       }));
       if (!matches.length) {
@@ -294,16 +351,26 @@
         el('div', { cls: 'common-backup-tools' }, [ exportButton, importButton, importInput, el('span', { cls: 'common-help', text: '合并导入，不覆盖已有简写；最多保存 500 条。请定期导出，以便换机或清理浏览器后恢复。' }) ])
       ]),
       status, copyPanel, editor,
+      el('div', { cls: 'common-sort-bar' }, [ el('label', { cls: 'common-sort-control', 'for': sortSelect.id }, [ el('span', { text: '排序方式' }), sortSelect ]), arrangeButton ]), orderHelp,
       el('div', { cls: 'common-list-toolbar' }, [ el('div', { cls: 'common-filter-field' }, [ el('label', { 'for': filter.id, text: '名单内搜索' }), filter ]), count ]), list
     ]) ]);
     refreshList = renderList; announce = notify;
+    refreshSort = function () {
+      var updated = store.loadSortMode();
+      if (updated.ok) { sortMode = updated.mode; sortSelect.value = sortMode; arranging = false; }
+      renderList();
+      if (!updated.ok) { notify(updated.error, true); }
+    };
     if (renderList()) {
       if (importing) { notify('正在读取备份，完成后会合并保存。'); }
       else if (importMessage) { notify(importMessage.text, importMessage.error); importMessage = null; }
+      else if (!sortPreference.ok) { notify(sortPreference.error, true); }
     }
   }
   window.addEventListener('storage', function (ev) {
-    if ((ev.key === Common.STORAGE_KEY || ev.key === null) && isCommonNamesRoute() && refreshList) { refreshList(); }
+    if (!isCommonNamesRoute()) { return; }
+    if ((ev.key === Common.SORT_KEY || ev.key === null) && refreshSort) { refreshSort(); }
+    else if (ev.key === Common.STORAGE_KEY && refreshList) { refreshList(); }
   });
   Object.assign(NS, { commonNameStore, commonNameButton, isCommonNamesRoute, renderCommonNames });
 })();
