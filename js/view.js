@@ -436,6 +436,9 @@
       治疗: extras.treatment || null,
       生化反应: extras.biochem || [],
       鉴别: extras.differential || [],
+      分型鉴定表: (extras.identificationTables || []).filter(function (group) {
+        return group.类别 === entry.类别;
+      }),
       药物: entry.药物 || [],
       天然耐药: entry.天然耐药 || '',
       小节: (entry.小节 || []).map(function (s) {

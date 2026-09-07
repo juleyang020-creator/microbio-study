@@ -28,6 +28,7 @@ global.window = { DB: {} };
   'glossary',
   'biochem',
   'differential',
+  'identification-tables',
   'morphology',
   'photos',
   'photos-atlas',

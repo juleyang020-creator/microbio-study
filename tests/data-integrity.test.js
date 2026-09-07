@@ -16,6 +16,7 @@ require('../data/genetics.js');
 require('../data/glossary.js');
 require('../data/biochem.js');
 require('../data/differential.js');
+require('../data/identification-tables.js');
 require('../data/morphology.js');
 require('../data/photos.js');
 require('../data/photos-atlas.js');
@@ -71,6 +72,41 @@ test('鉴别数据的键与引用 id 均为存在的微生物', () => {
     assert.ok(ids[k], '鉴别引用了不存在的微生物 id（键）：' + k);
     global.window.DB.differential[k].forEach((d) => {
       if (d.id) { assert.ok(ids[d.id], '鉴别项引用了不存在的 id：' + d.id + '（在 ' + k + '）'); }
+    });
+  });
+});
+
+test('分型鉴定表：分类、矩阵维度、引用菌种和来源完整', () => {
+  const DB = global.window.DB;
+  const microbes = new Map(DB.microbes.map((m) => [m.id, m]));
+  const groups = DB.identificationTables;
+  assert.deepStrictEqual(groups.map((g) => g.类别).sort(), ['志贺菌属', '沙门菌属'].sort());
+  const tableIds = new Set();
+  const hasText = (value) => typeof value === 'string' && value.trim().length > 0;
+  groups.forEach((group) => {
+    assert.ok(hasText(group.id) && hasText(group.标题) && hasText(group.说明), '分型表缺少标题或说明');
+    assert.ok(!tableIds.has(group.id), '分型表 id 重复：' + group.id);
+    tableIds.add(group.id);
+    assert.ok(DB.microbes.some((m) => m.类别 === group.类别), '分型表引用不存在的类别：' + group.类别);
+    assert.ok(group.表格.length >= 1, '分型表为空：' + group.id);
+    group.表格.forEach((item) => {
+      assert.ok(hasText(item.id) && hasText(item.标题), '表格缺少 id 或标题');
+      assert.ok(!tableIds.has(item.id), '表格 id 重复：' + item.id);
+      tableIds.add(item.id);
+      assert.ok(item.列.length >= 2 && item.列.every(hasText), '表头缺失：' + item.id);
+      assert.ok(item.行.length >= 2, '表格缺少比较行：' + item.id);
+      item.行.forEach((row) => {
+        assert.ok(hasText(row.名称), '行名为空：' + item.id);
+        assert.strictEqual(row.结果.length, item.列.length - 1, item.id + '：' + row.名称 + ' 行列错位');
+        assert.ok(row.结果.every(hasText), item.id + '：' + row.名称 + ' 有空白结果');
+        if (row.id) { assert.ok(microbes.has(row.id), item.id + ' 引用了不存在的菌种：' + row.id); }
+      });
+      assert.ok(item.说明.length >= 1 && item.说明.every(hasText), '表格缺少符号或适用限制：' + item.id);
+      assert.ok(item.来源.length >= 1, '表格缺少来源：' + item.id);
+      item.来源.forEach((source) => {
+        assert.ok(hasText(source.名称), '来源名称为空：' + item.id);
+        if (source.url) { assert.match(source.url, /^https:\/\//, '来源链接应为 HTTPS：' + item.id); }
+      });
     });
   });
 });

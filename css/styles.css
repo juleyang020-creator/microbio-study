@@ -353,6 +353,30 @@ body.zoom-open { overflow: hidden; }
 .diff-tag { display: inline-block; font-size: 11px; color: var(--muted); background: var(--line-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; }
 .diff-tag.diff-key { background: var(--accent-weak); border-color: var(--accent-edge); color: var(--accent); }
 
+/* 分型鉴定：保留表格阅读字号，窄屏横向滚动并固定菌名列。 */
+.ident-jump { margin: 10px 0 18px; padding: 9px 14px; color: var(--accent); background: var(--accent-weak); border: 1px solid var(--accent-edge); border-radius: 6px; font: inherit; cursor: pointer; }
+.ident-jump:hover { border-color: var(--accent); }
+.ident-jump:focus-visible, .ident-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.identification-tables { margin: 26px 0; scroll-margin-top: 20px; }
+.identification-tables:focus { outline: none; }
+.identification-tables:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.ident-title { font-size: 16px; color: var(--ink); margin: 0 0 12px; }
+.ident-group-title { font-size: 14px; color: var(--ink-soft); margin: 0 0 6px; }
+.ident-group + .ident-group { margin-top: 26px; }
+.ident-intro { font-size: 13px; line-height: 1.7; color: var(--ink-soft); margin: 0 0 12px; }
+.ident-scroll { margin-top: 18px; }
+.ident-table { width: 100%; min-width: 620px; border-collapse: separate; border-spacing: 0; font-size: 13px; line-height: 1.55; }
+.ident-table caption { text-align: left; color: var(--ink); font-size: 14px; font-weight: 600; padding: 0 0 8px; }
+.ident-table th, .ident-table td { min-width: 6rem; padding: 9px 12px; text-align: center; vertical-align: top; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink-soft); background: var(--surface); }
+.ident-table thead th { color: var(--ink); background: var(--line-2); border-top: 1px solid var(--line); }
+.ident-table th:first-child { position: sticky; left: 0; z-index: 1; min-width: 8rem; width: 8rem; max-width: 8rem; text-align: left; border-left: 1px solid var(--line); box-shadow: 1px 0 0 var(--line); overflow-wrap: break-word; }
+.ident-table tbody tr:nth-child(even) td, .ident-table tbody tr:nth-child(even) th { background: var(--bg); }
+.ident-table a { color: var(--link); text-underline-offset: 3px; }
+.ident-notes { padding-left: 20px; margin: 10px 0 6px; color: var(--ink-soft); font-size: 13px; line-height: 1.65; }
+.ident-notes li + li { margin-top: 5px; }
+.ident-sources { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12px; line-height: 1.6; color: var(--muted); }
+.ident-sources a { color: var(--link); }
+
 /* 对比 */
 .biochem-head, .card-drugs-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 460px; }
 .cmp-add { background: var(--surface); color: var(--accent); border: 1px solid var(--line); border-radius: 5px; padding: 4px 10px; font-size: 12px; cursor: pointer; white-space: nowrap; font-family: inherit; }

@@ -14,6 +14,7 @@ require('../data/genetics.js');
 require('../data/glossary.js');
 require('../data/biochem.js');
 require('../data/differential.js');
+require('../data/identification-tables.js');
 require('../data/morphology.js');
 require('../data/cards.js');
 require('../data/tests.js');

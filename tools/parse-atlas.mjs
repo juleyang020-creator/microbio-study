@@ -32,7 +32,7 @@ const BOOKS = [
 ];
 
 global.window = { DB: {} };
-for (const f of ['microbes', 'microbes-gram-positive', 'microbes-gram-negative', 'microbes-anaerobe', 'microbes-atypical', 'microbes-fungi', 'microbes-parasite', 'microbes-virus', 'microbes-misc', 'microbe-names']) require(path.join(root, 'data', f + '.js'));
+for (const f of ['microbes', 'microbes-gram-positive', 'microbes-gram-negative', 'microbes-anaerobe', 'microbes-atypical', 'microbes-fungi', 'microbes-parasite', 'microbes-virus', 'microbes-misc', 'microbe-names', 'identification-tables']) require(path.join(root, 'data', f + '.js'));
 const DB = global.window.DB;
 
 // ---- 菌名 → id 索引 ----

@@ -178,6 +178,20 @@ test('detailVM 暴露鉴别', () => {
   assert.strictEqual(vm.鉴别[0].id, 'yy');
 });
 
+test('detailVM 分型鉴定表按类别匹配，未提供数据与其他类别均为空', () => {
+  const groups = [
+    { id: 'salmonella-typing', 类别: '沙门菌属', 表格: [] },
+    { id: 'shigella-typing', 类别: '志贺菌属', 表格: [] }
+  ];
+  for (const category of ['沙门菌属', '志贺菌属']) {
+    const vm = View.detailVM({ 类别: category }, [], { identificationTables: groups });
+    assert.strictEqual(vm.分型鉴定表.length, 1);
+    assert.strictEqual(vm.分型鉴定表[0].类别, category);
+  }
+  assert.deepStrictEqual(View.detailVM({ 类别: '大肠埃希菌属' }, [], { identificationTables: groups }).分型鉴定表, []);
+  assert.deepStrictEqual(View.detailVM({ 类别: '沙门菌属' }, []).分型鉴定表, []);
+});
+
 test('detailVM 无 extras 时默认空值', () => {
   const vm = View.detailVM({ 名称: 'x', 类别: 'c', 小节: [], 关联: [] }, []);
   assert.strictEqual(vm.药敏简写, '');
