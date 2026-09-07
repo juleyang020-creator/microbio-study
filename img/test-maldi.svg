@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>MALDI-TOF MS 质谱鉴定</title><desc>菌落与基质共结晶点于靶板，激光解吸电离后离子经静电场加速进入真空飞行管，质量小者先到探测器，形成以核糖体蛋白为主的质量指纹谱；软件与参考谱库比对按分值排序，最高分显著领先则报告到种，分值普遍偏低提示谱库未收录或制样不佳，需提取法重测</desc>
+<title>MALDI-TOF MS 质谱鉴定</title><desc>MALDI-TOF MS 以蛋白质指纹谱与参考谱库比对辅助鉴定。种级报告取决于谱库覆盖、谱图质量和所用系统经验证的判读规则，不能仅凭候选之间的相对分差决定。低匹配结果需复核质量和谱库范围，按本地验证流程处理；常规鉴定结果不替代药敏，部分近缘菌仍可能难以区分。</desc>
 <defs>
   <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
   <marker id="las" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c2413d"/></marker>
@@ -10,7 +10,7 @@
 <text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">MALDI-TOF MS 质谱鉴定</text>
 <rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
 <text x="416" y="27" text-anchor="middle" font-size="9.5" fill="#6b7684">鉴别试验</text>
-<text x="24" y="46" font-size="11.5" fill="#5c6672">基质吸收激光能解吸电离菌体蛋白 → 按飞行时间成指纹谱 → 比对谱库定种</text>
+<text x="24" y="46" font-size="11.5" fill="#5c6672">蛋白指纹谱与参考谱库比对；结果按经验证的规则解释</text>
 <line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
 <!-- ===== ❶ 点样 ===== -->
@@ -80,12 +80,12 @@
 <text x="42" y="171.5" font-size="10" font-weight="700" fill="#33404f">判读：与参考谱库比对，候选按分值排序</text>
 
 <rect x="24" y="178" width="210" height="66" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
-<text x="34" y="194" font-size="9.5" font-weight="700" fill="#1f4e79">结果 A：最高分显著领先</text>
+<text x="34" y="194" font-size="9.5" font-weight="700" fill="#1f4e79">结果 A：候选匹配较高（示意）</text>
 <text x="34" y="212" font-size="9.5" fill="#33404f">金黄色葡萄球菌</text>
 <rect x="124" y="204" width="98" height="9" rx="4.5" fill="#2b6cb0"/>
 <text x="34" y="228" font-size="9.5" fill="#5c6672">表皮葡萄球菌</text>
 <rect x="124" y="220" width="26" height="9" rx="4.5" fill="#b9c2cc"/>
-<text x="34" y="240" font-size="9.5" fill="#33404f">→ 与次高项拉开 → 报告到种</text>
+<text x="34" y="240" font-size="9.5" fill="#33404f">→ 仍须满足系统的种级判读规则</text>
 
 <rect x="246" y="178" width="210" height="66" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
 <text x="256" y="194" font-size="9.5" font-weight="700" fill="#a3332f">结果 B：候选分值普遍偏低</text>
@@ -93,12 +93,12 @@
 <rect x="346" y="204" width="24" height="9" rx="4.5" fill="#b9c2cc"/>
 <text x="256" y="228" font-size="9.5" fill="#5c6672">候选菌种 乙</text>
 <rect x="346" y="220" width="17" height="9" rx="4.5" fill="#b9c2cc"/>
-<text x="256" y="240" font-size="9.5" fill="#33404f">→ 谱库未收录，或制样不佳需重测</text>
+<text x="256" y="240" font-size="9.5" fill="#33404f">→ 复核质量与谱库，按验证流程处理</text>
 
 <!-- 结论 -->
-<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">单峰无特征、峰型组合才具种属特异性；分值低先加甲酸或乙醇-甲酸提取重测</text>
+<text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">种级报告依赖谱库覆盖、谱图质量与经验证的判读规则</text>
 
 <!-- 页脚 -->
 <rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
-<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　数分钟由菌落鉴定到种；但不能做药敏，大肠埃希菌与志贺菌属难区分</text>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　常规鉴定不替代药敏；大肠埃希菌与志贺菌属可难区分</text>
 </svg>

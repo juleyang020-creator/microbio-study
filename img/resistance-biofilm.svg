@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
-<title>生物膜</title><desc>细菌黏附于导管/植入物表面并分泌胞外多糖基质，形成分层三维群落：表层氧与营养充足、代谢活跃，深层缺氧贫营养形成代谢低下的持留菌；基质阻碍药物渗透、持留菌不被杀菌药杀灭，故针对浮游菌的常规药敏不能预测疗效</desc>
+<title>生物膜、耐受与持留</title><desc>生物膜是微生物与胞外基质形成的群落结构。图中分层仅作概念示意，不代表所有生物膜的固定状态。耐受与持留不等同于常规药敏的耐药，存活差异可不伴 MIC 升高；持留涉及部分菌细胞，不能用代谢静止解释全部现象。生物膜相关难清除不等于常规药敏必然显示耐药。</desc>
 <defs>
   <marker id="arrD" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c2413d"/></marker>
   <marker id="arrN" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
@@ -7,9 +7,9 @@
 <rect width="480" height="340" fill="#ffffff"/>
 
 <!-- 页眉 -->
-<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">生物膜</text>
+<text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">生物膜、耐受与持留</text>
 <rect x="376" y="14" width="80" height="18" rx="9" fill="#eef1f5"/>
-<text x="416" y="27" text-anchor="middle" font-size="10" fill="#6b7684">耐药机制</text>
+<text x="416" y="27" text-anchor="middle" font-size="10" fill="#6b7684">耐受与持留</text>
 <text x="24" y="46" font-size="11.5" fill="#5c6672">细菌黏附于异物表面，被自身分泌的基质包裹成分层三维群落</text>
 <line x1="24" y1="58" x2="456" y2="58" stroke="#e7e4dd"/>
 
@@ -43,7 +43,7 @@
   <ellipse cx="360" cy="154" rx="7" ry="5.5"/>
 </g>
 <g stroke="#2b6cb0" stroke-width="1"><line x1="120" y1="149" x2="120" y2="159"/><line x1="200" y1="149" x2="200" y2="159"/><line x1="280" y1="149" x2="280" y2="159"/><line x1="360" y1="149" x2="360" y2="159"/></g>
-<text x="84" y="176" font-size="9.5" fill="#1f4e79">表层：氧、营养充足 → 代谢活跃、分裂</text>
+<text x="84" y="176" font-size="9.5" fill="#1f4e79">表层示意：代谢较活跃</text>
 
 <!-- 氧/营养梯度 -->
 <text x="422" y="138" text-anchor="end" font-size="9.5" fill="#5c6672">氧、营养</text>
@@ -57,11 +57,11 @@
   <ellipse cx="200" cy="236" rx="6.5" ry="5"/><ellipse cx="236" cy="236" rx="6.5" ry="5"/><ellipse cx="272" cy="236" rx="6.5" ry="5"/>
   <ellipse cx="336" cy="236" rx="6.5" ry="5"/><ellipse cx="372" cy="236" rx="6.5" ry="5"/>
 </g>
-<text x="84" y="226" font-size="9.5" fill="#5c6672">深层：缺氧、贫营养</text>
+<text x="84" y="226" font-size="9.5" fill="#5c6672">深层示意：代谢状态可不同</text>
 
 <!-- ❹ 持留菌 -->
 <circle cx="300" cy="222" r="7.5" fill="#1f2733"/><text x="300" y="226" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">4</text>
-<text x="312" y="226" font-size="9.5" fill="#5c6672">持留菌：代谢静止 → 耐受</text>
+<text x="312" y="226" font-size="9.5" fill="#5c6672">持留：部分菌细胞耐受</text>
 
 <!-- ❶ 黏附 -->
 <circle cx="70" cy="242" r="7.5" fill="#1f2733"/><text x="70" y="246" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
@@ -79,7 +79,7 @@
 <text x="32" y="270" font-size="9.5" fill="#5c6672">导管 / 人工瓣膜等植入物（异物）表面</text>
 
 <!-- 结论 -->
-<text x="240" y="300" text-anchor="middle" font-size="11.5" fill="#33404f">常规药敏针对浮游菌，不能预测生物膜疗效 → 常需拔除导管</text>
+<text x="240" y="300" text-anchor="middle" font-size="11.5" fill="#33404f">生物膜相关难清除，不等于常规药敏必然显示耐药</text>
 
 <!-- 页脚：典型例子 -->
 <rect x="24" y="310" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>

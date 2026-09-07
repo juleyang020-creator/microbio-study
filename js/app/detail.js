@@ -396,10 +396,26 @@
       ]));
     }
     if (vm.机制图) {
-      nodes.push(el('figure', { cls: 'mechanism-fig' }, [
-        zoomableImg(imgV(vm.机制图), vm.机制图说明, vm.机制图说明),
-        el('figcaption', { cls: 'mechanism-cap', text: vm.机制图说明 })
-      ]));
+      var diagramMeta = ((window.DB || {}).sourceMetadata || {}).diagrams || {};
+      var diagram = diagramMeta[vm.机制图];
+      var diagramCaption = diagram ? diagram.标题 : vm.机制图说明;
+      var figure = [ zoomableImg(imgV(vm.机制图), diagramCaption, diagramCaption) ];
+      if (diagram) {
+        figure.push(el('p', { cls: 'diagram-takeaway', text: diagram.核心命题 }));
+        figure.push(el('details', { cls: 'diagram-guidance' }, [
+          el('summary', { text: '适用范围与来源' }),
+          el('p', { text: diagram.适用范围 }),
+          el('ul', {}, diagram.来源.map(function (source) {
+            return el('li', {}, [ source.url
+              ? el('a', { href: source.url, target: '_blank', rel: 'noopener noreferrer', text: source.名称 })
+              : el('span', { text: source.名称 })
+            ]);
+          })),
+          el('p', { cls: 'mechanism-cap', text: '核心命题核对：' + diagram.核对日期 + '；不代表整图方法参数已全部复核。' })
+        ]));
+      }
+      figure.push(el('figcaption', { cls: 'mechanism-cap', text: diagramCaption }));
+      nodes.push(el('figure', { cls: 'mechanism-fig' }, figure));
     }
 
     if (vm.小节.length === 0) {
