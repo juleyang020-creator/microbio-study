@@ -17,6 +17,9 @@
     'aba': ['鲍曼不动杆菌', 'acinetobacter baumannii'],
     'pae': ['铜绿假单胞菌', 'pseudomonas aeruginosa'],
     'sau': ['金黄色葡萄球菌', 'staphylococcus aureus'],
+    // 中文简称依据东莞市疾控公开释名；仅作检索扩展，不作表型或耐药推断。
+    '金葡': ['金黄色葡萄球菌', 'staphylococcus aureus'],
+    '金葡菌': ['金黄色葡萄球菌', 'staphylococcus aureus'],
     'efa': ['粪肠球菌', 'enterococcus faecalis'],
     'efm': ['屎肠球菌', 'enterococcus faecium'],
     'ecl': ['阴沟肠杆菌', 'enterobacter cloacae'],
@@ -68,6 +71,13 @@
     'vzv': ['水痘', '带状疱疹', 'varicella']
   };
 
+  // 只折叠全角 ASCII 与空白；不做 NFKC，避免把上标等专业符号改成别的字符。
+  function normalizeSearchText(value) {
+    return String(value == null ? '' : value).replace(/[\uff01-\uff5e]/g, function (ch) {
+      return String.fromCharCode(ch.charCodeAt(0) - 0xfee0);
+    }).toLowerCase().replace(/[\s\u200b]+/g, ' ').trim();
+  }
+
   function aliasKeys(term) {
     return [
       term,
@@ -79,15 +89,24 @@
 
   function aliasesFor(term) {
     var out = [];
-    aliasKeys(term).forEach(function (key) {
-      (SEARCH_ALIASES[key] || []).forEach(function (alias) { out.push(String(alias).toLowerCase()); });
+    aliasKeys(normalizeSearchText(term)).forEach(function (key) {
+      if (!Object.prototype.hasOwnProperty.call(SEARCH_ALIASES, key)) { return; }
+      SEARCH_ALIASES[key].forEach(function (alias) { out.push(String(alias).toLowerCase()); });
     });
     return out;
   }
 
-  function textHasTerm(text, term) {
-    if (text.indexOf(term) !== -1) { return true; }
-    return aliasesFor(term).some(function (alias) { return text.indexOf(alias) !== -1; });
+  function termPosition(text, term) {
+    var at = text.indexOf(term.text);
+    while (at !== -1) {
+      if (!term.wholeWord || (!/[a-z0-9]/.test(text.charAt(at - 1)) && !/[a-z0-9]/.test(text.charAt(at + term.text.length)))) { return at; }
+      at = text.indexOf(term.text, at + 1);
+    }
+    return -1;
+  }
+
+  function textHasTerms(text, terms) {
+    return terms.some(function (term) { return termPosition(text, term) !== -1; });
   }
 
   function buildIndex(db) {
@@ -169,10 +188,7 @@
     out.push(String(text));
   }
 
-  // 搜索 haystack 缓存：数据加载后条目不变，按条目对象缓存一次，避免每次击键全量重建
-  var _hayCache = (typeof WeakMap !== 'undefined') ? new WeakMap() : null;
   function entrySearchText(db, mod, entry) {
-    if (_hayCache && _hayCache.has(entry)) { return _hayCache.get(entry); }
     var hay = [];
     pushText(hay, [entry.名称, entry.拉丁名, entry.英文, entry.类别, entry.药敏简写, entry.天然耐药, entry.药物]);
     (entry.小节 || []).forEach(function (s) { pushText(hay, [s.标题, s.正文]); });
@@ -182,9 +198,7 @@
       pushText(hay, (db.biochem || {})[entry.id]);
       pushText(hay, (db.differential || {})[entry.id]);
     }
-    var text = hay.join(' ').toLowerCase();
-    if (_hayCache) { _hayCache.set(entry, text); }
-    return text;
+    return normalizeSearchText(hay.join(' '));
   }
 
   function searchSummary(mod, entry) {
@@ -194,56 +208,139 @@
     return entry.类别 || '';
   }
 
-  // 命中片段：优先取 名称/拉丁名/英文 命中处，否则取首个命中小节；命中词前后各 20 字，供搜索结果展示上下文
-  function searchSnippet(entry, tokens) {
-    var out = { 字段: '', 片段: '' };
-    function scan(field, raw) {
-      if (out.片段) { return; }
-      var val = String(raw || '').toLowerCase();
-      for (var i = 0; i < tokens.length; i++) {
-        var t = tokens[i]; if (!t) { continue; }
-        // 检索命中走别名（输入 mrsa 能命中「金黄色葡萄球菌」），取片段时也必须找别名，
-        // 否则正文里没有 mrsa 字样、片段恒为空，白白丢掉上下文与高亮
-        var terms = [t].concat(aliasesFor(t));
-        for (var j = 0; j < terms.length; j++) {
-          var idx = val.indexOf(terms[j]);
+  function snippetField(field, raw) {
+    var item = { field: field, raw: raw, text: normalizeSearchText(raw) };
+    // 只有长度改变时才保存偏移；折叠长空白后仍截取原文，不篡改显示内容。
+    if (item.text.length !== raw.length || raw.toLowerCase().length !== raw.length) {
+      item.starts = []; item.ends = [];
+      var pattern = /[\s\u200b]+|[^\s\u200b]/g;
+      var match;
+      while ((match = pattern.exec(raw))) {
+        var space = /^[\s\u200b]/.test(match[0]);
+        if (space && !item.starts.length) { continue; }
+        var length = space ? 1 : match[0].toLowerCase().length;
+        for (var i = 0; i < length; i++) {
+          item.starts.push(match.index);
+          item.ends.push(match.index + match[0].length);
+        }
+      }
+    }
+    return item;
+  }
+
+  function entrySnippetFields(entry) {
+    var fields = [];
+    function add(field, value) {
+      var raw = String(value == null ? '' : value);
+      if (raw) { fields.push(snippetField(field, raw)); }
+    }
+    add('名称', entry.名称); add('拉丁名', entry.拉丁名); add('英文', entry.英文); add('药敏简写', entry.药敏简写);
+    (entry.小节 || []).forEach(function (section) { add(section.标题 || '', section.正文); });
+    return fields;
+  }
+
+  // 名称字段优先，其次正文；使用预建字段与本次查询的 OR 词组，不重新读取/拼接源数据。
+  function searchSnippet(fields, groups) {
+    for (var f = 0; f < fields.length; f++) {
+      var field = fields[f];
+      for (var i = 0; i < groups.length; i++) {
+        for (var j = 0; j < groups[i].length; j++) {
+          var term = groups[i][j];
+          var idx = termPosition(field.text, term);
           if (idx !== -1) {
-            var s = Math.max(0, idx - 20), e = Math.min(raw.length, idx + terms[j].length + 20);
-            out.字段 = field;
-            out.片段 = (s > 0 ? '…' : '') + String(raw).slice(s, e) + (e < raw.length ? '…' : '');
-            return;
+            var start = field.starts ? field.starts[idx] : idx;
+            var end = field.ends ? field.ends[idx + term.text.length - 1] : idx + term.text.length;
+            var s = Math.max(0, start - 20), e = Math.min(field.raw.length, end + 20);
+            return { 字段: field.field, 片段: (s > 0 ? '…' : '') + field.raw.slice(s, e) + (e < field.raw.length ? '…' : '') };
           }
         }
       }
     }
-    scan('名称', entry.名称); scan('拉丁名', entry.拉丁名); scan('英文', entry.英文);
-    if (!out.片段) { (entry.小节 || []).forEach(function (sct) { scan(sct.标题 || '', sct.正文); }); }
-    return out;
+    return { 字段: '', 片段: '' };
+  }
+
+  var _searchCache = (typeof WeakMap !== 'undefined') ? new WeakMap() : null;
+
+  // 索引是数据快照；静态数据加载完后建一次。数据改变时显式重建，不跨 db 共享条目缓存。
+  // 返回值供 searchIndex 使用，调用方不依赖其内部结构。重建同时刷新兼容入口的缓存。
+  function createSearchIndex(db) {
+    var index = { entries: [] };
+    MODULE_KEYS.forEach(function (mod) {
+      (db[mod] || []).forEach(function (entry) {
+        var names = [entry.名称, entry.拉丁名, entry.英文, entry.药敏简写].filter(Boolean).map(normalizeSearchText);
+        index.entries.push({
+          id: entry.id, 名称: entry.名称, module: mod, 摘要: searchSummary(mod, entry),
+          names: names, head: names.join(' '), text: entrySearchText(db, mod, entry),
+          snippets: entrySnippetFields(entry)
+        });
+      });
+    });
+    if (_searchCache) { _searchCache.set(db, index); }
+    return index;
+  }
+
+  var SEARCH_PHRASES = Object.keys(SEARCH_ALIASES).filter(function (key) { return key.indexOf(' ') !== -1; })
+    .sort(function (a, b) { return b.length - a.length; });
+
+  function queryTokens(q) {
+    var words = q.split(/\s+/).filter(Boolean);
+    var tokens = [];
+    for (var i = 0; i < words.length; i++) {
+      var phrase = SEARCH_PHRASES.find(function (key) {
+        return words.slice(i, i + key.split(' ').length).join(' ') === key;
+      });
+      tokens.push(phrase || words[i]);
+      if (phrase) { i += phrase.split(' ').length - 1; }
+    }
+    return tokens;
+  }
+
+  function searchGroups(q) {
+    return queryTokens(q).map(function (token) {
+      return [token].concat(aliasesFor(token)).filter(function (term, i, terms) { return terms.indexOf(term) === i; });
+    });
+  }
+
+  // 给视图高亮用：与检索共享分组规则，展平去重；长词优先，避免短词抢先截断别名。
+  function searchTokens(query) {
+    var terms = [];
+    searchGroups(normalizeSearchText(query)).forEach(function (group) {
+      group.forEach(function (term) { if (terms.indexOf(term) === -1) { terms.push(term); } });
+    });
+    return terms.sort(function (a, b) { return b.length - a.length; });
+  }
+
+  function searchIndex(index, query) {
+    var q = normalizeSearchText(query);
+    if (!q) { return []; }
+    // 已知短语别名作为一个 OR 分组，其余空白分词；分组之间全部命中（AND）。
+    var groups = searchGroups(q).map(function (group) {
+      return group.map(function (term, i) {
+        // 已知英文缩写不能靠其他英文单词的内部子串命中；扩展名称仍按包含检索。
+        return { text: term, wholeWord: i === 0 && group.length > 1 && /^[a-z0-9]+$/.test(term) };
+      });
+    });
+    var exactAliases = groups.length === 1 ? groups[0].slice(1).map(function (term) { return term.text; }) : [];
+    var phraseTerms = groups.length === 1 ? groups[0] : [{ text: q, wholeWord: false }];
+    var results = [];
+    index.entries.forEach(function (entry, order) {
+      if (!groups.every(function (terms) { return textHasTerms(entry.text, terms); })) { return; }
+      var score = entry.names.indexOf(q) !== -1 ? 100 : (exactAliases.some(function (alias) { return entry.names.indexOf(alias) !== -1; }) ? 60 : 0);
+      groups.forEach(function (terms) { if (textHasTerms(entry.head, terms)) { score += 2; } });
+      if (textHasTerms(entry.head, phraseTerms)) { score += 3; }
+      var snip = searchSnippet(entry.snippets, groups);
+      results.push({ entry: entry, score: score, order: order, snippet: snip });
+    });
+    results.sort(function (a, b) { return b.score - a.score || a.order - b.order; });
+    return results.map(function (r) {
+      return { id: r.entry.id, 名称: r.entry.名称, module: r.entry.module, 摘要: r.entry.摘要, 命中字段: r.snippet.字段, 命中片段: r.snippet.片段 };
+    });
   }
 
   function searchEntries(db, query) {
-    var q = (query || '').trim().toLowerCase();
-    if (!q) { return []; }
-    // 分词检索：空白拆成多个词，要求全部命中（AND）。
-    // 这样中英混输、缩写+种名（如 "staph aureus" / "大肠 coli"）都能匹配。
-    var tokens = aliasesFor(q).length ? [q] : q.split(/\s+/).filter(Boolean);
-    var results = [];
-    MODULE_KEYS.forEach(function (mod) {
-      (db[mod] || []).forEach(function (entry) {
-        var hay = entrySearchText(db, mod, entry);
-        var hit = tokens.every(function (t) { return textHasTerm(hay, t); });
-        if (!hit) { return; }
-        // 相关度：命中名称/拉丁名/英文名比命中正文得分更高，整串命中再加分
-        var head = String((entry.名称 || '') + ' ' + (entry.拉丁名 || '') + ' ' + (entry.英文 || '')).toLowerCase();
-        var score = 0;
-        tokens.forEach(function (t) { if (textHasTerm(head, t)) { score += 2; } });
-        if (textHasTerm(head, q)) { score += 3; }
-        var snip = searchSnippet(entry, tokens);
-        results.push({ id: entry.id, 名称: entry.名称, module: mod, 摘要: searchSummary(mod, entry), _score: score, 命中字段: snip.字段, 命中片段: snip.片段 });
-      });
-    });
-    results.sort(function (a, b) { return b._score - a._score; });
-    return results.map(function (r) { return { id: r.id, 名称: r.名称, module: r.module, 摘要: r.摘要, 命中字段: r.命中字段, 命中片段: r.命中片段 }; });
+    if (!normalizeSearchText(query)) { return []; }
+    var index = _searchCache && _searchCache.get(db);
+    return searchIndex(index || createSearchIndex(db), query);
   }
 
   // 递归收集"叶子"分类名（无子类的节点），支持任意层级（如 大类→形态→属）
@@ -296,6 +393,9 @@
     buildReverseIndex: buildReverseIndex,
     getRelations: getRelations,
     searchEntries: searchEntries,
+    createSearchIndex: createSearchIndex,
+    searchIndex: searchIndex,
+    searchTokens: searchTokens,
     aliasesFor: aliasesFor,   // View.searchVM 高亮时要把别名一并标出
     validateData: validateData,
     collectLeaves: collectLeaves

@@ -79,8 +79,8 @@
 
   function buildSidebar(vm, moduleKey) {
     var nodes = [];
-    vm.tree.forEach(function (root) {
-      nodes.push(el('div', { cls: 'cat-group' }, sidebarNodes(root, 0, moduleKey)));
+    vm.tree.forEach(function (root, index) {
+      nodes.push(el('div', { cls: 'cat-group', id: 'category-' + moduleKey + '-' + index, tabindex: '-1' }, sidebarNodes(root, 0, moduleKey)));
     });
     if (vm.未分类.length) {
       var uc = [ el('div', { cls: 'cat-group-name', text: '未分类' }) ];
