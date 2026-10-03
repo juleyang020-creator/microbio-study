@@ -12,10 +12,11 @@
   --faint: #7f858d;
   --line: #e7e4dd;
   --line-2: #f0ede7;
-  --accent: #2e6b66;
-  --accent-weak: #e9f0ee;
-  --accent-edge: #cfe0db;
-  --link: #345f86;
+  --accent: #155E56;
+  --accent-weak: #E2EFEB;
+  --accent-edge: #B9D9D0;
+  --on-accent: #ffffff;
+  --link: #1F5F8B;
   --green: #3f7a52;
   --rust: #a85a2a;
   --gold: #8a6d1f;
@@ -35,7 +36,7 @@ body {
 
 /* 顶栏：搜索独立一行；知识导航在下一行，工具菜单按需展开。 */
 .topbar { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 8px 32px; background: var(--surface); border-bottom: 1px solid var(--line); padding: 12px 22px 8px; flex-shrink: 0; position: relative; z-index: 20; }
-.brand { grid-column: 1; grid-row: 1; font-weight: 700; font-size: 19px; letter-spacing: 2px; color: var(--ink); white-space: nowrap; text-decoration: none; }
+.brand { grid-column: 1; grid-row: 1; font-weight: 700; font-size: 19px; letter-spacing: 2px; color: var(--accent); white-space: nowrap; text-decoration: none; }
 .nav-boards { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; min-width: 0; }
 .nav-board { display: flex; align-items: center; min-width: 0; }
 .nav-board-title { display: none; }
@@ -91,7 +92,7 @@ body.tools-open .tools { display: grid; }
 .genus-arrow { flex: 0 0 auto; width: auto !important; border: 0; background: transparent; color: var(--muted); font-size: 11px; padding: 2px 4px; line-height: 1.3; cursor: pointer; user-select: none; }
 .genus-arrow:hover { color: var(--accent); }
 .cat-genus-title { font-weight: 500; color: var(--ink-soft); display: block; padding: 2px 8px 2px 4px !important; }
-.cat-genus-title::after { content: ' ⌐总览'; font-size: 10px; color: var(--line-3, #bbb); font-weight: 400; }
+.cat-genus-title::after { content: ' ⌐总览'; font-size: 10px; color: var(--muted); font-weight: 400; }
 
 /* 侧栏：收藏夹 + 浏览历史 */
 .fav-section, .history-section { margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); }
@@ -126,7 +127,7 @@ body.route-mn .detail-title { margin-top: 18px; }
 .mn-az { display: flex; flex-wrap: nowrap; gap: 3px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .mn-az::-webkit-scrollbar { display: none; }
 .mn-az-l { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 24px; padding: 0 5px; border-radius: 4px; font-size: 12px; font-weight: 700; font-family: var(--mono); color: var(--accent); text-decoration: none; border: 1px solid var(--accent-edge); background: var(--accent-weak); }
-.mn-az-l:hover { background: var(--accent); color: #fff; }
+.mn-az-l:hover { background: var(--accent); color: var(--on-accent); }
 .mn-section { margin: 14px 0 18px; scroll-margin-top: 96px; }
 .mn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap: 2px 14px; }
 .mn-item { display: flex; flex-wrap: wrap; min-width: 0; overflow-wrap: anywhere; align-items: baseline; gap: 4px 8px; padding: 5px 8px; border-radius: 5px; text-decoration: none; color: var(--ink); border: 1px solid transparent; }
@@ -138,7 +139,7 @@ body.route-mn .detail-title { margin-top: 18px; }
 .mn-item .mn-kind { flex-shrink: 0; font-size: 10px; border-radius: 3px; padding: 0 4px; line-height: 1.6; font-family: var(--mono); border: 1px solid transparent; }
 .mn-kind-gp { color: #6b46a8; background: #f1ecfa; border-color: #ddd0f0; }
 .mn-kind-gn { color: #b4453a; background: #fbeeec; border-color: #f0d5d0; }
-.mn-kind-y  { color: #8a6d1f; background: #faf4e2; border-color: #ece0bd; }
+.mn-kind-y  { color: #8a6d1f; background: #FCF6E4; border-color: #ece0bd; }
 .mn-kind-m  { color: #7a5c2e; background: #f7f0e6; border-color: #e8dac5; }
 .mn-kind-tb { color: #2f6b5e; background: #e9f4f1; border-color: #cbe4dd; }
 /* 「本库」标记：该菌名在本软件已收录，点击跳应用内详情（离线），而非外部站点 */
@@ -187,8 +188,8 @@ body.route-mn .detail-title { margin-top: 18px; }
 .id-tri-wrap { display: inline-flex; gap: 2px; flex: 0 0 auto; }
 .id-tri { min-width: 30px; height: 24px; padding: 0 6px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 5px; font-size: 12px; cursor: pointer; font-family: inherit; }
 .id-tri:hover { border-color: var(--accent); }
-.id-tri.pos.sel { background: var(--green); color: #fff; border-color: var(--green); }
-.id-tri.neg.sel { background: var(--rust); color: #fff; border-color: var(--rust); }
+.id-tri.pos.sel { background: var(--green); color: var(--on-accent); border-color: var(--green); }
+.id-tri.neg.sel { background: var(--rust); color: var(--on-accent); border-color: var(--rust); }
 .id-tri.sel:not(.pos):not(.neg) { background: var(--line-2); color: var(--ink-soft); border-color: var(--faint); }
 .identify-cands { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 12px; }
 .identify-cand { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; padding: 5px 11px; border: 1px solid var(--accent-edge); background: var(--accent-weak); border-radius: 16px; }
@@ -254,7 +255,7 @@ body.zoom-open { overflow: hidden; }
 .section-body { color: var(--ink-soft); line-height: 1.72; white-space: pre-wrap; }
 /* 富渲染正文：分层要点 + 站内词条链接 */
 .wiki-link { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent); padding: 0 1px; cursor: pointer; }
-.wiki-link:hover { background: var(--accent); color: #fff; border-bottom-color: transparent; border-radius: 2px; }
+.wiki-link:hover { background: var(--accent); color: var(--on-accent); border-bottom-color: transparent; border-radius: 2px; }
 .rich-body { white-space: normal; }
 .rich-list { list-style: none; margin: 2px 0 0; padding: 0; }
 .rich-list li { display: flex; gap: 8px; align-items: baseline; padding: 3px 0; }
@@ -362,7 +363,8 @@ body.zoom-open { overflow: hidden; }
 .biochem-head, .card-drugs-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 460px; }
 .cmp-add { background: var(--surface); color: var(--accent); border: 1px solid var(--line); border-radius: 5px; padding: 4px 10px; font-size: 12px; cursor: pointer; white-space: nowrap; font-family: inherit; }
 .cmp-add:hover { border-color: var(--accent); background: var(--accent-weak); }
-.cmp-search { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px; margin: 6px 0 8px; font-family: inherit; }
+.cmp-search { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px; margin: 6px 0 8px; font-family: inherit; background-color: var(--surface); color: var(--ink); }
+.cmp-search::placeholder, .mn-search::placeholder { color: var(--muted); }
 .cmp-search:focus { outline: none; border-color: var(--accent); }
 .cmp-pick { display: block; width: 100%; padding: 3px 9px; border: 0; background: transparent; border-radius: 4px; cursor: pointer; color: var(--ink-soft); font-size: 13px; user-select: none; text-align: left; font-family: inherit; }
 .cmp-pick:hover { background: var(--line-2); }
@@ -433,8 +435,9 @@ body.zoom-open { overflow: hidden; }
 .bp-foot { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
 /* CLSI M100 报告分组徽章 */
 .bp-tier { display: inline-block; min-width: 15px; padding: 0 4px; margin-right: 5px; border-radius: 4px; font-size: 10.5px; font-weight: 700; line-height: 16px; text-align: center; color: #fff; vertical-align: middle; font-family: var(--mono); }
-.bp-tier-A, .bp-tier-1 { background: #2e6b66; }
-.bp-tier-B, .bp-tier-2 { background: #345f86; }
+/* 实底徽章保留深底白字；不要直接用深色模式提亮后的文字主色作底。 */
+.bp-tier-A, .bp-tier-1 { background: #155E56; }
+.bp-tier-B, .bp-tier-2 { background: #1F5F8B; }
 .bp-tier-C, .bp-tier-3 { background: #6f61a0; }  /* 原 #7d6fae 白字仅 4.41 */
 .bp-tier-4 { background: #5f646c; }  /* 原 #8a8f98 白字仅 3.25 */
 .bp-tier-U { background: #8a6d1f; }  /* 原 #b58f2a 白字仅 3.03 */
@@ -487,7 +490,7 @@ body.zoom-open { overflow: hidden; }
 .ir-card-head .latin { font-style: italic; color: var(--muted); font-size: 11.5px; }
 .ir-card-drugs { display: flex; flex-wrap: wrap; gap: 5px; }
 .ir-drug-chip { display: inline-block; padding: 3px 9px; border-radius: 5px; background: #fdecec; color: #b83227; border: 1px solid #f0b6b1; font-size: 12.5px; line-height: 1.35; }
-.ir-card-none { display: inline-block; color: var(--green); font-size: 12.5px; background: var(--accent-weak); border: 1px solid var(--accent-edge); border-radius: 5px; padding: 3px 9px; }
+.ir-card-none { display: inline-block; color: var(--green); font-size: 12.5px; background: var(--surface); border: 1px solid var(--accent-edge); border-radius: 5px; padding: 3px 9px; }
 .ir-card-note { margin-top: 8px; color: var(--muted); font-size: 11.5px; line-height: 1.55; }
 
 /* 念珠菌标本部位报告限制（M27M44S App A）参考面板 */
@@ -516,8 +519,8 @@ body.zoom-open { overflow: hidden; }
 .intrinsic-title { font-size: 12px; font-weight: 700; color: var(--rust); letter-spacing: 1.2px; margin-bottom: 5px; }
 .intrinsic-body { color: var(--ink-soft); line-height: 1.7; font-size: 13.5px; }
 
-.treatment { margin: 20px 0; max-width: 700px; border-left: 2px solid var(--teal, #2a8a78); background: #eef7f4; border-radius: 0 6px 6px 0; padding: 10px 14px; }
-.treatment-title { font-size: 12px; font-weight: 700; color: var(--teal, #2a8a78); letter-spacing: 1.2px; margin-bottom: 5px; }
+.treatment { margin: 20px 0; max-width: 700px; border-left: 2px solid var(--accent); background: #eef7f4; border-radius: 0 6px 6px 0; padding: 10px 14px; }
+.treatment-title { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 1.2px; margin-bottom: 5px; }
 .treatment-body { color: var(--ink-soft); line-height: 1.7; font-size: 13.5px; }
 
 /* 天然耐药速查（独立模块） */
@@ -555,11 +558,12 @@ body.zoom-open { overflow: hidden; }
 .bp-verdict.v-i .bp-verdict-tag { color: var(--gold); }
 .bp-verdict.v-sdd .bp-verdict-tag { color: #4a5cb0; }
 .bp-verdict.v-r .bp-verdict-tag { color: var(--rust); }
-.bp-verdict.v-ns .bp-verdict-tag { color: #b5701f; }
+.bp-verdict.v-ns .bp-verdict-tag { color: #9B601B; }
 .bp-verdict.v-unknown .bp-verdict-tag { color: var(--muted); }
 /* 判读方法切换（MIC / 抑菌圈）与禁用态 */
 .bp-method-toggle { display: inline-flex; gap: 6px; }
-.cmp-add.disabled { opacity: .45; cursor: not-allowed; }
+/* 禁用态用明确灰色而非整控件半透明，保留文字可读性。 */
+.cmp-add.disabled { color: var(--muted); background-color: var(--line-2); cursor: not-allowed; }
 .bp-method-toggle .cmp-add.sel { background: var(--accent-weak); border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .bp-verdict-reason { font-size: 13.5px; color: var(--ink-soft); }
 .bp-judge-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
@@ -579,7 +583,7 @@ body.zoom-open { overflow: hidden; }
 .ast-level { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; font-size: 11px; font-weight: 700; line-height: 1; border: 1px solid var(--line); border-radius: 4px; padding: 4px 7px; color: var(--ink-soft); background: var(--line-2); white-space: nowrap; }
 .ast-critical { color: #8b3d28; background: #fbefe8; border-color: #edcbb8; }
 .ast-review { color: #6d5a13; background: #fbf5df; border-color: #e6d99d; }
-.ast-limit { color: #345f86; background: #edf3f8; border-color: #c9d9e8; }
+.ast-limit { color: var(--link); background: #edf3f8; border-color: #c9d9e8; }
 .ast-table-wrap { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; max-width: 1120px; }
 .ast-table { border-collapse: collapse; width: 100%; font-size: 13.5px; background: var(--surface); }
 .ast-table thead th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .6px; color: var(--muted); background: var(--line-2); padding: 8px 12px; border-bottom: 1px solid var(--line); }
@@ -619,6 +623,8 @@ body.zoom-open { overflow: hidden; }
 .search-list { display: flex; flex-direction: column; gap: 8px; max-width: 920px; }
 .search-item { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; text-decoration: none; color: var(--ink); overflow-wrap: anywhere; }
 .search-item:hover { border-color: var(--accent); background: var(--accent-weak); }
+/* 保留模块语义字色，避免绿色/金色标签落在青绿底上低于 4.5:1。 */
+.search-item:hover .tag { background-color: var(--surface); }
 .search-item-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .search-item-title { font-size: 16px; font-weight: 600; }
 .search-item-head .tag { flex-shrink: 0; margin-right: 0; }
@@ -657,7 +663,7 @@ body.zoom-open { overflow: hidden; }
   border: 1px solid var(--accent-edge);
   border-radius: 6px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   padding: 9px 14px;
   font: inherit;
   box-shadow: 0 6px 22px rgba(15,18,22,.18);
@@ -902,7 +908,7 @@ body.zoom-open { overflow: hidden; }
 .footer-links { font-size: 11.5px; margin: 0; flex-shrink: 0; }
 .footer-links a { color: var(--link); text-decoration: none; }
 .footer-links a:hover { text-decoration: underline; }
-.about-card { max-width: 760px; margin: 16px 0; padding: 14px 18px; background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--teal, #2a8a78); border-radius: 0 6px 6px 0; }
+.about-card { max-width: 760px; margin: 16px 0; padding: 14px 18px; background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--accent); border-radius: 0 6px 6px 0; }
 .about-h { font-size: 14px; font-weight: 700; color: var(--ink); margin: 0 0 8px; }
 .about-p { font-size: 13.5px; line-height: 1.8; color: var(--ink-soft); margin: 0 0 6px; }
 .about-p:last-child { margin-bottom: 0; }
@@ -927,10 +933,11 @@ body.zoom-open { overflow: hidden; }
     --faint: #6e7178;
     --line: #343a43;
     --line-2: #262b32;
-    --accent: #66b3ab;
-    --accent-weak: #24312f;
-    --accent-edge: #3a524e;
-    --link: #7fa8d4;
+    --accent: #62BDB3;
+    --accent-weak: #20312F;
+    --accent-edge: #375D59;
+    --on-accent: #191c21;
+    --link: #80B7DC;
     --green: #7dba8f;
     --rust: #d4925f;
     --gold: #c9a84c;
@@ -977,6 +984,6 @@ body.zoom-open { overflow: hidden; }
      深色下必须换暗色垫，否则像贴在暗页上的两张白纸（用户实测反馈刺眼）。
      about-card 用 var(--surface) 已自动适配，无需处理。 */
   .intrinsic { background: #2a201c; }
-  .treatment { background: #1e2b28; }
-  .treatment-title { color: #6fb8a8; }
+  .treatment { background: #1B2D2B; }
+  .treatment-title { color: var(--accent); }
 }
