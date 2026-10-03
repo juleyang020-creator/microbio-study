@@ -110,15 +110,25 @@ try {
     await page.waitForURL('**/#/antibiotics/ampicillin');
     await page.locator('#search-input').fill('葡萄');
     await page.locator('#search-input').press('Enter');
+    await page.waitForURL('**/#/search/' + encodeURIComponent('葡萄'));
     await page.goBack();
+    await page.waitForURL('**/#/antibiotics/ampicillin');
+    await page.waitForFunction(() => document.querySelector('#main .detail-title')?.textContent === '氨苄西林');
     await page.goBack();
     await page.waitForURL('**/#/search/ampicillin');
     await page.reload();
     await page.locator('#search-clear').click();
     check('older search keeps its own return route across reload', page.url().endsWith('#/glossary'));
     await page.goto(base + '#/microbes/staph-aureus');
-    await page.locator('#search-input').fill('coli');
-    await page.locator('#sidebar .entry-link.selected').first().click();
+    // This tests cancellation BEFORE the 150ms debounce, not Playwright's
+    // scrolling/actionability latency. Dispatch both DOM events in one task.
+    await page.locator('#sidebar .entry-link.selected').first().waitFor();
+    await page.evaluate(() => {
+      const input = document.getElementById('search-input');
+      input.value = 'coli';
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+      document.querySelector('#sidebar .entry-link.selected').click();
+    });
     await page.waitForTimeout(220);
     check('same-detail click cancels pending search', page.url().endsWith('#/microbes/staph-aureus') && await page.locator('#search-input').inputValue() === '');
     await page.goto(base + '#/microbes');
