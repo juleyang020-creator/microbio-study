@@ -13,5 +13,6 @@ docs/软著材料/*.docx
 docs/软著材料/*.pdf
 docs/软著材料/~$*
 tools/.atlas-matched.json
-# 审核用示意图渲染预览（由工具再生，不入库）
-docs/审核/图预览/
+# 审核目录下的子目录全是工具产物（示意图渲染预览、tools/*-check.mjs 的截图/JSON 证据），
+# 体积大（单次可达上百 MB）且可再生，不入库；只入库 docs/审核/*.md 报告本身
+docs/审核/*/

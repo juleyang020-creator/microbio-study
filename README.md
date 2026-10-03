@@ -4,6 +4,8 @@
 
 > 本软件仅供医学教育与专业人员学习参考，不构成诊断、治疗或用药建议；临床决策必须结合患者情况、本地药敏结果与当前权威指南。
 
+**线上地址**：<https://juleyang020-creator.github.io/microbio-study/>（GitHub Pages，合并 `main` 后自动部署）
+
 ## 十二个模块（顶部「基础知识」导航，顺序同界面）
 
 1. **微生物分类** — 细菌（按革兰染色与形态分属）/ 病毒（DNA/RNA）/ 真菌 / 寄生虫，860 个条目
@@ -21,15 +23,18 @@
 
 各模块互相打通：在一个条目里声明 `关联`，相关条目会在两边自动互相显示；详情页正文里的菌名/药名/缩写也会自动变成站内链接。
 
-## 七个快捷工具（顶部「快捷工具」栏）
+此外，沙门菌与志贺菌的**分型鉴定表**（生化鉴别 + 血清分型/分群，`data/identification-tables.js`）不单设 Tab，按属挂到全部沙门/志贺菌种及属总览详情页顶部。
+
+## 八个快捷工具（顶部「快捷工具」栏）
 
 - **天然耐药速查** (`#/intrinsic`) — 聚合所有微生物的「天然耐药」字段，按菌属分组展示，支持按菌名/拉丁名/药名模糊过滤。临床夜班"这菌天然耐哪些药"高频查询。
 - **异常药敏速查** (`#/ast-alerts`) — 常见需修正/警示的药敏结果组合（如 MRSA 报敏感 β-内酰胺、肠球菌报敏感头孢等）。18 条规则，按「必须修正 / 需复核 / 限制报告」三等级 + 菌名/药物/机制关键词双维筛选，每条含触发条件、异常结果、处理建议与依据。
 - **菌名速查** (`#/microbe-names`) — 4684 条微生物名称（中文 + 拉丁，含 Bruker MBT 主库 2969 种）索引。命中本库条目的跳应用内详情页（离线，标「本库」）；未收录者按拉丁名完整度分流到 NCBI Taxonomy 精确条目或 PubMed 文献检索（均为权威源、国内可达）。同名异译收在 `别名` 字段（299 条）里一并参与检索——照着 MALDI 报告上的名字也能查到。
+- **常见菌菌名速查** (`#/common-names`) — 个人常用菌名清单：从库内名称索引补全中文/拉丁名，可填本机仪器简写；支持自动排序（中文/拉丁/简写）与手动调序、导入导出备份。数据只存本机 `localStorage`，不猜测、不生成「通用仪器编码」。详情页与菌名速查页可一键「加入常用」。
 - **生化鉴定** (`#/compare`) — 勾选 2 个以上细菌并排比较生化反应，差异项自动高亮；也可反查：勾选试验结果组合筛出匹配的菌。
 - **药敏卡对比** (`#/cardcompare`) — 勾选 2 张以上药敏卡，并排比较所含药物/检测项，不一致项高亮。
 - **折点判读** (`#/breakpoints`) — 两个子模式：**折点查询**（按菌组名/药物名筛选 CLSI 折点表，并排对照 EUCAST，含念珠菌标本部位报告限制参考）；**MIC / 抑菌圈判读**（选菌组 → 选药 → 选方法 → 输入值，结构化引擎自动判读 S/I/SDD/R/NS 并给出依据，支持「无 S 折点」「仅敏感折点」等非标准情形）。
-- **标本流程** (`#/lab-workflow`) — 摘自《临床微生物学手册》(MCM) 第 12 版的实验室流程教学参考：教学工作流路径、标本采集/运输/拒收、阳性血培养处理流程、鉴定方法与局限。
+- **标本流程** (`#/lab-workflow`) — 实验室流程教学参考，7 个板块：教学工作流路径、标本采集/运输/拒收、阳性血培养处理、鉴定方法与局限（摘自 MCM 第 12 版），以及七类标本检验路径表、医院感染监测、病毒分离培养（源《临床微生物学检验技术实验指导》第 2 版）。
 
 ## 搜索
 
@@ -48,7 +53,7 @@
 
 ## 数据文件一览
 
-> 下表数字由 `data/` 实测得出（2026-09-05），改数据后请一并更新。
+> 下表数字由 `data/` 实测得出（2026-10-03），改数据后请一并更新。
 
 ### 主模块数据
 | 文件 | 模块 | 条目量 |
@@ -65,9 +70,9 @@
 | `data/biochem-tests.js` | 生化反应 | 94 |
 | `data/cards.js` | 检测卡：药敏卡 13 + 鉴定卡 7 | 20 |
 | `data/qc-strains.js` | 质控菌株（ATCC，含可接受范围） | 25 |
-| `data/tests.js` | 试验 | 29 |
-| `data/staining.js` | 染色 | 16 |
-| `data/media.js` | 培养基 | 38 |
+| `data/tests.js` | 试验（含血清学 / 分子检测） | 38 |
+| `data/staining.js` | 染色 | 18 |
+| `data/media.js` | 培养基 | 39 |
 
 ### 辅助数据（按微生物 id 索引）
 | 文件 | 用途 | 键数 |
@@ -76,13 +81,14 @@
 | `data/biochem.js` | 生化反应结果（用于详情页与对比） | 700 |
 | `data/differential.js` | 相似菌鉴别要点 | 718 |
 | `data/treatment.js` | 治疗要点 | 305 |
+| `data/identification-tables.js` | 分型鉴定表（沙门 / 志贺生化鉴别 + 血清分型） | 2 张 |
 | `data/breakpoints.js` | CLSI M100/M45（细菌）· M27M44S/M38M51S（真菌）药敏折点（按菌组） | 46 组 / 441 药物行 |
 | `data/eucast-breakpoints.js` | EUCAST MIC 折点，与 CLSI 并排对照 | 28 组 |
 | `data/ecv.js` | 流行病学界值（ECV，非临床折点，只分 WT/NWT） | 15 组 |
 | `data/intrinsic-resistance.js` | 天然耐药矩阵（M100 附录 B + 真菌） | 8 组 |
 | `data/ast-alerts.js` | 异常 / 警示药敏结果速查规则 | 18 条 |
 | `data/site-reporting.js` | 念珠菌标本部位报告限制（CLSI M27M44S 附录 A） | 1 组 |
-| `data/lab-workflow.js` | MCM 12 版实验室流程教学参考 | 6 节 |
+| `data/lab-workflow.js` | 实验室流程教学参考（MCM 12 版 + 实验指导第 2 版） | 7 板块 |
 | `data/drug-cn.js` | 英/中药名对照 | 176 条 |
 | `data/nprc-catalogue.js` | 《人间传染的病原微生物名录》名录对照 | 中文 502 + 拉丁属 313 |
 | `data/categories.js` | 全部模块的分类树（支持多级） | 12 棵 |
@@ -99,15 +105,23 @@ python3 -m http.server 8123
 
 **测试**（需要 Node ≥ 18）：
 ```bash
-node --test
+npm test        # 即 node --test tests/*.test.js
 ```
-共 120 个用例，覆盖：核心逻辑（关联、搜索、分类校验）、视图模型（详情/对比/折点/天然耐药/MIC 与抑菌圈判读/异常药敏筛选）、数据完整性（id 唯一、悬空关联、未匹配分类、辅助数据键合法、机制图文件存在、版本号跨文件一致、js/app 接线、离线预缓存清单等），以及**路由冒烟**——把 js/app 全部渲染脚本在最小 DOM stub 里跑起来，逐条路由与全部条目详情页渲染断言不抛异常。
+共 200 个用例（`tests/` 下 16 个文件，2026-10-03 实测），覆盖：核心逻辑（关联、搜索、分类校验）、视图模型（详情/对比/折点/天然耐药/MIC 与抑菌圈判读/异常药敏筛选）、数据完整性（id 唯一、悬空关联、未匹配分类、辅助数据键合法、机制图文件存在、版本号跨文件一致、js/app 接线、离线预缓存清单等）、SVG 知识与外观约束、常见菌菌名（补全/排序/备份）、搜索/导航/首页 UI，以及**路由冒烟**——把 js/app 全部渲染脚本在最小 DOM stub 里跑起来，逐条路由与全部条目详情页渲染断言不抛异常。
 
 发布前完整自检（内容自检 → 示意图 lint → 离线预缓存清单核对 → 全部测试 → 空白字符）：
 
 ```bash
 node tools/release-check.mjs
 ```
+
+**真实浏览器回归**（开发期可选，依赖外部 Playwright，不进 `npm test`）：
+
+```bash
+PW_MODULE=/path/to/playwright-core CHROME_PATH=/path/to/chrome node tools/ui-check.mjs
+```
+
+同类脚本还有 `mobile-appearance-check.mjs`（手机外观）、`common-names-check.mjs` / `common-names-sort-check.mjs`（常见菌菌名）、`brand-colors-check.mjs` / `brand-color-states-check.mjs` / `brand-colors-selfcheck.mjs`（配色与对比度）。截图与 JSON 证据默认写到 `docs/审核/<任务目录>/`，该类子目录已 gitignore，不入库。
 
 **示意图审校**（开发期工具，可选）：
 ```bash
@@ -133,36 +147,44 @@ DEEPSEEK_API_KEY=xxx GLM_API_KEY=yyy node tools/review-diagrams.mjs
 
 ```
 .
-├── index.html              # 单页入口（12 个模块 Tab + 7 个快捷工具 + 搜索）
+├── index.html              # 单页入口（12 个模块 Tab + 8 个快捷工具 + 搜索）
 ├── manifest.json           # PWA 清单
-├── sw.js                   # Service Worker（离线缓存）
-├── css/styles.css          # 全部样式
+├── sw.js                   # Service Worker（离线缓存；APP_VERSION 在此）
+├── css/styles.css          # 全部样式（含深色模式与品牌色变量）
 ├── js/
 │   ├── core.js             # 关联、搜索、数据校验（无 DOM，Node 可测）
+│   ├── common-names.js     # 常见菌菌名的存储/补全/排序/备份逻辑（无 DOM，Node 可测）
 │   ├── view.js             # 视图模型与判读引擎（无 DOM，Node 可测）
 │   ├── validate.js         # 浏览器端数据自检
-│   └── app/                # 渲染层（2026-09 由单文件 app.js 拆分；纯 <script> 加载）
+│   └── app/                # 渲染层（纯 <script> 加载，下列顺序即加载顺序）
 │       ├── helpers.js      #   基础原语：el/fill、路由解析、名称→id 词典、折点分层徽标、版本兜底
 │       ├── sidebar.js      #   分类树侧栏 + 收藏夹/最近浏览（localStorage）
 │       ├── search.js       #   搜索结果与命中高亮
 │       ├── compare.js      #   生化鉴定（对比+结果查菌）与药敏卡对比
 │       ├── bp-table.js     #   CLSI/EUCAST 折点表构建（详情页与折点工具共用）
 │       ├── tools-info.js   #   关于页 / 标本流程 / 菌名速查
-│       ├── detail.js       #   详情页富渲染（示意图放大、照片轮播、站内链接词典）
+│       ├── common-names.js #   常见菌菌名速查页面
+│       ├── detail.js       #   详情页富渲染（示意图放大、照片轮播、站内链接词典、分型鉴定表）
 │       ├── tools-drug.js   #   天然耐药 / 折点判读 / 异常药敏
+│       ├── navigation.js   #   顶栏工具菜单开合与焦点管理
+│       ├── landing.js      #   模块首页（总览图置顶 + 介绍/最近浏览/分类入口）
 │       └── router.js       #   路由分发 + init() 启动（最后加载）
 ├── data/                   # 全部数据（见上表）
 ├── img/                    # SVG 教学示意图 + 图谱/CDC PHIL 真实形态照片
 ├── icons/                  # PWA 图标
-├── tests/                  # node:test 用例
-├── tools/                  # 开发期脚本（发布自检、内容审计、示意图 lint/审校、预缓存同步）
+├── tests/                  # node:test 用例（dom-stub.js 为渲染冒烟用的最小 DOM）
+├── tools/                  # 开发期脚本（发布自检、内容审计、示意图 lint/审校、预缓存/图谱同步、浏览器回归）
 │   └── _archive/           # 已完成的各批次一次性脚本（仅留档，勿再引用）
+├── CLAUDE.md / AGENTS.md   # 协作约定（CLAUDE.md 为单一事实源，AGENTS.md 为铁律速查）
+├── CHANGELOG.md            # 按月变更日志
 └── docs/
     ├── 菌种编辑规范.md      # 加/改菌种必读：一个菌要动哪五个数据文件
     ├── 示意图设计规范.md    # img/*.svg 的版式与配色规范（画布宽度一律 480）
-    ├── 审核/               # 全库内容审核结论与源文件已知缺陷
+    ├── 任务日志.md          # 每次任务的简记：可继续空间 + 发现的问题（新条目在上）
+    ├── 审核/               # 审查/验收报告（*.md 入库；子目录为工具截图证据，不入库）
     ├── 上架与知识产权指南.md
-    └── superpowers/        # 设计文档与计划
+    ├── 软著材料/            # 软著申请材料（申请表类文件已 gitignore，勿提交）
+    └── superpowers/        # 2026-06 初版设计文档与计划（历史留档）
 ```
 
 `js/app/` 各文件为独立 IIFE，跨文件函数经 `window.AppNS` 命名空间共享；`<script>` 加载顺序即依赖顺序（helpers 最先、router 最后），由 `tests/data-integrity.test.js` 自动守住。
