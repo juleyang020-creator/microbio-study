@@ -53,15 +53,16 @@
       return /\d\/\d/.test(s); // 复方记法"数字/数字"无空格；VM 合并串的 " / " 分隔有空格，故不会误判
     });
   }
-  function buildBpTable(drugs, eu) {
+  function buildBpTableScroll(drugs, eu) {
     var euZone = euHasZone(eu);
     var bodyRows = drugs.map(function (d) {
       var aid = abxIdByDrugText(d.药物);
       var drugCell = aid
         ? el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' '), el('a', { cls: 'bp-drug-link', text: d.药物, href: '#/antibiotics/' + aid }) ])
         : el('td', { cls: 'bp-drug' }, [ bpTierBadge(d.组别), bpUrineChip(d), el('strong', { text: d.简写 }), document.createTextNode(' ' + d.药物) ]);
-      var clsiMic = [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / ');
-      var cells = [ drugCell, el('td', { cls: 'bp-mic', text: clsiMic }), el('td', { cls: 'bp-disk', text: [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / ') }) ];
+      var clsiMic = d.MIC != null ? d.MIC : [d.MIC_S, d.MIC_I, d.MIC_R].filter(Boolean).join(' / ');
+      var clsiDisk = d.抑菌圈 != null ? d.抑菌圈 : [d.抑菌圈_S, d.抑菌圈_I, d.抑菌圈_R].filter(Boolean).join(' / ');
+      var cells = [ drugCell, el('td', { cls: 'bp-mic', text: clsiMic }), el('td', { cls: 'bp-disk', text: clsiDisk }) ];
       if (eu) {
         cells.push(eucastCell(eu.drug[d.药物], clsiMic)); // EUCAST MIC 置于抑菌圈之后
         if (euZone) { cells.push(eucastZoneCell(eu.drug[d.药物])); }
@@ -69,15 +70,18 @@
       cells.push(el('td', { cls: 'bp-comment', text: d.备注 || '' }));
       return el('tr', {}, cells);
     });
-    var tableWrap = el('div', { cls: 'table-scroll' }, [
+    return el('div', { cls: 'table-scroll' }, [
       el('table', { cls: 'bp-table' }, [
         el('thead', {}, bpThead(eu)),
         el('tbody', {}, bodyRows)
       ])
     ]);
+  }
+  function buildBpTable(drugs, eu) {
+    var tableWrap = buildBpTableScroll(drugs, eu);
     var legend = bpTierLegend(drugs);
     if (!legend && !bpHasCombo(drugs)) { return tableWrap; }
     return el('div', {}, [ tableWrap, legend, bpHasCombo(drugs) ? el('div', { cls: 'bp-foot', text: COMBO_BP_NOTE }) : null ]);
   }
-  Object.assign(NS, { COMBO_BP_NOTE, EUCAST_URL, bpHasCombo, bpThead, buildBpTable, euHasZone, eucastBadgeNodes, eucastCell, eucastNoteNode, eucastZoneCell });
+  Object.assign(NS, { COMBO_BP_NOTE, EUCAST_URL, bpHasCombo, bpThead, buildBpTable, buildBpTableScroll, euHasZone, eucastBadgeNodes, eucastCell, eucastNoteNode, eucastZoneCell });
 })();

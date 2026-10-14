@@ -520,5 +520,5 @@
     ]);
   }
 
-  Object.assign(NS, { astAlerts, astFilter, astLegend, astLevel, astLevelChip, astLevelClass, astLevelDesc, astLevelIcon, astLine, astSources, bpDrugFilter, bpGroupByName, bpGroupFilter, bpGroups, bpJudgeDrug, bpJudgeGroup, bpJudgeMIC, bpJudgeMethod, bpJudgeStd, bpMode, bpSiteReportingNodes, buildAstTable, drugHasZone, eucastDrugFor, intrinsicFilter, intrinsicMatrixNodes, intrinsicResistanceCard, isAstAlertsRoute, isBreakpointsRoute, isIntrinsicRoute, judgeableBpGroupByName, judgeableBpGroups, levelLabel, renderAstAlerts, renderAstAlertsMain, renderBreakpoints, renderBreakpointsMain, renderIntrinsic, renderIntrinsicMain, renderJudgeResult, toggleAstRow });
+  Object.assign(NS, { astAlerts, astLegend, astLevelChip, astLevelClass, astLevelDesc, astLevelIcon, astLine, astSources, bpGroupByName, bpGroups, bpSiteReportingNodes, buildAstTable, drugHasZone, eucastDrugFor, intrinsicMatrixNodes, intrinsicResistanceCard, isAstAlertsRoute, isBreakpointsRoute, isIntrinsicRoute, judgeableBpGroupByName, judgeableBpGroups, levelLabel, renderAstAlerts, renderAstAlertsMain, renderBreakpoints, renderBreakpointsMain, renderIntrinsic, renderIntrinsicMain, renderJudgeResult, toggleAstRow });
 })();

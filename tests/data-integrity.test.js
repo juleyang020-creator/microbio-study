@@ -47,14 +47,29 @@ test('种子数据通过 validateData，无任何问题', () => {
     microbes: global.window.DB.microbes,
     antibiotics: global.window.DB.antibiotics,
     resistance: global.window.DB.resistance,
+    virulence: global.window.DB.virulence,
+    genetics: global.window.DB.genetics,
+    glossary: global.window.DB.glossary,
     cards: global.window.DB.cards,
     tests: global.window.DB.tests,
     media: global.window.DB.media,
     staining: global.window.DB.staining,
-    'biochem-tests': global.window.DB.biochemTests
+    'biochem-tests': global.window.DB.biochemTests,
+    'qc-strains': global.window.DB['qc-strains']
   };
   const problems = Core.validateData(db, global.window.DB.categories);
   assert.deepStrictEqual(problems, [], '发现问题：' + JSON.stringify(problems, null, 2));
+});
+
+test('导航栏模块顺序与 Core.MODULE_KEYS 一致，且全部 12 个模块均有语义色样式', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'styles.css'), 'utf8');
+  const tabModules = [...html.matchAll(/class="tab[^"]*"\s+data-module="([^"]+)"/g)].map((m) => m[1]);
+  assert.deepStrictEqual(tabModules, Core.MODULE_KEYS, 'index.html 顶部模块标签顺序应与 Core.MODULE_KEYS 一致');
+  Core.MODULE_KEYS.forEach((mod) => {
+    assert.ok(css.includes('.chip-' + mod), 'css/styles.css 缺少模块 chip 颜色类：.chip-' + mod);
+    assert.ok(css.includes('.tag-' + mod), 'css/styles.css 缺少模块 tag 颜色类：.tag-' + mod);
+  });
 });
 
 test('生化反应的键均为存在的微生物 id', () => {
@@ -211,8 +226,10 @@ test('试验配图存在；已确认缺少合适图片的条目不得借错图',
 test('各模块主界面的总览图均存在', () => {
   [
     'morphology-overview.svg', 'morphology-fungi.svg', 'morphology-virus.svg',
-    'landing-antibiotics.svg', 'landing-resistance.svg', 'landing-idcards.svg', 'landing-cards.svg',
-    'landing-tests.svg', 'landing-staining.svg', 'landing-media.svg', 'landing-biochem.svg'
+    'landing-antibiotics.svg', 'landing-resistance.svg', 'landing-virulence.svg',
+    'landing-genetics.svg', 'landing-glossary.svg', 'landing-idcards.svg',
+    'landing-cards.svg', 'landing-tests.svg', 'landing-staining.svg',
+    'landing-media.svg', 'landing-biochem.svg', 'landing-qc-strains.svg'
   ].forEach((f) => {
     assert.ok(fs.existsSync(path.join(__dirname, '..', 'img', f)), '缺少 img/' + f);
   });

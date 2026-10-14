@@ -177,3 +177,37 @@ test('重复渲染的锚点稳定，旧分型跳转仍控制原目标', () => {
   assert.ok(section.ownerDocument_activeElement);
   assert.equal(app.win.location.hash, route);
 });
+
+test('微生物详情页按「表型与培养鉴定 → 药敏耐药与临床治疗」顺序组织', () => {
+  const app = loadApp();
+  goto(app, '#/microbes/pseudomonas-aeruginosa');
+  const main = app.doc.getElementById('main');
+  const labels = main.querySelectorAll('.detail-toc-link').map((btn) => btn.textContent.trim());
+  const morphIdx = labels.indexOf('培养与镜下形态');
+  const bioIdx = labels.indexOf('生化反应');
+  const diffIdx = labels.indexOf('相似菌与鉴别');
+  const intrIdx = labels.indexOf('天然耐药');
+  const bpIdx = labels.indexOf('药敏折点');
+  const treatIdx = labels.indexOf('治疗要点');
+  assert.ok(morphIdx >= 0 && bioIdx > morphIdx && diffIdx > bioIdx, '鉴定板块内部顺序应为：培养与镜下形态 → 生化反应 → 相似菌与鉴别');
+  assert.ok(intrIdx > diffIdx && bpIdx > intrIdx && treatIdx > bpIdx, '药敏与治疗板块应排在鉴定板块之后：天然耐药 → 药敏折点 → 治疗要点');
+});
+
+test('示意图放大弹窗打开时聚焦关闭按钮，关闭后焦点回到原触发控件', () => {
+  const app = loadApp();
+  goto(app, '#/antibiotics/meropenem');
+  const main = app.doc.getElementById('main');
+  const img = main.querySelector('.mechanism-img.zoomable');
+  assert.ok(img, '应渲染可放大的机制图');
+  img.focus();
+  assert.ok(app.doc.activeElement === img);
+  img.click();
+  const overlay = app.doc.body.querySelector('.zoom-overlay');
+  assert.ok(overlay, '点击示意图后应打开放大浮层');
+  assert.equal(overlay.getAttribute('aria-modal'), 'true');
+  const closeBtn = overlay.querySelector('.zoom-close');
+  assert.ok(app.doc.activeElement === closeBtn, '打开放大浮层后焦点应移至关闭按钮');
+  app.win.AppNS.closeImageZoom();
+  assert.equal(app.doc.body.querySelector('.zoom-overlay'), null);
+  assert.ok(app.doc.activeElement === img, '关闭放大浮层后焦点应回到原触发示意图');
+});

@@ -79,7 +79,7 @@ class Node {
   removeEventListener(t, fn) { this.listeners[t] = (this.listeners[t] || []).filter((f) => f !== fn); }
   dispatch(t, ev) { (this.listeners[t] || []).forEach((fn) => fn(ev || { type: t, preventDefault() {}, stopPropagation() {} })); }
   click() { this.dispatch('click', { type: 'click', preventDefault() {}, stopPropagation() {} }); }
-  focus() { this.ownerDocument_activeElement = true; }
+  focus() { this.ownerDocument_activeElement = true; if (this._doc) { this._doc.activeElement = this; } }
   scrollIntoView() {}
   // 支持 app.js 实际用到的选择器形态：tag、#id、.a.b 复合类、以及 :not(.x)。
   // :not() 必须真的实现：曾经把它当成普通类名比较，导致选择器永远匹配不到，
@@ -97,14 +97,17 @@ class Node {
 function makeDocument() {
   const doc = new Node('#document');
   doc.body = new Node('body');
+  doc.body._doc = doc;
   doc.documentElement = new Node('html');
+  doc.documentElement._doc = doc;
   doc.appendChild(doc.body);
-  doc.createElement = (t) => new Node(t);
-  doc.createElementNS = (ns, t) => new Node(t);
-  doc.createTextNode = (t) => { const n = new Node('#text'); n._text = String(t); return n; };
-  doc.createDocumentFragment = () => new Node('#fragment');
+  doc.createElement = (t) => { const n = new Node(t); n._doc = doc; return n; };
+  doc.createElementNS = (ns, t) => { const n = new Node(t); n._doc = doc; return n; };
+  doc.createTextNode = (t) => { const n = new Node('#text'); n._text = String(t); n._doc = doc; return n; };
+  doc.createDocumentFragment = () => { const n = new Node('#fragment'); n._doc = doc; return n; };
   doc.getElementById = (id) => doc.querySelectorAll('*').concat(allNodes(doc)).find((n) => n.id === id) || null;
   doc.addEventListener = Node.prototype.addEventListener.bind(doc);
+  doc.removeEventListener = Node.prototype.removeEventListener.bind(doc);
   doc.dispatch = Node.prototype.dispatch.bind(doc);
   doc.activeElement = null;
   return doc;

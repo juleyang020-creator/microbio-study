@@ -89,7 +89,7 @@
     return nodes;
   }
 
-  var searchTimer = null, composing = false, searchIndex = null;
+  var searchTimer = null, composing = false, searchIndex = null, searchIndexDb = null;
   // 返回位置属于浏览器中的每条搜索记录，不能由一个会被后续搜索覆盖的全局变量保存。
   function searchOrigin() {
     var origin = (window.history.state || {}).searchReturn;
@@ -117,7 +117,11 @@
     NS.setActiveTab(null);
     var main = document.getElementById('main');
     main.scrollTop = 0;
-    if (!searchIndex) { searchIndex = Core.createSearchIndex(NS.db()); }
+    var data = NS.db();
+    if (!searchIndex || searchIndexDb !== data) {
+      searchIndexDb = data;
+      searchIndex = Core.createSearchIndex(data);
+    }
     NS.fill(main, buildSearch(View.searchVM(Core.searchIndex(searchIndex, route.query), route.query), route.module));
     NS.fill(document.getElementById('sidebar'), [
       el('div', { cls: 'search-guide' }, [

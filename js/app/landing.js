@@ -51,7 +51,7 @@
         el('button', { cls: 'action-btn', type: 'button', text: '搜索条目 /', onClick: function () { document.getElementById('search-input').focus(); } })
       ])
     ]) ];
-    var index = Core.buildIndex(data);
+    var index = NS.dbIndex();
     var recent = NS.browseHistory().filter(function (h) { return index[h.id]; }).slice(0, 4);
     if (recent.length) {
       nodes.push(el('section', { cls: 'landing-recent' }, [

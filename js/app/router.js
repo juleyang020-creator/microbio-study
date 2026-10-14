@@ -2,7 +2,7 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var NS = window.AppNS = window.AppNS || {};
-  var buildLanding = NS.buildLanding, buildDetail = NS.buildDetail, categories = NS.categories, db = NS.db, fill = NS.fill, isAboutRoute = NS.isAboutRoute, isAstAlertsRoute = NS.isAstAlertsRoute, isBreakpointsRoute = NS.isBreakpointsRoute, isCardCompareRoute = NS.isCardCompareRoute, isCompareRoute = NS.isCompareRoute, isIntrinsicRoute = NS.isIntrinsicRoute, isLabWorkflowRoute = NS.isLabWorkflowRoute, isMicrobeNamesRoute = NS.isMicrobeNamesRoute, mergeAtlasPhotos = NS.mergeAtlasPhotos, parseHash = NS.parseHash, recordHistory = NS.recordHistory, renderAbout = NS.renderAbout, renderAstAlerts = NS.renderAstAlerts, renderBreakpoints = NS.renderBreakpoints, renderCardCompare = NS.renderCardCompare, renderCompare = NS.renderCompare, renderIntrinsic = NS.renderIntrinsic, renderLabWorkflow = NS.renderLabWorkflow, renderMicrobeNames = NS.renderMicrobeNames, renderSidebar = NS.renderSidebar, setActiveTab = NS.setActiveTab;
+  var buildLanding = NS.buildLanding, buildDetail = NS.buildDetail, categories = NS.categories, db = NS.db, dbIndex = NS.dbIndex, dbReverseIndex = NS.dbReverseIndex, fill = NS.fill, isAboutRoute = NS.isAboutRoute, isAstAlertsRoute = NS.isAstAlertsRoute, isBreakpointsRoute = NS.isBreakpointsRoute, isCardCompareRoute = NS.isCardCompareRoute, isCompareRoute = NS.isCompareRoute, isIntrinsicRoute = NS.isIntrinsicRoute, isLabWorkflowRoute = NS.isLabWorkflowRoute, isMicrobeNamesRoute = NS.isMicrobeNamesRoute, mergeAtlasPhotos = NS.mergeAtlasPhotos, parseHash = NS.parseHash, recordHistory = NS.recordHistory, renderAbout = NS.renderAbout, renderAstAlerts = NS.renderAstAlerts, renderBreakpoints = NS.renderBreakpoints, renderCardCompare = NS.renderCardCompare, renderCompare = NS.renderCompare, renderIntrinsic = NS.renderIntrinsic, renderLabWorkflow = NS.renderLabWorkflow, renderMicrobeNames = NS.renderMicrobeNames, renderSidebar = NS.renderSidebar, setActiveTab = NS.setActiveTab;
   function renderRoute() {
     NS.cancelSearchTimer();
     NS.setNavOpen(false, false);
@@ -30,10 +30,10 @@
 
     var entry = null, rels = [], mechImg = null;
     if (route.id) {
-      var index = Core.buildIndex(data);
+      var index = dbIndex();
       var hit = index[route.id];
       entry = hit ? hit.entry : null;
-      rels = entry ? Core.getRelations(route.id, data, index) : [];
+      rels = entry ? Core.getRelations(route.id, data, index, dbReverseIndex()) : [];
       mechImg = View.mechanismImageFor(route.module, entry, categories());
     }
     if (entry && route.id) { recordHistory(route.id, route.module, entry.名称); }

@@ -27,21 +27,21 @@
   依赖的前序文件函数在开头 `var x = NS.x` 导入；**`<script>` 加载顺序即依赖顺序**（helpers 最先、router 最后），
   引用**后面**文件的函数必须写成 `NS.x()` 调用点形式（否则加载时捕获到 undefined）。js/app 新增文件只接两处：
   `index.html` script 列表（按依赖顺序插入）+ `sw.js` CORE——data-integrity 测试自动核对全接线与首末顺序。
-  常用符号位置：`db()`/`el()`/版本兜底→helpers.js、侧栏/收藏历史→sidebar.js、buildDetail/linkDict→detail.js、
-  折点表构建（buildBpTable/eucast*）→bp-table.js、renderRoute/init→router.js。
+  常用符号位置：`db()`/`dbIndex()`/`dbReverseIndex()`/`el()`/版本兜底→helpers.js、侧栏/收藏历史→sidebar.js、buildDetail/linkDict→detail.js、
+  折点表构建（buildBpTable/buildBpTableScroll/eucast*）→bp-table.js、renderRoute/init→router.js。
 - 新增数据文件要同时加进 `index.html` 的 `<script>` 列表和 `sw.js` 的 `CORE` 数组。
 - `tools/_archive/` 是已完成批次的一次性脚本留档，**现役工具不要引用其中文件**；新批次的一次性脚本用完也归档进去。
 
 ## 改完必做
 
-1. **升 `APP_VERSION`**（形如 `20261003-1`，当天第 N 次发布）。改了 `data/`、`js/`、`css/` 而不升版本，
+1. **升 `APP_VERSION`**（形如 `20261014-2`，当天第 N 次发布）。改了 `data/`、`js/`、`css/` 而不升版本，
    老用户和线上 PWA 会继续吃缓存里的旧文件，**而测试照样全绿**（测试走 Node `require`，不经 Service Worker）。
    这个坑踩过不止一次，症状是浏览器里 `window.DB.xxx` 是空的。
    版本号要**四处同步**（data-integrity 测试会核对，漏一处测试挂）：`sw.js` 的 `APP_VERSION`、`index.html` 全部 `?v=` 参数、
    `js/app/helpers.js` 的 `APP_VERSION` 兜底值、`data/source-metadata.js` 的 `app.资源版本`。
-2. 跑 `node tools/release-check.mjs`（内容自检 → 示意图 lint → 预缓存清单核对 → 全部测试〔2026-10-03 为 200 个〕→ 空白字符）。
+2. 跑 `node tools/release-check.mjs`（内容自检 → 示意图 lint → 预缓存清单核对 → 全部测试〔2026-10-14 为 204 个〕→ 空白字符）。
 3. 新增/改动 `img/*.svg` 后跑 `node tools/sync-sw-images.mjs` 同步预缓存清单；
-   新示意图还要接上 `js/view.js` 里对应的 `*_IMAGE` 映射。
+   新示意图还要接上 `js/view.js` 里对应的 `*_IMAGE` 映射（规范见 `docs/示意图设计规范.md`）。
 4. 动了界面/样式，可选跑真实浏览器回归 `tools/ui-check.mjs` 等（需外部 Playwright：`PW_MODULE=… CHROME_PATH=…`，见 README）。
    它们的截图/JSON 证据写到 `docs/审核/<任务目录>/`——**这类子目录已 gitignore，只入库 `docs/审核/*.md` 报告**；
    任务发布验收完后证据目录可删（单次能到上百 MB）。
@@ -86,8 +86,9 @@ G-杆菌→`microbes-gram-negative.js`、厌氧→`microbes-anaerobe.js`、苛�
 `data/microbes.js` 本体只剩初始化，不要再追加。
 **新增 data/ 文件接线是六处**：index.html script 列表、sw.js CORE、tests/data-integrity、tests/tools、
 tools/audit-content.mjs、tools/parse-atlas.mjs（漏一处数据静默丢）。
-**新增「基础知识模块」（如 virulence/genetics）另需三处模块接线**：js/core.js MODULE_KEYS、
-js/view.js MODULE_LABEL、js/app/helpers.js db() 映射 + js/app/detail.js 链接词典对 + index.html tab 按钮。
+**新增「基础知识模块」（如 virulence/genetics）另需模块接线**：`js/core.js` `MODULE_KEYS`、
+`js/view.js` `MODULE_LABEL`、`js/app/helpers.js` `db()` 映射、`js/app/detail.js` 链接词典对、`js/app/landing.js` `LANDING`、
+`index.html` tab 按钮、`css/styles.css` `.chip-<module>, .tag-<module>` 亮/暗语义色、`js/validate.js` 与 `tools/audit-content.mjs`。
 
 动手前读 `docs/菌种编辑规范.md`（含 §8 属级条目写法与侧栏渲染链路——2026-08-30 曾因在 VM 层滤同名条目
 导致 34 个属介绍从侧栏消失，修复与教训见该节），对照黄金样例 `pseudomonas-aeruginosa`。

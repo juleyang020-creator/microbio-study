@@ -4,7 +4,7 @@
   var NS = window.AppNS = window.AppNS || {};
   var MODULES = Core.MODULE_KEYS;
   // 正常由 index.html 内联脚本注入；此兜底值随发布一起更新（见发布清单）
-  var APP_VERSION = window.APP_VERSION || '20261014-1';
+  var APP_VERSION = window.APP_VERSION || '20261014-2';
   // 给图片 URL 追加版本号，保证内容更新后手机端不会命中旧缓存（图片本身无 ?v= 时浏览器/SW 会一直返回旧图）
   function imgV(p) { return p ? (p + (p.indexOf('?') < 0 ? '?v=' : '&v=') + APP_VERSION) : p; }
 
@@ -60,9 +60,49 @@
   // 折点表写「青霉素 (Penicillin)」、抗菌药条目写「青霉素G」——两条别名覆盖从折点表回查与直接按条目名查两种路径。
   var ABX_ALIAS = { '青霉素': 'penicillin-g', '青霉素G': 'penicillin-g', '氨苄西林/阿莫西林': 'ampicillin', '复方磺胺甲噁唑': 'cotrimoxazole', '复方新诺明': 'cotrimoxazole' };
 
+  var _dbCache = null, _indexCache = null, _reverseIndexCache = null;
   function db() {
     var DB = window.DB || {};
-    return { microbes: DB.microbes || [], antibiotics: DB.antibiotics || [], resistance: DB.resistance || [], virulence: DB.virulence || [], genetics: DB.genetics || [], glossary: DB.glossary || [], cards: DB.cards || [], tests: DB.tests || [], media: DB.media || [], staining: DB.staining || [], 'biochem-tests': DB.biochemTests || [], 'qc-strains': DB['qc-strains'] || [] };
+    var m = DB.microbes || [], st = DB.staining || [], md = DB.media || [], bt = DB.biochemTests || [],
+      ts = DB.tests || [], cd = DB.cards || [], ab = DB.antibiotics || [], rs = DB.resistance || [],
+      qc = DB['qc-strains'] || [], vr = DB.virulence || [], gn = DB.genetics || [], gl = DB.glossary || [],
+      morph = DB.morphology || {}, bio = DB.biochem || {}, diff = DB.differential || {};
+    if (
+      _dbCache && _dbCache._raw === DB &&
+      _dbCache.microbes === m && _dbCache.staining === st && _dbCache.media === md &&
+      _dbCache['biochem-tests'] === bt && _dbCache.tests === ts && _dbCache.cards === cd &&
+      _dbCache.antibiotics === ab && _dbCache.resistance === rs && _dbCache['qc-strains'] === qc &&
+      _dbCache.virulence === vr && _dbCache.genetics === gn && _dbCache.glossary === gl &&
+      _dbCache.morphology === morph && _dbCache.biochem === bio && _dbCache.differential === diff
+    ) {
+      return _dbCache;
+    }
+    var res = {
+      microbes: m, staining: st, media: md, 'biochem-tests': bt, tests: ts, cards: cd,
+      antibiotics: ab, resistance: rs, 'qc-strains': qc, virulence: vr, genetics: gn, glossary: gl
+    };
+    // 扩展字典设为不可枚举属性：既供 Core.createSearchIndex 检索形态/生化/鉴别文本，
+    // 又保证 Object.entries(db()) 仅遍历 12 个内容模块数组。
+    Object.defineProperties(res, {
+      _raw: { value: DB },
+      morphology: { value: morph },
+      biochem: { value: bio },
+      differential: { value: diff }
+    });
+    _dbCache = res;
+    _indexCache = null;
+    _reverseIndexCache = null;
+    return res;
+  }
+  function dbIndex() {
+    var data = db();
+    if (!_indexCache) { _indexCache = Core.buildIndex(data); }
+    return _indexCache;
+  }
+  function dbReverseIndex() {
+    var data = db();
+    if (!_reverseIndexCache) { _reverseIndexCache = Core.buildReverseIndex(data); }
+    return _reverseIndexCache;
   }
 
   // 缓存：window.DB 加载后不变，名称→id 映射只需建一次
@@ -100,31 +140,10 @@
 
     // 显式别名词典：biochem.js 中的简名 → 模块条目 id
     var aliases = {
-      '血浆凝固酶': 'bio-coagulase',
-      '试管凝固酶': 'bio-coagulase',
-      '玻片凝固酶': 'bio-coagulase',
-      '新生霉素': 'novobiocin',
-      '溶血型': 'hemolysis',
-      '杆菌肽': 'bacitracin',
-      'PYR': 'pyr-test',
-      'Lancefield 群': 'lancefield',
-      'Optochin': 'bio-optochin',
-      '6.5%NaCl 生长': 'nacl-65',
-      'VP': 'vp-test',
-      '枸橼酸盐': 'citrate',
-      'H2S': 'h2s',
-      'H₂S': 'h2s',
       '绿脓菌素': 'pigment',
-      '黄色素': 'pigment',
       '蔗糖': 'glucose-fermentation',
       '麦芽糖': 'glucose-fermentation',
-      '葡萄糖': 'glucose-fermentation',
-      '糖发酵': 'glucose-fermentation',
-      '葡萄糖发酵': 'glucose-fermentation',
       'TCBS(蔗糖)': 'glucose-fermentation',
-      '蔗糖发酵(TCBS)': 'glucose-fermentation',
-            '明胶酶': 'gelatinase',
-      'DNase': 'dnase',
       '迁徙生长': 'motility',
       '动力(25℃/37℃)': 'motility',
       // ==== 批量归一映射（tools/_tmp-biomap.py 生成，2026-08-30）====
@@ -187,7 +206,6 @@
       '乳糖': 'lactose-fermentation',
       '乳糖发酵': 'lactose-fermentation',
       '亚硝酸盐还原': 'nitrate-reduction',
-      '亚硝酸盐还原为氮气(脱氮)': 'nitrate-reduction',
       '产色素': 'pigment',
       '产过氧化氢': 'bio-catalase',
       '兰氏(Lancefield)血清分群': 'lancefield',
@@ -212,7 +230,6 @@
       '卵磷脂酶（蛋黄反应）': 'lecithinase',
       '双圈(双区)溶血(血平板)': 'hemolysis',
       '发酵葡萄糖': 'glucose-fermentation',
-      '发酵葡萄糖/蔗糖': 'glucose-fermentation',
       '可溶性色素': 'pigment',
       '吲哚': 'indole',
       '吲哚/VP': 'indole',
@@ -229,11 +246,9 @@
       '明胶液化': 'gelatinase',
       '明胶液化(28℃)': 'gelatinase',
       '明胶酶': 'gelatinase',
-      '木糖发酵': 'glucose-fermentation',
       '杆菌肽': 'bacitracin',
       '杆菌肽(0.04U)': 'bacitracin',
       '果糖/甘露醇发酵': 'mannitol-fermentation',
-      '果糖发酵': 'glucose-fermentation',
       '枸橼酸盐': 'citrate',
       '枸橼酸盐利用': 'citrate',
       '氧化酶': 'bio-oxidase',
@@ -242,7 +257,6 @@
       '氧化酶/触酶': 'bio-catalase',
       '氧化酶/触酶/硝酸盐': 'bio-catalase',
       '海藻糖发酵': 'glucose-fermentation',
-      '海藻糖发酵/同化': 'glucose-fermentation',
       '溶血': 'hemolysis',
       '溶血型': 'hemolysis',
       '热触酶(68℃)': 'bio-catalase',
@@ -274,7 +288,6 @@
       '红色可扩散色素(25℃)': 'pigment',
       '耐热核酸酶(DNase)': 'dnase',
       '胆汁七叶苷': 'bile-esculin',
-      '胆汁七叶苷(BBE，20%胆盐)': 'bile-esculin',
       '胆汁七叶苷(BEA)': 'bile-esculin',
       '胆汁溶菌': 'bio-bile-solubility',
       '胆汁溶解': 'bio-bile-solubility',
@@ -291,17 +304,12 @@
       '葡萄糖': 'glucose-fermentation',
       '葡萄糖/乳糖发酵': 'lactose-fermentation',
       '葡萄糖/蔗糖/山梨醇/甘露糖发酵': 'glucose-fermentation',
-      '葡萄糖/麦芽糖/蔗糖发酵': 'glucose-fermentation',
-      '葡萄糖/麦芽糖发酵': 'glucose-fermentation',
       '葡萄糖产气': 'glucose-fermentation',
       '葡萄糖产酸': 'glucose-fermentation',
       '葡萄糖发酵': 'glucose-fermentation',
       '葡萄糖发酵(O-F)': 'glucose-fermentation',
-      '葡萄糖发酵/同化': 'glucose-fermentation',
       '葡萄糖发酵产气': 'glucose-fermentation',
-      '葡萄糖（氧化型产酸）': 'glucose-fermentation',
       '葡萄糖（氧化型）': 'glucose-fermentation',
-      '蔗糖发酵': 'glucose-fermentation',
       '蔗糖发酵(TCBS)': 'glucose-fermentation',
       '蔗糖发酵产酸': 'glucose-fermentation',
       '血平板溶血': 'hemolysis',
@@ -317,15 +325,12 @@
       '酚氧化酶(咖啡酸)': 'bio-oxidase',
       '酚氧化酶/咖啡酸(鸟食)培养基(产黑色素)': 'bio-oxidase',
       '酚氧化酶（黑素）': 'bio-oxidase',
-      '阿拉伯糖发酵': 'glucose-fermentation',
       '马尿酸水解': 'hippurate',
       '马尿酸盐': 'hippurate',
       '马尿酸盐水解': 'hippurate',
       '高盐(10% NaCl)耐受': 'nacl-65',
       '鸟氨酸脱羧酶': 'ornithine-decarboxylase',
       '鸟氨酸脱羧酶（ODC）': 'ornithine-decarboxylase',
-      '麦芽糖/蔗糖发酵': 'glucose-fermentation',
-      '麦芽糖发酵': 'glucose-fermentation',
       '黄色素': 'pigment',
       '黄色素（25℃）': 'pigment',
       '黄色色素': 'pigment',
@@ -441,7 +446,7 @@
       '荧光素（King B 紫外）': 'fluorescein-production',
       '绿脓菌素(荧光)': 'pigment',
       '生物发光': 'fluorescein-production',
-                        '生长速度': 'growth-temperature-panel',
+      '生长速度': 'growth-temperature-panel',
       '生长速率': 'growth-temperature-panel',
       '生长温度': 'growth-temperature-panel',
       '最适生长温度': 'growth-temperature-panel',
@@ -470,8 +475,8 @@
       '代谢类型': 'growth-temperature-panel',
       '嗜盐性': 'growth-temperature-panel',
       '嗜盐': 'growth-temperature-panel',
-                                                            '营养琼脂 35℃': 'growth-temperature-panel',
-                        '伍德灯': 'wood-lamp',
+      '营养琼脂 35℃': 'growth-temperature-panel',
+      '伍德灯': 'wood-lamp',
       '365nm紫外荧光': 'wood-lamp',
       '紫外荧光': 'wood-lamp',
       '毛发穿孔试验': 'hair-perforation-test',
@@ -672,5 +677,5 @@
     });
   }
 
-  Object.assign(NS, { ABX_ALIAS, APP_VERSION, BP_TIER_LABELS, BP_TIER_ORDER, CARD_TEST, FADE, MODULES, SVGNS, _abxNameMap, _biochemTestMap, abxIdByDrugText, abxIdByName, appendChildNode, biochemTestIdByName, bpTierBadge, bpTierLegend, bpUrineChip, categories, db, el, fill, imgV, initScrollFades, mergeAtlasPhotos, parseHash, routeKey, setActiveTab, setActiveTool, sg, syncScrollFade });
+  Object.assign(NS, { ABX_ALIAS, APP_VERSION, BP_TIER_LABELS, BP_TIER_ORDER, CARD_TEST, FADE, MODULES, SVGNS, abxIdByDrugText, abxIdByName, appendChildNode, biochemTestIdByName, bpTierBadge, bpTierLegend, bpUrineChip, categories, db, dbIndex, dbReverseIndex, el, fill, imgV, initScrollFades, mergeAtlasPhotos, parseHash, routeKey, setActiveTab, setActiveTool, sg, syncScrollFade });
 })();

@@ -40,3 +40,14 @@ test('连续搜索复用一次预建索引，视图高亮使用同一套别名�
   assert.ok(tokens.includes('金黄色葡萄球菌'));
   assert.ok(tokens.includes('凝固酶'));
 });
+
+test('UI 搜索索引包含微生物形态、生化反应与相似菌鉴别字段，且 Object.entries(db()) 仅枚举 12 个模块', () => {
+  const app = loadApp();
+  const data = app.win.AppNS.db();
+  assert.deepEqual(Object.keys(data), [...app.win.Core.MODULE_KEYS], 'db() 可枚举键应仅含 12 个模块');
+  assert.ok(data.morphology && data.biochem && data.differential, 'db() 应附带不可枚举的形态/生化/鉴别字典供全文检索');
+  goto(app, '#/search/' + encodeURIComponent('葡萄串状') + '/microbes');
+  const main = app.doc.getElementById('main');
+  const hrefs = main.querySelectorAll('.search-item').map(n => n.getAttribute('href'));
+  assert.ok(hrefs.includes('#/microbes/staph-aureus'), '搜索形态关键词应命中金黄色葡萄球菌');
+});

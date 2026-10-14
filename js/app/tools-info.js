@@ -396,5 +396,5 @@
     fill(document.getElementById('mn-results'), nodes);
   }
 
-  Object.assign(NS, { MN_KIND_CLS, MN_KIND_SHORT, _mnLibIndex, _mnNameSet, cacheStatusLine, isAboutRoute, isLabWorkflowRoute, isMicrobeNamesRoute, lwList, mnFilter, mnHasName, mnLetter, mnLibIndex, mnNorm, mnTarget, mnTimer, renderAbout, renderLabWorkflow, renderMicrobeNames, renderMicrobeNamesResults, sourceMetadataLines });
+  Object.assign(NS, { MN_KIND_CLS, MN_KIND_SHORT, cacheStatusLine, isAboutRoute, isLabWorkflowRoute, isMicrobeNamesRoute, lwList, mnHasName, mnLetter, mnLibIndex, mnNorm, mnTarget, renderAbout, renderLabWorkflow, renderMicrobeNames, renderMicrobeNamesResults, sourceMetadataLines });
 })();
