@@ -23,6 +23,7 @@ require('../data/staining.js');
 require('../data/breakpoints.js');
 require('../data/biochem-tests.js');
 require('../data/ast-alerts.js');
+require('../data/qc-strains.js');
 require('../data/intrinsic-resistance.js');
 require('../data/treatment.js');
 const Core = require('../js/core.js');
@@ -32,11 +33,15 @@ const db = () => ({
   microbes: global.window.DB.microbes,
   antibiotics: global.window.DB.antibiotics,
   resistance: global.window.DB.resistance,
+  virulence: global.window.DB.virulence,
+  genetics: global.window.DB.genetics,
+  glossary: global.window.DB.glossary,
   cards: global.window.DB.cards,
   tests: global.window.DB.tests,
   media: global.window.DB.media,
   staining: global.window.DB.staining,
-  'biochem-tests': global.window.DB.biochemTests
+  'biochem-tests': global.window.DB.biochemTests,
+  'qc-strains': global.window.DB['qc-strains']
 });
 
 // ===== 天然耐药速查 =====

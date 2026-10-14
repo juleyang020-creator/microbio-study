@@ -40,6 +40,7 @@ global.window = { DB: {} };
   'breakpoints',
   'biochem-tests',
   'ast-alerts',
+  'qc-strains',
   'nprc-catalogue'
 ].forEach((name) => {
   require(path.join(root, 'data', `${name}.js`));
@@ -51,11 +52,15 @@ const appDb = {
   microbes: DB.microbes || [],
   antibiotics: DB.antibiotics || [],
   resistance: DB.resistance || [],
+  virulence: DB.virulence || [],
+  genetics: DB.genetics || [],
+  glossary: DB.glossary || [],
   cards: DB.cards || [],
   tests: DB.tests || [],
   media: DB.media || [],
   staining: DB.staining || [],
-  'biochem-tests': DB.biochemTests || []
+  'biochem-tests': DB.biochemTests || [],
+  'qc-strains': DB['qc-strains'] || []
 };
 
 const errors = [];

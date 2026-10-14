@@ -6,7 +6,7 @@
 })(function () {
   'use strict';
 
-  var MODULE_KEYS = ['microbes', 'antibiotics', 'resistance', 'virulence', 'genetics', 'glossary', 'cards', 'tests', 'media', 'staining', 'biochem-tests', 'qc-strains'];
+  var MODULE_KEYS = ['microbes', 'staining', 'media', 'biochem-tests', 'tests', 'cards', 'antibiotics', 'resistance', 'qc-strains', 'virulence', 'genetics', 'glossary'];
   var SEARCH_ALIASES = {
     'ng': ['淋病奈瑟菌', '淋病', 'neisseria gonorrhoeae', 'gonococcus'],
     'gc': ['淋病奈瑟菌', '淋病', 'neisseria gonorrhoeae', 'gonococcus'],

@@ -2,7 +2,7 @@
   'use strict';
   var Core = window.Core, View = window.View;
   var NS = window.AppNS = window.AppNS || {};
-  var categories = NS.categories, db = NS.db, el = NS.el, fill = NS.fill, parseHash = NS.parseHash;
+  var categories = NS.categories, db = NS.db, dbIndex = NS.dbIndex, el = NS.el, fill = NS.fill, parseHash = NS.parseHash;
   var collapsed = {}; // path -> true 表示该分类节点已折叠（跨模块、跨重渲染保持）
 
   function toggleCollapse(key) {
@@ -128,7 +128,7 @@
   // 侧栏顶部的「我的收藏」+「最近浏览」区（名称实时取 DB，改名后不过期；取不到用快照名）
   function favHistNodes(route) {
     var out = [];
-    var index = Core.buildIndex(db());
+    var index = dbIndex();
     var favs = favorites();
     if (favs.length) {
       var favItems = favs.slice().reverse().map(function (f) { // 最新收藏在前
@@ -184,5 +184,5 @@
     }
   }
 
-  Object.assign(NS, { FAV_KEY, HIST_KEY, _favCache, _histCache, browseHistory, buildSidebar, clearHistory, collapsed, favHistNodes, favorites, isFavorited, isMobile, lsLoad, lsSave, recordHistory, renderSidebar, sidebarNodes, toggleCollapse, toggleFavorite });
+  Object.assign(NS, { FAV_KEY, HIST_KEY, browseHistory, buildSidebar, clearHistory, collapsed, favHistNodes, favorites, isFavorited, isMobile, lsLoad, lsSave, recordHistory, renderSidebar, sidebarNodes, toggleCollapse, toggleFavorite });
 })();

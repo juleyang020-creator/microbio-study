@@ -14,7 +14,7 @@
 ## 改完必做（顺序不能乱）
 
 1. 改了 `data/`、`js/`、`css/` → **必升 `APP_VERSION`**，四处同步：`sw.js`、`index.html` 全部 `?v=`、`js/app/helpers.js` 兜底值、`data/source-metadata.js` 的 `资源版本`。不升版本线上 PWA 继续吃旧缓存，而测试照样全绿（测试走 Node require 不经 SW）——这个坑踩过不止一次。
-2. 跑 `node tools/release-check.mjs`，全部测试（2026-10-03 为 200 个）+ 内容自检全绿才算完成。
+2. 跑 `node tools/release-check.mjs`，全部测试（2026-10-14 为 204 个）+ 内容自检全绿才算完成。
 3. 新增数据文件接线共 **六处**（index.html script 列表、sw.js CORE、tests/data-integrity、tests/tools、tools/audit-content.mjs、tools/parse-atlas.mjs），漏一处数据静默丢。
 4. 新增/改动 `img/*.svg` → 跑 `node tools/sync-sw-images.mjs`。
 

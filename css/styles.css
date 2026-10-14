@@ -39,7 +39,6 @@ body {
 .brand { grid-column: 1; grid-row: 1; font-weight: 700; font-size: 19px; letter-spacing: 2px; color: var(--accent); white-space: nowrap; text-decoration: none; }
 .nav-boards { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; min-width: 0; }
 .nav-board { display: flex; align-items: center; min-width: 0; }
-.nav-board-title { display: none; }
 .nav-board-tools { position: relative; }
 .tabs { display: flex; flex-wrap: wrap; gap: 3px; min-width: 0; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
@@ -84,7 +83,7 @@ body.tools-open .tools { display: grid; }
 .entry-link.selected { color: var(--accent); font-weight: 600; border-left-color: var(--accent); background: var(--accent-weak); }
 /* 属级单条目：叶子下唯一同名条目折叠成属节点本身可点（js/app.js sidebarNodes） */
 .cat-genus-link { display: block; text-decoration: none; margin-top: 1px; }
-.cat-genus-link::before { content: '• '; color: var(--line-3, #bbb); }
+.cat-genus-link::before { content: '• '; color: var(--muted); }
 .cat-genus-link.selected::before { color: var(--accent); }
 /* 大属双控件行：独立箭头按钮 + 属名链接（直达属总览） */
 .genus-row { display: flex; align-items: center; flex-wrap: nowrap; gap: 0; margin-top: 1px; min-width: 0; }
@@ -151,8 +150,8 @@ body.route-mn .detail-title { margin-top: 18px; }
 .lw-note { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.55; max-width: 760px; }
 .lw-section { margin: 8px 0 22px; }
 .lw-nav { display: flex; flex-direction: column; gap: 2px; margin-top: 10px; }
-.lw-nav-item { display: block; padding: 5px 8px; border-radius: 6px; font-size: 13px; color: var(--accent, #0a6); text-decoration: none; }
-.lw-nav-item:hover { background: var(--line, #eee); }
+.lw-nav-item { display: block; padding: 5px 8px; border-radius: 6px; font-size: 13px; color: var(--accent); text-decoration: none; }
+.lw-nav-item:hover { background: var(--line); }
 .lw-nav-item.sub { padding-left: 18px; font-size: 12.5px; }
 .lw-h { font-size: 15px; font-weight: 700; color: var(--ink); margin: 0 0 4px; padding-bottom: 5px; border-bottom: 1px solid var(--line); }
 .lw-sub { font-weight: 600; font-size: 13px; color: var(--ink-soft); margin: 12px 0 5px; }
@@ -298,13 +297,12 @@ body.zoom-open { overflow: hidden; }
 .photo-nav:hover { background: rgba(0,0,0,.68); }
 .photo-nav.prev { left: 4px; }
 .photo-nav.next { right: 4px; }
-.photo-dots { display: flex; justify-content: center; gap: 6px; margin-top: 7px; }
+.photo-dots { display: flex; justify-content: center; gap: 6px; margin-top: 0; }
 /* 圆点视觉仍是 7px，但用透明边框把点击区扩到 23px —— 7px 的目标基本点不中。
    background-clip: content-box 保证边框区域不被底色填上。 */
 .photo-dot { width: 7px; height: 7px; padding: 0; border-radius: 50%; border: 8px solid transparent;
   background: var(--line); background-clip: content-box; box-sizing: content-box; cursor: pointer; }
 .photo-dot.on { background: var(--accent); background-clip: content-box; }
-.photo-dots { margin-top: 0; }
 @media (max-width: 760px) {
   .morphology.photos { max-width: 100%; }
   .photo-nav { display: none; }
@@ -381,19 +379,23 @@ body.zoom-open { overflow: hidden; }
 .cmp tr.cmp-diff .cmp-item { background: #f1e8cf; color: #715711; }
 .cmp-hint { font-size: 12px; color: var(--muted); margin-top: 10px; }
 
-/* 关联 / 标签 */
+/* 关联 / 标签（全部 12 个知识模块的语义色：白底与浅色底均 ≥5.2:1） */
 .relations { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-size: 12.5px; padding: 3px 10px; border-radius: 4px; text-decoration: none; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
 .chip:hover { border-color: var(--faint); }
-.chip-microbes { color: var(--link); }
-.chip-antibiotics { color: var(--green); }
-.chip-resistance { color: var(--rust); }
-.chip-tests { color: var(--gold); }
-.chip-cards { color: #4a6d8c; }
-.chip-media { color: #6b4e8a; }
-.chip-staining { color: #8a4a6b; }
-.chip-biochem-tests { color: #4a7a6b; }
+.chip-microbes, .tag-microbes { color: var(--link); }
+.chip-antibiotics, .tag-antibiotics { color: var(--green); }
+.chip-resistance, .tag-resistance { color: var(--rust); }
+.chip-tests, .tag-tests { color: var(--gold); }
+.chip-cards, .tag-cards { color: #4a6d8c; }
+.chip-media, .tag-media { color: #6b4e8a; }
+.chip-staining, .tag-staining { color: #8a4a6b; }
+.chip-biochem-tests, .tag-biochem-tests { color: #4a7a6b; }
+.chip-virulence, .tag-virulence { color: #8c4a4a; }
+.chip-genetics, .tag-genetics { color: #4a588c; }
+.chip-glossary, .tag-glossary { color: #526373; }
+.chip-qc-strains, .tag-qc-strains { color: #2f6b5e; }
 .chip-missing, .chip-plain { color: var(--muted); background: var(--line-2); }
 
 /* 折点表 */
@@ -433,15 +435,13 @@ body.zoom-open { overflow: hidden; }
 .bp-table .bp-comment { color: var(--muted); font-size: 12px; max-width: 240px; }
 .bp-table tbody tr:hover { background: var(--line-2); }
 .bp-foot { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
-/* CLSI M100 报告分组徽章 */
+/* CLSI M100 Ed36 报告分层徽章（Tier 1–4） */
 .bp-tier { display: inline-block; min-width: 15px; padding: 0 4px; margin-right: 5px; border-radius: 4px; font-size: 10.5px; font-weight: 700; line-height: 16px; text-align: center; color: #fff; vertical-align: middle; font-family: var(--mono); }
 /* 实底徽章保留深底白字；不要直接用深色模式提亮后的文字主色作底。 */
-.bp-tier-A, .bp-tier-1 { background: #155E56; }
-.bp-tier-B, .bp-tier-2 { background: #1F5F8B; }
-.bp-tier-C, .bp-tier-3 { background: #6f61a0; }  /* 原 #7d6fae 白字仅 4.41 */
+.bp-tier-1 { background: #155E56; }
+.bp-tier-2 { background: #1F5F8B; }
+.bp-tier-3 { background: #6f61a0; }  /* 原 #7d6fae 白字仅 4.41 */
 .bp-tier-4 { background: #5f646c; }  /* 原 #8a8f98 白字仅 3.25 */
-.bp-tier-U { background: #8a6d1f; }  /* 原 #b58f2a 白字仅 3.03 */
-.bp-tier-O { background: #5f646c; }
 .bp-urine { display: inline-block; padding: 0 4px; margin-right: 5px; border-radius: 4px; font-size: 10.5px; font-weight: 700; line-height: 16px; color: #fff; background: #8a6d1f; vertical-align: middle; }
 .bp-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 12px; margin-top: 8px; font-size: 11.5px; }
 .bp-legend-lead { font-weight: 600; color: var(--ink-soft); }
@@ -638,14 +638,7 @@ body.zoom-open { overflow: hidden; }
 .search-guide { padding: 8px 6px; color: var(--muted); line-height: 1.8; }
 .search-guide h2 { font-size: 16px; color: var(--ink); }
 .tag { font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 8px; border: 1px solid var(--line); color: var(--muted); }
-.tag-microbes { color: var(--link); }
-.tag-antibiotics { color: var(--green); }
-.tag-resistance { color: var(--rust); }
-.tag-tests { color: var(--gold); }
-.tag-cards { color: #4a6d8c; }
-.tag-media { color: #6b4e8a; }
-.tag-staining { color: #8a4a6b; }
-.tag-biochem-tests { color: #4a7a6b; }
+/* 各模块语义色已与 .chip-<module> 合并定义 */
 
 /* 空状态 */
 .empty { color: var(--muted); padding: 48px 0; text-align: center; }
@@ -977,6 +970,10 @@ body.zoom-open { overflow: hidden; }
   .chip-media, .tag-media { color: #b598d4; }
   .chip-staining, .tag-staining { color: #d49ab8; }
   .chip-biochem-tests, .tag-biochem-tests { color: #8ac2ad; }
+  .chip-virulence, .tag-virulence { color: #d99a9a; }
+  .chip-genetics, .tag-genetics { color: #9aa8e0; }
+  .chip-glossary, .tag-glossary { color: #a8b8c8; }
+  .chip-qc-strains, .tag-qc-strains { color: #85c4b4; }
   .bp-verdict.v-sdd .bp-verdict-tag { color: #9aa8e0; }
   .bp-verdict.v-ns .bp-verdict-tag { color: #d4a05c; }
   .update-toast { box-shadow: 0 6px 22px rgba(0,0,0,.5); }
