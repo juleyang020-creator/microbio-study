@@ -54,10 +54,10 @@
 <text x="240" y="232" text-anchor="middle" font-size="9.5" fill="#5c6672">→ 顶入 Durham 管成气泡</text>
 
 <!-- 中 → 右：两条结局 -->
-<line x1="318" y1="190" x2="382" y2="120" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
-<text x="350" y="148" text-anchor="middle" font-size="9.5" fill="#33404f">产酸显色</text>
-<line x1="318" y1="226" x2="382" y2="145" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
-<text x="350" y="178" text-anchor="middle" font-size="9.5" fill="#33404f">产气顶开小管</text>
+<line x1="318" y1="190" x2="380" y2="126" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="348" y="118" text-anchor="middle" font-size="9.5" fill="#33404f">产酸显色</text>
+<line x1="318" y1="226" x2="380" y2="156" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="346" y="232" text-anchor="middle" font-size="9.5" fill="#33404f">产气入管</text>
 
 <!-- ===== 右：阳性管 ===== -->
 <text x="405" y="74" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5c6672">阳性：产酸 ± 产气</text>

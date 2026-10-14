@@ -35,14 +35,14 @@
 </g>
 <!-- 参与成孔的固醇 -->
 <g fill="#4e8d5b"><ellipse cx="206" cy="135" rx="3" ry="8"/><ellipse cx="272" cy="135" rx="3" ry="8"/></g>
-<text x="240" y="172" text-anchor="middle" font-size="9.5" fill="#1f2733">药物-固醇孔道</text>
+<text x="316" y="168" font-size="9.5" fill="#1f2733">← 药物-固醇孔道</text>
 
 <!-- 离子外漏 -->
 <g stroke="#3a6f8c" stroke-width="1.4" fill="none">
-  <line x1="234" y1="154" x2="228" y2="188" marker-end="url(#arr)"/>
-  <line x1="246" y1="154" x2="252" y2="188" marker-end="url(#arr)"/>
+  <line x1="234" y1="154" x2="228" y2="184" marker-end="url(#arr)"/>
+  <line x1="246" y1="154" x2="252" y2="184" marker-end="url(#arr)"/>
 </g>
-<text x="240" y="202" text-anchor="middle" font-size="9.5" fill="#3a6f8c">K⁺ / Mg²⁺ 等离子外漏</text>
+<text x="240" y="200" text-anchor="middle" font-size="9.5" fill="#3a6f8c">K⁺ / Mg²⁺ 等离子外漏</text>
 
 <!-- 选择性说明 -->
 <text x="240" y="226" text-anchor="middle" font-size="9.5" fill="#5c6672">对麦角固醇亲和力 ＞ 胆固醇 → 有选择性，但仍可损伤肾小管（肾毒性）</text>

@@ -25,7 +25,7 @@
 <text x="50" y="88.5" font-size="9.5" font-weight="700" fill="#33404f">菌悬液轻涂片</text>
 <path d="M70,105.5 q-9,-7 -17,-1 q-8,6 -15,1" fill="none" stroke="#d0d4d9" stroke-width="0.6"/>
 <rect x="70" y="100" width="36" height="11" rx="5.5" fill="#eef1f5" stroke="#b9c2cc"/>
-<text x="112" y="108" font-size="9.5" fill="#8c96a2">看不见</text>
+<text x="112" y="108" font-size="9.5" fill="#5c6672">看不见</text>
 <text x="32" y="124" font-size="9.5" fill="#5c6672">自然干燥，勿加热固定</text>
 
 <!-- ❷ 媒染 -->

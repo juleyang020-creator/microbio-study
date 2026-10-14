@@ -18,7 +18,7 @@
 <path d="M79,88 L79,178 A17,17 0 0 0 113,178 L113,88" fill="#eef3f7" stroke="none"/>
 <path d="M79,88 L79,178 A17,17 0 0 0 113,178 L113,88" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
 <line x1="75" y1="88" x2="117" y2="88" stroke="#b9c2cc" stroke-width="1.4"/>
-<text x="96" y="146" text-anchor="middle" font-size="9.5" fill="#8c96a2">无色</text>
+<text x="96" y="146" text-anchor="middle" font-size="9.5" fill="#5c6672">无色</text>
 <text x="96" y="210" text-anchor="middle" font-size="9.5" fill="#5c6672">35℃ 24 h 仍无色判阴</text>
 <text x="96" y="224" text-anchor="middle" font-size="9.5" fill="#33404f">无 β-半乳糖苷酶</text>
 
@@ -33,7 +33,7 @@
 <rect x="176" y="172" width="128" height="32" rx="5" fill="#fdf3cf" stroke="#d9b96a"/>
 <text x="240" y="186" text-anchor="middle" font-size="9.5" fill="#8a6d2f">邻硝基苯酚（黄色）</text>
 <text x="240" y="198" text-anchor="middle" font-size="9.5" fill="#5c6672">＋ 半乳糖</text>
-<text x="240" y="219" text-anchor="middle" font-size="9.5" fill="#8c96a2">载体：ONPG 肉汤或浸润纸片</text>
+<text x="240" y="219" text-anchor="middle" font-size="9.5" fill="#5c6672">载体：ONPG 肉汤或浸润纸片</text>
 
 <!-- 转化指向两管 -->
 <line x1="174" y1="100" x2="120" y2="106" stroke="#8c96a2" stroke-width="1.1" stroke-dasharray="4,3" marker-end="url(#arrs)"/>

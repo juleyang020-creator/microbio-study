@@ -136,7 +136,11 @@ test('重点图在所有挂载详情页显示具体图名、命题、范围与�
 
 test('确认错配的条目不再借用专用图，生物膜词条挂实际结构图', () => {
   const View = require('../js/view.js');
-  ['hbsag-elisa', 'hcv-ab-elisa', 'hiv-ab-screen', 'sars2-rtqpcr'].forEach((id) => {
+  [
+    'hbsag-elisa', 'hcv-ab-elisa', 'hiv-ab-screen', 'sars2-rtqpcr',
+    'crag-test', 'aspergillus-antibody', 'candida-mannan',
+    'blastomyces-antigen', 'coccidioides-serology', 'histoplasma-antigen'
+  ].forEach((id) => {
     assert.strictEqual(View.mechanismImageFor('tests', { id }), null, id + ' 不应借错图');
   });
   assert.strictEqual(View.mechanismImageFor('staining', { id: 'calcofluor-white' }), null);

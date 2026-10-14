@@ -57,12 +57,12 @@
   <path d="M363,136 L363,168 L374,152 Z" fill="none" stroke="#b9c2cc" stroke-width="1" stroke-dasharray="2,3"/>
 </g>
 <line x1="345" y1="177" x2="360" y2="164" stroke="#8c96a2" stroke-width="1"/>
-<text x="340" y="188" text-anchor="middle" font-size="9.5" fill="#8c96a2">交界无增强</text>
+<text x="340" y="188" text-anchor="middle" font-size="9.5" fill="#5c6672">交界无增强</text>
 <text x="352" y="224" text-anchor="middle" font-size="9.5" fill="#5c6672">交界处无三角形透明区</text>
 <text x="352" y="238" text-anchor="middle" font-size="9.5" font-weight="700" fill="#33404f">阴性 → 非 B 群（如化脓链球菌）</text>
 
 <!-- 注意 -->
-<text x="240" y="250" text-anchor="middle" font-size="9.5" fill="#8c96a2">注意　CO₂ 或厌氧孵育时 A 群可假阳性（故须有氧）；李斯特菌亦 CAMP(+)，但呈矩形区</text>
+<text x="240" y="250" text-anchor="middle" font-size="9.5" fill="#5c6672">注意　CO₂ 或厌氧孵育时 A 群可假阳性（故须有氧）；李斯特菌亦 CAMP(+)，但呈矩形区</text>
 
 <!-- 结论 -->
 <text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">CAMP 因子与金葡 β 溶血素协同，交界处箭头状增强溶血即为阳性</text>

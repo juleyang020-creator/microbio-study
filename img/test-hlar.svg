@@ -80,7 +80,7 @@
 <text x="395" y="160.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">修饰酶</text>
 <line x1="414" y1="157" x2="422" y2="157" stroke="#c2413d" stroke-width="1.6" marker-end="url(#blk)"/>
 <ellipse cx="440" cy="157" rx="15" ry="11" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
-<text x="440" y="160.5" text-anchor="middle" font-size="9.5" fill="#8c96a2">核糖体</text>
+<text x="440" y="160.5" text-anchor="middle" font-size="9.5" fill="#5c6672">核糖体</text>
 <text x="388" y="180" text-anchor="middle" font-size="9.5" fill="#5c6672">修饰酶灭活/靶位突变 → 失效</text>
 <text x="388" y="194" text-anchor="middle" font-size="9.5" fill="#a3332f">协同消失（HLAR 阳性）</text>
 

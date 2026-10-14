@@ -66,14 +66,8 @@
     'cbde-colistin': 'img/test-colistin.svg',
     'satellitism': 'img/test-satellitism.svg',
     'bdg-test': 'img/test-bdg.svg',
-    'gm-test': 'img/test-gm.svg',
-    // 批43 新增（94书第23章真菌血清学）：复用 G/GM 同族示意图
-    'crag-test': 'img/test-gm.svg',
-    'aspergillus-antibody': 'img/test-gm.svg',
-    'candida-mannan': 'img/test-bdg.svg',
-    'blastomyces-antigen': 'img/test-bdg.svg',
-    'coccidioides-serology': 'img/test-bdg.svg',
-    'histoplasma-antigen': 'img/test-bdg.svg'
+    'gm-test': 'img/test-gm.svg'
+    // 隐球菌荚膜抗原、曲霉抗体、甘露聚糖、芽生菌/球孢子菌/组织胞浆菌血清学暂不借用 G/GM 专用图
   };
 
   // 染色：按条目 id 映射到示意图

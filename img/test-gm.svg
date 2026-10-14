@@ -70,8 +70,8 @@
 <text x="313" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">阈值对照</text>
 <text x="367" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">患者甲</text>
 <text x="421" y="142" text-anchor="middle" font-size="9.5" fill="#5c6672">患者乙</text>
-<text x="259" y="154" text-anchor="middle" font-size="9.5" fill="#8c96a2">近无色</text>
-<text x="313" y="154" text-anchor="middle" font-size="9.5" fill="#8c96a2">作分母</text>
+<text x="259" y="154" text-anchor="middle" font-size="9.5" fill="#5c6672">近无色</text>
+<text x="313" y="154" text-anchor="middle" font-size="9.5" fill="#5c6672">作分母</text>
 <text x="367" y="154" text-anchor="middle" font-size="9.5" fill="#5c6672">指数 0.3</text>
 <text x="421" y="154" text-anchor="middle" font-size="9.5" fill="#a3332f">指数 2.4</text>
 

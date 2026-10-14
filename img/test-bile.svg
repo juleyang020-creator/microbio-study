@@ -74,7 +74,7 @@
 <text x="268" y="211" text-anchor="middle" font-size="9.5" fill="#5b4f8a">水解肽聚糖</text>
 <line x1="303" y1="208" x2="319" y2="208" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
 <text x="323" y="211" font-size="9.5" fill="#33404f">菌体崩解、悬液变清</text>
-<text x="34" y="234" font-size="9.5" fill="#5c6672">草绿色链球菌无胆盐激活型 LytA 自溶酶 → 不溶；须与未加胆盐的对照管比对，防止把稀悬液误判为澄清</text>
+<text x="34" y="234" font-size="9.5" fill="#5c6672">草绿色链球菌无胆盐激活型 LytA → 不溶；须与未加胆盐对照管比对，防误判</text>
 
 <!-- 结论 -->
 <text x="240" y="262" text-anchor="middle" font-size="11.5" fill="#33404f">溶解变清判为肺炎链球菌，不溶则提示草绿色链球菌群</text>

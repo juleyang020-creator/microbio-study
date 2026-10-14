@@ -19,8 +19,8 @@
 <rect x="24" y="84" width="132" height="36" rx="6" fill="#fbfaf8" stroke="#e3e7ec"/>
 <g stroke="#b93b34" stroke-width="3.4" stroke-linecap="round"><line x1="38" y1="101" x2="62" y2="91"/></g>
 <g fill="#c95c55" stroke="#b93b34" stroke-width="0.8"><ellipse cx="104" cy="94" rx="5" ry="3.6"/><ellipse cx="118" cy="100" rx="5" ry="3.6"/></g>
-<text x="50" y="115" text-anchor="middle" font-size="9.5" fill="#8c96a2">抗酸菌</text>
-<text x="112" y="115" text-anchor="middle" font-size="9.5" fill="#8c96a2">非抗酸菌</text>
+<text x="50" y="115" text-anchor="middle" font-size="9.5" fill="#5c6672">抗酸菌</text>
+<text x="112" y="115" text-anchor="middle" font-size="9.5" fill="#5c6672">非抗酸菌</text>
 <text x="24" y="134" font-size="9.5" fill="#33404f">加热助复红透入蜡质层</text>
 <text x="24" y="147" font-size="9.5" fill="#5c6672">冒蒸气勿煮沸，约 5 min</text>
 
@@ -34,7 +34,7 @@
 <g stroke="#b93b34" stroke-width="3.4" stroke-linecap="round"><line x1="188" y1="101" x2="212" y2="91"/></g>
 <g fill="none" stroke="#c3c9d1" stroke-width="1.1"><ellipse cx="254" cy="94" rx="5" ry="3.6"/><ellipse cx="268" cy="100" rx="5" ry="3.6"/></g>
 <text x="200" y="115" text-anchor="middle" font-size="9.5" fill="#b93b34">仍为红</text>
-<text x="262" y="115" text-anchor="middle" font-size="9.5" fill="#8c96a2">已褪成无色</text>
+<text x="262" y="115" text-anchor="middle" font-size="9.5" fill="#5c6672">已褪成无色</text>
 <text x="174" y="134" font-size="9.5" fill="#33404f">关键：分枝菌酸锁住染料</text>
 <text x="174" y="147" font-size="9.5" fill="#5c6672">非抗酸菌被脱成无色</text>
 

@@ -41,9 +41,9 @@
 <text x="24" y="216" font-size="10.5" font-weight="700" fill="#33404f">位相变异（沙门菌双相 H 抗原切换）</text>
 <rect x="60" y="228" width="26" height="11" rx="5.5" fill="#e8f5f0" stroke="#2f8f83" stroke-width="1.2"/>
 <path d="M86,233 q10,-7 16,2" fill="none" stroke="#7d8a98" stroke-width="1.4"/>
-<text x="112" y="237" font-size="9.5" fill="#33404f">第 1 相（特异相 a,b,c…）</text>
-<line x1="216" y1="233" x2="244" y2="233" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
-<line x1="244" y1="241" x2="216" y2="241" stroke="#b9c2cc" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="108" y="237" font-size="9.5" fill="#33404f">第 1 相（特异相 a,b,c…）</text>
+<line x1="224" y1="233" x2="246" y2="233" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="246" y1="241" x2="224" y2="241" stroke="#b9c2cc" stroke-width="1.2" marker-end="url(#arr)"/>
 <rect x="254" y="228" width="26" height="11" rx="5.5" fill="#f2ecfa" stroke="#7a63ad" stroke-width="1.2"/>
 <path d="M280,233 q10,-7 16,2" fill="none" stroke="#7a63ad" stroke-width="1.4"/>
 <text x="306" y="237" font-size="9.5" fill="#33404f">第 2 相（非特异相 1,2,3…）</text>
@@ -58,14 +58,14 @@
 <line x1="200" y1="308" x2="228" y2="308" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>
 <circle cx="256" cy="308" r="9" fill="#e8f5f0" stroke="#2f8f83" stroke-width="1.2"/>
 <text x="278" y="304" font-size="9.5" fill="#33404f">W 型：Vi 丢失 → O 可凝集</text>
-<text x="112" y="322" font-size="9.5" fill="#a3332f">煮沸破坏 Vi 后再做 O 凝集；Vi 多糖疫苗基础</text>
+<text x="112" y="324" font-size="9.5" fill="#a3332f">煮沸破坏 Vi 后再做 O 凝集；Vi 多糖疫苗基础</text>
 
 <!-- ===== L 型 ===== -->
 <text x="24" y="350" font-size="10.5" font-weight="700" fill="#33404f">L 型（细胞壁缺陷）</text>
-<ellipse cx="80" cy="366" rx="16" ry="9" fill="url(#rcol)" stroke="#a8894e" stroke-width="1.2"/>
-<ellipse cx="80" cy="366" rx="7" ry="4" fill="#8a6d3a"/>
-<text x="112" y="362" font-size="9.5" fill="#33404f">「油煎蛋」菌落（中厚边薄）· 高度多形性</text>
-<text x="112" y="375" font-size="9.5" fill="#33404f">高渗培养基（3~5% NaCl / 10~20% 蔗糖）才长</text>
-<text x="300" y="362" font-size="9.5" fill="#5c6672">β-内酰胺/溶菌酶/胆汁/高盐诱导</text>
-<text x="300" y="375" font-size="9.5" fill="#5c6672">常规血平板不长 → 须专门申请 L 型培养</text>
+<ellipse cx="76" cy="368" rx="16" ry="9" fill="url(#rcol)" stroke="#a8894e" stroke-width="1.2"/>
+<ellipse cx="76" cy="368" rx="7" ry="4" fill="#8a6d3a"/>
+<text x="104" y="364" font-size="9.5" fill="#33404f">「油煎蛋」菌落（中厚边薄）· 多形性</text>
+<text x="104" y="378" font-size="9.5" fill="#33404f">高渗培养基（NaCl / 蔗糖）才生长</text>
+<text x="288" y="364" font-size="9.5" fill="#5c6672">β-内酰胺/溶菌酶/胆汁/高盐诱导</text>
+<text x="288" y="378" font-size="9.5" fill="#5c6672">常规血平板不长 → 须专申 L 型培养</text>
 </svg>

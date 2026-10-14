@@ -26,12 +26,12 @@
 <g stroke="#c2413d" stroke-width="2" stroke-linecap="round"><line x1="76" y1="214" x2="92" y2="222"/><line x1="76" y1="222" x2="92" y2="214"/></g>
 <text x="84" y="236" text-anchor="middle" font-size="9.5" fill="#c2413d">DNA 双链断裂</text>
 <!-- 旋转酶 -->
-<circle cx="84" cy="144" r="15" fill="#e3edf8" fill-opacity="0.92" stroke="#2b6cb0" stroke-width="1.4"/>
-<text x="84" y="147" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">旋转酶</text>
+<circle cx="84" cy="144" r="16" fill="#e3edf8" fill-opacity="0.92" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="84" y="147.5" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">旋转酶</text>
 <!-- 氟喹诺酮 -->
 <rect x="132" y="120" width="58" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
 <text x="161" y="131" text-anchor="middle" font-size="9.5" fill="#a3332f">氟喹诺酮</text>
-<line x1="142" y1="135" x2="97" y2="141" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
+<line x1="132" y1="132" x2="103" y2="141" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
 <text x="132" y="112" font-size="9.5" fill="#5c6672">锁定酶-DNA断裂复合物</text>
 
 <!-- ===== 右：RNA转录 × 利福平 ===== -->

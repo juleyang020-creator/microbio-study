@@ -52,6 +52,7 @@
 
 <!-- 页脚 -->
 <rect x="24" y="240" width="432" height="52" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
-<text x="40" y="260" font-size="9.5" font-weight="700" fill="#1f2733">组合思路</text>
-<text x="40" y="276" font-size="9.5" fill="#5c6672">头癣筛查：伍德灯直接照（无创）→ 阳性毛发送穿孔试验/培养定种 → 药物治疗随访再照灯计数荧光毛发</text>
+<text x="36" y="256" font-size="9.5" font-weight="700" fill="#1f2733">组合思路</text>
+<text x="36" y="271" font-size="9.5" fill="#5c6672">头癣筛查：伍德灯直接照（无创）→ 阳性病发做穿孔试验与培养定种</text>
+<text x="36" y="285" font-size="9.5" fill="#5c6672">药物治疗随访：复查伍德灯观察荧光毛发消退情况</text>
 </svg>

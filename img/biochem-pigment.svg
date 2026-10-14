@@ -29,17 +29,17 @@
 <text x="88" y="192" text-anchor="middle" font-size="9.5" fill="#5c6672">（无 phz 途径）</text>
 
 <!-- ===== 中：底物 → 酶 → 色素 ===== -->
-<text x="164" y="92.5" text-anchor="end" font-size="9.5" fill="#8c96a2">底物</text>
+<text x="164" y="92.5" text-anchor="end" font-size="9.5" fill="#5c6672">底物</text>
 <rect x="170" y="80" width="140" height="18" rx="9" fill="#f5f7f9" stroke="#e3e7ec"/>
 <text x="240" y="92.5" text-anchor="middle" font-size="9.5" fill="#33404f">分支酸（chorismate）</text>
 <line x1="240" y1="98" x2="240" y2="105" stroke="#33404f" stroke-width="0.9" marker-end="url(#arr)"/>
 
-<text x="164" y="121.5" text-anchor="end" font-size="9.5" fill="#8c96a2">酶</text>
+<text x="164" y="121.5" text-anchor="end" font-size="9.5" fill="#5c6672">酶</text>
 <rect x="170" y="108" width="140" height="18" rx="4" fill="#e3edf8" stroke="#2b6cb0"/>
 <text x="240" y="120.5" text-anchor="middle" font-size="9.5" fill="#1f4e79">phz 基因簇编码的酶系</text>
 <line x1="240" y1="126" x2="240" y2="133" stroke="#33404f" stroke-width="0.9" marker-end="url(#arr)"/>
 
-<text x="164" y="151.5" text-anchor="end" font-size="9.5" fill="#8c96a2">色素</text>
+<text x="164" y="151.5" text-anchor="end" font-size="9.5" fill="#5c6672">色素</text>
 <rect x="170" y="136" width="140" height="20" rx="4" fill="#d3ebe4" stroke="#2f8f7a"/>
 <text x="240" y="149.5" text-anchor="middle" font-size="9.5" fill="#1c6b5e">绿脓菌素 pyocyanin（蓝）</text>
 <text x="240" y="170" text-anchor="middle" font-size="9.5" fill="#5c6672">水溶性 → 弥散入琼脂，与荧光素叠加呈蓝绿</text>

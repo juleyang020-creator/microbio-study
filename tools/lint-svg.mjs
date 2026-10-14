@@ -42,68 +42,117 @@ function parseTransform(tr) {
   return { dx, dy, skip: false };
 }
 
-// 取出 <text>（含 tspan）与位置；累加祖先 <g transform="translate(...)"> 的偏移
+// 取出 <text>（含 tspan 与 tspan 后尾文）与位置；累加祖先 <g> 的 translate 偏移与 font-size/text-anchor 继承
 function parseTexts(svg) {
   const out = [];
-  // 先扫一遍标签流，记录每个 <text> 起始下标 → 累计偏移
-  const stack = [{ dx: 0, dy: 0, skip: false }];
-  const offsetAt = new Map();
-  for (const tm of svg.matchAll(/<(\/?)(g|text)\b([^>]*?)(\/?)>/g)) {
+  const stack = [{ dx: 0, dy: 0, skip: false, fs: 11, anchor: 'start' }];
+  const ctxAt = new Map();
+  for (const tm of svg.matchAll(/<(\/?)(g|text|rect)\b([^>]*?)(\/?)>/g)) {
     const closing = tm[1], tag = tm[2], attrStr = tm[3], selfClose = tm[4];
     const top = stack[stack.length - 1];
     if (tag === 'g') {
       if (closing) { if (stack.length > 1) stack.pop(); }
       else if (!selfClose) {
-        const t = parseTransform(attrs('<g ' + attrStr + '>').transform);
-        stack.push({ dx: top.dx + t.dx, dy: top.dy + t.dy, skip: top.skip || t.skip });
+        const ga = attrs('<g ' + attrStr + '>');
+        const t = parseTransform(ga.transform);
+        stack.push({
+          dx: top.dx + t.dx,
+          dy: top.dy + t.dy,
+          skip: top.skip || t.skip || Boolean(ga['clip-path']),
+          fs: ga['font-size'] ? parseFloat(ga['font-size']) : top.fs,
+          anchor: ga['text-anchor'] || top.anchor
+        });
       }
-    } else if (tag === 'text' && !closing) {
-      const t = parseTransform(attrs('<text ' + attrStr + '>').transform);
-      offsetAt.set(tm.index, { dx: top.dx + t.dx, dy: top.dy + t.dy, skip: top.skip || t.skip });
+    } else if ((tag === 'text' || tag === 'rect') && !closing) {
+      const ta = attrs('<' + tag + ' ' + attrStr + '>');
+      const t = parseTransform(ta.transform);
+      ctxAt.set(tm.index, {
+        dx: top.dx + t.dx,
+        dy: top.dy + t.dy,
+        skip: top.skip || t.skip || Boolean(ta['clip-path']),
+        fs: ta['font-size'] ? parseFloat(ta['font-size']) : top.fs,
+        anchor: ta['text-anchor'] || top.anchor
+      });
     }
   }
 
   for (const m of svg.matchAll(/<text\b([^>]*)>([\s\S]*?)<\/text>/g)) {
-    const off = offsetAt.get(m.index) || { dx: 0, dy: 0, skip: false };
-    if (off.skip) continue;                       // 含 scale/rotate，跳过
+    const ctx = ctxAt.get(m.index) || { dx: 0, dy: 0, skip: false, fs: 11, anchor: 'start' };
+    if (ctx.skip) continue;                       // 含 scale/rotate，跳过
     const a = attrs('<text ' + m[1] + '>');
     const raw = m[2];
-    // 有 tspan 且带独立 x/y 的，拆成多行分别计算
-    const spans = [...raw.matchAll(/<tspan\b([^>]*)>([\s\S]*?)<\/tspan>/g)];
-    const base = { x: parseFloat(a.x || 0), y: parseFloat(a.y || 0), fs: parseFloat(a['font-size'] || 11), anchor: a['text-anchor'] || 'start' };
-    if (spans.length) {
-      // 无 x 的 tspan 是「行内续排」，须接在前一段末尾，而不是回到父元素的 x
-      let cursorX = base.x, cursorY = base.y;
-      for (const sp of spans) {
-        const sa = attrs('<tspan ' + sp[1] + '>');
-        const t = sp[2].replace(/<[^>]+>/g, '').trim();
-        if (!t) continue;
-        const fs = sa['font-size'] ? parseFloat(sa['font-size']) : base.fs;
-        const hasX = sa.x != null;
-        const x = hasX ? parseFloat(sa.x) : cursorX;
-        const y = sa.y != null ? parseFloat(sa.y)
-          : (sa.dy != null ? cursorY + parseFloat(sa.dy) : cursorY);
+    const base = {
+      x: parseFloat(a.x || 0),
+      y: parseFloat(a.y || 0),
+      fs: a['font-size'] ? parseFloat(a['font-size']) : ctx.fs,
+      anchor: a['text-anchor'] || ctx.anchor
+    };
+    if (/<tspan\b/.test(raw)) {
+      // 拆分为交替的纯文本片段与 <tspan> 片段，避免漏掉 </tspan> 后的父节点尾文
+      const tokens = raw.split(/(<tspan\b[^>]*>[\s\S]*?<\/tspan>)/g);
+      // 將同一行（无独立 x/y/dy）的连续片段合并按整行锚点计算，有独立 x/y/dy 的开启新行
+      const lines = [];
+      let curLine = { x: base.x, y: base.y, fs: base.fs, anchor: base.anchor, text: '', width: 0 };
+      for (const tok of tokens) {
+        if (!tok) continue;
+        const sp = tok.match(/^<tspan\b([^>]*)>([\s\S]*?)<\/tspan>$/);
+        if (sp) {
+          const sa = attrs('<tspan ' + sp[1] + '>');
+          const t = sp[2].replace(/<[^>]+>/g, '');
+          if (!t.trim()) continue;
+          const fs = sa['font-size'] ? parseFloat(sa['font-size']) : base.fs;
+          const hasNewPos = sa.x != null || sa.y != null || sa.dy != null;
+          if (hasNewPos) {
+            if (curLine.text.trim()) lines.push(curLine);
+            const nx = sa.x != null ? parseFloat(sa.x) : curLine.x;
+            const ny = sa.y != null ? parseFloat(sa.y)
+              : (sa.dy != null ? curLine.y + parseFloat(sa.dy) : curLine.y);
+            curLine = {
+              x: nx, y: ny, fs,
+              anchor: sa['text-anchor'] || base.anchor,
+              text: t,
+              width: textWidth(t, fs)
+            };
+          } else {
+            curLine.text += t;
+            curLine.width += textWidth(t, fs);
+            if (fs > curLine.fs) curLine.fs = fs;
+          }
+        } else {
+          const t = tok.replace(/<[^>]+>/g, '');
+          if (!t.trim()) continue;
+          curLine.text += t;
+          curLine.width += textWidth(t, base.fs);
+        }
+      }
+      if (curLine.text.trim()) lines.push(curLine);
+      for (const ln of lines) {
         out.push({
-          text: t, x: x + off.dx, y: y + off.dy, fs,
-          // 续排段落没有独立锚点，按 start 处理
-          anchor: sa['text-anchor'] || (hasX ? base.anchor : 'start'),
+          text: ln.text.trim(),
+          x: ln.x + ctx.dx,
+          y: ln.y + ctx.dy,
+          fs: ln.fs,
+          anchor: ln.anchor,
+          w: ln.width,
+          order: m.index
         });
-        cursorX = x + textWidth(t, fs);
-        cursorY = y;
       }
     } else {
       const t = raw.replace(/<[^>]+>/g, '').trim();
-      if (t) out.push({ text: t, ...base, x: base.x + off.dx, y: base.y + off.dy });
+      if (t) out.push({ text: t, ...base, x: base.x + ctx.dx, y: base.y + ctx.dy, w: textWidth(t, base.fs), order: m.index });
     }
   }
-  return out.map((t) => {
-    const w = textWidth(t.text, t.fs);
-    let x0 = t.x;
-    if (t.anchor === 'middle') x0 = t.x - w / 2;
-    else if (t.anchor === 'end') x0 = t.x - w;
-    // 基线在 y，字形大致占 [y-0.80fs, y+0.20fs]
-    return { ...t, x0, x1: x0 + w, y0: t.y - t.fs * 0.80, y1: t.y + t.fs * 0.20, w, h: t.fs };
-  });
+  return {
+    texts: out.map((t) => {
+      const w = t.w != null ? t.w : textWidth(t.text, t.fs);
+      let x0 = t.x;
+      if (t.anchor === 'middle') x0 = t.x - w / 2;
+      else if (t.anchor === 'end') x0 = t.x - w;
+      // 基线在 y，字形大致占 [y-0.80fs, y+0.20fs]
+      return { ...t, x0, x1: x0 + w, y0: t.y - t.fs * 0.80, y1: t.y + t.fs * 0.20, w, h: t.fs };
+    }),
+    ctxAt
+  };
 }
 
 function overlapArea(a, b) {
@@ -148,7 +197,7 @@ export function lintSvg(file) {
 
   const W = vb ? parseFloat(vb[3]) : 0;
   const H = vb ? parseFloat(vb[4]) : 0;
-  const texts = parseTexts(svg);
+  const { texts, ctxAt } = parseTexts(svg);
 
   // 1) 字号下限
   for (const t of texts) {
@@ -171,6 +220,26 @@ export function lintSvg(file) {
       const ratio = ov / Math.min(a.w * a.h, b.w * b.h);
       if (ratio > OVERLAP_TOL) {
         issues.push({ sev: 'ERR', msg: `文字重叠 ${(ratio * 100).toFixed(0)}%：「${a.text.slice(0, 14)}」×「${b.text.slice(0, 14)}」` });
+      }
+    }
+  }
+  // 4) 后绘不透明 <rect> 遮挡先绘 <text>
+  for (const rm of svg.matchAll(/<rect\b([^>]*?)>/g)) {
+    const rctx = ctxAt.get(rm.index) || { dx: 0, dy: 0, skip: false };
+    if (rctx.skip) continue;
+    const ra = attrs('<rect ' + rm[1] + '>');
+    const rw = parseFloat(ra.width || 0), rh = parseFloat(ra.height || 0);
+    if (!rw || !rh || (W && rw >= W - 10 && rh >= H - 10)) continue;
+    const fill = (ra.fill || '').toLowerCase();
+    const op = parseFloat(ra['fill-opacity'] ?? ra.opacity ?? 1);
+    if (!fill || fill === 'none' || fill === 'transparent' || op < 0.85) continue;
+    const rx0 = parseFloat(ra.x || 0) + rctx.dx, ry0 = parseFloat(ra.y || 0) + rctx.dy;
+    const rBox = { x0: rx0, x1: rx0 + rw, y0: ry0, y1: ry0 + rh };
+    for (const t of texts) {
+      if (t.order >= rm.index) continue;
+      const ov = overlapArea(t, rBox);
+      if (ov && ov / (t.w * t.h) > 0.20) {
+        issues.push({ sev: 'ERR', msg: `后绘矩形遮挡先绘文字：「${t.text.slice(0, 16)}」被 rect(${rx0},${ry0},${rw}x${rh}) 覆盖` });
       }
     }
   }

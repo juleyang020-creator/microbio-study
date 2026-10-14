@@ -41,13 +41,13 @@
 <text x="228" y="176" text-anchor="middle" font-size="9.5" fill="#a3332f">圈明显变小</text>
 
 <!-- 判读行 -->
-<text x="100" y="198" text-anchor="middle" font-size="9.5" fill="#33404f">圈径 ≥22 mm（MIC ≤4）</text>
-<text x="228" y="198" text-anchor="middle" font-size="9.5" fill="#33404f">圈径 ≤21 mm（MIC ≥8）</text>
-<text x="100" y="214" text-anchor="middle" font-size="10" font-weight="700" fill="#2f8f83">判为 MSSA（甲氧西林敏感）</text>
-<text x="228" y="214" text-anchor="middle" font-size="10" font-weight="700" fill="#c2413d">判为 MRSA（多由 mecA 介导）</text>
-<text x="100" y="230" text-anchor="middle" font-size="9.5" fill="#5c6672">β-内酰胺类可用（青霉素另测）</text>
-<text x="228" y="230" text-anchor="middle" font-size="9.5" fill="#5c6672">所有β-内酰胺报耐药</text>
-<text x="160" y="246" text-anchor="middle" font-size="9.5" fill="#8c96a2">注：表皮葡萄球菌 S≥25/R≤24 且须 24 h 再读；假中间型改测苯唑西林</text>
+<text x="92" y="198" text-anchor="middle" font-size="9.5" fill="#33404f">圈径 ≥22 mm（MIC ≤4）</text>
+<text x="232" y="198" text-anchor="middle" font-size="9.5" fill="#33404f">圈径 ≤21 mm（MIC ≥8）</text>
+<text x="92" y="214" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2f6b45">判为 MSSA（甲氧西林敏感）</text>
+<text x="232" y="214" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c2413d">判为 MRSA（多由 mecA 介导）</text>
+<text x="92" y="229" text-anchor="middle" font-size="9.5" fill="#5c6672">β-内酰胺类可用（青霉素另测）</text>
+<text x="232" y="229" text-anchor="middle" font-size="9.5" fill="#5c6672">所有β-内酰胺报耐药</text>
+<text x="24" y="245" font-size="9.5" fill="#5c6672">注：表葡 S≥25/R≤24（24 h 读）；假中间型测苯唑西林</text>
 
 <!-- ===== 右栏：为何用头孢西丁 ===== -->
 <rect x="306" y="66" width="150" height="180" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>

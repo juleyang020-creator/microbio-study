@@ -21,12 +21,12 @@
   <text x="34" y="120" fill="#5c6672">超广谱 / 染色体头孢菌素酶</text>
   <text x="34" y="134" fill="#5c6672">水解青霉素与多数头孢</text>
 
-  <rect x="170" y="90" width="136" height="58" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
-  <text x="180" y="106" font-weight="700" fill="#a3332f">CPE / CRE</text>
-  <text x="180" y="120" fill="#5c6672">产碳青霉烯酶 / 碳青霉烯耐药</text>
-  <text x="180" y="134" fill="#5c6672">mCIM+eCIM 区分丝氨酸酶/金属酶</text>
+  <rect x="168" y="90" width="142" height="58" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
+  <text x="176" y="106" font-weight="700" fill="#a3332f">CPE / CRE</text>
+  <text x="176" y="120" fill="#5c6672">产碳青霉烯酶 / 碳青霉烯耐药</text>
+  <text x="176" y="134" fill="#5c6672">mCIM/eCIM 分丝氨酸/金属酶</text>
 
-  <rect x="316" y="90" width="140" height="58" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
+  <rect x="318" y="90" width="138" height="58" rx="7" fill="#fdf6f5" stroke="#e3c8c8"/>
   <text x="326" y="106" font-weight="700" fill="#a3332f">MBL / MLSB</text>
   <text x="326" y="120" fill="#5c6672">金属酶 · 红霉素诱导</text>
   <text x="326" y="134" fill="#5c6672">克林霉素耐药（D 试验确证）</text>
@@ -35,18 +35,18 @@
 <!-- ===== ② 菌名 ===== -->
 <text x="24" y="170" font-size="10.5" font-weight="700" fill="#2b6cb0">② 菌名（哪个菌耐了什么）</text>
 <g font-size="9.5">
-  <rect x="24" y="182" width="104" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
-  <text x="34" y="198" font-weight="700" fill="#1f4e79">MRSA</text>
-  <text x="34" y="212" fill="#5c6672">mecA/PBP2a</text>
-  <rect x="136" y="182" width="96" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
-  <text x="146" y="198" font-weight="700" fill="#1f4e79">VRE</text>
-  <text x="146" y="212" fill="#5c6672">VanA/B 靶位改变</text>
-  <rect x="240" y="182" width="96" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
-  <text x="250" y="198" font-weight="700" fill="#1f4e79">PRSP</text>
-  <text x="250" y="212" fill="#5c6672">pbp 逐步突变累积</text>
-  <rect x="344" y="182" width="112" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
-  <text x="354" y="198" font-weight="700" fill="#1f4e79">CRAB / CRKP</text>
-  <text x="354" y="212" fill="#5c6672">碳青霉烯耐药不动/克雷伯</text>
+  <rect x="24" y="182" width="100" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="32" y="198" font-weight="700" fill="#1f4e79">MRSA</text>
+  <text x="32" y="212" fill="#5c6672">mecA/PBP2a</text>
+  <rect x="132" y="182" width="96" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="140" y="198" font-weight="700" fill="#1f4e79">VRE</text>
+  <text x="140" y="212" fill="#5c6672">VanA/B 靶位改变</text>
+  <rect x="236" y="182" width="96" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="244" y="198" font-weight="700" fill="#1f4e79">PRSP</text>
+  <text x="244" y="212" fill="#5c6672">pbp 逐步突变累积</text>
+  <rect x="340" y="182" width="116" height="46" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+  <text x="348" y="198" font-weight="700" fill="#1f4e79">CRAB / CRKP</text>
+  <text x="348" y="212" fill="#5c6672">碳青霉烯耐药不动/克雷伯</text>
 </g>
 <text x="24" y="244" font-size="9.5" fill="#5c6672">HLAR＝高水平氨基糖苷耐药（肠球菌联合用药判断）；BLNAR＝酶阴性但氨苄耐药的流感嗜血杆菌</text>
 

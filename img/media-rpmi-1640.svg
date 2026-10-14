@@ -19,7 +19,7 @@
   <rect x="24" y="90" width="140" height="52" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
   <text x="34" y="106" font-weight="700" fill="#1f4e79">营养支持</text>
   <text x="34" y="120" fill="#33404f">L-谷氨酰胺＋葡萄糖 2 g/L</text>
-  <text x="34" y="133" fill="#5c6672">真菌生长足够快（24~48 h 可读）</text>
+  <text x="34" y="133" fill="#5c6672">生长迅速（24~48 h 可判读）</text>
 
   <rect x="172" y="90" width="140" height="52" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
   <text x="182" y="106" font-weight="700" fill="#2f6b45">pH 锁定</text>
@@ -52,15 +52,15 @@
   <text x="253" y="195" text-anchor="middle" font-size="9.5" fill="#5c6672">0.5</text>
 </g>
 <line x1="156" y1="206" x2="156" y2="216" stroke="#c2413d" stroke-width="1.6"/>
-<text x="166" y="218" font-size="9.5" fill="#a3332f">MIC＝第一孔澄清（肉眼判读）</text>
+<text x="148" y="218" font-size="9.5" fill="#a3332f">终点孔依药类而定（示意）</text>
 <text x="36" y="218" font-size="9.5" fill="#5c6672">浓度 μg/ml →</text>
 
 <!-- 判读差异 -->
 <g font-size="9.5">
-  <rect x="290" y="172" width="166" height="52" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
-  <text x="300" y="188" font-weight="700" fill="#33404f">唑类 vs 棘白菌素</text>
-  <text x="300" y="202" fill="#5c6672">唑类终点按 ~50% 抑制的「拖尾」</text>
-  <text x="300" y="215" fill="#5c6672">棘白菌素按 100% 抑制（澄清）判读</text>
+  <rect x="282" y="172" width="174" height="52" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+  <text x="290" y="188" font-weight="700" fill="#33404f">终点判读（CLSI M27/M38）</text>
+  <text x="290" y="202" fill="#5c6672">念珠菌：唑类/棘白菌素读≥50%抑制</text>
+  <text x="290" y="215" fill="#5c6672">两性霉素B读澄清；曲霉棘白读MEC</text>
 </g>
 
 <!-- ===== 下：适用与质控 ===== -->

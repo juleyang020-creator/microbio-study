@@ -59,7 +59,7 @@
 </g>
 <text x="176" y="124" font-size="9.5" fill="#8a6d2f">外膜</text>
 <line x1="240" y1="96" x2="240" y2="104" stroke="#c2413d" stroke-width="1.6" marker-end="url(#blk)"/>
-<text x="240" y="146" text-anchor="middle" font-size="9.5" fill="#8c96a2">孔蛋白缺失/关闭</text>
+<text x="240" y="146" text-anchor="middle" font-size="9.5" fill="#5c6672">孔蛋白缺失/关闭</text>
 <text x="240" y="160" text-anchor="middle" font-size="9.5" fill="#5c6672">跨膜摄入显著减少（非完全阻断）</text>
 <text x="240" y="174" text-anchor="middle" font-size="9.5" fill="#33404f">头孢/碳青霉烯 MIC↑</text>
 <text x="240" y="188" text-anchor="middle" font-size="9.5" fill="#5c6672">（肺炎克雷伯菌常见）</text>
@@ -85,7 +85,7 @@
 <text x="324" y="124" font-size="9.5" fill="#8a6d2f">外膜</text>
 <line x1="388" y1="96" x2="388" y2="104" stroke="#c2413d" stroke-width="1.6" marker-end="url(#blk)"/>
 <line x1="427" y1="96" x2="427" y2="134" stroke="#33404f" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr)"/>
-<text x="388" y="146" text-anchor="middle" font-size="9.5" fill="#8c96a2">OprD 通道缺失/下调</text>
+<text x="388" y="146" text-anchor="middle" font-size="9.5" fill="#5c6672">OprD 通道缺失/下调</text>
 <text x="388" y="160" text-anchor="middle" font-size="9.5" fill="#5c6672">亚胺培南主要经 OprD 入胞</text>
 <text x="388" y="174" text-anchor="middle" font-size="9.5" fill="#33404f">→ 亚胺培南耐药</text>
 <text x="388" y="188" text-anchor="middle" font-size="9.5" fill="#5c6672">（美罗培南受影响较小）</text>

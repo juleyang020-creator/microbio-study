@@ -26,11 +26,11 @@
 <text x="258" y="114" font-size="9.5" fill="#33404f">WT/NWT · 麦氏比浊（McFarland）</text>
 
 <!-- ===== 行 1：标准与机构 + 培养基 ===== -->
-<rect x="248" y="130" width="208" height="56" rx="8" fill="#f0f6f1" stroke="#c9e0cc"/>
-<text x="258" y="148" font-size="10.5" font-weight="700" fill="#2f6b45">标准机构 3 条 ＋ 培养基 8 条</text>
-<text x="258" y="164" font-size="9.5" fill="#33404f">CLSI · EUCAST · ATCC</text>
-<text x="258" y="177" font-size="9.5" fill="#33404f">MHA/CAMHB · HTM · SDA/PDA</text>
-<text x="258" y="190" font-size="9.5" fill="#33404f">TCBS · TSI/KIA · SMAC · ONPG/PYR/XV</text>
+<rect x="248" y="128" width="208" height="60" rx="8" fill="#f0f6f1" stroke="#c9e0cc"/>
+<text x="258" y="144" font-size="10.5" font-weight="700" fill="#2f6b45">标准机构 3 条 ＋ 培养基 8 条</text>
+<text x="258" y="158" font-size="9.5" fill="#33404f">CLSI · EUCAST · ATCC</text>
+<text x="258" y="171" font-size="9.5" fill="#33404f">MHA/CAMHB · HTM · SDA/PDA</text>
+<text x="258" y="184" font-size="9.5" fill="#33404f">TCBS · TSI/KIA · SMAC · ONPG/PYR/XV</text>
 
 <!-- ===== 行 2：菌群与综合征 ===== -->
 <rect x="24" y="196" width="208" height="104" rx="8" fill="#f6f1fb" stroke="#dcccec"/>

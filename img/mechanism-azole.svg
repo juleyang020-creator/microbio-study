@@ -18,11 +18,11 @@
 <text x="74" y="122" text-anchor="middle" font-size="10" fill="#1f2733">羊毛固醇</text>
 <line x1="112" y1="118" x2="178" y2="118" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 <!-- Erg11 -->
-<circle cx="200" cy="118" r="18" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
-<text x="200" y="115" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">14α-</text>
-<text x="200" y="125" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">去甲基化酶</text>
+<circle cx="200" cy="118" r="21" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
+<text x="200" y="114" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">14α-</text>
+<text x="200" y="125" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">去甲基酶</text>
 <text x="200" y="154" text-anchor="middle" font-size="9.5" fill="#5c6672">Erg11 / CYP51</text>
-<line x1="218" y1="118" x2="282" y2="118" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="223" y1="118" x2="282" y2="118" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 <!-- 麦角固醇（减少） -->
 <rect x="284" y="104" width="76" height="28" rx="5" fill="#e8f3ef" stroke="#2f8f83"/>
 <text x="322" y="118" text-anchor="middle" font-size="10" fill="#1f2733">麦角固醇</text>

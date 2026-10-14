@@ -30,8 +30,8 @@
   <circle cx="166" cy="146" r="6"/><circle cx="76" cy="192" r="5"/>
 </g>
 <path d="M163,143 l6,6 m0,-6 l-6,6 M73,189 l6,6 m0,-6 l-6,6" stroke="#a8894e" stroke-width="1.2"/>
-<text x="118" y="248" text-anchor="middle" font-size="9.5" fill="#5c6672">脆弱拟杆菌群：耐胆汁＋七叶苷 → 黑色</text>
-<text x="118" y="260" text-anchor="middle" font-size="9.5" fill="#5c6672">庆大霉素抑兼性厌氧 G⁻ 杆菌</text>
+<text x="118" y="246" text-anchor="middle" font-size="9.5" fill="#5c6672">脆弱拟杆菌群：耐胆汁＋七叶苷 → 黑色</text>
+<text x="118" y="258" text-anchor="middle" font-size="9.5" fill="#5c6672">庆大霉素抑兼性厌氧 G⁻ 杆菌</text>
 
 <!-- ===== 右：两种培养基分工 ===== -->
 <text x="228" y="80" font-size="10.5" font-weight="700" fill="#33404f">KVLB 管「分离」、BBE 管「快鉴」</text>
@@ -50,10 +50,10 @@
 <!-- 质控 -->
 <rect x="228" y="214" width="228" height="40" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
 <text x="238" y="230" font-size="9.5" font-weight="700" fill="#2f6b45">质控（48 h 厌氧）</text>
-<text x="238" y="244" font-size="9.5" fill="#33404f">脆弱拟杆菌 ATCC 25285：菌落＞2 mm，BBE 黑色</text>
+<text x="238" y="244" font-size="9.5" fill="#33404f">脆弱拟杆菌 ATCC 25285：＞2 mm 黑色</text>
 
 <!-- 结论 -->
-<text x="240" y="272" text-anchor="middle" font-size="11.5" fill="#33404f">胆汁耐受＋七叶苷水解，是脆弱拟杆菌群的双重身份证</text>
+<text x="240" y="276" text-anchor="middle" font-size="11.5" fill="#33404f">胆汁耐受 ＋ 七叶苷水解，是脆弱拟杆菌群的重要初筛特征</text>
 
 <!-- 页脚 -->
 <rect x="24" y="288" width="432" height="36" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>

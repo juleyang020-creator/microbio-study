@@ -31,7 +31,7 @@
 <circle cx="310" cy="112" r="15" fill="url(#donor)" stroke="#7a63ad" stroke-width="1.4"/>
 <circle cx="410" cy="112" r="15" fill="url(#recip)" stroke="#2f8f83" stroke-width="1.4"/>
 <line x1="326" y1="112" x2="394" y2="112" stroke="#7d8a98" stroke-width="2.4"/>
-<text x="360" y="104" text-anchor="middle" font-size="9.5" fill="#5c6672">性菌毛</text>
+<text x="360" y="125" text-anchor="middle" font-size="9.5" fill="#5c6672">性菌毛</text>
 <circle cx="322" cy="104" r="4" fill="none" stroke="#c2413d" stroke-width="1.2"/>
 <path d="M330,102 q30,-10 60,0" fill="none" stroke="#c2413d" stroke-width="1.2" marker-end="url(#arr)"/>
 <text x="360" y="92" text-anchor="middle" font-size="9.5" fill="#c2413d">R 质粒 →</text>

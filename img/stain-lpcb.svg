@@ -26,10 +26,10 @@
 <line x1="145" y1="100" x2="155" y2="100" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 
 <!-- ❷ LPCB 三组分 -->
-<rect x="156" y="72" width="164" height="58" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
-<circle cx="168" cy="72" r="8" fill="#1f2733"/>
-<text x="168" y="75.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
-<text x="182" y="75.5" font-size="9.5" font-weight="700" fill="#33404f">LPCB 染液</text>
+<rect x="156" y="64" width="164" height="66" rx="7" fill="#f5f7f9" stroke="#e3e7ec"/>
+<circle cx="168" cy="74" r="8" fill="#1f2733"/>
+<text x="168" y="77.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2</text>
+<text x="182" y="77.5" font-size="9.5" font-weight="700" fill="#33404f">LPCB 染液</text>
 <rect x="164" y="82" width="38" height="13" rx="6.5" fill="#ffffff" stroke="#b9c2cc"/>
 <text x="183" y="92" text-anchor="middle" font-size="9.5" fill="#33404f">乳酸</text>
 <text x="208" y="92" font-size="9.5" fill="#5c6672">保持菌丝形态、防干瘪</text>

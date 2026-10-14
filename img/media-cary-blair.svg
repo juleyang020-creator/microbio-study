@@ -15,13 +15,13 @@
 
 <!-- ===== 左：半固体管 ===== -->
 <text x="24" y="80" font-size="10.5" font-weight="700" fill="#33404f">半固体：穿刺后菌体就地「待命」</text>
-<path d="M56,92 L56,230 Q56,246 76,246 Q96,246 96,230 L96,92 Z" fill="#f7f5ee" stroke="#b9c2cc" stroke-width="1.4"/>
-<rect x="56" y="110" width="40" height="120" fill="#eee9dc" opacity="0.7"/>
+<path d="M56,92 L56,214 Q56,230 76,230 Q96,230 96,214 L96,92 Z" fill="#f7f5ee" stroke="#b9c2cc" stroke-width="1.4"/>
+<rect x="56" y="110" width="40" height="104" fill="#eee9dc" opacity="0.7"/>
 <ellipse cx="76" cy="92" rx="20" ry="5" fill="#eef2f7" stroke="#b9c2cc" stroke-width="1.2"/>
 <!-- 穿刺线 -->
-<line x1="76" y1="104" x2="76" y2="216" stroke="#8a6d3a" stroke-width="2" stroke-dasharray="4,3"/>
-<g fill="#8a6d3a"><circle cx="76" cy="130" r="2"/><circle cx="76" cy="156" r="2"/><circle cx="76" cy="184" r="2"/></g>
-<text x="76" y="258" text-anchor="middle" font-size="9.5" fill="#5c6672">沿穿刺线存活</text>
+<line x1="76" y1="104" x2="76" y2="204" stroke="#8a6d3a" stroke-width="2" stroke-dasharray="4,3"/>
+<g fill="#8a6d3a"><circle cx="76" cy="128" r="2"/><circle cx="76" cy="154" r="2"/><circle cx="76" cy="180" r="2"/></g>
+<text x="76" y="244" text-anchor="middle" font-size="9.5" fill="#5c6672">沿穿刺线存活</text>
 
 <!-- 性状要点 -->
 <g font-size="9.5">

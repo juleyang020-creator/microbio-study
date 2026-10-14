@@ -26,7 +26,7 @@
   <line x1="99" y1="99" x2="110" y2="115"/><line x1="110" y1="99" x2="99" y2="115"/>
 </g>
 <text x="92" y="130" text-anchor="middle" font-size="9.5" fill="#33404f">菌液＋墨汁／刚果红混匀</text>
-<text x="92" y="142" text-anchor="middle" font-size="9.5" fill="#c2413d">自然干燥（加热收缩→假荚膜晕）</text>
+<text x="92" y="142" text-anchor="middle" font-size="9.5" fill="#c2413d">自然干燥(加热致假荚膜晕)</text>
 
 <line x1="162" y1="106" x2="170" y2="106" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 

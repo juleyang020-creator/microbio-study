@@ -43,7 +43,7 @@
 <text x="80" y="176" text-anchor="middle" font-size="9.5" fill="#5c6672">均匀混浊无凝集</text>
 <text x="176" y="176" text-anchor="middle" font-size="9.5" fill="#5c6672">白色颗粒状凝集</text>
 <text x="128" y="191" text-anchor="middle" font-size="9.5" fill="#a3332f">10 s 内凝集 → 阳性</text>
-<text x="128" y="205" text-anchor="middle" font-size="9.5" fill="#8c96a2">盐水侧也凝集＝自凝，不可判读</text>
+<text x="128" y="205" text-anchor="middle" font-size="9.5" fill="#5c6672">盐水侧也凝集＝自凝，不可判读</text>
 
 <!-- ===== ❷ 试管法：游离凝固酶 ===== -->
 <circle cx="256" cy="72" r="7.5" fill="#1f2733"/>
@@ -73,14 +73,14 @@
 </g>
 <!-- 重力方向 -->
 <line x1="452" y1="96" x2="452" y2="118" stroke="#33404f" stroke-width="1" marker-end="url(#arr)"/>
-<text x="446" y="132" text-anchor="middle" font-size="9.5" fill="#8c96a2">重力</text>
+<text x="446" y="132" text-anchor="middle" font-size="9.5" fill="#5c6672">重力</text>
 
 <text x="292" y="162" text-anchor="middle" font-size="9.5" fill="#a3332f">阳性：凝块不流动</text>
 <text x="396" y="162" text-anchor="middle" font-size="9.5" fill="#33404f">阴性：仍为液体</text>
 <text x="292" y="176" text-anchor="middle" font-size="9.5" fill="#5c6672">凝面随管壁倾斜</text>
 <text x="396" y="176" text-anchor="middle" font-size="9.5" fill="#5c6672">液面随重力水平</text>
 <text x="352" y="191" text-anchor="middle" font-size="9.5" fill="#33404f">37 ℃ 水浴 4 h 倾斜观察</text>
-<text x="352" y="205" text-anchor="middle" font-size="9.5" fill="#8c96a2">阴性 24 h 复看；久置凝块溶解致假阴性</text>
+<text x="352" y="205" text-anchor="middle" font-size="9.5" fill="#5c6672">阴性 24 h 复看；久置凝块溶解致假阴性</text>
 
 <!-- 两法关系 -->
 <rect x="24" y="214" width="432" height="34" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>

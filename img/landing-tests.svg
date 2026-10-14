@@ -46,7 +46,7 @@
     <circle cx="370" cy="20" r="4" fill="#ffffff"/><circle cx="380" cy="20" r="4" fill="#ffffff"/><circle cx="390" cy="20" r="4" fill="#ffffff"/><circle cx="400" cy="20" r="4" fill="#ffffff"/><circle cx="410" cy="20" r="4" fill="#ffffff"/>
   </g>
   <line x1="370" y1="34" x2="370" y2="26" stroke="#c2413d" stroke-width="1.2" marker-end="url(#arrR)"/>
-  <text x="375" y="44" text-anchor="middle" font-size="9.5" fill="#8c96a2">浓度 →</text>
+  <text x="375" y="44" text-anchor="middle" font-size="9.5" fill="#5c6672">浓度 →</text>
   <text x="375" y="64" text-anchor="middle" font-size="9.5" fill="#5c6672">微量板：首个清亮孔</text>
 </g>
 
@@ -81,7 +81,7 @@
     <line x1="310" y1="30" x2="310" y2="21" marker-end="url(#arrR)"/>
     <line x1="310" y1="36" x2="310" y2="45" marker-end="url(#arrR)"/>
   </g>
-  <text x="285" y="64" text-anchor="middle" font-size="9.5" fill="#5c6672">ESBL：+克拉维酸</text>
+  <text x="280" y="64" text-anchor="middle" font-size="9.5" fill="#5c6672">ESBL：+克拉维酸</text>
 
   <!-- C mCIM：纸片在菌悬液中被酶灭活，移贴敏感指示菌 E. coli ATCC 25922 平板后圈缩小 -->
   <rect x="344" y="10" width="13" height="28" rx="4" fill="#eef1f5" stroke="#b9c2cc"/>
@@ -90,7 +90,7 @@
   <circle cx="393" cy="26" r="16" fill="#f5f7f9" stroke="#cfd6de"/>
   <circle cx="393" cy="26" r="6" fill="#ffffff" stroke="#b9c2cc" stroke-dasharray="2,2"/>
   <circle cx="393" cy="26" r="3.6" fill="#ffffff" stroke="#2b6cb0" stroke-width="1.1"/>
-  <text x="375" y="64" text-anchor="middle" font-size="9.5" fill="#5c6672">mCIM：圈≤15 mm＝产酶</text>
+  <text x="380" y="64" text-anchor="middle" font-size="9.5" fill="#5c6672">mCIM：≤15 mm＝产酶</text>
 </g>
 
 <!-- ===== ❸ 鉴别试验 ===== -->

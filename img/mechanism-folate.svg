@@ -50,7 +50,6 @@
 <rect x="118" y="84" width="56" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
 <text x="146" y="95" text-anchor="middle" font-size="9.5" fill="#a3332f">磺胺类</text>
 <line x1="148" y1="99" x2="150" y2="113" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
-<text x="146" y="110" font-size="9.5" fill="#c2413d" text-anchor="start"> </text>
 <rect x="272" y="84" width="64" height="15" rx="7.5" fill="#f9e6e4" stroke="#c2413d"/>
 <text x="304" y="95" text-anchor="middle" font-size="9.5" fill="#a3332f">甲氧苄啶</text>
 <line x1="304" y1="99" x2="304" y2="113" stroke="#c2413d" stroke-width="1.5" marker-end="url(#blk)"/>
