@@ -59,14 +59,14 @@
 <text x="336" y="138" font-size="9.5" fill="#5c6672">涂成菌苔，35℃ 过夜</text>
 
 <!-- ===== ❸ 结果判读 ===== -->
-<circle cx="31" cy="170" r="7.5" fill="#1f2733"/>
-<text x="31" y="173.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
-<text x="44" y="174" font-size="10" font-weight="700" fill="#33404f">量抑菌圈直径</text>
-<text x="456" y="174" text-anchor="end" font-size="9.5" fill="#8c96a2">读圈窗口 18–24 h</text>
+<circle cx="31" cy="166" r="7.5" fill="#1f2733"/>
+<text x="31" y="169.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3</text>
+<text x="44" y="170" font-size="10" font-weight="700" fill="#33404f">量抑菌圈直径</text>
+<text x="456" y="170" text-anchor="end" font-size="9.5" fill="#5c6672">读圈窗口 18–24 h</text>
 
 <!-- 阳性平板 -->
-<rect x="68" y="176" width="128" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
-<text x="132" y="187.5" text-anchor="middle" font-size="9.5" fill="#a3332f">阳性 · 产碳青霉烯酶</text>
+<rect x="68" y="178" width="128" height="16" rx="8" fill="#f9e6e4" stroke="#c2413d"/>
+<text x="132" y="189.5" text-anchor="middle" font-size="9.5" fill="#a3332f">阳性 · 产碳青霉烯酶</text>
 <circle cx="132" cy="238" r="44" fill="#f4efe2" stroke="#cbc1a8" stroke-width="2.2"/>
 <g stroke="#ddd4c0" stroke-width="1" opacity="0.8">
   <line x1="104" y1="208" x2="160" y2="208"/>
@@ -85,9 +85,9 @@
 
 <!-- 灰区 -->
 <rect x="208" y="214" width="64" height="48" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
-<text x="240" y="231" text-anchor="middle" font-size="9.5" fill="#8c96a2">16–18 mm 清亮</text>
-<text x="240" y="245" text-anchor="middle" font-size="9.5" fill="#8c96a2">不能确定</text>
-<text x="240" y="259" text-anchor="middle" font-size="9.5" fill="#8c96a2">→ 复核</text>
+<text x="240" y="231" text-anchor="middle" font-size="9.5" fill="#5c6672">16–18 mm 清亮</text>
+<text x="240" y="245" text-anchor="middle" font-size="9.5" fill="#5c6672">不能确定</text>
+<text x="240" y="259" text-anchor="middle" font-size="9.5" fill="#5c6672">→ 复核</text>
 
 <!-- 阴性平板 -->
 <rect x="284" y="176" width="128" height="16" rx="8" fill="#f5f7f9" stroke="#e3e7ec"/>
@@ -110,5 +110,5 @@
 
 <!-- 页脚：用途 -->
 <rect x="24" y="324" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
-<text x="32" y="340" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　CRE 表型确认标准方法；eCIM 须与其同步做（±EDTA），mCIM 阳性才判读、分金属/丝氨酸酶</text>
+<text x="32" y="340" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">用途</tspan>　CRE 表型确认标准方法；eCIM 须同步做（±EDTA），mCIM(+) 才判分金属/丝氨酸酶</text>
 </svg>

@@ -7,6 +7,7 @@
   <linearGradient id="cfTurbid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8ccb0"/><stop offset="1" stop-color="#cdbf9e"/></linearGradient>
   <linearGradient id="cfClear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbfaf8"/></linearGradient>
 </defs>
+<rect width="480" height="300" fill="#ffffff"/>
 
 <!-- 页眉 -->
 <text x="24" y="27" font-size="16" font-weight="700" fill="#1f2733">头孢地尔药敏（缺铁 CAMHB）</text>

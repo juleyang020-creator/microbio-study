@@ -29,8 +29,8 @@
 <text x="240" y="93" text-anchor="middle" font-size="9.5" fill="#5c6672">洗去游离染料</text>
 <!-- ④ 本法缺席的步骤（虚线框，流程绕行） -->
 <rect x="292.5" y="68" width="74" height="30" rx="5" fill="#fbfbfa" stroke="#b9c2cc" stroke-dasharray="3,2.5"/>
-<text x="329.5" y="81" text-anchor="middle" font-size="9.5" fill="#8c96a2">脱色 / 复染</text>
-<text x="329.5" y="93" text-anchor="middle" font-size="9.5" fill="#8c96a2">单染无此步</text>
+<text x="329.5" y="81" text-anchor="middle" font-size="9.5" fill="#5c6672">脱色 / 复染</text>
+<text x="329.5" y="93" text-anchor="middle" font-size="9.5" fill="#5c6672">单染无此步</text>
 <path d="M277,86 C300,112 358,112 379,88" fill="none" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 <!-- ⑤ 干燥镜检 -->
 <rect x="382" y="68" width="74" height="30" rx="5" fill="#f5f7f9" stroke="#e3e7ec"/>

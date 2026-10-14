@@ -27,8 +27,8 @@
 <rect x="276" y="82" width="100" height="22" rx="4" fill="#f6dedb" stroke="#c2413d"/>
 <text x="326" y="97" text-anchor="middle" font-size="10" fill="#a3332f">红色偶氮化合物</text>
 
-<text x="456" y="90" text-anchor="end" font-size="9.5" fill="#8c96a2">加试剂后须</text>
-<text x="456" y="103" text-anchor="end" font-size="9.5" fill="#8c96a2">数分钟内判读</text>
+<text x="456" y="90" text-anchor="end" font-size="9.5" fill="#5c6672">加试剂后须</text>
+<text x="456" y="103" text-anchor="end" font-size="9.5" fill="#5c6672">数分钟内判读</text>
 
 <text x="24" y="118" font-size="9.5" fill="#5c6672">注意：NO₂⁻ 可被继续还原为 N₂ / N₂O，此时 Griess 同样不显色</text>
 

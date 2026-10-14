@@ -191,7 +191,11 @@ test('每个耐药机制都映射到存在的机制图', () => {
 });
 
 test('试验配图存在；已确认缺少合适图片的条目不得借错图', () => {
-  const awaitingDiagram = new Set(['hbsag-elisa', 'hcv-ab-elisa', 'hiv-ab-screen', 'sars2-rtqpcr']);
+  const awaitingDiagram = new Set([
+    'hbsag-elisa', 'hcv-ab-elisa', 'hiv-ab-screen', 'sars2-rtqpcr',
+    'crag-test', 'aspergillus-antibody', 'candida-mannan',
+    'blastomyces-antigen', 'coccidioides-serology', 'histoplasma-antigen'
+  ]);
   global.window.DB.tests.forEach((t) => {
     const img = View.mechanismImageFor('tests', t, global.window.DB.categories);
     if (awaitingDiagram.has(t.id)) {

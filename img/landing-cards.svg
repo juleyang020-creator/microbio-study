@@ -72,7 +72,7 @@
 <path d="M320,171 C352,170 366,150 396,146 L446,144" fill="none" stroke="#2b6cb0" stroke-width="1.6"/>
 <path d="M320,170 L446,169" fill="none" stroke="#8c96a2" stroke-width="1.4" stroke-dasharray="4,3"/>
 <text x="404" y="155" font-size="9.5" fill="#1f4e79">浊 = 生长</text>
-<text x="404" y="167" font-size="9.5" fill="#8c96a2">清 = 抑制</text>
+<text x="404" y="167" font-size="9.5" fill="#5c6672">清 = 抑制</text>
 <text x="381" y="191" text-anchor="middle" font-size="9.5" fill="#5c6672">每 15 min 自动读数</text>
 
 <!-- ===== C. ❹ 对折点判 S / I / R ===== -->

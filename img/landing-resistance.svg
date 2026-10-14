@@ -39,9 +39,9 @@
 <!-- ❻ 生物膜（覆盖菌体表面的胞外基质） -->
 <path d="M300,94 L300,80 C312,66 330,74 344,68 C362,61 378,74 396,68 C414,62 432,76 452,70 L452,94 Z" fill="#e7e2f3" stroke="#8b7fb8" stroke-width="1.1"/>
 <g fill="#cfc4e8" stroke="#8b7fb8" stroke-width="0.7">
-  <ellipse cx="336" cy="86" rx="7" ry="3.6"/><ellipse cx="366" cy="80" rx="7" ry="3.6"/><ellipse cx="404" cy="88" rx="7" ry="3.6"/><ellipse cx="432" cy="82" rx="7" ry="3.6"/>
+  <ellipse cx="336" cy="86" rx="7" ry="3.6"/><ellipse cx="366" cy="82" rx="7" ry="3.6"/><ellipse cx="432" cy="82" rx="7" ry="3.6"/>
 </g>
-<text x="374" y="102" font-size="9.5" fill="#5b4f8a">生物膜基质</text>
+<text x="400" y="90" text-anchor="middle" font-size="9.5" fill="#5b4f8a">生物膜基质</text>
 <circle cx="314" cy="80" r="8" fill="#1f2733"/><text x="314" y="84" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">6</text>
 
 <!-- ===== 外膜 ===== -->
@@ -56,11 +56,11 @@
 <rect x="178" y="94" width="16" height="20" rx="3" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
 <rect x="202" y="94" width="16" height="20" rx="3" fill="none" stroke="#c2413d" stroke-width="1.2" stroke-dasharray="3,2.5"/>
 <g stroke="#c2413d" stroke-width="2" stroke-linecap="round"><line x1="204" y1="97" x2="216" y2="111"/><line x1="204" y1="111" x2="216" y2="97"/></g>
-<circle cx="232" cy="132" r="8" fill="#1f2733"/><text x="232" y="136" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">4</text>
-<text x="204" y="152" font-size="9.5" fill="#2b6cb0">孔蛋白丢失</text>
+<circle cx="230" cy="104" r="8" fill="#1f2733"/><text x="230" y="108" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">4</text>
+<text x="218" y="128" text-anchor="middle" font-size="9.5" fill="#2b6cb0">孔蛋白丢失</text>
 
 <!-- ===== 周质腔：❶ 灭活酶 ===== -->
-<text x="26" y="118" font-size="9.5" fill="#5c6672">周质腔</text>
+<text x="26" y="128" font-size="9.5" fill="#5c6672">周质腔</text>
 <ellipse cx="150" cy="128" rx="32" ry="13" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.4"/>
 <text x="150" y="131" text-anchor="middle" font-size="9.5" fill="#1f4e79" font-weight="600">β-内酰胺酶</text>
 <line x1="186" y1="114" x2="180" y2="121" stroke="#33404f" stroke-width="1.3" marker-end="url(#arr)"/>

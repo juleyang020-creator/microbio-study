@@ -51,7 +51,7 @@
 <rect x="24" y="134" width="212" height="114" rx="8" fill="#fbfcfd" stroke="#e3e7ec"/>
 <rect x="244" y="134" width="212" height="114" rx="8" fill="#fbfcfd" stroke="#e3e7ec"/>
 <text x="34" y="148" font-size="10" font-weight="700" fill="#33404f">阳性 · 隐球菌属</text>
-<text x="254" y="148" font-size="10" font-weight="700" fill="#8c96a2">阴性 / 易误判结构</text>
+<text x="254" y="148" font-size="10" font-weight="700" fill="#5c6672">阴性 / 易误判结构</text>
 
 <!-- 左视野 -->
 <circle cx="72" cy="194" r="38" fill="url(#ink)" stroke="#4a4f57" stroke-width="1.6"/>
@@ -96,7 +96,7 @@
 <circle cx="306" cy="208" r="9" fill="#d8dde2" stroke="#eef1f5" stroke-width="1.4"/>
 <line x1="282" y1="163" x2="336" y2="164" stroke="#b9c2cc" stroke-width="1"/>
 <circle cx="282" cy="163" r="2" fill="#c2413d"/>
-<text x="340" y="168" font-size="9.5" font-weight="700" fill="#8c96a2">无透明亮晕</text>
+<text x="340" y="168" font-size="9.5" font-weight="700" fill="#5c6672">无透明亮晕</text>
 <text x="340" y="182" font-size="9.5" fill="#5c6672">白细胞、脂滴虽圆</text>
 <text x="340" y="196" font-size="9.5" fill="#5c6672">但无荚膜带不出芽</text>
 <text x="340" y="210" font-size="9.5" fill="#33404f">阴性不能排除感染</text>

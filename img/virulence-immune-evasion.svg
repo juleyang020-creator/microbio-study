@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 372" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>免疫逃逸的四种打法（变脸 · 抗补体 · 切抗体 · 杀白细胞）</title>
-<desc>抗原变异：淋病奈瑟菌菌毛/Opa 基因转换、流感抗原漂移与转换、回归热 Vmp 切换——感染后不免疫；补体抵抗：脑膜炎奈瑟菌 fHbp 结合 H 因子下调替代途径，逃过 MAC 膜攻击（晚期补体缺陷与依库珠单抗用药者 IMD 高危）；IgA 蛋白酶：奈瑟菌/流感嗜血杆菌/肺炎链球菌裂解 slgA 铰链区，黏膜长期定植；PVL 杀白细胞素：金葡打孔毒素溶解中性粒细胞与巨噬细胞，CA-MRSA 相关坏死性肺炎</desc>
+<desc>抗原变异：淋病奈瑟菌菌毛/Opa 基因转换、流感抗原漂移与转换、回归热 Vmp 切换——感染后不免疫；补体抵抗：脑膜炎奈瑟菌 fHbp 结合 H 因子下调替代途径，逃过 MAC 膜攻击（晚期补体缺陷与依库珠单抗用药者 IMD 高危）；IgA 蛋白酶：奈瑟菌/流感嗜血杆菌/肺炎链球菌裂解 sIgA 铰链区，黏膜长期定植；PVL 杀白细胞素：金葡打孔毒素溶解中性粒细胞与巨噬细胞，CA-MRSA 相关坏死性肺炎</desc>
 <defs>
   <radialGradient id="bac" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe9f8"/><stop offset="1" stop-color="#c9b8e2"/></radialGradient>
   <radialGradient id="immune" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#eef4fb"/><stop offset="1" stop-color="#b9cde4"/></radialGradient>
@@ -52,9 +52,9 @@
 <!-- ===== ③ IgA 蛋白酶 ===== -->
 <circle cx="40" cy="206" r="8" fill="#1f2733"/><text x="40" y="210" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">3</text>
 <text x="56" y="210" font-size="11" font-weight="700" fill="#33404f">IgA 蛋白酶：剪断黏膜抗体</text>
-<!-- slgA 被剪 -->
+<!-- sIgA 被剪 -->
 <path d="M76,238 l10,-12 l10,12 l10,-12 l10,12" fill="none" stroke="#2b6cb0" stroke-width="2"/>
-<text x="130" y="240" font-size="9.5" fill="#2b6cb0">slgA（黏膜一线）</text>
+<text x="130" y="240" font-size="9.5" fill="#2b6cb0">sIgA（黏膜一线）</text>
 <line x1="96" y1="248" x2="96" y2="260" stroke="#c2413d" stroke-width="1.8"/>
 <text x="106" y="260" font-size="9.5" fill="#c2413d">铰链区裂解 ✂</text>
 <text x="70" y="278" font-size="9.5" fill="#33404f">淋病/脑膜炎奈瑟菌 · 流感嗜血杆菌</text>
@@ -76,10 +76,11 @@
 <circle cx="382" cy="246" r="6" fill="none" stroke="#5b7d9d" stroke-width="1.2"/>
 <path d="M376,240 l4,4 m10,8 l4,4" stroke="#c2413d" stroke-width="1.6"/>
 <text x="382" y="276" text-anchor="middle" font-size="9.5" fill="#5c6672">中性粒/巨噬细胞溶解</text>
-<text x="300" y="296" font-size="9.5" fill="#33404f">CA-MRSA 常携带（前噬菌体 lukS/F-PV）</text>
-<text x="300" y="309" font-size="9.5" fill="#a3332f">流感后坏死性肺炎可致命</text>
+<text x="272" y="294" font-size="9.5" fill="#33404f">CA-MRSA 常携带（前噬菌体 lukS/F-PV）</text>
+<text x="272" y="308" font-size="9.5" fill="#a3332f">流感后坏死性肺炎可致命</text>
 
 <!-- 页脚 -->
-<rect x="24" y="330" width="432" height="30" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
-<text x="32" y="349" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">意义</tspan>　淋病/链咽炎可反复感染（无保护免疫）· 反复奈瑟菌感染查 C5-C9 · PVL 基因检测试剂盒可单项确认</text>
+<rect x="24" y="324" width="432" height="36" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
+<text x="32" y="339" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">意义</tspan>　淋病/链球菌咽炎可反复感染（无持久保护免疫）· 反复奈瑟菌感染须排查 C5–C9 缺陷</text>
+<text x="32" y="353" font-size="9.5" fill="#5c6672">PVL 杀白细胞素基因（lukS/F-PV）可通过 PCR / 试剂盒专项检测确认</text>
 </svg>

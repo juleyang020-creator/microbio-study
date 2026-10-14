@@ -16,17 +16,17 @@
 <line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
 
 <!-- ===== 左：两支斜面对照 ===== -->
-<text x="90" y="78" text-anchor="middle" font-size="10.5" font-weight="700" fill="#a3332f">须癣毛癣菌（＋）</text>
-<path d="M66,92 L66,196 Q66,212 86,212 Q106,212 106,196 L106,92 Z" fill="#fdfcf8" stroke="#b9c2cc" stroke-width="1.5"/>
-<path d="M66,140 L106,120 L106,196 Q106,212 86,212 Q66,212 66,196 Z" fill="#d6407f"/>
-<ellipse cx="86" cy="92" rx="20" ry="5" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
-<text x="86" y="228" text-anchor="middle" font-size="9.5" fill="#a3332f">3~4 日：黄→红（产氨碱化）</text>
+<text x="80" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#a3332f">须癣毛癣菌（＋）</text>
+<path d="M60,92 L60,196 Q60,212 80,212 Q100,212 100,196 L100,92 Z" fill="#fdfcf8" stroke="#b9c2cc" stroke-width="1.5"/>
+<path d="M60,140 L100,120 L100,196 Q100,212 80,212 Q60,212 60,196 Z" fill="#d6407f"/>
+<ellipse cx="80" cy="92" rx="20" ry="5" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="80" y="228" text-anchor="middle" font-size="9.5" fill="#a3332f">3~4 日：黄→红</text>
 
-<text x="196" y="78" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8a6d2f">红色毛癣菌（−）</text>
-<path d="M172,92 L172,196 Q172,212 192,212 Q212,212 212,196 L212,92 Z" fill="#fdfcf8" stroke="#b9c2cc" stroke-width="1.5"/>
-<path d="M172,140 L212,120 L212,196 Q212,212 192,212 Q172,212 172,196 Z" fill="#e9b949"/>
-<ellipse cx="192" cy="92" rx="20" ry="5" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
-<text x="192" y="228" text-anchor="middle" font-size="9.5" fill="#8a6d2f">保持黄色（不分解尿素）</text>
+<text x="196" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#8a6d2f">红色毛癣菌（−）</text>
+<path d="M176,92 L176,196 Q176,212 196,212 Q216,212 216,196 L216,92 Z" fill="#fdfcf8" stroke="#b9c2cc" stroke-width="1.5"/>
+<path d="M176,140 L216,120 L216,196 Q216,212 196,212 Q176,212 176,196 Z" fill="#e9b949"/>
+<ellipse cx="196" cy="92" rx="20" ry="5" fill="#f5f7f9" stroke="#b9c2cc" stroke-width="1.2"/>
+<text x="196" y="228" text-anchor="middle" font-size="9.5" fill="#8a6d2f">保持黄色（阴性）</text>
 
 <!-- 指示剂条 -->
 <rect x="66" y="246" width="146" height="12" rx="6" fill="url(#ureaph)" stroke="#e3e7ec"/>

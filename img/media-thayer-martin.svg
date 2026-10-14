@@ -68,7 +68,7 @@
   <circle cx="194" cy="124" r="3.8"/><circle cx="205" cy="133" r="4"/><circle cx="215" cy="129" r="3.6"/>
 </g>
 <text x="200" y="178" text-anchor="middle" font-size="9.5" fill="#5c6672">灰白湿润、边缘整齐</text>
-<text x="200" y="190" text-anchor="middle" font-size="9.5" fill="#8c96a2">虚线＝被抑制</text>
+<text x="200" y="190" text-anchor="middle" font-size="9.5" fill="#5c6672">虚线＝被抑制</text>
 
 <!-- ===== 右列：VCNT 各抑制谁 ===== -->
 <text x="256" y="78" font-size="9.5" font-weight="700" fill="#33404f">VCNT 抗菌剂分别抑制谁</text>

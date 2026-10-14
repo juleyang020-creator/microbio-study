@@ -55,8 +55,8 @@
 
 <!-- 质控 -->
 <rect x="232" y="238" width="224" height="40" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
-<text x="242" y="254" font-size="9.5" font-weight="700" fill="#2f6b45">质控</text>
-<text x="242" y="268" font-size="9.5" fill="#33404f">金葡 ATCC 25923：黑心＋透明环；大肠 25922：不长</text>
+<text x="240" y="254" font-size="9.5" font-weight="700" fill="#2f6b45">质控</text>
+<text x="240" y="268" font-size="9.5" fill="#33404f">金葡 25923：黑心＋透明环；大肠 25922：不长</text>
 
 <!-- 结论 -->
 <text x="240" y="292" text-anchor="middle" font-size="11.5" fill="#33404f">「黑色菌落＋透明环」先锁定金葡，凝固酶/乳胶试验再确认</text>

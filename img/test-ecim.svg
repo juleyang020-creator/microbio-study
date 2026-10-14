@@ -73,7 +73,7 @@
 <circle cx="296" cy="192" r="7" fill="#e3edf8" stroke="#2b6cb0" stroke-width="1.2"/>
 <text x="296" y="195" text-anchor="middle" font-size="9.5" fill="#1f4e79">MEM</text>
 <text x="338" y="172" font-size="9.5" font-weight="700" fill="#33404f">直径较 mCIM 增大 ≥5 mm</text>
-<text x="338" y="186" font-size="9.5" fill="#8c96a2">（虚线＝mCIM 原大小）</text>
+<text x="338" y="186" font-size="9.5" fill="#5c6672">（虚线＝mCIM 原大小）</text>
 <text x="338" y="200" font-size="9.5" fill="#33404f">→ 金属酶 MBL 阳性</text>
 <text x="338" y="214" font-size="9.5" fill="#5c6672">NDM · IMP · VIM</text>
 

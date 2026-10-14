@@ -49,13 +49,13 @@
 <text x="34" y="277" font-size="9.5" fill="#5c6672">RNA 阳性＝现症（可治愈，DAA 时代）</text>
 
 <!-- ===== IgM/IgG 曲线 ===== -->
-<text x="268" y="162" font-size="10.5" font-weight="700" fill="#33404f">典型初次免疫应答（示意）</text>
+<text x="258" y="242" font-size="10.5" font-weight="700" fill="#33404f">典型初次免疫应答（示意）</text>
 <!-- 曲线 -->
 <line x1="268" y1="318" x2="456" y2="318" stroke="#33404f" stroke-width="1.2" marker-end="url(#arr)"/>
-<path d="M268,318 Q290,318 300,272 Q308,244 322,262 Q340,290 360,314" fill="none" stroke="#c2413d" stroke-width="1.8"/>
+<path d="M268,318 Q290,318 300,282 Q308,262 322,276 Q340,294 360,314" fill="none" stroke="#c2413d" stroke-width="1.8"/>
 <path d="M268,318 Q300,318 316,296 Q340,264 380,268 Q420,272 448,282" fill="none" stroke="#2b6cb0" stroke-width="1.8"/>
-<text x="296" y="258" font-size="9.5" fill="#c2413d">IgM 常较早</text>
-<text x="392" y="262" font-size="9.5" fill="#2b6cb0">IgG 可持续</text>
+<text x="308" y="256" text-anchor="middle" font-size="9.5" fill="#c2413d">IgM 常较早</text>
+<text x="392" y="260" font-size="9.5" fill="#2b6cb0">IgG 可持续</text>
 <text x="330" y="334" font-size="9.5" fill="#5c6672">配对血清依病原与方法解释</text>
 
 <!-- 页脚 -->

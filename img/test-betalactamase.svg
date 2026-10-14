@@ -41,7 +41,7 @@
 <line x1="168" y1="110" x2="218" y2="101" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 <line x1="168" y1="132" x2="216" y2="180" stroke="#33404f" stroke-width="1.4" marker-end="url(#arr)"/>
 <text x="194" y="94" text-anchor="middle" font-size="9.5" fill="#a3332f">产 β-内酰胺酶</text>
-<text x="192" y="176" text-anchor="middle" font-size="9.5" fill="#5c6672">不产酶</text>
+<text x="194" y="194" text-anchor="middle" font-size="9.5" fill="#5c6672">不产酶</text>
 
 <!-- ===== ❸ 判读 ===== -->
 <circle cx="234" cy="145" r="7.5" fill="#1f2733"/>

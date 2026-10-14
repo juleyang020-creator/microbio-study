@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 364" role="img" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
 <title>鉴定技术与生物安全缩写（MALDI · 16S · PCR/NAAT · ELISA · BSL）</title>
-<desc>MALDI-TOF MS：蛋白指纹比对谱库，分钟级定种（血培养报阳后快速鉴定的主力）；16S rRNA 测序：高保守区通用引物＋高变区鉴别，谱库未收录菌的兜底金标准；PCR/NAAT：靶向核酸扩增（结核 Xpert、难辨梭菌毒素基因、耐甲氧西林 mecA），快但只检出靶标；ELISA/EIA：酶标抗原抗体检测（HBsAg、HIV 筛查）；BSL 生物安全水平 1~4 级：结核培养/疑似布鲁菌/双相真菌霉菌型须 BSL-3</desc>
+<desc>MALDI-TOF MS：蛋白指纹比对谱库，分钟级定种（血培养报阳后快速鉴定的主力）；16S rRNA 测序：高保守区通用引物＋高变区鉴别，谱库未收录疑难菌的分子鉴定参考；PCR/NAAT：靶向核酸扩增（结核 Xpert、难辨梭菌毒素基因、耐甲氧西林 mecA），快但只检出靶标；ELISA/EIA：酶标抗原抗体检测（HBsAg、HIV 筛查）；BSL 生物安全水平 1~4 级：结核培养/疑似布鲁菌/双相真菌霉菌型须 BSL-3</desc>
 <defs>
   <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#33404f"/></marker>
 </defs>
@@ -27,11 +27,11 @@
 
 <!-- PCR/NAAT -->
 <circle cx="200" cy="86" r="5" fill="#2b6cb0"/>
-<rect x="155" y="98" width="100" height="66" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
-<text x="165" y="114" font-size="9.5" font-weight="700" fill="#1f4e79">PCR / NAAT</text>
-<text x="165" y="127" font-size="9.5" fill="#33404f">小时级 · 核酸靶标</text>
-<text x="165" y="140" font-size="9.5" fill="#5c6672">Xpert 结核 · 难辨梭菌</text>
-<text x="165" y="153" font-size="9.5" fill="#5c6672">mecA · 只检出靶标</text>
+<rect x="154" y="98" width="102" height="66" rx="7" fill="#eef4fb" stroke="#b9cde4"/>
+<text x="162" y="114" font-size="9.5" font-weight="700" fill="#1f4e79">PCR / NAAT</text>
+<text x="162" y="127" font-size="9.5" fill="#33404f">小时级 · 核酸靶标</text>
+<text x="162" y="140" font-size="9.5" fill="#5c6672">Xpert结核·难辨梭菌</text>
+<text x="162" y="153" font-size="9.5" fill="#5c6672">mecA · 只检出靶标</text>
 
 <!-- 16S -->
 <circle cx="305" cy="86" r="5" fill="#6e5a9e"/>
@@ -39,7 +39,7 @@
 <text x="272" y="114" font-size="9.5" font-weight="700" fill="#5b4f8a">16S rRNA 测序</text>
 <text x="272" y="127" font-size="9.5" fill="#33404f">天级 · 通用引物</text>
 <text x="272" y="140" font-size="9.5" fill="#5c6672">谱库未收录菌兜底</text>
-<text x="272" y="153" font-size="9.5" fill="#5c6672">分类学金标准</text>
+<text x="272" y="153" font-size="9.5" fill="#5c6672">分子分类参考</text>
 
 <!-- ELISA -->
 <circle cx="405" cy="86" r="5" fill="#c9a95f"/>
@@ -58,18 +58,18 @@
 <!-- ===== BSL 分级 ===== -->
 <text x="24" y="262" font-size="10.5" font-weight="700" fill="#33404f">BSL（生物安全水平）：按病原风险分级操作</text>
 <g font-size="9.5">
-  <rect x="24" y="274" width="104" height="52" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
-  <text x="34" y="290" font-weight="700" fill="#2f6b45">BSL-1 / 2</text>
-  <text x="34" y="304" fill="#33404f">常规临床微生物</text>
-  <text x="34" y="317" fill="#5c6672">大肠/金葡等（二级为主）</text>
-  <rect x="136" y="274" width="160" height="52" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
-  <text x="146" y="290" font-weight="700" fill="#8a6d2f">BSL-3</text>
-  <text x="146" y="304" fill="#33404f">结核分枝杆菌培养 · 疑似布鲁菌</text>
-  <text x="146" y="317" fill="#5c6672">双相真菌霉菌型（球孢子菌等）</text>
-  <rect x="304" y="274" width="152" height="52" rx="7" fill="#fdf0ef" stroke="#dfa0a0"/>
-  <text x="314" y="290" font-weight="700" fill="#a3332f">BSL-4</text>
-  <text x="314" y="304" fill="#33404f">高致病性病毒（埃博拉等）</text>
-  <text x="314" y="317" fill="#5c6672">常规医院实验室不涉及</text>
+  <rect x="24" y="274" width="116" height="52" rx="7" fill="#f0f6f2" stroke="#c8dcc5"/>
+  <text x="32" y="290" font-weight="700" fill="#2f6b45">BSL-1 / 2</text>
+  <text x="32" y="304" fill="#33404f">常规临床微生物</text>
+  <text x="32" y="317" fill="#5c6672">大肠/金葡（二级为主）</text>
+  <rect x="148" y="274" width="152" height="52" rx="7" fill="#fdf6e3" stroke="#c9a95f"/>
+  <text x="156" y="290" font-weight="700" fill="#8a6d2f">BSL-3</text>
+  <text x="156" y="304" fill="#33404f">结核分枝杆菌培养·疑似布鲁菌</text>
+  <text x="156" y="317" fill="#5c6672">双相真菌霉菌型（球孢子菌等）</text>
+  <rect x="308" y="274" width="148" height="52" rx="7" fill="#fdf0ef" stroke="#dfa0a0"/>
+  <text x="316" y="290" font-weight="700" fill="#a3332f">BSL-4</text>
+  <text x="316" y="304" fill="#33404f">高致病性病毒（埃博拉等）</text>
+  <text x="316" y="317" fill="#5c6672">常规医院实验室不涉及</text>
 </g>
 
 <!-- 页脚 -->

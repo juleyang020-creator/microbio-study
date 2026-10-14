@@ -46,7 +46,7 @@
   <text text-anchor="middle" x="296" y="104">天青染核酸·伊红染Hb</text>
   <text text-anchor="middle" x="408" y="104">油镜（100×）观察</text>
 </g>
-<text x="240" y="132" text-anchor="middle" font-size="9.5" fill="#8c96a2">染液须用 pH 7.0~7.2 缓冲水现配现用；pH 偏酸则薛氏点不显、虫体着色差</text>
+<text x="240" y="132" text-anchor="middle" font-size="9.5" fill="#5c6672">染液须用 pH 7.0~7.2 缓冲水现配现用；pH 偏酸则薛氏点不显、虫体着色差</text>
 
 <!-- ===== 下半：镜下所见 ===== -->
 <text x="88" y="146" text-anchor="middle" font-size="10" font-weight="700" fill="#33404f">阳性：疟原虫感染红细胞</text>

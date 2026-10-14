@@ -65,6 +65,6 @@
 
 <!-- 临床处理原则 -->
 <rect x="24" y="300" width="432" height="44" rx="8" fill="#fdf6f5" stroke="#e3c8c8"/>
-<text x="32" y="318" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#a3332f">临床</tspan>　生物膜感染治愈三原则：拔除装置 · 外科清创 · 长疗程联合（人工关节可试利福平＋氟喹诺酮）</text>
+<text x="32" y="318" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#a3332f">临床</tspan>　生物膜感染三原则：拔除装置 · 外科清创 · 长疗程联合（人工关节可试利福平＋氟喹诺酮）</text>
 <text x="32" y="333" font-size="9.5" fill="#5c6672">疫苗思路对应三步：菌毛疫苗（在研）· 荚膜多糖疫苗（PCV13/Hib）· 抗 QS/抗膜剂（研究中）</text>
 </svg>

@@ -10,32 +10,32 @@
 <line x1="24" y1="58" x2="456" y2="58" stroke="#e3e7ec"/>
 
 <!-- ===== A 基本结构 ===== -->
-<circle cx="30" cy="75" r="4" fill="#4f7cc4"/><text x="42" y="79" font-size="12.5" font-weight="700" fill="#3d63a0">基本结构（包膜病毒剖面）</text>
+<circle cx="30" cy="72" r="4" fill="#4f7cc4"/><text x="42" y="76" font-size="12.5" font-weight="700" fill="#3d63a0">基本结构（包膜病毒剖面）</text>
 <!-- 包膜 -->
-<circle cx="110" cy="148" r="54" fill="#f0f3fa" stroke="#7a93bd" stroke-width="1.6"/>
+<circle cx="110" cy="154" r="52" fill="#f0f3fa" stroke="#7a93bd" stroke-width="1.6"/>
 <!-- 刺突 ×12 -->
 <g stroke="#7a93bd" stroke-width="1.5" fill="#7a93bd">
-  <g transform="rotate(0 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(30 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(60 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(90 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(120 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(150 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(180 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(210 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(240 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(270 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(300 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
-  <g transform="rotate(330 110 148)"><line x1="110" y1="94" x2="110" y2="84"/><circle cx="110" cy="82" r="3"/></g>
+  <g transform="rotate(0 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(30 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(60 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(90 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(120 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(150 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(180 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(210 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(240 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(270 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(300 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
+  <g transform="rotate(330 110 154)"><line x1="110" y1="102" x2="110" y2="92"/><circle cx="110" cy="90" r="3"/></g>
 </g>
 <!-- 衣壳（二十面体） -->
-<polygon points="110,118 136,133 136,163 110,178 84,163 84,133" fill="#d6dfee" stroke="#4f7cc4" stroke-width="1.4"/>
-<g stroke="#4f7cc4" stroke-width="0.7" opacity="0.6"><line x1="110" y1="118" x2="110" y2="178"/><line x1="84" y1="133" x2="136" y2="163"/><line x1="136" y1="133" x2="84" y2="163"/></g>
+<polygon points="110,124 136,139 136,169 110,184 84,169 84,139" fill="#d6dfee" stroke="#4f7cc4" stroke-width="1.4"/>
+<g stroke="#4f7cc4" stroke-width="0.7" opacity="0.6"><line x1="110" y1="124" x2="110" y2="184"/><line x1="84" y1="139" x2="136" y2="169"/><line x1="136" y1="139" x2="84" y2="169"/></g>
 <!-- 核酸 -->
-<path d="M96,148 q7,-9 14,0 t14,0" fill="none" stroke="#bf7583" stroke-width="1.8"/>
+<path d="M96,154 q7,-9 14,0 t14,0" fill="none" stroke="#bf7583" stroke-width="1.8"/>
 <!-- 引线 -->
-<g stroke="#c9cfda" stroke-width="1"><line x1="152" y1="100" x2="246" y2="88"/><line x1="164" y1="142" x2="246" y2="132"/><line x1="136" y1="142" x2="246" y2="178"/><line x1="110" y1="148" x2="246" y2="224"/></g>
-<g fill="#7a93bd"><circle cx="152" cy="100" r="2"/><circle cx="164" cy="142" r="2"/><circle cx="136" cy="142" r="2"/><circle cx="110" cy="148" r="2"/></g>
+<g stroke="#c9cfda" stroke-width="1"><line x1="152" y1="106" x2="246" y2="88"/><line x1="162" y1="146" x2="246" y2="132"/><line x1="136" y1="156" x2="246" y2="178"/><line x1="110" y1="154" x2="246" y2="224"/></g>
+<g fill="#7a93bd"><circle cx="152" cy="106" r="2"/><circle cx="162" cy="146" r="2"/><circle cx="136" cy="156" r="2"/><circle cx="110" cy="154" r="2"/></g>
 <!-- 标注 -->
 <text x="250" y="92" font-size="11" font-weight="700" fill="#3f444b">刺突（糖蛋白）</text>
 <text x="250" y="106" font-size="9.5" fill="#5c6672">介导对宿主细胞的吸附</text>
@@ -48,10 +48,10 @@
 <line x1="24" y1="256" x2="456" y2="256" stroke="#e3e7ec"/>
 
 <!-- ===== B 衣壳对称型 ===== -->
-<circle cx="30" cy="277" r="4" fill="#4f7cc4"/><text x="42" y="281" font-size="12.5" font-weight="700" fill="#3d63a0">衣壳对称型</text>
+<circle cx="30" cy="272" r="4" fill="#4f7cc4"/><text x="42" y="276" font-size="12.5" font-weight="700" fill="#3d63a0">衣壳对称型</text>
 <!-- 二十面体对称 -->
-<polygon points="96,282 117,294 117,318 96,330 75,318 75,294" fill="#d6dfee" stroke="#4f7cc4" stroke-width="1.4"/>
-<g stroke="#4f7cc4" stroke-width="0.7" opacity="0.6"><line x1="96" y1="282" x2="96" y2="330"/><line x1="75" y1="294" x2="117" y2="318"/><line x1="117" y1="294" x2="75" y2="318"/></g>
+<polygon points="96,286 117,298 117,322 96,334 75,322 75,298" fill="#d6dfee" stroke="#4f7cc4" stroke-width="1.4"/>
+<g stroke="#4f7cc4" stroke-width="0.7" opacity="0.6"><line x1="96" y1="286" x2="96" y2="334"/><line x1="75" y1="298" x2="117" y2="322"/><line x1="117" y1="298" x2="75" y2="322"/></g>
 <text x="96" y="348" text-anchor="middle" font-size="11" fill="#3f444b">二十面体对称</text>
 <!-- 螺旋对称 -->
 <g fill="#d6dfee" stroke="#4f7cc4" stroke-width="1.1">
@@ -68,13 +68,13 @@
 <line x1="24" y1="362" x2="456" y2="362" stroke="#e3e7ec"/>
 
 <!-- ===== C 包膜与外形 ===== -->
-<circle cx="30" cy="381" r="4" fill="#4f7cc4"/><text x="42" y="385" font-size="12.5" font-weight="700" fill="#3d63a0">包膜与外形</text>
+<circle cx="30" cy="378" r="4" fill="#4f7cc4"/><text x="42" y="382" font-size="12.5" font-weight="700" fill="#3d63a0">包膜与外形</text>
 <!-- 无包膜（腺病毒，五邻体纤维） -->
-<polygon points="96,392 113,402 113,422 96,432 79,422 79,402" fill="#d6dfee" stroke="#4f7cc4" stroke-width="1.3"/>
+<polygon points="96,400 113,410 113,428 96,438 79,428 79,410" fill="#d6dfee" stroke="#4f7cc4" stroke-width="1.3"/>
 <g stroke="#7a93bd" stroke-width="1.3" fill="#7a93bd">
-  <line x1="96" y1="392" x2="96" y2="383"/><circle cx="96" cy="381" r="2.4"/>
-  <line x1="113" y1="402" x2="121" y2="397"/><circle cx="123" cy="396" r="2.3"/>
-  <line x1="79" y1="402" x2="71" y2="397"/><circle cx="69" cy="396" r="2.3"/>
+  <line x1="96" y1="400" x2="96" y2="393"/><circle cx="96" cy="391" r="2.2"/>
+  <line x1="113" y1="410" x2="121" y2="405"/><circle cx="123" cy="404" r="2.2"/>
+  <line x1="79" y1="410" x2="71" y2="405"/><circle cx="69" cy="404" r="2.2"/>
 </g>
 <text x="96" y="452" text-anchor="middle" font-size="11" fill="#3f444b">无包膜（腺病毒）</text>
 <!-- 有包膜球形带刺突（冠状/流感） -->

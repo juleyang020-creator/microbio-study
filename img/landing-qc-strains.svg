@@ -66,8 +66,8 @@
 <circle cx="264" cy="170" r="7.5" fill="#1f2733"/>
 <text x="264" y="173.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">4</text>
 <text x="277" y="174" font-size="10.5" font-weight="700" fill="#1f2733">抗真菌质控</text>
-<text x="262" y="189" text-anchor="middle" font-size="9.5" fill="#8c96a2">高</text>
-<text x="306" y="189" text-anchor="middle" font-size="9.5" fill="#8c96a2">低</text>
+<text x="262" y="189" text-anchor="middle" font-size="9.5" fill="#5c6672">高</text>
+<text x="306" y="189" text-anchor="middle" font-size="9.5" fill="#5c6672">低</text>
 <line x1="270" y1="186" x2="298" y2="186" stroke="#b9c2cc" stroke-width="1" marker-end="url(#arrs)"/>
 <g stroke="#b9c2cc">
   <circle cx="262" cy="202" r="5.5" fill="#ffffff"/><circle cx="273" cy="202" r="5.5" fill="#ffffff"/><circle cx="284" cy="202" r="5.5" fill="#ffffff"/>

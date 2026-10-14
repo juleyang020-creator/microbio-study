@@ -32,10 +32,10 @@
 <line x1="104" y1="152" x2="94" y2="152" stroke="#c2413d" stroke-width="1.8"/>
 <ellipse cx="114" cy="152" rx="9" ry="7" fill="#f9e6e4" stroke="#c2413d"/>
 <line x1="123" y1="152" x2="130" y2="152" stroke="#c2413d" stroke-width="1.8"/>
-<text x="146" y="130" font-size="9.5" fill="#33404f">菌毛 / 黏附素</text>
-<text x="146" y="144" font-size="9.5" fill="#5c6672">结合组织特异性受体</text>
-<text x="146" y="158" font-size="9.5" fill="#5c6672">UPEC P 菌毛·淋菌菌毛</text>
-<text x="146" y="172" font-size="9.5" fill="#5c6672">导尿管生物膜第一步</text>
+<text x="134" y="130" font-size="9.5" fill="#33404f">菌毛 / 黏附素</text>
+<text x="134" y="144" font-size="9.5" fill="#5c6672">结合组织特异性受体</text>
+<text x="134" y="158" font-size="9.5" fill="#5c6672">UPEC P菌毛·淋菌菌毛</text>
+<text x="134" y="172" font-size="9.5" fill="#5c6672">导尿管生物膜第一步</text>
 
 <!-- ===== ❷ 侵袭 · 扩散 ===== -->
 <rect x="246" y="86" width="210" height="96" rx="8" fill="#ffffff" stroke="#e3e7ec"/>
@@ -72,9 +72,9 @@
 <circle cx="176" cy="244" r="9" fill="#f9e6e4" stroke="#c2413d"/>
 <text x="176" y="273" text-anchor="middle" font-size="9.5" fill="#5c6672">胞内生存</text>
 <!-- IgA 蛋白酶切断抗体 -->
-<path d="M 262 244 q 6 -12 12 0 q 6 12 12 0 q 6 -12 12 0" transform="translate(0,-4)" fill="none" stroke="#2b6cb0" stroke-width="1.6"/>
-<line x1="312" y1="232" x2="322" y2="252" stroke="#c2413d" stroke-width="2"/>
-<text x="292" y="273" text-anchor="middle" font-size="9.5" fill="#5c6672">IgA 蛋白酶</text>
+<path d="M 272 244 q 6 -12 12 0 q 6 12 12 0 q 6 -12 12 0" transform="translate(0,-4)" fill="none" stroke="#2b6cb0" stroke-width="1.6"/>
+<line x1="316" y1="232" x2="326" y2="252" stroke="#c2413d" stroke-width="2"/>
+<text x="296" y="273" text-anchor="middle" font-size="9.5" fill="#5c6672">IgA 蛋白酶</text>
 <!-- 抗原变异 -->
 <ellipse cx="382" cy="240" rx="13" ry="10" fill="#f9e6e4" stroke="#c2413d"/>
 <ellipse cx="408" cy="240" rx="13" ry="10" fill="#e3edf8" stroke="#2b6cb0"/>
@@ -82,10 +82,10 @@
 <text x="421" y="243" text-anchor="middle" font-size="9.5" fill="#1f4e79">Ag₂</text>
 <path d="M 397 240 h 6" stroke="#33404f" stroke-width="1.2" marker-end="url(#arrs)"/>
 <text x="396" y="273" text-anchor="middle" font-size="9.5" fill="#5c6672">抗原变异</text>
-<text x="100" y="230" font-size="9.5" fill="#5c6672">补体抵抗</text>
-<text x="100" y="244" font-size="9.5" fill="#5c6672">fHbp·血清杀菌↑</text>
-<text x="214" y="230" font-size="9.5" fill="#5c6672">PVL 杀白细胞素</text>
-<text x="214" y="244" font-size="9.5" fill="#5c6672">穿孔溶解吞噬细胞</text>
+<text x="98" y="230" font-size="9.5" fill="#5c6672">补体抵抗</text>
+<text x="98" y="244" font-size="9.5" fill="#5c6672">fHbp·血清杀菌↑</text>
+<text x="202" y="230" font-size="9.5" fill="#5c6672">PVL 杀白细胞素</text>
+<text x="202" y="244" font-size="9.5" fill="#5c6672">穿孔溶解吞噬细胞</text>
 <text x="330" y="222" font-size="9.5" fill="#5c6672">重复感染不免疫</text>
 
 <!-- ===== ❹ 毒素损伤（横向长卡） ===== -->
@@ -100,11 +100,11 @@
 <text x="92" y="338" font-size="9.5" fill="#33404f">蛋白毒素·靶器官特异</text>
 <text x="92" y="352" font-size="9.5" fill="#5c6672">超抗原/溶血素/A-B 结构</text>
 <!-- 内毒素 -->
-<rect x="246" y="334" width="26" height="18" rx="3" fill="#f7ecd4" stroke="#d9b96a"/>
-<circle cx="253" cy="343" r="2.4" fill="#d9b96a"/><circle cx="262" cy="343" r="2.4" fill="#d9b96a"/>
-<text x="280" y="338" font-size="9.5" fill="#33404f">内毒素（G⁻ 脂多糖）</text>
-<text x="280" y="352" font-size="9.5" fill="#5c6672">脂质A→TNF-α 风暴→休克</text>
-<text x="440" y="346" text-anchor="end" font-size="9.5" fill="#5c6672">裂解释放 · 耐热</text>
+<rect x="236" y="334" width="26" height="18" rx="3" fill="#f7ecd4" stroke="#d9b96a"/>
+<circle cx="243" cy="343" r="2.4" fill="#d9b96a"/><circle cx="252" cy="343" r="2.4" fill="#d9b96a"/>
+<text x="268" y="338" font-size="9.5" fill="#33404f">内毒素（G⁻ 脂多糖）</text>
+<text x="268" y="352" font-size="9.5" fill="#5c6672">脂质A→TNF-α→休克</text>
+<text x="444" y="346" text-anchor="end" font-size="9.5" fill="#5c6672">裂解释放 · 耐热</text>
 
 <!-- 结论 -->
 <text x="240" y="388" text-anchor="middle" font-size="11.5" fill="#33404f">毒力不是单一武器，而是一条按进程部署的攻击链</text>

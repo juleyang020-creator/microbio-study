@@ -88,5 +88,5 @@
 
 <!-- 页脚：典型菌 -->
 <rect x="24" y="270" width="432" height="24" rx="6" fill="#f5f7f9" stroke="#e3e7ec"/>
-<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　赖+/鸟± 大肠埃希菌 · 赖+/鸟+ 沙门菌属 · 赖+/鸟− 肺炎克雷伯菌 · 赖− 志贺菌属、变形杆菌属</text>
+<text x="32" y="286" font-size="9.5" fill="#5c6672"><tspan font-weight="700" fill="#33404f">典型菌</tspan>　赖+/鸟± 大肠 · 赖+/鸟+ 沙门菌 · 赖+/鸟− 肺克 · 赖− 志贺/变形杆菌</text>
 </svg>
