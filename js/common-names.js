@@ -6,59 +6,59 @@
 })(function () {
   'use strict';
 
-  var STORAGE_KEY = 'zhiwei-common-names-v2';
+  var STORAGE_KEY = 'zhiwei-common-names-v3';
 
   var DEFAULT_RAW = [
-    ['GN334', 'Escherichia coli', '大肠埃希菌', 'e-coli'],
-    ['GN334', 'Klebsiella pneumoniae', '肺炎克雷伯菌', 'klebsiella-pneumoniae'],
-    ['GN334', 'Klebsiella oxytoca', '产酸克雷伯菌', 'klebsiella-oxytoca'],
-    ['GN334', 'Enterobacter aerogenes', '产气肠杆菌', 'klebsiella-aerogenes'],
-    ['GN334', 'Enterobacter cloacae', '阴沟肠杆菌', 'enterobacter-cloacae'],
-    ['GN334', 'Serratia marcescens', '粘质沙雷菌', 'serratia-marcescens'],
-    ['GN334', 'Citrobacter freundii', '弗劳地柠檬酸杆菌', 'citrobacter-freundii'],
-    ['GN334', 'Citrobacter koseri', '克氏柠檬酸杆菌', 'citrobacter-koseri'],
-    ['GN334', 'Proteus mirabilis', '奇异变形杆菌', 'proteus-mirabilis'],
-    ['GN334', 'Proteus vulgaris', '普通变形杆菌', 'proteus-vulgaris'],
-    ['GN334', 'Morganella morganii', '摩根摩根菌', 'morganella-morganii'],
-    ['GN334', 'Proteus hauseri', '豪泽变形杆菌', 'proteus-hauseri'],
-    ['GN334', 'Raoultella ornithinolytica', '解鸟氨酸拉乌尔菌', 'raoultella-ornithinolytica'],
-    ['GN334', 'Providencia rettgeri', '雷氏普罗威登斯菌', 'providencia-rettgeri'],
-    ['GN335', 'Pseudomonas aeruginosa', '铜绿假单胞菌', 'pseudomonas-aeruginosa'],
-    ['GN335', 'Pseudomonas putida', '恶臭假单胞菌', 'pseudomonas-putida'],
-    ['GN335', 'Pseudomonas fluorescens', '荧光假单胞菌', 'pseudomonas-fluorescens'],
-    ['GN335', 'Acinetobacter baumannii', '鲍曼不动杆菌', 'acinetobacter-baumannii'],
-    ['GN335', 'Chryseobacterium indologenes', '产吲哚金黄杆菌', 'chryseobacterium-indologenes'],
-    ['GN335', 'Achromobacter xylosoxidans', '木糖氧化无色杆菌', 'achromobacter-xylosoxidans'],
-    ['GN335', 'Acinetobacter junii', '琼氏不动杆菌', 'acinetobacter-junii'],
-    ['GN335', 'Elizabethkingia meningoseptica', '脑膜败血症伊丽莎白', 'elizabethkingia-meningoseptica'],
-    ['GN335', 'Chryseobacterium gleum', '粘金黄杆菌', 'chryseobacterium-gleum'],
-    ['GN335', 'Ralstonia mannitolilytica', '解甘露醇罗尔斯顿菌', 'ralstonia-mannitolilytica'],
-    ['GP67', 'Enterococcus faecalis', '粪肠球菌', 'enterococcus-faecalis'],
-    ['GP67', 'Enterococcus faecium', '屎肠球菌', 'enterococcus-faecium'],
-    ['GP67', 'Enterococcus casseliflavus', '铅黄肠球菌', 'enterococcus-casseliflavus'],
-    ['GP67', 'Staphylococcus aureus', '金黄色葡萄球菌', 'staph-aureus'],
-    ['GP67', 'Enterococcus avium', '鸟肠球菌', 'enterococcus-avium'],
-    ['GP67', 'Staphylococcus haemolyticus', '溶血葡萄球菌', 'staph-haemolyticus'],
-    ['GP67', 'Staphylococcus epidermidis', '表皮葡萄球菌', 'staph-epidermidis'],
-    ['GP67', 'Staphylococcus capitis', '头葡萄球菌', 'staph-capitis'],
-    ['GP67', 'Staphylococcus hominis', '人葡萄球菌', 'staph-hominis'],
-    ['GP67', 'Staphylococcus saprophyticus', '腐生葡萄球菌', 'staph-saprophyticus'],
-    ['GP67', 'Staphylococcus lugdunensis', '路邓葡萄球菌', 'staph-lugdunensis'],
-    ['GP67', 'Streptococcus agalactiae', '无乳链球菌', 'strep-agalactiae'],
-    ['GP67', 'Staphylococcus cohnii', '科氏葡萄球菌', 'staph-cohnii'],
-    ['YST08', 'Candida albicans', '白色念珠菌', 'candida-albicans'],
-    ['YST08', 'Candida tropicalis', '热带念珠菌', 'candida-tropicalis'],
-    ['YST08', 'Candida glabrata', '光滑念珠菌', 'candida-glabrata'],
-    ['YST08', 'Candida parapsilosis', '近平滑念珠菌', 'candida-parapsilosis'],
-    ['YST08', 'Candida krusei', '克柔念珠菌', 'candida-krusei'],
-    ['YST08', 'Candida lusitaniae', '葡萄牙念珠菌', 'candida-lusitaniae'],
-    ['YST08', 'Candida guilliermondii', '季也蒙念珠菌', 'candida-guilliermondii'],
-    ['YST08', 'Candida dubliniensis', '都柏林念珠菌', 'candida-dubliniensis'],
-    ['YST08', 'Candida kefyr', '乳酒念珠菌', 'candida-kefyr'],
-    ['YST08', 'Cryptococcus neoformans', '新生隐球菌', 'cryptococcus-neoformans']
+    ['Escherichia coli', '大肠埃希菌', 'e-coli'],
+    ['Klebsiella pneumoniae', '肺炎克雷伯菌', 'klebsiella-pneumoniae'],
+    ['Klebsiella oxytoca', '产酸克雷伯菌', 'klebsiella-oxytoca'],
+    ['Enterobacter aerogenes', '产气肠杆菌', 'klebsiella-aerogenes'],
+    ['Enterobacter cloacae', '阴沟肠杆菌', 'enterobacter-cloacae'],
+    ['Serratia marcescens', '粘质沙雷菌', 'serratia-marcescens'],
+    ['Citrobacter freundii', '弗劳地柠檬酸杆菌', 'citrobacter-freundii'],
+    ['Citrobacter koseri', '克氏柠檬酸杆菌', 'citrobacter-koseri'],
+    ['Proteus mirabilis', '奇异变形杆菌', 'proteus-mirabilis'],
+    ['Proteus vulgaris', '普通变形杆菌', 'proteus-vulgaris'],
+    ['Morganella morganii', '摩根摩根菌', 'morganella-morganii'],
+    ['Proteus hauseri', '豪泽变形杆菌', 'proteus-hauseri'],
+    ['Raoultella ornithinolytica', '解鸟氨酸拉乌尔菌', 'raoultella-ornithinolytica'],
+    ['Providencia rettgeri', '雷氏普罗威登斯菌', 'providencia-rettgeri'],
+    ['Pseudomonas aeruginosa', '铜绿假单胞菌', 'pseudomonas-aeruginosa'],
+    ['Pseudomonas putida', '恶臭假单胞菌', 'pseudomonas-putida'],
+    ['Pseudomonas fluorescens', '荧光假单胞菌', 'pseudomonas-fluorescens'],
+    ['Acinetobacter baumannii', '鲍曼不动杆菌', 'acinetobacter-baumannii'],
+    ['Chryseobacterium indologenes', '产吲哚金黄杆菌', 'chryseobacterium-indologenes'],
+    ['Achromobacter xylosoxidans', '木糖氧化无色杆菌', 'achromobacter-xylosoxidans'],
+    ['Acinetobacter junii', '琼氏不动杆菌', 'acinetobacter-junii'],
+    ['Elizabethkingia meningoseptica', '脑膜败血症伊丽莎白', 'elizabethkingia-meningoseptica'],
+    ['Chryseobacterium gleum', '粘金黄杆菌', 'chryseobacterium-gleum'],
+    ['Ralstonia mannitolilytica', '解甘露醇罗尔斯顿菌', 'ralstonia-mannitolilytica'],
+    ['Enterococcus faecalis', '粪肠球菌', 'enterococcus-faecalis'],
+    ['Enterococcus faecium', '屎肠球菌', 'enterococcus-faecium'],
+    ['Enterococcus casseliflavus', '铅黄肠球菌', 'enterococcus-casseliflavus'],
+    ['Staphylococcus aureus', '金黄色葡萄球菌', 'staph-aureus'],
+    ['Enterococcus avium', '鸟肠球菌', 'enterococcus-avium'],
+    ['Staphylococcus haemolyticus', '溶血葡萄球菌', 'staph-haemolyticus'],
+    ['Staphylococcus epidermidis', '表皮葡萄球菌', 'staph-epidermidis'],
+    ['Staphylococcus capitis', '头葡萄球菌', 'staph-capitis'],
+    ['Staphylococcus hominis', '人葡萄球菌', 'staph-hominis'],
+    ['Staphylococcus saprophyticus', '腐生葡萄球菌', 'staph-saprophyticus'],
+    ['Staphylococcus lugdunensis', '路邓葡萄球菌', 'staph-lugdunensis'],
+    ['Streptococcus agalactiae', '无乳链球菌', 'strep-agalactiae'],
+    ['Staphylococcus cohnii', '科氏葡萄球菌', 'staph-cohnii'],
+    ['Candida albicans', '白色念珠菌', 'candida-albicans'],
+    ['Candida tropicalis', '热带念珠菌', 'candida-tropicalis'],
+    ['Candida glabrata', '光滑念珠菌', 'candida-glabrata'],
+    ['Candida parapsilosis', '近平滑念珠菌', 'candida-parapsilosis'],
+    ['Candida krusei', '克柔念珠菌', 'candida-krusei'],
+    ['Candida lusitaniae', '葡萄牙念珠菌', 'candida-lusitaniae'],
+    ['Candida guilliermondii', '季也蒙念珠菌', 'candida-guilliermondii'],
+    ['Candida dubliniensis', '都柏林念珠菌', 'candida-dubliniensis'],
+    ['Candida kefyr', '乳酒念珠菌', 'candida-kefyr'],
+    ['Cryptococcus neoformans', '新生隐球菌', 'cryptococcus-neoformans']
   ];
   var DEFAULT_ITEMS = Object.freeze(DEFAULT_RAW.map(function (row) {
-    return Object.freeze({ id: 'cn-default-' + row[3], name: row[2], latin: row[1], abbr: row[0], microbeId: row[3] });
+    return Object.freeze({ id: 'cn-default-' + row[2], name: row[1], latin: row[0], abbr: '', microbeId: row[2] });
   }));
   function defaultItems() {
     return DEFAULT_ITEMS.map(function (item) {
@@ -329,9 +329,10 @@
       return write(current.items, current.raw);
     }
 
-    // 基于完整名单的 ID 顺序快照移动；不使用旧界面中的内容覆盖最新字段。
+    // 基于完整名单的 ID 顺序快照移动；direction 支持 'up' | 'down' | 'top' 或目标索引（0..items.length-1）。
     function move(id, direction, expectedIds) {
-      if (['up', 'down', 'top'].indexOf(direction) === -1 || !Array.isArray(expectedIds)) { return failure('排序操作无效。'); }
+      var isIndex = typeof direction === 'number' && Number.isInteger(direction);
+      if ((!isIndex && ['up', 'down', 'top'].indexOf(direction) === -1) || !Array.isArray(expectedIds)) { return failure('排序操作无效。'); }
       var current = readSnapshot();
       if (!current.ok) { return current; }
       if (expectedIds.length !== current.items.length || current.items.some(function (item, index) { return expectedIds[index] !== item.id; })) {
@@ -339,7 +340,8 @@
       }
       var from = current.items.findIndex(function (item) { return item.id === id; });
       if (from === -1) { return failure('条目已不存在，无法移动。'); }
-      var to = direction === 'top' ? 0 : Math.max(0, Math.min(current.items.length - 1, from + (direction === 'up' ? -1 : 1)));
+      if (isIndex && (direction < 0 || direction >= current.items.length)) { return failure('排序操作无效。'); }
+      var to = isIndex ? direction : (direction === 'top' ? 0 : Math.max(0, Math.min(current.items.length - 1, from + (direction === 'up' ? -1 : 1))));
       if (to === from) { return { ok: true, items: current.items, position: to }; }
       var item = current.items.splice(from, 1)[0];
       current.items.splice(to, 0, item);

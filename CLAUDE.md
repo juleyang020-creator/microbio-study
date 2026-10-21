@@ -39,7 +39,7 @@
    这个坑踩过不止一次，症状是浏览器里 `window.DB.xxx` 是空的。
    版本号要**四处同步**（data-integrity 测试会核对，漏一处测试挂）：`sw.js` 的 `APP_VERSION`、`index.html` 全部 `?v=` 参数、
    `js/app/helpers.js` 的 `APP_VERSION` 兜底值、`data/source-metadata.js` 的 `app.资源版本`。
-2. 跑 `node tools/release-check.mjs`（内容自检 → 示意图 lint → 预缓存清单核对 → 全部测试〔2026-10-21 为 206 个〕→ 空白字符）。
+2. 跑 `node tools/release-check.mjs`（内容自检 → 示意图 lint → 预缓存清单核对 → 全部测试〔2026-10-21 为 207 个〕→ 空白字符）。
 3. 新增/改动 `img/*.svg` 后跑 `node tools/sync-sw-images.mjs` 同步预缓存清单；
    新示意图还要接上 `js/view.js` 里对应的 `*_IMAGE` 映射（规范见 `docs/示意图设计规范.md`）。
 4. 动了界面/样式，可选跑真实浏览器回归 `tools/ui-check.mjs` 等（需外部 Playwright：`PW_MODULE=… CHROME_PATH=…`，见 README）。
