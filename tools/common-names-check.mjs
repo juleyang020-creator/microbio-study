@@ -31,7 +31,12 @@ try {
   await go('#/microbes');
   check('overview diagrams are first', await page.locator('.landing').evaluate(n => n.firstElementChild.classList.contains('landing-diagrams')));
   await go('#/common-names');
-  check('new tool renders an empty personal list', await page.locator('.common-empty').count() === 1 && await page.locator('.common-row').count() === 0);
+  check('new tool renders 47 default common microbes and allows deletion', await page.locator('.common-row').count() === 47);
+  await page.locator('.common-row').first().locator('.common-remove').click();
+  await page.locator('.common-row').first().locator('.common-remove-confirm').click();
+  await count(46);
+  await page.evaluate(() => { localStorage.setItem(window.CommonNames.STORAGE_KEY, JSON.stringify({ format: 'zhiwei-common-names', version: 1, items: [] })); window.AppNS.renderCommonNames(); });
+  check('cleared list renders empty state and opens form', await page.locator('.common-empty').count() === 1 && await page.locator('.common-row').count() === 0);
   check('name input is a usable touch target', await page.locator('#common-name').evaluate(n => n.getBoundingClientRect().height >= 42));
   await page.locator('#common-name').fill('金黄色葡萄球菌');
   await page.locator('.common-option').filter({ hasText: 'Staphylococcus aureus' }).first().click();
@@ -109,6 +114,7 @@ try {
   await fresh.addInitScript(() => { if (navigator.serviceWorker) { navigator.serviceWorker.register = () => new Promise(() => {}); } });
   const restored = await fresh.newPage();
   await restored.goto(base + '#/common-names');
+  await restored.evaluate(() => { localStorage.setItem(window.CommonNames.STORAGE_KEY, JSON.stringify({ format: 'zhiwei-common-names', version: 1, items: [] })); window.AppNS.renderCommonNames(); });
   await restored.locator('#common-import').setInputFiles({ name: 'backup.json', mimeType: 'application/json', buffer: Buffer.from(backup) });
   await restored.waitForFunction(() => document.querySelectorAll('.common-row').length === 4);
   check('backup restores names in a fresh browser context', (await restored.locator('#common-list').innerText()).includes('Sa-Test01'));

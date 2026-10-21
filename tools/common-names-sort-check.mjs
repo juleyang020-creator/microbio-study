@@ -35,6 +35,7 @@ for (const engine of ['webkit', 'chromium']) {
     page.on('pageerror', e => report.errors.push(engine + ': ' + e.message));
     await page.goto(base + '#/common-names');
     await page.evaluate(() => {
+      localStorage.setItem(window.CommonNames.STORAGE_KEY, JSON.stringify({ format: 'zhiwei-common-names', version: 1, items: [] }));
       const store = window.AppNS.commonNameStore();
       for (const [name, latin, abbr] of [['中组', 'Zeta', 'C10'], ['阿组', 'Alpha', 'C2'], ['波组', 'Beta', '']]) { store.save({ name, latin, abbr }); }
       window.AppNS.renderCommonNames();
@@ -95,6 +96,7 @@ for (const engine of ['webkit', 'chromium']) {
     const fresh = await browser.newContext({ serviceWorkers: 'block' });
     await fresh.addInitScript(() => { if (navigator.serviceWorker) { navigator.serviceWorker.register = () => new Promise(() => {}); } });
     const restored = await fresh.newPage(); await restored.goto(base + '#/common-names');
+    await restored.evaluate(() => { localStorage.setItem(window.CommonNames.STORAGE_KEY, JSON.stringify({ format: 'zhiwei-common-names', version: 1, items: [] })); window.AppNS.renderCommonNames(); });
     await restored.locator('#common-import').setInputFiles({ name: 'order.json', mimeType: 'application/json', buffer: Buffer.from(backup) });
     await restored.waitForFunction(() => document.querySelectorAll('.common-row').length === 3);
     check(engine, 'import into a fresh browser restores manual order and codes', equal(await restored.locator('.common-row-name h2').allTextContents(), ['波组', '中组', '阿组']) && (await restored.locator('#common-list').innerText()).includes('C10'));
@@ -116,6 +118,7 @@ for (const engine of ['webkit', 'chromium']) {
     const filePage = await context.newPage();
     await filePage.goto(fileBase + '#/common-names');
     await filePage.evaluate(() => {
+      localStorage.setItem(window.CommonNames.STORAGE_KEY, JSON.stringify({ format: 'zhiwei-common-names', version: 1, items: [] }));
       const s = window.AppNS.commonNameStore();
       s.save({ name: 'File Z', latin: 'Zeta' }); s.save({ name: 'File A', latin: 'Alpha' });
       window.AppNS.renderCommonNames();

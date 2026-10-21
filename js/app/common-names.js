@@ -283,10 +283,14 @@
         return row;
       }));
       if (!matches.length) {
-        list.appendChild(el('div', { cls: 'common-empty' }, [
+        var emptyNodes = [
           el('h2', { text: loaded.items.length ? '名单中没有匹配项' : '建立自己的常用菌名单' }),
-          el('p', { text: loaded.items.length ? '试试名称的一部分或自定义简写，也可以清空筛选。' : '在上方添加菌名；也可以在菌种详情或完整菌名库中点击“加入常用”。' })
-        ]));
+          el('p', { text: loaded.items.length ? '试试名称的一部分或自定义简写，也可以清空筛选。' : '在上方添加菌名，或恢复预置的 47 种常见菌默认名单。' })
+        ];
+        if (!loaded.items.length) {
+          emptyNodes.push(el('button', { cls: 'action-btn common-restore-empty', type: 'button', text: '恢复默认名单', onClick: restoreDefaults }));
+        }
+        list.appendChild(el('div', { cls: 'common-empty' }, emptyNodes));
       }
       return true;
     }
@@ -316,6 +320,13 @@
         notify('已发起备份下载，请确认文件已保存。');
       } catch (e) { showCopyText(result.text, 'common-backup-text'); notify('无法下载，请复制备份内容保存为 JSON 文件。', true); }
     } });
+    function restoreDefaults() {
+      var result = store.restoreDefaults();
+      if (!result.ok) { renderList(); notify(result.error, true); return; }
+      filter.value = ''; renderList();
+      notify(result.added ? '已恢复 ' + result.added + ' 条默认常见菌，已有简写未被覆盖。' : '默认常见菌均已在名单中。');
+    }
+    var restoreButton = el('button', { cls: 'action-btn common-restore-defaults', type: 'button', text: '恢复默认名单', onClick: restoreDefaults });
     var importInput = el('input', { id: 'common-import', type: 'file' });
     importInput.setAttribute('accept', '.json,application/json'); importInput.hidden = true;
     var importButton = el('button', { cls: 'action-btn common-import-button', type: 'button', text: '导入备份', onClick: function () { importInput.click(); } });
@@ -345,10 +356,10 @@
         el('div', {}, [ el('p', { cls: 'eyebrow', text: '常用名单 · 本机保存' }), el('h1', { cls: 'detail-title', text: '常见菌菌名速查' }) ]),
         el('button', { cls: 'action-btn action-primary common-new', type: 'button', text: '＋ 添加菌名', onClick: function () { edit(null); } })
       ]),
-      el('p', { cls: 'common-help', text: '用于人工录名；名单仅保存在当前浏览器，不自动同步。' }),
+      el('p', { cls: 'common-help', text: '已预置 GN334、GN335、GP67、YST08 常用菌（可编辑或删除）；名单仅保存在当前浏览器，不自动同步。' }),
       el('details', { cls: 'common-backup' }, [
         el('summary', { text: '备份与迁移' }),
-        el('div', { cls: 'common-backup-tools' }, [ exportButton, importButton, importInput, el('span', { cls: 'common-help', text: '合并导入，不覆盖已有简写；最多保存 500 条。请定期导出，以便换机或清理浏览器后恢复。' }) ])
+        el('div', { cls: 'common-backup-tools' }, [ exportButton, importButton, restoreButton, importInput, el('span', { cls: 'common-help', text: '合并导入或恢复默认均不覆盖已有简写；最多保存 500 条。请定期导出，以便换机或清理浏览器后恢复。' }) ])
       ]),
       status, copyPanel, editor,
       el('div', { cls: 'common-sort-bar' }, [ el('label', { cls: 'common-sort-control', 'for': sortSelect.id }, [ el('span', { text: '排序方式' }), sortSelect ]), arrangeButton ]), orderHelp,

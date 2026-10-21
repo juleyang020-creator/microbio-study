@@ -203,11 +203,12 @@ try {
     await pwa.waitForTimeout(240);
     check('installed PWA reloads and searches offline', await pwa.locator('.search-item').count() > 0);
     await pwa.evaluate(() => { location.hash = '#/common-names'; });
+    await pwa.locator('.common-new').click();
     await pwa.locator('#common-name').fill('示例离线名单');
     await pwa.locator('#common-abbr').fill('Offline-01');
     await pwa.locator('.common-save').click();
     await pwa.reload();
-    check('personal name list saves and survives offline reload', await pwa.locator('.common-row').count() === 1 && (await pwa.locator('#common-list').innerText()).includes('Offline-01'));
+    check('personal name list saves and survives offline reload', await pwa.locator('.common-row').count() === 48 && (await pwa.locator('#common-list').innerText()).includes('Offline-01'));
     await cached.close();
   }
   await context.close();

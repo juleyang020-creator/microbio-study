@@ -22,8 +22,9 @@ test('自动排序按中文拼音、拉丁名或简写；空值后置、同值�
   assert.deepEqual(Common.sortItems(null, 'name'), []);
 });
 
+const EMPTY_LIST = JSON.stringify({ format: 'zhiwei-common-names', version: 1, items: [] });
 function fixture() {
-  const data = new Map();
+  const data = new Map([[Common.STORAGE_KEY, EMPTY_LIST]]);
   const storage = { getItem: key => data.has(key) ? data.get(key) : null, setItem: (key, value) => data.set(key, value) };
   const store = Common.createStore(storage);
   const rows = ['A', 'B', 'C'].map(letter => store.save({ name: '排序占位' + letter, latin: 'Example ' + letter, abbr: 'Keep-' + letter }).item);
@@ -46,7 +47,7 @@ test('上移、下移、置顶只改顺序；重载、编辑和备份保留手�
   assert.deepEqual(ids(store), [c, a, b]);
   const backup = store.exportBackup();
   assert.equal(JSON.parse(backup.text).version, 1);
-  const fresh = fixture(); fresh.data.delete(Common.STORAGE_KEY);
+  const fresh = fixture(); fresh.data.set(Common.STORAGE_KEY, EMPTY_LIST);
   assert.equal(fresh.store.importBackup(backup.text).ok, true);
   assert.deepEqual(fresh.store.load().items.map(x => x.name), ['排序占位C', '排序占位A', '排序占位B']);
   assert.equal(fresh.store.load().items[1].abbr, 'Edited-case');
@@ -91,6 +92,7 @@ test('调序拒绝过期名单快照、未知条目和无效动作，保留其�
 const { loadApp, goto } = require('./dom-stub');
 function appFixture() {
   const app = loadApp();
+  app.win.localStorage.setItem(app.win.CommonNames.STORAGE_KEY, EMPTY_LIST);
   const store = app.win.AppNS.commonNameStore();
   for (const [name, latin, abbr] of [['中组', 'Zeta', 'C10'], ['阿组', 'Alpha', 'C2'], ['波组', 'Beta', '']]) {
     store.save({ name, latin, abbr });
