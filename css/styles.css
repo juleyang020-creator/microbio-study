@@ -749,9 +749,15 @@ body.zoom-open { overflow: hidden; }
 .common-arrange-toggle:disabled { color: var(--muted); background: var(--line-2); border-color: var(--line); cursor: default; }
 .common-order-controls { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; border-top: 1px solid var(--line); padding-top: 10px; }
 .common-order-position { color: var(--muted); font-size: 12px; margin-right: auto; }
+.common-drag-handle { cursor: grab; touch-action: none; -webkit-user-select: none; user-select: none; }
+.common-drag-handle.dragging { cursor: grabbing; }
 .common-list.is-arranging .common-row-actions, .common-list.is-arranging .common-copy-abbr { display: none; }
 .common-list { display: flex; flex-direction: column; gap: 10px; }
-.common-row { scroll-margin-top: 96px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(130px, .55fr) auto; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.common-row { scroll-margin-top: 96px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.common-row.has-abbr { grid-template-columns: minmax(0, 1fr) minmax(130px, .55fr) auto; align-items: start; }
+.common-row.is-dragging { position: relative; z-index: 6; box-shadow: 0 8px 24px rgba(15,18,22,.16); border-color: var(--accent); opacity: .94; }
+.common-row.is-drop-before { box-shadow: 0 -3px 0 0 var(--accent); }
+.common-row.is-drop-after { box-shadow: 0 3px 0 0 var(--accent); }
 .common-row-name, .common-row-code { min-width: 0; overflow-wrap: anywhere; }
 .common-row-name h2 { margin: 0; font-size: 16px; line-height: 1.5; }
 .common-latin { font-style: italic; color: var(--ink-soft); font-size: 13px; line-height: 1.65; margin: 6px 0 0; }
@@ -777,7 +783,7 @@ body.zoom-open { overflow: hidden; }
 .mn-entry .common-add-control { flex: 0 0 76px; align-items: stretch; }
 .mn-entry .common-add-btn { padding: 6px; font-size: 11.5px; }
 @media (max-width: 760px) {
-  .common-form, .common-row { grid-template-columns: minmax(0, 1fr); }
+  .common-form, .common-row, .common-row.has-abbr { grid-template-columns: minmax(0, 1fr); }
   .common-form { padding: 12px; }
   .common-form .common-input, #common-filter { font-size: 16px; }
   .common-row-code { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }

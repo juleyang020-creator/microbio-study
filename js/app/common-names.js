@@ -80,8 +80,8 @@
       });
     }
     var name = commonInput('common-name', '输入中文名或拉丁名', 200);
-    var latin = commonInput('common-latin', '拉丁名，可手工填写', 200);
-    var abbr = commonInput('common-abbr', '按本机词库填写，不自动生成', 80);
+    var latin = commonInput('common-latin', '选填，可手工填写拉丁名', 200);
+    var abbr = commonInput('common-abbr', '选填，可按个人或本机习惯填写', 80);
     name.setAttribute('required', '');
     var editId = '', sourceId = '', lastChoice = null, autoLatin = false, editSnapshot = null, codeAnchor = null;
     var keepCode = el('input', { id: 'common-keep-code', type: 'checkbox' });
@@ -137,7 +137,7 @@
       if (!abbr.value) { codeAnchor = { name: name.value, latin: latin.value, abbr: '' }; }
       updateCodeWarning(true);
       clearSuggestions(); abbr.focus();
-      notify(needsCodeConfirmation() ? '已补齐名称；原简写已保留，请核对后确认或重新填写。' : '已补齐中文名和拉丁名；简写请按本机词库填写。');
+      notify(needsCodeConfirmation() ? '已补齐名称；原简写已保留，请核对后确认或重新填写。' : '已补齐中文名和拉丁名；简写可按需选填。');
     }
     function completeName() {
       if (composing) { return; }
@@ -182,8 +182,8 @@
       el('div', { cls: 'common-field common-name-field' }, [
         el('label', { 'for': name.id, text: '菌名（必填，输入后可选择补全）' }), el('div', { cls: 'common-completion-box' }, [ name, suggestions ]),
         el('p', { cls: 'common-help', id: 'common-completion-help', text: '选择候选后补齐名称；库中没有的名称可手工填写并保存。' })
-      ]), field('拉丁名', latin), field('自定义简写 / 仪器编码', abbr), codeWarning,
-      el('p', { cls: 'common-help', text: '简写区分大小写并按原样保存。名称与编码仍需按本机词库核对，不代表仪器支持该菌名。' }),
+      ]), field('拉丁名（选填）', latin), field('菌名简写（选填）', abbr), codeWarning,
+      el('p', { cls: 'common-help', text: '简写为选填项，区分大小写并按原样保存。' }),
       el('div', { cls: 'common-actions' }, [ save, el('button', { cls: 'action-btn', type: 'button', text: '取消', onClick: function () { resetForm(); editor.open = false; } }) ])
     ]);
     var filter = commonInput('common-filter', '菌名、拉丁名、简写', 200);
@@ -200,7 +200,7 @@
       if (sortMode !== 'manual') { notify('请先选择手动顺序。'); return; }
       if (!arranging && filter.value.trim()) { notify('请先清空名单内搜索，再调整完整名单的顺序。'); return; }
       arranging = !arranging; renderList();
-      notify(arranging ? '可用上移、下移或置顶调整顺序，每次移动都会保存。' : '手动顺序已保留。');
+      notify(arranging ? '可按住拖拽或用上移、下移、置顶调整顺序，每次移动都会保存。' : '手动顺序已保留。');
     } });
     sortSelect.addEventListener('change', function () {
       if (Common.SORT_MODES.indexOf(sortSelect.value) === -1) { sortSelect.value = sortMode; return; }
@@ -209,7 +209,7 @@
       renderList();
       notify(saved.ok ? '已切换为' + SORT_LABELS[sortMode] + '，手动顺序不会被改动。' : '当前排序已应用，但' + saved.error, !saved.ok);
     });
-    function moveItem(item, direction, expectedIds) {
+    function moveItem(item, direction, expectedIds, focusClass) {
       if (sortMode !== 'manual' || !arranging || filter.value.trim()) { notify('请在未筛选的手动排序模式下调整顺序。', true); return; }
       var moved = store.move(item.id, direction, expectedIds);
       renderList();
@@ -217,12 +217,110 @@
       else { notify(moved.error, true); }
       var row = Array.prototype.find.call(list.querySelectorAll('.common-row'), function (node) { return node.getAttribute('data-id') === item.id; });
       if (row) {
-        var button = row.querySelector('.common-move-' + direction);
+        var button = row.querySelector('.' + (focusClass || ('common-move-' + direction)));
         (button && !button.disabled ? button : row).focus({ preventScroll: true });
         row.scrollIntoView({ block: 'nearest' });
       } else {
         (!arrangeButton.disabled ? arrangeButton : !sortSelect.disabled ? sortSelect : main).focus({ preventScroll: true });
       }
+    }
+    function bindDragReorder(handle, row, item, position, manualIds) {
+      var startY = 0, offsetY = 0, baseTop = 0, minTop = 0, maxTop = 0;
+      var dragging = false, targetIndex = position, activePointer = null;
+      function clearDropMarkers() {
+        Array.prototype.forEach.call(list.querySelectorAll('.common-row'), function (node) {
+          node.classList.remove('is-drop-before', 'is-drop-after');
+        });
+      }
+      function cleanupDrag() {
+        dragging = false; activePointer = null; targetIndex = position;
+        handle.classList.remove('dragging');
+        row.classList.remove('is-dragging');
+        row.style.transform = '';
+        var posNode = row.querySelector('.common-order-position');
+        if (posNode) { posNode.textContent = '第 ' + (position + 1) + ' 位'; }
+        clearDropMarkers();
+      }
+      function clampTargetIndex(index) {
+        return Math.max(0, Math.min(manualIds.length - 1, index));
+      }
+      function computeTarget(clientY) {
+        var rows = list.querySelectorAll('.common-row');
+        var next = position;
+        for (var i = 0; i < rows.length; i += 1) {
+          if (i === position) { continue; }
+          var rect = rows[i].getBoundingClientRect();
+          var mid = rect.top + rect.height / 2;
+          if (i < position && clientY < mid) { return clampTargetIndex(i); }
+          if (i > position && clientY > mid) { next = i; }
+        }
+        return clampTargetIndex(next);
+      }
+      function startPointerDrag(ev, captureNode) {
+        if (ev.button !== 0 || handle.disabled || sortMode !== 'manual' || !arranging || filter.value.trim()) { return; }
+        var listRect = list.getBoundingClientRect();
+        var rowRect = row.getBoundingClientRect();
+        startY = ev.clientY;
+        offsetY = ev.clientY - rowRect.top;
+        baseTop = rowRect.top;
+        minTop = listRect.top;
+        maxTop = Math.max(listRect.top, listRect.bottom - rowRect.height);
+        targetIndex = position;
+        activePointer = ev.pointerId;
+        if (captureNode.setPointerCapture) { captureNode.setPointerCapture(ev.pointerId); }
+      }
+      function movePointerDrag(ev, captureNode) {
+        if (activePointer !== ev.pointerId || (captureNode.hasPointerCapture && !captureNode.hasPointerCapture(ev.pointerId))) { return; }
+        if (!dragging && Math.abs(ev.clientY - startY) < 4) { return; }
+        dragging = true;
+        handle.classList.add('dragging');
+        row.classList.add('is-dragging');
+        var clampedTop = Math.max(minTop, Math.min(ev.clientY - offsetY, maxTop));
+        row.style.transform = 'translateY(' + (clampedTop - baseTop) + 'px)';
+        targetIndex = computeTarget(ev.clientY);
+        clearDropMarkers();
+        var rows = list.querySelectorAll('.common-row');
+        if (targetIndex !== position && rows[targetIndex]) {
+          rows[targetIndex].classList.add(targetIndex < position ? 'is-drop-before' : 'is-drop-after');
+        }
+        var posNode = row.querySelector('.common-order-position');
+        if (posNode) {
+          posNode.textContent = targetIndex === position ? '第 ' + (position + 1) + ' 位' : '第 ' + (position + 1) + ' 位 → 第 ' + (targetIndex + 1) + ' 位';
+        }
+      }
+      function endPointerDrag(ev, captureNode) {
+        if (activePointer !== ev.pointerId) { return; }
+        var wasDragging = dragging;
+        var finalIndex = targetIndex;
+        if (captureNode.releasePointerCapture && captureNode.hasPointerCapture && captureNode.hasPointerCapture(ev.pointerId)) {
+          captureNode.releasePointerCapture(ev.pointerId);
+        }
+        cleanupDrag();
+        if (wasDragging && finalIndex !== position) {
+          moveItem(item, finalIndex, manualIds, 'common-drag-handle');
+        }
+      }
+      handle.addEventListener('pointerdown', function (ev) { startPointerDrag(ev, handle); });
+      handle.addEventListener('pointermove', function (ev) { movePointerDrag(ev, handle); });
+      handle.addEventListener('pointerup', function (ev) { endPointerDrag(ev, handle); });
+      handle.addEventListener('pointercancel', cleanupDrag);
+      handle.addEventListener('lostpointercapture', cleanupDrag);
+      row.addEventListener('pointerdown', function (ev) {
+        if (ev.pointerType && ev.pointerType !== 'mouse') { return; }
+        if (ev.target && ev.target.closest && ev.target.closest('button, input, select, textarea, a')) { return; }
+        startPointerDrag(ev, row);
+      });
+      row.addEventListener('pointermove', function (ev) { movePointerDrag(ev, row); });
+      row.addEventListener('pointerup', function (ev) { endPointerDrag(ev, row); });
+      row.addEventListener('pointercancel', cleanupDrag);
+      row.addEventListener('lostpointercapture', cleanupDrag);
+      handle.addEventListener('keydown', function (ev) {
+        if (ev.key !== 'ArrowUp' && ev.key !== 'ArrowDown') { return; }
+        ev.preventDefault();
+        if (handle.disabled) { return; }
+        var nextPos = clampTargetIndex(position + (ev.key === 'ArrowUp' ? -1 : 1));
+        if (nextPos !== position) { moveItem(item, nextPos, manualIds, 'common-drag-handle'); }
+      });
     }
     function removePrompt(item, row) {
       if (row.querySelector('.common-remove-ask')) { return; }
@@ -247,22 +345,24 @@
       arrangeButton.textContent = arranging ? '完成排序' : '调整顺序';
       arrangeButton.setAttribute('aria-pressed', String(arranging));
       list.classList.toggle('is-arranging', arranging);
-      orderHelp.textContent = arranging && filter.value.trim() ? '筛选中，移动暂不可用；清空名单内搜索即可继续。' : '自动排序不改动手动顺序；切回手动可继续调整。';
+      orderHelp.textContent = arranging && filter.value.trim() ? '筛选中，移动暂不可用；清空名单内搜索即可继续。' : '自动排序不改动手动顺序；点击“调整顺序”可拖拽或上下移动条目。';
       if (importButton) { importButton.disabled = importing; }
       if (!loaded.ok) { notify(loaded.error, true); count.textContent = '本机数据暂不可用'; list.replaceChildren(); return false; }
       var manualIds = loaded.items.map(function (item) { return item.id; });
       var matches = Common.filter(Common.sortItems(loaded.items, sortMode), filter.value);
       count.textContent = filter.value.trim() ? matches.length + ' / ' + loaded.items.length + ' 条' : loaded.items.length + ' 条常用菌名';
       NS.fill(list, matches.map(function (item) {
-        var row = el('article', { cls: 'common-row', 'data-id': item.id, tabindex: '-1' });
+        var row = el('article', { cls: 'common-row' + (item.abbr ? ' has-abbr' : ''), 'data-id': item.id, tabindex: '-1' });
         row.appendChild(el('div', { cls: 'common-row-name' }, [
           el('h2', { text: item.name }), el('p', { cls: 'common-latin', text: item.latin || '未填写拉丁名' })
         ]));
-        row.appendChild(el('div', { cls: 'common-row-code' }, [
-          el('span', { cls: 'common-label', text: '简写 / 仪器编码' }),
-          el('code', { cls: item.abbr ? 'common-abbr' : 'common-missing', text: item.abbr || '未填写' }),
-          copyButton(item, 'abbr', '简写')
-        ]));
+        if (item.abbr) {
+          row.appendChild(el('div', { cls: 'common-row-code' }, [
+            el('span', { cls: 'common-label', text: '菌名简写' }),
+            el('code', { cls: 'common-abbr', text: item.abbr }),
+            copyButton(item, 'abbr', '简写')
+          ]));
+        }
         row.appendChild(el('div', { cls: 'common-row-actions' }, [
           copyButton(item, 'name', '菌名'), copyButton(item, 'latin', '拉丁名'),
           el('button', { cls: 'action-btn common-edit', type: 'button', text: '编辑', 'aria-label': '编辑 ' + item.name, onClick: function () { edit(item); } }),
@@ -270,7 +370,13 @@
         ]));
         if (arranging) {
           var position = manualIds.indexOf(item.id);
+          var handle = el('button', { cls: 'action-btn common-drag-handle', type: 'button', text: '⋮⋮ 拖拽',
+            'aria-label': '拖拽调整 ' + item.name + ' 顺序，也可用上下方向键移动',
+            disabled: !!filter.value.trim()
+          });
+          bindDragReorder(handle, row, item, position, manualIds);
           row.appendChild(el('div', { cls: 'common-order-controls' }, [
+            handle,
             el('span', { cls: 'common-order-position', text: '第 ' + (position + 1) + ' 位' })
           ].concat([['up', '上移'], ['down', '下移'], ['top', '置顶']].map(function (action) {
             return el('button', { cls: 'action-btn common-move-' + action[0], type: 'button', text: action[1],
@@ -356,7 +462,7 @@
         el('div', {}, [ el('p', { cls: 'eyebrow', text: '常用名单 · 本机保存' }), el('h1', { cls: 'detail-title', text: '常见菌菌名速查' }) ]),
         el('button', { cls: 'action-btn action-primary common-new', type: 'button', text: '＋ 添加菌名', onClick: function () { edit(null); } })
       ]),
-      el('p', { cls: 'common-help', text: '已预置 GN334、GN335、GP67、YST08 常用菌（可编辑或删除）；名单仅保存在当前浏览器，不自动同步。' }),
+      el('p', { cls: 'common-help', text: '已预置 47 种常见菌（可编辑、拖拽调整顺序或删除）；名单仅保存在当前浏览器，不自动同步。' }),
       el('details', { cls: 'common-backup' }, [
         el('summary', { text: '备份与迁移' }),
         el('div', { cls: 'common-backup-tools' }, [ exportButton, importButton, restoreButton, importInput, el('span', { cls: 'common-help', text: '合并导入或恢复默认均不覆盖已有简写；最多保存 500 条。请定期导出，以便换机或清理浏览器后恢复。' }) ])

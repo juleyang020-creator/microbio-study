@@ -6,7 +6,7 @@ const vm = require('node:vm');
 const CommonNames = require('../js/common-names.js');
 
 test('UMD 同时支持 Node require 与浏览器 window.CommonNames', () => {
-  assert.equal(CommonNames.STORAGE_KEY, 'zhiwei-common-names-v2');
+  assert.equal(CommonNames.STORAGE_KEY, 'zhiwei-common-names-v3');
   assert.equal(CommonNames.DEFAULT_ITEMS.length, 47);
   const context = { window: {} };
   vm.runInNewContext(fs.readFileSync(require.resolve('../js/common-names.js'), 'utf8'), context);
@@ -424,20 +424,19 @@ test('严格纯对象校验不接受伪造根原型、继承字段、隐藏字�
   assert.equal(reads, 0);
 });
 
-test('未初始化本地存储时默认返回 47 条预置常见菌，允许编辑、逐条删除、清空及恢复默认', () => {
+test('未初始化本地存储时默认返回 47 条预置常见菌（简写均为空），允许编辑、逐条删除、清空及恢复默认', () => {
   const storage = memoryStorage(null);
   const store = CommonNames.createStore(storage);
   const initial = store.load();
   assert.equal(initial.ok, true);
   assert.equal(initial.items.length, 47);
   assert.equal(readRaw(storage), null, '仅读取默认名单不写存储');
-  const counts = initial.items.reduce((acc, item) => { acc[item.abbr] = (acc[item.abbr] || 0) + 1; return acc; }, {});
-  assert.deepEqual(counts, { GN334: 14, GN335: 10, GP67: 13, YST08: 10 });
+  assert.ok(initial.items.every(item => item.abbr === ''), '默认常见菌简写均应为空串，不塞药敏卡号');
   assert.deepEqual(initial.items[0], {
-    id: 'cn-default-e-coli', name: '大肠埃希菌', latin: 'Escherichia coli', abbr: 'GN334', microbeId: 'e-coli'
+    id: 'cn-default-e-coli', name: '大肠埃希菌', latin: 'Escherichia coli', abbr: '', microbeId: 'e-coli'
   });
   assert.deepEqual(initial.items[46], {
-    id: 'cn-default-cryptococcus-neoformans', name: '新生隐球菌', latin: 'Cryptococcus neoformans', abbr: 'YST08', microbeId: 'cryptococcus-neoformans'
+    id: 'cn-default-cryptococcus-neoformans', name: '新生隐球菌', latin: 'Cryptococcus neoformans', abbr: '', microbeId: 'cryptococcus-neoformans'
   });
   initial.items[0].name = '篡改副本';
   assert.equal(store.load().items[0].name, '大肠埃希菌');

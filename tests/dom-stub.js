@@ -81,6 +81,10 @@ class Node {
   click() { this.dispatch('click', { type: 'click', preventDefault() {}, stopPropagation() {} }); }
   focus() { this.ownerDocument_activeElement = true; if (this._doc) { this._doc.activeElement = this; } }
   scrollIntoView() {}
+  getBoundingClientRect() { return this._rect || { top: 0, left: 0, right: 0, bottom: 0, width: 0, height: 0 }; }
+  setPointerCapture(id) { this._pointerCapture = id; }
+  hasPointerCapture(id) { return this._pointerCapture === id; }
+  releasePointerCapture(id) { if (this._pointerCapture === id) { this._pointerCapture = null; this.dispatch('lostpointercapture', { pointerId: id }); } }
   // 支持 app.js 实际用到的选择器形态：tag、#id、.a.b 复合类、以及 :not(.x)。
   // :not() 必须真的实现：曾经把它当成普通类名比较，导致选择器永远匹配不到，
   // 于是紧随其后的代码从未被执行，一个 ReferenceError 就这样通过了全部冒烟测试。

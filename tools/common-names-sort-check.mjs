@@ -63,6 +63,16 @@ for (const engine of ['webkit', 'chromium']) {
     await page.locator('.common-row').filter({ hasText: '中组' }).locator('.common-move-up').click();
     check(engine, 'manual up move', equal(await names(), ['波组', '中组', '阿组']));
     check(engine, 'moved control keeps keyboard focus', await page.locator('.common-row').filter({ hasText: '中组' }).locator('.common-move-up').evaluate(n => n === document.activeElement));
+    const dragFrom = await page.locator('.common-row').filter({ hasText: '阿组' }).locator('.common-drag-handle').boundingBox();
+    const dragTo = await page.locator('.common-row').filter({ hasText: '波组' }).boundingBox();
+    await page.mouse.move(dragFrom.x + dragFrom.width / 2, dragFrom.y + dragFrom.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(dragFrom.x + dragFrom.width / 2, dragTo.y + 8, { steps: 8 });
+    await page.mouse.up();
+    check(engine, 'drag handle reorders and persists immediately', equal(await storedNames(), ['阿组', '波组', '中组']));
+    await page.locator('.common-row').filter({ hasText: '阿组' }).locator('.common-drag-handle').press('ArrowDown');
+    await page.locator('.common-row').filter({ hasText: '阿组' }).locator('.common-drag-handle').press('ArrowDown');
+    check(engine, 'drag handle keyboard ArrowDown reorders', equal(await storedNames(), ['波组', '中组', '阿组']));
     await page.evaluate(() => {
       window.originalSortSetter = Storage.prototype.setItem;
       Storage.prototype.setItem = function (key, value) { if (key === window.CommonNames.STORAGE_KEY) { throw new Error('test write blocked'); } return window.originalSortSetter.call(this, key, value); };

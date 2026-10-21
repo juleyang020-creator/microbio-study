@@ -24,7 +24,8 @@ test('常见菌工具默认展示 47 条预置常见菌，支持删除默认项�
   assert.equal(main.querySelectorAll('.common-row').length, 47, '首次进入应展示 47 条预置常见菌');
   const store = app.win.CommonNames.createStore(app.win.localStorage);
   assert.equal(store.load().items[0].name, '大肠埃希菌');
-  assert.equal(store.load().items[0].abbr, 'GN334');
+  assert.equal(store.load().items[0].abbr, '');
+  assert.equal(main.querySelectorAll('.common-row-code').length, 0, '未填写简写时不渲染简写栏与复制简写按钮');
   // 删除第一条默认项（大肠埃希菌），跨路由返回后仍保持删除状态
   main.querySelector('.common-remove').click();
   assert.equal(store.load().items.length, 47, '首次移除只应显示确认');
@@ -197,19 +198,18 @@ test('选择其他候选保留手写简写并要求核对，不静默删除输�
   assert.ok(!app.doc.querySelector('.common-code-confirm').hidden);
 });
 
-test('预置 47 条常见菌全部关联有效菌种 ID，支持按药敏卡号筛选，详情页点击加入识别已存在', () => {
+test('预置 47 条常见菌全部关联有效菌种 ID 且简写默认为空，详情页点击加入识别已存在', () => {
   const app = loadApp();
   const microbeIds = new Set(app.win.DB.microbes.map(m => m.id));
   for (const item of app.win.CommonNames.DEFAULT_ITEMS) {
     assert.ok(microbeIds.has(item.microbeId), '默认常见菌应关联有效菌种 ID: ' + item.microbeId);
+    assert.equal(item.abbr, '', '默认常见菌简写不应预填药敏卡号: ' + item.name);
   }
   goto(app, '#/common-names');
   const filter = app.doc.getElementById('common-filter');
-  for (const [card, expected] of [['GN334', 14], ['GN335', 10], ['GP67', 13], ['YST08', 10]]) {
-    filter.value = card;
-    filter.dispatch('input');
-    assert.equal(app.doc.querySelectorAll('.common-row').length, expected, card + ' 筛选条数应匹配');
-  }
+  filter.value = '念珠菌';
+  filter.dispatch('input');
+  assert.equal(app.doc.querySelectorAll('.common-row').length, 9, '按中文名称筛选应匹配对应条目');
   goto(app, '#/microbes/candida-glabrata');
   const addBtn = app.doc.querySelector('.common-add-btn');
   addBtn.click();

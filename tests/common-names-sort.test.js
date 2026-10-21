@@ -83,10 +83,15 @@ test('调序拒绝过期名单快照、未知条目和无效动作，保留其�
   assert.equal(store.move(rows[2].id, 'top', old).ok, false);
   assert.equal(store.move('missing', 'up', current).ok, false);
   assert.equal(store.move(rows[0].id, 'invalid', current).ok, false);
+  assert.equal(store.move(rows[0].id, -1, current).ok, false);
+  assert.equal(store.move(rows[0].id, 3, current).ok, false);
+  assert.equal(store.move(rows[0].id, 1.5, current).ok, false);
   assert.equal(store.move(rows[0].id, 'up').ok, false);
   assert.deepEqual(ids(store), current);
   assert.equal(store.move(current[0], 'up', current).ok, true);
   assert.deepEqual(ids(store), current);
+  assert.equal(store.move(current[2], 0, current).ok, true);
+  assert.deepEqual(ids(store), [current[2], current[0], current[1]]);
 });
 
 const { loadApp, goto } = require('./dom-stub');
@@ -165,4 +170,30 @@ test('移动写入失败时保留顺序，并恢复到新渲染的操作按钮',
   const newButton = app.doc.querySelectorAll('.common-row')[2].querySelector('.common-move-top');
   assert.notEqual(newButton, oldButton);
   assert.ok(newButton.ownerDocument_activeElement, '不能把焦点留在已经删除的旧按钮');
+});
+
+test('调整顺序模式支持拖拽手柄指针拖拽与键盘方向键调序，并即时持久化', () => {
+  const { app, store } = appFixture();
+  app.doc.querySelector('.common-arrange-toggle').click();
+  const listNode = app.doc.getElementById('common-list');
+  listNode._rect = { top: 0, bottom: 300, left: 0, right: 400, width: 400, height: 300 };
+  const rows = app.doc.querySelectorAll('.common-row');
+  rows.forEach((row, index) => {
+    row._rect = { top: index * 100, bottom: (index + 1) * 100, left: 0, right: 400, width: 400, height: 100 };
+  });
+  // 将第 3 条（波组，index=2）通过拖拽手柄拖到第 1 条上方（clientY = 20）
+  const handle = rows[2].querySelector('.common-drag-handle');
+  assert.ok(handle, '调整顺序模式应渲染拖拽手柄');
+  handle.dispatch('pointerdown', { type: 'pointerdown', button: 0, pointerId: 1, clientY: 250 });
+  handle.dispatch('pointermove', { type: 'pointermove', pointerId: 1, clientY: 20 });
+  assert.ok(handle.classList.contains('dragging'));
+  assert.ok(rows[0].classList.contains('is-drop-before'));
+  handle.dispatch('pointerup', { type: 'pointerup', pointerId: 1, clientY: 20 });
+  assert.deepEqual(visibleNames(app), ['波组', '中组', '阿组']);
+  assert.deepEqual(store.load().items.map(x => x.name), ['波组', '中组', '阿组']);
+  // 键盘方向键在拖拽手柄上也可移动条目
+  const firstHandle = app.doc.querySelectorAll('.common-row')[0].querySelector('.common-drag-handle');
+  firstHandle.dispatch('keydown', { type: 'keydown', key: 'ArrowDown', preventDefault() {} });
+  assert.deepEqual(visibleNames(app), ['中组', '波组', '阿组']);
+  assert.deepEqual(store.load().items.map(x => x.name), ['中组', '波组', '阿组']);
 });
