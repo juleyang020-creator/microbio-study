@@ -6,10 +6,12 @@ const vm = require('node:vm');
 const CommonNames = require('../js/common-names.js');
 
 test('UMD 同时支持 Node require 与浏览器 window.CommonNames', () => {
-  assert.equal(CommonNames.STORAGE_KEY, 'zhiwei-common-names-v1');
+  assert.equal(CommonNames.STORAGE_KEY, 'zhiwei-common-names-v2');
+  assert.equal(CommonNames.DEFAULT_ITEMS.length, 47);
   const context = { window: {} };
   vm.runInNewContext(fs.readFileSync(require.resolve('../js/common-names.js'), 'utf8'), context);
   assert.equal(context.window.CommonNames.STORAGE_KEY, CommonNames.STORAGE_KEY);
+  assert.equal(context.window.CommonNames.DEFAULT_ITEMS.length, 47);
 });
 
 function catalogFixture() {
@@ -80,7 +82,7 @@ test('常用名单筛选仅按 name/latin/abbr，保留顺序与原文，空查�
   assert.equal(items[0].abbr, 'aB / 2');
 });
 
-function memoryStorage(initial = null) {
+function memoryStorage(initial = backup([])) {
   let raw = initial;
   return {
     getItem(key) { assert.equal(key, CommonNames.STORAGE_KEY); return raw; },
@@ -145,8 +147,9 @@ test('保存严格校验字段、类型与长度，拒绝原型字段但不改�
     JSON.parse('{"name":"甲","__proto__":{"polluted":true}}'),
     Object.create({ name: '原型上的名称' })];
   invalid.forEach(value => {
+    const before = readRaw(storage);
     assertFailure(store.save(value));
-    assert.equal(readRaw(storage), null);
+    assert.equal(readRaw(storage), before);
   });
   assert.equal({}.polluted, undefined);
   const legal = { name: '甲'.repeat(200), latin: 'L'.repeat(200), abbr: 'a'.repeat(80), microbeId: '' };
@@ -414,8 +417,54 @@ test('严格纯对象校验不接受伪造根原型、继承字段、隐藏字�
   const accessor = { get name() { reads += 1; return '访问器名称'; } };
   const symbolField = { name: '符号字段', [Symbol('extra')]: '不应存在' };
   for (const value of [Object.create(fakeRoot), inheritedNative, hidden, accessor, symbolField]) {
+    const before = readRaw(storage);
     assertFailure(store.save(value));
-    assert.equal(readRaw(storage), null);
+    assert.equal(readRaw(storage), before);
   }
   assert.equal(reads, 0);
+});
+
+test('未初始化本地存储时默认返回 47 条预置常见菌，允许编辑、逐条删除、清空及恢复默认', () => {
+  const storage = memoryStorage(null);
+  const store = CommonNames.createStore(storage);
+  const initial = store.load();
+  assert.equal(initial.ok, true);
+  assert.equal(initial.items.length, 47);
+  assert.equal(readRaw(storage), null, '仅读取默认名单不写存储');
+  const counts = initial.items.reduce((acc, item) => { acc[item.abbr] = (acc[item.abbr] || 0) + 1; return acc; }, {});
+  assert.deepEqual(counts, { GN334: 14, GN335: 10, GP67: 13, YST08: 10 });
+  assert.deepEqual(initial.items[0], {
+    id: 'cn-default-e-coli', name: '大肠埃希菌', latin: 'Escherichia coli', abbr: 'GN334', microbeId: 'e-coli'
+  });
+  assert.deepEqual(initial.items[46], {
+    id: 'cn-default-cryptococcus-neoformans', name: '新生隐球菌', latin: 'Cryptococcus neoformans', abbr: 'YST08', microbeId: 'cryptococcus-neoformans'
+  });
+  initial.items[0].name = '篡改副本';
+  assert.equal(store.load().items[0].name, '大肠埃希菌');
+  // 删除单条默认项后持久化，重新读取不会复活
+  const removed = store.remove('cn-default-e-coli');
+  assert.equal(removed.ok, true);
+  assert.equal(removed.items.length, 46);
+  assert.equal(CommonNames.createStore(storage).load().items.length, 46);
+  assert.equal(CommonNames.createStore(storage).load().items.some(x => x.id === 'cn-default-e-coli'), false);
+  // 编辑默认项简写后，恢复默认只补回已删项、不覆盖已改简写
+  const kpn = store.load().items[0];
+  assert.equal(store.save({ ...kpn, abbr: 'KPN-Custom' }, kpn).ok, true);
+  const restored = store.restoreDefaults();
+  assert.equal(restored.ok, true);
+  assert.equal(restored.added, 1);
+  assert.equal(restored.skipped, 46);
+  assert.equal(store.load().items.length, 47);
+  assert.equal(store.load().items.find(x => x.id === kpn.id).abbr, 'KPN-Custom');
+  // 全部删除后存储为空数组，重载保持为空，不自动复活默认项
+  for (const item of store.load().items) {
+    assert.equal(store.remove(item.id).ok, true);
+  }
+  assert.deepEqual(store.load(), { ok: true, items: [] });
+  assert.deepEqual(CommonNames.createStore(storage).load(), { ok: true, items: [] });
+  // 空名单下可再次恢复全部 47 条默认项
+  const restoredAll = store.restoreDefaults();
+  assert.equal(restoredAll.ok, true);
+  assert.equal(restoredAll.added, 47);
+  assert.equal(store.load().items.length, 47);
 });

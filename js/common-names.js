@@ -6,7 +6,65 @@
 })(function () {
   'use strict';
 
-  var STORAGE_KEY = 'zhiwei-common-names-v1';
+  var STORAGE_KEY = 'zhiwei-common-names-v2';
+
+  var DEFAULT_RAW = [
+    ['GN334', 'Escherichia coli', '大肠埃希菌', 'e-coli'],
+    ['GN334', 'Klebsiella pneumoniae', '肺炎克雷伯菌', 'klebsiella-pneumoniae'],
+    ['GN334', 'Klebsiella oxytoca', '产酸克雷伯菌', 'klebsiella-oxytoca'],
+    ['GN334', 'Enterobacter aerogenes', '产气肠杆菌', 'klebsiella-aerogenes'],
+    ['GN334', 'Enterobacter cloacae', '阴沟肠杆菌', 'enterobacter-cloacae'],
+    ['GN334', 'Serratia marcescens', '粘质沙雷菌', 'serratia-marcescens'],
+    ['GN334', 'Citrobacter freundii', '弗劳地柠檬酸杆菌', 'citrobacter-freundii'],
+    ['GN334', 'Citrobacter koseri', '克氏柠檬酸杆菌', 'citrobacter-koseri'],
+    ['GN334', 'Proteus mirabilis', '奇异变形杆菌', 'proteus-mirabilis'],
+    ['GN334', 'Proteus vulgaris', '普通变形杆菌', 'proteus-vulgaris'],
+    ['GN334', 'Morganella morganii', '摩根摩根菌', 'morganella-morganii'],
+    ['GN334', 'Proteus hauseri', '豪泽变形杆菌', 'proteus-hauseri'],
+    ['GN334', 'Raoultella ornithinolytica', '解鸟氨酸拉乌尔菌', 'raoultella-ornithinolytica'],
+    ['GN334', 'Providencia rettgeri', '雷氏普罗威登斯菌', 'providencia-rettgeri'],
+    ['GN335', 'Pseudomonas aeruginosa', '铜绿假单胞菌', 'pseudomonas-aeruginosa'],
+    ['GN335', 'Pseudomonas putida', '恶臭假单胞菌', 'pseudomonas-putida'],
+    ['GN335', 'Pseudomonas fluorescens', '荧光假单胞菌', 'pseudomonas-fluorescens'],
+    ['GN335', 'Acinetobacter baumannii', '鲍曼不动杆菌', 'acinetobacter-baumannii'],
+    ['GN335', 'Chryseobacterium indologenes', '产吲哚金黄杆菌', 'chryseobacterium-indologenes'],
+    ['GN335', 'Achromobacter xylosoxidans', '木糖氧化无色杆菌', 'achromobacter-xylosoxidans'],
+    ['GN335', 'Acinetobacter junii', '琼氏不动杆菌', 'acinetobacter-junii'],
+    ['GN335', 'Elizabethkingia meningoseptica', '脑膜败血症伊丽莎白', 'elizabethkingia-meningoseptica'],
+    ['GN335', 'Chryseobacterium gleum', '粘金黄杆菌', 'chryseobacterium-gleum'],
+    ['GN335', 'Ralstonia mannitolilytica', '解甘露醇罗尔斯顿菌', 'ralstonia-mannitolilytica'],
+    ['GP67', 'Enterococcus faecalis', '粪肠球菌', 'enterococcus-faecalis'],
+    ['GP67', 'Enterococcus faecium', '屎肠球菌', 'enterococcus-faecium'],
+    ['GP67', 'Enterococcus casseliflavus', '铅黄肠球菌', 'enterococcus-casseliflavus'],
+    ['GP67', 'Staphylococcus aureus', '金黄色葡萄球菌', 'staph-aureus'],
+    ['GP67', 'Enterococcus avium', '鸟肠球菌', 'enterococcus-avium'],
+    ['GP67', 'Staphylococcus haemolyticus', '溶血葡萄球菌', 'staph-haemolyticus'],
+    ['GP67', 'Staphylococcus epidermidis', '表皮葡萄球菌', 'staph-epidermidis'],
+    ['GP67', 'Staphylococcus capitis', '头葡萄球菌', 'staph-capitis'],
+    ['GP67', 'Staphylococcus hominis', '人葡萄球菌', 'staph-hominis'],
+    ['GP67', 'Staphylococcus saprophyticus', '腐生葡萄球菌', 'staph-saprophyticus'],
+    ['GP67', 'Staphylococcus lugdunensis', '路邓葡萄球菌', 'staph-lugdunensis'],
+    ['GP67', 'Streptococcus agalactiae', '无乳链球菌', 'strep-agalactiae'],
+    ['GP67', 'Staphylococcus cohnii', '科氏葡萄球菌', 'staph-cohnii'],
+    ['YST08', 'Candida albicans', '白色念珠菌', 'candida-albicans'],
+    ['YST08', 'Candida tropicalis', '热带念珠菌', 'candida-tropicalis'],
+    ['YST08', 'Candida glabrata', '光滑念珠菌', 'candida-glabrata'],
+    ['YST08', 'Candida parapsilosis', '近平滑念珠菌', 'candida-parapsilosis'],
+    ['YST08', 'Candida krusei', '克柔念珠菌', 'candida-krusei'],
+    ['YST08', 'Candida lusitaniae', '葡萄牙念珠菌', 'candida-lusitaniae'],
+    ['YST08', 'Candida guilliermondii', '季也蒙念珠菌', 'candida-guilliermondii'],
+    ['YST08', 'Candida dubliniensis', '都柏林念珠菌', 'candida-dubliniensis'],
+    ['YST08', 'Candida kefyr', '乳酒念珠菌', 'candida-kefyr'],
+    ['YST08', 'Cryptococcus neoformans', '新生隐球菌', 'cryptococcus-neoformans']
+  ];
+  var DEFAULT_ITEMS = Object.freeze(DEFAULT_RAW.map(function (row) {
+    return Object.freeze({ id: 'cn-default-' + row[3], name: row[2], latin: row[1], abbr: row[0], microbeId: row[3] });
+  }));
+  function defaultItems() {
+    return DEFAULT_ITEMS.map(function (item) {
+      return { id: item.id, name: item.name, latin: item.latin, abbr: item.abbr, microbeId: item.microbeId };
+    });
+  }
 
   // 仅用于比较，不改变保存的字面值，也不使用 Core 的医学/仪器缩写扩展。
   function normalize(value) {
@@ -150,6 +208,9 @@
   function duplicateOf(items, candidate) {
     return items.find(function (item) {
       if (candidate.id && item.id === candidate.id) { return false; }
+      var microbeId = normalize(item.microbeId);
+      var otherMicrobeId = normalize(candidate.microbeId);
+      if (microbeId && otherMicrobeId && microbeId === otherMicrobeId) { return true; }
       var latin = normalize(item.latin);
       var otherLatin = normalize(candidate.latin);
       return latin && otherLatin ? latin === otherLatin : normalize(item.name) === normalize(candidate.name);
@@ -184,7 +245,7 @@
       var raw;
       try { raw = storage.getItem(STORAGE_KEY); }
       catch (error) { return failure('本地存储读取失败，请检查浏览器存储权限。'); }
-      var result = raw === null ? { ok: true, items: [] } : parseDocument(raw);
+      var result = raw === null ? { ok: true, items: defaultItems() } : parseDocument(raw);
       if (result.ok) { result.raw = raw; }
       return result;
     }
@@ -315,11 +376,30 @@
       return result;
     }
 
-    return { load: load, save: save, remove: remove, move: move, loadSortMode: loadSortMode, saveSortMode: saveSortMode, exportBackup: exportBackup, importBackup: importBackup };
+    function restoreDefaults() {
+      var current = readSnapshot();
+      if (!current.ok) { return current; }
+      var items = current.items;
+      var added = 0;
+      var skipped = 0;
+      DEFAULT_ITEMS.forEach(function (input) {
+        var item = { id: '', name: input.name, latin: input.latin, abbr: input.abbr, microbeId: input.microbeId };
+        if (duplicateOf(items, item)) { skipped += 1; return; }
+        item.id = items.some(function (existing) { return existing.id === input.id; }) ? newId(items.concat(DEFAULT_ITEMS)) : input.id;
+        items.push(item);
+        added += 1;
+      });
+      if (items.length > MAX_ITEMS) { return failure('恢复默认后超过 500 条上限，未写入任何条目。'); }
+      var result = added ? write(items, current.raw) : { ok: true, items: items };
+      if (result.ok) { result.added = added; result.skipped = skipped; }
+      return result;
+    }
+
+    return { load: load, save: save, remove: remove, move: move, loadSortMode: loadSortMode, saveSortMode: saveSortMode, exportBackup: exportBackup, importBackup: importBackup, restoreDefaults: restoreDefaults };
   }
 
   return {
-    STORAGE_KEY: STORAGE_KEY, buildCatalog: buildCatalog, suggest: suggest,
+    STORAGE_KEY: STORAGE_KEY, DEFAULT_ITEMS: DEFAULT_ITEMS, buildCatalog: buildCatalog, suggest: suggest,
     filter: filter, createStore: createStore, sortItems: sortItems, SORT_MODES: SORT_MODES.slice(), SORT_KEY: SORT_KEY
   };
 });
